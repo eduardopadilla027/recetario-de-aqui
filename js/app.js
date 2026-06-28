@@ -106,6 +106,7 @@ const categoryOrder = [
 let currentLang = "es";
 let openCategories = new Set();
 let searchQuery = "";
+let selectedNavCategory = null; // when a nav pill is clicked, only show that category
 
 function init() {
   renderNavPills();
@@ -117,6 +118,10 @@ function init() {
 function setupEventListeners() {
   document.getElementById("search-input").addEventListener("input", (e) => {
     searchQuery = e.target.value.toLowerCase().trim();
+    if (searchQuery) {
+      selectedNavCategory = null;
+      renderNavPills();
+    }
     renderCategories();
   });
 
@@ -164,8 +169,8 @@ function renderNavPills() {
   const t = translations[currentLang];
   const container = document.getElementById("nav-pills");
   container.innerHTML = categoryOrder.map(cat => {
-    const count = recipes.filter(r => r.category === cat).length;
-    return `<button class="nav-pill" data-category="${cat}">
+    const isActive = selectedNavCategory === cat;
+    return `<button class="nav-pill${isActive ? " active" : ""}" data-category="${cat}">
       <span class="pill-icon">${categoryIcons[cat]}</span>${t.categories[cat]}
     </button>`;
   }).join("");
@@ -173,14 +178,22 @@ function renderNavPills() {
   container.querySelectorAll(".nav-pill").forEach(btn => {
     btn.addEventListener("click", () => {
       const cat = btn.dataset.category;
-      const section = document.getElementById(`cat-${cat}`);
-      if (section) {
-        openCategories.add(cat);
-        renderCategories();
-        setTimeout(() => {
-          section.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 100);
+      // Toggle: if same pill clicked again, show all categories
+      if (selectedNavCategory === cat) {
+        selectedNavCategory = null;
+      } else {
+        selectedNavCategory = cat;
       }
+      openCategories.clear();
+      openCategories.add(cat);
+      renderNavPills();
+      renderCategories();
+      setTimeout(() => {
+        const section = document.getElementById(`cat-${cat}`);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
     });
   });
 }
@@ -201,9 +214,14 @@ function renderCategories() {
   const t = translations[currentLang];
   const container = document.getElementById("categories-container");
 
-  container.innerHTML = categoryOrder.map(cat => {
+  // Determine which categories to show
+  const categoriesToRender = selectedNavCategory && !searchQuery
+    ? [selectedNavCategory]
+    : categoryOrder;
+
+  container.innerHTML = categoriesToRender.map(cat => {
     const catRecipes = getFilteredRecipes(cat);
-    const isOpen = openCategories.has(cat) || searchQuery.length > 0;
+    const isOpen = selectedNavCategory === cat || openCategories.has(cat) || searchQuery.length > 0;
     const allCatRecipes = recipes.filter(r => r.category === cat);
 
     if (searchQuery && catRecipes.length === 0) return "";
