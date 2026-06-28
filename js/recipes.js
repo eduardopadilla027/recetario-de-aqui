@@ -1,0 +1,5089 @@
+const recipes = [
+  // ══════════════════════════════════════
+  // ── SOPAS Y CALDOS ──
+  // ══════════════════════════════════════
+  {
+    id: "sopa-pollo",
+    category: "sopas",
+    name: { es: "Sopa de Pollo con Fideos", en: "Chicken Noodle Soup" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 pechuga de pollo grande",
+        "8 tazas de agua",
+        "2 papas medianas, peladas y cortadas en cubos",
+        "1 zanahoria grande, cortada en ruedas",
+        "1 taza de fideos",
+        "1 sobre de sazón con culantro y achiote",
+        "2 dientes de ajo, machacados",
+        "1 ramita de cilantro",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 large chicken breast",
+        "8 cups water",
+        "2 medium potatoes, peeled and cubed",
+        "1 large carrot, sliced into rounds",
+        "1 cup thin noodles",
+        "1 packet sazón with coriander and annatto",
+        "2 garlic cloves, crushed",
+        "1 sprig cilantro",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el pollo en las 8 tazas de agua con ajo, cilantro y sal por 25 minutos.",
+        "Retire el pollo, desmenúcelo y cuele el caldo.",
+        "Regrese el caldo al fuego y añada las papas y la zanahoria. Cocine 10 minutos.",
+        "Agregue los fideos, el sazón y el pollo desmenuzado. Cocine 8 minutos más.",
+        "Ajuste la sal y pimienta. Sirva caliente."
+      ],
+      en: [
+        "Boil the chicken in 8 cups of water with garlic, cilantro, and salt for 25 minutes.",
+        "Remove the chicken, shred it, and strain the broth.",
+        "Return the broth to heat and add potatoes and carrots. Cook 10 minutes.",
+        "Add the noodles, sazón, and shredded chicken. Cook 8 more minutes.",
+        "Adjust salt and pepper. Serve hot."
+      ]
+    }
+  },
+  {
+    id: "sancocho",
+    category: "sopas",
+    name: { es: "Sancocho Puertorriqueño", en: "Puerto Rican Sancocho" },
+    time: "1 hr 30 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 lb de carne de res para guisar",
+        "½ lb de pollo, cortado en piezas",
+        "1 mazorca de maíz, cortada en trozos",
+        "2 plátanos verdes, pelados y cortados",
+        "1 lb de yautía, pelada y cortada",
+        "2 papas grandes, peladas y cortadas",
+        "1 calabaza pequeña, pelada y cortada",
+        "1 sobre de sazón",
+        "Sofrito al gusto",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 lb beef stew meat",
+        "½ lb chicken, cut into pieces",
+        "1 ear of corn, cut into chunks",
+        "2 green plantains, peeled and cut",
+        "1 lb yautía (taro root), peeled and cut",
+        "2 large potatoes, peeled and cut",
+        "1 small calabaza (pumpkin), peeled and cut",
+        "1 packet sazón",
+        "Sofrito to taste",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla grande, sofría la carne de res con el sofrito y el sazón por 5 minutos.",
+        "Añada 12 tazas de agua y el pollo. Hierva y cocine a fuego medio por 30 minutos.",
+        "Agregue el maíz, los plátanos verdes y la yautía. Cocine 15 minutos.",
+        "Añada las papas y la calabaza. Cocine 20 minutos más o hasta que todo esté tierno.",
+        "Ajuste la sal y pimienta. El caldo debe quedar espeso. Sirva caliente."
+      ],
+      en: [
+        "In a large pot, sauté the beef with sofrito and sazón for 5 minutes.",
+        "Add 12 cups of water and the chicken. Boil and cook on medium heat for 30 minutes.",
+        "Add the corn, green plantains, and yautía. Cook 15 minutes.",
+        "Add potatoes and calabaza. Cook 20 more minutes or until everything is tender.",
+        "Adjust salt and pepper. The broth should be thick. Serve hot."
+      ]
+    }
+  },
+  {
+    id: "sopa-platano",
+    category: "sopas",
+    name: { es: "Sopa de Plátano", en: "Plantain Soup" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 plátanos verdes, pelados y cortados en trozos",
+        "6 tazas de caldo de pollo",
+        "2 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "2 dientes de ajo, machacados",
+        "1 cucharada de aceite de oliva",
+        "Sal y pimienta al gusto",
+        "Cilantro fresco para decorar"
+      ],
+      en: [
+        "3 green plantains, peeled and cut into chunks",
+        "6 cups chicken broth",
+        "2 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "2 garlic cloves, crushed",
+        "1 tablespoon olive oil",
+        "Salt and pepper to taste",
+        "Fresh cilantro for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el aceite en una olla. Sofría el sofrito y el ajo por 2 minutos.",
+        "Añada el caldo de pollo y el sazón. Hierva.",
+        "Agregue los plátanos verdes. Cocine a fuego medio por 25 minutos hasta que estén muy blandos.",
+        "Con una licuadora de inmersión o en la licuadora, procese hasta obtener una crema suave.",
+        "Ajuste la sal y pimienta. Sirva caliente con cilantro fresco."
+      ],
+      en: [
+        "Heat oil in a pot. Sauté sofrito and garlic for 2 minutes.",
+        "Add chicken broth and sazón. Bring to a boil.",
+        "Add green plantains. Cook on medium heat for 25 minutes until very soft.",
+        "Using an immersion blender or regular blender, process until smooth and creamy.",
+        "Adjust salt and pepper. Serve hot garnished with fresh cilantro."
+      ]
+    }
+  },
+  {
+    id: "caldo-santo",
+    category: "sopas",
+    name: { es: "Caldo Santo", en: "Holy Broth (Lenten Fish Soup)" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lb de bacalao seco, desalado",
+        "1 lb de chillo u otro pescado fresco",
+        "2 plátanos verdes, cortados en ruedas gruesas",
+        "2 mazorcas de maíz, cortadas en trozos",
+        "1 lb de ñame, pelado y cortado",
+        "1 lb de yautía blanca, pelada y cortada",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón",
+        "Jugo de 2 limones",
+        "Sal al gusto"
+      ],
+      en: [
+        "1 lb dried codfish, desalted",
+        "1 lb red snapper or other fresh fish",
+        "2 green plantains, cut into thick rounds",
+        "2 ears of corn, cut into chunks",
+        "1 lb yam, peeled and cut",
+        "1 lb white yautía, peeled and cut",
+        "3 tablespoons sofrito",
+        "2 packets sazón",
+        "Juice of 2 limes",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla grande, hierva 10 tazas de agua con el sofrito y el sazón.",
+        "Añada los plátanos, el maíz, el ñame y la yautía. Cocine 20 minutos.",
+        "Agregue el bacalao desmenuzado y los trozos de pescado fresco.",
+        "Cocine a fuego bajo por 15 minutos más sin revolver mucho para no deshacer el pescado.",
+        "Añada el jugo de limón y sal al gusto. Sirva caliente."
+      ],
+      en: [
+        "In a large pot, boil 10 cups of water with sofrito and sazón.",
+        "Add plantains, corn, yam, and yautía. Cook 20 minutes.",
+        "Add shredded codfish and fresh fish pieces.",
+        "Cook on low heat for 15 more minutes without stirring too much to keep fish intact.",
+        "Add lime juice and salt to taste. Serve hot."
+      ]
+    }
+  },
+  {
+    id: "sopa-habichuelas-negras",
+    category: "sopas",
+    name: { es: "Sopa de Habichuelas Negras", en: "Black Bean Soup" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lb de habichuelas negras secas (o 2 latas)",
+        "1 pimiento verde, picado",
+        "1 cebolla grande, picada",
+        "4 dientes de ajo, machacados",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharadita de comino",
+        "1 cucharadita de orégano",
+        "2 hojas de laurel",
+        "2 cucharadas de vinagre",
+        "Sal y pimienta al gusto",
+        "Arroz blanco para acompañar"
+      ],
+      en: [
+        "1 lb dried black beans (or 2 cans)",
+        "1 green bell pepper, diced",
+        "1 large onion, diced",
+        "4 garlic cloves, crushed",
+        "2 tablespoons olive oil",
+        "1 teaspoon cumin",
+        "1 teaspoon oregano",
+        "2 bay leaves",
+        "2 tablespoons vinegar",
+        "Salt and pepper to taste",
+        "White rice to serve alongside"
+      ]
+    },
+    steps: {
+      es: [
+        "Si usa habichuelas secas, remójelas la noche anterior. Hierva hasta que estén blandas (1 hora aproximadamente).",
+        "En una olla, caliente el aceite y sofría la cebolla, el pimiento y el ajo por 5 minutos.",
+        "Añada el comino, orégano y las hojas de laurel.",
+        "Agregue las habichuelas con su líquido. Cocine a fuego medio por 20 minutos.",
+        "Maje algunas habichuelas contra la olla para espesar el caldo.",
+        "Añada el vinagre, sal y pimienta. Sirva sobre arroz blanco."
+      ],
+      en: [
+        "If using dried beans, soak overnight. Boil until soft (about 1 hour).",
+        "In a pot, heat oil and sauté onion, pepper, and garlic for 5 minutes.",
+        "Add cumin, oregano, and bay leaves.",
+        "Add beans with their liquid. Cook on medium heat for 20 minutes.",
+        "Mash some beans against the pot to thicken the broth.",
+        "Add vinegar, salt, and pepper. Serve over white rice."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════
+  // ── ARROCES Y HABICHUELAS ──
+  // ══════════════════════════════════════
+  {
+    id: "arroz-habichuelas",
+    category: "arroces",
+    name: { es: "Arroz Blanco con Habichuelas Rosadas", en: "White Rice with Pink Beans" },
+    time: "50 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 tazas de arroz grano mediano",
+        "4½ tazas de agua",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharadita de sal",
+        "1 lata de habichuelas rosadas (15 oz)",
+        "2 cucharadas de sofrito",
+        "1 sobre de sazón",
+        "2 cucharadas de salsa de tomate",
+        "1 papa pequeña, cortada en cubos",
+        "Aceitunas rellenas al gusto"
+      ],
+      en: [
+        "3 cups medium grain rice",
+        "4½ cups water",
+        "2 tablespoons olive oil",
+        "1 teaspoon salt",
+        "1 can pink beans (15 oz)",
+        "2 tablespoons sofrito",
+        "1 packet sazón",
+        "2 tablespoons tomato sauce",
+        "1 small potato, cubed",
+        "Stuffed olives to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Para el arroz: caliente el aceite en un caldero, añada el arroz, el agua y la sal. Hierva sin tapar hasta que el agua se absorba.",
+        "Tape, baje el fuego al mínimo y cocine por 20 minutos. No destape mientras cocina.",
+        "Para las habichuelas: en otra olla, sofría el sofrito con el sazón y la salsa de tomate.",
+        "Añada las habichuelas con su líquido, las papas y las aceitunas. Cocine a fuego medio por 20 minutos.",
+        "Sirva las habichuelas sobre el arroz blanco."
+      ],
+      en: [
+        "For the rice: heat oil in a caldero (heavy pot), add rice, water, and salt. Boil uncovered until water is absorbed.",
+        "Cover, reduce heat to minimum and cook for 20 minutes. Do not uncover while cooking.",
+        "For the beans: in another pot, sauté sofrito with sazón and tomato sauce.",
+        "Add beans with their liquid, potatoes, and olives. Cook on medium heat for 20 minutes.",
+        "Serve the beans over white rice."
+      ]
+    }
+  },
+  {
+    id: "arroz-gandules",
+    category: "arroces",
+    name: { es: "Arroz con Gandules", en: "Rice with Pigeon Peas" },
+    time: "55 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 tazas de arroz grano mediano",
+        "1 lata de gandules verdes (15 oz), escurridos",
+        "4 tazas de caldo de pollo",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "2 cucharadas de aceite de oliva",
+        "1 hoja de recao (culantro)",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "3 cups medium grain rice",
+        "1 can green pigeon peas (15 oz), drained",
+        "4 cups chicken broth",
+        "3 tablespoons sofrito",
+        "2 packets sazón with annatto",
+        "¼ cup tomato sauce",
+        "¼ cup stuffed olives",
+        "2 tablespoons olive oil",
+        "1 recao leaf (culantro)",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero grande, caliente el aceite y sofría el sofrito por 2 minutos.",
+        "Añada el sazón, la salsa de tomate, las aceitunas y los gandules. Mezcle bien.",
+        "Agregue el caldo de pollo y el recao. Hierva.",
+        "Añada el arroz, mezcle una vez y cocine sin tapa hasta que el líquido se absorba.",
+        "Tape, baje el fuego al mínimo y cocine 20-25 minutos. Voltee con cuchara antes de servir."
+      ],
+      en: [
+        "In a large caldero, heat oil and sauté sofrito for 2 minutes.",
+        "Add sazón, tomato sauce, olives, and pigeon peas. Mix well.",
+        "Add chicken broth and recao leaf. Bring to a boil.",
+        "Add rice, stir once, and cook uncovered until liquid is absorbed.",
+        "Cover, reduce heat to minimum and cook 20-25 minutes. Fold with a spoon before serving."
+      ]
+    }
+  },
+  {
+    id: "asopao-pollo",
+    category: "arroces",
+    name: { es: "Asopao de Pollo", en: "Chicken Asopao (Rice Stew)" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 lbs de pollo, cortado en piezas",
+        "1½ tazas de arroz grano corto",
+        "8 tazas de caldo de pollo",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón",
+        "¼ taza de salsa de tomate",
+        "1 taza de gandules (opcional)",
+        "½ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "1 pimiento rojo asado, cortado en tiras",
+        "Sal, pimienta y orégano al gusto"
+      ],
+      en: [
+        "2 lbs chicken, cut into pieces",
+        "1½ cups short grain rice",
+        "8 cups chicken broth",
+        "3 tablespoons sofrito",
+        "2 packets sazón",
+        "¼ cup tomato sauce",
+        "1 cup pigeon peas (optional)",
+        "½ cup stuffed olives",
+        "1 tablespoon capers",
+        "1 roasted red pepper, cut in strips",
+        "Salt, pepper, and oregano to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone el pollo con sal, pimienta, orégano y ajo. Marine por 15 minutos.",
+        "En un caldero grande, dore el pollo en aceite. Retire y reserve.",
+        "En el mismo caldero, sofría el sofrito, sazón y salsa de tomate por 3 minutos.",
+        "Añada el caldo, el pollo, las aceitunas, alcaparras y gandules. Hierva.",
+        "Agregue el arroz, baje el fuego a medio y cocine sin tapa por 30 minutos, revolviendo ocasionalmente.",
+        "El asopao debe quedar caldoso. Decore con las tiras de pimiento y sirva."
+      ],
+      en: [
+        "Season chicken with salt, pepper, oregano, and garlic. Marinate 15 minutes.",
+        "In a large caldero, brown the chicken in oil. Remove and set aside.",
+        "In the same pot, sauté sofrito, sazón, and tomato sauce for 3 minutes.",
+        "Add broth, chicken, olives, capers, and pigeon peas. Bring to a boil.",
+        "Add rice, lower heat to medium and cook uncovered for 30 minutes, stirring occasionally.",
+        "Asopao should be soupy. Garnish with pepper strips and serve."
+      ]
+    }
+  },
+  {
+    id: "arroz-pollo",
+    category: "arroces",
+    name: { es: "Arroz con Pollo", en: "Chicken and Rice" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 tazas de arroz grano mediano",
+        "2 lbs de pollo, cortado en piezas",
+        "4 tazas de caldo de pollo",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "½ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "½ taza de petit pois",
+        "1 pimiento rojo asado en tiras",
+        "Sal, pimienta y orégano"
+      ],
+      en: [
+        "3 cups medium grain rice",
+        "2 lbs chicken, cut into pieces",
+        "4 cups chicken broth",
+        "3 tablespoons sofrito",
+        "2 packets sazón with annatto",
+        "¼ cup tomato sauce",
+        "½ cup stuffed olives",
+        "1 tablespoon capers",
+        "½ cup petit pois (green peas)",
+        "1 roasted red pepper in strips",
+        "Salt, pepper, and oregano"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone el pollo con sal, pimienta, orégano y ajo. Marine 30 minutos.",
+        "Dore el pollo en aceite caliente en un caldero grande. Retire.",
+        "Sofría el sofrito, sazón y salsa de tomate por 3 minutos.",
+        "Añada el caldo, aceitunas, alcaparras y regrese el pollo. Hierva.",
+        "Agregue el arroz, revuelva una vez. Cocine sin tapa hasta absorber el líquido.",
+        "Tape, baje el fuego y cocine 25 minutos. Decore con pimiento y petit pois."
+      ],
+      en: [
+        "Season chicken with salt, pepper, oregano, and garlic. Marinate 30 minutes.",
+        "Brown chicken in hot oil in a large caldero. Remove.",
+        "Sauté sofrito, sazón, and tomato sauce for 3 minutes.",
+        "Add broth, olives, capers, and return chicken. Bring to a boil.",
+        "Add rice, stir once. Cook uncovered until liquid is absorbed.",
+        "Cover, lower heat and cook 25 minutes. Garnish with pepper strips and petit pois."
+      ]
+    }
+  },
+  {
+    id: "arroz-salchichas",
+    category: "arroces",
+    name: { es: "Arroz con Salchichas", en: "Rice with Vienna Sausages" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 tazas de arroz grano mediano",
+        "2 latas de salchichas de Viena, cortadas",
+        "3 tazas de agua",
+        "2 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "2 cucharadas de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharada de aceite vegetal",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 cups medium grain rice",
+        "2 cans Vienna sausages, sliced",
+        "3 cups water",
+        "2 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "2 tablespoons tomato sauce",
+        "¼ cup stuffed olives",
+        "1 tablespoon vegetable oil",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero, caliente el aceite y dore las salchichas ligeramente. Retire.",
+        "Sofría el sofrito con el sazón y la salsa de tomate por 2 minutos.",
+        "Añada el agua, las aceitunas y sal. Hierva.",
+        "Agregue el arroz y las salchichas. Cocine sin tapa hasta que el agua se absorba.",
+        "Tape, baje el fuego al mínimo y cocine 20 minutos."
+      ],
+      en: [
+        "In a caldero, heat oil and lightly brown sausages. Remove.",
+        "Sauté sofrito with sazón and tomato sauce for 2 minutes.",
+        "Add water, olives, and salt. Bring to a boil.",
+        "Add rice and sausages. Cook uncovered until water is absorbed.",
+        "Cover, reduce heat to minimum and cook 20 minutes."
+      ]
+    }
+  },
+  {
+    id: "arroz-mamposteao",
+    category: "arroces",
+    name: { es: "Arroz Mamposteao", en: "Mashed Rice and Beans" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 tazas de arroz blanco cocido (del día anterior)",
+        "1 lata de habichuelas rojas o rosadas",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón",
+        "2 cucharadas de aceite de oliva",
+        "4 lonjas de tocino, cortadas (opcional)",
+        "Sal al gusto"
+      ],
+      en: [
+        "3 cups cooked white rice (day-old preferred)",
+        "1 can red or pink beans",
+        "3 tablespoons sofrito",
+        "1 packet sazón",
+        "2 tablespoons olive oil",
+        "4 bacon slices, chopped (optional)",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Si usa tocino, fríalo hasta que esté crujiente. Reserve.",
+        "En el mismo caldero, sofría el sofrito con el sazón por 2 minutos.",
+        "Añada las habichuelas con todo su líquido. Cocine 5 minutos majando algunas.",
+        "Agregue el arroz y mezcle vigorosamente, aplastando y combinando con las habichuelas.",
+        "Cocine a fuego medio por 5 minutos, revolviendo. Añada el tocino y sirva."
+      ],
+      en: [
+        "If using bacon, fry until crispy. Set aside.",
+        "In the same pot, sauté sofrito with sazón for 2 minutes.",
+        "Add beans with all their liquid. Cook 5 minutes, mashing some.",
+        "Add rice and mix vigorously, mashing and combining with the beans.",
+        "Cook on medium heat for 5 minutes, stirring. Add bacon and serve."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════
+  // ── CARNES ──
+  // ══════════════════════════════════════
+  {
+    id: "carne-guisada",
+    category: "carnes",
+    name: { es: "Carne Guisada Criolla", en: "Creole Beef Stew" },
+    time: "1 hr 15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 lbs de carne de res para guisar",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "2 papas grandes, cortadas en cubos",
+        "1 zanahoria, cortada en ruedas",
+        "½ taza de aceitunas rellenas",
+        "2 hojas de laurel",
+        "2 tazas de agua",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 lbs beef stew meat",
+        "3 tablespoons sofrito",
+        "2 packets sazón with annatto",
+        "¼ cup tomato sauce",
+        "2 large potatoes, cubed",
+        "1 carrot, sliced into rounds",
+        "½ cup stuffed olives",
+        "2 bay leaves",
+        "2 cups water",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone la carne con sal, pimienta y ajo en polvo.",
+        "En un caldero, dore la carne en aceite caliente por todos lados. Retire.",
+        "En el mismo caldero, sofría el sofrito con el sazón y la salsa de tomate por 3 minutos.",
+        "Regrese la carne, añada el agua, las hojas de laurel y las aceitunas. Tape y cocine a fuego bajo por 40 minutos.",
+        "Añada las papas y la zanahoria. Cocine 20 minutos más hasta que la carne esté tierna y la salsa espese."
+      ],
+      en: [
+        "Season beef with salt, pepper, and garlic powder.",
+        "In a caldero, brown the meat in hot oil on all sides. Remove.",
+        "In the same pot, sauté sofrito with sazón and tomato sauce for 3 minutes.",
+        "Return the meat, add water, bay leaves, and olives. Cover and cook on low for 40 minutes.",
+        "Add potatoes and carrots. Cook 20 more minutes until meat is tender and sauce thickens."
+      ]
+    }
+  },
+  {
+    id: "bistec-encebollado",
+    category: "carnes",
+    name: { es: "Bistec Encebollado", en: "Steak with Onions" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 bistecs de res, finos",
+        "2 cebollas grandes, cortadas en aros",
+        "3 dientes de ajo, machacados",
+        "2 cucharadas de vinagre",
+        "2 cucharadas de aceite de oliva",
+        "1 sobre de sazón",
+        "Sal, pimienta y orégano al gusto"
+      ],
+      en: [
+        "4 thin beef steaks",
+        "2 large onions, sliced into rings",
+        "3 garlic cloves, crushed",
+        "2 tablespoons vinegar",
+        "2 tablespoons olive oil",
+        "1 packet sazón",
+        "Salt, pepper, and oregano to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe los bistecs con ajo, vinagre, sal, pimienta y orégano. Marine por 15 minutos.",
+        "Caliente el aceite en un sartén grande a fuego alto. Dore los bistecs 2 minutos por cada lado. Retire.",
+        "En el mismo sartén, sofría las cebollas con el sazón hasta que estén transparentes.",
+        "Regrese los bistecs al sartén, cubra con las cebollas y cocine 3 minutos más."
+      ],
+      en: [
+        "Season steaks with garlic, vinegar, salt, pepper, and oregano. Marinate 15 minutes.",
+        "Heat oil in a large skillet on high heat. Brown steaks 2 minutes per side. Remove.",
+        "In the same skillet, sauté onions with sazón until translucent.",
+        "Return steaks to skillet, cover with onions and cook 3 more minutes."
+      ]
+    }
+  },
+  {
+    id: "pernil",
+    category: "carnes",
+    name: { es: "Pernil Asado", en: "Roast Pork Shoulder" },
+    time: "5-6 hrs",
+    servings: 15,
+    ingredients: {
+      es: [
+        "1 pernil de cerdo (8-10 lbs)",
+        "1 cabeza de ajo, pelada",
+        "2 cucharadas de orégano seco",
+        "2 cucharadas de aceite de oliva",
+        "3 cucharadas de vinagre",
+        "2 sobres de sazón con achiote",
+        "1 cucharada de pimienta en grano",
+        "2 cucharaditas de sal",
+        "Jugo de 3 limones"
+      ],
+      en: [
+        "1 pork shoulder (8-10 lbs)",
+        "1 head of garlic, peeled",
+        "2 tablespoons dried oregano",
+        "2 tablespoons olive oil",
+        "3 tablespoons vinegar",
+        "2 packets sazón with annatto",
+        "1 tablespoon peppercorns",
+        "2 teaspoons salt",
+        "Juice of 3 limes"
+      ]
+    },
+    steps: {
+      es: [
+        "En un pilón o procesador, maje el ajo con el orégano, la sal, la pimienta, el aceite, el vinagre y el sazón para hacer el adobo.",
+        "Con un cuchillo, haga incisiones profundas por todo el pernil.",
+        "Unte el adobo por dentro de las incisiones y por toda la superficie. Añada el jugo de limón.",
+        "Cubra con papel plástico y refrigere por al menos 12 horas (mejor 24 horas).",
+        "Precaliente el horno a 350°F. Cubra el pernil con papel de aluminio.",
+        "Hornee por 4 horas tapado. Destape y suba a 375°F por 1 hora más hasta que el cuero esté crujiente.",
+        "Deje reposar 20 minutos antes de cortar."
+      ],
+      en: [
+        "In a mortar or food processor, crush garlic with oregano, salt, pepper, oil, vinegar, and sazón to make the adobo.",
+        "With a knife, make deep incisions all over the pork shoulder.",
+        "Rub the adobo into the incisions and all over the surface. Add lime juice.",
+        "Cover with plastic wrap and refrigerate at least 12 hours (24 hours is better).",
+        "Preheat oven to 350°F. Cover pork with aluminum foil.",
+        "Bake covered for 4 hours. Uncover and raise to 375°F for 1 more hour until skin is crispy.",
+        "Let rest 20 minutes before carving."
+      ]
+    }
+  },
+  {
+    id: "chuletas-kan-kan",
+    category: "carnes",
+    name: { es: "Chuletas Kan Kan", en: "Kan Kan Pork Chops" },
+    time: "45 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 chuletas de cerdo gruesas con el cuero",
+        "6 dientes de ajo, machacados",
+        "2 cucharadas de vinagre",
+        "1 cucharadita de orégano seco",
+        "1 sobre de sazón",
+        "Aceite vegetal para freír",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "4 thick pork chops with skin on",
+        "6 garlic cloves, crushed",
+        "2 tablespoons vinegar",
+        "1 teaspoon dried oregano",
+        "1 packet sazón",
+        "Vegetable oil for frying",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe las chuletas con ajo, vinagre, orégano, sazón, sal y pimienta. Marine por al menos 1 hora.",
+        "Haga cortes en el cuero de las chuletas para que se inflen al freír.",
+        "Caliente abundante aceite a fuego medio-alto en un sartén hondo.",
+        "Fría las chuletas por 8-10 minutos por cada lado hasta que el cuero esté inflado y crujiente.",
+        "Escurra sobre papel toalla. Sirva con arroz y habichuelas."
+      ],
+      en: [
+        "Season chops with garlic, vinegar, oregano, sazón, salt, and pepper. Marinate at least 1 hour.",
+        "Score the skin of the chops so it puffs when frying.",
+        "Heat plenty of oil over medium-high heat in a deep skillet.",
+        "Fry chops 8-10 minutes per side until skin is puffed and crispy.",
+        "Drain on paper towels. Serve with rice and beans."
+      ]
+    }
+  },
+  {
+    id: "carne-frita",
+    category: "carnes",
+    name: { es: "Carne Frita con Cebolla", en: "Fried Pork with Onions" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 lbs de masa de cerdo, cortada en trozos",
+        "6 dientes de ajo, machacados",
+        "2 cucharadas de vinagre",
+        "1 cucharadita de orégano",
+        "1 sobre de sazón",
+        "Aceite para freír",
+        "2 cebollas, cortadas en aros",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 lbs pork shoulder, cut into chunks",
+        "6 garlic cloves, crushed",
+        "2 tablespoons vinegar",
+        "1 teaspoon oregano",
+        "1 packet sazón",
+        "Oil for frying",
+        "2 onions, sliced into rings",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe la carne con ajo, vinagre, orégano, sazón, sal y pimienta. Marine por 1 hora.",
+        "Hierva la carne en agua con sal por 30 minutos hasta que esté tierna. Escurra bien.",
+        "En un sartén hondo, caliente aceite y fría la carne hasta dorar y quedar crujiente por fuera.",
+        "Retire la carne y en el mismo aceite sofría las cebollas hasta transparentar.",
+        "Sirva la carne cubierta con las cebollas. Acompañe con tostones."
+      ],
+      en: [
+        "Season pork with garlic, vinegar, oregano, sazón, salt, and pepper. Marinate 1 hour.",
+        "Boil pork in salted water for 30 minutes until tender. Drain well.",
+        "In a deep skillet, heat oil and fry pork until golden and crispy outside.",
+        "Remove pork and in the same oil sauté onions until translucent.",
+        "Serve pork topped with onions. Pair with tostones."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════
+  // ── AVES ──
+  // ══════════════════════════════════════
+  {
+    id: "pollo-fricasé",
+    category: "aves",
+    name: { es: "Pollo en Fricasé", en: "Chicken Fricassee" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 lbs de pollo, cortado en piezas",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón",
+        "¼ taza de salsa de tomate",
+        "3 papas medianas, cortadas en cuartos",
+        "½ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "1 hoja de laurel",
+        "½ taza de vino blanco para cocinar",
+        "Sal, pimienta, orégano y ajo al gusto"
+      ],
+      en: [
+        "3 lbs chicken, cut into pieces",
+        "3 tablespoons sofrito",
+        "2 packets sazón",
+        "¼ cup tomato sauce",
+        "3 medium potatoes, quartered",
+        "½ cup stuffed olives",
+        "1 tablespoon capers",
+        "1 bay leaf",
+        "½ cup cooking white wine",
+        "Salt, pepper, oregano, and garlic to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone el pollo con sal, pimienta, orégano y ajo. Marine por 20 minutos.",
+        "Dore el pollo en aceite caliente. Retire y reserve.",
+        "En el mismo caldero, sofría el sofrito con el sazón y la salsa de tomate.",
+        "Añada el vino blanco, las aceitunas, las alcaparras y la hoja de laurel.",
+        "Regrese el pollo, añada 1 taza de agua, tape y cocine a fuego bajo por 25 minutos.",
+        "Agregue las papas y cocine 20 minutos más hasta que todo esté tierno."
+      ],
+      en: [
+        "Season chicken with salt, pepper, oregano, and garlic. Marinate 20 minutes.",
+        "Brown chicken in hot oil. Remove and set aside.",
+        "In the same pot, sauté sofrito with sazón and tomato sauce.",
+        "Add white wine, olives, capers, and bay leaf.",
+        "Return chicken, add 1 cup water, cover and cook on low for 25 minutes.",
+        "Add potatoes and cook 20 more minutes until everything is tender."
+      ]
+    }
+  },
+  {
+    id: "pollo-asado",
+    category: "aves",
+    name: { es: "Pollo Asado al Horno", en: "Oven Roasted Chicken" },
+    time: "1 hr 30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 pollo entero (3-4 lbs)",
+        "6 dientes de ajo, machacados",
+        "2 cucharadas de aceite de oliva",
+        "2 cucharadas de vinagre",
+        "1 cucharadita de orégano seco",
+        "1 sobre de sazón",
+        "Jugo de 1 limón",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 whole chicken (3-4 lbs)",
+        "6 garlic cloves, crushed",
+        "2 tablespoons olive oil",
+        "2 tablespoons vinegar",
+        "1 teaspoon dried oregano",
+        "1 packet sazón",
+        "Juice of 1 lime",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el ajo, aceite, vinagre, orégano, sazón, limón, sal y pimienta para hacer el adobo.",
+        "Unte el pollo por dentro y por fuera con el adobo. Marine en la nevera por al menos 2 horas.",
+        "Precaliente el horno a 350°F (175°C).",
+        "Coloque el pollo en una bandeja de hornear. Cubra con papel de aluminio.",
+        "Hornee por 1 hora tapado. Destape y hornee 30 minutos más hasta dorar.",
+        "Deje reposar 10 minutos antes de cortar y servir."
+      ],
+      en: [
+        "Mix garlic, oil, vinegar, oregano, sazón, lime juice, salt, and pepper to make the adobo.",
+        "Rub the chicken inside and out with the adobo. Marinate in the fridge for at least 2 hours.",
+        "Preheat oven to 350°F (175°C).",
+        "Place chicken in a baking pan. Cover with aluminum foil.",
+        "Bake covered for 1 hour. Uncover and bake 30 more minutes until golden.",
+        "Let rest 10 minutes before cutting and serving."
+      ]
+    }
+  },
+  {
+    id: "pollo-guisado",
+    category: "aves",
+    name: { es: "Pollo Guisado", en: "Puerto Rican Stewed Chicken" },
+    time: "50 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 lbs de pollo, cortado en piezas",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "2 papas grandes, cortadas en cubos",
+        "½ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "1 taza de agua o caldo",
+        "Adobo: ajo, vinagre, orégano, sal, pimienta"
+      ],
+      en: [
+        "3 lbs chicken, cut into pieces",
+        "3 tablespoons sofrito",
+        "2 packets sazón with annatto",
+        "¼ cup tomato sauce",
+        "2 large potatoes, cubed",
+        "½ cup stuffed olives",
+        "1 tablespoon capers",
+        "1 cup water or broth",
+        "Adobo: garlic, vinegar, oregano, salt, pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el pollo con ajo machacado, vinagre, orégano, sal y pimienta. Marine 30 minutos.",
+        "En un caldero, dore el pollo en aceite por todos lados. Retire.",
+        "Sofría el sofrito con el sazón y la salsa de tomate por 3 minutos.",
+        "Regrese el pollo, añada el agua, aceitunas y alcaparras. Tape y cocine 20 minutos a fuego medio.",
+        "Añada las papas y cocine 15 minutos más. La salsa debe espesar naturalmente."
+      ],
+      en: [
+        "Season chicken with crushed garlic, vinegar, oregano, salt, and pepper. Marinate 30 minutes.",
+        "In a caldero, brown chicken in oil on all sides. Remove.",
+        "Sauté sofrito with sazón and tomato sauce for 3 minutes.",
+        "Return chicken, add water, olives, and capers. Cover and cook 20 minutes on medium heat.",
+        "Add potatoes and cook 15 more minutes. Sauce should thicken naturally."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════
+  // ── PESCADOS Y MARISCOS ──
+  // ══════════════════════════════════════
+  {
+    id: "bacalao-guisado",
+    category: "pescados",
+    name: { es: "Bacalao Guisado", en: "Stewed Codfish" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lb de bacalao seco, desalado y desmenuzado",
+        "3 cucharadas de sofrito",
+        "2 papas grandes, cortadas en cubos",
+        "¼ taza de salsa de tomate",
+        "1 sobre de sazón",
+        "½ taza de aceitunas rellenas",
+        "2 cucharadas de aceite de oliva",
+        "1 cebolla, cortada en aros",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 lb dried codfish, desalted and shredded",
+        "3 tablespoons sofrito",
+        "2 large potatoes, cubed",
+        "¼ cup tomato sauce",
+        "1 packet sazón",
+        "½ cup stuffed olives",
+        "2 tablespoons olive oil",
+        "1 onion, sliced into rings",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje el bacalao en agua por varias horas, cambiando el agua 2-3 veces para desalar.",
+        "Hierva el bacalao por 15 minutos. Escurra y desmenuce.",
+        "En un caldero, caliente el aceite y sofría el sofrito con el sazón y la salsa de tomate.",
+        "Añada el bacalao, las papas, las aceitunas y 1 taza de agua.",
+        "Cocine a fuego medio por 20 minutos hasta que las papas estén tiernas.",
+        "Decore con los aros de cebolla y sirva con arroz blanco."
+      ],
+      en: [
+        "Soak codfish in water for several hours, changing water 2-3 times to desalt.",
+        "Boil codfish for 15 minutes. Drain and shred.",
+        "In a caldero, heat oil and sauté sofrito with sazón and tomato sauce.",
+        "Add codfish, potatoes, olives, and 1 cup water.",
+        "Cook on medium heat for 20 minutes until potatoes are tender.",
+        "Garnish with onion rings and serve with white rice."
+      ]
+    }
+  },
+  {
+    id: "camarones-ajillo",
+    category: "pescados",
+    name: { es: "Camarones al Ajillo", en: "Garlic Shrimp" },
+    time: "20 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 lb de camarones grandes, pelados y limpios",
+        "8 dientes de ajo, cortados en láminas",
+        "¼ taza de aceite de oliva",
+        "¼ taza de vino blanco",
+        "1 cucharadita de pimentón",
+        "Perejil fresco picado",
+        "Jugo de 1 limón",
+        "Sal y pimienta al gusto",
+        "Hojuelas de chile rojo (opcional)"
+      ],
+      en: [
+        "1 lb large shrimp, peeled and cleaned",
+        "8 garlic cloves, thinly sliced",
+        "¼ cup olive oil",
+        "¼ cup white wine",
+        "1 teaspoon paprika",
+        "Fresh parsley, chopped",
+        "Juice of 1 lime",
+        "Salt and pepper to taste",
+        "Red pepper flakes (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone los camarones con sal, pimienta y limón.",
+        "Caliente el aceite de oliva en un sartén a fuego medio. Añada el ajo y sofría hasta dorar ligeramente.",
+        "Suba el fuego a alto, añada los camarones y cocine 2 minutos por cada lado.",
+        "Añada el vino blanco y el pimentón. Cocine 1 minuto más.",
+        "Retire del fuego, espolvoree con perejil y sirva inmediatamente."
+      ],
+      en: [
+        "Season shrimp with salt, pepper, and lime juice.",
+        "Heat olive oil in a skillet over medium heat. Add garlic and sauté until lightly golden.",
+        "Raise heat to high, add shrimp and cook 2 minutes per side.",
+        "Add white wine and paprika. Cook 1 more minute.",
+        "Remove from heat, sprinkle with parsley and serve immediately."
+      ]
+    }
+  },
+  {
+    id: "chillo-frito",
+    category: "pescados",
+    name: { es: "Chillo Frito Entero", en: "Whole Fried Red Snapper" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 chillo entero (2-3 lbs), limpio y con escamas",
+        "6 dientes de ajo, machacados",
+        "Jugo de 3 limones",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "Aceite vegetal para freír",
+        "Mojito isleño para servir"
+      ],
+      en: [
+        "1 whole red snapper (2-3 lbs), cleaned and scaled",
+        "6 garlic cloves, crushed",
+        "Juice of 3 limes",
+        "1 teaspoon salt",
+        "½ teaspoon pepper",
+        "Vegetable oil for frying",
+        "Mojito isleño sauce for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Haga 3-4 cortes diagonales en cada lado del pescado.",
+        "Marine con ajo, limón, sal y pimienta por 30 minutos.",
+        "Seque bien el pescado con papel toalla antes de freír.",
+        "Caliente abundante aceite a 375°F en un sartén grande y hondo.",
+        "Fría el chillo por 6-8 minutos por cada lado hasta que esté dorado y crujiente.",
+        "Escurra y sirva con mojito isleño, tostones y ensalada."
+      ],
+      en: [
+        "Make 3-4 diagonal cuts on each side of the fish.",
+        "Marinate with garlic, lime, salt, and pepper for 30 minutes.",
+        "Pat fish very dry with paper towels before frying.",
+        "Heat plenty of oil to 375°F in a large deep skillet.",
+        "Fry snapper 6-8 minutes per side until golden and crispy.",
+        "Drain and serve with mojito isleño sauce, tostones, and salad."
+      ]
+    }
+  },
+  {
+    id: "ensalada-pulpo",
+    category: "pescados",
+    name: { es: "Ensalada de Pulpo", en: "Octopus Salad" },
+    time: "1 hr 30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 lbs de pulpo, limpio",
+        "1 cebolla grande, picada finamente",
+        "1 pimiento rojo, picado",
+        "1 pimiento verde, picado",
+        "¼ taza de aceite de oliva",
+        "3 cucharadas de vinagre",
+        "2 dientes de ajo, machacados",
+        "Aceitunas rellenas al gusto",
+        "Cilantro fresco picado",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 lbs octopus, cleaned",
+        "1 large onion, finely diced",
+        "1 red bell pepper, diced",
+        "1 green bell pepper, diced",
+        "¼ cup olive oil",
+        "3 tablespoons vinegar",
+        "2 garlic cloves, crushed",
+        "Stuffed olives to taste",
+        "Fresh cilantro, chopped",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el pulpo en agua con sal por 45-60 minutos hasta que esté tierno (pruebe con un tenedor).",
+        "Escurra y deje enfriar. Corte en trozos pequeños.",
+        "En un tazón, combine el pulpo con la cebolla, los pimientos, las aceitunas y el cilantro.",
+        "Mezcle el aceite de oliva, el vinagre, el ajo, sal y pimienta para el aderezo.",
+        "Vierta el aderezo sobre la ensalada. Mezcle bien.",
+        "Refrigere por al menos 1 hora antes de servir para que los sabores se mezclen."
+      ],
+      en: [
+        "Boil octopus in salted water for 45-60 minutes until tender (test with a fork).",
+        "Drain and let cool. Cut into small pieces.",
+        "In a bowl, combine octopus with onion, peppers, olives, and cilantro.",
+        "Mix olive oil, vinegar, garlic, salt, and pepper for the dressing.",
+        "Pour dressing over salad. Mix well.",
+        "Refrigerate at least 1 hour before serving to let flavors meld."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════
+  // ── ENSALADAS ──
+  // ══════════════════════════════════════
+  {
+    id: "ensalada-papa",
+    category: "ensaladas",
+    name: { es: "Ensalada de Papa", en: "Puerto Rican Potato Salad" },
+    time: "40 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "5 papas grandes, peladas y cortadas en cubos",
+        "4 huevos duros, picados",
+        "1 taza de mayonesa",
+        "1 manzana verde, pelada y cortada en cubos pequeños",
+        "½ taza de petit pois (guisantes)",
+        "2 cucharadas de aceitunas rellenas, picadas",
+        "1 cucharada de vinagre",
+        "Sal y pimienta al gusto",
+        "Pimiento morrón para decorar"
+      ],
+      en: [
+        "5 large potatoes, peeled and cubed",
+        "4 hard-boiled eggs, chopped",
+        "1 cup mayonnaise",
+        "1 green apple, peeled and diced",
+        "½ cup petit pois (green peas)",
+        "2 tablespoons stuffed olives, chopped",
+        "1 tablespoon vinegar",
+        "Salt and pepper to taste",
+        "Pimiento strips for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las papas en agua con sal hasta que estén tiernas pero firmes. Escurra y deje enfriar.",
+        "En un tazón grande, combine las papas, los huevos, la manzana, los petit pois y las aceitunas.",
+        "Mezcle la mayonesa con el vinagre, sal y pimienta.",
+        "Añada el aderezo a la mezcla de papas y revuelva con cuidado.",
+        "Refrigere por al menos 1 hora. Decore con pimiento morrón antes de servir."
+      ],
+      en: [
+        "Boil potatoes in salted water until tender but firm. Drain and let cool.",
+        "In a large bowl, combine potatoes, eggs, apple, petit pois, and olives.",
+        "Mix mayonnaise with vinegar, salt, and pepper.",
+        "Add dressing to potato mixture and fold gently.",
+        "Refrigerate at least 1 hour. Garnish with pimiento strips before serving."
+      ]
+    }
+  },
+  {
+    id: "ensalada-bacalao",
+    category: "ensaladas",
+    name: { es: "Serenata de Bacalao", en: "Codfish Salad (Serenata)" },
+    time: "45 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "½ lb de bacalao seco, desalado",
+        "2 aguacates maduros, cortados en lonjas",
+        "2 tomates, cortados en ruedas",
+        "1 cebolla grande, cortada en aros",
+        "2 huevos duros, cortados en ruedas",
+        "Aceite de oliva al gusto",
+        "Vinagre al gusto",
+        "Lechuga para decorar"
+      ],
+      en: [
+        "½ lb dried codfish, desalted",
+        "2 ripe avocados, sliced",
+        "2 tomatoes, sliced into rounds",
+        "1 large onion, sliced into rings",
+        "2 hard-boiled eggs, sliced",
+        "Olive oil to taste",
+        "Vinegar to taste",
+        "Lettuce for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje el bacalao la noche anterior. Hierva por 15 minutos, escurra y desmenuce.",
+        "En una fuente, coloque la lechuga como base.",
+        "Arregle el bacalao, los aguacates, los tomates, la cebolla y los huevos de forma decorativa.",
+        "Rocíe con aceite de oliva y vinagre al gusto. Sirva a temperatura ambiente."
+      ],
+      en: [
+        "Soak codfish overnight. Boil 15 minutes, drain and shred.",
+        "On a platter, place lettuce as a base.",
+        "Arrange codfish, avocados, tomatoes, onion, and eggs decoratively.",
+        "Drizzle with olive oil and vinegar to taste. Serve at room temperature."
+      ]
+    }
+  },
+  {
+    id: "ensalada-coditos",
+    category: "ensaladas",
+    name: { es: "Ensalada de Coditos", en: "Macaroni Salad" },
+    time: "30 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 lb de coditos (macarrones), cocidos y escurridos",
+        "1 taza de mayonesa",
+        "3 huevos duros, picados",
+        "1 manzana verde, pelada y cortada en cubitos",
+        "½ taza de jamón cocido, cortado en cubitos",
+        "¼ taza de aceitunas rellenas, picadas",
+        "½ taza de petit pois",
+        "1 cucharada de mostaza",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 lb elbow macaroni, cooked and drained",
+        "1 cup mayonnaise",
+        "3 hard-boiled eggs, chopped",
+        "1 green apple, peeled and diced",
+        "½ cup cooked ham, diced",
+        "¼ cup stuffed olives, chopped",
+        "½ cup petit pois",
+        "1 tablespoon mustard",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Cocine los coditos al dente según las instrucciones del paquete. Escurra y deje enfriar.",
+        "En un tazón grande, mezcle la mayonesa con la mostaza, sal y pimienta.",
+        "Añada los coditos fríos, los huevos, la manzana, el jamón, las aceitunas y los petit pois.",
+        "Mezcle todo con cuidado. Ajuste la sazón.",
+        "Refrigere por al menos 2 horas antes de servir."
+      ],
+      en: [
+        "Cook macaroni al dente according to package directions. Drain and let cool.",
+        "In a large bowl, mix mayonnaise with mustard, salt, and pepper.",
+        "Add cooled macaroni, eggs, apple, ham, olives, and petit pois.",
+        "Fold everything together gently. Adjust seasoning.",
+        "Refrigerate at least 2 hours before serving."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════
+  // ── VEGETALES Y VIANDAS ──
+  // ══════════════════════════════════════
+  {
+    id: "tostones",
+    category: "vegetales",
+    name: { es: "Tostones de Plátano Verde", en: "Fried Green Plantain Tostones" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 plátanos verdes",
+        "Aceite vegetal para freír",
+        "Sal al gusto",
+        "Agua con ajo y sal para remojar"
+      ],
+      en: [
+        "3 green plantains",
+        "Vegetable oil for frying",
+        "Salt to taste",
+        "Garlic-salt water for soaking"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los plátanos y córtelos en ruedas de 1 pulgada.",
+        "Caliente abundante aceite a fuego medio-alto.",
+        "Fría las ruedas por 3-4 minutos hasta que estén ligeramente doradas. Retire.",
+        "Aplaste cada rueda con un tostonero o el fondo de un vaso.",
+        "Remoje brevemente en agua con ajo y sal.",
+        "Fría nuevamente hasta que estén dorados y crujientes. Escurra y sale."
+      ],
+      en: [
+        "Peel plantains and cut into 1-inch rounds.",
+        "Heat plenty of oil over medium-high heat.",
+        "Fry rounds for 3-4 minutes until lightly golden. Remove.",
+        "Flatten each round with a tostonera or bottom of a glass.",
+        "Briefly soak in garlic-salt water.",
+        "Fry again until golden and crispy. Drain and salt."
+      ]
+    }
+  },
+  {
+    id: "mofongo",
+    category: "vegetales",
+    name: { es: "Mofongo", en: "Mofongo (Mashed Plantain)" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 plátanos verdes",
+        "6 dientes de ajo, machacados",
+        "4 cucharadas de aceite de oliva",
+        "Chicharrones de cerdo, triturados",
+        "Caldo de pollo para servir",
+        "Aceite vegetal para freír",
+        "Sal al gusto"
+      ],
+      en: [
+        "3 green plantains",
+        "6 garlic cloves, crushed",
+        "4 tablespoons olive oil",
+        "Pork cracklings, crushed",
+        "Chicken broth for serving",
+        "Vegetable oil for frying",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele y corte los plátanos en ruedas. Fría en aceite caliente hasta que estén dorados.",
+        "En un pilón (mortero), mezcle el ajo con el aceite de oliva.",
+        "Añada las ruedas de plátano fritas y los chicharrones al pilón.",
+        "Maje todo junto vigorosamente hasta obtener una masa uniforme.",
+        "Forme bolas o moldee en un tazón. Sirva con caldo de pollo caliente al lado."
+      ],
+      en: [
+        "Peel and slice plantains. Fry in hot oil until golden.",
+        "In a pilón (mortar), mix garlic with olive oil.",
+        "Add fried plantain rounds and pork cracklings to the mortar.",
+        "Mash everything together vigorously until you get a uniform mass.",
+        "Form into balls or mold in a bowl. Serve with hot chicken broth on the side."
+      ]
+    }
+  },
+  {
+    id: "amarillos",
+    category: "vegetales",
+    name: { es: "Amarillos Fritos (Maduros)", en: "Fried Sweet Plantains" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 plátanos maduros (con cáscara negra)",
+        "Aceite vegetal para freír",
+        "Pizca de sal (opcional)"
+      ],
+      en: [
+        "3 ripe plantains (with black skin)",
+        "Vegetable oil for frying",
+        "Pinch of salt (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los plátanos maduros y córtelos en diagonal en lonjas de ½ pulgada.",
+        "Caliente aceite a fuego medio en un sartén.",
+        "Fría las lonjas 2-3 minutos por cada lado hasta que estén doradas y caramelizadas.",
+        "Escurra sobre papel toalla. Sirva como acompañante."
+      ],
+      en: [
+        "Peel ripe plantains and cut diagonally into ½-inch slices.",
+        "Heat oil over medium heat in a skillet.",
+        "Fry slices 2-3 minutes per side until golden and caramelized.",
+        "Drain on paper towels. Serve as a side dish."
+      ]
+    }
+  },
+  {
+    id: "guineos-escabeche",
+    category: "vegetales",
+    name: { es: "Guineos en Escabeche", en: "Pickled Green Bananas" },
+    time: "45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "12 guineos verdes",
+        "1 taza de aceite de oliva",
+        "1 taza de vinagre",
+        "2 cebollas grandes, cortadas en aros",
+        "8 granos de pimienta",
+        "3 hojas de laurel",
+        "8 aceitunas rellenas",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "12 green bananas",
+        "1 cup olive oil",
+        "1 cup vinegar",
+        "2 large onions, sliced into rings",
+        "8 peppercorns",
+        "3 bay leaves",
+        "8 stuffed olives",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los guineos con cáscara en agua con sal por 20 minutos. Pele y corte en ruedas.",
+        "En una olla, caliente el aceite de oliva a fuego medio.",
+        "Sofría las cebollas en el aceite hasta que estén transparentes.",
+        "Añada el vinagre, la pimienta, las hojas de laurel, las aceitunas y la sal.",
+        "Agregue los guineos cortados. Mezcle con cuidado.",
+        "Retire del fuego y deje marinar en la nevera por al menos 4 horas. Sirva frío o a temperatura ambiente."
+      ],
+      en: [
+        "Boil green bananas with skin on in salted water for 20 minutes. Peel and slice into rounds.",
+        "In a pot, heat olive oil over medium heat.",
+        "Sauté onions in oil until translucent.",
+        "Add vinegar, peppercorns, bay leaves, olives, and salt.",
+        "Add sliced bananas. Fold gently.",
+        "Remove from heat and marinate in the fridge for at least 4 hours. Serve cold or at room temperature."
+      ]
+    }
+  },
+  {
+    id: "yuca-mojo",
+    category: "vegetales",
+    name: { es: "Yuca al Mojo", en: "Yuca with Garlic Sauce" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 lbs de yuca, pelada y cortada en trozos",
+        "6 dientes de ajo, cortados en láminas",
+        "½ taza de aceite de oliva",
+        "Jugo de 2 limones",
+        "1 cebolla mediana, cortada en aros",
+        "Sal al gusto",
+        "Perejil fresco picado"
+      ],
+      en: [
+        "2 lbs yuca (cassava), peeled and cut into chunks",
+        "6 garlic cloves, thinly sliced",
+        "½ cup olive oil",
+        "Juice of 2 limes",
+        "1 medium onion, sliced into rings",
+        "Salt to taste",
+        "Fresh parsley, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la yuca en agua con sal por 25 minutos hasta que esté tierna. Escurra.",
+        "Retire la fibra central de cada trozo de yuca.",
+        "En un sartén, caliente el aceite de oliva y dore el ajo hasta que esté fragante.",
+        "Añada la cebolla y sofría 2 minutos. Retire del fuego.",
+        "Agregue el jugo de limón y sal al aceite.",
+        "Vierta el mojo caliente sobre la yuca. Espolvoree con perejil."
+      ],
+      en: [
+        "Boil yuca in salted water for 25 minutes until tender. Drain.",
+        "Remove the central fiber from each yuca piece.",
+        "In a skillet, heat olive oil and brown garlic until fragrant.",
+        "Add onion and sauté 2 minutes. Remove from heat.",
+        "Add lime juice and salt to the oil.",
+        "Pour the hot mojo over the yuca. Sprinkle with parsley."
+      ]
+    }
+  },
+  {
+    id: "pasteles",
+    category: "vegetales",
+    name: { es: "Pasteles de Masa", en: "Pasteles (Plantain & Meat Bundles)" },
+    time: "3 hrs",
+    servings: 24,
+    ingredients: {
+      es: [
+        "5 lbs de guineos verdes y plátanos verdes, pelados",
+        "2 lbs de yautía, pelada",
+        "1 lb de calabaza, pelada",
+        "Aceite con achiote (½ taza aceite + 2 cda achiote)",
+        "Leche de la masa (caldo de cerdo o pollo)",
+        "Relleno: 2 lbs de cerdo, sofrito, aceitunas, alcaparras, garbanzos",
+        "Hojas de plátano o papel de pasteles",
+        "Hilo de cocina",
+        "Sal al gusto"
+      ],
+      en: [
+        "5 lbs green bananas and green plantains, peeled",
+        "2 lbs yautía, peeled",
+        "1 lb calabaza (pumpkin), peeled",
+        "Annatto oil (½ cup oil + 2 tbsp annatto seeds)",
+        "Masa liquid (pork or chicken broth)",
+        "Filling: 2 lbs pork, sofrito, olives, capers, chickpeas",
+        "Banana leaves or pastel paper",
+        "Kitchen twine",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Para el relleno: guise el cerdo cortado en trocitos con sofrito, sazón, salsa de tomate, aceitunas, alcaparras y garbanzos.",
+        "Para la masa: ralle los guineos, plátanos, yautía y calabaza finamente (o use procesador de alimentos).",
+        "Añada el aceite con achiote y caldo a la masa rallada. Mezcle bien. Debe quedar suave y manejable.",
+        "Sobre un pedazo de papel de pasteles engrasado, extienda una porción de masa.",
+        "Coloque 2 cucharadas de relleno en el centro.",
+        "Doble el papel formando un paquete rectangular. Amarre con hilo.",
+        "Hierva los pasteles en agua con sal por 45 minutos a 1 hora.",
+        "Retire, deje enfriar un poco, desenvuelva y sirva."
+      ],
+      en: [
+        "For the filling: stew diced pork with sofrito, sazón, tomato sauce, olives, capers, and chickpeas.",
+        "For the masa: finely grate green bananas, plantains, yautía, and calabaza (or use food processor).",
+        "Add annatto oil and broth to the grated masa. Mix well. Should be smooth and workable.",
+        "On a piece of greased pastel paper, spread a portion of masa.",
+        "Place 2 tablespoons of filling in the center.",
+        "Fold the paper into a rectangular package. Tie with twine.",
+        "Boil pasteles in salted water for 45 minutes to 1 hour.",
+        "Remove, let cool slightly, unwrap, and serve."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════
+  // ── POSTRES ──
+  // ══════════════════════════════════════
+  {
+    id: "flan",
+    category: "postres",
+    name: { es: "Flan de Queso", en: "Cream Cheese Flan" },
+    time: "1 hr 15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 paquete de queso crema (8 oz)",
+        "1 lata de leche evaporada (12 oz)",
+        "1 lata de leche condensada (14 oz)",
+        "5 huevos",
+        "1 cucharadita de vainilla",
+        "1 taza de azúcar para el caramelo"
+      ],
+      en: [
+        "1 package cream cheese (8 oz)",
+        "1 can evaporated milk (12 oz)",
+        "1 can condensed milk (14 oz)",
+        "5 eggs",
+        "1 teaspoon vanilla",
+        "1 cup sugar for caramel"
+      ]
+    },
+    steps: {
+      es: [
+        "Prepare el caramelo: derrita el azúcar en un molde redondo a fuego medio, moviendo hasta que se dore. Cubra todo el fondo.",
+        "En la licuadora, mezcle el queso crema, las leches, los huevos y la vainilla hasta que esté suave.",
+        "Vierta la mezcla sobre el caramelo.",
+        "Cocine en baño de María en el horno a 350°F por 1 hora o hasta que al insertar un palillo salga limpio.",
+        "Deje enfriar completamente. Refrigere por al menos 4 horas.",
+        "Voltee sobre un plato para servir."
+      ],
+      en: [
+        "Make the caramel: melt sugar in a round mold over medium heat, stirring until golden brown. Coat the entire bottom.",
+        "In a blender, mix cream cheese, both milks, eggs, and vanilla until smooth.",
+        "Pour mixture over the caramel.",
+        "Bake in a water bath (baño de María) at 350°F for 1 hour or until a toothpick comes out clean.",
+        "Let cool completely. Refrigerate at least 4 hours.",
+        "Flip onto a serving plate to serve."
+      ]
+    }
+  },
+  {
+    id: "tembleque",
+    category: "postres",
+    name: { es: "Tembleque", en: "Coconut Pudding (Tembleque)" },
+    time: "30 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 latas de leche de coco (13.5 oz cada una)",
+        "½ taza de azúcar",
+        "½ taza de maicena",
+        "¼ cucharadita de sal",
+        "1 cucharadita de vainilla",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "2 cans coconut milk (13.5 oz each)",
+        "½ cup sugar",
+        "½ cup cornstarch",
+        "¼ teaspoon salt",
+        "1 teaspoon vanilla",
+        "Ground cinnamon for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, mezcle la leche de coco, el azúcar, la maicena y la sal en frío.",
+        "Cocine a fuego medio, revolviendo constantemente con una cuchara de madera.",
+        "Cuando espese y hierva, añada la vainilla. Cocine 2 minutos más.",
+        "Vierta en un molde humedecido con agua. Deje enfriar.",
+        "Refrigere por al menos 4 horas hasta que cuaje.",
+        "Desmolde y espolvoree con canela en polvo."
+      ],
+      en: [
+        "In a pot, mix coconut milk, sugar, cornstarch, and salt while cold.",
+        "Cook over medium heat, stirring constantly with a wooden spoon.",
+        "When it thickens and boils, add vanilla. Cook 2 more minutes.",
+        "Pour into a mold rinsed with water. Let cool.",
+        "Refrigerate at least 4 hours until set.",
+        "Unmold and sprinkle with ground cinnamon."
+      ]
+    }
+  },
+  {
+    id: "arroz-dulce",
+    category: "postres",
+    name: { es: "Arroz con Dulce", en: "Sweet Rice Pudding" },
+    time: "1 hr 30 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 tazas de arroz grano corto",
+        "4 tazas de leche de coco",
+        "4 tazas de agua",
+        "2 tazas de azúcar",
+        "1 raja de canela",
+        "6 clavos de olor",
+        "1 cucharadita de jengibre fresco rallado",
+        "½ taza de pasas",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "2 cups short grain rice",
+        "4 cups coconut milk",
+        "4 cups water",
+        "2 cups sugar",
+        "1 cinnamon stick",
+        "6 whole cloves",
+        "1 teaspoon fresh grated ginger",
+        "½ cup raisins",
+        "Ground cinnamon for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje el arroz en agua por 30 minutos. Escurra.",
+        "En una olla grande, hierva las 4 tazas de agua con la canela, los clavos y el jengibre por 10 minutos. Cuele.",
+        "En la misma olla, añada el arroz y el agua de especias. Cocine a fuego medio hasta que el arroz absorba el agua.",
+        "Añada la leche de coco y el azúcar. Cocine a fuego bajo, revolviendo frecuentemente por 45 minutos.",
+        "Añada las pasas en los últimos 10 minutos.",
+        "El arroz debe quedar espeso y cremoso. Sirva en platos y espolvoree con canela."
+      ],
+      en: [
+        "Soak rice in water for 30 minutes. Drain.",
+        "In a large pot, boil 4 cups water with cinnamon, cloves, and ginger for 10 minutes. Strain.",
+        "In the same pot, add rice and spiced water. Cook on medium heat until rice absorbs the water.",
+        "Add coconut milk and sugar. Cook on low heat, stirring frequently for 45 minutes.",
+        "Add raisins in the last 10 minutes.",
+        "Rice should be thick and creamy. Serve on plates and sprinkle with cinnamon."
+      ]
+    }
+  },
+  {
+    id: "budin-pan",
+    category: "postres",
+    name: { es: "Budín de Pan", en: "Puerto Rican Bread Pudding" },
+    time: "1 hr 15 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 pan sobao grande (o pan de agua), cortado en trozos",
+        "1 lata de leche evaporada (12 oz)",
+        "1 lata de leche condensada (14 oz)",
+        "1 taza de leche regular",
+        "4 huevos",
+        "½ taza de pasas",
+        "2 cucharadas de mantequilla, derretida",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de canela",
+        "1 taza de azúcar para el caramelo"
+      ],
+      en: [
+        "1 large pan sobao (or white bread), torn into pieces",
+        "1 can evaporated milk (12 oz)",
+        "1 can condensed milk (14 oz)",
+        "1 cup regular milk",
+        "4 eggs",
+        "½ cup raisins",
+        "2 tablespoons butter, melted",
+        "1 teaspoon vanilla",
+        "1 teaspoon cinnamon",
+        "1 cup sugar for caramel"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje el pan en las tres leches combinadas por 30 minutos hasta que se ablande.",
+        "Prepare el caramelo derritiendo el azúcar en el molde. Cubra el fondo.",
+        "Aplaste el pan remojado con las manos o un tenedor.",
+        "Añada los huevos, la mantequilla, vainilla, canela y pasas. Mezcle bien.",
+        "Vierta la mezcla sobre el caramelo.",
+        "Hornee a 350°F en baño de María por 1 hora o hasta que esté firme.",
+        "Deje enfriar, refrigere y voltee sobre un plato para servir."
+      ],
+      en: [
+        "Soak bread in the three combined milks for 30 minutes until soft.",
+        "Make caramel by melting sugar in the mold. Coat the bottom.",
+        "Mash the soaked bread with your hands or a fork.",
+        "Add eggs, butter, vanilla, cinnamon, and raisins. Mix well.",
+        "Pour mixture over the caramel.",
+        "Bake at 350°F in a water bath for 1 hour or until firm.",
+        "Let cool, refrigerate, and flip onto a plate to serve."
+      ]
+    }
+  },
+  {
+    id: "majarete",
+    category: "postres",
+    name: { es: "Majarete", en: "Corn Pudding (Majarete)" },
+    time: "40 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "6 mazorcas de maíz tierno, ralladas",
+        "1 lata de leche de coco (13.5 oz)",
+        "½ taza de azúcar",
+        "½ cucharadita de sal",
+        "1 cucharadita de vainilla",
+        "1 raja de canela",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "6 ears of fresh corn, grated",
+        "1 can coconut milk (13.5 oz)",
+        "½ cup sugar",
+        "½ teaspoon salt",
+        "1 teaspoon vanilla",
+        "1 cinnamon stick",
+        "Ground cinnamon for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Ralle las mazorcas de maíz y exprima para obtener la leche de maíz. Cuele.",
+        "En una olla, combine la leche de maíz con la leche de coco, el azúcar, la sal y la canela en raja.",
+        "Cocine a fuego medio, revolviendo constantemente por 20-25 minutos hasta que espese.",
+        "Retire la canela en raja. Añada la vainilla.",
+        "Vierta en moldes individuales. Deje enfriar.",
+        "Refrigere y espolvoree con canela en polvo antes de servir."
+      ],
+      en: [
+        "Grate corn ears and squeeze to extract corn milk. Strain.",
+        "In a pot, combine corn milk with coconut milk, sugar, salt, and cinnamon stick.",
+        "Cook over medium heat, stirring constantly for 20-25 minutes until thick.",
+        "Remove cinnamon stick. Add vanilla.",
+        "Pour into individual molds. Let cool.",
+        "Refrigerate and sprinkle with ground cinnamon before serving."
+      ]
+    }
+  },
+  {
+    id: "cazuela",
+    category: "postres",
+    name: { es: "Cazuela", en: "Sweet Pumpkin & Coconut Casserole" },
+    time: "1 hr 30 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 lbs de calabaza, pelada y cortada",
+        "2 lbs de batata (boniato), pelada y cortada",
+        "1 lata de leche de coco (13.5 oz)",
+        "1 taza de azúcar",
+        "4 huevos",
+        "2 cucharadas de mantequilla",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de canela",
+        "½ cucharadita de nuez moscada",
+        "½ cucharadita de jengibre",
+        "½ taza de harina de trigo"
+      ],
+      en: [
+        "2 lbs calabaza (pumpkin), peeled and cut",
+        "2 lbs sweet potato, peeled and cut",
+        "1 can coconut milk (13.5 oz)",
+        "1 cup sugar",
+        "4 eggs",
+        "2 tablespoons butter",
+        "1 teaspoon vanilla",
+        "1 teaspoon cinnamon",
+        "½ teaspoon nutmeg",
+        "½ teaspoon ginger",
+        "½ cup all-purpose flour"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la calabaza y la batata hasta que estén muy blandas. Escurra y maje hasta formar un puré.",
+        "Añada la leche de coco, el azúcar, los huevos, la mantequilla y la vainilla. Mezcle bien.",
+        "Agregue la canela, nuez moscada, jengibre y la harina. Bata hasta obtener una mezcla suave.",
+        "Vierta en un molde engrasado.",
+        "Hornee a 350°F por 1 hora o hasta que esté firme y dorado por encima.",
+        "Deje enfriar, corte en cuadros y sirva."
+      ],
+      en: [
+        "Boil calabaza and sweet potato until very soft. Drain and mash into a purée.",
+        "Add coconut milk, sugar, eggs, butter, and vanilla. Mix well.",
+        "Add cinnamon, nutmeg, ginger, and flour. Beat until smooth.",
+        "Pour into a greased baking dish.",
+        "Bake at 350°F for 1 hour or until firm and golden on top.",
+        "Let cool, cut into squares, and serve."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-ron",
+    category: "postres",
+    name: { es: "Bizcocho de Ron", en: "Puerto Rican Rum Cake" },
+    time: "1 hr 30 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 caja de mezcla de bizcocho amarillo",
+        "1 paquete de pudín de vainilla instantáneo",
+        "4 huevos",
+        "½ taza de agua fría",
+        "½ taza de aceite vegetal",
+        "½ taza de ron oscuro",
+        "1 taza de nueces picadas",
+        "Glaseado: ½ taza de mantequilla, 1 taza de azúcar, ¼ taza de agua, ½ taza de ron"
+      ],
+      en: [
+        "1 box yellow cake mix",
+        "1 package instant vanilla pudding",
+        "4 eggs",
+        "½ cup cold water",
+        "½ cup vegetable oil",
+        "½ cup dark rum",
+        "1 cup chopped walnuts",
+        "Glaze: ½ cup butter, 1 cup sugar, ¼ cup water, ½ cup rum"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 325°F. Engrase y enharine un molde Bundt. Esparza las nueces en el fondo.",
+        "Mezcle la harina de bizcocho, el pudín, los huevos, el agua, el aceite y el ron. Bata 2 minutos.",
+        "Vierta la mezcla sobre las nueces en el molde.",
+        "Hornee por 1 hora o hasta que al insertar un palillo salga limpio.",
+        "Para el glaseado: derrita la mantequilla, añada el azúcar y el agua. Hierva 5 minutos. Retire y añada el ron.",
+        "Pique el bizcocho con un tenedor y vierta el glaseado caliente por encima. Deje absorber.",
+        "Voltee sobre un plato después de 20 minutos."
+      ],
+      en: [
+        "Preheat oven to 325°F. Grease and flour a Bundt pan. Spread walnuts on the bottom.",
+        "Mix cake mix, pudding, eggs, water, oil, and rum. Beat 2 minutes.",
+        "Pour batter over the walnuts in the pan.",
+        "Bake for 1 hour or until a toothpick comes out clean.",
+        "For the glaze: melt butter, add sugar and water. Boil 5 minutes. Remove and add rum.",
+        "Poke the cake with a fork and pour the hot glaze over it. Let it absorb.",
+        "Flip onto a plate after 20 minutes."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════
+  // ── BEBIDAS ──
+  // ══════════════════════════════════════
+  {
+    id: "coquito",
+    category: "bebidas",
+    name: { es: "Coquito", en: "Coconut Eggnog (Coquito)" },
+    time: "15 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 latas de leche de coco (13.5 oz)",
+        "1 lata de leche condensada (14 oz)",
+        "1 lata de leche evaporada (12 oz)",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de canela en polvo",
+        "¼ cucharadita de nuez moscada",
+        "Ron blanco al gusto (opcional)",
+        "Canela en raja para servir"
+      ],
+      en: [
+        "2 cans coconut milk (13.5 oz)",
+        "1 can condensed milk (14 oz)",
+        "1 can evaporated milk (12 oz)",
+        "1 teaspoon vanilla",
+        "1 teaspoon ground cinnamon",
+        "¼ teaspoon nutmeg",
+        "White rum to taste (optional)",
+        "Cinnamon sticks for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "En una licuadora, combine la leche de coco, la leche condensada y la leche evaporada.",
+        "Añada la vainilla, la canela y la nuez moscada. Licúe hasta que esté suave.",
+        "Añada el ron al gusto si desea. Mezcle.",
+        "Vierta en botellas de cristal. Refrigere por al menos 4 horas.",
+        "Sirva bien frío con una raja de canela en cada vaso. Agite antes de servir."
+      ],
+      en: [
+        "In a blender, combine coconut milk, condensed milk, and evaporated milk.",
+        "Add vanilla, cinnamon, and nutmeg. Blend until smooth.",
+        "Add rum to taste if desired. Mix.",
+        "Pour into glass bottles. Refrigerate at least 4 hours.",
+        "Serve very cold with a cinnamon stick in each glass. Shake before serving."
+      ]
+    }
+  },
+  {
+    id: "limber-coco",
+    category: "bebidas",
+    name: { es: "Limber de Coco", en: "Coconut Ice Pop (Limber)" },
+    time: "10 min + congelación",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 lata de leche de coco (13.5 oz)",
+        "1 lata de leche condensada (14 oz)",
+        "2 tazas de agua",
+        "½ cucharadita de vainilla",
+        "Pizca de canela"
+      ],
+      en: [
+        "1 can coconut milk (13.5 oz)",
+        "1 can condensed milk (14 oz)",
+        "2 cups water",
+        "½ teaspoon vanilla",
+        "Pinch of cinnamon"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle todos los ingredientes en una licuadora hasta que estén bien combinados.",
+        "Vierta la mezcla en vasitos plásticos pequeños.",
+        "Congele por al menos 4 horas o hasta que estén sólidos.",
+        "Para servir, deje reposar 2 minutos fuera del congelador y disfrute."
+      ],
+      en: [
+        "Blend all ingredients in a blender until well combined.",
+        "Pour mixture into small plastic cups.",
+        "Freeze for at least 4 hours or until solid.",
+        "To serve, let sit 2 minutes out of the freezer and enjoy."
+      ]
+    }
+  },
+  {
+    id: "champola",
+    category: "bebidas",
+    name: { es: "Champola de Guanábana", en: "Soursop Smoothie" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 tazas de pulpa de guanábana (fresca o congelada)",
+        "1 lata de leche evaporada (12 oz)",
+        "½ taza de azúcar",
+        "2 tazas de hielo",
+        "1 taza de agua fría",
+        "½ cucharadita de vainilla"
+      ],
+      en: [
+        "2 cups soursop pulp (fresh or frozen)",
+        "1 can evaporated milk (12 oz)",
+        "½ cup sugar",
+        "2 cups ice",
+        "1 cup cold water",
+        "½ teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Combine la pulpa de guanábana con la leche evaporada, el azúcar y el agua en la licuadora.",
+        "Añada la vainilla y el hielo.",
+        "Licúe hasta obtener una consistencia suave y cremosa.",
+        "Pruebe y ajuste el azúcar. Sirva inmediatamente bien frío."
+      ],
+      en: [
+        "Combine soursop pulp with evaporated milk, sugar, and water in a blender.",
+        "Add vanilla and ice.",
+        "Blend until smooth and creamy.",
+        "Taste and adjust sugar. Serve immediately, very cold."
+      ]
+    }
+  },
+  {
+    id: "jugo-parcha",
+    category: "bebidas",
+    name: { es: "Jugo de Parcha", en: "Passion Fruit Juice" },
+    time: "10 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 taza de pulpa de parcha (maracuyá)",
+        "6 tazas de agua fría",
+        "¾ taza de azúcar (ajustar al gusto)",
+        "Hielo para servir"
+      ],
+      en: [
+        "1 cup passion fruit pulp",
+        "6 cups cold water",
+        "¾ cup sugar (adjust to taste)",
+        "Ice for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Extraiga la pulpa de las parchas (si son frescas) o use pulpa congelada.",
+        "Mezcle la pulpa con el agua y el azúcar en una jarra.",
+        "Revuelva bien hasta disolver el azúcar. Cuele si desea quitar las semillas.",
+        "Sirva con abundante hielo."
+      ],
+      en: [
+        "Extract pulp from passion fruits (if fresh) or use frozen pulp.",
+        "Mix pulp with water and sugar in a pitcher.",
+        "Stir well until sugar dissolves. Strain if you want to remove seeds.",
+        "Serve with plenty of ice."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════
+  // ── CÓCTELES Y TRAGOS ──
+  // ══════════════════════════════════════
+  {
+    id: "pina-colada",
+    category: "cocteles",
+    name: { es: "Piña Colada", en: "Piña Colada" },
+    time: "5 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 oz de ron blanco puertorriqueño",
+        "4 oz de crema de coco (Coco López)",
+        "4 oz de jugo de piña",
+        "2 tazas de hielo",
+        "Rodaja de piña y cereza para decorar"
+      ],
+      en: [
+        "2 oz Puerto Rican white rum",
+        "4 oz cream of coconut (Coco López)",
+        "4 oz pineapple juice",
+        "2 cups ice",
+        "Pineapple slice and cherry for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Combine el ron, la crema de coco, el jugo de piña y el hielo en la licuadora.",
+        "Licúe hasta obtener una consistencia suave y cremosa.",
+        "Sirva en vasos altos o en una piña vaciada.",
+        "Decore con una rodaja de piña y una cereza."
+      ],
+      en: [
+        "Combine rum, cream of coconut, pineapple juice, and ice in a blender.",
+        "Blend until smooth and creamy.",
+        "Serve in tall glasses or a hollowed-out pineapple.",
+        "Garnish with a pineapple slice and a cherry."
+      ]
+    }
+  },
+  {
+    id: "mojito-pr",
+    category: "cocteles",
+    name: { es: "Mojito Puertorriqueño", en: "Puerto Rican Mojito" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "2 oz de ron blanco puertorriqueño",
+        "1 oz de jugo de limón fresco",
+        "2 cucharaditas de azúcar",
+        "6-8 hojas de yerba buena (menta)",
+        "Agua de soda (club soda)",
+        "Hielo",
+        "Ramita de menta para decorar"
+      ],
+      en: [
+        "2 oz Puerto Rican white rum",
+        "1 oz fresh lime juice",
+        "2 teaspoons sugar",
+        "6-8 mint leaves",
+        "Club soda",
+        "Ice",
+        "Mint sprig for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "En un vaso alto, maje las hojas de menta con el azúcar y el jugo de limón.",
+        "Añada el ron y mezcle bien.",
+        "Llene el vaso con hielo.",
+        "Complete con agua de soda y revuelva suavemente.",
+        "Decore con una ramita de menta y una rodaja de limón."
+      ],
+      en: [
+        "In a tall glass, muddle mint leaves with sugar and lime juice.",
+        "Add rum and mix well.",
+        "Fill glass with ice.",
+        "Top with club soda and stir gently.",
+        "Garnish with a mint sprig and lime slice."
+      ]
+    }
+  },
+  {
+    id: "chichaito",
+    category: "cocteles",
+    name: { es: "Chichaíto", en: "Chichaíto (Anise Shot)" },
+    time: "2 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "1 oz de ron puertorriqueño",
+        "1 oz de anís (licor de anís)",
+        "Hielo (opcional)"
+      ],
+      en: [
+        "1 oz Puerto Rican rum",
+        "1 oz anisette (anise liqueur)",
+        "Ice (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "En un vaso de shot o vasito pequeño, vierta primero el anís.",
+        "Con cuidado, añada el ron lentamente sobre una cuchara para crear dos capas.",
+        "Sirva como shot. También se puede mezclar y servir con hielo."
+      ],
+      en: [
+        "In a shot glass, pour the anisette first.",
+        "Carefully add rum slowly over a spoon to create two layers.",
+        "Serve as a shot. Can also be mixed and served over ice."
+      ]
+    }
+  },
+  {
+    id: "ron-ponche",
+    category: "cocteles",
+    name: { es: "Ponche de Ron", en: "Rum Punch" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de ron dorado puertorriqueño",
+        "1 taza de jugo de piña",
+        "1 taza de jugo de parcha (maracuyá)",
+        "1 taza de jugo de naranja",
+        "½ taza de jugo de limón",
+        "½ taza de granadina",
+        "2 tazas de agua de soda",
+        "Rodajas de frutas para decorar",
+        "Hielo abundante"
+      ],
+      en: [
+        "2 cups Puerto Rican golden rum",
+        "1 cup pineapple juice",
+        "1 cup passion fruit juice",
+        "1 cup orange juice",
+        "½ cup lime juice",
+        "½ cup grenadine",
+        "2 cups club soda",
+        "Fruit slices for garnish",
+        "Plenty of ice"
+      ]
+    },
+    steps: {
+      es: [
+        "En una ponchera grande, combine todos los jugos y la granadina.",
+        "Añada el ron y mezcle bien.",
+        "Justo antes de servir, agregue el agua de soda y hielo abundante.",
+        "Decore con rodajas de piña, naranja y limón.",
+        "Sirva en vasos con hielo adicional."
+      ],
+      en: [
+        "In a large punch bowl, combine all juices and grenadine.",
+        "Add rum and mix well.",
+        "Just before serving, add club soda and plenty of ice.",
+        "Garnish with pineapple, orange, and lime slices.",
+        "Serve in glasses with additional ice."
+      ]
+    }
+  },
+  {
+    id: "coquito-nutella",
+    category: "cocteles",
+    name: { es: "Coquito de Chocolate", en: "Chocolate Coquito" },
+    time: "15 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 latas de leche de coco (13.5 oz)",
+        "1 lata de leche condensada (14 oz)",
+        "1 lata de leche evaporada (12 oz)",
+        "½ taza de cacao en polvo",
+        "½ taza de chocolate derretido",
+        "1 cucharadita de vainilla",
+        "½ cucharadita de canela",
+        "Ron blanco al gusto"
+      ],
+      en: [
+        "2 cans coconut milk (13.5 oz)",
+        "1 can condensed milk (14 oz)",
+        "1 can evaporated milk (12 oz)",
+        "½ cup cocoa powder",
+        "½ cup melted chocolate",
+        "1 teaspoon vanilla",
+        "½ teaspoon cinnamon",
+        "White rum to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En una licuadora, combine las leches de coco, condensada y evaporada.",
+        "Añada el cacao en polvo, el chocolate derretido, la vainilla y la canela.",
+        "Licúe hasta que esté completamente suave y homogéneo.",
+        "Añada el ron al gusto. Mezcle.",
+        "Vierta en botellas y refrigere por al menos 4 horas. Agite antes de servir."
+      ],
+      en: [
+        "In a blender, combine coconut milk, condensed milk, and evaporated milk.",
+        "Add cocoa powder, melted chocolate, vanilla, and cinnamon.",
+        "Blend until completely smooth and uniform.",
+        "Add rum to taste. Mix.",
+        "Pour into bottles and refrigerate at least 4 hours. Shake before serving."
+      ]
+    }
+  },
+  {
+    id: "sangria-tropical",
+    category: "cocteles",
+    name: { es: "Sangría Tropical", en: "Tropical Sangria" },
+    time: "15 min + reposo",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 botella de vino tinto",
+        "1 taza de ron puertorriqueño",
+        "1 taza de jugo de piña",
+        "½ taza de jugo de naranja",
+        "¼ taza de azúcar",
+        "1 piña fresca, cortada en trozos",
+        "2 naranjas, cortadas en rodajas",
+        "1 mango, cortado en cubos",
+        "1 taza de agua de soda"
+      ],
+      en: [
+        "1 bottle red wine",
+        "1 cup Puerto Rican rum",
+        "1 cup pineapple juice",
+        "½ cup orange juice",
+        "¼ cup sugar",
+        "1 fresh pineapple, cut into chunks",
+        "2 oranges, sliced into rounds",
+        "1 mango, cubed",
+        "1 cup club soda"
+      ]
+    },
+    steps: {
+      es: [
+        "En una jarra grande, disuelva el azúcar en los jugos de piña y naranja.",
+        "Añada el vino tinto y el ron. Mezcle bien.",
+        "Agregue todas las frutas cortadas.",
+        "Refrigere por al menos 4 horas para que las frutas absorban los sabores.",
+        "Antes de servir, añada el agua de soda y hielo. Sirva con las frutas."
+      ],
+      en: [
+        "In a large pitcher, dissolve sugar in pineapple and orange juices.",
+        "Add red wine and rum. Mix well.",
+        "Add all the cut fruits.",
+        "Refrigerate at least 4 hours so fruits absorb the flavors.",
+        "Before serving, add club soda and ice. Serve with the fruits."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════
+  // ── PANES Y REPOSTERÍA ──
+  // ══════════════════════════════════════
+  {
+    id: "mallorca",
+    category: "panes",
+    name: { es: "Pan de Mallorca", en: "Mallorca Bread" },
+    time: "3 hrs",
+    servings: 12,
+    ingredients: {
+      es: [
+        "4 tazas de harina de pan",
+        "½ taza de azúcar",
+        "1 sobre de levadura activa",
+        "½ taza de leche tibia",
+        "4 yemas de huevo",
+        "½ taza de mantequilla, derretida",
+        "1 cucharadita de sal",
+        "Azúcar en polvo para espolvorear"
+      ],
+      en: [
+        "4 cups bread flour",
+        "½ cup sugar",
+        "1 packet active dry yeast",
+        "½ cup warm milk",
+        "4 egg yolks",
+        "½ cup butter, melted",
+        "1 teaspoon salt",
+        "Powdered sugar for dusting"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura en la leche tibia con 1 cucharada de azúcar. Espere 10 minutos hasta que burbujee.",
+        "En un tazón grande, mezcle la harina, el azúcar y la sal. Haga un hueco en el centro.",
+        "Añada la levadura, las yemas y la mantequilla derretida. Mezcle hasta formar una masa suave.",
+        "Amase por 10 minutos. La masa será pegajosa pero manejable. Cubra y deje crecer 1 hora.",
+        "Divida en 12 porciones. Forme tiras largas y enróllelas en espiral. Coloque en bandeja engrasada.",
+        "Deje crecer 30 minutos más. Hornee a 350°F por 15-18 minutos hasta que estén ligeramente dorados.",
+        "Espolvoree generosamente con azúcar en polvo al salir del horno."
+      ],
+      en: [
+        "Dissolve yeast in warm milk with 1 tablespoon sugar. Wait 10 minutes until bubbly.",
+        "In a large bowl, mix flour, sugar, and salt. Make a well in the center.",
+        "Add yeast mixture, egg yolks, and melted butter. Mix until a soft dough forms.",
+        "Knead for 10 minutes. Dough will be sticky but manageable. Cover and let rise 1 hour.",
+        "Divide into 12 portions. Form long strips and roll into spirals. Place on greased baking sheet.",
+        "Let rise 30 more minutes. Bake at 350°F for 15-18 minutes until lightly golden.",
+        "Dust generously with powdered sugar right out of the oven."
+      ]
+    }
+  },
+  {
+    id: "quesito",
+    category: "panes",
+    name: { es: "Quesitos", en: "Cream Cheese Pastries" },
+    time: "45 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 paquete de masa de hojaldre (puff pastry), descongelada",
+        "1 paquete de queso crema (8 oz), suavizado",
+        "½ taza de azúcar",
+        "1 cucharadita de vainilla",
+        "1 huevo batido (para barnizar)",
+        "Almíbar: ½ taza de azúcar + ¼ taza de agua"
+      ],
+      en: [
+        "1 package puff pastry, thawed",
+        "1 package cream cheese (8 oz), softened",
+        "½ cup sugar",
+        "1 teaspoon vanilla",
+        "1 beaten egg (for egg wash)",
+        "Simple syrup: ½ cup sugar + ¼ cup water"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el queso crema con el azúcar y la vainilla hasta que esté suave.",
+        "Extienda la masa de hojaldre y córtela en rectángulos de 3x5 pulgadas.",
+        "Coloque una cucharada del relleno de queso en el centro de cada rectángulo.",
+        "Doble la masa sobre el relleno, sellando los bordes con un tenedor.",
+        "Barnize con huevo batido. Hornee a 375°F por 18-20 minutos hasta dorar.",
+        "Prepare el almíbar hirviendo el azúcar con el agua. Barnize los quesitos al salir del horno."
+      ],
+      en: [
+        "Mix cream cheese with sugar and vanilla until smooth.",
+        "Roll out puff pastry and cut into 3x5 inch rectangles.",
+        "Place a spoonful of cheese filling in the center of each rectangle.",
+        "Fold dough over filling, sealing edges with a fork.",
+        "Brush with beaten egg. Bake at 375°F for 18-20 minutes until golden.",
+        "Make simple syrup by boiling sugar with water. Brush pastries upon removing from oven."
+      ]
+    }
+  },
+  {
+    id: "pan-sobao",
+    category: "panes",
+    name: { es: "Pan Sobao", en: "Puerto Rican Soft Bread" },
+    time: "3 hrs",
+    servings: 2,
+    ingredients: {
+      es: [
+        "6 tazas de harina de pan",
+        "¾ taza de azúcar",
+        "2 sobres de levadura activa",
+        "1 taza de leche tibia",
+        "½ taza de manteca vegetal (Crisco)",
+        "2 huevos",
+        "1½ cucharaditas de sal",
+        "¼ taza de mantequilla derretida (para barnizar)"
+      ],
+      en: [
+        "6 cups bread flour",
+        "¾ cup sugar",
+        "2 packets active dry yeast",
+        "1 cup warm milk",
+        "½ cup vegetable shortening (Crisco)",
+        "2 eggs",
+        "1½ teaspoons salt",
+        "¼ cup melted butter (for brushing)"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura en la leche tibia con 1 cucharada de azúcar. Espere 10 minutos.",
+        "En un tazón grande, mezcle la harina, el azúcar y la sal.",
+        "Añada la levadura activa, los huevos y la manteca. Amase por 10-15 minutos hasta que esté suave y elástica.",
+        "Cubra y deje crecer en un lugar tibio por 1½ horas o hasta duplicar.",
+        "Divida la masa en 2 porciones. Forme cada una en un óvalo largo tipo pan.",
+        "Coloque en bandejas engrasadas. Deje crecer 45 minutos más.",
+        "Hornee a 350°F por 25-30 minutos hasta dorar. Barnize con mantequilla derretida al salir del horno."
+      ],
+      en: [
+        "Dissolve yeast in warm milk with 1 tablespoon sugar. Wait 10 minutes.",
+        "In a large bowl, mix flour, sugar, and salt.",
+        "Add activated yeast, eggs, and shortening. Knead 10-15 minutes until smooth and elastic.",
+        "Cover and let rise in a warm place for 1½ hours or until doubled.",
+        "Divide dough into 2 portions. Shape each into a long oval loaf.",
+        "Place on greased baking sheets. Let rise 45 more minutes.",
+        "Bake at 350°F for 25-30 minutes until golden. Brush with melted butter right out of the oven."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════
+  // ── SALSAS Y ADEREZOS ──
+  // ══════════════════════════════════════
+  {
+    id: "sofrito",
+    category: "salsas",
+    name: { es: "Sofrito Puertorriqueño", en: "Puerto Rican Sofrito" },
+    time: "15 min",
+    servings: 20,
+    ingredients: {
+      es: [
+        "1 manojo de recao (culantro)",
+        "1 manojo de cilantro",
+        "2 pimientos verdes (ajíes)",
+        "1 pimiento rojo",
+        "1 cebolla grande",
+        "1 cabeza de ajo, pelada",
+        "6 ajíes dulces",
+        "2 cucharadas de aceite de oliva"
+      ],
+      en: [
+        "1 bunch recao (culantro)",
+        "1 bunch cilantro",
+        "2 green bell peppers",
+        "1 red bell pepper",
+        "1 large onion",
+        "1 head of garlic, peeled",
+        "6 sweet peppers (ajíes dulces)",
+        "2 tablespoons olive oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave y corte todos los vegetales en trozos grandes.",
+        "Coloque todo en el procesador de alimentos o licuadora.",
+        "Procese hasta obtener una mezcla homogénea pero con algo de textura.",
+        "Guarde en un envase hermético en la nevera hasta por 2 semanas, o congele en cubetas de hielo para usar por porciones."
+      ],
+      en: [
+        "Wash and roughly chop all vegetables.",
+        "Place everything in a food processor or blender.",
+        "Process until you get a uniform mixture with some texture.",
+        "Store in an airtight container in the fridge for up to 2 weeks, or freeze in ice cube trays for portioned use."
+      ]
+    }
+  },
+  {
+    id: "mojito-isleno",
+    category: "salsas",
+    name: { es: "Mojito Isleño (Salsa Criolla)", en: "Island Mojito Sauce (Creole Sauce)" },
+    time: "15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tomates maduros, picados finamente",
+        "1 cebolla mediana, picada finamente",
+        "1 pimiento verde, picado finamente",
+        "2 dientes de ajo, machacados",
+        "¼ taza de aceite de oliva",
+        "2 cucharadas de vinagre",
+        "1 cucharada de alcaparras",
+        "Aceitunas picadas al gusto",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 ripe tomatoes, finely diced",
+        "1 medium onion, finely diced",
+        "1 green bell pepper, finely diced",
+        "2 garlic cloves, crushed",
+        "¼ cup olive oil",
+        "2 tablespoons vinegar",
+        "1 tablespoon capers",
+        "Chopped olives to taste",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En un sartén, caliente el aceite de oliva a fuego medio.",
+        "Sofría la cebolla, el pimiento y el ajo hasta que estén blandos.",
+        "Añada los tomates, las alcaparras y las aceitunas. Cocine por 5 minutos.",
+        "Agregue el vinagre, sal y pimienta. Cocine 3 minutos más.",
+        "Sirva sobre pescado frito, tostones o como acompañante."
+      ],
+      en: [
+        "In a skillet, heat olive oil over medium heat.",
+        "Sauté onion, pepper, and garlic until soft.",
+        "Add tomatoes, capers, and olives. Cook for 5 minutes.",
+        "Add vinegar, salt, and pepper. Cook 3 more minutes.",
+        "Serve over fried fish, tostones, or as a side."
+      ]
+    }
+  },
+  {
+    id: "pique",
+    category: "salsas",
+    name: { es: "Pique Puertorriqueño", en: "Puerto Rican Hot Sauce (Pique)" },
+    time: "15 min + reposo",
+    servings: 1,
+    ingredients: {
+      es: [
+        "10-15 ajíes caballeros (o habaneros pequeños)",
+        "1 taza de vinagre blanco",
+        "½ taza de jugo de piña",
+        "4 dientes de ajo, enteros",
+        "½ cebolla, cortada en trozos",
+        "10 granos de pimienta",
+        "1 cucharadita de sal",
+        "Hojas de recao (culantro)"
+      ],
+      en: [
+        "10-15 hot peppers (or small habaneros)",
+        "1 cup white vinegar",
+        "½ cup pineapple juice",
+        "4 garlic cloves, whole",
+        "½ onion, cut into chunks",
+        "10 peppercorns",
+        "1 teaspoon salt",
+        "Recao (culantro) leaves"
+      ]
+    },
+    steps: {
+      es: [
+        "En una botella de cristal limpia, coloque los ajíes cortados por la mitad.",
+        "Añada el ajo, la cebolla, los granos de pimienta y las hojas de recao.",
+        "Vierta el vinagre y el jugo de piña. Añada la sal.",
+        "Tape la botella y agite bien.",
+        "Deje reposar por al menos 3 días antes de usar. El sabor mejora con el tiempo.",
+        "Use gotas sobre comida — es muy picante. Rellene con vinagre según se vaya usando."
+      ],
+      en: [
+        "In a clean glass bottle, place peppers cut in half.",
+        "Add garlic, onion, peppercorns, and recao leaves.",
+        "Pour in vinegar and pineapple juice. Add salt.",
+        "Cap the bottle and shake well.",
+        "Let sit for at least 3 days before using. Flavor improves over time.",
+        "Use drops on food — it's very spicy. Refill with vinegar as you use it."
+      ]
+    }
+  },
+  {
+    id: "adobo-pr",
+    category: "salsas",
+    name: { es: "Adobo Puertorriqueño", en: "Puerto Rican Adobo Seasoning" },
+    time: "10 min",
+    servings: 20,
+    ingredients: {
+      es: [
+        "1 cabeza de ajo, pelada",
+        "1 cucharada de pimienta en grano",
+        "2 cucharadas de orégano seco",
+        "1 cucharada de sal",
+        "2 cucharadas de aceite de oliva",
+        "¼ taza de vinagre",
+        "Jugo de 2 limones"
+      ],
+      en: [
+        "1 head of garlic, peeled",
+        "1 tablespoon peppercorns",
+        "2 tablespoons dried oregano",
+        "1 tablespoon salt",
+        "2 tablespoons olive oil",
+        "¼ cup vinegar",
+        "Juice of 2 limes"
+      ]
+    },
+    steps: {
+      es: [
+        "En un pilón (mortero), maje el ajo con la pimienta, el orégano y la sal hasta formar una pasta.",
+        "Añada el aceite de oliva y mezcle bien.",
+        "Agregue el vinagre y el jugo de limón. Combine todo.",
+        "Use para marinar carnes, pollo o cerdo antes de cocinar.",
+        "Guarde en un envase hermético en la nevera por hasta 2 semanas."
+      ],
+      en: [
+        "In a pilón (mortar), mash garlic with peppercorns, oregano, and salt into a paste.",
+        "Add olive oil and mix well.",
+        "Add vinegar and lime juice. Combine everything.",
+        "Use to marinate beef, chicken, or pork before cooking.",
+        "Store in an airtight container in the fridge for up to 2 weeks."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════
+  // ── ENTREMESES Y BOCADILLOS ──
+  // ══════════════════════════════════════
+  {
+    id: "alcapurrias",
+    category: "entremeses",
+    name: { es: "Alcapurrias", en: "Alcapurrias (Stuffed Fritters)" },
+    time: "1 hr 30 min",
+    servings: 15,
+    ingredients: {
+      es: [
+        "2 lbs de yautía (o guineos verdes), pelada y rallada",
+        "1 plátano verde, pelado y rallado",
+        "1 sobre de sazón con achiote",
+        "Aceite con achiote al gusto",
+        "Relleno: 1 lb de carne molida",
+        "Sofrito, salsa de tomate, aceitunas",
+        "Aceite vegetal para freír",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 lbs yautía (or green bananas), peeled and grated",
+        "1 green plantain, peeled and grated",
+        "1 packet sazón with annatto",
+        "Annatto oil to taste",
+        "Filling: 1 lb ground beef",
+        "Sofrito, tomato sauce, olives",
+        "Vegetable oil for frying",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Para el relleno: sofría la carne molida con sofrito, sazón, salsa de tomate y aceitunas hasta cocinar. Reserve.",
+        "Para la masa: mezcle la yautía rallada, el plátano rallado, el sazón y un poco de aceite con achiote. La masa debe estar suave.",
+        "Sobre un pedazo de papel engrasado, extienda una porción de masa en forma ovalada.",
+        "Coloque una cucharada de relleno en el centro. Doble la masa usando el papel para cubrir el relleno.",
+        "Caliente abundante aceite a 350°F. Deslice las alcapurrias con cuidado al aceite.",
+        "Fría hasta que estén doradas y crujientes, aproximadamente 4-5 minutos por lado."
+      ],
+      en: [
+        "For the filling: sauté ground beef with sofrito, sazón, tomato sauce, and olives until cooked. Set aside.",
+        "For the dough: mix grated yautía, grated plantain, sazón, and some annatto oil. Dough should be smooth.",
+        "On a piece of greased paper, spread a portion of dough into an oval shape.",
+        "Place a spoonful of filling in the center. Fold the dough using the paper to cover the filling.",
+        "Heat plenty of oil to 350°F. Carefully slide alcapurrias into the oil.",
+        "Fry until golden and crispy, about 4-5 minutes per side."
+      ]
+    }
+  },
+  {
+    id: "pastelillos",
+    category: "entremeses",
+    name: { es: "Pastelillos de Carne", en: "Meat Turnovers (Pastelillos)" },
+    time: "1 hr",
+    servings: 15,
+    ingredients: {
+      es: [
+        "1 paquete de discos para empanadillas",
+        "1 lb de carne molida",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón",
+        "2 cucharadas de salsa de tomate",
+        "¼ taza de aceitunas rellenas, picadas",
+        "Aceite vegetal para freír",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 package empanada discs",
+        "1 lb ground beef",
+        "3 tablespoons sofrito",
+        "1 packet sazón",
+        "2 tablespoons tomato sauce",
+        "¼ cup stuffed olives, chopped",
+        "Vegetable oil for frying",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría la carne molida con el sofrito, sazón, salsa de tomate y aceitunas. Cocine hasta que esté lista. Deje enfriar.",
+        "Coloque una cucharada del relleno en el centro de cada disco.",
+        "Doble el disco por la mitad y selle los bordes presionando con un tenedor.",
+        "Caliente aceite a 350°F. Fría los pastelillos hasta que estén dorados, aproximadamente 3 minutos por lado.",
+        "Escurra sobre papel toalla y sirva calientes."
+      ],
+      en: [
+        "Sauté ground beef with sofrito, sazón, tomato sauce, and olives. Cook until done. Let cool.",
+        "Place a spoonful of filling in the center of each disc.",
+        "Fold disc in half and seal edges by pressing with a fork.",
+        "Heat oil to 350°F. Fry pastelillos until golden, about 3 minutes per side.",
+        "Drain on paper towels and serve hot."
+      ]
+    }
+  },
+  {
+    id: "bacalaitos",
+    category: "entremeses",
+    name: { es: "Bacalaítos Fritos", en: "Codfish Fritters" },
+    time: "30 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "½ lb de bacalao seco, desalado y desmenuzado",
+        "1 taza de harina de trigo",
+        "1 taza de agua",
+        "2 dientes de ajo, machacados",
+        "½ cucharadita de polvo de hornear",
+        "1 cucharadita de achiote en polvo (o sazón)",
+        "Aceite vegetal para freír",
+        "Pimienta al gusto"
+      ],
+      en: [
+        "½ lb dried codfish, desalted and shredded",
+        "1 cup all-purpose flour",
+        "1 cup water",
+        "2 garlic cloves, crushed",
+        "½ teaspoon baking powder",
+        "1 teaspoon annatto powder (or sazón)",
+        "Vegetable oil for frying",
+        "Pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la harina, el agua, el ajo, el polvo de hornear y el achiote hasta obtener una masa líquida suave.",
+        "Añada el bacalao desmenuzado y pimienta. Mezcle bien.",
+        "Caliente aceite a 375°F en un sartén hondo.",
+        "Con una cuchara, vierta porciones de la masa en el aceite caliente, extendiéndolas lo más finas posible.",
+        "Fría hasta que estén dorados y crujientes, 2-3 minutos por lado.",
+        "Escurra sobre papel toalla. Sirva calientes como aperitivo."
+      ],
+      en: [
+        "Mix flour, water, garlic, baking powder, and annatto until you get a smooth thin batter.",
+        "Add shredded codfish and pepper. Mix well.",
+        "Heat oil to 375°F in a deep skillet.",
+        "Using a spoon, pour portions of batter into hot oil, spreading as thin as possible.",
+        "Fry until golden and crispy, 2-3 minutes per side.",
+        "Drain on paper towels. Serve hot as an appetizer."
+      ]
+    }
+  },
+  {
+    id: "sorullitos",
+    category: "entremeses",
+    name: { es: "Sorullitos de Maíz", en: "Corn Sticks (Sorullitos)" },
+    time: "30 min",
+    servings: 15,
+    ingredients: {
+      es: [
+        "2 tazas de agua",
+        "1 cucharadita de sal",
+        "1 cucharada de azúcar",
+        "1½ tazas de harina de maíz (polenta)",
+        "½ taza de queso Gouda o cheddar, rallado",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "2 cups water",
+        "1 teaspoon salt",
+        "1 tablespoon sugar",
+        "1½ cups cornmeal (polenta)",
+        "½ cup Gouda or cheddar cheese, shredded",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con la sal y el azúcar.",
+        "Baje el fuego y añada la harina de maíz de golpe, revolviendo vigorosamente.",
+        "Cocine revolviendo por 3-4 minutos hasta que la masa se despegue de la olla.",
+        "Retire del fuego y añada el queso. Mezcle bien.",
+        "Cuando pueda manejar la masa, forme cilindros de 3-4 pulgadas de largo.",
+        "Caliente aceite a 350°F y fría los sorullitos hasta que estén dorados. Escurra y sirva con mayoketchup."
+      ],
+      en: [
+        "Boil water with salt and sugar.",
+        "Lower heat and add cornmeal all at once, stirring vigorously.",
+        "Cook stirring for 3-4 minutes until dough pulls away from the pot.",
+        "Remove from heat and add cheese. Mix well.",
+        "When dough is cool enough to handle, form cylinders 3-4 inches long.",
+        "Heat oil to 350°F and fry sorullitos until golden. Drain and serve with mayo-ketchup dip."
+      ]
+    }
+  },
+  {
+    id: "rellenos-papa",
+    category: "entremeses",
+    name: { es: "Rellenos de Papa", en: "Stuffed Potato Balls" },
+    time: "1 hr",
+    servings: 12,
+    ingredients: {
+      es: [
+        "3 lbs de papas, peladas y cortadas",
+        "1 lb de carne molida",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón",
+        "2 cucharadas de salsa de tomate",
+        "¼ taza de aceitunas rellenas, picadas",
+        "2 huevos batidos",
+        "Harina de trigo para empanizar",
+        "Aceite vegetal para freír",
+        "Sal al gusto"
+      ],
+      en: [
+        "3 lbs potatoes, peeled and cut",
+        "1 lb ground beef",
+        "3 tablespoons sofrito",
+        "1 packet sazón",
+        "2 tablespoons tomato sauce",
+        "¼ cup stuffed olives, chopped",
+        "2 beaten eggs",
+        "All-purpose flour for coating",
+        "Vegetable oil for frying",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las papas en agua con sal hasta que estén blandas. Escurra y maje hasta obtener un puré liso sin grumos.",
+        "Para el relleno: sofría la carne molida con sofrito, sazón, salsa de tomate y aceitunas. Deje enfriar.",
+        "Tome una porción de puré, haga un hueco en el centro y coloque una cucharada de relleno.",
+        "Cierre el puré alrededor del relleno formando una bola. Repita.",
+        "Pase cada bola por harina, luego por huevo batido.",
+        "Fría en aceite caliente a 350°F hasta que estén doradas por todos lados. Escurra y sirva."
+      ],
+      en: [
+        "Boil potatoes in salted water until soft. Drain and mash into a smooth purée with no lumps.",
+        "For the filling: sauté ground beef with sofrito, sazón, tomato sauce, and olives. Let cool.",
+        "Take a portion of purée, make a well in the center and place a spoonful of filling.",
+        "Close the purée around the filling to form a ball. Repeat.",
+        "Dredge each ball in flour, then dip in beaten egg.",
+        "Fry in hot oil at 350°F until golden on all sides. Drain and serve."
+      ]
+    }
+  },
+  {
+    id: "pionono",
+    category: "entremeses",
+    name: { es: "Piononos", en: "Sweet Plantain Meat Cups" },
+    time: "45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "4 plátanos maduros",
+        "1 lb de carne molida",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón",
+        "2 cucharadas de salsa de tomate",
+        "Aceite vegetal para freír",
+        "3 huevos batidos",
+        "Sal al gusto"
+      ],
+      en: [
+        "4 ripe plantains",
+        "1 lb ground beef",
+        "3 tablespoons sofrito",
+        "1 packet sazón",
+        "2 tablespoons tomato sauce",
+        "Vegetable oil for frying",
+        "3 beaten eggs",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte los plátanos maduros en lonjas largas y finas a lo largo.",
+        "Fría las lonjas en aceite hasta que estén doradas pero flexibles. Escurra.",
+        "Prepare el relleno: sofría la carne con sofrito, sazón y salsa de tomate.",
+        "Forme cilindros con las lonjas de plátano, asegurándolos con un palillo.",
+        "Rellene cada cilindro con la carne.",
+        "Sumerja en huevo batido y fría hasta que el huevo se cocine y se dore. Sirva calientes."
+      ],
+      en: [
+        "Cut ripe plantains into long thin slices lengthwise.",
+        "Fry slices in oil until golden but still flexible. Drain.",
+        "Make the filling: sauté beef with sofrito, sazón, and tomato sauce.",
+        "Form cylinders with the plantain slices, securing with a toothpick.",
+        "Fill each cylinder with the meat mixture.",
+        "Dip in beaten egg and fry until egg is cooked and golden. Serve hot."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════════════
+  // ── RECETAS ADICIONALES — Edición 1983 ──
+  // ══════════════════════════════════════════════
+
+  // ── SOPAS (1983) ──
+  {
+    id: "sopa-frijoles-blancos",
+    category: "sopas",
+    name: { es: "Sopa de Frijoles Blancos con Calabaza", en: "White Bean & Pumpkin Soup" },
+    time: "1 hr 15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 lb de frijoles blancos secos, remojados",
+        "1 lb de calabaza, pelada y cortada en cubos",
+        "½ lb de jamón ahumado, cortado en trozos",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón",
+        "2 papas grandes, peladas y cortadas",
+        "1 chorizo español, cortado en ruedas",
+        "2 hojas de laurel",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 lb dried white beans, soaked",
+        "1 lb calabaza (pumpkin), peeled and cubed",
+        "½ lb smoked ham, cut into pieces",
+        "3 tablespoons sofrito",
+        "2 packets sazón",
+        "2 large potatoes, peeled and cut",
+        "1 Spanish chorizo, sliced into rounds",
+        "2 bay leaves",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje los frijoles la noche anterior. Escurra y enjuague.",
+        "En una olla grande, cubra los frijoles con agua fresca y hierva por 30 minutos.",
+        "Añada el jamón, el chorizo, el sofrito, el sazón y las hojas de laurel.",
+        "Cocine a fuego medio por 20 minutos. Agregue la calabaza y las papas.",
+        "Cocine 20 minutos más hasta que todo esté tierno. La calabaza espesará el caldo naturalmente.",
+        "Ajuste la sal y pimienta. Sirva caliente con pan."
+      ],
+      en: [
+        "Soak beans overnight. Drain and rinse.",
+        "In a large pot, cover beans with fresh water and boil for 30 minutes.",
+        "Add ham, chorizo, sofrito, sazón, and bay leaves.",
+        "Cook on medium heat for 20 minutes. Add calabaza and potatoes.",
+        "Cook 20 more minutes until everything is tender. The calabaza will naturally thicken the broth.",
+        "Adjust salt and pepper. Serve hot with bread."
+      ]
+    }
+  },
+  {
+    id: "sopa-pescado",
+    category: "sopas",
+    name: { es: "Sopa de Pescado", en: "Fish Soup" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1½ lbs de pescado fresco (chillo o mero), cortado en trozos",
+        "2 tomates maduros, picados",
+        "1 cebolla grande, picada",
+        "3 dientes de ajo, machacados",
+        "2 plátanos verdes, cortados en ruedas",
+        "2 cucharadas de aceite de oliva",
+        "Jugo de 2 limones",
+        "Cilantro fresco",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1½ lbs fresh fish (snapper or grouper), cut into chunks",
+        "2 ripe tomatoes, diced",
+        "1 large onion, diced",
+        "3 garlic cloves, crushed",
+        "2 green plantains, cut into rounds",
+        "2 tablespoons olive oil",
+        "Juice of 2 limes",
+        "Fresh cilantro",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, caliente el aceite y sofría la cebolla, el ajo y los tomates por 5 minutos.",
+        "Añada 8 tazas de agua y los plátanos verdes. Hierva y cocine 15 minutos.",
+        "Agregue el pescado con cuidado. Baje el fuego y cocine 12 minutos sin revolver mucho.",
+        "Añada el jugo de limón, cilantro, sal y pimienta.",
+        "Sirva caliente con un poco de cilantro fresco encima."
+      ],
+      en: [
+        "In a pot, heat oil and sauté onion, garlic, and tomatoes for 5 minutes.",
+        "Add 8 cups water and green plantains. Boil and cook 15 minutes.",
+        "Carefully add the fish. Lower heat and cook 12 minutes without stirring too much.",
+        "Add lime juice, cilantro, salt, and pepper.",
+        "Serve hot with fresh cilantro on top."
+      ]
+    }
+  },
+
+  // ── ARROCES (1983) ──
+  {
+    id: "arroz-jueyes",
+    category: "arroces",
+    name: { es: "Arroz con Jueyes", en: "Rice with Land Crabs" },
+    time: "1 hr 15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 tazas de arroz grano mediano",
+        "1 lb de carne de jueyes (cangrejos de tierra)",
+        "4 tazas de caldo (de los jueyes o de pollo)",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "½ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "2 cucharadas de aceite con achiote",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "3 cups medium grain rice",
+        "1 lb land crab meat",
+        "4 cups broth (from crabs or chicken)",
+        "3 tablespoons sofrito",
+        "2 packets sazón with annatto",
+        "¼ cup tomato sauce",
+        "½ cup stuffed olives",
+        "1 tablespoon capers",
+        "2 tablespoons annatto oil",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero, caliente el aceite con achiote y sofría el sofrito por 3 minutos.",
+        "Añada el sazón, la salsa de tomate, las aceitunas y las alcaparras.",
+        "Agregue la carne de jueyes y sofría 3 minutos.",
+        "Vierta el caldo y hierva. Añada el arroz.",
+        "Cocine sin tapa hasta que el líquido se absorba. Tape, baje el fuego y cocine 25 minutos.",
+        "Voltee con cuchara antes de servir."
+      ],
+      en: [
+        "In a caldero, heat annatto oil and sauté sofrito for 3 minutes.",
+        "Add sazón, tomato sauce, olives, and capers.",
+        "Add crab meat and sauté 3 minutes.",
+        "Pour in broth and bring to a boil. Add rice.",
+        "Cook uncovered until liquid is absorbed. Cover, lower heat and cook 25 minutes.",
+        "Fold with a spoon before serving."
+      ]
+    }
+  },
+  {
+    id: "arroz-habichuelas-coloradas",
+    category: "arroces",
+    name: { es: "Habichuelas Coloradas Guisadas", en: "Stewed Red Kidney Beans" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 latas de habichuelas coloradas (kidney beans)",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "2 papas medianas, peladas y cortadas en cubos",
+        "½ taza de calabaza, cortada en cubos",
+        "½ taza de aceitunas rellenas",
+        "2 cucharadas de aceite de oliva",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 cans red kidney beans",
+        "3 tablespoons sofrito",
+        "2 packets sazón with annatto",
+        "¼ cup tomato sauce",
+        "2 medium potatoes, peeled and cubed",
+        "½ cup calabaza (pumpkin), cubed",
+        "½ cup stuffed olives",
+        "2 tablespoons olive oil",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, caliente el aceite y sofría el sofrito con el sazón y la salsa de tomate por 3 minutos.",
+        "Añada las habichuelas con su líquido, las papas, la calabaza y las aceitunas.",
+        "Cocine a fuego medio por 25 minutos hasta que las papas y calabaza estén tiernas.",
+        "La calabaza espesará la salsa naturalmente. Ajuste la sal.",
+        "Sirva sobre arroz blanco."
+      ],
+      en: [
+        "In a pot, heat oil and sauté sofrito with sazón and tomato sauce for 3 minutes.",
+        "Add beans with their liquid, potatoes, calabaza, and olives.",
+        "Cook on medium heat for 25 minutes until potatoes and calabaza are tender.",
+        "The calabaza will naturally thicken the sauce. Adjust salt.",
+        "Serve over white rice."
+      ]
+    }
+  },
+
+  // ── CARNES (1983) ──
+  {
+    id: "ternera-empanada",
+    category: "carnes",
+    name: { es: "Ternera Empanada", en: "Breaded Veal Cutlets" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de ternera finos",
+        "2 huevos batidos",
+        "1 taza de pan rallado (polvo de galleta)",
+        "½ cucharadita de ajo en polvo",
+        "½ cucharadita de orégano",
+        "Aceite vegetal para freír",
+        "Jugo de 1 limón",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "4 thin veal cutlets",
+        "2 beaten eggs",
+        "1 cup breadcrumbs (cracker meal)",
+        "½ teaspoon garlic powder",
+        "½ teaspoon oregano",
+        "Vegetable oil for frying",
+        "Juice of 1 lime",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone los filetes con limón, sal, pimienta, ajo y orégano. Marine 15 minutos.",
+        "Pase cada filete por huevo batido y luego por el pan rallado, cubriendo bien.",
+        "Caliente aceite a fuego medio-alto en un sartén.",
+        "Fría cada filete por 3-4 minutos por cada lado hasta que estén dorados y crujientes.",
+        "Escurra sobre papel toalla. Sirva con arroz y habichuelas."
+      ],
+      en: [
+        "Season cutlets with lime, salt, pepper, garlic, and oregano. Marinate 15 minutes.",
+        "Dip each cutlet in beaten egg, then coat well in breadcrumbs.",
+        "Heat oil over medium-high heat in a skillet.",
+        "Fry each cutlet 3-4 minutes per side until golden and crispy.",
+        "Drain on paper towels. Serve with rice and beans."
+      ]
+    }
+  },
+  {
+    id: "lengua-rellena",
+    category: "carnes",
+    name: { es: "Lengua Rellena", en: "Stuffed Beef Tongue" },
+    time: "3 hrs",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 lengua de res (3-4 lbs)",
+        "½ lb de jamón cocido, molido",
+        "½ lb de carne de cerdo, molida",
+        "2 huevos duros, picados",
+        "¼ taza de aceitunas rellenas, picadas",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón",
+        "¼ taza de salsa de tomate",
+        "Hilo de cocina",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 beef tongue (3-4 lbs)",
+        "½ lb cooked ham, ground",
+        "½ lb pork, ground",
+        "2 hard-boiled eggs, chopped",
+        "¼ cup stuffed olives, chopped",
+        "3 tablespoons sofrito",
+        "2 packets sazón",
+        "¼ cup tomato sauce",
+        "Kitchen twine",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la lengua en agua con sal por 2 horas hasta que esté tierna. Pele la piel exterior.",
+        "Haga un corte a lo largo sin atravesarla para crear un bolsillo.",
+        "Mezcle el jamón, el cerdo molido, los huevos, las aceitunas, sal y pimienta para el relleno.",
+        "Rellene la lengua y cierre con hilo de cocina.",
+        "En un caldero, sofría el sofrito con sazón y salsa de tomate. Coloque la lengua rellena.",
+        "Añada 2 tazas de agua, tape y cocine a fuego bajo por 45 minutos.",
+        "Corte en rodajas y sirva con la salsa."
+      ],
+      en: [
+        "Boil tongue in salted water for 2 hours until tender. Peel off the outer skin.",
+        "Make a lengthwise cut without going through to create a pocket.",
+        "Mix ham, ground pork, eggs, olives, salt, and pepper for the stuffing.",
+        "Stuff the tongue and close with kitchen twine.",
+        "In a caldero, sauté sofrito with sazón and tomato sauce. Place stuffed tongue inside.",
+        "Add 2 cups water, cover and cook on low for 45 minutes.",
+        "Slice into rounds and serve with the sauce."
+      ]
+    }
+  },
+
+  // ── AVES (1983) ──
+  {
+    id: "pavo-relleno",
+    category: "aves",
+    name: { es: "Pavo Relleno a la Puertorriqueña", en: "Puerto Rican Stuffed Turkey" },
+    time: "4-5 hrs",
+    servings: 15,
+    ingredients: {
+      es: [
+        "1 pavo de 12-14 lbs",
+        "Adobo: 1 cabeza de ajo, orégano, sal, pimienta, vinagre, aceite de oliva",
+        "Relleno: 1 lb de carne molida de cerdo",
+        "½ lb de jamón, picado",
+        "½ taza de aceitunas rellenas",
+        "½ taza de pasas",
+        "3 cucharadas de alcaparras",
+        "3 huevos duros, cortados",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón",
+        "Pan sobao remojado en leche",
+        "Mantequilla para barnizar"
+      ],
+      en: [
+        "1 turkey, 12-14 lbs",
+        "Adobo: 1 head garlic, oregano, salt, pepper, vinegar, olive oil",
+        "Stuffing: 1 lb ground pork",
+        "½ lb ham, diced",
+        "½ cup stuffed olives",
+        "½ cup raisins",
+        "3 tablespoons capers",
+        "3 hard-boiled eggs, cut",
+        "3 tablespoons sofrito",
+        "2 packets sazón",
+        "Pan sobao soaked in milk",
+        "Butter for basting"
+      ]
+    },
+    steps: {
+      es: [
+        "Prepare el adobo machacando ajo con orégano, sal, pimienta, vinagre y aceite. Adobe el pavo por dentro y por fuera. Marine 24 horas.",
+        "Para el relleno: sofría el cerdo molido con sofrito, sazón, jamón, aceitunas, pasas y alcaparras. Deje enfriar.",
+        "Añada al relleno el pan remojado y los huevos duros. Mezcle bien.",
+        "Rellene el pavo y cierre la cavidad con palillos e hilo de cocina.",
+        "Precaliente el horno a 325°F. Cubra el pavo con papel de aluminio.",
+        "Hornee 3½ a 4 horas (20 minutos por libra), barnizando con mantequilla cada 45 minutos.",
+        "Destape la última hora para dorar. La temperatura interna debe llegar a 165°F.",
+        "Deje reposar 20 minutos antes de cortar."
+      ],
+      en: [
+        "Make adobo by crushing garlic with oregano, salt, pepper, vinegar, and oil. Season turkey inside and out. Marinate 24 hours.",
+        "For stuffing: sauté ground pork with sofrito, sazón, ham, olives, raisins, and capers. Let cool.",
+        "Add soaked bread and hard-boiled eggs to the stuffing. Mix well.",
+        "Stuff the turkey and close cavity with skewers and kitchen twine.",
+        "Preheat oven to 325°F. Cover turkey with aluminum foil.",
+        "Bake 3½ to 4 hours (20 minutes per pound), basting with butter every 45 minutes.",
+        "Uncover the last hour to brown. Internal temp should reach 165°F.",
+        "Let rest 20 minutes before carving."
+      ]
+    }
+  },
+
+  // ── PESCADOS (1983) ──
+  {
+    id: "pescado-escabeche",
+    category: "pescados",
+    name: { es: "Pescado en Escabeche", en: "Pickled Fish (Escabeche)" },
+    time: "1 hr + reposo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 lbs de pescado (chillo o sierra), en ruedas o filetes",
+        "1 taza de aceite de oliva",
+        "1 taza de vinagre",
+        "2 cebollas grandes, cortadas en aros",
+        "1 pimiento verde, cortado en tiras",
+        "8 granos de pimienta",
+        "3 hojas de laurel",
+        "8 aceitunas rellenas",
+        "Harina para enharinar",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 lbs fish (snapper or kingfish), steaks or fillets",
+        "1 cup olive oil",
+        "1 cup vinegar",
+        "2 large onions, sliced into rings",
+        "1 green bell pepper, cut in strips",
+        "8 peppercorns",
+        "3 bay leaves",
+        "8 stuffed olives",
+        "Flour for dredging",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Sale el pescado y enharine ligeramente. Fría en aceite caliente hasta dorar. Reserve.",
+        "En una olla, caliente 1 taza de aceite de oliva. Sofría las cebollas y el pimiento hasta que estén blandos.",
+        "Añada el vinagre, los granos de pimienta, las hojas de laurel, las aceitunas y la sal.",
+        "Cocine 5 minutos. Retire del fuego.",
+        "En un envase hondo, alterne capas de pescado frito y la mezcla de escabeche.",
+        "Deje marinar en la nevera por al menos 6 horas o toda la noche. Sirva frío."
+      ],
+      en: [
+        "Salt fish and lightly flour. Fry in hot oil until golden. Set aside.",
+        "In a pot, heat 1 cup olive oil. Sauté onions and pepper until soft.",
+        "Add vinegar, peppercorns, bay leaves, olives, and salt.",
+        "Cook 5 minutes. Remove from heat.",
+        "In a deep container, alternate layers of fried fish and the escabeche mixture.",
+        "Marinate in the fridge for at least 6 hours or overnight. Serve cold."
+      ]
+    }
+  },
+  {
+    id: "salmorejo-jueyes",
+    category: "pescados",
+    name: { es: "Salmorejo de Jueyes", en: "Land Crab Stew (Salmorejo)" },
+    time: "45 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 lb de carne de jueyes (cangrejos de tierra)",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "½ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "2 cucharadas de aceite con achiote",
+        "1 taza de agua o caldo",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 lb land crab meat",
+        "3 tablespoons sofrito",
+        "2 packets sazón with annatto",
+        "¼ cup tomato sauce",
+        "½ cup stuffed olives",
+        "1 tablespoon capers",
+        "2 tablespoons annatto oil",
+        "1 cup water or broth",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero, caliente el aceite con achiote y sofría el sofrito por 3 minutos.",
+        "Añada el sazón, la salsa de tomate, las aceitunas y las alcaparras.",
+        "Agregue la carne de jueyes y sofría 5 minutos.",
+        "Vierta el agua o caldo. Cocine a fuego medio por 20 minutos hasta que la salsa espese.",
+        "Ajuste la sal y pimienta. Sirva sobre arroz blanco o tostones."
+      ],
+      en: [
+        "In a caldero, heat annatto oil and sauté sofrito for 3 minutes.",
+        "Add sazón, tomato sauce, olives, and capers.",
+        "Add crab meat and sauté 5 minutes.",
+        "Pour in water or broth. Cook on medium heat for 20 minutes until sauce thickens.",
+        "Adjust salt and pepper. Serve over white rice or tostones."
+      ]
+    }
+  },
+
+  // ── ENSALADAS (1983) ──
+  {
+    id: "ensalada-aguacate",
+    category: "ensaladas",
+    name: { es: "Ensalada de Aguacate", en: "Avocado Salad" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 aguacates maduros, cortados en lonjas",
+        "2 tomates maduros, cortados en ruedas",
+        "1 cebolla mediana, cortada en aros finos",
+        "1 lechuga, lavada y cortada",
+        "¼ taza de aceite de oliva",
+        "2 cucharadas de vinagre",
+        "1 diente de ajo, machacado",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 ripe avocados, sliced",
+        "2 ripe tomatoes, sliced into rounds",
+        "1 medium onion, thinly sliced into rings",
+        "1 head lettuce, washed and chopped",
+        "¼ cup olive oil",
+        "2 tablespoons vinegar",
+        "1 garlic clove, crushed",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En una fuente, coloque la lechuga como base.",
+        "Arregle las lonjas de aguacate, las ruedas de tomate y los aros de cebolla de forma decorativa.",
+        "Mezcle el aceite de oliva, el vinagre, el ajo, sal y pimienta para hacer el aderezo.",
+        "Rocíe el aderezo sobre la ensalada justo antes de servir para que el aguacate no se oscurezca."
+      ],
+      en: [
+        "On a platter, place lettuce as a base.",
+        "Arrange avocado slices, tomato rounds, and onion rings decoratively.",
+        "Mix olive oil, vinegar, garlic, salt, and pepper to make the dressing.",
+        "Drizzle dressing over salad just before serving so avocado doesn't brown."
+      ]
+    }
+  },
+
+  // ── VEGETALES (1983) ──
+  {
+    id: "guineitos-tierno",
+    category: "vegetales",
+    name: { es: "Guineítos Niños Envueltos", en: "Finger Bananas in Sauce" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "12 guineítos niños (dátiles/finger bananas)",
+        "2 cucharadas de mantequilla",
+        "½ taza de azúcar morena",
+        "1 raja de canela",
+        "½ taza de vino dulce o moscatel",
+        "Jugo de 1 naranja",
+        "Pizca de sal"
+      ],
+      en: [
+        "12 finger bananas (dátiles)",
+        "2 tablespoons butter",
+        "½ cup brown sugar",
+        "1 cinnamon stick",
+        "½ cup sweet wine or muscatel",
+        "Juice of 1 orange",
+        "Pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los guineítos con cuidado para mantenerlos enteros.",
+        "En un sartén, derrita la mantequilla y añada el azúcar morena. Cocine hasta que se derrita.",
+        "Añada el jugo de naranja, el vino y la canela. Cocine 3 minutos.",
+        "Coloque los guineítos en la salsa. Cocine a fuego bajo por 15 minutos, bañándolos con la salsa.",
+        "Sirva tibios como acompañante o postre con la salsa por encima."
+      ],
+      en: [
+        "Peel finger bananas carefully to keep them whole.",
+        "In a skillet, melt butter and add brown sugar. Cook until melted.",
+        "Add orange juice, wine, and cinnamon. Cook 3 minutes.",
+        "Place bananas in the sauce. Cook on low heat for 15 minutes, basting with sauce.",
+        "Serve warm as a side dish or dessert with sauce spooned over."
+      ]
+    }
+  },
+  {
+    id: "viandas-hervidas",
+    category: "vegetales",
+    name: { es: "Viandas Hervidas con Bacalao", en: "Boiled Root Vegetables with Codfish" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 plátanos verdes",
+        "1 lb de yautía blanca",
+        "1 lb de ñame",
+        "2 guineos verdes",
+        "½ lb de batata",
+        "½ lb de bacalao seco, desalado",
+        "Aceite de oliva al gusto",
+        "1 cebolla, cortada en aros",
+        "Vinagre al gusto"
+      ],
+      en: [
+        "2 green plantains",
+        "1 lb white yautía (taro)",
+        "1 lb yam",
+        "2 green bananas",
+        "½ lb sweet potato",
+        "½ lb dried codfish, desalted",
+        "Olive oil to taste",
+        "1 onion, sliced into rings",
+        "Vinegar to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele todas las viandas y córtelas en trozos grandes.",
+        "Hierva en agua con sal por 25-30 minutos hasta que estén tiernas.",
+        "Mientras, hierva el bacalao por 15 minutos. Escurra y desmenuce.",
+        "Escurra las viandas y colóquelas en una fuente.",
+        "Cubra con el bacalao desmenuzado, los aros de cebolla, aceite de oliva y vinagre.",
+        "Sirva caliente como plato principal."
+      ],
+      en: [
+        "Peel all root vegetables and cut into large chunks.",
+        "Boil in salted water for 25-30 minutes until tender.",
+        "Meanwhile, boil codfish for 15 minutes. Drain and shred.",
+        "Drain vegetables and place on a serving platter.",
+        "Top with shredded codfish, onion rings, olive oil, and vinegar.",
+        "Serve hot as a main dish."
+      ]
+    }
+  },
+
+  // ── POSTRES (1983) ──
+  {
+    id: "brazo-gitano",
+    category: "postres",
+    name: { es: "Brazo Gitano", en: "Jelly Roll Cake" },
+    time: "1 hr",
+    servings: 10,
+    ingredients: {
+      es: [
+        "5 huevos, separados",
+        "1 taza de azúcar",
+        "1 taza de harina de trigo, cernida",
+        "1 cucharadita de polvo de hornear",
+        "1 cucharadita de vainilla",
+        "Pizca de sal",
+        "Relleno: mermelada de guayaba o crema pastelera",
+        "Azúcar en polvo para decorar"
+      ],
+      en: [
+        "5 eggs, separated",
+        "1 cup sugar",
+        "1 cup all-purpose flour, sifted",
+        "1 teaspoon baking powder",
+        "1 teaspoon vanilla",
+        "Pinch of salt",
+        "Filling: guava jam or pastry cream",
+        "Powdered sugar for dusting"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F. Engrase y forre una bandeja de 15x10 con papel encerado.",
+        "Bata las yemas con el azúcar hasta que estén pálidas y espumosas. Añada la vainilla.",
+        "Bata las claras con sal a punto de nieve. Incorpore con movimientos envolventes a las yemas.",
+        "Cierna la harina con el polvo de hornear sobre la mezcla. Integre con cuidado.",
+        "Vierta en la bandeja y extienda uniformemente. Hornee 12-15 minutos.",
+        "Voltee inmediatamente sobre un paño limpio espolvoreado con azúcar en polvo. Retire el papel.",
+        "Enrolle el bizcocho con el paño mientras esté caliente. Deje enfriar.",
+        "Desenrolle, unte con mermelada de guayaba y vuelva a enrollar. Espolvoree con azúcar en polvo."
+      ],
+      en: [
+        "Preheat oven to 350°F. Grease and line a 15x10 jelly roll pan with parchment paper.",
+        "Beat yolks with sugar until pale and fluffy. Add vanilla.",
+        "Beat whites with salt to stiff peaks. Fold gently into yolk mixture.",
+        "Sift flour with baking powder over the mixture. Fold in carefully.",
+        "Pour into pan and spread evenly. Bake 12-15 minutes.",
+        "Immediately flip onto a clean towel dusted with powdered sugar. Remove paper.",
+        "Roll the cake up with the towel while still warm. Let cool.",
+        "Unroll, spread with guava jam, and re-roll. Dust with powdered sugar."
+      ]
+    }
+  },
+  {
+    id: "dulce-papaya",
+    category: "postres",
+    name: { es: "Dulce de Lechosa (Papaya)", en: "Candied Papaya" },
+    time: "2 hrs",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 lechosa verde grande (4-5 lbs), pelada",
+        "4 tazas de azúcar",
+        "6 tazas de agua",
+        "4 rajas de canela",
+        "8 clavos de olor",
+        "Jugo de 1 limón",
+        "Queso del país para servir"
+      ],
+      en: [
+        "1 large green papaya (4-5 lbs), peeled",
+        "4 cups sugar",
+        "6 cups water",
+        "4 cinnamon sticks",
+        "8 whole cloves",
+        "Juice of 1 lime",
+        "Local white cheese for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele la lechosa, retire las semillas y corte en lonjas o tiras.",
+        "Remoje las lonjas en agua con cal (o bicarbonato) por 2 horas para que queden firmes. Enjuague bien.",
+        "En una olla grande, prepare un almíbar con el azúcar, el agua, la canela y los clavos. Hierva.",
+        "Añada las lonjas de lechosa al almíbar. Cocine a fuego bajo por 1½ horas.",
+        "La lechosa debe quedar translúcida y el almíbar espeso. Añada el jugo de limón.",
+        "Deje enfriar y sirva con queso del país."
+      ],
+      en: [
+        "Peel papaya, remove seeds and cut into slices or strips.",
+        "Soak slices in lime water (or baking soda water) for 2 hours to firm them. Rinse well.",
+        "In a large pot, make a syrup with sugar, water, cinnamon, and cloves. Bring to a boil.",
+        "Add papaya slices to the syrup. Cook on low heat for 1½ hours.",
+        "Papaya should become translucent and syrup thick. Add lime juice.",
+        "Let cool and serve with local white cheese."
+      ]
+    }
+  },
+  {
+    id: "besitos-coco",
+    category: "postres",
+    name: { es: "Besitos de Coco", en: "Coconut Kisses (Macaroons)" },
+    time: "35 min",
+    servings: 20,
+    ingredients: {
+      es: [
+        "3 tazas de coco rallado fresco (o seco)",
+        "1 taza de azúcar",
+        "3 yemas de huevo",
+        "2 cucharadas de mantequilla, derretida",
+        "1 cucharadita de vainilla",
+        "½ cucharadita de canela",
+        "Pizca de sal"
+      ],
+      en: [
+        "3 cups fresh grated coconut (or dried)",
+        "1 cup sugar",
+        "3 egg yolks",
+        "2 tablespoons butter, melted",
+        "1 teaspoon vanilla",
+        "½ teaspoon cinnamon",
+        "Pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F. Engrase una bandeja de hornear.",
+        "Mezcle el coco rallado con el azúcar, las yemas, la mantequilla, la vainilla, la canela y la sal.",
+        "Forme bolitas con las manos (como besos) y colóquelas en la bandeja, separadas.",
+        "Hornee por 18-20 minutos hasta que estén doradas por fuera.",
+        "Deje enfriar en la bandeja. Quedan crujientes por fuera y suaves por dentro."
+      ],
+      en: [
+        "Preheat oven to 350°F. Grease a baking sheet.",
+        "Mix grated coconut with sugar, egg yolks, butter, vanilla, cinnamon, and salt.",
+        "Form small balls (like kisses) and place on the sheet, spaced apart.",
+        "Bake for 18-20 minutes until golden on the outside.",
+        "Let cool on the sheet. They should be crispy outside and soft inside."
+      ]
+    }
+  },
+
+  // ── PANES (1983) ──
+  {
+    id: "panapen-horno",
+    category: "panes",
+    name: { es: "Panapén (Pana) al Horno", en: "Baked Breadfruit" },
+    time: "1 hr 15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 panapén (pana de pepita) maduro",
+        "3 cucharadas de mantequilla",
+        "Sal al gusto",
+        "Aceite de oliva (opcional)"
+      ],
+      en: [
+        "1 ripe breadfruit",
+        "3 tablespoons butter",
+        "Salt to taste",
+        "Olive oil (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave el panapén y haga cortes en forma de cruz en la base.",
+        "Precaliente el horno a 375°F.",
+        "Coloque el panapén directamente en la rejilla del horno con una bandeja debajo para recoger los jugos.",
+        "Hornee por 1 hora o hasta que la cáscara esté oscura y al insertar un cuchillo la pulpa esté blanda.",
+        "Corte a la mitad, retire el corazón y unte con mantequilla y sal.",
+        "Corte en porciones y sirva como acompañante."
+      ],
+      en: [
+        "Wash breadfruit and make cross-shaped cuts on the base.",
+        "Preheat oven to 375°F.",
+        "Place breadfruit directly on oven rack with a tray underneath to catch drips.",
+        "Bake for 1 hour or until skin is dark and a knife goes in easily to soft flesh.",
+        "Cut in half, remove the core and spread with butter and salt.",
+        "Cut into portions and serve as a side dish."
+      ]
+    }
+  },
+  {
+    id: "rosquillas",
+    category: "panes",
+    name: { es: "Rosquillas de Viento", en: "Puerto Rican Doughnuts (Rosquillas)" },
+    time: "1 hr",
+    servings: 15,
+    ingredients: {
+      es: [
+        "2 tazas de harina de trigo",
+        "½ taza de azúcar",
+        "2 huevos",
+        "¼ taza de mantequilla, suavizada",
+        "½ cucharadita de polvo de hornear",
+        "½ taza de leche",
+        "1 cucharadita de vainilla",
+        "Ralladura de 1 limón",
+        "Aceite vegetal para freír",
+        "Azúcar con canela para rebozar"
+      ],
+      en: [
+        "2 cups all-purpose flour",
+        "½ cup sugar",
+        "2 eggs",
+        "¼ cup butter, softened",
+        "½ teaspoon baking powder",
+        "½ cup milk",
+        "1 teaspoon vanilla",
+        "Zest of 1 lime",
+        "Vegetable oil for frying",
+        "Cinnamon sugar for coating"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la harina con el polvo de hornear y el azúcar.",
+        "Añada los huevos, la mantequilla, la leche, la vainilla y la ralladura. Amase hasta formar una masa suave.",
+        "Deje reposar 15 minutos. Estire la masa a ½ pulgada de grosor.",
+        "Corte con un cortador de rosquillas (o dos vasos de diferente tamaño).",
+        "Caliente aceite a 350°F. Fría las rosquillas hasta que estén doradas, volteando una vez.",
+        "Escurra y rebócelas inmediatamente en azúcar con canela."
+      ],
+      en: [
+        "Mix flour with baking powder and sugar.",
+        "Add eggs, butter, milk, vanilla, and zest. Knead into a smooth dough.",
+        "Rest 15 minutes. Roll out to ½ inch thick.",
+        "Cut with a doughnut cutter (or two different-sized glasses).",
+        "Heat oil to 350°F. Fry doughnuts until golden, flipping once.",
+        "Drain and immediately coat in cinnamon sugar."
+      ]
+    }
+  },
+
+  // ── SALSAS (1983) ──
+  {
+    id: "salsa-criolla",
+    category: "salsas",
+    name: { es: "Salsa Criolla para Carnes", en: "Creole Sauce for Meats" },
+    time: "20 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 tomates maduros, picados",
+        "1 pimiento verde, picado",
+        "1 cebolla grande, picada",
+        "3 dientes de ajo, machacados",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharadita de orégano",
+        "1 cucharada de vinagre",
+        "1 hoja de laurel",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "3 ripe tomatoes, diced",
+        "1 green bell pepper, diced",
+        "1 large onion, diced",
+        "3 garlic cloves, crushed",
+        "2 tablespoons olive oil",
+        "1 teaspoon oregano",
+        "1 tablespoon vinegar",
+        "1 bay leaf",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el aceite en un sartén. Sofría la cebolla, el pimiento y el ajo por 5 minutos.",
+        "Añada los tomates, el orégano y la hoja de laurel. Cocine 10 minutos a fuego medio.",
+        "Agregue el vinagre, sal y pimienta. Cocine 3 minutos más.",
+        "Retire la hoja de laurel. Sirva sobre carnes asadas, chuletas o bistecs."
+      ],
+      en: [
+        "Heat oil in a skillet. Sauté onion, pepper, and garlic for 5 minutes.",
+        "Add tomatoes, oregano, and bay leaf. Cook 10 minutes on medium heat.",
+        "Add vinegar, salt, and pepper. Cook 3 more minutes.",
+        "Remove bay leaf. Serve over roasted meats, pork chops, or steaks."
+      ]
+    }
+  },
+
+  // ── ENTREMESES (1983) ──
+  {
+    id: "surullitos-dulces",
+    category: "entremeses",
+    name: { es: "Surullitos Dulces", en: "Sweet Corn Sticks" },
+    time: "25 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 tazas de agua",
+        "1½ cucharadas de azúcar",
+        "½ cucharadita de sal",
+        "½ cucharadita de anís en grano (opcional)",
+        "1½ tazas de harina de maíz amarilla",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "2 cups water",
+        "1½ tablespoons sugar",
+        "½ teaspoon salt",
+        "½ teaspoon anise seeds (optional)",
+        "1½ cups yellow cornmeal",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con el azúcar, la sal y el anís.",
+        "Retire del fuego y añada la harina de maíz de golpe, revolviendo vigorosamente.",
+        "Regrese al fuego bajo y revuelva por 3 minutos hasta que la masa se despegue de la olla.",
+        "Deje enfriar un poco. Forme cilindros de 3 pulgadas con las manos húmedas.",
+        "Fría en aceite caliente a 350°F hasta dorar. Son dulces por el azúcar y el anís.",
+        "Escurra sobre papel toalla. Sirva como merienda o acompañante."
+      ],
+      en: [
+        "Boil water with sugar, salt, and anise.",
+        "Remove from heat and add cornmeal all at once, stirring vigorously.",
+        "Return to low heat and stir for 3 minutes until dough pulls away from pot.",
+        "Let cool slightly. Form 3-inch cylinders with wet hands.",
+        "Fry in hot oil at 350°F until golden. They're sweet from the sugar and anise.",
+        "Drain on paper towels. Serve as a snack or side."
+      ]
+    }
+  },
+  {
+    id: "empanadillas-chaparro",
+    category: "entremeses",
+    name: { es: "Empanadillas de Chaparro", en: "Guava & Cheese Turnovers" },
+    time: "40 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 paquete de discos para empanadillas",
+        "1 barra de pasta de guayaba (8 oz), cortada en tiritas",
+        "8 oz de queso blanco del país, cortado en tiritas",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "1 package empanada discs",
+        "1 bar guava paste (8 oz), cut into thin strips",
+        "8 oz local white cheese, cut into thin strips",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Coloque una tirita de pasta de guayaba y una de queso en el centro de cada disco.",
+        "Doble por la mitad y selle los bordes presionando con un tenedor.",
+        "Caliente aceite a 350°F.",
+        "Fría las empanadillas hasta que estén doradas, aproximadamente 3 minutos por lado.",
+        "Escurra sobre papel toalla. El queso derretido con la guayaba es irresistible."
+      ],
+      en: [
+        "Place a strip of guava paste and a strip of cheese in the center of each disc.",
+        "Fold in half and seal edges by pressing with a fork.",
+        "Heat oil to 350°F.",
+        "Fry turnovers until golden, about 3 minutes per side.",
+        "Drain on paper towels. The melted cheese with guava is irresistible."
+      ]
+    }
+  },
+
+  // ── CÓCTELES (1983) ──
+  {
+    id: "bilí",
+    category: "cocteles",
+    name: { es: "Bilí (Ron con Quenepa)", en: "Bilí (Rum & Quenepa Liqueur)" },
+    time: "10 min + 2 semanas",
+    servings: 15,
+    ingredients: {
+      es: [
+        "2 lbs de quenepas maduras, peladas",
+        "1 botella de ron blanco puertorriqueño (750 ml)",
+        "1 taza de azúcar",
+        "1 raja de canela",
+        "3 clavos de olor"
+      ],
+      en: [
+        "2 lbs ripe quenepas (Spanish limes), peeled",
+        "1 bottle Puerto Rican white rum (750 ml)",
+        "1 cup sugar",
+        "1 cinnamon stick",
+        "3 whole cloves"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele las quenepas y coloque la pulpa con sus semillas en un envase de cristal grande.",
+        "Añada el azúcar, la canela y los clavos.",
+        "Vierta el ron sobre las quenepas hasta cubrirlas.",
+        "Tape bien y guarde en un lugar oscuro y fresco por al menos 2 semanas, agitando cada 2-3 días.",
+        "Cuele y embotelle. Sirva bien frío en vasitos. El sabor mejora con el tiempo."
+      ],
+      en: [
+        "Peel quenepas and place the pulp with seeds in a large glass jar.",
+        "Add sugar, cinnamon, and cloves.",
+        "Pour rum over the quenepas until covered.",
+        "Seal well and store in a dark, cool place for at least 2 weeks, shaking every 2-3 days.",
+        "Strain and bottle. Serve very cold in small glasses. Flavor improves over time."
+      ]
+    }
+  },
+  {
+    id: "ponche-crema",
+    category: "cocteles",
+    name: { es: "Ponche de Crema Navideño", en: "Christmas Cream Punch" },
+    time: "20 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "6 yemas de huevo",
+        "1 lata de leche condensada (14 oz)",
+        "1 lata de leche evaporada (12 oz)",
+        "1 cucharadita de vainilla",
+        "½ cucharadita de nuez moscada",
+        "½ cucharadita de canela en polvo",
+        "1 taza de ron dorado puertorriqueño",
+        "Canela en raja para servir"
+      ],
+      en: [
+        "6 egg yolks",
+        "1 can condensed milk (14 oz)",
+        "1 can evaporated milk (12 oz)",
+        "1 teaspoon vanilla",
+        "½ teaspoon nutmeg",
+        "½ teaspoon ground cinnamon",
+        "1 cup Puerto Rican golden rum",
+        "Cinnamon sticks for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata las yemas hasta que estén espesas y de color claro.",
+        "Añada gradualmente la leche condensada y la leche evaporada, batiendo constantemente.",
+        "Agregue la vainilla, la nuez moscada y la canela. Mezcle bien.",
+        "Cocine a baño de María a fuego bajo por 10 minutos, revolviendo, hasta que espese ligeramente. No hierva.",
+        "Retire del fuego, deje enfriar y añada el ron.",
+        "Refrigere por al menos 4 horas. Sirva frío con una raja de canela."
+      ],
+      en: [
+        "Beat yolks until thick and light in color.",
+        "Gradually add condensed milk and evaporated milk, beating constantly.",
+        "Add vanilla, nutmeg, and cinnamon. Mix well.",
+        "Cook in a double boiler on low heat for 10 minutes, stirring, until slightly thick. Do not boil.",
+        "Remove from heat, let cool and add rum.",
+        "Refrigerate at least 4 hours. Serve cold with a cinnamon stick."
+      ]
+    }
+  },
+
+  // ══════════════════════════════════════════════════
+  // ── NUEVAS CATEGORÍAS — Basadas en Cocine a Gusto
+  // ══════════════════════════════════════════════════
+
+  // ── FRUTAS ──
+  {
+    id: "dulce-coco",
+    category: "frutas",
+    name: { es: "Dulce de Coco Rallado", en: "Grated Coconut Candy" },
+    time: "45 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 coco fresco, rallado (3 tazas aproximadamente)",
+        "2 tazas de azúcar",
+        "½ taza de agua",
+        "1 raja de canela",
+        "Jugo de 1 limón",
+        "Colorante rojo (opcional, para hacer bicolor)"
+      ],
+      en: [
+        "1 fresh coconut, grated (about 3 cups)",
+        "2 cups sugar",
+        "½ cup water",
+        "1 cinnamon stick",
+        "Juice of 1 lime",
+        "Red food coloring (optional, for bicolor)"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, prepare un almíbar con el azúcar, el agua y la canela. Cocine hasta que forme un hilo al dejar caer de una cuchara.",
+        "Añada el coco rallado y el jugo de limón. Revuelva constantemente a fuego medio.",
+        "Si desea bicolor, divida la mezcla y añada colorante rojo a una mitad.",
+        "Cocine hasta que la mezcla se despegue de la olla (unos 20 minutos).",
+        "Vierta sobre una superficie engrasada o papel encerado. Deje enfriar y corte en cuadros."
+      ],
+      en: [
+        "In a pot, make a syrup with sugar, water, and cinnamon. Cook until it forms a thread when dropped from a spoon.",
+        "Add grated coconut and lime juice. Stir constantly over medium heat.",
+        "If making bicolor, divide the mixture and add red coloring to one half.",
+        "Cook until mixture pulls away from pot (about 20 minutes).",
+        "Pour onto a greased surface or wax paper. Let cool and cut into squares."
+      ]
+    }
+  },
+  {
+    id: "dulce-guayaba",
+    category: "frutas",
+    name: { es: "Pasta de Guayaba Casera", en: "Homemade Guava Paste" },
+    time: "1 hr 30 min",
+    servings: 15,
+    ingredients: {
+      es: [
+        "3 lbs de guayabas maduras",
+        "3 tazas de azúcar",
+        "Jugo de 1 limón",
+        "½ taza de agua"
+      ],
+      en: [
+        "3 lbs ripe guavas",
+        "3 cups sugar",
+        "Juice of 1 lime",
+        "½ cup water"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave las guayabas, córtelas y retire las semillas. Cocine en agua hasta que estén blandas.",
+        "Pase por un colador fino para obtener la pulpa sin semillas.",
+        "En una olla gruesa, combine la pulpa con el azúcar y el jugo de limón.",
+        "Cocine a fuego medio-bajo, revolviendo constantemente por 45-60 minutos hasta que espese y se despegue de la olla.",
+        "Vierta en un molde engrasado. Deje enfriar completamente y corte en barras.",
+        "Sirva con queso blanco del país."
+      ],
+      en: [
+        "Wash guavas, cut and remove seeds. Cook in water until soft.",
+        "Pass through a fine strainer to get seedless pulp.",
+        "In a heavy pot, combine pulp with sugar and lime juice.",
+        "Cook on medium-low heat, stirring constantly for 45-60 minutes until thick and pulling away from pot.",
+        "Pour into a greased mold. Let cool completely and cut into bars.",
+        "Serve with local white cheese."
+      ]
+    }
+  },
+  {
+    id: "mermelada-naranja",
+    category: "frutas",
+    name: { es: "Mermelada de China (Naranja)", en: "Orange Marmalade" },
+    time: "1 hr",
+    servings: 10,
+    ingredients: {
+      es: [
+        "6 chinas (naranjas) grandes",
+        "3 tazas de azúcar",
+        "2 tazas de agua",
+        "Jugo de 1 limón"
+      ],
+      en: [
+        "6 large oranges",
+        "3 cups sugar",
+        "2 cups water",
+        "Juice of 1 lime"
+      ]
+    },
+    steps: {
+      es: [
+        "Ralle la cáscara de 3 naranjas finamente. Exprima el jugo de todas las naranjas.",
+        "Corte la cáscara rallada en tiritas finas.",
+        "Hierva las tiritas de cáscara en agua por 10 minutos. Escurra.",
+        "En una olla, combine el jugo de naranja, el azúcar, el agua, las tiritas de cáscara y el jugo de limón.",
+        "Cocine a fuego medio, revolviendo, por 30-40 minutos hasta que espese y cubra el dorso de una cuchara.",
+        "Vierta en frascos esterilizados. Deje enfriar y refrigere."
+      ],
+      en: [
+        "Finely zest 3 oranges. Juice all oranges.",
+        "Cut the zest into thin strips.",
+        "Boil strips in water for 10 minutes. Drain.",
+        "In a pot, combine orange juice, sugar, water, zest strips, and lime juice.",
+        "Cook on medium heat, stirring, for 30-40 minutes until thick and coats the back of a spoon.",
+        "Pour into sterilized jars. Let cool and refrigerate."
+      ]
+    }
+  },
+  {
+    id: "dulce-papaya-verde",
+    category: "frutas",
+    name: { es: "Dulce de Papaya Verde en Almíbar", en: "Green Papaya in Syrup" },
+    time: "2 hrs",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 papaya verde grande, pelada y cortada en tiras",
+        "4 tazas de azúcar",
+        "4 tazas de agua",
+        "3 rajas de canela",
+        "6 clavos de olor",
+        "1 cucharada de bicarbonato (para remojar)"
+      ],
+      en: [
+        "1 large green papaya, peeled and cut in strips",
+        "4 cups sugar",
+        "4 cups water",
+        "3 cinnamon sticks",
+        "6 whole cloves",
+        "1 tablespoon baking soda (for soaking)"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje las tiras de papaya en agua con bicarbonato por 2 horas para que queden firmes. Enjuague bien.",
+        "Prepare un almíbar con el azúcar, el agua, la canela y los clavos. Hierva 5 minutos.",
+        "Añada las tiras de papaya al almíbar. Cocine a fuego bajo por 1½ horas.",
+        "La papaya debe quedar translúcida y el almíbar espeso.",
+        "Sirva fría con queso blanco del país."
+      ],
+      en: [
+        "Soak papaya strips in water with baking soda for 2 hours to firm them. Rinse well.",
+        "Make syrup with sugar, water, cinnamon, and cloves. Boil 5 minutes.",
+        "Add papaya strips to syrup. Cook on low heat for 1½ hours.",
+        "Papaya should become translucent and syrup thick.",
+        "Serve cold with local white cheese."
+      ]
+    }
+  },
+
+  // ── CEREALES ──
+  {
+    id: "funche",
+    category: "cereales",
+    name: { es: "Funche (Gofio de Maíz)", en: "Funche (Cornmeal Porridge)" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 taza de harina de maíz amarilla",
+        "3 tazas de leche de coco",
+        "1 taza de agua",
+        "½ taza de azúcar",
+        "1 raja de canela",
+        "½ cucharadita de sal",
+        "1 cucharadita de vainilla",
+        "Canela en polvo para espolvorear"
+      ],
+      en: [
+        "1 cup yellow cornmeal",
+        "3 cups coconut milk",
+        "1 cup water",
+        "½ cup sugar",
+        "1 cinnamon stick",
+        "½ teaspoon salt",
+        "1 teaspoon vanilla",
+        "Ground cinnamon for sprinkling"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, mezcle la harina de maíz con el agua fría hasta que no haya grumos.",
+        "Añada la leche de coco, el azúcar, la sal y la canela en raja.",
+        "Cocine a fuego medio, revolviendo constantemente por 20 minutos hasta que espese.",
+        "Retire la canela en raja. Añada la vainilla.",
+        "Vierta en platos hondos o moldes. Espolvoree con canela. Sirva tibio o frío."
+      ],
+      en: [
+        "In a pot, mix cornmeal with cold water until no lumps remain.",
+        "Add coconut milk, sugar, salt, and cinnamon stick.",
+        "Cook over medium heat, stirring constantly for 20 minutes until thick.",
+        "Remove cinnamon stick. Add vanilla.",
+        "Pour into bowls or molds. Sprinkle with cinnamon. Serve warm or cold."
+      ]
+    }
+  },
+  {
+    id: "avena-criolla",
+    category: "cereales",
+    name: { es: "Avena Criolla", en: "Puerto Rican Oatmeal" },
+    time: "20 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 taza de avena",
+        "3 tazas de leche",
+        "½ taza de azúcar",
+        "1 raja de canela",
+        "½ cucharadita de vainilla",
+        "Pizca de sal",
+        "Canela en polvo para servir"
+      ],
+      en: [
+        "1 cup oats",
+        "3 cups milk",
+        "½ cup sugar",
+        "1 cinnamon stick",
+        "½ teaspoon vanilla",
+        "Pinch of salt",
+        "Ground cinnamon for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, combine la leche, la avena, el azúcar, la sal y la canela en raja.",
+        "Cocine a fuego medio, revolviendo frecuentemente por 12-15 minutos.",
+        "Cuando espese a su gusto, retire la canela y añada la vainilla.",
+        "Sirva caliente o fría espolvoreada con canela en polvo."
+      ],
+      en: [
+        "In a pot, combine milk, oats, sugar, salt, and cinnamon stick.",
+        "Cook over medium heat, stirring frequently for 12-15 minutes.",
+        "When thickened to your liking, remove cinnamon and add vanilla.",
+        "Serve hot or cold sprinkled with ground cinnamon."
+      ]
+    }
+  },
+  {
+    id: "harina-maiz-leche",
+    category: "cereales",
+    name: { es: "Harina de Maíz con Leche", en: "Cornmeal with Milk" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 taza de harina de maíz fina",
+        "2 tazas de leche",
+        "2 tazas de agua",
+        "¼ taza de azúcar",
+        "½ cucharadita de sal",
+        "1 cucharada de mantequilla",
+        "Canela al gusto"
+      ],
+      en: [
+        "1 cup fine cornmeal",
+        "2 cups milk",
+        "2 cups water",
+        "¼ cup sugar",
+        "½ teaspoon salt",
+        "1 tablespoon butter",
+        "Cinnamon to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la harina de maíz en el agua fría.",
+        "En una olla, caliente la leche con el azúcar y la sal.",
+        "Vierta la harina disuelta en la leche caliente, revolviendo constantemente.",
+        "Cocine a fuego medio por 15 minutos, revolviendo para evitar grumos.",
+        "Añada la mantequilla. Sirva en platos espolvoreada con canela."
+      ],
+      en: [
+        "Dissolve cornmeal in cold water.",
+        "In a pot, heat milk with sugar and salt.",
+        "Pour dissolved cornmeal into hot milk, stirring constantly.",
+        "Cook over medium heat for 15 minutes, stirring to prevent lumps.",
+        "Add butter. Serve in bowls sprinkled with cinnamon."
+      ]
+    }
+  },
+
+  // ── GRANOS Y LEGUMBRES ──
+  {
+    id: "garbanzos-guisados",
+    category: "granos",
+    name: { es: "Garbanzos Guisados", en: "Stewed Chickpeas" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 latas de garbanzos (15 oz cada una)",
+        "½ lb de calabaza, cortada en cubos",
+        "½ lb de jamón de cocinar, cortado en cubos",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "1 chorizo español, cortado en ruedas",
+        "2 cucharadas de aceite de oliva",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 cans chickpeas (15 oz each)",
+        "½ lb calabaza (pumpkin), cubed",
+        "½ lb cooking ham, cubed",
+        "3 tablespoons sofrito",
+        "2 packets sazón with annatto",
+        "¼ cup tomato sauce",
+        "1 Spanish chorizo, sliced into rounds",
+        "2 tablespoons olive oil",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, caliente el aceite y sofría el sofrito con el sazón y la salsa de tomate.",
+        "Añada el jamón y el chorizo. Sofría 3 minutos.",
+        "Agregue los garbanzos con su líquido y la calabaza.",
+        "Cocine a fuego medio por 25 minutos hasta que la calabaza esté tierna y espese la salsa.",
+        "Ajuste la sal. Sirva sobre arroz blanco."
+      ],
+      en: [
+        "In a pot, heat oil and sauté sofrito with sazón and tomato sauce.",
+        "Add ham and chorizo. Sauté 3 minutes.",
+        "Add chickpeas with their liquid and calabaza.",
+        "Cook on medium heat for 25 minutes until calabaza is tender and sauce thickens.",
+        "Adjust salt. Serve over white rice."
+      ]
+    }
+  },
+  {
+    id: "habichuelas-blancas",
+    category: "granos",
+    name: { es: "Habichuelas Blancas Guisadas", en: "Stewed White Beans" },
+    time: "50 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 latas de habichuelas blancas",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón",
+        "¼ taza de salsa de tomate",
+        "2 papas medianas, cortadas en cubos",
+        "½ taza de aceitunas rellenas",
+        "¼ lb de tocino, cortado en pedazos",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 cans white beans",
+        "3 tablespoons sofrito",
+        "1 packet sazón",
+        "¼ cup tomato sauce",
+        "2 medium potatoes, cubed",
+        "½ cup stuffed olives",
+        "¼ lb bacon, cut into pieces",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Fría el tocino hasta que esté crujiente. En la misma grasa, sofría el sofrito con sazón y salsa de tomate.",
+        "Añada las habichuelas con su líquido, las papas y las aceitunas.",
+        "Cocine a fuego medio por 25 minutos hasta que las papas estén tiernas.",
+        "Agregue el tocino crujiente. Ajuste la sal. Sirva sobre arroz blanco."
+      ],
+      en: [
+        "Fry bacon until crispy. In the same fat, sauté sofrito with sazón and tomato sauce.",
+        "Add beans with their liquid, potatoes, and olives.",
+        "Cook on medium heat for 25 minutes until potatoes are tender.",
+        "Add crispy bacon. Adjust salt. Serve over white rice."
+      ]
+    }
+  },
+  {
+    id: "gandules-guisados",
+    category: "granos",
+    name: { es: "Gandules Guisados", en: "Stewed Pigeon Peas" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 latas de gandules verdes",
+        "3 cucharadas de sofrito",
+        "2 sobres de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "½ taza de calabaza, cortada en cubos",
+        "2 cucharadas de aceite de oliva",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 cans green pigeon peas",
+        "3 tablespoons sofrito",
+        "2 packets sazón with annatto",
+        "¼ cup tomato sauce",
+        "½ cup calabaza, cubed",
+        "2 tablespoons olive oil",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, caliente el aceite y sofría el sofrito con el sazón y la salsa de tomate por 3 minutos.",
+        "Añada los gandules con su líquido y la calabaza.",
+        "Cocine a fuego medio por 20 minutos hasta que la calabaza se ablande y espese la salsa.",
+        "Ajuste la sal. Sirva como acompañante con arroz blanco."
+      ],
+      en: [
+        "In a pot, heat oil and sauté sofrito with sazón and tomato sauce for 3 minutes.",
+        "Add pigeon peas with their liquid and calabaza.",
+        "Cook on medium heat for 20 minutes until calabaza softens and sauce thickens.",
+        "Adjust salt. Serve as a side with white rice."
+      ]
+    }
+  },
+
+  // ── HUEVOS Y QUESO ──
+  {
+    id: "tortilla-espanola",
+    category: "huevos",
+    name: { es: "Tortilla Española", en: "Spanish Omelette" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "6 huevos",
+        "3 papas medianas, peladas y cortadas en rodajas finas",
+        "1 cebolla mediana, picada finamente",
+        "½ taza de aceite de oliva",
+        "Sal al gusto"
+      ],
+      en: [
+        "6 eggs",
+        "3 medium potatoes, peeled and thinly sliced",
+        "1 medium onion, finely diced",
+        "½ cup olive oil",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el aceite en un sartén. Fría las papas y la cebolla a fuego medio-bajo por 15 minutos hasta que estén tiernas. No deben dorarse.",
+        "Escurra las papas reservando el aceite. Bata los huevos con sal y añada las papas.",
+        "En el mismo sartén con un poco del aceite reservado, vierta la mezcla de huevos y papas.",
+        "Cocine a fuego bajo por 5 minutos hasta que cuaje por debajo.",
+        "Con un plato grande, voltee la tortilla y cocine por el otro lado 3-4 minutos más.",
+        "Sirva a temperatura ambiente cortada en triángulos."
+      ],
+      en: [
+        "Heat oil in a skillet. Fry potatoes and onion over medium-low heat for 15 minutes until tender. They should not brown.",
+        "Drain potatoes, reserving the oil. Beat eggs with salt and add potatoes.",
+        "In the same skillet with some reserved oil, pour the egg and potato mixture.",
+        "Cook on low heat for 5 minutes until set on the bottom.",
+        "Using a large plate, flip the tortilla and cook the other side 3-4 more minutes.",
+        "Serve at room temperature cut into triangles."
+      ]
+    }
+  },
+  {
+    id: "revoltillo-bacalao",
+    category: "huevos",
+    name: { es: "Revoltillo de Bacalao", en: "Scrambled Eggs with Codfish" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "6 huevos",
+        "½ lb de bacalao seco, desalado y desmenuzado",
+        "1 cebolla mediana, picada",
+        "1 tomate maduro, picado",
+        "2 cucharadas de aceite de oliva",
+        "Pimienta al gusto"
+      ],
+      en: [
+        "6 eggs",
+        "½ lb dried codfish, desalted and shredded",
+        "1 medium onion, diced",
+        "1 ripe tomato, diced",
+        "2 tablespoons olive oil",
+        "Pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Desale el bacalao cambiando el agua varias veces. Hierva 15 minutos y desmenuce.",
+        "En un sartén, caliente el aceite y sofría la cebolla y el tomate por 3 minutos.",
+        "Añada el bacalao desmenuzado. Sofría 2 minutos.",
+        "Bata los huevos y viértalos en el sartén. Revuelva a fuego bajo hasta que cuajen.",
+        "Sirva con pan sobao o tostadas y aguacate."
+      ],
+      en: [
+        "Desalt codfish by changing water several times. Boil 15 minutes and shred.",
+        "In a skillet, heat oil and sauté onion and tomato for 3 minutes.",
+        "Add shredded codfish. Sauté 2 minutes.",
+        "Beat eggs and pour into skillet. Scramble on low heat until set.",
+        "Serve with pan sobao or toast and avocado."
+      ]
+    }
+  },
+  {
+    id: "huevos-rellenos",
+    category: "huevos",
+    name: { es: "Huevos Rellenos", en: "Deviled Eggs" },
+    time: "25 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "6 huevos duros",
+        "3 cucharadas de mayonesa",
+        "1 cucharadita de mostaza",
+        "1 cucharada de aceitunas rellenas, picadas finamente",
+        "1 cucharadita de vinagre",
+        "Sal y pimienta al gusto",
+        "Pimentón para decorar"
+      ],
+      en: [
+        "6 hard-boiled eggs",
+        "3 tablespoons mayonnaise",
+        "1 teaspoon mustard",
+        "1 tablespoon stuffed olives, finely chopped",
+        "1 teaspoon vinegar",
+        "Salt and pepper to taste",
+        "Paprika for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte los huevos a la mitad a lo largo. Retire las yemas con cuidado.",
+        "Maje las yemas con la mayonesa, mostaza, vinagre, aceitunas, sal y pimienta.",
+        "Con una cuchara o manga pastelera, rellene las claras con la mezcla de yema.",
+        "Espolvoree con pimentón. Refrigere antes de servir."
+      ],
+      en: [
+        "Cut eggs in half lengthwise. Carefully remove the yolks.",
+        "Mash yolks with mayonnaise, mustard, vinegar, olives, salt, and pepper.",
+        "Using a spoon or piping bag, fill the whites with the yolk mixture.",
+        "Sprinkle with paprika. Refrigerate before serving."
+      ]
+    }
+  },
+  {
+    id: "queso-frito",
+    category: "huevos",
+    name: { es: "Queso del País Frito", en: "Fried Local White Cheese" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 lb de queso del país (queso blanco fresco), cortado en lonjas de ½ pulgada",
+        "2 cucharadas de aceite de oliva",
+        "Pasta de guayaba para acompañar"
+      ],
+      en: [
+        "1 lb local white cheese (queso fresco), cut into ½-inch slices",
+        "2 tablespoons olive oil",
+        "Guava paste for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el aceite en un sartén a fuego medio.",
+        "Coloque las lonjas de queso y fría por 2 minutos por cada lado hasta que estén doradas.",
+        "Sirva inmediatamente con lonjas de pasta de guayaba al lado."
+      ],
+      en: [
+        "Heat oil in a skillet over medium heat.",
+        "Place cheese slices and fry 2 minutes per side until golden.",
+        "Serve immediately with slices of guava paste on the side."
+      ]
+    }
+  },
+
+  // ── BIZCOCHOS ──
+  {
+    id: "bizcocho-vainilla",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Vainilla", en: "Vanilla Cake" },
+    time: "1 hr",
+    servings: 12,
+    ingredients: {
+      es: [
+        "3 tazas de harina de trigo, cernida",
+        "2 tazas de azúcar",
+        "1 taza de mantequilla, suavizada",
+        "4 huevos",
+        "1 taza de leche",
+        "2 cucharaditas de polvo de hornear",
+        "2 cucharaditas de vainilla",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "3 cups all-purpose flour, sifted",
+        "2 cups sugar",
+        "1 cup butter, softened",
+        "4 eggs",
+        "1 cup milk",
+        "2 teaspoons baking powder",
+        "2 teaspoons vanilla",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F. Engrase y enharine dos moldes redondos de 9 pulgadas.",
+        "Bata la mantequilla con el azúcar hasta que esté cremosa y esponjosa.",
+        "Añada los huevos uno a uno, batiendo bien después de cada uno. Agregue la vainilla.",
+        "Cierna la harina con el polvo de hornear y la sal. Añada a la mezcla alternando con la leche.",
+        "Vierta en los moldes. Hornee 30-35 minutos hasta que al insertar un palillo salga limpio.",
+        "Deje enfriar. Decore con mantecado o glaseado de su preferencia."
+      ],
+      en: [
+        "Preheat oven to 350°F. Grease and flour two 9-inch round pans.",
+        "Beat butter with sugar until creamy and fluffy.",
+        "Add eggs one at a time, beating well after each. Add vanilla.",
+        "Sift flour with baking powder and salt. Add to mixture alternating with milk.",
+        "Pour into pans. Bake 30-35 minutes until a toothpick comes out clean.",
+        "Let cool. Decorate with frosting of your choice."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-chocolate",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Chocolate", en: "Chocolate Cake" },
+    time: "1 hr",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 tazas de harina de trigo",
+        "2 tazas de azúcar",
+        "¾ taza de cacao en polvo",
+        "2 cucharaditas de polvo de hornear",
+        "1 cucharadita de bicarbonato",
+        "1 taza de leche",
+        "½ taza de aceite vegetal",
+        "2 huevos",
+        "1 taza de café fuerte caliente",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "2 cups all-purpose flour",
+        "2 cups sugar",
+        "¾ cup cocoa powder",
+        "2 teaspoons baking powder",
+        "1 teaspoon baking soda",
+        "1 cup milk",
+        "½ cup vegetable oil",
+        "2 eggs",
+        "1 cup hot strong coffee",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F. Engrase dos moldes de 9 pulgadas.",
+        "En un tazón, mezcle todos los ingredientes secos: harina, azúcar, cacao, polvo de hornear, bicarbonato.",
+        "Añada la leche, el aceite, los huevos y la vainilla. Bata 2 minutos.",
+        "Agregue el café caliente. La masa quedará líquida — es normal.",
+        "Vierta en los moldes. Hornee 30-35 minutos.",
+        "Deje enfriar y cubra con un glaseado de chocolate."
+      ],
+      en: [
+        "Preheat oven to 350°F. Grease two 9-inch pans.",
+        "In a bowl, mix all dry ingredients: flour, sugar, cocoa, baking powder, baking soda.",
+        "Add milk, oil, eggs, and vanilla. Beat 2 minutes.",
+        "Add hot coffee. The batter will be thin — that's normal.",
+        "Pour into pans. Bake 30-35 minutes.",
+        "Let cool and cover with chocolate frosting."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-naranja",
+    category: "bizcochos",
+    name: { es: "Bizcocho de China (Naranja)", en: "Orange Cake" },
+    time: "1 hr",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2½ tazas de harina de trigo",
+        "1½ tazas de azúcar",
+        "¾ taza de mantequilla, suavizada",
+        "3 huevos",
+        "¾ taza de jugo de china (naranja) fresco",
+        "Ralladura de 2 chinas",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "Glaseado: 1 taza de azúcar en polvo + jugo de china"
+      ],
+      en: [
+        "2½ cups all-purpose flour",
+        "1½ cups sugar",
+        "¾ cup butter, softened",
+        "3 eggs",
+        "¾ cup fresh orange juice",
+        "Zest of 2 oranges",
+        "2 teaspoons baking powder",
+        "½ teaspoon salt",
+        "Glaze: 1 cup powdered sugar + orange juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F. Engrase un molde Bundt o de tubo.",
+        "Bata la mantequilla con el azúcar hasta que esté cremosa. Añada los huevos uno a uno.",
+        "Agregue la ralladura de naranja.",
+        "Mezcle la harina con el polvo de hornear y la sal. Añada alternando con el jugo de naranja.",
+        "Vierta en el molde. Hornee 40-45 minutos.",
+        "Para el glaseado: mezcle el azúcar en polvo con suficiente jugo de naranja para obtener una consistencia que fluya. Vierta sobre el bizcocho frío."
+      ],
+      en: [
+        "Preheat oven to 350°F. Grease a Bundt or tube pan.",
+        "Beat butter with sugar until creamy. Add eggs one at a time.",
+        "Add orange zest.",
+        "Mix flour with baking powder and salt. Add alternating with orange juice.",
+        "Pour into pan. Bake 40-45 minutes.",
+        "For glaze: mix powdered sugar with enough orange juice to get a flowing consistency. Pour over cooled cake."
+      ]
+    }
+  },
+
+  // ── GALLETITAS ──
+  {
+    id: "polvorones",
+    category: "galletitas",
+    name: { es: "Polvorones", en: "Puerto Rican Shortbread Cookies" },
+    time: "30 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "2 tazas de harina de trigo",
+        "1 taza de manteca vegetal o mantequilla",
+        "½ taza de azúcar en polvo",
+        "1 cucharadita de vainilla",
+        "¼ cucharadita de sal",
+        "Azúcar en polvo extra para rebozar"
+      ],
+      en: [
+        "2 cups all-purpose flour",
+        "1 cup vegetable shortening or butter",
+        "½ cup powdered sugar",
+        "1 teaspoon vanilla",
+        "¼ teaspoon salt",
+        "Extra powdered sugar for coating"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 325°F.",
+        "Bata la manteca con el azúcar en polvo y la vainilla hasta que esté esponjosa.",
+        "Añada la harina y la sal. Mezcle hasta formar una masa suave.",
+        "Forme bolitas de 1 pulgada y colóquelas en una bandeja sin engrasar.",
+        "Hornee por 15-18 minutos. No deben dorarse mucho.",
+        "Mientras estén tibias, rebócelas en azúcar en polvo. Repita cuando se enfríen."
+      ],
+      en: [
+        "Preheat oven to 325°F.",
+        "Beat shortening with powdered sugar and vanilla until fluffy.",
+        "Add flour and salt. Mix until a soft dough forms.",
+        "Form 1-inch balls and place on an ungreased sheet.",
+        "Bake for 15-18 minutes. They should not brown too much.",
+        "While still warm, coat in powdered sugar. Repeat when cooled."
+      ]
+    }
+  },
+  {
+    id: "mantecaditos",
+    category: "galletitas",
+    name: { es: "Mantecaditos", en: "Lard Cookies (Mantecaditos)" },
+    time: "30 min",
+    servings: 30,
+    ingredients: {
+      es: [
+        "3 tazas de harina de trigo",
+        "1 taza de manteca vegetal",
+        "½ taza de azúcar",
+        "1 cucharadita de vainilla o extracto de almendra",
+        "½ cucharadita de polvo de hornear",
+        "Pizca de sal",
+        "Cerezas marraschino para decorar"
+      ],
+      en: [
+        "3 cups all-purpose flour",
+        "1 cup vegetable shortening",
+        "½ cup sugar",
+        "1 teaspoon vanilla or almond extract",
+        "½ teaspoon baking powder",
+        "Pinch of salt",
+        "Maraschino cherries for topping"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F.",
+        "Bata la manteca con el azúcar hasta que esté cremosa. Añada la vainilla.",
+        "Mezcle la harina con el polvo de hornear y la sal. Incorpore a la mezcla de manteca.",
+        "Forme bolitas y colóquelas en una bandeja. Presione una cereza en el centro de cada una.",
+        "Hornee 15-18 minutos hasta que estén firmes pero sin dorar mucho.",
+        "Deje enfriar en la bandeja."
+      ],
+      en: [
+        "Preheat oven to 350°F.",
+        "Beat shortening with sugar until creamy. Add vanilla.",
+        "Mix flour with baking powder and salt. Incorporate into shortening mixture.",
+        "Form balls and place on a sheet. Press a cherry into the center of each.",
+        "Bake 15-18 minutes until firm but not too brown.",
+        "Let cool on the sheet."
+      ]
+    }
+  },
+  {
+    id: "cucas",
+    category: "galletitas",
+    name: { es: "Cucas (Galletas de Jengibre)", en: "Cucas (Ginger Cookies)" },
+    time: "30 min",
+    servings: 20,
+    ingredients: {
+      es: [
+        "2 tazas de harina de trigo",
+        "½ taza de mantequilla, suavizada",
+        "¾ taza de azúcar morena",
+        "1 huevo",
+        "¼ taza de melao (melaza)",
+        "1 cucharadita de jengibre en polvo",
+        "1 cucharadita de canela",
+        "½ cucharadita de bicarbonato",
+        "¼ cucharadita de clavo en polvo",
+        "Pizca de sal"
+      ],
+      en: [
+        "2 cups all-purpose flour",
+        "½ cup butter, softened",
+        "¾ cup brown sugar",
+        "1 egg",
+        "¼ cup molasses",
+        "1 teaspoon ground ginger",
+        "1 teaspoon cinnamon",
+        "½ teaspoon baking soda",
+        "¼ teaspoon ground cloves",
+        "Pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F.",
+        "Bata la mantequilla con el azúcar morena. Añada el huevo y el melao.",
+        "Mezcle los ingredientes secos y añádalos a la masa. Mezcle bien.",
+        "Forme bolitas y colóquelas en una bandeja engrasada, aplastándolas ligeramente.",
+        "Hornee 10-12 minutos hasta que estén firmes.",
+        "Deje enfriar. Son crujientes por fuera y suaves por dentro."
+      ],
+      en: [
+        "Preheat oven to 350°F.",
+        "Beat butter with brown sugar. Add egg and molasses.",
+        "Mix dry ingredients and add to the dough. Mix well.",
+        "Form balls and place on a greased sheet, flattening slightly.",
+        "Bake 10-12 minutes until firm.",
+        "Let cool. They're crispy outside and soft inside."
+      ]
+    }
+  },
+
+  // ── PASTELES DULCES ──
+  {
+    id: "pastel-guayaba",
+    category: "pasteles_dulces",
+    name: { es: "Pastel de Guayaba y Queso", en: "Guava & Cheese Pie" },
+    time: "50 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 masas de hojaldre (puff pastry) descongeladas",
+        "1 barra de pasta de guayaba (14 oz), cortada en lonjas finas",
+        "8 oz de queso crema, suavizado",
+        "1 huevo batido para barnizar",
+        "Azúcar para espolvorear"
+      ],
+      en: [
+        "2 puff pastry sheets, thawed",
+        "1 bar guava paste (14 oz), thinly sliced",
+        "8 oz cream cheese, softened",
+        "1 beaten egg for egg wash",
+        "Sugar for sprinkling"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 400°F.",
+        "Extienda una masa de hojaldre en un molde de pie engrasado.",
+        "Unte el queso crema sobre la masa. Cubra con lonjas de pasta de guayaba.",
+        "Cubra con la segunda masa de hojaldre. Selle los bordes con un tenedor.",
+        "Barnize con huevo batido y espolvoree con azúcar. Haga cortes para que salga el vapor.",
+        "Hornee 25-30 minutos hasta que esté dorado. Deje enfriar antes de cortar."
+      ],
+      en: [
+        "Preheat oven to 400°F.",
+        "Lay one puff pastry sheet in a greased pie pan.",
+        "Spread cream cheese over the pastry. Cover with guava paste slices.",
+        "Cover with the second puff pastry sheet. Seal edges with a fork.",
+        "Brush with beaten egg and sprinkle with sugar. Cut slits for steam.",
+        "Bake 25-30 minutes until golden. Let cool before slicing."
+      ]
+    }
+  },
+  {
+    id: "flan-calabaza",
+    category: "pasteles_dulces",
+    name: { es: "Flan de Calabaza", en: "Pumpkin Flan" },
+    time: "1 hr 15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de puré de calabaza",
+        "1 lata de leche condensada (14 oz)",
+        "1 lata de leche evaporada (12 oz)",
+        "4 huevos",
+        "1 cucharadita de canela",
+        "½ cucharadita de nuez moscada",
+        "1 cucharadita de vainilla",
+        "1 taza de azúcar para el caramelo"
+      ],
+      en: [
+        "2 cups pumpkin purée",
+        "1 can condensed milk (14 oz)",
+        "1 can evaporated milk (12 oz)",
+        "4 eggs",
+        "1 teaspoon cinnamon",
+        "½ teaspoon nutmeg",
+        "1 teaspoon vanilla",
+        "1 cup sugar for caramel"
+      ]
+    },
+    steps: {
+      es: [
+        "Prepare el caramelo derritiendo el azúcar en un molde redondo. Cubra el fondo.",
+        "Licúe el puré de calabaza, las leches, los huevos, la canela, nuez moscada y vainilla.",
+        "Vierta sobre el caramelo.",
+        "Hornee en baño de María a 350°F por 1 hora o hasta que cuaje.",
+        "Deje enfriar completamente. Refrigere mínimo 4 horas.",
+        "Voltee sobre un plato. La combinación de calabaza y caramelo es exquisita."
+      ],
+      en: [
+        "Make caramel by melting sugar in a round mold. Coat the bottom.",
+        "Blend pumpkin purée, milks, eggs, cinnamon, nutmeg, and vanilla.",
+        "Pour over caramel.",
+        "Bake in a water bath at 350°F for 1 hour or until set.",
+        "Let cool completely. Refrigerate at least 4 hours.",
+        "Flip onto a plate. The pumpkin and caramel combination is exquisite."
+      ]
+    }
+  },
+  {
+    id: "bienmesabe",
+    category: "pasteles_dulces",
+    name: { es: "Bienmesabe de Coco", en: "Coconut Bienmesabe" },
+    time: "45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 bizcocho esponjoso, cortado en capas",
+        "2 latas de leche de coco (13.5 oz)",
+        "1 lata de leche condensada (14 oz)",
+        "6 yemas de huevo",
+        "½ taza de azúcar",
+        "1 cucharadita de vainilla",
+        "1 taza de coco rallado",
+        "Canela en polvo"
+      ],
+      en: [
+        "1 sponge cake, cut into layers",
+        "2 cans coconut milk (13.5 oz)",
+        "1 can condensed milk (14 oz)",
+        "6 egg yolks",
+        "½ cup sugar",
+        "1 teaspoon vanilla",
+        "1 cup grated coconut",
+        "Ground cinnamon"
+      ]
+    },
+    steps: {
+      es: [
+        "Prepare la crema: mezcle las yemas con el azúcar. Añada la leche de coco y la leche condensada.",
+        "Cocine a baño de María, revolviendo constantemente, hasta que espese y cubra el dorso de una cuchara (15 minutos). Añada la vainilla.",
+        "En un molde, coloque una capa de bizcocho. Vierta crema encima. Espolvoree coco rallado.",
+        "Repita las capas hasta terminar con crema y coco.",
+        "Espolvoree canela en polvo. Refrigere por al menos 4 horas.",
+        "Sirva frío. Es uno de los postres más elegantes de la cocina puertorriqueña."
+      ],
+      en: [
+        "Make the cream: mix yolks with sugar. Add coconut milk and condensed milk.",
+        "Cook in a double boiler, stirring constantly, until it thickens and coats the back of a spoon (15 minutes). Add vanilla.",
+        "In a mold, place a layer of cake. Pour cream over it. Sprinkle grated coconut.",
+        "Repeat layers until ending with cream and coconut.",
+        "Sprinkle ground cinnamon. Refrigerate at least 4 hours.",
+        "Serve cold. It's one of the most elegant desserts in Puerto Rican cuisine."
+      ]
+    }
+  },
+
+  // ── EMPAREDADOS ──
+  {
+    id: "sandwich-mezcla",
+    category: "emparedados",
+    name: { es: "Sándwich de Mezcla", en: "Puerto Rican Party Sandwich Spread" },
+    time: "20 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 lata de jamón del diablo (deviled ham)",
+        "1 paquete de queso crema (8 oz), suavizado",
+        "½ taza de aceitunas rellenas, picadas finamente",
+        "2 cucharadas de pimiento morrón, picado",
+        "1 cucharada de mostaza",
+        "Pan de molde blanco sin corteza"
+      ],
+      en: [
+        "1 can deviled ham",
+        "1 package cream cheese (8 oz), softened",
+        "½ cup stuffed olives, finely chopped",
+        "2 tablespoons pimiento, diced",
+        "1 tablespoon mustard",
+        "White sandwich bread, crusts removed"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el jamón del diablo con el queso crema hasta obtener una pasta suave.",
+        "Añada las aceitunas, el pimiento morrón y la mostaza. Combine bien.",
+        "Unte generosamente sobre el pan de molde sin corteza.",
+        "Cubra con otra rebanada de pan. Corte en triángulos o rectángulos.",
+        "Sirva como parte del menú de fiestas y actividades."
+      ],
+      en: [
+        "Mix deviled ham with cream cheese until smooth.",
+        "Add olives, pimiento, and mustard. Combine well.",
+        "Spread generously on crustless bread.",
+        "Top with another bread slice. Cut into triangles or rectangles.",
+        "Serve as part of a party menu."
+      ]
+    }
+  },
+  {
+    id: "medianoche",
+    category: "emparedados",
+    name: { es: "Sándwich de Medianoche", en: "Midnight Sandwich (Medianoche)" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 panes de medianoche (pan dulce tipo egg bread)",
+        "½ lb de pernil asado, cortado fino",
+        "½ lb de jamón cocido, cortado fino",
+        "4 lonjas de queso suizo",
+        "Mostaza amarilla",
+        "Pepinillos en vinagre, cortados en lonjas",
+        "Mantequilla para la plancha"
+      ],
+      en: [
+        "4 medianoche rolls (sweet egg bread)",
+        "½ lb roast pork, thinly sliced",
+        "½ lb cooked ham, thinly sliced",
+        "4 slices Swiss cheese",
+        "Yellow mustard",
+        "Dill pickles, sliced",
+        "Butter for the press"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte los panes a la mitad horizontalmente. Unte mostaza en ambos lados.",
+        "Coloque capas de pernil, jamón, queso y pepinillos.",
+        "Cierre los sándwiches. Unte mantequilla por fuera.",
+        "Cocine en una plancha o sartén pesado, presionando, hasta que el pan esté dorado y el queso derretido.",
+        "Corte a la mitad y sirva caliente."
+      ],
+      en: [
+        "Slice rolls in half horizontally. Spread mustard on both sides.",
+        "Layer roast pork, ham, cheese, and pickles.",
+        "Close sandwiches. Butter the outside.",
+        "Cook on a press or heavy skillet, pressing down, until bread is golden and cheese is melted.",
+        "Cut in half and serve hot."
+      ]
+    }
+  },
+  {
+    id: "cubano",
+    category: "emparedados",
+    name: { es: "Sándwich Cubano", en: "Cuban Sandwich" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 panes de agua (pan cubano) o baguettes",
+        "½ lb de pernil asado, cortado fino",
+        "½ lb de jamón cocido",
+        "4 lonjas de queso suizo",
+        "Mostaza amarilla",
+        "Pepinillos en vinagre",
+        "Mantequilla para la plancha"
+      ],
+      en: [
+        "4 Cuban bread rolls or baguettes",
+        "½ lb roast pork, thinly sliced",
+        "½ lb cooked ham",
+        "4 slices Swiss cheese",
+        "Yellow mustard",
+        "Dill pickles",
+        "Butter for the press"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte el pan a lo largo. Unte mostaza generosamente.",
+        "Coloque capas de pernil, jamón, queso y pepinillos.",
+        "Cierre y unte mantequilla por fuera del pan.",
+        "Cocine en una plancha caliente, presionando firmemente, hasta que esté crujiente y el queso se derrita.",
+        "Sirva caliente cortado a la mitad."
+      ],
+      en: [
+        "Slice bread lengthwise. Spread mustard generously.",
+        "Layer roast pork, ham, cheese, and pickles.",
+        "Close and butter the outside of the bread.",
+        "Cook on a hot press, pressing firmly, until crispy and cheese melts.",
+        "Serve hot cut in half."
+      ]
+    }
+  }
+];

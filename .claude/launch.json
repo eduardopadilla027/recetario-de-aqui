@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cocine-a-gusto",
+      "runtimeExecutable": "C:\\Program Files\\nodejs\\npx.cmd",
+      "runtimeArgs": ["serve", "-l", "3000", "C:\\Users\\EDUARDOP\\Desktop\\cocine-a-gusto"],
+      "port": 3000
+    }
+  ]
+}
