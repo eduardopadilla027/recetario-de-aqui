@@ -26,6 +26,11 @@ body {
   background-color: var(--sand-beige);
   color: var(--dark-wood);
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 /* ── Header ── */
@@ -354,6 +359,7 @@ main {
   align-items: flex-start;
   padding: 2rem 1rem;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-overlay.open {
@@ -368,6 +374,10 @@ main {
   padding: 2rem;
   position: relative;
   animation: modalIn 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  min-width: 0;
 }
 
 @keyframes modalIn {
@@ -537,18 +547,39 @@ footer .footer-decorative {
 
 /* ── Responsive ── */
 @media (max-width: 600px) {
+  header {
+    padding: 1.5rem 1rem 1.2rem;
+  }
+
   header h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   header .subtitle {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  header .author {
+    font-size: 0.75rem;
+    margin-bottom: 0;
   }
 
   .lang-toggle {
     position: static;
     justify-content: center;
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .banner-flag svg {
+    width: 80px;
+    height: 53px;
+  }
+
+  /* Hide decorative chef and coquí on small screens to avoid overlap */
+  .banner-coqui,
+  .banner-chef-right {
+    display: none;
   }
 
   .nav-pills {
@@ -556,15 +587,80 @@ footer .footer-decorative {
     flex-wrap: nowrap;
   }
 
+  .nav-pill {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .category-header {
+    padding: 0.9rem 1rem;
+  }
+
   .category-header .cat-title {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+  }
+
+  .category-header .cat-icon {
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+  }
+
+  .category-header .cat-count {
+    font-size: 0.7rem;
+    margin-right: 0.5rem;
+  }
+
+  .category-recipes {
+    padding: 0.5rem 1rem 1rem;
+  }
+
+  .recipe-card {
+    padding: 1rem 1.2rem;
+  }
+
+  .recipe-card .recipe-name {
+    font-size: 1rem;
   }
 
   .modal-content {
-    padding: 1.5rem;
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .modal-overlay {
+    padding: 1rem 0.5rem;
   }
 
   .modal-title {
+    font-size: 1.3rem;
+  }
+
+  .modal-steps li {
+    padding-left: 2.2rem;
+  }
+
+  .search-container {
+    padding: 0.8rem 0.8rem 0;
+  }
+
+  .search-box {
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+  }
+}
+
+/* ── Extra small screens (iPhone SE, etc.) ── */
+@media (max-width: 380px) {
+  header h1 {
     font-size: 1.4rem;
+  }
+
+  .nav-pill {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .category-header .cat-title {
+    font-size: 0.95rem;
   }
 }
