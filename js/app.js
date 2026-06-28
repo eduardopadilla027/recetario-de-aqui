@@ -1,6 +1,6 @@
 const translations = {
   es: {
-    siteTitle: "Recetas de Aquí",
+    siteTitle: "Recetarios de Aquí",
     subtitle: "Recetario de Cocina Puertorriqueña",
     author: "Inspirado en la obra de Berta Cabanillas — Edición 1983",
     searchPlaceholder: "Buscar recetas...",
@@ -35,7 +35,7 @@ const translations = {
     }
   },
   en: {
-    siteTitle: "Recetas de Aquí",
+    siteTitle: "Recetarios de Aquí",
     subtitle: "Puerto Rican Cookbook",
     author: "Inspired by the work of Berta Cabanillas — 1983 Edition",
     searchPlaceholder: "Search recipes...",
