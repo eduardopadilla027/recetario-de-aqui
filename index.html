@@ -3,137 +3,228 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recetarios de Aquí — Recetario Puertorriqueño</title>
-  <meta name="description" content="Recetario digital inspirado en Recetarios de Aquí de Berta Cabanillas. Recetas tradicionales puertorriqueñas.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌴</text></svg>">
+  <title>Recetarios Cocina Boricua — Recetario Puertorriqueño</title>
+  <meta name="description" content="Recetario digital de cocina tradicional puertorriqueña. Busca por nombre o ingrediente, filtra por categoría y ajusta las porciones.">
+  <meta name="theme-color" content="#FBF6EE">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -150 900 900'><rect width='900' height='600' fill='%23ED0000'/><rect y='120' width='900' height='120' fill='%23fff'/><rect y='360' width='900' height='120' fill='%23fff'/><polygon points='0,0 519.6,300 0,600' fill='%230050F0'/><polygon points='173.2,200 195.7,269.1 268.3,269.1 209.5,311.8 232,380.9 173.2,338.2 114.4,380.9 136.9,311.8 78.1,269.1 150.7,269.1' fill='%23fff'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main" data-i18n="skip">Saltar al contenido</a>
 
-  <!-- Header -->
-  <header>
-    <div class="lang-toggle">
-      <button class="lang-btn active" id="btn-es">ES</button>
-      <button class="lang-btn" id="btn-en">EN</button>
-    </div>
-    <!-- Bandera de Puerto Rico SVG -->
-    <div class="banner-flag" aria-label="Bandera de Puerto Rico">
-      <svg viewBox="0 0 900 600" width="120" height="80" class="pr-flag-svg">
-        <!-- 5 franjas: roja, blanca, roja, blanca, roja -->
-        <rect width="900" height="120" y="0" fill="#ED0000"/>
-        <rect width="900" height="120" y="120" fill="#FFFFFF"/>
-        <rect width="900" height="120" y="240" fill="#ED0000"/>
-        <rect width="900" height="120" y="360" fill="#FFFFFF"/>
-        <rect width="900" height="120" y="480" fill="#ED0000"/>
-        <!-- Triángulo azul -->
-        <polygon points="0,0 470,300 0,600" fill="#0050F0"/>
-        <!-- Estrella blanca -->
-        <polygon points="200,300 230,218 156,262 244,262 170,218" fill="#FFFFFF"/>
-      </svg>
-    </div>
-    <h1>🌴 Recetarios de Aquí 🌺</h1>
-    <p class="subtitle" id="site-subtitle">Recetario de Cocina Puertorriqueña</p>
-    <p class="author" id="site-author">Inspirado en la obra de Berta Cabanillas — Edición 1983</p>
-    <!-- Coquí decorativo -->
-    <div class="banner-coqui" aria-label="Coquí">
-      <svg viewBox="0 0 100 100" width="60" height="60">
-        <text x="50" y="65" text-anchor="middle" font-size="55">🐸</text>
-      </svg>
-      <span class="coqui-label">Coquí!</span>
-    </div>
-    <!-- Chef decorativo al lado derecho -->
-    <div class="banner-chef-right" aria-label="Chef">
-      <svg viewBox="0 0 100 100" width="70" height="70" class="chef-svg">
-        <!-- Gorro de chef -->
-        <ellipse cx="50" cy="22" rx="28" ry="18" fill="#FFFFFF"/>
-        <ellipse cx="35" cy="18" rx="12" ry="14" fill="#FFFFFF"/>
-        <ellipse cx="65" cy="18" rx="12" ry="14" fill="#FFFFFF"/>
-        <ellipse cx="50" cy="14" rx="14" ry="12" fill="#FFFFFF"/>
-        <rect x="30" y="22" width="40" height="12" fill="#FFFFFF"/>
-        <!-- Banda del gorro -->
-        <rect x="30" y="32" width="40" height="3" fill="#E0D5C0" rx="1"/>
-        <!-- Cara -->
-        <ellipse cx="50" cy="48" rx="18" ry="16" fill="#F5C49C"/>
-        <!-- Ojos -->
-        <ellipse cx="43" cy="45" rx="2.5" ry="3" fill="#3E2723"/>
-        <ellipse cx="57" cy="45" rx="2.5" ry="3" fill="#3E2723"/>
-        <!-- Brillos en los ojos -->
-        <circle cx="44" cy="44" r="0.8" fill="#FFFFFF"/>
-        <circle cx="58" cy="44" r="0.8" fill="#FFFFFF"/>
-        <!-- Cejas -->
-        <path d="M39 41 Q43 38 47 41" stroke="#5D4037" stroke-width="1.2" fill="none"/>
-        <path d="M53 41 Q57 38 61 41" stroke="#5D4037" stroke-width="1.2" fill="none"/>
-        <!-- Nariz -->
-        <ellipse cx="50" cy="49" rx="2" ry="1.5" fill="#E8A97E"/>
-        <!-- Sonrisa -->
-        <path d="M43 54 Q50 60 57 54" stroke="#C0392B" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-        <!-- Bigote -->
-        <path d="M42 52 Q46 50 50 52 Q54 50 58 52" stroke="#5D4037" stroke-width="1.5" fill="none"/>
-        <!-- Cuello -->
-        <rect x="44" y="62" width="12" height="6" fill="#F5C49C"/>
-        <!-- Pañuelo del cuello -->
-        <polygon points="38,68 50,78 62,68" fill="#E84D4D"/>
-        <polygon points="44,68 50,74 56,68" fill="#C0392B"/>
-        <!-- Cuerpo / chaqueta de chef -->
-        <rect x="32" y="68" width="36" height="30" rx="4" fill="#FFFFFF"/>
-        <!-- Botones de la chaqueta -->
-        <circle cx="50" cy="76" r="1.8" fill="#333"/>
-        <circle cx="50" cy="83" r="1.8" fill="#333"/>
-        <circle cx="50" cy="90" r="1.8" fill="#333"/>
-        <!-- Línea central de la chaqueta -->
-        <line x1="50" y1="68" x2="50" y2="98" stroke="#E0D5C0" stroke-width="0.5"/>
-        <!-- Brazos -->
-        <rect x="20" y="72" width="14" height="8" rx="4" fill="#FFFFFF"/>
-        <rect x="66" y="72" width="14" height="8" rx="4" fill="#FFFFFF"/>
-        <!-- Manos -->
-        <circle cx="18" cy="76" r="4" fill="#F5C49C"/>
-        <circle cx="82" cy="76" r="4" fill="#F5C49C"/>
-        <!-- Cuchara en mano derecha -->
-        <line x1="82" y1="72" x2="88" y2="58" stroke="#999" stroke-width="2" stroke-linecap="round"/>
-        <ellipse cx="89" cy="55" rx="4" ry="6" fill="#BBB" transform="rotate(-15 89 55)"/>
-      </svg>
-      <span class="chef-label">¡Buen Provecho!</span>
+  <!-- Iconos SVG reutilizables (trazo, caja 24×24). Sin emojis en la interfaz. -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <!-- Bandera de Puerto Rico (3:2): 5 franjas, triángulo equilátero y estrella en su centro -->
+    <symbol id="flag-pr" viewBox="0 0 900 600">
+      <rect width="900" height="600" fill="#ED0000"/>
+      <rect y="120" width="900" height="120" fill="#FFFFFF"/>
+      <rect y="360" width="900" height="120" fill="#FFFFFF"/>
+      <polygon points="0,0 519.6,300 0,600" fill="#0050F0"/>
+      <polygon points="173.2,200 195.7,269.1 268.3,269.1 209.5,311.8 232,380.9 173.2,338.2 114.4,380.9 136.9,311.8 78.1,269.1 150.7,269.1" fill="#FFFFFF"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14.5A6.5 6.5 0 0 1 21.5 20"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.4-7.5-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 7.5 2.4C19.5 15.6 12 20 12 20z"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6L13 3z"/></symbol>
+  </svg>
+
+  <!-- Encabezado -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#/" id="brand-link">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 900 600"><use href="#flag-pr"/></svg></span>
+        <span class="brand-text">
+          <span class="brand-name">Recetarios</span>
+          <span class="brand-sub">Cocina Boricua</span>
+        </span>
+      </a>
+
+      <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav" data-i18n-label="menu">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" data-i18n-label="mainNav">
+        <a href="#categorias" class="nav-link" data-i18n="navCategories">Categorías</a>
+        <button type="button" class="nav-link nav-fav" id="nav-favorites">
+          <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span data-i18n="navFavorites">Favoritas</span>
+          <span class="nav-badge" id="fav-count" hidden></span>
+        </button>
+        <div class="lang-toggle" role="group" data-i18n-label="language">
+          <button type="button" class="lang-btn" id="btn-es" lang="es" aria-pressed="true">ES</button>
+          <button type="button" class="lang-btn" id="btn-en" lang="en" aria-pressed="false">EN</button>
+        </div>
+      </nav>
     </div>
   </header>
-  <div class="decorative-border"></div>
 
-  <!-- Category Navigation -->
-  <nav class="category-nav">
-    <div class="nav-pills" id="nav-pills"></div>
-  </nav>
+  <main id="main" tabindex="-1">
 
-  <!-- Search -->
-  <div class="search-container">
-    <input type="text" class="search-box" id="search-input" placeholder="Buscar recetas...">
-  </div>
+    <!-- ===================== INICIO ===================== -->
+    <div id="view-home">
 
-  <!-- Recipe Categories -->
-  <main id="categories-container"></main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow" id="site-subtitle">Recetario de Cocina Puertorriqueña</p>
+            <h1 class="hero-title" id="hero-title">El Sabor de la Cocina <span class="hero-accent">Puertorriqueña</span></h1>
+            <p class="hero-lead" id="site-author">Versión 1.0</p>
 
-  <!-- Recipe Modal -->
-  <div class="modal-overlay" id="modal-overlay">
-    <div class="modal-content">
-      <button class="modal-close" id="modal-close">&times;</button>
-      <span class="modal-category-badge" id="modal-badge"></span>
-      <h2 class="modal-title" id="modal-title"></h2>
-      <div class="modal-meta">
-        <span id="modal-time"></span>
-        <span id="modal-servings"></span>
-      </div>
-      <h3 class="modal-section-title" id="modal-ingredients-title"></h3>
-      <ul class="modal-ingredients" id="modal-ingredients-list"></ul>
-      <h3 class="modal-section-title" id="modal-steps-title"></h3>
-      <ol class="modal-steps" id="modal-steps-list"></ol>
+            <form class="search" id="search-form" role="search">
+              <label class="sr-only" for="search-input" data-i18n="searchLabel">Buscar recetas por nombre o ingrediente</label>
+              <svg class="icon search-icon" aria-hidden="true"><use href="#i-search"/></svg>
+              <input type="search" class="search-input" id="search-input" autocomplete="off" enterkeyhint="search" placeholder="Buscar recetas...">
+              <button type="button" class="search-clear" id="search-clear" hidden data-i18n-label="clearSearch">
+                <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
+              </button>
+              <button type="submit" class="btn btn-primary search-submit" data-i18n="searchBtn">Buscar</button>
+            </form>
+
+            <p class="hero-stats" id="hero-stats"></p>
+          </div>
+
+          <div class="hero-art" aria-hidden="true" id="hero-art"></div>
+        </div>
+      </section>
+
+      <section class="section" id="categorias" aria-labelledby="cat-heading">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title" id="cat-heading" data-i18n="categoriesTitle">Explora por categoría</h2>
+            <p class="section-sub" data-i18n="categoriesSub">Elige una categoría para ver sus recetas. Vuelve a pulsarla para cerrarla.</p>
+          </div>
+          <div class="category-grid" id="nav-pills"></div>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="rapidas" aria-labelledby="quick-heading">
+        <div class="container">
+          <div class="section-head section-head-row">
+            <div>
+              <h2 class="section-title" id="quick-heading" data-i18n="quickTitle">Listas en 30 minutos o menos</h2>
+              <p class="section-sub" data-i18n="quickSub">Según el tiempo indicado en cada receta.</p>
+            </div>
+            <button type="button" class="btn btn-ghost" id="quick-all">
+              <span data-i18n="quickAll">Ver todas</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </button>
+          </div>
+          <div class="card-rail" id="quick-rail"></div>
+        </div>
+      </section>
+
+      <section class="section" id="recetas" aria-labelledby="results-heading" hidden>
+        <div class="container">
+          <div class="results-bar">
+            <div>
+              <h2 class="section-title" id="results-heading"></h2>
+              <p class="results-count" id="results-count" role="status" aria-live="polite"></p>
+            </div>
+            <div class="filter-chips" role="group" data-i18n-label="filters">
+              <button type="button" class="chip" id="filter-quick" aria-pressed="false">
+                <svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg><span data-i18n="filterQuick">≤ 30 min</span>
+              </button>
+              <button type="button" class="chip" id="filter-fav" aria-pressed="false">
+                <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span data-i18n="navFavorites">Favoritas</span>
+              </button>
+              <button type="button" class="chip chip-clear" id="filter-clear" hidden>
+                <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span data-i18n="clearFilters">Quitar filtros</span>
+              </button>
+            </div>
+          </div>
+          <div id="categories-container"></div>
+        </div>
+      </section>
     </div>
-  </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-decorative">🌺 🌴 🍍 🌴 🌺</div>
-    <p id="footer-text">Inspirado en el legado culinario de Berta Cabanillas y la cocina tradicional puertorriqueña.</p>
+    <!-- ===================== DETALLE DE RECETA ===================== -->
+    <article id="view-recipe" class="recipe-view" hidden aria-labelledby="modal-title">
+      <div class="container recipe-container">
+        <button type="button" class="btn btn-ghost back-btn" id="back-btn">
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg><span data-i18n="back">Volver a las recetas</span>
+        </button>
+
+        <header class="recipe-hero">
+          <div class="recipe-hero-art" id="recipe-art" aria-hidden="true"></div>
+          <div class="recipe-hero-copy">
+            <button type="button" class="badge" id="modal-badge"></button>
+            <h1 class="recipe-title" id="modal-title" tabindex="-1"></h1>
+            <ul class="recipe-facts">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span><span class="fact-label" data-i18n="time">Tiempo</span><strong id="modal-time"></strong></span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span><span class="fact-label" data-i18n="servings">Porciones</span><strong id="modal-servings"></strong></span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><span><span class="fact-label" data-i18n="ingredients">Ingredientes</span><strong id="modal-ing-count"></strong></span></li>
+            </ul>
+            <div class="recipe-actions">
+              <button type="button" class="btn btn-outline" id="fav-btn" aria-pressed="false">
+                <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span id="fav-btn-text"></span>
+              </button>
+              <button type="button" class="btn btn-outline" id="print-btn">
+                <svg class="icon" aria-hidden="true"><use href="#i-print"/></svg><span data-i18n="print">Imprimir</span>
+              </button>
+              <button type="button" class="btn btn-outline" id="share-btn">
+                <svg class="icon" aria-hidden="true"><use href="#i-share"/></svg><span data-i18n="share">Compartir</span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <div class="recipe-body">
+          <section class="panel ingredients-panel" aria-labelledby="modal-ingredients-title">
+            <div class="panel-head">
+              <h2 class="panel-title" id="modal-ingredients-title" data-i18n="ingredients">Ingredientes</h2>
+              <div class="stepper" role="group" aria-labelledby="stepper-label">
+                <span class="stepper-label" id="stepper-label" data-i18n="servings">Porciones</span>
+                <button type="button" class="stepper-btn" id="serv-minus" data-i18n-label="fewer"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+                <output class="stepper-value" id="serv-value" aria-live="polite"></output>
+                <button type="button" class="stepper-btn" id="serv-plus" data-i18n-label="more"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+              </div>
+            </div>
+            <p class="scale-note" id="scale-note" hidden></p>
+            <ul class="ingredient-list" id="modal-ingredients-list"></ul>
+          </section>
+
+          <section class="panel steps-panel" aria-labelledby="modal-steps-title">
+            <h2 class="panel-title" id="modal-steps-title" data-i18n="steps">Preparación</h2>
+            <ol class="step-list" id="modal-steps-list"></ol>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 900 600"><use href="#flag-pr"/></svg></span>
+        <div>
+          <p class="footer-name">Recetarios Cocina Boricua</p>
+          <p class="footer-text" id="footer-text">Recetas de la cocina tradicional puertorriqueña · Versión 1.0</p>
+        </div>
+      </div>
+      <nav class="footer-nav" data-i18n-label="footerNav">
+        <a href="#categorias" data-i18n="navCategories">Categorías</a>
+        <a href="#rapidas" data-i18n="quickShort">Recetas rápidas</a>
+      </nav>
+    </div>
   </footer>
 
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
   <script src="js/recipes.js"></script>
+  <script src="js/recipes-2.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
