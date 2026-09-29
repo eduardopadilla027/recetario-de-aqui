@@ -23,8 +23,12 @@
   --focus: #1D4ED8;
 
   /* Tipografía */
-  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* Una sola letra en toda la app: Tahoma (Windows y Mac). En iPhone y
+     Android, que no la traen, la más parecida: Verdana o la del sistema. */
+  --font-display: Tahoma, Verdana, "Segoe UI", system-ui, sans-serif;
+  --font-body: Tahoma, Verdana, "Segoe UI", system-ui, sans-serif;
+  /* Única excepción: "Puertorriqueña" del título principal. */
+  --font-accent: "Playfair Display", Georgia, "Times New Roman", serif;
   --step--1: 0.875rem;
   --step-0: 1rem;
   --step-1: 1.125rem;
@@ -182,6 +186,7 @@ main:focus { outline: none; }
    línea, con un trazo dorado "a pincel" debajo. */
 .hero-accent {
   display: inline-block;
+  font-family: var(--font-accent);
   font-style: italic; font-weight: 700; color: var(--achiote);
   padding-bottom: .12em;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 16' preserveAspectRatio='none'%3E%3Cpath d='M3 11 C 60 4, 120 3, 170 6 S 260 12, 297 5' fill='none' stroke='%23C8912E' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E") left bottom / 100% .28em no-repeat;
@@ -437,6 +442,43 @@ main:focus { outline: none; }
 .nutri-notes { margin-top: var(--s-5); padding-top: var(--s-4); border-top: 1px dashed var(--line); font-size: .85rem; color: var(--ink-2); display: grid; gap: var(--s-2); max-width: 75ch; }
 .nutri-missing { margin: 0 0 0 var(--s-5); color: var(--ink-3); }
 .nutri-empty { color: var(--ink-2); margin-top: var(--s-3); }
+
+/* Alergias, alertas y manejo seguro */
+.allergen-line {
+  display: flex; align-items: flex-start; gap: var(--s-2); margin-top: var(--s-4);
+  padding: var(--s-3) var(--s-4); border-radius: var(--radius); background: var(--achiote-50); color: var(--achiote-600); font-size: .92rem;
+}
+.allergen-line .icon { width: 20px; height: 20px; flex: none; margin-top: 1px; }
+.allergen-line strong { margin-right: var(--s-1); }
+.safety-panel { margin-top: var(--s-5); }
+.safety-panel:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.advice-block { margin-top: var(--s-5); }
+.advice-title {
+  font-family: var(--font-body); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: var(--s-3);
+}
+.advice-empty { color: var(--ink-2); }
+.allergen-list, .alert-list, .tip-list { list-style: none; padding: 0; display: grid; gap: var(--s-3); }
+.allergen-list li { display: grid; gap: var(--s-1); padding-bottom: var(--s-3); border-bottom: 1px dashed var(--line); }
+.allergen-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.allergen-chip {
+  justify-self: start; padding: 4px 12px; border-radius: 999px; font-weight: 700; font-size: .88rem;
+  background: var(--achiote-50); color: var(--achiote-600); border: 1px solid #EBC5B2;
+}
+.allergen-src { font-size: .85rem; color: var(--ink-3); }
+.alert { display: flex; gap: var(--s-3); align-items: flex-start; padding: var(--s-3) var(--s-4); border-radius: var(--radius); border: 1px solid var(--line); line-height: 1.5; }
+.alert .icon { width: 20px; height: 20px; flex: none; margin-top: 2px; }
+.alert-high { background: var(--achiote-50); border-color: #EBC5B2; color: var(--achiote-600); }
+.alert-high span { color: var(--ink); }
+.alert-caution { background: #FBF0D9; border-color: #EAD3A0; }
+.alert-caution .icon { color: #8A5A00; }
+.alert-info { background: var(--plantain-50); border-color: #C9DCC2; }
+.alert-info .icon { color: var(--plantain); }
+.tip-list li { position: relative; padding-left: var(--s-5); line-height: 1.55; color: var(--ink-2); }
+.tip-list li::before {
+  content: ""; position: absolute; left: 4px; top: .6em; width: 8px; height: 8px; border-radius: 50%; background: var(--plantain);
+}
+.advice-note { margin-top: var(--s-5); padding-top: var(--s-4); border-top: 1px dashed var(--line); font-size: .85rem; color: var(--ink-3); max-width: 75ch; }
 .panel { background: var(--ivory); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(20px, 3vw, 32px); }
 .ingredients-panel { position: sticky; top: calc(var(--header-h) + 16px); }
 .panel-head { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); flex-wrap: wrap; margin-bottom: var(--s-4); }
@@ -503,7 +545,8 @@ main:focus { outline: none; }
   .recipe-body { grid-template-columns: 1fr; }
   .nutri-grid { grid-template-columns: 1fr; }
   .recipe-tabs { display: flex; width: 100%; }
-  .recipe-tab { flex: 1 1 0; justify-content: center; padding: 0 var(--s-3); font-size: .9rem; text-align: center; line-height: 1.2; }
+  .recipe-tabs { border-radius: var(--radius); }
+  .recipe-tab { flex: 1 1 0; flex-direction: column; justify-content: center; gap: 2px; padding: var(--s-2) var(--s-1); font-size: .8rem; text-align: center; line-height: 1.2; border-radius: calc(var(--radius) - 4px); }
   .ingredients-panel { position: static; }
 }
 

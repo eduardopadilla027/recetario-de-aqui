@@ -131,7 +131,9 @@ const NUTRI_FOODS = [
   F("habichuelas tiernas", 31, 1.8, 7, 3.3, 2.7, 0.2, 0, 6, { cup: 110 }),
   F("petit pois|guisante", 81, 5.4, 14.5, 5.7, 5.1, 0.4, 0.1, 5, { cup: 145, can: 250 }),
   // Viandas y vegetales
-  F("platano", 122, 1.3, 32, 15, 2.3, 0.4, 0.1, 4, { u: 180, cup: 200 }),
+  // El plátano verde es casi todo almidón; al madurar, ese almidón se vuelve azúcar.
+  F("platano|platano verde", 122, 1.3, 32, 2, 2.3, 0.4, 0.1, 4, { u: 180, cup: 200 }),
+  F("platano maduro|platano bien maduro|amarillo", 122, 1.3, 32, 20, 2.3, 0.4, 0.1, 4, { u: 180, cup: 200 }),
   F("guineo|guineito", 89, 1.1, 23, 12, 2.6, 0.3, 0.1, 1, { u: 118 }),
   F("yuca", 160, 1.4, 38, 1.7, 1.8, 0.3, 0.1, 14, { u: 400, cup: 206 }),
   F("yautia|malanga", 98, 1.5, 24, 0.5, 4, 0.4, 0.1, 21, { u: 300, cup: 135 }),

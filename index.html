@@ -9,7 +9,8 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -150 900 900'><rect width='900' height='600' fill='%23ED0000'/><rect y='120' width='900' height='120' fill='%23fff'/><rect y='360' width='900' height='120' fill='%23fff'/><polygon points='0,0 519.6,300 0,600' fill='%230050F0'/><polygon points='173.2,200 195.7,269.1 268.3,269.1 209.5,311.8 232,380.9 173.2,338.2 114.4,380.9 136.9,311.8 78.1,269.1 150.7,269.1' fill='%23fff'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap">
+  <!-- Tahoma es del sistema; de Google sólo la cursiva de "Puertorriqueña". -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -41,6 +42,8 @@
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6L13 3z"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 4.2 2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 4.2a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17.2v.1"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.3 2.9 8 7 9.5 4.1-1.5 7-5.2 7-9.5V6l-7-3z"/><path d="m9 12 2 2 4-4"/></symbol>
     <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21a6 6 0 0 0 6-6c0-4-3-6.5-4.5-10.5C11 7 8.5 8.5 8.5 11.5c-1-.5-1.8-1.6-2-2.8C5.5 10.2 6 12.5 6 15a6 6 0 0 0 6 6z"/><path d="M12 21a2.5 2.5 0 0 1-2.5-2.5c0-1.8 1.4-2.6 2.5-4.5 1.1 1.9 2.5 2.7 2.5 4.5A2.5 2.5 0 0 1 12 21z"/></symbol>
   </svg>
 
@@ -169,6 +172,7 @@
               <li><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><span><span class="fact-label" data-i18n="ingredients">Ingredientes</span><strong id="modal-ing-count"></strong></span></li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg><span><span class="fact-label" data-i18n="kcalFact">Calorías / porción</span><strong id="modal-kcal"></strong></span></li>
             </ul>
+            <p class="allergen-line" id="allergen-line" hidden></p>
             <div class="recipe-actions">
               <button type="button" class="btn btn-outline" id="fav-btn" aria-pressed="false">
                 <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span id="fav-btn-text"></span>
@@ -190,9 +194,13 @@
           <button type="button" class="recipe-tab" role="tab" id="tab-nutrition" aria-controls="panel-nutrition" aria-selected="false" tabindex="-1">
             <svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg><span data-i18n="tabNutrition">Información nutricional</span>
           </button>
+          <button type="button" class="recipe-tab" role="tab" id="tab-safety" aria-controls="panel-safety" aria-selected="false" tabindex="-1">
+            <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span id="tab-safety-label">Alergias y seguridad</span>
+          </button>
         </div>
 
         <section class="panel nutrition-panel" id="panel-nutrition" role="tabpanel" aria-labelledby="tab-nutrition" tabindex="0" hidden></section>
+        <section class="panel safety-panel" id="panel-safety" role="tabpanel" aria-labelledby="tab-safety" tabindex="0" hidden></section>
 
         <div class="recipe-body" id="panel-recipe" role="tabpanel" aria-labelledby="tab-recipe">
           <section class="panel ingredients-panel" aria-labelledby="modal-ingredients-title">
@@ -241,6 +249,7 @@
   <script src="js/recipes-2.js"></script>
   <script src="js/recipes-3.js"></script>
   <script src="js/nutrition.js"></script>
+  <script src="js/advisories.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

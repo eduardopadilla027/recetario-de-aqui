@@ -649,6 +649,7 @@ function renderModal(recipe) {
   renderFavButton();
   renderIngredients();
   renderNutrition(recipe);
+  renderSafety(recipe);
 }
 
 /* Pestaña de información nutricional: estimación de js/nutrition.js. */
@@ -725,17 +726,61 @@ function renderNutrition(recipe) {
     </div>`;
 }
 
+/* Pestaña de alergias, alertas y manejo seguro: reglas de js/advisories.js. */
+function renderSafety(recipe) {
+  const at = ADVICE_TEXT[currentLang];
+  const adv = getAdvisories(recipe);
+  const ings = recipe.ingredients[currentLang];
+  const icon = (id) => `<svg class="icon" aria-hidden="true"><use href="#${id}"/></svg>`;
+  $("tab-safety-label").textContent = at.tab;
+
+  const line = $("allergen-line");
+  line.hidden = !adv.allergens.length;
+  line.innerHTML = adv.allergens.length
+    ? `${icon("i-alert")}<span><strong>${at.contains}</strong> ${adv.allergens.map((a) => esc(at.allergens[a.key])).join(" · ")}</span>`
+    : "";
+
+  const allergens = adv.allergens.length
+    ? `<ul class="allergen-list">${adv.allergens.map((a) => `
+        <li>
+          <span class="allergen-chip">${esc(at.allergens[a.key])}</span>
+          <span class="allergen-src">${at.foundIn} ${a.items.map((i) => esc(ings[i])).join("; ")}</span>
+        </li>`).join("")}</ul>`
+    : `<p class="advice-empty">${at.allergensNone}</p>`;
+
+  const alertText = (a) => {
+    const v = at.alerts[a.key];
+    return typeof v === "function" ? v(...a.args) : v;
+  };
+  const alerts = adv.alerts.length
+    ? `<ul class="alert-list">${adv.alerts.map((a) => `
+        <li class="alert alert-${a.level}">${icon(a.level === "info" ? "i-shield" : "i-alert")}<span>${esc(alertText(a))}</span></li>`).join("")}</ul>`
+    : `<p class="advice-empty">${at.alertsNone}</p>`;
+
+  const tips = adv.tips.length
+    ? `<section class="advice-block"><h3 class="advice-title">${at.tipsTitle}</h3>
+        <ul class="tip-list">${adv.tips.map((k) => `<li>${esc(at.tips[k])}</li>`).join("")}</ul></section>`
+    : "";
+
+  $("panel-safety").innerHTML = `
+    <h2 class="panel-title">${at.title}</h2>
+    <section class="advice-block"><h3 class="advice-title">${at.allergensTitle}</h3>${allergens}</section>
+    <section class="advice-block"><h3 class="advice-title">${at.alertsTitle}</h3>${alerts}</section>
+    ${tips}
+    <p class="advice-note">${at.note}</p>`;
+}
+
+const RECIPE_TABS = ["recipe", "nutrition", "safety"];
+
 function selectRecipeTab(which, focus = false) {
-  const nutrition = which === "nutrition";
-  const tabs = { recipe: $("tab-recipe"), nutrition: $("tab-nutrition") };
-  for (const [key, tab] of Object.entries(tabs)) {
+  for (const key of RECIPE_TABS) {
     const on = key === which;
+    const tab = $(`tab-${key}`);
     tab.setAttribute("aria-selected", String(on));
     tab.tabIndex = on ? 0 : -1;
+    $(`panel-${key}`).hidden = !on;
   }
-  $("panel-recipe").hidden = nutrition;
-  $("panel-nutrition").hidden = !nutrition;
-  if (focus) tabs[which].focus();
+  if (focus) $(`tab-${which}`).focus();
 }
 
 function renderIngredients() {
@@ -978,21 +1023,20 @@ function setupEventListeners() {
   $("print-btn").addEventListener("click", () => window.print());
   $("share-btn").addEventListener("click", shareRecipe);
 
-  // Pestañas Receta / Información nutricional (flechas, Inicio y Fin como en
-  // cualquier lista de pestañas).
-  $("tab-recipe").addEventListener("click", () => selectRecipeTab("recipe"));
-  $("tab-nutrition").addEventListener("click", () => selectRecipeTab("nutrition"));
+  // Pestañas Receta / Nutrición / Alergias y seguridad (flechas, Inicio y Fin
+  // como en cualquier lista de pestañas).
+  for (const key of RECIPE_TABS) $(`tab-${key}`).addEventListener("click", () => selectRecipeTab(key));
   document.querySelector(".recipe-tabs").addEventListener("keydown", (e) => {
-    const order = ["recipe", "nutrition"];
-    const now = $("tab-nutrition").getAttribute("aria-selected") === "true" ? 1 : 0;
+    const n = RECIPE_TABS.length;
+    const now = RECIPE_TABS.findIndex((k) => $(`tab-${k}`).getAttribute("aria-selected") === "true");
     let next = null;
-    if (e.key === "ArrowRight") next = (now + 1) % order.length;
-    else if (e.key === "ArrowLeft") next = (now + order.length - 1) % order.length;
+    if (e.key === "ArrowRight") next = (now + 1) % n;
+    else if (e.key === "ArrowLeft") next = (now + n - 1) % n;
     else if (e.key === "Home") next = 0;
-    else if (e.key === "End") next = order.length - 1;
+    else if (e.key === "End") next = n - 1;
     if (next === null) return;
     e.preventDefault();
-    selectRecipeTab(order[next], true);
+    selectRecipeTab(RECIPE_TABS[next], true);
   });
   $("serv-minus").addEventListener("click", () => { if (currentServings > 1) { currentServings--; renderIngredients(); } });
   $("serv-plus").addEventListener("click", () => { currentServings++; renderIngredients(); });
