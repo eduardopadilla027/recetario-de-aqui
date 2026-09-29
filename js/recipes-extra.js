@@ -5538,5 +5538,529 @@ recipes.push(
         "Fold, cover, and cook on low 25 minutes. Serve with tostones or sweet plantains."
       ]
     }
+  },
+
+  // ── POSTRES PUERTORRIQUEÑOS (más) ──
+  {
+    id: "gofio",
+    category: "postres",
+    name: { es: "Gofio (Dulce de Maíz Tostado)", en: "Gofio (Toasted Cornmeal Candy)" },
+    time: "20 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 tazas de harina de maíz fina",
+        "¾ taza de azúcar",
+        "½ cucharadita de canela",
+        "Pizca de sal"
+      ],
+      en: [
+        "2 cups fine cornmeal",
+        "¾ cup sugar",
+        "½ teaspoon cinnamon",
+        "Pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Tueste la harina de maíz en un sartén seco a fuego medio-bajo, revolviendo sin parar, 10-12 minutos, hasta que huela a maíz tostado y tome color dorado.",
+        "Déjela enfriar por completo.",
+        "Mezcle con el azúcar, la canela y la sal.",
+        "Sirva en cartuchitos de papel o en montoncitos. Se come a cucharaditas, poco a poco, porque es un polvo seco. Así se vendía en las tiendas de pueblo."
+      ],
+      en: [
+        "Toast the cornmeal in a dry skillet over medium-low heat, stirring constantly, 10-12 minutes, until it smells of toasted corn and turns golden.",
+        "Let it cool completely.",
+        "Mix with the sugar, cinnamon, and salt.",
+        "Serve in small paper cones or little piles. Eat it by the teaspoon, slowly, since it's a dry powder. That's how it was sold in small-town shops."
+      ]
+    }
+  },
+  {
+    id: "coconetes",
+    category: "postres",
+    name: { es: "Coconetes", en: "Coconetes (Coconut Cookies)" },
+    time: "35 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "2 tazas de coco rallado",
+        "1½ tazas de harina",
+        "¾ taza de azúcar morena",
+        "¼ taza de mantequilla derretida",
+        "½ taza de leche de coco",
+        "1 cucharadita de polvo de hornear",
+        "½ cucharadita de canela",
+        "½ cucharadita de jengibre molido",
+        "1 cucharadita de vainilla",
+        "Pizca de sal"
+      ],
+      en: [
+        "2 cups shredded coconut",
+        "1½ cups flour",
+        "¾ cup brown sugar",
+        "¼ cup melted butter",
+        "½ cup coconut milk",
+        "1 teaspoon baking powder",
+        "½ teaspoon cinnamon",
+        "½ teaspoon ground ginger",
+        "1 teaspoon vanilla",
+        "Pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F y engrase una bandeja.",
+        "Mezcle la harina, el azúcar morena, el polvo de hornear, las especias y la sal.",
+        "Añada el coco, la mantequilla, la leche de coco y la vainilla. Debe quedar una masa pegajosa y rústica.",
+        "Forme montoncitos irregulares con una cuchara sobre la bandeja.",
+        "Hornee 18-20 minutos, hasta que estén dorados por fuera y blanditos por dentro. Son las galletas de coco de las panaderías del país."
+      ],
+      en: [
+        "Preheat the oven to 350°F and grease a baking sheet.",
+        "Mix the flour, brown sugar, baking powder, spices, and salt.",
+        "Add the coconut, butter, coconut milk, and vanilla. It should be a sticky, rustic dough.",
+        "Drop uneven mounds by the spoonful onto the sheet.",
+        "Bake 18-20 minutes, until golden outside and soft inside. They're the coconut cookies of Puerto Rican bakeries."
+      ]
+    }
+  },
+  {
+    id: "dulce-mamey",
+    category: "postres",
+    name: { es: "Dulce de Mamey en Almíbar", en: "Mamey in Syrup" },
+    time: "1 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 mameyes maduros pero firmes",
+        "2 tazas de azúcar",
+        "2 tazas de agua",
+        "2 rajas de canela",
+        "4 clavos de olor",
+        "Queso del país para servir"
+      ],
+      en: [
+        "2 ripe but firm mameys (mammee apples)",
+        "2 cups sugar",
+        "2 cups water",
+        "2 cinnamon sticks",
+        "4 whole cloves",
+        "Local white cheese to serve"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los mameyes, quite la piel blanca amarga que queda pegada a la pulpa y saque las semillas.",
+        "Corte la pulpa en tiras o pedazos.",
+        "Prepare un almíbar con el azúcar, el agua, la canela y los clavos. Hierva 5 minutos.",
+        "Añada el mamey y cocine a fuego bajo 35-40 minutos, hasta que esté brilloso y el almíbar espese.",
+        "Enfríe y sirva con queso del país."
+      ],
+      en: [
+        "Peel the mameys, remove the bitter white skin stuck to the flesh, and take out the seeds.",
+        "Cut the flesh into strips or pieces.",
+        "Make a syrup with the sugar, water, cinnamon, and cloves. Boil 5 minutes.",
+        "Add the mamey and cook on low 35-40 minutes, until glossy and the syrup thickens.",
+        "Cool and serve with local white cheese."
+      ]
+    }
+  },
+  {
+    id: "majarete-arroz",
+    category: "postres",
+    name: { es: "Majarete de Harina de Arroz", en: "Rice Flour Majarete" },
+    time: "30 min + frío",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de harina de arroz",
+        "1 lata de leche de coco (13.5 oz)",
+        "2 tazas de leche",
+        "¾ taza de azúcar",
+        "2 rajas de canela",
+        "1 pedazo de jengibre",
+        "Cáscara de 1 limón",
+        "½ cucharadita de sal",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "1 cup rice flour",
+        "1 can coconut milk (13.5 oz)",
+        "2 cups milk",
+        "¾ cup sugar",
+        "2 cinnamon sticks",
+        "1 piece of ginger",
+        "Peel of 1 lime",
+        "½ teaspoon salt",
+        "Ground cinnamon for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva 1 taza de agua con la canela, el jengibre y la cáscara de limón 5 minutos. Cuele y reserve ½ taza de esa agua de especias.",
+        "En una olla, disuelva la harina de arroz en la leche de coco y la leche frías, sin grumos.",
+        "Añada el azúcar, la sal y el agua de especias.",
+        "Cocine a fuego medio, revolviendo sin parar con cuchara de madera, 12-15 minutos, hasta que espese como una crema firme.",
+        "Vierta en un platón o en copitas, espolvoree canela y deje enfriar. Es el majarete de las abuelas, antes de hacerse con maíz."
+      ],
+      en: [
+        "Boil 1 cup water with the cinnamon, ginger, and lime peel 5 minutes. Strain and reserve ½ cup of the spiced water.",
+        "In a pot, dissolve the rice flour in the cold coconut milk and milk, with no lumps.",
+        "Add the sugar, salt, and spiced water.",
+        "Cook on medium, stirring constantly with a wooden spoon, 12-15 minutes, until it thickens to a firm cream.",
+        "Pour into a platter or small cups, sprinkle with cinnamon, and let cool. It's grandma's majarete, from before it was made with corn."
+      ]
+    }
+  },
+  {
+    id: "flan-cafe",
+    category: "postres",
+    name: { es: "Flan de Café", en: "Coffee Flan" },
+    time: "1 hr 15 min + frío",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de azúcar (para el caramelo)",
+        "1 lata de leche condensada",
+        "1 lata de leche evaporada",
+        "½ taza de café puertorriqueño bien fuerte, frío",
+        "5 huevos",
+        "1 cucharadita de vainilla",
+        "Pizca de sal"
+      ],
+      en: [
+        "1 cup sugar (for caramel)",
+        "1 can condensed milk",
+        "1 can evaporated milk",
+        "½ cup very strong Puerto Rican coffee, cold",
+        "5 eggs",
+        "1 teaspoon vanilla",
+        "Pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita el azúcar en el molde a fuego medio hasta que esté ámbar y cubra el fondo.",
+        "Licúe las leches, el café, los huevos, la vainilla y la sal. Cuele.",
+        "Vierta sobre el caramelo y tape con papel de aluminio.",
+        "Hornee en baño de María a 350°F por 55-60 minutos, hasta que cuaje.",
+        "Refrigere al menos 6 horas y voltee para servir."
+      ],
+      en: [
+        "Melt the sugar in the mold over medium heat until amber and coat the bottom.",
+        "Blend the milks, coffee, eggs, vanilla, and salt. Strain.",
+        "Pour over the caramel and cover with foil.",
+        "Bake in a water bath at 350°F for 55-60 minutes, until set.",
+        "Refrigerate at least 6 hours and invert to serve."
+      ]
+    }
+  },
+  {
+    id: "pudin-batata",
+    category: "postres",
+    name: { es: "Pudín de Batata", en: "Sweet Potato Pudding" },
+    time: "1 hr 20 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "3 tazas de batata blanca cocida y majada",
+        "1 lata de leche de coco",
+        "1 lata de leche evaporada",
+        "1 taza de azúcar morena",
+        "3 huevos",
+        "¼ taza de mantequilla derretida",
+        "½ taza de harina",
+        "1 cucharadita de canela",
+        "½ cucharadita de jengibre molido",
+        "¼ cucharadita de clavo molido",
+        "1 cucharadita de vainilla",
+        "½ taza de pasas (opcional)"
+      ],
+      en: [
+        "3 cups cooked, mashed white sweet potato (batata)",
+        "1 can coconut milk",
+        "1 can evaporated milk",
+        "1 cup brown sugar",
+        "3 eggs",
+        "¼ cup melted butter",
+        "½ cup flour",
+        "1 teaspoon cinnamon",
+        "½ teaspoon ground ginger",
+        "¼ teaspoon ground cloves",
+        "1 teaspoon vanilla",
+        "½ cup raisins (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F y engrase un molde de 9x13.",
+        "Licúe la batata con las leches, el azúcar, los huevos, la mantequilla, la harina, las especias y la vainilla.",
+        "Añada las pasas y vierta en el molde.",
+        "Hornee 60 minutos, hasta que al insertar un palillo salga limpio.",
+        "Deje enfriar y corte en cuadros. Es mejor al día siguiente."
+      ],
+      en: [
+        "Preheat the oven to 350°F and grease a 9x13 pan.",
+        "Blend the sweet potato with both milks, sugar, eggs, butter, flour, spices, and vanilla.",
+        "Stir in the raisins and pour into the pan.",
+        "Bake 60 minutes, until a toothpick comes out clean.",
+        "Let cool and cut into squares. It's best the next day."
+      ]
+    }
+  },
+  {
+    id: "bunuelos-batata",
+    category: "postres",
+    name: { es: "Buñuelos de Batata en Almíbar", en: "Sweet Potato Fritters in Syrup" },
+    time: "1 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de batata cocida y majada",
+        "1 taza de harina",
+        "2 huevos",
+        "2 cucharadas de azúcar",
+        "1 cucharadita de polvo de hornear",
+        "½ cucharadita de anís en semillas",
+        "Pizca de sal",
+        "Aceite para freír",
+        "Almíbar: 1½ tazas de azúcar, 1 taza de agua, 2 rajas de canela, 4 clavos de olor, cáscara de 1 limón"
+      ],
+      en: [
+        "2 cups cooked, mashed sweet potato",
+        "1 cup flour",
+        "2 eggs",
+        "2 tablespoons sugar",
+        "1 teaspoon baking powder",
+        "½ teaspoon anise seeds",
+        "Pinch of salt",
+        "Oil for frying",
+        "Syrup: 1½ cups sugar, 1 cup water, 2 cinnamon sticks, 4 whole cloves, peel of 1 lime"
+      ]
+    },
+    steps: {
+      es: [
+        "Prepare el almíbar: hierva todos sus ingredientes 10 minutos, hasta que espese un poco. Reserve tibio.",
+        "Mezcle la batata con los huevos, el azúcar, la harina, el polvo de hornear, el anís y la sal.",
+        "Caliente el aceite a 350°F y fría cucharadas de la masa hasta que estén dorados por todos lados.",
+        "Escúrralos y páselos al almíbar tibio.",
+        "Sirva los buñuelos bañados en almíbar. Son dulce típico de Navidad y de Semana Santa."
+      ],
+      en: [
+        "Make the syrup: boil all its ingredients 10 minutes, until slightly thick. Keep warm.",
+        "Mix the sweet potato with the eggs, sugar, flour, baking powder, anise, and salt.",
+        "Heat the oil to 350°F and fry spoonfuls of the batter until golden all over.",
+        "Drain and transfer to the warm syrup.",
+        "Serve the fritters bathed in syrup. A traditional sweet at Christmas and Holy Week."
+      ]
+    }
+  },
+  {
+    id: "helado-coquito",
+    category: "postres",
+    name: { es: "Helado de Coquito", en: "Coquito Ice Cream" },
+    time: "20 min + congelación",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 lata de crema de coco (15 oz)",
+        "1 lata de leche condensada",
+        "1 lata de leche evaporada",
+        "1½ tazas de crema de leche (heavy cream)",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de canela",
+        "¼ cucharadita de nuez moscada",
+        "Pizca de sal"
+      ],
+      en: [
+        "1 can cream of coconut (15 oz)",
+        "1 can condensed milk",
+        "1 can evaporated milk",
+        "1½ cups heavy cream",
+        "1 teaspoon vanilla",
+        "1 teaspoon cinnamon",
+        "¼ teaspoon nutmeg",
+        "Pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la crema de coco, la leche condensada, la leche evaporada, la vainilla, las especias y la sal.",
+        "Bata la crema de leche hasta que forme picos suaves.",
+        "Incorpore la mezcla de coquito a la crema batida con movimientos envolventes.",
+        "Vierta en un envase, tape y congele 6 horas, revolviendo cada 2 horas para que quede cremoso.",
+        "Sirva con canela por encima. Es sin alcohol, apto para toda la familia; para adultos, añada 2 onzas de ron al licuar."
+      ],
+      en: [
+        "Blend the cream of coconut, condensed milk, evaporated milk, vanilla, spices, and salt.",
+        "Whip the heavy cream to soft peaks.",
+        "Fold the coquito mixture into the whipped cream.",
+        "Pour into a container, cover, and freeze 6 hours, stirring every 2 hours so it stays creamy.",
+        "Serve sprinkled with cinnamon. It's alcohol-free for the whole family; for adults, add 2 oz rum when blending."
+      ]
+    }
+  },
+  {
+    id: "tres-leches-coco",
+    category: "postres",
+    name: { es: "Tres Leches de Coco", en: "Coconut Tres Leches Cake" },
+    time: "1 hr 30 min + frío",
+    servings: 12,
+    ingredients: {
+      es: [
+        "Bizcocho: 5 huevos, 1 taza de azúcar, 1 taza de harina, 1 cucharadita de polvo de hornear, ⅓ taza de leche, 1 cucharadita de vainilla",
+        "Mezcla: 1 lata de leche condensada, 1 lata de leche evaporada, 1 lata de leche de coco",
+        "Cubierta: 1½ tazas de crema de leche (heavy cream), 3 cucharadas de azúcar",
+        "1 taza de coco rallado tostado"
+      ],
+      en: [
+        "Cake: 5 eggs, 1 cup sugar, 1 cup flour, 1 teaspoon baking powder, ⅓ cup milk, 1 teaspoon vanilla",
+        "Soak: 1 can condensed milk, 1 can evaporated milk, 1 can coconut milk",
+        "Topping: 1½ cups heavy cream, 3 tablespoons sugar",
+        "1 cup toasted shredded coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata los huevos con el azúcar hasta que dupliquen su volumen. Añada la vainilla.",
+        "Incorpore la harina con el polvo de hornear en forma envolvente, alternando con la leche.",
+        "Hornee en un molde de 9x13 engrasado a 350°F por 25-30 minutos. Enfríe un poco.",
+        "Pinche todo el bizcocho con un tenedor y vierta despacio la mezcla de las tres leches. Refrigere 4 horas.",
+        "Bata la crema de leche con el azúcar hasta que forme picos y cubra el bizcocho.",
+        "Espolvoree el coco tostado y sirva frío."
+      ],
+      en: [
+        "Beat the eggs with the sugar until doubled in volume. Add the vanilla.",
+        "Fold in the flour with the baking powder, alternating with the milk.",
+        "Bake in a greased 9x13 pan at 350°F for 25-30 minutes. Cool slightly.",
+        "Poke the whole cake with a fork and slowly pour over the three-milk soak. Refrigerate 4 hours.",
+        "Whip the heavy cream with the sugar to peaks and cover the cake.",
+        "Sprinkle with the toasted coconut and serve cold."
+      ]
+    }
+  },
+  {
+    id: "tarta-queso-guayaba",
+    category: "postres",
+    name: { es: "Tarta de Queso con Guayaba", en: "Guava Cheesecake" },
+    time: "1 hr 30 min + frío",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de galleta molida (tipo graham o María)",
+        "⅓ taza de mantequilla derretida",
+        "3 paquetes de queso crema (8 oz cada uno)",
+        "1 taza de azúcar",
+        "3 huevos",
+        "½ taza de crema agria o yogur natural",
+        "1 cucharadita de vainilla",
+        "8 oz de pasta de guayaba",
+        "¼ taza de agua"
+      ],
+      en: [
+        "1½ cups cookie crumbs (graham or María)",
+        "⅓ cup melted butter",
+        "3 packages cream cheese (8 oz each)",
+        "1 cup sugar",
+        "3 eggs",
+        "½ cup sour cream or plain yogurt",
+        "1 teaspoon vanilla",
+        "8 oz guava paste",
+        "¼ cup water"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la galleta molida con la mantequilla y presione en el fondo de un molde desmontable de 9 pulgadas. Hornee a 350°F por 8 minutos.",
+        "Bata el queso crema con el azúcar hasta que esté suave. Añada los huevos uno a uno, la crema agria y la vainilla.",
+        "Derrita la pasta de guayaba con el agua a fuego bajo hasta formar una salsa.",
+        "Vierta el relleno sobre la base y ponga cucharadas de guayaba por encima; dibuje remolinos con un cuchillo.",
+        "Hornee a 325°F por 55-60 minutos, hasta que el centro apenas tiemble. Apague el horno y deje dentro 1 hora con la puerta entreabierta.",
+        "Refrigere toda la noche antes de desmoldar."
+      ],
+      en: [
+        "Mix the cookie crumbs with the butter and press into the bottom of a 9-inch springform pan. Bake at 350°F for 8 minutes.",
+        "Beat the cream cheese with the sugar until smooth. Add the eggs one at a time, the sour cream, and the vanilla.",
+        "Melt the guava paste with the water over low heat into a sauce.",
+        "Pour the filling over the crust and drop spoonfuls of guava on top; swirl with a knife.",
+        "Bake at 325°F for 55-60 minutes, until the center barely wobbles. Turn off the oven and leave it inside 1 hour with the door ajar.",
+        "Refrigerate overnight before unmolding."
+      ]
+    }
+  },
+  {
+    id: "limber-guanabana",
+    category: "postres",
+    name: { es: "Limber de Guanábana", en: "Soursop Ice Pop (Limber)" },
+    time: "15 min + congelación",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 tazas de pulpa de guanábana (fresca o congelada)",
+        "1 lata de leche evaporada",
+        "½ lata de leche condensada",
+        "1 taza de agua",
+        "¼ taza de azúcar",
+        "½ cucharadita de vainilla"
+      ],
+      en: [
+        "2 cups soursop pulp (fresh or frozen)",
+        "1 can evaporated milk",
+        "½ can condensed milk",
+        "1 cup water",
+        "¼ cup sugar",
+        "½ teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la pulpa de guanábana con el agua y cuele para quitar las semillas y las fibras.",
+        "Vuelva a licuar con las leches, el azúcar y la vainilla.",
+        "Vierta en vasitos plásticos.",
+        "Congele al menos 5 horas. Para comerlo, apriete el vasito desde abajo, como se hace con el limber."
+      ],
+      en: [
+        "Blend the soursop pulp with the water and strain out the seeds and fibers.",
+        "Blend again with the milks, sugar, and vanilla.",
+        "Pour into small plastic cups.",
+        "Freeze at least 5 hours. To eat, squeeze the cup from the bottom, the way you eat a limber."
+      ]
+    }
+  },
+  {
+    id: "helado-parcha",
+    category: "postres",
+    name: { es: "Helado de Parcha", en: "Passion Fruit Ice Cream" },
+    time: "20 min + congelación",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de pulpa de parcha, colada",
+        "1 lata de leche condensada",
+        "2 tazas de crema de leche (heavy cream)",
+        "Pizca de sal"
+      ],
+      en: [
+        "1 cup passion fruit pulp, strained",
+        "1 can condensed milk",
+        "2 cups heavy cream",
+        "Pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la pulpa de parcha con la leche condensada y la sal.",
+        "Bata la crema de leche hasta que forme picos firmes.",
+        "Incorpore la mezcla de parcha con movimientos envolventes.",
+        "Vierta en un envase, tape y congele 6 horas o toda la noche. No necesita máquina de helado."
+      ],
+      en: [
+        "Mix the passion fruit pulp with the condensed milk and salt.",
+        "Whip the heavy cream to stiff peaks.",
+        "Fold in the passion fruit mixture.",
+        "Pour into a container, cover, and freeze 6 hours or overnight. No ice cream maker needed."
+      ]
+    }
   }
 );

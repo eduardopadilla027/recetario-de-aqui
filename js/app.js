@@ -263,6 +263,7 @@ const dishIcons = [
   ["guineito", "🍌"], ["guingambo", "🥒"], ["grosella", "🍒"], ["pasta de guayaba", "🫙"], ["cascos de guayaba", "🫙"],
   ["maicena", "🥣"], ["cremita", "🥣"], ["guarapo", "🍵"], ["avena fria", "🥤"],
   ["mero", "🐟"], ["conejo", "🐇"], ["morcilla", "🌭"], ["masitas de res", "🥩"], ["pudin", "🍮"], ["arroz con leche", "🍮"],
+  ["gofio", "🍬"], ["coconete", "🍪"], ["mamey", "🍑"], ["tres leches", "🍰"], ["tarta", "🍰"],
   ["bienmesabe", "🍮"], ["mampostial", "🍬"], ["dulce de leche", "🍬"], ["dulce de ajonjoli", "🍬"], ["bolitas de tamarindo", "🍬"], ["tocino del cielo", "🍮"],
   ["sandwich", "🥪"], ["tripleta", "🥪"], ["medianoche", "🥪"], ["emparedado", "🥪"],
   ["arroz con dulce", "🍮"], ["arroz con coco", "🍮"], ["arroz", "🍚"], ["locrio", "🍚"],
