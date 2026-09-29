@@ -19,11 +19,14 @@ function F(kw, kcal, p, c, s, fib, fat, sat, na, m = {}) {
 
 const NUTRI_FOODS = [
   // Aves
-  F("pollo|presas de pollo|gallina", 190, 16, 0, 0, 0, 13, 3.7, 70, { u: 1500, cup: 140 }),
+  // Pollo, gallina y guinea en presas o enteros: por 100 g tal como se compran,
+  // con hueso (sólo ~70% se come). La pechuga y el muslo van aparte.
+  F("pollo|presas de pollo|gallina", 150, 12.6, 0, 0, 0, 10.5, 3, 60, { u: 1500, cup: 140 }),
   F("pechuga|pechuga de pollo", 120, 22.5, 0, 0, 0, 2.6, 0.6, 45, { u: 170, cup: 140 }),
   F("muslo|muslos de pollo", 177, 17.5, 0, 0, 0, 11, 3, 80, { u: 115 }),
   F("alita|alitas de pollo", 203, 17.5, 0, 0, 0, 14, 4, 75, { u: 90 }),
-  F("pavo", 150, 20, 0, 0, 0, 7, 2, 65, { u: 6000 }),
+  F("pavo", 150, 20, 0, 0, 0, 7, 2, 65, { u: 6000, cup: 140 }),
+  F("guinea", 110, 16.4, 0, 0, 0, 4.5, 1.3, 47, { u: 1200 }),
   F("molleja|mollejas de pollo", 94, 17.7, 0, 0, 0, 2.1, 0.5, 69, { u: 30, cup: 145 }),
   // Cerdo
   F("cerdo|carne de cerdo|masitas|paleta|pierna de cerdo", 240, 17, 0, 0, 0, 19, 7, 60, { u: 3000 }),
@@ -121,6 +124,7 @@ const NUTRI_FOODS = [
   F("bolitas de cacao|cacao del pais|cacao puro", 501, 12, 29, 0, 17, 52, 32, 20, { u: 30 }),
   F("pasa", 299, 3, 79, 59, 3.7, 0.5, 0.1, 11, { cup: 145 }),
   F("nueces|nuez", 654, 15, 14, 2.6, 6.7, 65, 6, 2, { cup: 117 }),
+  F("almendra|almendras molidas", 579, 21, 22, 4.4, 12.5, 50, 3.8, 1, { cup: 95, u: 1.2 }),
   F("ajonjoli", 573, 17.7, 23, 0.3, 11.8, 49.7, 7, 11, { cup: 144 }),
   F("mermelada|jalea", 250, 0.4, 63, 50, 1, 0.1, 0, 30, { cup: 320 }),
   F("pasta de guayaba", 286, 0.4, 75, 60, 2.5, 0.1, 0, 20, { can: 227 }),
@@ -179,8 +183,15 @@ const NUTRI_FOODS = [
   F("guanabana", 66, 1, 17, 13.5, 3.3, 0.3, 0.1, 14, { cup: 225, u: 500 }),
   F("quenepa", 58, 0.5, 15, 12, 1, 0.2, 0, 3, { u: 8 }),
   F("limon", 29, 1.1, 9.3, 2.5, 2.8, 0.3, 0, 2, { u: 44 }),
-  F("china|naranja", 47, 0.9, 12, 9.4, 2.4, 0.1, 0, 0, { u: 130 }),
-  F("toronja", 42, 0.8, 10.7, 6.9, 1.6, 0.1, 0, 0, { u: 250 }),
+  // Por unidad cuenta lo que se exprime (en las recetas la china y la toronja
+  // enteras se usan para jugo).
+  F("china|naranja", 47, 0.9, 12, 9.4, 2.4, 0.1, 0, 0, { u: 85 }),
+  F("toronja", 42, 0.8, 10.7, 6.9, 1.6, 0.1, 0, 0, { u: 150 }),
+  F("acerola", 32, 0.4, 7.7, 0, 1.1, 0.3, 0, 7, { cup: 98, u: 5 }),
+  F("sandia", 30, 0.6, 7.6, 6.2, 0.4, 0.2, 0, 1, { cup: 152, u: 4500 }),
+  // Por 100 g de caña pelada: lo que da de guarapo (un tallo ~350 g).
+  F("cana de azucar|cana", 50, 0, 13, 13, 0, 0, 0, 5, { u: 350 }),
+  F("coco de agua|coco verde", 19, 0.7, 3.7, 2.6, 1.1, 0.2, 0.2, 105, { u: 350 }),
   F("grosella", 44, 0.9, 10, 7, 4, 0.5, 0, 1, { cup: 150 }),
   F("mamey", 51, 0.5, 12.5, 7, 3, 0.5, 0.1, 15, { u: 500, cup: 170 }),
   F("yogur|crema agria", 100, 5, 5, 4, 0, 7, 4.5, 50, { cup: 245 }),
@@ -201,6 +212,7 @@ const NUTRI_FOODS = [
   F("licor|licor de anis", 330, 0, 35, 35, 0, 0, 0, 5, { cup: 240, can: 750 }),
   F("refresco|refresco de cola", 42, 0, 10.6, 10.6, 0, 0, 0, 4, { cup: 248, can: 355 }),
   F("malta", 62, 0.5, 15, 13, 0, 0, 0, 10, { can: 355 }),
+  F("cerveza", 43, 0.5, 3.6, 0, 0, 0, 0, 4, { cup: 240, can: 355 }),
   F("mabi", 40, 0, 10, 9, 0, 0, 0, 5, { cup: 240 }),
   F("corteza|corteza de mabi", 0, 0, 0, 0, 0, 0, 0, 0),
   F("granadina", 268, 0, 67, 60, 0, 0, 0, 30, { cup: 320 }),
@@ -247,7 +259,7 @@ const NUTRI_UNITS = [
   [/^(pizcas?)\b/, { g: 0.4 }],
   [/^(rajas?|ramas?|ramitas?)\b/, { g: 2.5 }],
   [/^(manojos?|punados?)\b/, { g: 50 }],
-  [/^(tallos?)\b/, { g: 40 }],
+  [/^(tallos?)\b/, { stalk: true }],
   [/^(mazorcas?)\b/, { g: 150 }],
   [/^(lonjas?|lascas?|rebanadas?|ruedas?|laminas?)\b/, { slice: true }],
   [/^(pedazos?|trozos?)\b/, { g: 10 }],
@@ -361,6 +373,7 @@ function measurePart(part) {
   else if (unit.sobre) grams = q.v * (m.sobre || 7);
   else if (unit.head) grams = q.v * (food.kw[0] === "ajo" ? 40 : m.u || 300);
   else if (unit.slice) grams = q.v * (m.sl || 20);
+  else if (unit.stalk) grams = q.v * (m.u && m.u > 40 ? m.u : 40); // apio 40 g; caña, un tallo entero
   if (grams == null) return { kind: "unknown" };
   return { kind: "ok", food, grams };
 }

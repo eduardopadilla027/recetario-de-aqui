@@ -122,6 +122,7 @@ const translations = {
       salsas: "Salsas y Aderezos",
       bebidas: "Bebidas",
       cocteles: "Cócteles y Tragos",
+      jugos: "Jugos Naturales",
       calientes: "Bebidas Calientes",
       pastas: "Pastas"
     }
@@ -233,6 +234,7 @@ const translations = {
       salsas: "Sauces & Dressings",
       bebidas: "Beverages",
       cocteles: "Cocktails & Drinks",
+      jugos: "Natural Juices",
       calientes: "Hot Drinks",
       pastas: "Pasta"
     }
@@ -246,7 +248,7 @@ const categoryIcons = {
   carnes: "🥩", aves: "🍗", pescados: "🐟", huevos: "🥚", entremeses: "🥟",
   bizcochos: "🎂", galletitas: "🍪", pasteles_dulces: "🥧", panes: "🍞",
   emparedados: "🥪", postres: "🍮", arroces: "🍚", vegetales: "🥑",
-  salsas: "🫙", bebidas: "🥤", cocteles: "🍹",
+  salsas: "🫙", bebidas: "🥤", jugos: "🧃", cocteles: "🍹",
   calientes: "☕", pastas: "🍝"
 };
 
@@ -259,6 +261,9 @@ const categoryIcons = {
  * sprite de index.html, verde y maduro. En savory, "guineo" es guineo verde. */
 const VERDE = "svg:ic-platano-verde";
 const MADURO = "svg:ic-platano-maduro";
+/* Tampoco hay emoji de embutido (🌭 es un perro caliente en su pan). */
+const LONGANIZA = "svg:ic-longaniza";
+const MORCILLA = "svg:ic-morcilla";
 
 const dishIcons = [
   ["sopa", "🍲"], ["asopao", "🍲"], ["sancocho", "🍲"], ["caldo", "🍲"], ["sopon", "🍲"], ["mondongo", "🍲"], ["crema de calabaza", "🍲"], ["crema de pana", "🍲"], ["crema de yautia", "🍲"],
@@ -267,7 +272,7 @@ const dishIcons = [
   ["ternera", "🥩"], ["chicharrones de pollo", "🍗"], ["rellenos de papa", "🥔"], ["surullito", "🌽"],
   ["guineito", VERDE], ["guineitos ninos", "🍌"], ["guingambo", "🥒"], ["grosella", "🍒"], ["pasta de guayaba", "🫙"], ["cascos de guayaba", "🫙"],
   ["maicena", "🥣"], ["cremita", "🥣"], ["guarapo", "🍵"], ["avena fria", "🥤"],
-  ["mero", "🐟"], ["conejo", "🐇"], ["morcilla", "🌭"], ["masitas de res", "🥩"], ["pudin", "🍮"], ["arroz con leche", "🍮"],
+  ["mero", "🐟"], ["conejo", "🐇"], ["morcilla", MORCILLA], ["masitas de res", "🥩"], ["pudin", "🍮"], ["arroz con leche", "🍮"],
   ["gofio", "🍬"], ["coconete", "🍪"], ["mamey", "🍑"], ["tres leches", "🍰"], ["tarta", "🍰"],
   ["bienmesabe", "🍮"], ["mampostial", "🍬"], ["dulce de leche", "🍬"], ["dulce de ajonjoli", "🍬"], ["bolitas de tamarindo", "🍬"], ["tocino del cielo", "🍮"],
   ["sandwich", "🥪"], ["tripleta", "🥪"], ["medianoche", "🥪"], ["emparedado", "🥪"],
@@ -276,8 +281,8 @@ const dishIcons = [
   ["langosta", "🦞"], ["camaron", "🦐"], ["pulpo", "🐙"], ["calamar", "🦑"], ["juey", "🦀"], ["carrucho", "🐚"],
   ["mariscada", "🦞"], ["paella", "🥘"], ["sierra", "🐟"], ["dorado", "🐟"],
   ["bacalao", "🐟"], ["bacalaito", "🐟"], ["pescado", "🐟"], ["chillo", "🐟"], ["filete", "🐟"], ["atun", "🐟"], ["ceviche", "🐟"],
-  ["pavo", "🦃"], ["pavochon", "🦃"], ["molleja", "🍗"], ["pollo", "🍗"], ["pechuga", "🍗"], ["gallina", "🍗"],
-  ["salchicha", "🌭"], ["longaniza", "🌭"], ["chorizo", "🌭"], ["salami", "🌭"],
+  ["pavo", "🦃"], ["pavochon", "🦃"], ["molleja", "🍗"], ["guinea", "🍗"], ["muslo", "🍗"], ["pollo", "🍗"], ["pechuga", "🍗"], ["gallina", "🍗"],
+  ["salchicha", LONGANIZA], ["longaniza", LONGANIZA], ["chorizo", LONGANIZA], ["salami", LONGANIZA],
   ["lechon", "🍖"], ["pernil", "🍖"], ["chuleta", "🍖"], ["costilla", "🍖"], ["chicharron", "🍖"], ["patitas", "🍖"], ["masitas", "🍖"], ["pincho", "🍢"],
   ["bistec", "🥩"], ["carne", "🥩"], ["rabo", "🥩"], ["ropa vieja", "🥩"], ["churrasco", "🥩"], ["higado", "🥩"], ["albondiga", "🧆"], ["picadillo", "🥩"], ["lengua", "🥩"], ["cabro", "🥩"], ["cabrito", "🥩"], ["carne de cerdo", "🍖"], ["costillita", "🍖"], ["cuajito", "🍖"], ["salpicon", "🥩"], ["lomo", "🍖"], ["jamon", "🍖"],
   ["espagueti", "🍝"], ["lasana", "🍝"], ["coditos", "🍝"], ["macarrones", "🍝"], ["canelones", "🍝"], ["fideos", "🍝"],
@@ -300,6 +305,8 @@ const dishIcons = [
   ["mantecado", "🍨"], ["helado", "🍨"], ["limber", "🍧"], ["piragua", "🍧"],
   ["pan", "🍞"], ["mallorca", "🥐"], ["rosquilla", "🍩"], ["bunuelo", "🍩"], ["barriguita", "🍩"], ["almojabana", "🧆"],
   ["sangria", "🍷"], ["ponche", "🍹"], ["mojito", "🍹"], ["daiquiri", "🍹"], ["cuba libre", "🥃"], ["pitorro", "🥃"], ["chichaito", "🥃"], ["bili", "🥃"], ["limoncello", "🥃"],
+  ["jugo de china", "🍊"], ["jugo de toronja", "🍊"], ["jugo de mango", "🥭"], ["jugo de pina", "🍍"], ["jugo de acerola", "🍒"],
+  ["jugo de sandia", "🍉"], ["guarapo de cana", "🧃"], ["agua de coco", "🥥"],
   ["jugo", "🧃"], ["batida", "🥤"], ["champola", "🥤"], ["malta", "🥤"], ["avena", "🥣"], ["crema", "🥣"], ["farina", "🥣"],
   ["pique", "🌶️"], ["sofrito", "🌿"], ["recaito", "🌿"], ["ajilimojili", "🌶️"], ["mojo", "🧄"], ["adobo", "🧂"], ["sazon", "🧂"], ["achiote", "🫙"], ["mayo", "🫙"]
 ];
@@ -324,7 +331,7 @@ const categoryTones = {
   entremeses: ["#F0CFA0", "#D9A15E"], bizcochos: ["#F5D3D0", "#E3A19C"], galletitas: ["#EED8BC", "#D4AE7E"],
   pasteles_dulces: ["#F2D6C0", "#DDA984"], panes: ["#EDD9B8", "#D2AC72"], emparedados: ["#EBDDBF", "#CDB27E"],
   postres: ["#F3DCC6", "#DBAE7F"], arroces: ["#EFE3C8", "#D4BC8A"], vegetales: ["#D7E5C2", "#A3C27E"],
-  salsas: ["#F0C7B4", "#D98F71"], bebidas: ["#CDE5E4", "#93C6C3"], cocteles: ["#F3D0D6", "#E0939F"],
+  salsas: ["#F0C7B4", "#D98F71"], bebidas: ["#CDE5E4", "#93C6C3"], jugos: ["#FBE2B8", "#F2AE52"], cocteles: ["#F3D0D6", "#E0939F"],
   calientes: ["#E8D2BE", "#B98A63"], pastas: ["#F4DDB0", "#E0A95A"]
 };
 
@@ -336,7 +343,7 @@ const categoryOrder = [
   "carnes", "aves", "pescados", "huevos", "entremeses",
   "pastas", "bizcochos", "galletitas", "pasteles_dulces", "panes",
   "emparedados", "postres", "arroces", "vegetales",
-  "salsas", "bebidas", "cocteles"
+  "salsas", "bebidas", "jugos", "cocteles"
 ];
 
 const QUICK_MAX_MIN = 30;

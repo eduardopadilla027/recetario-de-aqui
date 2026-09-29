@@ -61,7 +61,9 @@ const ADVICE_TEXT = {
       sazon: "El sazón y el adobo comerciales suelen llevar glutamato monosódico (MSG) y colorantes como el amarillo 5; si le caen mal, use el Sazón Casero y el Adobo del recetario.",
       ciguatera: "En el Caribe, algunos peces grandes de arrecife (picúa, barracuda, meros y pargos muy grandes) pueden causar ciguatera. Compre en pescaderías confiables y evite las piezas muy grandes.",
       mercury: "En el embarazo, limite el atún blanco (albacore), que tiene más mercurio; el atún claro (light) es mejor opción, en 2-3 porciones de pescado a la semana.",
-      veda: "Respete las vedas y los tamaños mínimos del DRNA para el carrucho, la langosta y los jueyes: compre a pescadores o pescaderías autorizados."
+      veda: "Respete las vedas y los tamaños mínimos del DRNA para el carrucho, la langosta y los jueyes: compre a pescadores o pescaderías autorizados.",
+      grapefruit: "El jugo de toronja interfiere con varios medicamentos (para la presión, el colesterol, el corazón y otros). Si toma medicinas, consulte a su médico o farmacéutico antes de tomarlo.",
+      quenepa: "La semilla de la quenepa es del tamaño justo para atragantar: no les dé quenepas enteras a niños pequeños y vigílelos mientras las comen."
     },
     tips: {
       poultry: "Aves: cocínelas hasta 165°F (74°C) en la parte más gruesa. No lave el pollo crudo (salpica bacterias por la cocina); use tabla y cuchillo aparte y lávese las manos. Descongele en la nevera, nunca sobre el mostrador.",
@@ -117,7 +119,9 @@ const ADVICE_TEXT = {
       sazon: "Store-bought sazón and adobo often contain MSG and colorings such as Yellow 5; if they bother you, use the Homemade Sazón and Adobo recipes.",
       ciguatera: "In the Caribbean, some large reef fish (barracuda, very large grouper and snapper) can cause ciguatera. Buy from trusted fishmongers and avoid very large fish.",
       mercury: "During pregnancy, limit white (albacore) tuna, which is higher in mercury; light tuna is a better choice, within 2-3 fish servings a week.",
-      veda: "Respect the DRNA closed seasons and minimum sizes for conch, lobster, and land crabs: buy from licensed fishers or fish markets."
+      veda: "Respect the DRNA closed seasons and minimum sizes for conch, lobster, and land crabs: buy from licensed fishers or fish markets.",
+      grapefruit: "Grapefruit juice interferes with several medications (for blood pressure, cholesterol, the heart, and others). If you take medicines, ask your doctor or pharmacist before drinking it.",
+      quenepa: "A quenepa seed is just the right size to cause choking: don't give whole quenepas to young children and watch them while they eat."
     },
     tips: {
       poultry: "Poultry: cook to 165°F (74°C) in the thickest part. Don't rinse raw chicken (it splashes bacteria around the kitchen); use a separate board and knife and wash your hands. Thaw in the fridge, never on the counter.",
@@ -163,7 +167,7 @@ function getAdvisories(recipe) {
 
   const alerts = [];
   const push = (key, level, args = []) => alerts.push({ key, level, args });
-  const isDrink = ["bebidas", "cocteles", "calientes"].includes(cat);
+  const isDrink = ["bebidas", "jugos", "cocteles", "calientes"].includes(cat);
   const alcohol = /\b(ron|licor|pitorro|cerveza|limoncello)\b|(?<!vinagre de )\bvinos?\b/;
 
   if (/ceviche/.test(name)) push("rawFish", "high");
@@ -177,6 +181,8 @@ function getAdvisories(recipe) {
   if (has(/\b(mero|pargo|picua|barracuda|sierra)\b/)) push("ciguatera", "info");
   if (has(/\batun\b/)) push("mercury", "info");
   if (has(/carrucho|caracol|langost|\bjuey|cangrejo/)) push("veda", "info");
+  if (has(/\btoronjas?\b/) && !/cascos/.test(nutriNorm(recipe.name.es))) push("grapefruit", "caution");
+  if (has(/\bquenepas?\b/)) push("quenepa", "caution");
   // Sazón o adobo de sobre/frasco (con cantidad); "Adobo: ajo, orégano…" es casero.
   if (has(/\bsazon\b(?!\s+casero)|\d[^\n:]*\badobo\b|adobo al gusto/) && !/^(sazon-casero|adobo)$/.test(recipe.id)) push("sazon", "info");
 
@@ -200,7 +206,7 @@ function getAdvisories(recipe) {
   const raw = lines.filter((l) => !/\bcaldos?\b|consome|chicharron/.test(l))
     .map((l) => l.replace(/\([^)]*\)/g, "")).join("\n");
   const hasRaw = (rx) => rx.test(raw);
-  const poultry = hasRaw(/\b(pollos?|pavos?|gallinas?|pechugas?|muslos?|alitas?|mollejas?)\b/);
+  const poultry = hasRaw(/\b(pollos?|pavos?|gallinas?|guineas?|pechugas?|muslos?|alitas?|mollejas?)\b/);
   const pork = hasRaw(/\b(cerdo|pernil|lechon|chuletas?|costillas?|costillar|masitas|paleta|patitas?|cuero|longaniza)\b/);
   const ground = hasRaw(/carne molida|picadillo|albondiga/);
   const beef = hasRaw(/\b(res|bistecs?|falda|churrasco|rabo|cabro|chivo|cabrito|conejo|ternera|palomilla|boliche|lengua)\b|\bcarne\b(?!\s+(molida|de\s+(juey|cangrejo|cerdo)))/);

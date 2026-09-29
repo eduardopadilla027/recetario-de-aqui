@@ -2032,7 +2032,7 @@ const recipes = [
   },
   {
     id: "jugo-parcha",
-    category: "bebidas",
+    category: "jugos",
     name: { es: "Jugo de Parcha", en: "Passion Fruit Juice" },
     time: "10 min",
     servings: 6,

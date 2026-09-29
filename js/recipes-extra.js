@@ -1727,7 +1727,7 @@ recipes.push(
   // ── BEBIDAS ──
   {
     id: "jugo-tamarindo",
-    category: "bebidas",
+    category: "jugos",
     name: { es: "Jugo de Tamarindo", en: "Tamarind Juice" },
     time: "1 hr",
     servings: 8,
@@ -1762,7 +1762,7 @@ recipes.push(
   },
   {
     id: "limonada-criolla",
-    category: "bebidas",
+    category: "jugos",
     name: { es: "Limonada Criolla", en: "Puerto Rican Limeade" },
     time: "10 min",
     servings: 6,
@@ -7475,6 +7475,1700 @@ recipes.push(
         "Preheat the oven to 325°F. Place the goat in a baking dish with the onion, bay leaves, and marinade.",
         "Cover with foil and bake 2 hours, until the meat comes off the bone.",
         "Uncover, raise to 400°F, and brown 20 minutes. Serve with rice and pigeon peas or root vegetables."
+      ]
+    }
+  },
+
+  // ── AVES PUERTORRIQUEÑAS (más) ──
+  {
+    id: "pollo-carbon-mojo",
+    category: "aves",
+    name: { es: "Pollo al Carbón con Mojo", en: "Charcoal-Grilled Chicken with Mojo" },
+    time: "1 hr 15 min + adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 pollo entero (3-4 lbs), abierto por el espinazo",
+        "10 dientes de ajo, majados",
+        "¾ taza de jugo de naranja agria",
+        "¼ taza de aceite de oliva",
+        "1 cucharada de orégano",
+        "1 cucharadita de comino",
+        "1 cucharada de adobo",
+        "1 cebolla en aros"
+      ],
+      en: [
+        "1 whole chicken (3-4 lbs), butterflied through the back",
+        "10 garlic cloves, mashed",
+        "¾ cup sour orange juice",
+        "¼ cup olive oil",
+        "1 tablespoon oregano",
+        "1 teaspoon cumin",
+        "1 tablespoon adobo seasoning",
+        "1 onion, in rings"
+      ]
+    },
+    steps: {
+      es: [
+        "Prepare el mojo con el ajo, la naranja agria, el aceite, el orégano y el comino. Separe ¼ taza para servir.",
+        "Frote el pollo con el adobo y el resto del mojo, por dentro y por fuera y debajo del pellejo. Marine en la nevera de 4 horas a toda la noche.",
+        "Encienda el carbón y espere a que las brasas estén cubiertas de ceniza blanca. Ponga el pollo con el pellejo hacia arriba sobre el lado de calor indirecto.",
+        "Tape la parrilla y ase 45-50 minutos, volteándolo a la mitad, hasta 165°F en el muslo.",
+        "Termine 5 minutos sobre las brasas directas con el pellejo hacia abajo para que quede tostadito.",
+        "Sirva con el mojo que separó y la cebolla, con tostones o yuca. Es el pollo de los asaderos de carretera."
+      ],
+      en: [
+        "Make the mojo with the garlic, sour orange, oil, oregano, and cumin. Set aside ¼ cup for serving.",
+        "Rub the chicken with the adobo and the rest of the mojo, inside, outside, and under the skin. Marinate in the fridge from 4 hours to overnight.",
+        "Light the charcoal and wait until the coals are covered in white ash. Place the chicken skin-side up over the indirect-heat side.",
+        "Cover the grill and cook 45-50 minutes, turning halfway, to 165°F in the thigh.",
+        "Finish 5 minutes over direct heat skin-side down so it gets crispy.",
+        "Serve with the reserved mojo and the onion, with tostones or yuca. It's the chicken of the roadside asaderos."
+      ]
+    }
+  },
+  {
+    id: "pinchos-pollo",
+    category: "aves",
+    name: { es: "Pinchos de Pollo", en: "Chicken Skewers (Pinchos)" },
+    time: "40 min + adobo",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 lbs de pechuga o muslo de pollo sin hueso, en cubos",
+        "4 dientes de ajo, majados",
+        "1 cucharada de orégano",
+        "2 cucharadas de adobo",
+        "2 cucharadas de vinagre",
+        "2 cucharadas de aceite",
+        "1 taza de salsa BBQ",
+        "Palitos de pincho remojados",
+        "Pan de agua en pedazos para servir"
+      ],
+      en: [
+        "3 lbs boneless chicken breast or thigh, cubed",
+        "4 garlic cloves, mashed",
+        "1 tablespoon oregano",
+        "2 tablespoons adobo seasoning",
+        "2 tablespoons vinegar",
+        "2 tablespoons oil",
+        "1 cup BBQ sauce",
+        "Soaked wooden skewers",
+        "Water bread in pieces for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el pollo con ajo, orégano, adobo, vinagre y aceite. Marine 2 horas en la nevera.",
+        "Ensarte 5-6 pedazos en cada palito.",
+        "Ase a la parrilla a fuego medio-alto 12-15 minutos, volteando, hasta que no quede rosado por dentro.",
+        "Barnice con salsa BBQ los últimos 3 minutos.",
+        "Sirva con un pedazo de pan de agua en la punta del palito, como en los kioscos."
+      ],
+      en: [
+        "Season the chicken with garlic, oregano, adobo, vinegar, and oil. Marinate 2 hours in the fridge.",
+        "Thread 5-6 pieces on each skewer.",
+        "Grill over medium-high heat 12-15 minutes, turning, until no pink remains inside.",
+        "Brush with BBQ sauce the last 3 minutes.",
+        "Serve with a piece of water bread on the tip of the skewer, like at the kiosks."
+      ]
+    }
+  },
+  {
+    id: "pollo-encebollado",
+    category: "aves",
+    name: { es: "Pollo Encebollado", en: "Chicken Smothered in Onions" },
+    time: "50 min + adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 lbs de muslos de pollo sin hueso",
+        "4 dientes de ajo, majados",
+        "1 cucharadita de orégano",
+        "1 cucharadita de adobo",
+        "2 cucharadas de vinagre",
+        "3 cebollas grandes en aros",
+        "3 cucharadas de aceite de oliva",
+        "½ taza de caldo de pollo",
+        "1 hoja de laurel"
+      ],
+      en: [
+        "2 lbs boneless chicken thighs",
+        "4 garlic cloves, mashed",
+        "1 teaspoon oregano",
+        "1 teaspoon adobo seasoning",
+        "2 tablespoons vinegar",
+        "3 large onions, in rings",
+        "3 tablespoons olive oil",
+        "½ cup chicken broth",
+        "1 bay leaf"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el pollo con ajo, orégano, adobo y 1 cucharada de vinagre. Marine 1 hora en la nevera.",
+        "Dore el pollo en el aceite por ambos lados. Retírelo.",
+        "En la misma grasa, cocine la cebolla a fuego medio-bajo 10 minutos, hasta que esté blanda y dorada.",
+        "Añada el resto del vinagre, el caldo y el laurel. Regrese el pollo, tape y cocine a fuego bajo 20 minutos.",
+        "Sirva el pollo cubierto de cebolla, con arroz blanco y habichuelas."
+      ],
+      en: [
+        "Season the chicken with garlic, oregano, adobo, and 1 tablespoon vinegar. Marinate 1 hour in the fridge.",
+        "Brown the chicken in the oil on both sides. Remove.",
+        "In the same fat, cook the onions over medium-low heat 10 minutes, until soft and golden.",
+        "Add the rest of the vinegar, the broth, and the bay leaf. Return the chicken, cover, and cook on low 20 minutes.",
+        "Serve the chicken covered in onions, with white rice and beans."
+      ]
+    }
+  },
+  {
+    id: "pollo-cerveza",
+    category: "aves",
+    name: { es: "Pollo en Cerveza", en: "Chicken Stewed in Beer" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 lbs de presas de pollo",
+        "1 cucharada de adobo",
+        "4 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "½ taza de salsa de tomate",
+        "1 botella de cerveza (12 oz)",
+        "¼ taza de aceitunas rellenas",
+        "2 papas en cubos",
+        "1 zanahoria en ruedas",
+        "2 cucharadas de aceite"
+      ],
+      en: [
+        "3 lbs chicken pieces",
+        "1 tablespoon adobo seasoning",
+        "4 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "½ cup tomato sauce",
+        "1 bottle beer (12 oz)",
+        "¼ cup stuffed olives",
+        "2 potatoes, cubed",
+        "1 carrot, sliced",
+        "2 tablespoons oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone el pollo con el adobo y dórelo en el aceite. Retírelo.",
+        "Sofría el sofrito y el sazón 2 minutos. Añada la salsa de tomate, la cerveza y las aceitunas.",
+        "Regrese el pollo, tape y cocine a fuego bajo 25 minutos.",
+        "Añada las papas y la zanahoria y cocine 20 minutos más, hasta que la salsa espese.",
+        "Sirva con arroz blanco. La cerveza le da un sabor más profundo a la salsa."
+      ],
+      en: [
+        "Season the chicken with the adobo and brown it in the oil. Remove.",
+        "Sauté the sofrito and sazón 2 minutes. Add the tomato sauce, beer, and olives.",
+        "Return the chicken, cover, and cook on low 25 minutes.",
+        "Add the potatoes and carrot and cook 20 more minutes, until the sauce thickens.",
+        "Serve with white rice. The beer gives the sauce a deeper flavor."
+      ]
+    }
+  },
+  {
+    id: "pollo-salsa-coco",
+    category: "aves",
+    name: { es: "Pollo en Salsa de Coco", en: "Chicken in Coconut Sauce" },
+    time: "50 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 lbs de muslos de pollo",
+        "1 cucharada de adobo",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "2 cucharadas de salsa de tomate",
+        "1 lata de leche de coco (13.5 oz)",
+        "1 ají picante (opcional)",
+        "Recao picado",
+        "2 cucharadas de aceite con achiote"
+      ],
+      en: [
+        "3 lbs chicken thighs",
+        "1 tablespoon adobo seasoning",
+        "3 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "2 tablespoons tomato sauce",
+        "1 can coconut milk (13.5 oz)",
+        "1 hot pepper (optional)",
+        "Chopped culantro",
+        "2 tablespoons annatto oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone el pollo con el adobo y dórelo en el aceite con achiote.",
+        "Añada el sofrito, el sazón y la salsa de tomate y sofría 2 minutos.",
+        "Vierta la leche de coco y añada el ají entero. Tape y cocine a fuego bajo 30 minutos.",
+        "Destape y deje que la salsa espese 5 minutos. Retire el ají.",
+        "Espolvoree recao y sirva con arroz blanco o arepas de coco, como en Loíza."
+      ],
+      en: [
+        "Season the chicken with the adobo and brown it in the annatto oil.",
+        "Add the sofrito, sazón, and tomato sauce and sauté 2 minutes.",
+        "Pour in the coconut milk and add the whole hot pepper. Cover and cook on low 30 minutes.",
+        "Uncover and let the sauce thicken 5 minutes. Remove the pepper.",
+        "Sprinkle with culantro and serve with white rice or coconut arepas, as in Loíza."
+      ]
+    }
+  },
+  {
+    id: "muslos-guayaba",
+    category: "aves",
+    name: { es: "Muslos Glaseados con Guayaba", en: "Guava-Glazed Chicken Thighs" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "8 muslos de pollo con hueso",
+        "1 cucharada de adobo",
+        "1 cucharadita de ajo en polvo",
+        "Glaseado: 6 oz de pasta de guayaba",
+        "½ taza de agua",
+        "2 cucharadas de salsa de soya",
+        "2 cucharadas de vinagre",
+        "2 dientes de ajo, majados"
+      ],
+      en: [
+        "8 bone-in chicken thighs",
+        "1 tablespoon adobo seasoning",
+        "1 teaspoon garlic powder",
+        "Glaze: 6 oz guava paste",
+        "½ cup water",
+        "2 tablespoons soy sauce",
+        "2 tablespoons vinegar",
+        "2 garlic cloves, mashed"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 400°F. Sazone los muslos con el adobo y el ajo en polvo y colóquelos en un molde con el pellejo hacia arriba.",
+        "Hornee 25 minutos.",
+        "Mientras tanto, derrita la pasta de guayaba con el agua, la salsa de soya, el vinagre y el ajo a fuego bajo, hasta que forme un glaseado espeso.",
+        "Barnice los muslos con el glaseado y hornee 15-20 minutos más, barnizando otra vez a la mitad, hasta 165°F por dentro.",
+        "Sirva con el glaseado que sobre, con arroz y ensalada."
+      ],
+      en: [
+        "Preheat the oven to 400°F. Season the thighs with the adobo and garlic powder and place skin-side up in a baking dish.",
+        "Bake 25 minutes.",
+        "Meanwhile, melt the guava paste with the water, soy sauce, vinegar, and garlic over low heat until it forms a thick glaze.",
+        "Brush the thighs with the glaze and bake 15-20 more minutes, brushing again halfway, to 165°F inside.",
+        "Serve with the leftover glaze, with rice and salad."
+      ]
+    }
+  },
+  {
+    id: "pechugas-empanadas",
+    category: "aves",
+    name: { es: "Pechugas Empanadas", en: "Breaded Chicken Breasts" },
+    time: "30 min + adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 pechugas de pollo grandes, abiertas y aplanadas (4 filetes)",
+        "3 dientes de ajo, majados",
+        "Jugo de 1 limón",
+        "1 cucharadita de adobo",
+        "½ taza de harina",
+        "2 huevos batidos",
+        "1½ tazas de galleta molida o pan rallado",
+        "Aceite para freír"
+      ],
+      en: [
+        "2 large chicken breasts, butterflied and pounded (4 cutlets)",
+        "3 garlic cloves, mashed",
+        "Juice of 1 lime",
+        "1 teaspoon adobo seasoning",
+        "½ cup flour",
+        "2 beaten eggs",
+        "1½ cups cracker meal or breadcrumbs",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe los filetes con ajo, limón y adobo. Marine 30 minutos en la nevera.",
+        "Páselos por harina, luego por huevo y por último por galleta molida, presionando.",
+        "Fría en ½ pulgada de aceite caliente 3-4 minutos por lado, hasta que estén dorados y cocidos por dentro.",
+        "Escurra sobre papel toalla. Sirva con arroz, habichuelas y tostones, o en un sándwich."
+      ],
+      en: [
+        "Season the cutlets with garlic, lime, and adobo. Marinate 30 minutes in the fridge.",
+        "Dredge in flour, then egg, and finally cracker meal, pressing.",
+        "Fry in ½ inch hot oil 3-4 minutes per side, until golden and cooked through.",
+        "Drain on paper towels. Serve with rice, beans, and tostones, or in a sandwich."
+      ]
+    }
+  },
+  {
+    id: "fricase-gallina",
+    category: "aves",
+    name: { es: "Fricasé de Gallina", en: "Stewed Hen Fricassee" },
+    time: "2 hrs 30 min + adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 gallina (4 lbs), en presas",
+        "6 dientes de ajo, majados",
+        "1 cucharada de orégano",
+        "¼ taza de vinagre",
+        "1 cucharada de adobo",
+        "4 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "1 lata de salsa de tomate (8 oz)",
+        "½ taza de vino blanco",
+        "½ taza de aceitunas rellenas",
+        "2 cucharadas de alcaparras",
+        "3 papas en cubos",
+        "2 hojas de laurel"
+      ],
+      en: [
+        "1 stewing hen (4 lbs), cut into pieces",
+        "6 garlic cloves, mashed",
+        "1 tablespoon oregano",
+        "¼ cup vinegar",
+        "1 tablespoon adobo seasoning",
+        "4 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "1 can tomato sauce (8 oz)",
+        "½ cup white wine",
+        "½ cup stuffed olives",
+        "2 tablespoons capers",
+        "3 potatoes, cubed",
+        "2 bay leaves"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe la gallina con ajo, orégano, vinagre y adobo. Marine toda la noche en la nevera.",
+        "Dórela en un caldero. Añada el sofrito, el sazón, la salsa de tomate, el vino, las aceitunas, las alcaparras y el laurel.",
+        "Cubra con agua, tape y cocine a fuego bajo 1½-2 horas: la gallina es más dura que el pollo y necesita más tiempo.",
+        "Cuando la carne esté blanda, añada las papas y cocine 25 minutos más, hasta que la salsa espese.",
+        "Sirva con arroz blanco. Tiene más sabor que el de pollo; es el fricasé de las casas del campo."
+      ],
+      en: [
+        "Season the hen with garlic, oregano, vinegar, and adobo. Marinate overnight in the fridge.",
+        "Brown it in a caldero. Add the sofrito, sazón, tomato sauce, wine, olives, capers, and bay leaves.",
+        "Cover with water, cover the pot, and cook on low 1½-2 hours: a hen is tougher than a chicken and needs more time.",
+        "When the meat is tender, add the potatoes and cook 25 more minutes, until the sauce thickens.",
+        "Serve with white rice. It has more flavor than chicken fricassee; it's the fricasé of country homes."
+      ]
+    }
+  },
+  {
+    id: "pollo-relleno-horno",
+    category: "aves",
+    name: { es: "Pollo Relleno al Horno", en: "Stuffed Roast Chicken" },
+    time: "2 hrs + adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 pollo entero (4-5 lbs)",
+        "6 dientes de ajo, majados",
+        "1 cucharada de orégano",
+        "1 cucharada de adobo",
+        "2 cucharadas de aceite de oliva",
+        "Jugo de 2 limones",
+        "Relleno: 1 lb de carne molida",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón",
+        "2 cucharadas de salsa de tomate",
+        "¼ taza de aceitunas picadas",
+        "¼ taza de pasas",
+        "1 taza de pan de agua en pedacitos",
+        "1 huevo",
+        "Hilo de cocina"
+      ],
+      en: [
+        "1 whole chicken (4-5 lbs)",
+        "6 garlic cloves, mashed",
+        "1 tablespoon oregano",
+        "1 tablespoon adobo seasoning",
+        "2 tablespoons olive oil",
+        "Juice of 2 limes",
+        "Filling: 1 lb ground beef",
+        "3 tablespoons sofrito",
+        "1 packet sazón",
+        "2 tablespoons tomato sauce",
+        "¼ cup chopped olives",
+        "¼ cup raisins",
+        "1 cup water bread, in small pieces",
+        "1 egg",
+        "Kitchen twine"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el pollo por dentro y por fuera con ajo, orégano, adobo, aceite y limón. Marine en la nevera de 4 horas a toda la noche.",
+        "Relleno: sofría la carne con el sofrito, el sazón y la salsa de tomate hasta que no quede rosada. Añada las aceitunas y las pasas y deje enfriar.",
+        "Mezcle la carne con el pan y el huevo. Rellene la cavidad del pollo sin apretar demasiado y amarre las patas.",
+        "Hornee a 350°F 1½ horas, bañándolo con su jugo, hasta 165°F en el muslo y también en el centro del relleno.",
+        "Repose 15 minutos antes de trinchar. Sirva el relleno aparte. Es un plato de fiesta en muchas casas."
+      ],
+      en: [
+        "Season the chicken inside and out with garlic, oregano, adobo, oil, and lime. Marinate in the fridge from 4 hours to overnight.",
+        "Filling: sauté the beef with the sofrito, sazón, and tomato sauce until no pink remains. Add the olives and raisins and let cool.",
+        "Mix the beef with the bread and egg. Stuff the cavity loosely and tie the legs.",
+        "Roast at 350°F for 1½ hours, basting with the juices, to 165°F in the thigh and also in the center of the stuffing.",
+        "Rest 15 minutes before carving. Serve the stuffing on the side. It's a party dish in many homes."
+      ]
+    }
+  },
+  {
+    id: "pavo-guisado",
+    category: "aves",
+    name: { es: "Pavo Guisado (con el Pavo que Sobra)", en: "Stewed Leftover Turkey" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "4 tazas de pavo asado, en pedazos o desmenuzado",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "½ taza de salsa de tomate",
+        "2 tazas de caldo de pavo o de pollo",
+        "¼ taza de aceitunas rellenas",
+        "2 papas en cubos",
+        "1 zanahoria en ruedas",
+        "½ taza de petit pois",
+        "2 cucharadas de aceite"
+      ],
+      en: [
+        "4 cups roast turkey, in pieces or shredded",
+        "3 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "½ cup tomato sauce",
+        "2 cups turkey or chicken broth",
+        "¼ cup stuffed olives",
+        "2 potatoes, cubed",
+        "1 carrot, sliced",
+        "½ cup petit pois",
+        "2 tablespoons oil"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero, sofría el sofrito y el sazón en el aceite 2 minutos.",
+        "Añada la salsa de tomate, el caldo, las aceitunas, las papas y la zanahoria. Cocine tapado 20 minutos.",
+        "Agregue el pavo y los petit pois y cocine 10 minutos más, hasta que el pavo esté bien caliente y la salsa espese.",
+        "Sirva con arroz blanco. Use pavo que se haya guardado en la nevera antes de 2 horas y consúmalo en 3-4 días."
+      ],
+      en: [
+        "In a caldero, sauté the sofrito and sazón in the oil 2 minutes.",
+        "Add the tomato sauce, broth, olives, potatoes, and carrot. Cook covered 20 minutes.",
+        "Add the turkey and petit pois and cook 10 more minutes, until the turkey is piping hot and the sauce thickens.",
+        "Serve with white rice. Use turkey that was refrigerated within 2 hours and eat it within 3-4 days."
+      ]
+    }
+  },
+
+  // ── GUINEAS (ave de campo) ──
+  {
+    id: "guinea-guisada",
+    category: "aves",
+    name: { es: "Guinea Guisada en Fricasé", en: "Stewed Guinea Hen Fricassee" },
+    time: "2 hrs + adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 guinea (2½-3 lbs), limpia y en presas",
+        "6 dientes de ajo, majados",
+        "1 cucharada de orégano",
+        "¼ taza de vinagre",
+        "1 cucharada de adobo",
+        "4 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "½ taza de salsa de tomate",
+        "½ taza de vino tinto",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "2 papas en cubos",
+        "2 hojas de laurel",
+        "2 cucharadas de aceite"
+      ],
+      en: [
+        "1 guinea hen (2½-3 lbs), cleaned and cut into pieces",
+        "6 garlic cloves, mashed",
+        "1 tablespoon oregano",
+        "¼ cup vinegar",
+        "1 tablespoon adobo seasoning",
+        "4 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "½ cup tomato sauce",
+        "½ cup red wine",
+        "¼ cup stuffed olives",
+        "1 tablespoon capers",
+        "2 potatoes, cubed",
+        "2 bay leaves",
+        "2 tablespoons oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave la guinea con agua y limón. Adóbela con ajo, orégano, vinagre y adobo y marine toda la noche en la nevera: su carne es oscura y más dura que la del pollo.",
+        "Dore las presas en el aceite. Añada el sofrito, el sazón, la salsa de tomate, el vino, las aceitunas, las alcaparras y el laurel.",
+        "Cubra con agua, tape y cocine a fuego bajo 1-1½ horas, hasta que la carne esté blanda.",
+        "Añada las papas y cocine 25 minutos más, hasta que la salsa espese.",
+        "Sirva con arroz blanco y amarillos. Es un plato de campo, de cuando se criaban guineas en el patio."
+      ],
+      en: [
+        "Rinse the guinea hen with water and lime. Season with garlic, oregano, vinegar, and adobo and marinate overnight in the fridge: its meat is dark and tougher than chicken.",
+        "Brown the pieces in the oil. Add the sofrito, sazón, tomato sauce, wine, olives, capers, and bay leaves.",
+        "Cover with water, cover the pot, and cook on low 1-1½ hours, until the meat is tender.",
+        "Add the potatoes and cook 25 more minutes, until the sauce thickens.",
+        "Serve with white rice and sweet plantains. It's a country dish, from when families raised guinea hens in the yard."
+      ]
+    }
+  },
+  {
+    id: "guinea-asada",
+    category: "aves",
+    name: { es: "Guinea Asada al Horno", en: "Roast Guinea Hen" },
+    time: "1 hr 45 min + adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 guinea entera (2½-3 lbs), limpia",
+        "8 dientes de ajo, majados",
+        "1 cucharada de orégano",
+        "½ taza de jugo de naranja agria",
+        "3 cucharadas de aceite de oliva",
+        "1 cucharada de adobo",
+        "4 lonjas de tocineta",
+        "1 cebolla en cuartos"
+      ],
+      en: [
+        "1 whole guinea hen (2½-3 lbs), cleaned",
+        "8 garlic cloves, mashed",
+        "1 tablespoon oregano",
+        "½ cup sour orange juice",
+        "3 tablespoons olive oil",
+        "1 tablespoon adobo seasoning",
+        "4 bacon slices",
+        "1 onion, quartered"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe la guinea por dentro y por fuera con ajo, orégano, naranja agria, aceite y adobo. Marine toda la noche en la nevera.",
+        "Precaliente el horno a 350°F. Ponga la cebolla dentro de la cavidad y amarre las patas.",
+        "Cubra la pechuga con las lonjas de tocineta: la guinea tiene poca grasa y así no se seca.",
+        "Tape con papel de aluminio y hornee 1 hora. Destape, quite la tocineta y hornee 20-30 minutos más, bañándola con su jugo, hasta 165°F en el muslo.",
+        "Repose 10 minutos y corte en presas. Sirva con arroz con gandules."
+      ],
+      en: [
+        "Season the guinea hen inside and out with garlic, oregano, sour orange, oil, and adobo. Marinate overnight in the fridge.",
+        "Preheat the oven to 350°F. Put the onion in the cavity and tie the legs.",
+        "Cover the breast with the bacon slices: guinea hen is lean and this keeps it from drying out.",
+        "Cover with foil and roast 1 hour. Uncover, remove the bacon, and roast 20-30 more minutes, basting, to 165°F in the thigh.",
+        "Rest 10 minutes and cut into pieces. Serve with rice and pigeon peas."
+      ]
+    }
+  },
+  {
+    id: "arroz-guinea",
+    category: "arroces",
+    name: { es: "Arroz con Guinea", en: "Rice with Guinea Hen" },
+    time: "2 hrs + adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 guinea (2½-3 lbs), en presas pequeñas",
+        "4 dientes de ajo, majados",
+        "1 cucharadita de orégano",
+        "1 cucharada de adobo",
+        "3 tazas de arroz grano mediano",
+        "4 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "½ taza de petit pois",
+        "3 cucharadas de aceite con achiote"
+      ],
+      en: [
+        "1 guinea hen (2½-3 lbs), in small pieces",
+        "4 garlic cloves, mashed",
+        "1 teaspoon oregano",
+        "1 tablespoon adobo seasoning",
+        "3 cups medium grain rice",
+        "4 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "¼ cup tomato sauce",
+        "¼ cup stuffed olives",
+        "1 tablespoon capers",
+        "½ cup petit pois",
+        "3 tablespoons annatto oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe la guinea con ajo, orégano y adobo. Marine toda la noche en la nevera.",
+        "En un caldero, dore las presas en el aceite con achiote. Añada el sofrito, el sazón, la salsa de tomate, las aceitunas y las alcaparras.",
+        "Agregue 5 tazas de agua, tape y cocine a fuego bajo 1 hora, hasta que la guinea esté blanda.",
+        "Mida el líquido: debe haber unas 4 tazas (añada agua si hace falta). Cuando hierva, añada el arroz y cocine sin tapa hasta que se seque.",
+        "Voltee, añada los petit pois, tape y cocine a fuego bajo 25 minutos."
+      ],
+      en: [
+        "Season the guinea hen with garlic, oregano, and adobo. Marinate overnight in the fridge.",
+        "In a caldero, brown the pieces in the annatto oil. Add the sofrito, sazón, tomato sauce, olives, and capers.",
+        "Add 5 cups water, cover, and cook on low 1 hour, until the guinea hen is tender.",
+        "Measure the liquid: there should be about 4 cups (add water if needed). When it boils, add the rice and cook uncovered until dry.",
+        "Fold, add the petit pois, cover, and cook on low 25 minutes."
+      ]
+    }
+  },
+
+  // ── GALLETAS (más) ──
+  {
+    id: "galletas-maicena",
+    category: "galletitas",
+    name: { es: "Galletas de Maicena", en: "Cornstarch Cookies" },
+    time: "35 min",
+    servings: 30,
+    ingredients: {
+      es: [
+        "1½ tazas de maicena",
+        "½ taza de harina",
+        "¾ taza de mantequilla suavizada",
+        "½ taza de azúcar en polvo",
+        "1 yema de huevo",
+        "1 cucharadita de vainilla",
+        "Ralladura de 1 limón",
+        "Pizca de sal"
+      ],
+      en: [
+        "1½ cups cornstarch",
+        "½ cup flour",
+        "¾ cup softened butter",
+        "½ cup powdered sugar",
+        "1 egg yolk",
+        "1 teaspoon vanilla",
+        "Zest of 1 lime",
+        "Pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 325°F y forre una bandeja con papel de hornear.",
+        "Bata la mantequilla con el azúcar en polvo hasta que esté cremosa. Añada la yema, la vainilla y la ralladura.",
+        "Cierna la maicena con la harina y la sal e incorpórelas hasta formar una masa suave.",
+        "Forme bolitas, colóquelas en la bandeja y aplástelas con un tenedor.",
+        "Hornee 15-18 minutos: deben quedar blancas por encima y apenas doradas por debajo. Se deshacen en la boca."
+      ],
+      en: [
+        "Preheat the oven to 325°F and line a baking sheet with parchment.",
+        "Beat the butter with the powdered sugar until creamy. Add the yolk, vanilla, and zest.",
+        "Sift the cornstarch with the flour and salt and mix in until a soft dough forms.",
+        "Shape into balls, place on the sheet, and flatten with a fork.",
+        "Bake 15-18 minutes: they should stay white on top and barely golden underneath. They melt in your mouth."
+      ]
+    }
+  },
+  {
+    id: "galletas-mantequilla-mermelada",
+    category: "galletitas",
+    name: { es: "Galletas de Mantequilla con Mermelada", en: "Butter Cookies with Jam" },
+    time: "40 min",
+    servings: 30,
+    ingredients: {
+      es: [
+        "2 tazas de harina",
+        "1 taza de mantequilla suavizada",
+        "½ taza de azúcar",
+        "1 huevo",
+        "1 cucharadita de vainilla",
+        "¼ cucharadita de sal",
+        "½ taza de mermelada de guayaba o de piña"
+      ],
+      en: [
+        "2 cups flour",
+        "1 cup softened butter",
+        "½ cup sugar",
+        "1 egg",
+        "1 teaspoon vanilla",
+        "¼ teaspoon salt",
+        "½ cup guava or pineapple jam"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F.",
+        "Bata la mantequilla con el azúcar hasta que esté cremosa. Añada el huevo y la vainilla.",
+        "Incorpore la harina y la sal. Ponga la masa en una manga con boquilla rizada.",
+        "Forme rosetas o anillos sobre una bandeja y ponga un poquito de mermelada en el centro.",
+        "Hornee 12-14 minutos, hasta que los bordes estén dorados. Son las galletas de lata de las fiestas."
+      ],
+      en: [
+        "Preheat the oven to 350°F.",
+        "Beat the butter with the sugar until creamy. Add the egg and vanilla.",
+        "Mix in the flour and salt. Put the dough in a piping bag with a star tip.",
+        "Pipe rosettes or rings onto a baking sheet and put a little jam in the center.",
+        "Bake 12-14 minutes, until the edges are golden. They're the holiday tin cookies."
+      ]
+    }
+  },
+  {
+    id: "galletas-avena-pasas",
+    category: "galletitas",
+    name: { es: "Galletas de Avena con Pasas", en: "Oatmeal Raisin Cookies" },
+    time: "30 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "1½ tazas de avena",
+        "1 taza de harina",
+        "½ taza de mantequilla suavizada",
+        "¾ taza de azúcar morena",
+        "1 huevo",
+        "1 cucharadita de vainilla",
+        "½ cucharadita de bicarbonato",
+        "1 cucharadita de canela",
+        "¼ cucharadita de sal",
+        "¾ taza de pasas"
+      ],
+      en: [
+        "1½ cups oats",
+        "1 cup flour",
+        "½ cup softened butter",
+        "¾ cup brown sugar",
+        "1 egg",
+        "1 teaspoon vanilla",
+        "½ teaspoon baking soda",
+        "1 teaspoon cinnamon",
+        "¼ teaspoon salt",
+        "¾ cup raisins"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F.",
+        "Bata la mantequilla con el azúcar morena. Añada el huevo y la vainilla.",
+        "Mezcle la harina, el bicarbonato, la canela y la sal, e incorpórelos. Añada la avena y las pasas.",
+        "Ponga cucharadas de masa en una bandeja, separadas porque se extienden.",
+        "Hornee 11-13 minutos, hasta que los bordes estén dorados y el centro todavía suave."
+      ],
+      en: [
+        "Preheat the oven to 350°F.",
+        "Beat the butter with the brown sugar. Add the egg and vanilla.",
+        "Mix the flour, baking soda, cinnamon, and salt, and stir them in. Add the oats and raisins.",
+        "Drop spoonfuls of dough onto a baking sheet, spaced apart because they spread.",
+        "Bake 11-13 minutes, until the edges are golden and the centers still soft."
+      ]
+    }
+  },
+  {
+    id: "galletas-ajonjoli",
+    category: "galletitas",
+    name: { es: "Galletas de Ajonjolí", en: "Sesame Cookies" },
+    time: "40 min",
+    servings: 30,
+    ingredients: {
+      es: [
+        "2 tazas de harina",
+        "½ taza de manteca vegetal o mantequilla",
+        "½ taza de azúcar",
+        "1 huevo",
+        "2 cucharadas de leche",
+        "1 cucharadita de polvo de hornear",
+        "1 cucharadita de vainilla",
+        "¾ taza de ajonjolí",
+        "1 clara de huevo batida para pegar"
+      ],
+      en: [
+        "2 cups flour",
+        "½ cup shortening or butter",
+        "½ cup sugar",
+        "1 egg",
+        "2 tablespoons milk",
+        "1 teaspoon baking powder",
+        "1 teaspoon vanilla",
+        "¾ cup sesame seeds",
+        "1 beaten egg white to coat"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F.",
+        "Bata la manteca con el azúcar. Añada el huevo, la leche y la vainilla.",
+        "Incorpore la harina con el polvo de hornear hasta formar una masa firme.",
+        "Forme palitos de 2 pulgadas, páselos por la clara y luego por el ajonjolí.",
+        "Hornee 15-18 minutos, hasta que el ajonjolí esté dorado. Son las de las panaderías de pueblo."
+      ],
+      en: [
+        "Preheat the oven to 350°F.",
+        "Beat the shortening with the sugar. Add the egg, milk, and vanilla.",
+        "Mix in the flour with the baking powder until a firm dough forms.",
+        "Shape into 2-inch logs, dip in the egg white and then in the sesame seeds.",
+        "Bake 15-18 minutes, until the sesame is golden. They're the small-town bakery kind."
+      ]
+    }
+  },
+  {
+    id: "galletas-almendra",
+    category: "galletitas",
+    name: { es: "Galletas de Almendra", en: "Almond Cookies" },
+    time: "35 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "1½ tazas de harina",
+        "1 taza de almendras molidas",
+        "½ taza de mantequilla suavizada",
+        "½ taza de azúcar",
+        "1 huevo",
+        "½ cucharadita de extracto de almendra",
+        "¼ cucharadita de sal",
+        "24 almendras enteras para decorar"
+      ],
+      en: [
+        "1½ cups flour",
+        "1 cup ground almonds",
+        "½ cup softened butter",
+        "½ cup sugar",
+        "1 egg",
+        "½ teaspoon almond extract",
+        "¼ teaspoon salt",
+        "24 whole almonds for decorating"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F.",
+        "Bata la mantequilla con el azúcar. Añada el huevo y el extracto de almendra.",
+        "Incorpore la harina, las almendras molidas y la sal.",
+        "Forme bolitas, colóquelas en una bandeja y presione una almendra entera en el centro de cada una.",
+        "Hornee 14-16 minutos, hasta que estén apenas doradas."
+      ],
+      en: [
+        "Preheat the oven to 350°F.",
+        "Beat the butter with the sugar. Add the egg and almond extract.",
+        "Mix in the flour, ground almonds, and salt.",
+        "Shape into balls, place on a baking sheet, and press a whole almond into the center of each.",
+        "Bake 14-16 minutes, until just golden."
+      ]
+    }
+  },
+  {
+    id: "galletas-cafe",
+    category: "galletitas",
+    name: { es: "Galletas de Café", en: "Coffee Cookies" },
+    time: "35 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "2 tazas de harina",
+        "½ taza de mantequilla suavizada",
+        "¾ taza de azúcar morena",
+        "1 huevo",
+        "2 cucharadas de café puertorriqueño bien fuerte",
+        "1 cucharadita de café instantáneo",
+        "½ cucharadita de canela",
+        "½ cucharadita de polvo de hornear",
+        "Pizca de sal"
+      ],
+      en: [
+        "2 cups flour",
+        "½ cup softened butter",
+        "¾ cup brown sugar",
+        "1 egg",
+        "2 tablespoons very strong Puerto Rican coffee",
+        "1 teaspoon instant coffee",
+        "½ teaspoon cinnamon",
+        "½ teaspoon baking powder",
+        "Pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F.",
+        "Disuelva el café instantáneo en el café colado.",
+        "Bata la mantequilla con el azúcar morena. Añada el huevo y el café.",
+        "Incorpore la harina, la canela, el polvo de hornear y la sal. Forme bolitas y aplástelas un poco.",
+        "Hornee 12-14 minutos. Perfectas para mojar en el café con leche."
+      ],
+      en: [
+        "Preheat the oven to 350°F.",
+        "Dissolve the instant coffee in the brewed coffee.",
+        "Beat the butter with the brown sugar. Add the egg and coffee.",
+        "Mix in the flour, cinnamon, baking powder, and salt. Shape into balls and flatten slightly.",
+        "Bake 12-14 minutes. Perfect for dunking in café con leche."
+      ]
+    }
+  },
+  {
+    id: "galletas-limon",
+    category: "galletitas",
+    name: { es: "Galletas de Limón Glaseadas", en: "Glazed Lime Cookies" },
+    time: "40 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "2 tazas de harina",
+        "½ taza de mantequilla suavizada",
+        "¾ taza de azúcar",
+        "1 huevo",
+        "Ralladura de 2 limones",
+        "2 cucharadas de jugo de limón",
+        "1 cucharadita de polvo de hornear",
+        "Glaseado: 1 taza de azúcar en polvo",
+        "2 cucharadas de jugo de limón más"
+      ],
+      en: [
+        "2 cups flour",
+        "½ cup softened butter",
+        "¾ cup sugar",
+        "1 egg",
+        "Zest of 2 limes",
+        "2 tablespoons lime juice",
+        "1 teaspoon baking powder",
+        "Glaze: 1 cup powdered sugar",
+        "2 more tablespoons lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F.",
+        "Bata la mantequilla con el azúcar y la ralladura. Añada el huevo y el jugo de limón.",
+        "Incorpore la harina con el polvo de hornear. Forme bolitas y colóquelas en una bandeja.",
+        "Hornee 12-14 minutos y deje enfriar.",
+        "Mezcle el azúcar en polvo con el jugo de limón y bañe las galletas. Deje secar el glaseado 20 minutos."
+      ],
+      en: [
+        "Preheat the oven to 350°F.",
+        "Beat the butter with the sugar and zest. Add the egg and lime juice.",
+        "Mix in the flour with the baking powder. Shape into balls and place on a baking sheet.",
+        "Bake 12-14 minutes and let cool.",
+        "Mix the powdered sugar with the lime juice and glaze the cookies. Let the glaze set 20 minutes."
+      ]
+    }
+  },
+  {
+    id: "galletas-soda-caseras",
+    category: "galletitas",
+    name: { es: "Galletas de Soda Caseras", en: "Homemade Soda Crackers" },
+    time: "45 min",
+    servings: 40,
+    ingredients: {
+      es: [
+        "2 tazas de harina",
+        "¼ taza de mantequilla fría",
+        "½ cucharadita de polvo de hornear",
+        "¼ cucharadita de bicarbonato",
+        "½ cucharadita de sal",
+        "⅔ taza de agua fría",
+        "Sal gruesa para espolvorear"
+      ],
+      en: [
+        "2 cups flour",
+        "¼ cup cold butter",
+        "½ teaspoon baking powder",
+        "¼ teaspoon baking soda",
+        "½ teaspoon salt",
+        "⅔ cup cold water",
+        "Coarse salt for sprinkling"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 400°F.",
+        "Mezcle la harina, el polvo de hornear, el bicarbonato y la sal. Desmorone la mantequilla con los dedos hasta que parezca arena.",
+        "Añada el agua y forme una masa. Estírela muy fina, de ⅛ de pulgada.",
+        "Corte cuadrados de 2 pulgadas, pínchelos con un tenedor y espolvoree sal gruesa.",
+        "Hornee 10-12 minutos, hasta que estén dorados y crujientes. Sirva con queso del país, guayaba o sopa."
+      ],
+      en: [
+        "Preheat the oven to 400°F.",
+        "Mix the flour, baking powder, baking soda, and salt. Rub in the butter with your fingers until it looks like sand.",
+        "Add the water and form a dough. Roll it very thin, ⅛ inch.",
+        "Cut into 2-inch squares, prick with a fork, and sprinkle with coarse salt.",
+        "Bake 10-12 minutes, until golden and crisp. Serve with local cheese, guava, or soup."
+      ]
+    }
+  },
+  {
+    id: "mantecaditos-chocolate",
+    category: "galletitas",
+    name: { es: "Mantecaditos de Chocolate", en: "Chocolate Shortbread Cookies (Mantecaditos)" },
+    time: "35 min",
+    servings: 30,
+    ingredients: {
+      es: [
+        "2 tazas de harina",
+        "¼ taza de cacao en polvo",
+        "1 taza de manteca vegetal o mantequilla",
+        "¾ taza de azúcar",
+        "1 cucharadita de vainilla",
+        "¼ cucharadita de sal",
+        "Cerezas marrasquino en mitades (opcional)"
+      ],
+      en: [
+        "2 cups flour",
+        "¼ cup cocoa powder",
+        "1 cup shortening or butter",
+        "¾ cup sugar",
+        "1 teaspoon vanilla",
+        "¼ teaspoon salt",
+        "Maraschino cherry halves (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F.",
+        "Bata la manteca con el azúcar y la vainilla hasta que esté esponjosa.",
+        "Cierna la harina con el cacao y la sal e incorpórelos hasta formar una masa suave.",
+        "Forme bolitas, colóquelas en una bandeja y hunda el centro con el dedo. Ponga media cereza si desea.",
+        "Hornee 12-15 minutos. Déjelas enfriar en la bandeja porque salen muy frágiles."
+      ],
+      en: [
+        "Preheat the oven to 350°F.",
+        "Beat the shortening with the sugar and vanilla until fluffy.",
+        "Sift the flour with the cocoa and salt and mix in until a soft dough forms.",
+        "Shape into balls, place on a baking sheet, and press the center with your finger. Add half a cherry if you like.",
+        "Bake 12-15 minutes. Let them cool on the sheet because they come out very fragile."
+      ]
+    }
+  },
+  {
+    id: "galletas-batata",
+    category: "galletitas",
+    name: { es: "Galletas de Batata con Canela", en: "Sweet Potato Cinnamon Cookies" },
+    time: "35 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "1 taza de batata cocida y majada",
+        "2 tazas de harina",
+        "½ taza de mantequilla suavizada",
+        "¾ taza de azúcar morena",
+        "1 huevo",
+        "1 cucharadita de polvo de hornear",
+        "1 cucharadita de canela",
+        "¼ cucharadita de nuez moscada",
+        "Azúcar y canela para espolvorear"
+      ],
+      en: [
+        "1 cup cooked, mashed sweet potato",
+        "2 cups flour",
+        "½ cup softened butter",
+        "¾ cup brown sugar",
+        "1 egg",
+        "1 teaspoon baking powder",
+        "1 teaspoon cinnamon",
+        "¼ teaspoon nutmeg",
+        "Cinnamon sugar for sprinkling"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F.",
+        "Bata la mantequilla con el azúcar morena. Añada el huevo y la batata.",
+        "Incorpore la harina, el polvo de hornear y las especias.",
+        "Ponga cucharadas de masa en una bandeja y espolvoree azúcar con canela.",
+        "Hornee 14-16 minutos. Quedan suaves, como un bizcochito."
+      ],
+      en: [
+        "Preheat the oven to 350°F.",
+        "Beat the butter with the brown sugar. Add the egg and sweet potato.",
+        "Mix in the flour, baking powder, and spices.",
+        "Drop spoonfuls of dough onto a baking sheet and sprinkle with cinnamon sugar.",
+        "Bake 14-16 minutes. They stay soft, like little cakes."
+      ]
+    }
+  },
+
+  // ── JUGOS NATURALES ──
+  {
+    id: "jugo-china-natural",
+    category: "jugos",
+    name: { es: "Jugo de China Natural", en: "Fresh Orange Juice" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "8 chinas (naranjas) de jugo",
+        "Hielo (opcional)"
+      ],
+      en: [
+        "8 juice oranges",
+        "Ice (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave las chinas y páselas por la mesa presionándolas con la mano para que suelten más jugo.",
+        "Córtelas por la mitad y exprímalas.",
+        "Cuele si no le gusta la pulpa.",
+        "Sírvalo enseguida, solo o con hielo: el jugo recién hecho pierde vitamina C y sabor con las horas. No necesita azúcar."
+      ],
+      en: [
+        "Wash the oranges and roll them on the counter, pressing with your hand, so they release more juice.",
+        "Cut them in half and squeeze.",
+        "Strain if you don't like pulp.",
+        "Serve right away, plain or over ice: fresh juice loses vitamin C and flavor over the hours. It needs no sugar."
+      ]
+    }
+  },
+  {
+    id: "jugo-toronja",
+    category: "jugos",
+    name: { es: "Jugo de Toronja", en: "Grapefruit Juice" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "3 toronjas",
+        "1 cucharada de miel o azúcar (opcional)",
+        "Hielo"
+      ],
+      en: [
+        "3 grapefruits",
+        "1 tablespoon honey or sugar (optional)",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte las toronjas por la mitad y exprímalas.",
+        "Cuele y endulce si lo prefiere menos amargo.",
+        "Sirva con hielo.",
+        "Si toma medicamentos para la presión, el colesterol u otros, pregunte a su médico: la toronja interfiere con varios."
+      ],
+      en: [
+        "Cut the grapefruits in half and squeeze.",
+        "Strain and sweeten if you prefer it less bitter.",
+        "Serve over ice.",
+        "If you take medication for blood pressure, cholesterol, or others, ask your doctor: grapefruit interferes with several."
+      ]
+    }
+  },
+  {
+    id: "jugo-guayaba",
+    category: "jugos",
+    name: { es: "Jugo de Guayaba", en: "Guava Juice" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "6 guayabas maduras",
+        "4 tazas de agua fría",
+        "¼ taza de azúcar",
+        "Jugo de 1 limón",
+        "Hielo"
+      ],
+      en: [
+        "6 ripe guavas",
+        "4 cups cold water",
+        "¼ cup sugar",
+        "Juice of 1 lime",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave las guayabas, quíteles las puntas y córtelas en pedazos.",
+        "Licúelas con 2 tazas de agua.",
+        "Cuele con un colador fino, apretando la pulpa, para quitar las semillas.",
+        "Añada el resto del agua, el azúcar y el limón. Sirva bien frío con hielo."
+      ],
+      en: [
+        "Wash the guavas, trim the ends, and cut into pieces.",
+        "Blend them with 2 cups of the water.",
+        "Strain through a fine sieve, pressing the pulp, to remove the seeds.",
+        "Add the rest of the water, the sugar, and the lime. Serve very cold over ice."
+      ]
+    }
+  },
+  {
+    id: "jugo-guanabana",
+    category: "jugos",
+    name: { es: "Jugo de Guanábana", en: "Soursop Juice" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 tazas de pulpa de guanábana, sin semillas",
+        "4 tazas de agua fría",
+        "¼ taza de azúcar",
+        "½ cucharadita de vainilla (opcional)",
+        "Hielo"
+      ],
+      en: [
+        "2 cups soursop pulp, seeds removed",
+        "4 cups cold water",
+        "¼ cup sugar",
+        "½ teaspoon vanilla (optional)",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Quite todas las semillas negras de la pulpa: no se deben licuar ni comer.",
+        "Licúe la pulpa con el agua y el azúcar.",
+        "Cuele para quitar las fibras.",
+        "Añada la vainilla y sirva bien frío. Si le añade leche, se convierte en champola."
+      ],
+      en: [
+        "Remove all the black seeds from the pulp: they should not be blended or eaten.",
+        "Blend the pulp with the water and sugar.",
+        "Strain to remove the fibers.",
+        "Add the vanilla and serve very cold. Add milk and it becomes a champola."
+      ]
+    }
+  },
+  {
+    id: "jugo-acerola",
+    category: "jugos",
+    name: { es: "Jugo de Acerola", en: "Acerola Cherry Juice" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 tazas de acerolas, lavadas y sin semillas",
+        "4 tazas de agua fría",
+        "⅓ taza de azúcar",
+        "Hielo"
+      ],
+      en: [
+        "2 cups acerola cherries, washed and pitted",
+        "4 cups cold water",
+        "⅓ cup sugar",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Quite las semillas a las acerolas (son pequeñas y duras).",
+        "Licúe con el agua y el azúcar.",
+        "Cuele y sirva enseguida con hielo.",
+        "La acerola del patio es de las frutas con más vitamina C que hay; se pierde si el jugo se guarda mucho."
+      ],
+      en: [
+        "Remove the seeds from the acerolas (they're small and hard).",
+        "Blend with the water and sugar.",
+        "Strain and serve right away over ice.",
+        "Backyard acerola is one of the richest fruits in vitamin C; it fades if the juice sits too long."
+      ]
+    }
+  },
+  {
+    id: "jugo-mango",
+    category: "jugos",
+    name: { es: "Jugo de Mangó", en: "Mango Juice" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 mangós bien maduros",
+        "3 tazas de agua fría",
+        "Jugo de 1 limón",
+        "2 cucharadas de azúcar (opcional)",
+        "Hielo"
+      ],
+      en: [
+        "2 very ripe mangoes",
+        "3 cups cold water",
+        "Juice of 1 lime",
+        "2 tablespoons sugar (optional)",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los mangós y corte la pulpa alrededor de la semilla.",
+        "Licúe con el agua y el limón hasta que quede suave.",
+        "Pruebe antes de endulzar: si el mangó está bien maduro, no hace falta azúcar.",
+        "Cuele si lo quiere más ligero y sirva con hielo."
+      ],
+      en: [
+        "Peel the mangoes and cut the flesh from around the pit.",
+        "Blend with the water and lime until smooth.",
+        "Taste before sweetening: if the mango is very ripe, it needs no sugar.",
+        "Strain if you want it lighter and serve over ice."
+      ]
+    }
+  },
+  {
+    id: "jugo-pina-natural",
+    category: "jugos",
+    name: { es: "Jugo de Piña Natural", en: "Fresh Pineapple Juice" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "½ piña madura, pelada y en pedazos",
+        "3 tazas de agua fría",
+        "Jugo de 1 limón",
+        "Hojas de menta (opcional)",
+        "Hielo"
+      ],
+      en: [
+        "½ ripe pineapple, peeled and cut into pieces",
+        "3 cups cold water",
+        "Juice of 1 lime",
+        "Mint leaves (optional)",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la piña con el agua, el limón y la menta.",
+        "Cuele para quitar la fibra.",
+        "Sirva con hielo. La piña madura es dulce: no necesita azúcar.",
+        "Guarde la cáscara para hacer té de cáscara de piña."
+      ],
+      en: [
+        "Blend the pineapple with the water, lime, and mint.",
+        "Strain to remove the fiber.",
+        "Serve over ice. Ripe pineapple is sweet: it needs no sugar.",
+        "Save the peel to make pineapple peel tea."
+      ]
+    }
+  },
+  {
+    id: "jugo-quenepa",
+    category: "jugos",
+    name: { es: "Jugo de Quenepa", en: "Quenepa (Spanish Lime) Juice" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 lbs de quenepas",
+        "4 tazas de agua fría",
+        "⅓ taza de azúcar",
+        "Hielo"
+      ],
+      en: [
+        "2 lbs quenepas (Spanish limes)",
+        "4 cups cold water",
+        "⅓ cup sugar",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele las quenepas y ponga las semillas con su pulpa en un envase con 2 tazas de agua.",
+        "Apriete y frote con las manos para separar la pulpa de las semillas (no las licúe: son muy grandes y duras).",
+        "Cuele, apretando bien, y descarte las semillas.",
+        "Añada el resto del agua y el azúcar y sirva con hielo. Es el jugo del verano, en temporada de quenepas.",
+        "Cuidado con los niños pequeños: la semilla entera de la quenepa puede atragantar."
+      ],
+      en: [
+        "Peel the quenepas and put the seeds with their pulp in a container with 2 cups of the water.",
+        "Squeeze and rub with your hands to separate the pulp from the seeds (don't blend them: they're large and hard).",
+        "Strain, pressing well, and discard the seeds.",
+        "Add the rest of the water and the sugar and serve over ice. It's the summer juice, in quenepa season.",
+        "Careful with young children: a whole quenepa seed can be a choking hazard."
+      ]
+    }
+  },
+  {
+    id: "guarapo-cana",
+    category: "jugos",
+    name: { es: "Guarapo de Caña", en: "Fresh Sugarcane Juice (Guarapo)" },
+    time: "20 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 tallos de caña de azúcar, pelados y cortados",
+        "Jugo de 2 limones",
+        "Hielo"
+      ],
+      en: [
+        "4 stalks sugarcane, peeled and cut",
+        "Juice of 2 limes",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele la caña con un cuchillo fuerte y córtela en pedazos pequeños.",
+        "Exprímala en un trapiche o extractor de jugos. En casa también se puede machacar y licuar con 1 taza de agua y luego colar bien.",
+        "Añada el limón, que le corta lo empalagoso.",
+        "Sírvalo enseguida, bien frío: el guarapo se fermenta y se oscurece en pocas horas."
+      ],
+      en: [
+        "Peel the cane with a sturdy knife and cut it into small pieces.",
+        "Press it in a cane mill or juicer. At home you can also crush and blend it with 1 cup of water and then strain well.",
+        "Add the lime, which cuts the sweetness.",
+        "Serve right away, very cold: guarapo ferments and darkens within a few hours."
+      ]
+    }
+  },
+  {
+    id: "agua-coco-natural",
+    category: "jugos",
+    name: { es: "Agua de Coco Natural", en: "Fresh Coconut Water" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 cocos de agua (verdes)",
+        "Hielo (opcional)"
+      ],
+      en: [
+        "2 young green coconuts",
+        "Ice (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Con un machete o cuchillo fuerte, corte la punta del coco verde hasta llegar al hueco.",
+        "Vierta el agua en vasos o tómela directo del coco con un sorbeto.",
+        "Parta el coco por la mitad y saque la tela (la carne tierna) con una cuchara.",
+        "Es la bebida de playa y de carretera; refréscala en la nevera antes de abrir el coco."
+      ],
+      en: [
+        "With a machete or sturdy knife, cut the top of the green coconut until you reach the hollow.",
+        "Pour the water into glasses or drink it straight from the coconut with a straw.",
+        "Split the coconut in half and scoop out the tender flesh with a spoon.",
+        "It's the beach and roadside drink; chill the coconut in the fridge before opening it."
+      ]
+    }
+  },
+  {
+    id: "jugo-sandia",
+    category: "jugos",
+    name: { es: "Jugo de Sandía con Limón", en: "Watermelon Lime Juice" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "6 tazas de sandía en cubos, sin semillas",
+        "Jugo de 2 limones",
+        "Hojas de menta o yerbabuena",
+        "Hielo"
+      ],
+      en: [
+        "6 cups watermelon, cubed and seeded",
+        "Juice of 2 limes",
+        "Mint or spearmint leaves",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la sandía con el limón y unas hojas de menta. No necesita agua ni azúcar.",
+        "Cuele si lo quiere sin pulpa.",
+        "Sirva bien frío con hielo y una ramita de menta."
+      ],
+      en: [
+        "Blend the watermelon with the lime and a few mint leaves. It needs no water or sugar.",
+        "Strain if you want it without pulp.",
+        "Serve very cold over ice with a mint sprig."
+      ]
+    }
+  },
+
+  // ── BEBIDAS (más) ──
+  {
+    id: "batida-guineo",
+    category: "bebidas",
+    name: { es: "Batida de Guineo", en: "Banana Milkshake" },
+    time: "5 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 guineos maduros",
+        "1½ tazas de leche fría",
+        "2 cucharadas de leche condensada",
+        "½ cucharadita de canela",
+        "1 taza de hielo"
+      ],
+      en: [
+        "2 ripe bananas",
+        "1½ cups cold milk",
+        "2 tablespoons condensed milk",
+        "½ teaspoon cinnamon",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe todos los ingredientes hasta que esté cremoso.",
+        "Sirva enseguida con canela por encima. Es el desayuno rápido de muchas casas."
+      ],
+      en: [
+        "Blend all the ingredients until creamy.",
+        "Serve right away with cinnamon on top. It's the quick breakfast in many homes."
+      ]
+    }
+  },
+  {
+    id: "champola-guayaba",
+    category: "bebidas",
+    name: { es: "Champola de Guayaba", en: "Guava Milk Drink (Champola)" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "5 guayabas maduras",
+        "1 taza de agua",
+        "2 tazas de leche fría",
+        "¼ taza de leche condensada",
+        "½ cucharadita de vainilla",
+        "Hielo"
+      ],
+      en: [
+        "5 ripe guavas",
+        "1 cup water",
+        "2 cups cold milk",
+        "¼ cup condensed milk",
+        "½ teaspoon vanilla",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe las guayabas en pedazos con el agua y cuele para quitar las semillas.",
+        "Vuelva a licuar la pulpa colada con la leche, la leche condensada y la vainilla.",
+        "Sirva bien fría con hielo."
+      ],
+      en: [
+        "Blend the guavas in pieces with the water and strain out the seeds.",
+        "Blend the strained pulp again with the milk, condensed milk, and vanilla.",
+        "Serve very cold over ice."
+      ]
+    }
+  },
+  {
+    id: "batida-parcha",
+    category: "bebidas",
+    name: { es: "Batida de Parcha", en: "Passion Fruit Milkshake" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "½ taza de pulpa de parcha, colada",
+        "1 taza de leche evaporada fría",
+        "3 cucharadas de leche condensada",
+        "1½ tazas de hielo"
+      ],
+      en: [
+        "½ cup passion fruit pulp, strained",
+        "1 cup cold evaporated milk",
+        "3 tablespoons condensed milk",
+        "1½ cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe todos los ingredientes hasta que esté espumoso.",
+        "Sirva enseguida. La parcha es ácida: ajuste la leche condensada a su gusto."
+      ],
+      en: [
+        "Blend all the ingredients until frothy.",
+        "Serve right away. Passion fruit is tart: adjust the condensed milk to taste."
+      ]
+    }
+  },
+  {
+    id: "batida-mamey",
+    category: "bebidas",
+    name: { es: "Batida de Mamey", en: "Mamey Milkshake" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de pulpa de mamey maduro",
+        "1½ tazas de leche fría",
+        "2 cucharadas de azúcar",
+        "½ cucharadita de vainilla",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 cup ripe mamey flesh",
+        "1½ cups cold milk",
+        "2 tablespoons sugar",
+        "½ teaspoon vanilla",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele el mamey y quite bien la piel blanca amarga que queda pegada a la pulpa.",
+        "Licúe la pulpa con la leche, el azúcar, la vainilla y el hielo.",
+        "Sirva bien frío."
+      ],
+      en: [
+        "Peel the mamey and remove all the bitter white skin stuck to the flesh.",
+        "Blend the flesh with the milk, sugar, vanilla, and ice.",
+        "Serve very cold."
+      ]
+    }
+  },
+  {
+    id: "pina-colada-sin-alcohol",
+    category: "bebidas",
+    name: { es: "Piña Colada sin Alcohol", en: "Virgin Piña Colada" },
+    time: "5 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de jugo de piña",
+        "½ taza de crema de coco",
+        "½ taza de piña fresca en pedazos",
+        "2 tazas de hielo",
+        "Cerezas marrasquino y ruedas de piña para decorar"
+      ],
+      en: [
+        "1 cup pineapple juice",
+        "½ cup cream of coconut",
+        "½ cup fresh pineapple chunks",
+        "2 cups ice",
+        "Maraschino cherries and pineapple wedges for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe el jugo de piña, la crema de coco, la piña y el hielo hasta que quede frappé.",
+        "Sirva en copas y decore con una cereza y una rueda de piña.",
+        "Es la bebida nacional de Puerto Rico en su versión para toda la familia."
+      ],
+      en: [
+        "Blend the pineapple juice, cream of coconut, pineapple, and ice until slushy.",
+        "Serve in glasses and garnish with a cherry and a pineapple wedge.",
+        "It's Puerto Rico's national drink in its family-friendly version."
+      ]
+    }
+  },
+  {
+    id: "cafe-frio",
+    category: "bebidas",
+    name: { es: "Café Frío con Leche", en: "Iced Café con Leche" },
+    time: "10 min + frío",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de café puertorriqueño bien fuerte, frío",
+        "1 taza de leche fría",
+        "2 cucharadas de leche condensada",
+        "Pizca de canela",
+        "Cubitos de hielo (mejor si son de café)"
+      ],
+      en: [
+        "1 cup very strong Puerto Rican coffee, cold",
+        "1 cup cold milk",
+        "2 tablespoons condensed milk",
+        "Pinch of cinnamon",
+        "Ice cubes (better if made of coffee)"
+      ]
+    },
+    steps: {
+      es: [
+        "Cuele el café bien fuerte y déjelo enfriar en la nevera. Si quiere, congele un poco en cubitos para que no se agüe.",
+        "Mezcle el café con la leche, la leche condensada y la canela.",
+        "Sirva sobre los cubitos de hielo."
+      ],
+      en: [
+        "Brew very strong coffee and chill it in the fridge. If you like, freeze some into cubes so it doesn't get watered down.",
+        "Mix the coffee with the milk, condensed milk, and cinnamon.",
+        "Serve over the ice cubes."
       ]
     }
   }
