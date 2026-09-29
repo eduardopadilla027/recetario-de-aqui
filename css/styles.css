@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Recetarios Cocina Boricua — sistema de diseño
+   Recetarios de Aquí · Cocina Boricua — sistema de diseño
    Dirección (skill ui-ux-pro-max): revista gastronómica editorial +
    "Warm Brown + Cream + Appetizing accents". Tipografía Playfair Display
    (títulos) + Inter (texto). Iconos SVG, sin emojis en la interfaz.
@@ -231,7 +231,13 @@ main:focus { outline: none; }
   content: ""; position: absolute; inset: 0; opacity: .12;
   background-image: repeating-linear-gradient(45deg, rgba(43,29,20,.5) 0 1px, transparent 1px 12px);
 }
-.cover-emoji { position: relative; z-index: 1; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1; filter: drop-shadow(0 6px 10px rgba(43,29,20,.18)); }
+/* El plato se sirve en un plato: aro crema con borde y sombra suave. */
+.cover-emoji {
+  position: relative; z-index: 1; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1;
+  display: grid; place-items: center; width: 1.9em; height: 1.9em; border-radius: 50%;
+  background: radial-gradient(circle, #FFFDF8 0 56%, #F3E9DA 58% 70%, #FFFDF8 72% 100%);
+  box-shadow: 0 .18em .4em rgba(43,29,20,.18), inset 0 -.05em 0 rgba(43,29,20,.06);
+}
 .cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; }
 
 /* ---------- Secciones ---------- */
@@ -385,7 +391,52 @@ main:focus { outline: none; }
 .recipe-facts strong { font-size: var(--step-1); }
 .recipe-actions { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-5); }
 
-.recipe-body { display: grid; grid-template-columns: minmax(280px, 380px) minmax(0, 1fr); gap: clamp(20px, 4vw, 48px); margin-top: clamp(32px, 5vw, 56px); align-items: start; }
+.recipe-body { display: grid; grid-template-columns: minmax(280px, 380px) minmax(0, 1fr); gap: clamp(20px, 4vw, 48px); margin-top: var(--s-5); align-items: start; }
+
+/* Pestañas Receta / Información nutricional */
+.recipe-tabs {
+  display: inline-flex; gap: 4px; margin-top: clamp(32px, 5vw, 56px); padding: 4px;
+  background: var(--sand); border: 1px solid var(--line); border-radius: 999px; max-width: 100%;
+}
+.recipe-tab {
+  display: inline-flex; align-items: center; gap: var(--s-2); min-height: 44px; padding: 0 var(--s-5);
+  border-radius: 999px; font-weight: 600; color: var(--ink-2);
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.recipe-tab .icon { width: 18px; height: 18px; }
+.recipe-tab:hover { color: var(--ink); }
+.recipe-tab[aria-selected="true"] { background: var(--ivory); color: var(--achiote-600); box-shadow: var(--shadow-sm); }
+
+/* Información nutricional */
+.nutrition-panel { margin-top: var(--s-5); }
+.nutrition-panel:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.nutri-head { margin-bottom: var(--s-5); }
+.nutri-sub { color: var(--ink-3); font-size: .9rem; margin-top: var(--s-1); }
+.nutri-grid { display: grid; grid-template-columns: minmax(240px, 340px) minmax(0, 1fr); gap: clamp(20px, 4vw, 48px); align-items: start; }
+.nutri-kcal { display: flex; flex-direction: column; }
+.nutri-kcal strong { font-family: var(--font-display); font-size: clamp(2.6rem, 2rem + 2.5vw, 3.6rem); line-height: 1; color: var(--achiote-600); font-variant-numeric: tabular-nums; }
+.nutri-kcal span { font-weight: 600; color: var(--ink-2); margin-top: var(--s-2); }
+.nutri-total { font-size: .9rem; color: var(--ink-3); margin-top: var(--s-2); }
+.nutri-subtitle { font-family: var(--font-body); font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: var(--s-5) 0 var(--s-2); }
+.macro-bar { display: flex; height: 14px; border-radius: 999px; overflow: hidden; background: var(--sand); gap: 2px; }
+.macro-bar span { display: block; min-width: 2px; }
+.m-p { background: var(--plantain); }
+.m-c { background: var(--gold); }
+.m-f { background: var(--achiote); }
+.macro-legend { list-style: none; padding: 0; margin-top: var(--s-3); display: grid; gap: var(--s-2); }
+.macro-legend li { display: flex; align-items: center; gap: var(--s-2); font-size: .92rem; color: var(--ink-2); }
+.macro-legend strong { margin-left: auto; color: var(--ink); font-variant-numeric: tabular-nums; }
+.macro-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.nutri-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.nutri-table th, .nutri-table td { padding: var(--s-3) var(--s-2); border-bottom: 1px solid var(--line); text-align: right; }
+.nutri-table th[scope="row"], .nutri-table thead th:first-child { text-align: left; }
+.nutri-table thead th { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); border-bottom: 2px solid var(--ink); }
+.nutri-table tbody th { font-weight: 600; }
+.nutri-table tr.sub th { font-weight: 400; padding-left: var(--s-5); color: var(--ink-2); }
+.nutri-table tr.row-kcal th, .nutri-table tr.row-kcal td { font-weight: 800; font-size: var(--step-1); border-bottom-width: 2px; border-bottom-color: var(--ink); }
+.nutri-notes { margin-top: var(--s-5); padding-top: var(--s-4); border-top: 1px dashed var(--line); font-size: .85rem; color: var(--ink-2); display: grid; gap: var(--s-2); max-width: 75ch; }
+.nutri-missing { margin: 0 0 0 var(--s-5); color: var(--ink-3); }
+.nutri-empty { color: var(--ink-2); margin-top: var(--s-3); }
 .panel { background: var(--ivory); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(20px, 3vw, 32px); }
 .ingredients-panel { position: sticky; top: calc(var(--header-h) + 16px); }
 .panel-head { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); flex-wrap: wrap; margin-bottom: var(--s-4); }
@@ -450,6 +501,9 @@ main:focus { outline: none; }
   .recipe-hero { grid-template-columns: 1fr; }
   .recipe-hero-art .cover { aspect-ratio: 16 / 9; }
   .recipe-body { grid-template-columns: 1fr; }
+  .nutri-grid { grid-template-columns: 1fr; }
+  .recipe-tabs { display: flex; width: 100%; }
+  .recipe-tab { flex: 1 1 0; justify-content: center; padding: 0 var(--s-3); font-size: .9rem; text-align: center; line-height: 1.2; }
   .ingredients-panel { position: static; }
 }
 
@@ -475,14 +529,17 @@ main:focus { outline: none; }
   .hero-art { gap: var(--s-2); }
   .hero-art .cover { border-radius: var(--radius); }
   .hero-art .cover-emoji { font-size: 1.8rem; }
-  /* 21 categorías en rejilla ocupaban ~1500 px: en móvil, carrusel de 2 filas */
-  .category-grid {
-    grid-template-columns: none; grid-template-rows: repeat(2, auto);
-    grid-auto-flow: column; grid-auto-columns: 42%;
-    overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
-    padding: 4px 4px var(--s-3); margin: -4px -4px 0;
-  }
-  .cat-tile { scroll-snap-align: start; }
+  /* Todas las categorías a la vista, sin deslizar: fichas compactas en 2
+     columnas (icono a la izquierda, nombre y recuento a la derecha). */
+  .category-grid { grid-template-columns: 1fr 1fr; gap: var(--s-2); }
+  .cat-tile { flex-direction: row; align-items: center; min-height: 64px; }
+  .cat-tile .cover { flex: none; width: 52px; aspect-ratio: 1 / 1; margin: 6px 0 6px 6px; border-radius: calc(var(--radius) - 4px); }
+  .cat-tile .cover::after { display: none; }
+  .cat-tile .cover-emoji { font-size: 1.15rem; box-shadow: 0 .12em .3em rgba(43,29,20,.16); }
+  .cat-tile-body { padding: var(--s-2) var(--s-2) var(--s-2) 10px; min-width: 0; }
+  .cat-tile-name { font-size: .84rem; line-height: 1.25; overflow-wrap: anywhere; }
+  .cat-tile-count { font-size: .72rem; }
+  .cat-tile[aria-pressed="true"] .cat-tile-body::after { margin-top: 2px; font-size: .62rem; }
   .recipe-grid { grid-template-columns: 1fr; gap: var(--s-4); }
   .results-bar { align-items: flex-start; }
   .cat-title { font-size: var(--step-1); }
@@ -503,7 +560,7 @@ main:focus { outline: none; }
 
 /* ---------- Impresión (receta) ---------- */
 @media print {
-  .site-header, .site-footer, .back-btn, .recipe-actions, .stepper-btn, .toast, .skip-link, #view-home, .recipe-hero-art { display: none !important; }
+  .site-header, .site-footer, .back-btn, .recipe-actions, .stepper-btn, .toast, .skip-link, #view-home, .recipe-hero-art, .recipe-tabs { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .recipe-view { padding: 0; }
   .recipe-hero, .recipe-body { display: block; }

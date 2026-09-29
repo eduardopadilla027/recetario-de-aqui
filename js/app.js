@@ -1,16 +1,18 @@
-/* Recetarios Cocina Boricua — lógica de la interfaz.
+/* Recetarios de Aquí · Cocina Boricua — lógica de la interfaz.
  *
  * Datos: `recipes` (js/recipes.js) con id, category, name{es,en}, time,
  * servings, ingredients{es,en}, steps{es,en}. Campo OPCIONAL `image`
  * (ruta en images/): si una receta lo tiene, su foto sustituye a la portada
  * ilustrada de la categoría. No se inventa ningún dato: lo que no está en
- * recipes.js (fotos, dificultad, valoraciones…) no se muestra.
+ * recipes.js (fotos, dificultad, valoraciones…) no se muestra. La información
+ * nutricional se CALCULA de los ingredientes (js/nutrition.js) y se presenta
+ * como estimación, con los ingredientes que no se pudieron contar.
  *
  * Vistas: inicio (#/ o anclas #categorias, #recetas, #rapidas) y detalle
  * (#/receta/<id>). El detalle tiene URL propia: se puede compartir, y "Atrás"
  * del navegador vuelve a los resultados en la misma posición. */
 
-const BRAND = "Recetarios Cocina Boricua";
+const BRAND = "Recetarios de Aquí";
 
 const translations = {
   es: {
@@ -26,6 +28,7 @@ const translations = {
     steps: "Preparación",
     time: "Tiempo",
     servings: "Porciones",
+    servingOne: "porción",
     recipeCount: "recetas",
     recipeOne: "receta",
     footer: "Recetas de la cocina tradicional puertorriqueña · Versión 1.0",
@@ -69,6 +72,32 @@ const translations = {
     fewer: "Menos porciones",
     more: "Más porciones",
     scaleNote: (n) => `Cantidades ajustadas para ${n} porciones (aproximadas). Las líneas sin cantidad al inicio no cambian.`,
+    recipeTabs: "Secciones de la receta",
+    tabRecipe: "Receta",
+    tabNutrition: "Información nutricional",
+    kcalFact: "Calorías / porción",
+    nutriTitle: "Información nutricional",
+    nutriPer: (n) => `Estimado por porción · receta para ${n} ${n === 1 ? "porción" : "porciones"}`,
+    nutriKcal: "calorías por porción",
+    nutriTotal: (k) => `Receta completa: ≈ ${k} kcal`,
+    nutriMacros: "De dónde vienen las calorías",
+    nutrient: "Nutriente",
+    perServing: "Por porción",
+    dv: "% VD*",
+    nCalories: "Calorías",
+    nFat: "Grasa total",
+    nSat: "Grasa saturada",
+    nSodium: "Sodio",
+    nCarbs: "Carbohidratos",
+    nFiber: "Fibra",
+    nSugars: "Azúcares",
+    nProtein: "Proteína",
+    nutriCoverage: (a, b) => `Calculado con ${a} de ${b} ingredientes con cantidad.`,
+    nutriMissing: "No se pudieron incluir:",
+    nutriFrying: "Incluye unos 7 g de aceite absorbido al freír por porción.",
+    nutriNote: "Valores aproximados, calculados a partir de los ingredientes con datos de referencia por 100 g (USDA). Varían según las marcas, el tamaño de los ingredientes y la preparación. No se suman los ingredientes sin cantidad (\"sal al gusto\") ni los opcionales.",
+    nutriDv: "* % del valor diario según una dieta de 2,000 calorías.",
+    nutriNone: "No hay datos suficientes para estimar la información nutricional de esta receta.",
     viewRecipe: (n) => `Ver la receta ${n}`,
     notFound: "No encontramos esa receta.",
     categories: {
@@ -110,6 +139,7 @@ const translations = {
     steps: "Preparation",
     time: "Time",
     servings: "Servings",
+    servingOne: "serving",
     recipeCount: "recipes",
     recipeOne: "recipe",
     footer: "Traditional Puerto Rican recipes · Version 1.0",
@@ -153,6 +183,32 @@ const translations = {
     fewer: "Fewer servings",
     more: "More servings",
     scaleNote: (n) => `Quantities adjusted for ${n} servings (approximate). Lines without a leading quantity don't change.`,
+    recipeTabs: "Recipe sections",
+    tabRecipe: "Recipe",
+    tabNutrition: "Nutrition facts",
+    kcalFact: "Calories / serving",
+    nutriTitle: "Nutrition facts",
+    nutriPer: (n) => `Estimated per serving · recipe makes ${n} ${n === 1 ? "serving" : "servings"}`,
+    nutriKcal: "calories per serving",
+    nutriTotal: (k) => `Whole recipe: ≈ ${k} kcal`,
+    nutriMacros: "Where the calories come from",
+    nutrient: "Nutrient",
+    perServing: "Per serving",
+    dv: "% DV*",
+    nCalories: "Calories",
+    nFat: "Total fat",
+    nSat: "Saturated fat",
+    nSodium: "Sodium",
+    nCarbs: "Carbohydrates",
+    nFiber: "Fiber",
+    nSugars: "Sugars",
+    nProtein: "Protein",
+    nutriCoverage: (a, b) => `Calculated from ${a} of ${b} measured ingredients.`,
+    nutriMissing: "Could not be included:",
+    nutriFrying: "Includes about 7 g of oil absorbed during frying per serving.",
+    nutriNote: "Approximate values, calculated from the ingredients using reference data per 100 g (USDA). They vary with brands, ingredient sizes, and preparation. Ingredients without a quantity (\"salt to taste\") and optional ones are not counted.",
+    nutriDv: "* Percent Daily Value based on a 2,000-calorie diet.",
+    nutriNone: "There isn't enough data to estimate nutrition for this recipe.",
     viewRecipe: (n) => `View recipe ${n}`,
     notFound: "We couldn't find that recipe.",
     categories: {
@@ -193,6 +249,63 @@ const categoryIcons = {
   salsas: "🫙", bebidas: "🥤", cocteles: "🍹",
   calientes: "☕", pastas: "🍝"
 };
+
+/* Ilustración de cada plato según su nombre en español (sin acentos), para
+ * que las tarjetas de una misma categoría no se vean iguales. Gana la palabra
+ * que aparece primero en el nombre, que suele ser el tipo de plato ("Flan de
+ * Queso" → flan, no queso); en empate, la más larga ("pastelon" antes que
+ * "pastel"). Sin coincidencia: el de la categoría. Sólo decorativo. */
+const dishIcons = [
+  ["sopa", "🍲"], ["asopao", "🍲"], ["sancocho", "🍲"], ["caldo", "🍲"], ["sopon", "🍲"], ["mondongo", "🍲"], ["crema de calabaza", "🍲"], ["crema de pana", "🍲"],
+  ["ensalada", "🥗"], ["serenata", "🥗"], ["ensalada de frutas", "🍇"],
+  ["salsa", "🍅"], ["mojito isleno", "🍅"], ["salsa de mango", "🥭"],
+  ["ternera", "🥩"], ["chicharrones de pollo", "🍗"], ["rellenos de papa", "🥔"], ["surullito", "🌽"],
+  ["guineito", "🍌"], ["guingambo", "🥒"], ["grosella", "🍒"], ["pasta de guayaba", "🫙"], ["cascos de guayaba", "🫙"],
+  ["maicena", "🥣"], ["cremita", "🥣"], ["guarapo", "🍵"], ["avena fria", "🥤"],
+  ["mero", "🐟"], ["conejo", "🐇"], ["morcilla", "🌭"], ["masitas de res", "🥩"], ["pudin", "🍮"], ["arroz con leche", "🍮"],
+  ["bienmesabe", "🍮"], ["mampostial", "🍬"], ["dulce de leche", "🍬"], ["dulce de ajonjoli", "🍬"], ["bolitas de tamarindo", "🍬"], ["tocino del cielo", "🍮"],
+  ["sandwich", "🥪"], ["tripleta", "🥪"], ["medianoche", "🥪"], ["emparedado", "🥪"],
+  ["arroz con dulce", "🍮"], ["arroz con coco", "🍮"], ["arroz", "🍚"], ["locrio", "🍚"],
+  ["habichuela", "🫘"], ["frijol", "🫘"], ["gandul", "🫘"], ["garbanzo", "🫘"], ["lenteja", "🫘"],
+  ["langosta", "🦞"], ["camaron", "🦐"], ["pulpo", "🐙"], ["calamar", "🦑"], ["juey", "🦀"], ["carrucho", "🐚"],
+  ["bacalao", "🐟"], ["bacalaito", "🐟"], ["pescado", "🐟"], ["chillo", "🐟"], ["filete", "🐟"], ["atun", "🐟"], ["ceviche", "🐟"],
+  ["pavo", "🦃"], ["pavochon", "🦃"], ["molleja", "🍗"], ["pollo", "🍗"], ["pechuga", "🍗"], ["gallina", "🍗"],
+  ["salchicha", "🌭"], ["longaniza", "🌭"], ["chorizo", "🌭"], ["salami", "🌭"],
+  ["lechon", "🍖"], ["pernil", "🍖"], ["chuleta", "🍖"], ["costilla", "🍖"], ["chicharron", "🍖"], ["patitas", "🍖"], ["masitas", "🍖"], ["pincho", "🍢"],
+  ["bistec", "🥩"], ["carne", "🥩"], ["rabo", "🥩"], ["ropa vieja", "🥩"], ["churrasco", "🥩"], ["higado", "🥩"], ["albondiga", "🧆"], ["picadillo", "🥩"], ["lengua", "🥩"], ["cabro", "🥩"],
+  ["espagueti", "🍝"], ["lasana", "🍝"], ["coditos", "🍝"], ["macarrones", "🍝"], ["canelones", "🍝"], ["fideos", "🍝"],
+  ["tortilla", "🍳"], ["revoltillo", "🍳"], ["huevo", "🍳"],
+  ["queso", "🧀"], ["quesito", "🥐"],
+  ["mofongo", "🍌"], ["trifongo", "🍌"], ["tostones", "🍌"], ["platano", "🍌"], ["amarillo", "🍌"], ["pionono", "🍌"], ["canoa", "🍌"], ["jibarito", "🍌"], ["guineo", "🍌"], ["pastelon", "🥘"], ["platanutre", "🍌"], ["aranita", "🍌"],
+  ["tostones de pana", "🍈"], ["mofongo de pana", "🍈"], ["bunuelos de pana", "🧆"], ["bunuelos de yautia", "🧆"],
+  ["pasteles de", "🫔"], ["alcapurria", "🥟"], ["empanadilla", "🥟"], ["pastelillo", "🥟"], ["empanada", "🥟"], ["croqueta", "🥟"], ["relleno", "🥟"],
+  ["yuca", "🍠"], ["yautia", "🍠"], ["batata", "🍠"], ["panapen", "🍈"], ["pana", "🍈"], ["viandas", "🍠"], ["papa", "🥔"],
+  ["maiz", "🌽"], ["sorullito", "🌽"], ["guanime", "🌽"], ["funche", "🌽"], ["majarete", "🍮"], ["arepa", "🫓"], ["casabe", "🫓"],
+  ["berenjena", "🍆"], ["calabaza", "🎃"], ["aguacate", "🥑"], ["repollo", "🥬"], ["chayote", "🥒"],
+  ["coquito", "🥥"], ["coco", "🥥"], ["tembleque", "🍮"], ["besito", "🥥"],
+  ["pina colada", "🍹"], ["pina", "🍍"], ["mango", "🥭"], ["papaya", "🥭"], ["lechosa", "🥭"], ["china", "🍊"], ["naranja", "🍊"], ["toronja", "🍊"], ["limon", "🍋"], ["limonada", "🍋"],
+  ["cafe", "☕"], ["chocolate", "🍫"], ["te de", "🍵"],
+  ["flan", "🍮"], ["quesillo", "🍮"], ["natilla", "🍮"], ["budin", "🍮"], ["cazuela", "🍮"],
+  ["bizcocho boricua", "🎂"], ["bizcocho", "🍰"], ["brazo gitano", "🍰"],
+  ["galleta", "🍪"], ["polvoron", "🍪"], ["mantecadito", "🍪"], ["cucas", "🍪"], ["suspiro", "🍪"], ["royal", "🍪"],
+  ["pie", "🥧"], ["pastel", "🥧"],
+  ["mantecado", "🍨"], ["helado", "🍨"], ["limber", "🍧"], ["piragua", "🍧"],
+  ["pan", "🍞"], ["mallorca", "🥐"], ["rosquilla", "🍩"], ["bunuelo", "🍩"], ["barriguita", "🍩"], ["almojabana", "🧆"],
+  ["sangria", "🍷"], ["ponche", "🍹"], ["mojito", "🍹"], ["daiquiri", "🍹"], ["cuba libre", "🥃"], ["pitorro", "🥃"], ["chichaito", "🥃"], ["bili", "🥃"], ["limoncello", "🥃"],
+  ["jugo", "🧃"], ["batida", "🥤"], ["champola", "🥤"], ["malta", "🥤"], ["avena", "🥣"], ["crema", "🥣"], ["farina", "🥣"],
+  ["pique", "🌶️"], ["sofrito", "🌿"], ["recaito", "🌿"], ["ajilimojili", "🌶️"], ["mojo", "🧄"], ["adobo", "🧂"], ["sazon", "🧂"], ["achiote", "🫙"], ["mayo", "🫙"]
+];
+
+function dishIcon(recipe) {
+  const name = norm(recipe.name.es);
+  let best = null;
+  for (const [word, icon] of dishIcons) {
+    const at = name.search(new RegExp(`\\b${word}`));
+    if (at < 0) continue;
+    if (!best || at < best.at || (at === best.at && word.length > best.word.length)) best = { at, word, icon };
+  }
+  return best ? best.icon : categoryIcons[recipe.category];
+}
 
 /* Tono de la portada por familia: salados en terracota, dulces en caramelo y
  * rosa, frescos en verde, bebidas en turquesa. [fondo, círculo] */
@@ -326,7 +439,8 @@ function coverHTML(cat, recipe) {
   const spots = [["85%", "90%", "30%"], ["12%", "88%", "26%"], ["88%", "14%", "24%"], ["50%", "105%", "34%"]];
   const [cx, cy, cr] = spots[v % spots.length];
   // <span> y no <div>: la portada también va dentro de botones (categorías).
-  return `<span class="cover" style="--tone:${tone};--tone-2:${tone2};--cx:${cx};--cy:${cy};--cr:${cr}"><span class="cover-emoji" aria-hidden="true">${categoryIcons[cat] || ""}</span>${img}</span>`;
+  const icon = recipe ? dishIcon(recipe) : categoryIcons[cat] || "";
+  return `<span class="cover" style="--tone:${tone};--tone-2:${tone2};--cx:${cx};--cy:${cy};--cr:${cr}"><span class="cover-emoji" aria-hidden="true">${icon}</span>${img}</span>`;
 }
 
 function favButtonHTML(r) {
@@ -347,7 +461,7 @@ function cardHTML(r, i = 0) {
       <h3 class="card-title"><a class="card-link" href="#/receta/${encodeURIComponent(r.id)}" data-open="${esc(r.id)}">${esc(name)}</a></h3>
       <div class="card-meta">
         <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span class="sr-only">${tr.time}:</span>${esc(formatTime(r.time))}</span>
-        <span><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>${r.servings} ${tr.servings.toLowerCase()}</span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>${r.servings} ${r.servings === 1 ? tr.servingOne : tr.servings.toLowerCase()}</span>
       </div>
     </div>
   </article>`;
@@ -534,6 +648,94 @@ function renderModal(recipe) {
   $("modal-steps-list").innerHTML = recipe.steps[currentLang].map((s) => `<li>${esc(s)}</li>`).join("");
   renderFavButton();
   renderIngredients();
+  renderNutrition(recipe);
+}
+
+/* Pestaña de información nutricional: estimación de js/nutrition.js. */
+function renderNutrition(recipe) {
+  const tr = t();
+  const est = estimateNutrition(recipe);
+  const locale = currentLang === "es" ? "es-PR" : "en-US";
+  const fmt = (v, digits = 0) => v.toLocaleString(locale, { maximumFractionDigits: digits });
+  // Como en las etiquetas: calorías redondeadas a 5 (a 10 por encima de 50).
+  const round = (k) => (k < 50 ? Math.round(k / 5) * 5 : Math.round(k / 10) * 10);
+  const panel = $("panel-nutrition");
+
+  if (!est.counted) {
+    $("modal-kcal").textContent = "—";
+    panel.innerHTML = `<h2 class="panel-title">${tr.nutriTitle}</h2><p class="nutri-empty">${tr.nutriNone}</p>`;
+    return;
+  }
+
+  const per = est.per;
+  const kcal = round(per.kcal);
+  $("modal-kcal").textContent = `≈ ${fmt(kcal)}`;
+
+  const fromP = per.p * 4, fromC = per.c * 4, fromF = per.fat * 9;
+  const sum = fromP + fromC + fromF || 1;
+  const macros = [
+    ["m-p", tr.nProtein, Math.round((fromP / sum) * 100)],
+    ["m-c", tr.nCarbs, Math.round((fromC / sum) * 100)],
+    ["m-f", tr.nFat, Math.round((fromF / sum) * 100)]
+  ];
+  const grams = (v) => (v < 1 && v > 0 ? "< 1" : fmt(v, v < 10 ? 1 : 0));
+  const dv = (v, key) => `${fmt(Math.round((v / NUTRI_DV[key]) * 100))}%`;
+  const rows = [
+    [tr.nFat, `${grams(per.fat)} g`, dv(per.fat, "fat"), ""],
+    [tr.nSat, `${grams(per.sat)} g`, dv(per.sat, "sat"), "sub"],
+    [tr.nSodium, `${fmt(Math.round(per.na / 5) * 5)} mg`, dv(per.na, "na"), ""],
+    [tr.nCarbs, `${grams(per.c)} g`, dv(per.c, "c"), ""],
+    [tr.nFiber, `${grams(per.fib)} g`, dv(per.fib, "fib"), "sub"],
+    [tr.nSugars, `${grams(per.s)} g`, "", "sub"],
+    [tr.nProtein, `${grams(per.p)} g`, dv(per.p, "p"), ""]
+  ];
+  const missing = est.missing.map((i) => `<li>${esc(recipe.ingredients[currentLang][i])}</li>`).join("");
+
+  panel.innerHTML = `
+    <div class="nutri-head">
+      <h2 class="panel-title">${tr.nutriTitle}</h2>
+      <p class="nutri-sub">${tr.nutriPer(recipe.servings)}</p>
+    </div>
+    <div class="nutri-grid">
+      <div class="nutri-summary">
+        <p class="nutri-kcal"><strong>≈ ${fmt(kcal)}</strong><span>${tr.nutriKcal}</span></p>
+        <p class="nutri-total">${tr.nutriTotal(fmt(round(est.total.kcal)))}</p>
+        <h3 class="nutri-subtitle">${tr.nutriMacros}</h3>
+        <div class="macro-bar" role="img" aria-label="${esc(macros.map(([, l, v]) => `${l} ${v}%`).join(", "))}">
+          ${macros.map(([cls, , v]) => `<span class="${cls}" style="width:${v}%"></span>`).join("")}
+        </div>
+        <ul class="macro-legend">
+          ${macros.map(([cls, l, v]) => `<li><span class="macro-dot ${cls}" aria-hidden="true"></span>${l}<strong>${v}%</strong></li>`).join("")}
+        </ul>
+      </div>
+      <table class="nutri-table">
+        <caption class="sr-only">${tr.nutriTitle} — ${recipe.name[currentLang]}</caption>
+        <thead><tr><th scope="col">${tr.nutrient}</th><th scope="col">${tr.perServing}</th><th scope="col">${tr.dv}</th></tr></thead>
+        <tbody>
+          <tr class="row-kcal"><th scope="row">${tr.nCalories}</th><td>${fmt(kcal)}</td><td>${dv(per.kcal, "kcal")}</td></tr>
+          ${rows.map(([l, v, d, cls]) => `<tr class="${cls}"><th scope="row">${l}</th><td>${v}</td><td>${d}</td></tr>`).join("")}
+        </tbody>
+      </table>
+    </div>
+    <div class="nutri-notes">
+      <p>${tr.nutriCoverage(est.counted, est.measurable)}${est.frying ? ` ${tr.nutriFrying}` : ""}</p>
+      ${missing ? `<p>${tr.nutriMissing}</p><ul class="nutri-missing">${missing}</ul>` : ""}
+      <p>${tr.nutriNote}</p>
+      <p>${tr.nutriDv}</p>
+    </div>`;
+}
+
+function selectRecipeTab(which, focus = false) {
+  const nutrition = which === "nutrition";
+  const tabs = { recipe: $("tab-recipe"), nutrition: $("tab-nutrition") };
+  for (const [key, tab] of Object.entries(tabs)) {
+    const on = key === which;
+    tab.setAttribute("aria-selected", String(on));
+    tab.tabIndex = on ? 0 : -1;
+  }
+  $("panel-recipe").hidden = nutrition;
+  $("panel-nutrition").hidden = !nutrition;
+  if (focus) tabs[which].focus();
 }
 
 function renderIngredients() {
@@ -577,6 +779,7 @@ function showRecipe(id) {
   current = recipe;
   currentServings = recipe.servings;
   $("modal-ingredients-list").innerHTML = ""; // casillas limpias en cada receta
+  selectRecipeTab("recipe");
   renderModal(recipe);
   $("view-home").hidden = true;
   $("view-recipe").hidden = false;
@@ -774,6 +977,23 @@ function setupEventListeners() {
   $("fav-btn").addEventListener("click", () => current && toggleFavorite(current.id, $("fav-btn")));
   $("print-btn").addEventListener("click", () => window.print());
   $("share-btn").addEventListener("click", shareRecipe);
+
+  // Pestañas Receta / Información nutricional (flechas, Inicio y Fin como en
+  // cualquier lista de pestañas).
+  $("tab-recipe").addEventListener("click", () => selectRecipeTab("recipe"));
+  $("tab-nutrition").addEventListener("click", () => selectRecipeTab("nutrition"));
+  document.querySelector(".recipe-tabs").addEventListener("keydown", (e) => {
+    const order = ["recipe", "nutrition"];
+    const now = $("tab-nutrition").getAttribute("aria-selected") === "true" ? 1 : 0;
+    let next = null;
+    if (e.key === "ArrowRight") next = (now + 1) % order.length;
+    else if (e.key === "ArrowLeft") next = (now + order.length - 1) % order.length;
+    else if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = order.length - 1;
+    if (next === null) return;
+    e.preventDefault();
+    selectRecipeTab(order[next], true);
+  });
   $("serv-minus").addEventListener("click", () => { if (currentServings > 1) { currentServings--; renderIngredients(); } });
   $("serv-plus").addEventListener("click", () => { currentServings++; renderIngredients(); });
 

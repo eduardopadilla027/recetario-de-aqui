@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recetarios Cocina Boricua — Recetario Puertorriqueño</title>
+  <title>Recetarios de Aquí — Recetario Puertorriqueño</title>
   <meta name="description" content="Recetario digital de cocina tradicional puertorriqueña. Busca por nombre o ingrediente, filtra por categoría y ajusta las porciones.">
   <meta name="theme-color" content="#FBF6EE">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -150 900 900'><rect width='900' height='600' fill='%23ED0000'/><rect y='120' width='900' height='120' fill='%23fff'/><rect y='360' width='900' height='120' fill='%23fff'/><polygon points='0,0 519.6,300 0,600' fill='%230050F0'/><polygon points='173.2,200 195.7,269.1 268.3,269.1 209.5,311.8 232,380.9 173.2,338.2 114.4,380.9 136.9,311.8 78.1,269.1 150.7,269.1' fill='%23fff'/></svg>">
@@ -41,6 +41,7 @@
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6L13 3z"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21a6 6 0 0 0 6-6c0-4-3-6.5-4.5-10.5C11 7 8.5 8.5 8.5 11.5c-1-.5-1.8-1.6-2-2.8C5.5 10.2 6 12.5 6 15a6 6 0 0 0 6 6z"/><path d="M12 21a2.5 2.5 0 0 1-2.5-2.5c0-1.8 1.4-2.6 2.5-4.5 1.1 1.9 2.5 2.7 2.5 4.5A2.5 2.5 0 0 1 12 21z"/></symbol>
   </svg>
 
   <!-- Encabezado -->
@@ -49,7 +50,7 @@
       <a class="brand" href="#/" id="brand-link">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 900 600"><use href="#flag-pr"/></svg></span>
         <span class="brand-text">
-          <span class="brand-name">Recetarios</span>
+          <span class="brand-name">Recetarios de Aquí</span>
           <span class="brand-sub">Cocina Boricua</span>
         </span>
       </a>
@@ -166,6 +167,7 @@
               <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span><span class="fact-label" data-i18n="time">Tiempo</span><strong id="modal-time"></strong></span></li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span><span class="fact-label" data-i18n="servings">Porciones</span><strong id="modal-servings"></strong></span></li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><span><span class="fact-label" data-i18n="ingredients">Ingredientes</span><strong id="modal-ing-count"></strong></span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg><span><span class="fact-label" data-i18n="kcalFact">Calorías / porción</span><strong id="modal-kcal"></strong></span></li>
             </ul>
             <div class="recipe-actions">
               <button type="button" class="btn btn-outline" id="fav-btn" aria-pressed="false">
@@ -181,7 +183,18 @@
           </div>
         </header>
 
-        <div class="recipe-body">
+        <div class="recipe-tabs" role="tablist" data-i18n-label="recipeTabs">
+          <button type="button" class="recipe-tab" role="tab" id="tab-recipe" aria-controls="panel-recipe" aria-selected="true">
+            <svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><span data-i18n="tabRecipe">Receta</span>
+          </button>
+          <button type="button" class="recipe-tab" role="tab" id="tab-nutrition" aria-controls="panel-nutrition" aria-selected="false" tabindex="-1">
+            <svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg><span data-i18n="tabNutrition">Información nutricional</span>
+          </button>
+        </div>
+
+        <section class="panel nutrition-panel" id="panel-nutrition" role="tabpanel" aria-labelledby="tab-nutrition" tabindex="0" hidden></section>
+
+        <div class="recipe-body" id="panel-recipe" role="tabpanel" aria-labelledby="tab-recipe">
           <section class="panel ingredients-panel" aria-labelledby="modal-ingredients-title">
             <div class="panel-head">
               <h2 class="panel-title" id="modal-ingredients-title" data-i18n="ingredients">Ingredientes</h2>
@@ -210,7 +223,7 @@
       <div class="footer-brand">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 900 600"><use href="#flag-pr"/></svg></span>
         <div>
-          <p class="footer-name">Recetarios Cocina Boricua</p>
+          <p class="footer-name">Recetarios de Aquí · Cocina Boricua</p>
           <p class="footer-text" id="footer-text">Recetas de la cocina tradicional puertorriqueña · Versión 1.0</p>
         </div>
       </div>
@@ -227,6 +240,7 @@
   <script src="js/recipes-extra.js"></script>
   <script src="js/recipes-2.js"></script>
   <script src="js/recipes-3.js"></script>
+  <script src="js/nutrition.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
