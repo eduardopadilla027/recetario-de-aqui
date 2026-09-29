@@ -196,7 +196,9 @@ function getAdvisories(recipe) {
   const tip = (key, when) => { if (when) tips.push(key); };
   // Para las carnes crudas no cuentan los caldos ("caldo de pollo") ni lo que
   // ya viene cocido ("chicharrón triturado").
-  const raw = lines.filter((l) => !/\bcaldos?\b|consome|chicharron/.test(l)).join("\n");
+  // Tampoco las notas entre paréntesis: "4 dientes de ajo (para la carne)".
+  const raw = lines.filter((l) => !/\bcaldos?\b|consome|chicharron/.test(l))
+    .map((l) => l.replace(/\([^)]*\)/g, "")).join("\n");
   const hasRaw = (rx) => rx.test(raw);
   const poultry = hasRaw(/\b(pollos?|pavos?|gallinas?|pechugas?|muslos?|alitas?|mollejas?)\b/);
   const pork = hasRaw(/\b(cerdo|pernil|lechon|chuletas?|costillas?|costillar|masitas|paleta|patitas?|cuero|longaniza)\b/);

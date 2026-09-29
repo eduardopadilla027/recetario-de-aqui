@@ -6975,5 +6975,507 @@ recipes.push(
         "Serve one egg per bowl, with parsley. It's a soup of Spanish origin that was very common on the island."
       ]
     }
+  },
+
+  // ── CARNES PUERTORRIQUEÑAS (más) ──
+  {
+    id: "bistec-guisado-criolla",
+    category: "carnes",
+    name: { es: "Bistec Guisado a la Criolla", en: "Creole Stewed Steak" },
+    time: "1 hr + adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 lbs de bistec fino (palomilla o cadera)",
+        "4 dientes de ajo, majados",
+        "1 cucharadita de orégano",
+        "2 cucharadas de vinagre",
+        "1 cucharadita de adobo",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "1 lata de salsa de tomate (8 oz)",
+        "2 papas en ruedas",
+        "1 cebolla en aros",
+        "1 pimiento verde en tiras",
+        "¼ taza de aceitunas rellenas",
+        "2 cucharadas de aceite"
+      ],
+      en: [
+        "2 lbs thin steak (top sirloin or round)",
+        "4 garlic cloves, mashed",
+        "1 teaspoon oregano",
+        "2 tablespoons vinegar",
+        "1 teaspoon adobo seasoning",
+        "3 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "1 can tomato sauce (8 oz)",
+        "2 potatoes, sliced",
+        "1 onion, in rings",
+        "1 green bell pepper, in strips",
+        "¼ cup stuffed olives",
+        "2 tablespoons oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe los bistecs con ajo, orégano, vinagre y adobo. Marine 1 hora en la nevera.",
+        "En un caldero, dore los bistecs en el aceite por ambos lados. Retírelos.",
+        "Sofría el sofrito, el sazón, la cebolla y el pimiento 3 minutos. Añada la salsa de tomate, las aceitunas y ½ taza de agua.",
+        "Regrese los bistecs, acomode las papas entre ellos, tape y cocine a fuego bajo 40 minutos, hasta que la carne esté blanda.",
+        "Sirva con arroz blanco y habichuelas."
+      ],
+      en: [
+        "Season the steaks with garlic, oregano, vinegar, and adobo. Marinate 1 hour in the fridge.",
+        "In a caldero, brown the steaks in the oil on both sides. Remove.",
+        "Sauté the sofrito, sazón, onion, and bell pepper 3 minutes. Add the tomato sauce, olives, and ½ cup water.",
+        "Return the steaks, tuck the potatoes between them, cover, and cook on low 40 minutes, until the meat is tender.",
+        "Serve with white rice and beans."
+      ]
+    }
+  },
+  {
+    id: "chuletas-guisadas",
+    category: "carnes",
+    name: { es: "Chuletas Guisadas", en: "Stewed Pork Chops" },
+    time: "1 hr + adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 chuletas de cerdo",
+        "4 dientes de ajo, majados",
+        "1 cucharadita de orégano",
+        "1 cucharada de vinagre",
+        "1 cucharadita de adobo",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "½ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "2 papas en cubos",
+        "2 cucharadas de aceite"
+      ],
+      en: [
+        "4 pork chops",
+        "4 garlic cloves, mashed",
+        "1 teaspoon oregano",
+        "1 tablespoon vinegar",
+        "1 teaspoon adobo seasoning",
+        "3 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "½ cup tomato sauce",
+        "¼ cup stuffed olives",
+        "1 tablespoon capers",
+        "2 potatoes, cubed",
+        "2 tablespoons oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe las chuletas con ajo, orégano, vinagre y adobo. Marine al menos 1 hora en la nevera.",
+        "Dórelas en un caldero con el aceite, 4 minutos por lado. Retírelas.",
+        "En la misma grasa, sofría el sofrito y el sazón. Añada la salsa de tomate, las aceitunas, las alcaparras y 1 taza de agua.",
+        "Regrese las chuletas con las papas, tape y cocine a fuego bajo 35 minutos.",
+        "La salsa debe quedar espesa. Sirva con arroz blanco y amarillos."
+      ],
+      en: [
+        "Season the chops with garlic, oregano, vinegar, and adobo. Marinate at least 1 hour in the fridge.",
+        "Brown them in a caldero with the oil, 4 minutes per side. Remove.",
+        "In the same fat, sauté the sofrito and sazón. Add the tomato sauce, olives, capers, and 1 cup water.",
+        "Return the chops with the potatoes, cover, and cook on low 35 minutes.",
+        "The sauce should be thick. Serve with white rice and sweet plantains."
+      ]
+    }
+  },
+  {
+    id: "chuletas-horno-papas",
+    category: "carnes",
+    name: { es: "Chuletas al Horno con Papas", en: "Baked Pork Chops with Potatoes" },
+    time: "1 hr + adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 chuletas de cerdo gruesas",
+        "6 dientes de ajo, majados",
+        "1 cucharadita de orégano",
+        "Jugo de 1 naranja agria (o 2 limones)",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharadita de adobo",
+        "4 papas en cuartos",
+        "1 cebolla en aros",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "4 thick pork chops",
+        "6 garlic cloves, mashed",
+        "1 teaspoon oregano",
+        "Juice of 1 sour orange (or 2 limes)",
+        "2 tablespoons olive oil",
+        "1 teaspoon adobo seasoning",
+        "4 potatoes, quartered",
+        "1 onion, in rings",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe las chuletas con ajo, orégano, naranja agria, adobo y la mitad del aceite. Marine 2 horas en la nevera.",
+        "Precaliente el horno a 400°F. Mezcle las papas con el resto del aceite, sal y pimienta y acomódelas en un molde.",
+        "Coloque las chuletas encima con la cebolla y rocíe con el adobo que sobró.",
+        "Hornee 40-45 minutos, volteando las chuletas a la mitad, hasta que estén doradas y a 145°F por dentro.",
+        "Deje reposar 3 minutos antes de servir."
+      ],
+      en: [
+        "Season the chops with garlic, oregano, sour orange, adobo, and half the oil. Marinate 2 hours in the fridge.",
+        "Preheat the oven to 400°F. Toss the potatoes with the rest of the oil, salt, and pepper and spread in a baking dish.",
+        "Place the chops on top with the onion and drizzle with the leftover marinade.",
+        "Bake 40-45 minutes, turning the chops halfway, until golden and 145°F inside.",
+        "Let rest 3 minutes before serving."
+      ]
+    }
+  },
+  {
+    id: "costillitas-guisadas",
+    category: "carnes",
+    name: { es: "Costillitas de Cerdo Guisadas", en: "Stewed Pork Riblets" },
+    time: "1 hr 30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 lbs de costillitas de cerdo, cortadas en pedazos",
+        "1 cucharada de adobo",
+        "4 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "½ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "2 papas en cubos",
+        "1 zanahoria en ruedas",
+        "1 hoja de laurel",
+        "2 cucharadas de aceite"
+      ],
+      en: [
+        "3 lbs pork riblets, cut into pieces",
+        "1 tablespoon adobo seasoning",
+        "4 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "½ cup tomato sauce",
+        "¼ cup stuffed olives",
+        "2 potatoes, cubed",
+        "1 carrot, sliced",
+        "1 bay leaf",
+        "2 tablespoons oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone las costillitas con el adobo y dórelas por tandas en el aceite.",
+        "Añada el sofrito, el sazón, la salsa de tomate, las aceitunas, el laurel y 2 tazas de agua.",
+        "Tape y cocine a fuego bajo 50 minutos, hasta que la carne esté blanda.",
+        "Agregue las papas y la zanahoria y cocine 20 minutos más.",
+        "Sirva con arroz blanco o con viandas hervidas."
+      ],
+      en: [
+        "Season the riblets with the adobo and brown them in batches in the oil.",
+        "Add the sofrito, sazón, tomato sauce, olives, bay leaf, and 2 cups water.",
+        "Cover and cook on low 50 minutes, until the meat is tender.",
+        "Add the potatoes and carrot and cook 20 more minutes.",
+        "Serve with white rice or boiled root vegetables."
+      ]
+    }
+  },
+  {
+    id: "lomo-cerdo-relleno",
+    category: "carnes",
+    name: { es: "Lomo de Cerdo Relleno", en: "Stuffed Pork Loin" },
+    time: "2 hrs + adobo",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 lbs de lomo de cerdo",
+        "6 dientes de ajo, majados",
+        "1 cucharadita de orégano",
+        "2 cucharaditas de adobo",
+        "½ taza de jugo de naranja agria",
+        "Relleno: 6 lascas de jamón de cocinar",
+        "½ taza de ciruelas pasas sin semilla",
+        "¼ taza de aceitunas rellenas",
+        "½ taza de vino tinto",
+        "2 cucharadas de aceite de oliva",
+        "Hilo de cocina"
+      ],
+      en: [
+        "3 lbs pork loin",
+        "6 garlic cloves, mashed",
+        "1 teaspoon oregano",
+        "2 teaspoons adobo seasoning",
+        "½ cup sour orange juice",
+        "Filling: 6 slices cooking ham",
+        "½ cup pitted prunes",
+        "¼ cup stuffed olives",
+        "½ cup red wine",
+        "2 tablespoons olive oil",
+        "Kitchen twine"
+      ]
+    },
+    steps: {
+      es: [
+        "Abra el lomo como un libro, cortándolo a lo largo sin llegar al final, hasta que quede plano.",
+        "Adóbelo por dentro y por fuera con ajo, orégano, adobo y naranja agria. Marine 4 horas o toda la noche en la nevera.",
+        "Cubra el interior con el jamón, las ciruelas y las aceitunas. Enróllelo apretado y amárrelo con hilo cada 2 pulgadas.",
+        "Dórelo en un caldero con el aceite por todos lados. Añada el vino y el adobo que sobró.",
+        "Tape y cocine a fuego bajo 1 hora (o hornee a 350°F), bañándolo con su jugo, hasta 145°F por dentro.",
+        "Repose 10 minutos, quite el hilo y corte en ruedas. Es plato de Navidad y Año Nuevo."
+      ],
+      en: [
+        "Butterfly the loin, cutting it lengthwise without going all the way through, until it lies flat.",
+        "Season it inside and out with garlic, oregano, adobo, and sour orange. Marinate 4 hours or overnight in the fridge.",
+        "Cover the inside with the ham, prunes, and olives. Roll it up tightly and tie with twine every 2 inches.",
+        "Brown it in a caldero with the oil on all sides. Add the wine and the leftover marinade.",
+        "Cover and cook on low 1 hour (or bake at 350°F), basting with the juices, to 145°F inside.",
+        "Rest 10 minutes, remove the twine, and slice. It's a Christmas and New Year's dish."
+      ]
+    }
+  },
+  {
+    id: "jamon-glaseado-malta",
+    category: "carnes",
+    name: { es: "Jamón Glaseado con Malta y Piña", en: "Malta and Pineapple Glazed Ham" },
+    time: "2 hrs 30 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "1 jamón ahumado con hueso (8-10 lbs), ya cocido",
+        "1 botella de malta (12 oz)",
+        "1 lata de piña en ruedas, con su jugo (20 oz)",
+        "1 taza de azúcar morena",
+        "2 cucharadas de mostaza",
+        "30 clavos de olor",
+        "Cerezas marrasquino para decorar"
+      ],
+      en: [
+        "1 smoked bone-in ham (8-10 lbs), fully cooked",
+        "1 bottle malta (12 oz)",
+        "1 can pineapple rings, with juice (20 oz)",
+        "1 cup brown sugar",
+        "2 tablespoons mustard",
+        "30 whole cloves",
+        "Maraschino cherries for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 325°F. Quite el exceso de grasa del jamón y haga cortes en forma de rombos en la superficie.",
+        "Clave un clavo de olor en el centro de cada rombo.",
+        "Coloque el jamón en un molde, vierta la malta y el jugo de la piña, tape con papel de aluminio y hornee 1½ horas.",
+        "Mezcle el azúcar morena con la mostaza y unte el jamón. Acomode las ruedas de piña con palillos y una cereza en el centro de cada una.",
+        "Hornee destapado 30-40 minutos más, bañándolo con el líquido cada 10 minutos, hasta que brille y la piña se caramelice.",
+        "Repose 15 minutos y corte en lascas. Es el jamón de Navidad boricua."
+      ],
+      en: [
+        "Preheat the oven to 325°F. Trim excess fat from the ham and score the surface in a diamond pattern.",
+        "Stick a clove in the center of each diamond.",
+        "Place the ham in a pan, pour over the malta and the pineapple juice, cover with foil, and bake 1½ hours.",
+        "Mix the brown sugar with the mustard and spread it over the ham. Secure the pineapple rings with toothpicks, with a cherry in the center of each.",
+        "Bake uncovered 30-40 more minutes, basting with the liquid every 10 minutes, until glossy and the pineapple caramelizes.",
+        "Rest 15 minutes and slice. It's the Puerto Rican Christmas ham."
+      ]
+    }
+  },
+  {
+    id: "mofongo-carne-frita",
+    category: "carnes",
+    name: { es: "Mofongo Relleno de Carne Frita", en: "Mofongo Stuffed with Fried Pork" },
+    time: "1 hr + adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ lbs de masitas de cerdo en cubos",
+        "4 dientes de ajo, majados (para la carne)",
+        "1 cucharadita de orégano",
+        "1 cucharadita de adobo",
+        "1 cucharada de vinagre",
+        "4 plátanos verdes",
+        "6 dientes de ajo (para el mofongo)",
+        "3 cucharadas de aceite de oliva",
+        "½ taza de caldo de pollo caliente",
+        "1 cebolla en aros",
+        "Aceite para freír"
+      ],
+      en: [
+        "1½ lbs pork shoulder, cubed",
+        "4 garlic cloves, mashed (for the pork)",
+        "1 teaspoon oregano",
+        "1 teaspoon adobo seasoning",
+        "1 tablespoon vinegar",
+        "4 green plantains",
+        "6 garlic cloves (for the mofongo)",
+        "3 tablespoons olive oil",
+        "½ cup hot chicken broth",
+        "1 onion, in rings",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el cerdo con ajo, orégano, adobo y vinagre. Marine 1 hora en la nevera.",
+        "Fría el cerdo en aceite a fuego medio 15-20 minutos, hasta que esté dorado por fuera y cocido por dentro. Escurra y sofría la cebolla en un poco de ese aceite.",
+        "Pele los plátanos, córtelos en ruedas de 1 pulgada y fríalos 8 minutos, hasta que estén blandos y dorados.",
+        "Maje el ajo con sal y aceite de oliva en el pilón. Añada los plátanos por partes y májelos con un chorrito de caldo.",
+        "Moldee el mofongo en una taza, haga un hueco en el centro y rellene con la carne frita y la cebolla.",
+        "Voltee en el plato y sirva con el resto del caldo al lado."
+      ],
+      en: [
+        "Season the pork with garlic, oregano, adobo, and vinegar. Marinate 1 hour in the fridge.",
+        "Fry the pork in oil over medium heat 15-20 minutes, until golden outside and cooked through. Drain and sauté the onion in a little of that oil.",
+        "Peel the plantains, cut into 1-inch rounds, and fry 8 minutes, until soft and golden.",
+        "Mash the garlic with salt and olive oil in the mortar. Add the plantains in batches and mash with a splash of broth.",
+        "Pack the mofongo into a cup, make a well in the center, and fill with the fried pork and onion.",
+        "Turn out onto the plate and serve with the rest of the broth on the side."
+      ]
+    }
+  },
+  {
+    id: "salpicon-res",
+    category: "carnes",
+    name: { es: "Salpicón de Res", en: "Shredded Beef Salad (Salpicón)" },
+    time: "2 hrs + frío",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 lbs de falda de res",
+        "1 cebolla en cuartos (para hervir)",
+        "4 dientes de ajo",
+        "1 hoja de laurel",
+        "1 cebolla roja en aros finos",
+        "1 pimiento verde y 1 rojo, en tiras finas",
+        "2 tomates picados",
+        "1 aguacate en cubos",
+        "⅓ taza de aceite de oliva",
+        "¼ taza de vinagre",
+        "Jugo de 2 limones",
+        "Cilantro picado",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 lbs flank steak",
+        "1 onion, quartered (for boiling)",
+        "4 garlic cloves",
+        "1 bay leaf",
+        "1 red onion, thinly sliced",
+        "1 green and 1 red bell pepper, in thin strips",
+        "2 tomatoes, chopped",
+        "1 avocado, cubed",
+        "⅓ cup olive oil",
+        "¼ cup vinegar",
+        "Juice of 2 limes",
+        "Chopped cilantro",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la falda con la cebolla, el ajo, el laurel y sal por 1½ horas, hasta que se deshaga con un tenedor.",
+        "Escurra, deje enfriar y desmenuce la carne en hebras finas.",
+        "Mezcle la carne con la cebolla roja, los pimientos y el tomate.",
+        "Aliñe con el aceite, el vinagre, el limón, sal y pimienta. Refrigere al menos 1 hora.",
+        "Justo antes de servir, añada el aguacate y el cilantro. Se sirve frío, con tostones o galletas."
+      ],
+      en: [
+        "Boil the flank steak with the onion, garlic, bay leaf, and salt for 1½ hours, until it falls apart with a fork.",
+        "Drain, let cool, and shred the meat into thin strands.",
+        "Mix the meat with the red onion, bell peppers, and tomato.",
+        "Dress with the oil, vinegar, lime, salt, and pepper. Refrigerate at least 1 hour.",
+        "Just before serving, add the avocado and cilantro. Serve cold, with tostones or crackers."
+      ]
+    }
+  },
+  {
+    id: "chuletas-parrilla-mojo",
+    category: "carnes",
+    name: { es: "Chuletas a la Parrilla con Mojo", en: "Grilled Pork Chops with Mojo" },
+    time: "30 min + adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 chuletas de cerdo",
+        "8 dientes de ajo, majados",
+        "½ taza de jugo de naranja agria",
+        "¼ taza de aceite de oliva",
+        "1 cucharadita de orégano",
+        "1 cucharadita de comino",
+        "1 cucharadita de sal",
+        "1 cebolla en aros"
+      ],
+      en: [
+        "4 pork chops",
+        "8 garlic cloves, mashed",
+        "½ cup sour orange juice",
+        "¼ cup olive oil",
+        "1 teaspoon oregano",
+        "1 teaspoon cumin",
+        "1 teaspoon salt",
+        "1 onion, in rings"
+      ]
+    },
+    steps: {
+      es: [
+        "Prepare el mojo: mezcle el ajo, la naranja agria, el aceite, el orégano, el comino y la sal. Separe ⅓ para servir.",
+        "Marine las chuletas y la cebolla en el resto del mojo, en la nevera, de 2 horas a toda la noche.",
+        "Ase las chuletas en la parrilla a fuego medio-alto 5-6 minutos por lado, hasta 145°F por dentro. Ase la cebolla a la vez.",
+        "Repose 3 minutos. Sirva con la cebolla asada y el mojo que separó (nunca con el que tuvo la carne cruda)."
+      ],
+      en: [
+        "Make the mojo: mix the garlic, sour orange, oil, oregano, cumin, and salt. Set aside ⅓ for serving.",
+        "Marinate the chops and onion in the rest of the mojo, in the fridge, from 2 hours to overnight.",
+        "Grill the chops over medium-high heat 5-6 minutes per side, to 145°F inside. Grill the onion at the same time.",
+        "Rest 3 minutes. Serve with the grilled onion and the reserved mojo (never the one that held the raw meat)."
+      ]
+    }
+  },
+  {
+    id: "cabrito-asado",
+    category: "carnes",
+    name: { es: "Cabrito Asado al Horno", en: "Oven-Roasted Goat" },
+    time: "3 hrs + adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 lbs de cabrito (chivo) en presas",
+        "8 dientes de ajo, majados",
+        "1 cucharada de orégano",
+        "½ taza de jugo de naranja agria",
+        "½ taza de vino tinto",
+        "¼ taza de aceite de oliva",
+        "2 cucharaditas de adobo",
+        "1 cebolla en aros",
+        "2 hojas de laurel"
+      ],
+      en: [
+        "3 lbs young goat, cut into pieces",
+        "8 garlic cloves, mashed",
+        "1 tablespoon oregano",
+        "½ cup sour orange juice",
+        "½ cup red wine",
+        "¼ cup olive oil",
+        "2 teaspoons adobo seasoning",
+        "1 onion, in rings",
+        "2 bay leaves"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave el cabrito con agua y limón para suavizar el olor fuerte.",
+        "Adóbelo con el ajo, el orégano, la naranja agria, el vino, el aceite y el adobo. Marine toda la noche en la nevera.",
+        "Precaliente el horno a 325°F. Coloque el cabrito en un molde con la cebolla, el laurel y el adobo.",
+        "Tape con papel de aluminio y hornee 2 horas, hasta que la carne se despegue del hueso.",
+        "Destape, suba a 400°F y dore 20 minutos. Sirva con arroz con gandules o viandas."
+      ],
+      en: [
+        "Rinse the goat with water and lime to soften its strong smell.",
+        "Season it with the garlic, oregano, sour orange, wine, oil, and adobo. Marinate overnight in the fridge.",
+        "Preheat the oven to 325°F. Place the goat in a baking dish with the onion, bay leaves, and marinade.",
+        "Cover with foil and bake 2 hours, until the meat comes off the bone.",
+        "Uncover, raise to 400°F, and brown 20 minutes. Serve with rice and pigeon peas or root vegetables."
+      ]
+    }
   }
 );

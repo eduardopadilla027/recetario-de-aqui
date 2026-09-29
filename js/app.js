@@ -255,12 +255,17 @@ const categoryIcons = {
  * que aparece primero en el nombre, que suele ser el tipo de plato ("Flan de
  * Queso" → flan, no queso); en empate, la más larga ("pastelon" antes que
  * "pastel"). Sin coincidencia: el de la categoría. Sólo decorativo. */
+/* El plátano no tiene emoji (🍌 es guineo maduro): dos dibujos propios del
+ * sprite de index.html, verde y maduro. En savory, "guineo" es guineo verde. */
+const VERDE = "svg:ic-platano-verde";
+const MADURO = "svg:ic-platano-maduro";
+
 const dishIcons = [
   ["sopa", "🍲"], ["asopao", "🍲"], ["sancocho", "🍲"], ["caldo", "🍲"], ["sopon", "🍲"], ["mondongo", "🍲"], ["crema de calabaza", "🍲"], ["crema de pana", "🍲"], ["crema de yautia", "🍲"],
   ["ensalada", "🥗"], ["serenata", "🥗"], ["ensalada de frutas", "🍇"],
   ["salsa", "🍅"], ["mojito isleno", "🍅"], ["salsa de mango", "🥭"],
   ["ternera", "🥩"], ["chicharrones de pollo", "🍗"], ["rellenos de papa", "🥔"], ["surullito", "🌽"],
-  ["guineito", "🍌"], ["guingambo", "🥒"], ["grosella", "🍒"], ["pasta de guayaba", "🫙"], ["cascos de guayaba", "🫙"],
+  ["guineito", VERDE], ["guineitos ninos", "🍌"], ["guingambo", "🥒"], ["grosella", "🍒"], ["pasta de guayaba", "🫙"], ["cascos de guayaba", "🫙"],
   ["maicena", "🥣"], ["cremita", "🥣"], ["guarapo", "🍵"], ["avena fria", "🥤"],
   ["mero", "🐟"], ["conejo", "🐇"], ["morcilla", "🌭"], ["masitas de res", "🥩"], ["pudin", "🍮"], ["arroz con leche", "🍮"],
   ["gofio", "🍬"], ["coconete", "🍪"], ["mamey", "🍑"], ["tres leches", "🍰"], ["tarta", "🍰"],
@@ -274,11 +279,12 @@ const dishIcons = [
   ["pavo", "🦃"], ["pavochon", "🦃"], ["molleja", "🍗"], ["pollo", "🍗"], ["pechuga", "🍗"], ["gallina", "🍗"],
   ["salchicha", "🌭"], ["longaniza", "🌭"], ["chorizo", "🌭"], ["salami", "🌭"],
   ["lechon", "🍖"], ["pernil", "🍖"], ["chuleta", "🍖"], ["costilla", "🍖"], ["chicharron", "🍖"], ["patitas", "🍖"], ["masitas", "🍖"], ["pincho", "🍢"],
-  ["bistec", "🥩"], ["carne", "🥩"], ["rabo", "🥩"], ["ropa vieja", "🥩"], ["churrasco", "🥩"], ["higado", "🥩"], ["albondiga", "🧆"], ["picadillo", "🥩"], ["lengua", "🥩"], ["cabro", "🥩"],
+  ["bistec", "🥩"], ["carne", "🥩"], ["rabo", "🥩"], ["ropa vieja", "🥩"], ["churrasco", "🥩"], ["higado", "🥩"], ["albondiga", "🧆"], ["picadillo", "🥩"], ["lengua", "🥩"], ["cabro", "🥩"], ["cabrito", "🥩"], ["carne de cerdo", "🍖"], ["costillita", "🍖"], ["cuajito", "🍖"], ["salpicon", "🥩"], ["lomo", "🍖"], ["jamon", "🍖"],
   ["espagueti", "🍝"], ["lasana", "🍝"], ["coditos", "🍝"], ["macarrones", "🍝"], ["canelones", "🍝"], ["fideos", "🍝"],
   ["tortilla", "🍳"], ["revoltillo", "🍳"], ["huevo", "🍳"],
   ["queso", "🧀"], ["quesito", "🥐"],
-  ["mofongo", "🍌"], ["trifongo", "🍌"], ["tostones", "🍌"], ["platano", "🍌"], ["amarillo", "🍌"], ["pionono", "🍌"], ["canoa", "🍌"], ["jibarito", "🍌"], ["guineo", "🍌"], ["pastelon", "🥘"], ["platanutre", "🍌"], ["aranita", "🍌"],
+  ["mofongo", VERDE], ["trifongo", VERDE], ["tostones", VERDE], ["platano", VERDE], ["jibarito", VERDE], ["guineo", VERDE], ["platanutre", VERDE], ["aranita", VERDE],
+  ["amarillo", MADURO], ["platanos maduros", MADURO], ["platano maduro", MADURO], ["pionono", MADURO], ["canoa", MADURO], ["pastelon", "🥘"],
   ["tostones de pana", "🍈"], ["mofongo de pana", "🍈"], ["bunuelos de pana", "🧆"], ["bunuelos de yautia", "🧆"],
   ["pasteles de", "🫔"], ["alcapurria", "🥟"], ["empanadilla", "🥟"], ["pastelillo", "🥟"], ["empanada", "🥟"], ["croqueta", "🥟"], ["relleno", "🥟"],
   ["yuca", "🍠"], ["yautia", "🍠"], ["batata", "🍠"], ["panapen", "🍈"], ["pana", "🍈"], ["viandas", "🍠"], ["papa", "🥔"],
@@ -442,7 +448,10 @@ function coverHTML(cat, recipe) {
   const [cx, cy, cr] = spots[v % spots.length];
   // <span> y no <div>: la portada también va dentro de botones (categorías).
   const icon = recipe ? dishIcon(recipe) : categoryIcons[cat] || "";
-  return `<span class="cover" style="--tone:${tone};--tone-2:${tone2};--cx:${cx};--cy:${cy};--cr:${cr}"><span class="cover-emoji" aria-hidden="true">${icon}</span>${img}</span>`;
+  const art = icon.startsWith("svg:")
+    ? `<svg class="cover-svg" viewBox="0 0 64 64"><use href="#${icon.slice(4)}"/></svg>`
+    : icon;
+  return `<span class="cover" style="--tone:${tone};--tone-2:${tone2};--cx:${cx};--cy:${cy};--cr:${cr}"><span class="cover-emoji" aria-hidden="true">${art}</span>${img}</span>`;
 }
 
 function favButtonHTML(r) {
