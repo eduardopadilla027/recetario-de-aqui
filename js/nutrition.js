@@ -58,7 +58,9 @@ const NUTRI_FOODS = [
   F("conejo", 136, 20, 0, 0, 0, 5.5, 1.7, 45, { u: 1400 }),
   F("ternera", 112, 20, 0, 0, 0, 3, 1, 80, { u: 150 }),
   // Pescados y mariscos
-  F("pescado|filete|mero|chillo|dorado|mahi mahi|tilapia|pargo", 96, 20, 0, 0, 0, 1.7, 0.4, 60, { u: 170 }),
+  F("almeja|mejillon", 86, 14.7, 3.6, 0, 0, 1, 0.2, 600, { u: 12, can: 283 }),
+  F("hoja de platano", 0, 0, 0, 0, 0, 0, 0, 0),
+  F("pescado|filete|mero|chillo|dorado|mahi mahi|tilapia|pargo|sierra", 96, 20, 0, 0, 0, 1.7, 0.4, 60, { u: 170, sl: 170 }),
   F("bacalao", 290, 63, 0, 0, 0, 2.4, 0.5, 1500, { cup: 100 }),
   F("camaron", 85, 20, 0, 0, 0, 0.5, 0.1, 119, { u: 15, cup: 145 }),
   F("langosta", 112, 20.6, 2.4, 0, 0, 1.5, 0.2, 177, { u: 150 }),
@@ -341,7 +343,7 @@ function measurePart(part) {
   }
   // Utensilios con cantidad ("12 palitos de pincho, remojados en agua",
   // "6 vasos"): no son comida, aunque mencionen alguna.
-  if (/^(de\s+)?(colador|palitos?|palillos?|vasos?|moldes?|papel|hilo|bolsas?)\b/.test(rest)) return { kind: "free" };
+  if (/^(de\s+)?(colador|palitos?|palillos?|vasos?|moldes?|papel|hilo|bolsas?|carapachos?|conchas?)\b/.test(rest)) return { kind: "free" };
   const food = findFood(rest.replace(/^de\s+/, ""));
   if (!food) return { kind: "unknown" };
 

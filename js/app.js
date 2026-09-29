@@ -268,6 +268,7 @@ const dishIcons = [
   ["arroz con dulce", "🍮"], ["arroz con coco", "🍮"], ["arroz", "🍚"], ["locrio", "🍚"],
   ["habichuela", "🫘"], ["frijol", "🫘"], ["gandul", "🫘"], ["garbanzo", "🫘"], ["lenteja", "🫘"],
   ["langosta", "🦞"], ["camaron", "🦐"], ["pulpo", "🐙"], ["calamar", "🦑"], ["juey", "🦀"], ["carrucho", "🐚"],
+  ["mariscada", "🦞"], ["paella", "🥘"], ["sierra", "🐟"], ["dorado", "🐟"],
   ["bacalao", "🐟"], ["bacalaito", "🐟"], ["pescado", "🐟"], ["chillo", "🐟"], ["filete", "🐟"], ["atun", "🐟"], ["ceviche", "🐟"],
   ["pavo", "🦃"], ["pavochon", "🦃"], ["molleja", "🍗"], ["pollo", "🍗"], ["pechuga", "🍗"], ["gallina", "🍗"],
   ["salchicha", "🌭"], ["longaniza", "🌭"], ["chorizo", "🌭"], ["salami", "🌭"],

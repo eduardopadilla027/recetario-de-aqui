@@ -4918,5 +4918,625 @@ recipes.push(
         "It is more bitter and intense than tablet chocolate: sweeten more if you like. This is how it was made on the mountain farms."
       ]
     }
+  },
+
+  // ── PESCADOS Y MARISCOS (más) ──
+  {
+    id: "mariscada",
+    category: "pescados",
+    name: { es: "Mariscada Criolla", en: "Creole Seafood Stew (Mariscada)" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lb de camarones grandes, pelados",
+        "2 colas de langosta, cortadas en medallones",
+        "1 lb de almejas, bien lavadas",
+        "½ lb de calamares, en anillos",
+        "½ lb de pulpo cocido, en pedazos",
+        "1 lb de filete de mero, en pedazos",
+        "4 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "1 lata de salsa de tomate (15 oz)",
+        "1 taza de vino blanco",
+        "1 taza de caldo de pescado o de camarones",
+        "6 dientes de ajo, picados",
+        "⅓ taza de aceite de oliva",
+        "¼ taza de aceitunas rellenas",
+        "Cilantro picado",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 lb large shrimp, peeled",
+        "2 lobster tails, cut into medallions",
+        "1 lb clams, well scrubbed",
+        "½ lb squid, in rings",
+        "½ lb cooked octopus, in pieces",
+        "1 lb grouper fillet, in pieces",
+        "4 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "1 can tomato sauce (15 oz)",
+        "1 cup white wine",
+        "1 cup fish or shrimp broth",
+        "6 garlic cloves, chopped",
+        "⅓ cup olive oil",
+        "¼ cup stuffed olives",
+        "Chopped cilantro",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero grande, caliente el aceite y sofría el ajo sin dorar. Añada el sofrito y el sazón y cocine 2 minutos.",
+        "Agregue la salsa de tomate, el vino, el caldo y las aceitunas. Hierva a fuego bajo 10 minutos.",
+        "Añada el pescado y la langosta y cocine 4 minutos.",
+        "Agregue las almejas, tape y cocine hasta que se abran (unos 5 minutos). Descarte las que no abran.",
+        "Añada los camarones, los calamares y el pulpo y cocine 3 minutos más, hasta que los camarones estén rosados.",
+        "Ajuste la sal, espolvoree cilantro y sirva con arroz blanco, tostones o mofongo."
+      ],
+      en: [
+        "In a large caldero, heat the oil and sauté the garlic without browning. Add the sofrito and sazón and cook 2 minutes.",
+        "Add the tomato sauce, wine, broth, and olives. Simmer 10 minutes.",
+        "Add the fish and lobster and cook 4 minutes.",
+        "Add the clams, cover, and cook until they open (about 5 minutes). Discard any that don't open.",
+        "Add the shrimp, squid, and octopus and cook 3 more minutes, until the shrimp are pink.",
+        "Adjust salt, sprinkle with cilantro, and serve with white rice, tostones, or mofongo."
+      ]
+    }
+  },
+  {
+    id: "jueyes-rellenos",
+    category: "pescados",
+    name: { es: "Jueyes Rellenos al Carapacho", en: "Stuffed Land Crab Shells" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lb de carne de juey (o de cangrejo), limpia",
+        "6 carapachos de juey limpios (o conchas para hornear)",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "2 cucharadas de salsa de tomate",
+        "2 cucharadas de aceitunas picadas",
+        "1 cucharada de alcaparras",
+        "2 cucharadas de mantequilla",
+        "½ taza de pan rallado",
+        "Recao picado"
+      ],
+      en: [
+        "1 lb land crab (or crab) meat, picked over",
+        "6 cleaned crab shells (or baking shells)",
+        "3 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "2 tablespoons tomato sauce",
+        "2 tablespoons chopped olives",
+        "1 tablespoon capers",
+        "2 tablespoons butter",
+        "½ cup breadcrumbs",
+        "Chopped culantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Revise la carne de juey y quite cualquier pedacito de carapacho.",
+        "En un sartén, derrita 1 cucharada de mantequilla y sofría el sofrito con el sazón y la salsa de tomate.",
+        "Añada el juey, las aceitunas, las alcaparras y el recao. Cocine 8 minutos hasta que seque un poco.",
+        "Rellene los carapachos, cubra con pan rallado y ponga encima pedacitos del resto de la mantequilla.",
+        "Hornee a 375°F por 15-20 minutos hasta que doren. Típicos de los kioscos de Piñones y Luquillo."
+      ],
+      en: [
+        "Check the crab meat and remove any bits of shell.",
+        "In a skillet, melt 1 tablespoon of butter and sauté the sofrito with the sazón and tomato sauce.",
+        "Add the crab, olives, capers, and culantro. Cook 8 minutes until slightly dry.",
+        "Fill the shells, top with breadcrumbs, and dot with the remaining butter.",
+        "Bake at 375°F for 15-20 minutes until golden. A favorite at the Piñones and Luquillo kiosks."
+      ]
+    }
+  },
+  {
+    id: "langosta-parrilla",
+    category: "pescados",
+    name: { es: "Langosta a la Parrilla con Mantequilla de Ajo", en: "Grilled Lobster with Garlic Butter" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 colas de langosta (8 oz cada una)",
+        "½ taza de mantequilla",
+        "6 dientes de ajo, majados",
+        "Jugo de 1 limón",
+        "1 cucharadita de pimentón",
+        "2 cucharadas de perejil o cilantro picado",
+        "Sal al gusto"
+      ],
+      en: [
+        "4 lobster tails (8 oz each)",
+        "½ cup butter",
+        "6 garlic cloves, mashed",
+        "Juice of 1 lime",
+        "1 teaspoon paprika",
+        "2 tablespoons chopped parsley or cilantro",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la mantequilla con el ajo a fuego bajo 3 minutos. Añada el limón, el pimentón, el perejil y la sal.",
+        "Con tijeras, corte las colas por la mitad a lo largo, a través del carapacho.",
+        "Barnice la carne con la mantequilla de ajo.",
+        "Ase con la carne hacia abajo 4-5 minutos. Voltee, barnice otra vez y ase 4-5 minutos más, hasta que la carne esté blanca y opaca.",
+        "Sirva con el resto de la mantequilla de ajo, tostones y ensalada."
+      ],
+      en: [
+        "Melt the butter with the garlic over low heat 3 minutes. Add the lime, paprika, parsley, and salt.",
+        "With kitchen shears, split the tails lengthwise through the shell.",
+        "Brush the meat with the garlic butter.",
+        "Grill meat-side down 4-5 minutes. Turn, brush again, and grill 4-5 more minutes, until the meat is white and opaque.",
+        "Serve with the remaining garlic butter, tostones, and salad."
+      ]
+    }
+  },
+  {
+    id: "ruedas-sierra",
+    category: "pescados",
+    name: { es: "Ruedas de Sierra Fritas", en: "Fried Kingfish Steaks" },
+    time: "30 min + adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 ruedas de sierra (de 1 pulgada de grueso)",
+        "4 dientes de ajo, majados",
+        "Jugo de 2 limones",
+        "1 cucharadita de orégano",
+        "1 cucharadita de adobo",
+        "½ taza de harina",
+        "Aceite para freír",
+        "1 cebolla en aros"
+      ],
+      en: [
+        "4 kingfish steaks (1 inch thick)",
+        "4 garlic cloves, mashed",
+        "Juice of 2 limes",
+        "1 teaspoon oregano",
+        "1 teaspoon adobo seasoning",
+        "½ cup flour",
+        "Oil for frying",
+        "1 onion, in rings"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe las ruedas con ajo, limón, orégano y adobo. Marine 30 minutos en la nevera.",
+        "Séquelas un poco y páselas por harina.",
+        "Fría en ½ pulgada de aceite caliente 4-5 minutos por lado, hasta que estén doradas y el centro se separe en lascas.",
+        "En el mismo aceite, sofría la cebolla y póngala encima del pescado.",
+        "Sirva con tostones, arroz blanco o viandas. Es el pescado frito de los chinchorros de la costa."
+      ],
+      en: [
+        "Season the steaks with garlic, lime, oregano, and adobo. Marinate 30 minutes in the fridge.",
+        "Pat them a little dry and dredge in flour.",
+        "Fry in ½ inch hot oil 4-5 minutes per side, until golden and the center flakes.",
+        "In the same oil, sauté the onion and spoon it over the fish.",
+        "Serve with tostones, white rice, or root vegetables. It is the fried fish of the seaside chinchorros."
+      ]
+    }
+  },
+  {
+    id: "chillo-horno",
+    category: "pescados",
+    name: { es: "Chillo al Horno con Vegetales", en: "Baked Red Snapper with Vegetables" },
+    time: "45 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 chillo entero de 2-3 lbs, limpio y con escamas quitadas",
+        "6 dientes de ajo, majados",
+        "Jugo de 2 limones",
+        "⅓ taza de aceite de oliva",
+        "1 cebolla en aros",
+        "1 pimiento rojo en tiras",
+        "2 tomates en ruedas",
+        "2 papas en ruedas finas",
+        "¼ taza de aceitunas",
+        "1 cucharadita de orégano",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 whole red snapper, 2-3 lbs, cleaned and scaled",
+        "6 garlic cloves, mashed",
+        "Juice of 2 limes",
+        "⅓ cup olive oil",
+        "1 onion, in rings",
+        "1 red bell pepper, in strips",
+        "2 tomatoes, sliced",
+        "2 potatoes, thinly sliced",
+        "¼ cup olives",
+        "1 teaspoon oregano",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hágale 3 cortes diagonales al chillo por cada lado. Frótelo por dentro y por fuera con el ajo, el limón, el orégano, sal y pimienta.",
+        "Precaliente el horno a 400°F. Engrase un molde con parte del aceite y acomode las papas en el fondo.",
+        "Coloque el chillo encima y rodéelo con la cebolla, el pimiento, el tomate y las aceitunas.",
+        "Rocíe con el resto del aceite y tape con papel de aluminio.",
+        "Hornee 20 minutos, destape y hornee 10-15 minutos más, hasta que la carne se separe del espinazo.",
+        "Sirva en el mismo molde con el jugo del horno."
+      ],
+      en: [
+        "Make 3 diagonal cuts on each side of the snapper. Rub it inside and out with the garlic, lime, oregano, salt, and pepper.",
+        "Preheat the oven to 400°F. Grease a baking dish with some of the oil and layer the potatoes on the bottom.",
+        "Place the snapper on top and surround it with the onion, bell pepper, tomato, and olives.",
+        "Drizzle with the remaining oil and cover with foil.",
+        "Bake 20 minutes, uncover, and bake 10-15 more minutes, until the flesh comes off the backbone.",
+        "Serve in the same dish with the pan juices."
+      ]
+    }
+  },
+  {
+    id: "dorado-mango",
+    category: "pescados",
+    name: { es: "Dorado a la Plancha con Salsa de Mango", en: "Seared Mahi-Mahi with Mango Salsa" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de dorado (mahi-mahi), de 6 oz",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharadita de adobo",
+        "Jugo de 1 limón",
+        "Salsa: 1 mangó maduro en cubitos",
+        "¼ de cebolla roja picada",
+        "½ pimiento rojo picado",
+        "2 ajíes dulces picados",
+        "2 cucharadas de cilantro picado",
+        "Jugo de 1 limón más",
+        "Pizca de sal"
+      ],
+      en: [
+        "4 mahi-mahi fillets, 6 oz each",
+        "2 tablespoons olive oil",
+        "1 teaspoon adobo seasoning",
+        "Juice of 1 lime",
+        "Salsa: 1 ripe mango, diced",
+        "¼ red onion, diced",
+        "½ red bell pepper, diced",
+        "2 sweet peppers (ají dulce), diced",
+        "2 tablespoons chopped cilantro",
+        "Juice of 1 more lime",
+        "Pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle todos los ingredientes de la salsa y refrigere mientras cocina el pescado.",
+        "Sazone los filetes con adobo y limón.",
+        "Caliente el aceite en una plancha o sartén a fuego medio-alto.",
+        "Cocine el dorado 3-4 minutos por lado, hasta que esté dorado por fuera y opaco en el centro.",
+        "Sirva con la salsa de mango por encima y arroz blanco o ensalada."
+      ],
+      en: [
+        "Mix all the salsa ingredients and refrigerate while you cook the fish.",
+        "Season the fillets with adobo and lime.",
+        "Heat the oil on a griddle or skillet over medium-high heat.",
+        "Cook the mahi-mahi 3-4 minutes per side, until golden outside and opaque in the center.",
+        "Serve topped with the mango salsa, with white rice or salad."
+      ]
+    }
+  },
+  {
+    id: "pescado-hoja-platano",
+    category: "pescados",
+    name: { es: "Pescado Asado en Hoja de Plátano", en: "Fish Roasted in Banana Leaves" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de pescado blanco (mero o chillo), de 6 oz",
+        "4 pedazos grandes de hoja de plátano, pasados por el fuego",
+        "3 cucharadas de recaíto",
+        "4 dientes de ajo, majados",
+        "Jugo de 1 naranja agria (o 2 limones)",
+        "2 cucharadas de aceite con achiote",
+        "1 tomate en ruedas",
+        "½ cebolla en aros",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "4 white fish fillets (grouper or snapper), 6 oz each",
+        "4 large pieces of banana leaf, passed over a flame",
+        "3 tablespoons recaíto",
+        "4 garlic cloves, mashed",
+        "Juice of 1 sour orange (or 2 limes)",
+        "2 tablespoons annatto oil",
+        "1 tomato, sliced",
+        "½ onion, in rings",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el recaíto, el ajo, el jugo de naranja agria, el aceite con achiote, sal y pimienta.",
+        "Unte los filetes con la mezcla.",
+        "Coloque cada filete sobre una hoja de plátano, póngale encima tomate y cebolla y doble la hoja como un paquete.",
+        "Ase en la parrilla o en el horno a 400°F por 15-20 minutos, hasta que el pescado se separe en lascas.",
+        "Sirva abriendo el paquete en el plato: la hoja le da un aroma especial."
+      ],
+      en: [
+        "Mix the recaíto, garlic, sour orange juice, annatto oil, salt, and pepper.",
+        "Rub the fillets with the mixture.",
+        "Place each fillet on a banana leaf, top with tomato and onion, and fold the leaf into a packet.",
+        "Grill or bake at 400°F for 15-20 minutes, until the fish flakes.",
+        "Serve by opening the packet on the plate: the leaf gives it a special aroma."
+      ]
+    }
+  },
+  {
+    id: "ensalada-mariscos",
+    category: "pescados",
+    name: { es: "Ensalada de Mariscos", en: "Seafood Salad" },
+    time: "1 hr + frío",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 lb de pulpo cocido, en pedazos",
+        "1 lb de camarones cocidos y pelados",
+        "½ lb de carrucho cocido, en pedazos",
+        "½ lb de calamares cocidos, en anillos",
+        "1 cebolla roja picada",
+        "1 pimiento verde y 1 rojo, picados",
+        "4 ajíes dulces picados",
+        "½ taza de aceite de oliva",
+        "⅓ taza de vinagre",
+        "Jugo de 3 limones",
+        "¼ taza de aceitunas",
+        "Cilantro picado",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 lb cooked octopus, in pieces",
+        "1 lb cooked, peeled shrimp",
+        "½ lb cooked conch, in pieces",
+        "½ lb cooked squid, in rings",
+        "1 red onion, diced",
+        "1 green and 1 red bell pepper, diced",
+        "4 sweet peppers (ají dulce), diced",
+        "½ cup olive oil",
+        "⅓ cup vinegar",
+        "Juice of 3 limes",
+        "¼ cup olives",
+        "Chopped cilantro",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Asegúrese de que todos los mariscos estén bien cocidos y fríos.",
+        "Combine el pulpo, los camarones, el carrucho y los calamares en un envase de cristal.",
+        "Añada la cebolla, los pimientos, los ajíes, las aceitunas y el cilantro.",
+        "Mezcle el aceite, el vinagre, el limón, sal y pimienta, y viértalo por encima.",
+        "Refrigere al menos 1 hora. Sirva frío con tostones o galletas. Consúmala en 1-2 días."
+      ],
+      en: [
+        "Make sure all the seafood is well cooked and cold.",
+        "Combine the octopus, shrimp, conch, and squid in a glass container.",
+        "Add the onion, bell peppers, sweet peppers, olives, and cilantro.",
+        "Mix the oil, vinegar, lime, salt, and pepper, and pour it over.",
+        "Refrigerate at least 1 hour. Serve cold with tostones or crackers. Eat within 1-2 days."
+      ]
+    }
+  },
+  {
+    id: "coctel-camarones",
+    category: "pescados",
+    name: { es: "Cóctel de Camarones", en: "Puerto Rican Shrimp Cocktail" },
+    time: "20 min + frío",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 lb de camarones medianos, pelados",
+        "½ taza de ketchup",
+        "Jugo de 2 limones",
+        "½ cebolla roja picada",
+        "1 tomate picado",
+        "1 aguacate en cubitos",
+        "2 cucharadas de cilantro picado",
+        "Unas gotas de pique o salsa picante",
+        "Galletas de soda para servir"
+      ],
+      en: [
+        "1 lb medium shrimp, peeled",
+        "½ cup ketchup",
+        "Juice of 2 limes",
+        "½ red onion, diced",
+        "1 tomato, diced",
+        "1 avocado, diced",
+        "2 tablespoons chopped cilantro",
+        "A few drops of pique or hot sauce",
+        "Soda crackers to serve"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva agua con sal, añada los camarones y cocine 2-3 minutos, hasta que estén rosados. Páselos a agua con hielo y escurra.",
+        "Mezcle el ketchup con el limón y el pique.",
+        "Añada los camarones, la cebolla, el tomate y el cilantro.",
+        "Refrigere 30 minutos. Justo antes de servir, añada el aguacate.",
+        "Sirva frío en copas con galletas de soda."
+      ],
+      en: [
+        "Bring salted water to a boil, add the shrimp, and cook 2-3 minutes, until pink. Transfer to ice water and drain.",
+        "Mix the ketchup with the lime and hot sauce.",
+        "Add the shrimp, onion, tomato, and cilantro.",
+        "Refrigerate 30 minutes. Just before serving, add the avocado.",
+        "Serve cold in glasses with soda crackers."
+      ]
+    }
+  },
+  {
+    id: "asopao-mariscos",
+    category: "sopas",
+    name: { es: "Asopao de Mariscos", en: "Seafood Asopao" },
+    time: "50 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1½ tazas de arroz grano corto",
+        "1 lb de camarones, pelados",
+        "1 lb de almejas, bien lavadas",
+        "½ lb de calamares, en anillos",
+        "1 lb de filete de pescado, en pedazos",
+        "4 cucharadas de sofrito",
+        "2 sobres de sazón con achiote",
+        "½ taza de salsa de tomate",
+        "10 tazas de caldo de pescado o de camarones",
+        "½ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "½ taza de petit pois",
+        "1 pimiento rojo asado, en tiras"
+      ],
+      en: [
+        "1½ cups short grain rice",
+        "1 lb shrimp, peeled",
+        "1 lb clams, well scrubbed",
+        "½ lb squid, in rings",
+        "1 lb fish fillet, in pieces",
+        "4 tablespoons sofrito",
+        "2 packets sazón with annatto",
+        "½ cup tomato sauce",
+        "10 cups fish or shrimp broth",
+        "½ cup stuffed olives",
+        "1 tablespoon capers",
+        "½ cup petit pois",
+        "1 roasted red pepper, in strips"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla grande, sofría el sofrito con el sazón y la salsa de tomate 3 minutos.",
+        "Añada el caldo, las aceitunas y las alcaparras y hierva.",
+        "Agregue el arroz y cocine a fuego medio 18 minutos, revolviendo de vez en cuando.",
+        "Añada el pescado y las almejas y cocine 5 minutos, hasta que las almejas abran (descarte las que no abran).",
+        "Agregue los camarones y los calamares y cocine 3 minutos más.",
+        "Debe quedar caldoso. Decore con los petit pois y el pimiento y sirva enseguida."
+      ],
+      en: [
+        "In a large pot, sauté the sofrito with the sazón and tomato sauce 3 minutes.",
+        "Add the broth, olives, and capers and bring to a boil.",
+        "Add the rice and cook on medium 18 minutes, stirring now and then.",
+        "Add the fish and clams and cook 5 minutes, until the clams open (discard any that don't).",
+        "Add the shrimp and squid and cook 3 more minutes.",
+        "It should be soupy. Garnish with the petit pois and pepper and serve right away."
+      ]
+    }
+  },
+  {
+    id: "paella-mariscos",
+    category: "arroces",
+    name: { es: "Paella de Mariscos a la Boricua", en: "Puerto Rican Seafood Paella" },
+    time: "1 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 tazas de arroz grano mediano",
+        "1 lb de camarones grandes, con cáscara",
+        "1 lb de mejillones o almejas, bien lavados",
+        "½ lb de calamares, en anillos",
+        "2 colas de langosta, en medallones",
+        "½ lb de chorizo en ruedas",
+        "4 cucharadas de sofrito",
+        "2 sobres de sazón con azafrán (o una pizca de azafrán)",
+        "½ taza de salsa de tomate",
+        "5 tazas de caldo de pescado o de pollo",
+        "⅓ taza de aceite de oliva",
+        "1 pimiento rojo en tiras",
+        "½ taza de petit pois",
+        "Limones en cuartos para servir"
+      ],
+      en: [
+        "3 cups medium grain rice",
+        "1 lb large shell-on shrimp",
+        "1 lb mussels or clams, well scrubbed",
+        "½ lb squid, in rings",
+        "2 lobster tails, in medallions",
+        "½ lb chorizo, sliced",
+        "4 tablespoons sofrito",
+        "2 packets sazón with saffron (or a pinch of saffron)",
+        "½ cup tomato sauce",
+        "5 cups fish or chicken broth",
+        "⅓ cup olive oil",
+        "1 red bell pepper, in strips",
+        "½ cup petit pois",
+        "Lime wedges to serve"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero ancho o paellera, caliente el aceite y dore el chorizo. Añada los calamares y el pimiento y sofría 3 minutos.",
+        "Agregue el sofrito, el sazón y la salsa de tomate. Añada el arroz y revuelva para que se impregne.",
+        "Vierta el caldo caliente, pruebe la sal y cocine sin revolver a fuego medio 15 minutos.",
+        "Acomode encima la langosta, los camarones y los mejillones, hundiéndolos un poco en el arroz.",
+        "Tape y cocine a fuego bajo 10-12 minutos, hasta que el arroz esté listo y los mejillones abran (descarte los que no abran).",
+        "Añada los petit pois, deje reposar 5 minutos y sirva con limón. El pegao del fondo es lo mejor."
+      ],
+      en: [
+        "In a wide caldero or paella pan, heat the oil and brown the chorizo. Add the squid and bell pepper and sauté 3 minutes.",
+        "Add the sofrito, sazón, and tomato sauce. Add the rice and stir to coat.",
+        "Pour in the hot broth, taste for salt, and cook without stirring on medium 15 minutes.",
+        "Arrange the lobster, shrimp, and mussels on top, pressing them slightly into the rice.",
+        "Cover and cook on low 10-12 minutes, until the rice is done and the mussels open (discard any that don't).",
+        "Add the petit pois, rest 5 minutes, and serve with lime. The crispy pegao at the bottom is the best part."
+      ]
+    }
+  },
+  {
+    id: "arroz-pulpo",
+    category: "arroces",
+    name: { es: "Arroz con Pulpo", en: "Rice with Octopus" },
+    time: "1 hr 45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 lbs de pulpo limpio",
+        "3 tazas de arroz grano mediano",
+        "4 tazas del caldo del pulpo",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "3 cucharadas de aceite de oliva",
+        "1 hoja de laurel"
+      ],
+      en: [
+        "2 lbs cleaned octopus",
+        "3 cups medium grain rice",
+        "4 cups octopus broth",
+        "3 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "¼ cup tomato sauce",
+        "¼ cup stuffed olives",
+        "1 tablespoon capers",
+        "3 tablespoons olive oil",
+        "1 bay leaf"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el pulpo en agua con sal y laurel 45-60 minutos, hasta que un tenedor entre con facilidad. Reserve 4 tazas del caldo.",
+        "Corte el pulpo en pedazos pequeños.",
+        "En un caldero, caliente el aceite y sofría el sofrito, el sazón y la salsa de tomate. Añada el pulpo, las aceitunas y las alcaparras.",
+        "Agregue el caldo y, cuando hierva, el arroz. Cocine sin tapa hasta que se seque.",
+        "Voltee, tape y cocine a fuego bajo 25 minutos. Sirva con tostones o amarillos."
+      ],
+      en: [
+        "Boil the octopus in salted water with the bay leaf 45-60 minutes, until a fork goes in easily. Reserve 4 cups of the broth.",
+        "Cut the octopus into small pieces.",
+        "In a caldero, heat the oil and sauté the sofrito, sazón, and tomato sauce. Add the octopus, olives, and capers.",
+        "Add the broth and, when it boils, the rice. Cook uncovered until dry.",
+        "Fold, cover, and cook on low 25 minutes. Serve with tostones or sweet plantains."
+      ]
+    }
   }
 );
