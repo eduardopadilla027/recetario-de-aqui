@@ -6062,5 +6062,430 @@ recipes.push(
         "Pour into a container, cover, and freeze 6 hours or overnight. No ice cream maker needed."
       ]
     }
+  },
+
+  // ── PANES PUERTORRIQUEÑOS (más) ──
+  {
+    id: "pan-jamon",
+    category: "panes",
+    name: { es: "Pan de Jamón", en: "Ham Bread (Christmas Pan de Jamón)" },
+    time: "3 hrs",
+    servings: 12,
+    ingredients: {
+      es: [
+        "Masa: 4 tazas de harina de pan",
+        "1 sobre de levadura",
+        "1 taza de leche tibia",
+        "¼ taza de azúcar",
+        "1 huevo",
+        "¼ taza de mantequilla",
+        "1 cucharadita de sal",
+        "Relleno: 1 lb de jamón de cocinar en lascas finas",
+        "½ lb de tocineta, ligeramente frita",
+        "½ taza de pasas",
+        "½ taza de aceitunas rellenas, en ruedas",
+        "1 huevo batido para barnizar"
+      ],
+      en: [
+        "Dough: 4 cups bread flour",
+        "1 packet yeast",
+        "1 cup warm milk",
+        "¼ cup sugar",
+        "1 egg",
+        "¼ cup butter",
+        "1 teaspoon salt",
+        "Filling: 1 lb thinly sliced cooking ham",
+        "½ lb bacon, lightly fried",
+        "½ cup raisins",
+        "½ cup stuffed olives, sliced",
+        "1 beaten egg for brushing"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura en la leche tibia con 1 cucharada de azúcar. Espere 10 minutos.",
+        "Añada el resto del azúcar, el huevo, la mantequilla, la harina y la sal. Amase 10 minutos y deje crecer 1 hora.",
+        "Estire la masa en un rectángulo de unas 12x16 pulgadas.",
+        "Cubra con las lascas de jamón y la tocineta, y reparta las pasas y las aceitunas, dejando 1 pulgada libre en los bordes.",
+        "Enrolle por el lado largo, selle bien la costura y las puntas, y colóquelo en una bandeja con la costura hacia abajo. Deje crecer 30 minutos.",
+        "Barnice con el huevo, pinche la superficie con un tenedor y hornee a 350°F por 30-35 minutos hasta dorar.",
+        "Deje enfriar un poco y corte en ruedas. Es el pan de las fiestas navideñas."
+      ],
+      en: [
+        "Dissolve the yeast in the warm milk with 1 tablespoon sugar. Wait 10 minutes.",
+        "Add the rest of the sugar, the egg, butter, flour, and salt. Knead 10 minutes and let rise 1 hour.",
+        "Roll the dough into a rectangle about 12x16 inches.",
+        "Cover with the ham slices and bacon, and scatter the raisins and olives, leaving a 1-inch border.",
+        "Roll up from the long side, seal the seam and ends well, and place seam-down on a baking sheet. Let rise 30 minutes.",
+        "Brush with the egg, prick the top with a fork, and bake at 350°F for 30-35 minutes until golden.",
+        "Let cool slightly and slice. It's the bread of the Christmas holidays."
+      ]
+    }
+  },
+  {
+    id: "mallorcas-guayaba-queso",
+    category: "panes",
+    name: { es: "Mallorcas Rellenas de Guayaba y Queso", en: "Mallorcas Filled with Guava and Cheese" },
+    time: "3 hrs 30 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "4 tazas de harina de pan",
+        "1 sobre de levadura",
+        "¾ taza de leche tibia",
+        "½ taza de azúcar",
+        "3 yemas de huevo",
+        "½ taza de mantequilla suavizada (más 2 cucharadas derretidas)",
+        "½ cucharadita de sal",
+        "6 oz de pasta de guayaba, en 12 pedacitos",
+        "6 oz de queso crema, en 12 pedacitos",
+        "Azúcar en polvo para cubrir"
+      ],
+      en: [
+        "4 cups bread flour",
+        "1 packet yeast",
+        "¾ cup warm milk",
+        "½ cup sugar",
+        "3 egg yolks",
+        "½ cup softened butter (plus 2 tablespoons melted)",
+        "½ teaspoon salt",
+        "6 oz guava paste, in 12 pieces",
+        "6 oz cream cheese, in 12 pieces",
+        "Powdered sugar for dusting"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura en la leche tibia con 1 cucharada de azúcar. Espere 10 minutos.",
+        "Añada las yemas, el resto del azúcar, la harina y la sal. Amase e incorpore la mantequilla suavizada poco a poco hasta tener una masa suave y brillosa. Deje crecer 1½ horas.",
+        "Divida en 12 bolitas. Estire cada una en una tira larga, ponga en el centro un pedazo de guayaba y uno de queso, cierre y enrolle en espiral, como caracol.",
+        "Coloque en bandejas engrasadas y deje crecer 45 minutos.",
+        "Hornee a 350°F por 15-18 minutos hasta que doren.",
+        "Barnice con la mantequilla derretida y cubra con abundante azúcar en polvo."
+      ],
+      en: [
+        "Dissolve the yeast in the warm milk with 1 tablespoon sugar. Wait 10 minutes.",
+        "Add the yolks, the rest of the sugar, the flour, and the salt. Knead, working in the softened butter little by little until the dough is soft and glossy. Let rise 1½ hours.",
+        "Divide into 12 balls. Roll each into a long strip, put a piece of guava and a piece of cheese in the center, close, and coil into a spiral, like a snail.",
+        "Place on greased baking sheets and let rise 45 minutes.",
+        "Bake at 350°F for 15-18 minutes until golden.",
+        "Brush with the melted butter and dust generously with powdered sugar."
+      ]
+    }
+  },
+  {
+    id: "pan-tostado-plancha",
+    category: "panes",
+    name: { es: "Pan Tostado a la Plancha", en: "Griddle-Toasted Bread (Tostada)" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 pan de agua",
+        "3 cucharadas de mantequilla suavizada",
+        "Café con leche para acompañar"
+      ],
+      en: [
+        "1 water bread loaf",
+        "3 tablespoons softened butter",
+        "Café con leche to serve"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte el pan de agua por la mitad a lo largo y luego en dos pedazos.",
+        "Unte la mantequilla por el lado de la miga.",
+        "Colóquelo en una plancha o sartén caliente con la mantequilla hacia abajo y presiónelo con una espátula o un peso.",
+        "Tueste 2-3 minutos hasta que esté dorado y crujiente, y la corteza caliente.",
+        "Sírvalo enseguida con café con leche para mojar: es el desayuno de las panaderías."
+      ],
+      en: [
+        "Cut the water bread in half lengthwise and then into two pieces.",
+        "Spread the butter on the crumb side.",
+        "Place butter-side down on a hot griddle or skillet and press with a spatula or a weight.",
+        "Toast 2-3 minutes until golden and crisp, with a warm crust.",
+        "Serve right away with café con leche for dunking: it's the classic bakery breakfast."
+      ]
+    }
+  },
+  {
+    id: "pan-molde-casero",
+    category: "panes",
+    name: { es: "Pan de Molde Casero", en: "Homemade Sandwich Loaf" },
+    time: "3 hrs",
+    servings: 16,
+    ingredients: {
+      es: [
+        "4 tazas de harina de pan",
+        "1 sobre de levadura",
+        "1¼ tazas de leche tibia",
+        "2 cucharadas de azúcar",
+        "3 cucharadas de mantequilla",
+        "1½ cucharaditas de sal"
+      ],
+      en: [
+        "4 cups bread flour",
+        "1 packet yeast",
+        "1¼ cups warm milk",
+        "2 tablespoons sugar",
+        "3 tablespoons butter",
+        "1½ teaspoons salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura y el azúcar en la leche tibia. Espere 10 minutos.",
+        "Añada la harina, la mantequilla y la sal. Amase 10 minutos hasta que la masa esté lisa y elástica.",
+        "Deje crecer 1 hora, hasta que duplique su tamaño.",
+        "Estire la masa en un rectángulo, enróllela bien apretada y colóquela en un molde de pan engrasado. Deje crecer 45 minutos.",
+        "Hornee a 375°F por 30 minutos. Desmolde y deje enfriar por completo antes de rebanar. Es el pan de los sándwiches de mezcla."
+      ],
+      en: [
+        "Dissolve the yeast and sugar in the warm milk. Wait 10 minutes.",
+        "Add the flour, butter, and salt. Knead 10 minutes until smooth and elastic.",
+        "Let rise 1 hour, until doubled.",
+        "Roll the dough into a rectangle, roll it up tightly, and place it in a greased loaf pan. Let rise 45 minutes.",
+        "Bake at 375°F for 30 minutes. Unmold and cool completely before slicing. It's the bread for party sandwiches (sándwiches de mezcla)."
+      ]
+    }
+  },
+  {
+    id: "pan-queso-pais",
+    category: "panes",
+    name: { es: "Pan de Queso del País", en: "Local White Cheese Rolls" },
+    time: "2 hrs 30 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "3½ tazas de harina de pan",
+        "1 sobre de levadura",
+        "1 taza de leche tibia",
+        "2 cucharadas de azúcar",
+        "1 huevo",
+        "3 cucharadas de mantequilla",
+        "1 cucharadita de sal",
+        "1½ tazas de queso del país rallado",
+        "1 huevo batido para barnizar"
+      ],
+      en: [
+        "3½ cups bread flour",
+        "1 packet yeast",
+        "1 cup warm milk",
+        "2 tablespoons sugar",
+        "1 egg",
+        "3 tablespoons butter",
+        "1 teaspoon salt",
+        "1½ cups grated local white cheese",
+        "1 beaten egg for brushing"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura y el azúcar en la leche tibia. Espere 10 minutos.",
+        "Añada el huevo, la mantequilla, la harina y la sal. Amase 8 minutos.",
+        "Incorpore 1 taza del queso y deje crecer 1 hora.",
+        "Forme 12 panecillos, colóquelos en una bandeja engrasada y deje crecer 30 minutos.",
+        "Barnice con huevo, cubra con el resto del queso y hornee a 375°F por 18-20 minutos. Se comen tibios."
+      ],
+      en: [
+        "Dissolve the yeast and sugar in the warm milk. Wait 10 minutes.",
+        "Add the egg, butter, flour, and salt. Knead 8 minutes.",
+        "Work in 1 cup of the cheese and let rise 1 hour.",
+        "Shape 12 rolls, place on a greased baking sheet, and let rise 30 minutes.",
+        "Brush with egg, top with the rest of the cheese, and bake at 375°F for 18-20 minutes. Best eaten warm."
+      ]
+    }
+  },
+  {
+    id: "pan-mantequilla",
+    category: "panes",
+    name: { es: "Pan de Mantequilla", en: "Soft Butter Bread" },
+    time: "3 hrs",
+    servings: 16,
+    ingredients: {
+      es: [
+        "4½ tazas de harina de pan",
+        "1 sobre de levadura",
+        "1 taza de leche tibia",
+        "⅓ taza de azúcar",
+        "2 huevos",
+        "½ taza de mantequilla suavizada",
+        "1 cucharadita de sal",
+        "2 cucharadas de mantequilla derretida para barnizar"
+      ],
+      en: [
+        "4½ cups bread flour",
+        "1 packet yeast",
+        "1 cup warm milk",
+        "⅓ cup sugar",
+        "2 eggs",
+        "½ cup softened butter",
+        "1 teaspoon salt",
+        "2 tablespoons melted butter for brushing"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura en la leche tibia con 1 cucharada de azúcar. Espere 10 minutos.",
+        "Añada los huevos, el resto del azúcar, la harina y la sal. Amase e incorpore la mantequilla poco a poco. Amase 10 minutos más.",
+        "Deje crecer 1½ horas.",
+        "Divida en 2, forme dos panes y colóquelos en moldes engrasados. Deje crecer 45 minutos.",
+        "Hornee a 350°F por 25-30 minutos. Barnice con mantequilla derretida al sacarlos. La miga queda muy suave y amarilla."
+      ],
+      en: [
+        "Dissolve the yeast in the warm milk with 1 tablespoon sugar. Wait 10 minutes.",
+        "Add the eggs, the rest of the sugar, the flour, and the salt. Knead, working in the butter little by little. Knead 10 more minutes.",
+        "Let rise 1½ hours.",
+        "Divide in 2, shape two loaves, and place in greased pans. Let rise 45 minutes.",
+        "Bake at 350°F for 25-30 minutes. Brush with melted butter as they come out. The crumb is very soft and yellow."
+      ]
+    }
+  },
+  {
+    id: "pan-leche-pasas",
+    category: "panes",
+    name: { es: "Pan de Leche con Pasas", en: "Sweet Milk Bread with Raisins" },
+    time: "3 hrs",
+    servings: 16,
+    ingredients: {
+      es: [
+        "4 tazas de harina de pan",
+        "1 sobre de levadura",
+        "1 taza de leche evaporada tibia",
+        "½ taza de azúcar",
+        "2 huevos",
+        "¼ taza de mantequilla",
+        "1 cucharadita de canela",
+        "½ cucharadita de sal",
+        "1 taza de pasas",
+        "1 huevo batido y 2 cucharadas de azúcar para cubrir"
+      ],
+      en: [
+        "4 cups bread flour",
+        "1 packet yeast",
+        "1 cup warm evaporated milk",
+        "½ cup sugar",
+        "2 eggs",
+        "¼ cup butter",
+        "1 teaspoon cinnamon",
+        "½ teaspoon salt",
+        "1 cup raisins",
+        "1 beaten egg and 2 tablespoons sugar for topping"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje las pasas en agua tibia 15 minutos y escúrralas bien.",
+        "Disuelva la levadura en la leche tibia con 1 cucharada de azúcar. Espere 10 minutos.",
+        "Añada los huevos, el resto del azúcar, la mantequilla, la harina, la canela y la sal. Amase 10 minutos.",
+        "Incorpore las pasas y deje crecer 1 hora.",
+        "Forme 2 panes redondos o trenzados, colóquelos en una bandeja y deje crecer 40 minutos.",
+        "Barnice con huevo, espolvoree azúcar y hornee a 350°F por 25-30 minutos."
+      ],
+      en: [
+        "Soak the raisins in warm water 15 minutes and drain well.",
+        "Dissolve the yeast in the warm milk with 1 tablespoon sugar. Wait 10 minutes.",
+        "Add the eggs, the rest of the sugar, the butter, flour, cinnamon, and salt. Knead 10 minutes.",
+        "Work in the raisins and let rise 1 hour.",
+        "Shape 2 round or braided loaves, place on a baking sheet, and let rise 40 minutes.",
+        "Brush with egg, sprinkle with sugar, and bake at 350°F for 25-30 minutes."
+      ]
+    }
+  },
+  {
+    id: "pan-platano-maduro",
+    category: "panes",
+    name: { es: "Pan de Plátano Maduro", en: "Ripe Plantain Bread" },
+    time: "1 hr 20 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 plátanos bien maduros (casi negros), majados",
+        "2 tazas de harina",
+        "¾ taza de azúcar morena",
+        "½ taza de aceite",
+        "2 huevos",
+        "¼ taza de leche de coco",
+        "1 cucharadita de bicarbonato",
+        "1 cucharadita de canela",
+        "½ cucharadita de nuez moscada",
+        "1 cucharadita de vainilla",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "2 very ripe plantains (almost black), mashed",
+        "2 cups flour",
+        "¾ cup brown sugar",
+        "½ cup oil",
+        "2 eggs",
+        "¼ cup coconut milk",
+        "1 teaspoon baking soda",
+        "1 teaspoon cinnamon",
+        "½ teaspoon nutmeg",
+        "1 teaspoon vanilla",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Precaliente el horno a 350°F y engrase un molde de pan.",
+        "Mezcle los plátanos majados con el aceite, el azúcar, los huevos, la leche de coco y la vainilla.",
+        "Añada la harina, el bicarbonato, las especias y la sal, sin batir demasiado.",
+        "Vierta en el molde y hornee 55-60 minutos, hasta que un palillo salga limpio.",
+        "Deje enfriar antes de cortar. Aprovecha los plátanos que se pasaron de maduros."
+      ],
+      en: [
+        "Preheat the oven to 350°F and grease a loaf pan.",
+        "Mix the mashed plantains with the oil, sugar, eggs, coconut milk, and vanilla.",
+        "Add the flour, baking soda, spices, and salt without overmixing.",
+        "Pour into the pan and bake 55-60 minutes, until a toothpick comes out clean.",
+        "Let cool before slicing. It uses up plantains that got too ripe."
+      ]
+    }
+  },
+  {
+    id: "pan-yautia",
+    category: "panes",
+    name: { es: "Pan de Yautía", en: "Yautía (Taro) Bread Rolls" },
+    time: "3 hrs",
+    servings: 16,
+    ingredients: {
+      es: [
+        "1 taza de yautía blanca hervida y majada",
+        "4 tazas de harina de pan",
+        "1 sobre de levadura",
+        "¾ taza de leche tibia",
+        "2 cucharadas de azúcar",
+        "1 huevo",
+        "3 cucharadas de mantequilla",
+        "1½ cucharaditas de sal"
+      ],
+      en: [
+        "1 cup boiled, mashed white yautía (taro)",
+        "4 cups bread flour",
+        "1 packet yeast",
+        "¾ cup warm milk",
+        "2 tablespoons sugar",
+        "1 egg",
+        "3 tablespoons butter",
+        "1½ teaspoons salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la yautía pelada hasta que esté blanda, májela sin grumos y déjela entibiar.",
+        "Disuelva la levadura y el azúcar en la leche tibia. Espere 10 minutos.",
+        "Mezcle la yautía con la levadura, el huevo y la mantequilla. Añada la harina y la sal y amase 10 minutos.",
+        "Deje crecer 1 hora. Forme 16 panecillos, colóquelos en un molde engrasado y deje crecer 40 minutos.",
+        "Hornee a 375°F por 20-22 minutos. Quedan muy suaves y húmedos por la yautía."
+      ],
+      en: [
+        "Boil the peeled yautía until soft, mash it smooth, and let it cool to lukewarm.",
+        "Dissolve the yeast and sugar in the warm milk. Wait 10 minutes.",
+        "Mix the yautía with the yeast, egg, and butter. Add the flour and salt and knead 10 minutes.",
+        "Let rise 1 hour. Shape 16 rolls, place in a greased pan, and let rise 40 minutes.",
+        "Bake at 375°F for 20-22 minutes. The yautía makes them very soft and moist."
+      ]
+    }
   }
 );
