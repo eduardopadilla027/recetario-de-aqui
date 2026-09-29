@@ -256,7 +256,7 @@ const categoryIcons = {
  * Queso" → flan, no queso); en empate, la más larga ("pastelon" antes que
  * "pastel"). Sin coincidencia: el de la categoría. Sólo decorativo. */
 const dishIcons = [
-  ["sopa", "🍲"], ["asopao", "🍲"], ["sancocho", "🍲"], ["caldo", "🍲"], ["sopon", "🍲"], ["mondongo", "🍲"], ["crema de calabaza", "🍲"], ["crema de pana", "🍲"],
+  ["sopa", "🍲"], ["asopao", "🍲"], ["sancocho", "🍲"], ["caldo", "🍲"], ["sopon", "🍲"], ["mondongo", "🍲"], ["crema de calabaza", "🍲"], ["crema de pana", "🍲"], ["crema de yautia", "🍲"],
   ["ensalada", "🥗"], ["serenata", "🥗"], ["ensalada de frutas", "🍇"],
   ["salsa", "🍅"], ["mojito isleno", "🍅"], ["salsa de mango", "🥭"],
   ["ternera", "🥩"], ["chicharrones de pollo", "🍗"], ["rellenos de papa", "🥔"], ["surullito", "🌽"],

@@ -6487,5 +6487,493 @@ recipes.push(
         "Bake at 375°F for 20-22 minutes. The yautía makes them very soft and moist."
       ]
     }
+  },
+
+  // ── SOPAS PUERTORRIQUEÑAS (más) ──
+  {
+    id: "caldo-pollo-casero",
+    category: "sopas",
+    name: { es: "Caldo de Pollo Casero", en: "Homemade Chicken Broth" },
+    time: "1 hr 30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 lbs de muslos de pollo con hueso, sin pellejo",
+        "10 tazas de agua",
+        "1 cebolla en cuartos",
+        "1 pimiento verde en pedazos",
+        "4 dientes de ajo machacados",
+        "4 hojas de recao",
+        "2 zanahorias en ruedas",
+        "1 tallo de apio",
+        "2 papas en cubos",
+        "1 cucharadita de sal",
+        "Jugo de 1 limón"
+      ],
+      en: [
+        "2 lbs bone-in chicken thighs, skinless",
+        "10 cups water",
+        "1 onion, quartered",
+        "1 green bell pepper, in pieces",
+        "4 garlic cloves, crushed",
+        "4 culantro leaves",
+        "2 carrots, sliced",
+        "1 celery stalk",
+        "2 potatoes, cubed",
+        "1 teaspoon salt",
+        "Juice of 1 lime"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga el pollo en una olla con el agua fría y la sal. Cuando empiece a hervir, quite la espuma con una cuchara.",
+        "Añada la cebolla, el pimiento, el ajo, el recao y el apio. Cocine tapado a fuego bajo 1 hora.",
+        "Saque el pollo, desmenúcelo y descarte los huesos. Cuele el caldo si lo quiere claro.",
+        "Regrese el pollo al caldo con la zanahoria y las papas y cocine 20 minutos.",
+        "Añada el limón y ajuste la sal. Es el caldo de la casa para el catarro o cuando el estómago está delicado."
+      ],
+      en: [
+        "Put the chicken in a pot with the cold water and salt. When it starts to boil, skim off the foam with a spoon.",
+        "Add the onion, bell pepper, garlic, culantro, and celery. Cook covered on low 1 hour.",
+        "Remove the chicken, shred it, and discard the bones. Strain the broth if you want it clear.",
+        "Return the chicken to the broth with the carrots and potatoes and cook 20 minutes.",
+        "Add the lime and adjust the salt. It's the home broth for colds or an upset stomach."
+      ]
+    }
+  },
+  {
+    id: "sopa-fideos-criolla",
+    category: "sopas",
+    name: { es: "Sopa de Fideos Criolla con Huevo", en: "Creole Noodle Soup with Egg" },
+    time: "30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "8 tazas de caldo de pollo",
+        "2 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "2 cucharadas de salsa de tomate",
+        "1 papa en cubitos",
+        "1 zanahoria en cubitos",
+        "1 taza de fideos finos",
+        "2 huevos batidos",
+        "Cilantro picado"
+      ],
+      en: [
+        "8 cups chicken broth",
+        "2 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "2 tablespoons tomato sauce",
+        "1 potato, diced",
+        "1 carrot, diced",
+        "1 cup thin noodles",
+        "2 beaten eggs",
+        "Chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, sofría el sofrito con el sazón y la salsa de tomate 2 minutos.",
+        "Añada el caldo, la papa y la zanahoria y hierva 12 minutos.",
+        "Agregue los fideos y cocine 6-8 minutos hasta que estén blandos.",
+        "Con la sopa hirviendo, vierta los huevos batidos en un hilo fino mientras revuelve para que se formen hebras. Cocine 1 minuto más.",
+        "Sirva con cilantro. Es la sopa rápida de los días de lluvia."
+      ],
+      en: [
+        "In a pot, sauté the sofrito with the sazón and tomato sauce 2 minutes.",
+        "Add the broth, potato, and carrot and boil 12 minutes.",
+        "Add the noodles and cook 6-8 minutes until tender.",
+        "With the soup boiling, pour in the beaten eggs in a thin stream while stirring so they form ribbons. Cook 1 more minute.",
+        "Serve with cilantro. It's the quick soup for rainy days."
+      ]
+    }
+  },
+  {
+    id: "sopa-albondigas",
+    category: "sopas",
+    name: { es: "Sopa de Albóndigas", en: "Meatball Soup" },
+    time: "50 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lb de carne molida",
+        "¼ taza de pan rallado",
+        "1 huevo",
+        "2 cucharadas de sofrito (para las albóndigas)",
+        "3 cucharadas de sofrito (para la sopa)",
+        "1 sobre de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "8 tazas de caldo de res o agua",
+        "2 papas en cubos",
+        "1 zanahoria en ruedas",
+        "1 taza de calabaza en cubos",
+        "½ taza de arroz",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 lb ground beef",
+        "¼ cup breadcrumbs",
+        "1 egg",
+        "2 tablespoons sofrito (for the meatballs)",
+        "3 tablespoons sofrito (for the soup)",
+        "1 packet sazón with annatto",
+        "¼ cup tomato sauce",
+        "8 cups beef broth or water",
+        "2 potatoes, cubed",
+        "1 carrot, sliced",
+        "1 cup calabaza, cubed",
+        "½ cup rice",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la carne, el pan rallado, el huevo, 2 cucharadas de sofrito, sal y pimienta. Forme bolitas del tamaño de una nuez.",
+        "En una olla, sofría el resto del sofrito con el sazón y la salsa de tomate.",
+        "Añada el caldo y hierva. Eche las albóndigas una a una y cocine 10 minutos sin revolver para que no se rompan.",
+        "Agregue las papas, la zanahoria, la calabaza y el arroz. Cocine 20 minutos a fuego medio.",
+        "Ajuste la sal. La calabaza se deshace y espesa el caldo."
+      ],
+      en: [
+        "Mix the beef, breadcrumbs, egg, 2 tablespoons sofrito, salt, and pepper. Form walnut-sized balls.",
+        "In a pot, sauté the rest of the sofrito with the sazón and tomato sauce.",
+        "Add the broth and bring to a boil. Drop in the meatballs one by one and cook 10 minutes without stirring so they hold together.",
+        "Add the potatoes, carrot, calabaza, and rice. Cook 20 minutes on medium.",
+        "Adjust the salt. The calabaza breaks down and thickens the broth."
+      ]
+    }
+  },
+  {
+    id: "sopa-lentejas",
+    category: "sopas",
+    name: { es: "Sopa de Lentejas con Calabaza", en: "Lentil Soup with Calabaza" },
+    time: "1 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 lb de lentejas secas",
+        "10 tazas de agua",
+        "4 onzas de jamón de cocinar en cubitos",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "1 lb de calabaza en cubos",
+        "2 papas en cubos",
+        "1 zanahoria en ruedas",
+        "1 hoja de laurel",
+        "2 cucharadas de aceite de oliva",
+        "Sal al gusto"
+      ],
+      en: [
+        "1 lb dried lentils",
+        "10 cups water",
+        "4 oz cooking ham, diced",
+        "3 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "¼ cup tomato sauce",
+        "1 lb calabaza, cubed",
+        "2 potatoes, cubed",
+        "1 carrot, sliced",
+        "1 bay leaf",
+        "2 tablespoons olive oil",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave las lentejas y revise que no tengan piedritas.",
+        "En una olla, dore el jamón en el aceite. Añada el sofrito, el sazón y la salsa de tomate y sofría 2 minutos.",
+        "Agregue las lentejas, el agua y el laurel. Hierva y cocine a fuego medio 25 minutos.",
+        "Añada la calabaza, las papas y la zanahoria. Cocine 20 minutos más, hasta que todo esté blando.",
+        "Maje algunos pedazos de calabaza contra la olla para espesar. Ajuste la sal y sirva con arroz blanco o pan."
+      ],
+      en: [
+        "Rinse the lentils and check for small stones.",
+        "In a pot, brown the ham in the oil. Add the sofrito, sazón, and tomato sauce and sauté 2 minutes.",
+        "Add the lentils, water, and bay leaf. Bring to a boil and cook on medium 25 minutes.",
+        "Add the calabaza, potatoes, and carrot. Cook 20 more minutes, until everything is tender.",
+        "Mash some calabaza pieces against the pot to thicken. Adjust salt and serve with white rice or bread."
+      ]
+    }
+  },
+  {
+    id: "sopa-guineitos",
+    category: "sopas",
+    name: { es: "Sopa de Guineítos Verdes", en: "Green Banana Soup" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "8 guineítos verdes",
+        "1 lb de costillitas de cerdo o carne de res en cubos",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "¼ taza de salsa de tomate",
+        "8 tazas de agua",
+        "1 taza de calabaza en cubos",
+        "Recao picado",
+        "Sal al gusto"
+      ],
+      en: [
+        "8 small green bananas",
+        "1 lb pork riblets or cubed beef",
+        "3 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "¼ cup tomato sauce",
+        "8 cups water",
+        "1 cup calabaza, cubed",
+        "Chopped culantro",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, dore la carne. Añada el sofrito, el sazón y la salsa de tomate y sofría 3 minutos.",
+        "Agregue el agua, tape y cocine a fuego medio 30 minutos.",
+        "Mientras tanto, pele los guineítos con las manos aceitadas (manchan) y córtelos en ruedas. Póngalos en agua con sal para que no se oscurezcan.",
+        "Escurra los guineítos y añádalos a la olla con la calabaza. Cocine 20 minutos, hasta que estén blandos.",
+        "Maje algunas ruedas de guineo para espesar, ajuste la sal y sirva con recao."
+      ],
+      en: [
+        "In a pot, brown the meat. Add the sofrito, sazón, and tomato sauce and sauté 3 minutes.",
+        "Add the water, cover, and cook on medium 30 minutes.",
+        "Meanwhile, peel the green bananas with oiled hands (they stain) and slice them. Keep them in salted water so they don't darken.",
+        "Drain the bananas and add them to the pot with the calabaza. Cook 20 minutes, until tender.",
+        "Mash a few banana slices to thicken, adjust the salt, and serve with culantro."
+      ]
+    }
+  },
+  {
+    id: "crema-yautia",
+    category: "sopas",
+    name: { es: "Crema de Yautía", en: "Cream of Yautía (Taro) Soup" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 lbs de yautía blanca, pelada y en cubos",
+        "1 cebolla picada",
+        "3 dientes de ajo",
+        "2 cucharadas de mantequilla",
+        "6 tazas de caldo de pollo",
+        "1 taza de leche",
+        "Pizca de nuez moscada",
+        "Sal y pimienta al gusto",
+        "Cebollín o recao picado"
+      ],
+      en: [
+        "2 lbs white yautía (taro), peeled and cubed",
+        "1 onion, chopped",
+        "3 garlic cloves",
+        "2 tablespoons butter",
+        "6 cups chicken broth",
+        "1 cup milk",
+        "Pinch of nutmeg",
+        "Salt and pepper to taste",
+        "Chopped chives or culantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele la yautía con las manos aceitadas o con guantes y córtela en cubos.",
+        "Sofría la cebolla y el ajo en la mantequilla hasta que estén blandos.",
+        "Añada la yautía y el caldo y hierva 25 minutos, hasta que esté muy blanda.",
+        "Licúe hasta que quede una crema suave. Regrese a la olla, añada la leche, la nuez moscada, sal y pimienta, y caliente sin hervir.",
+        "Sirva con cebollín. Es una sopa suave, buena para los niños y para los días de convalecencia."
+      ],
+      en: [
+        "Peel the yautía with oiled hands or gloves and cut into cubes.",
+        "Sauté the onion and garlic in the butter until soft.",
+        "Add the yautía and broth and boil 25 minutes, until very soft.",
+        "Blend into a smooth cream. Return to the pot, add the milk, nutmeg, salt, and pepper, and heat without boiling.",
+        "Serve with chives. It's a gentle soup, good for children and for recovery days."
+      ]
+    }
+  },
+  {
+    id: "sopa-papa-chorizo",
+    category: "sopas",
+    name: { es: "Sopa de Papa con Chorizo", en: "Potato Soup with Chorizo" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 lbs de papas en cubos",
+        "½ lb de chorizo en ruedas",
+        "1 cebolla picada",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "7 tazas de caldo de pollo",
+        "1 taza de repollo picado",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 lbs potatoes, cubed",
+        "½ lb chorizo, sliced",
+        "1 onion, chopped",
+        "3 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "7 cups chicken broth",
+        "1 cup chopped cabbage",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, dore el chorizo hasta que suelte su grasa.",
+        "Añada la cebolla, el sofrito y el sazón y sofría 3 minutos.",
+        "Agregue las papas y el caldo. Hierva y cocine 20 minutos a fuego medio.",
+        "Añada el repollo y cocine 10 minutos más.",
+        "Maje algunas papas para espesar, ajuste la sal y sirva con pan de agua."
+      ],
+      en: [
+        "In a pot, brown the chorizo until it renders its fat.",
+        "Add the onion, sofrito, and sazón and sauté 3 minutes.",
+        "Add the potatoes and broth. Bring to a boil and cook 20 minutes on medium.",
+        "Add the cabbage and cook 10 more minutes.",
+        "Mash some potatoes to thicken, adjust the salt, and serve with water bread."
+      ]
+    }
+  },
+  {
+    id: "sopa-maiz-tierno",
+    category: "sopas",
+    name: { es: "Sopa de Maíz Tierno", en: "Fresh Corn Soup" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "4 mazorcas de maíz tierno",
+        "1 cebolla picada",
+        "2 cucharadas de sofrito",
+        "2 cucharadas de mantequilla",
+        "6 tazas de caldo de pollo",
+        "2 papas en cubitos",
+        "½ taza de leche evaporada",
+        "Sal y pimienta al gusto",
+        "Cilantro picado"
+      ],
+      en: [
+        "4 ears fresh corn",
+        "1 onion, chopped",
+        "2 tablespoons sofrito",
+        "2 tablespoons butter",
+        "6 cups chicken broth",
+        "2 potatoes, diced",
+        "½ cup evaporated milk",
+        "Salt and pepper to taste",
+        "Chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Desgrane las mazorcas con un cuchillo. Guarde las tusas (los centros).",
+        "En una olla, sofría la cebolla y el sofrito en la mantequilla.",
+        "Añada el caldo, las tusas y las papas y cocine 15 minutos. Saque las tusas.",
+        "Agregue los granos de maíz y cocine 10 minutos. Licúe la mitad de la sopa y regrésela a la olla para espesar.",
+        "Añada la leche evaporada, sal y pimienta y caliente sin hervir. Sirva con cilantro."
+      ],
+      en: [
+        "Cut the kernels off the ears with a knife. Keep the cobs.",
+        "In a pot, sauté the onion and sofrito in the butter.",
+        "Add the broth, cobs, and potatoes and cook 15 minutes. Remove the cobs.",
+        "Add the corn kernels and cook 10 minutes. Blend half the soup and return it to the pot to thicken.",
+        "Add the evaporated milk, salt, and pepper and heat without boiling. Serve with cilantro."
+      ]
+    }
+  },
+  {
+    id: "asopao-jueyes",
+    category: "sopas",
+    name: { es: "Asopao de Jueyes", en: "Land Crab Asopao" },
+    time: "50 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lb de carne de juey (o de cangrejo), limpia",
+        "1½ tazas de arroz grano corto",
+        "8 tazas de caldo de mariscos o agua",
+        "4 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "½ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "2 cucharadas de aceite con achiote",
+        "Recao picado"
+      ],
+      en: [
+        "1 lb land crab (or crab) meat, picked over",
+        "1½ cups short grain rice",
+        "8 cups seafood broth or water",
+        "4 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "½ cup tomato sauce",
+        "¼ cup stuffed olives",
+        "1 tablespoon capers",
+        "2 tablespoons annatto oil",
+        "Chopped culantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Revise la carne de juey y quite cualquier pedacito de carapacho.",
+        "En una olla, caliente el aceite con achiote y sofría el sofrito, el sazón y la salsa de tomate 3 minutos.",
+        "Añada el caldo, las aceitunas y las alcaparras y hierva.",
+        "Agregue el arroz y cocine a fuego medio 20 minutos, revolviendo de vez en cuando.",
+        "Añada el juey y cocine 5 minutos más. Debe quedar caldoso. Sirva con recao, tostones y limón."
+      ],
+      en: [
+        "Check the crab meat and remove any bits of shell.",
+        "In a pot, heat the annatto oil and sauté the sofrito, sazón, and tomato sauce 3 minutes.",
+        "Add the broth, olives, and capers and bring to a boil.",
+        "Add the rice and cook on medium 20 minutes, stirring now and then.",
+        "Add the crab and cook 5 more minutes. It should be soupy. Serve with culantro, tostones, and lime."
+      ]
+    }
+  },
+  {
+    id: "sopa-ajo-huevo",
+    category: "sopas",
+    name: { es: "Sopa de Ajo con Huevo", en: "Garlic Soup with Egg" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "8 dientes de ajo, en láminas",
+        "¼ taza de aceite de oliva",
+        "4 rebanadas de pan de agua del día anterior",
+        "1 cucharadita de pimentón",
+        "6 tazas de caldo de pollo",
+        "4 huevos",
+        "Sal al gusto",
+        "Perejil picado"
+      ],
+      en: [
+        "8 garlic cloves, sliced",
+        "¼ cup olive oil",
+        "4 slices day-old water bread",
+        "1 teaspoon paprika",
+        "6 cups chicken broth",
+        "4 eggs",
+        "Salt to taste",
+        "Chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, dore el ajo en el aceite a fuego bajo sin que se queme.",
+        "Añada el pan en pedazos y dórelo un poco. Retire del fuego y añada el pimentón.",
+        "Agregue el caldo y hierva 10 minutos, hasta que el pan se deshaga.",
+        "Baje el fuego, rompa los huevos dentro de la sopa y cocínelos 4-5 minutos, hasta que las claras estén firmes.",
+        "Sirva un huevo en cada plato, con perejil. Es una sopa de origen español que se hacía mucho en la isla."
+      ],
+      en: [
+        "In a pot, brown the garlic in the oil over low heat without burning.",
+        "Add the bread in pieces and toast it lightly. Remove from the heat and stir in the paprika.",
+        "Add the broth and boil 10 minutes, until the bread breaks down.",
+        "Lower the heat, crack the eggs into the soup, and cook 4-5 minutes, until the whites are firm.",
+        "Serve one egg per bowl, with parsley. It's a soup of Spanish origin that was very common on the island."
+      ]
+    }
   }
 );
