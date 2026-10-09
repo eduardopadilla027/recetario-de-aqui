@@ -43,6 +43,8 @@ const NUTRI_FOODS = [
   F("tocino|tocineta", 417, 13, 1.4, 0, 0, 40, 13, 830, { sl: 25, cup: 150 }),
   F("jamon", 145, 21, 1.5, 0, 0, 6, 2, 1200, { cup: 140, sl: 28 }),
   F("salchicha", 230, 10, 2, 1, 0, 20, 7, 900, { can: 130, u: 16 }),
+  // Jamonilla: carne de cerdo enlatada (luncheon meat), muy salada.
+  F("jamonilla", 315, 13, 3, 1, 0, 27, 10, 1400, { can: 340, sl: 56 }),
   F("longaniza", 300, 15, 2, 0, 0, 25, 9, 900, { u: 100 }),
   F("chorizo", 455, 24, 2, 0, 0, 38, 14, 1235, { u: 75, cup: 130 }),
   F("salami", 336, 22, 1, 0, 0, 26, 9.5, 1740, { cup: 130 }),
@@ -50,6 +52,8 @@ const NUTRI_FOODS = [
   F("sangre|sangre de cerdo", 80, 17, 0, 0, 0, 0.5, 0.2, 60, { cup: 240 }),
   // Res y otras carnes
   F("carne|carne de res|res|falda|boliche|punta|palomilla|churrasco|rabo de res", 200, 19, 0, 0, 0, 13, 5, 66, { cup: 225 }),
+  // Carne bif: corned beef de lata, cocida y salada.
+  F("carne bif|corned beef", 250, 27, 0, 0, 0, 15, 6, 1000, { can: 340 }),
   F("bistec", 180, 21, 0, 0, 0, 10, 4, 60, { u: 150 }),
   F("carne molida", 254, 17, 0, 0, 0, 20, 7.6, 66, { cup: 225 }),
   F("picadillo", 250, 17, 4, 2, 1, 18, 6.5, 400, { cup: 225 }),
@@ -72,6 +76,7 @@ const NUTRI_FOODS = [
   F("juey|cangrejo|carne de juey|carne de cangrejo", 87, 18, 0, 0, 0, 1, 0.2, 290, { u: 40, cup: 135 }),
   F("carrucho|caracol", 130, 26, 1.7, 0, 0, 1.2, 0.3, 153),
   F("atun", 190, 28, 0, 0, 0, 8, 1.5, 350, { can: 142, cup: 150 }),
+  F("salmon", 140, 20, 0, 0, 0, 6, 1.4, 400, { can: 418, cup: 140 }),
   // Huevos y lácteos
   F("huevo", 143, 12.6, 0.7, 0.4, 0, 9.5, 3.1, 142, { u: 50, cup: 243 }),
   F("yema", 322, 16, 3.6, 0.6, 0, 27, 9.6, 48, { u: 17 }),
@@ -151,6 +156,7 @@ const NUTRI_FOODS = [
   F("calabaza", 26, 1, 6.5, 2.8, 0.5, 0.1, 0.1, 1, { u: 800, cup: 180 }),
   F("maiz|maiz en grano", 86, 3.3, 19, 3.2, 2.7, 1.4, 0.2, 15, { cup: 154, can: 420, u: 150 }),
   F("cebolla", 40, 1.1, 9.3, 4.2, 1.7, 0.1, 0, 4, { u: 150, cup: 160 }),
+  F("cebollin|cebollino", 32, 1.8, 7.3, 2.3, 2.6, 0.2, 0, 16, { u: 15, cup: 100 }),
   F("pimiento|cubanela", 26, 1, 6, 4.2, 2.1, 0.3, 0, 4, { u: 150, cup: 150 }),
   F("aji|aji dulce|aji picante", 30, 1.5, 6, 3, 1.5, 0.3, 0, 5, { u: 10, cup: 150 }),
   F("ajo", 149, 6.4, 33, 1, 2.1, 0.5, 0.1, 17, { u: 3, cup: 136 }),
@@ -228,6 +234,7 @@ const NUTRI_FOODS = [
   F("salsa marinara", 50, 1.4, 8, 5, 2, 1.5, 0.2, 450, { cup: 250, can: 680 }),
   F("salsa inglesa", 78, 0, 19, 10, 0, 0, 0, 980, { cup: 275 }),
   F("salsa de soya", 53, 8, 4.9, 0.4, 0.8, 0.6, 0.1, 5493, { cup: 255 }),
+  F("salsa de ostras", 51, 1.4, 11, 0, 0.3, 0.3, 0, 2733, { cup: 290 }),
   F("mostaza", 60, 3.7, 5.3, 0.9, 4, 3.3, 0.2, 1120, { cup: 250 }),
   F("sal|sal gruesa", 0, 0, 0, 0, 0, 0, 0, 38758, { cup: 292 }),
   F("adobo", 150, 5, 30, 1, 5, 1, 0, 42500, { cup: 150 }),

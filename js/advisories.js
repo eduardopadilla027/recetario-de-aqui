@@ -15,7 +15,7 @@ const ALLERGENS = [
   ["egg", /\bhuevos?\b|\byemas?\b|\bclaras?\b|mayonesa|merengue/],
   ["fish", /\bpescado|bacalao|bacalaito|\batun\b|\bmero\b|\bchillo\b|(?<!ron )\bdorado\b|mahi|tilapia|\bpargo\b|\bsierra\b|salsa inglesa|anchoa|sardina|salmon|\bfiletes? de (pescado|mero|chillo|dorado|pargo)/],
   ["crustacean", /camaron|langost|\bjuey|cangrejo/],
-  ["mollusc", /\bpulpo\b|calamar|carrucho|caracol|ostion|almeja|mejillon/],
+  ["mollusc", /\bpulpo\b|calamar|carrucho|caracol|ostion|\bostras?\b|almeja|mejillon/],
   ["treenut", /\bnuez\b(?!\s+moscada)|\bnueces\b|almendra|pistacho|avellana|maranon|pecana|mazapan/],
   ["peanut", /\bmani\b|cacahuate/],
   ["sesame", /ajonjoli|sesamo/],
