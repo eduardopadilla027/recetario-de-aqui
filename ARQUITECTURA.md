@@ -31,6 +31,10 @@ Las recetas son **versiones propias redactadas para esta app** (no copias de lib
 
 `.vercel/` está en `.gitignore` (es la vinculación local con Vercel).
 
+**Publicar:** Vercel **no** está conectado al repositorio de GitHub: cada versión se publica a mano desde la carpeta con
+`vercel --prod` después de hacer commit y push a `master`. `.vercelignore` deja fuera de la web `ARQUITECTURA.md`,
+`CLAUDE.md` y `.claude/`.
+
 ## 3. Stack
 
 - **HTML + CSS + JavaScript sin frameworks ni build.** Scripts clásicos (no módulos) cargados en orden desde `index.html`;
@@ -57,6 +61,7 @@ cocine-a-gusto/
 │   └── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
 ├── images/               (vacía: reservada para fotos)
 ├── .claude/launch.json   servidor local para la vista previa
+├── .vercelignore         archivos que no se publican en Vercel
 ├── ARQUITECTURA.md       este documento (fuente de verdad)
 └── CLAUDE.md             instrucciones para Claude Code: leer y actualizar este documento en cada cambio
 ```
@@ -212,7 +217,8 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   Las 463 recetas se cuentan completas (0 ingredientes sin contar).
 - **Alérgenos:** "ostras" se detecta como molusco (salsa de ostras).
 - **Iconos:** mazamorra 🌽, domplines y yaniqueques 🫓, mofongo de yuca 🍠, sopa borracha 🍰.
-- Nuevos `ARQUITECTURA.md` (este documento) y `CLAUDE.md` (regla de mantenerlo al día).
+- Nuevos `ARQUITECTURA.md` (este documento) y `CLAUDE.md` (regla de mantenerlo al día), y `.vercelignore` para no publicarlos.
+- Publicado con `vercel --prod` (Vercel no despliega solo desde GitHub).
 - Total: **440 → 463 recetas**.
 - *Verificado:* datos en Node (ids, categorías, ES/EN, nutrición) ✔; navegador: 463 recetas × 2 idiomas a 375 px sin
   errores ni desbordes.
