@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.8.0 · **Recetas:** 530 en 24 categorías
+> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.9.0 · **Recetas:** 540 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -56,7 +56,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, y más bebidas tropicales, en siete tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales y pechugas y alitas, en ocho tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -111,7 +111,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | ensaladas | Ensaladas | 11 |
 | sopas | Sopas | 29 |
 | carnes | Carnes | 47 |
-| aves | Aves | 27 |
+| aves | Aves | 35 |
 | pescados | Pescado y Mariscos | 40 |
 | huevos | Huevos y Queso | 11 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 33 |
@@ -120,9 +120,9 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | galletitas | Galletitas | 18 |
 | pasteles_dulces | Pasteles Dulces | 8 |
 | panes | Pan y Panecillos | 26 |
-| emparedados | Emparedados | 9 |
+| emparedados | Emparedados | 10 |
 | postres | Helados, Budines, Flan y Otros Postres | 59 |
-| arroces | Arroces y Habichuelas | 24 |
+| arroces | Arroces y Habichuelas | 25 |
 | vegetales | Vegetales y Viandas | 29 |
 | salsas | Salsas y Aderezos | 13 |
 | bebidas | Bebidas | 17 |
@@ -163,7 +163,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - **Normaliza:** sin acentos ni mayúsculas; singular y plural ("limones" = "limón"); ignora palabras vacías
   (y, con, de, para, receta, algo, quiero, and, with…). Las palabras pueden ir en cualquier orden.
 - **Sinónimos** (`S_GROUPS`): china = naranja = orange, parcha = maracuyá = chinola, habichuela = frijol = bean,
-  guineo = banana, juey = cangrejo, negro = negra, etc. **Términos generales** (`S_EXPAND`, cuentan la mitad):
+  guineo = banana, juey = cangrejo, alita = ala = wing, pechuga = breast, negro = negra, etc. **Términos generales** (`S_EXPAND`, cuentan la mitad):
   "mariscos" incluye camarón, pulpo, langosta…; "carne" incluye res, cerdo, pollo…
 - **Categorías por su nombre** (`S_CATS`): "postres", "tragos", "sopas", "frituras"…
 - **Errores de escritura:** si una palabra no existe en el recetario, se corrige a la más parecida (distancia de edición
@@ -186,7 +186,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 530). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 540). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -231,6 +231,20 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-09 — v1.9.0 · Pechugas y alitas de pollo
+- *Pedido:* buscar recetas puertorriqueñas con pechugas y alitas de pollo.
+- Octava tanda en `js/recipes-4.js` (versiones propias; todas indican cocinar el pollo a 165°F por dentro):
+  - Aves: Pechugas a la Plancha con Mojo, Pechugas Rellenas de Mofongo, Alitas Fritas Boricuas, Alitas en BBQ de
+    Guayaba, Alitas Guisadas con Papas, Alitas al Horno con Mojo de Ajo, Alitas de Parcha y Pique, Alitas Agridulces.
+  - Emparedados: Sándwich de Pechuga a la Plancha. Arroces: Arroz con Alitas.
+- **Nutrición:** la entrada de alitas pasa a valores "tal como se compran, con hueso" (como el pollo en presas): antes
+  daba ~750 kcal por porción; ahora ~440–540. Ninguna receta anterior usaba alitas. Nuevo alimento: pique / salsa picante.
+- **Buscador:** sinónimos alita = ala = wing, pechuga = breast, muslo = thigh ("alas de pollo" encuentra las alitas).
+- Icono: alitas 🍗.
+- Total: **530 → 540 recetas**.
+- *Verificado:* datos en Node ✔ (0 ingredientes sin contar); buscador: "alitas", "alas de pollo", "chicken wings",
+  "pechuga", "chicken breast" ✔; navegador: las 10 recetas en ES y EN a 375 px, sin errores ni desbordes.
 
 ### 2026-10-09 — v1.8.0 · Buscador inteligente
 - *Pedido:* mejorar el buscador "con AI" para buscar por ingredientes de cualquier receta o por palabras clave. Se eligió

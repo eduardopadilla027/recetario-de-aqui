@@ -16,6 +16,8 @@
  * calabaza, cidra y china, flan de piña, torrejas, limber, piragua…).
  * Séptima tanda: más tragos y bebidas tropicales (daiquirí de fresa, margarita
  * de parcha, guarapo con ron, coquito de café, limonadas, agua de jamaica…).
+ * Octava tanda: pechugas y alitas de pollo (a la plancha con mojo, rellenas de
+ * mofongo, alitas fritas, en BBQ de guayaba, guisadas, agridulces…).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -3969,6 +3971,466 @@ recipes.push(
         "Add the cucumber, celery, spinach, ginger and lime and blend well.",
         "Strain if you prefer it lighter and serve cold.",
         "The pineapple sweetens it on its own: no sugar needed."
+      ]
+    }
+  },
+
+  // ── Octava tanda (2026-10): pechugas y alitas de pollo ──
+  {
+    id: "pechugas-plancha-mojo",
+    category: "aves",
+    name: { es: "Pechugas a la Plancha con Mojo", en: "Grilled Chicken Breasts with Mojo" },
+    time: "30 min + 30 min de adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 pechugas de pollo grandes, deshuesadas y abiertas en filetes finos",
+        "1 cucharadita de adobo",
+        "½ cucharadita de orégano",
+        "2 cucharadas de jugo de naranja agria o de limón",
+        "1 cucharada de aceite de oliva",
+        "Mojo: 6 dientes de ajo, majados",
+        "¼ taza de aceite de oliva",
+        "2 cucharadas de jugo de limón",
+        "1 cucharada de cilantro, picado",
+        "1 cebolla, en ruedas finas"
+      ],
+      en: [
+        "2 large chicken breasts, boneless and butterflied into thin fillets",
+        "1 teaspoon adobo",
+        "½ teaspoon oregano",
+        "2 tablespoons sour orange or lime juice",
+        "1 tablespoon olive oil",
+        "Mojo: 6 garlic cloves, mashed",
+        "¼ cup olive oil",
+        "2 tablespoons lime juice",
+        "1 tablespoon cilantro, chopped",
+        "1 onion, thinly sliced"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe los filetes con el adobo, el orégano, la naranja agria y la cucharada de aceite. Refrigere 30 minutos.",
+        "Caliente una plancha o sartén de hierro a fuego medio-alto y cocine los filetes 3–4 minutos por lado, hasta que lleguen a 165°F por dentro.",
+        "Para el mojo: caliente el ¼ de taza de aceite con la cebolla a fuego bajo 5 minutos. Añada el ajo 1 minuto sin dorarlo, retire y agregue el limón y el cilantro.",
+        "Bañe las pechugas con el mojo caliente.",
+        "Sirva con arroz con habichuelas y tostones o amarillos, como el especial de pechuga a la plancha de las fondas."
+      ],
+      en: [
+        "Season the fillets with the adobo, oregano, sour orange and the tablespoon of oil. Refrigerate 30 minutes.",
+        "Heat a griddle or cast-iron skillet over medium-high heat and cook the fillets 3–4 minutes per side, until they reach 165°F inside.",
+        "For the mojo: warm the ¼ cup of oil with the onion over low heat 5 minutes. Add the garlic for 1 minute without browning, remove and add the lime and cilantro.",
+        "Spoon the hot mojo over the chicken.",
+        "Serve with rice and beans and tostones or sweet plantains, like the grilled-chicken special at the fondas."
+      ]
+    }
+  },
+  {
+    id: "pechugas-rellenas-mofongo",
+    category: "aves",
+    name: { es: "Pechugas Rellenas de Mofongo", en: "Mofongo-Stuffed Chicken Breasts" },
+    time: "1 hr 15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 pechugas de pollo, deshuesadas",
+        "1 cucharadita de adobo",
+        "2 plátanos verdes, pelados y en ruedas",
+        "4 dientes de ajo",
+        "¼ taza de chicharrón de cerdo",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de caldo de pollo, caliente",
+        "1 taza de salsa criolla (sofrito, salsa de tomate y pimientos)",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "4 boneless chicken breasts",
+        "1 teaspoon adobo",
+        "2 green plantains, peeled and sliced",
+        "4 garlic cloves",
+        "¼ cup pork cracklings (chicharrón)",
+        "2 tablespoons olive oil",
+        "½ cup hot chicken broth",
+        "1 cup Creole sauce (sofrito, tomato sauce and peppers)",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Abra un bolsillo en el lado grueso de cada pechuga sin atravesarla. Adóbelas por dentro y por fuera.",
+        "Fría las ruedas de plátano hasta que estén blandas y doradas. Maje el ajo con el aceite de oliva, añada el plátano y el chicharrón y maje rociando caldo hasta tener un mofongo suave.",
+        "Rellene las pechugas con el mofongo y ciérrelas con palillos.",
+        "Dórelas en un sartén con un poco de aceite 3 minutos por lado y termine en el horno a 375°F por 20 minutos, hasta 165°F por dentro.",
+        "Quite los palillos y sirva bañadas con la salsa criolla caliente."
+      ],
+      en: [
+        "Cut a pocket into the thick side of each breast without cutting through. Season inside and out with adobo.",
+        "Fry the plantain slices until soft and golden. Mash the garlic with the olive oil, add the plantain and chicharrón and mash, sprinkling broth, into a soft mofongo.",
+        "Stuff the breasts with the mofongo and close with toothpicks.",
+        "Brown in a skillet with a little oil 3 minutes per side and finish in a 375°F oven for 20 minutes, to 165°F inside.",
+        "Remove the toothpicks and serve topped with the hot Creole sauce."
+      ]
+    }
+  },
+  {
+    id: "sandwich-pechuga-plancha",
+    category: "emparedados",
+    name: { es: "Sándwich de Pechuga a la Plancha", en: "Grilled Chicken Breast Sandwich" },
+    time: "25 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 pechuga de pollo, abierta en 2 filetes finos",
+        "½ cucharadita de adobo",
+        "1 pan de agua o 2 panes sobaos",
+        "2 lonjas de queso suizo",
+        "2 hojas de lechuga",
+        "1 tomate, en ruedas",
+        "¼ taza de papitas de lata (papas fritas en hilo)",
+        "2 cucharadas de mayo-ketchup",
+        "1 cucharada de mantequilla"
+      ],
+      en: [
+        "1 chicken breast, butterflied into 2 thin fillets",
+        "½ teaspoon adobo",
+        "1 pan de agua or 2 pan sobao rolls",
+        "2 slices Swiss cheese",
+        "2 lettuce leaves",
+        "1 tomato, sliced",
+        "¼ cup canned shoestring potato sticks",
+        "2 tablespoons mayo-ketchup",
+        "1 tablespoon butter"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe los filetes y cocínelos en la plancha 3–4 minutos por lado, hasta 165°F por dentro. Ponga el queso encima el último minuto para que se derrita.",
+        "Abra el pan, úntelo con mantequilla por fuera y tuéstelo en la plancha.",
+        "Unte el mayo-ketchup por dentro y arme con la lechuga, el tomate, la pechuga con queso y las papitas.",
+        "Prense el sándwich en la plancha con una sartén encima 1 minuto por lado. Corte en diagonal y sirva caliente, como en los carritos y cafeterías."
+      ],
+      en: [
+        "Season the fillets and cook them on the griddle 3–4 minutes per side, to 165°F inside. Put the cheese on top for the last minute so it melts.",
+        "Split the bread, butter the outside and toast it on the griddle.",
+        "Spread the mayo-ketchup inside and build with the lettuce, tomato, chicken with cheese and potato sticks.",
+        "Press the sandwich on the griddle under a skillet 1 minute per side. Cut diagonally and serve hot, as at the food trucks and cafeterias."
+      ]
+    }
+  },
+  {
+    id: "alitas-fritas-boricuas",
+    category: "aves",
+    name: { es: "Alitas Fritas Boricuas", en: "Puerto Rican Fried Chicken Wings" },
+    time: "45 min + 1 hr de adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2½ libras de alitas de pollo, separadas en tres partes (sin la puntita)",
+        "4 dientes de ajo, majados",
+        "1 cucharada de adobo",
+        "1 cucharadita de orégano",
+        "2 cucharadas de jugo de limón",
+        "1 taza de harina de trigo",
+        "1 cucharadita de pimentón",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "2½ pounds chicken wings, split into flats and drumettes (tips removed)",
+        "4 garlic cloves, mashed",
+        "1 tablespoon adobo",
+        "1 teaspoon oregano",
+        "2 tablespoons lime juice",
+        "1 cup all-purpose flour",
+        "1 teaspoon paprika",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe las alitas con el ajo, el adobo, el orégano y el limón. Refrigere al menos 1 hora.",
+        "Mezcle la harina con el pimentón y pase las alitas, sacudiendo el exceso.",
+        "Fría en aceite a 350°F por tandas, 10–12 minutos, volteándolas, hasta que estén doradas y lleguen a 165°F por dentro.",
+        "Escurra sobre papel y sirva con tostones y mayo-ketchup, como en los chinchorros."
+      ],
+      en: [
+        "Season the wings with the garlic, adobo, oregano and lime. Refrigerate at least 1 hour.",
+        "Mix the flour with the paprika and dredge the wings, shaking off the excess.",
+        "Fry in oil at 350°F in batches, 10–12 minutes, turning, until golden and 165°F inside.",
+        "Drain on paper and serve with tostones and mayo-ketchup, as at the chinchorros."
+      ]
+    }
+  },
+  {
+    id: "alitas-bbq-guayaba",
+    category: "aves",
+    name: { es: "Alitas en BBQ de Guayaba", en: "Guava BBQ Chicken Wings" },
+    time: "1 hr",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2½ libras de alitas de pollo, separadas",
+        "1 cucharada de adobo",
+        "8 onzas de pasta de guayaba, en cubitos",
+        "½ taza de salsa de tomate",
+        "¼ taza de vinagre de manzana",
+        "2 cucharadas de azúcar morena",
+        "1 cucharada de salsa inglesa",
+        "2 dientes de ajo, picaditos",
+        "¼ taza de agua"
+      ],
+      en: [
+        "2½ pounds chicken wings, split",
+        "1 tablespoon adobo",
+        "8 oz guava paste, cubed",
+        "½ cup tomato sauce",
+        "¼ cup apple cider vinegar",
+        "2 tablespoons brown sugar",
+        "1 tablespoon Worcestershire sauce",
+        "2 garlic cloves, finely chopped",
+        "¼ cup water"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 425°F. Adobe las alitas y colóquelas en una rejilla sobre una bandeja forrada.",
+        "Hornee 40 minutos, volteándolas a la mitad, hasta que estén doradas y a 165°F por dentro.",
+        "Mientras tanto, derrita la guayaba con el agua a fuego bajo. Añada la salsa de tomate, el vinagre, el azúcar, la salsa inglesa y el ajo y cocine 10 minutos, hasta que espese.",
+        "Mezcle las alitas calientes con la mitad de la salsa y hornéelas 5 minutos más para que se glaseen.",
+        "Sirva con el resto de la salsa aparte."
+      ],
+      en: [
+        "Heat the oven to 425°F. Season the wings and set them on a rack over a lined tray.",
+        "Bake 40 minutes, turning halfway, until golden and 165°F inside.",
+        "Meanwhile, melt the guava paste with the water over low heat. Add the tomato sauce, vinegar, sugar, Worcestershire and garlic and cook 10 minutes, until thick.",
+        "Toss the hot wings with half the sauce and bake 5 more minutes to glaze.",
+        "Serve with the rest of the sauce on the side."
+      ]
+    }
+  },
+  {
+    id: "alitas-guisadas",
+    category: "aves",
+    name: { es: "Alitas Guisadas con Papas", en: "Stewed Chicken Wings with Potatoes" },
+    time: "50 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2½ libras de alitas de pollo, separadas",
+        "1 cucharadita de adobo",
+        "½ taza de sofrito",
+        "1 sobre de sazón con culantro y achiote",
+        "½ taza de salsa de tomate",
+        "3 papas, peladas y en cubos",
+        "¼ taza de aceitunas rellenas",
+        "1 hoja de laurel",
+        "1½ tazas de agua",
+        "1 cucharada de aceite vegetal"
+      ],
+      en: [
+        "2½ pounds chicken wings, split",
+        "1 teaspoon adobo",
+        "½ cup sofrito",
+        "1 packet sazón with coriander and annatto",
+        "½ cup tomato sauce",
+        "3 potatoes, peeled and cubed",
+        "¼ cup stuffed olives",
+        "1 bay leaf",
+        "1½ cups water",
+        "1 tablespoon vegetable oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe las alitas y dórelas en el aceite en un caldero, por tandas, 8 minutos.",
+        "Añada el sofrito, el sazón y la salsa de tomate y sofría 3 minutos.",
+        "Agregue las papas, las aceitunas, el laurel y el agua. Tape y cocine a fuego medio-bajo 25 minutos, hasta que las papas estén blandas y la salsa espese.",
+        "Sirva con arroz blanco. Es el guiso de alitas de las casas: rinde, es económico y gusta a los niños."
+      ],
+      en: [
+        "Season the wings and brown them in the oil in a caldero, in batches, 8 minutes.",
+        "Add the sofrito, sazón and tomato sauce and sauté 3 minutes.",
+        "Add the potatoes, olives, bay leaf and water. Cover and cook over medium-low heat 25 minutes, until the potatoes are tender and the sauce thickens.",
+        "Serve with white rice. It's the home-style wing stew: it stretches, it's affordable and kids love it."
+      ]
+    }
+  },
+  {
+    id: "alitas-mojo-ajo",
+    category: "aves",
+    name: { es: "Alitas al Horno con Mojo de Ajo", en: "Baked Chicken Wings with Garlic Mojo" },
+    time: "55 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2½ libras de alitas de pollo, separadas",
+        "1 cucharada de adobo",
+        "1 cucharadita de polvo de hornear",
+        "8 dientes de ajo, majados",
+        "⅓ taza de aceite de oliva",
+        "2 cucharadas de jugo de limón",
+        "1 cucharada de perejil, picado"
+      ],
+      en: [
+        "2½ pounds chicken wings, split",
+        "1 tablespoon adobo",
+        "1 teaspoon baking powder",
+        "8 garlic cloves, mashed",
+        "⅓ cup olive oil",
+        "2 tablespoons lime juice",
+        "1 tablespoon parsley, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Seque muy bien las alitas y mézclelas con el adobo y el polvo de hornear: el polvo hace que el pellejo quede crujiente sin freír.",
+        "Hornee en una rejilla a 425°F por 45 minutos, volteando a la mitad, hasta que estén doradas y a 165°F por dentro.",
+        "Caliente el aceite con el ajo a fuego bajo 1 minuto, sin dorar. Retire y añada el limón y el perejil.",
+        "Bañe las alitas con el mojo y sirva enseguida con yuca o tostones."
+      ],
+      en: [
+        "Pat the wings very dry and toss with the adobo and baking powder: the powder makes the skin crisp without frying.",
+        "Bake on a rack at 425°F for 45 minutes, turning halfway, until golden and 165°F inside.",
+        "Warm the oil with the garlic over low heat 1 minute, without browning. Remove and add the lime and parsley.",
+        "Toss the wings with the mojo and serve right away with yuca or tostones."
+      ]
+    }
+  },
+  {
+    id: "alitas-parcha-pique",
+    category: "aves",
+    name: { es: "Alitas de Parcha y Pique", en: "Passion Fruit and Hot Sauce Chicken Wings" },
+    time: "55 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2½ libras de alitas de pollo, separadas",
+        "1 cucharada de adobo",
+        "½ taza de pulpa de parcha",
+        "¼ taza de miel",
+        "2 cucharadas de pique boricua o salsa picante",
+        "1 cucharada de mantequilla",
+        "1 diente de ajo, picadito"
+      ],
+      en: [
+        "2½ pounds chicken wings, split",
+        "1 tablespoon adobo",
+        "½ cup passion fruit pulp",
+        "¼ cup honey",
+        "2 tablespoons Puerto Rican pique or hot sauce",
+        "1 tablespoon butter",
+        "1 garlic clove, finely chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe las alitas y hornéelas en una rejilla a 425°F por 45 minutos, volteando a la mitad, hasta 165°F por dentro.",
+        "Mientras, cocine la parcha, la miel, el pique, la mantequilla y el ajo a fuego medio 8 minutos, hasta que espese como un glaseado.",
+        "Mezcle las alitas calientes con el glaseado.",
+        "Sirva con ruedas de limón. Ajuste el picor con más o menos pique."
+      ],
+      en: [
+        "Season the wings and bake them on a rack at 425°F for 45 minutes, turning halfway, to 165°F inside.",
+        "Meanwhile, cook the passion fruit, honey, pique, butter and garlic over medium heat 8 minutes, until thick like a glaze.",
+        "Toss the hot wings with the glaze.",
+        "Serve with lime wheels. Adjust the heat with more or less pique."
+      ]
+    }
+  },
+  {
+    id: "alitas-agridulces",
+    category: "aves",
+    name: { es: "Alitas Agridulces", en: "Sweet and Sour Chicken Wings" },
+    time: "50 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2½ libras de alitas de pollo, separadas",
+        "1 cucharadita de adobo",
+        "½ taza de maicena",
+        "1 lata de 8 onzas de piña en trozos, con su jugo",
+        "⅓ taza de vinagre blanco",
+        "⅓ taza de azúcar",
+        "3 cucharadas de salsa de tomate",
+        "2 cucharadas de salsa de soya",
+        "1 pimiento, en cuadritos",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "2½ pounds chicken wings, split",
+        "1 teaspoon adobo",
+        "½ cup cornstarch",
+        "1 can (8 oz) pineapple chunks, with juice",
+        "⅓ cup white vinegar",
+        "⅓ cup sugar",
+        "3 tablespoons tomato sauce",
+        "2 tablespoons soy sauce",
+        "1 bell pepper, diced",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe las alitas, páselas por maicena (guarde 1 cucharada) y fríalas a 350°F, 10–12 minutos, hasta que estén doradas y a 165°F por dentro.",
+        "Para la salsa: escurra el jugo de la piña y cocínelo con el vinagre, el azúcar, la salsa de tomate y la soya hasta que hierva.",
+        "Disuelva la cucharada de maicena en un poco de agua, añádala y cocine hasta que espese. Agregue la piña y el pimiento 2 minutos.",
+        "Mezcle las alitas con la salsa y sirva con arroz frito, como en los restaurantes chinos boricuas."
+      ],
+      en: [
+        "Season the wings, dredge in cornstarch (save 1 tablespoon) and fry at 350°F, 10–12 minutes, until golden and 165°F inside.",
+        "For the sauce: drain the pineapple juice and cook it with the vinegar, sugar, tomato sauce and soy sauce until it boils.",
+        "Dissolve the tablespoon of cornstarch in a little water, add it and cook until thick. Add the pineapple and bell pepper for 2 minutes.",
+        "Toss the wings with the sauce and serve with fried rice, as at Puerto Rican Chinese restaurants."
+      ]
+    }
+  },
+  {
+    id: "arroz-con-alitas",
+    category: "arroces",
+    name: { es: "Arroz con Alitas", en: "Rice with Chicken Wings" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de alitas de pollo, separadas",
+        "1 cucharadita de adobo",
+        "2 tazas de arroz de grano mediano",
+        "½ taza de sofrito",
+        "1 sobre de sazón con culantro y achiote",
+        "½ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "1 lata de 15 onzas de gandules, escurridos",
+        "2½ tazas de agua",
+        "2 cucharadas de aceite vegetal",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 pounds chicken wings, split",
+        "1 teaspoon adobo",
+        "2 cups medium-grain rice",
+        "½ cup sofrito",
+        "1 packet sazón with coriander and annatto",
+        "½ cup tomato sauce",
+        "¼ cup stuffed olives",
+        "1 can (15 oz) pigeon peas (gandules), drained",
+        "2½ cups water",
+        "2 tablespoons vegetable oil",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe las alitas y dórelas en el aceite en un caldero, 10 minutos.",
+        "Añada el sofrito, el sazón, la salsa de tomate y las aceitunas y sofría 3 minutos.",
+        "Agregue los gandules, el agua y sal. Cuando hierva, añada el arroz lavado y cocine destapado hasta que se seque el agua.",
+        "Voltee el arroz, tape y cocine a fuego bajo 25 minutos, hasta que el arroz esté blando y las alitas a 165°F por dentro.",
+        "Es el arroz con pollo económico de diario: las alitas dan mucho sabor al arroz."
+      ],
+      en: [
+        "Season the wings and brown them in the oil in a caldero, 10 minutes.",
+        "Add the sofrito, sazón, tomato sauce and olives and sauté 3 minutes.",
+        "Add the gandules, water and salt. When it boils, add the rinsed rice and cook uncovered until the water is absorbed.",
+        "Turn the rice, cover and cook over low heat 25 minutes, until the rice is tender and the wings are 165°F inside.",
+        "It's the everyday budget arroz con pollo: the wings give the rice lots of flavor."
       ]
     }
   }

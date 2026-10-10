@@ -24,7 +24,8 @@ const NUTRI_FOODS = [
   F("pollo|presas de pollo|gallina", 150, 12.6, 0, 0, 0, 10.5, 3, 60, { u: 1500, cup: 140 }),
   F("pechuga|pechuga de pollo", 120, 22.5, 0, 0, 0, 2.6, 0.6, 45, { u: 170, cup: 140 }),
   F("muslo|muslos de pollo", 177, 17.5, 0, 0, 0, 11, 3, 80, { u: 115 }),
-  F("alita|alitas de pollo", 203, 17.5, 0, 0, 0, 14, 4, 75, { u: 90 }),
+  // Alitas: tal como se compran, con hueso (sólo ~55% se come).
+  F("alita|alitas de pollo", 110, 9.5, 0, 0, 0, 7.7, 2.2, 45, { u: 90 }),
   F("pavo", 150, 20, 0, 0, 0, 7, 2, 65, { u: 6000, cup: 140 }),
   F("guinea", 110, 16.4, 0, 0, 0, 4.5, 1.3, 47, { u: 1200 }),
   F("molleja|mollejas de pollo", 94, 17.7, 0, 0, 0, 2.1, 0.5, 69, { u: 30, cup: 145 }),
@@ -246,6 +247,7 @@ const NUTRI_FOODS = [
   F("salsa inglesa", 78, 0, 19, 10, 0, 0, 0, 980, { cup: 275 }),
   F("salsa de soya", 53, 8, 4.9, 0.4, 0.8, 0.6, 0.1, 5493, { cup: 255 }),
   F("salsa de ostras", 51, 1.4, 11, 0, 0.3, 0.3, 0, 2733, { cup: 290 }),
+  F("pique|salsa picante", 12, 0.5, 2, 1, 0.5, 0.2, 0, 300, { cup: 240 }),
   F("mostaza", 60, 3.7, 5.3, 0.9, 4, 3.3, 0.2, 1120, { cup: 250 }),
   F("sal|sal gruesa", 0, 0, 0, 0, 0, 0, 0, 38758, { cup: 292 }),
   F("adobo", 150, 5, 30, 1, 5, 1, 0, 42500, { cup: 150 }),
