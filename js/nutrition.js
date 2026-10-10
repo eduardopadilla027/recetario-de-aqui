@@ -275,6 +275,7 @@ const NUTRI_FOODS = [
   F("mabi", 40, 0, 10, 9, 0, 0, 0, 5, { cup: 240 }),
   F("corteza|corteza de mabi", 0, 0, 0, 0, 0, 0, 0, 0),
   F("granadina", 268, 0, 67, 60, 0, 0, 0, 30, { cup: 320 }),
+  F("te negro|te suelto", 1, 0, 0.3, 0, 0, 0, 0, 3, { cup: 2, u: 2 }),
   F("cafe|cafe negro", 1, 0.1, 0, 0, 0, 0, 0, 2, { cup: 240 }),
   F("agua|hielo", 0, 0, 0, 0, 0, 0, 0, 0, { cup: 240 }),
   F("caldo|caldo de pollo|consome", 6, 0.6, 0.4, 0.2, 0, 0.2, 0.1, 343, { cup: 240 }),

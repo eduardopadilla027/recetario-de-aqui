@@ -74,6 +74,9 @@
  * Trigésima tanda: postres tropicales (mousse de parcha, tres leches de mangó, panna
  * cotta de coco, tembleque de mangó, pavlova, crumble de mangó, bizcochos de guineo
  * y de mangó, pastelillos de piña, mangó verde con sal y limón…).
+ * Trigésima primera tanda: tragos sin alcohol (mojito, daiquirí, margarita, bahama
+ * mama, lava flow, coquito, ponche de crema y sangría sin alcohol, ponche para fiestas,
+ * refresco de jengibre, spritzer de parcha, té helado, frappé de café, agua de pepino).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -18042,6 +18045,550 @@ recipes.push(
         "Mix the salt, chili and sugar.",
         "Sprinkle the mango with the lime juice and the mixture. Serve right away, well chilled.",
         "It's the tangy, salty snack of schoolyards and beaches. Adjust heat and salt to taste; ripe mango works too."
+      ]
+    }
+  },
+
+  // ── Trigésima primera tanda (2026-10): tragos sin alcohol ──
+  {
+    id: "mojito-parcha-sin-alcohol",
+    category: "bebidas",
+    name: { es: "Mojito de Parcha sin Alcohol", en: "Virgin Passion Fruit Mojito" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "8 hojas de menta o yerbabuena",
+        "½ limón verde en cuñas",
+        "1 cucharada de azúcar",
+        "2 onzas de pulpa de parcha",
+        "1 taza de hielo",
+        "½ taza de agua mineral con gas"
+      ],
+      en: [
+        "8 mint leaves",
+        "½ lime, in wedges",
+        "1 tablespoon sugar",
+        "2 oz passion fruit pulp",
+        "1 cup ice",
+        "½ cup sparkling water"
+      ]
+    },
+    steps: {
+      es: [
+        "En un vaso alto, machaque suave la menta con el limón y el azúcar, sólo para soltar el aroma (si la rompe mucho, amarga).",
+        "Añada la parcha y el hielo.",
+        "Complete con el agua con gas, mueva de abajo hacia arriba y decore con una ramita de menta."
+      ],
+      en: [
+        "In a tall glass, gently muddle the mint with the lime and sugar, just to release the aroma (crushing it too hard makes it bitter).",
+        "Add the passion fruit and ice.",
+        "Top with the sparkling water, stir from the bottom up and garnish with a mint sprig."
+      ]
+    }
+  },
+  {
+    id: "coquito-sin-alcohol",
+    category: "bebidas",
+    name: { es: "Coquito sin Alcohol (para Toda la Familia)", en: "Alcohol-Free Coquito (for the Whole Family)" },
+    time: "15 min + 4 hr",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 lata de 15 onzas de crema de coco",
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de canela en polvo",
+        "¼ cucharadita de nuez moscada",
+        "2 rajas de canela para el frasco"
+      ],
+      en: [
+        "1 can (15 oz) cream of coconut",
+        "1 can (13.5 oz) coconut milk",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "1 teaspoon vanilla",
+        "1 teaspoon ground cinnamon",
+        "¼ teaspoon nutmeg",
+        "2 cinnamon sticks for the bottle"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe todo menos las rajas de canela 2 minutos, hasta que esté espumoso.",
+        "Vierta en botellas limpias con una raja de canela cada una y enfríe por lo menos 4 horas.",
+        "Agite antes de servir: la grasa del coco sube y se endurece en la nevera. Si queda muy espeso, déjelo 10 minutos fuera.",
+        "Sin ron ni huevo, lo pueden tomar los niños y quien no toma alcohol. Dura 1 semana en la nevera."
+      ],
+      en: [
+        "Blend everything except the cinnamon sticks 2 minutes, until frothy.",
+        "Pour into clean bottles with a cinnamon stick in each and chill at least 4 hours.",
+        "Shake before serving: the coconut fat rises and firms in the fridge. If it's too thick, let it sit out 10 minutes.",
+        "With no rum or egg, kids and anyone who doesn't drink can enjoy it. Keeps 1 week in the refrigerator."
+      ]
+    }
+  },
+  {
+    id: "daiquiri-fresa-sin-alcohol",
+    category: "bebidas",
+    name: { es: "Daiquirí de Fresa sin Alcohol", en: "Virgin Strawberry Daiquiri" },
+    time: "5 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 tazas de fresas congeladas",
+        "3 cucharadas de jugo de limón",
+        "3 cucharadas de azúcar",
+        "½ taza de agua",
+        "1 taza de hielo"
+      ],
+      en: [
+        "2 cups frozen strawberries",
+        "3 tablespoons lime juice",
+        "3 tablespoons sugar",
+        "½ cup water",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe todo hasta que quede espeso y liso, como un granizado.",
+        "Pruebe y ajuste el azúcar o el limón.",
+        "Sirva en copas con el borde pasado por azúcar y una fresa."
+      ],
+      en: [
+        "Blend everything until thick and smooth, like a slush.",
+        "Taste and adjust the sugar or lime.",
+        "Serve in sugar-rimmed glasses with a strawberry."
+      ]
+    }
+  },
+  {
+    id: "margarita-mango-sin-alcohol",
+    category: "bebidas",
+    name: { es: "Margarita de Mangó sin Alcohol", en: "Virgin Mango Margarita" },
+    time: "5 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 tazas de mangó congelado en cubos",
+        "¼ taza de jugo de limón",
+        "½ taza de jugo de china",
+        "2 cucharadas de miel o azúcar",
+        "1 taza de hielo",
+        "Sal gruesa para el borde (opcional)"
+      ],
+      en: [
+        "2 cups frozen mango chunks",
+        "¼ cup lime juice",
+        "½ cup orange juice",
+        "2 tablespoons honey or sugar",
+        "1 cup ice",
+        "Coarse salt for the rim (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Pase el borde de las copas por una cuña de limón y luego por la sal (o por sal con hojuelas de ají).",
+        "Licúe el mangó, los jugos, la miel y el hielo hasta que esté liso.",
+        "Sirva enseguida con una rueda de limón."
+      ],
+      en: [
+        "Rub the glass rims with a lime wedge, then dip in the salt (or salt with chili flakes).",
+        "Blend the mango, juices, honey and ice until smooth.",
+        "Serve right away with a lime wheel."
+      ]
+    }
+  },
+  {
+    id: "sangria-sin-alcohol",
+    category: "bebidas",
+    name: { es: "Sangría sin Alcohol de Flor de Jamaica", en: "Alcohol-Free Hibiscus Sangria" },
+    time: "20 min + 2 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "½ taza de flor de jamaica seca",
+        "4 tazas de agua",
+        "⅓ taza de azúcar",
+        "2 tazas de jugo de uva",
+        "1 taza de jugo de china",
+        "1 manzana en cubitos",
+        "1 china en ruedas",
+        "1 taza de piña en cubitos",
+        "2 tazas de agua mineral con gas"
+      ],
+      en: [
+        "½ cup dried hibiscus flowers",
+        "4 cups water",
+        "⅓ cup sugar",
+        "2 cups grape juice",
+        "1 cup orange juice",
+        "1 apple, diced",
+        "1 orange, sliced",
+        "1 cup diced pineapple",
+        "2 cups sparkling water"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua, apague, añada la jamaica y el azúcar y deje reposar 10 minutos. Cuele y enfríe.",
+        "En una jarra, mezcle el té de jamaica con los jugos y las frutas.",
+        "Enfríe 2 horas para que las frutas cojan sabor.",
+        "Al servir, añada el agua con gas y hielo. La jamaica le da el color y el gusto ácido del vino tinto."
+      ],
+      en: [
+        "Boil the water, turn off, add the hibiscus and sugar and steep 10 minutes. Strain and cool.",
+        "In a pitcher, mix the hibiscus tea with the juices and fruit.",
+        "Chill 2 hours so the fruit takes on flavor.",
+        "To serve, add the sparkling water and ice. Hibiscus gives it the color and tartness of red wine."
+      ]
+    }
+  },
+  {
+    id: "ponche-tropical-fiestas",
+    category: "bebidas",
+    name: { es: "Ponche Tropical para Fiestas (Sin Alcohol)", en: "Tropical Party Punch (Alcohol-Free)" },
+    time: "10 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "4 tazas de jugo de piña",
+        "3 tazas de jugo de china",
+        "2 tazas de jugo de guayaba (néctar)",
+        "1 taza de pulpa de parcha",
+        "¼ taza de granadina",
+        "1 litro de refresco de limón o agua mineral con gas",
+        "2 tazas de frutas picadas (piña, fresas, china)",
+        "Hielo"
+      ],
+      en: [
+        "4 cups pineapple juice",
+        "3 cups orange juice",
+        "2 cups guava juice (nectar)",
+        "1 cup passion fruit pulp",
+        "¼ cup grenadine",
+        "1 liter lemon-lime soda or sparkling water",
+        "2 cups chopped fruit (pineapple, strawberries, orange)",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "En una ponchera, mezcle los jugos, la parcha y la granadina. Enfríe.",
+        "Justo antes de servir, añada el refresco o el agua con gas (si lo pone antes, pierde las burbujas) y las frutas.",
+        "Sirva con hielo. Para que no se agüe, congele parte del jugo de piña en cubetas y úselo como hielo."
+      ],
+      en: [
+        "In a punch bowl, mix the juices, passion fruit and grenadine. Chill.",
+        "Right before serving, add the soda or sparkling water (added earlier, it goes flat) and the fruit.",
+        "Serve over ice. To keep it from watering down, freeze some pineapple juice in ice trays and use it as ice."
+      ]
+    }
+  },
+  {
+    id: "ponche-crema-sin-alcohol",
+    category: "bebidas",
+    name: { es: "Ponche de Crema sin Alcohol", en: "Alcohol-Free Ponche de Crema" },
+    time: "25 min + 3 hr",
+    servings: 10,
+    ingredients: {
+      es: [
+        "4 yemas de huevo",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 taza de leche",
+        "1 raja de canela",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de ralladura de limón",
+        "¼ cucharadita de nuez moscada"
+      ],
+      en: [
+        "4 egg yolks",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "1 cup milk",
+        "1 cinnamon stick",
+        "1 teaspoon vanilla",
+        "1 teaspoon lime zest",
+        "¼ teaspoon nutmeg"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata las yemas con la leche condensada en una olla, fuera del fuego.",
+        "Añada la leche evaporada, la leche, la canela y la ralladura. Cocine a fuego bajo moviendo sin parar hasta que espese un poco y llegue a 160 °F (cubre la cuchara); no deje que hierva o se corta.",
+        "Apague, saque la canela, añada la vainilla y la nuez moscada, y cuele.",
+        "Enfríe 3 horas en botellas. Al cocinar las yemas a 160 °F queda más seguro que con huevo crudo."
+      ],
+      en: [
+        "Whisk the yolks with the condensed milk in a pot, off the heat.",
+        "Add the evaporated milk, milk, cinnamon and zest. Cook over low heat, stirring constantly, until slightly thick and 160 °F (it coats the spoon); don't let it boil or it will curdle.",
+        "Turn off, remove the cinnamon, add the vanilla and nutmeg, and strain.",
+        "Chill 3 hours in bottles. Cooking the yolks to 160 °F makes it safer than raw egg."
+      ]
+    }
+  },
+  {
+    id: "bahama-mama-sin-alcohol",
+    category: "bebidas",
+    name: { es: "Bahama Mama sin Alcohol", en: "Virgin Bahama Mama" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "3 onzas de jugo de piña",
+        "2 onzas de jugo de china",
+        "1 onza de crema de coco",
+        "½ onza de granadina",
+        "1 cucharada de jugo de limón",
+        "1 taza de hielo"
+      ],
+      en: [
+        "3 oz pineapple juice",
+        "2 oz orange juice",
+        "1 oz cream of coconut",
+        "½ oz grenadine",
+        "1 tablespoon lime juice",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata en una coctelera la piña, la china, la crema de coco y el limón con hielo.",
+        "Sirva en un vaso alto con hielo.",
+        "Deje caer la granadina por el borde para que baje al fondo y quede en capas. Decore con piña y una cereza."
+      ],
+      en: [
+        "Shake the pineapple, orange, cream of coconut and lime juice with ice.",
+        "Pour into a tall glass with ice.",
+        "Drizzle the grenadine down the side so it sinks and layers. Garnish with pineapple and a cherry."
+      ]
+    }
+  },
+  {
+    id: "lava-flow-sin-alcohol",
+    category: "bebidas",
+    name: { es: "Lava Flow sin Alcohol (Colada de Fresa)", en: "Virgin Lava Flow (Strawberry Colada)" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de fresas congeladas",
+        "1 cucharada de azúcar",
+        "1 cucharada de jugo de limón",
+        "1 taza de jugo de piña",
+        "½ taza de crema de coco",
+        "1 guineo maduro",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 cup frozen strawberries",
+        "1 tablespoon sugar",
+        "1 tablespoon lime juice",
+        "1 cup pineapple juice",
+        "½ cup cream of coconut",
+        "1 ripe banana",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe las fresas con el azúcar y el limón y repártalas en el fondo de dos vasos. Enjuague la licuadora.",
+        "Licúe el jugo de piña, la crema de coco, el guineo y el hielo hasta que esté espeso.",
+        "Vierta la colada despacio sobre las fresas: el rojo sube por los lados como lava. Decore con piña."
+      ],
+      en: [
+        "Blend the strawberries with the sugar and lime juice and divide among the bottoms of two glasses. Rinse the blender.",
+        "Blend the pineapple juice, cream of coconut, banana and ice until thick.",
+        "Pour the colada slowly over the strawberries: the red rises up the sides like lava. Garnish with pineapple."
+      ]
+    }
+  },
+  {
+    id: "refresco-jengibre-casero",
+    category: "bebidas",
+    name: { es: "Refresco de Jengibre Casero (Ginger Beer sin Alcohol)", en: "Homemade Ginger Soda (Alcohol-Free Ginger Beer)" },
+    time: "25 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 taza de jengibre fresco pelado y en rodajas",
+        "2 tazas de agua",
+        "½ taza de azúcar morena",
+        "½ taza de jugo de limón",
+        "4 tazas de agua mineral con gas bien fría"
+      ],
+      en: [
+        "1 cup fresh ginger, peeled and sliced",
+        "2 cups water",
+        "½ cup brown sugar",
+        "½ cup lime juice",
+        "4 cups well-chilled sparkling water"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el jengibre en el agua 15 minutos a fuego bajo. Apague, añada el azúcar y mueva hasta que se disuelva.",
+        "Cuele y enfríe este sirop de jengibre; dura 2 semanas en la nevera.",
+        "Para cada vaso: ⅓ taza de sirop, 1 cucharada de limón y ⅔ taza de agua con gas, con hielo.",
+        "Pica más o menos según cuánto hierva el jengibre. Con ron sería un Dark & Stormy; así lo puede tomar quien conduce."
+      ],
+      en: [
+        "Simmer the ginger in the water 15 minutes. Turn off, add the sugar and stir until dissolved.",
+        "Strain and cool this ginger syrup; it keeps 2 weeks in the refrigerator.",
+        "For each glass: ⅓ cup syrup, 1 tablespoon lime juice and ⅔ cup sparkling water, over ice.",
+        "It gets spicier the longer the ginger simmers. With rum it would be a Dark & Stormy; this way the driver can have one too."
+      ]
+    }
+  },
+  {
+    id: "spritzer-parcha",
+    category: "bebidas",
+    name: { es: "Spritzer de Parcha y Romero", en: "Passion Fruit Rosemary Spritzer" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "½ taza de pulpa de parcha",
+        "¼ taza de azúcar",
+        "¼ taza de agua",
+        "2 ramitas de romero",
+        "3 tazas de agua mineral con gas",
+        "1 limón verde en ruedas",
+        "Hielo"
+      ],
+      en: [
+        "½ cup passion fruit pulp",
+        "¼ cup sugar",
+        "¼ cup water",
+        "2 rosemary sprigs",
+        "3 cups sparkling water",
+        "1 lime, sliced",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con el azúcar y una ramita de romero 3 minutos. Deje enfriar y saque el romero.",
+        "Mezcle el almíbar con la parcha.",
+        "En copas con hielo, sirva 3 cucharadas de la mezcla y complete con el agua con gas. Decore con limón y romero."
+      ],
+      en: [
+        "Boil the water with the sugar and one rosemary sprig 3 minutes. Let cool and remove the rosemary.",
+        "Mix the syrup with the passion fruit.",
+        "In glasses with ice, pour 3 tablespoons of the mix and top with sparkling water. Garnish with lime and rosemary."
+      ]
+    }
+  },
+  {
+    id: "te-helado-parcha",
+    category: "bebidas",
+    name: { es: "Té Helado de Parcha", en: "Passion Fruit Iced Tea" },
+    time: "15 min + 1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 cucharadas de té negro suelto (o 4 bolsitas)",
+        "4 tazas de agua",
+        "⅓ taza de azúcar",
+        "½ taza de pulpa de parcha",
+        "2 tazas de agua fría",
+        "Hielo y hojas de menta"
+      ],
+      en: [
+        "2 tablespoons loose black tea (or 4 tea bags)",
+        "4 cups water",
+        "⅓ cup sugar",
+        "½ cup passion fruit pulp",
+        "2 cups cold water",
+        "Ice and mint leaves"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua, apague, añada el té y deje reposar 4 minutos (más tiempo lo pone amargo). Cuele.",
+        "Disuelva el azúcar en el té caliente y añada el agua fría.",
+        "Añada la parcha, enfríe 1 hora y sirva con hielo y menta. Lleva cafeína: con moderación en niños y de noche."
+      ],
+      en: [
+        "Boil the water, turn off, add the tea and steep 4 minutes (longer makes it bitter). Strain.",
+        "Dissolve the sugar in the hot tea and add the cold water.",
+        "Add the passion fruit, chill 1 hour and serve with ice and mint. It has caffeine: in moderation for kids and at night."
+      ]
+    }
+  },
+  {
+    id: "cafe-coco-frappe",
+    category: "bebidas",
+    name: { es: "Frappé de Café con Coco", en: "Coconut Coffee Frappé" },
+    time: "5 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de café colao fuerte, frío",
+        "½ taza de leche de coco",
+        "3 cucharadas de crema de coco",
+        "2 tazas de hielo",
+        "1 pizca de canela"
+      ],
+      en: [
+        "1 cup strong brewed coffee, chilled",
+        "½ cup coconut milk",
+        "3 tablespoons cream of coconut",
+        "2 cups ice",
+        "1 pinch cinnamon"
+      ]
+    },
+    steps: {
+      es: [
+        "Congele parte del café en cubetas el día antes si quiere que no se agüe.",
+        "Licúe el café, la leche de coco, la crema de coco y el hielo hasta que esté espeso y espumoso.",
+        "Sirva con canela por encima. Lleva cafeína: mejor no de noche ni para niños."
+      ],
+      en: [
+        "Freeze some of the coffee in ice trays the day before if you don't want it watered down.",
+        "Blend the coffee, coconut milk, cream of coconut and ice until thick and frothy.",
+        "Serve dusted with cinnamon. It has caffeine: better not at night or for kids."
+      ]
+    }
+  },
+  {
+    id: "agua-pepino-limon-menta",
+    category: "bebidas",
+    name: { es: "Agua Fresca de Pepino, Limón y Menta", en: "Cucumber, Lime and Mint Agua Fresca" },
+    time: "10 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 pepino grande pelado en trozos",
+        "½ taza de jugo de limón",
+        "¼ taza de azúcar o miel",
+        "10 hojas de menta",
+        "4 tazas de agua fría",
+        "Hielo"
+      ],
+      en: [
+        "1 large cucumber, peeled and chopped",
+        "½ cup lime juice",
+        "¼ cup sugar or honey",
+        "10 mint leaves",
+        "4 cups cold water",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe el pepino, el limón, el azúcar, la menta y 1 taza del agua hasta que esté liso.",
+        "Cuele por un colador fino y añada el resto del agua.",
+        "Sirva bien frío con hielo y ruedas de pepino. Es de las más ligeras: unas 40 calorías por vaso."
+      ],
+      en: [
+        "Blend the cucumber, lime juice, sugar, mint and 1 cup of the water until smooth.",
+        "Strain through a fine sieve and add the remaining water.",
+        "Serve very cold with ice and cucumber slices. One of the lightest: about 40 calories a glass."
       ]
     }
   }

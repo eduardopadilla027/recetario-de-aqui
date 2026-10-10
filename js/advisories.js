@@ -239,7 +239,8 @@ function getAdvisories(recipe) {
   const alcohol = /\b(ron|licor|pitorro|cerveza|limoncello)\b|(?<!vinagre de )\bvinos?\b/;
 
   if (/ceviche/.test(name)) push("rawFish", "high");
-  if (RAW_EGG_IDS.has(recipe.id) || (isDrink && has(/\b(huevos?|yemas?)\b/))) push("rawEgg", "high");
+  // Las bebidas con yemas cocidas a 160 °F (ponche de crema sin alcohol) no llevan la alerta.
+  if (RAW_EGG_IDS.has(recipe.id) || (isDrink && has(/\b(huevos?|yemas?)\b/) && !/\b160\b/.test(steps))) push("rawEgg", "high");
   // Gramos de alcohol por porción (de nutrition.js) y tragos estándar de 14 g.
   const alcG = typeof estimateNutrition === "function" ? estimateNutrition(recipe).alcohol || 0 : 0;
   const drinks = alcG / 14;
@@ -251,7 +252,7 @@ function getAdvisories(recipe) {
   } else if (has(alcohol)) push("alcoholCooked", "caution");
   if (has(/\bmiel\b/)) push("honey", "caution");
   if (has(/anis estrellado/)) push("starAnise", "caution");
-  if (has(/\bcafe\b/)) push("caffeine", "info");
+  if (has(/\bcafe\b|\bte (negro|verde)\b/)) push("caffeine", "info");
   if (TEA_INFO[recipe.id]) { push("teaUse", "info", [recipe.id]); push("teaCaution", "caution", [recipe.id]); }
   if (cat === "calientes" && /^(te-|guarapo)/.test(recipe.id)) push("herbal", "info");
   if (has(/\b(mero|pargo|picua|barracuda|sierra)\b/)) push("ciguatera", "info");

@@ -125,6 +125,8 @@ const S_IDEAS = [
     test: (r) => { const e = estimateNutrition(r); return e.per.kcal < 350 && !e.frying; } },
   { words: "alcohol alcoholico alcoholica boozy", label: { es: "Con alcohol", en: "With alcohol" },
     test: (r) => sIsAlcohol(r) },
+  { words: "mocktail mocktails", label: { es: "Tragos sin alcohol", en: "Alcohol-free drinks" },
+    test: (r) => ["bebidas", "jugos", "cocteles"].includes(r.category) && !sIsAlcohol(r) },
   { words: "nino ninos kid kids infantil", label: { es: "Para niños (sin alcohol ni cafeína)", en: "Kid-friendly (no alcohol or caffeine)" },
     test: (r) => !getAdvisories(r).alerts.some((a) => ["alcoholDrink", "alcoholCooked", "caffeine", "rawEgg", "rawFish"].includes(a.key)) }
 ].map((idea) => ({ ...idea, words: idea.words.split(" ").map(sStem) }));
@@ -328,6 +330,12 @@ function smartSearch(query, ctx) {
     const named = new Map();
     for (const r of recipes) if (nameHas(r)) named.set(r.id, (scores.get(r.id) || 0) + 20);
     return { scores: named, terms, excludes: [], ideas: [], corrections, partial: false };
+  }
+  // "Trago sin alcohol": primero las versiones sin alcohol de los tragos (mojito, daiquirí, coquito… sin alcohol).
+  if (excludes.some((e) => ["alcohol", "alcoholico", "alcoholica", "ron", "rum", "licor"].includes(e.stem)) || ideas.some((i) => i.label.en === "Alcohol-free drinks")) {
+    for (const r of recipes) {
+      if (scores.has(r.id) && /sin alcohol|alcohol-free|virgin/.test(sNorm(r.name.es + " " + r.name.en))) scores.set(r.id, scores.get(r.id) + 3);
+    }
   }
   return { scores, terms, excludes, ideas, corrections, partial };
 }

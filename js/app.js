@@ -374,6 +374,21 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Tragos sin alcohol (tanda 31).
+  [/^mojito de parcha sin alcohol/, "svg:ic-sin-mojito-parcha"],
+  [/^coquito sin alcohol/, "svg:ic-sin-coquito"],
+  [/^daiquiri de fresa sin alcohol/, "svg:ic-sin-daiquiri-fresa"],
+  [/^margarita de mango sin alcohol/, "svg:ic-sin-margarita-mango"],
+  [/^sangria sin alcohol/, "svg:ic-sin-sangria"],
+  [/^ponche tropical para fiestas/, "svg:ic-sin-ponche-fiestas"],
+  [/^ponche de crema sin alcohol/, "svg:ic-sin-ponche-crema"],
+  [/^bahama mama sin alcohol/, "svg:ic-sin-bahama-mama"],
+  [/^lava flow sin alcohol/, "svg:ic-sin-lava-flow"],
+  [/^refresco de jengibre/, "svg:ic-sin-jengibre"],
+  [/^spritzer de parcha/, "svg:ic-sin-spritzer"],
+  [/^te helado de parcha/, "svg:ic-sin-te-helado"],
+  [/^frappe de cafe con coco/, "svg:ic-sin-cafe-frappe"],
+  [/^agua fresca de pepino/, "svg:ic-sin-agua-pepino"],
   // Postres tropicales (tanda 30): primero, para que no los tomen las reglas generales (tembleque, mangó, piña…).
   [/^mousse de parcha/, "svg:ic-pos-mousse-parcha"],
   [/^tres leches de mango/, "svg:ic-pos-tres-leches-mango"],
