@@ -10,6 +10,8 @@
  * daiquirí de mangó, mojito de parcha, coco loco, pitorro de parcha…).
  * Cuarta tanda: platos típicos de pueblos (Piñones-Loíza, Luquillo, Orocovis,
  * Guavate-Cayey, Hatillo, Lares, Mayagüez, Yauco).
+ * Quinta tanda: mariscos y frituras de playa (pulpo a la parrilla, carrucho,
+ * calamares, chicharrones de pescado, empanadillas de carrucho y camarones…).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -2588,6 +2590,417 @@ recipes.push(
         "Sift the flour with the baking powder, salt and cinnamon. Add it alternately with the coffee, starting and ending with flour.",
         "Bake 45–50 minutes, until a toothpick comes out clean. Cool 15 minutes and unmold.",
         "Mix the powdered sugar with the coffee and pour over the cake. Use coffee from the coffee region: Yauco is known as the Coffee Town (Pueblo del Café)."
+      ]
+    }
+  },
+
+  // ── Quinta tanda (2026-10): mariscos y frituras de playa ──
+  {
+    id: "pulpo-parrilla",
+    category: "pescados",
+    name: { es: "Pulpo a la Parrilla con Mojo", en: "Grilled Octopus with Mojo" },
+    time: "1 hr 30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de pulpo",
+        "1 cebolla, partida a la mitad",
+        "2 hojas de laurel",
+        "6 dientes de ajo, majados",
+        "⅓ taza de aceite de oliva",
+        "2 cucharadas de jugo de limón",
+        "1 cucharada de perejil, picado",
+        "½ cucharadita de pimentón",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 pounds octopus",
+        "1 onion, halved",
+        "2 bay leaves",
+        "6 garlic cloves, mashed",
+        "⅓ cup olive oil",
+        "2 tablespoons lime juice",
+        "1 tablespoon parsley, chopped",
+        "½ teaspoon paprika",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el pulpo con la cebolla, el laurel y sal a fuego bajo, tapado, 50–60 minutos, hasta que un tenedor entre fácil en la parte gruesa del tentáculo.",
+        "Escúrralo, déjelo enfriar un poco y separe los tentáculos.",
+        "Para el mojo: caliente el aceite con el ajo a fuego bajo 1 minuto sin dorar. Retire y añada el limón, el perejil, el pimentón y sal.",
+        "Unte los tentáculos con un poco del mojo y áselos en la parrilla bien caliente 3 minutos por lado, hasta que tengan marcas y bordes crujientes.",
+        "Sirva bañados con el resto del mojo, con tostones o yuca hervida."
+      ],
+      en: [
+        "Simmer the octopus with the onion, bay leaves and salt over low heat, covered, 50–60 minutes, until a fork slides easily into the thick part of a tentacle.",
+        "Drain, let cool a little and separate the tentacles.",
+        "For the mojo: warm the oil with the garlic over low heat 1 minute without browning. Remove and add the lime, parsley, paprika and salt.",
+        "Brush the tentacles with some mojo and grill over very high heat 3 minutes per side, until marked and crisp at the edges.",
+        "Serve drizzled with the rest of the mojo, with tostones or boiled yuca."
+      ]
+    }
+  },
+  {
+    id: "carrucho-empanado",
+    category: "pescados",
+    name: { es: "Carrucho Empanado", en: "Breaded Fried Conch" },
+    time: "1 hr 15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de carrucho limpio, en filetes",
+        "2 cucharadas de jugo de limón",
+        "1 cucharadita de adobo",
+        "½ taza de harina de trigo",
+        "2 huevos, batidos",
+        "1 taza de pan rallado",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "1½ pounds cleaned conch, in fillets",
+        "2 tablespoons lime juice",
+        "1 teaspoon adobo",
+        "½ cup all-purpose flour",
+        "2 eggs, beaten",
+        "1 cup breadcrumbs",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Aplaste los filetes de carrucho con un mazo de cocina, entre dos plásticos, hasta que tengan ¼ de pulgada de grueso: así se ablanda.",
+        "Hiérvalo 30 minutos en agua con sal para que quede tierno. Escurra y seque bien.",
+        "Adobe con el limón y el adobo y deje reposar 15 minutos.",
+        "Pase cada filete por harina, huevo y pan rallado.",
+        "Fría en aceite a 350°F, 2 minutos por lado, hasta que dore. Sirva con limón y mayo-ajo. Compre carrucho fuera de la veda y de fuentes legales: es una especie protegida."
+      ],
+      en: [
+        "Pound the conch fillets with a meat mallet, between two sheets of plastic, to ¼ inch thick: this tenderizes it.",
+        "Boil 30 minutes in salted water so it's tender. Drain and pat very dry.",
+        "Season with the lime and adobo and let rest 15 minutes.",
+        "Dredge each fillet in flour, egg and breadcrumbs.",
+        "Fry in oil at 350°F, 2 minutes per side, until golden. Serve with lime and garlic mayo. Buy conch outside the closed season and from legal sources: it's a protected species."
+      ]
+    }
+  },
+  {
+    id: "ceviche-camarones",
+    category: "pescados",
+    name: { es: "Ceviche de Camarones", en: "Shrimp Ceviche" },
+    time: "30 min + 1 hr de frío",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1½ libras de camarones, pelados",
+        "1 taza de jugo de limón",
+        "½ taza de jugo de china",
+        "1 cebolla roja, en juliana fina",
+        "2 tomates, sin semillas y en cubitos",
+        "1 pepino, en cubitos",
+        "1 aguacate, en cubos",
+        "¼ taza de cilantro, picado",
+        "1 ají picante, picadito (opcional)",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1½ pounds shrimp, peeled",
+        "1 cup lime juice",
+        "½ cup orange juice",
+        "1 red onion, thinly sliced",
+        "2 tomatoes, seeded and diced",
+        "1 cucumber, diced",
+        "1 avocado, cubed",
+        "¼ cup cilantro, chopped",
+        "1 hot pepper, finely chopped (optional)",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Para mayor seguridad, hierva los camarones 1 minuto, sólo hasta que se pongan rosados, y páselos a agua con hielo. Córtelos en trozos.",
+        "Mezcle los camarones con el jugo de limón y el de china, la cebolla y sal. Refrigere 1 hora.",
+        "Añada el tomate, el pepino, el cilantro y el ají.",
+        "Justo antes de servir, agregue el aguacate y ajuste la sal y la pimienta.",
+        "Sirva bien frío con tostones o galletas, en vasitos, como en los chinchorros de la costa."
+      ],
+      en: [
+        "For extra safety, boil the shrimp 1 minute, just until pink, and move them to ice water. Cut into pieces.",
+        "Mix the shrimp with the lime and orange juices, the onion and salt. Refrigerate 1 hour.",
+        "Add the tomato, cucumber, cilantro and hot pepper.",
+        "Just before serving, add the avocado and adjust salt and pepper.",
+        "Serve very cold with tostones or crackers, in small cups, as at the seaside chinchorros."
+      ]
+    }
+  },
+  {
+    id: "arroz-langosta",
+    category: "arroces",
+    name: { es: "Arroz con Langosta", en: "Rice with Lobster" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano mediano",
+        "1 libra de carne de langosta, en trozos",
+        "½ taza de sofrito",
+        "1 sobre de sazón con culantro y achiote",
+        "½ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "¼ taza de vino blanco",
+        "3 tazas de caldo de pescado o de pollo",
+        "3 cucharadas de aceite de oliva",
+        "½ taza de pimientos morrones, en tiras",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 cups medium-grain rice",
+        "1 pound lobster meat, in chunks",
+        "½ cup sofrito",
+        "1 packet sazón with coriander and annatto",
+        "½ cup tomato sauce",
+        "¼ cup stuffed olives",
+        "¼ cup white wine",
+        "3 cups fish or chicken broth",
+        "3 tablespoons olive oil",
+        "½ cup roasted red peppers (pimientos morrones), in strips",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero, sofría la langosta en el aceite 2 minutos y retírela (terminará de cocinarse con el arroz).",
+        "En el mismo aceite, sofría el sofrito, el sazón, la salsa de tomate y las aceitunas 3 minutos. Añada el vino y deje que reduzca.",
+        "Agregue el caldo y sal. Cuando hierva, añada el arroz lavado y cocine destapado hasta que se seque el líquido.",
+        "Voltee el arroz, coloque la langosta encima, tape y cocine a fuego bajo 20–25 minutos.",
+        "Decore con los pimientos morrones y sirva con tostones y ensalada de aguacate."
+      ],
+      en: [
+        "In a caldero, sauté the lobster in the oil 2 minutes and remove it (it finishes cooking with the rice).",
+        "In the same oil, sauté the sofrito, sazón, tomato sauce and olives 3 minutes. Add the wine and let it reduce.",
+        "Add the broth and salt. When it boils, add the rinsed rice and cook uncovered until the liquid is absorbed.",
+        "Turn the rice, place the lobster on top, cover and cook over low heat 20–25 minutes.",
+        "Garnish with the roasted peppers and serve with tostones and avocado salad."
+      ]
+    }
+  },
+  {
+    id: "calamares-fritos",
+    category: "entremeses",
+    name: { es: "Calamares Fritos", en: "Fried Calamari" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de calamares limpios, en ruedas",
+        "1 taza de harina de trigo",
+        "½ taza de harina de maíz",
+        "1 cucharadita de adobo",
+        "½ cucharadita de pimentón",
+        "Aceite vegetal para freír",
+        "Ruedas de limón para servir"
+      ],
+      en: [
+        "1½ pounds cleaned squid, cut into rings",
+        "1 cup all-purpose flour",
+        "½ cup cornmeal",
+        "1 teaspoon adobo",
+        "½ teaspoon paprika",
+        "Vegetable oil for frying",
+        "Lime wheels for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Seque muy bien los calamares con papel toalla.",
+        "Mezcle la harina de trigo, la harina de maíz, el adobo y el pimentón.",
+        "Pase los calamares por la mezcla, sacudiendo el exceso.",
+        "Fría por tandas en aceite a 375°F sólo 1–2 minutos, hasta que estén dorados: más tiempo los pone duros como goma.",
+        "Escurra y sirva enseguida con limón y mayo-ajo, como en los kioscos de playa."
+      ],
+      en: [
+        "Pat the squid very dry with paper towels.",
+        "Mix the flour, cornmeal, adobo and paprika.",
+        "Toss the squid in the mixture, shaking off the excess.",
+        "Fry in batches in oil at 375°F for just 1–2 minutes, until golden: longer makes them rubbery.",
+        "Drain and serve right away with lime and garlic mayo, as at the beach kiosks."
+      ]
+    }
+  },
+  {
+    id: "chicharrones-pescado",
+    category: "entremeses",
+    name: { es: "Chicharrones de Pescado", en: "Fried Fish Bites (Chicharrones de Pescado)" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de filete de dorado o de chillo, en cubos de 1 pulgada",
+        "¼ taza de jugo de limón",
+        "4 dientes de ajo, majados",
+        "1 cucharadita de adobo",
+        "1 taza de harina de trigo",
+        "1 cucharadita de polvo de hornear",
+        "¾ taza de cerveza fría",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "2 pounds mahi-mahi or snapper fillet, in 1-inch cubes",
+        "¼ cup lime juice",
+        "4 garlic cloves, mashed",
+        "1 teaspoon adobo",
+        "1 cup all-purpose flour",
+        "1 teaspoon baking powder",
+        "¾ cup cold beer",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el pescado con el limón, el ajo y el adobo. Deje reposar 20 minutos en la nevera.",
+        "Mezcle la harina y el polvo de hornear y añada la cerveza fría hasta tener un batido espeso, como de panqueques.",
+        "Seque un poco los cubos de pescado y páselos por el batido.",
+        "Fría en aceite a 350°F, 3–4 minutos, hasta que estén dorados y crujientes.",
+        "Escurra y sirva con limón, mayo-ketchup o pique, en cartuchos de papel, como en los chinchorros."
+      ],
+      en: [
+        "Season the fish with the lime, garlic and adobo. Let rest 20 minutes in the fridge.",
+        "Mix the flour and baking powder and add the cold beer to make a thick, pancake-like batter.",
+        "Pat the fish cubes a little dry and dip them in the batter.",
+        "Fry in oil at 350°F, 3–4 minutes, until golden and crisp.",
+        "Drain and serve with lime, mayo-ketchup or pique, in paper cones, as at the chinchorros."
+      ]
+    }
+  },
+  {
+    id: "empanadillas-carrucho",
+    category: "entremeses",
+    name: { es: "Empanadillas de Carrucho", en: "Conch Turnovers (Empanadillas de Carrucho)" },
+    time: "1 hr 15 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "10 discos para empanadillas",
+        "1 libra de carrucho limpio",
+        "¼ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "2 dientes de ajo, picaditos",
+        "2 cucharadas de aceite de oliva",
+        "1 huevo, batido (para sellar)",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "10 turnover wrappers (discos)",
+        "1 pound cleaned conch",
+        "¼ cup sofrito",
+        "½ cup tomato sauce",
+        "2 garlic cloves, finely chopped",
+        "2 tablespoons olive oil",
+        "1 egg, beaten (for sealing)",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el carrucho en agua con sal 40 minutos, hasta que esté tierno. Escurra y píquelo bien menudo.",
+        "Sofría el ajo y el sofrito en el aceite de oliva, añada el carrucho y la salsa de tomate y cocine 8 minutos hasta que seque. Deje enfriar.",
+        "Ponga 2 cucharadas de relleno en cada disco, pinte el borde con huevo, doble y selle con un tenedor.",
+        "Fría en aceite a 350°F, 2 minutos por lado, hasta que doren.",
+        "Sirva calientes con pique. Compre carrucho fuera de la veda y de fuentes legales."
+      ],
+      en: [
+        "Boil the conch in salted water 40 minutes, until tender. Drain and chop very finely.",
+        "Sauté the garlic and sofrito in the olive oil, add the conch and tomato sauce and cook 8 minutes until dry. Let cool.",
+        "Place 2 tablespoons of filling on each wrapper, brush the edge with egg, fold and seal with a fork.",
+        "Fry in oil at 350°F, 2 minutes per side, until golden.",
+        "Serve hot with pique. Buy conch outside the closed season and from legal sources."
+      ]
+    }
+  },
+  {
+    id: "empanadillas-camarones",
+    category: "entremeses",
+    name: { es: "Empanadillas de Camarones", en: "Shrimp Turnovers (Empanadillas de Camarones)" },
+    time: "40 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "10 discos para empanadillas",
+        "1 libra de camarones, pelados y picados",
+        "¼ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "3 dientes de ajo, picaditos",
+        "2 cucharadas de mantequilla",
+        "1 cucharada de cilantro, picado",
+        "1 huevo, batido (para sellar)",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "10 turnover wrappers (discos)",
+        "1 pound shrimp, peeled and chopped",
+        "¼ cup sofrito",
+        "½ cup tomato sauce",
+        "3 garlic cloves, finely chopped",
+        "2 tablespoons butter",
+        "1 tablespoon cilantro, chopped",
+        "1 egg, beaten (for sealing)",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la mantequilla y sofría el ajo y el sofrito 2 minutos.",
+        "Añada los camarones y la salsa de tomate y cocine 4 minutos, hasta que estén rosados y la salsa espese. Agregue el cilantro y deje enfriar.",
+        "Ponga 2 cucharadas de relleno en cada disco, pinte el borde con huevo, doble y selle con un tenedor.",
+        "Fría en aceite a 350°F, 2 minutos por lado, hasta que doren.",
+        "Escurra y sirva calientes con mayo-ajo o pique."
+      ],
+      en: [
+        "Melt the butter and sauté the garlic and sofrito 2 minutes.",
+        "Add the shrimp and tomato sauce and cook 4 minutes, until pink and the sauce thickens. Add the cilantro and let cool.",
+        "Place 2 tablespoons of filling on each wrapper, brush the edge with egg, fold and seal with a fork.",
+        "Fry in oil at 350°F, 2 minutes per side, until golden.",
+        "Drain and serve hot with garlic mayo or pique."
+      ]
+    }
+  },
+  {
+    id: "mayo-ajo",
+    category: "salsas",
+    name: { es: "Mayo-Ajo", en: "Garlic Mayo (Mayo-Ajo)" },
+    time: "5 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "¾ taza de mayonesa",
+        "3 dientes de ajo, majados",
+        "1 cucharada de jugo de limón",
+        "1 cucharada de aceite de oliva",
+        "1 cucharadita de perejil, picadito",
+        "Pimienta al gusto"
+      ],
+      en: [
+        "¾ cup mayonnaise",
+        "3 garlic cloves, mashed",
+        "1 tablespoon lime juice",
+        "1 tablespoon olive oil",
+        "1 teaspoon parsley, finely chopped",
+        "Pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Maje el ajo hasta formar una pasta.",
+        "Mezcle con la mayonesa, el limón, el aceite y el perejil.",
+        "Añada pimienta y refrigere 30 minutos para que el ajo se integre.",
+        "Sirva con frituras, tostones, calamares o mariscos. Se conserva 3 días en la nevera."
+      ],
+      en: [
+        "Mash the garlic into a paste.",
+        "Mix with the mayonnaise, lime, oil and parsley.",
+        "Add pepper and refrigerate 30 minutes so the garlic blends in.",
+        "Serve with fritters, tostones, calamari or seafood. Keeps 3 days in the fridge."
       ]
     }
   }
