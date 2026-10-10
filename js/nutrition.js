@@ -174,12 +174,15 @@ const NUTRI_FOODS = [
   F("zanahoria", 41, 0.9, 9.6, 4.7, 2.8, 0.2, 0, 69, { u: 60, cup: 128 }),
   F("pepino", 15, 0.7, 3.6, 1.7, 0.5, 0.1, 0, 2, { u: 300 }),
   F("apio", 16, 0.7, 3, 1.3, 1.6, 0.2, 0, 80, { u: 40 }),
+  F("espinaca", 23, 2.9, 3.6, 0.4, 2.2, 0.4, 0.1, 79, { cup: 30 }),
   F("chayote", 19, 0.8, 4.5, 1.7, 1.7, 0.1, 0, 2, { u: 200 }),
   F("berenjena", 25, 1, 5.9, 3.5, 3, 0.2, 0, 2, { u: 450 }),
   F("aguacate", 160, 2, 8.5, 0.7, 6.7, 14.7, 2.1, 7, { u: 350, cup: 150 }),
   F("remolacha", 43, 1.6, 9.6, 6.8, 2.8, 0.2, 0, 78, { u: 80 }),
   F("guingambo|quimbombo", 33, 1.9, 7.5, 1.5, 3.2, 0.2, 0, 7, { u: 12, cup: 100 }),
   F("cilantro|recao|culantro|perejil|menta|yerbabuena|albahaca|limoncillo", 23, 2, 3.7, 0.9, 2.8, 0.5, 0, 46, { cup: 16, u: 1 }),
+  // Flor de jamaica: en infusión, casi todo se queda en las flores coladas.
+  F("flor de jamaica|jamaica", 5, 0.1, 1.2, 0, 0, 0, 0, 1, { cup: 40 }),
   // Hierbas para té: en infusión casi no aportan nada.
   F("naranjo|manzanilla|tilo|flores de tilo|oregano brujo|anis estrellado", 5, 0, 1, 0, 0, 0, 0, 1, { cup: 30, u: 0.5 }),
   // Frutas
@@ -207,6 +210,7 @@ const NUTRI_FOODS = [
   F("manzana", 52, 0.3, 14, 10, 2.4, 0.2, 0, 1, { u: 180, cup: 125 }),
   F("fresa", 32, 0.7, 7.7, 4.9, 2, 0.3, 0, 1, { cup: 150 }),
   F("frambuesa", 52, 1.2, 12, 4.4, 6.5, 0.7, 0, 1, { cup: 123 }),
+  F("carambola", 31, 1, 6.7, 4, 2.8, 0.3, 0, 2, { u: 90, cup: 110 }),
   // Cidra: se usa la parte blanca de la cáscara (la pulpa se bota).
   F("cidra", 30, 0.5, 9, 3, 3, 0.2, 0, 2, { u: 300 }),
   F("uva", 69, 0.7, 18, 15.5, 0.9, 0.2, 0.1, 2, { cup: 151 }),
@@ -219,6 +223,7 @@ const NUTRI_FOODS = [
   F("jugo de guayaba|nectar", 55, 0.1, 14, 13, 0.3, 0.1, 0, 5, { cup: 250 }),
   F("agua de coco", 19, 0.7, 3.7, 2.6, 1.1, 0.2, 0.2, 105, { cup: 240 }),
   F("ron|pitorro", 231, 0, 0, 0, 0, 0, 0, 1, { cup: 240, can: 750 }),
+  F("tequila", 231, 0, 0, 0, 0, 0, 0, 1, { cup: 240, can: 750 }),
   F("vino", 83, 0.1, 2.6, 0.6, 0, 0, 0, 5, { cup: 240, can: 750 }),
   F("vino dulce", 160, 0.2, 14, 8, 0, 0, 0, 9, { cup: 240, can: 750 }),
   F("licor|licor de anis", 330, 0, 35, 35, 0, 0, 0, 5, { cup: 240, can: 750 }),

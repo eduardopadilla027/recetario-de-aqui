@@ -14,6 +14,8 @@
  * calamares, chicharrones de pescado, empanadillas de carrucho y camarones…).
  * Sexta tanda: postres y dulces típicos (melcocha, dulces en almíbar de
  * calabaza, cidra y china, flan de piña, torrejas, limber, piragua…).
+ * Séptima tanda: más tragos y bebidas tropicales (daiquirí de fresa, margarita
+ * de parcha, guarapo con ron, coquito de café, limonadas, agua de jamaica…).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -3380,6 +3382,593 @@ recipes.push(
         "Beat the eggs with the sugar, butter, vanilla and cinnamon and stir into the bread.",
         "Pour half into the dish, scatter the guava and cheese, and cover with the rest.",
         "Bake 55–60 minutes, until set and golden. Let cool before cutting: it's the classic bread pudding with the flavor of guava-and-cheese pastelillos."
+      ]
+    }
+  },
+
+  // ── Séptima tanda (2026-10): más tragos y bebidas tropicales ──
+  {
+    id: "daiquiri-fresa",
+    category: "cocteles",
+    name: { es: "Daiquirí de Fresa", en: "Strawberry Daiquiri" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "4 oz de ron blanco",
+        "1½ tazas de fresas",
+        "1 oz de jugo de limón fresco",
+        "1½ oz de almíbar simple",
+        "2 tazas de hielo"
+      ],
+      en: [
+        "4 oz white rum",
+        "1½ cups strawberries",
+        "1 oz fresh lime juice",
+        "1½ oz simple syrup",
+        "2 cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe las fresas con el limón y el almíbar hasta que estén muy finas.",
+        "Añada el ron y el hielo y licúe hasta tener una textura de granizado.",
+        "Pruebe y ajuste con más limón o almíbar según lo dulces que estén las fresas.",
+        "Sirva en copas frías con una fresa en el borde."
+      ],
+      en: [
+        "Blend the strawberries with the lime and syrup until very smooth.",
+        "Add the rum and ice and blend to a slushy texture.",
+        "Taste and adjust with more lime or syrup depending on how sweet the strawberries are.",
+        "Serve in chilled glasses with a strawberry on the rim."
+      ]
+    }
+  },
+  {
+    id: "margarita-parcha",
+    category: "cocteles",
+    name: { es: "Margarita de Parcha", en: "Passion Fruit Margarita" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "2 oz de tequila blanco",
+        "1 oz de pulpa de parcha",
+        "¾ oz de licor de naranja",
+        "¾ oz de jugo de limón fresco",
+        "½ oz de almíbar simple",
+        "1 taza de hielo",
+        "Sal gruesa y una rueda de limón para el borde"
+      ],
+      en: [
+        "2 oz blanco tequila",
+        "1 oz passion fruit pulp",
+        "¾ oz orange liqueur",
+        "¾ oz fresh lime juice",
+        "½ oz simple syrup",
+        "1 cup ice",
+        "Coarse salt and a lime wheel for the rim"
+      ]
+    },
+    steps: {
+      es: [
+        "Frote el borde del vaso con limón y páselo por la sal gruesa.",
+        "Agite el tequila, la parcha, el licor de naranja, el limón y el almíbar con hielo 15 segundos.",
+        "Cuele en el vaso con hielo nuevo.",
+        "Decore con la rueda de limón. La parcha le da un ácido tropical que equilibra el tequila."
+      ],
+      en: [
+        "Rub the rim of the glass with lime and dip it in the coarse salt.",
+        "Shake the tequila, passion fruit, orange liqueur, lime and syrup with ice 15 seconds.",
+        "Strain into the glass over fresh ice.",
+        "Garnish with the lime wheel. Passion fruit adds a tropical tartness that balances the tequila."
+      ]
+    }
+  },
+  {
+    id: "rum-runner",
+    category: "cocteles",
+    name: { es: "Rum Runner", en: "Rum Runner" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "1 oz de ron añejo oscuro",
+        "1 oz de ron blanco",
+        "½ oz de licor de guineo",
+        "½ oz de licor de mora",
+        "1 oz de jugo de piña",
+        "1 oz de jugo de china",
+        "½ oz de granadina",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 oz dark aged rum",
+        "1 oz white rum",
+        "½ oz banana liqueur",
+        "½ oz blackberry liqueur",
+        "1 oz pineapple juice",
+        "1 oz orange juice",
+        "½ oz grenadine",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Agite el ron blanco, los licores, los jugos y la granadina con hielo 10 segundos.",
+        "Sirva en un vaso alto con el hielo.",
+        "Vierta el ron oscuro por encima para que flote.",
+        "Decore con piña y cereza. Nació en los Cayos de la Florida con lo que sobraba en la barra: guineo, mora y ron."
+      ],
+      en: [
+        "Shake the white rum, liqueurs, juices and grenadine with ice 10 seconds.",
+        "Serve in a tall glass with the ice.",
+        "Float the dark rum on top.",
+        "Garnish with pineapple and a cherry. It was born in the Florida Keys from what was left at the bar: banana, blackberry and rum."
+      ]
+    }
+  },
+  {
+    id: "sangria-blanca-tropical",
+    category: "cocteles",
+    name: { es: "Sangría Blanca Tropical", en: "Tropical White Sangria" },
+    time: "15 min + 2 hr de frío",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 botella de vino blanco seco (750 ml)",
+        "½ taza de ron blanco",
+        "½ taza de licor de naranja",
+        "1 taza de jugo de piña",
+        "¼ taza de azúcar",
+        "1 taza de piña, en cubos",
+        "1 mangó, en cubos",
+        "Pulpa de 2 parchas",
+        "1 carambola, en estrellas",
+        "1 taza de agua de soda"
+      ],
+      en: [
+        "1 bottle dry white wine (750 ml)",
+        "½ cup white rum",
+        "½ cup orange liqueur",
+        "1 cup pineapple juice",
+        "¼ cup sugar",
+        "1 cup pineapple, cubed",
+        "1 mango, cubed",
+        "Pulp of 2 passion fruits",
+        "1 star fruit, sliced into stars",
+        "1 cup club soda"
+      ]
+    },
+    steps: {
+      es: [
+        "En una jarra grande, disuelva el azúcar en el jugo de piña.",
+        "Añada el vino, el ron y el licor de naranja.",
+        "Agregue la piña, el mangó, la parcha y la carambola.",
+        "Refrigere al menos 2 horas para que la fruta suelte su sabor.",
+        "Justo antes de servir, añada el agua de soda y sirva con hielo."
+      ],
+      en: [
+        "In a large pitcher, dissolve the sugar in the pineapple juice.",
+        "Add the wine, rum and orange liqueur.",
+        "Add the pineapple, mango, passion fruit and star fruit.",
+        "Refrigerate at least 2 hours so the fruit releases its flavor.",
+        "Right before serving, add the club soda and serve over ice."
+      ]
+    }
+  },
+  {
+    id: "coco-frio-ron",
+    category: "cocteles",
+    name: { es: "Coco Frío con Ron", en: "Chilled Coconut Water with Rum" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "1 taza de agua de coco bien fría",
+        "1½ oz de ron blanco",
+        "1 cucharada de jugo de limón",
+        "½ taza de hielo"
+      ],
+      en: [
+        "1 cup well-chilled coconut water",
+        "1½ oz white rum",
+        "1 tablespoon lime juice",
+        "½ cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Si tiene un coco verde, ábralo y use su agua; si no, agua de coco natural sin azúcar.",
+        "Mezcle el agua de coco con el ron y el limón.",
+        "Sirva con hielo, o dentro del mismo coco con un sorbeto.",
+        "Es el trago más sencillo de la playa: lo venden así en los kioscos que abren cocos con machete."
+      ],
+      en: [
+        "If you have a green coconut, open it and use its water; if not, unsweetened natural coconut water.",
+        "Mix the coconut water with the rum and lime.",
+        "Serve over ice, or inside the coconut itself with a straw.",
+        "It's the simplest beach drink: sold this way at the kiosks that open coconuts with a machete."
+      ]
+    }
+  },
+  {
+    id: "guarapo-con-ron",
+    category: "cocteles",
+    name: { es: "Guarapo de Caña con Ron", en: "Sugarcane Juice with Rum" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 tallos de caña de azúcar, pelados y cortados",
+        "4 oz de ron blanco",
+        "Jugo de 2 limones",
+        "2 tazas de hielo"
+      ],
+      en: [
+        "4 sugarcane stalks, peeled and cut",
+        "4 oz white rum",
+        "Juice of 2 limes",
+        "2 cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Exprima la caña en un trapiche o licúela por partes con muy poca agua y cuele bien: ese es el guarapo.",
+        "Mezcle el guarapo con el limón y el ron.",
+        "Sirva enseguida sobre hielo: el guarapo fresco se oscurece y se pone agrio en pocas horas.",
+        "Une dos tradiciones de la isla: la caña de azúcar de las haciendas y el ron que se hace con ella."
+      ],
+      en: [
+        "Press the cane in a cane press or blend it in batches with very little water and strain well: that's the guarapo.",
+        "Mix the guarapo with the lime and rum.",
+        "Serve right away over ice: fresh guarapo darkens and sours within a few hours.",
+        "It joins two island traditions: the sugarcane of the old estates and the rum made from it."
+      ]
+    }
+  },
+  {
+    id: "tamarindo-con-ron",
+    category: "cocteles",
+    name: { es: "Tamarindo con Ron", en: "Tamarind Rum Sour" },
+    time: "10 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "2 oz de ron dorado",
+        "1 oz de pulpa de tamarindo, sin semillas",
+        "½ oz de jugo de limón fresco",
+        "¾ oz de almíbar simple",
+        "1 pizca de sal",
+        "1 taza de hielo"
+      ],
+      en: [
+        "2 oz gold rum",
+        "1 oz tamarind pulp, seedless",
+        "½ oz fresh lime juice",
+        "¾ oz simple syrup",
+        "1 pinch salt",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la pulpa de tamarindo en el almíbar, aplastándola con una cuchara.",
+        "Agite con el ron, el limón, la sal y el hielo por 15 segundos.",
+        "Cuele en un vaso corto con hielo nuevo.",
+        "La pizca de sal resalta el agridulce del tamarindo, como en las bolitas de tamarindo."
+      ],
+      en: [
+        "Dissolve the tamarind pulp in the syrup, mashing it with a spoon.",
+        "Shake with the rum, lime, salt and ice for 15 seconds.",
+        "Strain into a short glass over fresh ice.",
+        "The pinch of salt brings out tamarind's sweet-sour flavor, just like in tamarind candy balls."
+      ]
+    }
+  },
+  {
+    id: "coquito-cafe",
+    category: "cocteles",
+    name: { es: "Coquito de Café", en: "Coffee Coquito" },
+    time: "15 min + 4 hr de frío",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 lata de 15 onzas de crema de coco",
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "½ taza de café colado fuerte, frío",
+        "1 taza de ron dorado",
+        "1 cucharadita de vainilla",
+        "½ cucharadita de canela en polvo"
+      ],
+      en: [
+        "1 can (15 oz) cream of coconut",
+        "1 can (13.5 oz) coconut milk",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "½ cup strong brewed coffee, cold",
+        "1 cup gold rum",
+        "1 teaspoon vanilla",
+        "½ teaspoon ground cinnamon"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la crema de coco, la leche de coco, la leche condensada y la evaporada hasta que estén bien mezcladas.",
+        "Añada el café, la vainilla y la canela y licúe unos segundos.",
+        "Agregue el ron y mezcle.",
+        "Embotelle y refrigere al menos 4 horas. Agite antes de servir en vasitos fríos."
+      ],
+      en: [
+        "Blend the cream of coconut, coconut milk, condensed and evaporated milk until well combined.",
+        "Add the coffee, vanilla and cinnamon and blend a few seconds.",
+        "Add the rum and mix.",
+        "Bottle and refrigerate at least 4 hours. Shake before serving in small chilled glasses."
+      ]
+    }
+  },
+  {
+    id: "mango-colada",
+    category: "cocteles",
+    name: { es: "Mangó Colada", en: "Mango Colada" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "4 oz de ron blanco",
+        "1 taza de mangó maduro, en cubos",
+        "3 oz de crema de coco",
+        "3 oz de jugo de piña",
+        "2 tazas de hielo"
+      ],
+      en: [
+        "4 oz white rum",
+        "1 cup ripe mango, cubed",
+        "3 oz cream of coconut",
+        "3 oz pineapple juice",
+        "2 cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe el mangó con la crema de coco y el jugo de piña hasta que esté muy fino.",
+        "Añada el ron y el hielo y licúe hasta que quede cremoso.",
+        "Sirva en copas altas con un triángulo de piña y un cubito de mangó.",
+        "Es la piña colada boricua con mangó maduro: más espesa y perfumada."
+      ],
+      en: [
+        "Blend the mango with the cream of coconut and pineapple juice until very smooth.",
+        "Add the rum and ice and blend until creamy.",
+        "Serve in tall glasses with a pineapple wedge and a mango cube.",
+        "It's the Puerto Rican piña colada with ripe mango: thicker and more fragrant."
+      ]
+    }
+  },
+  {
+    id: "limonada-coco",
+    category: "jugos",
+    name: { es: "Limonada de Coco", en: "Coconut Limeade" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 taza de jugo de limón fresco",
+        "1 lata de 13.5 onzas de leche de coco",
+        "½ taza de crema de coco",
+        "¼ taza de azúcar",
+        "3 tazas de hielo"
+      ],
+      en: [
+        "1 cup fresh lime juice",
+        "1 can (13.5 oz) coconut milk",
+        "½ cup cream of coconut",
+        "¼ cup sugar",
+        "3 cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe el jugo de limón con el azúcar hasta que se disuelva.",
+        "Añada la leche de coco, la crema de coco y el hielo.",
+        "Licúe hasta que esté espumosa y cremosa.",
+        "Sirva enseguida, bien fría, con una rueda de limón."
+      ],
+      en: [
+        "Blend the lime juice with the sugar until it dissolves.",
+        "Add the coconut milk, cream of coconut and ice.",
+        "Blend until frothy and creamy.",
+        "Serve right away, very cold, with a lime wheel."
+      ]
+    }
+  },
+  {
+    id: "limonada-parcha",
+    category: "jugos",
+    name: { es: "Limonada de Parcha", en: "Passion Fruit Limeade" },
+    time: "10 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "½ taza de jugo de limón fresco",
+        "½ taza de pulpa de parcha",
+        "¾ taza de azúcar",
+        "6 tazas de agua fría",
+        "Hojas de yerbabuena",
+        "Hielo"
+      ],
+      en: [
+        "½ cup fresh lime juice",
+        "½ cup passion fruit pulp",
+        "¾ cup sugar",
+        "6 cups cold water",
+        "Mint leaves",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la pulpa de parcha con 1 taza del agua unos segundos, sin triturar las semillas, y cuele.",
+        "En una jarra, disuelva el azúcar en el resto del agua.",
+        "Añada el jugo de limón y el de parcha y mezcle.",
+        "Sirva con hielo y hojas de yerbabuena."
+      ],
+      en: [
+        "Pulse the passion fruit pulp with 1 cup of the water a few seconds, without crushing the seeds, and strain.",
+        "In a pitcher, dissolve the sugar in the rest of the water.",
+        "Add the lime and passion fruit juices and stir.",
+        "Serve over ice with mint leaves."
+      ]
+    }
+  },
+  {
+    id: "agua-jamaica",
+    category: "bebidas",
+    name: { es: "Agua de Flor de Jamaica", en: "Hibiscus (Sorrel) Drink" },
+    time: "20 min + 1 hr de frío",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de flor de jamaica seca",
+        "8 tazas de agua",
+        "¾ taza de azúcar",
+        "1 raja de canela",
+        "1 pedacito de jengibre fresco",
+        "Jugo de 1 limón"
+      ],
+      en: [
+        "1 cup dried hibiscus flowers (sorrel)",
+        "8 cups water",
+        "¾ cup sugar",
+        "1 cinnamon stick",
+        "1 small piece fresh ginger",
+        "Juice of 1 lime"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva 4 tazas del agua con la canela y el jengibre. Apague el fuego.",
+        "Añada la flor de jamaica y deje reposar tapado 15 minutos.",
+        "Cuele, añada el azúcar y revuelva hasta disolver. Agregue el resto del agua fría y el limón.",
+        "Refrigere 1 hora y sirva con hielo. En todo el Caribe se toma, sobre todo en Navidad."
+      ],
+      en: [
+        "Boil 4 cups of the water with the cinnamon and ginger. Turn off the heat.",
+        "Add the hibiscus and let steep covered 15 minutes.",
+        "Strain, add the sugar and stir until dissolved. Add the rest of the cold water and the lime.",
+        "Refrigerate 1 hour and serve over ice. It's drunk all over the Caribbean, especially at Christmas."
+      ]
+    }
+  },
+  {
+    id: "jugo-carambola",
+    category: "jugos",
+    name: { es: "Jugo de Carambola", en: "Star Fruit Juice" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 carambolas maduras, en trozos",
+        "3 tazas de agua fría",
+        "¼ taza de azúcar",
+        "1 cucharada de jugo de limón",
+        "Hielo"
+      ],
+      en: [
+        "4 ripe star fruits, in chunks",
+        "3 cups cold water",
+        "¼ cup sugar",
+        "1 tablespoon lime juice",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Quite los bordes oscuros de las aristas de la carambola y las semillas.",
+        "Licúe con el agua, el azúcar y el limón.",
+        "Cuele y sirva con hielo, con una estrellita de carambola en el vaso.",
+        "Personas con problemas de los riñones deben evitar la carambola: contiene una sustancia que el riñón enfermo no elimina."
+      ],
+      en: [
+        "Trim the dark edges of the star fruit's ridges and remove the seeds.",
+        "Blend with the water, sugar and lime.",
+        "Strain and serve over ice, with a little star fruit slice in the glass.",
+        "People with kidney problems should avoid star fruit: it contains a substance a diseased kidney can't clear."
+      ]
+    }
+  },
+  {
+    id: "batida-mango",
+    category: "bebidas",
+    name: { es: "Batida de Mangó", en: "Mango Shake (Batida de Mangó)" },
+    time: "5 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 tazas de mangó maduro, en cubos",
+        "1 taza de leche",
+        "2 cucharadas de azúcar",
+        "1 taza de hielo"
+      ],
+      en: [
+        "2 cups ripe mango, cubed",
+        "1 cup milk",
+        "2 tablespoons sugar",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe el mangó con la leche y el azúcar hasta que esté muy fino.",
+        "Añada el hielo y licúe hasta que quede espumosa.",
+        "Sirva enseguida. Con mangó bien maduro casi no necesita azúcar."
+      ],
+      en: [
+        "Blend the mango with the milk and sugar until very smooth.",
+        "Add the ice and blend until frothy.",
+        "Serve right away. With very ripe mango it barely needs sugar."
+      ]
+    }
+  },
+  {
+    id: "jugo-verde-pina",
+    category: "jugos",
+    name: { es: "Jugo Verde de Piña", en: "Green Pineapple Juice" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 tazas de piña, en cubos",
+        "1 pepino, en trozos",
+        "2 tallos de apio",
+        "1 taza de espinaca",
+        "1 pedacito de jengibre fresco",
+        "Jugo de 1 limón",
+        "2 tazas de agua fría"
+      ],
+      en: [
+        "3 cups pineapple, cubed",
+        "1 cucumber, in chunks",
+        "2 celery stalks",
+        "1 cup spinach",
+        "1 small piece fresh ginger",
+        "Juice of 1 lime",
+        "2 cups cold water"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la piña con el agua hasta que esté fina.",
+        "Añada el pepino, el apio, la espinaca, el jengibre y el limón y licúe bien.",
+        "Cuele si lo prefiere más ligero y sirva frío.",
+        "La piña endulza sola: no necesita azúcar."
+      ],
+      en: [
+        "Blend the pineapple with the water until smooth.",
+        "Add the cucumber, celery, spinach, ginger and lime and blend well.",
+        "Strain if you prefer it lighter and serve cold.",
+        "The pineapple sweetens it on its own: no sugar needed."
       ]
     }
   }

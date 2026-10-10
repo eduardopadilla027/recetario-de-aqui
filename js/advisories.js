@@ -63,7 +63,8 @@ const ADVICE_TEXT = {
       mercury: "En el embarazo, limite el atún blanco (albacore), que tiene más mercurio; el atún claro (light) es mejor opción, en 2-3 porciones de pescado a la semana.",
       veda: "Respete las vedas y los tamaños mínimos del DRNA para el carrucho, la langosta y los jueyes: compre a pescadores o pescaderías autorizados.",
       grapefruit: "El jugo de toronja interfiere con varios medicamentos (para la presión, el colesterol, el corazón y otros). Si toma medicinas, consulte a su médico o farmacéutico antes de tomarlo.",
-      quenepa: "La semilla de la quenepa es del tamaño justo para atragantar: no les dé quenepas enteras a niños pequeños y vigílelos mientras las comen."
+      quenepa: "La semilla de la quenepa es del tamaño justo para atragantar: no les dé quenepas enteras a niños pequeños y vigílelos mientras las comen.",
+      starfruit: "Las personas con enfermedad de los riñones no deben comer carambola ni tomar su jugo: contiene una toxina que el riñón enfermo no elimina y puede causar daños graves."
     },
     tips: {
       poultry: "Aves: cocínelas hasta 165°F (74°C) en la parte más gruesa. No lave el pollo crudo (salpica bacterias por la cocina); use tabla y cuchillo aparte y lávese las manos. Descongele en la nevera, nunca sobre el mostrador.",
@@ -121,7 +122,8 @@ const ADVICE_TEXT = {
       mercury: "During pregnancy, limit white (albacore) tuna, which is higher in mercury; light tuna is a better choice, within 2-3 fish servings a week.",
       veda: "Respect the DRNA closed seasons and minimum sizes for conch, lobster, and land crabs: buy from licensed fishers or fish markets.",
       grapefruit: "Grapefruit juice interferes with several medications (for blood pressure, cholesterol, the heart, and others). If you take medicines, ask your doctor or pharmacist before drinking it.",
-      quenepa: "A quenepa seed is just the right size to cause choking: don't give whole quenepas to young children and watch them while they eat."
+      quenepa: "A quenepa seed is just the right size to cause choking: don't give whole quenepas to young children and watch them while they eat.",
+      starfruit: "People with kidney disease should not eat star fruit or drink its juice: it contains a toxin a diseased kidney can't clear and it can cause serious harm."
     },
     tips: {
       poultry: "Poultry: cook to 165°F (74°C) in the thickest part. Don't rinse raw chicken (it splashes bacteria around the kitchen); use a separate board and knife and wash your hands. Thaw in the fridge, never on the counter.",
@@ -183,6 +185,7 @@ function getAdvisories(recipe) {
   if (has(/carrucho|caracol|langost|\bjuey|cangrejo/)) push("veda", "info");
   if (has(/\btoronjas?\b/) && !/cascos/.test(nutriNorm(recipe.name.es))) push("grapefruit", "caution");
   if (has(/\bquenepas?\b/)) push("quenepa", "caution");
+  if (has(/\bcarambolas?\b/)) push("starfruit", "high");
   // Sazón o adobo de sobre/frasco (con cantidad); "Adobo: ajo, orégano…" es casero.
   if (has(/\bsazon\b(?!\s+casero)|\d[^\n:]*\badobo\b|adobo al gusto/) && !/^(sazon-casero|adobo)$/.test(recipe.id)) push("sazon", "info");
 

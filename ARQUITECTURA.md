@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.6.0 · **Recetas:** 515 en 24 categorías
+> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.7.0 · **Recetas:** 530 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -55,7 +55,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, y postres y dulces, en seis tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, y más bebidas tropicales, en siete tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   └── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
@@ -123,9 +123,9 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | arroces | Arroces y Habichuelas | 24 |
 | vegetales | Vegetales y Viandas | 29 |
 | salsas | Salsas y Aderezos | 13 |
-| bebidas | Bebidas | 15 |
-| jugos | Jugos Naturales | 14 |
-| cocteles | Cócteles y Tragos | 26 |
+| bebidas | Bebidas | 17 |
+| jugos | Jugos Naturales | 18 |
+| cocteles | Cócteles y Tragos | 35 |
 
 **Añadir una categoría:** clave en `categoryOrder`, nombre en `translations.es.categories` y `translations.en.categories`,
 `categoryIcons` y `categoryTones`. En `advisories.js`, revisar si es bebida (`isDrink`).
@@ -156,7 +156,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 515). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 530). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -166,7 +166,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   crustáceos, moluscos, nueces, maní, ajonjolí, soya, coco y sulfitos. Se muestran con la línea donde aparecen.
 - **Alertas** (`getAdvisories`): pescado crudo (ceviche), huevo crudo (`RAW_EGG_IDS` + bebidas con huevo), alcohol
   (bebida o cocinado), miel (bebés), anís estrellado, cafeína, tés de hierbas, ciguatera, mercurio (atún), veda de
-  mariscos, toronja con medicamentos, quenepa (atragantamiento), sazón/adobo comerciales (sodio y glutamato) y alertas
+  mariscos, toronja con medicamentos, quenepa (atragantamiento), carambola (peligrosa con enfermedad renal), sazón/adobo comerciales (sodio y glutamato) y alertas
   nutricionales con los umbrales de las etiquetas (sodio o grasa saturada ≥ 20 % VD, azúcar ≥ 25 g, ≥ 700 kcal).
 - **Manejo seguro:** temperaturas internas según el USDA según el tipo de carne o marisco.
 - Es información general: la interfaz pide revisar etiquetas y consultar al médico.
@@ -201,6 +201,21 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-09 — v1.7.0 · Más tragos y bebidas tropicales
+- *Pedido:* buscar más tragos y bebidas tropicales.
+- Séptima tanda en `js/recipes-4.js` (versiones propias):
+  - Cócteles y tragos: Daiquirí de Fresa, Margarita de Parcha, Rum Runner, Sangría Blanca Tropical, Coco Frío con Ron,
+    Guarapo de Caña con Ron, Tamarindo con Ron, Coquito de Café, Mangó Colada.
+  - Sin alcohol: Limonada de Coco, Limonada de Parcha, Jugo de Carambola y Jugo Verde de Piña (*Jugos Naturales*);
+    Agua de Flor de Jamaica y Batida de Mangó (*Bebidas*).
+- **Alerta nueva `starfruit`** (nivel alto): toda receta con carambola avisa que las personas con enfermedad de los
+  riñones no deben comerla (contiene una toxina que el riñón enfermo no elimina). Textos ES/EN en `ADVICE_TEXT`.
+- **Nutrición:** nuevos alimentos tequila, carambola, espinaca y flor de jamaica (en infusión, casi sin aporte).
+- Iconos: flor de jamaica 🌺, jugo de carambola ⭐.
+- Total: **515 → 530 recetas**.
+- *Verificado:* datos en Node ✔ (0 ingredientes sin contar); navegador: las 15 recetas en ES y EN a 375 px, con sus tres
+  pestañas, sin errores ni desbordes, y la alerta de la carambola visible en ambos idiomas.
 
 ### 2026-10-09 — v1.6.0 · Postres y dulces típicos
 - *Pedido:* buscar más recetas de postres y dulces típicos.
