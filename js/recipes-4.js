@@ -22,6 +22,8 @@
  * recetas con aguacate.
  * Décima tanda: papas (asadas, majadas, fritas, guisadas, gratinadas…) y
  * majados de malanga.
+ * Undécima tanda: cupcakes, bizcochos (zanahoria, marmoleado, parcha), donas,
+ * rollos de canela y churros.
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -5373,6 +5375,597 @@ recipes.push(
         "Mash or blend it with the liquid little by little into a smooth purée with no lumps. For older babies, leave it thicker.",
         "Don't add salt, sugar or honey: babies under 1 year should not have them.",
         "Serve lukewarm. Keep in the fridge up to 2 days or freeze in portions. Check with the pediatrician before starting solid foods."
+      ]
+    }
+  },
+
+  // ── Undécima tanda (2026-10): cupcakes, bizcochos y panes dulces ──
+  {
+    id: "cupcakes-vainilla",
+    category: "bizcochos",
+    name: { es: "Cupcakes (Bizcochitos) de Vainilla", en: "Vanilla Cupcakes" },
+    time: "50 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de harina de trigo",
+        "1½ cucharaditas de polvo de hornear",
+        "¼ cucharadita de sal",
+        "½ taza de mantequilla, blanda",
+        "¾ taza de azúcar",
+        "2 huevos",
+        "2 cucharaditas de vainilla",
+        "½ taza de leche",
+        "Frosting: ½ taza de mantequilla, blanda",
+        "2 tazas de azúcar en polvo",
+        "2 cucharadas de leche",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "1½ cups all-purpose flour",
+        "1½ teaspoons baking powder",
+        "¼ teaspoon salt",
+        "½ cup butter, softened",
+        "¾ cup sugar",
+        "2 eggs",
+        "2 teaspoons vanilla",
+        "½ cup milk",
+        "Frosting: ½ cup butter, softened",
+        "2 cups powdered sugar",
+        "2 tablespoons milk",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y ponga 12 capacillos de papel en un molde de muffins.",
+        "Bata la mantequilla con el azúcar hasta que esté cremosa. Añada los huevos de uno en uno y la vainilla.",
+        "Cierna la harina con el polvo de hornear y la sal, y añádala alternando con la leche, sin batir de más.",
+        "Llene los capacillos a ⅔ y hornee 18–20 minutos, hasta que un palillo salga limpio. Deje enfriar por completo.",
+        "Para el frosting: bata la mantequilla con el azúcar en polvo, la leche y la vainilla hasta que esté esponjoso. Decore con manga o cuchara."
+      ],
+      en: [
+        "Heat the oven to 350°F and line a muffin pan with 12 paper liners.",
+        "Beat the butter with the sugar until creamy. Add the eggs one at a time and the vanilla.",
+        "Sift the flour with the baking powder and salt and add it alternately with the milk, without overmixing.",
+        "Fill the liners ⅔ full and bake 18–20 minutes, until a toothpick comes out clean. Let cool completely.",
+        "For the frosting: beat the butter with the powdered sugar, milk and vanilla until fluffy. Pipe or spread on top."
+      ]
+    }
+  },
+  {
+    id: "cupcakes-chocolate",
+    category: "bizcochos",
+    name: { es: "Cupcakes de Chocolate", en: "Chocolate Cupcakes" },
+    time: "50 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 taza de harina de trigo",
+        "½ taza de cocoa en polvo",
+        "1 cucharadita de bicarbonato de sodio",
+        "¼ cucharadita de sal",
+        "1 taza de azúcar",
+        "1 huevo",
+        "½ taza de leche",
+        "⅓ taza de aceite vegetal",
+        "1 cucharadita de vainilla",
+        "½ taza de café colado caliente",
+        "Frosting: 4 onzas de chocolate semidulce, derretido",
+        "½ taza de mantequilla, blanda",
+        "1 taza de azúcar en polvo"
+      ],
+      en: [
+        "1 cup all-purpose flour",
+        "½ cup cocoa powder",
+        "1 teaspoon baking soda",
+        "¼ teaspoon salt",
+        "1 cup sugar",
+        "1 egg",
+        "½ cup milk",
+        "⅓ cup vegetable oil",
+        "1 teaspoon vanilla",
+        "½ cup hot brewed coffee",
+        "Frosting: 4 oz semisweet chocolate, melted",
+        "½ cup butter, softened",
+        "1 cup powdered sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y prepare 12 capacillos.",
+        "Mezcle la harina, la cocoa, el bicarbonato, la sal y el azúcar.",
+        "Añada el huevo, la leche, el aceite y la vainilla y bata 1 minuto. Incorpore el café caliente: la mezcla queda líquida, es normal (el café realza el chocolate).",
+        "Llene los capacillos a ⅔ y hornee 18–20 minutos. Deje enfriar.",
+        "Para el frosting: bata la mantequilla con el azúcar en polvo y el chocolate derretido tibio hasta que esté cremoso y decore."
+      ],
+      en: [
+        "Heat the oven to 350°F and prepare 12 liners.",
+        "Mix the flour, cocoa, baking soda, salt and sugar.",
+        "Add the egg, milk, oil and vanilla and beat 1 minute. Stir in the hot coffee: the batter will be thin, that's normal (coffee boosts the chocolate).",
+        "Fill the liners ⅔ full and bake 18–20 minutes. Let cool.",
+        "For the frosting: beat the butter with the powdered sugar and the lukewarm melted chocolate until creamy and decorate."
+      ]
+    }
+  },
+  {
+    id: "cupcakes-guayaba-queso",
+    category: "bizcochos",
+    name: { es: "Cupcakes de Guayaba y Queso", en: "Guava and Cream Cheese Cupcakes" },
+    time: "55 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de harina de trigo",
+        "1½ cucharaditas de polvo de hornear",
+        "¼ cucharadita de sal",
+        "½ taza de mantequilla, blanda",
+        "¾ taza de azúcar",
+        "2 huevos",
+        "1 cucharadita de vainilla",
+        "½ taza de leche",
+        "4 onzas de pasta de guayaba, en 12 cubitos",
+        "Frosting: 8 onzas de queso crema, blando",
+        "¼ taza de mantequilla, blanda",
+        "1½ tazas de azúcar en polvo",
+        "2 onzas de pasta de guayaba, derretida con 1 cucharada de agua"
+      ],
+      en: [
+        "1½ cups all-purpose flour",
+        "1½ teaspoons baking powder",
+        "¼ teaspoon salt",
+        "½ cup butter, softened",
+        "¾ cup sugar",
+        "2 eggs",
+        "1 teaspoon vanilla",
+        "½ cup milk",
+        "4 oz guava paste, in 12 cubes",
+        "Frosting: 8 oz cream cheese, softened",
+        "¼ cup butter, softened",
+        "1½ cups powdered sugar",
+        "2 oz guava paste, melted with 1 tablespoon water"
+      ]
+    },
+    steps: {
+      es: [
+        "Prepare la mezcla como la de los cupcakes de vainilla: mantequilla y azúcar cremosas, huevos, vainilla y la harina alternando con la leche.",
+        "Ponga 1 cucharada de mezcla en cada capacillo, un cubito de guayaba en el centro y cubra con más mezcla hasta ⅔.",
+        "Hornee a 350°F por 20 minutos y deje enfriar por completo.",
+        "Bata el queso crema con la mantequilla y el azúcar en polvo hasta que esté liso.",
+        "Decore con el frosting y un hilo de la guayaba derretida por encima: el sabor de los pastelillos de guayaba y queso en un cupcake."
+      ],
+      en: [
+        "Make the batter like the vanilla cupcakes: cream the butter and sugar, add the eggs, vanilla and the flour alternately with the milk.",
+        "Put 1 tablespoon of batter in each liner, a guava cube in the center and cover with more batter to ⅔ full.",
+        "Bake at 350°F for 20 minutes and let cool completely.",
+        "Beat the cream cheese with the butter and powdered sugar until smooth.",
+        "Frost and drizzle with the melted guava: the flavor of guava-and-cheese pastries in a cupcake."
+      ]
+    }
+  },
+  {
+    id: "cupcakes-coquito",
+    category: "bizcochos",
+    name: { es: "Cupcakes de Coquito", en: "Coquito Cupcakes" },
+    time: "55 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de harina de trigo",
+        "1½ cucharaditas de polvo de hornear",
+        "1 cucharadita de canela en polvo",
+        "¼ cucharadita de nuez moscada",
+        "¼ cucharadita de sal",
+        "½ taza de mantequilla, blanda",
+        "¾ taza de azúcar",
+        "2 huevos",
+        "½ taza de leche de coco con 1 cucharada de leche condensada (o ½ taza de coquito)",
+        "½ taza de coco rallado",
+        "Frosting: ½ taza de mantequilla, blanda",
+        "2 tazas de azúcar en polvo",
+        "3 cucharadas de crema de coco",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "1½ cups all-purpose flour",
+        "1½ teaspoons baking powder",
+        "1 teaspoon ground cinnamon",
+        "¼ teaspoon nutmeg",
+        "¼ teaspoon salt",
+        "½ cup butter, softened",
+        "¾ cup sugar",
+        "2 eggs",
+        "½ cup coconut milk with 1 tablespoon condensed milk (or ½ cup coquito)",
+        "½ cup shredded coconut",
+        "Frosting: ½ cup butter, softened",
+        "2 cups powdered sugar",
+        "3 tablespoons cream of coconut",
+        "Ground cinnamon for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y prepare 12 capacillos.",
+        "Bata la mantequilla con el azúcar, añada los huevos de uno en uno.",
+        "Cierna la harina con el polvo de hornear, la canela, la nuez moscada y la sal. Añádala alternando con la leche de coco (o el coquito) y agregue el coco rallado.",
+        "Hornee 18–20 minutos y deje enfriar.",
+        "Bata la mantequilla con el azúcar en polvo y la crema de coco, decore y espolvoree canela. Si usa coquito con ron, el horneado evapora parte del alcohol, no todo."
+      ],
+      en: [
+        "Heat the oven to 350°F and prepare 12 liners.",
+        "Beat the butter with the sugar and add the eggs one at a time.",
+        "Sift the flour with the baking powder, cinnamon, nutmeg and salt. Add it alternately with the coconut milk (or coquito) and fold in the shredded coconut.",
+        "Bake 18–20 minutes and let cool.",
+        "Beat the butter with the powdered sugar and cream of coconut, frost and dust with cinnamon. If you use coquito with rum, baking evaporates some of the alcohol, not all of it."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-zanahoria",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Zanahoria", en: "Carrot Cake" },
+    time: "1 hr 15 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "2 tazas de harina de trigo",
+        "2 cucharaditas de polvo de hornear",
+        "1 cucharadita de bicarbonato de sodio",
+        "2 cucharaditas de canela en polvo",
+        "½ cucharadita de sal",
+        "4 huevos",
+        "1½ tazas de azúcar",
+        "1 taza de aceite vegetal",
+        "3 tazas de zanahoria rallada",
+        "1 lata de 8 onzas de piña triturada, escurrida",
+        "½ taza de nueces, picadas",
+        "Frosting: 8 onzas de queso crema, blando",
+        "¼ taza de mantequilla, blanda",
+        "2 tazas de azúcar en polvo"
+      ],
+      en: [
+        "2 cups all-purpose flour",
+        "2 teaspoons baking powder",
+        "1 teaspoon baking soda",
+        "2 teaspoons ground cinnamon",
+        "½ teaspoon salt",
+        "4 eggs",
+        "1½ cups sugar",
+        "1 cup vegetable oil",
+        "3 cups grated carrot",
+        "1 can (8 oz) crushed pineapple, drained",
+        "½ cup walnuts, chopped",
+        "Frosting: 8 oz cream cheese, softened",
+        "¼ cup butter, softened",
+        "2 cups powdered sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y engrase un molde de 9 × 13 pulgadas.",
+        "Mezcle la harina, el polvo de hornear, el bicarbonato, la canela y la sal.",
+        "Bata los huevos con el azúcar y el aceite. Añada los secos y luego la zanahoria, la piña y las nueces.",
+        "Hornee 40–45 minutos, hasta que un palillo salga limpio. Deje enfriar por completo.",
+        "Bata el queso crema con la mantequilla y el azúcar en polvo y cubra el bizcocho. La piña lo mantiene húmedo, como en las reposterías de la isla."
+      ],
+      en: [
+        "Heat the oven to 350°F and grease a 9 × 13-inch pan.",
+        "Mix the flour, baking powder, baking soda, cinnamon and salt.",
+        "Beat the eggs with the sugar and oil. Add the dry ingredients, then the carrot, pineapple and walnuts.",
+        "Bake 40–45 minutes, until a toothpick comes out clean. Let cool completely.",
+        "Beat the cream cheese with the butter and powdered sugar and frost the cake. The pineapple keeps it moist, as in the island's bakeries."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-marmoleado",
+    category: "bizcochos",
+    name: { es: "Bizcocho Marmoleado", en: "Marble Cake" },
+    time: "1 hr 15 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2½ tazas de harina de trigo",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "1 taza de mantequilla, blanda",
+        "1½ tazas de azúcar",
+        "4 huevos",
+        "1 cucharada de vainilla",
+        "1 taza de leche",
+        "3 cucharadas de cocoa en polvo",
+        "2 cucharadas de leche caliente"
+      ],
+      en: [
+        "2½ cups all-purpose flour",
+        "2 teaspoons baking powder",
+        "½ teaspoon salt",
+        "1 cup butter, softened",
+        "1½ cups sugar",
+        "4 eggs",
+        "1 tablespoon vanilla",
+        "1 cup milk",
+        "3 tablespoons cocoa powder",
+        "2 tablespoons hot milk"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y engrase y enharine un molde de tubo.",
+        "Bata la mantequilla con el azúcar, añada los huevos de uno en uno y la vainilla. Agregue la harina cernida con el polvo de hornear y la sal, alternando con la leche.",
+        "Separe un tercio de la mezcla y añádale la cocoa disuelta en la leche caliente.",
+        "Alterne cucharadas de mezcla blanca y de chocolate en el molde y pase un cuchillo en zigzag para marmolear.",
+        "Hornee 50–55 minutos, hasta que un palillo salga limpio. Deje enfriar 15 minutos antes de desmoldar."
+      ],
+      en: [
+        "Heat the oven to 350°F and grease and flour a tube pan.",
+        "Beat the butter with the sugar, add the eggs one at a time and the vanilla. Add the flour sifted with the baking powder and salt, alternating with the milk.",
+        "Set aside a third of the batter and stir in the cocoa dissolved in the hot milk.",
+        "Alternate spoonfuls of white and chocolate batter in the pan and swirl a knife through in a zigzag.",
+        "Bake 50–55 minutes, until a toothpick comes out clean. Cool 15 minutes before unmolding."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-parcha",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Parcha", en: "Passion Fruit Cake" },
+    time: "1 hr 15 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2½ tazas de harina de trigo",
+        "2 cucharaditas de polvo de hornear",
+        "¼ cucharadita de sal",
+        "1 taza de mantequilla, blanda",
+        "1½ tazas de azúcar",
+        "4 huevos",
+        "½ taza de pulpa de parcha, colada",
+        "½ taza de leche",
+        "Almíbar de parcha: ¼ taza de pulpa de parcha",
+        "¼ taza de azúcar",
+        "Glaseado: 1 taza de azúcar en polvo",
+        "2 cucharadas de pulpa de parcha"
+      ],
+      en: [
+        "2½ cups all-purpose flour",
+        "2 teaspoons baking powder",
+        "¼ teaspoon salt",
+        "1 cup butter, softened",
+        "1½ cups sugar",
+        "4 eggs",
+        "½ cup passion fruit pulp, strained",
+        "½ cup milk",
+        "Passion fruit syrup: ¼ cup passion fruit pulp",
+        "¼ cup sugar",
+        "Glaze: 1 cup powdered sugar",
+        "2 tablespoons passion fruit pulp"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y engrase y enharine un molde de tubo.",
+        "Bata la mantequilla con el azúcar y añada los huevos de uno en uno. Agregue la harina cernida con el polvo de hornear y la sal, alternando con la parcha y la leche.",
+        "Hornee 50–55 minutos, hasta que un palillo salga limpio.",
+        "Mientras está caliente, píquelo con un palillo y báñelo con el almíbar (parcha y azúcar hervidas 2 minutos).",
+        "Desmolde frío y cubra con el glaseado de azúcar en polvo y parcha."
+      ],
+      en: [
+        "Heat the oven to 350°F and grease and flour a tube pan.",
+        "Beat the butter with the sugar and add the eggs one at a time. Add the flour sifted with the baking powder and salt, alternating with the passion fruit and milk.",
+        "Bake 50–55 minutes, until a toothpick comes out clean.",
+        "While still hot, poke it with a toothpick and soak it with the syrup (passion fruit and sugar boiled 2 minutes).",
+        "Unmold when cool and cover with the powdered sugar and passion fruit glaze."
+      ]
+    }
+  },
+  {
+    id: "donas-glaseadas",
+    category: "panes",
+    name: { es: "Donas Glaseadas", en: "Glazed Doughnuts" },
+    time: "2 hr 30 min",
+    servings: 14,
+    ingredients: {
+      es: [
+        "3½ tazas de harina de trigo",
+        "1 sobre de levadura seca (¼ onza)",
+        "¼ taza de azúcar",
+        "½ cucharadita de sal",
+        "1 taza de leche tibia",
+        "2 huevos",
+        "¼ taza de mantequilla, derretida",
+        "1 cucharadita de vainilla",
+        "Aceite vegetal para freír",
+        "Glaseado: 2 tazas de azúcar en polvo",
+        "¼ taza de leche",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "3½ cups all-purpose flour",
+        "1 packet active dry yeast (¼ oz)",
+        "¼ cup sugar",
+        "½ teaspoon salt",
+        "1 cup warm milk",
+        "2 eggs",
+        "¼ cup butter, melted",
+        "1 teaspoon vanilla",
+        "Vegetable oil for frying",
+        "Glaze: 2 cups powdered sugar",
+        "¼ cup milk",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura y 1 cucharada del azúcar en la leche tibia y deje reposar 10 minutos, hasta que haga espuma.",
+        "Añada el resto del azúcar, los huevos, la mantequilla, la vainilla, la sal y la harina. Amase 8 minutos hasta tener una masa suave. Deje crecer tapada 1 hora, hasta que doble.",
+        "Estire a ½ pulgada y corte las donas con un cortador (o un vaso y una tapita para el hueco). Deje crecer 30 minutos más.",
+        "Fría en aceite a 350°F, 1 minuto por lado, hasta que estén doradas. Escurra.",
+        "Bata el azúcar en polvo con la leche y la vainilla y pase las donas tibias por el glaseado. Deje secar sobre una rejilla."
+      ],
+      en: [
+        "Dissolve the yeast and 1 tablespoon of the sugar in the warm milk and let rest 10 minutes, until foamy.",
+        "Add the rest of the sugar, the eggs, butter, vanilla, salt and flour. Knead 8 minutes into a soft dough. Let rise covered 1 hour, until doubled.",
+        "Roll out to ½ inch and cut the doughnuts with a cutter (or a glass and a small cap for the hole). Let rise 30 more minutes.",
+        "Fry in oil at 350°F, 1 minute per side, until golden. Drain.",
+        "Whisk the powdered sugar with the milk and vanilla and dip the warm doughnuts in the glaze. Let set on a rack."
+      ]
+    }
+  },
+  {
+    id: "donas-rellenas-guayaba",
+    category: "panes",
+    name: { es: "Donas Rellenas de Guayaba", en: "Guava-Filled Doughnuts" },
+    time: "2 hr 30 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "3½ tazas de harina de trigo",
+        "1 sobre de levadura seca (¼ onza)",
+        "¼ taza de azúcar (más para cubrir)",
+        "½ cucharadita de sal",
+        "1 taza de leche tibia",
+        "2 huevos",
+        "¼ taza de mantequilla, derretida",
+        "8 onzas de pasta de guayaba",
+        "3 cucharadas de agua",
+        "Aceite vegetal para freír",
+        "½ taza de azúcar para cubrir"
+      ],
+      en: [
+        "3½ cups all-purpose flour",
+        "1 packet active dry yeast (¼ oz)",
+        "¼ cup sugar (plus more for coating)",
+        "½ teaspoon salt",
+        "1 cup warm milk",
+        "2 eggs",
+        "¼ cup butter, melted",
+        "8 oz guava paste",
+        "3 tablespoons water",
+        "Vegetable oil for frying",
+        "½ cup sugar for coating"
+      ]
+    },
+    steps: {
+      es: [
+        "Haga la masa como la de las donas glaseadas y déjela crecer 1 hora.",
+        "Estire a ½ pulgada y corte círculos de 3 pulgadas, sin hueco. Deje crecer 30 minutos.",
+        "Fría a 350°F, 1–2 minutos por lado. Escurra y páselas por azúcar mientras están tibias.",
+        "Derrita la guayaba con el agua a fuego bajo hasta tener una crema y póngala en una manga con boquilla fina.",
+        "Haga un hoyito en el lado de cada dona y rellénela con la guayaba. Son las de las panaderías por la mañana, con un café con leche."
+      ],
+      en: [
+        "Make the dough like the glazed doughnuts and let it rise 1 hour.",
+        "Roll out to ½ inch and cut 3-inch rounds, without holes. Let rise 30 minutes.",
+        "Fry at 350°F, 1–2 minutes per side. Drain and roll in sugar while warm.",
+        "Melt the guava paste with the water over low heat into a cream and put it in a piping bag with a thin tip.",
+        "Poke a small hole in the side of each doughnut and fill it with the guava. They're the bakery ones in the morning, with café con leche."
+      ]
+    }
+  },
+  {
+    id: "rollos-canela",
+    category: "panes",
+    name: { es: "Rollos de Canela", en: "Cinnamon Rolls" },
+    time: "2 hr 45 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "4 tazas de harina de trigo",
+        "1 sobre de levadura seca (¼ onza)",
+        "⅓ taza de azúcar",
+        "½ cucharadita de sal",
+        "1 taza de leche tibia",
+        "2 huevos",
+        "⅓ taza de mantequilla, derretida",
+        "Relleno: ½ taza de mantequilla, blanda",
+        "¾ taza de azúcar morena",
+        "2 cucharadas de canela en polvo",
+        "Glaseado: 4 onzas de queso crema, blando",
+        "1 taza de azúcar en polvo",
+        "2 cucharadas de leche"
+      ],
+      en: [
+        "4 cups all-purpose flour",
+        "1 packet active dry yeast (¼ oz)",
+        "⅓ cup sugar",
+        "½ teaspoon salt",
+        "1 cup warm milk",
+        "2 eggs",
+        "⅓ cup butter, melted",
+        "Filling: ½ cup butter, softened",
+        "¾ cup brown sugar",
+        "2 tablespoons ground cinnamon",
+        "Glaze: 4 oz cream cheese, softened",
+        "1 cup powdered sugar",
+        "2 tablespoons milk"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura en la leche tibia con 1 cucharada del azúcar y deje reposar 10 minutos.",
+        "Añada el resto del azúcar, los huevos, la mantequilla, la sal y la harina. Amase 8 minutos y deje crecer tapada 1 hora.",
+        "Estire en un rectángulo de 12 × 18 pulgadas, unte la mantequilla blanda y espolvoree el azúcar morena con la canela. Enrolle por el lado largo y corte 12 rollos.",
+        "Colóquelos en un molde engrasado, deje crecer 30 minutos y hornee a 350°F por 25–30 minutos, hasta que doren.",
+        "Bata el queso crema con el azúcar en polvo y la leche y cubra los rollos tibios."
+      ],
+      en: [
+        "Dissolve the yeast in the warm milk with 1 tablespoon of the sugar and let rest 10 minutes.",
+        "Add the rest of the sugar, the eggs, butter, salt and flour. Knead 8 minutes and let rise covered 1 hour.",
+        "Roll into a 12 × 18-inch rectangle, spread the soft butter and sprinkle the brown sugar mixed with the cinnamon. Roll up from the long side and cut 12 rolls.",
+        "Place in a greased pan, let rise 30 minutes and bake at 350°F for 25–30 minutes, until golden.",
+        "Beat the cream cheese with the powdered sugar and milk and spread over the warm rolls."
+      ]
+    }
+  },
+  {
+    id: "churros-chocolate",
+    category: "postres",
+    name: { es: "Churros con Chocolate", en: "Churros with Chocolate Sauce" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 taza de agua",
+        "2 cucharadas de azúcar",
+        "½ cucharadita de sal",
+        "2 cucharadas de mantequilla",
+        "1 taza de harina de trigo",
+        "1 huevo",
+        "Aceite vegetal para freír",
+        "Para cubrir: ½ taza de azúcar",
+        "1 cucharadita de canela en polvo",
+        "Salsa: 4 onzas de chocolate semidulce",
+        "½ taza de leche"
+      ],
+      en: [
+        "1 cup water",
+        "2 tablespoons sugar",
+        "½ teaspoon salt",
+        "2 tablespoons butter",
+        "1 cup all-purpose flour",
+        "1 egg",
+        "Vegetable oil for frying",
+        "Coating: ½ cup sugar",
+        "1 teaspoon ground cinnamon",
+        "Sauce: 4 oz semisweet chocolate",
+        "½ cup milk"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con el azúcar, la sal y la mantequilla. Añada la harina de golpe y mueva hasta que la masa se despegue de la olla.",
+        "Deje enfriar 5 minutos y añada el huevo, batiendo hasta que la masa esté lisa.",
+        "Pase la masa a una manga con boquilla de estrella y fría tiras de 5 pulgadas en aceite a 350°F, 2–3 minutos, hasta que doren.",
+        "Escurra y páselos enseguida por el azúcar con canela.",
+        "Para la salsa: caliente la leche y derrita el chocolate en ella. Sirva los churros calientes para mojar, como en las fiestas patronales."
+      ],
+      en: [
+        "Boil the water with the sugar, salt and butter. Add the flour all at once and stir until the dough pulls away from the pot.",
+        "Cool 5 minutes and add the egg, beating until the dough is smooth.",
+        "Put the dough in a piping bag with a star tip and fry 5-inch strips in oil at 350°F, 2–3 minutes, until golden.",
+        "Drain and roll right away in the cinnamon sugar.",
+        "For the sauce: heat the milk and melt the chocolate in it. Serve the churros hot for dipping, as at the patron saint festivals."
       ]
     }
   }

@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.11.0 · **Recetas:** 563 en 24 categorías
+> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.12.0 · **Recetas:** 574 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -56,7 +56,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, y papas y malanga, en diez tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, y cupcakes, bizcochos y panes dulces, en once tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -118,12 +118,12 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | huevos | Huevos y Queso | 11 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 34 |
 | pastas | Pastas | 17 |
-| bizcochos | Bizcochos | 10 |
+| bizcochos | Bizcochos | 17 |
 | galletitas | Galletitas | 18 |
 | pasteles_dulces | Pasteles Dulces | 8 |
-| panes | Pan y Panecillos | 26 |
+| panes | Pan y Panecillos | 29 |
 | emparedados | Emparedados | 10 |
-| postres | Helados, Budines, Flan y Otros Postres | 59 |
+| postres | Helados, Budines, Flan y Otros Postres | 60 |
 | arroces | Arroces y Habichuelas | 25 |
 | vegetales | Vegetales y Viandas | 48 |
 | salsas | Salsas y Aderezos | 15 |
@@ -165,7 +165,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - **Normaliza:** sin acentos ni mayúsculas; singular y plural ("limones" = "limón"); ignora palabras vacías
   (y, con, de, para, receta, algo, quiero, and, with…). Las palabras pueden ir en cualquier orden.
 - **Sinónimos** (`S_GROUPS`): china = naranja = orange, parcha = maracuyá = chinola, habichuela = frijol = bean,
-  guineo = banana, juey = cangrejo, alita = ala = wing, pechuga = breast, negro = negra, etc. **Términos generales** (`S_EXPAND`, cuentan la mitad):
+  guineo = banana, juey = cangrejo, alita = ala = wing, pechuga = breast, dona = donut, cupcake = bizcochito, negro = negra, etc. **Términos generales** (`S_EXPAND`, cuentan la mitad):
   "mariscos" incluye camarón, pulpo, langosta…; "carne" incluye res, cerdo, pollo…
 - **Categorías por su nombre** (`S_CATS`): "postres", "tragos", "sopas", "frituras"…
 - **Errores de escritura:** si una palabra no existe en el recetario, se corrige a la más parecida (distancia de edición
@@ -188,7 +188,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 563). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 574). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -233,6 +233,19 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-09 — v1.12.0 · Cupcakes, bizcochos y panes dulces
+- *Pedido:* buscar recetas de bizcochos, incluidos los cupcakes, y de panes dulces como donas y otros.
+- Undécima tanda en `js/recipes-4.js` (versiones propias):
+  - Bizcochos: Cupcakes de Vainilla, de Chocolate, de Guayaba y Queso y de Coquito; Bizcocho de Zanahoria, Bizcocho
+    Marmoleado, Bizcocho de Parcha.
+  - Panes: Donas Glaseadas, Donas Rellenas de Guayaba, Rollos de Canela.
+  - Postres: Churros con Chocolate.
+- Buscador: sinónimos dona = donut = doughnut y cupcake = bizcochito = magdalena.
+- Iconos: cupcakes 🧁, donas 🍩, rollos de canela 🥐, churros 🥖.
+- Total: **563 → 574 recetas**.
+- *Verificado:* datos en Node ✔ (0 ingredientes sin contar); buscador: "cupcakes", "donas", "donut", "bizcochitos" ✔;
+  navegador: las 11 recetas en ES y EN a 375 px, sin errores ni desbordes.
 
 ### 2026-10-09 — v1.11.0 · Papas y majados de malanga
 - *Pedido:* buscar recetas con papas (asadas, majadas o fritas) y recetas de majado de malanga.
