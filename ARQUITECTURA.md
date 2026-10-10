@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.1.0 · **Recetas:** 463 en 24 categorías
+> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.2.0 · **Recetas:** 477 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -55,7 +55,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos que faltaban (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos que faltaban, en dos tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   └── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
@@ -106,18 +106,18 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | granos | Granos y Legumbres | 10 |
 | ensaladas | Ensaladas | 11 |
 | sopas | Sopas | 29 |
-| carnes | Carnes | 43 |
+| carnes | Carnes | 46 |
 | aves | Aves | 27 |
-| pescados | Pescado y Mariscos | 34 |
+| pescados | Pescado y Mariscos | 37 |
 | huevos | Huevos y Queso | 10 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 26 |
-| pastas | Pastas | 14 |
-| bizcochos | Bizcochos | 8 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 27 |
+| pastas | Pastas | 17 |
+| bizcochos | Bizcochos | 9 |
 | galletitas | Galletitas | 18 |
 | pasteles_dulces | Pasteles Dulces | 8 |
 | panes | Pan y Panecillos | 26 |
 | emparedados | Emparedados | 9 |
-| postres | Helados, Budines, Flan y Otros Postres | 48 |
+| postres | Helados, Budines, Flan y Otros Postres | 51 |
 | arroces | Arroces y Habichuelas | 23 |
 | vegetales | Vegetales y Viandas | 28 |
 | salsas | Salsas y Aderezos | 12 |
@@ -154,7 +154,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 463). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 477). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -199,6 +199,22 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-09 — v1.2.0 · 14 recetas más: carnes, pescados, pastas, postres y otros
+- *Pedido:* buscar más recetas puertorriqueñas de carnes, pescados, pastas, postres y otras.
+- Segunda tanda en `js/recipes-4.js` (versiones propias):
+  - Carnes: Riñoncitos Guisados, Fricasé de Cerdo, Chuletas Rellenas de Mofongo.
+  - Pescados y mariscos: Frituras de Cetí, Ostiones en Escabeche, Mofongo Relleno de Mariscos.
+  - Pastas: Espaguetis con Mariscos a la Criolla, Espaguetis con Longaniza, Fideos Guisados con Pollo.
+  - Postres: Marrayo (dulce de coco y melao), Coquimol, Polvo de Amor. Bizcochos: Ponqué Boricua.
+  - Entremeses: Empanadillas de Langosta.
+- **Nutrición:** nuevos alimentos riñón de res, cetí y ostiones (antes los riñones se contaban como carne de res).
+  Las 477 recetas se cuentan completas.
+- **Alérgenos:** el cetí se detecta como pescado.
+- **Iconos:** ostiones 🦪, fricasé de cerdo 🍖, polvo de amor y coquimol 🥥.
+- Total: **463 → 477 recetas**. Publicado con `vercel --prod`.
+- *Verificado:* datos en Node ✔ (0 ingredientes sin contar); navegador: las 14 recetas nuevas en ES y EN a 375 px, con sus
+  tres pestañas, sin errores ni desbordes.
 
 ### 2026-10-09 — v1.1.0 · 23 recetas puertorriqueñas nuevas y este documento
 - *Pedido:* buscar más recetas de la cocina puertorriqueña y crear `ARQUITECTURA.md` como fuente de verdad, actualizado

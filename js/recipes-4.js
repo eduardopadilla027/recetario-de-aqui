@@ -4,7 +4,9 @@
  * (carne bif, salmón y atún guisados, arroz chino boricua, arroz apastelado),
  * frituras y entremeses (domplines, yaniqueques, pastelillos de queso y de
  * pollo, alcapurrias de jueyes) y postres de celebración (sopa borracha,
- * mazamorra). Versiones propias redactadas para esta app. Todas van en
+ * mazamorra). Segunda tanda: riñoncitos y fricasé de cerdo, cetí, ostiones,
+ * mofongo de mariscos, pastas criollas, marrayo, coquimol, polvo de amor y
+ * ponqué. Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
   // ── SOPAS ──
@@ -1044,6 +1046,674 @@ recipes.push(
         "Blend the guava with the cream of coconut, coconut milk, condensed milk, vanilla and cinnamon.",
         "Add the rum and blend a few more seconds.",
         "Bottle and refrigerate at least 4 hours. Shake before serving: the guava tends to settle."
+      ]
+    }
+  },
+
+  // ── Segunda tanda (2026-10): carnes, pescados, pastas, postres y otros ──
+
+  // ── CARNES ──
+  {
+    id: "rinones-guisados",
+    category: "carnes",
+    name: { es: "Riñoncitos Guisados", en: "Stewed Kidneys (Riñoncitos Guisados)" },
+    time: "1 hr 30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de riñones de res",
+        "½ taza de vinagre blanco (para el agua del remojo)",
+        "½ taza de sofrito",
+        "1 sobre de sazón con culantro y achiote",
+        "½ taza de salsa de tomate",
+        "½ taza de vino seco",
+        "2 papas, peladas y en cubos",
+        "1 cebolla, en ruedas",
+        "¼ taza de aceitunas rellenas",
+        "2 cucharadas de aceite de oliva",
+        "1 taza de agua",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 pounds beef kidneys",
+        "½ cup white vinegar (for the soaking water)",
+        "½ cup sofrito",
+        "1 packet sazón with coriander and annatto",
+        "½ cup tomato sauce",
+        "½ cup dry wine",
+        "2 potatoes, peeled and cubed",
+        "1 onion, sliced",
+        "¼ cup stuffed olives",
+        "2 tablespoons olive oil",
+        "1 cup water",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Abra los riñones a lo largo y quite la parte blanca y dura del centro. Córtelos en trozos pequeños.",
+        "Remójelos 30 minutos en agua fría con el vinagre. Escurra, enjuague bien y repita si todavía huelen fuerte: así pierden el olor.",
+        "En un caldero, sofría la cebolla y el sofrito en el aceite. Añada los riñones y dore 5 minutos a fuego alto.",
+        "Agregue el sazón, la salsa de tomate, el vino, las papas, las aceitunas y el agua. Tape y cocine a fuego medio-bajo 30 minutos, hasta que estén tiernos y la salsa espese.",
+        "Ajuste la sal y la pimienta. Sirva con arroz blanco, como en las fondas de antes."
+      ],
+      en: [
+        "Split the kidneys lengthwise and remove the tough white core. Cut into small pieces.",
+        "Soak 30 minutes in cold water with the vinegar. Drain, rinse well and repeat if they still smell strong: this removes the odor.",
+        "In a caldero, sauté the onion and sofrito in the oil. Add the kidneys and brown 5 minutes over high heat.",
+        "Add the sazón, tomato sauce, wine, potatoes, olives and water. Cover and cook over medium-low heat 30 minutes, until tender and the sauce thickens.",
+        "Adjust salt and pepper. Serve with white rice, as in the old-time fondas."
+      ]
+    }
+  },
+  {
+    id: "fricase-cerdo",
+    category: "carnes",
+    name: { es: "Fricasé de Cerdo", en: "Pork Fricassee" },
+    time: "1 hr 30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de carne de cerdo, en cubos",
+        "4 dientes de ajo, majados",
+        "1 cucharadita de orégano",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "½ taza de vino seco",
+        "3 papas, peladas y en cubos",
+        "1 pimiento verde, en tiras",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "2 hojas de laurel",
+        "2 cucharadas de aceite vegetal",
+        "1½ tazas de agua",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 pounds pork, cubed",
+        "4 garlic cloves, mashed",
+        "1 teaspoon oregano",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "½ cup dry wine",
+        "3 potatoes, peeled and cubed",
+        "1 green bell pepper, in strips",
+        "¼ cup stuffed olives",
+        "1 tablespoon capers",
+        "2 bay leaves",
+        "2 tablespoons vegetable oil",
+        "1½ cups water",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe la carne con el ajo, el orégano, sal y pimienta. Deje reposar 30 minutos (o toda la noche en la nevera).",
+        "En un caldero, dore la carne en el aceite a fuego alto, por partes, unos 10 minutos.",
+        "Añada el sofrito y el pimiento y sofría 3 minutos. Agregue el vino y deje que reduzca un poco.",
+        "Incorpore la salsa de tomate, las aceitunas, las alcaparras, el laurel y el agua. Tape y cocine a fuego bajo 40 minutos.",
+        "Añada las papas y cocine 20 minutos más, hasta que la carne esté blanda y la salsa espesa. Sirva con arroz blanco y tostones."
+      ],
+      en: [
+        "Season the meat with the garlic, oregano, salt and pepper. Let rest 30 minutes (or overnight in the fridge).",
+        "In a caldero, brown the meat in the oil over high heat, in batches, about 10 minutes.",
+        "Add the sofrito and bell pepper and sauté 3 minutes. Add the wine and let it reduce a little.",
+        "Stir in the tomato sauce, olives, capers, bay leaves and water. Cover and cook over low heat 40 minutes.",
+        "Add the potatoes and cook 20 more minutes, until the meat is tender and the sauce thick. Serve with white rice and tostones."
+      ]
+    }
+  },
+  {
+    id: "chuletas-rellenas-mofongo",
+    category: "carnes",
+    name: { es: "Chuletas Rellenas de Mofongo", en: "Mofongo-Stuffed Pork Chops" },
+    time: "1 hr 15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 chuletas de cerdo gruesas (1½ pulgadas)",
+        "1 cucharadita de adobo",
+        "2 plátanos verdes, pelados y en ruedas",
+        "4 dientes de ajo",
+        "¼ taza de chicharrón de cerdo",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de caldo de pollo, caliente",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "4 thick pork chops (1½ inches)",
+        "1 teaspoon adobo",
+        "2 green plantains, peeled and sliced",
+        "4 garlic cloves",
+        "¼ cup pork cracklings (chicharrón)",
+        "2 tablespoons olive oil",
+        "½ cup hot chicken broth",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Con un cuchillo fino, abra un bolsillo en el lado grueso de cada chuleta, sin atravesarla. Adóbelas por dentro y por fuera.",
+        "Fría las ruedas de plátano a fuego medio hasta que estén blandas y doradas. Escurra.",
+        "Maje el ajo con el aceite de oliva en el pilón. Añada el plátano y el chicharrón y maje, rociando caldo, hasta tener un mofongo suave.",
+        "Rellene cada chuleta con el mofongo y ciérrela con palillos. Dore las chuletas 3 minutos por lado en un sartén con un poco de aceite.",
+        "Termine en el horno a 400°F por 15–20 minutos, hasta que la carne llegue a 145°F por dentro. Deje reposar 3 minutos y quite los palillos antes de servir."
+      ],
+      en: [
+        "With a thin knife, cut a pocket into the thick side of each chop without cutting through. Season inside and out with adobo.",
+        "Fry the plantain slices over medium heat until soft and golden. Drain.",
+        "Mash the garlic with the olive oil in the pilón. Add the plantain and chicharrón and mash, sprinkling broth, into a soft mofongo.",
+        "Stuff each chop with the mofongo and close with toothpicks. Brown the chops 3 minutes per side in a skillet with a little oil.",
+        "Finish in a 400°F oven for 15–20 minutes, until the meat reaches 145°F inside. Rest 3 minutes and remove the toothpicks before serving."
+      ]
+    }
+  },
+
+  // ── PESCADOS ──
+  {
+    id: "frituras-ceti",
+    category: "pescados",
+    name: { es: "Frituras de Cetí", en: "Cetí Fritters (Tiny River-Mouth Fish)" },
+    time: "30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de cetí, lavado y escurrido",
+        "1 taza de harina de trigo",
+        "½ cucharadita de polvo de hornear",
+        "2 huevos",
+        "¼ taza de agua",
+        "2 dientes de ajo, picaditos",
+        "1 cucharada de cilantro, picado",
+        "½ cucharadita de sal",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "1 pound cetí (tiny river-mouth fish), rinsed and drained",
+        "1 cup all-purpose flour",
+        "½ teaspoon baking powder",
+        "2 eggs",
+        "¼ cup water",
+        "2 garlic cloves, finely chopped",
+        "1 tablespoon cilantro, chopped",
+        "½ teaspoon salt",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave el cetí varias veces en un colador fino y escúrralo muy bien: se come entero, sin limpiar.",
+        "Mezcle la harina, el polvo de hornear, los huevos, el agua, el ajo, el cilantro y la sal hasta tener una masa espesa.",
+        "Incorpore el cetí con cuidado.",
+        "Fría por cucharadas en aceite a 350°F, 2–3 minutos por lado, hasta que estén doradas.",
+        "Escurra y sirva enseguida con limón. El cetí sólo se pesca en temporada (de septiembre a diciembre, en las desembocaduras de los ríos de Arecibo y del norte): fuera de ella use cetí congelado."
+      ],
+      en: [
+        "Rinse the cetí several times in a fine strainer and drain very well: it's eaten whole, uncleaned.",
+        "Mix the flour, baking powder, eggs, water, garlic, cilantro and salt into a thick batter.",
+        "Gently fold in the cetí.",
+        "Fry by spoonfuls in oil at 350°F, 2–3 minutes per side, until golden.",
+        "Drain and serve right away with lime. Cetí is only caught in season (September to December, at the river mouths of Arecibo and the north coast): out of season use frozen cetí."
+      ]
+    }
+  },
+  {
+    id: "ostiones-escabeche",
+    category: "pescados",
+    name: { es: "Ostiones en Escabeche", en: "Pickled Oysters (Ostiones en Escabeche)" },
+    time: "30 min + 1 día de reposo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de ostiones sin concha, con su jugo",
+        "1 taza de aceite de oliva",
+        "½ taza de vinagre blanco",
+        "1 cebolla grande, en ruedas finas",
+        "4 dientes de ajo, en lascas",
+        "10 granos de pimienta",
+        "2 hojas de laurel",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1 pound shucked oysters, with their liquor",
+        "1 cup olive oil",
+        "½ cup white vinegar",
+        "1 large onion, thinly sliced",
+        "4 garlic cloves, sliced",
+        "10 peppercorns",
+        "2 bay leaves",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga los ostiones con su jugo en una olla a fuego medio y cocine 3–4 minutos, hasta que los bordes se encrespen. Escurra.",
+        "En otra olla, cocine a fuego bajo el aceite con la cebolla, el ajo, la pimienta y el laurel 10 minutos, sin dorar.",
+        "Retire del fuego y añada el vinagre y la sal.",
+        "Coloque los ostiones en un frasco de cristal y cúbralos con el escabeche tibio.",
+        "Refrigere al menos 24 horas y consuma en 3 días. Sirva frío con galletas, como en los kioscos de Boquerón."
+      ],
+      en: [
+        "Put the oysters and their liquor in a pot over medium heat and cook 3–4 minutes, until the edges curl. Drain.",
+        "In another pot, cook the oil with the onion, garlic, peppercorns and bay leaves over low heat 10 minutes, without browning.",
+        "Remove from heat and add the vinegar and salt.",
+        "Place the oysters in a glass jar and cover with the warm escabeche.",
+        "Refrigerate at least 24 hours and eat within 3 days. Serve cold with crackers, as at the kiosks of Boquerón."
+      ]
+    }
+  },
+  {
+    id: "mofongo-relleno-mariscos",
+    category: "pescados",
+    name: { es: "Mofongo Relleno de Mariscos", en: "Seafood-Stuffed Mofongo" },
+    time: "1 hr",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 plátanos verdes, pelados y en ruedas",
+        "4 dientes de ajo",
+        "¼ taza de chicharrón de cerdo",
+        "3 cucharadas de aceite de oliva",
+        "½ libra de camarones, pelados",
+        "½ libra de pulpo cocido, en trozos",
+        "½ libra de calamares, en ruedas",
+        "¼ taza de sofrito",
+        "1 taza de salsa de tomate",
+        "¼ taza de vino blanco",
+        "Aceite vegetal para freír",
+        "Sal al gusto"
+      ],
+      en: [
+        "4 green plantains, peeled and sliced",
+        "4 garlic cloves",
+        "¼ cup pork cracklings (chicharrón)",
+        "3 tablespoons olive oil",
+        "½ pound shrimp, peeled",
+        "½ pound cooked octopus, in chunks",
+        "½ pound squid, in rings",
+        "¼ cup sofrito",
+        "1 cup tomato sauce",
+        "¼ cup white wine",
+        "Vegetable oil for frying",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Para la salsa: sofría el sofrito en 1 cucharada de aceite de oliva, añada la salsa de tomate y el vino y cocine 5 minutos.",
+        "Agregue los calamares y cocine 2 minutos; añada los camarones y el pulpo y cocine 3 minutos más, sólo hasta que los camarones estén rosados.",
+        "Fría las ruedas de plátano a fuego medio hasta que estén blandas y doradas. Escurra.",
+        "Maje el ajo con sal y el resto del aceite de oliva. Añada el plátano y el chicharrón por partes y maje hasta tener un mofongo compacto.",
+        "Moldee el mofongo en un tazón, voltéelo en el plato, abra un hueco en el centro y rellene con los mariscos y su salsa."
+      ],
+      en: [
+        "For the sauce: sauté the sofrito in 1 tablespoon of the olive oil, add the tomato sauce and wine and cook 5 minutes.",
+        "Add the squid and cook 2 minutes; add the shrimp and octopus and cook 3 more minutes, just until the shrimp turn pink.",
+        "Fry the plantain slices over medium heat until soft and golden. Drain.",
+        "Mash the garlic with salt and the rest of the olive oil. Add the plantain and chicharrón in batches and mash into a firm mofongo.",
+        "Mold the mofongo in a bowl, turn it out onto the plate, make a well in the center and fill with the seafood and its sauce."
+      ]
+    }
+  },
+
+  // ── PASTAS ──
+  {
+    id: "espaguetis-mariscos",
+    category: "pastas",
+    name: { es: "Espaguetis con Mariscos a la Criolla", en: "Creole-Style Seafood Spaghetti" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de espaguetis",
+        "½ libra de camarones, pelados",
+        "½ libra de calamares, en ruedas",
+        "½ libra de pulpo cocido, en trozos",
+        "¼ taza de sofrito",
+        "1 lata de 15 onzas de salsa de tomate",
+        "¼ taza de vino blanco",
+        "3 dientes de ajo, picados",
+        "3 cucharadas de aceite de oliva",
+        "1 cucharadita de orégano",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 pound spaghetti",
+        "½ pound shrimp, peeled",
+        "½ pound squid, in rings",
+        "½ pound cooked octopus, in chunks",
+        "¼ cup sofrito",
+        "1 can (15 oz) tomato sauce",
+        "¼ cup white wine",
+        "3 garlic cloves, chopped",
+        "3 tablespoons olive oil",
+        "1 teaspoon oregano",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los espaguetis en agua con sal hasta que estén al dente. Escurra y reserve ½ taza del agua.",
+        "En un sartén grande, sofría el ajo y el sofrito en el aceite 2 minutos.",
+        "Añada la salsa de tomate, el vino y el orégano. Cocine 10 minutos a fuego medio-bajo.",
+        "Agregue los calamares y cocine 2 minutos; luego los camarones y el pulpo, 3 minutos más.",
+        "Mezcle con los espaguetis, aflojando con el agua reservada si hace falta. Ajuste la sal y la pimienta y sirva enseguida."
+      ],
+      en: [
+        "Boil the spaghetti in salted water until al dente. Drain, reserving ½ cup of the water.",
+        "In a large skillet, sauté the garlic and sofrito in the oil 2 minutes.",
+        "Add the tomato sauce, wine and oregano. Cook 10 minutes over medium-low heat.",
+        "Add the squid and cook 2 minutes; then the shrimp and octopus, 3 more minutes.",
+        "Toss with the spaghetti, loosening with the reserved water if needed. Adjust salt and pepper and serve right away."
+      ]
+    }
+  },
+  {
+    id: "espaguetis-longaniza",
+    category: "pastas",
+    name: { es: "Espaguetis con Longaniza", en: "Spaghetti with Longaniza Sausage" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de espaguetis",
+        "1 libra de longaniza, en ruedas",
+        "¼ taza de sofrito",
+        "1 lata de 15 onzas de salsa de tomate",
+        "1 cucharadita de sazón",
+        "¼ taza de aceitunas rellenas, en ruedas",
+        "1 cucharada de aceite de oliva",
+        "½ taza de queso parmesano, rallado"
+      ],
+      en: [
+        "1 pound spaghetti",
+        "1 pound longaniza sausage, sliced",
+        "¼ cup sofrito",
+        "1 can (15 oz) tomato sauce",
+        "1 teaspoon sazón",
+        "¼ cup stuffed olives, sliced",
+        "1 tablespoon olive oil",
+        "½ cup grated Parmesan cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los espaguetis en agua con sal hasta que estén al dente y escúrralos.",
+        "En un caldero, dore la longaniza en el aceite 8 minutos, hasta que suelte la grasa y esté bien cocida. Quite el exceso de grasa.",
+        "Añada el sofrito, el sazón, la salsa de tomate y las aceitunas. Cocine 10 minutos a fuego bajo.",
+        "Mezcle los espaguetis con la salsa en el caldero.",
+        "Sirva con el queso por encima. No añada sal: la longaniza y el sazón ya la traen."
+      ],
+      en: [
+        "Boil the spaghetti in salted water until al dente and drain.",
+        "In a caldero, brown the longaniza in the oil 8 minutes, until it releases its fat and is fully cooked. Pour off the excess fat.",
+        "Add the sofrito, sazón, tomato sauce and olives. Cook 10 minutes over low heat.",
+        "Toss the spaghetti with the sauce in the caldero.",
+        "Serve topped with the cheese. Don't add salt: the longaniza and sazón already have it."
+      ]
+    }
+  },
+  {
+    id: "fideos-guisados-pollo",
+    category: "pastas",
+    name: { es: "Fideos Guisados con Pollo", en: "Stewed Fideos with Chicken" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "8 onzas de fideos finos",
+        "1½ libras de muslos de pollo, sin hueso y en trozos",
+        "¼ taza de sofrito",
+        "1 sobre de sazón con culantro y achiote",
+        "½ taza de salsa de tomate",
+        "1 papa, pelada y en cubitos",
+        "3 tazas de caldo de pollo",
+        "1 cucharada de aceite vegetal",
+        "Sal al gusto"
+      ],
+      en: [
+        "8 oz thin noodles (fideos)",
+        "1½ pounds boneless chicken thighs, in pieces",
+        "¼ cup sofrito",
+        "1 packet sazón with coriander and annatto",
+        "½ cup tomato sauce",
+        "1 potato, peeled and diced",
+        "3 cups chicken broth",
+        "1 tablespoon vegetable oil",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero, dore el pollo en el aceite 8 minutos.",
+        "Añada el sofrito, el sazón y la salsa de tomate y sofría 3 minutos.",
+        "Agregue la papa y el caldo. Cuando hierva, cocine tapado 10 minutos.",
+        "Añada los fideos partidos con la mano y cocine destapado a fuego medio, moviendo, 8–10 minutos, hasta que absorban casi todo el caldo.",
+        "Deje reposar 5 minutos antes de servir: deben quedar jugosos, entre sopa y arroz, como se hacían en casa."
+      ],
+      en: [
+        "In a caldero, brown the chicken in the oil 8 minutes.",
+        "Add the sofrito, sazón and tomato sauce and sauté 3 minutes.",
+        "Add the potato and broth. When it boils, cook covered 10 minutes.",
+        "Add the noodles, broken by hand, and cook uncovered over medium heat, stirring, 8–10 minutes, until they absorb almost all the broth.",
+        "Let rest 5 minutes before serving: they should be juicy, between a soup and a rice, the way they were made at home."
+      ]
+    }
+  },
+
+  // ── ENTREMESES ──
+  {
+    id: "empanadillas-langosta",
+    category: "entremeses",
+    name: { es: "Empanadillas de Langosta", en: "Lobster Turnovers (Empanadillas de Langosta)" },
+    time: "45 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "10 discos para empanadillas",
+        "1 libra de carne de langosta cocida, picada",
+        "¼ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "2 dientes de ajo, picaditos",
+        "2 cucharadas de mantequilla",
+        "1 huevo, batido (para sellar)",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "10 turnover wrappers (discos)",
+        "1 pound cooked lobster meat, chopped",
+        "¼ cup sofrito",
+        "½ cup tomato sauce",
+        "2 garlic cloves, finely chopped",
+        "2 tablespoons butter",
+        "1 egg, beaten (for sealing)",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la mantequilla y sofría el ajo y el sofrito 2 minutos.",
+        "Añada la langosta y la salsa de tomate y cocine 5 minutos, hasta que la salsa seque. Deje enfriar.",
+        "Ponga 2 cucharadas de relleno en cada disco, pinte el borde con huevo, doble y selle con un tenedor.",
+        "Fría en aceite a 350°F, 2 minutos por lado, hasta que estén doradas.",
+        "Escurra y sirva calientes, como en los kioscos de la costa."
+      ],
+      en: [
+        "Melt the butter and sauté the garlic and sofrito 2 minutes.",
+        "Add the lobster and tomato sauce and cook 5 minutes, until the sauce dries. Let cool.",
+        "Place 2 tablespoons of filling on each wrapper, brush the edge with egg, fold and seal with a fork.",
+        "Fry in oil at 350°F, 2 minutes per side, until golden.",
+        "Drain and serve hot, as at the coastal kiosks."
+      ]
+    }
+  },
+
+  // ── BIZCOCHOS ──
+  {
+    id: "ponque-boricua",
+    category: "bizcochos",
+    name: { es: "Ponqué Boricua", en: "Puerto Rican Pound Cake (Ponqué)" },
+    time: "1 hr 30 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "1 taza de mantequilla, a temperatura ambiente",
+        "2 tazas de azúcar",
+        "5 huevos",
+        "3 tazas de harina de trigo",
+        "½ cucharadita de polvo de hornear",
+        "¼ cucharadita de sal",
+        "1 taza de leche evaporada",
+        "1 cucharada de vainilla",
+        "1 cucharadita de ralladura de limón"
+      ],
+      en: [
+        "1 cup butter, at room temperature",
+        "2 cups sugar",
+        "5 eggs",
+        "3 cups all-purpose flour",
+        "½ teaspoon baking powder",
+        "¼ teaspoon salt",
+        "1 cup evaporated milk",
+        "1 tablespoon vanilla",
+        "1 teaspoon lime zest"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 325°F y engrase y enharine un molde de tubo (bundt).",
+        "Bata la mantequilla con el azúcar 5 minutos, hasta que esté blanca y esponjosa.",
+        "Añada los huevos de uno en uno, batiendo bien después de cada uno.",
+        "Cierna la harina con el polvo de hornear y la sal. Añádala alternando con la leche evaporada, empezando y terminando con harina. Agregue la vainilla y la ralladura.",
+        "Vierta en el molde y hornee 1 hora y 10 minutos, hasta que un palillo salga limpio. Deje enfriar 15 minutos antes de desmoldar. Es el bizcocho de los cafés de la tarde."
+      ],
+      en: [
+        "Heat the oven to 325°F and grease and flour a tube (bundt) pan.",
+        "Beat the butter with the sugar 5 minutes, until pale and fluffy.",
+        "Add the eggs one at a time, beating well after each.",
+        "Sift the flour with the baking powder and salt. Add it alternately with the evaporated milk, starting and ending with flour. Add the vanilla and zest.",
+        "Pour into the pan and bake 1 hour 10 minutes, until a toothpick comes out clean. Cool 15 minutes before unmolding. It's the cake of afternoon coffee."
+      ]
+    }
+  },
+
+  // ── POSTRES ──
+  {
+    id: "marrayo",
+    category: "postres",
+    name: { es: "Marrayo (Dulce de Coco y Melao)", en: "Marrayo (Coconut and Molasses Candy)" },
+    time: "45 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "2 tazas de coco rallado fresco",
+        "1 taza de melao de caña (melaza)",
+        "½ taza de azúcar morena",
+        "1 cucharadita de jengibre fresco, rallado",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "2 cups freshly grated coconut",
+        "1 cup sugarcane molasses (melao)",
+        "½ cup brown sugar",
+        "1 teaspoon fresh ginger, grated",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Engrase una tabla o bandeja y tenga a mano un cuchillo engrasado.",
+        "En un caldero, cocine el melao con el azúcar, el jengibre y la sal a fuego medio hasta que hierva.",
+        "Añada el coco y cocine sin dejar de mover con cuchara de madera, unos 25 minutos, hasta que la mezcla esté muy espesa y se despegue del fondo. Una gota en agua fría debe quedar dura.",
+        "Vierta sobre la tabla y extienda a ½ pulgada con la cuchara engrasada. Cuidado: el almíbar caliente quema mucho.",
+        "Cuando esté tibio, corte en cuadritos o barritas. Deje endurecer y guarde en un frasco. Es un dulce de tradición de Loíza."
+      ],
+      en: [
+        "Grease a board or tray and keep a greased knife at hand.",
+        "In a caldero, cook the molasses with the sugar, ginger and salt over medium heat until it boils.",
+        "Add the coconut and cook, stirring constantly with a wooden spoon, about 25 minutes, until very thick and pulling away from the bottom. A drop in cold water should turn hard.",
+        "Pour onto the board and spread ½ inch thick with the greased spoon. Careful: hot syrup burns badly.",
+        "While still warm, cut into small squares or bars. Let harden and store in a jar. It's a traditional sweet from Loíza."
+      ]
+    }
+  },
+  {
+    id: "coquimol",
+    category: "postres",
+    name: { es: "Coquimol", en: "Coquimol (Coconut Custard Cream)" },
+    time: "30 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de leche de coco",
+        "¾ taza de azúcar",
+        "4 yemas de huevo",
+        "2 cucharadas de maicena",
+        "1 raja de canela",
+        "1 cucharadita de vainilla",
+        "¼ cucharadita de sal",
+        "½ cucharadita de canela en polvo"
+      ],
+      en: [
+        "2 cups coconut milk",
+        "¾ cup sugar",
+        "4 egg yolks",
+        "2 tablespoons cornstarch",
+        "1 cinnamon stick",
+        "1 teaspoon vanilla",
+        "¼ teaspoon salt",
+        "½ teaspoon ground cinnamon"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la maicena en ½ taza de la leche de coco. Bata las yemas con el azúcar.",
+        "Caliente el resto de la leche de coco con la raja de canela y la sal hasta que empiece a hervir.",
+        "Vierta un poco de la leche caliente sobre las yemas, batiendo, para templarlas. Regrese todo a la olla con la maicena disuelta.",
+        "Cocine a fuego bajo sin dejar de mover, 8–10 minutos, hasta que espese como una natilla y llegue a 160°F.",
+        "Retire la canela, añada la vainilla y sirva tibio o frío, solo o sobre rebanadas de bizcocho, con canela en polvo por encima."
+      ],
+      en: [
+        "Dissolve the cornstarch in ½ cup of the coconut milk. Beat the yolks with the sugar.",
+        "Heat the rest of the coconut milk with the cinnamon stick and salt until it starts to boil.",
+        "Pour a little of the hot milk over the yolks, whisking, to temper them. Return everything to the pot with the dissolved cornstarch.",
+        "Cook over low heat, stirring constantly, 8–10 minutes, until thick like a custard and it reaches 160°F.",
+        "Remove the cinnamon, add the vanilla and serve warm or cold, alone or over slices of cake, dusted with ground cinnamon."
+      ]
+    }
+  },
+  {
+    id: "polvo-de-amor",
+    category: "postres",
+    name: { es: "Polvo de Amor", en: "Polvo de Amor (Toasted Coconut Sugar)" },
+    time: "40 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "3 tazas de coco rallado fresco",
+        "1½ tazas de azúcar",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "3 cups freshly grated coconut",
+        "1½ cups sugar",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero grueso, mezcle el coco, el azúcar y la sal.",
+        "Cocine a fuego medio-bajo, moviendo sin parar con cuchara de madera, unos 30 minutos.",
+        "El azúcar se derrite, el coco suelta su agua y poco a poco todo se seca y toma un color dorado claro: debe quedar suelto, como un polvo grueso.",
+        "Extienda en una bandeja para que se enfríe y se termine de secar.",
+        "Guarde en un frasco bien cerrado. Se come a cucharadas o en cartuchitos de papel, como lo vendían en las fiestas de pueblo."
+      ],
+      en: [
+        "In a heavy caldero, mix the coconut, sugar and salt.",
+        "Cook over medium-low heat, stirring nonstop with a wooden spoon, about 30 minutes.",
+        "The sugar melts, the coconut releases its water and little by little everything dries out and turns light golden: it should be loose, like a coarse powder.",
+        "Spread on a tray to cool and finish drying.",
+        "Store in a tightly closed jar. It's eaten by the spoonful or from little paper cones, as it was sold at town festivals."
       ]
     }
   }

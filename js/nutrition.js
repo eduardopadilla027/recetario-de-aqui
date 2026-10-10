@@ -54,6 +54,7 @@ const NUTRI_FOODS = [
   F("carne|carne de res|res|falda|boliche|punta|palomilla|churrasco|rabo de res", 200, 19, 0, 0, 0, 13, 5, 66, { cup: 225 }),
   // Carne bif: corned beef de lata, cocida y salada.
   F("carne bif|corned beef", 250, 27, 0, 0, 0, 15, 6, 1000, { can: 340 }),
+  F("rinon|rinones de res", 99, 17.4, 0.3, 0, 0, 3.1, 0.9, 182, { u: 300 }),
   F("bistec", 180, 21, 0, 0, 0, 10, 4, 60, { u: 150 }),
   F("carne molida", 254, 17, 0, 0, 0, 20, 7.6, 66, { cup: 225 }),
   F("picadillo", 250, 17, 4, 2, 1, 18, 6.5, 400, { cup: 225 }),
@@ -77,6 +78,8 @@ const NUTRI_FOODS = [
   F("carrucho|caracol", 130, 26, 1.7, 0, 0, 1.2, 0.3, 153),
   F("atun", 190, 28, 0, 0, 0, 8, 1.5, 350, { can: 142, cup: 150 }),
   F("salmon", 140, 20, 0, 0, 0, 6, 1.4, 400, { can: 418, cup: 140 }),
+  F("ceti", 90, 18, 0, 0, 0, 2, 0.5, 80, { cup: 150 }),
+  F("ostion|ostiones", 68, 7, 3.9, 0, 0, 2.5, 0.8, 211, { u: 15, cup: 248 }),
   // Huevos y lácteos
   F("huevo", 143, 12.6, 0.7, 0.4, 0, 9.5, 3.1, 142, { u: 50, cup: 243 }),
   F("yema", 322, 16, 3.6, 0.6, 0, 27, 9.6, 48, { u: 17 }),
