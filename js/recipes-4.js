@@ -56,6 +56,8 @@
  * Vigesimocuarta tanda: más tragos tropicales (painkiller, jungle bird, caipiriña de
  * parcha, paloma, mojito de coco, daiquirí de guayaba, ponche de acerola, tequila sunrise,
  * dark & stormy, guanábana colada, michelada boricua).
+ * Vigesimoquinta tanda: más emparedados (desayuno, churrasco, pescado frito, lechón,
+ * choripán, queso con guayaba, jibarito de pollo, club, wrap, pavochón).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -13791,6 +13793,414 @@ recipes.push(
         "Run lime around the rim of a glass or mug and dip it in the salt and paprika.",
         "Add the ice, lime juice, pique and Worcestershire sauce.",
         "Top with the beer, tilting the glass so it doesn't foam too much. Stir gently."
+      ]
+    }
+  },
+
+  // ── Vigesimoquinta tanda (2026-10): más emparedados ──
+  {
+    id: "sandwich-desayuno",
+    category: "emparedados",
+    name: { es: "Sándwich de Desayuno (Huevo, Jamón y Queso en Pan Sobao)", en: "Breakfast Sandwich (Egg, Ham and Cheese on Pan Sobao)" },
+    time: "15 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 pan sobao de 12 pulgadas, partido en 2",
+        "1 cucharada de mantequilla",
+        "3 huevos batidos con una pizca de sal",
+        "4 lascas de jamón de sándwich",
+        "2 lascas de queso de papa (americano)"
+      ],
+      en: [
+        "1 pan sobao loaf (12 inches), cut in 2",
+        "1 tablespoon butter",
+        "3 eggs beaten with a pinch of salt",
+        "4 slices sandwich ham",
+        "2 slices American cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Abra los panes, úntelos por dentro con la mitad de la mantequilla y tuéstelos en la plancha o un sartén.",
+        "En el resto de la mantequilla, dore el jamón 1 minuto y sáquelo.",
+        "Haga una tortilla fina con los huevos del ancho del pan y córtela en dos.",
+        "Arme con el huevo, el jamón y el queso, y presione el pan en la plancha 1 minuto por lado para que el queso se derrita. Como en la panadería."
+      ],
+      en: [
+        "Split the loaves, butter the insides with half the butter and toast them on the griddle or in a skillet.",
+        "In the remaining butter, brown the ham 1 minute and remove.",
+        "Make a thin omelet with the eggs the width of the bread and cut it in two.",
+        "Build with the egg, ham and cheese, and press the bread on the griddle 1 minute per side so the cheese melts. Just like the bakery."
+      ]
+    }
+  },
+  {
+    id: "sandwich-churrasco",
+    category: "emparedados",
+    name: { es: "Sándwich de Churrasco con Chimichurri", en: "Skirt Steak Sandwich with Chimichurri" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de churrasco (entraña)",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "1 libra de pan de agua (un pan largo), en 4 pedazos",
+        "¼ taza de aceite de oliva con perejil, ajo y vinagre (chimichurri)",
+        "1 cebolla en ruedas, salteada",
+        "4 lascas de queso suizo",
+        "Lechuga y tomate"
+      ],
+      en: [
+        "1½ lb skirt steak",
+        "1 teaspoon salt",
+        "½ teaspoon pepper",
+        "1 lb Puerto Rican water bread (one long loaf), in 4 pieces",
+        "¼ cup olive oil with parsley, garlic and vinegar (chimichurri)",
+        "1 onion, sliced and sautéed",
+        "4 slices Swiss cheese",
+        "Lettuce and tomato"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone el churrasco con sal y pimienta y áselo a fuego muy alto 2–4 minutos por lado. Deje reposar 5 minutos.",
+        "Córtelo en tiras finas en contra de la fibra (así queda tierno al morder).",
+        "Tueste los panes y úntelos con chimichurri por dentro.",
+        "Arme con la carne, la cebolla, el queso, la lechuga y el tomate, y presione en la plancha 1 minuto."
+      ],
+      en: [
+        "Season the steak with salt and pepper and sear over very high heat 2–4 minutes per side. Rest 5 minutes.",
+        "Slice thin strips against the grain (so it's tender to bite).",
+        "Toast the rolls and spread the insides with chimichurri.",
+        "Build with the meat, onion, cheese, lettuce and tomato, and press on the griddle 1 minute."
+      ]
+    }
+  },
+  {
+    id: "sandwich-pescado-frito",
+    category: "emparedados",
+    name: { es: "Sándwich de Pescado Frito con Mayo-Ajo", en: "Fried Fish Sandwich with Garlic Mayo" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de pescado blanco (mero o dorado)",
+        "1 cucharadita de adobo",
+        "½ taza de harina de trigo",
+        "1 huevo batido",
+        "1 taza de pan rallado",
+        "Aceite para freír",
+        "4 panes de hamburguesa",
+        "¼ taza de mayonesa con ajo",
+        "Repollo rallado y tomate"
+      ],
+      en: [
+        "4 white fish fillets (grouper or mahi)",
+        "1 teaspoon adobo",
+        "½ cup all-purpose flour",
+        "1 egg, beaten",
+        "1 cup breadcrumbs",
+        "Oil for frying",
+        "4 hamburger buns",
+        "¼ cup garlic mayonnaise",
+        "Shredded cabbage and tomato"
+      ]
+    },
+    steps: {
+      es: [
+        "Seque los filetes y sazónelos con el adobo.",
+        "Páselos por la harina, el huevo y el pan rallado.",
+        "Fríalos a 350°F 3 minutos por lado, hasta dorar y que lleguen a 145°F.",
+        "Tueste los panes, unte la mayo-ajo y arme con el pescado, el repollo y el tomate. Con limón aparte."
+      ],
+      en: [
+        "Pat the fillets dry and season with the adobo.",
+        "Dredge them in the flour, egg and breadcrumbs.",
+        "Fry at 350°F 3 minutes per side, until golden and they reach 145°F.",
+        "Toast the buns, spread the garlic mayo and build with the fish, cabbage and tomato. Lime on the side."
+      ]
+    }
+  },
+  {
+    id: "sandwich-lechon-pique",
+    category: "emparedados",
+    name: { es: "Sándwich de Lechón con Pique", en: "Roast Pork Sandwich with Pique" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de lechón asado o pernil, desmenuzado, con un poco de cuerito",
+        "1 libra de pan de agua (un pan largo), en 4 pedazos",
+        "¼ taza de mojo de ajo",
+        "2 cucharadas de pique de vinagre",
+        "1 cebolla roja en aros finos",
+        "2 cucharadas de mayonesa"
+      ],
+      en: [
+        "1½ lb roast pork (lechón or pernil), shredded, with some crackling",
+        "1 lb Puerto Rican water bread (one long loaf), in 4 pieces",
+        "¼ cup garlic mojo",
+        "2 tablespoons vinegar pique",
+        "1 red onion in thin rings",
+        "2 tablespoons mayonnaise"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el lechón en un sartén con el mojo 3–4 minutos, hasta que los bordes se doren.",
+        "Mezcle la cebolla con el pique y deje 10 minutos (se encurte un poquito).",
+        "Tueste los panes y unte una capa fina de mayonesa.",
+        "Rellene con el lechón, pedacitos de cuerito y la cebolla con pique. Lo de Guavate, en pan."
+      ],
+      en: [
+        "Warm the pork in a skillet with the mojo 3–4 minutes, until the edges brown.",
+        "Mix the onion with the pique and let sit 10 minutes (it pickles a little).",
+        "Toast the rolls and spread a thin layer of mayonnaise.",
+        "Fill with the pork, bits of crackling and the onion with pique. Guavate, in a sandwich."
+      ]
+    }
+  },
+  {
+    id: "choripan-boricua",
+    category: "emparedados",
+    name: { es: "Choripán Boricua (Longaniza en Pan con Chimichurri)", en: "Puerto Rican Choripán (Longaniza Sandwich with Chimichurri)" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de longaniza, en 4 pedazos",
+        "1 libra de pan de agua (un pan largo), en 4 pedazos",
+        "¼ taza de aceite de oliva con perejil, ajo y vinagre (chimichurri)",
+        "1 pimiento rojo asado en tiritas",
+        "½ taza de queso blanco rallado"
+      ],
+      en: [
+        "1 lb longaniza sausage, in 4 pieces",
+        "1 lb Puerto Rican water bread (one long loaf), in 4 pieces",
+        "¼ cup olive oil with parsley, garlic and vinegar (chimichurri)",
+        "1 roasted red pepper in strips",
+        "½ cup grated white cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Abra la longaniza a lo largo sin separarla (en mariposa) para que se cocine pareja.",
+        "Ásela a la parrilla o la plancha a fuego medio 4–5 minutos por lado, hasta que esté dorada y bien cocida (160°F).",
+        "Tueste los panes.",
+        "Ponga la longaniza en el pan con el chimichurri, el pimiento y el queso. Para el pasadía o la parrilla."
+      ],
+      en: [
+        "Butterfly the sausage lengthwise without separating it so it cooks evenly.",
+        "Grill or griddle over medium heat 4–5 minutes per side, until browned and fully cooked (160°F).",
+        "Toast the rolls.",
+        "Put the sausage in the bread with the chimichurri, pepper and cheese. For cookouts and the grill."
+      ]
+    }
+  },
+  {
+    id: "sandwich-queso-guayaba",
+    category: "emparedados",
+    name: { es: "Sándwich de Queso Derretido con Guayaba", en: "Grilled Cheese with Guava" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "4 rebanadas de pan de molde o pan sobao",
+        "2 cucharadas de mantequilla",
+        "4 lascas de queso blanco o de papa",
+        "2 onzas de pasta de guayaba en lascas finas"
+      ],
+      en: [
+        "4 slices sandwich bread or pan sobao",
+        "2 tablespoons butter",
+        "4 slices white or American cheese",
+        "2 oz guava paste in thin slices"
+      ]
+    },
+    steps: {
+      es: [
+        "Unte la mantequilla por fuera de las rebanadas de pan.",
+        "Arme con queso, guayaba y queso (el queso por los dos lados sella la guayaba).",
+        "Dore en un sartén a fuego medio-bajo 3 minutos por lado, apretando, hasta que el pan esté dorado y el queso derretido.",
+        "Corte en triángulos. Dulce y salado, como un pastelillo de guayaba y queso."
+      ],
+      en: [
+        "Butter the outsides of the bread slices.",
+        "Build with cheese, guava and cheese (cheese on both sides seals in the guava).",
+        "Brown in a skillet over medium-low heat 3 minutes per side, pressing, until the bread is golden and the cheese melted.",
+        "Cut into triangles. Sweet and salty, like a guava and cheese pastry."
+      ]
+    }
+  },
+  {
+    id: "jibarito-pollo",
+    category: "emparedados",
+    name: { es: "Jibarito de Pollo", en: "Chicken Jibarito (Plantain Sandwich)" },
+    time: "35 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 plátanos verdes grandes",
+        "Aceite para freír",
+        "2 filetes finos de pechuga de pollo",
+        "1 cucharadita de adobo",
+        "2 cucharadas de mojo de ajo",
+        "2 lascas de queso suizo",
+        "Lechuga, tomate y cebolla",
+        "2 cucharadas de mayo-ketchup"
+      ],
+      en: [
+        "2 large green plantains",
+        "Oil for frying",
+        "2 thin chicken breast cutlets",
+        "1 teaspoon adobo",
+        "2 tablespoons garlic mojo",
+        "2 slices Swiss cheese",
+        "Lettuce, tomato and onion",
+        "2 tablespoons mayo-ketchup"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los plátanos y córtelos a lo largo en dos. Fríalos a 325°F 4 minutos, hasta que estén blandos sin dorar.",
+        "Aplástelos entre dos tablas o con el fondo de un plato hasta ¼ de pulgada y fríalos otra vez a 375°F hasta que estén crujientes. Sale con sal.",
+        "Adobe el pollo y hágalo a la plancha 3–4 minutos por lado, hasta 165°F. Báñelo con el mojo y póngale el queso para que se derrita.",
+        "Use los plátanos como pan: mayo-ketchup, lechuga, tomate, cebolla, el pollo con queso y la otra tajada de plátano."
+      ],
+      en: [
+        "Peel the plantains and cut them lengthwise in two. Fry at 325°F 4 minutes, until soft but not browned.",
+        "Flatten them between two boards or with the bottom of a plate to ¼ inch and fry again at 375°F until crisp. Salt them.",
+        "Season the chicken and griddle 3–4 minutes per side, to 165°F. Drizzle with the mojo and top with the cheese to melt.",
+        "Use the plantains as bread: mayo-ketchup, lettuce, tomato, onion, the chicken with cheese and the other plantain slab."
+      ]
+    }
+  },
+  {
+    id: "sandwich-club-boricua",
+    category: "emparedados",
+    name: { es: "Sándwich Club Boricua", en: "Puerto Rican Club Sandwich" },
+    time: "20 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "6 rebanadas de pan de molde, tostadas",
+        "3 cucharadas de mayo-ketchup",
+        "4 lascas de pechuga de pavo",
+        "4 lascas de jamón",
+        "4 tiras de tocineta, cocidas",
+        "2 lascas de queso suizo",
+        "Hojas de lechuga y ruedas de tomate",
+        "Papitas de lata para acompañar"
+      ],
+      en: [
+        "6 slices sandwich bread, toasted",
+        "3 tablespoons mayo-ketchup",
+        "4 slices turkey breast",
+        "4 slices ham",
+        "4 strips bacon, cooked",
+        "2 slices Swiss cheese",
+        "Lettuce leaves and tomato slices",
+        "Shoestring potato sticks on the side"
+      ]
+    },
+    steps: {
+      es: [
+        "Unte mayo-ketchup en las tostadas.",
+        "Primer piso: tostada, pavo, queso y lechuga. Ponga otra tostada encima.",
+        "Segundo piso: jamón, tocineta y tomate, y cierre con la última tostada.",
+        "Asegure con 4 palillos y corte en 4 triángulos. Se sirve con papitas."
+      ],
+      en: [
+        "Spread mayo-ketchup on the toast.",
+        "First level: toast, turkey, cheese and lettuce. Add another slice of toast.",
+        "Second level: ham, bacon and tomato, and close with the last toast.",
+        "Secure with 4 toothpicks and cut into 4 triangles. Serve with potato sticks."
+      ]
+    }
+  },
+  {
+    id: "wrap-pollo-aguacate",
+    category: "emparedados",
+    name: { es: "Wrap de Pollo a la Plancha con Aguacate y Recao", en: "Grilled Chicken Wrap with Avocado and Culantro" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de pechuga de pollo en filetes",
+        "1 cucharadita de adobo",
+        "1 cucharada de aceite de oliva",
+        "4 tortillas de harina grandes",
+        "1 aguacate majado con limón y sal",
+        "1 taza de lechuga picada",
+        "1 tomate en cubitos",
+        "¼ taza de aderezo de cilantro y ajo",
+        "2 cucharadas de recao picado"
+      ],
+      en: [
+        "1 lb chicken breast cutlets",
+        "1 teaspoon adobo",
+        "1 tablespoon olive oil",
+        "4 large flour tortillas",
+        "1 avocado mashed with lime and salt",
+        "1 cup chopped lettuce",
+        "1 tomato, diced",
+        "¼ cup cilantro garlic dressing",
+        "2 tablespoons chopped culantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el pollo y hágalo a la plancha con el aceite 4 minutos por lado, hasta 165°F. Córtelo en tiras.",
+        "Caliente las tortillas 20 segundos por lado para que no se rompan al enrollar.",
+        "Unte el aguacate en el centro, ponga el pollo, la lechuga, el tomate, el recao y el aderezo.",
+        "Doble los lados hacia adentro y enrolle apretado. Corte en diagonal. Bueno para llevar."
+      ],
+      en: [
+        "Season the chicken and griddle with the oil 4 minutes per side, to 165°F. Slice into strips.",
+        "Warm the tortillas 20 seconds per side so they don't tear when rolling.",
+        "Spread the avocado in the center, add the chicken, lettuce, tomato, culantro and dressing.",
+        "Fold in the sides and roll up tightly. Cut on the diagonal. Good to go."
+      ]
+    }
+  },
+  {
+    id: "sandwich-pavochon",
+    category: "emparedados",
+    name: { es: "Sándwich de Pavochón (con lo que Sobra)", en: "Pavochón Sandwich (Leftover Turkey)" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de pavochón o pavo asado, en lascas",
+        "1 libra de pan sobao, en 4 pedazos",
+        "¼ taza de mayonesa",
+        "2 cucharadas de mojo de ajo",
+        "1 taza de ensalada de repollo",
+        "4 lascas de queso blanco"
+      ],
+      en: [
+        "1 lb pavochón or roast turkey, sliced",
+        "1 lb pan sobao, in 4 pieces",
+        "¼ cup mayonnaise",
+        "2 tablespoons garlic mojo",
+        "1 cup coleslaw",
+        "4 slices white cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el pavo en un sartén con el mojo 2–3 minutos (que no se seque).",
+        "Tueste los panes y úntelos con mayonesa.",
+        "Arme con el queso, el pavo caliente y la ensalada de repollo encima.",
+        "El pavo que sobró debe haberse guardado en la nevera dentro de las 2 horas de cocinado y comerse en 3–4 días."
+      ],
+      en: [
+        "Warm the turkey in a skillet with the mojo 2–3 minutes (don't let it dry out).",
+        "Toast the rolls and spread with mayonnaise.",
+        "Build with the cheese, the warm turkey and the coleslaw on top.",
+        "Leftover turkey should have gone into the fridge within 2 hours of cooking and be eaten within 3–4 days."
       ]
     }
   }

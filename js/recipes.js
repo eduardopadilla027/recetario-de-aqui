@@ -5091,7 +5091,7 @@ const recipes = [
     servings: 4,
     ingredients: {
       es: [
-        "4 panes de agua (pan cubano) o baguettes",
+        "1 libra de pan de agua (pan cubano) o baguette, en 4 pedazos",
         "½ lb de pernil asado, cortado fino",
         "½ lb de jamón cocido",
         "4 lonjas de queso suizo",
@@ -5100,7 +5100,7 @@ const recipes = [
         "Mantequilla para la plancha"
       ],
       en: [
-        "4 Cuban bread rolls or baguettes",
+        "1 lb Cuban bread or baguette, in 4 pieces",
         "½ lb roast pork, thinly sliced",
         "½ lb cooked ham",
         "4 slices Swiss cheese",
@@ -6753,7 +6753,7 @@ const recipes = [
     servings: 4,
     ingredients: {
       es: [
-        "4 panes largos de agua o pan sobao",
+        "1 libra de pan de agua o pan sobao (un pan largo), en 4 pedazos",
         "½ lb de bistec, cortado fino y guisado",
         "½ lb de pollo, cortado fino y guisado",
         "½ lb de pernil o jamón",
@@ -6763,7 +6763,7 @@ const recipes = [
         "Queso americano (opcional)"
       ],
       en: [
-        "4 long bread rolls",
+        "1 lb long water bread or pan sobao, in 4 pieces",
         "½ lb steak, thinly sliced and seasoned",
         "½ lb chicken, thinly sliced and seasoned",
         "½ lb roast pork or ham",

@@ -373,6 +373,17 @@ const meatIcons = {
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
   [/^milanesa|a la milanesa/, "svg:ic-empanado"],
+  // Emparedados según el pan y el relleno.
+  [/^sandwich de (churrasco|bistec)|^tripleta/, "svg:ic-sandwich-churrasco"],
+  [/^sandwich de (lechon|pernil)/, "svg:ic-sandwich-lechon"],
+  [/^choripan/, "svg:ic-choripan"],
+  [/^sandwich de pavochon/, "svg:ic-sandwich-pavochon"],
+  [/^sandwich de pescado/, "svg:ic-sandwich-pescado"],
+  [/^sandwich de desayuno/, "svg:ic-sandwich-desayuno"],
+  [/^sandwich de queso derretido/, "svg:ic-sandwich-queso-guayaba"],
+  [/^sandwich club/, "svg:ic-sandwich-club"],
+  [/^wrap/, "svg:ic-wrap-pollo"],
+  [/^jibarito/, "svg:ic-jibarito"],
   // Tragos tropicales en su vaso.
   [/^painkiller/, "svg:ic-trago-painkiller"],
   [/^guanabana colada/, "svg:ic-trago-guanabana"],
