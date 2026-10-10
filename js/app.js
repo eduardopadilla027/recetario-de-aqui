@@ -420,7 +420,30 @@ const dessertIcons = [
   [/galletas de cafe/, "svg:ic-galleta-cafe"],
   [/galletas maria/, "svg:ic-galleta-maria"],
   [/galletas de soda/, "svg:ic-galleta-soda"],
-  [/tipo danesas/, "svg:ic-galleta-danesa"]
+  [/tipo danesas/, "svg:ic-galleta-danesa"],
+  // Pies: el relleno lleva el color de su fruta y la cubierta según el tipo.
+  [/^pie de pina colada/, "svg:ic-pie-pina-colada"],
+  [/^pie de pina/, "svg:ic-pie-pina"],
+  [/^pie de mango/, "svg:ic-pie-mango"],
+  [/^pie de parcha/, "svg:ic-pie-merengue"],
+  [/^pie de limon/, "svg:ic-pie-limon"],
+  [/^pie de guineo/, "svg:ic-pie-guineo"],
+  [/^pie frio de guanabana/, "svg:ic-pie-guanabana"],
+  [/^pie de calabaza|^pastel \(pie\) de batata/, "svg:ic-pie-calabaza"],
+  [/^pie de coco/, "svg:ic-pie-coco"],
+  [/^pastel de guayaba/, "svg:ic-pie-guayaba"],
+  // Salsas y aderezos para carnes y pollo.
+  [/^chimichurri/, "svg:ic-salsa-chimichurri"],
+  [/^salsa bbq de guayaba/, "svg:ic-salsa-bbq"],
+  [/^salsa bbq de tamarindo/, "svg:ic-salsa-tamarindo"],
+  [/^mojo de naranja agria/, "svg:ic-salsa-mojo"],
+  [/^glaseado de parcha/, "svg:ic-salsa-parcha"],
+  [/^aderezo de mostaza/, "svg:ic-salsa-mostaza-miel"],
+  [/^salsa agridulce/, "svg:ic-salsa-agridulce"],
+  [/^aderezo cremoso de cilantro/, "svg:ic-salsa-cilantro"],
+  [/^salsa de champinones/, "svg:ic-salsa-champinones"],
+  [/^adobo mojado/, "svg:ic-pilon-adobo"],
+  [/^salsa de pique/, "svg:ic-salsa-pique"]
 ];
 
 function dishIcon(recipe) {

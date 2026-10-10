@@ -190,9 +190,12 @@ function smartSearch(query, ctx) {
   const terms = [], excludes = [], ideas = [], corrections = [];
   const vocab = sGetVocab();
   const vocabSet = new Set(vocab);
+  // "salsa para pollo", "postre para niños": lo que va después de "para" es el uso, no el plato.
+  let afterPara = false;
 
   for (let i = 0; i < words.length; i++) {
     let w = words[i];
+    if ((w === "para" || w === "for") && terms.length) { afterPara = true; continue; }
     // Exclusiones: "sin X", "no X", "without X", "libre de X", "X free".
     let negate = false;
     if (["sin", "no", "without", "excepto", "except"].includes(w) && words[i + 1]) { negate = true; w = words[++i]; }
@@ -219,7 +222,7 @@ function smartSearch(query, ctx) {
       }
       if (best) { corrections.push({ from: w, to: best }); variants = sVariants(best); }
     }
-    terms.push({ text: w, variants, weak: sWeak(variants[0]), cats: cats.length ? cats : sCatsFor(variants[0]), prefix: isLast && stem.length >= 3 });
+    terms.push({ text: w, variants, weak: sWeak(variants[0]), cats: cats.length ? cats : sCatsFor(variants[0]), prefix: isLast && stem.length >= 3, use: afterPara });
   }
 
   if (!terms.length && !excludes.length && !ideas.length) return null;
@@ -227,6 +230,11 @@ function smartSearch(query, ctx) {
   if (excludes.some((e) => ["alcohol", "alcoholico", "alcoholica", "ron", "rum", "licor"].includes(e.stem))) {
     terms.forEach((t) => { if (t.cats.includes("cocteles")) t.cats = ["bebidas", "jugos", "cocteles"]; });
   }
+
+  // Si lo de antes de "para" es una categoría, se busca en ella y el uso sólo ordena.
+  const headCats = terms.filter((t) => !t.use).flatMap((t) => t.cats);
+  const scoped = headCats.length > 0 && terms.some((t) => t.use);
+  const required = scoped ? terms.filter((t) => !t.use).length : terms.length;
 
   const scoreTerm = (r, x, t) => {
     let s = 0;
@@ -262,9 +270,10 @@ function smartSearch(query, ctx) {
       const x = sIndex(r);
       if (excluded(r, x)) continue;
       if (!ideas.every((idea) => idea.test(r, x, ctx))) continue;
-      let total = 0, hits = 0;
-      for (const t of terms) { const s = scoreTerm(r, x, t); if (s) { hits++; total += s; } }
-      if (terms.length && (needAll ? hits < terms.length : hits === 0)) continue;
+      if (scoped && !headCats.includes(r.category)) continue;
+      let total = 0, hits = 0, reqHits = 0;
+      for (const t of terms) { const s = scoreTerm(r, x, t); if (s) { hits++; total += s; if (!scoped || !t.use) reqHits++; } }
+      if (terms.length && (needAll ? reqHits < required : hits === 0)) continue;
       // Desempates: el nombre contiene la frase buscada tal cual, o empieza con ella.
       if (phrase.length > 2) {
         const nm = ` ${sNorm(r.name.es)} ${sNorm(r.name.en)} `;

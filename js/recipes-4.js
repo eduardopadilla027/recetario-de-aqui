@@ -35,6 +35,9 @@
  * Decimoquinta tanda: galletas (cucas de melao de panadería, muñequitos de jengibre,
  * melao y especias, Marías, espirales de guayaba, alfajores…) y más postres (natilla
  * de chocolate, tembleque de calabaza, helados de guayaba y mangó…).
+ * Decimosexta tanda: pies tropicales (piña, mangó, parcha con merengue, limón, guineo,
+ * piña colada, calabaza, guanábana) y salsas y aderezos para carnes y pollo
+ * (chimichurri, BBQ de guayaba y tamarindo, mojo de naranja agria, adobo mojado…).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -8802,6 +8805,825 @@ recipes.push(
         "Mix the purée with the condensed milk.",
         "Whip the cream to stiff peaks and gently fold it into the mango mixture, keeping the air in.",
         "Pour into a pan, cover and freeze 6 hours. Take it out 5 minutes before serving so it scoops easily."
+      ]
+    }
+  },
+
+  // ── Decimosexta tanda (2026-10): pies tropicales y salsas y aderezos para carnes y pollo ──
+  {
+    id: "pie-pina",
+    category: "pasteles_dulces",
+    name: { es: "Pie de Piña con Rejilla", en: "Lattice-Top Pineapple Pie" },
+    time: "1 hr 20 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 masas para pie de 9 pulgadas (una para la base y otra para la rejilla)",
+        "1 lata de 20 onzas de piña triturada en su jugo",
+        "½ taza de azúcar",
+        "3 cucharadas de maicena",
+        "1 cucharada de mantequilla",
+        "½ cucharadita de canela en polvo",
+        "1 huevo batido (para barnizar)"
+      ],
+      en: [
+        "2 pie crusts, 9 inch (one for the bottom and one for the lattice)",
+        "1 can (20 oz) crushed pineapple in juice",
+        "½ cup sugar",
+        "3 tablespoons cornstarch",
+        "1 tablespoon butter",
+        "½ teaspoon ground cinnamon",
+        "1 beaten egg (for brushing)"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, mezcle la piña con su jugo, el azúcar, la maicena y la canela. Cocine moviendo hasta que hierva y espese, unos 5 minutos. Añada la mantequilla y deje refrescar.",
+        "Caliente el horno a 400°F. Forre un molde de pie con una masa y vierta el relleno frío.",
+        "Corte la otra masa en tiras de 1 pulgada y téjalas encima en forma de rejilla. Selle los bordes.",
+        "Barnice con el huevo y hornee 15 minutos; baje a 350°F y siga 25–30 minutos, hasta que la masa esté dorada.",
+        "Deje refrescar 2 horas antes de cortar para que el relleno asiente."
+      ],
+      en: [
+        "In a pot, mix the pineapple with its juice, sugar, cornstarch and cinnamon. Cook, stirring, until it boils and thickens, about 5 minutes. Add the butter and let cool.",
+        "Heat the oven to 400°F. Line a pie pan with one crust and pour in the cooled filling.",
+        "Cut the other crust into 1-inch strips and weave them on top in a lattice. Seal the edges.",
+        "Brush with the egg and bake 15 minutes; lower to 350°F and continue 25–30 minutes, until golden.",
+        "Let cool 2 hours before slicing so the filling sets."
+      ]
+    }
+  },
+  {
+    id: "pie-mango",
+    category: "pasteles_dulces",
+    name: { es: "Pie de Mangó", en: "Mango Pie" },
+    time: "1 hr 15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 masas para pie de 9 pulgadas",
+        "4 tazas de mangó maduro pero firme, en lascas",
+        "½ taza de azúcar",
+        "3 cucharadas de maicena",
+        "1 cucharada de jugo de limón",
+        "½ cucharadita de canela en polvo",
+        "¼ cucharadita de jengibre molido",
+        "1 huevo batido (para barnizar)"
+      ],
+      en: [
+        "2 pie crusts, 9 inch",
+        "4 cups ripe but firm mango, sliced",
+        "½ cup sugar",
+        "3 tablespoons cornstarch",
+        "1 tablespoon lime juice",
+        "½ teaspoon ground cinnamon",
+        "¼ teaspoon ground ginger",
+        "1 beaten egg (for brushing)"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400°F. Mezcle el mangó con el azúcar, la maicena, el limón y las especias; deje reposar 10 minutos.",
+        "Forre un molde con una masa y añada el mangó con su jugo.",
+        "Cubra con la otra masa (entera con cortes para el vapor, o en rejilla) y selle los bordes.",
+        "Barnice con el huevo y hornee 15 minutos; baje a 350°F y siga 30–35 minutos, hasta que el relleno burbujee.",
+        "Deje enfriar por completo antes de cortar. Use mangó que no esté muy blando para que mantenga la forma."
+      ],
+      en: [
+        "Heat the oven to 400°F. Toss the mango with the sugar, cornstarch, lime juice and spices; let sit 10 minutes.",
+        "Line a pan with one crust and add the mango with its juices.",
+        "Top with the other crust (whole with vents, or as a lattice) and seal the edges.",
+        "Brush with the egg and bake 15 minutes; lower to 350°F and continue 30–35 minutes, until the filling bubbles.",
+        "Let cool completely before slicing. Use mango that isn't too soft so it holds its shape."
+      ]
+    }
+  },
+  {
+    id: "pie-parcha-merengue",
+    category: "pasteles_dulces",
+    name: { es: "Pie de Parcha con Merengue", en: "Passion Fruit Meringue Pie" },
+    time: "1 hr 15 min + 3 hr de nevera",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 masa para pie de 9 pulgadas, horneada",
+        "1 lata de 14 onzas de leche condensada",
+        "½ taza de pulpa de parcha, colada",
+        "4 yemas de huevo",
+        "Merengue: 4 claras de huevo",
+        "½ taza de azúcar",
+        "¼ cucharadita de cremor tártaro"
+      ],
+      en: [
+        "1 pie crust, 9 inch, baked",
+        "1 can (14 oz) sweetened condensed milk",
+        "½ cup passion fruit pulp, strained",
+        "4 egg yolks",
+        "Meringue: 4 egg whites",
+        "½ cup sugar",
+        "¼ teaspoon cream of tartar"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F. Bata la leche condensada con las yemas y añada la parcha: la mezcla espesa enseguida.",
+        "Vierta en la masa horneada y hornee 15 minutos para cocinar las yemas.",
+        "Para el merengue: bata las claras con el cremor tártaro hasta que hagan espuma y añada el azúcar poco a poco hasta tener picos firmes y brillantes.",
+        "Cubra el relleno caliente con el merengue, sellando hasta el borde de la masa (así no se encoge), y haga picos con una cuchara.",
+        "Hornee 12–15 minutos más, hasta que el merengue dore. Deje refrescar y refrigere 3 horas."
+      ],
+      en: [
+        "Heat the oven to 350°F. Whisk the condensed milk with the yolks and add the passion fruit: the mixture thickens right away.",
+        "Pour into the baked crust and bake 15 minutes to cook the yolks.",
+        "For the meringue: beat the whites with the cream of tartar until foamy and add the sugar gradually to stiff, glossy peaks.",
+        "Spread the meringue over the hot filling, sealing it to the crust edge (so it doesn't shrink), and make peaks with a spoon.",
+        "Bake 12–15 more minutes, until the meringue is golden. Let cool and refrigerate 3 hours."
+      ]
+    }
+  },
+  {
+    id: "pie-limon",
+    category: "pasteles_dulces",
+    name: { es: "Pie de Limón (con Limón del País)", en: "Puerto Rican Lime Pie" },
+    time: "40 min + 3 hr de nevera",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1½ tazas de galleta molida (galletas María o graham)",
+        "6 cucharadas de mantequilla, derretida",
+        "2 cucharadas de azúcar",
+        "1 lata de 14 onzas de leche condensada",
+        "½ taza de jugo de limón del país",
+        "1 cucharada de ralladura de limón",
+        "3 yemas de huevo",
+        "1 taza de crema batida para decorar"
+      ],
+      en: [
+        "1½ cups cookie crumbs (Maria or graham crackers)",
+        "6 tablespoons butter, melted",
+        "2 tablespoons sugar",
+        "1 can (14 oz) sweetened condensed milk",
+        "½ cup local lime juice",
+        "1 tablespoon lime zest",
+        "3 egg yolks",
+        "1 cup whipped cream for topping"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F. Mezcle la galleta molida con la mantequilla y el azúcar, y apriete en un molde de pie. Hornee 8 minutos.",
+        "Bata las yemas con la leche condensada, añada el jugo y la ralladura de limón.",
+        "Vierta en la base y hornee 15 minutos, hasta que el centro apenas tiemble.",
+        "Deje refrescar y refrigere 3 horas. Decore con crema batida y ralladura de limón."
+      ],
+      en: [
+        "Heat the oven to 350°F. Mix the cookie crumbs with the butter and sugar and press into a pie pan. Bake 8 minutes.",
+        "Whisk the yolks with the condensed milk, add the lime juice and zest.",
+        "Pour into the crust and bake 15 minutes, until the center barely jiggles.",
+        "Let cool and refrigerate 3 hours. Top with whipped cream and lime zest."
+      ]
+    }
+  },
+  {
+    id: "pie-guineo-crema",
+    category: "pasteles_dulces",
+    name: { es: "Pie de Guineo y Crema", en: "Banana Cream Pie" },
+    time: "40 min + 4 hr de nevera",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 masa para pie de 9 pulgadas, horneada",
+        "2½ tazas de leche",
+        "½ taza de azúcar",
+        "¼ taza de maicena",
+        "3 yemas de huevo",
+        "2 cucharadas de mantequilla",
+        "1 cucharadita de vainilla",
+        "3 guineos maduros en ruedas",
+        "1½ tazas de crema batida"
+      ],
+      en: [
+        "1 pie crust, 9 inch, baked",
+        "2½ cups milk",
+        "½ cup sugar",
+        "¼ cup cornstarch",
+        "3 egg yolks",
+        "2 tablespoons butter",
+        "1 teaspoon vanilla",
+        "3 ripe bananas, sliced",
+        "1½ cups whipped cream"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, mezcle en frío la leche, el azúcar, la maicena y las yemas. Cocine a fuego medio moviendo sin parar hasta que espese y hierva 1 minuto.",
+        "Retire del fuego y añada la mantequilla y la vainilla. Cubra con plástico tocando la crema y deje refrescar 20 minutos.",
+        "Ponga una capa de guineo en la masa, la mitad de la crema, otra capa de guineo y el resto de la crema.",
+        "Refrigere 4 horas y cubra con crema batida antes de servir. Decore con ruedas de guineo al momento para que no se oscurezcan."
+      ],
+      en: [
+        "In a pot, whisk the cold milk, sugar, cornstarch and yolks. Cook over medium heat, stirring constantly, until thick and boiling 1 minute.",
+        "Remove from the heat and add the butter and vanilla. Cover with plastic touching the custard and let cool 20 minutes.",
+        "Layer banana slices in the crust, half the custard, another layer of banana and the rest of the custard.",
+        "Refrigerate 4 hours and top with whipped cream before serving. Garnish with banana slices at the last minute so they don't brown."
+      ]
+    }
+  },
+  {
+    id: "pie-pina-colada",
+    category: "pasteles_dulces",
+    name: { es: "Pie de Piña Colada (Sin Alcohol)", en: "Piña Colada Pie (Alcohol-Free)" },
+    time: "30 min + 4 hr de nevera",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1½ tazas de galleta molida",
+        "6 cucharadas de mantequilla, derretida",
+        "1 lata de 15 onzas de crema de coco",
+        "8 onzas de queso crema, blando",
+        "1 lata de 8 onzas de piña triturada, bien escurrida",
+        "1 sobre de gelatina sin sabor",
+        "¼ taza de agua fría",
+        "1 taza de crema batida",
+        "¼ taza de coco rallado, tostado"
+      ],
+      en: [
+        "1½ cups cookie crumbs",
+        "6 tablespoons butter, melted",
+        "1 can (15 oz) cream of coconut",
+        "8 oz cream cheese, softened",
+        "1 can (8 oz) crushed pineapple, well drained",
+        "1 envelope unflavored gelatin",
+        "¼ cup cold water",
+        "1 cup whipped cream",
+        "¼ cup shredded coconut, toasted"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la galleta molida con la mantequilla y apriete en un molde de pie. Refrigere mientras prepara el relleno.",
+        "Hidrate la gelatina en el agua fría 5 minutos y derrítala 20 segundos en el microondas.",
+        "Bata el queso crema con la crema de coco hasta que esté liso; añada la gelatina y la piña.",
+        "Una con cuidado la crema batida y vierta en la base.",
+        "Refrigere 4 horas y decore con el coco tostado. Todo el sabor del trago, sin alcohol."
+      ],
+      en: [
+        "Mix the cookie crumbs with the butter and press into a pie pan. Refrigerate while you make the filling.",
+        "Bloom the gelatin in the cold water 5 minutes and melt it 20 seconds in the microwave.",
+        "Beat the cream cheese with the cream of coconut until smooth; add the gelatin and pineapple.",
+        "Gently fold in the whipped cream and pour into the crust.",
+        "Refrigerate 4 hours and top with the toasted coconut. All the flavor of the drink, without alcohol."
+      ]
+    }
+  },
+  {
+    id: "pie-calabaza-boricua",
+    category: "pasteles_dulces",
+    name: { es: "Pie de Calabaza a lo Boricua", en: "Puerto Rican-Style Pumpkin Pie" },
+    time: "1 hr 15 min + 2 hr de nevera",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 masa para pie de 9 pulgadas",
+        "2 tazas de calabaza cocida y majada, bien escurrida",
+        "1 lata de 13.5 onzas de leche de coco",
+        "¾ taza de azúcar morena",
+        "3 huevos",
+        "1½ cucharaditas de canela en polvo",
+        "½ cucharadita de jengibre molido",
+        "¼ cucharadita de clavo molido",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "1 pie crust, 9 inch",
+        "2 cups cooked, mashed calabaza (West Indian pumpkin), well drained",
+        "1 can (13.5 oz) coconut milk",
+        "¾ cup brown sugar",
+        "3 eggs",
+        "1½ teaspoons ground cinnamon",
+        "½ teaspoon ground ginger",
+        "¼ teaspoon ground cloves",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 425°F y forre un molde de pie con la masa.",
+        "Licúe la calabaza con la leche de coco, el azúcar morena, los huevos, las especias y la sal hasta que quede liso.",
+        "Vierta en la masa y hornee 15 minutos; baje a 350°F y siga 35–40 minutos, hasta que el centro apenas tiemble.",
+        "Deje enfriar y refrigere 2 horas. La leche de coco en vez de la evaporada le da el toque isleño."
+      ],
+      en: [
+        "Heat the oven to 425°F and line a pie pan with the crust.",
+        "Blend the calabaza with the coconut milk, brown sugar, eggs, spices and salt until smooth.",
+        "Pour into the crust and bake 15 minutes; lower to 350°F and continue 35–40 minutes, until the center barely jiggles.",
+        "Let cool and refrigerate 2 hours. Coconut milk instead of evaporated milk gives it the island touch."
+      ]
+    }
+  },
+  {
+    id: "pie-guanabana",
+    category: "pasteles_dulces",
+    name: { es: "Pie Frío de Guanábana", en: "No-Bake Soursop Pie" },
+    time: "30 min + 4 hr de nevera",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1½ tazas de galleta molida",
+        "6 cucharadas de mantequilla, derretida",
+        "1½ tazas de pulpa de guanábana, sin semillas",
+        "1 lata de 14 onzas de leche condensada",
+        "8 onzas de queso crema, blando",
+        "1 sobre de gelatina sin sabor",
+        "¼ taza de agua fría",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "1½ cups cookie crumbs",
+        "6 tablespoons butter, melted",
+        "1½ cups soursop pulp, seeded",
+        "1 can (14 oz) sweetened condensed milk",
+        "8 oz cream cheese, softened",
+        "1 envelope unflavored gelatin",
+        "¼ cup cold water",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la galleta molida con la mantequilla y apriete en un molde de pie. Refrigere.",
+        "Hidrate la gelatina en el agua fría 5 minutos y derrítala 20 segundos en el microondas.",
+        "Licúe la guanábana con la leche condensada, el queso crema y el limón. Añada la gelatina y licúe unos segundos más.",
+        "Vierta en la base y refrigere 4 horas, hasta que esté firme. Decore con pulpa de guanábana o hojitas de menta."
+      ],
+      en: [
+        "Mix the cookie crumbs with the butter and press into a pie pan. Refrigerate.",
+        "Bloom the gelatin in the cold water 5 minutes and melt it 20 seconds in the microwave.",
+        "Blend the soursop with the condensed milk, cream cheese and lime juice. Add the gelatin and blend a few more seconds.",
+        "Pour into the crust and refrigerate 4 hours, until firm. Garnish with soursop pulp or mint leaves."
+      ]
+    }
+  },
+  {
+    id: "chimichurri-boricua",
+    category: "salsas",
+    name: { es: "Chimichurri Boricua con Recao", en: "Puerto Rican Chimichurri with Culantro" },
+    time: "15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de perejil picado fino",
+        "½ taza de recao picado fino",
+        "6 dientes de ajo, majados",
+        "1 cucharadita de orégano seco",
+        "½ cucharadita de hojuelas de ají (opcional)",
+        "¼ taza de vinagre",
+        "¾ taza de aceite de oliva",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "1 cup finely chopped parsley",
+        "½ cup finely chopped culantro",
+        "6 garlic cloves, mashed",
+        "1 teaspoon dried oregano",
+        "½ teaspoon red pepper flakes (optional)",
+        "¼ cup vinegar",
+        "¾ cup olive oil",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el perejil, el recao, el ajo, el orégano y el ají en un envase.",
+        "Disuelva la sal en el vinagre y añádalo.",
+        "Añada el aceite y mezcle. Deje reposar 20 minutos para que se mezclen los sabores.",
+        "Sirva sobre churrasco, bistec, chuletas o pollo a la parrilla. Se guarda en la nevera hasta 1 semana."
+      ],
+      en: [
+        "Combine the parsley, culantro, garlic, oregano and pepper flakes in a jar.",
+        "Dissolve the salt in the vinegar and add it.",
+        "Add the oil and stir. Let rest 20 minutes so the flavors blend.",
+        "Serve over skirt steak, steak, pork chops or grilled chicken. It keeps in the fridge up to 1 week."
+      ]
+    }
+  },
+  {
+    id: "salsa-bbq-guayaba",
+    category: "salsas",
+    name: { es: "Salsa BBQ de Guayaba", en: "Guava BBQ Sauce" },
+    time: "25 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "8 onzas de pasta de guayaba, en cubos",
+        "½ taza de agua",
+        "½ taza de ketchup",
+        "¼ taza de vinagre",
+        "2 cucharadas de salsa inglesa",
+        "2 cucharadas de jugo de limón",
+        "3 dientes de ajo, majados",
+        "1 cucharadita de comino",
+        "1 cucharadita de pimentón",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "8 oz guava paste, cubed",
+        "½ cup water",
+        "½ cup ketchup",
+        "¼ cup vinegar",
+        "2 tablespoons Worcestershire sauce",
+        "2 tablespoons lime juice",
+        "3 garlic cloves, mashed",
+        "1 teaspoon cumin",
+        "1 teaspoon paprika",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la pasta de guayaba con el agua a fuego bajo, moviendo, hasta que esté lisa.",
+        "Añada el resto de los ingredientes y cocine a fuego bajo 10–15 minutos, moviendo, hasta que espese.",
+        "Para pinchos, costillas, alitas o pollo a la parrilla: úntela en los últimos 10 minutos de cocción para que no se queme.",
+        "Separe una porción para servir en la mesa y no use la brocha que tocó carne cruda. Se guarda 2 semanas en la nevera."
+      ],
+      en: [
+        "Melt the guava paste with the water over low heat, stirring, until smooth.",
+        "Add the rest of the ingredients and simmer 10–15 minutes, stirring, until thick.",
+        "For skewers, ribs, wings or grilled chicken: brush it on in the last 10 minutes of cooking so it doesn't burn.",
+        "Set aside a portion for the table and don't use the brush that touched raw meat. Keeps 2 weeks in the fridge."
+      ]
+    }
+  },
+  {
+    id: "salsa-bbq-tamarindo",
+    category: "salsas",
+    name: { es: "Salsa BBQ de Tamarindo", en: "Tamarind BBQ Sauce" },
+    time: "30 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "½ taza de pulpa de tamarindo, sin semillas",
+        "1 taza de agua caliente",
+        "½ taza de ketchup",
+        "½ taza de azúcar morena",
+        "2 cucharadas de salsa de soya",
+        "1 cucharada de melao",
+        "3 dientes de ajo, majados",
+        "1 cucharadita de jengibre fresco rallado",
+        "½ cucharadita de pimienta"
+      ],
+      en: [
+        "½ cup tamarind pulp, seeded",
+        "1 cup hot water",
+        "½ cup ketchup",
+        "½ cup brown sugar",
+        "2 tablespoons soy sauce",
+        "1 tablespoon molasses",
+        "3 garlic cloves, mashed",
+        "1 teaspoon grated fresh ginger",
+        "½ teaspoon pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje el tamarindo en el agua caliente 15 minutos, apriételo con los dedos y cuele, apretando para sacar toda la pulpa.",
+        "Ponga el líquido en una olla con el resto de los ingredientes.",
+        "Cocine a fuego bajo 12–15 minutos, moviendo, hasta que espese y brille.",
+        "Ácida y dulce: va muy bien con costillas, pernil y alitas. Úntela al final de la cocción."
+      ],
+      en: [
+        "Soak the tamarind in the hot water 15 minutes, squeeze it with your fingers and strain, pressing out all the pulp.",
+        "Put the liquid in a pot with the rest of the ingredients.",
+        "Simmer 12–15 minutes, stirring, until thick and glossy.",
+        "Tangy and sweet: great with ribs, roast pork and wings. Brush it on at the end of cooking."
+      ]
+    }
+  },
+  {
+    id: "mojo-naranja-agria",
+    category: "salsas",
+    name: { es: "Mojo de Naranja Agria para Pernil y Pollo", en: "Sour Orange Mojo for Roast Pork and Chicken" },
+    time: "15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de jugo de naranja agria (o ⅔ taza de jugo de china y ⅓ de limón)",
+        "10 dientes de ajo, majados",
+        "½ cebolla en ruedas finas",
+        "1 cucharadita de orégano seco",
+        "1 cucharadita de comino",
+        "½ taza de aceite de oliva",
+        "1½ cucharaditas de sal",
+        "½ cucharadita de pimienta"
+      ],
+      en: [
+        "1 cup sour orange juice (or ⅔ cup orange juice and ⅓ cup lime juice)",
+        "10 garlic cloves, mashed",
+        "½ onion, thinly sliced",
+        "1 teaspoon dried oregano",
+        "1 teaspoon cumin",
+        "½ cup olive oil",
+        "1½ teaspoons salt",
+        "½ teaspoon pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Maje el ajo con la sal, el orégano, el comino y la pimienta hasta hacer una pasta.",
+        "Mézclela con el jugo de naranja agria y la cebolla.",
+        "Caliente el aceite hasta que esté tibio (no humeante), apague y añada la mezcla con cuidado: chisporrotea.",
+        "Use la mitad para marinar pernil o pollo de 4 horas a toda la noche en la nevera, y la otra mitad (sin tocar la carne cruda) para servir."
+      ],
+      en: [
+        "Mash the garlic with the salt, oregano, cumin and pepper into a paste.",
+        "Mix it with the sour orange juice and the onion.",
+        "Heat the oil until warm (not smoking), turn off the heat and carefully add the mixture: it sputters.",
+        "Use half to marinate pork or chicken 4 hours to overnight in the fridge, and the other half (never touching raw meat) for serving."
+      ]
+    }
+  },
+  {
+    id: "glaseado-parcha",
+    category: "salsas",
+    name: { es: "Glaseado de Parcha para Pollo y Cerdo", en: "Passion Fruit Glaze for Chicken and Pork" },
+    time: "15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "½ taza de pulpa de parcha, colada",
+        "½ taza de azúcar morena",
+        "2 cucharadas de salsa de soya",
+        "1 cucharada de vinagre",
+        "2 dientes de ajo, majados",
+        "1 cucharadita de maicena",
+        "2 cucharadas de agua"
+      ],
+      en: [
+        "½ cup passion fruit pulp, strained",
+        "½ cup brown sugar",
+        "2 tablespoons soy sauce",
+        "1 tablespoon vinegar",
+        "2 garlic cloves, mashed",
+        "1 teaspoon cornstarch",
+        "2 tablespoons water"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla pequeña, hierva la parcha con el azúcar morena, la soya, el vinagre y el ajo 5 minutos.",
+        "Disuelva la maicena en el agua, añádala y cocine 1 minuto más, moviendo, hasta que brille y espese.",
+        "Barnice pechugas, muslos, alitas o chuletas en los últimos minutos del horno o la parrilla.",
+        "Sirva un poco aparte, en un envase que no haya tocado la carne cruda."
+      ],
+      en: [
+        "In a small pot, boil the passion fruit with the brown sugar, soy sauce, vinegar and garlic 5 minutes.",
+        "Dissolve the cornstarch in the water, add it and cook 1 more minute, stirring, until glossy and thick.",
+        "Brush on chicken breasts, thighs, wings or pork chops in the last minutes in the oven or on the grill.",
+        "Serve some on the side, in a container that hasn't touched raw meat."
+      ]
+    }
+  },
+  {
+    id: "aderezo-mostaza-miel",
+    category: "salsas",
+    name: { es: "Aderezo de Mostaza y Miel", en: "Honey Mustard Dressing" },
+    time: "5 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "½ taza de mayonesa",
+        "¼ taza de mostaza amarilla",
+        "3 cucharadas de miel",
+        "1 cucharada de jugo de limón",
+        "1 pizca de pimentón"
+      ],
+      en: [
+        "½ cup mayonnaise",
+        "¼ cup yellow mustard",
+        "3 tablespoons honey",
+        "1 tablespoon lime juice",
+        "1 pinch of paprika"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle todos los ingredientes hasta que quede liso.",
+        "Pruebe y ajuste: más miel si lo quiere más dulce, más mostaza si lo quiere más fuerte.",
+        "Para mojar chicharrones de pollo, alitas, pechugas empanadas o como aderezo de ensalada. Guárdelo en la nevera hasta 1 semana.",
+        "No es apto para menores de 1 año por la miel."
+      ],
+      en: [
+        "Mix all the ingredients until smooth.",
+        "Taste and adjust: more honey for sweeter, more mustard for sharper.",
+        "For dipping chicken bites, wings, breaded chicken or as a salad dressing. Keeps in the fridge up to 1 week.",
+        "Not suitable for babies under 1 year because of the honey."
+      ]
+    }
+  },
+  {
+    id: "salsa-agridulce-pina",
+    category: "salsas",
+    name: { es: "Salsa Agridulce de Piña", en: "Pineapple Sweet and Sour Sauce" },
+    time: "15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 lata de 8 onzas de piña en trocitos, con su jugo",
+        "⅓ taza de azúcar morena",
+        "¼ taza de vinagre",
+        "3 cucharadas de ketchup",
+        "1 cucharada de salsa de soya",
+        "½ pimiento rojo en cuadritos",
+        "1 cucharada de maicena",
+        "2 cucharadas de agua"
+      ],
+      en: [
+        "1 can (8 oz) pineapple tidbits, with juice",
+        "⅓ cup brown sugar",
+        "¼ cup vinegar",
+        "3 tablespoons ketchup",
+        "1 tablespoon soy sauce",
+        "½ red bell pepper, diced",
+        "1 tablespoon cornstarch",
+        "2 tablespoons water"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la piña con su jugo, el azúcar morena, el vinagre, el ketchup, la soya y el pimiento 5 minutos.",
+        "Disuelva la maicena en el agua, añádala y cocine moviendo hasta que espese y brille.",
+        "Sirva sobre pollo frito, masitas de cerdo, chuletas o pinchos, o como salsa para mojar."
+      ],
+      en: [
+        "Boil the pineapple with its juice, the brown sugar, vinegar, ketchup, soy sauce and bell pepper 5 minutes.",
+        "Dissolve the cornstarch in the water, add it and cook, stirring, until thick and glossy.",
+        "Serve over fried chicken, fried pork chunks, pork chops or skewers, or as a dipping sauce."
+      ]
+    }
+  },
+  {
+    id: "aderezo-cilantro-ajo",
+    category: "salsas",
+    name: { es: "Aderezo Cremoso de Cilantro y Ajo", en: "Creamy Cilantro Garlic Sauce" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de cilantro, con tallos tiernos",
+        "¼ taza de recao",
+        "½ taza de mayonesa",
+        "½ taza de crema agria",
+        "3 dientes de ajo",
+        "2 cucharadas de jugo de limón",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1 cup cilantro, with tender stems",
+        "¼ cup culantro",
+        "½ cup mayonnaise",
+        "½ cup sour cream",
+        "3 garlic cloves",
+        "2 tablespoons lime juice",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe todos los ingredientes hasta que quede verde y liso.",
+        "Pruebe y ajuste la sal y el limón.",
+        "Refrigere 15 minutos: espesa un poco. Va con pollo a la plancha, churrasco, tostones y pinchos. Dura 4 días en la nevera."
+      ],
+      en: [
+        "Blend all the ingredients until green and smooth.",
+        "Taste and adjust the salt and lime.",
+        "Refrigerate 15 minutes: it thickens a bit. Great with grilled chicken, skirt steak, tostones and skewers. Keeps 4 days in the fridge."
+      ]
+    }
+  },
+  {
+    id: "salsa-champinones",
+    category: "salsas",
+    name: { es: "Salsa de Champiñones para Carnes", en: "Mushroom Sauce for Meats" },
+    time: "25 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "8 onzas de champiñones en lascas",
+        "2 cucharadas de mantequilla",
+        "½ cebolla picada fina",
+        "2 dientes de ajo, picados",
+        "2 cucharadas de harina de trigo",
+        "1 taza de caldo de res",
+        "½ taza de crema de leche (heavy cream)",
+        "1 cucharada de salsa inglesa",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "8 oz mushrooms, sliced",
+        "2 tablespoons butter",
+        "½ onion, finely chopped",
+        "2 garlic cloves, minced",
+        "2 tablespoons all-purpose flour",
+        "1 cup beef broth",
+        "½ cup heavy cream",
+        "1 tablespoon Worcestershire sauce",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la mantequilla y dore los champiñones a fuego alto 5 minutos, sin moverlos mucho para que se doren.",
+        "Añada la cebolla y el ajo y cocine 3 minutos.",
+        "Espolvoree la harina y mueva 1 minuto. Añada el caldo poco a poco, moviendo, y la salsa inglesa.",
+        "Añada la crema y cocine a fuego bajo 5 minutos, hasta que espese. Sazone.",
+        "Sirva sobre bistec, churrasco, chuletas, filete de cerdo o pechugas a la plancha."
+      ],
+      en: [
+        "Melt the butter and brown the mushrooms over high heat 5 minutes, without stirring too much so they brown.",
+        "Add the onion and garlic and cook 3 minutes.",
+        "Sprinkle in the flour and stir 1 minute. Gradually add the broth, stirring, and the Worcestershire sauce.",
+        "Add the cream and simmer 5 minutes, until thick. Season.",
+        "Serve over steak, skirt steak, pork chops, pork tenderloin or grilled chicken breasts."
+      ]
+    }
+  },
+  {
+    id: "adobo-mojado",
+    category: "salsas",
+    name: { es: "Adobo Mojado para Pernil y Pollo", en: "Wet Adobo Marinade for Roast Pork and Chicken" },
+    time: "10 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 cabeza de ajo, pelada",
+        "2 cucharadas de orégano seco",
+        "1 cucharada de sal",
+        "1 cucharadita de pimienta en grano",
+        "2 cucharadas de aceite de oliva",
+        "2 cucharadas de vinagre",
+        "1 sobre de sazón con achiote"
+      ],
+      en: [
+        "1 head of garlic, peeled",
+        "2 tablespoons dried oregano",
+        "1 tablespoon salt",
+        "1 teaspoon whole peppercorns",
+        "2 tablespoons olive oil",
+        "2 tablespoons vinegar",
+        "1 packet sazón with annatto"
+      ]
+    },
+    steps: {
+      es: [
+        "En el pilón, maje el ajo con la sal, el orégano y la pimienta hasta hacer una pasta (o use un procesador).",
+        "Añada el aceite, el vinagre y el sazón y mezcle.",
+        "Alcanza para un pernil de 8–10 libras o dos pollos enteros. Haga cortes en la carne, rellénelos con el adobo y unte el resto por todas partes.",
+        "Deje marinar en la nevera toda la noche (el pernil, hasta 2 días). Lávese las manos después de tocar la carne cruda."
+      ],
+      en: [
+        "In the pilón, mash the garlic with the salt, oregano and pepper into a paste (or use a food processor).",
+        "Add the oil, vinegar and sazón and mix.",
+        "Enough for an 8–10 lb pork shoulder or two whole chickens. Cut slits in the meat, stuff them with the adobo and rub the rest all over.",
+        "Marinate in the fridge overnight (the pork shoulder, up to 2 days). Wash your hands after handling raw meat."
+      ]
+    }
+  },
+  {
+    id: "salsa-pique-mantequilla",
+    category: "salsas",
+    name: { es: "Salsa de Pique y Mantequilla para Alitas", en: "Pique Butter Wing Sauce" },
+    time: "10 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "½ taza de pique de vinagre (colado)",
+        "¼ taza de mantequilla",
+        "1 cucharada de miel",
+        "2 dientes de ajo, majados",
+        "1 cucharadita de pimentón",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "½ cup vinegar pique (strained)",
+        "¼ cup butter",
+        "1 tablespoon honey",
+        "2 garlic cloves, mashed",
+        "1 teaspoon paprika",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la mantequilla a fuego bajo con el ajo 1 minuto, sin que se dore.",
+        "Añada el pique, la miel, el pimentón y la sal, y mueva hasta que se integre.",
+        "Mezcle con las alitas recién fritas u horneadas en un envase grande y sacuda para cubrirlas.",
+        "Ajuste el picante con más o menos pique. No es apta para menores de 1 año por la miel."
+      ],
+      en: [
+        "Melt the butter over low heat with the garlic 1 minute, without browning.",
+        "Add the pique, honey, paprika and salt, and stir until combined.",
+        "Toss with freshly fried or baked wings in a large container and shake to coat.",
+        "Adjust the heat with more or less pique. Not suitable for babies under 1 year because of the honey."
       ]
     }
   }
