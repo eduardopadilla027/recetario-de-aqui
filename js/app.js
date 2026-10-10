@@ -374,6 +374,22 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Postres tropicales (tanda 30): primero, para que no los tomen las reglas generales (tembleque, mangó, piña…).
+  [/^mousse de parcha/, "svg:ic-pos-mousse-parcha"],
+  [/^tres leches de mango/, "svg:ic-pos-tres-leches-mango"],
+  [/^panna cotta/, "svg:ic-pos-panna-cotta"],
+  [/^tembleque de mango/, "svg:ic-pos-tembleque-mango"],
+  [/^guineos flambeados/, "svg:ic-pos-guineos-flambeados"],
+  [/^sorbete de pina/, "svg:ic-pos-sorbete-pina"],
+  [/^pavlova/, "svg:ic-pos-pavlova"],
+  [/^copa tropical/, "svg:ic-pos-copa-tropical"],
+  [/^crumble/, "svg:ic-pos-crumble"],
+  [/^crema fria de guanabana/, "svg:ic-pos-crema-guanabana"],
+  [/^bizcocho de guineo/, "svg:ic-pos-bizcocho-guineo"],
+  [/^bizcocho de mango/, "svg:ic-pos-bizcocho-mango"],
+  [/^pastelillos de pina/, "svg:ic-pos-pastelillos-pina"],
+  [/^dulce de pina en almibar/, "svg:ic-pos-dulce-pina"],
+  [/^mango verde/, "svg:ic-pos-mango-verde"],
   [/^milanesa|a la milanesa/, "svg:ic-empanado"],
   // Pescados que antes usaban 🐟: entero, filete, ruedas, guisado o frituras según el plato.
   [/^bacalao guisado con berenjena/, "svg:ic-pez-bacalao-berenjena"],

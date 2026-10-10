@@ -71,6 +71,9 @@
  * mejillones, salmón con guayaba, tacos de pescado…), salsas y aderezos (tártara,
  * cóctel, vinagretas, ranch de recao, teriyaki de piña, pesto, queso) y cereales
  * (avena horneada, granola, quinoa con leche, panqueques de avena, avena salada).
+ * Trigésima tanda: postres tropicales (mousse de parcha, tres leches de mangó, panna
+ * cotta de coco, tembleque de mangó, pavlova, crumble de mangó, bizcochos de guineo
+ * y de mangó, pastelillos de piña, mangó verde con sal y limón…).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -17398,6 +17401,647 @@ recipes.push(
         "Fry the eggs in the oil over medium heat until the whites are set (yolk as you like it).",
         "Serve the oats in two bowls topped with the egg, avocado, tomato, scallion and pepper.",
         "It's a breakfast with more protein and less sugar than sweet oatmeal; also good with a splash of hot sauce."
+      ]
+    }
+  },
+
+  // ── Trigésima tanda (2026-10): más postres tropicales ──
+  {
+    id: "mousse-parcha",
+    category: "postres",
+    name: { es: "Mousse de Parcha", en: "Passion Fruit Mousse" },
+    time: "20 min + 4 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 lata de 14 onzas de leche condensada",
+        "1 taza de pulpa de parcha colada (sin semillas)",
+        "1 taza de crema de leche bien fría",
+        "1 sobre de gelatina sin sabor",
+        "¼ taza de agua",
+        "2 cucharadas de pulpa de parcha con semillas, para decorar"
+      ],
+      en: [
+        "1 can (14 oz) sweetened condensed milk",
+        "1 cup strained passion fruit pulp (seedless)",
+        "1 cup well-chilled heavy cream",
+        "1 envelope unflavored gelatin",
+        "¼ cup water",
+        "2 tablespoons passion fruit pulp with seeds, to garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Espolvoree la gelatina sobre el agua, déjela 5 minutos y derrítala 15 segundos en el microondas.",
+        "Licúe la leche condensada con la parcha colada y la gelatina derretida 1 minuto. La mezcla espesa sola por el ácido de la parcha.",
+        "Bata la crema hasta que forme picos suaves y únala a la mezcla de parcha con movimientos envolventes, sin batir, para que no pierda el aire.",
+        "Sirva en copas, enfríe 4 horas y decore con la parcha con semillas."
+      ],
+      en: [
+        "Sprinkle the gelatin over the water, let it sit 5 minutes and melt it 15 seconds in the microwave.",
+        "Blend the condensed milk with the strained passion fruit and melted gelatin 1 minute. The mixture thickens on its own from the fruit's acid.",
+        "Whip the cream to soft peaks and fold it into the passion fruit mixture gently, without beating, so it keeps the air.",
+        "Spoon into glasses, chill 4 hours and top with the passion fruit pulp with seeds."
+      ]
+    }
+  },
+  {
+    id: "tres-leches-mango",
+    category: "postres",
+    name: { es: "Tres Leches de Mangó", en: "Mango Tres Leches Cake" },
+    time: "1 hr + 4 hr",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 bizcocho esponjoso de vainilla de 9 × 13 pulgadas, horneado y frío",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 taza de pulpa de mangó licuada",
+        "½ taza de crema de leche",
+        "1½ tazas de crema de leche para el merengue de crema",
+        "3 cucharadas de azúcar en polvo",
+        "2 mangós maduros en cubitos"
+      ],
+      en: [
+        "1 vanilla sponge cake (9 × 13 inches), baked and cooled",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "1 cup blended mango pulp",
+        "½ cup heavy cream",
+        "1½ cups heavy cream for the whipped topping",
+        "3 tablespoons powdered sugar",
+        "2 ripe mangoes, diced"
+      ]
+    },
+    steps: {
+      es: [
+        "Pinche el bizcocho por todas partes con un tenedor, dentro del molde.",
+        "Licúe la leche condensada, la evaporada, la pulpa de mangó y ½ taza de crema. Vierta poco a poco sobre el bizcocho hasta que lo absorba todo.",
+        "Tape y enfríe por lo menos 4 horas (mejor de un día para otro).",
+        "Bata la crema restante con el azúcar en polvo hasta que forme picos, cubra el bizcocho y decore con los cubitos de mangó. Guárdelo siempre en la nevera."
+      ],
+      en: [
+        "Poke the cake all over with a fork, in its pan.",
+        "Blend the condensed milk, evaporated milk, mango pulp and ½ cup of cream. Pour slowly over the cake until it soaks it all up.",
+        "Cover and chill at least 4 hours (overnight is best).",
+        "Whip the remaining cream with the powdered sugar to peaks, spread over the cake and top with the diced mango. Always keep refrigerated."
+      ]
+    }
+  },
+  {
+    id: "panna-cotta-coco-parcha",
+    category: "postres",
+    name: { es: "Panna Cotta de Coco con Salsa de Parcha", en: "Coconut Panna Cotta with Passion Fruit Sauce" },
+    time: "20 min + 4 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 taza de crema de leche",
+        "⅓ taza de azúcar",
+        "1 sobre de gelatina sin sabor",
+        "3 cucharadas de agua",
+        "1 cucharadita de vainilla",
+        "½ taza de pulpa de parcha con semillas",
+        "3 cucharadas de azúcar para la salsa"
+      ],
+      en: [
+        "1 can (13.5 oz) coconut milk",
+        "1 cup heavy cream",
+        "⅓ cup sugar",
+        "1 envelope unflavored gelatin",
+        "3 tablespoons water",
+        "1 teaspoon vanilla",
+        "½ cup passion fruit pulp with seeds",
+        "3 tablespoons sugar for the sauce"
+      ]
+    },
+    steps: {
+      es: [
+        "Espolvoree la gelatina sobre el agua y déjela 5 minutos.",
+        "Caliente la leche de coco, la crema y el azúcar hasta que humee, sin hervir. Apague, añada la gelatina y la vainilla, y mueva hasta que se disuelva.",
+        "Vierta en 6 vasitos y enfríe 4 horas, hasta que cuaje y tiemble al moverlo.",
+        "Para la salsa, hierva la parcha con el azúcar 3 minutos y déjela enfriar. Sirva una cucharada sobre cada panna cotta."
+      ],
+      en: [
+        "Sprinkle the gelatin over the water and let it sit 5 minutes.",
+        "Heat the coconut milk, cream and sugar until steaming, without boiling. Turn off, add the gelatin and vanilla, and stir until dissolved.",
+        "Pour into 6 small glasses and chill 4 hours, until set and wobbly.",
+        "For the sauce, boil the passion fruit with the sugar 3 minutes and let it cool. Spoon some over each panna cotta."
+      ]
+    }
+  },
+  {
+    id: "tembleque-mango",
+    category: "postres",
+    name: { es: "Tembleque de Mangó", en: "Mango Tembleque" },
+    time: "25 min + 3 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 latas de 13.5 onzas de leche de coco",
+        "1 taza de pulpa de mangó licuada",
+        "½ taza de azúcar",
+        "½ taza de maicena",
+        "¼ cucharadita de sal",
+        "1 cucharadita de vainilla",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "2 cans (13.5 oz each) coconut milk",
+        "1 cup blended mango pulp",
+        "½ cup sugar",
+        "½ cup cornstarch",
+        "¼ teaspoon salt",
+        "1 teaspoon vanilla",
+        "Ground cinnamon to garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla fuera del fuego, mezcle la leche de coco, el mangó, el azúcar, la maicena y la sal hasta que no queden grumos.",
+        "Cocine a fuego medio moviendo sin parar con paleta de madera, unos 10 minutos, hasta que espese y empiece a burbujear. Cocine 1 minuto más.",
+        "Apague, añada la vainilla y vierta en un molde mojado con agua o en platitos.",
+        "Enfríe 3 horas, desmolde y espolvoree canela. Es el tembleque de siempre con el color y el sabor del mangó."
+      ],
+      en: [
+        "In a pot off the heat, mix the coconut milk, mango, sugar, cornstarch and salt until smooth.",
+        "Cook over medium heat, stirring constantly with a wooden spoon, about 10 minutes, until thick and starting to bubble. Cook 1 more minute.",
+        "Turn off, add the vanilla and pour into a mold rinsed with water or into small dishes.",
+        "Chill 3 hours, unmold and dust with cinnamon. It's classic tembleque with mango's color and flavor."
+      ]
+    }
+  },
+  {
+    id: "guineos-flambeados",
+    category: "postres",
+    name: { es: "Guineos Flambeados con Ron y Canela", en: "Rum-Flambéed Bananas with Cinnamon" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 guineos maduros pero firmes",
+        "3 cucharadas de mantequilla",
+        "⅓ taza de azúcar morena",
+        "½ cucharadita de canela",
+        "¼ taza de ron oscuro",
+        "2 tazas de mantecado de vainilla (4 bolas)"
+      ],
+      en: [
+        "4 ripe but firm bananas",
+        "3 tablespoons butter",
+        "⅓ cup brown sugar",
+        "½ teaspoon cinnamon",
+        "¼ cup dark rum",
+        "2 cups vanilla ice cream (4 scoops)"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los guineos y pártalos a lo largo y por la mitad.",
+        "En un sartén, derrita la mantequilla con el azúcar y la canela hasta que burbujee. Añada los guineos y cocine 1 minuto por lado.",
+        "Apague el fuego, añada el ron y, con un fósforo largo y el rostro lejos, enciéndalo. Mueva el sartén hasta que se apague la llama (sin campana de extractor encendida ni nada encima).",
+        "Sirva caliente sobre el mantecado. Sin flamear, cocine el ron 2 minutos; para niños, cámbielo por jugo de china."
+      ],
+      en: [
+        "Peel the bananas and halve them lengthwise and crosswise.",
+        "In a skillet, melt the butter with the sugar and cinnamon until bubbling. Add the bananas and cook 1 minute per side.",
+        "Turn off the heat, add the rum and, with a long match and your face away, light it. Shake the pan until the flame dies (nothing hanging above the pan).",
+        "Serve hot over the ice cream. Without flaming, cook the rum 2 minutes; for kids, use orange juice instead."
+      ]
+    }
+  },
+  {
+    id: "sorbete-pina-menta",
+    category: "postres",
+    name: { es: "Sorbete de Piña y Menta (Sin Máquina)", en: "Pineapple Mint Sorbet (No Machine)" },
+    time: "15 min + 6 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "4 tazas de piña fresca en cubos",
+        "½ taza de azúcar",
+        "½ taza de agua",
+        "10 hojas de menta",
+        "2 cucharadas de jugo de limón"
+      ],
+      en: [
+        "4 cups fresh pineapple chunks",
+        "½ cup sugar",
+        "½ cup water",
+        "10 mint leaves",
+        "2 tablespoons lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con el azúcar 2 minutos hasta que se disuelva. Apague, añada la menta y deje reposar 10 minutos. Cuele.",
+        "Licúe la piña con el almíbar de menta y el limón hasta que esté bien liso.",
+        "Vierta en un molde de metal y congele. Cada 45 minutos, raspe y mezcle con un tenedor, 4 veces, para que quede suave y no como bloque de hielo.",
+        "Antes de servir, déjelo 5 minutos fuera del congelador y sirva en bolas con una hojita de menta."
+      ],
+      en: [
+        "Boil the water with the sugar 2 minutes until dissolved. Turn off, add the mint and steep 10 minutes. Strain.",
+        "Blend the pineapple with the mint syrup and lime juice until very smooth.",
+        "Pour into a metal pan and freeze. Every 45 minutes, scrape and stir with a fork, 4 times, so it stays soft instead of a block of ice.",
+        "Before serving, let it sit out 5 minutes and scoop with a mint leaf."
+      ]
+    }
+  },
+  {
+    id: "pavlova-tropical",
+    category: "postres",
+    name: { es: "Pavlova Tropical de Mangó y Parcha", en: "Tropical Mango and Passion Fruit Pavlova" },
+    time: "2 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "4 claras de huevo a temperatura ambiente",
+        "1 taza de azúcar",
+        "1 cucharadita de maicena",
+        "1 cucharadita de vinagre",
+        "1 cucharadita de vainilla",
+        "1 taza de crema de leche bien fría",
+        "2 cucharadas de azúcar en polvo",
+        "1 mangó en cubitos",
+        "1 taza de fresas en mitades",
+        "¼ taza de pulpa de parcha con semillas"
+      ],
+      en: [
+        "4 egg whites at room temperature",
+        "1 cup sugar",
+        "1 teaspoon cornstarch",
+        "1 teaspoon vinegar",
+        "1 teaspoon vanilla",
+        "1 cup well-chilled heavy cream",
+        "2 tablespoons powdered sugar",
+        "1 mango, diced",
+        "1 cup strawberries, halved",
+        "¼ cup passion fruit pulp with seeds"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 250 °F. Bata las claras a punto de nieve y añada el azúcar de cucharada en cucharada, batiendo hasta que el merengue brille y no se sientan los granitos.",
+        "Añada la maicena, el vinagre y la vainilla con movimientos envolventes. Forme un círculo de 9 pulgadas sobre papel de hornear, con el centro un poco hundido.",
+        "Hornee 1 hora y 15 minutos y apague el horno; déjela enfriar adentro con la puerta entreabierta (así no se agrieta tanto).",
+        "Justo antes de servir, bata la crema con el azúcar en polvo, póngala en el centro y cubra con el mangó, las fresas y la parcha. Con humedad se ablanda: ármela al momento."
+      ],
+      en: [
+        "Heat the oven to 250 °F. Beat the egg whites to stiff peaks and add the sugar a spoonful at a time, beating until glossy and no grains remain.",
+        "Fold in the cornstarch, vinegar and vanilla. Shape a 9-inch circle on parchment, with a slight well in the center.",
+        "Bake 1 hour 15 minutes and turn off the oven; let it cool inside with the door ajar (so it cracks less).",
+        "Just before serving, whip the cream with the powdered sugar, spread it in the center and top with the mango, strawberries and passion fruit. Humidity softens it: assemble at the last minute."
+      ]
+    }
+  },
+  {
+    id: "copa-tropical",
+    category: "postres",
+    name: { es: "Copa Tropical de Bizcocho, Crema y Frutas", en: "Tropical Trifle with Cake, Custard and Fruit" },
+    time: "30 min + 2 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "½ bizcocho esponjoso de vainilla en cubos",
+        "¼ taza de jugo de piña",
+        "2 tazas de leche",
+        "½ taza de azúcar",
+        "3 yemas de huevo",
+        "3 cucharadas de maicena",
+        "1 cucharadita de vainilla",
+        "1 taza de piña en cubitos",
+        "1 mangó en cubitos",
+        "2 guineos en ruedas",
+        "½ taza de coco rallado tostado"
+      ],
+      en: [
+        "½ vanilla sponge cake, in cubes",
+        "¼ cup pineapple juice",
+        "2 cups milk",
+        "½ cup sugar",
+        "3 egg yolks",
+        "3 tablespoons cornstarch",
+        "1 teaspoon vanilla",
+        "1 cup diced pineapple",
+        "1 mango, diced",
+        "2 bananas, sliced",
+        "½ cup toasted shredded coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "Para la crema, mezcle la leche, el azúcar, las yemas y la maicena en una olla fría. Cocine a fuego medio moviendo hasta que espese y hierva 1 minuto. Añada la vainilla, tape con plástico pegado a la crema y enfríe.",
+        "Humedezca los cubos de bizcocho con el jugo de piña.",
+        "En una copa grande o en vasos, haga capas de bizcocho, crema, piña, mangó y guineo. Repita y termine con crema.",
+        "Espolvoree el coco tostado y enfríe 2 horas antes de servir. Ponga el guineo justo al armar para que no se oscurezca."
+      ],
+      en: [
+        "For the custard, mix the milk, sugar, yolks and cornstarch in a cold pot. Cook over medium heat, stirring, until thick and boiling 1 minute. Add the vanilla, press plastic wrap on the surface and chill.",
+        "Moisten the cake cubes with the pineapple juice.",
+        "In a large bowl or glasses, layer cake, custard, pineapple, mango and banana. Repeat and finish with custard.",
+        "Sprinkle with the toasted coconut and chill 2 hours before serving. Add the banana right when assembling so it doesn't brown."
+      ]
+    }
+  },
+  {
+    id: "crumble-mango-coco",
+    category: "postres",
+    name: { es: "Crumble de Mangó y Coco", en: "Mango Coconut Crumble" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "4 mangós maduros en cubos",
+        "2 cucharadas de jugo de limón",
+        "2 cucharadas de azúcar morena",
+        "1 cucharada de maicena",
+        "¾ taza de harina",
+        "½ taza de avena en hojuelas",
+        "½ taza de coco rallado",
+        "⅓ taza de azúcar morena para la cubierta",
+        "6 cucharadas de mantequilla fría en cubitos",
+        "½ cucharadita de canela"
+      ],
+      en: [
+        "4 ripe mangoes, cubed",
+        "2 tablespoons lime juice",
+        "2 tablespoons brown sugar",
+        "1 tablespoon cornstarch",
+        "¾ cup flour",
+        "½ cup rolled oats",
+        "½ cup shredded coconut",
+        "⅓ cup brown sugar for the topping",
+        "6 tablespoons cold butter, diced",
+        "½ teaspoon cinnamon"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 375 °F. Mezcle el mangó con el limón, 2 cucharadas de azúcar y la maicena, y póngalo en un molde de 8 × 8 pulgadas.",
+        "Mezcle la harina, la avena, el coco, el azúcar de la cubierta y la canela. Añada la mantequilla y frote con los dedos hasta que queden boronas.",
+        "Riegue las boronas sobre el mangó sin aplastarlas.",
+        "Hornee 30 minutos, hasta que la cubierta esté dorada y el jugo burbujee por los bordes. Sirva tibio, con mantecado si quiere."
+      ],
+      en: [
+        "Heat the oven to 375 °F. Toss the mango with the lime juice, 2 tablespoons sugar and the cornstarch, and spread in an 8 × 8-inch dish.",
+        "Mix the flour, oats, coconut, topping sugar and cinnamon. Add the butter and rub with your fingertips into crumbs.",
+        "Scatter the crumbs over the mango without pressing.",
+        "Bake 30 minutes, until the topping is golden and the juices bubble at the edges. Serve warm, with ice cream if you like."
+      ]
+    }
+  },
+  {
+    id: "crema-guanabana",
+    category: "postres",
+    name: { es: "Crema Fría de Guanábana", en: "Chilled Soursop Cream" },
+    time: "15 min + 3 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de pulpa de guanábana sin semillas",
+        "1 lata de 14 onzas de leche condensada",
+        "1 taza de crema de leche",
+        "2 cucharadas de jugo de limón",
+        "1 paquete de 7 onzas de galletas María",
+        "Hojitas de menta para decorar"
+      ],
+      en: [
+        "2 cups seedless soursop pulp",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 cup heavy cream",
+        "2 tablespoons lime juice",
+        "1 package (7 oz) Maria cookies",
+        "Mint leaves to garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la guanábana, la leche condensada, la crema y el limón hasta que espese, 1 minuto.",
+        "En un molde, haga capas de galletas y crema de guanábana, terminando con crema.",
+        "Tape y enfríe 3 horas, hasta que las galletas se ablanden como bizcocho.",
+        "Sirva frío con menta. Si usa pulpa congelada, descongélela en la nevera y escúrrala un poco."
+      ],
+      en: [
+        "Blend the soursop, condensed milk, cream and lime juice until thick, 1 minute.",
+        "In a dish, layer cookies and soursop cream, finishing with cream.",
+        "Cover and chill 3 hours, until the cookies soften like cake.",
+        "Serve cold with mint. If using frozen pulp, thaw it in the refrigerator and drain it a little."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-guineo-coco",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Guineo y Coco", en: "Banana Coconut Cake" },
+    time: "1 hr 10 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "3 guineos bien maduros, majados",
+        "½ taza de mantequilla derretida",
+        "¾ taza de azúcar morena",
+        "2 huevos",
+        "1 cucharadita de vainilla",
+        "1½ tazas de harina",
+        "1 cucharadita de bicarbonato",
+        "½ cucharadita de canela",
+        "¼ cucharadita de sal",
+        "¾ taza de coco rallado",
+        "½ taza de nueces picadas"
+      ],
+      en: [
+        "3 very ripe bananas, mashed",
+        "½ cup melted butter",
+        "¾ cup brown sugar",
+        "2 eggs",
+        "1 teaspoon vanilla",
+        "1½ cups flour",
+        "1 teaspoon baking soda",
+        "½ teaspoon cinnamon",
+        "¼ teaspoon salt",
+        "¾ cup shredded coconut",
+        "½ cup chopped walnuts"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de pan de 9 × 5 pulgadas.",
+        "Mezcle los guineos, la mantequilla, el azúcar, los huevos y la vainilla.",
+        "Añada la harina, el bicarbonato, la canela y la sal, y mezcle sólo hasta que no se vea harina. Añada ½ taza de coco y las nueces.",
+        "Vierta en el molde, riegue el resto del coco encima y hornee 55 a 60 minutos, hasta que un palillo salga limpio. Si el coco se dora muy rápido, cúbralo con papel de aluminio."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 9 × 5-inch loaf pan.",
+        "Mix the bananas, butter, sugar, eggs and vanilla.",
+        "Add the flour, baking soda, cinnamon and salt, and mix just until no flour shows. Fold in ½ cup of the coconut and the walnuts.",
+        "Pour into the pan, sprinkle the remaining coconut on top and bake 55 to 60 minutes, until a toothpick comes out clean. If the coconut browns too fast, tent with foil."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-mango",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Mangó", en: "Mango Cake" },
+    time: "1 hr",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 tazas de harina",
+        "2 cucharaditas de polvo de hornear",
+        "¼ cucharadita de sal",
+        "½ taza de mantequilla blanda",
+        "1 taza de azúcar",
+        "3 huevos",
+        "1 taza de pulpa de mangó licuada",
+        "¼ taza de leche",
+        "1 cucharadita de ralladura de limón",
+        "1 taza de azúcar en polvo",
+        "2 cucharadas de jugo de mangó o de limón para el glaseado"
+      ],
+      en: [
+        "2 cups flour",
+        "2 teaspoons baking powder",
+        "¼ teaspoon salt",
+        "½ cup softened butter",
+        "1 cup sugar",
+        "3 eggs",
+        "1 cup blended mango pulp",
+        "¼ cup milk",
+        "1 teaspoon lime zest",
+        "1 cup powdered sugar",
+        "2 tablespoons mango or lime juice for the glaze"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase y enharine un molde de 9 pulgadas con hueco (bundt) o uno redondo.",
+        "Bata la mantequilla con el azúcar 3 minutos hasta que esté cremosa. Añada los huevos uno a uno.",
+        "Mezcle la harina, el polvo de hornear y la sal. Añádala alternando con el mangó y la leche. Añada la ralladura.",
+        "Hornee 40 a 45 minutos, hasta que un palillo salga limpio. Enfríe 10 minutos, desmolde y báñelo con el azúcar en polvo mezclado con el jugo."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease and flour a 9-inch bundt or round pan.",
+        "Beat the butter with the sugar 3 minutes until creamy. Add the eggs one at a time.",
+        "Mix the flour, baking powder and salt. Add it alternating with the mango and milk. Add the zest.",
+        "Bake 40 to 45 minutes, until a toothpick comes out clean. Cool 10 minutes, unmold and drizzle with the powdered sugar mixed with the juice."
+      ]
+    }
+  },
+  {
+    id: "pastelillos-pina",
+    category: "pasteles_dulces",
+    name: { es: "Pastelillos de Piña", en: "Pineapple Turnovers" },
+    time: "1 hr",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 lata de 20 onzas de piña triturada, con su jugo",
+        "⅓ taza de azúcar",
+        "2 cucharadas de maicena",
+        "½ cucharadita de canela",
+        "12 discos para empanadillas",
+        "1 huevo batido",
+        "2 cucharadas de azúcar para espolvorear"
+      ],
+      en: [
+        "1 can (20 oz) crushed pineapple, with its juice",
+        "⅓ cup sugar",
+        "2 tablespoons cornstarch",
+        "½ teaspoon cinnamon",
+        "12 turnover dough discs",
+        "1 egg, beaten",
+        "2 tablespoons sugar for sprinkling"
+      ]
+    },
+    steps: {
+      es: [
+        "Cocine la piña con su jugo, el azúcar, la maicena y la canela a fuego medio, moviendo, 8 minutos, hasta que espese como mermelada. Enfríe por completo.",
+        "Caliente el horno a 375 °F. Ponga 1½ cucharadas del relleno en cada disco, doble, moje el borde y selle con un tenedor.",
+        "Póngalos en una bandeja con papel de hornear, úntelos con el huevo, espolvoree azúcar y hágales un cortecito arriba.",
+        "Hornee 18 a 20 minutos, hasta que estén dorados. El relleno sale muy caliente: déjelos reposar 10 minutos."
+      ],
+      en: [
+        "Cook the pineapple with its juice, the sugar, cornstarch and cinnamon over medium heat, stirring, 8 minutes, until thick like jam. Cool completely.",
+        "Heat the oven to 375 °F. Put 1½ tablespoons of filling on each disc, fold, wet the edge and seal with a fork.",
+        "Place them on a parchment-lined sheet, brush with the egg, sprinkle with sugar and cut a small slit on top.",
+        "Bake 18 to 20 minutes, until golden. The filling comes out very hot: let them rest 10 minutes."
+      ]
+    }
+  },
+  {
+    id: "dulce-pina-almibar",
+    category: "frutas",
+    name: { es: "Dulce de Piña en Almíbar con Clavos", en: "Pineapple in Clove Syrup" },
+    time: "45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 piña madura, pelada y en cubos",
+        "1 taza de azúcar",
+        "1 taza de agua",
+        "1 raja de canela",
+        "4 clavos de olor",
+        "1 tira de cáscara de limón"
+      ],
+      en: [
+        "1 ripe pineapple, peeled and cubed",
+        "1 cup sugar",
+        "1 cup water",
+        "1 cinnamon stick",
+        "4 whole cloves",
+        "1 strip of lime peel"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, hierva el agua con el azúcar, la canela, los clavos y la cáscara de limón 5 minutos.",
+        "Añada la piña y cocine a fuego bajo 30 minutos, hasta que esté brillosa y el almíbar espese un poco.",
+        "Saque la canela, los clavos y la cáscara. Enfríe y guarde en frascos limpios en la nevera hasta 2 semanas.",
+        "Sirva sola, con queso blanco del país, sobre mantecado o con flan."
+      ],
+      en: [
+        "In a pot, boil the water with the sugar, cinnamon, cloves and lime peel 5 minutes.",
+        "Add the pineapple and simmer 30 minutes, until glossy and the syrup thickens slightly.",
+        "Remove the cinnamon, cloves and peel. Cool and store in clean jars in the refrigerator up to 2 weeks.",
+        "Serve on its own, with Puerto Rican white cheese, over ice cream or with flan."
+      ]
+    }
+  },
+  {
+    id: "mango-verde-sal-limon",
+    category: "frutas",
+    name: { es: "Mangó Verde con Sal, Limón y Ají", en: "Green Mango with Salt, Lime and Chili" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 mangós verdes (tiernos y firmes)",
+        "2 cucharadas de jugo de limón",
+        "½ cucharadita de sal",
+        "¼ cucharadita de hojuelas de ají (o pique al gusto)",
+        "1 cucharadita de azúcar (opcional)"
+      ],
+      en: [
+        "2 green (unripe, firm) mangoes",
+        "2 tablespoons lime juice",
+        "½ teaspoon salt",
+        "¼ teaspoon chili flakes (or hot sauce to taste)",
+        "1 teaspoon sugar (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los mangós y córtelos en tiritas o lascas finas alrededor de la semilla.",
+        "Mezcle la sal, el ají y el azúcar.",
+        "Rocíe el mangó con el limón y espolvoree la mezcla. Sirva enseguida, bien frío.",
+        "Es la merienda ácida y salada de las escuelas y las playas. Pique o sal al gusto; con mangó maduro también se puede."
+      ],
+      en: [
+        "Peel the mangoes and cut them into thin strips or slices around the pit.",
+        "Mix the salt, chili and sugar.",
+        "Sprinkle the mango with the lime juice and the mixture. Serve right away, well chilled.",
+        "It's the tangy, salty snack of schoolyards and beaches. Adjust heat and salt to taste; ripe mango works too."
       ]
     }
   }

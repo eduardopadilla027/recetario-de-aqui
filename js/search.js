@@ -210,7 +210,9 @@ function smartSearch(query, ctx) {
   const sPlain = (t) => ` ${sNorm(t).replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim()} `;
   const hasNeg = words.some((w) => ["sin", "no", "without", "libre", "free"].includes(w));
   const nameHas = (r) => sPlain(r.name.es).includes(` ${qn} `) || sPlain(r.name.en).includes(` ${qn} `);
-  const isName = hasNeg && qn.includes(" ") && recipes.some(nameHas);
+  // "sin horno" a secas es la idea "Sin horno", aunque un nombre lo lleve ("Cheesecake… (Sin Horno)").
+  const noBakeOnly = /^(sin|no|without) (horno|bake|hornear|baking|oven)$/.test(qn);
+  const isName = hasNeg && !noBakeOnly && qn.includes(" ") && recipes.some(nameHas);
   const terms = [], excludes = [], ideas = [], corrections = [];
   const vocab = sGetVocab();
   const vocabSet = new Set(vocab);
