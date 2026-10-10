@@ -453,14 +453,21 @@ const nutriCache = new Map();
 
 /** Estimación de una receta: totales, por porción y qué no se pudo contar
  *  (índices de sus ingredientes, para mostrarlos en cualquier idioma). */
+/* Alcohol (etanol) en gramos por cada 100 g de la bebida, según la primera palabra clave del alimento:
+ * ron, pitorro, tequila y cachaça ≈ 40% vol.; vino ≈ 12%; vino dulce ≈ 16%; licores ≈ 25%; cerveza ≈ 5%.
+ * Con esto la pestaña de seguridad calcula los tragos estándar (14 g de alcohol) de cada porción. */
+const NUTRI_ALCOHOL = { "ron": 33, "tequila": 33, "cachaca": 33, "vino": 9.6, "vino dulce": 12.7, "licor": 19, "cerveza": 3.9 };
+
 function estimateNutrition(recipe) {
   if (nutriCache.has(recipe.id)) return nutriCache.get(recipe.id);
   const total = EMPTY_TOTALS();
   const missing = [];
-  let counted = 0, measurable = 0, frying = false;
+  let counted = 0, measurable = 0, frying = false, alcohol = 0;
 
   const add = (food, grams) => {
     for (const k in total) total[k] += (food.n[k] * grams) / 100;
+    const alc = NUTRI_ALCOHOL[food.kw[0]];
+    if (alc) alcohol += (alc * grams) / 100;
   };
 
   recipe.ingredients.es.forEach((line, i) => {
@@ -488,7 +495,8 @@ function estimateNutrition(recipe) {
 
   const per = {};
   for (const k in total) per[k] = total[k] / recipe.servings;
-  const result = { total, per, counted, measurable, missing, frying };
+  // alcohol: gramos de etanol por porción (0 si no lleva).
+  const result = { total, per, counted, measurable, missing, frying, alcohol: alcohol / recipe.servings };
   nutriCache.set(recipe.id, result);
   return result;
 }

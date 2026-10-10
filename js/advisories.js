@@ -27,6 +27,62 @@ const ALLERGENS = [
 /* Recetas con huevo crudo o poco cocido (no se deduce del texto). */
 const RAW_EGG_IDS = new Set(["malta-huevo", "tres-leches", "ponche-crema"]);
 
+/* Tés e infusiones: uso tradicional en Puerto Rico y una precaución propia de cada planta.
+ * Es información general de la tradición, no un tratamiento: la pestaña lo dice así. */
+const TEA_INFO = {
+  "te-hojas-naranjo": {
+    es: ["calmar los nervios, ayudar a dormir y asentar el estómago.", "Tómelo con moderación; en el embarazo, consulte antes a su médico."],
+    en: ["calming the nerves, helping you sleep and settling the stomach.", "Drink it in moderation; if pregnant, check with your doctor first."]
+  },
+  "te-yerbabuena": {
+    es: ["la digestión, los gases y las náuseas leves.", "Puede empeorar la acidez y el reflujo. No les dé aceite ni gotas de menta a bebés ni a niños pequeños."],
+    en: ["digestion, gas and mild nausea.", "It can make heartburn and reflux worse. Don't give mint oil or drops to babies or young children."]
+  },
+  "te-manzanilla": {
+    es: ["la digestión, los cólicos y para relajarse antes de dormir.", "Si es alérgico a la ambrosía, la margarita o el crisantemo, puede darle alergia. Si toma anticoagulantes (como warfarina) o sedantes, consulte a su médico."],
+    en: ["digestion, cramps and relaxing before bed.", "If you're allergic to ragweed, daisies or chrysanthemums, it may cause a reaction. If you take blood thinners (such as warfarin) or sedatives, ask your doctor."]
+  },
+  "te-canela": {
+    es: ["entrar en calor en días frescos, el catarro y la digestión.", "La canela común (cassia) tiene cumarina: con moderación, sobre todo si tiene problemas del hígado o toma anticoagulantes."],
+    en: ["warming up on cool days, colds and digestion.", "Common (cassia) cinnamon contains coumarin: drink in moderation, especially with liver problems or if you take blood thinners."]
+  },
+  "te-anis-estrellado": {
+    es: ["los gases y la digestión en adultos.", "Use sólo anís estrellado chino de cocina (el japonés es tóxico). No en el embarazo ni en bebés o niños pequeños."],
+    en: ["gas and digestion in adults.", "Use only Chinese culinary star anise (Japanese star anise is toxic). Not during pregnancy or for babies and young children."]
+  },
+  "te-oregano-brujo": {
+    es: ["el catarro, la tos y la congestión.", "Es una planta fuerte: pocas hojas y por pocos días. No en el embarazo ni en niños pequeños."],
+    en: ["colds, cough and congestion.", "It's a strong plant: a few leaves for a few days only. Not during pregnancy or for young children."]
+  },
+  "te-albahaca": {
+    es: ["la digestión, los gases y para relajarse.", "En el embarazo y la lactancia, no lo tome a diario ni en cantidad."],
+    en: ["digestion, gas and relaxing.", "During pregnancy and breastfeeding, don't drink it daily or in large amounts."]
+  },
+  "te-cascara-pina": {
+    es: ["la digestión y como diurético (para orinar más).", "Restriegue bien la cáscara. Guárdelo en la nevera y tómelo en 2-3 días: fuera de la nevera se fermenta. La piña puede irritar la boca a algunas personas."],
+    en: ["digestion and as a diuretic (to urinate more).", "Scrub the peel well. Keep it refrigerated and drink it within 2-3 days: left out, it ferments. Pineapple can irritate some people's mouths."]
+  },
+  "te-hojas-guayaba": {
+    es: ["la diarrea leve y la digestión.", "Si tiene diabetes y toma medicamentos, consulte: puede sumar a su efecto sobre el azúcar. Si la diarrea dura más de 2 días, hay fiebre o señales de deshidratación, vea a un médico."],
+    en: ["mild diarrhea and digestion.", "If you have diabetes and take medication, ask your doctor: it may add to its effect on blood sugar. If diarrhea lasts more than 2 days, or there is fever or dehydration, see a doctor."]
+  },
+  "te-tilo": {
+    es: ["los nervios, el insomnio y el catarro.", "Puede dar sueño: no lo combine con sedantes ni pastillas para dormir sin consultar. Con moderación si padece del corazón."],
+    en: ["nerves, sleeplessness and colds.", "It can make you drowsy: don't combine it with sedatives or sleeping pills without asking. In moderation if you have heart problems."]
+  },
+  "te-limoncillo": {
+    es: ["la digestión, para relajarse y en el catarro con fiebre.", "En el embarazo, no lo tome en cantidad."],
+    en: ["digestion, relaxing and colds with fever.", "During pregnancy, don't drink large amounts."]
+  },
+  "guarapo-jengibre": {
+    es: ["las náuseas, el catarro y la digestión.", "Puede dar acidez. Si toma anticoagulantes o tiene piedras en la vesícula, consulte a su médico."],
+    en: ["nausea, colds and digestion.", "It can cause heartburn. If you take blood thinners or have gallstones, ask your doctor."]
+  }
+};
+// Tragos estándar con un decimal y horas aproximadas que tarda el cuerpo en eliminarlos (≈ 1 trago por hora).
+const fmtDrinks = (d) => (Math.round(d * 10) / 10).toString();
+const drinkHours = (d) => Math.max(1, Math.ceil(d));
+
 const ADVICE_TEXT = {
   es: {
     tab: "Alergias y seguridad",
@@ -50,7 +106,10 @@ const ADVICE_TEXT = {
       sat: (g, pct) => `Alto en grasa saturada: ≈ ${g} g por porción (${pct}% del valor diario). Quite la grasa visible y el cuero, y hornee en vez de freír cuando se pueda.`,
       sugar: (g) => `Alto en azúcar: ≈ ${g} g por porción. Si tiene diabetes, prefiera una porción pequeña.`,
       kcal: (k) => `Porción muy calórica (≈ ${k} kcal). Puede servir porciones más pequeñas acompañadas de ensalada o vegetales.`,
-      alcoholDrink: "Bebida alcohólica: no apta para menores de 18 años, embarazadas ni si va a conducir. Tome con moderación.",
+      alcoholDrink: (g, d) => g
+        ? `Bebida alcohólica: cada porción tiene unos ${g} g de alcohol, ≈ ${fmtDrinks(d)} ${d >= 1.05 ? "tragos estándar" : "trago estándar"} (1 trago estándar = 14 g: una cerveza de 12 oz, una copa de vino de 5 oz o 1½ oz de ron). No apta para menores de 18 años ni en el embarazo. Tome con moderación.`
+        : "Bebida alcohólica: el ron va al gusto, así que cuente cada 1½ oz de ron (o 5 oz de vino, o una cerveza de 12 oz) como un trago estándar. No apta para menores de 18 años ni en el embarazo. Tome con moderación.",
+      drinkDriving: (d) => `Si va a conducir: la Ley 22 de Vehículos y Tránsito de Puerto Rico prohíbe conducir con 0.08% o más de alcohol en la sangre (21 años o más) y con 0.02% o más si tiene de 18 a 20 años o maneja motora, camión, guagua escolar, vehículo pesado o de transporte público; los menores de 18, nada. Un solo trago estándar puede llevar a muchas personas a 0.02%, y 2 o 3 en una hora a 0.08%, sobre todo con menos peso o sin haber comido. ${d ? `Esta porción (≈ ${fmtDrinks(d)} ${d >= 1.05 ? "tragos" : "trago"}) tarda unas ${drinkHours(d)} ${drinkHours(d) > 1 ? "horas" : "hora"} en eliminarse; ` : "El cuerpo elimina más o menos un trago estándar por hora; "}el café, el agua fría o una ducha no lo bajan. No hay una cantidad segura para conducir: si toma, designe un conductor o pida transporte.`,
       alcoholCooked: "Lleva alcohol. Una parte se evapora al cocinar, pero no todo: téngalo en cuenta con niños, en el embarazo o si evita el alcohol.",
       rawEgg: "Lleva huevo crudo o poco cocido, con riesgo de salmonela. Use huevos pasteurizados y evítelo en el embarazo, en niños pequeños, envejecientes y personas con las defensas bajas.",
       rawFish: "El pescado del ceviche no se cocina: el limón no mata las bacterias ni los parásitos como el calor. Use pescado muy fresco de una pescadería confiable (mejor si fue congelado antes) y evítelo en el embarazo, en niños pequeños, envejecientes y personas con las defensas bajas.",
@@ -58,6 +117,8 @@ const ADVICE_TEXT = {
       caffeine: "Contiene cafeína: con moderación en niños, en el embarazo y de noche.",
       starAnise: "No les dé té de anís estrellado a bebés ni a niños pequeños: puede ser tóxico si está mezclado con anís japonés.",
       herbal: "Las infusiones de hierbas pueden interactuar con algunos medicamentos. Consulte a su médico si está embarazada, lactando o toma medicinas.",
+      teaUse: (id) => `Uso tradicional: ${TEA_INFO[id].es[0]} Es un remedio casero, no sustituye el tratamiento médico: si los síntomas siguen o empeoran, consulte a su médico.`,
+      teaCaution: (id) => `Precaución: ${TEA_INFO[id].es[1]}`,
       sazon: "El sazón y el adobo comerciales suelen llevar glutamato monosódico (MSG) y colorantes como el amarillo 5; si le caen mal, use el Sazón Casero y el Adobo del recetario.",
       ciguatera: "En el Caribe, algunos peces grandes de arrecife (picúa, barracuda, meros y pargos muy grandes) pueden causar ciguatera. Compre en pescaderías confiables y evite las piezas muy grandes.",
       mercury: "En el embarazo, limite el atún blanco (albacore), que tiene más mercurio; el atún claro (light) es mejor opción, en 2-3 porciones de pescado a la semana.",
@@ -109,7 +170,10 @@ const ADVICE_TEXT = {
       sat: (g, pct) => `High in saturated fat: ≈ ${g} g per serving (${pct}% of the daily value). Trim visible fat and skin, and bake instead of frying when you can.`,
       sugar: (g) => `High in sugar: ≈ ${g} g per serving. If you have diabetes, choose a small portion.`,
       kcal: (k) => `Very high-calorie serving (≈ ${k} kcal). Consider smaller portions with salad or vegetables.`,
-      alcoholDrink: "Alcoholic drink: not for anyone under 18, during pregnancy, or if you will drive. Drink in moderation.",
+      alcoholDrink: (g, d) => g
+        ? `Alcoholic drink: each serving has about ${g} g of alcohol, ≈ ${fmtDrinks(d)} standard ${d >= 1.05 ? "drinks" : "drink"} (1 standard drink = 14 g: a 12 oz beer, a 5 oz glass of wine or 1½ oz of rum). Not for anyone under 18 or during pregnancy. Drink in moderation.`
+        : "Alcoholic drink: the rum is to taste, so count every 1½ oz of rum (or 5 oz of wine, or a 12 oz beer) as one standard drink. Not for anyone under 18 or during pregnancy. Drink in moderation.",
+      drinkDriving: (d) => `If you'll be driving: Puerto Rico's Vehicle and Traffic Law 22 prohibits driving with a blood alcohol content of 0.08% or more (age 21 and over) and 0.02% or more if you are 18 to 20 or drive a motorcycle, truck, school bus, heavy vehicle or public transport; under 18, none at all. A single standard drink can bring many people to 0.02%, and 2 or 3 within an hour to 0.08%, especially at lower body weight or on an empty stomach. ${d ? `This serving (≈ ${fmtDrinks(d)} ${d >= 1.05 ? "drinks" : "drink"}) takes about ${drinkHours(d)} ${drinkHours(d) > 1 ? "hours" : "hour"} to clear; ` : "The body clears roughly one standard drink per hour; "}coffee, cold water or a shower won't lower it. There is no safe amount for driving: if you drink, use a designated driver or get a ride.`,
       alcoholCooked: "Contains alcohol. Some evaporates during cooking, but not all: keep that in mind for children, pregnancy, or if you avoid alcohol.",
       rawEgg: "Contains raw or undercooked egg, with a salmonella risk. Use pasteurized eggs and avoid it during pregnancy and for young children, older adults, and people with weakened immunity.",
       rawFish: "Ceviche fish is not cooked: lime juice does not kill bacteria or parasites the way heat does. Use very fresh fish from a trusted fishmonger (ideally previously frozen) and avoid it during pregnancy and for young children, older adults, and people with weakened immunity.",
@@ -117,6 +181,8 @@ const ADVICE_TEXT = {
       caffeine: "Contains caffeine: in moderation for children, during pregnancy, and at night.",
       starAnise: "Do not give star anise tea to babies or young children: it can be toxic if mixed with Japanese star anise.",
       herbal: "Herbal teas can interact with some medications. Ask your doctor if you are pregnant, breastfeeding, or take medicines.",
+      teaUse: (id) => `Traditional use: ${TEA_INFO[id].en[0]} It's a home remedy, not a substitute for medical treatment: if symptoms persist or get worse, see your doctor.`,
+      teaCaution: (id) => `Caution: ${TEA_INFO[id].en[1]}`,
       sazon: "Store-bought sazón and adobo often contain MSG and colorings such as Yellow 5; if they bother you, use the Homemade Sazón and Adobo recipes.",
       ciguatera: "In the Caribbean, some large reef fish (barracuda, very large grouper and snapper) can cause ciguatera. Buy from trusted fishmongers and avoid very large fish.",
       mercury: "During pregnancy, limit white (albacore) tuna, which is higher in mercury; light tuna is a better choice, within 2-3 fish servings a week.",
@@ -174,11 +240,19 @@ function getAdvisories(recipe) {
 
   if (/ceviche/.test(name)) push("rawFish", "high");
   if (RAW_EGG_IDS.has(recipe.id) || (isDrink && has(/\b(huevos?|yemas?)\b/))) push("rawEgg", "high");
-  if (cat === "cocteles" || (isDrink && has(alcohol))) push("alcoholDrink", "high");
-  else if (has(alcohol)) push("alcoholCooked", "caution");
+  // Gramos de alcohol por porción (de nutrition.js) y tragos estándar de 14 g.
+  const alcG = typeof estimateNutrition === "function" ? estimateNutrition(recipe).alcohol || 0 : 0;
+  const drinks = alcG / 14;
+  // Los cócteles "sin alcohol" (piña colada sin alcohol…) no llevan la alerta.
+  const virgin = /sin alcohol/.test(name) && !has(alcohol);
+  if (!virgin && (cat === "cocteles" || (isDrink && has(alcohol)))) {
+    push("alcoholDrink", "high", alcG >= 1 ? [Math.round(alcG), drinks] : []);
+    push("drinkDriving", "high", [alcG >= 1 ? drinks : 0]);
+  } else if (has(alcohol)) push("alcoholCooked", "caution");
   if (has(/\bmiel\b/)) push("honey", "caution");
   if (has(/anis estrellado/)) push("starAnise", "caution");
   if (has(/\bcafe\b/)) push("caffeine", "info");
+  if (TEA_INFO[recipe.id]) { push("teaUse", "info", [recipe.id]); push("teaCaution", "caution", [recipe.id]); }
   if (cat === "calientes" && /^(te-|guarapo)/.test(recipe.id)) push("herbal", "info");
   if (has(/\b(mero|pargo|picua|barracuda|sierra)\b/)) push("ciguatera", "info");
   if (has(/\batun\b/)) push("mercury", "info");

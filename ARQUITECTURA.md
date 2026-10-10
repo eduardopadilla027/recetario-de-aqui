@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.6.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 844 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.7.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 844 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -323,6 +323,15 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   (bebida o cocinado), miel (bebés), anís estrellado, cafeína, tés de hierbas, ciguatera, mercurio (atún), veda de
   mariscos, toronja con medicamentos, quenepa (atragantamiento), carambola (peligrosa con enfermedad renal), sazón/adobo comerciales (sodio y glutamato) y alertas
   nutricionales con los umbrales de las etiquetas (sodio o grasa saturada ≥ 20 % VD, azúcar ≥ 25 g, ≥ 700 kcal).
+- **Bebidas con alcohol:** `estimateNutrition` suma los gramos de alcohol (`NUTRI_ALCOHOL`: ron, tequila y cachaça ≈ 40%
+  vol., vino 12%, vino dulce 16%, licores 25%, cerveza 5%) y devuelve `alcohol` por porción. La alerta dice los gramos y
+  los tragos estándar (14 g); si el ron va "al gusto", explica cómo contarlo. Otra alerta (`drinkDriving`) resume la
+  Ley 22 de Vehículos y Tránsito de Puerto Rico: 0.08% (21 años o más) y 0.02% (18 a 20 años, motoras, camiones, guaguas
+  escolares, vehículos pesados y de transporte público; menores de 18, nada), cuántas horas tarda en eliminarse esa
+  porción (≈ 1 trago por hora) y que no hay una cantidad segura para conducir. Los cócteles "sin alcohol" no la llevan.
+- **Tés** (`TEA_INFO`, por id): uso tradicional en Puerto Rico (aclarando que es remedio casero y no sustituye al
+  médico) y una precaución propia de cada planta (manzanilla y alergia a la familia de la margarita, canela y cumarina,
+  anís estrellado japonés, tilo y sedantes, hojas de guayaba con medicinas para la diabetes…).
 - **Manejo seguro:** temperaturas internas según el USDA según el tipo de carne o marisco.
 - Es información general: la interfaz pide revisar etiquetas y consultar al médico.
 
@@ -356,6 +365,16 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v3.7.0 · Alcohol y Ley 22; uso tradicional de los tés
+- *Pedido:* en los tés, poner en "Alergias y seguridad" su uso principal; en los tragos, una precaución de cuánto tomar
+  para no pasarse de los límites de la Ley 22 de Puerto Rico al conducir.
+- `js/nutrition.js`: `NUTRI_ALCOHOL` y `alcohol` (g por porción) en `estimateNutrition`.
+- `js/advisories.js`: alerta de alcohol con gramos y tragos estándar; nueva alerta `drinkDriving` con los límites de la
+  Ley 22 (0.08% y 0.02%), el tiempo para eliminar la porción y la recomendación de no conducir; `TEA_INFO` con uso
+  tradicional y precaución de los 12 tés (`teaUse`, `teaCaution`), en español e inglés (§9).
+- *Verificado:* 45 bebidas con su cálculo (de 0.2 a 2.0 tragos por porción; el coquito, con ron al gusto, explica cómo
+  contarlo); mojito, coquito, piña colada y té de manzanilla en ES y EN en el navegador ✔; sin errores ✔.
 
 ### 2026-10-10 — v3.6.0 · Más postres tropicales
 - *Pedido:* más recetas de postres tropicales.
