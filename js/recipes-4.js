@@ -42,6 +42,9 @@
  * parcha y guayaba, batidas, yogur helado, paletas, avena fría y salsa de yogur).
  * Decimoctava tanda: paellas (mariscos clásica, negra, langosta, pulpo; valenciana,
  * mixta, pollo y chorizo a la boricua, vegetales).
+ * Decimonovena tanda: a la parrilla y al carbón (pernil ahumado, muslos con achiote,
+ * hamburguesas boricuas, chillo entero, camarones, salmón, costillas de res, maíz,
+ * maduros, vegetales y queso de freír con guayaba).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -10529,6 +10532,471 @@ recipes.push(
         "Add the rice, stir 1 minute and pour in the broth with the salt. Spread evenly and don't stir again.",
         "Cook 10 minutes over medium-high. Arrange the eggplant, zucchini, artichokes and peas on top and continue 8–10 minutes over medium-low.",
         "Form the socarrat, rest covered 5 minutes and serve with lemon. Suitable for vegetarians and vegans."
+      ]
+    }
+  },
+
+  // ── Decimonovena tanda (2026-10): a la parrilla y al carbón ──
+  {
+    id: "pernil-ahumado-carbon",
+    category: "carnes",
+    name: { es: "Pernil Ahumado al Carbón (Fuego Indirecto)", en: "Charcoal-Smoked Pork Shoulder (Indirect Heat)" },
+    time: "6 hr + marinar la noche anterior",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 pernil de 7–8 libras, con cuero",
+        "1 cabeza de ajo majada con orégano, sal y aceite (adobo mojado)",
+        "1 taza de jugo de naranja agria",
+        "1 cucharada de sal gruesa",
+        "Carbón vegetal (unas 6 libras) y 2 tazas de astillas de guayabo o de nogal, remojadas"
+      ],
+      en: [
+        "1 pork shoulder, 7–8 lb, skin on",
+        "1 batch wet adobo (1 head of garlic mashed with oregano, salt and oil)",
+        "1 cup sour orange juice",
+        "1 tablespoon coarse salt",
+        "Lump charcoal (about 6 lb) and 2 cups guava or hickory wood chips, soaked"
+      ]
+    },
+    steps: {
+      es: [
+        "La noche anterior: haga cortes profundos en la carne (no en el cuero), rellénelos con el adobo, unte el resto y báñelo con la naranja agria. Refrigere tapado.",
+        "Encienda el carbón en una chimenea de encendido. Cuando esté cubierto de ceniza blanca (15–20 minutos), páselo todo a un lado de la parrilla: ese es el fuego directo; el otro lado queda para el fuego indirecto.",
+        "Ponga el pernil con el cuero hacia arriba en el lado sin carbón. Eche un puñado de astillas escurridas sobre las brasas y tape con las ventilaciones medio abiertas, buscando unos 275–300°F.",
+        "Cocine 5–6 horas, añadiendo 8–10 carbones encendidos y otro puñado de astillas cada hora. No abra la tapa más de lo necesario.",
+        "Cuando la carne llegue a 190°F por dentro (se deshace), frote el cuero con la sal y páselo sobre las brasas, con el cuero hacia el fuego, unos minutos por sección, vigilando, hasta que haga burbujas y quede crujiente.",
+        "Deje reposar 20 minutos antes de cortar. Cocine al aire libre, lejos de la casa, y nunca deje el carbón encendido solo."
+      ],
+      en: [
+        "The night before: cut deep slits in the meat (not the skin), stuff them with the adobo, rub on the rest and pour on the sour orange. Refrigerate covered.",
+        "Light the charcoal in a chimney starter. When it's covered with white ash (15–20 minutes), pour it all to one side of the grill: that's direct heat; the other side is for indirect heat.",
+        "Put the pork skin side up on the side without coals. Toss a handful of drained chips on the coals and cover with the vents half open, aiming for about 275–300°F.",
+        "Cook 5–6 hours, adding 8–10 lit coals and another handful of chips every hour. Don't open the lid more than needed.",
+        "When the meat reaches 190°F inside (it falls apart), rub the skin with the salt and move it over the coals, skin toward the fire, a few minutes per section, watching, until it blisters and turns crisp.",
+        "Rest 20 minutes before carving. Cook outdoors, away from the house, and never leave lit charcoal unattended."
+      ]
+    }
+  },
+  {
+    id: "muslos-pollo-carbon-achiote",
+    category: "aves",
+    name: { es: "Muslos de Pollo al Carbón con Adobo de Achiote", en: "Charcoal-Grilled Chicken Thighs with Annatto Adobo" },
+    time: "45 min + 2 hr de marinar",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 libras de muslos de pollo con hueso y piel",
+        "3 cucharadas de aceite de achiote",
+        "6 dientes de ajo, majados",
+        "1 cucharada de orégano",
+        "1 cucharadita de comino",
+        "2 cucharaditas de sal",
+        "½ cucharadita de pimienta",
+        "¼ taza de jugo de limón"
+      ],
+      en: [
+        "3 lb bone-in, skin-on chicken thighs",
+        "3 tablespoons annatto oil",
+        "6 garlic cloves, mashed",
+        "1 tablespoon oregano",
+        "1 teaspoon cumin",
+        "2 teaspoons salt",
+        "½ teaspoon pepper",
+        "¼ cup lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el aceite de achiote con el ajo, el orégano, el comino, la sal, la pimienta y el limón. Unte el pollo por todas partes y marine 2 horas en la nevera.",
+        "Prepare el carbón para dos zonas: brasas a un lado y el otro libre.",
+        "Ponga los muslos con la piel hacia abajo sobre las brasas 3–4 minutos, hasta que la piel dore (mueva si hay llamaradas).",
+        "Páselos al lado sin carbón, tape y cocine 25–30 minutos, volteando una vez, hasta que lleguen a 175°F por dentro junto al hueso.",
+        "Deje reposar 5 minutos. Use otra bandeja para servir: la que trajo el pollo crudo no se usa para el cocido."
+      ],
+      en: [
+        "Mix the annatto oil with the garlic, oregano, cumin, salt, pepper and lime juice. Rub it all over the chicken and marinate 2 hours in the fridge.",
+        "Set up the charcoal for two zones: coals on one side and the other empty.",
+        "Put the thighs skin side down over the coals 3–4 minutes, until the skin browns (move them if it flares up).",
+        "Move them to the side without coals, cover and cook 25–30 minutes, turning once, until they reach 175°F inside next to the bone.",
+        "Rest 5 minutes. Use a different platter to serve: the one that held the raw chicken isn't used for cooked."
+      ]
+    }
+  },
+  {
+    id: "hamburguesas-boricuas-parrilla",
+    category: "emparedados",
+    name: { es: "Hamburguesas Boricuas a la Parrilla", en: "Puerto Rican-Style Grilled Burgers" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de carne molida de res (80/20)",
+        "3 cucharadas de sofrito",
+        "1 sobre de sazón",
+        "1 cucharadita de adobo",
+        "6 lascas de queso de freír o queso blanco",
+        "6 panes de hamburguesa",
+        "Mayo-ketchup, lechuga, tomate y cebolla para servir",
+        "Papitas de lata (opcional) para servir"
+      ],
+      en: [
+        "2 lb ground beef (80/20)",
+        "3 tablespoons sofrito",
+        "1 packet sazón",
+        "1 teaspoon adobo",
+        "6 slices frying cheese or white cheese",
+        "6 hamburger buns",
+        "Mayo-ketchup, lettuce, tomato and onion for serving",
+        "Shoestring potato sticks (optional) for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la carne con el sofrito, el sazón y el adobo sin amasar de más. Forme 6 tortas un poco más anchas que el pan y haga un hundido con el pulgar en el centro (así no se inflan).",
+        "Prepare el carbón a fuego medio-alto y limpie y engrase la parrilla.",
+        "Ase las hamburguesas 4–5 minutos por lado, volteando una sola vez y sin aplastarlas, hasta que lleguen a 160°F por dentro.",
+        "En el último minuto, ponga el queso encima y tape. Tueste los panes en la orilla de la parrilla.",
+        "Arme con mayo-ketchup, lechuga, tomate, cebolla y, si quiere, papitas encima como en los carritos."
+      ],
+      en: [
+        "Mix the beef with the sofrito, sazón and adobo without overworking it. Shape 6 patties a little wider than the bun and press a dimple in the center with your thumb (so they don't puff up).",
+        "Set up the charcoal at medium-high heat and clean and oil the grate.",
+        "Grill the burgers 4–5 minutes per side, flipping only once and without pressing them, until they reach 160°F inside.",
+        "In the last minute, put the cheese on top and cover. Toast the buns at the edge of the grill.",
+        "Build with mayo-ketchup, lettuce, tomato, onion and, if you like, potato sticks on top like the food trucks do."
+      ]
+    }
+  },
+  {
+    id: "chillo-entero-parrilla",
+    category: "pescados",
+    name: { es: "Chillo Entero a la Parrilla con Mojo", en: "Whole Grilled Red Snapper with Mojo" },
+    time: "45 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 chillos enteros de 1½ libras, limpios y escamados",
+        "¼ taza de aceite de oliva",
+        "6 dientes de ajo, majados",
+        "¼ taza de jugo de limón",
+        "1½ cucharaditas de sal",
+        "½ cucharadita de pimienta",
+        "1 limón en ruedas",
+        "Unas ramitas de cilantro"
+      ],
+      en: [
+        "2 whole red snappers, 1½ lb each, cleaned and scaled",
+        "¼ cup olive oil",
+        "6 garlic cloves, mashed",
+        "¼ cup lime juice",
+        "1½ teaspoons salt",
+        "½ teaspoon pepper",
+        "1 lime, sliced",
+        "A few cilantro sprigs"
+      ]
+    },
+    steps: {
+      es: [
+        "Haga 3 cortes diagonales a cada lado del pescado. Mezcle el aceite, el ajo, el limón, la sal y la pimienta y unte por dentro y por fuera, metiendo mojo en los cortes.",
+        "Rellene la barriga con las ruedas de limón y el cilantro. Deje 15 minutos.",
+        "Limpie muy bien la parrilla, caliéntela a fuego medio-alto y engrásela con un papel con aceite (así la piel no se pega).",
+        "Ase el pescado 7–8 minutos por lado sin moverlo; voltéelo con dos espátulas cuando se despegue solo.",
+        "Está listo cuando la carne se separa en lascas junto a la espina y llega a 145°F. Sirva con tostones y más mojo."
+      ],
+      en: [
+        "Cut 3 diagonal slashes on each side of the fish. Mix the oil, garlic, lime juice, salt and pepper and rub inside and out, working mojo into the cuts.",
+        "Stuff the cavity with the lime slices and cilantro. Let sit 15 minutes.",
+        "Clean the grate very well, heat it to medium-high and oil it with an oiled paper towel (so the skin doesn't stick).",
+        "Grill the fish 7–8 minutes per side without moving it; flip with two spatulas when it releases on its own.",
+        "It's done when the flesh flakes next to the bone and reaches 145°F. Serve with tostones and more mojo."
+      ]
+    }
+  },
+  {
+    id: "camarones-parrilla-mojo",
+    category: "pescados",
+    name: { es: "Camarones a la Parrilla con Mojo de Ajo", en: "Grilled Shrimp with Garlic Mojo" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de camarones grandes, pelados y desvenados (con la colita)",
+        "¼ taza de aceite de oliva",
+        "6 dientes de ajo, majados",
+        "2 cucharadas de jugo de limón",
+        "1 cucharadita de pimentón",
+        "1 cucharadita de sal",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "2 lb large shrimp, peeled and deveined (tails on)",
+        "¼ cup olive oil",
+        "6 garlic cloves, mashed",
+        "2 tablespoons lime juice",
+        "1 teaspoon paprika",
+        "1 teaspoon salt",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el aceite, el ajo, el limón, el pimentón y la sal. Separe 2 cucharadas para servir y mezcle el resto con los camarones; deje 15 minutos (no más: el limón los cocina).",
+        "Ensarte los camarones en dos palitos paralelos (así no giran) o use una canasta de parrilla.",
+        "Ase a fuego alto 2 minutos por lado, hasta que estén rosados y opacos. Se pasan rápido.",
+        "Rocíe el mojo que separó y el cilantro. Van con arroz, ensalada o tostones."
+      ],
+      en: [
+        "Mix the oil, garlic, lime juice, paprika and salt. Set aside 2 tablespoons for serving and toss the rest with the shrimp; let sit 15 minutes (no longer: the lime cooks them).",
+        "Thread the shrimp on two parallel skewers (so they don't spin) or use a grill basket.",
+        "Grill over high heat 2 minutes per side, until pink and opaque. They overcook fast.",
+        "Drizzle with the reserved mojo and the cilantro. Serve with rice, salad or tostones."
+      ]
+    }
+  },
+  {
+    id: "salmon-parrilla-parcha",
+    category: "pescados",
+    name: { es: "Salmón a la Parrilla con Glaseado de Parcha", en: "Grilled Salmon with Passion Fruit Glaze" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de salmón de 6 onzas, con piel",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "Glaseado: ¼ taza de pulpa de parcha, colada",
+        "3 cucharadas de azúcar morena",
+        "1 cucharada de salsa de soya",
+        "1 diente de ajo, majado"
+      ],
+      en: [
+        "4 salmon fillets, 6 oz each, skin on",
+        "2 tablespoons olive oil",
+        "1 teaspoon salt",
+        "½ teaspoon pepper",
+        "Glaze: ¼ cup passion fruit pulp, strained",
+        "3 tablespoons brown sugar",
+        "1 tablespoon soy sauce",
+        "1 garlic clove, minced"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la parcha con el azúcar morena, la soya y el ajo 4 minutos, hasta que espese un poco.",
+        "Seque el salmón, úntelo con el aceite, la sal y la pimienta.",
+        "Con la parrilla limpia y engrasada a fuego medio-alto, ponga el salmón con la piel hacia abajo y tape. Cocine 6–8 minutos sin voltear.",
+        "Barnice con el glaseado los últimos 2 minutos. Está listo a 145°F, cuando se separa en lascas.",
+        "Deslice la espátula entre la piel y la carne para servir: la piel se queda pegada a la parrilla."
+      ],
+      en: [
+        "Boil the passion fruit with the brown sugar, soy sauce and garlic 4 minutes, until slightly thick.",
+        "Pat the salmon dry and rub with the oil, salt and pepper.",
+        "With the grate clean and oiled at medium-high, place the salmon skin side down and cover. Cook 6–8 minutes without flipping.",
+        "Brush with the glaze for the last 2 minutes. It's done at 145°F, when it flakes.",
+        "Slide the spatula between the skin and flesh to serve: the skin stays on the grate."
+      ]
+    }
+  },
+  {
+    id: "costillas-res-parrilla",
+    category: "carnes",
+    name: { es: "Costillas de Res a la Parrilla con Chimichurri", en: "Grilled Beef Short Ribs with Chimichurri" },
+    time: "40 min + 4 hr de marinar",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 libras de costillas de res cortadas finas a lo ancho (tipo flanken)",
+        "½ taza de jugo de naranja agria",
+        "6 dientes de ajo, majados",
+        "1 cucharada de orégano",
+        "2 cucharaditas de sal",
+        "1 cucharadita de pimienta",
+        "½ taza de aceite de oliva con perejil, ajo y vinagre (chimichurri) para servir"
+      ],
+      en: [
+        "3 lb beef short ribs cut thin across the bone (flanken style)",
+        "½ cup sour orange juice",
+        "6 garlic cloves, mashed",
+        "1 tablespoon oregano",
+        "2 teaspoons salt",
+        "1 teaspoon pepper",
+        "½ cup olive oil with parsley, garlic and vinegar (chimichurri) for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la naranja agria con el ajo, el orégano, la sal y la pimienta, y marine las costillas 4 horas en la nevera.",
+        "Prepare el carbón a fuego alto. Escurra las costillas y séquelas un poco (así doran en vez de hervirse).",
+        "Ase 3–4 minutos por lado, hasta que estén doradas y con marcas.",
+        "Deje reposar 5 minutos y sirva con chimichurri, arroz con gandules o tostones."
+      ],
+      en: [
+        "Mix the sour orange with the garlic, oregano, salt and pepper, and marinate the ribs 4 hours in the fridge.",
+        "Set up the charcoal at high heat. Drain the ribs and pat them a bit dry (so they brown instead of steaming).",
+        "Grill 3–4 minutes per side, until browned with grill marks.",
+        "Rest 5 minutes and serve with chimichurri, arroz con gandules or tostones."
+      ]
+    }
+  },
+  {
+    id: "maiz-asado-carbon",
+    category: "vegetales",
+    name: { es: "Maíz Asado al Carbón con Mayo-Ajo y Queso", en: "Charcoal-Grilled Corn with Garlic Mayo and Cheese" },
+    time: "30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "6 mazorcas de maíz, sin hojas",
+        "2 cucharadas de mantequilla, derretida",
+        "⅓ taza de mayonesa",
+        "2 dientes de ajo, majados",
+        "½ taza de queso parmesano o queso blanco rallado",
+        "1 cucharadita de pimentón",
+        "1 limón en gajos"
+      ],
+      en: [
+        "6 ears of corn, husked",
+        "2 tablespoons butter, melted",
+        "⅓ cup mayonnaise",
+        "2 garlic cloves, mashed",
+        "½ cup grated parmesan or white cheese",
+        "1 teaspoon paprika",
+        "1 lime in wedges"
+      ]
+    },
+    steps: {
+      es: [
+        "Barnice las mazorcas con la mantequilla.",
+        "Áselas sobre el carbón a fuego medio-alto 10–12 minutos, girándolas cada 2–3 minutos, hasta que estén tostadas en partes.",
+        "Mezcle la mayonesa con el ajo. Unte cada mazorca caliente con la mayo-ajo.",
+        "Espolvoree el queso y el pimentón, y sirva con limón para exprimir."
+      ],
+      en: [
+        "Brush the ears with the butter.",
+        "Grill over the coals at medium-high 10–12 minutes, turning every 2–3 minutes, until charred in spots.",
+        "Mix the mayonnaise with the garlic. Spread the garlic mayo on each hot ear.",
+        "Sprinkle with the cheese and paprika, and serve with lime to squeeze."
+      ]
+    }
+  },
+  {
+    id: "maduros-asados-carbon",
+    category: "vegetales",
+    name: { es: "Plátanos Maduros Asados al Carbón", en: "Charcoal-Roasted Ripe Plantains" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 plátanos bien maduros (casi negros), con cáscara",
+        "2 cucharadas de mantequilla",
+        "1 pizca de sal",
+        "4 lascas de queso blanco (opcional)"
+      ],
+      en: [
+        "4 very ripe plantains (almost black), skin on",
+        "2 tablespoons butter",
+        "1 pinch of salt",
+        "4 slices white cheese (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte las puntas de los plátanos y haga un corte a lo largo en la cáscara, sin llegar al otro lado.",
+        "Póngalos sobre las brasas a fuego medio, con la cáscara, 20–25 minutos, volteándolos, hasta que la cáscara esté negra y el plátano blando al apretarlo.",
+        "Ábralos por el corte, ponga un pedacito de mantequilla, la sal y, si quiere, el queso para que se derrita.",
+        "Se comen con cuchara, directo de la cáscara. Acompañan cualquier carne del carbón."
+      ],
+      en: [
+        "Cut the ends off the plantains and slit the skin lengthwise, without going through to the other side.",
+        "Put them over the coals at medium heat, in their skins, 20–25 minutes, turning, until the skin is black and the plantain is soft when pressed.",
+        "Open them along the slit, add a bit of butter, the salt and, if you like, the cheese to melt.",
+        "Eat them with a spoon, straight from the skin. They go with any meat from the grill."
+      ]
+    }
+  },
+  {
+    id: "vegetales-parrilla",
+    category: "vegetales",
+    name: { es: "Vegetales a la Parrilla con Mojo", en: "Grilled Vegetables with Mojo" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 berenjena en ruedas de ½ pulgada",
+        "2 calabacines en lascas a lo largo",
+        "1 pimiento rojo y 1 verde, en cuartos",
+        "1 cebolla roja en ruedas gruesas",
+        "1 taza de champiñones enteros",
+        "¼ taza de aceite de oliva",
+        "4 dientes de ajo, majados",
+        "2 cucharadas de vinagre",
+        "1 cucharadita de orégano",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "1 eggplant in ½-inch rounds",
+        "2 zucchini, sliced lengthwise",
+        "1 red and 1 green bell pepper, quartered",
+        "1 red onion in thick rings",
+        "1 cup whole mushrooms",
+        "¼ cup olive oil",
+        "4 garlic cloves, mashed",
+        "2 tablespoons vinegar",
+        "1 teaspoon oregano",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el aceite, el ajo, el vinagre, el orégano y la sal. Unte los vegetales con la mitad.",
+        "Ensarte los champiñones y la cebolla en palitos para que no se caigan por la parrilla.",
+        "Ase a fuego medio-alto: los pimientos y la cebolla 8–10 minutos, la berenjena y el calabacín 3–4 minutos por lado, hasta que tengan marcas y estén tiernos.",
+        "Acomode en un platón y rocíe el resto del mojo. Buenos calientes o a temperatura ambiente; aptos para veganos."
+      ],
+      en: [
+        "Mix the oil, garlic, vinegar, oregano and salt. Brush the vegetables with half.",
+        "Thread the mushrooms and onion on skewers so they don't fall through the grate.",
+        "Grill at medium-high: the peppers and onion 8–10 minutes, the eggplant and zucchini 3–4 minutes per side, until marked and tender.",
+        "Arrange on a platter and drizzle with the rest of the mojo. Good hot or at room temperature; vegan."
+      ]
+    }
+  },
+  {
+    id: "queso-parrilla-guayaba",
+    category: "entremeses",
+    name: { es: "Queso de Freír a la Parrilla con Guayaba", en: "Grilled Frying Cheese with Guava" },
+    time: "15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de queso de freír, en lascas de ½ pulgada",
+        "1 cucharada de aceite",
+        "4 onzas de pasta de guayaba",
+        "2 cucharadas de agua",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "1 lb frying cheese, in ½-inch slices",
+        "1 tablespoon oil",
+        "4 oz guava paste",
+        "2 tablespoons water",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la guayaba con el agua y el limón a fuego bajo hasta tener una salsita.",
+        "Unte las lascas de queso con el aceite.",
+        "Áselas en la parrilla bien caliente y limpia 1–2 minutos por lado, hasta que tengan marcas doradas (el queso de freír no se derrite).",
+        "Sirva enseguida con la salsita de guayaba por encima. Una picadera para mientras se asa lo demás."
+      ],
+      en: [
+        "Melt the guava with the water and lime juice over low heat into a sauce.",
+        "Brush the cheese slices with the oil.",
+        "Grill on a very hot, clean grate 1–2 minutes per side, until golden marks appear (frying cheese doesn't melt).",
+        "Serve right away with the guava sauce on top. A snack while the rest is grilling."
       ]
     }
   }

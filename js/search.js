@@ -63,6 +63,12 @@ const S_EXPAND = {
   legume: "grano legumbre legume habichuela frijol gandul garbanzo lenteja bean",
   vianda: "vianda yuca yautia name batata platano guineo pana malanga",
   fruta: "fruta fruit mango pina coco guayaba parcha lechosa china acerola tamarindo guanabana fresa mamey carambola",
+  // A la parrilla: "bbq", "barbacoa", "carbón", "parrilla" y "grill" traen también lo demás que se hace al fuego.
+  parrilla: "parrilla carbon bbq barbacoa grill grilled brasa pincho ahumado",
+  carbon: "parrilla carbon bbq barbacoa grill grilled brasa pincho ahumado",
+  bbq: "parrilla carbon bbq barbacoa grill grilled brasa pincho ahumado",
+  barbacoa: "parrilla carbon bbq barbacoa grill grilled brasa pincho ahumado",
+  grill: "parrilla carbon bbq barbacoa grill grilled brasa pincho ahumado",
   tropical: "tropical mango pina coco guayaba parcha lechosa guanabana tamarindo acerola mamey carambola",
   fruit: "fruta fruit mango pina coco guayaba parcha lechosa china acerola tamarindo guanabana fresa mamey carambola"
 };

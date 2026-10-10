@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 2.1.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 673 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 2.2.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 684 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, y paellas, en dieciocho tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, y recetas a la parrilla y al carbón, en diecinueve tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -113,20 +113,20 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | granos | Granos y Legumbres | 10 |
 | ensaladas | Ensaladas | 24 |
 | sopas | Sopas | 31 |
-| carnes | Carnes | 47 |
-| aves | Aves | 35 |
-| pescados | Pescado y Mariscos | 40 |
+| carnes | Carnes | 49 |
+| aves | Aves | 36 |
+| pescados | Pescado y Mariscos | 43 |
 | huevos | Huevos y Queso | 11 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 34 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 35 |
 | pastas | Pastas | 17 |
 | bizcochos | Bizcochos | 23 |
 | galletitas | Galletitas | 36 |
 | pasteles_dulces | Pasteles Dulces | 16 |
 | panes | Pan y Panecillos | 29 |
-| emparedados | Emparedados | 10 |
+| emparedados | Emparedados | 11 |
 | postres | Helados, Budines, Flan y Otros Postres | 84 |
 | arroces | Arroces y Habichuelas | 33 |
-| vegetales | Vegetales y Viandas | 48 |
+| vegetales | Vegetales y Viandas | 51 |
 | salsas | Salsas y Aderezos | 27 |
 | bebidas | Bebidas | 19 |
 | jugos | Jugos Naturales | 18 |
@@ -168,7 +168,9 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   pedazo servido y sus capas), tortilla de jamón y queso (doblada), revoltillo de bacalao y con salchichas (en sartén),
   huevos rellenos y huevos habaneros (en cazuela con salsa criolla). **Paellas:** paellera con asas y arroz de azafrán;
   encima los ingredientes de cada una (mariscos, negra con calamares y alioli, langosta, pulpo, valenciana con pollo y
-  habichuelas tiernas, mixta, pollo y chorizo a la boricua en arroz anaranjado, vegetales).
+  habichuelas tiernas, mixta, pollo y chorizo a la boricua en arroz anaranjado, vegetales). **A la parrilla:** parrilla
+  redonda de carbón con brasas y rejilla, con la comida encima (muslos, chillo entero, camarones, salmón, costillas de res,
+  maíz, maduros, vegetales, queso de freír); hamburguesas 🍔.
 - **Carnes y aves (`meatIcons`):** antes de `dishIcons`, las recetas de las categorías `carnes` y `aves` buscan su
   dibujo por tipo de plato con una lista de expresiones en orden (gana la primera): guiso en caldero (`ic-guiso-carne`,
   `ic-fricase-pollo`, ambos sobre `ic-caldero`), encebollado, empanado, desmenuzado (ropa vieja, salpicón), picadillo,
@@ -195,6 +197,8 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - **Sinónimos** (`S_GROUPS`): china = naranja = orange, parcha = maracuyá = chinola, habichuela = frijol = bean,
   guineo = banana, juey = cangrejo, alita = ala = wing, pechuga = breast, dona = donut, cupcake = bizcochito, gelatina = jello, negro = negra, etc. **Términos generales** (`S_EXPAND`, cuentan la mitad):
   "mariscos" incluye camarón, pulpo, langosta…; "carne" incluye res, cerdo, pollo…
+- **A la parrilla:** `bbq`, `barbacoa`, `carbon`, `parrilla` y `grill` amplían a todo lo que se hace al fuego
+  (parrilla, carbón, brasa, pinchos, ahumado).
 - **"X para Y"**: si lo de antes de "para"/"for" nombra una categoría ("salsa para pollo", "postre para niños"), se
   busca sólo en esa categoría y lo de después ordena los resultados sin ser obligatorio.
 - **Categorías por su nombre** (`S_CATS`): "postres", "tragos", "sopas", "frituras"…
@@ -218,7 +222,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 673). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 684). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -263,6 +267,24 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v2.2.0 · A la parrilla y al carbón
+- *Pedido:* recetas para utilizar el BBQ o cocinar al carbón.
+- Decimonovena tanda en `js/recipes-4.js` (versiones propias), 11 recetas: pernil ahumado al carbón (fuego indirecto),
+  muslos de pollo al carbón con adobo de achiote, hamburguesas boricuas, chillo entero con mojo, camarones con mojo de
+  ajo, salmón con glaseado de parcha, costillas de res con chimichurri, maíz asado con mayo-ajo y queso, maduros asados
+  en su cáscara, vegetales con mojo y queso de freír con guayaba. No se repiten las que ya había (pollo al carbón,
+  chuletas, pulpo y langosta a la parrilla, costillas y pollo BBQ, pinchos).
+- Técnica y seguridad en las recetas: carbón en dos zonas (directo e indirecto), chimenea de encendido, temperaturas
+  internas (pollo 165–175°F, carne molida 160°F, pescado 145°F), bandeja aparte para lo cocido, parrilla limpia y
+  engrasada para el pescado, cocinar al aire libre y no dejar el carbón solo.
+- **Nutrición:** nuevo alimento pan de hamburguesa (antes contaba como un pan de agua entero); el carbón y las astillas
+  de la parrilla no se cuentan.
+- **Buscador e iconos:** ver §7 y §7.1.
+- Total: **673 → 684 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador: "bbq", "barbacoa", "al carbon", "parrilla", "pollo bbq",
+  "pescado a la parrilla" ✔ y las consultas de siempre sin cambios; navegador: las 11 recetas en ES y EN a 375 px sin
+  errores ni desbordes ✔; dibujos revisados a tamaño grande ✔.
 
 ### 2026-10-10 — v2.1.0 · Paellas de mariscos y de carne
 - *Pedido:* recetas de paellas de mariscos y paella regular.

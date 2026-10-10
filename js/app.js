@@ -335,6 +335,7 @@ const meatIcons = {
   carnes: [
     [/chuleta|churrasco|albondiga|longaniza|salchicha|morcilla|conejo|pincho|mofongo/, null],
     [/jamonilla/, "svg:ic-jamonilla"],
+    [/^costillas de res a la parrilla/, "svg:ic-parrilla-costillas"],
     [/costill/, "svg:ic-costillas"],
     [/jamon/, "svg:ic-jamon"],
     [/encebollad|con cebolla/, "svg:ic-encebollado"],
@@ -351,6 +352,7 @@ const meatIcons = {
   ],
   aves: [
     [/pincho|pastelon/, null],
+    [/^muslos de pollo al carbon/, "svg:ic-parrilla-muslos"],
     [/alita/, "svg:ic-alitas"],
     [/empanad/, "svg:ic-empanado"],
     [/pechuga/, "svg:ic-pechuga"],
@@ -447,6 +449,15 @@ const dessertIcons = [
   [/^salsa de pique/, "svg:ic-salsa-pique"],
   // Yogures.
   [/^jamonilla/, "svg:ic-jamonilla"],
+  // A la parrilla y al carbón.
+  [/^hamburguesas/, "🍔"],
+  [/^chillo entero a la parrilla/, "svg:ic-parrilla-pescado"],
+  [/^camarones a la parrilla/, "svg:ic-parrilla-camarones"],
+  [/^salmon a la parrilla/, "svg:ic-parrilla-salmon"],
+  [/^maiz asado/, "svg:ic-parrilla-maiz"],
+  [/^platanos maduros asados al carbon/, "svg:ic-parrilla-maduros"],
+  [/^vegetales a la parrilla/, "svg:ic-parrilla-vegetales"],
+  [/^queso de freir a la parrilla/, "svg:ic-parrilla-queso"],
   // Paellas (🥘 era el mismo para todas).
   [/^paella negra/, "svg:ic-paella-negra"],
   [/^paella de langosta/, "svg:ic-paella-langosta"],
