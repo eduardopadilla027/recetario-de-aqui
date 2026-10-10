@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 2.9.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 759 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.0.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 759 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -61,7 +61,8 @@ cocine-a-gusto/
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
-│   └── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
+│   ├── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
+│   └── plans.js          planes de comida (#/planes): objetivos, época, preferencias, plan de 1 o 7 días
 ├── images/               (vacía: reservada para fotos)
 ├── .claude/launch.json   servidor local para la vista previa
 ├── .vercelignore         archivos que no se publican en Vercel
@@ -70,7 +71,7 @@ cocine-a-gusto/
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js`
-→ `nutrition.js` → `advisories.js` → `search.js` → `app.js`. Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
+→ `nutrition.js` → `advisories.js` → `search.js` → `app.js` → `plans.js` (usa funciones de `app.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
 ## 5. Modelo de datos: la receta
 
@@ -240,6 +241,34 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - **Si nada tiene todas las palabras**, muestra las recetas que tienen alguna y lo dice ("Ninguna receta tiene todo…").
 - Rendimiento: índice por receta en caché; cada búsqueda tarda unos milisegundos (la primera con alérgenos, ~0.25 s).
 
+### 7.2 Planes de comida (`js/plans.js`, ruta `#/planes`)
+- **Acceso:** enlace "Planes" / "Meal plans" en el menú y en el pie. Vista `<section id="view-plans">`; `route()` llama a
+  `showPlans()`; `showHome()` y `showRecipe()` la ocultan. Desde un plan, una receta se abre con `data-open` y "Atrás"
+  vuelve al plan en la misma posición.
+- **Objetivos (`PLAN_GOALS`):** rebajar, ganar masa muscular, mantener, bajo en sodio, bajo en carbohidratos, bajo en
+  azúcar y más nutritivo. Cada uno trae: meta típica de calorías, ajuste sobre el gasto (rebajar −20 %, masa +12 %…),
+  proteína por kilo (1.0–2.0 g/kg), porción máxima, criterios por comida (desayuno, plato principal, merienda) sobre la
+  nutrición estimada por porción, y una puntuación para ordenar. Rebajar excluye frituras.
+- **Mis datos (opcional):** sexo, edad, peso (libras), estatura (pies y pulgadas) y actividad. Calorías con Mifflin-St Jeor
+  × factor de actividad (1.2–1.725) × ajuste del objetivo; mínimo 1,200 (mujer) o 1,500 (hombre), con aviso.
+- **Época (`SEASONS`):** Navidad, Cuaresma y Semana Santa, verano y playa, Acción de Gracias y días de lluvia, por nombre y
+  categoría; "Según la fecha de hoy" la elige con `autoSeason()`. Las recetas de la época van primero en el plan (sin dejar
+  de cumplir el objetivo) y una lista aparte muestra todas las de la época, también postres y bebidas.
+- **Preferencias y exclusiones:** vegetariano (categoría + `S_MEAT_RX` + `PLAN_MEAT_EXTRA`: bistec, pechuga, gelatina…),
+  sólo rápidas (`isQuick`), y evitar gluten, leche, huevo, pescado, mariscos, maní y nueces (de `getAdvisories`) o cerdo.
+  Nunca entran tragos con alcohol, salsas ni dulces en los planes.
+- **Plan:** 1 o 7 días; desayuno 25 %, almuerzo 35 %, merienda 10 % y cena 30 % de la meta. La porción sugerida (½ a 2½) se
+  ajusta a la parte de la meta de cada comida. Sin repetir platos principales en la semana, y la cena evita la categoría
+  del almuerzo. "Otro plan" cambia la semilla. Totales del día: calorías y proteína con barras, carbohidratos, fibra,
+  azúcar y sodio. Etiquetas por comida (con la porción sugerida): alta en proteína (≥25 g), alta en fibra (≥5 g), baja en
+  azúcar (≤5 g), sodio moderado (≤600 mg).
+- **Si las exclusiones dejan una comida con pocas opciones** (menos de 6 platos principales o 3 desayunos/meriendas), se
+  completa con las que más se acercan al objetivo y se avisa.
+- **"Recetas que encajan":** las mejores 12 de cada comida para el objetivo, para consultar o cambiar.
+- **Avisos:** orientación general, no consejo médico (embarazo, menores, diabetes, riñón, corazón); nota propia de cada
+  objetivo (ritmo seguro al rebajar, entrenamiento de fuerza para masa, límite de sodio, azúcar añadida, plato saludable).
+- **Ajustes:** en `localStorage` (`rcb.plan`), sólo en ese navegador. Números con coma de miles (3,100) en los dos idiomas.
+
 ## 8. Estimación nutricional (`js/nutrition.js`)
 
 - `NUTRI_FOODS`: alimentos con palabras clave (sin acentos) y valores por 100 g (kcal, proteína, carbohidratos, azúcares,
@@ -292,6 +321,20 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v3.0.0 · Planes de comida
+- *Pedidos:* una pestaña de consulta con estas recetas y opciones predeterminadas para dietas de rebajar y ganar masa
+  muscular; también recomendaciones por época, bajo en azúcar, valor nutritivo y lo que la gente busca para una buena
+  recomendación.
+- Nuevo `js/plans.js` y vista `#/planes` (ver §7.2): 7 objetivos, calculadora de calorías y proteína con datos opcionales,
+  5 épocas más la automática, preferencias (vegetariano, rápidas), exclusiones por alérgenos y cerdo, plan de 1 o 7 días
+  con porciones sugeridas, totales y etiquetas nutricionales, lista de recetas que encajan y lista de temporada.
+- `app.js`: ruta `#/planes`, textos `navPlans`, la vista se oculta al ir al inicio o a una receta y se redibuja al
+  cambiar de idioma. `index.html`: enlace en el menú y el pie, `<section id="view-plans">` y `<script src="js/plans.js">`.
+  `styles.css`: estilos `.plans-*`, `.goal-*`, `.plan-*` (dos columnas de objetivos en celular).
+- *Verificado:* los 7 objetivos × 6 épocas × preferencias × exclusiones arman plan sin errores (252 combinaciones); metas
+  calculadas comprobadas a mano (hombre, 30 años, 180 lb, 5'10", moderada, masa → 3,100 cal y 165 g de proteína); abrir
+  una receta del plan y volver; ES y EN; 375 px sin desbordes; sin errores en la consola.
 
 ### 2026-10-10 — v2.9.0 · Más emparedados
 - *Pedido:* más recetas de emparedados.

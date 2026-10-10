@@ -8,8 +8,8 @@
  * nutricional se CALCULA de los ingredientes (js/nutrition.js) y se presenta
  * como estimación, con los ingredientes que no se pudieron contar.
  *
- * Vistas: inicio (#/ o anclas #categorias, #recetas, #rapidas) y detalle
- * (#/receta/<id>). El detalle tiene URL propia: se puede compartir, y "Atrás"
+ * Vistas: inicio (#/ o anclas #categorias, #recetas, #rapidas), detalle
+ * (#/receta/<id>) y planes de comida (#/planes, en js/plans.js). El detalle tiene URL propia: se puede compartir, y "Atrás"
  * del navegador vuelve a los resultados en la misma posición. */
 
 const BRAND = "Recetarios de Aquí";
@@ -40,6 +40,7 @@ const translations = {
     navCategories: "Categorías",
     navRecipes: "Recetas",
     navFavorites: "Favoritas",
+    navPlans: "Planes",
     categoriesTitle: "Explora por categoría",
     categoriesSub: "Elige una categoría para ver sus recetas. Vuelve a pulsarla para cerrarla.",
     showing: "Mostrando",
@@ -153,6 +154,7 @@ const translations = {
     navCategories: "Categories",
     navRecipes: "Recipes",
     navFavorites: "Favorites",
+    navPlans: "Meal plans",
     categoriesTitle: "Browse by category",
     categoriesSub: "Pick a category to see its recipes. Tap it again to close it.",
     showing: "Showing",
@@ -936,6 +938,7 @@ function switchLang(lang) {
   updateTexts();
   renderHome();
   if (current) renderModal(current);
+  if (!$("view-plans").hidden) renderPlansShell();
 }
 
 /* ------------------------------------------------------------ detalle ---- */
@@ -1135,6 +1138,7 @@ function showRecipe(id) {
   selectRecipeTab("recipe");
   renderModal(recipe);
   $("view-home").hidden = true;
+  $("view-plans").hidden = true;
   $("view-recipe").hidden = false;
   window.scrollTo(0, 0);
   $("modal-title").focus({ preventScroll: true });
@@ -1149,6 +1153,7 @@ function showHome(anchor) {
   current = null;
   document.title = `${BRAND} — ${t().subtitle}`;
   $("view-recipe").hidden = true;
+  $("view-plans").hidden = true;
   $("view-home").hidden = false;
   if (fromRecipe && !explicit) {
     // "Atrás": volver al mismo punto de los resultados y a la tarjeta abierta,
@@ -1175,6 +1180,7 @@ function route() {
   const hash = decodeURIComponent(location.hash || "");
   const m = hash.match(/^#\/receta\/(.+)$/);
   if (m) { showRecipe(m[1]); return; }
+  if (hash === "#/planes") { showPlans(); return; }
   const anchor = hash.startsWith("#") && !hash.startsWith("#/") ? hash.slice(1) : null;
   showHome(anchor);
 }
@@ -1373,6 +1379,7 @@ function init() {
   updateTexts();
   renderHome();
   setupEventListeners();
+  setupPlans();
   route();
 }
 

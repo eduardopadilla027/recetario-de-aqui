@@ -623,3 +623,92 @@ main:focus { outline: none; }
   .step-list li::after { display: none; }
   .scale-note { background: none; padding: 0; }
 }
+
+/* ===================== Planes de comida (#/planes) ===================== */
+.plans-view { padding: clamp(24px, 4vw, 48px) 0 var(--s-8); }
+.plans-wrap { display: flex; flex-direction: column; gap: var(--s-5); }
+.plans-head .section-sub { max-width: 70ch; }
+#plans-title:focus { outline: none; }
+.goal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: var(--s-3); }
+@media (max-width: 520px) { .goal-grid { grid-template-columns: 1fr 1fr; gap: var(--s-2); } .goal-card { padding: var(--s-3); } .goal-desc { font-size: .75rem; } .goal-icon { font-size: 1.3rem; } }
+.goal-card { display: flex; flex-direction: column; gap: 4px; text-align: left; padding: var(--s-4); border: 1.5px solid var(--line); border-radius: var(--radius); background: var(--ivory); color: var(--ink); cursor: pointer; transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+.goal-card:hover { border-color: var(--achiote); }
+.goal-card[aria-checked="true"] { border-color: var(--achiote); box-shadow: 0 0 0 3px var(--achiote-50); background: #FFF8F2; }
+.goal-icon { font-size: 1.6rem; line-height: 1; }
+.goal-name { font-weight: 700; }
+.goal-card[aria-checked="true"] .goal-name { color: var(--achiote-600); }
+.goal-desc { font-size: .85rem; color: var(--ink-2); line-height: 1.35; }
+.plans-controls { display: grid; gap: var(--s-4); grid-template-columns: 1fr; }
+@media (min-width: 860px) { .plans-controls { grid-template-columns: 3fr 2fr; align-items: start; } }
+.plans-me, .plans-avoid { border: 1px solid var(--line); border-radius: var(--radius); background: var(--ivory); padding: var(--s-4); margin: 0; }
+.plans-me summary { font-weight: 700; cursor: pointer; }
+.plans-help { font-size: .88rem; color: var(--ink-2); margin-top: var(--s-2); }
+.plans-form { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: var(--s-3); margin-top: var(--s-3); }
+.plans-form label, .plans-height legend { display: flex; flex-direction: column; gap: 4px; font-size: .85rem; font-weight: 600; color: var(--ink-2); }
+.plans-form input, .plans-form select { font: inherit; font-weight: 400; color: var(--ink); padding: 8px 10px; border: 1.5px solid var(--line); border-radius: var(--radius-sm); background: #fff; min-width: 0; width: 100%; }
+.plans-form input:focus-visible, .plans-form select:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; }
+.plans-height { border: 0; padding: 0; margin: 0; display: flex; gap: var(--s-2); align-items: flex-end; flex-wrap: wrap; grid-column: span 1; }
+.plans-height legend { margin-bottom: 4px; }
+.plans-height label { flex-direction: row; align-items: center; gap: 4px; font-weight: 400; color: var(--ink); }
+.plans-height input { width: 4.2em; }
+.plans-activity { grid-column: 1 / -1; }
+.plans-avoid legend { font-weight: 700; padding: 0 4px; }
+.plans-avoid { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.chip-check { position: relative; }
+.chip-check input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.chip-check span { display: inline-block; padding: 6px 12px; border: 1.5px solid var(--line); border-radius: 999px; font-size: .88rem; background: #fff; }
+.chip-check input:checked + span { background: var(--achiote-50); border-color: var(--achiote); color: var(--achiote-600); font-weight: 600; }
+.chip-check input:checked + span::before { content: "✕ "; }
+.chip-check input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; }
+.plans-target { background: var(--plantain-50); border-radius: var(--radius); padding: var(--s-4); display: flex; flex-direction: column; gap: var(--s-2); }
+.plans-note { font-size: .9rem; color: var(--ink-2); }
+.plans-warn { color: var(--achiote-600); font-weight: 600; }
+.plans-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: center; justify-content: space-between; }
+.seg { display: inline-flex; gap: 0; }
+.seg .btn { border-radius: 0; }
+.seg .btn:first-child { border-radius: 999px 0 0 999px; }
+.seg .btn:last-child { border-radius: 0 999px 999px 0; margin-left: -1.5px; }
+.plan-days { display: grid; gap: var(--s-4); }
+.plan-days.week { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.plan-day { border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--ivory); padding: var(--s-4); display: flex; flex-direction: column; gap: var(--s-3); box-shadow: var(--shadow-sm); }
+.plan-day-title { font-size: var(--step-1); color: var(--achiote-600); }
+.plan-meals { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--s-3); }
+.plan-meal { display: grid; grid-template-columns: 64px 1fr; grid-template-rows: auto auto; column-gap: var(--s-3); row-gap: 2px; align-items: start; }
+.plan-slot { grid-column: 1 / -1; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--plantain); }
+.plan-thumb { width: 64px; height: 64px; border-radius: 12px; overflow: hidden; display: block; }
+.plan-thumb .cover { width: 100%; height: 100%; aspect-ratio: auto; }
+.plan-thumb .cover-emoji { font-size: 1.7rem; }
+.plan-meal-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.plan-meal-name { font-weight: 700; color: var(--ink); text-decoration: none; line-height: 1.3; }
+.plan-meal-name:hover { color: var(--achiote); text-decoration: underline; }
+.plan-portion { font-size: .85rem; color: var(--achiote-600); font-weight: 600; }
+.plan-nutri { display: flex; flex-wrap: wrap; gap: 2px 10px; font-size: .8rem; color: var(--ink-3); }
+.plan-total { border-top: 1px dashed var(--line); padding-top: var(--s-3); display: grid; grid-template-columns: 1fr auto; gap: 6px var(--s-3); align-items: center; font-size: .88rem; }
+.plan-total-label { grid-column: 1 / -1; font-weight: 700; }
+.plan-bar { height: 8px; border-radius: 999px; background: var(--sand); overflow: hidden; }
+.plan-bar-fill { display: block; height: 100%; background: var(--achiote); border-radius: inherit; }
+.plan-bar-p .plan-bar-fill { background: var(--plantain); }
+.plan-total-val { color: var(--ink-2); white-space: nowrap; }
+.plan-total-extra { grid-column: 1 / -1; color: var(--ink-3); font-size: .8rem; }
+.plans-more-title { font-size: var(--step-2); }
+.plans-more > div { display: grid; gap: var(--s-4); grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); margin-top: var(--s-3); }
+.plans-more-slot { font-size: var(--step-0); color: var(--plantain); display: flex; gap: var(--s-2); align-items: center; }
+.plans-count { font-size: .75rem; background: var(--plantain-50); color: var(--plantain); border-radius: 999px; padding: 1px 8px; }
+.plans-more-list { list-style: none; padding: 0; margin: var(--s-2) 0 0; display: flex; flex-direction: column; gap: 6px; }
+.plans-more-list a { color: var(--ink); font-weight: 600; text-decoration: none; }
+.plans-more-list a:hover { color: var(--achiote); text-decoration: underline; }
+.plans-more-n { display: block; font-size: .78rem; color: var(--ink-3); }
+.plans-disclaimer { font-size: .85rem; color: var(--ink-2); background: var(--sand); border-left: 4px solid var(--gold); padding: var(--s-3) var(--s-4); border-radius: var(--radius-sm); }
+.plans-side { display: flex; flex-direction: column; gap: var(--s-3); }
+.plans-season-pick { display: flex; flex-direction: column; gap: 4px; font-weight: 700; }
+.plans-season-pick select { font: inherit; font-weight: 400; padding: 8px 10px; border: 1.5px solid var(--line); border-radius: var(--radius-sm); background: #fff; }
+.chip-pref input:checked + span { background: var(--plantain-50); border-color: var(--plantain); color: var(--plantain); }
+.chip-pref input:checked + span::before { content: "✓ "; }
+.plan-badges { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
+.plan-badge { font-size: .7rem; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--plantain-50); color: var(--plantain); }
+.plan-badge-prot { background: var(--achiote-50); color: var(--achiote-600); }
+.plans-season { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--s-4); background: #FFF8EE; }
+.plans-season-list { list-style: none; padding: 0; margin: var(--s-3) 0 0; display: grid; gap: 6px var(--s-4); grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.plans-season-list a { color: var(--ink); font-weight: 600; text-decoration: none; }
+.plans-season-list a:hover { color: var(--achiote); text-decoration: underline; }
+@media print { .plans-controls, .plans-actions, .goal-grid, .plans-more { display: none; } }
