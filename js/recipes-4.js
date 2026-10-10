@@ -47,6 +47,8 @@
  * maduros, vegetales y queso de freír con guayaba).
  * Vigésima tanda: adobos criollos (res y cerdo, pollo, pescado y mariscos, pavo, cabro,
  * BBQ, vegetales, limón y pimienta, y sin sal).
+ * Vigesimoprimera tanda: parmesanas y milanesas (pollo, res, cerdo, pescado, cordon bleu,
+ * panko al horno, berenjena) y recetas con Nutella.
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -11418,6 +11420,673 @@ recipes.push(
         "Use it like regular adobo (1 teaspoon per pound of meat, chicken or fish) and add salt separately only if needed.",
         "The lime and garlic fool the palate: you miss the salt less.",
         "Useful for anyone watching blood pressure or sodium. If your doctor restricted potassium, avoid potassium-based salt substitutes."
+      ]
+    }
+  },
+
+  // ── Vigesimoprimera tanda (2026-10): parmesanas, milanesas y recetas con Nutella ──
+  {
+    id: "pechuga-parmesana",
+    category: "aves",
+    name: { es: "Pechuga a la Parmesana", en: "Chicken Parmesan" },
+    time: "50 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 pechugas de pollo deshuesadas, abiertas en 4 filetes finos",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "½ taza de harina de trigo",
+        "2 huevos batidos",
+        "1 taza de pan rallado",
+        "½ taza de queso parmesano rallado",
+        "1 cucharadita de orégano seco",
+        "Aceite para freír",
+        "1½ tazas de salsa marinara",
+        "1½ tazas de queso mozzarella rallado",
+        "Hojas de albahaca para decorar"
+      ],
+      en: [
+        "2 boneless chicken breasts, butterflied into 4 thin cutlets",
+        "1 teaspoon salt",
+        "½ teaspoon pepper",
+        "½ cup all-purpose flour",
+        "2 eggs, beaten",
+        "1 cup breadcrumbs",
+        "½ cup grated parmesan cheese",
+        "1 teaspoon dried oregano",
+        "Oil for frying",
+        "1½ cups marinara sauce",
+        "1½ cups shredded mozzarella",
+        "Basil leaves for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga los filetes entre dos plásticos y aplánelos con un rolo o el fondo de un caldero hasta ½ pulgada parejo (así se cocinan sin secarse). Sazone con sal y pimienta.",
+        "Prepare tres platos: la harina; los huevos; y el pan rallado mezclado con la mitad del parmesano y el orégano. Pase cada filete por los tres, apretando el empanado.",
+        "Caliente el horno a 425°F. Fría los filetes en el aceite a fuego medio 3 minutos por lado, hasta dorar. Escúrralos en papel.",
+        "Póngalos en un molde, cubra cada uno con salsa marinara, la mozzarella y el resto del parmesano.",
+        "Hornee 10–12 minutos, hasta que el queso burbujee y el pollo llegue a 165°F. Decore con albahaca y sirva con espaguetis o ensalada."
+      ],
+      en: [
+        "Put the cutlets between two sheets of plastic and pound them with a rolling pin or the bottom of a pot to an even ½ inch (so they cook without drying out). Season with salt and pepper.",
+        "Set up three plates: the flour; the eggs; and the breadcrumbs mixed with half the parmesan and the oregano. Dredge each cutlet through all three, pressing on the coating.",
+        "Heat the oven to 425°F. Fry the cutlets in the oil over medium heat 3 minutes per side, until golden. Drain on paper towels.",
+        "Put them in a baking dish, top each with marinara, the mozzarella and the rest of the parmesan.",
+        "Bake 10–12 minutes, until the cheese bubbles and the chicken reaches 165°F. Garnish with basil and serve with spaghetti or salad."
+      ]
+    }
+  },
+  {
+    id: "milanesa-pollo",
+    category: "aves",
+    name: { es: "Milanesa de Pollo", en: "Chicken Milanesa" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 pechugas de pollo deshuesadas, abiertas en 4 filetes",
+        "4 dientes de ajo, majados",
+        "2 cucharadas de jugo de limón",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "2 huevos batidos",
+        "1½ tazas de pan rallado",
+        "2 cucharadas de perejil picado",
+        "Aceite para freír",
+        "1 limón en gajos"
+      ],
+      en: [
+        "2 boneless chicken breasts, butterflied into 4 cutlets",
+        "4 garlic cloves, mashed",
+        "2 tablespoons lime juice",
+        "1 teaspoon salt",
+        "½ teaspoon pepper",
+        "2 eggs, beaten",
+        "1½ cups breadcrumbs",
+        "2 tablespoons chopped parsley",
+        "Oil for frying",
+        "1 lime in wedges"
+      ]
+    },
+    steps: {
+      es: [
+        "Aplane los filetes hasta ¼ de pulgada. Adóbelos con el ajo, el limón, la sal y la pimienta 15 minutos.",
+        "Bata los huevos con 1 cucharada de agua. Mezcle el pan rallado con el perejil.",
+        "Pase cada filete por el huevo y luego por el pan, apretando bien con la mano para que el empanado no se caiga al freír.",
+        "Fría en el aceite caliente (350°F) 2–3 minutos por lado, hasta que esté dorada y el pollo llegue a 165°F.",
+        "Escurra en una rejilla (en papel se humedece por debajo) y sirva con limón, arroz y habichuelas o papas fritas."
+      ],
+      en: [
+        "Pound the cutlets to ¼ inch. Season them with the garlic, lime juice, salt and pepper 15 minutes.",
+        "Beat the eggs with 1 tablespoon of water. Mix the breadcrumbs with the parsley.",
+        "Dip each cutlet in the egg and then the crumbs, pressing well with your hand so the coating doesn't fall off when frying.",
+        "Fry in hot oil (350°F) 2–3 minutes per side, until golden and the chicken reaches 165°F.",
+        "Drain on a rack (on paper it gets soggy underneath) and serve with lime, rice and beans or fries."
+      ]
+    }
+  },
+  {
+    id: "milanesa-napolitana",
+    category: "carnes",
+    name: { es: "Milanesa a la Napolitana (de Res)", en: "Beef Milanesa Napolitana" },
+    time: "45 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 bisteces finos de res (de bola o de cadera)",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "3 dientes de ajo, majados",
+        "2 huevos batidos",
+        "1½ tazas de pan rallado",
+        "Aceite para freír",
+        "1 taza de salsa de tomate",
+        "4 lascas de jamón de cocinar",
+        "1 taza de queso mozzarella rallado",
+        "1 cucharadita de orégano seco"
+      ],
+      en: [
+        "4 thin beef steaks (round or rump)",
+        "1 teaspoon salt",
+        "½ teaspoon pepper",
+        "3 garlic cloves, mashed",
+        "2 eggs, beaten",
+        "1½ cups breadcrumbs",
+        "Oil for frying",
+        "1 cup tomato sauce",
+        "4 slices cooking ham",
+        "1 cup shredded mozzarella",
+        "1 teaspoon dried oregano"
+      ]
+    },
+    steps: {
+      es: [
+        "Aplane los bisteces y sazónelos con sal, pimienta y ajo.",
+        "Páselos por el huevo y por el pan rallado, apretando.",
+        "Fríalos a 350°F 2–3 minutos por lado, hasta dorar. Escúrralos.",
+        "Caliente el horno a 425°F. Ponga las milanesas en una bandeja y cubra cada una con salsa de tomate, una lasca de jamón y la mozzarella. Espolvoree el orégano.",
+        "Hornee 8–10 minutos, hasta que el queso se derrita y dore. Se sirve con papas fritas."
+      ],
+      en: [
+        "Pound the steaks and season with salt, pepper and garlic.",
+        "Dip them in the egg and the breadcrumbs, pressing.",
+        "Fry at 350°F 2–3 minutes per side, until golden. Drain.",
+        "Heat the oven to 425°F. Put the milanesas on a sheet pan and top each with tomato sauce, a slice of ham and the mozzarella. Sprinkle with oregano.",
+        "Bake 8–10 minutes, until the cheese melts and browns. Serve with fries."
+      ]
+    }
+  },
+  {
+    id: "milanesa-cerdo",
+    category: "carnes",
+    name: { es: "Milanesa de Cerdo (Chuleta Deshuesada Empanada)", en: "Pork Milanesa (Breaded Boneless Chop)" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 chuletas de cerdo deshuesadas, de ½ pulgada",
+        "1 cucharadita de adobo",
+        "½ cucharadita de orégano",
+        "½ taza de harina de trigo",
+        "2 huevos batidos",
+        "1½ tazas de galleta molida",
+        "Aceite para freír",
+        "1 limón en gajos"
+      ],
+      en: [
+        "4 boneless pork chops, ½ inch thick",
+        "1 teaspoon adobo",
+        "½ teaspoon oregano",
+        "½ cup all-purpose flour",
+        "2 eggs, beaten",
+        "1½ cups cracker crumbs",
+        "Oil for frying",
+        "1 lime in wedges"
+      ]
+    },
+    steps: {
+      es: [
+        "Aplane las chuletas un poco (¼ de pulgada) y sazónelas con el adobo y el orégano.",
+        "Páselas por la harina, el huevo y la galleta molida.",
+        "Fríalas a 350°F 3 minutos por lado, hasta que estén doradas y lleguen a 145°F por dentro.",
+        "Deje reposar 3 minutos en una rejilla y sirva con limón, tostones o arroz con gandules."
+      ],
+      en: [
+        "Pound the chops a little (¼ inch) and season with the adobo and oregano.",
+        "Dredge them in the flour, the egg and the cracker crumbs.",
+        "Fry at 350°F 3 minutes per side, until golden and they reach 145°F inside.",
+        "Rest 3 minutes on a rack and serve with lime, tostones or arroz con gandules."
+      ]
+    }
+  },
+  {
+    id: "pescado-milanesa",
+    category: "pescados",
+    name: { es: "Pescado a la Milanesa", en: "Breaded Fish Milanesa" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de filetes de pescado blanco (mero, dorado o tilapia)",
+        "1 cucharadita de sal",
+        "2 dientes de ajo, majados",
+        "2 cucharadas de jugo de limón",
+        "2 huevos batidos",
+        "1 taza de pan rallado",
+        "¼ taza de queso parmesano rallado",
+        "Aceite para freír",
+        "Mayo-ajo y limón para servir"
+      ],
+      en: [
+        "1½ lb white fish fillets (grouper, mahi or tilapia)",
+        "1 teaspoon salt",
+        "2 garlic cloves, mashed",
+        "2 tablespoons lime juice",
+        "2 eggs, beaten",
+        "1 cup breadcrumbs",
+        "¼ cup grated parmesan cheese",
+        "Oil for frying",
+        "Garlic mayo and lime for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Seque bien los filetes y adóbelos con la sal, el ajo y el limón 10 minutos (no más: el limón empieza a cocinarlos).",
+        "Pase cada filete por el huevo y por el pan rallado mezclado con el parmesano.",
+        "Fría a fuego medio (350°F) 2–3 minutos por lado, hasta dorar y que el pescado se separe en lascas (145°F).",
+        "Sirva con mayo-ajo, limón y ensalada o tostones."
+      ],
+      en: [
+        "Pat the fillets very dry and season with the salt, garlic and lime juice 10 minutes (no longer: the lime starts to cook them).",
+        "Dip each fillet in the egg and the breadcrumbs mixed with the parmesan.",
+        "Fry over medium heat (350°F) 2–3 minutes per side, until golden and the fish flakes (145°F).",
+        "Serve with garlic mayo, lime and salad or tostones."
+      ]
+    }
+  },
+  {
+    id: "pechuga-cordon-bleu",
+    category: "aves",
+    name: { es: "Pechuga Rellena de Jamón y Queso (Cordon Bleu)", en: "Ham and Cheese Stuffed Chicken (Cordon Bleu)" },
+    time: "55 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 pechugas de pollo deshuesadas",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "4 lascas de jamón de cocinar",
+        "4 lascas de queso suizo",
+        "½ taza de harina de trigo",
+        "2 huevos batidos",
+        "1 taza de pan rallado",
+        "3 cucharadas de mantequilla, derretida"
+      ],
+      en: [
+        "4 boneless chicken breasts",
+        "1 teaspoon salt",
+        "½ teaspoon pepper",
+        "4 slices cooking ham",
+        "4 slices Swiss cheese",
+        "½ cup all-purpose flour",
+        "2 eggs, beaten",
+        "1 cup breadcrumbs",
+        "3 tablespoons butter, melted"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400°F. Aplane las pechugas hasta ¼ de pulgada y sazónelas.",
+        "Ponga en cada una una lasca de jamón y una de queso, enróllela apretado y asegúrela con palillos.",
+        "Pase los rollos por la harina, el huevo y el pan rallado. Póngalos en un molde con la unión hacia abajo y rocíe la mantequilla.",
+        "Hornee 30–35 minutos, hasta que estén dorados y el centro llegue a 165°F.",
+        "Deje reposar 5 minutos, quite los palillos y corte en ruedas: se ve el espiral de jamón y queso."
+      ],
+      en: [
+        "Heat the oven to 400°F. Pound the breasts to ¼ inch and season.",
+        "Put a slice of ham and a slice of cheese on each, roll up tightly and secure with toothpicks.",
+        "Dredge the rolls in the flour, egg and breadcrumbs. Place seam side down in a baking dish and drizzle with the butter.",
+        "Bake 30–35 minutes, until golden and the center reaches 165°F.",
+        "Rest 5 minutes, remove the toothpicks and slice into rounds: you'll see the ham and cheese swirl."
+      ]
+    }
+  },
+  {
+    id: "pechugas-panko-horno",
+    category: "aves",
+    name: { es: "Pechugas Crujientes al Horno con Panko y Parmesano", en: "Crispy Baked Panko Parmesan Chicken" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de pechuga de pollo de ½ pulgada",
+        "1 cucharadita de sal",
+        "½ cucharadita de ajo en polvo",
+        "3 cucharadas de mayonesa",
+        "1 cucharada de mostaza",
+        "1 taza de panko",
+        "⅓ taza de queso parmesano rallado",
+        "1 cucharadita de pimentón",
+        "2 cucharadas de aceite de oliva"
+      ],
+      en: [
+        "4 chicken breast cutlets, ½ inch thick",
+        "1 teaspoon salt",
+        "½ teaspoon garlic powder",
+        "3 tablespoons mayonnaise",
+        "1 tablespoon mustard",
+        "1 cup panko",
+        "⅓ cup grated parmesan cheese",
+        "1 teaspoon paprika",
+        "2 tablespoons olive oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 425°F y ponga una rejilla sobre una bandeja (así el pollo queda crujiente por los dos lados).",
+        "Tueste el panko con el aceite en un sartén 3 minutos, moviendo, hasta que dore; mézclelo con el parmesano y el pimentón.",
+        "Sazone el pollo con sal y ajo en polvo, úntelo con la mayonesa mezclada con la mostaza y presiónelo en el panko.",
+        "Hornee sobre la rejilla 15–18 minutos, hasta 165°F por dentro. Todo lo crujiente del frito, sin freír."
+      ],
+      en: [
+        "Heat the oven to 425°F and set a rack over a sheet pan (so the chicken crisps on both sides).",
+        "Toast the panko with the oil in a skillet 3 minutes, stirring, until golden; mix with the parmesan and paprika.",
+        "Season the chicken with salt and garlic powder, brush it with the mayonnaise mixed with the mustard and press it into the panko.",
+        "Bake on the rack 15–18 minutes, to 165°F inside. All the crunch of fried, without frying."
+      ]
+    }
+  },
+  {
+    id: "berenjena-parmesana",
+    category: "vegetales",
+    name: { es: "Berenjena a la Parmesana", en: "Eggplant Parmesan" },
+    time: "1 hr 15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 berenjenas en ruedas de ½ pulgada",
+        "1 cucharadita de sal",
+        "½ taza de harina de trigo",
+        "3 huevos batidos",
+        "1½ tazas de pan rallado",
+        "½ taza de aceite de oliva",
+        "3 tazas de salsa marinara",
+        "2 tazas de queso mozzarella rallado",
+        "¾ taza de queso parmesano rallado",
+        "Hojas de albahaca"
+      ],
+      en: [
+        "2 eggplants in ½-inch rounds",
+        "1 teaspoon salt",
+        "½ cup all-purpose flour",
+        "3 eggs, beaten",
+        "1½ cups breadcrumbs",
+        "½ cup olive oil",
+        "3 cups marinara sauce",
+        "2 cups shredded mozzarella",
+        "¾ cup grated parmesan cheese",
+        "Basil leaves"
+      ]
+    },
+    steps: {
+      es: [
+        "Espolvoree la sal sobre las ruedas de berenjena y déjelas en un colador 30 minutos; séquelas bien (así sueltan el agua amarga y absorben menos aceite).",
+        "Caliente el horno a 400°F. Pase las ruedas por la harina, el huevo y el pan rallado.",
+        "Póngalas en bandejas, rocíe el aceite y hornee 20 minutos, volteando a la mitad, hasta dorar.",
+        "En un molde, haga capas de salsa, berenjena, mozzarella y parmesano, y termine con salsa y queso.",
+        "Hornee 25 minutos, hasta que burbujee. Deje reposar 10 minutos antes de cortar y decore con albahaca. Vegetariana."
+      ],
+      en: [
+        "Sprinkle the salt over the eggplant rounds and leave them in a colander 30 minutes; pat them very dry (so they release the bitter water and absorb less oil).",
+        "Heat the oven to 400°F. Dredge the rounds in the flour, egg and breadcrumbs.",
+        "Put them on sheet pans, drizzle with the oil and bake 20 minutes, flipping halfway, until golden.",
+        "In a baking dish, layer sauce, eggplant, mozzarella and parmesan, finishing with sauce and cheese.",
+        "Bake 25 minutes, until bubbling. Rest 10 minutes before cutting and garnish with basil. Vegetarian."
+      ]
+    }
+  },
+  {
+    id: "crepas-nutella-guineo",
+    category: "postres",
+    name: { es: "Crepas de Nutella y Guineo", en: "Nutella Banana Crêpes" },
+    time: "30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 taza de harina de trigo",
+        "1½ tazas de leche",
+        "2 huevos",
+        "2 cucharadas de mantequilla, derretida",
+        "1 cucharada de azúcar",
+        "1 pizca de sal",
+        "¾ taza de Nutella",
+        "3 guineos maduros en ruedas",
+        "Azúcar en polvo para decorar"
+      ],
+      en: [
+        "1 cup all-purpose flour",
+        "1½ cups milk",
+        "2 eggs",
+        "2 tablespoons butter, melted",
+        "1 tablespoon sugar",
+        "1 pinch of salt",
+        "¾ cup Nutella",
+        "3 ripe bananas, sliced",
+        "Powdered sugar for dusting"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la harina, la leche, los huevos, la mantequilla, el azúcar y la sal. Deje reposar la mezcla 15 minutos (las crepas salen más finas y no se rompen).",
+        "Caliente un sartén antiadherente de 8 pulgadas a fuego medio con unas gotas de mantequilla.",
+        "Vierta ¼ taza de mezcla y gire el sartén para cubrir el fondo. Cocine 1 minuto, voltee y cocine 30 segundos.",
+        "Unte cada crepa con Nutella, ponga ruedas de guineo y dóblela en cuatro.",
+        "Espolvoree azúcar en polvo. Contiene avellanas, leche y soya."
+      ],
+      en: [
+        "Blend the flour, milk, eggs, butter, sugar and salt. Let the batter rest 15 minutes (the crêpes come out thinner and don't tear).",
+        "Heat an 8-inch nonstick skillet over medium heat with a few drops of butter.",
+        "Pour in ¼ cup of batter and swirl the pan to coat the bottom. Cook 1 minute, flip and cook 30 seconds.",
+        "Spread each crêpe with Nutella, add banana slices and fold into quarters.",
+        "Dust with powdered sugar. Contains hazelnuts, milk and soy."
+      ]
+    }
+  },
+  {
+    id: "brownies-nutella",
+    category: "bizcochos",
+    name: { es: "Brownies de Nutella", en: "Nutella Brownies" },
+    time: "35 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1¼ tazas de Nutella",
+        "2 huevos",
+        "½ taza de harina de trigo",
+        "¼ taza de cocoa en polvo",
+        "¼ taza de azúcar",
+        "¼ taza de mantequilla, derretida",
+        "1 pizca de sal",
+        "½ taza de avellanas o nueces picadas"
+      ],
+      en: [
+        "1¼ cups Nutella",
+        "2 eggs",
+        "½ cup all-purpose flour",
+        "¼ cup cocoa powder",
+        "¼ cup sugar",
+        "¼ cup butter, melted",
+        "1 pinch of salt",
+        "½ cup chopped hazelnuts or walnuts"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y forre un molde de 8 × 8 pulgadas con papel de hornear.",
+        "Bata la Nutella con los huevos, el azúcar y la mantequilla hasta que esté liso.",
+        "Añada la harina, la cocoa y la sal sin batir de más, y luego las avellanas.",
+        "Hornee 20–25 minutos: un palillo debe salir con migas húmedas, no limpio (así quedan melcochosos).",
+        "Deje enfriar por completo antes de cortar. Contiene avellanas, leche y soya."
+      ],
+      en: [
+        "Heat the oven to 350°F and line an 8 × 8-inch pan with parchment.",
+        "Beat the Nutella with the eggs, sugar and butter until smooth.",
+        "Add the flour, cocoa and salt without overmixing, then the hazelnuts.",
+        "Bake 20–25 minutes: a toothpick should come out with moist crumbs, not clean (that's what keeps them fudgy).",
+        "Let cool completely before cutting. Contains hazelnuts, milk and soy."
+      ]
+    }
+  },
+  {
+    id: "galletas-nutella",
+    category: "galletitas",
+    name: { es: "Galletas de Nutella", en: "Nutella Cookies" },
+    time: "30 min",
+    servings: 20,
+    ingredients: {
+      es: [
+        "1 taza de Nutella",
+        "1 huevo",
+        "1 taza de harina de trigo",
+        "¼ taza de azúcar morena",
+        "½ cucharadita de polvo de hornear",
+        "1 pizca de sal",
+        "½ taza de chispas de chocolate"
+      ],
+      en: [
+        "1 cup Nutella",
+        "1 egg",
+        "1 cup all-purpose flour",
+        "¼ cup brown sugar",
+        "½ teaspoon baking powder",
+        "1 pinch of salt",
+        "½ cup chocolate chips"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y forre una bandeja con papel de hornear.",
+        "Mezcle la Nutella con el huevo y el azúcar morena. Añada la harina, el polvo de hornear y la sal, y luego las chispas.",
+        "Forme bolitas de una cucharada y aplánelas un poco.",
+        "Hornee 8–10 minutos: salen blandas y se afirman al enfriar. Contiene avellanas, leche y soya."
+      ],
+      en: [
+        "Heat the oven to 350°F and line a sheet pan with parchment.",
+        "Mix the Nutella with the egg and brown sugar. Add the flour, baking powder and salt, then the chips.",
+        "Form tablespoon balls and flatten slightly.",
+        "Bake 8–10 minutes: they come out soft and firm up as they cool. Contains hazelnuts, milk and soy."
+      ]
+    }
+  },
+  {
+    id: "flan-nutella",
+    category: "postres",
+    name: { es: "Flan de Nutella", en: "Nutella Flan" },
+    time: "1 hr 15 min + 4 hr de nevera",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 taza de azúcar (para el caramelo)",
+        "¾ taza de Nutella",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "5 huevos",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "1 cup sugar (for the caramel)",
+        "¾ cup Nutella",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "5 eggs",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F. Haga el caramelo con el azúcar y cubra el fondo de un molde de flan.",
+        "Caliente la leche evaporada sin hervir y licúela con la Nutella hasta que se disuelva.",
+        "Añada la leche condensada, los huevos y la vainilla y licúe. Cuele sobre el caramelo.",
+        "Hornee a baño de María 1 hora, hasta que un cuchillo salga limpio.",
+        "Enfríe, refrigere 4 horas y desmolde. Contiene avellanas, leche y soya."
+      ],
+      en: [
+        "Heat the oven to 350°F. Make the caramel with the sugar and coat the bottom of a flan mold.",
+        "Warm the evaporated milk without boiling and blend it with the Nutella until dissolved.",
+        "Add the condensed milk, eggs and vanilla and blend. Strain over the caramel.",
+        "Bake in a water bath 1 hour, until a knife comes out clean.",
+        "Cool, refrigerate 4 hours and unmold. Contains hazelnuts, milk and soy."
+      ]
+    }
+  },
+  {
+    id: "quesitos-nutella",
+    category: "pasteles_dulces",
+    name: { es: "Quesitos de Nutella (Hojaldre)", en: "Nutella Puff Pastry Twists (Quesitos)" },
+    time: "35 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 lámina de masa de hojaldre (de 17 onzas, 2 hojas), fría",
+        "4 onzas de queso crema, blando",
+        "½ taza de Nutella",
+        "1 huevo batido",
+        "¼ taza de almíbar (2 cucharadas de azúcar hervida en 2 de agua)"
+      ],
+      en: [
+        "1 package puff pastry (17 oz, 2 sheets), cold",
+        "4 oz cream cheese, softened",
+        "½ cup Nutella",
+        "1 beaten egg",
+        "¼ cup syrup (2 tablespoons sugar boiled in 2 of water)"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400°F y forre una bandeja con papel de hornear.",
+        "Corte cada hoja de hojaldre en 6 rectángulos.",
+        "Ponga en el centro de cada uno una cucharadita de queso crema y una de Nutella, enróllelo como un quesito y selle la orilla con huevo.",
+        "Barnice con huevo y hornee 15–18 minutos, hasta que estén dorados e inflados.",
+        "Barnice con el almíbar al salir del horno para que brillen, como los de panadería. Contiene avellanas, leche, huevo, gluten y soya."
+      ],
+      en: [
+        "Heat the oven to 400°F and line a sheet pan with parchment.",
+        "Cut each puff pastry sheet into 6 rectangles.",
+        "Put a teaspoon of cream cheese and one of Nutella in the center of each, roll it up like a quesito and seal the edge with egg.",
+        "Brush with egg and bake 15–18 minutes, until golden and puffed.",
+        "Brush with the syrup as they come out of the oven so they shine like bakery ones. Contains hazelnuts, milk, egg, gluten and soy."
+      ]
+    }
+  },
+  {
+    id: "pastelillos-nutella-guineo",
+    category: "pasteles_dulces",
+    name: { es: "Pastelillos de Nutella y Guineo", en: "Nutella and Banana Turnovers" },
+    time: "30 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "10 discos para empanadillas (pastelillos), descongelados",
+        "½ taza de Nutella",
+        "2 guineos maduros en ruedas finas",
+        "Aceite para freír",
+        "Azúcar en polvo y canela para decorar"
+      ],
+      en: [
+        "10 turnover dough discs (empanadilla), thawed",
+        "½ cup Nutella",
+        "2 ripe bananas, thinly sliced",
+        "Oil for frying",
+        "Powdered sugar and cinnamon for dusting"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga una cucharadita de Nutella y 3 ruedas de guineo en la mitad de cada disco, sin llegar al borde.",
+        "Doble, moje el borde con agua y selle con un tenedor (si queda abierto, la Nutella se sale y salta al freír).",
+        "Fría en el aceite a 350°F 1–2 minutos por lado, hasta dorar. Escurra.",
+        "Espolvoree azúcar en polvo con canela. Espere 5 minutos: el relleno sale muy caliente. Contiene avellanas, leche, gluten y soya."
+      ],
+      en: [
+        "Put a teaspoon of Nutella and 3 banana slices on half of each disc, leaving the edge clear.",
+        "Fold, wet the edge with water and seal with a fork (if it opens, the Nutella leaks and spatters when frying).",
+        "Fry in the oil at 350°F 1–2 minutes per side, until golden. Drain.",
+        "Dust with powdered sugar and cinnamon. Wait 5 minutes: the filling comes out very hot. Contains hazelnuts, milk, gluten and soy."
+      ]
+    }
+  },
+  {
+    id: "batida-nutella-guineo",
+    category: "bebidas",
+    name: { es: "Batida de Nutella y Guineo", en: "Nutella Banana Shake" },
+    time: "5 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 guineos maduros, congelados en ruedas",
+        "1½ tazas de leche",
+        "3 cucharadas de Nutella",
+        "½ taza de hielo"
+      ],
+      en: [
+        "2 ripe bananas, frozen in slices",
+        "1½ cups milk",
+        "3 tablespoons Nutella",
+        "½ cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la leche con la Nutella hasta que se disuelva.",
+        "Añada el guineo congelado y el hielo y licúe hasta que esté espesa.",
+        "Sirva enseguida. Contiene avellanas, leche y soya."
+      ],
+      en: [
+        "Blend the milk with the Nutella until dissolved.",
+        "Add the frozen banana and ice and blend until thick.",
+        "Serve right away. Contains hazelnuts, milk and soy."
       ]
     }
   }

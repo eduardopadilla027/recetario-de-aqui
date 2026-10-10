@@ -69,6 +69,10 @@ const S_EXPAND = {
   bbq: "parrilla carbon bbq barbacoa grill grilled brasa pincho ahumado",
   barbacoa: "parrilla carbon bbq barbacoa grill grilled brasa pincho ahumado",
   grill: "parrilla carbon bbq barbacoa grill grilled brasa pincho ahumado",
+  // Empanados: "pechuga empanada" incluye milanesas, parmesanas y panko.
+  empanado: "empanado empanada milanesa parmesana panko breaded cordon",
+  empanada: "empanado empanada milanesa parmesana panko breaded",
+  breaded: "empanado empanada milanesa parmesana panko breaded",
   tropical: "tropical mango pina coco guayaba parcha lechosa guanabana tamarindo acerola mamey carambola",
   fruit: "fruta fruit mango pina coco guayaba parcha lechosa china acerola tamarindo guanabana fresa mamey carambola"
 };

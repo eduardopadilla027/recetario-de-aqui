@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 2.4.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 693 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 2.5.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 708 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, y adobos criollos, en veinte tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, y parmesanas, milanesas y recetas con Nutella, en veintiuna tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -113,22 +113,22 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | granos | Granos y Legumbres | 10 |
 | ensaladas | Ensaladas | 24 |
 | sopas | Sopas | 31 |
-| carnes | Carnes | 49 |
-| aves | Aves | 36 |
-| pescados | Pescado y Mariscos | 43 |
+| carnes | Carnes | 51 |
+| aves | Aves | 40 |
+| pescados | Pescado y Mariscos | 44 |
 | huevos | Huevos y Queso | 11 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 35 |
 | pastas | Pastas | 17 |
-| bizcochos | Bizcochos | 23 |
-| galletitas | Galletitas | 36 |
-| pasteles_dulces | Pasteles Dulces | 16 |
+| bizcochos | Bizcochos | 24 |
+| galletitas | Galletitas | 37 |
+| pasteles_dulces | Pasteles Dulces | 18 |
 | panes | Pan y Panecillos | 29 |
 | emparedados | Emparedados | 11 |
-| postres | Helados, Budines, Flan y Otros Postres | 84 |
+| postres | Helados, Budines, Flan y Otros Postres | 86 |
 | arroces | Arroces y Habichuelas | 33 |
-| vegetales | Vegetales y Viandas | 51 |
+| vegetales | Vegetales y Viandas | 52 |
 | salsas | Salsas y Aderezos | 36 |
-| bebidas | Bebidas | 19 |
+| bebidas | Bebidas | 20 |
 | jugos | Jugos Naturales | 18 |
 | cocteles | Cócteles y Tragos | 36 |
 
@@ -172,7 +172,10 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   redonda de carbón con brasas y rejilla, con la comida encima (muslos, chillo entero, camarones, salmón, costillas de res,
   maíz, maduros, vegetales, queso de freír); hamburguesas 🍔. **Adobos:** frasco con etiqueta que dice para qué es
   (bistec, muslito, pescado, pavo, cuernitos de cabro, llama de BBQ, pimiento, limón, salero tachado para el sin sal);
-  secos con polvo y tapa de salero, mojados con pasta; el adobo mojado para pernil sigue en el pilón.
+  secos con polvo y tapa de salero, mojados con pasta; el adobo mojado para pernil sigue en el pilón. **Empanados:**
+  parmesana (con salsa y queso gratinado; también berenjena y napolitana), cordon bleu (ruedas con espiral de jamón y
+  queso); las milanesas y el panko usan el empanado con limón. **Nutella:** crepas con guineo y brownies; flan y galletas
+  usan las versiones de chocolate.
 - **Carnes y aves (`meatIcons`):** antes de `dishIcons`, las recetas de las categorías `carnes` y `aves` buscan su
   dibujo por tipo de plato con una lista de expresiones en orden (gana la primera): guiso en caldero (`ic-guiso-carne`,
   `ic-fricase-pollo`, ambos sobre `ic-caldero`), encebollado, empanado, desmenuzado (ropa vieja, salpicón), picadillo,
@@ -205,6 +208,8 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   ("adobo sin sal", "pina colada sin alcohol"), se muestran esas recetas y "sin" no excluye; si no, la exclusión
   funciona como siempre ("trago sin alcohol", "postre sin huevo"). Las palabras adobo, marinada, sazón y rub cuentan
   como la categoría salsas ("adobo para pollo" usa la regla "X para Y").
+- **Empanados:** `empanado`, `empanada` y `breaded` amplían a milanesa, parmesana y panko ("pechuga empanada",
+  "breaded chicken").
 - **"X para Y"**: si lo de antes de "para"/"for" nombra una categoría ("salsa para pollo", "postre para niños"), se
   busca sólo en esa categoría y lo de después ordena los resultados sin ser obligatorio.
 - **Categorías por su nombre** (`S_CATS`): "postres", "tragos", "sopas", "frituras"…
@@ -228,7 +233,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 693). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 708). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -273,6 +278,20 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v2.5.0 · Parmesanas, milanesas y recetas con Nutella
+- *Pedido:* recetas de pechuga a la parmesana, milanesas y otras, y recetas con Nutella.
+- Vigesimoprimera tanda en `js/recipes-4.js` (versiones propias), 15 recetas: pechuga a la parmesana, milanesa de pollo,
+  milanesa a la napolitana (res), milanesa de cerdo, pescado a la milanesa, pechuga cordon bleu, pechugas crujientes al
+  horno con panko, berenjena a la parmesana; crepas de Nutella y guineo, brownies, galletas y flan de Nutella, quesitos de
+  Nutella (hojaldre), pastelillos de Nutella y guineo y batida de Nutella y guineo.
+- **Nutrición:** nuevos alimentos Nutella, panko, mozzarella, queso suizo y avellana. El aceite de freír se escribe sin
+  cantidad ("Aceite para freír") para que cuente sólo lo absorbido; con cantidad se sumaba entero.
+- **Alérgenos:** la Nutella cuenta como frutos secos (avellana), leche y soya (lecitina); el panko, como gluten.
+- **Iconos y buscador:** ver §7 y §7.1.
+- Total: **693 → 708 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador: "parmesana", "milanesa", "nutella", "pechuga empanada",
+  "breaded chicken" ✔; navegador: las 15 recetas en ES y EN a 375 px sin errores ni desbordes ✔; dibujos revisados ✔.
 
 ### 2026-10-10 — v2.4.0 · Tips de parrilla (temperatura y tiempo)
 - *Pedido:* en las recetas de BBQ, los mejores tips de temperatura y tiempo.

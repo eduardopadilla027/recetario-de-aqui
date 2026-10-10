@@ -335,6 +335,8 @@ const meatIcons = {
   carnes: [
     [/chuleta|churrasco|albondiga|longaniza|salchicha|morcilla|conejo|pincho|mofongo/, null],
     [/jamonilla/, "svg:ic-jamonilla"],
+    [/napolitana/, "svg:ic-parmesana"],
+    [/milanesa/, "svg:ic-empanado"],
     [/^costillas de res a la parrilla/, "svg:ic-parrilla-costillas"],
     [/costill/, "svg:ic-costillas"],
     [/jamon/, "svg:ic-jamon"],
@@ -353,6 +355,9 @@ const meatIcons = {
   aves: [
     [/pincho|pastelon/, null],
     [/^muslos de pollo al carbon/, "svg:ic-parrilla-muslos"],
+    [/parmesana/, "svg:ic-parmesana"],
+    [/cordon bleu/, "svg:ic-cordon-bleu"],
+    [/milanesa|panko/, "svg:ic-empanado"],
     [/alita/, "svg:ic-alitas"],
     [/empanad/, "svg:ic-empanado"],
     [/pechuga/, "svg:ic-pechuga"],
@@ -367,6 +372,7 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  [/^milanesa|a la milanesa/, "svg:ic-empanado"],
   [/gelatina de mosaico/, "svg:ic-gelatina-mosaico"],
   [/gelatina de (parcha|pina)|gelatinas de ron con parcha/, "svg:ic-gelatina-amarilla"],
   [/gelatina de (leche|coco|coquito)/, "svg:ic-gelatina-blanca"],
@@ -379,7 +385,7 @@ const dessertIcons = [
   [/^arroz con dulce/, "svg:ic-arroz-dulce"],
   [/^arroz con (leche|coco)/, "svg:ic-arroz-leche"],
   [/^tocino del cielo/, "svg:ic-tocino-cielo"],
-  [/^flan de chocolate|^flancocho/, "svg:ic-flan-chocolate"],
+  [/^flan de (chocolate|nutella)|^flancocho/, "svg:ic-flan-chocolate"],
   [/^flan de cafe/, "svg:ic-flan-cafe"],
   [/^flan de (coco|coquito)/, "svg:ic-flan-coco"],
   [/^flan de guayaba/, "svg:ic-flan-guayaba"],
@@ -459,6 +465,12 @@ const dessertIcons = [
   [/^salsa de pique/, "svg:ic-salsa-pique"],
   // Yogures.
   [/^jamonilla/, "svg:ic-jamonilla"],
+  // Parmesanas, milanesas y Nutella.
+  [/a la parmesana/, "svg:ic-parmesana"],
+  [/a la milanesa/, "svg:ic-empanado"],
+  [/^crepas de nutella/, "svg:ic-crepas-nutella"],
+  [/^brownies/, "svg:ic-brownies"],
+  [/^galletas de nutella/, "svg:ic-galleta-chocolate"],
   // A la parrilla y al carbón.
   [/^hamburguesas/, "🍔"],
   [/^chillo entero a la parrilla/, "svg:ic-parrilla-pescado"],
