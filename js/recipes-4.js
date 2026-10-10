@@ -6,7 +6,9 @@
  * pollo, alcapurrias de jueyes) y postres de celebración (sopa borracha,
  * mazamorra). Segunda tanda: riñoncitos y fricasé de cerdo, cetí, ostiones,
  * mofongo de mariscos, pastas criollas, marrayo, coquimol, polvo de amor y
- * ponqué. Versiones propias redactadas para esta app. Todas van en
+ * ponqué. Tercera tanda: tragos tropicales (mai tai, planter's punch,
+ * daiquirí de mangó, mojito de parcha, coco loco, pitorro de parcha…).
+ * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
   // ── SOPAS ──
@@ -1714,6 +1716,490 @@ recipes.push(
         "The sugar melts, the coconut releases its water and little by little everything dries out and turns light golden: it should be loose, like a coarse powder.",
         "Spread on a tray to cool and finish drying.",
         "Store in a tightly closed jar. It's eaten by the spoonful or from little paper cones, as it was sold at town festivals."
+      ]
+    }
+  },
+
+  // ── Tercera tanda (2026-10): tragos tropicales ──
+  {
+    id: "mai-tai",
+    category: "cocteles",
+    name: { es: "Mai Tai", en: "Mai Tai" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "1 oz de ron blanco",
+        "1 oz de ron añejo oscuro",
+        "½ oz de licor de naranja (curaçao)",
+        "½ oz de almíbar de almendra (orgeat)",
+        "¾ oz de jugo de limón fresco",
+        "1 taza de hielo picado",
+        "Ramita de menta y rueda de limón para decorar"
+      ],
+      en: [
+        "1 oz white rum",
+        "1 oz dark aged rum",
+        "½ oz orange liqueur (curaçao)",
+        "½ oz almond syrup (orgeat)",
+        "¾ oz fresh lime juice",
+        "1 cup crushed ice",
+        "Mint sprig and lime wheel for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "En una coctelera con hielo, agite el ron blanco, el licor de naranja, el almíbar de almendra y el jugo de limón por 10 segundos.",
+        "Llene un vaso corto con el hielo picado y cuele el trago encima.",
+        "Vierta el ron oscuro por encima, despacio sobre el dorso de una cuchara, para que flote.",
+        "Decore con la menta y el limón. Es el clásico de los bares tiki: ácido, aromático y fuerte."
+      ],
+      en: [
+        "In a shaker with ice, shake the white rum, orange liqueur, almond syrup and lime juice for 10 seconds.",
+        "Fill a short glass with the crushed ice and strain the drink over it.",
+        "Pour the dark rum slowly over the back of a spoon so it floats on top.",
+        "Garnish with the mint and lime. It's the tiki-bar classic: tart, aromatic and strong."
+      ]
+    }
+  },
+  {
+    id: "planters-punch",
+    category: "cocteles",
+    name: { es: "Ponche del Hacendado (Planter's Punch)", en: "Planter's Punch" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "2 oz de ron añejo oscuro",
+        "1 oz de jugo de limón fresco",
+        "¾ oz de almíbar simple",
+        "2 oz de jugo de piña",
+        "2 oz de jugo de china",
+        "1 cucharadita de granadina",
+        "1 taza de hielo",
+        "Rodaja de china y cereza para decorar"
+      ],
+      en: [
+        "2 oz dark aged rum",
+        "1 oz fresh lime juice",
+        "¾ oz simple syrup",
+        "2 oz pineapple juice",
+        "2 oz orange juice",
+        "1 teaspoon grenadine",
+        "1 cup ice",
+        "Orange slice and cherry for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga todos los líquidos menos la granadina en una coctelera con hielo y agite 10 segundos.",
+        "Sirva en un vaso alto con hielo.",
+        "Deje caer la granadina por encima: se irá al fondo y hará un degradado rojo.",
+        "Decore con la china y la cereza. Es el ponche de las haciendas azucareras del Caribe: \"uno de ácido, dos de dulce, tres de fuerte y cuatro de suave\"."
+      ],
+      en: [
+        "Put all the liquids except the grenadine in a shaker with ice and shake 10 seconds.",
+        "Serve in a tall glass with ice.",
+        "Drizzle the grenadine on top: it sinks and makes a red gradient.",
+        "Garnish with the orange and cherry. It's the punch of the Caribbean sugar estates: \"one of sour, two of sweet, three of strong and four of weak\"."
+      ]
+    }
+  },
+  {
+    id: "daiquiri-mango",
+    category: "cocteles",
+    name: { es: "Daiquirí de Mangó", en: "Mango Daiquiri" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "4 oz de ron blanco",
+        "1½ tazas de mangó maduro, en cubos",
+        "1 oz de jugo de limón fresco",
+        "1 oz de almíbar simple",
+        "2 tazas de hielo"
+      ],
+      en: [
+        "4 oz white rum",
+        "1½ cups ripe mango, cubed",
+        "1 oz fresh lime juice",
+        "1 oz simple syrup",
+        "2 cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe el mangó con el jugo de limón y el almíbar hasta que esté muy fino.",
+        "Añada el ron y el hielo y licúe hasta tener una textura de granizado.",
+        "Pruebe: si el mangó es muy dulce, añada más limón; si está ácido, un poco más de almíbar.",
+        "Sirva enseguida en copas frías, con un cubito de mangó en el borde."
+      ],
+      en: [
+        "Blend the mango with the lime juice and syrup until very smooth.",
+        "Add the rum and ice and blend to a slushy texture.",
+        "Taste: if the mango is very sweet, add more lime; if tart, a little more syrup.",
+        "Serve right away in chilled glasses, with a mango cube on the rim."
+      ]
+    }
+  },
+  {
+    id: "mojito-parcha",
+    category: "cocteles",
+    name: { es: "Mojito de Parcha", en: "Passion Fruit Mojito" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "2 oz de ron blanco",
+        "1 oz de pulpa de parcha, con semillas",
+        "¾ oz de jugo de limón fresco",
+        "2 cucharaditas de azúcar",
+        "8 hojas de yerbabuena",
+        "2 oz de agua de soda",
+        "1 taza de hielo"
+      ],
+      en: [
+        "2 oz white rum",
+        "1 oz passion fruit pulp, with seeds",
+        "¾ oz fresh lime juice",
+        "2 teaspoons sugar",
+        "8 mint leaves",
+        "2 oz club soda",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "En un vaso alto, maje suavemente la yerbabuena con el azúcar y el jugo de limón, sin romper las hojas en pedacitos.",
+        "Añada la pulpa de parcha y el ron y mezcle hasta disolver el azúcar.",
+        "Llene el vaso con hielo y complete con el agua de soda.",
+        "Mezcle de abajo hacia arriba y decore con una ramita de yerbabuena."
+      ],
+      en: [
+        "In a tall glass, gently muddle the mint with the sugar and lime juice, without shredding the leaves.",
+        "Add the passion fruit pulp and the rum and stir until the sugar dissolves.",
+        "Fill the glass with ice and top with the club soda.",
+        "Stir from the bottom up and garnish with a mint sprig."
+      ]
+    }
+  },
+  {
+    id: "bahama-mama",
+    category: "cocteles",
+    name: { es: "Bahama Mama", en: "Bahama Mama" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "1 oz de ron añejo oscuro",
+        "1 oz de ron de coco",
+        "½ oz de licor de café",
+        "3 oz de jugo de piña",
+        "½ oz de jugo de limón fresco",
+        "½ oz de granadina",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 oz dark aged rum",
+        "1 oz coconut rum",
+        "½ oz coffee liqueur",
+        "3 oz pineapple juice",
+        "½ oz fresh lime juice",
+        "½ oz grenadine",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Agite todos los ingredientes con el hielo en una coctelera por 10 segundos.",
+        "Sirva sin colar en un vaso alto.",
+        "Decore con un triángulo de piña y una cereza.",
+        "El licor de café le da un fondo oscuro que equilibra lo dulce de la piña y el coco."
+      ],
+      en: [
+        "Shake all the ingredients with the ice in a shaker for 10 seconds.",
+        "Pour unstrained into a tall glass.",
+        "Garnish with a pineapple wedge and a cherry.",
+        "The coffee liqueur gives a dark base that balances the sweetness of pineapple and coconut."
+      ]
+    }
+  },
+  {
+    id: "blue-hawaiian",
+    category: "cocteles",
+    name: { es: "Blue Hawaiian (Azul Tropical)", en: "Blue Hawaiian" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "1 oz de ron blanco",
+        "1 oz de licor de curaçao azul",
+        "2 oz de jugo de piña",
+        "1 oz de crema de coco",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 oz white rum",
+        "1 oz blue curaçao liqueur",
+        "2 oz pineapple juice",
+        "1 oz cream of coconut",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe todos los ingredientes con el hielo hasta que quede cremoso, o agítelos en coctelera si lo prefiere con hielo en cubos.",
+        "Sirva en una copa alta o de huracán.",
+        "Decore con piña y una cereza.",
+        "Es pariente de la piña colada: el curaçao le da el color azul y un toque de naranja."
+      ],
+      en: [
+        "Blend all the ingredients with the ice until creamy, or shake them if you prefer it on the rocks.",
+        "Serve in a tall or hurricane glass.",
+        "Garnish with pineapple and a cherry.",
+        "It's a cousin of the piña colada: the curaçao adds the blue color and a hint of orange."
+      ]
+    }
+  },
+  {
+    id: "hurricane",
+    category: "cocteles",
+    name: { es: "Huracán (Hurricane)", en: "Hurricane" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "1 oz de ron blanco",
+        "1 oz de ron añejo oscuro",
+        "2 oz de jugo de parcha",
+        "1 oz de jugo de china",
+        "½ oz de jugo de limón fresco",
+        "½ oz de almíbar simple",
+        "1 cucharadita de granadina",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 oz white rum",
+        "1 oz dark aged rum",
+        "2 oz passion fruit juice",
+        "1 oz orange juice",
+        "½ oz fresh lime juice",
+        "½ oz simple syrup",
+        "1 teaspoon grenadine",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Agite todos los ingredientes con hielo en una coctelera por 15 segundos.",
+        "Cuele en una copa de huracán llena de hielo.",
+        "Decore con una rueda de china y una cereza.",
+        "La parcha manda en este trago: use jugo hecho en casa (Jugo de Parcha) si puede."
+      ],
+      en: [
+        "Shake all the ingredients with ice in a shaker for 15 seconds.",
+        "Strain into a hurricane glass filled with ice.",
+        "Garnish with an orange wheel and a cherry.",
+        "Passion fruit leads this drink: use homemade juice (Passion Fruit Juice) if you can."
+      ]
+    }
+  },
+  {
+    id: "coco-loco",
+    category: "cocteles",
+    name: { es: "Coco Loco", en: "Coco Loco (Rum in the Coconut)" },
+    time: "10 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "½ taza de agua de coco (de 1 coco verde frío, que sirve de vaso)",
+        "1 oz de ron blanco",
+        "1 oz de ron de coco",
+        "1 oz de crema de coco",
+        "½ taza de hielo"
+      ],
+      en: [
+        "½ cup coconut water (from 1 chilled young green coconut, used as the cup)",
+        "1 oz white rum",
+        "1 oz coconut rum",
+        "1 oz cream of coconut",
+        "½ cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Con cuidado y un machete o cuchillo grande, abra un hueco en la parte de arriba del coco. Use un paño para sujetarlo.",
+        "Vierta el agua de coco en una jarra y separe ½ taza.",
+        "Mezcle la ½ taza de agua de coco con los rones y la crema de coco.",
+        "Vuelva a poner la mezcla dentro del coco con el hielo y sirva con sorbeto, como en los kioscos de la playa."
+      ],
+      en: [
+        "Carefully, with a machete or large knife, open a hole in the top of the coconut. Hold it with a towel.",
+        "Pour the coconut water into a pitcher and set aside ½ cup.",
+        "Mix the ½ cup of coconut water with the rums and cream of coconut.",
+        "Pour the mix back into the coconut with the ice and serve with a straw, as at the beach kiosks."
+      ]
+    }
+  },
+  {
+    id: "lava-flow",
+    category: "cocteles",
+    name: { es: "Lava Flow (Colada de Fresa)", en: "Lava Flow (Strawberry Colada)" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de fresas",
+        "1 oz de almíbar simple",
+        "2 oz de ron blanco",
+        "2 oz de ron de coco",
+        "1 guineo maduro",
+        "4 oz de jugo de piña",
+        "3 oz de crema de coco",
+        "2 tazas de hielo"
+      ],
+      en: [
+        "1 cup strawberries",
+        "1 oz simple syrup",
+        "2 oz white rum",
+        "2 oz coconut rum",
+        "1 ripe banana",
+        "4 oz pineapple juice",
+        "3 oz cream of coconut",
+        "2 cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe las fresas con el almíbar y el ron blanco hasta tener un puré. Repártalo en el fondo de dos copas altas.",
+        "Lave la licuadora y licúe el ron de coco, el guineo, el jugo de piña, la crema de coco y el hielo hasta que esté cremoso.",
+        "Vierta la colada despacio sobre el puré de fresa: el rojo subirá por los lados como lava.",
+        "Decore con una fresa y piña y sirva enseguida."
+      ],
+      en: [
+        "Blend the strawberries with the syrup and white rum into a purée. Divide it into the bottom of two tall glasses.",
+        "Rinse the blender and blend the coconut rum, banana, pineapple juice, cream of coconut and ice until creamy.",
+        "Pour the colada slowly over the strawberry purée: the red will rise up the sides like lava.",
+        "Garnish with a strawberry and pineapple and serve right away."
+      ]
+    }
+  },
+  {
+    id: "zombie",
+    category: "cocteles",
+    name: { es: "Zombi (Zombie)", en: "Zombie" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "1 oz de ron blanco",
+        "1 oz de ron dorado",
+        "1 oz de ron añejo oscuro",
+        "1 oz de jugo de limón fresco",
+        "1 oz de jugo de piña",
+        "1 oz de jugo de parcha",
+        "½ oz de granadina",
+        "1 taza de hielo picado"
+      ],
+      en: [
+        "1 oz white rum",
+        "1 oz gold rum",
+        "1 oz dark aged rum",
+        "1 oz fresh lime juice",
+        "1 oz pineapple juice",
+        "1 oz passion fruit juice",
+        "½ oz grenadine",
+        "1 cup crushed ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Agite el ron blanco, el dorado, los jugos y la granadina con hielo por 10 segundos.",
+        "Sirva en un vaso alto con el hielo picado.",
+        "Vierta el ron oscuro por encima para que flote y decore con menta y frutas.",
+        "Lleva 3 onzas de ron: es uno de los tragos más fuertes del menú tiki. Uno por persona, y nunca si va a conducir."
+      ],
+      en: [
+        "Shake the white and gold rums, the juices and the grenadine with ice for 10 seconds.",
+        "Serve in a tall glass with the crushed ice.",
+        "Pour the dark rum on top so it floats and garnish with mint and fruit.",
+        "It has 3 ounces of rum: one of the strongest drinks on the tiki menu. One per person, and never if you will drive."
+      ]
+    }
+  },
+  {
+    id: "pitorro-parcha",
+    category: "cocteles",
+    name: { es: "Pitorro de Parcha", en: "Passion Fruit Pitorro (Infused Rum)" },
+    time: "20 min + 2 semanas de reposo",
+    servings: 16,
+    ingredients: {
+      es: [
+        "1 botella de ron blanco o pitorro (750 ml)",
+        "1 taza de pulpa de parcha, con semillas",
+        "¾ taza de azúcar",
+        "1 raja de canela"
+      ],
+      en: [
+        "1 bottle white rum or pitorro (750 ml)",
+        "1 cup passion fruit pulp, with seeds",
+        "¾ cup sugar",
+        "1 cinnamon stick"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva el azúcar en la pulpa de parcha a fuego bajo, sin que hierva. Deje enfriar.",
+        "En un frasco de cristal limpio, mezcle la pulpa endulzada con el ron y la canela.",
+        "Tape bien y deje reposar en un lugar fresco y oscuro 2 semanas, agitando el frasco cada dos o tres días.",
+        "Cuele por una tela fina y embotelle. Sirva frío, en vasitos, como se brinda en Navidad."
+      ],
+      en: [
+        "Dissolve the sugar in the passion fruit pulp over low heat, without boiling. Let cool.",
+        "In a clean glass jar, mix the sweetened pulp with the rum and cinnamon.",
+        "Seal tightly and let rest in a cool, dark place for 2 weeks, shaking the jar every two or three days.",
+        "Strain through a fine cloth and bottle. Serve chilled, in small glasses, the way it's offered at Christmas."
+      ]
+    }
+  },
+  {
+    id: "ponche-guayaba",
+    category: "cocteles",
+    name: { es: "Ponche de Guayaba con Ron", en: "Guava Rum Punch" },
+    time: "10 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 tazas de ron dorado",
+        "3 tazas de néctar de guayaba",
+        "1 taza de jugo de piña",
+        "½ taza de jugo de limón fresco",
+        "1 taza de agua de soda",
+        "4 tazas de hielo",
+        "Ruedas de limón y china para decorar"
+      ],
+      en: [
+        "2 cups gold rum",
+        "3 cups guava nectar",
+        "1 cup pineapple juice",
+        "½ cup fresh lime juice",
+        "1 cup club soda",
+        "4 cups ice",
+        "Lime and orange wheels for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "En una ponchera grande, mezcle el ron, el néctar de guayaba, el jugo de piña y el jugo de limón.",
+        "Refrigere al menos 1 hora.",
+        "Justo antes de servir, añada el hielo, el agua de soda y las ruedas de frutas.",
+        "Sirva con cucharón en vasos con hielo. Es el ponche de las fiestas de patio."
+      ],
+      en: [
+        "In a large punch bowl, mix the rum, guava nectar, pineapple juice and lime juice.",
+        "Refrigerate at least 1 hour.",
+        "Right before serving, add the ice, club soda and fruit wheels.",
+        "Ladle into glasses with ice. It's the punch of backyard parties."
       ]
     }
   }
