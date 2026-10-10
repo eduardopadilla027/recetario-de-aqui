@@ -310,7 +310,7 @@ const dishIcons = [
   ["ostiones", "🦪"], ["chicharrones de pescado", "🐟"], ["ceviche de camarones", "🦐"],
   ["melcocha", "🍬"], ["cidra", "🍋"], ["torrejas", "🍞"], ["flor de jamaica", "🌺"], ["jugo de carambola", "⭐"], ["alitas", "🍗"], ["name", "🍠"], ["papita", "🥔"], ["malanga", YAUTIA],
   ["cupcake", "🧁"], ["donas", "🍩"], ["rollos de canela", "🥐"], ["churros", "🥖"], ["gelatina", "🍮"], ["guacamole", "🥑"], ["salsa de aguacate", "🥑"], ["fricase de cerdo", "🍖"], ["polvo de amor", "🥥"], ["coquimol", "🥥"],
-  ["berenjena", "🍆"], ["calabaza", "🎃"], ["aguacate", "🥑"], ["repollo", "🥬"], ["chayote", "🥒"],
+  ["berenjena", "🍆"], ["calabaza", "🎃"], ["aguacate", "🥑"], ["repollo", "🥬"], ["chayote", "svg:ic-chayote"],
   ["coquito", "🥥"], ["coco", "🥥"], ["tembleque", "🍮"], ["besito", "🥥"],
   ["pina colada", "🍹"], ["pina", "🍍"], ["mango", "🥭"], ["papaya", "🥭"], ["lechosa", "🥭"], ["china", "🍊"], ["naranja", "🍊"], ["toronja", "🍊"], ["limon", "🍋"], ["limonada", "🍋"],
   ["cafe", "☕"], ["chocolate", "🍫"], ["te de", "🍵"],
@@ -356,11 +356,42 @@ const meatIcons = {
   ]
 };
 
+/* Postres: 🍮 servía para 40 recetas (flanes, gelatinas, tembleques, budines,
+ * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
+ * por nombre y en orden; gana la primera. */
+const dessertIcons = [
+  [/gelatina de mosaico/, "svg:ic-gelatina-mosaico"],
+  [/gelatina de (parcha|pina)/, "svg:ic-gelatina-amarilla"],
+  [/gelatina de (leche|coco|coquito)/, "svg:ic-gelatina-blanca"],
+  [/gelatina de cafe/, "svg:ic-gelatina-cafe"],
+  [/gelatina de guayaba/, "svg:ic-gelatina-guayaba"],
+  [/^gelatina/, "svg:ic-gelatina"],
+  [/^tembleque de cafe/, "svg:ic-tembleque-cafe"],
+  [/^tembleque/, "svg:ic-tembleque"],
+  [/^arroz con dulce/, "svg:ic-arroz-dulce"],
+  [/^arroz con (leche|coco)/, "svg:ic-arroz-leche"],
+  [/^tocino del cielo/, "svg:ic-tocino-cielo"],
+  [/^flan de chocolate|^flancocho/, "svg:ic-flan-chocolate"],
+  [/^flan de cafe/, "svg:ic-flan-cafe"],
+  [/^flan de (coco|coquito)/, "svg:ic-flan-coco"],
+  [/^flan de guayaba/, "svg:ic-flan-guayaba"],
+  [/^flan de (parcha|pina|mango|maiz|platano)/, "svg:ic-flan-fruta"],
+  [/^flan de (calabaza|batata)/, "svg:ic-flan-calabaza"],
+  [/^flan de queso/, "svg:ic-flan-queso"],
+  [/^flan\b|^quesillo/, "svg:ic-flan"],
+  [/^(pudin|budin) de (batata|calabaza)|^cazuela/, "svg:ic-budin-batata"],
+  [/^(pudin|budin) de guineo/, "svg:ic-budin-guineo"],
+  [/^(pudin|budin)/, "svg:ic-budin"],
+  [/^natilla/, "svg:ic-natilla"],
+  [/^majarete|^bienmesabe/, "svg:ic-majarete"]
+];
+
 function dishIcon(recipe) {
   const name = norm(recipe.name.es);
   for (const [re, icon] of meatIcons[recipe.category] || []) {
     if (re.test(name)) { if (icon) return icon; break; }
   }
+  for (const [re, icon] of dessertIcons) if (re.test(name)) return icon;
   let best = null;
   for (const [word, icon] of dishIcons) {
     const at = name.search(new RegExp(`\\b${word}`));
