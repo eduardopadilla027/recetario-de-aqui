@@ -271,6 +271,9 @@ const YUCA = "svg:ic-yuca";
 const PINCHO_CAMARONES = "svg:ic-pincho-camarones";
 /* Ni de albóndigas (🧆 es falafel). */
 const ALBONDIGAS = "svg:ic-albondigas";
+/* 🍖 es carne de caricatura en hueso y 🥩 un bistec crudo: chuleta y churrasco tienen dibujo propio. */
+const CHULETA = "svg:ic-chuleta";
+const CHURRASCO = "svg:ic-churrasco";
 
 const dishIcons = [
   ["sopa", "🍲"], ["asopao", "🍲"], ["sancocho", "🍲"], ["caldo", "🍲"], ["sopon", "🍲"], ["mondongo", "🍲"], ["crema de calabaza", "🍲"], ["crema de pana", "🍲"], ["crema de yautia", "🍲"],
@@ -290,8 +293,8 @@ const dishIcons = [
   ["bacalao", "🐟"], ["bacalaito", "🐟"], ["pescado", "🐟"], ["chillo", "🐟"], ["filete", "🐟"], ["atun", "🐟"], ["ceviche", "🐟"],
   ["pavo", "🦃"], ["pavochon", "🦃"], ["molleja", "🍗"], ["guinea", "🍗"], ["muslo", "🍗"], ["pollo", "🍗"], ["pechuga", "🍗"], ["gallina", "🍗"],
   ["salchicha", LONGANIZA], ["longaniza", LONGANIZA], ["chorizo", LONGANIZA], ["salami", LONGANIZA],
-  ["lechon", "🍖"], ["pernil", "🍖"], ["chuleta", "🍖"], ["costilla", "🍖"], ["chicharron", "🍖"], ["patitas", "🍖"], ["masitas", "🍖"], ["pincho", "🍢"], ["pinchos de camarones", PINCHO_CAMARONES], ["pincho de camarones", PINCHO_CAMARONES],
-  ["bistec", "🥩"], ["carne", "🥩"], ["rabo", "🥩"], ["ropa vieja", "🥩"], ["churrasco", "🥩"], ["higado", "🥩"], ["albondiga", ALBONDIGAS], ["picadillo", "🥩"], ["lengua", "🥩"], ["cabro", "🥩"], ["cabrito", "🥩"], ["carne de cerdo", "🍖"], ["costillita", "🍖"], ["cuajito", "🍖"], ["salpicon", "🥩"], ["lomo", "🍖"], ["jamon", "🍖"],
+  ["lechon", "🍖"], ["pernil", "🍖"], ["chuleta", CHULETA], ["costilla", "🍖"], ["chicharron", "🍖"], ["patitas", "🍖"], ["masitas", "🍖"], ["pincho", "🍢"], ["pinchos de camarones", PINCHO_CAMARONES], ["pincho de camarones", PINCHO_CAMARONES],
+  ["bistec", "🥩"], ["carne", "🥩"], ["rabo", "🥩"], ["ropa vieja", "🥩"], ["churrasco", CHURRASCO], ["higado", "🥩"], ["albondiga", ALBONDIGAS], ["picadillo", "🥩"], ["lengua", "🥩"], ["cabro", "🥩"], ["cabrito", "🥩"], ["carne de cerdo", "🍖"], ["costillita", "🍖"], ["cuajito", "🍖"], ["salpicon", "🥩"], ["lomo", "🍖"], ["jamon", "🍖"],
   ["espagueti", "🍝"], ["lasana", "🍝"], ["coditos", "🍝"], ["macarrones", "🍝"], ["canelones", "🍝"], ["fideos", "🍝"],
   ["tortilla", "🍳"], ["revoltillo", "🍳"], ["huevo", "🍳"],
   ["queso", "🧀"], ["quesito", "🥐"],
@@ -322,8 +325,40 @@ const dishIcons = [
   ["pique", "🌶️"], ["sofrito", "🌿"], ["recaito", "🌿"], ["ajilimojili", "🌶️"], ["mojo", "🧄"], ["adobo", "🧂"], ["sazon", "🧂"], ["achiote", "🫙"], ["mayo", "🫙"]
 ];
 
+/* Carnes y aves: el emoji (🥩 🍖 🍗) era el mismo para casi todo, así que el
+ * dibujo sale del tipo de plato: guiso en caldero, encebollado, empanado,
+ * desmenuzado, asado, frito… Las reglas van en orden y gana la primera; las
+ * piezas con dibujo propio (chuleta, churrasco, embutidos…) siguen por dishIcons. */
+const meatIcons = {
+  carnes: [
+    [/chuleta|churrasco|albondiga|longaniza|salchicha|morcilla|conejo|pincho|mofongo/, null],
+    [/costill/, "svg:ic-costillas"],
+    [/jamon/, "svg:ic-jamon"],
+    [/encebollad|con cebolla/, "svg:ic-encebollado"],
+    [/empanad/, "svg:ic-empanado"],
+    [/ropa vieja|salpicon/, "svg:ic-desmenuzada"],
+    [/picadillo/, "svg:ic-picadillo"],
+    [/pernil|lechon|asad|rellen|mechada/, "svg:ic-pernil"],
+    [/chicharron|masitas|frit/, "svg:ic-masitas"],
+    [/./, "svg:ic-guiso-carne"]
+  ],
+  aves: [
+    [/pincho|pastelon/, null],
+    [/alita/, "svg:ic-alitas"],
+    [/empanad/, "svg:ic-empanado"],
+    [/pechuga/, "svg:ic-pechuga"],
+    [/frit|chicharron/, "svg:ic-pollo-frito"],
+    [/asad|rellen|al carbon|al horno|pavochon/, "svg:ic-pollo-asado"],
+    [/muslo|bbq/, "🍗"],
+    [/./, "svg:ic-fricase-pollo"]
+  ]
+};
+
 function dishIcon(recipe) {
   const name = norm(recipe.name.es);
+  for (const [re, icon] of meatIcons[recipe.category] || []) {
+    if (re.test(name)) { if (icon) return icon; break; }
+  }
   let best = null;
   for (const [word, icon] of dishIcons) {
     const at = name.search(new RegExp(`\\b${word}`));

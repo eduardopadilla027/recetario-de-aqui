@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 1.15.0 · **Recetas:** 620 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 1.16.0 · **Recetas:** 620 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -49,7 +49,8 @@ Las recetas son **versiones propias redactadas para esta app** (no copias de lib
 
 ```
 cocine-a-gusto/
-├── index.html            estructura de la página, sprite SVG (iconos, bandera, plátanos, embutidos, yuca, pincho de camarones, albóndigas) y orden de scripts
+├── index.html            estructura de la página, sprite SVG (iconos, bandera, plátanos, embutidos, yuca, pincho de camarones, albóndigas, chuleta, churrasco y
+│                         los dibujos de carnes y aves por tipo de plato) y orden de scripts
 ├── css/styles.css        estilos (tokens en :root, responsive, movimiento reducido, impresión)
 ├── js/
 │   ├── recipes.js        crea el arreglo `const recipes = [...]` (recetas base)
@@ -148,8 +149,15 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   (½, ¼, ⅓…; enteros desde 10).
 - **Icono de cada plato (`dishIcon`):** busca palabras de `dishIcons` en el nombre en español; gana la que aparece primero
   y, en empate, la más larga. Sin coincidencia: el icono de la categoría. Valores `svg:<id>` usan dibujos del sprite
-  (plátano verde y maduro, longaniza, morcilla, yuca, pincho de camarones, albóndigas) porque no hay emoji
-  correcto (🍠 es batata, 🍢 es oden japonés, 🧆 es falafel).
+  (plátano verde y maduro, longaniza, morcilla, yuca, pincho de camarones, albóndigas, chuleta, churrasco) porque
+  no hay emoji correcto (🍠 es batata, 🍢 es oden japonés, 🧆 es falafel, 🍖 es carne de caricatura).
+- **Carnes y aves (`meatIcons`):** antes de `dishIcons`, las recetas de las categorías `carnes` y `aves` buscan su
+  dibujo por tipo de plato con una lista de expresiones en orden (gana la primera): guiso en caldero (`ic-guiso-carne`,
+  `ic-fricase-pollo`, ambos sobre `ic-caldero`), encebollado, empanado, desmenuzado (ropa vieja, salpicón), picadillo,
+  asado con cuerito (`ic-pernil`), masitas fritas, costillas, jamón con piña, pollo asado entero, pollo frito, alitas y
+  pechuga a la plancha. Una regla con `null` deja pasar el nombre a `dishIcons` (chuletas, churrasco, embutidos,
+  albóndigas, conejo, pinchos, mofongo, pastelón). Los dibujos se generan con un script de Node (contornos irregulares
+  deterministas) y quedan como `<symbol>` fijos en `index.html`.
 - **Idioma:** ES/EN con `translations`; se recuerda en `localStorage` (`rcb.lang`). Favoritos en `rcb.favorites`.
 - **Accesibilidad:** enlace "Saltar al contenido", pestañas con `role="tab"`, `aria-live` en conteos, foco visible,
   contraste AA de los tokens de color, `prefers-reduced-motion` e impresión limpia de la receta.
@@ -234,6 +242,16 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v1.16.0 · Iconos de carnes y aves
+- *Pedidos:* corregir el icono de las chuletas y del churrasco; los de carnes y pollos eran muy genéricos.
+- Antes: 19 carnes con 🥩, 13 con 🍖 y 30 aves con 🍗.
+- Dibujos SVG nuevos: `ic-chuleta` (con borde de grasa, hueso de costilla y marcas de parrilla), `ic-churrasco` (tira
+  a la parrilla con chimichurri) y 14 por tipo de plato (ver §7, `meatIcons`).
+- Reparto: guiso de carne 11, fricasé de pollo 12, asados 7, chuletas 7, pollo asado 6, alitas 6, encebollado 3,
+  empanado 3, masitas 3, pollo frito 3, pechuga 3, costillas 2, desmenuzada 2, picadillo 1, jamón 1; quedan con 🍗 sólo
+  los muslos glaseados y el pollo a la BBQ.
+- *Verificado:* cada dibujo revisado a tamaño grande; las 82 recetas de carnes y aves abren sin errores y con su dibujo ✔.
 
 ### 2026-10-10 — v1.15.0 · Galletitas, ensaladas verdes y de granos, gazpachos e iconos nuevos
 - *Pedidos:* buscar recetas de galletitas y de ensaladas verdes y de granos; recetas de gazpacho; cambiar el icono de
