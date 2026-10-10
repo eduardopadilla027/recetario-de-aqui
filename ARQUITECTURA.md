@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.8.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 858 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.9.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 869 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, y tragos sin alcohol, en treinta y una tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, y más tés, en treinta y dos tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -108,7 +108,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 
 | Clave | Nombre | Recetas |
 |---|---|---|
-| calientes | Bebidas Calientes | 18 |
+| calientes | Bebidas Calientes | 29 |
 | frutas | Frutas | 27 |
 | cereales | Cereales | 16 |
 | granos | Granos y Legumbres | 19 |
@@ -206,6 +206,9 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   de guineo en pan, bundt de mangó glaseado, pastelillos de piña, frasco de piña en almíbar y tiritas de mangó verde.
   **Tragos sin alcohol (`ic-sin-*`, tanda 31):** vaso alto, copa, botella, jarra, ponchera o frasco según el trago, con
   su color (capas de granadina, rojo de fresa subiendo, burbujas) y su adorno (menta, limón, piña y cereza, romero).
+  **Tés (`ic-te-*`):** taza en su platito con el color de cada té y, al lado, su hoja, flor o especia (naranjo,
+  yerbabuena, manzanillas, canela y clavos, anís estrellado, orégano brujo, albahaca, cáscara de piña, guayaba, tilo,
+  limoncillo, jengibre, hoja y flor de parcha, limón, guanábana, moringa, cúrcuma, jamaica, romero, hinojo, chai…).
   **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
@@ -314,7 +317,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 858). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 869). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -332,7 +335,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   Ley 22 de Vehículos y Tránsito de Puerto Rico: 0.08% (21 años o más) y 0.02% (18 a 20 años, motoras, camiones, guaguas
   escolares, vehículos pesados y de transporte público; menores de 18, nada), cuántas horas tarda en eliminarse esa
   porción (≈ 1 trago por hora) y que no hay una cantidad segura para conducir. Los cócteles "sin alcohol" no la llevan.
-- **Tés** (`TEA_INFO`, por id): uso tradicional en Puerto Rico (aclarando que es remedio casero y no sustituye al
+- **Tés** (`TEA_INFO`, por id, 23 tés): uso tradicional en Puerto Rico (aclarando que es remedio casero y no sustituye al
   médico) y una precaución propia de cada planta (manzanilla y alergia a la familia de la margarita, canela y cumarina,
   anís estrellado japonés, tilo y sedantes, hojas de guayaba con medicinas para la diabetes…).
 - **Manejo seguro:** temperaturas internas según el USDA según el tipo de carne o marisco.
@@ -368,6 +371,22 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v3.9.0 · Más tés
+- *Pedido:* más recetas de té.
+- Trigésima segunda tanda en `js/recipes-4.js` (versiones propias), 11 tés en **calientes**: hojas de parcha, hojas de
+  limón, hojas de guanábana, moringa con limón, cúrcuma y jengibre, jamaica caliente con canela, romero y limón, semillas
+  de hinojo, té verde con menta, cáscara de china con canela y chai con especias del país.
+- **Seguridad:** cada uno con su uso tradicional y su precaución en `TEA_INFO` (§9). La hoja de guanábana aclara que no
+  hay pruebas de que cure el cáncer y advierte del daño a los nervios con el uso prolongado; la moringa y la jamaica, de
+  las medicinas para la presión y la diabetes; el té verde y el chai, de la cafeína.
+- **Nutrición:** té verde, hojas para té (parcha, limón, guanábana, moringa, hinojo) y cúrcuma.
+- **Buscador:** los tés se encuentran también por su uso ("té para dormir", "té para los nervios", "té para el catarro",
+  "té para la digestión", "té para la presión"); esas palabras ya no se "corrigen" (catarro → chaparro).
+- **Iconos:** 23 dibujos de tés (los 12 que había usaban todos 🍵) (§7).
+- Total: **858 → 869 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador ✔; navegador: los 11 en ES y EN a 375 px con uso tradicional y
+  precaución, sin errores ni desbordes ✔.
 
 ### 2026-10-10 — v3.8.0 · Tragos sin alcohol
 - *Pedido:* más recetas de tragos sin alcohol.

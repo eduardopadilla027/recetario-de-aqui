@@ -141,7 +141,9 @@ function sIndex(r) {
   if (x) return x;
   const name = `${r.name.es} ${r.name.en}`;
   const ing = `${r.ingredients.es.join(" ")} ${r.ingredients.en.join(" ")}`;
-  const steps = `${r.steps.es.join(" ")} ${r.steps.en.join(" ")}`;
+  // Los tés también se encuentran por su uso tradicional ("té para los nervios", "té para dormir").
+  const tea = typeof TEA_INFO !== "undefined" && TEA_INFO[r.id] ? ` ${TEA_INFO[r.id].es[0]} ${TEA_INFO[r.id].en[0]}` : "";
+  const steps = `${r.steps.es.join(" ")} ${r.steps.en.join(" ")}${tea}`;
   x = {
     name: new Set(sTokens(name)), ing: new Set(sTokens(ing)), steps: new Set(sTokens(steps)),
     nameAll: sNorm(name), ingAll: sNorm(ing), stepsAll: sNorm(steps)
@@ -156,6 +158,8 @@ function sGetVocab() {
   const freq = new Map();
   recipes.forEach((r) => { const x = sIndex(r); x.name.forEach((w) => freq.set(w, (freq.get(w) || 0) + 5)); x.ing.forEach((w) => freq.set(w, (freq.get(w) || 0) + 1)); });
   S_GROUPS.forEach((g) => g.forEach((w) => { if (!freq.has(w)) freq.set(w, 0); }));
+  // Palabras del uso tradicional de los tés (catarro, presión, nervios…): conocidas, no se corrigen.
+  if (typeof TEA_INFO !== "undefined") Object.values(TEA_INFO).forEach((t) => sTokens(`${t.es[0]} ${t.en[0]}`).forEach((w) => { if (!freq.has(w)) freq.set(w, 0); }));
   Object.values(S_CATS).forEach((v) => v.split(" ").forEach((w) => { const k = sStem(w); if (!freq.has(k)) freq.set(k, 0); }));
   sVocab = { n: recipes.length, words: [...freq.keys()], freq };
   return sVocab.words;

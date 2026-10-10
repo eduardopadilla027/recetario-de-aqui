@@ -67,12 +67,56 @@ const TEA_INFO = {
     en: ["mild diarrhea and digestion.", "If you have diabetes and take medication, ask your doctor: it may add to its effect on blood sugar. If diarrhea lasts more than 2 days, or there is fever or dehydration, see a doctor."]
   },
   "te-tilo": {
-    es: ["los nervios, el insomnio y el catarro.", "Puede dar sueño: no lo combine con sedantes ni pastillas para dormir sin consultar. Con moderación si padece del corazón."],
+    es: ["los nervios, para dormir mejor y el catarro.", "Puede dar sueño: no lo combine con sedantes ni pastillas para dormir sin consultar. Con moderación si padece del corazón."],
     en: ["nerves, sleeplessness and colds.", "It can make you drowsy: don't combine it with sedatives or sleeping pills without asking. In moderation if you have heart problems."]
   },
   "te-limoncillo": {
     es: ["la digestión, para relajarse y en el catarro con fiebre.", "En el embarazo, no lo tome en cantidad."],
     en: ["digestion, relaxing and colds with fever.", "During pregnancy, don't drink large amounts."]
+  },
+  "te-hojas-parcha": {
+    es: ["los nervios, la ansiedad y para dormir mejor.", "Puede dar sueño: no lo combine con sedantes, pastillas para dormir ni alcohol, ni lo tome antes de conducir. No en el embarazo."],
+    en: ["nerves, anxiety and sleeplessness.", "It can make you drowsy: don't combine it with sedatives, sleeping pills or alcohol, or drink it before driving. Not during pregnancy."]
+  },
+  "te-hojas-limon": {
+    es: ["el catarro, los nervios y la digestión.", "Use hojas de un árbol que no haya sido fumigado y lávelas bien."],
+    en: ["colds, nerves and digestion.", "Use leaves from an unsprayed tree and wash them well."]
+  },
+  "te-hoja-guanabana": {
+    es: ["los nervios y el sueño; no hay pruebas de que cure el cáncer ni otras enfermedades.", "Tomado a menudo y por mucho tiempo se ha relacionado con daño a los nervios (un tipo de parkinsonismo) por la anonacina de la planta. Puede bajar la presión y el azúcar: no lo tome a diario, ni en el embarazo, ni con medicinas para la presión o la diabetes sin consultar."],
+    en: ["nerves and sleep; there's no evidence it cures cancer or other diseases.", "Drunk often and for long periods it has been linked to nerve damage (a form of parkinsonism) from the plant's annonacin. It can lower blood pressure and blood sugar: don't drink it daily, during pregnancy, or with blood pressure or diabetes medicines without asking your doctor."]
+  },
+  "te-moringa": {
+    es: ["dar energía y como bebida nutritiva.", "Puede bajar el azúcar y la presión: cuidado si toma medicinas para la diabetes, la presión o la tiroides. No en el embarazo."],
+    en: ["energy and as a nourishing drink.", "It can lower blood sugar and blood pressure: take care if you take medicine for diabetes, blood pressure or thyroid. Not during pregnancy."]
+  },
+  "te-curcuma-jengibre": {
+    es: ["la inflamación, los dolores de las coyunturas y la digestión.", "Si toma anticoagulantes o tiene piedras en la vesícula, consulte a su médico. Puede dar acidez. Los suplementos concentrados de cúrcuma han causado problemas del hígado; el té casero es mucho más suave."],
+    en: ["inflammation, joint aches and digestion.", "If you take blood thinners or have gallstones, ask your doctor. It can cause heartburn. Concentrated turmeric supplements have caused liver problems; homemade tea is much milder."]
+  },
+  "te-jamaica-caliente": {
+    es: ["la presión alta, como diurético y para refrescar.", "Puede bajar la presión: si toma medicinas para la presión o diuréticos, consulte a su médico. No en el embarazo en cantidad."],
+    en: ["high blood pressure, as a diuretic and to refresh.", "It can lower blood pressure: if you take blood pressure medicine or diuretics, ask your doctor. Not in large amounts during pregnancy."]
+  },
+  "te-romero": {
+    es: ["la digestión, el cansancio y la memoria.", "En el embarazo, no lo tome en cantidad. Si tiene epilepsia, presión alta o toma anticoagulantes, consulte a su médico."],
+    en: ["digestion, tiredness and memory.", "During pregnancy, don't drink large amounts. If you have epilepsy or high blood pressure, or take blood thinners, ask your doctor."]
+  },
+  "te-hinojo": {
+    es: ["los gases, los cólicos y la digestión después de comer.", "No en el embarazo en cantidad. No se lo dé a bebés sin consultar al pediatra. Si es alérgico al apio o la zanahoria, puede darle alergia."],
+    en: ["gas, cramps and digestion after meals.", "Not in large amounts during pregnancy. Don't give it to babies without asking the pediatrician. If you're allergic to celery or carrot, it may cause a reaction."]
+  },
+  "te-verde-menta": {
+    es: ["dar energía y como bebida con antioxidantes.", "Lleva cafeína (en el embarazo, no pase de 200 mg al día de todas las fuentes). Tomado con las comidas dificulta absorber el hierro. Los extractos concentrados de té verde han dañado el hígado; el té de taza no."],
+    en: ["energy and as an antioxidant drink.", "It has caffeine (during pregnancy, keep under 200 mg a day from all sources). Drunk with meals, it hinders iron absorption. Concentrated green tea extracts have harmed the liver; a regular cup doesn't."]
+  },
+  "te-cascara-china": {
+    es: ["la digestión, los gases y el catarro.", "Lave bien la cáscara (las chinas de tienda pueden traer cera y plaguicidas). La cáscara de china agria tiene sinefrina: evítela si tiene presión alta o problemas del corazón, o si toma estimulantes."],
+    en: ["digestion, gas and colds.", "Wash the peel well (store-bought oranges may have wax and pesticides). Sour orange peel contains synephrine: avoid it with high blood pressure or heart problems, or if you take stimulants."]
+  },
+  "te-chai-especias": {
+    es: ["entrar en calor y la digestión.", "Lleva cafeína del té negro: con moderación en el embarazo, en niños y de noche. Use sólo anís estrellado chino de cocina."],
+    en: ["warming up and digestion.", "It has caffeine from black tea: in moderation during pregnancy, for kids and at night. Use only Chinese culinary star anise."]
   },
   "guarapo-jengibre": {
     es: ["las náuseas, el catarro y la digestión.", "Puede dar acidez. Si toma anticoagulantes o tiene piedras en la vesícula, consulte a su médico."],

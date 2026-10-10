@@ -77,6 +77,8 @@
  * Trigésima primera tanda: tragos sin alcohol (mojito, daiquirí, margarita, bahama
  * mama, lava flow, coquito, ponche de crema y sangría sin alcohol, ponche para fiestas,
  * refresco de jengibre, spritzer de parcha, té helado, frappé de café, agua de pepino).
+ * Trigésima segunda tanda: más tés (hojas de parcha, de limón y de guanábana, moringa,
+ * cúrcuma y jengibre, jamaica caliente, romero, hinojo, té verde, cáscara de china, chai).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -18589,6 +18591,383 @@ recipes.push(
         "Blend the cucumber, lime juice, sugar, mint and 1 cup of the water until smooth.",
         "Strain through a fine sieve and add the remaining water.",
         "Serve very cold with ice and cucumber slices. One of the lightest: about 40 calories a glass."
+      ]
+    }
+  },
+
+  // ── Trigésima segunda tanda (2026-10): más tés e infusiones ──
+  {
+    id: "te-hojas-parcha",
+    category: "calientes",
+    name: { es: "Té de Hojas de Parcha", en: "Passion Fruit Leaf Tea" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "6 hojas tiernas de parcha, lavadas",
+        "4 tazas de agua",
+        "Miel al gusto"
+      ],
+      en: [
+        "6 young passion fruit leaves, washed",
+        "4 cups water",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua, añada las hojas y hierva a fuego bajo 3 minutos.",
+        "Apague, tape y deje reposar 10 minutos.",
+        "Cuele y endulce. Use hojas de una planta que no haya sido fumigada. Es un té de la noche, para calmarse."
+      ],
+      en: [
+        "Boil the water, add the leaves and simmer 3 minutes.",
+        "Turn off, cover and steep 10 minutes.",
+        "Strain and sweeten. Use leaves from an unsprayed plant. It's a bedtime tea, for calming down."
+      ]
+    }
+  },
+  {
+    id: "te-hojas-limon",
+    category: "calientes",
+    name: { es: "Té de Hojas de Limón", en: "Lime Leaf Tea" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "8 hojas de limón del país, lavadas y estrujadas",
+        "4 tazas de agua",
+        "Cáscara de ½ limón (opcional)",
+        "Azúcar o miel al gusto"
+      ],
+      en: [
+        "8 Key lime leaves, washed and crumpled",
+        "4 cups water",
+        "Peel of ½ lime (optional)",
+        "Sugar or honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Estruje las hojas con las manos para que suelten el aceite y el olor.",
+        "Hierva el agua, apague, añada las hojas y la cáscara, tape y deje reposar 8 minutos.",
+        "Cuele y endulce. Huele a limón aunque no lleva jugo: es el té de las abuelas para el catarro y los nervios."
+      ],
+      en: [
+        "Crumple the leaves with your hands so they release their oil and aroma.",
+        "Boil the water, turn off, add the leaves and peel, cover and steep 8 minutes.",
+        "Strain and sweeten. It smells of lime though it has no juice: grandmothers' tea for colds and nerves."
+      ]
+    }
+  },
+  {
+    id: "te-hoja-guanabana",
+    category: "calientes",
+    name: { es: "Té de Hojas de Guanábana", en: "Soursop Leaf Tea" },
+    time: "20 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 hojas de guanábana, lavadas",
+        "4 tazas de agua",
+        "Miel al gusto"
+      ],
+      en: [
+        "4 soursop leaves, washed",
+        "4 cups water",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Parta las hojas en pedazos.",
+        "Hierva el agua, añada las hojas y cocine a fuego bajo 10 minutos.",
+        "Cuele y endulce. Tómelo de vez en cuando, no todos los días: lea la precaución en Alergias y seguridad."
+      ],
+      en: [
+        "Tear the leaves into pieces.",
+        "Boil the water, add the leaves and simmer 10 minutes.",
+        "Strain and sweeten. Drink it once in a while, not daily: see the caution under Allergies & safety."
+      ]
+    }
+  },
+  {
+    id: "te-moringa",
+    category: "calientes",
+    name: { es: "Té de Moringa con Limón", en: "Moringa Tea with Lime" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 cucharada de hojas secas de moringa (o 1 cucharadita de moringa en polvo)",
+        "2 tazas de agua",
+        "1 cucharada de jugo de limón",
+        "Miel al gusto"
+      ],
+      en: [
+        "1 tablespoon dried moringa leaves (or 1 teaspoon moringa powder)",
+        "2 cups water",
+        "1 tablespoon lime juice",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el agua hasta que esté por hervir y apague (el agua hirviendo la amarga).",
+        "Añada la moringa y deje reposar 5 minutos.",
+        "Cuele, añada el limón y endulce. Tiene sabor a hierba verde, parecido al té verde."
+      ],
+      en: [
+        "Heat the water until almost boiling and turn off (boiling water makes it bitter).",
+        "Add the moringa and steep 5 minutes.",
+        "Strain, add the lime juice and sweeten. It tastes grassy, a bit like green tea."
+      ]
+    }
+  },
+  {
+    id: "te-curcuma-jengibre",
+    category: "calientes",
+    name: { es: "Té de Cúrcuma y Jengibre", en: "Turmeric Ginger Tea" },
+    time: "15 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 cucharadita de cúrcuma en polvo (o 1 pulgada de cúrcuma fresca rallada)",
+        "1 pedazo de jengibre de 1 pulgada en rodajas",
+        "2 tazas de agua",
+        "1 pizca de pimienta negra",
+        "1 cucharada de jugo de limón",
+        "Miel al gusto"
+      ],
+      en: [
+        "1 teaspoon ground turmeric (or 1 inch fresh turmeric, grated)",
+        "1 piece (1 inch) ginger, sliced",
+        "2 cups water",
+        "1 pinch black pepper",
+        "1 tablespoon lime juice",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con la cúrcuma, el jengibre y la pimienta a fuego bajo 10 minutos.",
+        "Cuele por un colador fino o un paño (la cúrcuma mancha: cuidado con la ropa y el mostrador).",
+        "Añada el limón y endulce. La pimienta ayuda a que el cuerpo aproveche la cúrcuma."
+      ],
+      en: [
+        "Simmer the water with the turmeric, ginger and pepper 10 minutes.",
+        "Strain through a fine sieve or cloth (turmeric stains: mind your clothes and counter).",
+        "Add the lime juice and sweeten. Black pepper helps the body absorb the turmeric."
+      ]
+    }
+  },
+  {
+    id: "te-jamaica-caliente",
+    category: "calientes",
+    name: { es: "Té Caliente de Flor de Jamaica y Canela", en: "Hot Hibiscus and Cinnamon Tea" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "¼ taza de flor de jamaica seca",
+        "4 tazas de agua",
+        "1 raja de canela",
+        "2 clavos de olor",
+        "Azúcar o miel al gusto"
+      ],
+      en: [
+        "¼ cup dried hibiscus flowers",
+        "4 cups water",
+        "1 cinnamon stick",
+        "2 whole cloves",
+        "Sugar or honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con la canela y los clavos 5 minutos.",
+        "Apague, añada la jamaica, tape y deje reposar 8 minutos (más tiempo lo pone muy ácido).",
+        "Cuele y endulce. Es la misma flor del agua de jamaica fría, pero caliente y con especias."
+      ],
+      en: [
+        "Boil the water with the cinnamon and cloves 5 minutes.",
+        "Turn off, add the hibiscus, cover and steep 8 minutes (longer makes it very tart).",
+        "Strain and sweeten. Same flower as cold agua de jamaica, served hot and spiced."
+      ]
+    }
+  },
+  {
+    id: "te-romero",
+    category: "calientes",
+    name: { es: "Té de Romero y Limón", en: "Rosemary Lime Tea" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 ramitas de romero fresco",
+        "2 tazas de agua",
+        "2 ruedas de limón",
+        "Miel al gusto"
+      ],
+      en: [
+        "2 fresh rosemary sprigs",
+        "2 cups water",
+        "2 lime slices",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua y apague.",
+        "Añada el romero y el limón, tape y deje reposar 5 minutos.",
+        "Cuele y endulce. Tiene un sabor fuerte y resinoso: con una ramita pequeña basta si es la primera vez."
+      ],
+      en: [
+        "Boil the water and turn off.",
+        "Add the rosemary and lime, cover and steep 5 minutes.",
+        "Strain and sweeten. It has a strong, piney flavor: a small sprig is enough the first time."
+      ]
+    }
+  },
+  {
+    id: "te-hinojo",
+    category: "calientes",
+    name: { es: "Té de Semillas de Hinojo", en: "Fennel Seed Tea" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 cucharadita de semillas de hinojo",
+        "2 tazas de agua",
+        "Miel al gusto"
+      ],
+      en: [
+        "1 teaspoon fennel seeds",
+        "2 cups water",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Machaque un poco las semillas en el pilón para que suelten el sabor.",
+        "Hierva el agua, apague, añada las semillas, tape y deje reposar 8 minutos.",
+        "Cuele y endulce. Sabe dulzón, parecido al anís: se toma después de las comidas pesadas."
+      ],
+      en: [
+        "Lightly crush the seeds in the pilón (mortar) to release the flavor.",
+        "Boil the water, turn off, add the seeds, cover and steep 8 minutes.",
+        "Strain and sweeten. It tastes sweetish, like anise: a classic after heavy meals."
+      ]
+    }
+  },
+  {
+    id: "te-verde-menta",
+    category: "calientes",
+    name: { es: "Té Verde con Menta y Limón", en: "Green Tea with Mint and Lime" },
+    time: "8 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 cucharada de té verde suelto (o 2 bolsitas)",
+        "2 tazas de agua",
+        "6 hojas de menta",
+        "2 ruedas de limón",
+        "Miel al gusto"
+      ],
+      en: [
+        "1 tablespoon loose green tea (or 2 tea bags)",
+        "2 cups water",
+        "6 mint leaves",
+        "2 lime slices",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el agua hasta que salgan burbujitas, sin que hierva fuerte (unos 175 °F): el agua hirviendo amarga el té verde.",
+        "Añada el té y la menta y deje reposar sólo 2-3 minutos.",
+        "Cuele, añada el limón y endulce. Lleva cafeína: mejor de mañana o de tarde."
+      ],
+      en: [
+        "Heat the water until small bubbles form, without a rolling boil (about 175 °F): boiling water makes green tea bitter.",
+        "Add the tea and mint and steep only 2-3 minutes.",
+        "Strain, add the lime and sweeten. It has caffeine: best in the morning or afternoon."
+      ]
+    }
+  },
+  {
+    id: "te-cascara-china",
+    category: "calientes",
+    name: { es: "Té de Cáscara de China con Canela", en: "Orange Peel and Cinnamon Tea" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "Cáscara de 2 chinas dulces, bien lavadas (sin lo blanco)",
+        "1 raja de canela",
+        "4 tazas de agua",
+        "Azúcar o miel al gusto"
+      ],
+      en: [
+        "Peel of 2 sweet oranges, well washed (without the white pith)",
+        "1 cinnamon stick",
+        "4 cups water",
+        "Sugar or honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele las chinas con un pelador, sacando sólo lo anaranjado: lo blanco amarga.",
+        "Hierva el agua con la cáscara y la canela a fuego bajo 10 minutos.",
+        "Cuele y endulce. Aproveche las chinas para jugo. Si usa cáscara de china agria, use sólo la mitad."
+      ],
+      en: [
+        "Peel the oranges with a vegetable peeler, taking only the orange part: the white is bitter.",
+        "Simmer the water with the peel and cinnamon 10 minutes.",
+        "Strain and sweeten. Use the oranges for juice. If you use sour orange peel, use only half."
+      ]
+    }
+  },
+  {
+    id: "te-chai-especias",
+    category: "calientes",
+    name: { es: "Té Chai con Especias del País", en: "Spiced Chai with Island Spices" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 tazas de agua",
+        "2 rajas de canela",
+        "4 clavos de olor",
+        "1 estrella de anís estrellado",
+        "1 pedazo de jengibre de 1 pulgada en rodajas",
+        "¼ cucharadita de nuez moscada",
+        "2 cucharadas de té negro suelto (o 4 bolsitas)",
+        "2 tazas de leche",
+        "3 cucharadas de azúcar morena"
+      ],
+      en: [
+        "2 cups water",
+        "2 cinnamon sticks",
+        "4 whole cloves",
+        "1 star anise",
+        "1 piece (1 inch) ginger, sliced",
+        "¼ teaspoon nutmeg",
+        "2 tablespoons loose black tea (or 4 tea bags)",
+        "2 cups milk",
+        "3 tablespoons brown sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con la canela, los clavos, el anís, el jengibre y la nuez moscada a fuego bajo 5 minutos.",
+        "Apague, añada el té y deje reposar 4 minutos.",
+        "Añada la leche y el azúcar y caliente sin que hierva. Cuele y sirva con canela por encima. Lleva cafeína."
+      ],
+      en: [
+        "Simmer the water with the cinnamon, cloves, star anise, ginger and nutmeg 5 minutes.",
+        "Turn off, add the tea and steep 4 minutes.",
+        "Add the milk and sugar and heat without boiling. Strain and serve dusted with cinnamon. It has caffeine."
       ]
     }
   }

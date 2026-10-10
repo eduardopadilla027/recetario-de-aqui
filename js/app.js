@@ -374,6 +374,30 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Tés: cada uno con su hoja, flor o especia (antes todos 🍵).
+  [/^te de hojas de naranjo/, "svg:ic-te-naranjo"],
+  [/^te de yerbabuena/, "svg:ic-te-yerbabuena"],
+  [/^te de manzanilla/, "svg:ic-te-manzanilla"],
+  [/^te de canela/, "svg:ic-te-canela"],
+  [/^te de anis estrellado/, "svg:ic-te-anis"],
+  [/^te de oregano brujo/, "svg:ic-te-oregano-brujo"],
+  [/^te de albahaca/, "svg:ic-te-albahaca"],
+  [/^te de cascara de pina/, "svg:ic-te-cascara-pina"],
+  [/^te de hojas de guayaba/, "svg:ic-te-guayaba"],
+  [/^te de tilo/, "svg:ic-te-tilo"],
+  [/^te de limoncillo/, "svg:ic-te-limoncillo"],
+  [/^guarapo de jengibre/, "svg:ic-te-jengibre"],
+  [/^te de hojas de parcha/, "svg:ic-te-hojas-parcha"],
+  [/^te de hojas de limon/, "svg:ic-te-hojas-limon"],
+  [/^te de hojas de guanabana/, "svg:ic-te-hoja-guanabana"],
+  [/^te de moringa/, "svg:ic-te-moringa"],
+  [/^te de curcuma/, "svg:ic-te-curcuma"],
+  [/^te caliente de flor de jamaica/, "svg:ic-te-jamaica"],
+  [/^te de romero/, "svg:ic-te-romero"],
+  [/^te de semillas de hinojo/, "svg:ic-te-hinojo"],
+  [/^te verde/, "svg:ic-te-verde"],
+  [/^te de cascara de china/, "svg:ic-te-cascara-china"],
+  [/^te chai/, "svg:ic-te-chai"],
   // Tragos sin alcohol (tanda 31).
   [/^mojito de parcha sin alcohol/, "svg:ic-sin-mojito-parcha"],
   [/^coquito sin alcohol/, "svg:ic-sin-coquito"],
