@@ -48,7 +48,7 @@ const S_GROUPS = [
   "verde green", "maduro madura ripe", "tierno tierna tender", "relleno rellena stuffed", "frito frita fritura fried fritter", "guisado guisada stew stewed guiso",
   "asado asada roast roasted", "empanadilla pastelillo turnover empanada", "bizcocho cake torta ponque",
   "sopa soup", "ensalada salad", "salsa sauce", "flan custard", "dulce sweet", "postre dessert",
-  "jengibre ginger", "canela cinnamon", "vainilla vanilla", "carambola starfruit", "mamey", "acerola cherry",
+  "jengibre ginger", "canela cinnamon", "vainilla vanilla", "carambola starfruit", "mamey", "acerola cereza cherry", "jalea mermelada jam jelly preserves", "hojaldre puff milhojas palmera",
   "chuleta chop", "pernil shoulder", "lechon suckling", "mariscada", "mofongo", "tostone", "alcapurria", "pastel"
 ].map((g) => g.split(" ").map(sStem));
 
@@ -85,8 +85,8 @@ const S_CATS = {
   jugos: "jugo juice", cocteles: "coctel cocktail trago bebida alcoholica", panes: "pan bread",
   salsas: "salsa sauce aderezo dip adobo marinada marinade sazon seasoning rub", entremeses: "entremes aperitivo appetizer picadera fritura fritter frituras",
   frutas: "fruta fruit almibar", cereales: "cereal avena oatmeal", granos: "grano legumbre legume",
-  huevos: "huevo egg queso cheese", bizcochos: "bizcocho cake", galletitas: "galleta cookie",
-  pasteles_dulces: "pie", emparedados: "sandwich emparedado", calientes: "te tea infusion caliente", pastas: "pasta"
+  huevos: "huevo egg queso cheese", bizcochos: "bizcocho cake postre dessert", galletitas: "galleta cookie postre dessert",
+  pasteles_dulces: "pie postre dessert hojaldre", emparedados: "sandwich emparedado", calientes: "te tea infusion caliente", pastas: "pasta"
 };
 
 /* Exclusiones que corresponden a alérgenos de advisories.js. */

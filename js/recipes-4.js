@@ -49,6 +49,8 @@
  * BBQ, vegetales, limón y pimienta, y sin sal).
  * Vigesimoprimera tanda: parmesanas y milanesas (pollo, res, cerdo, pescado, cordon bleu,
  * panko al horno, berenjena) y recetas con Nutella.
+ * Vigesimosegunda tanda: dulces y mermeladas de frutas tropicales (acerola, guayaba,
+ * grosella, carambola, mangó, parcha, piña), platos con berenjena y hojaldre.
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -12087,6 +12089,949 @@ recipes.push(
         "Blend the milk with the Nutella until dissolved.",
         "Add the frozen banana and ice and blend until thick.",
         "Serve right away. Contains hazelnuts, milk and soy."
+      ]
+    }
+  },
+
+  // ── Vigesimosegunda tanda (2026-10): dulces de frutas tropicales, berenjena y hojaldre ──
+  {
+    id: "dulce-acerolas-almibar",
+    category: "frutas",
+    name: { es: "Dulce de Cerezas (Acerolas) en Almíbar", en: "Acerola Cherries in Syrup" },
+    time: "40 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "4 tazas de acerolas maduras (cerezas del país), lavadas y sin tallo",
+        "2 tazas de azúcar",
+        "1½ tazas de agua",
+        "1 raja de canela",
+        "3 clavos de olor"
+      ],
+      en: [
+        "4 cups ripe acerola cherries, washed and stemmed",
+        "2 cups sugar",
+        "1½ cups water",
+        "1 cinnamon stick",
+        "3 whole cloves"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con el azúcar, la canela y los clavos 5 minutos para hacer el almíbar.",
+        "Añada las acerolas y cocine a fuego bajo 15–20 minutos, sin mover mucho para que no se deshagan, hasta que el almíbar espese y brille.",
+        "Saque la canela y los clavos. Deje enfriar: el almíbar espesa más al enfriar.",
+        "Las acerolas tienen semillas: avise a quien las coma, sobre todo a los niños. Se sirve frío con queso blanco del país; dura 2 semanas en la nevera."
+      ],
+      en: [
+        "Boil the water with the sugar, cinnamon and cloves 5 minutes to make the syrup.",
+        "Add the acerolas and cook over low heat 15–20 minutes, stirring little so they don't fall apart, until the syrup thickens and shines.",
+        "Remove the cinnamon and cloves. Let cool: the syrup thickens more as it cools.",
+        "Acerolas have seeds: warn whoever eats them, especially children. Serve cold with local white cheese; keeps 2 weeks in the fridge."
+      ]
+    }
+  },
+  {
+    id: "mermelada-acerola",
+    category: "frutas",
+    name: { es: "Mermelada de Acerola (Cereza del País)", en: "Acerola Cherry Jam" },
+    time: "50 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "4 tazas de acerolas maduras",
+        "1 taza de agua",
+        "2½ tazas de azúcar",
+        "2 cucharadas de jugo de limón"
+      ],
+      en: [
+        "4 cups ripe acerola cherries",
+        "1 cup water",
+        "2½ cups sugar",
+        "2 tablespoons lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las acerolas en el agua 10 minutos, hasta que estén blandas. Páselas por un colador apretando para sacar la pulpa y dejar las semillas.",
+        "Mida la pulpa (unas 2½ tazas) y póngala en una olla con el azúcar y el limón.",
+        "Cocine a fuego medio, moviendo seguido, 20–25 minutos. Está lista cuando una gota en un plato frío se arruga al empujarla con el dedo (unos 220°F).",
+        "Envase caliente en frascos limpios y refrigere. La acerola es de las frutas con más vitamina C, aunque parte se pierde al cocinarla."
+      ],
+      en: [
+        "Boil the acerolas in the water 10 minutes, until soft. Press them through a strainer to get the pulp and leave the seeds.",
+        "Measure the pulp (about 2½ cups) and put it in a pot with the sugar and lime juice.",
+        "Cook over medium heat, stirring often, 20–25 minutes. It's ready when a drop on a cold plate wrinkles when pushed with a finger (about 220°F).",
+        "Pour hot into clean jars and refrigerate. Acerola is one of the fruits richest in vitamin C, although some is lost in cooking."
+      ]
+    }
+  },
+  {
+    id: "jalea-guayaba",
+    category: "frutas",
+    name: { es: "Jalea de Guayaba", en: "Guava Jelly" },
+    time: "1 hr 15 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "3 libras de guayabas maduras, en cuartos",
+        "6 tazas de agua",
+        "3 tazas de azúcar",
+        "3 cucharadas de jugo de limón"
+      ],
+      en: [
+        "3 lb ripe guavas, quartered",
+        "6 cups water",
+        "3 cups sugar",
+        "3 tablespoons lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las guayabas en el agua 30 minutos, hasta que estén muy blandas.",
+        "Cuele por un paño o colador fino sin apretar (si aprieta, la jalea sale turbia). Debe sacar unas 4 tazas de líquido.",
+        "Hierva el líquido con el azúcar y el limón a fuego alto, quitando la espuma, 20–25 minutos, hasta 220°F o hasta que una gota cuaje en un plato frío.",
+        "Envase en frascos limpios. Queda transparente y rosada; la guayaba trae su propia pectina y cuaja sin añadirle nada."
+      ],
+      en: [
+        "Boil the guavas in the water 30 minutes, until very soft.",
+        "Strain through a cloth or fine strainer without pressing (pressing makes the jelly cloudy). You should get about 4 cups of liquid.",
+        "Boil the liquid with the sugar and lime juice over high heat, skimming the foam, 20–25 minutes, to 220°F or until a drop sets on a cold plate.",
+        "Pour into clean jars. It turns clear and pink; guava has its own pectin and sets without adding anything."
+      ]
+    }
+  },
+  {
+    id: "jalea-grosellas",
+    category: "frutas",
+    name: { es: "Jalea de Grosellas", en: "Gooseberry (Grosella) Jelly" },
+    time: "1 hr",
+    servings: 12,
+    ingredients: {
+      es: [
+        "4 tazas de grosellas",
+        "4 tazas de agua",
+        "2½ tazas de azúcar"
+      ],
+      en: [
+        "4 cups grosellas (Otaheite gooseberries)",
+        "4 cups water",
+        "2½ cups sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las grosellas en el agua 20 minutos, hasta que se rajen.",
+        "Cuele el líquido por un paño sin apretar.",
+        "Hierva el líquido con el azúcar a fuego alto, quitando la espuma, 15–20 minutos. Va cambiando de amarillo a rosado rojizo.",
+        "Está lista a 220°F o cuando una gota cuaja en un plato frío. Las grosellas son muy ácidas y tienen mucha pectina: cuaja fácil. Las frutas cocidas que quedan se pueden usar en el dulce de grosellas."
+      ],
+      en: [
+        "Boil the grosellas in the water 20 minutes, until they split.",
+        "Strain the liquid through a cloth without pressing.",
+        "Boil the liquid with the sugar over high heat, skimming the foam, 15–20 minutes. It changes from yellow to reddish pink.",
+        "It's ready at 220°F or when a drop sets on a cold plate. Grosellas are very tart and rich in pectin: it sets easily. The leftover cooked fruit can go into dulce de grosellas."
+      ]
+    }
+  },
+  {
+    id: "dulce-carambola",
+    category: "frutas",
+    name: { es: "Dulce de Carambola en Almíbar", en: "Starfruit in Syrup" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "4 carambolas maduras, en estrellas de ¼ de pulgada",
+        "1½ tazas de azúcar",
+        "1 taza de agua",
+        "1 raja de canela",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "4 ripe starfruits, cut into ¼-inch stars",
+        "1½ cups sugar",
+        "1 cup water",
+        "1 cinnamon stick",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Quite las semillas de las estrellas con la punta de un cuchillo.",
+        "Hierva el agua con el azúcar y la canela 5 minutos.",
+        "Añada las carambolas y cocine a fuego bajo 15 minutos, hasta que estén transparentes. Añada la vainilla.",
+        "Sirva frío, con queso blanco o sobre helado. Importante: las personas con enfermedad de los riñones no deben comer carambola, ni cocida."
+      ],
+      en: [
+        "Remove the seeds from the stars with the tip of a knife.",
+        "Boil the water with the sugar and cinnamon 5 minutes.",
+        "Add the starfruit and cook over low heat 15 minutes, until translucent. Add the vanilla.",
+        "Serve cold, with white cheese or over ice cream. Important: people with kidney disease should not eat starfruit, even cooked."
+      ]
+    }
+  },
+  {
+    id: "mermelada-mango",
+    category: "frutas",
+    name: { es: "Mermelada de Mangó", en: "Mango Jam" },
+    time: "45 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "4 tazas de mangó maduro en cubitos",
+        "2 tazas de azúcar",
+        "¼ taza de jugo de limón",
+        "½ cucharadita de jengibre fresco rallado"
+      ],
+      en: [
+        "4 cups ripe mango, diced",
+        "2 cups sugar",
+        "¼ cup lime juice",
+        "½ teaspoon grated fresh ginger"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el mangó con el azúcar y deje reposar 30 minutos, hasta que suelte su jugo.",
+        "Cocine con el limón y el jengibre a fuego medio, moviendo seguido y majando un poco, 25–30 minutos.",
+        "Está lista cuando al pasar la cuchara por el fondo queda un camino que tarda en cerrarse (unos 220°F).",
+        "Envase en frascos limpios y refrigere hasta 3 semanas."
+      ],
+      en: [
+        "Mix the mango with the sugar and let sit 30 minutes, until it releases its juice.",
+        "Cook with the lime juice and ginger over medium heat, stirring often and mashing a little, 25–30 minutes.",
+        "It's ready when a spoon dragged across the bottom leaves a trail that's slow to close (about 220°F).",
+        "Pour into clean jars and refrigerate up to 3 weeks."
+      ]
+    }
+  },
+  {
+    id: "mermelada-parcha",
+    category: "frutas",
+    name: { es: "Mermelada de Parcha", en: "Passion Fruit Jam" },
+    time: "35 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 tazas de pulpa de parcha (con o sin semillas)",
+        "2 tazas de azúcar",
+        "1 manzana verde rallada (aporta pectina)"
+      ],
+      en: [
+        "2 cups passion fruit pulp (with or without seeds)",
+        "2 cups sugar",
+        "1 green apple, grated (adds pectin)"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga la pulpa, el azúcar y la manzana rallada en una olla.",
+        "Cocine a fuego medio-bajo, moviendo, 20–25 minutos, hasta que espese y una gota cuaje en un plato frío.",
+        "Si la quiere lisa, cuélela caliente; con semillas queda crujiente y más bonita.",
+        "Envase y refrigere. Es la clásica para untar en galletas de soda con queso crema."
+      ],
+      en: [
+        "Put the pulp, sugar and grated apple in a pot.",
+        "Cook over medium-low heat, stirring, 20–25 minutes, until thick and a drop sets on a cold plate.",
+        "For a smooth jam, strain it hot; with seeds it's crunchy and prettier.",
+        "Pour into jars and refrigerate. It's the classic for spreading on soda crackers with cream cheese."
+      ]
+    }
+  },
+  {
+    id: "mermelada-pina",
+    category: "frutas",
+    name: { es: "Mermelada de Piña", en: "Pineapple Jam" },
+    time: "50 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "1 piña madura, pelada y rallada o picada fina (unas 4 tazas)",
+        "2 tazas de azúcar",
+        "2 cucharadas de jugo de limón",
+        "1 raja de canela",
+        "3 clavos de olor"
+      ],
+      en: [
+        "1 ripe pineapple, peeled and grated or finely chopped (about 4 cups)",
+        "2 cups sugar",
+        "2 tablespoons lime juice",
+        "1 cinnamon stick",
+        "3 whole cloves"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga la piña con su jugo, el azúcar, el limón, la canela y los clavos en una olla.",
+        "Cocine a fuego medio, moviendo seguido, 35–40 minutos, hasta que el jugo se evapore y la mermelada esté espesa y dorada.",
+        "Saque la canela y los clavos y envase en frascos limpios.",
+        "Es el relleno de los pastelillos de piña y las galletas rellenas. Dura 3 semanas en la nevera."
+      ],
+      en: [
+        "Put the pineapple with its juice, the sugar, lime juice, cinnamon and cloves in a pot.",
+        "Cook over medium heat, stirring often, 35–40 minutes, until the juice evaporates and the jam is thick and golden.",
+        "Remove the cinnamon and cloves and pour into clean jars.",
+        "It's the filling for pineapple turnovers and filled cookies. Keeps 3 weeks in the fridge."
+      ]
+    }
+  },
+  {
+    id: "berenjena-guisada",
+    category: "vegetales",
+    name: { es: "Berenjena Guisada a la Criolla", en: "Creole Stewed Eggplant" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 berenjenas en cubos de 1 pulgada",
+        "1 cucharadita de sal (para la berenjena)",
+        "2 cucharadas de aceite de oliva",
+        "¼ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "10 aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "½ taza de agua",
+        "1 cucharadita de orégano",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 eggplants in 1-inch cubes",
+        "1 teaspoon salt (for the eggplant)",
+        "2 tablespoons olive oil",
+        "¼ cup sofrito",
+        "½ cup tomato sauce",
+        "10 stuffed olives",
+        "1 tablespoon capers",
+        "½ cup water",
+        "1 teaspoon oregano",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la berenjena con la sal y déjela en un colador 20 minutos; enjuáguela y séquela (así suelta el amargor y no chupa tanto aceite).",
+        "Dore la berenjena en el aceite 5 minutos.",
+        "Añada el sofrito y cocine 3 minutos. Añada la salsa de tomate, las aceitunas, las alcaparras, el agua y el orégano.",
+        "Tape y cocine a fuego bajo 15–20 minutos, hasta que la berenjena esté blanda. Pruebe antes de salar (las aceitunas ya traen sal).",
+        "Sirva con arroz blanco. Vegana."
+      ],
+      en: [
+        "Toss the eggplant with the salt and leave it in a colander 20 minutes; rinse and pat dry (so it loses the bitterness and doesn't soak up as much oil).",
+        "Brown the eggplant in the oil 5 minutes.",
+        "Add the sofrito and cook 3 minutes. Add the tomato sauce, olives, capers, water and oregano.",
+        "Cover and simmer 15–20 minutes, until the eggplant is soft. Taste before salting (the olives are already salty).",
+        "Serve with white rice. Vegan."
+      ]
+    }
+  },
+  {
+    id: "escabeche-berenjena",
+    category: "vegetales",
+    name: { es: "Berenjena en Escabeche", en: "Pickled Eggplant (Escabeche)" },
+    time: "40 min + 4 hr de nevera",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 berenjenas en ruedas de ½ pulgada",
+        "½ taza de aceite de oliva",
+        "1 cebolla en aros",
+        "1 pimiento rojo en tiritas",
+        "6 dientes de ajo en lascas",
+        "½ taza de vinagre",
+        "2 hojas de laurel",
+        "8 granos de pimienta",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "2 eggplants in ½-inch rounds",
+        "½ cup olive oil",
+        "1 onion in rings",
+        "1 red bell pepper in strips",
+        "6 garlic cloves, sliced",
+        "½ cup vinegar",
+        "2 bay leaves",
+        "8 peppercorns",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Ase las ruedas de berenjena en el horno a 425°F, barnizadas con 2 cucharadas del aceite, 15–20 minutos, hasta dorar.",
+        "En el resto del aceite, cocine la cebolla, el pimiento y el ajo a fuego bajo 5 minutos, sin dorar.",
+        "Añada el vinagre, el laurel, la pimienta y la sal, y hierva 2 minutos.",
+        "Ponga la berenjena en un envase de cristal en capas, cubriendo cada capa con el escabeche caliente.",
+        "Refrigere 4 horas (mejor de un día para otro). Se sirve fría como picadera, con pan o con viandas."
+      ],
+      en: [
+        "Roast the eggplant rounds at 425°F, brushed with 2 tablespoons of the oil, 15–20 minutes, until golden.",
+        "In the rest of the oil, cook the onion, pepper and garlic over low heat 5 minutes, without browning.",
+        "Add the vinegar, bay leaves, peppercorns and salt, and boil 2 minutes.",
+        "Layer the eggplant in a glass container, covering each layer with the hot escabeche.",
+        "Refrigerate 4 hours (better overnight). Serve cold as a snack, with bread or root vegetables."
+      ]
+    }
+  },
+  {
+    id: "berenjena-frita",
+    category: "vegetales",
+    name: { es: "Berenjena Frita Empanada", en: "Breaded Fried Eggplant" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 berenjena grande en ruedas de ¼ de pulgada",
+        "1 cucharadita de sal",
+        "2 huevos batidos",
+        "1 taza de pan rallado",
+        "2 cucharadas de queso parmesano rallado",
+        "½ cucharadita de ajo en polvo",
+        "Aceite para freír",
+        "Mayo-ketchup o mayo-ajo para mojar"
+      ],
+      en: [
+        "1 large eggplant in ¼-inch rounds",
+        "1 teaspoon salt",
+        "2 eggs, beaten",
+        "1 cup breadcrumbs",
+        "2 tablespoons grated parmesan",
+        "½ teaspoon garlic powder",
+        "Oil for frying",
+        "Mayo-ketchup or garlic mayo for dipping"
+      ]
+    },
+    steps: {
+      es: [
+        "Sale las ruedas y déjelas 20 minutos; séquelas muy bien con papel.",
+        "Mezcle el pan rallado con el parmesano y el ajo en polvo.",
+        "Pase cada rueda por el huevo y el pan, y fríalas en aceite a 350°F 2 minutos por lado, hasta dorar.",
+        "Escurra en una rejilla y sirva caliente con mayo-ketchup. Una picadera crujiente y vegetariana."
+      ],
+      en: [
+        "Salt the rounds and leave them 20 minutes; pat them very dry with paper towels.",
+        "Mix the breadcrumbs with the parmesan and garlic powder.",
+        "Dip each round in the egg and crumbs, and fry in oil at 350°F 2 minutes per side, until golden.",
+        "Drain on a rack and serve hot with mayo-ketchup. A crunchy vegetarian snack."
+      ]
+    }
+  },
+  {
+    id: "bacalao-berenjena",
+    category: "pescados",
+    name: { es: "Bacalao Guisado con Berenjena", en: "Salt Cod Stewed with Eggplant" },
+    time: "45 min + desalar el bacalao",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de bacalao, desalado y en lascas",
+        "1 berenjena en cubos",
+        "3 cucharadas de aceite de oliva",
+        "1 cebolla en ruedas",
+        "1 pimiento verde en tiritas",
+        "3 dientes de ajo, picados",
+        "1 tomate picado",
+        "½ taza de salsa de tomate",
+        "½ taza de agua",
+        "10 aceitunas"
+      ],
+      en: [
+        "1 lb salt cod, desalted and flaked",
+        "1 eggplant, cubed",
+        "3 tablespoons olive oil",
+        "1 onion, sliced",
+        "1 green bell pepper in strips",
+        "3 garlic cloves, minced",
+        "1 tomato, chopped",
+        "½ cup tomato sauce",
+        "½ cup water",
+        "10 olives"
+      ]
+    },
+    steps: {
+      es: [
+        "Desale el bacalao de 8 a 12 horas en la nevera, cambiando el agua 3 o 4 veces. Hiérvalo 10 minutos y desmenúcelo.",
+        "Dore la berenjena en el aceite 5 minutos y sáquela.",
+        "Sofría la cebolla, el pimiento y el ajo 5 minutos; añada el tomate y la salsa.",
+        "Añada el bacalao, la berenjena, el agua y las aceitunas, tape y cocine a fuego bajo 15 minutos. Pruebe antes de salar.",
+        "Se sirve con viandas hervidas o arroz blanco."
+      ],
+      en: [
+        "Desalt the cod 8 to 12 hours in the fridge, changing the water 3 or 4 times. Boil it 10 minutes and flake it.",
+        "Brown the eggplant in the oil 5 minutes and remove.",
+        "Sauté the onion, pepper and garlic 5 minutes; add the tomato and sauce.",
+        "Add the cod, eggplant, water and olives, cover and simmer 15 minutes. Taste before salting.",
+        "Serve with boiled root vegetables or white rice."
+      ]
+    }
+  },
+  {
+    id: "lasana-berenjena",
+    category: "vegetales",
+    name: { es: "Lasaña de Berenjena (sin Pasta)", en: "Eggplant Lasagna (No Pasta)" },
+    time: "1 hr 20 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 berenjenas en lascas a lo largo de ¼ de pulgada",
+        "2 cucharadas de aceite de oliva",
+        "1 libra de carne molida de res",
+        "¼ taza de sofrito",
+        "3 tazas de salsa marinara",
+        "1 taza de queso ricotta",
+        "1 huevo",
+        "2 tazas de queso mozzarella rallado",
+        "½ taza de queso parmesano rallado",
+        "1 cucharadita de orégano"
+      ],
+      en: [
+        "3 eggplants, sliced lengthwise ¼ inch thick",
+        "2 tablespoons olive oil",
+        "1 lb ground beef",
+        "¼ cup sofrito",
+        "3 cups marinara sauce",
+        "1 cup ricotta cheese",
+        "1 egg",
+        "2 cups shredded mozzarella",
+        "½ cup grated parmesan",
+        "1 teaspoon oregano"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400°F. Barnice las lascas de berenjena con el aceite y áselas en bandejas 12–15 minutos, hasta que estén flexibles. Baje el horno a 375°F.",
+        "Dore la carne con el sofrito 8 minutos, escurra la grasa y añada la salsa marinara y el orégano.",
+        "Mezcle la ricotta con el huevo.",
+        "En un molde de 9 × 13 pulgadas, haga capas: salsa con carne, berenjena, ricotta y mozzarella. Repita y termine con salsa, mozzarella y parmesano.",
+        "Hornee 35–40 minutos, hasta que burbujee. Deje reposar 15 minutos para que corte limpio. Menos harina que la lasaña de siempre."
+      ],
+      en: [
+        "Heat the oven to 400°F. Brush the eggplant slices with the oil and roast on sheet pans 12–15 minutes, until pliable. Lower the oven to 375°F.",
+        "Brown the beef with the sofrito 8 minutes, drain the fat and add the marinara and oregano.",
+        "Mix the ricotta with the egg.",
+        "In a 9 × 13-inch dish, layer: meat sauce, eggplant, ricotta and mozzarella. Repeat and finish with sauce, mozzarella and parmesan.",
+        "Bake 35–40 minutes, until bubbling. Rest 15 minutes so it slices cleanly. Lower in flour than regular lasagna."
+      ]
+    }
+  },
+  {
+    id: "dip-berenjena-asada",
+    category: "salsas",
+    name: { es: "Dip de Berenjena Asada con Ajo y Limón", en: "Roasted Eggplant Dip with Garlic and Lime" },
+    time: "45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 berenjenas enteras",
+        "3 dientes de ajo, majados",
+        "3 cucharadas de jugo de limón",
+        "3 cucharadas de aceite de oliva",
+        "2 cucharadas de pasta de ajonjolí (tahini)",
+        "1 cucharadita de sal",
+        "½ cucharadita de comino",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "2 whole eggplants",
+        "3 garlic cloves, mashed",
+        "3 tablespoons lime juice",
+        "3 tablespoons olive oil",
+        "2 tablespoons sesame paste (tahini)",
+        "1 teaspoon salt",
+        "½ teaspoon cumin",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Pinche las berenjenas con un tenedor y áselas directo sobre la hornilla de gas, el carbón o a 450°F en el horno, volteando, 25–35 minutos, hasta que la piel esté negra y se aplasten.",
+        "Déjelas refrescar, ábralas y saque la pulpa con una cuchara; escúrrala 10 minutos en un colador.",
+        "Maje la pulpa con el ajo, el limón, el tahini, la sal y el comino.",
+        "Sirva con el aceite por encima y el cilantro, con tostones, casabe o pan. El asado al fuego le da el sabor ahumado."
+      ],
+      en: [
+        "Prick the eggplants with a fork and roast them directly over a gas flame, charcoal or at 450°F in the oven, turning, 25–35 minutes, until the skin is black and they collapse.",
+        "Let cool, split them and scoop out the flesh; drain it 10 minutes in a colander.",
+        "Mash the flesh with the garlic, lime juice, tahini, salt and cumin.",
+        "Serve drizzled with the oil and topped with cilantro, with tostones, cassava bread or bread. Charring over fire gives it the smoky flavor."
+      ]
+    }
+  },
+  {
+    id: "revoltillo-berenjena",
+    category: "huevos",
+    name: { es: "Revoltillo de Berenjena", en: "Scrambled Eggs with Eggplant" },
+    time: "25 min",
+    servings: 3,
+    ingredients: {
+      es: [
+        "1 berenjena en cubitos",
+        "2 cucharadas de aceite de oliva",
+        "½ cebolla picada",
+        "½ pimiento rojo picado",
+        "2 dientes de ajo, picados",
+        "5 huevos batidos",
+        "½ cucharadita de sal",
+        "¼ taza de queso blanco rallado"
+      ],
+      en: [
+        "1 eggplant, diced",
+        "2 tablespoons olive oil",
+        "½ onion, chopped",
+        "½ red bell pepper, chopped",
+        "2 garlic cloves, minced",
+        "5 eggs, beaten",
+        "½ teaspoon salt",
+        "¼ cup grated white cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría la berenjena en el aceite a fuego medio-alto 8 minutos, hasta que esté dorada y blanda.",
+        "Añada la cebolla, el pimiento y el ajo y cocine 4 minutos.",
+        "Baje el fuego, añada los huevos con la sal y mueva despacio hasta que cuajen pero sigan cremosos.",
+        "Espolvoree el queso y sirva con pan tostado o tostones."
+      ],
+      en: [
+        "Sauté the eggplant in the oil over medium-high heat 8 minutes, until golden and soft.",
+        "Add the onion, pepper and garlic and cook 4 minutes.",
+        "Lower the heat, add the eggs with the salt and stir slowly until set but still creamy.",
+        "Sprinkle the cheese and serve with toast or tostones."
+      ]
+    }
+  },
+  {
+    id: "pastelon-berenjena",
+    category: "carnes",
+    name: { es: "Pastelón de Berenjena con Picadillo", en: "Eggplant Pastelón with Picadillo" },
+    time: "1 hr 15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 berenjenas en lascas a lo largo",
+        "3 cucharadas de aceite de oliva",
+        "1½ libras de carne molida de res",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas, picadas",
+        "2 cucharadas de pasas",
+        "1 sobre de sazón",
+        "4 huevos batidos",
+        "1½ tazas de queso mozzarella rallado"
+      ],
+      en: [
+        "3 eggplants, sliced lengthwise",
+        "3 tablespoons olive oil",
+        "1½ lb ground beef",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "¼ cup stuffed olives, chopped",
+        "2 tablespoons raisins",
+        "1 packet sazón",
+        "4 eggs, beaten",
+        "1½ cups shredded mozzarella"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400°F. Barnice la berenjena con el aceite y ásela 15 minutos. Baje a 350°F.",
+        "Para el picadillo: dore la carne con el sofrito, escurra la grasa y añada la salsa, las aceitunas, las pasas y el sazón; cocine 10 minutos.",
+        "En un molde engrasado, vierta la mitad de los huevos, una capa de berenjena, el picadillo, queso, y otra capa de berenjena.",
+        "Cubra con el resto del huevo y del queso.",
+        "Hornee 30–35 minutos, hasta que el huevo cuaje y el queso dore. Es como el pastelón de amarillos, pero con berenjena."
+      ],
+      en: [
+        "Heat the oven to 400°F. Brush the eggplant with the oil and roast 15 minutes. Lower to 350°F.",
+        "For the picadillo: brown the beef with the sofrito, drain the fat and add the sauce, olives, raisins and sazón; cook 10 minutes.",
+        "In a greased dish, pour half the eggs, a layer of eggplant, the picadillo, cheese, and another layer of eggplant.",
+        "Top with the rest of the egg and cheese.",
+        "Bake 30–35 minutes, until the egg sets and the cheese browns. Like the sweet plantain pastelón, but with eggplant."
+      ]
+    }
+  },
+  {
+    id: "pastelillos-hojaldre-carne",
+    category: "entremeses",
+    name: { es: "Pastelillos de Hojaldre Rellenos de Carne", en: "Puff Pastry Meat Turnovers" },
+    time: "45 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 paquete de masa de hojaldre (2 hojas), fría",
+        "1 libra de carne molida de res",
+        "¼ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 sobre de sazón",
+        "8 aceitunas rellenas, picadas",
+        "1 huevo batido"
+      ],
+      en: [
+        "1 package puff pastry (2 sheets), cold",
+        "1 lb ground beef",
+        "¼ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 packet sazón",
+        "8 stuffed olives, chopped",
+        "1 beaten egg"
+      ]
+    },
+    steps: {
+      es: [
+        "Cocine la carne con el sofrito, la salsa, el sazón y las aceitunas 12 minutos, hasta que esté seca. Deje enfriar por completo (caliente derrite la mantequilla del hojaldre).",
+        "Caliente el horno a 400°F. Corte cada hoja en 6 cuadros.",
+        "Ponga una cucharada de relleno en cada uno, doble en triángulo y selle con un tenedor.",
+        "Barnice con huevo, haga un cortecito arriba y hornee 18–20 minutos, hasta que estén dorados e inflados."
+      ],
+      en: [
+        "Cook the beef with the sofrito, sauce, sazón and olives 12 minutes, until dry. Let cool completely (warm filling melts the butter in the pastry).",
+        "Heat the oven to 400°F. Cut each sheet into 6 squares.",
+        "Put a tablespoon of filling on each, fold into a triangle and seal with a fork.",
+        "Brush with egg, cut a small slit on top and bake 18–20 minutes, until golden and puffed."
+      ]
+    }
+  },
+  {
+    id: "tarta-jamon-queso-hojaldre",
+    category: "entremeses",
+    name: { es: "Tarta de Hojaldre con Jamón y Queso", en: "Ham and Cheese Puff Pastry Tart" },
+    time: "40 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "½ paquete de masa de hojaldre (1 hoja), fría",
+        "6 lascas de jamón de cocinar",
+        "1 taza de queso suizo o mozzarella rallado",
+        "3 huevos",
+        "½ taza de leche",
+        "¼ cucharadita de sal",
+        "1 pizca de nuez moscada",
+        "2 cucharadas de cebollín picado"
+      ],
+      en: [
+        "½ package puff pastry (1 sheet), cold",
+        "6 slices cooking ham",
+        "1 cup shredded Swiss or mozzarella cheese",
+        "3 eggs",
+        "½ cup milk",
+        "¼ teaspoon salt",
+        "1 pinch of nutmeg",
+        "2 tablespoons chopped scallion"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400°F. Forre un molde de tarta o pie con el hojaldre, pínchelo con un tenedor y hornéelo 10 minutos solo.",
+        "Ponga el jamón y el queso en la base.",
+        "Bata los huevos con la leche, la sal y la nuez moscada y viértalo encima. Espolvoree el cebollín.",
+        "Hornee a 375°F 20–25 minutos, hasta que el centro cuaje. Se come caliente o tibia, cortada en triángulos."
+      ],
+      en: [
+        "Heat the oven to 400°F. Line a tart or pie pan with the puff pastry, prick it with a fork and bake it alone 10 minutes.",
+        "Arrange the ham and cheese in the base.",
+        "Whisk the eggs with the milk, salt and nutmeg and pour over. Sprinkle the scallion.",
+        "Bake at 375°F 20–25 minutes, until the center sets. Eat warm or at room temperature, cut in wedges."
+      ]
+    }
+  },
+  {
+    id: "empanada-gallega-atun",
+    category: "pescados",
+    name: { es: "Empanada Gallega de Atún (en Hojaldre)", en: "Galician-Style Tuna Pie (Puff Pastry)" },
+    time: "1 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 paquete de masa de hojaldre (2 hojas), fría",
+        "2 latas de 5 onzas de atún en aceite, escurrido",
+        "2 cucharadas de aceite de oliva",
+        "1 cebolla en tiritas",
+        "1 pimiento rojo en tiritas",
+        "2 dientes de ajo, picados",
+        "½ taza de salsa de tomate",
+        "1 cucharadita de pimentón",
+        "2 huevos duros picados",
+        "1 huevo batido"
+      ],
+      en: [
+        "1 package puff pastry (2 sheets), cold",
+        "2 cans (5 oz) tuna in oil, drained",
+        "2 tablespoons olive oil",
+        "1 onion in strips",
+        "1 red bell pepper in strips",
+        "2 garlic cloves, minced",
+        "½ cup tomato sauce",
+        "1 teaspoon paprika",
+        "2 hard-boiled eggs, chopped",
+        "1 beaten egg"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría la cebolla, el pimiento y el ajo en el aceite a fuego bajo 15 minutos, hasta que estén muy blandos. Añada la salsa y el pimentón y cocine 5 minutos.",
+        "Mezcle con el atún y los huevos duros. Deje enfriar.",
+        "Caliente el horno a 400°F. Forre una bandeja con una hoja de hojaldre, extienda el relleno dejando 1 pulgada de borde, cubra con la otra hoja y selle doblando el borde.",
+        "Haga un hueco en el centro para el vapor, barnice con huevo y hornee 30 minutos, hasta dorar. Se sirve en cuadros, tibia o fría."
+      ],
+      en: [
+        "Sauté the onion, pepper and garlic in the oil over low heat 15 minutes, until very soft. Add the sauce and paprika and cook 5 minutes.",
+        "Mix with the tuna and hard-boiled eggs. Let cool.",
+        "Heat the oven to 400°F. Line a sheet pan with one puff pastry sheet, spread the filling leaving a 1-inch border, cover with the other sheet and seal by folding the edge.",
+        "Cut a vent in the center, brush with egg and bake 30 minutes, until golden. Serve in squares, warm or cold."
+      ]
+    }
+  },
+  {
+    id: "cachitos-jamon-queso",
+    category: "panes",
+    name: { es: "Cachitos de Hojaldre con Jamón y Queso", en: "Ham and Cheese Puff Pastry Crescents" },
+    time: "35 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 paquete de masa de hojaldre (2 hojas), fría",
+        "12 lascas finas de jamón de cocinar",
+        "6 lascas de queso de papa (americano) o suizo, en mitades",
+        "1 huevo batido",
+        "1 cucharada de ajonjolí"
+      ],
+      en: [
+        "1 package puff pastry (2 sheets), cold",
+        "12 thin slices cooking ham",
+        "6 slices American or Swiss cheese, halved",
+        "1 beaten egg",
+        "1 tablespoon sesame seeds"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400°F. Corte cada hoja de hojaldre en 6 triángulos largos.",
+        "Ponga en la parte ancha una lasca de jamón y media de queso, y enrolle hacia la punta, curvando las puntas como un cachito.",
+        "Barnice con huevo y espolvoree el ajonjolí.",
+        "Hornee 15–18 minutos, hasta dorar. Para el desayuno o la merienda."
+      ],
+      en: [
+        "Heat the oven to 400°F. Cut each puff pastry sheet into 6 long triangles.",
+        "Place a slice of ham and half a slice of cheese at the wide end and roll toward the tip, curving the ends into a crescent.",
+        "Brush with egg and sprinkle the sesame seeds.",
+        "Bake 15–18 minutes, until golden. For breakfast or an afternoon snack."
+      ]
+    }
+  },
+  {
+    id: "palmeras-azucar",
+    category: "pasteles_dulces",
+    name: { es: "Palmeras de Hojaldre (Orejitas de Azúcar)", en: "Palmiers (Sugar Puff Pastry Hearts)" },
+    time: "35 min + 30 min de nevera",
+    servings: 24,
+    ingredients: {
+      es: [
+        "1 paquete de masa de hojaldre (2 hojas), fría",
+        "¾ taza de azúcar",
+        "1 cucharadita de canela en polvo"
+      ],
+      en: [
+        "1 package puff pastry (2 sheets), cold",
+        "¾ cup sugar",
+        "1 teaspoon ground cinnamon"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el azúcar con la canela y espolvoree la mitad sobre la mesa.",
+        "Ponga una hoja de hojaldre encima, espolvoree más azúcar y pase el rolo para que se pegue.",
+        "Doble los dos lados largos hacia el centro dos veces, y luego uno sobre el otro, como un libro. Repita con la otra hoja y refrigere 30 minutos.",
+        "Caliente el horno a 400°F. Corte en tajadas de ⅓ de pulgada y póngalas separadas en papel de hornear.",
+        "Hornee 8 minutos, voltéelas y hornee 4–6 minutos más, hasta que el azúcar caramelice. Vigílelas: se queman en segundos."
+      ],
+      en: [
+        "Mix the sugar with the cinnamon and sprinkle half on the counter.",
+        "Lay a puff pastry sheet on top, sprinkle more sugar and roll over it so it sticks.",
+        "Fold both long sides to the center twice, then one over the other, like a book. Repeat with the other sheet and chill 30 minutes.",
+        "Heat the oven to 400°F. Slice ⅓ inch thick and place apart on parchment.",
+        "Bake 8 minutes, flip and bake 4–6 more minutes, until the sugar caramelizes. Watch them: they burn in seconds."
+      ]
+    }
+  },
+  {
+    id: "milhojas-crema",
+    category: "pasteles_dulces",
+    name: { es: "Milhojas de Crema Pastelera", en: "Mille-Feuille with Pastry Cream" },
+    time: "1 hr + 2 hr de nevera",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 paquete de masa de hojaldre (2 hojas), fría",
+        "2 tazas de leche",
+        "½ taza de azúcar",
+        "¼ taza de maicena",
+        "4 yemas de huevo",
+        "2 cucharadas de mantequilla",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de ralladura de limón",
+        "1 taza de azúcar en polvo para decorar"
+      ],
+      en: [
+        "1 package puff pastry (2 sheets), cold",
+        "2 cups milk",
+        "½ cup sugar",
+        "¼ cup cornstarch",
+        "4 egg yolks",
+        "2 tablespoons butter",
+        "1 teaspoon vanilla",
+        "1 teaspoon lime zest",
+        "1 cup powdered sugar for topping"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400°F. Pinche las hojas de hojaldre por todas partes y hornéelas entre dos papeles con otra bandeja encima (así no se inflan demasiado) 20–25 minutos, hasta dorar. Deje enfriar y corte cada una en dos rectángulos iguales.",
+        "Para la crema: mezcle en frío la leche, el azúcar, la maicena, las yemas y la ralladura. Cocine moviendo sin parar hasta que espese y hierva 1 minuto. Añada la mantequilla y la vainilla, cubra con plástico tocando la crema y enfríe.",
+        "Arme: hojaldre, crema, hojaldre, crema, hojaldre, crema y el último hojaldre.",
+        "Espolvoree con abundante azúcar en polvo y refrigere 2 horas. Corte con un cuchillo de sierra, sin apretar."
+      ],
+      en: [
+        "Heat the oven to 400°F. Prick the puff pastry sheets all over and bake them between two sheets of parchment with another pan on top (so they don't puff too much) 20–25 minutes, until golden. Let cool and cut each into two equal rectangles.",
+        "For the cream: whisk the cold milk, sugar, cornstarch, yolks and zest. Cook, stirring constantly, until thick and boiling 1 minute. Add the butter and vanilla, cover with plastic touching the cream and chill.",
+        "Assemble: pastry, cream, pastry, cream, pastry, cream and the last pastry.",
+        "Dust generously with powdered sugar and refrigerate 2 hours. Cut with a serrated knife, without pressing."
+      ]
+    }
+  },
+  {
+    id: "trenza-pina-coco",
+    category: "pasteles_dulces",
+    name: { es: "Trenza de Hojaldre con Piña y Coco", en: "Pineapple Coconut Puff Pastry Braid" },
+    time: "45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "½ paquete de masa de hojaldre (1 hoja), fría",
+        "1 taza de mermelada de piña",
+        "4 onzas de queso crema, blando",
+        "¼ taza de coco rallado",
+        "1 huevo batido",
+        "1 cucharada de azúcar"
+      ],
+      en: [
+        "½ package puff pastry (1 sheet), cold",
+        "1 cup pineapple jam",
+        "4 oz cream cheese, softened",
+        "¼ cup shredded coconut",
+        "1 beaten egg",
+        "1 tablespoon sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400°F. Ponga la hoja de hojaldre en papel de hornear y marque tres franjas a lo largo.",
+        "Unte el queso crema en la franja del centro, luego la mermelada de piña y el coco.",
+        "Corte las franjas de los lados en tiras diagonales de 1 pulgada y crúcelas sobre el relleno, alternando, como una trenza.",
+        "Barnice con huevo, espolvoree el azúcar y hornee 25 minutos, hasta dorar. Deje refrescar 10 minutos antes de cortar."
+      ],
+      en: [
+        "Heat the oven to 400°F. Place the puff pastry sheet on parchment and mark three lengthwise strips.",
+        "Spread the cream cheese down the center strip, then the pineapple jam and coconut.",
+        "Cut the side strips into 1-inch diagonal strips and fold them over the filling, alternating, like a braid.",
+        "Brush with egg, sprinkle the sugar and bake 25 minutes, until golden. Let cool 10 minutes before slicing."
       ]
     }
   }

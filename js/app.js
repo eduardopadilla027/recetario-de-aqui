@@ -373,6 +373,31 @@ const meatIcons = {
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
   [/^milanesa|a la milanesa/, "svg:ic-empanado"],
+  // Dulces y mermeladas de frutas.
+  [/^dulce de cerezas/, "svg:ic-dulce-acerola"],
+  [/^mermelada de acerola/, "svg:ic-mermelada-acerola"],
+  [/^jalea de guayaba/, "svg:ic-jalea-guayaba"],
+  [/^jalea de grosellas|^dulce de grosellas/, "svg:ic-jalea-grosella"],
+  [/^dulce de carambola/, "svg:ic-dulce-carambola"],
+  [/^mermelada de mango/, "svg:ic-mermelada-mango"],
+  [/^mermelada de parcha/, "svg:ic-mermelada-parcha"],
+  [/^mermelada de pina/, "svg:ic-mermelada-pina"],
+  // Berenjena.
+  [/^berenjena guisada/, "svg:ic-berenjena-guisada"],
+  [/^berenjena en escabeche/, "svg:ic-berenjena-escabeche"],
+  [/^berenjena frita/, "svg:ic-berenjena-frita"],
+  [/^lasana de berenjena/, "svg:ic-lasana-berenjena"],
+  [/^dip de berenjena/, "svg:ic-dip-berenjena"],
+  [/^revoltillo de berenjena/, "svg:ic-revoltillo-berenjena"],
+  [/^pastelon de berenjena/, "svg:ic-pastelon-berenjena"],
+  // Hojaldre.
+  [/^palmeras/, "svg:ic-palmeras"],
+  [/^milhojas/, "svg:ic-milhojas"],
+  [/^trenza de hojaldre/, "svg:ic-trenza-hojaldre"],
+  [/^tarta de hojaldre/, "svg:ic-tarta-salada"],
+  [/^empanada gallega/, "svg:ic-empanada-gallega"],
+  [/^pastelillos de hojaldre/, "svg:ic-pastelillo-hojaldre"],
+  [/^cachitos/, "🥐"],
   [/gelatina de mosaico/, "svg:ic-gelatina-mosaico"],
   [/gelatina de (parcha|pina)|gelatinas de ron con parcha/, "svg:ic-gelatina-amarilla"],
   [/gelatina de (leche|coco|coquito)/, "svg:ic-gelatina-blanca"],

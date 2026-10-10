@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 2.5.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 708 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 2.6.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 731 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, y parmesanas, milanesas y recetas con Nutella, en veintiuna tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, y dulces de frutas tropicales, berenjena y hojaldre, en veintidós tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -108,26 +108,26 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | Clave | Nombre | Recetas |
 |---|---|---|
 | calientes | Bebidas Calientes | 18 |
-| frutas | Frutas | 17 |
+| frutas | Frutas | 25 |
 | cereales | Cereales | 10 |
 | granos | Granos y Legumbres | 10 |
 | ensaladas | Ensaladas | 24 |
 | sopas | Sopas | 31 |
-| carnes | Carnes | 51 |
+| carnes | Carnes | 52 |
 | aves | Aves | 40 |
-| pescados | Pescado y Mariscos | 44 |
-| huevos | Huevos y Queso | 11 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 35 |
+| pescados | Pescado y Mariscos | 46 |
+| huevos | Huevos y Queso | 12 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 37 |
 | pastas | Pastas | 17 |
 | bizcochos | Bizcochos | 24 |
 | galletitas | Galletitas | 37 |
-| pasteles_dulces | Pasteles Dulces | 18 |
-| panes | Pan y Panecillos | 29 |
+| pasteles_dulces | Pasteles Dulces | 21 |
+| panes | Pan y Panecillos | 30 |
 | emparedados | Emparedados | 11 |
 | postres | Helados, Budines, Flan y Otros Postres | 86 |
 | arroces | Arroces y Habichuelas | 33 |
-| vegetales | Vegetales y Viandas | 52 |
-| salsas | Salsas y Aderezos | 36 |
+| vegetales | Vegetales y Viandas | 56 |
+| salsas | Salsas y Aderezos | 37 |
 | bebidas | Bebidas | 20 |
 | jugos | Jugos Naturales | 18 |
 | cocteles | Cócteles y Tragos | 36 |
@@ -175,7 +175,10 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   secos con polvo y tapa de salero, mojados con pasta; el adobo mojado para pernil sigue en el pilón. **Empanados:**
   parmesana (con salsa y queso gratinado; también berenjena y napolitana), cordon bleu (ruedas con espiral de jamón y
   queso); las milanesas y el panko usan el empanado con limón. **Nutella:** crepas con guineo y brownies; flan y galletas
-  usan las versiones de chocolate.
+  usan las versiones de chocolate. **Conservas:** frasco con tapa de tela a cuadros, color de la fruta y su fruta en la
+  etiqueta (acerola, guayaba, grosella, carambola, mangó, parcha, piña). **Berenjena:** guisada, escabeche en frasco,
+  frita, lasaña, dip, revoltillo y pastelón. **Hojaldre:** palmeras, milhojas, trenza, tarta salada, empanada gallega y
+  pastelillos de hojaldre; cachitos 🥐.
 - **Carnes y aves (`meatIcons`):** antes de `dishIcons`, las recetas de las categorías `carnes` y `aves` buscan su
   dibujo por tipo de plato con una lista de expresiones en orden (gana la primera): guiso en caldero (`ic-guiso-carne`,
   `ic-fricase-pollo`, ambos sobre `ic-caldero`), encebollado, empanado, desmenuzado (ropa vieja, salpicón), picadillo,
@@ -208,6 +211,8 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   ("adobo sin sal", "pina colada sin alcohol"), se muestran esas recetas y "sin" no excluye; si no, la exclusión
   funciona como siempre ("trago sin alcohol", "postre sin huevo"). Las palabras adobo, marinada, sazón y rub cuentan
   como la categoría salsas ("adobo para pollo" usa la regla "X para Y").
+- **Sinónimos nuevos:** cereza = acerola (en Puerto Rico la "cereza" es la acerola), jalea = mermelada, hojaldre =
+  milhojas = palmera. "postre" también cubre pasteles dulces, bizcochos y galletitas ("postre de hojaldre").
 - **Empanados:** `empanado`, `empanada` y `breaded` amplían a milanesa, parmesana y panko ("pechuga empanada",
   "breaded chicken").
 - **"X para Y"**: si lo de antes de "para"/"for" nombra una categoría ("salsa para pollo", "postre para niños"), se
@@ -233,7 +238,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 708). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 731). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -278,6 +283,25 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v2.6.0 · Dulces de frutas tropicales, berenjena y hojaldre
+- *Pedidos:* dulces de cereza o grosellas y de otras frutas tropicales; platos con berenjena; platos y postres con masa
+  de hojaldre.
+- Vigesimosegunda tanda en `js/recipes-4.js` (versiones propias), 23 recetas:
+  - **8 dulces:** cerezas (acerolas) en almíbar, mermelada de acerola, jalea de guayaba, jalea de grosellas, carambola en
+    almíbar (con aviso para enfermos de los riñones), mermeladas de mangó, parcha y piña. Punto de la jalea: 220°F o la
+    gota que cuaja en un plato frío.
+  - **8 con berenjena:** guisada a la criolla, en escabeche, frita empanada, bacalao con berenjena, lasaña sin pasta, dip
+    de berenjena asada, revoltillo y pastelón con picadillo (salar la berenjena para quitar el amargor).
+  - **7 de hojaldre:** pastelillos de carne, tarta de jamón y queso, empanada gallega de atún, cachitos de jamón y queso,
+    palmeras, milhojas de crema pastelera y trenza de piña y coco (relleno siempre frío).
+- **Nutrición:** "1 hoja de masa de hojaldre" se leía como una hoja de laurel (medio gramo); ahora se escribe "½ paquete
+  de masa de hojaldre (1 hoja)". **Alérgenos:** "pasta de ajonjolí/maní/tamarindo" ya no cuenta como gluten.
+- **Iconos y buscador:** ver §7 y §7.1 (21 dibujos nuevos).
+- Total: **708 → 731 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador: "dulce de cereza", "mermelada", "jalea", "berenjena", "hojaldre",
+  "postre de hojaldre", "grosellas" ✔ y las consultas de siempre funcionando; navegador: las 23 recetas en ES y EN a 375 px
+  sin errores ni desbordes ✔; dibujos revisados ✔.
 
 ### 2026-10-10 — v2.5.0 · Parmesanas, milanesas y recetas con Nutella
 - *Pedido:* recetas de pechuga a la parmesana, milanesas y otras, y recetas con Nutella.
