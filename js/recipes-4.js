@@ -61,6 +61,9 @@
  * Vigesimosexta tanda: más sopas, cremas y asopaos (langosta, pulpo, bacalao, gallina,
  * habichuelas coloradas, guingambó, coditos, res con mazorca, apio, ñame, brócoli,
  * champiñones).
+ * Vigesimoséptima tanda: más arroces (gandules y coco, moros y cristianos, garbanzos,
+ * vegetales, sardinas, atún, costillitas, integral) y granos (bacalao, lentejas con maduro,
+ * habas, garbanzos crujientes, hummus, sin carne, majadas, guisantes).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -14766,6 +14769,726 @@ recipes.push(
         "Add the onion and garlic and cook 4 minutes. Sprinkle the flour and stir 1 minute.",
         "Add the broth and thyme and cook 10 minutes. Blend carefully with the steam.",
         "Add the cream, season and heat without boiling. Serve topped with the reserved mushrooms and toast."
+      ]
+    }
+  },
+
+  // ── Vigesimoséptima tanda (2026-10): más arroces y granos ──
+  {
+    id: "arroz-gandules-coco",
+    category: "arroces",
+    name: { es: "Arroz con Gandules y Coco", en: "Rice with Pigeon Peas and Coconut" },
+    time: "50 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "2 onzas de jamón de cocinar en cubitos",
+        "¼ taza de salsa de tomate",
+        "10 aceitunas rellenas",
+        "1 sobre de sazón",
+        "1 lata de 15 onzas de gandules verdes, con su líquido",
+        "1 lata de 13.5 onzas de leche de coco",
+        "3 tazas de arroz de grano mediano, lavado",
+        "1½ tazas de agua",
+        "1½ cucharaditas de sal"
+      ],
+      en: [
+        "3 tablespoons annatto oil",
+        "½ cup sofrito",
+        "2 oz cooking ham, diced",
+        "¼ cup tomato sauce",
+        "10 stuffed olives",
+        "1 packet sazón",
+        "1 can (15 oz) green pigeon peas, with their liquid",
+        "1 can (13.5 oz) coconut milk",
+        "3 cups medium-grain rice, rinsed",
+        "1½ cups water",
+        "1½ teaspoons salt"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero, sofría el jamón y el sofrito en el aceite de achiote 4 minutos. Añada la salsa de tomate, las aceitunas y el sazón.",
+        "Añada los gandules con su líquido, la leche de coco, el agua y la sal, y deje hervir. Pruebe: el líquido debe estar un poco salado.",
+        "Añada el arroz, mueva una vez y cocine a fuego medio-alto hasta que el líquido baje al nivel del arroz.",
+        "Voltee el arroz de abajo hacia arriba, tape y cocine a fuego bajo 25 minutos sin destapar. Voltee otra vez al servir. El coco lo hace más cremoso y dulcito."
+      ],
+      en: [
+        "In a caldero, sauté the ham and sofrito in the annatto oil 4 minutes. Add the tomato sauce, olives and sazón.",
+        "Add the pigeon peas with their liquid, the coconut milk, water and salt, and bring to a boil. Taste: the liquid should be a little salty.",
+        "Add the rice, stir once and cook over medium-high heat until the liquid drops to the level of the rice.",
+        "Turn the rice from bottom to top, cover and cook over low heat 25 minutes without lifting the lid. Turn again to serve. Coconut makes it creamier and slightly sweet."
+      ]
+    }
+  },
+  {
+    id: "moros-cristianos",
+    category: "arroces",
+    name: { es: "Moros y Cristianos (Arroz con Habichuelas Negras)", en: "Moros y Cristianos (Black Beans and Rice)" },
+    time: "50 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 cucharadas de aceite de oliva",
+        "2 tiras de tocineta picada",
+        "½ taza de sofrito",
+        "1 cucharadita de comino",
+        "1 cucharadita de orégano",
+        "2 hojas de laurel",
+        "2 latas de 15 onzas de habichuelas negras, con su líquido",
+        "3 tazas de agua",
+        "2½ tazas de arroz de grano largo, lavado",
+        "1½ cucharaditas de sal"
+      ],
+      en: [
+        "2 tablespoons olive oil",
+        "2 strips bacon, chopped",
+        "½ cup sofrito",
+        "1 teaspoon cumin",
+        "1 teaspoon oregano",
+        "2 bay leaves",
+        "2 cans (15 oz) black beans, with their liquid",
+        "3 cups water",
+        "2½ cups long-grain rice, rinsed",
+        "1½ teaspoons salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Dore la tocineta en el aceite. Añada el sofrito, el comino, el orégano y el laurel y cocine 4 minutos.",
+        "Añada las habichuelas con su líquido, el agua y la sal y deje hervir.",
+        "Añada el arroz y cocine a fuego medio-alto hasta que el líquido baje al nivel del arroz.",
+        "Tape y cocine a fuego bajo 25 minutos. Saque el laurel y voltee. El arroz queda oscuro por las habichuelas: de ahí el nombre."
+      ],
+      en: [
+        "Brown the bacon in the oil. Add the sofrito, cumin, oregano and bay leaves and cook 4 minutes.",
+        "Add the beans with their liquid, the water and salt and bring to a boil.",
+        "Add the rice and cook over medium-high heat until the liquid drops to the level of the rice.",
+        "Cover and cook over low heat 25 minutes. Remove the bay leaves and fluff. The rice turns dark from the beans: hence the name."
+      ]
+    }
+  },
+  {
+    id: "arroz-garbanzos-chorizo",
+    category: "arroces",
+    name: { es: "Arroz con Garbanzos y Chorizo", en: "Rice with Chickpeas and Chorizo" },
+    time: "50 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "4 onzas de chorizo español en ruedas",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 sobre de sazón",
+        "1 lata de 15 onzas de garbanzos, escurridos",
+        "4½ tazas de agua",
+        "3 tazas de arroz de grano mediano, lavado",
+        "1½ cucharaditas de sal"
+      ],
+      en: [
+        "4 oz Spanish chorizo, sliced",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 packet sazón",
+        "1 can (15 oz) chickpeas, drained",
+        "4½ cups water",
+        "3 cups medium-grain rice, rinsed",
+        "1½ teaspoons salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Dore el chorizo en el aceite de achiote 3 minutos: suelta su grasa colorada, que le da el sabor al arroz.",
+        "Añada el sofrito, la salsa de tomate y el sazón y cocine 3 minutos. Añada los garbanzos.",
+        "Añada el agua y la sal, deje hervir y añada el arroz. Cocine a fuego medio-alto hasta que el líquido baje.",
+        "Tape y cocine a fuego bajo 25 minutos. Voltee al servir. Pruebe antes de salar más: el chorizo ya trae sal."
+      ],
+      en: [
+        "Brown the chorizo in the annatto oil 3 minutes: it releases its red fat, which flavors the rice.",
+        "Add the sofrito, tomato sauce and sazón and cook 3 minutes. Add the chickpeas.",
+        "Add the water and salt, bring to a boil and add the rice. Cook over medium-high heat until the liquid drops.",
+        "Cover and cook over low heat 25 minutes. Fluff to serve. Taste before adding salt: the chorizo is already salty."
+      ]
+    }
+  },
+  {
+    id: "arroz-vegetales",
+    category: "arroces",
+    name: { es: "Arroz Guisado con Vegetales", en: "Seasoned Rice with Vegetables" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 zanahoria en cubitos",
+        "1 taza de habichuelas tiernas, en trocitos",
+        "1 taza de maíz en grano",
+        "½ pimiento rojo en cubitos",
+        "¼ taza de salsa de tomate",
+        "1 cucharadita de orégano",
+        "3 tazas de caldo de vegetales",
+        "2 tazas de arroz de grano mediano, lavado",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 carrot, diced",
+        "1 cup green beans, cut",
+        "1 cup corn kernels",
+        "½ red bell pepper, diced",
+        "¼ cup tomato sauce",
+        "1 teaspoon oregano",
+        "3 cups vegetable broth",
+        "2 cups medium-grain rice, rinsed",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite 3 minutos. Añada la zanahoria, las habichuelas tiernas y el pimiento y cocine 5 minutos.",
+        "Añada el maíz, la salsa de tomate, el orégano, el caldo y la sal, y deje hervir.",
+        "Añada el arroz, cocine hasta que el líquido baje, tape y cocine a fuego bajo 25 minutos.",
+        "Voltee y sirva. Vegano y completo con unas habichuelas o un huevo frito encima."
+      ],
+      en: [
+        "Sauté the sofrito in the oil 3 minutes. Add the carrot, green beans and pepper and cook 5 minutes.",
+        "Add the corn, tomato sauce, oregano, broth and salt, and bring to a boil.",
+        "Add the rice, cook until the liquid drops, cover and cook over low heat 25 minutes.",
+        "Fluff and serve. Vegan, and a complete meal with some beans or a fried egg on top."
+      ]
+    }
+  },
+  {
+    id: "arroz-sardinas",
+    category: "arroces",
+    name: { es: "Arroz con Sardinas", en: "Rice with Sardines" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 latas de 4.25 onzas de sardinas en salsa de tomate",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 sobre de sazón",
+        "10 aceitunas rellenas",
+        "3 tazas de agua",
+        "2 tazas de arroz de grano mediano, lavado",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "2 cans (4.25 oz) sardines in tomato sauce",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 packet sazón",
+        "10 stuffed olives",
+        "3 cups water",
+        "2 cups medium-grain rice, rinsed",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite 3 minutos. Añada la salsa de las sardinas, el sazón y las aceitunas.",
+        "Añada el agua y la sal, deje hervir y añada el arroz. Cocine hasta que el líquido baje.",
+        "Ponga las sardinas en trozos por encima, tape y cocine a fuego bajo 25 minutos.",
+        "Voltee con cuidado al servir. Un clásico de las casas boricuas: económico, rápido y lleno de omega-3."
+      ],
+      en: [
+        "Sauté the sofrito in the oil 3 minutes. Add the sauce from the sardines, the sazón and olives.",
+        "Add the water and salt, bring to a boil and add the rice. Cook until the liquid drops.",
+        "Lay the sardines in pieces on top, cover and cook over low heat 25 minutes.",
+        "Fold gently to serve. A Puerto Rican household classic: cheap, quick and full of omega-3."
+      ]
+    }
+  },
+  {
+    id: "arroz-atun",
+    category: "arroces",
+    name: { es: "Arroz con Atún", en: "Rice with Tuna" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 latas de 5 onzas de atún, escurrido",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 sobre de sazón",
+        "½ taza de maíz en grano",
+        "3 tazas de agua",
+        "2 tazas de arroz de grano mediano, lavado",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "2 cans (5 oz) tuna, drained",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 packet sazón",
+        "½ cup corn kernels",
+        "3 cups water",
+        "2 cups medium-grain rice, rinsed",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite de achiote 3 minutos. Añada la salsa de tomate, el sazón, el atún y el maíz.",
+        "Añada el agua y la sal, deje hervir y añada el arroz.",
+        "Cocine a fuego medio-alto hasta que el líquido baje, tape y cocine a fuego bajo 25 minutos.",
+        "Voltee y sirva con aguacate. Por el mercurio del atún, las embarazadas y los niños pequeños deben preferir el atún claro (light) y comerlo con moderación."
+      ],
+      en: [
+        "Sauté the sofrito in the annatto oil 3 minutes. Add the tomato sauce, sazón, tuna and corn.",
+        "Add the water and salt, bring to a boil and add the rice.",
+        "Cook over medium-high heat until the liquid drops, cover and cook over low heat 25 minutes.",
+        "Fluff and serve with avocado. Because of mercury in tuna, pregnant women and young children should prefer light tuna and eat it in moderation."
+      ]
+    }
+  },
+  {
+    id: "arroz-costillitas",
+    category: "arroces",
+    name: { es: "Arroz con Costillitas de Cerdo", en: "Rice with Pork Riblets" },
+    time: "1 hr 30 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 libras de costillitas de cerdo, en pedazos",
+        "1 cucharada de adobo",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 sobre de sazón",
+        "10 aceitunas rellenas",
+        "5 tazas de agua",
+        "3 tazas de arroz de grano mediano, lavado",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "2 lb pork riblets, in pieces",
+        "1 tablespoon adobo",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 packet sazón",
+        "10 stuffed olives",
+        "5 cups water",
+        "3 cups medium-grain rice, rinsed",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe las costillitas y dórelas en el aceite de achiote, por tandas, 8 minutos.",
+        "Añada el sofrito, la salsa de tomate, el sazón, las aceitunas y 2 tazas del agua. Tape y cocine 40 minutos, hasta que estén tiernas.",
+        "Añada el resto del agua y la sal, deje hervir y añada el arroz. Cocine hasta que el líquido baje.",
+        "Tape y cocine a fuego bajo 25 minutos. Voltee con cuidado. Se busca el pegao en el fondo."
+      ],
+      en: [
+        "Season the riblets and brown them in the annatto oil, in batches, 8 minutes.",
+        "Add the sofrito, tomato sauce, sazón, olives and 2 cups of the water. Cover and cook 40 minutes, until tender.",
+        "Add the rest of the water and the salt, bring to a boil and add the rice. Cook until the liquid drops.",
+        "Cover and cook over low heat 25 minutes. Fold gently. Aim for the pegao (crispy rice) on the bottom."
+      ]
+    }
+  },
+  {
+    id: "arroz-integral-gandules",
+    category: "arroces",
+    name: { es: "Arroz Integral con Gandules", en: "Brown Rice with Pigeon Peas" },
+    time: "1 hr 10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 cucharadita de orégano",
+        "½ cucharadita de comino",
+        "1 lata de 15 onzas de gandules verdes, escurridos y enjuagados",
+        "5 tazas de agua",
+        "2½ tazas de arroz integral, lavado",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 teaspoon oregano",
+        "½ teaspoon cumin",
+        "1 can (15 oz) green pigeon peas, drained and rinsed",
+        "5 cups water",
+        "2½ cups brown rice, rinsed",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite 3 minutos con la salsa de tomate, el orégano y el comino.",
+        "Añada los gandules, el agua y la sal y deje hervir. Añada el arroz integral.",
+        "Cocine a fuego medio hasta que el líquido baje, tape y cocine a fuego bajo 45 minutos (el integral tarda casi el doble).",
+        "Apague y deje reposar tapado 10 minutos antes de voltear. Más fibra que el arroz blanco y sin jamón ni sazón de sobre: menos sodio."
+      ],
+      en: [
+        "Sauté the sofrito in the oil 3 minutes with the tomato sauce, oregano and cumin.",
+        "Add the pigeon peas, water and salt and bring to a boil. Add the brown rice.",
+        "Cook over medium heat until the liquid drops, cover and cook over low heat 45 minutes (brown rice takes almost twice as long).",
+        "Turn off the heat and rest covered 10 minutes before fluffing. More fiber than white rice and no ham or packaged sazón: less sodium."
+      ]
+    }
+  },
+  {
+    id: "habichuelas-blancas-bacalao",
+    category: "granos",
+    name: { es: "Habichuelas Blancas Guisadas con Bacalao", en: "White Beans Stewed with Salt Cod" },
+    time: "45 min + desalar el bacalao",
+    servings: 6,
+    ingredients: {
+      es: [
+        "½ libra de bacalao, desalado y en lascas",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "2 latas de 15 onzas de habichuelas blancas, con su líquido",
+        "1 taza de agua",
+        "1 taza de calabaza en cubitos",
+        "1 papa en cubitos",
+        "10 aceitunas"
+      ],
+      en: [
+        "½ lb salt cod, desalted and flaked",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "2 cans (15 oz) white beans, with their liquid",
+        "1 cup water",
+        "1 cup calabaza, diced",
+        "1 potato, diced",
+        "10 olives"
+      ]
+    },
+    steps: {
+      es: [
+        "Desale el bacalao de 8 a 12 horas en la nevera, cambiando el agua 3 o 4 veces.",
+        "Sofría el sofrito en el aceite 3 minutos, añada la salsa de tomate y el bacalao.",
+        "Añada las habichuelas, el agua, la calabaza, la papa y las aceitunas, y cocine a fuego medio 20 minutos, hasta que la calabaza se deshaga y espese.",
+        "Pruebe antes de salar: el bacalao ya trae sal. Sirva con arroz blanco. Típico de Cuaresma."
+      ],
+      en: [
+        "Desalt the cod 8 to 12 hours in the fridge, changing the water 3 or 4 times.",
+        "Sauté the sofrito in the oil 3 minutes, add the tomato sauce and the cod.",
+        "Add the beans, water, calabaza, potato and olives, and cook over medium heat 20 minutes, until the calabaza breaks down and thickens.",
+        "Taste before salting: the cod is already salty. Serve with white rice. A Lenten classic."
+      ]
+    }
+  },
+  {
+    id: "lentejas-maduro",
+    category: "granos",
+    name: { es: "Lentejas Guisadas con Plátano Maduro", en: "Stewed Lentils with Sweet Plantain" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de lentejas secas, enjuagadas",
+        "8 tazas de agua",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "2 onzas de chorizo en ruedas",
+        "¼ taza de salsa de tomate",
+        "1 plátano maduro en ruedas",
+        "1 cucharadita de comino",
+        "1½ cucharaditas de sal"
+      ],
+      en: [
+        "1 lb dried lentils, rinsed",
+        "8 cups water",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "2 oz chorizo, sliced",
+        "¼ cup tomato sauce",
+        "1 ripe plantain, sliced",
+        "1 teaspoon cumin",
+        "1½ teaspoons salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las lentejas en el agua 20 minutos (no necesitan remojo).",
+        "Aparte, dore el chorizo en el aceite, añada el sofrito, la salsa de tomate y el comino y cocine 3 minutos.",
+        "Añada el sofrito, el maduro y la sal a las lentejas y cocine 15 minutos más, hasta que el maduro esté blando.",
+        "El dulce del maduro balancea lo salado del chorizo. Sirva con arroz blanco. Para versión vegetariana, quite el chorizo y añada pimentón ahumado."
+      ],
+      en: [
+        "Boil the lentils in the water 20 minutes (they don't need soaking).",
+        "Separately, brown the chorizo in the oil, add the sofrito, tomato sauce and cumin and cook 3 minutes.",
+        "Add the sofrito, plantain and salt to the lentils and cook 15 more minutes, until the plantain is soft.",
+        "The sweetness of the plantain balances the salty chorizo. Serve with white rice. For a vegetarian version, skip the chorizo and add smoked paprika."
+      ]
+    }
+  },
+  {
+    id: "habas-guisadas",
+    category: "granos",
+    name: { es: "Habas Guisadas", en: "Stewed Lima Beans" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de habas (lima beans) congeladas",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "2 onzas de jamón de cocinar en cubitos",
+        "¼ taza de salsa de tomate",
+        "1 sobre de sazón",
+        "1 taza de calabaza en cubitos",
+        "2 tazas de agua",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "1 lb frozen lima beans",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "2 oz cooking ham, diced",
+        "¼ cup tomato sauce",
+        "1 packet sazón",
+        "1 cup calabaza, diced",
+        "2 cups water",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el jamón y el sofrito en el aceite 4 minutos. Añada la salsa de tomate y el sazón.",
+        "Añada las habas, la calabaza, el agua y la sal.",
+        "Cocine tapado a fuego medio-bajo 25 minutos, hasta que las habas estén tiernas y el caldo espese.",
+        "Sirva con arroz blanco y maduros. Las habas son cremosas y más suaves que las habichuelas."
+      ],
+      en: [
+        "Sauté the ham and sofrito in the oil 4 minutes. Add the tomato sauce and sazón.",
+        "Add the lima beans, calabaza, water and salt.",
+        "Cook covered over medium-low heat 25 minutes, until the beans are tender and the broth thickens.",
+        "Serve with white rice and sweet plantains. Lima beans are creamier and milder than kidney beans."
+      ]
+    }
+  },
+  {
+    id: "garbanzos-crujientes",
+    category: "granos",
+    name: { es: "Garbanzos Crujientes al Horno con Adobo", en: "Crispy Baked Chickpeas with Adobo" },
+    time: "45 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 latas de 15 onzas de garbanzos, escurridos y enjuagados",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharadita de adobo",
+        "1 cucharadita de pimentón",
+        "½ cucharadita de ajo en polvo",
+        "¼ cucharadita de comino"
+      ],
+      en: [
+        "2 cans (15 oz) chickpeas, drained and rinsed",
+        "2 tablespoons olive oil",
+        "1 teaspoon adobo",
+        "1 teaspoon paprika",
+        "½ teaspoon garlic powder",
+        "¼ teaspoon cumin"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400°F. Seque los garbanzos muy bien con un paño y quíteles los pellejitos que se suelten (así quedan crujientes).",
+        "Mézclelos con el aceite y extiéndalos en una bandeja en una sola capa.",
+        "Hornee 30–35 minutos, moviendo la bandeja cada 10, hasta que estén dorados y suenen al moverlos.",
+        "Mézclelos calientes con el adobo y las especias. Una merienda con proteína y fibra; se ponen blandos de un día para otro."
+      ],
+      en: [
+        "Heat the oven to 400°F. Dry the chickpeas very well with a towel and remove any loose skins (that's what makes them crunchy).",
+        "Toss them with the oil and spread on a sheet pan in a single layer.",
+        "Bake 30–35 minutes, shaking the pan every 10, until golden and they rattle when shaken.",
+        "Toss them hot with the adobo and spices. A snack with protein and fiber; they soften by the next day."
+      ]
+    }
+  },
+  {
+    id: "hummus-recao",
+    category: "granos",
+    name: { es: "Hummus de Garbanzos con Recao", en: "Chickpea Hummus with Culantro" },
+    time: "15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 lata de 15 onzas de garbanzos, escurridos (guarde el líquido)",
+        "¼ taza de pasta de ajonjolí (tahini)",
+        "3 cucharadas de jugo de limón",
+        "1 diente de ajo",
+        "4 hojas de recao",
+        "3 cucharadas de aceite de oliva",
+        "½ cucharadita de sal",
+        "1 pizca de pimentón para decorar"
+      ],
+      en: [
+        "1 can (15 oz) chickpeas, drained (save the liquid)",
+        "¼ cup sesame paste (tahini)",
+        "3 tablespoons lime juice",
+        "1 garlic clove",
+        "4 culantro leaves",
+        "3 tablespoons olive oil",
+        "½ teaspoon salt",
+        "1 pinch of paprika for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Procese el tahini con el limón 1 minuto, hasta que esté claro y cremoso.",
+        "Añada los garbanzos, el ajo, el recao, 2 cucharadas del aceite y la sal, y procese 2 minutos.",
+        "Añada el líquido de los garbanzos de cucharada en cucharada hasta que quede bien suave.",
+        "Sirva con el resto del aceite y el pimentón, con tostones, casabe o vegetales. Contiene ajonjolí."
+      ],
+      en: [
+        "Process the tahini with the lime juice 1 minute, until pale and creamy.",
+        "Add the chickpeas, garlic, culantro, 2 tablespoons of the oil and the salt, and process 2 minutes.",
+        "Add the chickpea liquid a tablespoon at a time until very smooth.",
+        "Serve with the rest of the oil and the paprika, with tostones, cassava bread or vegetables. Contains sesame."
+      ]
+    }
+  },
+  {
+    id: "habichuelas-vegetarianas",
+    category: "granos",
+    name: { es: "Habichuelas Rosadas Guisadas sin Carne (con Calabaza)", en: "Meatless Stewed Pink Beans with Calabaza" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 cucharadita de orégano",
+        "1 cucharadita de comino",
+        "½ cucharadita de pimentón ahumado",
+        "2 latas de 15 onzas de habichuelas rosadas, con su líquido",
+        "1½ tazas de calabaza en cubitos",
+        "1 taza de agua",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 teaspoon oregano",
+        "1 teaspoon cumin",
+        "½ teaspoon smoked paprika",
+        "2 cans (15 oz) pink beans, with their liquid",
+        "1½ cups calabaza, diced",
+        "1 cup water",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite 3 minutos con la salsa de tomate, el orégano, el comino y el pimentón ahumado (le da el sabor que suele dar el jamón).",
+        "Añada las habichuelas, la calabaza, el agua y la sal.",
+        "Cocine a fuego medio 20 minutos, hasta que la calabaza se deshaga y espese el caldo.",
+        "Veganas y con menos sodio que las de sobre de sazón. Sirva con arroz blanco o integral."
+      ],
+      en: [
+        "Sauté the sofrito in the oil 3 minutes with the tomato sauce, oregano, cumin and smoked paprika (it gives the flavor ham usually gives).",
+        "Add the beans, calabaza, water and salt.",
+        "Cook over medium heat 20 minutes, until the calabaza breaks down and thickens the broth.",
+        "Vegan, and lower in sodium than ones made with packaged sazón. Serve with white or brown rice."
+      ]
+    }
+  },
+  {
+    id: "habichuelas-negras-majadas",
+    category: "granos",
+    name: { es: "Habichuelas Negras Majadas", en: "Mashed Black Beans" },
+    time: "20 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 cucharadas de aceite de oliva",
+        "½ cebolla picada",
+        "2 dientes de ajo, picados",
+        "2 latas de 15 onzas de habichuelas negras, escurridas (guarde ½ taza del líquido)",
+        "½ cucharadita de comino",
+        "½ cucharadita de sal",
+        "2 cucharadas de queso blanco rallado"
+      ],
+      en: [
+        "2 tablespoons olive oil",
+        "½ onion, chopped",
+        "2 garlic cloves, minced",
+        "2 cans (15 oz) black beans, drained (save ½ cup of the liquid)",
+        "½ teaspoon cumin",
+        "½ teaspoon salt",
+        "2 tablespoons grated white cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría la cebolla y el ajo en el aceite 4 minutos.",
+        "Añada las habichuelas, el comino y la sal, y maje con un majador en el sartén, añadiendo el líquido poco a poco hasta tener un puré espeso.",
+        "Cocine 5 minutos más, moviendo, hasta que se despegue del sartén.",
+        "Sirva con queso blanco por encima, con tostones, arepas o arroz."
+      ],
+      en: [
+        "Sauté the onion and garlic in the oil 4 minutes.",
+        "Add the beans, cumin and salt, and mash with a masher right in the skillet, adding the liquid gradually to a thick purée.",
+        "Cook 5 more minutes, stirring, until it pulls away from the pan.",
+        "Serve topped with white cheese, with tostones, arepas or rice."
+      ]
+    }
+  },
+  {
+    id: "guisantes-guisados",
+    category: "granos",
+    name: { es: "Guisantes (Petit Pois) Guisados", en: "Stewed Green Peas" },
+    time: "25 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 cucharadas de aceite de oliva",
+        "¼ taza de sofrito",
+        "2 onzas de jamón de cocinar en cubitos",
+        "¼ taza de salsa de tomate",
+        "1 papa en cubitos",
+        "1 libra de guisantes (petit pois) congelados",
+        "1 taza de agua",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "2 tablespoons olive oil",
+        "¼ cup sofrito",
+        "2 oz cooking ham, diced",
+        "¼ cup tomato sauce",
+        "1 potato, diced",
+        "1 lb frozen green peas",
+        "1 cup water",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el jamón y el sofrito en el aceite 3 minutos y añada la salsa de tomate.",
+        "Añada la papa y el agua y cocine 10 minutos.",
+        "Añada los guisantes y la sal y cocine 6–8 minutos más, hasta que estén tiernos pero verdes.",
+        "Un acompañante rápido para el arroz blanco, como las habichuelas de siempre."
+      ],
+      en: [
+        "Sauté the ham and sofrito in the oil 3 minutes and add the tomato sauce.",
+        "Add the potato and water and cook 10 minutes.",
+        "Add the peas and salt and cook 6–8 more minutes, until tender but still green.",
+        "A quick side for white rice, like the usual beans."
       ]
     }
   }

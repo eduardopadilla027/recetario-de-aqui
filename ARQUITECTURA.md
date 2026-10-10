@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.1.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 771 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.2.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 787 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, y más sopas, cremas y asopaos, en veintiséis tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, y más arroces y granos, en veintisiete tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -111,7 +111,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | calientes | Bebidas Calientes | 18 |
 | frutas | Frutas | 25 |
 | cereales | Cereales | 10 |
-| granos | Granos y Legumbres | 10 |
+| granos | Granos y Legumbres | 18 |
 | ensaladas | Ensaladas | 24 |
 | sopas | Sopas | 43 |
 | carnes | Carnes | 52 |
@@ -126,7 +126,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | panes | Pan y Panecillos | 30 |
 | emparedados | Emparedados | 21 |
 | postres | Helados, Budines, Flan y Otros Postres | 93 |
-| arroces | Arroces y Habichuelas | 33 |
+| arroces | Arroces y Habichuelas | 41 |
 | vegetales | Vegetales y Viandas | 56 |
 | salsas | Salsas y Aderezos | 37 |
 | bebidas | Bebidas | 20 |
@@ -189,7 +189,12 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   wrap cortado y jibaritos con tostones como pan. **Sopas:** tazón de barro con el contenido de cada una: asopaos rojizos
   con arroz, aceitunas y su marisco o carne; cremas lisas con espiral y adorno, del color de su vianda o vegetal; sopas de
   caldo con fideos, habichuelas rojas/negras/blancas, garbanzos, lentejas, sancocho con mazorca, pescado, guingambó,
-  albóndigas, plátano, coditos o mondongo. Los gazpachos conservan 🍅 y 🥭.
+  albóndigas, plátano, coditos o mondongo. Los gazpachos conservan 🍅 y 🥭. **Arroces:** montoncito en plato del color de
+  cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
+  que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
+  habichuelas va con su tazoncito al lado. **Granos:** tazón de barro con el grano y su salsa (habichuelas rojas,
+  rosadas, negras, blancas, pintas y tiernas, garbanzos, gandules, lentejas, habas, guisantes, hummus) y los garbanzos
+  crujientes en plato.
 - **Carnes y aves (`meatIcons`):** antes de `dishIcons`, las recetas de las categorías `carnes` y `aves` buscan su
   dibujo por tipo de plato con una lista de expresiones en orden (gana la primera): guiso en caldero (`ic-guiso-carne`,
   `ic-fricase-pollo`, ambos sobre `ic-caldero`), encebollado, empanado, desmenuzado (ropa vieja, salpicón), picadillo,
@@ -279,7 +284,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 771). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 787). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -324,6 +329,20 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v3.2.0 · Más arroces y granos
+- *Pedido:* más recetas de arroces y granos.
+- Vigesimoséptima tanda en `js/recipes-4.js` (versiones propias), 16 recetas:
+  - **8 arroces:** con gandules y coco, moros y cristianos, con garbanzos y chorizo, guisado con vegetales (vegano), con
+    sardinas, con atún (con nota sobre el mercurio), con costillitas de cerdo e integral con gandules (menos sodio).
+  - **8 granos:** habichuelas blancas con bacalao, lentejas con plátano maduro, habas guisadas, garbanzos crujientes al
+    horno, hummus con recao, habichuelas rosadas sin carne con calabaza (veganas), habichuelas negras majadas y guisantes
+    guisados.
+- **Nutrición:** nuevo alimento sardinas (antes "sardinas en salsa de tomate" se contaba como salsa de tomate).
+- **Iconos:** 26 dibujos de arroces y granos (§7); los arroces y granos que ya existían también los usan.
+- Total: **771 → 787 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador: "arroz", "habichuelas", "granos", "moros", "arroz con sardinas"
+  ✔; navegador: las 16 recetas en ES y EN a 375 px sin errores ni desbordes ✔; todos los arroces y granos con dibujo ✔.
 
 ### 2026-10-10 — v3.1.0 · Más sopas, cremas y asopaos
 - *Pedido:* más recetas de sopas y asopaos.

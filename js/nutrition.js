@@ -201,6 +201,7 @@ const NUTRI_FOODS = [
   F("apio del pais|arracacha", 101, 0.8, 24, 1, 1.8, 0.2, 0, 20, { u: 300 }),
   F("queso cheddar|cheddar", 403, 25, 1.3, 0.5, 0, 33, 21, 620, { cup: 113, sl: 28 }),
   F("tomillo", 101, 5.6, 24, 1.7, 14, 1.7, 0.5, 9, { cup: 30 }),
+  F("sardina|sardinas|sardinas en salsa de tomate", 186, 17, 1.6, 0.5, 0.3, 12, 3, 410, { can: 120 }),
   F("berro", 11, 2.3, 1.3, 0.2, 0.5, 0.1, 0, 41, { cup: 34 }),
   F("brocoli", 34, 2.8, 6.6, 1.7, 2.6, 0.4, 0, 33, { u: 600, cup: 91 }),
   F("chayote", 19, 0.8, 4.5, 1.7, 1.7, 0.1, 0, 2, { u: 200 }),
