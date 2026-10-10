@@ -79,7 +79,7 @@ const S_CATS = {
   aves: "ave poultry", pescados: "pescado fish marisco seafood", ensaladas: "ensalada salad",
   vegetales: "vegetal vegetable verdura vianda", postres: "postre dessert dulce sweet", bebidas: "bebida drink refresco",
   jugos: "jugo juice", cocteles: "coctel cocktail trago bebida alcoholica", panes: "pan bread",
-  salsas: "salsa sauce aderezo dip", entremeses: "entremes aperitivo appetizer picadera fritura fritter frituras",
+  salsas: "salsa sauce aderezo dip adobo marinada marinade sazon seasoning rub", entremeses: "entremes aperitivo appetizer picadera fritura fritter frituras",
   frutas: "fruta fruit almibar", cereales: "cereal avena oatmeal", granos: "grano legumbre legume",
   huevos: "huevo egg queso cheese", bizcochos: "bizcocho cake", galletitas: "galleta cookie",
   pasteles_dulces: "pie", emparedados: "sandwich emparedado", calientes: "te tea infusion caliente", pastas: "pasta"
@@ -194,6 +194,13 @@ const sIdeaFor = (w) => S_IDEAS.find((idea) => idea.words.includes(w));
  */
 function smartSearch(query, ctx) {
   const words = sNorm(query).split(/\s+/).filter(Boolean);
+  // "Adobo sin Sal", "Piña Colada (Sin Alcohol)": si lo escrito es parte del nombre de una receta, "sin" no excluye.
+  const qn = words.join(" ");
+  // Sólo cuando hay una palabra de exclusión; los nombres se comparan sin paréntesis ni signos.
+  const sPlain = (t) => ` ${sNorm(t).replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim()} `;
+  const hasNeg = words.some((w) => ["sin", "no", "without", "libre", "free"].includes(w));
+  const nameHas = (r) => sPlain(r.name.es).includes(` ${qn} `) || sPlain(r.name.en).includes(` ${qn} `);
+  const isName = hasNeg && qn.includes(" ") && recipes.some(nameHas);
   const terms = [], excludes = [], ideas = [], corrections = [];
   const vocab = sGetVocab();
   const vocabSet = new Set(vocab);
@@ -205,9 +212,9 @@ function smartSearch(query, ctx) {
     if ((w === "para" || w === "for") && terms.length) { afterPara = true; continue; }
     // Exclusiones: "sin X", "no X", "without X", "libre de X", "X free".
     let negate = false;
-    if (["sin", "no", "without", "excepto", "except"].includes(w) && words[i + 1]) { negate = true; w = words[++i]; }
-    else if (w === "libre" && words[i + 1] === "de" && words[i + 2]) { negate = true; i += 2; w = words[i]; }
-    else if (words[i + 1] === "free") { negate = true; i++; }
+    if (!isName && ["sin", "no", "without", "excepto", "except"].includes(w) && words[i + 1]) { negate = true; w = words[++i]; }
+    else if (!isName && w === "libre" && words[i + 1] === "de" && words[i + 2]) { negate = true; i += 2; w = words[i]; }
+    else if (!isName && words[i + 1] === "free") { negate = true; i++; }
     const stem = sStem(w);
     if (negate) { excludes.push({ text: w, stem }); continue; }
     if (S_STOP.has(stem) || stem.length < 2) continue;
@@ -300,5 +307,11 @@ function smartSearch(query, ctx) {
 
   let scores = run(true), partial = false;
   if (!scores.size && terms.length > 1) { scores = run(false); partial = scores.size > 0; }
+  // Lo escrito es parte de un nombre ("pina colada sin alcohol"): sólo esas recetas, aunque una palabra parezca una idea.
+  if (isName) {
+    const named = new Map();
+    for (const r of recipes) if (nameHas(r)) named.set(r.id, (scores.get(r.id) || 0) + 20);
+    return { scores: named, terms, excludes: [], ideas: [], corrections, partial: false };
+  }
   return { scores, terms, excludes, ideas, corrections, partial };
 }

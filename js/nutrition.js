@@ -189,6 +189,8 @@ const NUTRI_FOODS = [
   F("alcachofa|corazones de alcachofa", 47, 3.3, 10.5, 1, 5.4, 0.2, 0, 300, { can: 240, u: 30 }),
   F("tinta de calamar", 70, 6, 3, 0, 0, 1, 0, 600, { sobre: 4 }),
   F("pan de hamburguesa|panes de hamburguesa", 270, 9, 49, 6, 2, 3.5, 0.8, 480, { u: 55 }),
+  F("cebolla en polvo", 341, 10, 79, 6.6, 15, 1, 0.2, 73, { cup: 110 }),
+  F("ralladura de limon|ralladura", 47, 1.5, 16, 4, 10, 0.3, 0, 6, { cup: 96, u: 2 }),
   F("berro", 11, 2.3, 1.3, 0.2, 0.5, 0.1, 0, 41, { cup: 34 }),
   F("brocoli", 34, 2.8, 6.6, 1.7, 2.6, 0.4, 0, 33, { u: 600, cup: 91 }),
   F("chayote", 19, 0.8, 4.5, 1.7, 1.7, 0.1, 0, 2, { u: 200 }),

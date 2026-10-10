@@ -45,6 +45,8 @@
  * Decimonovena tanda: a la parrilla y al carbón (pernil ahumado, muslos con achiote,
  * hamburguesas boricuas, chillo entero, camarones, salmón, costillas de res, maíz,
  * maduros, vegetales y queso de freír con guayaba).
+ * Vigésima tanda: adobos criollos (res y cerdo, pollo, pescado y mariscos, pavo, cabro,
+ * BBQ, vegetales, limón y pimienta, y sin sal).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -10997,6 +10999,393 @@ recipes.push(
         "Brush the cheese slices with the oil.",
         "Grill on a very hot, clean grate 1–2 minutes per side, until golden marks appear (frying cheese doesn't melt).",
         "Serve right away with the guava sauce on top. A snack while the rest is grilling."
+      ]
+    }
+  },
+
+  // ── Vigésima tanda (2026-10): adobos criollos para cada tipo de carne y más ──
+  {
+    id: "adobo-seco-res-cerdo",
+    category: "salsas",
+    name: { es: "Adobo Seco para Res y Cerdo", en: "Dry Adobo for Beef and Pork" },
+    time: "5 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "3 cucharadas de sal",
+        "2 cucharadas de ajo en polvo",
+        "1 cucharada de cebolla en polvo",
+        "1 cucharada de orégano seco, triturado",
+        "2 cucharaditas de comino molido",
+        "2 cucharaditas de pimienta negra molida",
+        "1 cucharadita de pimentón"
+      ],
+      en: [
+        "3 tablespoons salt",
+        "2 tablespoons garlic powder",
+        "1 tablespoon onion powder",
+        "1 tablespoon dried oregano, crushed",
+        "2 teaspoons ground cumin",
+        "2 teaspoons ground black pepper",
+        "1 teaspoon paprika"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle todo en un frasco seco, tape y agite.",
+        "Use 1 cucharadita por libra de carne: bistec, carne guisada, chuletas, costillas o carne molida.",
+        "Para bistec y chuletas, adobe 30 minutos antes; para carne guisada o costillas, desde la noche anterior en la nevera.",
+        "El comino le da el gusto de la carne guisada de la casa. Se guarda 6 meses en un lugar seco; use siempre una cuchara seca."
+      ],
+      en: [
+        "Mix everything in a dry jar, cover and shake.",
+        "Use 1 teaspoon per pound of meat: steak, beef stew, pork chops, ribs or ground beef.",
+        "For steak and chops, season 30 minutes ahead; for stews or ribs, the night before in the fridge.",
+        "The cumin gives it that home-style carne guisada flavor. Keeps 6 months in a dry place; always use a dry spoon."
+      ]
+    }
+  },
+  {
+    id: "adobo-pollo-limon-achiote",
+    category: "salsas",
+    name: { es: "Adobo Mojado de Limón y Achiote para Pollo", en: "Lime and Annatto Wet Adobo for Chicken" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "8 dientes de ajo",
+        "1½ cucharaditas de sal",
+        "1 cucharada de orégano seco",
+        "½ cucharadita de pimienta",
+        "3 cucharadas de aceite de achiote",
+        "¼ taza de jugo de limón",
+        "1 cucharadita de ralladura de limón",
+        "2 hojas de recao, picadas"
+      ],
+      en: [
+        "8 garlic cloves",
+        "1½ teaspoons salt",
+        "1 tablespoon dried oregano",
+        "½ teaspoon pepper",
+        "3 tablespoons annatto oil",
+        "¼ cup lime juice",
+        "1 teaspoon lime zest",
+        "2 culantro leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Maje el ajo con la sal, el orégano y la pimienta en el pilón hasta hacer una pasta.",
+        "Añada el aceite de achiote, el jugo y la ralladura de limón y el recao.",
+        "Alcanza para un pollo entero o 3 libras de presas. Despegue la piel con los dedos y unte por debajo y por encima.",
+        "Marine de 2 horas a toda la noche en la nevera (no más de un día: el limón ablanda la carne). Lávese las manos y el envase después de tocar el pollo crudo."
+      ],
+      en: [
+        "Mash the garlic with the salt, oregano and pepper in the pilón into a paste.",
+        "Add the annatto oil, the lime juice and zest and the culantro.",
+        "Enough for a whole chicken or 3 lb of pieces. Loosen the skin with your fingers and rub under and over it.",
+        "Marinate 2 hours to overnight in the fridge (no more than a day: the lime softens the meat). Wash your hands and the container after handling raw chicken."
+      ]
+    }
+  },
+  {
+    id: "adobo-pescado-mariscos",
+    category: "salsas",
+    name: { es: "Adobo para Pescado y Mariscos", en: "Adobo for Fish and Seafood" },
+    time: "10 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "6 dientes de ajo, majados",
+        "2 cucharadas de perejil picado",
+        "1 cucharada de recao picado",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimentón",
+        "¼ cucharadita de pimienta blanca",
+        "3 cucharadas de aceite de oliva",
+        "2 cucharadas de jugo de limón"
+      ],
+      en: [
+        "6 garlic cloves, mashed",
+        "2 tablespoons chopped parsley",
+        "1 tablespoon chopped culantro",
+        "1 teaspoon salt",
+        "½ teaspoon paprika",
+        "¼ teaspoon white pepper",
+        "3 tablespoons olive oil",
+        "2 tablespoons lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle todos los ingredientes.",
+        "Alcanza para 2 libras de filetes, camarones, pulpo o un pescado entero.",
+        "Adobe justo antes de cocinar, o como mucho 20–30 minutos antes: el limón empieza a cocinar el pescado y los camarones y se ponen gomosos.",
+        "Sirve para frito, a la plancha, a la parrilla, al horno o en escabeche."
+      ],
+      en: [
+        "Mix all the ingredients.",
+        "Enough for 2 lb of fillets, shrimp, octopus or a whole fish.",
+        "Season right before cooking, or at most 20–30 minutes ahead: the lime starts to cook fish and shrimp and they turn rubbery.",
+        "Works for fried, griddled, grilled, baked or escabeche."
+      ]
+    }
+  },
+  {
+    id: "adobo-pavo",
+    category: "salsas",
+    name: { es: "Adobo para Pavo o Pavochón", en: "Adobo for Turkey or Pavochón" },
+    time: "15 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "2 cabezas de ajo, peladas",
+        "3 cucharadas de sal",
+        "2 cucharadas de orégano seco",
+        "1 cucharada de pimienta en grano",
+        "2 sobres de sazón con culantro y achiote",
+        "¼ taza de aceite de oliva",
+        "¼ taza de vinagre",
+        "¼ taza de jugo de naranja agria"
+      ],
+      en: [
+        "2 heads of garlic, peeled",
+        "3 tablespoons salt",
+        "2 tablespoons dried oregano",
+        "1 tablespoon whole peppercorns",
+        "2 packets sazón with culantro and annatto",
+        "¼ cup olive oil",
+        "¼ cup vinegar",
+        "¼ cup sour orange juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Maje el ajo con la sal, el orégano y la pimienta (en el pilón por tandas o en el procesador).",
+        "Añada el sazón, el aceite, el vinagre y la naranja agria.",
+        "Alcanza para un pavo de 12–14 libras. Con el pavo bien descongelado (en la nevera, 1 día por cada 4–5 libras), haga cortes profundos en muslos y pechuga, rellénelos y unte por dentro, por fuera y debajo de la piel.",
+        "Marine en la nevera de 1 a 2 días, tapado. Al hornear, el pavo debe llegar a 165°F en la parte más gruesa del muslo."
+      ],
+      en: [
+        "Mash the garlic with the salt, oregano and pepper (in the pilón in batches or in a food processor).",
+        "Add the sazón, oil, vinegar and sour orange.",
+        "Enough for a 12–14 lb turkey. With the turkey fully thawed (in the fridge, 1 day per 4–5 lb), cut deep slits in the thighs and breast, stuff them and rub inside, outside and under the skin.",
+        "Marinate in the fridge 1 to 2 days, covered. When roasting, the turkey must reach 165°F in the thickest part of the thigh."
+      ]
+    }
+  },
+  {
+    id: "adobo-cabro",
+    category: "salsas",
+    name: { es: "Adobo para Cabro o Chivo", en: "Adobo for Goat" },
+    time: "10 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "10 dientes de ajo",
+        "2 cucharaditas de sal",
+        "1 cucharada de orégano seco",
+        "1 cucharadita de comino",
+        "1 cucharadita de pimienta",
+        "½ taza de vinagre",
+        "¼ taza de aceite de oliva",
+        "2 hojas de laurel, trituradas",
+        "1 ají dulce, picado"
+      ],
+      en: [
+        "10 garlic cloves",
+        "2 teaspoons salt",
+        "1 tablespoon dried oregano",
+        "1 teaspoon cumin",
+        "1 teaspoon pepper",
+        "½ cup vinegar",
+        "¼ cup olive oil",
+        "2 bay leaves, crushed",
+        "1 sweet chili pepper (ají dulce), chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Maje el ajo con la sal, el orégano, el comino y la pimienta.",
+        "Añada el vinagre, el aceite, el laurel y el ají dulce.",
+        "Alcanza para 4–5 libras de cabro. Lave la carne con agua y limón, séquela y báñela en el adobo.",
+        "Marine toda la noche en la nevera: el vinagre suaviza la carne y le quita el olor fuerte. Ideal para fricasé de cabro o cabrito al horno."
+      ],
+      en: [
+        "Mash the garlic with the salt, oregano, cumin and pepper.",
+        "Add the vinegar, oil, bay leaves and ají dulce.",
+        "Enough for 4–5 lb of goat. Rinse the meat with water and lime, pat dry and coat it in the adobo.",
+        "Marinate overnight in the fridge: the vinegar tenderizes the meat and tames its strong smell. Ideal for goat fricassee or roast kid."
+      ]
+    }
+  },
+  {
+    id: "adobo-seco-bbq",
+    category: "salsas",
+    name: { es: "Adobo Seco Ahumado para BBQ y Costillas", en: "Smoky Dry Rub for BBQ and Ribs" },
+    time: "5 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "¼ taza de azúcar morena",
+        "2 cucharadas de pimentón ahumado",
+        "1 cucharada de sal",
+        "1 cucharada de ajo en polvo",
+        "2 cucharaditas de cebolla en polvo",
+        "1 cucharadita de comino",
+        "1 cucharadita de orégano seco",
+        "1 cucharadita de pimienta",
+        "½ cucharadita de hojuelas de ají"
+      ],
+      en: [
+        "¼ cup brown sugar",
+        "2 tablespoons smoked paprika",
+        "1 tablespoon salt",
+        "1 tablespoon garlic powder",
+        "2 teaspoons onion powder",
+        "1 teaspoon cumin",
+        "1 teaspoon dried oregano",
+        "1 teaspoon pepper",
+        "½ teaspoon red pepper flakes"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle todo deshaciendo los grumos del azúcar morena.",
+        "Alcanza para 2 tandas de costillas o un pernil pequeño. Seque la carne y frote el adobo por todas partes.",
+        "Deje 1 hora (o toda la noche) en la nevera antes de la parrilla.",
+        "Por el azúcar, cocine a fuego indirecto o medio para que no se queme; termine con salsa BBQ de guayaba si quiere."
+      ],
+      en: [
+        "Mix everything, breaking up the brown sugar lumps.",
+        "Enough for 2 racks of ribs or a small pork shoulder. Pat the meat dry and rub the mix all over.",
+        "Leave 1 hour (or overnight) in the fridge before grilling.",
+        "Because of the sugar, cook over indirect or medium heat so it doesn't burn; finish with guava BBQ sauce if you like."
+      ]
+    }
+  },
+  {
+    id: "adobo-vegetales-viandas",
+    category: "salsas",
+    name: { es: "Adobo para Vegetales y Viandas Asadas", en: "Adobo for Roasted Vegetables and Root Vegetables" },
+    time: "5 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "¼ taza de aceite de oliva",
+        "4 dientes de ajo, majados",
+        "1 cucharadita de orégano seco",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimentón",
+        "¼ cucharadita de pimienta",
+        "1 cucharada de jugo de limón",
+        "1 cucharada de perejil picado"
+      ],
+      en: [
+        "¼ cup olive oil",
+        "4 garlic cloves, mashed",
+        "1 teaspoon dried oregano",
+        "1 teaspoon salt",
+        "½ teaspoon paprika",
+        "¼ teaspoon pepper",
+        "1 tablespoon lime juice",
+        "1 tablespoon chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle todos los ingredientes.",
+        "Alcanza para 2–3 libras de vegetales o viandas: calabaza, batata, papas, yuca hervida, berenjena, pimientos o calabacín.",
+        "Mezcle con los vegetales en cubos y hornee a 425°F 25–35 minutos, moviendo a la mitad, hasta que doren. La yuca y el ñame se hierven antes.",
+        "Sin carne ni lácteos: apto para veganos."
+      ],
+      en: [
+        "Mix all the ingredients.",
+        "Enough for 2–3 lb of vegetables or root vegetables: calabaza, sweet potato, potatoes, boiled yuca, eggplant, peppers or zucchini.",
+        "Toss with the cubed vegetables and roast at 425°F 25–35 minutes, stirring halfway, until browned. Boil yuca and ñame first.",
+        "No meat or dairy: vegan."
+      ]
+    }
+  },
+  {
+    id: "adobo-limon-pimienta",
+    category: "salsas",
+    name: { es: "Adobo de Limón y Pimienta para Alitas y Pescado", en: "Lime Pepper Seasoning for Wings and Fish" },
+    time: "1 hr (secando la ralladura)",
+    servings: 16,
+    ingredients: {
+      es: [
+        "Ralladura de 4 limones",
+        "2 cucharadas de pimienta negra molida gruesa",
+        "1 cucharada de sal",
+        "2 cucharaditas de ajo en polvo",
+        "1 cucharadita de cebolla en polvo",
+        "1 cucharadita de azúcar"
+      ],
+      en: [
+        "Zest of 4 limes",
+        "2 tablespoons coarsely ground black pepper",
+        "1 tablespoon salt",
+        "2 teaspoons garlic powder",
+        "1 teaspoon onion powder",
+        "1 teaspoon sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Extienda la ralladura en un plato y séquela en el horno a 200°F unos 40–60 minutos, hasta que se desmorone (o al aire 1 día).",
+        "Mezcle con la pimienta, la sal, el ajo, la cebolla y el azúcar.",
+        "Para alitas: 1 cucharada por libra, después de fritas u horneadas, con un poquito de mantequilla derretida. Para pescado: espolvoree antes de la plancha.",
+        "Guárdelo en un frasco seco hasta 2 meses."
+      ],
+      en: [
+        "Spread the zest on a plate and dry it in a 200°F oven 40–60 minutes, until it crumbles (or air-dry 1 day).",
+        "Mix with the pepper, salt, garlic powder, onion powder and sugar.",
+        "For wings: 1 tablespoon per pound, after frying or baking, with a little melted butter. For fish: sprinkle before griddling.",
+        "Store in a dry jar up to 2 months."
+      ]
+    }
+  },
+  {
+    id: "adobo-sin-sal",
+    category: "salsas",
+    name: { es: "Adobo sin Sal (Bajo en Sodio)", en: "Salt-Free Adobo (Low Sodium)" },
+    time: "5 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "2 cucharadas de ajo en polvo",
+        "1 cucharada de cebolla en polvo",
+        "1 cucharada de orégano seco, triturado",
+        "2 cucharaditas de pimentón",
+        "1 cucharadita de comino",
+        "1 cucharadita de pimienta negra",
+        "1 cucharadita de achiote molido",
+        "1 cucharadita de ralladura de limón seca"
+      ],
+      en: [
+        "2 tablespoons garlic powder",
+        "1 tablespoon onion powder",
+        "1 tablespoon dried oregano, crushed",
+        "2 teaspoons paprika",
+        "1 teaspoon cumin",
+        "1 teaspoon black pepper",
+        "1 teaspoon ground annatto",
+        "1 teaspoon dried lime zest"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle todo en un frasco seco.",
+        "Úselo como el adobo de siempre (1 cucharadita por libra de carne, pollo o pescado) y añada sal aparte sólo si hace falta.",
+        "El limón y el ajo engañan al paladar: se nota menos la falta de sal.",
+        "Útil para quien cuida la presión o el sodio. Si su médico le restringió el potasio, evite los sustitutos de sal de potasio."
+      ],
+      en: [
+        "Mix everything in a dry jar.",
+        "Use it like regular adobo (1 teaspoon per pound of meat, chicken or fish) and add salt separately only if needed.",
+        "The lime and garlic fool the palate: you miss the salt less.",
+        "Useful for anyone watching blood pressure or sodium. If your doctor restricted potassium, avoid potassium-based salt substitutes."
       ]
     }
   }
