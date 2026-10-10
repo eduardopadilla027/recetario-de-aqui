@@ -2666,14 +2666,16 @@ recipes.push(
         "Escúrralo, déjelo enfriar un poco y separe los tentáculos.",
         "Para el mojo: caliente el aceite con el ajo a fuego bajo 1 minuto sin dorar. Retire y añada el limón, el perejil, el pimentón y sal.",
         "Unte los tentáculos con un poco del mojo y áselos en la parrilla bien caliente 3 minutos por lado, hasta que tengan marcas y bordes crujientes.",
-        "Sirva bañados con el resto del mojo, con tostones o yuca hervida."
+        "Sirva bañados con el resto del mojo, con tostones o yuca hervida.",
+        "Tip de parrilla: el pulpo va a la parrilla ya hervido y tierno; ahí sólo se dora: fuego alto (450–500°F), 2–3 minutos por lado, hasta que las puntas de los tentáculos estén tostadas. Más tiempo lo pone duro otra vez."
       ],
       en: [
         "Simmer the octopus with the onion, bay leaves and salt over low heat, covered, 50–60 minutes, until a fork slides easily into the thick part of a tentacle.",
         "Drain, let cool a little and separate the tentacles.",
         "For the mojo: warm the oil with the garlic over low heat 1 minute without browning. Remove and add the lime, parsley, paprika and salt.",
         "Brush the tentacles with some mojo and grill over very high heat 3 minutes per side, until marked and crisp at the edges.",
-        "Serve drizzled with the rest of the mojo, with tostones or boiled yuca."
+        "Serve drizzled with the rest of the mojo, with tostones or boiled yuca.",
+        "Grill tip: the octopus goes on the grill already boiled and tender; there it only browns: high heat (450–500°F), 2–3 minutes per side, until the tentacle tips crisp. Longer makes it tough again."
       ]
     }
   },
@@ -4225,14 +4227,16 @@ recipes.push(
         "Hornee 40 minutos, volteándolas a la mitad, hasta que estén doradas y a 165°F por dentro.",
         "Mientras tanto, derrita la guayaba con el agua a fuego bajo. Añada la salsa de tomate, el vinagre, el azúcar, la salsa inglesa y el ajo y cocine 10 minutos, hasta que espese.",
         "Mezcle las alitas calientes con la mitad de la salsa y hornéelas 5 minutos más para que se glaseen.",
-        "Sirva con el resto de la salsa aparte."
+        "Sirva con el resto de la salsa aparte.",
+        "Tip de parrilla: alitas a fuego indirecto a 350–400°F por 35–45 minutos, volteando una vez, y luego 2–3 minutos directo para dorar. Aunque son seguras a 165°F, quedan mejor a 175–190°F: el colágeno se ablanda y la piel queda crujiente. La salsa va al final."
       ],
       en: [
         "Heat the oven to 425°F. Season the wings and set them on a rack over a lined tray.",
         "Bake 40 minutes, turning halfway, until golden and 165°F inside.",
         "Meanwhile, melt the guava paste with the water over low heat. Add the tomato sauce, vinegar, sugar, Worcestershire and garlic and cook 10 minutes, until thick.",
         "Toss the hot wings with half the sauce and bake 5 more minutes to glaze.",
-        "Serve with the rest of the sauce on the side."
+        "Serve with the rest of the sauce on the side.",
+        "Grill tip: wings over indirect heat at 350–400°F for 35–45 minutes, turning once, then 2–3 minutes direct to crisp. They're safe at 165°F but better at 175–190°F: the collagen softens and the skin crisps. The sauce goes on at the end."
       ]
     }
   },
@@ -9253,13 +9257,15 @@ recipes.push(
         "Derrita la pasta de guayaba con el agua a fuego bajo, moviendo, hasta que esté lisa.",
         "Añada el resto de los ingredientes y cocine a fuego bajo 10–15 minutos, moviendo, hasta que espese.",
         "Para pinchos, costillas, alitas o pollo a la parrilla: úntela en los últimos 10 minutos de cocción para que no se queme.",
-        "Separe una porción para servir en la mesa y no use la brocha que tocó carne cruda. Se guarda 2 semanas en la nevera."
+        "Separe una porción para servir en la mesa y no use la brocha que tocó carne cruda. Se guarda 2 semanas en la nevera.",
+        "Tip de parrilla: por el azúcar de la guayaba, esta salsa se quema por encima de unos 265°F. Úntela en los últimos 10–15 minutos, en capas finas, a fuego indirecto o medio, y deje que cada capa se pegue 2–3 minutos antes de la siguiente."
       ],
       en: [
         "Melt the guava paste with the water over low heat, stirring, until smooth.",
         "Add the rest of the ingredients and simmer 10–15 minutes, stirring, until thick.",
         "For skewers, ribs, wings or grilled chicken: brush it on in the last 10 minutes of cooking so it doesn't burn.",
-        "Set aside a portion for the table and don't use the brush that touched raw meat. Keeps 2 weeks in the fridge."
+        "Set aside a portion for the table and don't use the brush that touched raw meat. Keeps 2 weeks in the fridge.",
+        "Grill tip: because of the sugar in the guava, this sauce burns above about 265°F. Brush it on in the last 10–15 minutes, in thin coats, over indirect or medium heat, letting each coat set 2–3 minutes before the next."
       ]
     }
   },
@@ -9298,13 +9304,15 @@ recipes.push(
         "Remoje el tamarindo en el agua caliente 15 minutos, apriételo con los dedos y cuele, apretando para sacar toda la pulpa.",
         "Ponga el líquido en una olla con el resto de los ingredientes.",
         "Cocine a fuego bajo 12–15 minutos, moviendo, hasta que espese y brille.",
-        "Ácida y dulce: va muy bien con costillas, pernil y alitas. Úntela al final de la cocción."
+        "Ácida y dulce: va muy bien con costillas, pernil y alitas. Úntela al final de la cocción.",
+        "Tip de parrilla: como toda salsa con azúcar, va al final: los últimos 10–15 minutos, en capas finas, lejos de las llamas. Si se quema, se pone amarga."
       ],
       en: [
         "Soak the tamarind in the hot water 15 minutes, squeeze it with your fingers and strain, pressing out all the pulp.",
         "Put the liquid in a pot with the rest of the ingredients.",
         "Simmer 12–15 minutes, stirring, until thick and glossy.",
-        "Tangy and sweet: great with ribs, roast pork and wings. Brush it on at the end of cooking."
+        "Tangy and sweet: great with ribs, roast pork and wings. Brush it on at the end of cooking.",
+        "Grill tip: like any sugary sauce, it goes on at the end: the last 10–15 minutes, in thin coats, away from the flames. If it burns, it turns bitter."
       ]
     }
   },
@@ -10568,7 +10576,8 @@ recipes.push(
         "Ponga el pernil con el cuero hacia arriba en el lado sin carbón. Eche un puñado de astillas escurridas sobre las brasas y tape con las ventilaciones medio abiertas, buscando unos 275–300°F.",
         "Cocine 5–6 horas, añadiendo 8–10 carbones encendidos y otro puñado de astillas cada hora. No abra la tapa más de lo necesario.",
         "Cuando la carne llegue a 190°F por dentro (se deshace), frote el cuero con la sal y páselo sobre las brasas, con el cuero hacia el fuego, unos minutos por sección, vigilando, hasta que haga burbujas y quede crujiente.",
-        "Deje reposar 20 minutos antes de cortar. Cocine al aire libre, lejos de la casa, y nunca deje el carbón encendido solo."
+        "Deje reposar 20 minutos antes de cortar. Cocine al aire libre, lejos de la casa, y nunca deje el carbón encendido solo.",
+        "Tip de parrilla: mantenga 250–275°F con un termómetro en la tapa (o un termómetro de horno sobre la rejilla) y calcule 1 a 1½ horas por libra. Entre 150 y 170°F la carne se \"estanca\" un buen rato: es normal, no suba el fuego. Sáquelo a 195–203°F para desmenuzar (o a 145°F si lo quiere en lascas) y deje reposar 30 minutos envuelto en papel de aluminio."
       ],
       en: [
         "The night before: cut deep slits in the meat (not the skin), stuff them with the adobo, rub on the rest and pour on the sour orange. Refrigerate covered.",
@@ -10576,7 +10585,8 @@ recipes.push(
         "Put the pork skin side up on the side without coals. Toss a handful of drained chips on the coals and cover with the vents half open, aiming for about 275–300°F.",
         "Cook 5–6 hours, adding 8–10 lit coals and another handful of chips every hour. Don't open the lid more than needed.",
         "When the meat reaches 190°F inside (it falls apart), rub the skin with the salt and move it over the coals, skin toward the fire, a few minutes per section, watching, until it blisters and turns crisp.",
-        "Rest 20 minutes before carving. Cook outdoors, away from the house, and never leave lit charcoal unattended."
+        "Rest 20 minutes before carving. Cook outdoors, away from the house, and never leave lit charcoal unattended.",
+        "Grill tip: hold 250–275°F with a lid thermometer (or an oven thermometer on the grate) and figure 1 to 1½ hours per pound. Between 150 and 170°F the meat \"stalls\" for a while: that's normal, don't raise the heat. Pull it at 195–203°F to shred (or 145°F to slice) and rest 30 minutes wrapped in foil."
       ]
     }
   },
@@ -10614,14 +10624,16 @@ recipes.push(
         "Prepare el carbón para dos zonas: brasas a un lado y el otro libre.",
         "Ponga los muslos con la piel hacia abajo sobre las brasas 3–4 minutos, hasta que la piel dore (mueva si hay llamaradas).",
         "Páselos al lado sin carbón, tape y cocine 25–30 minutos, volteando una vez, hasta que lleguen a 175°F por dentro junto al hueso.",
-        "Deje reposar 5 minutos. Use otra bandeja para servir: la que trajo el pollo crudo no se usa para el cocido."
+        "Deje reposar 5 minutos. Use otra bandeja para servir: la que trajo el pollo crudo no se usa para el cocido.",
+        "Tip de parrilla: los muslos aguantan más que la pechuga; aunque son seguros a 165°F, quedan más jugosos y tiernos a 175–185°F. Fuego directo medio-alto sólo para dorar la piel (prueba de la mano a 5 pulgadas de la rejilla: 2 segundos = fuego alto (450–550°F), 4–5 = medio (350–450°F), 6–8 = bajo (250–350°F)) y el resto a fuego indirecto con la tapa puesta, unos 350–375°F."
       ],
       en: [
         "Mix the annatto oil with the garlic, oregano, cumin, salt, pepper and lime juice. Rub it all over the chicken and marinate 2 hours in the fridge.",
         "Set up the charcoal for two zones: coals on one side and the other empty.",
         "Put the thighs skin side down over the coals 3–4 minutes, until the skin browns (move them if it flares up).",
         "Move them to the side without coals, cover and cook 25–30 minutes, turning once, until they reach 175°F inside next to the bone.",
-        "Rest 5 minutes. Use a different platter to serve: the one that held the raw chicken isn't used for cooked."
+        "Rest 5 minutes. Use a different platter to serve: the one that held the raw chicken isn't used for cooked.",
+        "Grill tip: thighs are more forgiving than breast; they're safe at 165°F but juicier and more tender at 175–185°F. Use medium-high direct heat only to crisp the skin (hand test 5 inches above the grate: 2 seconds = high (450–550°F), 4–5 = medium (350–450°F), 6–8 = low (250–350°F)) and finish over indirect heat with the lid on, about 350–375°F."
       ]
     }
   },
@@ -10659,14 +10671,16 @@ recipes.push(
         "Prepare el carbón a fuego medio-alto y limpie y engrase la parrilla.",
         "Ase las hamburguesas 4–5 minutos por lado, volteando una sola vez y sin aplastarlas, hasta que lleguen a 160°F por dentro.",
         "En el último minuto, ponga el queso encima y tape. Tueste los panes en la orilla de la parrilla.",
-        "Arme con mayo-ketchup, lechuga, tomate, cebolla y, si quiere, papitas encima como en los carritos."
+        "Arme con mayo-ketchup, lechuga, tomate, cebolla y, si quiere, papitas encima como en los carritos.",
+        "Tip de parrilla: fuego medio-alto (400–450°F). Para una torta de ¾ de pulgada: 4–5 minutos por lado hasta 160°F, la temperatura segura para carne molida. No las aplaste con la espátula (se va el jugo) y voltéelas una sola vez, cuando se despeguen solas de la rejilla."
       ],
       en: [
         "Mix the beef with the sofrito, sazón and adobo without overworking it. Shape 6 patties a little wider than the bun and press a dimple in the center with your thumb (so they don't puff up).",
         "Set up the charcoal at medium-high heat and clean and oil the grate.",
         "Grill the burgers 4–5 minutes per side, flipping only once and without pressing them, until they reach 160°F inside.",
         "In the last minute, put the cheese on top and cover. Toast the buns at the edge of the grill.",
-        "Build with mayo-ketchup, lettuce, tomato, onion and, if you like, potato sticks on top like the food trucks do."
+        "Build with mayo-ketchup, lettuce, tomato, onion and, if you like, potato sticks on top like the food trucks do.",
+        "Grill tip: medium-high heat (400–450°F). For a ¾-inch patty: 4–5 minutes per side to 160°F, the safe temperature for ground beef. Don't press them with the spatula (the juice runs out) and flip only once, when they release from the grate on their own."
       ]
     }
   },
@@ -10704,14 +10718,16 @@ recipes.push(
         "Rellene la barriga con las ruedas de limón y el cilantro. Deje 15 minutos.",
         "Limpie muy bien la parrilla, caliéntela a fuego medio-alto y engrásela con un papel con aceite (así la piel no se pega).",
         "Ase el pescado 7–8 minutos por lado sin moverlo; voltéelo con dos espátulas cuando se despegue solo.",
-        "Está listo cuando la carne se separa en lascas junto a la espina y llega a 145°F. Sirva con tostones y más mojo."
+        "Está listo cuando la carne se separa en lascas junto a la espina y llega a 145°F. Sirva con tostones y más mojo.",
+        "Tip de parrilla: calcule unos 10 minutos por cada pulgada de grosor en la parte más gruesa, a fuego medio-alto (400–450°F). Listo a 145°F junto a la espina o cuando la carne se separa en lascas y el ojo se pone blanco. Una rejilla bien caliente, limpia y engrasada es lo que evita que se pegue."
       ],
       en: [
         "Cut 3 diagonal slashes on each side of the fish. Mix the oil, garlic, lime juice, salt and pepper and rub inside and out, working mojo into the cuts.",
         "Stuff the cavity with the lime slices and cilantro. Let sit 15 minutes.",
         "Clean the grate very well, heat it to medium-high and oil it with an oiled paper towel (so the skin doesn't stick).",
         "Grill the fish 7–8 minutes per side without moving it; flip with two spatulas when it releases on its own.",
-        "It's done when the flesh flakes next to the bone and reaches 145°F. Serve with tostones and more mojo."
+        "It's done when the flesh flakes next to the bone and reaches 145°F. Serve with tostones and more mojo.",
+        "Grill tip: figure about 10 minutes per inch of thickness at the thickest part, over medium-high heat (400–450°F). Done at 145°F next to the bone or when the flesh flakes and the eye turns white. A very hot, clean, oiled grate is what keeps it from sticking."
       ]
     }
   },
@@ -10746,13 +10762,15 @@ recipes.push(
         "Mezcle el aceite, el ajo, el limón, el pimentón y la sal. Separe 2 cucharadas para servir y mezcle el resto con los camarones; deje 15 minutos (no más: el limón los cocina).",
         "Ensarte los camarones en dos palitos paralelos (así no giran) o use una canasta de parrilla.",
         "Ase a fuego alto 2 minutos por lado, hasta que estén rosados y opacos. Se pasan rápido.",
-        "Rocíe el mojo que separó y el cilantro. Van con arroz, ensalada o tostones."
+        "Rocíe el mojo que separó y el cilantro. Van con arroz, ensalada o tostones.",
+        "Tip de parrilla: fuego alto (450–500°F) y poco tiempo: 2–3 minutos por lado para camarones grandes. Están listos cuando forman una \"C\"; si se cierran en \"O\", se pasaron. Retírelos apenas se pongan opacos: siguen cocinándose un poco fuera del fuego."
       ],
       en: [
         "Mix the oil, garlic, lime juice, paprika and salt. Set aside 2 tablespoons for serving and toss the rest with the shrimp; let sit 15 minutes (no longer: the lime cooks them).",
         "Thread the shrimp on two parallel skewers (so they don't spin) or use a grill basket.",
         "Grill over high heat 2 minutes per side, until pink and opaque. They overcook fast.",
-        "Drizzle with the reserved mojo and the cilantro. Serve with rice, salad or tostones."
+        "Drizzle with the reserved mojo and the cilantro. Serve with rice, salad or tostones.",
+        "Grill tip: high heat (450–500°F) and a short time: 2–3 minutes per side for large shrimp. They're done when they curl into a \"C\"; if they close into an \"O\", they're overcooked. Pull them as soon as they turn opaque: they keep cooking a little off the heat."
       ]
     }
   },
@@ -10790,14 +10808,16 @@ recipes.push(
         "Seque el salmón, úntelo con el aceite, la sal y la pimienta.",
         "Con la parrilla limpia y engrasada a fuego medio-alto, ponga el salmón con la piel hacia abajo y tape. Cocine 6–8 minutos sin voltear.",
         "Barnice con el glaseado los últimos 2 minutos. Está listo a 145°F, cuando se separa en lascas.",
-        "Deslice la espátula entre la piel y la carne para servir: la piel se queda pegada a la parrilla."
+        "Deslice la espátula entre la piel y la carne para servir: la piel se queda pegada a la parrilla.",
+        "Tip de parrilla: fuego medio-alto (400–450°F), con la piel hacia abajo y la tapa puesta: unos 8 minutos por pulgada de grosor sin voltear. El USDA indica 145°F; muchos lo sacan a 125–130°F para que quede jugoso y llega a unos 135°F reposando. El glaseado con azúcar va sólo al final para que no se queme."
       ],
       en: [
         "Boil the passion fruit with the brown sugar, soy sauce and garlic 4 minutes, until slightly thick.",
         "Pat the salmon dry and rub with the oil, salt and pepper.",
         "With the grate clean and oiled at medium-high, place the salmon skin side down and cover. Cook 6–8 minutes without flipping.",
         "Brush with the glaze for the last 2 minutes. It's done at 145°F, when it flakes.",
-        "Slide the spatula between the skin and flesh to serve: the skin stays on the grate."
+        "Slide the spatula between the skin and flesh to serve: the skin stays on the grate.",
+        "Grill tip: medium-high heat (400–450°F), skin side down with the lid on: about 8 minutes per inch of thickness without flipping. USDA says 145°F; many cooks pull it at 125–130°F so it stays juicy and it climbs to about 135°F resting. The sugary glaze goes on only at the end so it doesn't burn."
       ]
     }
   },
@@ -10832,13 +10852,15 @@ recipes.push(
         "Mezcle la naranja agria con el ajo, el orégano, la sal y la pimienta, y marine las costillas 4 horas en la nevera.",
         "Prepare el carbón a fuego alto. Escurra las costillas y séquelas un poco (así doran en vez de hervirse).",
         "Ase 3–4 minutos por lado, hasta que estén doradas y con marcas.",
-        "Deje reposar 5 minutos y sirva con chimichurri, arroz con gandules o tostones."
+        "Deje reposar 5 minutos y sirva con chimichurri, arroz con gandules o tostones.",
+        "Tip de parrilla: estas costillas son finas (¼–½ pulgada), así que van a fuego alto (450–550°F) y rápido: 3–4 minutos por lado. Para costillas de res gruesas sería al revés: fuego indirecto a 250–275°F por 5–7 horas, hasta 200–205°F por dentro."
       ],
       en: [
         "Mix the sour orange with the garlic, oregano, salt and pepper, and marinate the ribs 4 hours in the fridge.",
         "Set up the charcoal at high heat. Drain the ribs and pat them a bit dry (so they brown instead of steaming).",
         "Grill 3–4 minutes per side, until browned with grill marks.",
-        "Rest 5 minutes and serve with chimichurri, arroz con gandules or tostones."
+        "Rest 5 minutes and serve with chimichurri, arroz con gandules or tostones.",
+        "Grill tip: these ribs are thin (¼–½ inch), so they go over high heat (450–550°F) and fast: 3–4 minutes per side. Thick beef short ribs are the opposite: indirect heat at 250–275°F for 5–7 hours, to 200–205°F inside."
       ]
     }
   },
@@ -10873,13 +10895,15 @@ recipes.push(
         "Barnice las mazorcas con la mantequilla.",
         "Áselas sobre el carbón a fuego medio-alto 10–12 minutos, girándolas cada 2–3 minutos, hasta que estén tostadas en partes.",
         "Mezcle la mayonesa con el ajo. Unte cada mazorca caliente con la mayo-ajo.",
-        "Espolvoree el queso y el pimentón, y sirva con limón para exprimir."
+        "Espolvoree el queso y el pimentón, y sirva con limón para exprimir.",
+        "Tip de parrilla: fuego medio-alto (400–450°F), 10–15 minutos girando cada 2–3 minutos. Si lo prefiere más jugoso, áselo con las hojas (remojadas 15 minutos en agua) 15–20 minutos y luego quíteselas y dórelo 2 minutos directo al fuego."
       ],
       en: [
         "Brush the ears with the butter.",
         "Grill over the coals at medium-high 10–12 minutes, turning every 2–3 minutes, until charred in spots.",
         "Mix the mayonnaise with the garlic. Spread the garlic mayo on each hot ear.",
-        "Sprinkle with the cheese and paprika, and serve with lime to squeeze."
+        "Sprinkle with the cheese and paprika, and serve with lime to squeeze.",
+        "Grill tip: medium-high heat (400–450°F), 10–15 minutes turning every 2–3 minutes. For juicier corn, grill it in the husk (soaked 15 minutes in water) 15–20 minutes, then remove the husk and char it 2 minutes over direct heat."
       ]
     }
   },
@@ -10908,13 +10932,15 @@ recipes.push(
         "Corte las puntas de los plátanos y haga un corte a lo largo en la cáscara, sin llegar al otro lado.",
         "Póngalos sobre las brasas a fuego medio, con la cáscara, 20–25 minutos, volteándolos, hasta que la cáscara esté negra y el plátano blando al apretarlo.",
         "Ábralos por el corte, ponga un pedacito de mantequilla, la sal y, si quiere, el queso para que se derrita.",
-        "Se comen con cuchara, directo de la cáscara. Acompañan cualquier carne del carbón."
+        "Se comen con cuchara, directo de la cáscara. Acompañan cualquier carne del carbón.",
+        "Tip de parrilla: fuego medio (350–400°F), 20–30 minutos con la cáscara, volteando cada 5–7 minutos. Mientras más negro y maduro el plátano, más dulce queda. Está listo cuando cede como mantequilla al apretarlo con una pinza."
       ],
       en: [
         "Cut the ends off the plantains and slit the skin lengthwise, without going through to the other side.",
         "Put them over the coals at medium heat, in their skins, 20–25 minutes, turning, until the skin is black and the plantain is soft when pressed.",
         "Open them along the slit, add a bit of butter, the salt and, if you like, the cheese to melt.",
-        "Eat them with a spoon, straight from the skin. They go with any meat from the grill."
+        "Eat them with a spoon, straight from the skin. They go with any meat from the grill.",
+        "Grill tip: medium heat (350–400°F), 20–30 minutes in the skin, turning every 5–7 minutes. The blacker and riper the plantain, the sweeter it gets. It's done when it gives like butter when squeezed with tongs."
       ]
     }
   },
@@ -10955,13 +10981,15 @@ recipes.push(
         "Mezcle el aceite, el ajo, el vinagre, el orégano y la sal. Unte los vegetales con la mitad.",
         "Ensarte los champiñones y la cebolla en palitos para que no se caigan por la parrilla.",
         "Ase a fuego medio-alto: los pimientos y la cebolla 8–10 minutos, la berenjena y el calabacín 3–4 minutos por lado, hasta que tengan marcas y estén tiernos.",
-        "Acomode en un platón y rocíe el resto del mojo. Buenos calientes o a temperatura ambiente; aptos para veganos."
+        "Acomode en un platón y rocíe el resto del mojo. Buenos calientes o a temperatura ambiente; aptos para veganos.",
+        "Tip de parrilla: fuego medio-alto (400–450°F). Corte todo del mismo grosor (½ pulgada) para que se haga parejo. Tiempos: calabacín y berenjena 3–4 minutos por lado, pimientos y cebolla 8–10 en total, champiñones 6–8. Las marcas salen si no los mueve hasta voltearlos."
       ],
       en: [
         "Mix the oil, garlic, vinegar, oregano and salt. Brush the vegetables with half.",
         "Thread the mushrooms and onion on skewers so they don't fall through the grate.",
         "Grill at medium-high: the peppers and onion 8–10 minutes, the eggplant and zucchini 3–4 minutes per side, until marked and tender.",
-        "Arrange on a platter and drizzle with the rest of the mojo. Good hot or at room temperature; vegan."
+        "Arrange on a platter and drizzle with the rest of the mojo. Good hot or at room temperature; vegan.",
+        "Grill tip: medium-high heat (400–450°F). Cut everything the same thickness (½ inch) so it cooks evenly. Times: zucchini and eggplant 3–4 minutes per side, peppers and onion 8–10 total, mushrooms 6–8. The grill marks come out if you don't move them until you flip."
       ]
     }
   },
@@ -10992,13 +11020,15 @@ recipes.push(
         "Derrita la guayaba con el agua y el limón a fuego bajo hasta tener una salsita.",
         "Unte las lascas de queso con el aceite.",
         "Áselas en la parrilla bien caliente y limpia 1–2 minutos por lado, hasta que tengan marcas doradas (el queso de freír no se derrite).",
-        "Sirva enseguida con la salsita de guayaba por encima. Una picadera para mientras se asa lo demás."
+        "Sirva enseguida con la salsita de guayaba por encima. Una picadera para mientras se asa lo demás.",
+        "Tip de parrilla: lo más caliente posible (500°F o más) y la rejilla muy limpia. Deje el queso quieto 60–90 segundos hasta que se despegue solo; si lo mueve antes, se rompe. Use queso de freír o halloumi: el queso blanco del país se derrite."
       ],
       en: [
         "Melt the guava with the water and lime juice over low heat into a sauce.",
         "Brush the cheese slices with the oil.",
         "Grill on a very hot, clean grate 1–2 minutes per side, until golden marks appear (frying cheese doesn't melt).",
-        "Serve right away with the guava sauce on top. A snack while the rest is grilling."
+        "Serve right away with the guava sauce on top. A snack while the rest is grilling.",
+        "Grill tip: as hot as possible (500°F or more) and a very clean grate. Leave the cheese alone 60–90 seconds until it releases on its own; move it sooner and it tears. Use frying cheese or halloumi: regular white cheese melts."
       ]
     }
   },
@@ -11254,13 +11284,15 @@ recipes.push(
         "Mezcle todo deshaciendo los grumos del azúcar morena.",
         "Alcanza para 2 tandas de costillas o un pernil pequeño. Seque la carne y frote el adobo por todas partes.",
         "Deje 1 hora (o toda la noche) en la nevera antes de la parrilla.",
-        "Por el azúcar, cocine a fuego indirecto o medio para que no se queme; termine con salsa BBQ de guayaba si quiere."
+        "Por el azúcar, cocine a fuego indirecto o medio para que no se queme; termine con salsa BBQ de guayaba si quiere.",
+        "Tip de parrilla: con este adobo, cocine a fuego indirecto entre 225 y 300°F; por el azúcar morena, a fuego directo alto se quema y amarga. Para costillas de cerdo, 4–6 horas a 225–275°F; para pollo, a 325–350°F."
       ],
       en: [
         "Mix everything, breaking up the brown sugar lumps.",
         "Enough for 2 racks of ribs or a small pork shoulder. Pat the meat dry and rub the mix all over.",
         "Leave 1 hour (or overnight) in the fridge before grilling.",
-        "Because of the sugar, cook over indirect or medium heat so it doesn't burn; finish with guava BBQ sauce if you like."
+        "Because of the sugar, cook over indirect or medium heat so it doesn't burn; finish with guava BBQ sauce if you like.",
+        "Grill tip: with this rub, cook over indirect heat between 225 and 300°F; because of the brown sugar, high direct heat burns it bitter. For pork ribs, 4–6 hours at 225–275°F; for chicken, 325–350°F."
       ]
     }
   },

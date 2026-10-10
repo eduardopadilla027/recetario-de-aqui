@@ -188,13 +188,15 @@ recipes.push(
         "Sazone el churrasco con el adobo y la mitad del ajo. Deje reposar 30 minutos.",
         "Para el chimichurri, mezcle el perejil, el resto del ajo, el aceite, el vinagre, el orégano, el pimiento y la sal.",
         "Ase el churrasco en parrilla o plancha bien caliente, 3 o 4 minutos por lado para término medio.",
-        "Deje reposar 5 minutos, corte en tiras contra la fibra y sirva con el chimichurri."
+        "Deje reposar 5 minutos, corte en tiras contra la fibra y sirva con el chimichurri.",
+        "Tip de parrilla: el churrasco es fino, así que va a fuego muy alto (500°F o más) y rápido: 2–4 minutos por lado. Para término medio, sáquelo a 130–135°F (el USDA recomienda 145°F con 3 minutos de reposo). Deje reposar 5 minutos y córtelo siempre en contra de la fibra, en tiras finas."
       ],
       en: [
         "Season the steak with the adobo and half the garlic. Let rest 30 minutes.",
         "For the chimichurri, mix the parsley, remaining garlic, oil, vinegar, oregano, pepper flakes and salt.",
         "Grill or sear the steak over very high heat, 3 to 4 minutes per side for medium.",
-        "Rest 5 minutes, slice against the grain and serve with the chimichurri."
+        "Rest 5 minutes, slice against the grain and serve with the chimichurri.",
+        "Grill tip: skirt steak is thin, so it goes over very high heat (500°F or more) and fast: 2–4 minutes per side. For medium, pull it at 130–135°F (USDA recommends 145°F with a 3-minute rest). Rest 5 minutes and always slice it thin against the grain."
       ]
     }
   },

@@ -520,13 +520,15 @@ recipes.push(
         "Adobe el cerdo con el ajo, el adobo, el orégano, el jugo y el aceite. Refrigere por lo menos 2 horas.",
         "Ensarte 4 o 5 cubos en cada palito.",
         "Ase a la parrilla o en plancha a fuego medio-alto, volteando, por 12 a 15 minutos.",
-        "Pinte con salsa barbacoa en los últimos 3 minutos. Sirva con un pedazo de pan de agua en la punta, como en los kioscos."
+        "Pinte con salsa barbacoa en los últimos 3 minutos. Sirva con un pedazo de pan de agua en la punta, como en los kioscos.",
+        "Tip de parrilla: corte la carne en cubos iguales de 1 pulgada y deje un poquito de espacio entre trozos para que se cocinen parejo. Fuego medio-alto (400–450°F), 10–12 minutos girando cada 3, hasta 145°F. Si usa palitos de madera, remójelos 30 minutos para que no se quemen; la salsa BBQ va los últimos 2–3 minutos."
       ],
       en: [
         "Marinate the pork with the garlic, adobo, oregano, juice and oil. Refrigerate at least 2 hours.",
         "Thread 4 or 5 cubes onto each skewer.",
         "Grill or griddle over medium-high heat, turning, for 12 to 15 minutes.",
-        "Brush with barbecue sauce in the last 3 minutes. Serve with a piece of pan de agua on the tip, like at roadside kiosks."
+        "Brush with barbecue sauce in the last 3 minutes. Serve with a piece of pan de agua on the tip, like at roadside kiosks.",
+        "Grill tip: cut the meat into even 1-inch cubes and leave a little space between pieces so they cook evenly. Medium-high heat (400–450°F), 10–12 minutes turning every 3, to 145°F. If using wooden skewers, soak them 30 minutes so they don't burn; the BBQ sauce goes on in the last 2–3 minutes."
       ]
     }
   },

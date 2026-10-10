@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 2.3.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 693 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 2.4.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 693 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -273,6 +273,18 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v2.4.0 · Tips de parrilla (temperatura y tiempo)
+- *Pedido:* en las recetas de BBQ, los mejores tips de temperatura y tiempo.
+- Último paso "Tip de parrilla" / "Grill tip" en 26 recetas de parrilla, carbón y BBQ (las 11 de la tanda 19, pollo al
+  carbón, chuletas, churrasco, pulpo, langosta, costillas y pollo BBQ, alitas BBQ, los tres pinchos, piña asada, las dos
+  salsas BBQ y el adobo seco para BBQ). Incluyen la temperatura de la parrilla, el tiempo por grosor o por libra, la
+  temperatura interna (USDA: aves 165°F, carne molida 160°F, cerdo y pescado 145°F; temperaturas de "listo para
+  desmenuzar" 195–203°F en pernil y costillas), la prueba de la mano para medir el fuego, fuego directo e indirecto, el
+  estancamiento del pernil, el método 3-2-1 de costillas, el reposo y que el azúcar de las salsas se quema por encima de
+  unos 265°F.
+- Se generan con un script que añade el paso a los arreglos `es` y `en` y no repite si ya está.
+- *Verificado:* datos en Node ✔ (pasos ES/EN parejos); el tip se ve en ES y EN en la receta ✔.
 
 ### 2026-10-10 — v2.3.0 · Adobos criollos
 - *Pedido:* recetas de adobos criollos para carnes, pollo, mariscos y otras categorías que los ameriten.

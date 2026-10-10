@@ -77,13 +77,15 @@ recipes.push(
         "Mezcle la mantequilla, el azúcar morena, la canela y el ron.",
         "Barnice las ruedas de piña con la mezcla.",
         "Ase en una plancha o parrilla caliente 3-4 minutos por lado hasta caramelizar.",
-        "Sirva caliente con una bola de mantecado."
+        "Sirva caliente con una bola de mantecado.",
+        "Tip de parrilla: ruedas de ½ pulgada a fuego medio-alto (400–450°F), 2–3 minutos por lado sin moverlas, hasta que el azúcar caramelice y salgan las marcas. Mientras más madura la piña, más rápido se carameliza."
       ],
       en: [
         "Mix butter, brown sugar, cinnamon, and rum.",
         "Brush pineapple rings with the mixture.",
         "Grill on a hot griddle or grill 3-4 minutes per side until caramelized.",
-        "Serve warm with a scoop of ice cream."
+        "Serve warm with a scoop of ice cream.",
+        "Grill tip: ½-inch rings over medium-high heat (400–450°F), 2–3 minutes per side without moving them, until the sugar caramelizes and grill marks appear. The riper the pineapple, the faster it caramelizes."
       ]
     }
   },
@@ -559,14 +561,16 @@ recipes.push(
         "Envuelva en papel de aluminio y hornee a 300°F por 2½ horas.",
         "Para la salsa: derrita la pasta de guayaba con el agua y añada el resto de los ingredientes. Cocine 10 minutos.",
         "Destape las costillas, barnice con la salsa y hornee a 425°F 15 minutos (o áselas a la parrilla).",
-        "Corte y sirva con más salsa."
+        "Corte y sirva con más salsa.",
+        "Tip de parrilla: las costillas de cerdo quedan mejor lentas: fuego indirecto a 225–275°F por 4–6 horas (el método 3-2-1: 3 horas al humo, 2 envueltas en papel de aluminio con un poco de jugo y 1 destapadas con la salsa). Están listas a 195–203°F o cuando, al levantarlas por el centro con una pinza, se doblan y la superficie se agrieta."
       ],
       en: [
         "Season ribs with adobo, garlic powder, and cumin.",
         "Wrap in foil and bake at 300°F for 2½ hours.",
         "For the sauce: melt guava paste with water and add remaining ingredients. Cook 10 minutes.",
         "Unwrap ribs, brush with sauce, and bake at 425°F for 15 minutes (or grill).",
-        "Cut and serve with extra sauce."
+        "Cut and serve with extra sauce.",
+        "Grill tip: pork ribs are best low and slow: indirect heat at 225–275°F for 4–6 hours (the 3-2-1 method: 3 hours in smoke, 2 wrapped in foil with a little juice and 1 unwrapped with the sauce). They're done at 195–203°F or when, lifted in the middle with tongs, they bend and the surface cracks."
       ]
     }
   },
@@ -3689,13 +3693,15 @@ recipes.push(
         "Marine los camarones con ajo, aceite, limón y adobo 20 minutos.",
         "Ensarte alternando camarón, piña y pimiento.",
         "Ase a la parrilla o plancha 2-3 minutos por lado.",
-        "Sirva con mojo de ajo o salsa de mango."
+        "Sirva con mojo de ajo o salsa de mango.",
+        "Tip de parrilla: ensarte los camarones con dos palitos paralelos para que no giren. Fuego alto (450–500°F), 2–3 minutos por lado, hasta que estén rosados, opacos y en forma de \"C\"."
       ],
       en: [
         "Marinate the shrimp with garlic, oil, lime, and adobo 20 minutes.",
         "Thread alternating shrimp, pineapple, and pepper.",
         "Grill or griddle 2-3 minutes per side.",
-        "Serve with garlic mojo or mango sauce."
+        "Serve with garlic mojo or mango sauce.",
+        "Grill tip: thread the shrimp on two parallel skewers so they don't spin. High heat (450–500°F), 2–3 minutes per side, until pink, opaque and curled into a \"C\"."
       ]
     }
   },
@@ -5065,14 +5071,16 @@ recipes.push(
         "Con tijeras, corte las colas por la mitad a lo largo, a través del carapacho.",
         "Barnice la carne con la mantequilla de ajo.",
         "Ase con la carne hacia abajo 4-5 minutos. Voltee, barnice otra vez y ase 4-5 minutos más, hasta que la carne esté blanca y opaca.",
-        "Sirva con el resto de la mantequilla de ajo, tostones y ensalada."
+        "Sirva con el resto de la mantequilla de ajo, tostones y ensalada.",
+        "Tip de parrilla: colas partidas a fuego medio-alto (400–450°F): 5–6 minutos con la carne hacia abajo y 3–4 con el carapacho hacia abajo, bañando con la mantequilla. Lista a 140°F, cuando la carne está blanca y opaca. Pasada de 145°F se pone gomosa."
       ],
       en: [
         "Melt the butter with the garlic over low heat 3 minutes. Add the lime, paprika, parsley, and salt.",
         "With kitchen shears, split the tails lengthwise through the shell.",
         "Brush the meat with the garlic butter.",
         "Grill meat-side down 4-5 minutes. Turn, brush again, and grill 4-5 more minutes, until the meat is white and opaque.",
-        "Serve with the remaining garlic butter, tostones, and salad."
+        "Serve with the remaining garlic butter, tostones, and salad.",
+        "Grill tip: split tails over medium-high heat (400–450°F): 5–6 minutes flesh side down and 3–4 shell side down, basting with the butter. Done at 140°F, when the meat is white and opaque. Past 145°F it turns rubbery."
       ]
     }
   },
@@ -7421,13 +7429,15 @@ recipes.push(
         "Prepare el mojo: mezcle el ajo, la naranja agria, el aceite, el orégano, el comino y la sal. Separe ⅓ para servir.",
         "Marine las chuletas y la cebolla en el resto del mojo, en la nevera, de 2 horas a toda la noche.",
         "Ase las chuletas en la parrilla a fuego medio-alto 5-6 minutos por lado, hasta 145°F por dentro. Ase la cebolla a la vez.",
-        "Repose 3 minutos. Sirva con la cebolla asada y el mojo que separó (nunca con el que tuvo la carne cruda)."
+        "Repose 3 minutos. Sirva con la cebolla asada y el mojo que separó (nunca con el que tuvo la carne cruda).",
+        "Tip de parrilla: para chuletas de 1 pulgada, fuego directo medio-alto (400–450°F) 4–5 minutos por lado. Sáquelas a 140°F: suben a 145°F, la temperatura segura del cerdo, en 3–5 minutos de reposo, y quedan jugosas y levemente rosadas. Si son más gruesas, termínelas a fuego indirecto."
       ],
       en: [
         "Make the mojo: mix the garlic, sour orange, oil, oregano, cumin, and salt. Set aside ⅓ for serving.",
         "Marinate the chops and onion in the rest of the mojo, in the fridge, from 2 hours to overnight.",
         "Grill the chops over medium-high heat 5-6 minutes per side, to 145°F inside. Grill the onion at the same time.",
-        "Rest 3 minutes. Serve with the grilled onion and the reserved mojo (never the one that held the raw meat)."
+        "Rest 3 minutes. Serve with the grilled onion and the reserved mojo (never the one that held the raw meat).",
+        "Grill tip: for 1-inch chops, medium-high direct heat (400–450°F) 4–5 minutes per side. Pull them at 140°F: they climb to 145°F, the safe temperature for pork, in 3–5 minutes of rest, and stay juicy and faintly pink. If thicker, finish over indirect heat."
       ]
     }
   },
@@ -7515,7 +7525,8 @@ recipes.push(
         "Encienda el carbón y espere a que las brasas estén cubiertas de ceniza blanca. Ponga el pollo con el pellejo hacia arriba sobre el lado de calor indirecto.",
         "Tape la parrilla y ase 45-50 minutos, volteándolo a la mitad, hasta 165°F en el muslo.",
         "Termine 5 minutos sobre las brasas directas con el pellejo hacia abajo para que quede tostadito.",
-        "Sirva con el mojo que separó y la cebolla, con tostones o yuca. Es el pollo de los asaderos de carretera."
+        "Sirva con el mojo que separó y la cebolla, con tostones o yuca. Es el pollo de los asaderos de carretera.",
+        "Tip de parrilla: con dos zonas, el pollo entero o abierto se hace a fuego indirecto a 350–375°F en unos 45–60 minutos (unos 15 minutos por libra si está abierto). Busque 165°F en la pechuga y 175°F en el muslo, sin tocar el hueso; dórelo al final sobre las brasas y deje reposar 10 minutos."
       ],
       en: [
         "Make the mojo with the garlic, sour orange, oil, oregano, and cumin. Set aside ¼ cup for serving.",
@@ -7523,7 +7534,8 @@ recipes.push(
         "Light the charcoal and wait until the coals are covered in white ash. Place the chicken skin-side up over the indirect-heat side.",
         "Cover the grill and cook 45-50 minutes, turning halfway, to 165°F in the thigh.",
         "Finish 5 minutes over direct heat skin-side down so it gets crispy.",
-        "Serve with the reserved mojo and the onion, with tostones or yuca. It's the chicken of the roadside asaderos."
+        "Serve with the reserved mojo and the onion, with tostones or yuca. It's the chicken of the roadside asaderos.",
+        "Grill tip: with two zones, a whole or spatchcocked chicken cooks over indirect heat at 350–375°F in about 45–60 minutes (about 15 minutes per pound if spatchcocked). Look for 165°F in the breast and 175°F in the thigh, not touching bone; crisp it over the coals at the end and rest 10 minutes."
       ]
     }
   },
@@ -7563,14 +7575,16 @@ recipes.push(
         "Ensarte 5-6 pedazos en cada palito.",
         "Ase a la parrilla a fuego medio-alto 12-15 minutos, volteando, hasta que no quede rosado por dentro.",
         "Barnice con salsa BBQ los últimos 3 minutos.",
-        "Sirva con un pedazo de pan de agua en la punta del palito, como en los kioscos."
+        "Sirva con un pedazo de pan de agua en la punta del palito, como en los kioscos.",
+        "Tip de parrilla: use muslo deshuesado si puede (no se seca como la pechuga). Fuego medio-alto (400–450°F), 10–12 minutos girando, hasta 165°F en el trozo más grueso. Palitos de madera remojados 30 minutos; la salsa BBQ, sólo al final."
       ],
       en: [
         "Season the chicken with garlic, oregano, adobo, vinegar, and oil. Marinate 2 hours in the fridge.",
         "Thread 5-6 pieces on each skewer.",
         "Grill over medium-high heat 12-15 minutes, turning, until no pink remains inside.",
         "Brush with BBQ sauce the last 3 minutes.",
-        "Serve with a piece of water bread on the tip of the skewer, like at the kiosks."
+        "Serve with a piece of water bread on the tip of the skewer, like at the kiosks.",
+        "Grill tip: use boneless thigh if you can (it doesn't dry out like breast). Medium-high heat (400–450°F), 10–12 minutes turning, to 165°F in the thickest piece. Wooden skewers soaked 30 minutes; the BBQ sauce only at the end."
       ]
     }
   },

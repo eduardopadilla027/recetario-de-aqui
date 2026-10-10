@@ -5752,14 +5752,16 @@ const recipes = [
         "Mezcle todos los ingredientes de la salsa BBQ criolla.",
         "Precaliente el horno a 375°F. Coloque el pollo en una bandeja.",
         "Unte generosamente con la salsa BBQ.",
-        "Hornee 45 minutos, barnizando con más salsa cada 15 minutos, hasta que esté dorado."
+        "Hornee 45 minutos, barnizando con más salsa cada 15 minutos, hasta que esté dorado.",
+        "Tip de parrilla: cocine el pollo casi completo a fuego indirecto (350–375°F) y unte la salsa BBQ sólo los últimos 10–15 minutos: el azúcar se quema por encima de unos 265°F. Pechuga a 165°F y muslos a 175°F."
       ],
       en: [
         "Season chicken with adobo and marinate 1 hour.",
         "Mix all Creole BBQ sauce ingredients.",
         "Preheat oven to 375°F. Place chicken on a baking sheet.",
         "Brush generously with BBQ sauce.",
-        "Bake 45 minutes, basting with more sauce every 15 minutes, until golden."
+        "Bake 45 minutes, basting with more sauce every 15 minutes, until golden.",
+        "Grill tip: cook the chicken almost all the way over indirect heat (350–375°F) and brush on the BBQ sauce only in the last 10–15 minutes: sugar burns above about 265°F. Breast to 165°F and thighs to 175°F."
       ]
     }
   },
