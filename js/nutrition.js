@@ -196,6 +196,7 @@ const NUTRI_FOODS = [
   F("queso mozzarella|mozzarella", 280, 28, 3, 1, 0, 17, 10, 630, { cup: 113, sl: 28 }),
   F("queso suizo", 380, 27, 1.5, 0, 0, 28, 18, 190, { sl: 28 }),
   F("avellana|avellanas", 628, 15, 17, 4.3, 9.7, 61, 4.5, 0, { cup: 115 }),
+  F("cachaca|aguardiente", 231, 0, 0, 0, 0, 0, 0, 1, { cup: 237 }),
   F("berro", 11, 2.3, 1.3, 0.2, 0.5, 0.1, 0, 41, { cup: 34 }),
   F("brocoli", 34, 2.8, 6.6, 1.7, 2.6, 0.4, 0, 33, { u: 600, cup: 91 }),
   F("chayote", 19, 0.8, 4.5, 1.7, 1.7, 0.1, 0, 2, { u: 200 }),

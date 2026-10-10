@@ -53,6 +53,9 @@
  * grosella, carambola, mangó, parcha, piña), platos con berenjena y hojaldre.
  * Vigesimotercera tanda: cheesecakes tropicales (parcha, mangó, coco, piña colada,
  * coquito, guanábana y mini de guayaba).
+ * Vigesimocuarta tanda: más tragos tropicales (painkiller, jungle bird, caipiriña de
+ * parcha, paloma, mojito de coco, daiquirí de guayaba, ponche de acerola, tequila sunrise,
+ * dark & stormy, guanábana colada, michelada boricua).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -13375,6 +13378,419 @@ recipes.push(
         "Melt the guava with the water over low heat into a sauce.",
         "Divide the cheese batter among the liners, top with a teaspoon of guava and swirl with a toothpick.",
         "Bake 18–20 minutes, until set with the center barely wobbly. Cool and refrigerate 3 hours. They don't need a water bath because they're small."
+      ]
+    }
+  },
+
+  // ── Vigesimocuarta tanda (2026-10): más tragos tropicales ──
+  {
+    id: "painkiller",
+    category: "cocteles",
+    name: { es: "Painkiller (Ron, Piña, China y Coco)", en: "Painkiller" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "2 oz de ron oscuro",
+        "4 oz de jugo de piña",
+        "1 oz de jugo de china",
+        "1 oz de crema de coco",
+        "1 taza de hielo",
+        "1 pizca de nuez moscada recién rallada"
+      ],
+      en: [
+        "2 oz dark rum",
+        "4 oz pineapple juice",
+        "1 oz orange juice",
+        "1 oz cream of coconut",
+        "1 cup ice",
+        "1 pinch freshly grated nutmeg"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga el ron, los jugos y la crema de coco en una coctelera con hielo.",
+        "Agite fuerte 15 segundos, hasta que la coctelera esté helada por fuera.",
+        "Sirva en un vaso alto con hielo nuevo y ralle la nuez moscada por encima.",
+        "Decore con una cuña de piña. Es primo de la piña colada, pero sin licuar."
+      ],
+      en: [
+        "Put the rum, juices and cream of coconut in a shaker with ice.",
+        "Shake hard 15 seconds, until the shaker is frosty.",
+        "Serve in a tall glass over fresh ice and grate the nutmeg on top.",
+        "Garnish with a pineapple wedge. It's a cousin of the piña colada, but not blended."
+      ]
+    }
+  },
+  {
+    id: "jungle-bird",
+    category: "cocteles",
+    name: { es: "Jungle Bird (Ron Oscuro, Piña y Amargo)", en: "Jungle Bird" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "1½ oz de ron oscuro",
+        "¾ oz de licor amargo (tipo Campari)",
+        "1½ oz de jugo de piña",
+        "½ oz de jugo de limón",
+        "½ oz de almíbar simple",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1½ oz dark rum",
+        "¾ oz bitter liqueur (Campari-style)",
+        "1½ oz pineapple juice",
+        "½ oz lime juice",
+        "½ oz simple syrup",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Agite todos los ingredientes con hielo 15 segundos.",
+        "Cuele sobre un vaso bajo con hielo.",
+        "Decore con hojas y una cuña de piña. Agridulce y un poco amargo: para los que no quieren un trago empalagoso."
+      ],
+      en: [
+        "Shake all the ingredients with ice 15 seconds.",
+        "Strain over a rocks glass with ice.",
+        "Garnish with pineapple leaves and a wedge. Sweet-tart and slightly bitter: for those who don't want a cloying drink."
+      ]
+    }
+  },
+  {
+    id: "caipirinha-parcha",
+    category: "cocteles",
+    name: { es: "Caipiriña de Parcha", en: "Passion Fruit Caipirinha" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "½ limón en 4 pedazos",
+        "2 cucharaditas de azúcar",
+        "1 oz de pulpa de parcha, con semillas",
+        "2 oz de cachaça (aguardiente de caña)",
+        "1 taza de hielo picado"
+      ],
+      en: [
+        "½ lime in 4 pieces",
+        "2 teaspoons sugar",
+        "1 oz passion fruit pulp, with seeds",
+        "2 oz cachaça (sugarcane spirit)",
+        "1 cup crushed ice"
+      ]
+    },
+    steps: {
+      es: [
+        "En un vaso bajo, maje los pedazos de limón con el azúcar hasta sacarles todo el jugo.",
+        "Añada la parcha y el hielo picado.",
+        "Vierta la cachaça y mezcle bien. Se puede hacer con ron blanco si no consigue cachaça."
+      ],
+      en: [
+        "In a rocks glass, muddle the lime pieces with the sugar until all the juice is out.",
+        "Add the passion fruit and crushed ice.",
+        "Pour in the cachaça and stir well. You can use white rum if you can't find cachaça."
+      ]
+    }
+  },
+  {
+    id: "paloma-toronja",
+    category: "cocteles",
+    name: { es: "Paloma de Toronja", en: "Grapefruit Paloma" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "2 oz de tequila blanco",
+        "2 oz de jugo de toronja fresco",
+        "½ oz de jugo de limón",
+        "½ oz de almíbar simple",
+        "2 oz de agua de soda",
+        "1 taza de hielo",
+        "Sal para el borde"
+      ],
+      en: [
+        "2 oz blanco tequila",
+        "2 oz fresh grapefruit juice",
+        "½ oz lime juice",
+        "½ oz simple syrup",
+        "2 oz club soda",
+        "1 cup ice",
+        "Salt for the rim"
+      ]
+    },
+    steps: {
+      es: [
+        "Pase un limón por el borde de un vaso alto y páselo por sal.",
+        "Llene el vaso con hielo y añada el tequila, los jugos y el almíbar.",
+        "Complete con el agua de soda y mezcle suave. Decore con una rueda de toronja."
+      ],
+      en: [
+        "Run a lime around the rim of a tall glass and dip it in salt.",
+        "Fill the glass with ice and add the tequila, juices and syrup.",
+        "Top with the club soda and stir gently. Garnish with a grapefruit wheel."
+      ]
+    }
+  },
+  {
+    id: "mojito-coco",
+    category: "cocteles",
+    name: { es: "Mojito de Coco", en: "Coconut Mojito" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "8 hojas de yerbabuena",
+        "¾ oz de jugo de limón",
+        "1 oz de crema de coco",
+        "2 oz de ron blanco",
+        "2 oz de agua de coco",
+        "1 taza de hielo",
+        "1 cucharada de coco rallado para el borde"
+      ],
+      en: [
+        "8 mint leaves",
+        "¾ oz lime juice",
+        "1 oz cream of coconut",
+        "2 oz white rum",
+        "2 oz coconut water",
+        "1 cup ice",
+        "1 tablespoon shredded coconut for the rim"
+      ]
+    },
+    steps: {
+      es: [
+        "Moje el borde de un vaso con crema de coco y páselo por el coco rallado.",
+        "En el vaso, maje suave la yerbabuena con el limón y la crema de coco.",
+        "Añada el ron y el hielo, y complete con el agua de coco.",
+        "Mezcle de abajo hacia arriba y decore con yerbabuena."
+      ],
+      en: [
+        "Wet the rim of a glass with cream of coconut and dip it in the shredded coconut.",
+        "In the glass, gently muddle the mint with the lime juice and cream of coconut.",
+        "Add the rum and ice, and top with the coconut water.",
+        "Stir from the bottom up and garnish with mint."
+      ]
+    }
+  },
+  {
+    id: "daiquiri-guayaba",
+    category: "cocteles",
+    name: { es: "Daiquirí de Guayaba", en: "Guava Daiquiri" },
+    time: "5 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "4 oz de ron blanco",
+        "4 oz de néctar de guayaba",
+        "1 oz de jugo de limón",
+        "1 oz de almíbar simple",
+        "2 tazas de hielo"
+      ],
+      en: [
+        "4 oz white rum",
+        "4 oz guava nectar",
+        "1 oz lime juice",
+        "1 oz simple syrup",
+        "2 cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe todo con el hielo hasta que esté como un granizado.",
+        "Pruebe y ajuste: más almíbar si lo quiere más dulce, más limón si lo quiere más ácido.",
+        "Sirva en copas frías con una rueda de limón."
+      ],
+      en: [
+        "Blend everything with the ice until slushy.",
+        "Taste and adjust: more syrup for sweeter, more lime for tarter.",
+        "Serve in chilled glasses with a lime wheel."
+      ]
+    }
+  },
+  {
+    id: "ponche-acerola-ron",
+    category: "cocteles",
+    name: { es: "Ponche de Acerola con Ron (para 8)", en: "Acerola Rum Punch (Serves 8)" },
+    time: "15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de jugo de acerola, colado",
+        "2 tazas de jugo de piña",
+        "1 taza de jugo de china",
+        "½ taza de almíbar simple",
+        "1½ tazas de ron blanco",
+        "½ taza de ron oscuro",
+        "3 tazas de hielo",
+        "1 china y 1 limón en ruedas"
+      ],
+      en: [
+        "2 cups acerola juice, strained",
+        "2 cups pineapple juice",
+        "1 cup orange juice",
+        "½ cup simple syrup",
+        "1½ cups white rum",
+        "½ cup dark rum",
+        "3 cups ice",
+        "1 orange and 1 lime, sliced"
+      ]
+    },
+    steps: {
+      es: [
+        "En una ponchera, mezcle los jugos, el almíbar y el ron blanco.",
+        "Añada las ruedas de china y limón y refrigere 1 hora.",
+        "Al servir, añada el hielo y vierta el ron oscuro por encima para que flote.",
+        "Para una versión sin alcohol, cambie el ron por agua de soda."
+      ],
+      en: [
+        "In a punch bowl, mix the juices, syrup and white rum.",
+        "Add the orange and lime slices and refrigerate 1 hour.",
+        "When serving, add the ice and pour the dark rum on top so it floats.",
+        "For an alcohol-free version, swap the rum for club soda."
+      ]
+    }
+  },
+  {
+    id: "tequila-sunrise-tropical",
+    category: "cocteles",
+    name: { es: "Tequila Sunrise Tropical (con Parcha)", en: "Tropical Tequila Sunrise (with Passion Fruit)" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "2 oz de tequila blanco",
+        "3 oz de jugo de china",
+        "1 oz de jugo de parcha",
+        "½ oz de granadina",
+        "1 taza de hielo"
+      ],
+      en: [
+        "2 oz blanco tequila",
+        "3 oz orange juice",
+        "1 oz passion fruit juice",
+        "½ oz grenadine",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Llene un vaso alto con hielo y añada el tequila y los jugos de china y parcha. Mezcle.",
+        "Vierta la granadina despacio por el borde: se va al fondo y hace el degradado de amanecer.",
+        "No lo mezcle. Decore con una rueda de china y una cereza."
+      ],
+      en: [
+        "Fill a tall glass with ice and add the tequila and the orange and passion fruit juices. Stir.",
+        "Pour the grenadine slowly down the side: it sinks and makes the sunrise gradient.",
+        "Don't stir. Garnish with an orange wheel and a cherry."
+      ]
+    }
+  },
+  {
+    id: "dark-stormy-boricua",
+    category: "cocteles",
+    name: { es: "Dark & Stormy Boricua (Ron y Jengibre)", en: "Puerto Rican Dark & Stormy" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "4 oz de refresco de jengibre (ginger beer)",
+        "½ oz de jugo de limón",
+        "1 taza de hielo",
+        "2 oz de ron oscuro",
+        "1 rueda de limón"
+      ],
+      en: [
+        "4 oz ginger beer",
+        "½ oz lime juice",
+        "1 cup ice",
+        "2 oz dark rum",
+        "1 lime wheel"
+      ]
+    },
+    steps: {
+      es: [
+        "Llene un vaso alto con hielo, añada el ginger beer y el limón.",
+        "Vierta el ron oscuro despacio sobre el dorso de una cuchara para que flote encima (la \"tormenta\").",
+        "Decore con el limón y sirva sin mezclar."
+      ],
+      en: [
+        "Fill a tall glass with ice and add the ginger beer and lime juice.",
+        "Pour the dark rum slowly over the back of a spoon so it floats on top (the \"storm\").",
+        "Garnish with the lime and serve unstirred."
+      ]
+    }
+  },
+  {
+    id: "guanabana-colada",
+    category: "cocteles",
+    name: { es: "Guanábana Colada", en: "Soursop Colada" },
+    time: "5 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de pulpa de guanábana, sin semillas",
+        "3 oz de ron blanco",
+        "3 oz de crema de coco",
+        "2 oz de leche de coco",
+        "2 tazas de hielo"
+      ],
+      en: [
+        "1 cup soursop pulp, seeded",
+        "3 oz white rum",
+        "3 oz cream of coconut",
+        "2 oz coconut milk",
+        "2 cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe todo con el hielo hasta que esté cremoso.",
+        "Sirva en copas o vasos altos y decore con canela en polvo.",
+        "La guanábana le da un sabor ácido y perfumado a la colada de siempre."
+      ],
+      en: [
+        "Blend everything with the ice until creamy.",
+        "Serve in tall glasses and dust with cinnamon.",
+        "Soursop gives the classic colada a tangy, fragrant flavor."
+      ]
+    }
+  },
+  {
+    id: "michelada-boricua",
+    category: "cocteles",
+    name: { es: "Michelada Boricua (con Pique)", en: "Puerto Rican Michelada (with Pique)" },
+    time: "5 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "1 botella de 12 oz de cerveza rubia ligera, bien fría",
+        "1 oz de jugo de limón",
+        "1 cucharadita de pique de vinagre",
+        "½ cucharadita de salsa inglesa",
+        "1 pizca de sal y pimentón para el borde",
+        "½ taza de hielo"
+      ],
+      en: [
+        "1 bottle (12 oz) light beer, very cold",
+        "1 oz lime juice",
+        "1 teaspoon vinegar pique",
+        "½ teaspoon Worcestershire sauce",
+        "1 pinch salt and paprika for the rim",
+        "½ cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Pase limón por el borde de un vaso o jarra y páselo por la sal con pimentón.",
+        "Ponga el hielo, el limón, el pique y la salsa inglesa.",
+        "Complete con la cerveza, inclinando el vaso para que no haga tanta espuma. Mezcle suave."
+      ],
+      en: [
+        "Run lime around the rim of a glass or mug and dip it in the salt and paprika.",
+        "Add the ice, lime juice, pique and Worcestershire sauce.",
+        "Top with the beer, tilting the glass so it doesn't foam too much. Stir gently."
       ]
     }
   }

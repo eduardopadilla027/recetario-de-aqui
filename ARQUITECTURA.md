@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 2.7.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 738 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 2.8.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 749 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, y cheesecakes tropicales, en veintitrés tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, y más tragos tropicales, en veinticuatro tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -130,7 +130,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | salsas | Salsas y Aderezos | 37 |
 | bebidas | Bebidas | 20 |
 | jugos | Jugos Naturales | 18 |
-| cocteles | Cócteles y Tragos | 36 |
+| cocteles | Cócteles y Tragos | 47 |
 
 **Añadir una categoría:** clave en `categoryOrder`, nombre en `translations.es.categories` y `translations.en.categories`,
 `categoryIcons` y `categoryTones`. En `advisories.js`, revisar si es bebida (`isDrink`).
@@ -180,7 +180,9 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   frita, lasaña, dip, revoltillo y pastelón. **Hojaldre:** palmeras, milhojas, trenza, tarta salada, empanada gallega y
   pastelillos de hojaldre; cachitos 🥐. **Cheesecakes:** pedazo con base de galleta, relleno cremoso y la cubierta de
   cada sabor (parcha con semillas, mangó en cubitos, coco, piña colada, coquito con canela, guanábana con menta,
-  guayaba); los mini van en capacillos. La tarta de queso con guayaba usa el de guayaba.
+  guayaba); los mini van en capacillos. La tarta de queso con guayaba usa el de guayaba. **Tragos:** cada uno en su vaso
+  (copa hurricane, vaso alto, vaso bajo, coupé, ponchera, jarra) con el color del trago y su adorno (cuña de piña,
+  rueda de cítrico, yerbabuena, sorbeto, borde de sal o de coco, degradado del sunrise, capas del dark & stormy).
 - **Carnes y aves (`meatIcons`):** antes de `dishIcons`, las recetas de las categorías `carnes` y `aves` buscan su
   dibujo por tipo de plato con una lista de expresiones en orden (gana la primera): guiso en caldero (`ic-guiso-carne`,
   `ic-fricase-pollo`, ambos sobre `ic-caldero`), encebollado, empanado, desmenuzado (ropa vieja, salpicón), picadillo,
@@ -242,7 +244,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 738). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 749). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -287,6 +289,17 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v2.8.0 · Más tragos tropicales
+- *Pedido:* recetas de más tragos tropicales.
+- Vigesimocuarta tanda en `js/recipes-4.js` (versiones propias), 11 tragos que no estaban: painkiller, jungle bird,
+  caipiriña de parcha, paloma de toronja, mojito de coco, daiquirí de guayaba, ponche de acerola con ron (para 8, con
+  versión sin alcohol), tequila sunrise tropical, dark & stormy boricua, guanábana colada y michelada boricua con pique.
+- **Nutrición:** nuevo alimento cachaça. Se evitó "cerveza clara" (la regla de huevo lee "clara" como clara de huevo).
+- **Iconos:** 11 vasos dibujados (§7).
+- Total: **738 → 749 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar; los 11 con su alerta de alcohol); buscador: "tragos tropicales",
+  "painkiller", "tequila", "michelada" ✔; navegador: los 11 en ES y EN a 375 px sin errores ni desbordes ✔; dibujos ✔.
 
 ### 2026-10-10 — v2.7.0 · Cheesecakes tropicales
 - *Pedido:* recetas de cheesecake tropicales.
