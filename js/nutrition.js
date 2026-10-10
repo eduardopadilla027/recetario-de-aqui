@@ -206,6 +206,9 @@ const NUTRI_FOODS = [
   F("yogur|crema agria", 100, 5, 5, 4, 0, 7, 4.5, 50, { cup: 245 }),
   F("manzana", 52, 0.3, 14, 10, 2.4, 0.2, 0, 1, { u: 180, cup: 125 }),
   F("fresa", 32, 0.7, 7.7, 4.9, 2, 0.3, 0, 1, { cup: 150 }),
+  F("frambuesa", 52, 1.2, 12, 4.4, 6.5, 0.7, 0, 1, { cup: 123 }),
+  // Cidra: se usa la parte blanca de la cáscara (la pulpa se bota).
+  F("cidra", 30, 0.5, 9, 3, 3, 0.2, 0, 2, { u: 300 }),
   F("uva", 69, 0.7, 18, 15.5, 0.9, 0.2, 0.1, 2, { cup: 151 }),
   F("coco|coco rallado|coco seco", 354, 3.3, 15, 6, 9, 33.5, 30, 20, { u: 400, cup: 80 }),
   // Jugos y bebidas

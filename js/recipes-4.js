@@ -12,6 +12,8 @@
  * Guavate-Cayey, Hatillo, Lares, Mayagüez, Yauco).
  * Quinta tanda: mariscos y frituras de playa (pulpo a la parrilla, carrucho,
  * calamares, chicharrones de pescado, empanadillas de carrucho y camarones…).
+ * Sexta tanda: postres y dulces típicos (melcocha, dulces en almíbar de
+ * calabaza, cidra y china, flan de piña, torrejas, limber, piragua…).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -3001,6 +3003,383 @@ recipes.push(
         "Mix with the mayonnaise, lime, oil and parsley.",
         "Add pepper and refrigerate 30 minutes so the garlic blends in.",
         "Serve with fritters, tostones, calamari or seafood. Keeps 3 days in the fridge."
+      ]
+    }
+  },
+
+  // ── Sexta tanda (2026-10): postres y dulces típicos ──
+  {
+    id: "melcocha",
+    category: "postres",
+    name: { es: "Melcocha", en: "Melcocha (Pulled Molasses Taffy)" },
+    time: "45 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "2 tazas de melao de caña (melaza)",
+        "½ taza de azúcar",
+        "1 cucharada de vinagre",
+        "1 cucharada de mantequilla (más para las manos)",
+        "1 cucharadita de jengibre en polvo",
+        "¼ cucharadita de bicarbonato de sodio"
+      ],
+      en: [
+        "2 cups sugarcane molasses (melao)",
+        "½ cup sugar",
+        "1 tablespoon vinegar",
+        "1 tablespoon butter (plus more for your hands)",
+        "1 teaspoon ground ginger",
+        "¼ teaspoon baking soda"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla grande, hierva el melao con el azúcar y el vinagre a fuego medio, sin mover, hasta que llegue a 260°F (una gota en agua fría forma una bola dura), unos 20 minutos.",
+        "Retire del fuego y añada la mantequilla, el jengibre y el bicarbonato: hará espuma. Mezcle rápido.",
+        "Vierta sobre una superficie engrasada y deje enfriar hasta que se pueda tocar, unos 5 minutos.",
+        "Con las manos engrasadas, estire la melcocha y dóblela una y otra vez durante 10 minutos, hasta que se vuelva dorada clara y brillante. Cuidado: el centro puede seguir muy caliente.",
+        "Forme un cordón, córtelo con tijeras engrasadas en pedacitos y envuélvalos en papel encerado. Es el dulce de las fiestas patronales de antes."
+      ],
+      en: [
+        "In a large pot, boil the molasses with the sugar and vinegar over medium heat, without stirring, until it reaches 260°F (a drop in cold water forms a hard ball), about 20 minutes.",
+        "Remove from heat and add the butter, ginger and baking soda: it will foam. Stir quickly.",
+        "Pour onto a greased surface and let cool until you can touch it, about 5 minutes.",
+        "With greased hands, pull and fold the taffy over and over for 10 minutes, until it turns light golden and glossy. Careful: the center can still be very hot.",
+        "Shape into a rope, cut into small pieces with greased scissors and wrap them in wax paper. It's the sweet of old-time patron saint festivals."
+      ]
+    }
+  },
+  {
+    id: "dulce-calabaza",
+    category: "frutas",
+    name: { es: "Dulce de Calabaza en Almíbar", en: "Calabaza (Pumpkin) in Syrup" },
+    time: "1 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 libras de calabaza, pelada y en trozos de 2 pulgadas",
+        "2 tazas de azúcar",
+        "2 tazas de agua",
+        "3 rajas de canela",
+        "6 clavos de olor",
+        "1 cucharadita de vainilla",
+        "1 cáscara de limón"
+      ],
+      en: [
+        "2 pounds calabaza (West Indian pumpkin), peeled and in 2-inch pieces",
+        "2 cups sugar",
+        "2 cups water",
+        "3 cinnamon sticks",
+        "6 whole cloves",
+        "1 teaspoon vanilla",
+        "1 lime peel"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con el azúcar, la canela, los clavos y la cáscara de limón 10 minutos.",
+        "Añada la calabaza y cocine a fuego bajo, sin mover para que no se rompa, 30–40 minutos, hasta que esté brillante y el almíbar espese.",
+        "Retire del fuego, añada la vainilla y deje enfriar en el almíbar.",
+        "Sirva frío, solo o con una lasca de queso blanco del país."
+      ],
+      en: [
+        "Boil the water with the sugar, cinnamon, cloves and lime peel 10 minutes.",
+        "Add the calabaza and cook over low heat, without stirring so it doesn't break, 30–40 minutes, until glossy and the syrup thickens.",
+        "Remove from heat, add the vanilla and let cool in the syrup.",
+        "Serve cold, alone or with a slice of fresh white cheese (queso del país)."
+      ]
+    }
+  },
+  {
+    id: "dulce-cidra",
+    category: "frutas",
+    name: { es: "Dulce de Cidra", en: "Citron in Syrup (Dulce de Cidra)" },
+    time: "2 hr + 1 noche de remojo",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 cidras grandes",
+        "3 tazas de azúcar",
+        "3 tazas de agua",
+        "2 rajas de canela",
+        "4 clavos de olor"
+      ],
+      en: [
+        "2 large citrons (cidras)",
+        "3 cups sugar",
+        "3 cups water",
+        "2 cinnamon sticks",
+        "4 whole cloves"
+      ]
+    },
+    steps: {
+      es: [
+        "Ralle ligeramente la cáscara verde de las cidras, pártalas en cascos y quíteles la pulpa y las semillas: se usa la parte blanca y gruesa.",
+        "Remoje los cascos en agua fría toda la noche, cambiando el agua 2 o 3 veces, para quitarles lo amargo.",
+        "Hiérvalos en agua limpia 15 minutos y escurra. Repita si todavía amargan.",
+        "Haga un almíbar con el azúcar, el agua, la canela y los clavos. Añada los cascos y cocine a fuego bajo 1 hora, hasta que estén transparentes.",
+        "Deje enfriar en el almíbar y guarde en frascos en la nevera. Se sirve como los cascos de guayaba, con queso blanco."
+      ],
+      en: [
+        "Lightly grate the green skin of the citrons, cut them into wedges and remove the pulp and seeds: the thick white part is what's used.",
+        "Soak the wedges in cold water overnight, changing the water 2 or 3 times, to remove the bitterness.",
+        "Boil them in fresh water 15 minutes and drain. Repeat if still bitter.",
+        "Make a syrup with the sugar, water, cinnamon and cloves. Add the wedges and cook over low heat 1 hour, until translucent.",
+        "Let cool in the syrup and store in jars in the fridge. Serve like guava shells, with white cheese."
+      ]
+    }
+  },
+  {
+    id: "cascos-china",
+    category: "frutas",
+    name: { es: "Cascos de China en Almíbar", en: "Orange Shells in Syrup" },
+    time: "2 hr + 1 noche de remojo",
+    servings: 10,
+    ingredients: {
+      es: [
+        "6 chinas (naranjas) de cáscara gruesa",
+        "3 tazas de azúcar",
+        "3 tazas de agua",
+        "2 rajas de canela",
+        "4 clavos de olor"
+      ],
+      en: [
+        "6 thick-skinned oranges",
+        "3 cups sugar",
+        "3 cups water",
+        "2 cinnamon sticks",
+        "4 whole cloves"
+      ]
+    },
+    steps: {
+      es: [
+        "Ralle ligeramente la cáscara de las chinas, pártalas en cuatro y saque la pulpa (úsela para jugo).",
+        "Remoje los cascos en agua toda la noche, cambiando el agua varias veces.",
+        "Hiérvalos 15 minutos en agua limpia, escurra y repita una vez más para quitar lo amargo.",
+        "Cocine los cascos en el almíbar de azúcar, agua, canela y clavos a fuego bajo 1 hora, hasta que estén brillantes y tiernos.",
+        "Deje enfriar y sirva con queso blanco del país."
+      ],
+      en: [
+        "Lightly grate the orange peel, quarter the oranges and remove the pulp (use it for juice).",
+        "Soak the shells in water overnight, changing the water several times.",
+        "Boil them 15 minutes in fresh water, drain and repeat once more to remove the bitterness.",
+        "Cook the shells in the syrup of sugar, water, cinnamon and cloves over low heat 1 hour, until glossy and tender.",
+        "Let cool and serve with fresh white cheese (queso del país)."
+      ]
+    }
+  },
+  {
+    id: "flan-pina",
+    category: "postres",
+    name: { es: "Flan de Piña", en: "Pineapple Flan" },
+    time: "1 hr 30 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 lata de 20 onzas de piña triturada, con su jugo",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "5 huevos",
+        "1 cucharadita de vainilla",
+        "1 taza de azúcar (para el caramelo)"
+      ],
+      en: [
+        "1 can (20 oz) crushed pineapple, with its juice",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "5 eggs",
+        "1 teaspoon vanilla",
+        "1 cup sugar (for the caramel)"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita el azúcar en el molde a fuego medio hasta que tome color ámbar y cubra el fondo y los lados. Deje enfriar.",
+        "Cocine la piña con su jugo 10 minutos a fuego medio para concentrar el sabor (y para que la piña no corte la leche). Deje enfriar.",
+        "Licúe la piña con las leches, los huevos y la vainilla.",
+        "Vierta en el molde, cubra con papel de aluminio y hornee a baño de María a 350°F por 1 hora, hasta que un cuchillo salga limpio.",
+        "Refrigere toda la noche y desmolde volteando sobre un platón."
+      ],
+      en: [
+        "Melt the sugar in the mold over medium heat until amber and swirl to coat the bottom and sides. Let cool.",
+        "Cook the pineapple with its juice 10 minutes over medium heat to concentrate the flavor (and so the pineapple doesn't curdle the milk). Let cool.",
+        "Blend the pineapple with the milks, eggs and vanilla.",
+        "Pour into the mold, cover with foil and bake in a water bath at 350°F for 1 hour, until a knife comes out clean.",
+        "Refrigerate overnight and unmold by flipping onto a platter."
+      ]
+    }
+  },
+  {
+    id: "torrejas",
+    category: "postres",
+    name: { es: "Torrejas en Almíbar", en: "Torrejas (Fried Bread in Syrup)" },
+    time: "45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 pan de agua del día anterior, en rebanadas de 1 pulgada",
+        "2 tazas de leche",
+        "½ taza de azúcar",
+        "1 raja de canela",
+        "3 huevos, batidos",
+        "Aceite vegetal para freír",
+        "Almíbar: 1 taza de azúcar",
+        "1 taza de agua",
+        "1 cucharadita de anís en grano",
+        "1 cáscara de limón"
+      ],
+      en: [
+        "1 day-old pan de agua (water bread), in 1-inch slices",
+        "2 cups milk",
+        "½ cup sugar",
+        "1 cinnamon stick",
+        "3 eggs, beaten",
+        "Vegetable oil for frying",
+        "Syrup: 1 cup sugar",
+        "1 cup water",
+        "1 teaspoon anise seed",
+        "1 lime peel"
+      ]
+    },
+    steps: {
+      es: [
+        "Para el almíbar: hierva el azúcar, el agua, el anís y la cáscara de limón 10 minutos. Cuele y reserve.",
+        "Caliente la leche con la ½ taza de azúcar y la canela hasta que el azúcar se disuelva. Deje refrescar.",
+        "Remoje las rebanadas de pan en la leche, sin que se deshagan, y luego páselas por el huevo batido.",
+        "Fría en aceite a 350°F, 2 minutos por lado, hasta que doren. Escurra.",
+        "Bañe las torrejas con el almíbar y sirva tibias o frías. Es el dulce de la Cuaresma y de Semana Santa."
+      ],
+      en: [
+        "For the syrup: boil the sugar, water, anise and lime peel 10 minutes. Strain and set aside.",
+        "Warm the milk with the ½ cup of sugar and the cinnamon until the sugar dissolves. Let cool slightly.",
+        "Soak the bread slices in the milk without letting them fall apart, then dip them in the beaten egg.",
+        "Fry in oil at 350°F, 2 minutes per side, until golden. Drain.",
+        "Drench the torrejas with the syrup and serve warm or cold. It's the sweet of Lent and Holy Week."
+      ]
+    }
+  },
+  {
+    id: "limber-mango",
+    category: "postres",
+    name: { es: "Limber de Mangó", en: "Mango Limber (Frozen Cup)" },
+    time: "15 min + 6 hr de congelador",
+    servings: 10,
+    ingredients: {
+      es: [
+        "3 tazas de pulpa de mangó maduro",
+        "1 taza de leche evaporada",
+        "½ taza de azúcar",
+        "1½ tazas de agua",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "3 cups ripe mango pulp",
+        "1 cup evaporated milk",
+        "½ cup sugar",
+        "1½ cups water",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe el mangó con el agua, el azúcar y el limón hasta que esté muy fino.",
+        "Añada la leche evaporada y licúe unos segundos más.",
+        "Reparta en vasitos plásticos de 5 onzas.",
+        "Congele al menos 6 horas. Para comerlo, apriete el vaso para que el limber suba, como se hace en el barrio."
+      ],
+      en: [
+        "Blend the mango with the water, sugar and lime until very smooth.",
+        "Add the evaporated milk and blend a few more seconds.",
+        "Pour into 5-ounce plastic cups.",
+        "Freeze at least 6 hours. To eat it, squeeze the cup so the limber rises, the way it's done in the neighborhood."
+      ]
+    }
+  },
+  {
+    id: "piragua-frambuesa",
+    category: "postres",
+    name: { es: "Piragua de Frambuesa", en: "Raspberry Piragua (Shaved Ice)" },
+    time: "30 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de frambuesas o fresas",
+        "1½ tazas de azúcar",
+        "1 taza de agua",
+        "1 cucharada de jugo de limón",
+        "8 tazas de hielo raspado"
+      ],
+      en: [
+        "2 cups raspberries or strawberries",
+        "1½ cups sugar",
+        "1 cup water",
+        "1 tablespoon lime juice",
+        "8 cups shaved ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las frambuesas con el azúcar y el agua 10 minutos, aplastándolas con la cuchara.",
+        "Cuele por un colador fino, apretando bien, y añada el limón. Deje enfriar: es el sirope.",
+        "Raspe el hielo bien fino y apriételo en un vaso cónico de papel, formando un cono.",
+        "Bañe la piragua con el sirope frío poco a poco, dejando que baje por el hielo.",
+        "La de frambuesa, roja intensa, es el sabor más pedido en los carritos de piragua de la plaza."
+      ],
+      en: [
+        "Boil the raspberries with the sugar and water 10 minutes, mashing them with the spoon.",
+        "Strain through a fine sieve, pressing well, and add the lime. Let cool: this is the syrup.",
+        "Shave the ice very fine and pack it into a paper cone cup, forming a cone.",
+        "Pour the cold syrup over the piragua little by little, letting it run down through the ice.",
+        "Bright red raspberry is the most requested flavor at the piragua carts on the town square."
+      ]
+    }
+  },
+  {
+    id: "budin-pan-guayaba",
+    category: "postres",
+    name: { es: "Budín de Pan con Guayaba y Queso", en: "Bread Pudding with Guava and Cheese" },
+    time: "1 hr 30 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 libra de pan de agua del día anterior, en pedazos",
+        "1 lata de 12 onzas de leche evaporada",
+        "2 tazas de leche",
+        "1 taza de azúcar",
+        "4 huevos",
+        "4 cucharadas de mantequilla, derretida",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de canela en polvo",
+        "8 onzas de pasta de guayaba, en cubitos",
+        "8 onzas de queso crema, en cubitos"
+      ],
+      en: [
+        "1 pound day-old pan de agua (water bread), torn into pieces",
+        "1 can (12 oz) evaporated milk",
+        "2 cups milk",
+        "1 cup sugar",
+        "4 eggs",
+        "4 tablespoons butter, melted",
+        "1 teaspoon vanilla",
+        "1 teaspoon ground cinnamon",
+        "8 oz guava paste, cubed",
+        "8 oz cream cheese, cubed"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje el pan en las dos leches 20 minutos y desbarátelo con las manos.",
+        "Caliente el horno a 350°F y engrase un molde de 9 × 13 pulgadas.",
+        "Bata los huevos con el azúcar, la mantequilla, la vainilla y la canela e incorpórelos al pan.",
+        "Vierta la mitad en el molde, reparta la guayaba y el queso, y cubra con el resto.",
+        "Hornee 55–60 minutos, hasta que esté firme y dorado. Deje enfriar antes de cortar: es el budín de pan de siempre con el sabor de los pastelillos de guayaba y queso."
+      ],
+      en: [
+        "Soak the bread in both milks 20 minutes and break it up with your hands.",
+        "Heat the oven to 350°F and grease a 9 × 13-inch dish.",
+        "Beat the eggs with the sugar, butter, vanilla and cinnamon and stir into the bread.",
+        "Pour half into the dish, scatter the guava and cheese, and cover with the rest.",
+        "Bake 55–60 minutes, until set and golden. Let cool before cutting: it's the classic bread pudding with the flavor of guava-and-cheese pastelillos."
       ]
     }
   }

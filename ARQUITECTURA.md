@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.5.0 · **Recetas:** 506 en 24 categorías
+> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.6.0 · **Recetas:** 515 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -55,7 +55,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos y mariscos y frituras de playa, en cinco tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, y postres y dulces, en seis tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   └── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
@@ -103,7 +103,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | Clave | Nombre | Recetas |
 |---|---|---|
 | calientes | Bebidas Calientes | 18 |
-| frutas | Frutas | 10 |
+| frutas | Frutas | 13 |
 | cereales | Cereales | 8 |
 | granos | Granos y Legumbres | 10 |
 | ensaladas | Ensaladas | 11 |
@@ -119,7 +119,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | pasteles_dulces | Pasteles Dulces | 8 |
 | panes | Pan y Panecillos | 26 |
 | emparedados | Emparedados | 9 |
-| postres | Helados, Budines, Flan y Otros Postres | 53 |
+| postres | Helados, Budines, Flan y Otros Postres | 59 |
 | arroces | Arroces y Habichuelas | 24 |
 | vegetales | Vegetales y Viandas | 29 |
 | salsas | Salsas y Aderezos | 13 |
@@ -156,7 +156,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 506). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 515). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -201,6 +201,19 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-09 — v1.6.0 · Postres y dulces típicos
+- *Pedido:* buscar más recetas de postres y dulces típicos.
+- Sexta tanda en `js/recipes-4.js` (versiones propias):
+  - Postres: Melcocha, Flan de Piña, Torrejas en Almíbar, Limber de Mangó, Piragua de Frambuesa, Budín de Pan con
+    Guayaba y Queso.
+  - Dulces de frutas (categoría *Frutas*, junto a los cascos de guayaba y toronja): Dulce de Calabaza en Almíbar,
+    Dulce de Cidra, Cascos de China en Almíbar.
+- **Nutrición:** nuevos alimentos cidra (parte blanca de la cáscara) y frambuesa.
+- Iconos: melcocha 🍬, cidra 🍋, torrejas 🍞.
+- Total: **506 → 515 recetas**.
+- *Verificado:* datos en Node ✔ (0 ingredientes sin contar); navegador: las 9 recetas en ES y EN a 375 px, con sus tres
+  pestañas, sin errores ni desbordes.
 
 ### 2026-10-09 — v1.5.0 · Mariscos y frituras de playa
 - *Pedido:* buscar más recetas de mariscos y frituras de playa.
