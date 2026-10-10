@@ -18,6 +18,8 @@
  * de parcha, guarapo con ron, coquito de café, limonadas, agua de jamaica…).
  * Octava tanda: pechugas y alitas de pollo (a la plancha con mojo, rellenas de
  * mofongo, alitas fritas, en BBQ de guayaba, guisadas, agridulces…).
+ * Novena tanda: viandas, majados (plátano, yuca, batata, guineo, ñame) y
+ * recetas con aguacate.
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -4431,6 +4433,443 @@ recipes.push(
         "Add the gandules, water and salt. When it boils, add the rinsed rice and cook uncovered until the water is absorbed.",
         "Turn the rice, cover and cook over low heat 25 minutes, until the rice is tender and the wings are 165°F inside.",
         "It's the everyday budget arroz con pollo: the wings give the rice lots of flavor."
+      ]
+    }
+  },
+
+  // ── Novena tanda (2026-10): viandas, majados y aguacate ──
+  {
+    id: "majado-platano",
+    category: "vegetales",
+    name: { es: "Majado de Plátano Verde", en: "Mashed Green Plantains" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 plátanos verdes, pelados y en trozos",
+        "3 dientes de ajo, majados",
+        "3 cucharadas de aceite de oliva",
+        "½ taza del agua de hervir los plátanos",
+        "1 cebolla pequeña, en ruedas finas",
+        "Sal al gusto"
+      ],
+      en: [
+        "3 green plantains, peeled and cut into chunks",
+        "3 garlic cloves, mashed",
+        "3 tablespoons olive oil",
+        "½ cup of the plantain cooking water",
+        "1 small onion, thinly sliced",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los plátanos en agua con sal unos 25 minutos, hasta que estén blandos. Guarde ½ taza del agua.",
+        "Mientras, sofría la cebolla en el aceite a fuego bajo hasta que esté blanda y añada el ajo 1 minuto.",
+        "Maje los plátanos calientes con un majador o en el pilón, añadiendo el agua poco a poco hasta que estén suaves pero con algo de textura.",
+        "Mezcle con la cebolla y el ajo con su aceite y ajuste la sal.",
+        "Sirva caliente con bistec encebollado, huevo frito o bacalao guisado."
+      ],
+      en: [
+        "Boil the plantains in salted water about 25 minutes, until tender. Save ½ cup of the water.",
+        "Meanwhile, sauté the onion in the oil over low heat until soft and add the garlic for 1 minute.",
+        "Mash the hot plantains with a masher or in the pilón, adding the water little by little until soft but still a bit textured.",
+        "Mix in the onion and garlic with their oil and adjust the salt.",
+        "Serve hot with steak and onions, a fried egg or stewed salt cod."
+      ]
+    }
+  },
+  {
+    id: "majado-yuca",
+    category: "vegetales",
+    name: { es: "Majado de Yuca con Mojo", en: "Mashed Cassava with Mojo" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de yuca, pelada y en trozos",
+        "3 cucharadas de mantequilla",
+        "½ taza de leche caliente",
+        "4 dientes de ajo, majados",
+        "3 cucharadas de aceite de oliva",
+        "1 cucharada de jugo de limón",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 pounds yuca (cassava), peeled and cut into chunks",
+        "3 tablespoons butter",
+        "½ cup hot milk",
+        "4 garlic cloves, mashed",
+        "3 tablespoons olive oil",
+        "1 tablespoon lime juice",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la yuca en agua con sal 25–30 minutos, hasta que se abra y esté muy blanda. Escurra y quite la fibra del centro.",
+        "Maje la yuca caliente con la mantequilla y la leche hasta que esté suave.",
+        "Caliente el aceite con el ajo a fuego bajo 1 minuto, sin dorar, y añada el limón.",
+        "Sirva el majado con el mojo por encima, al lado de pernil, chuletas o pescado frito."
+      ],
+      en: [
+        "Boil the yuca in salted water 25–30 minutes, until it splits and is very soft. Drain and remove the center fiber.",
+        "Mash the hot yuca with the butter and milk until smooth.",
+        "Warm the oil with the garlic over low heat 1 minute, without browning, and add the lime.",
+        "Serve the mash topped with the mojo, alongside roast pork, pork chops or fried fish."
+      ]
+    }
+  },
+  {
+    id: "majado-batata",
+    category: "vegetales",
+    name: { es: "Majado de Batata", en: "Mashed Sweet Potato (Batata)" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de batata blanca o mameya, pelada y en trozos",
+        "3 cucharadas de mantequilla",
+        "¼ taza de leche caliente",
+        "¼ cucharadita de canela en polvo (opcional)",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 pounds white or orange sweet potato (batata), peeled and cut into chunks",
+        "3 tablespoons butter",
+        "¼ cup hot milk",
+        "¼ teaspoon ground cinnamon (optional)",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la batata en agua con sal 20 minutos, hasta que esté blanda. Escurra bien.",
+        "Maje con la mantequilla y la leche hasta que esté cremosa.",
+        "Añada una pizca de canela si la quiere más dulce, o déjela sólo con sal para acompañar carnes.",
+        "Sirva caliente con pollo asado o chuletas."
+      ],
+      en: [
+        "Boil the sweet potato in salted water 20 minutes, until tender. Drain well.",
+        "Mash with the butter and milk until creamy.",
+        "Add a pinch of cinnamon if you want it sweeter, or keep it just salted to go with meats.",
+        "Serve hot with roast chicken or pork chops."
+      ]
+    }
+  },
+  {
+    id: "majado-guineo",
+    category: "vegetales",
+    name: { es: "Majado de Guineítos Verdes", en: "Mashed Green Bananas" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "8 guineos verdes",
+        "3 cucharadas de mantequilla",
+        "½ taza de leche caliente",
+        "Sal al gusto"
+      ],
+      en: [
+        "8 green bananas",
+        "3 tablespoons butter",
+        "½ cup hot milk",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte las puntas de los guineos y haga un corte a lo largo de la cáscara. Hiérvalos con cáscara en agua con sal 15–20 minutos.",
+        "Escurra, pele (la cáscara sale fácil en caliente) y quite cualquier hebra.",
+        "Maje los guineos calientes con la mantequilla y la leche hasta que estén suaves.",
+        "Ajuste la sal y sirva con salchichas guisadas, bacalao o huevo frito. Unte aceite en las manos para pelarlos: la cáscara mancha."
+      ],
+      en: [
+        "Cut the ends off the bananas and slit the peel lengthwise. Boil them in their peel in salted water 15–20 minutes.",
+        "Drain, peel (the peel comes off easily while hot) and remove any strings.",
+        "Mash the hot bananas with the butter and milk until smooth.",
+        "Adjust the salt and serve with stewed sausages, salt cod or a fried egg. Oil your hands to peel them: the peel stains."
+      ]
+    }
+  },
+  {
+    id: "majado-name",
+    category: "vegetales",
+    name: { es: "Majado de Ñame", en: "Mashed Yam (Ñame)" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de ñame, pelado y en trozos",
+        "3 cucharadas de mantequilla",
+        "½ taza de leche caliente",
+        "1 cucharada de aceite de oliva",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 pounds yam (ñame), peeled and cut into chunks",
+        "3 tablespoons butter",
+        "½ cup hot milk",
+        "1 tablespoon olive oil",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele el ñame con guantes o con las manos aceitadas: la cáscara puede dar picazón. Córtelo en trozos y póngalo en agua para que no se oscurezca.",
+        "Hierva en agua con sal 25 minutos, hasta que esté blando.",
+        "Escurra y maje caliente con la mantequilla, la leche y el aceite de oliva.",
+        "Ajuste la sal. Es más firme y harinoso que la yautía: queda muy bien con carne guisada o bacalao."
+      ],
+      en: [
+        "Peel the yam with gloves or oiled hands: the skin can itch. Cut into chunks and keep them in water so they don't darken.",
+        "Boil in salted water 25 minutes, until tender.",
+        "Drain and mash while hot with the butter, milk and olive oil.",
+        "Adjust the salt. It's firmer and starchier than yautía: great with beef stew or salt cod."
+      ]
+    }
+  },
+  {
+    id: "guineitos-cebolla",
+    category: "vegetales",
+    name: { es: "Guineítos Verdes con Cebolla", en: "Boiled Green Bananas with Onions" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "8 guineos verdes",
+        "1 cebolla grande, en ruedas",
+        "¼ taza de aceite de oliva",
+        "2 cucharadas de vinagre",
+        "Sal al gusto"
+      ],
+      en: [
+        "8 green bananas",
+        "1 large onion, sliced",
+        "¼ cup olive oil",
+        "2 tablespoons vinegar",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los guineos con cáscara en agua con sal 15–20 minutos (con un corte a lo largo de la cáscara). Pele y corte en ruedas.",
+        "Sofría la cebolla en el aceite a fuego bajo hasta que esté blanda y transparente. Añada el vinagre y sal.",
+        "Bañe los guineítos con la cebolla y su aceite.",
+        "Sirva calientes con bacalao, salchichas guisadas o un huevo frito: el desayuno y almuerzo de campo."
+      ],
+      en: [
+        "Boil the bananas in their peel in salted water 15–20 minutes (with a slit along the peel). Peel and slice into rounds.",
+        "Sauté the onion in the oil over low heat until soft and translucent. Add the vinegar and salt.",
+        "Spoon the onion and its oil over the bananas.",
+        "Serve hot with salt cod, stewed sausages or a fried egg: the country breakfast and lunch."
+      ]
+    }
+  },
+  {
+    id: "batata-asada",
+    category: "vegetales",
+    name: { es: "Batata Asada", en: "Roasted Sweet Potato (Batata)" },
+    time: "1 hr",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 batatas medianas, con cáscara",
+        "2 cucharadas de mantequilla",
+        "Sal al gusto"
+      ],
+      en: [
+        "4 medium sweet potatoes (batatas), skin on",
+        "2 tablespoons butter",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave bien las batatas y pínchelas con un tenedor en varios sitios.",
+        "Áselas en el horno a 400°F sobre una bandeja forrada 45–55 minutos, hasta que estén blandas y suelten almíbar.",
+        "Ábralas a lo largo y ponga un poco de mantequilla y sal.",
+        "También se asan envueltas en papel de aluminio entre las brasas del fogón, como se hacía en el campo."
+      ],
+      en: [
+        "Scrub the sweet potatoes and prick them with a fork in several places.",
+        "Roast in a 400°F oven on a lined tray 45–55 minutes, until soft and oozing syrup.",
+        "Split them lengthwise and add a little butter and salt.",
+        "They can also be roasted wrapped in foil in the embers of a fire, the way it was done in the countryside."
+      ]
+    }
+  },
+  {
+    id: "viandas-mojo",
+    category: "vegetales",
+    name: { es: "Viandas al Mojo", en: "Root Vegetables with Garlic Mojo" },
+    time: "45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 libra de yuca, pelada y en trozos",
+        "1 libra de yautía, pelada y en trozos",
+        "1 libra de batata, pelada y en trozos",
+        "1 libra de ñame, pelado y en trozos",
+        "2 plátanos verdes, pelados y en trozos",
+        "Mojo: ½ taza de aceite de oliva",
+        "8 dientes de ajo, majados",
+        "1 cebolla, en ruedas",
+        "2 cucharadas de jugo de limón o de naranja agria",
+        "Sal al gusto"
+      ],
+      en: [
+        "1 pound yuca (cassava), peeled and cut into chunks",
+        "1 pound yautía (taro root), peeled and cut into chunks",
+        "1 pound sweet potato (batata), peeled and cut into chunks",
+        "1 pound yam (ñame), peeled and cut into chunks",
+        "2 green plantains, peeled and cut into chunks",
+        "Mojo: ½ cup olive oil",
+        "8 garlic cloves, mashed",
+        "1 onion, sliced",
+        "2 tablespoons lime or sour orange juice",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga la yuca, el ñame y los plátanos en una olla grande con agua y sal y hierva 10 minutos.",
+        "Añada la yautía y la batata (se cocinan más rápido) y siga hirviendo 15–20 minutos, hasta que todo esté blando.",
+        "Para el mojo: sofría la cebolla en el aceite a fuego bajo 5 minutos, añada el ajo 1 minuto sin dorar y retire. Agregue el limón y sal.",
+        "Escurra las viandas, colóquelas en una fuente y báñelas con el mojo caliente.",
+        "Sirva con bacalao guisado, pescado frito o carne frita. Así se aprovechan las viandas de la finca."
+      ],
+      en: [
+        "Put the yuca, yam and plantains in a large pot with salted water and boil 10 minutes.",
+        "Add the yautía and sweet potato (they cook faster) and keep boiling 15–20 minutes, until everything is tender.",
+        "For the mojo: sauté the onion in the oil over low heat 5 minutes, add the garlic 1 minute without browning and remove. Add the lime and salt.",
+        "Drain the root vegetables, arrange them on a platter and pour the hot mojo over them.",
+        "Serve with stewed salt cod, fried fish or fried pork. It's how the farm's root vegetables are put to use."
+      ]
+    }
+  },
+  {
+    id: "aguacates-rellenos",
+    category: "ensaladas",
+    name: { es: "Aguacates Rellenos de Camarones", en: "Shrimp-Stuffed Avocados" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 aguacates grandes, maduros",
+        "1 libra de camarones cocidos, pelados y picados",
+        "¼ taza de mayonesa",
+        "1 cucharada de salsa de tomate (ketchup)",
+        "2 cucharadas de cebolla roja, picadita",
+        "1 cucharada de cilantro, picado",
+        "2 cucharadas de jugo de limón",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 large ripe avocados",
+        "1 pound cooked shrimp, peeled and chopped",
+        "¼ cup mayonnaise",
+        "1 tablespoon ketchup",
+        "2 tablespoons red onion, finely chopped",
+        "1 tablespoon cilantro, chopped",
+        "2 tablespoons lime juice",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle los camarones con la mayonesa, el ketchup, la cebolla, el cilantro, 1 cucharada de limón, sal y pimienta.",
+        "Parta los aguacates a la mitad, quite la semilla y rocíe con el resto del limón para que no se oscurezcan.",
+        "Rellene cada mitad con la ensalada de camarones.",
+        "Sirva frío sobre hojas de lechuga, como entrada o almuerzo ligero."
+      ],
+      en: [
+        "Mix the shrimp with the mayonnaise, ketchup, onion, cilantro, 1 tablespoon of lime, salt and pepper.",
+        "Halve the avocados, remove the pits and sprinkle with the rest of the lime so they don't brown.",
+        "Fill each half with the shrimp salad.",
+        "Serve cold on lettuce leaves, as a starter or a light lunch."
+      ]
+    }
+  },
+  {
+    id: "guacamole-recao",
+    category: "salsas",
+    name: { es: "Guacamole con Recao", en: "Guacamole with Recao (Culantro)" },
+    time: "15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 aguacates maduros",
+        "1 tomate, sin semillas y en cubitos",
+        "¼ taza de cebolla roja, picadita",
+        "2 cucharadas de recao (culantro), picado",
+        "1 ají dulce, picadito",
+        "2 cucharadas de jugo de limón",
+        "Sal al gusto"
+      ],
+      en: [
+        "3 ripe avocados",
+        "1 tomato, seeded and diced",
+        "¼ cup red onion, finely chopped",
+        "2 tablespoons recao (culantro), chopped",
+        "1 ají dulce (sweet pepper), finely chopped",
+        "2 tablespoons lime juice",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Maje los aguacates con un tenedor, dejando algunos trocitos.",
+        "Añada el limón y la sal enseguida para que no se oscurezca.",
+        "Incorpore el tomate, la cebolla, el recao y el ají dulce.",
+        "Sirva con tostones, platanutres o arañitas. El recao y el ají dulce le dan el sabor boricua."
+      ],
+      en: [
+        "Mash the avocados with a fork, leaving some small chunks.",
+        "Add the lime and salt right away so it doesn't brown.",
+        "Fold in the tomato, onion, recao and ají dulce.",
+        "Serve with tostones, plantain chips or arañitas. Recao and ají dulce give it the Puerto Rican flavor."
+      ]
+    }
+  },
+  {
+    id: "salsa-aguacate-tostones",
+    category: "salsas",
+    name: { es: "Salsa de Aguacate para Tostones", en: "Avocado Sauce for Tostones" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 aguacate grande, maduro",
+        "¼ taza de aceite de oliva",
+        "¼ taza de agua",
+        "2 dientes de ajo",
+        "2 cucharadas de cilantro",
+        "2 cucharadas de jugo de limón",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1 large ripe avocado",
+        "¼ cup olive oil",
+        "¼ cup water",
+        "2 garlic cloves",
+        "2 tablespoons cilantro",
+        "2 tablespoons lime juice",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe todos los ingredientes hasta que la salsa esté lisa y cremosa.",
+        "Si está muy espesa, añada un poco más de agua.",
+        "Pruebe y ajuste el limón y la sal.",
+        "Sirva enseguida con tostones, yuca frita o carne frita. Se guarda 1 día en la nevera bien tapada."
+      ],
+      en: [
+        "Blend all the ingredients until the sauce is smooth and creamy.",
+        "If too thick, add a little more water.",
+        "Taste and adjust the lime and salt.",
+        "Serve right away with tostones, fried yuca or fried pork. Keeps 1 day in the fridge, tightly covered."
       ]
     }
   }

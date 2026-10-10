@@ -150,6 +150,8 @@ const NUTRI_FOODS = [
   F("platano|platano verde", 122, 1.3, 32, 2, 2.3, 0.4, 0.1, 4, { u: 180, cup: 200 }),
   F("platano maduro|platano bien maduro|amarillo", 122, 1.3, 32, 20, 2.3, 0.4, 0.1, 4, { u: 180, cup: 200 }),
   F("guineo|guineito", 89, 1.1, 23, 12, 2.6, 0.3, 0.1, 1, { u: 118 }),
+  // Guineo verde: casi todo almidón (al madurar ese almidón se vuelve azúcar).
+  F("guineo verde|guineito verde", 89, 1.1, 23, 1.5, 2.6, 0.3, 0.1, 1, { u: 118 }),
   F("yuca", 160, 1.4, 38, 1.7, 1.8, 0.3, 0.1, 14, { u: 400, cup: 206 }),
   F("yautia|malanga", 98, 1.5, 24, 0.5, 4, 0.4, 0.1, 21, { u: 300, cup: 135 }),
   F("name", 118, 1.5, 28, 0.5, 4.1, 0.2, 0, 9, { u: 400, cup: 150 }),

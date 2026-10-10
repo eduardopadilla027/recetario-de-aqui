@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.9.0 · **Recetas:** 540 en 24 categorías
+> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.10.0 · **Recetas:** 551 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -56,7 +56,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales y pechugas y alitas, en ocho tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, y viandas, majados y aguacate, en nueve tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -108,7 +108,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | frutas | Frutas | 13 |
 | cereales | Cereales | 8 |
 | granos | Granos y Legumbres | 10 |
-| ensaladas | Ensaladas | 11 |
+| ensaladas | Ensaladas | 12 |
 | sopas | Sopas | 29 |
 | carnes | Carnes | 47 |
 | aves | Aves | 35 |
@@ -123,8 +123,8 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | emparedados | Emparedados | 10 |
 | postres | Helados, Budines, Flan y Otros Postres | 59 |
 | arroces | Arroces y Habichuelas | 25 |
-| vegetales | Vegetales y Viandas | 29 |
-| salsas | Salsas y Aderezos | 13 |
+| vegetales | Vegetales y Viandas | 37 |
+| salsas | Salsas y Aderezos | 15 |
 | bebidas | Bebidas | 17 |
 | jugos | Jugos Naturales | 18 |
 | cocteles | Cócteles y Tragos | 35 |
@@ -186,7 +186,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 540). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 551). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -231,6 +231,21 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-09 — v1.10.0 · Viandas, majados y aguacate
+- *Pedido:* buscar recetas de viandas y diferentes majados, incluyendo recetas con aguacate.
+- Novena tanda en `js/recipes-4.js` (versiones propias):
+  - Vegetales y viandas: Majado de Plátano Verde, Majado de Yuca con Mojo, Majado de Batata, Majado de Guineítos Verdes,
+    Majado de Ñame, Guineítos Verdes con Cebolla, Batata Asada, Viandas al Mojo (yuca, yautía, batata, ñame y plátano).
+  - Con aguacate: Aguacates Rellenos de Camarones (*Ensaladas*), Guacamole con Recao y Salsa de Aguacate para Tostones
+    (*Salsas*).
+- **Nutrición:** nueva entrada `guineo verde` (casi todo almidón, 1.5 g de azúcar por 100 g). Antes los guineos verdes
+  se contaban como maduros (12 g): corrige también el azúcar de recetas anteriores con guineos verdes (escabeche,
+  pasteles, etc.).
+- Iconos: ñame 🍠, guacamole y salsa de aguacate 🥑.
+- Total: **540 → 551 recetas**.
+- *Verificado:* datos en Node ✔ (0 ingredientes sin contar); buscador: "majado", "viandas", "aguacate", "avocado" ✔;
+  navegador: las 11 recetas en ES y EN a 375 px, sin errores ni desbordes.
 
 ### 2026-10-09 — v1.9.0 · Pechugas y alitas de pollo
 - *Pedido:* buscar recetas puertorriqueñas con pechugas y alitas de pollo.
