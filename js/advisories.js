@@ -118,11 +118,53 @@ const TEA_INFO = {
     es: ["entrar en calor y la digestión.", "Lleva cafeína del té negro: con moderación en el embarazo, en niños y de noche. Use sólo anís estrellado chino de cocina."],
     en: ["warming up and digestion.", "It has caffeine from black tea: in moderation during pregnancy, for kids and at night. Use only Chinese culinary star anise."]
   },
+  "te-maguey": {
+    es: ["la tos, el catarro y el dolor de garganta (es un remedio más conocido en México que en Puerto Rico).", "La savia cruda irrita la piel, los ojos y la boca: use guantes y hiérvalo siempre. Hay poca información sobre su seguridad: no en el embarazo, la lactancia ni en niños, y no por más de unos días."],
+    en: ["cough, colds and sore throat (a remedy better known in Mexico than in Puerto Rico).", "The raw sap irritates skin, eyes and mouth: wear gloves and always boil it. There is little safety information: not during pregnancy, breastfeeding or for children, and not for more than a few days."]
+  },
+  "te-anamu": {
+    es: ["el catarro, la fiebre y los dolores; no hay pruebas de que cure el cáncer.", "Puede provocar contracciones y pérdida del embarazo: nunca en el embarazo, la lactancia ni si busca quedar embarazada. Puede bajar el azúcar y la presión, y tiene cumarina (adelgaza la sangre): cuidado con medicinas para la diabetes, la presión o anticoagulantes, y no lo tome en las 2 semanas antes de una operación. Tomado mucho tiempo o en cantidad se ha relacionado con mareos, temblores y confusión."],
+    en: ["colds, fever and aches; there's no evidence it cures cancer.", "It can trigger contractions and pregnancy loss: never during pregnancy, breastfeeding or when trying to conceive. It can lower blood sugar and blood pressure, and contains coumarin (a blood thinner): take care with diabetes, blood pressure or blood-thinning medicines, and don't take it in the 2 weeks before surgery. Long or heavy use has been linked to dizziness, tremors and confusion."]
+  },
+  "te-poleo": {
+    es: ["los gases, la digestión y el catarro, en adultos.", "El poleo tiene pulegona, que daña el hígado y los riñones. Ha causado la muerte de bebés a quienes se les dio té de poleo para los cólicos: NUNCA se lo dé a bebés ni a niños, NUNCA en el embarazo ni la lactancia, y nunca tome ni use aceite de poleo. Adultos: muy poca cantidad, una taza, uno o dos días; no si tiene problemas del hígado o los riñones. Si alguien tomó aceite de poleo o mucho té, llame a Control de Envenenamiento: 1-800-222-1222."],
+    en: ["gas, digestion and colds, in adults.", "Pennyroyal contains pulegone, which damages the liver and kidneys. It has killed babies given pennyroyal tea for colic: NEVER give it to babies or children, NEVER use it during pregnancy or breastfeeding, and never drink or use pennyroyal oil. Adults: a very small amount, one cup, for a day or two; not with liver or kidney problems. If someone swallowed pennyroyal oil or a lot of the tea, call Poison Control: 1-800-222-1222."]
+  },
+  "te-hojas-aguacate": {
+    es: ["la digestión, los gases y la tos.", "Use sólo hojas del aguacate de cocina (mexicano, con olor a anís); las de otras variedades pueden hacer daño. No en el embarazo. Las hojas de aguacate son tóxicas para perros, gatos, pájaros y caballos: no se las dé a sus animales."],
+    en: ["digestion, gas and cough.", "Use only leaves from culinary (Mexican, anise-scented) avocado; other varieties can be harmful. Not during pregnancy. Avocado leaves are toxic to dogs, cats, birds and horses: keep them away from pets."]
+  },
+  "te-hojas-mango": {
+    es: ["el azúcar alta (diabetes), la tos y el catarro.", "Puede sumar al efecto de las medicinas para la diabetes y bajar demasiado el azúcar: consulte a su médico y mídase el azúcar. Si la savia o la cáscara del mangó le dan alergia en la boca o la piel, evítelo. No en el embarazo."],
+    en: ["high blood sugar (diabetes), cough and colds.", "It may add to diabetes medicines and drop your blood sugar too low: ask your doctor and check your sugar. If mango sap or peel gives you a mouth or skin allergy, avoid it. Not during pregnancy."]
+  },
+  "te-llanten": {
+    es: ["la tos, la garganta irritada y la digestión.", "Asegúrese de identificar bien la planta y de que no esté fumigada ni crezca junto a la carretera. Puede dar alergia a quien es alérgico al polen del llantén."],
+    en: ["cough, sore throat and digestion.", "Make sure you identify the plant correctly and that it isn't sprayed or growing by a road. It may cause a reaction if you're allergic to plantain pollen."]
+  },
+  "te-flor-sauco": {
+    es: ["el catarro, la fiebre y para sudar.", "Use sólo las flores secas: las hojas, los tallos, la corteza, las semillas y las bayas crudas o verdes del saúco tienen sustancias tóxicas que dan vómitos y mareos. Es diurético: cuidado si toma diuréticos o litio. No en el embarazo."],
+    en: ["colds, fever and to break a sweat.", "Use only the dried flowers: elder leaves, stems, bark, seeds and raw or unripe berries contain toxic compounds that cause vomiting and dizziness. It's a diuretic: take care if you take diuretics or lithium. Not during pregnancy."]
+  },
+  "te-toronjil": {
+    es: ["los nervios, la ansiedad y para dormir mejor.", "Puede dar sueño: no lo combine con sedantes, pastillas para dormir ni alcohol. Si tiene problemas de la tiroides o toma medicina para la tiroides, consulte a su médico."],
+    en: ["nerves, anxiety and better sleep.", "It can make you drowsy: don't combine it with sedatives, sleeping pills or alcohol. If you have thyroid problems or take thyroid medicine, ask your doctor."]
+  },
+  "te-mejorana": {
+    es: ["la digestión, los gases y los cólicos de la menstruación.", "En el embarazo, no lo tome en cantidad: puede estimular la menstruación. Si toma anticoagulantes, consulte a su médico."],
+    en: ["digestion, gas and menstrual cramps.", "During pregnancy, don't drink large amounts: it can bring on menstruation. If you take blood thinners, ask your doctor."]
+  },
+  "te-cundeamor": {
+    es: ["el azúcar alta (diabetes) y la piel; las pruebas de que baje el azúcar son débiles.", "Puede bajar demasiado el azúcar, sobre todo con medicinas para la diabetes o en ayunas: no lo use en lugar de su tratamiento y consulte a su médico. No en el embarazo ni la lactancia (en animales causó malformaciones), ni a niños. Evítelo si tiene deficiencia de G6PD o úlceras. Las semillas rojas son tóxicas."],
+    en: ["high blood sugar (diabetes) and skin; evidence that it lowers blood sugar is weak.", "It can drop your blood sugar too low, especially with diabetes medicines or on an empty stomach: don't use it instead of your treatment, and ask your doctor. Not during pregnancy or breastfeeding (it caused birth defects in animals), or for children. Avoid it with G6PD deficiency or ulcers. The red seeds are toxic."]
+  },
   "guarapo-jengibre": {
     es: ["las náuseas, el catarro y la digestión.", "Puede dar acidez. Si toma anticoagulantes o tiene piedras en la vesícula, consulte a su médico."],
     en: ["nausea, colds and digestion.", "It can cause heartburn. If you take blood thinners or have gallstones, ask your doctor."]
   }
 };
+// Tés con riesgos serios: su precaución va en rojo (alta).
+const TEA_HIGH = new Set(["te-poleo", "te-anamu", "te-cundeamor", "te-hoja-guanabana"]);
 // Tragos estándar con un decimal y horas aproximadas que tarda el cuerpo en eliminarlos (≈ 1 trago por hora).
 const fmtDrinks = (d) => (Math.round(d * 10) / 10).toString();
 const drinkHours = (d) => Math.max(1, Math.ceil(d));
@@ -297,7 +339,7 @@ function getAdvisories(recipe) {
   if (has(/\bmiel\b/)) push("honey", "caution");
   if (has(/anis estrellado/)) push("starAnise", "caution");
   if (has(/\bcafe\b|\bte (negro|verde)\b/)) push("caffeine", "info");
-  if (TEA_INFO[recipe.id]) { push("teaUse", "info", [recipe.id]); push("teaCaution", "caution", [recipe.id]); }
+  if (TEA_INFO[recipe.id]) { push("teaUse", "info", [recipe.id]); push("teaCaution", TEA_HIGH.has(recipe.id) ? "high" : "caution", [recipe.id]); }
   if (cat === "calientes" && /^(te-|guarapo)/.test(recipe.id)) push("herbal", "info");
   if (has(/\b(mero|pargo|picua|barracuda|sierra)\b/)) push("ciguatera", "info");
   if (has(/\batun\b/)) push("mercury", "info");

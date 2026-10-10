@@ -396,6 +396,16 @@ const meatIcons = {
 const dessertIcons = [
   // Tés: cada uno con su hoja, flor o especia (antes todos 🍵).
   [/^te de hojas de naranjo/, "svg:ic-te-naranjo"],
+  [/^te de maguey/, "svg:ic-te-maguey"],
+  [/^te de anamu/, "svg:ic-te-anamu"],
+  [/^te de poleo/, "svg:ic-te-poleo"],
+  [/^te de hojas de aguacate/, "svg:ic-te-hojas-aguacate"],
+  [/^te de hojas de mango/, "svg:ic-te-hojas-mango"],
+  [/^te de llanten/, "svg:ic-te-llanten"],
+  [/^te de flor de sauco/, "svg:ic-te-flor-sauco"],
+  [/^te de toronjil/, "svg:ic-te-toronjil"],
+  [/^te de mejorana/, "svg:ic-te-mejorana"],
+  [/^te de cundeamor/, "svg:ic-te-cundeamor"],
   [/^te de yerbabuena/, "svg:ic-te-yerbabuena"],
   [/^te de manzanilla/, "svg:ic-te-manzanilla"],
   [/^te de canela/, "svg:ic-te-canela"],

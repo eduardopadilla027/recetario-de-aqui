@@ -128,7 +128,9 @@ const S_IDEAS = [
   { words: "mocktail mocktails", label: { es: "Tragos sin alcohol", en: "Alcohol-free drinks" },
     test: (r) => ["bebidas", "jugos", "cocteles"].includes(r.category) && !sIsAlcohol(r) },
   { words: "nino ninos kid kids infantil", label: { es: "Para niños (sin alcohol ni cafeína)", en: "Kid-friendly (no alcohol or caffeine)" },
-    test: (r) => !getAdvisories(r).alerts.some((a) => ["alcoholDrink", "alcoholCooked", "caffeine", "rawEgg", "rawFish"].includes(a.key)) }
+    // Tampoco los tés que no son para niños (poleo, anamú, anís estrellado, orégano brujo…).
+    test: (r) => !getAdvisories(r).alerts.some((a) => ["alcoholDrink", "alcoholCooked", "caffeine", "rawEgg", "rawFish", "starAnise"].includes(a.key)) &&
+      !(typeof TEA_INFO !== "undefined" && TEA_INFO[r.id] && (TEA_HIGH.has(r.id) || /niños/.test(TEA_INFO[r.id].es[1]))) }
 ].map((idea) => ({ ...idea, words: idea.words.split(" ").map(sStem) }));
 
 /* ---------------------------------------------------------------- índice ---- */

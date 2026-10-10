@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.10.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 887 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.11.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 897 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, y otros cortes de carnes y aves, en treinta y tres tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, y tés tradicionales, en treinta y cuatro tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -108,7 +108,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 
 | Clave | Nombre | Recetas |
 |---|---|---|
-| calientes | Bebidas Calientes | 29 |
+| calientes | Bebidas Calientes | 39 |
 | frutas | Frutas | 27 |
 | cereales | Cereales | 16 |
 | granos | Granos y Legumbres | 19 |
@@ -322,7 +322,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 887). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 897). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -340,9 +340,12 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   Ley 22 de Vehículos y Tránsito de Puerto Rico: 0.08% (21 años o más) y 0.02% (18 a 20 años, motoras, camiones, guaguas
   escolares, vehículos pesados y de transporte público; menores de 18, nada), cuántas horas tarda en eliminarse esa
   porción (≈ 1 trago por hora) y que no hay una cantidad segura para conducir. Los cócteles "sin alcohol" no la llevan.
-- **Tés** (`TEA_INFO`, por id, 23 tés): uso tradicional en Puerto Rico (aclarando que es remedio casero y no sustituye al
+- **Tés** (`TEA_INFO`, por id, 33 tés): uso tradicional en Puerto Rico (aclarando que es remedio casero y no sustituye al
   médico) y una precaución propia de cada planta (manzanilla y alergia a la familia de la margarita, canela y cumarina,
-  anís estrellado japonés, tilo y sedantes, hojas de guayaba con medicinas para la diabetes…).
+  anís estrellado japonés, tilo y sedantes, hojas de guayaba con medicinas para la diabetes…). Los de riesgo serio
+  (`TEA_HIGH`: poleo, anamú, cundeamor, hoja de guanábana) llevan la precaución en rojo, no salen en "para niños" (que
+  tampoco muestra los tés cuya precaución dice "niños" ni el anís estrellado) ni en la lista de la época de lluvia de
+  los planes. No se incluyen ruda, yerba bruja, epazote, higuereta ni sábila tomada, por ser tóxicas.
 - **Manejo seguro:** temperaturas internas según el USDA según el tipo de carne o marisco.
 - Es información general: la interfaz pide revisar etiquetas y consultar al médico.
 
@@ -376,6 +379,23 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v3.11.0 · Tés tradicionales: maguey, anamú, poleo y otros
+- *Pedido:* el té de maguey, anamú, poleo y otros que falten.
+- Trigésima cuarta tanda en `js/recipes-4.js` (versiones propias), 10 tés en **calientes**: maguey, anamú, poleo (sólo
+  adultos), hojas de aguacate, hojas de mangó, llantén, flor de saúco, toronjil, mejorana y cundeamor. Cantidades
+  pequeñas y por pocos días.
+- **Seguridad** (`TEA_INFO`, §9): uso tradicional y precaución de cada uno, revisados con fuentes (Drugs.com,
+  MedicineNet, MSKCC, Poison Control, Healthline, estudios en animales). El poleo explica la pulegona, las muertes de
+  bebés con té de poleo y el teléfono de Control de Envenenamiento (1-800-222-1222); el anamú, el riesgo de pérdida del
+  embarazo, el azúcar, la presión y la cumarina; el cundeamor, el azúcar baja, el embarazo y la G6PD; el saúco, que sólo
+  se usan las flores; el aguacate, que sus hojas son tóxicas para mascotas. Nuevo `TEA_HIGH` (precaución en rojo).
+- **Buscador:** "para niños" deja fuera los tés que no son para niños; "té para la diabetes", "té para la tos" y "té
+  para dormir" encuentran los nuevos. **Planes:** la época de lluvia no lista los tés de `TEA_HIGH`.
+- **Iconos:** 10 tazas nuevas con su planta (el poleo, con un triángulo de precaución) (§7).
+- Total: **887 → 897 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador ✔; navegador: los 10 en ES y EN a 375 px con uso tradicional
+  y precaución (en rojo los de riesgo serio), sin errores ni desbordes ✔.
 
 ### 2026-10-10 — v3.10.0 · Otros cortes de carnes y aves
 - *Pedido:* recetas de otros cortes de carnes y aves.

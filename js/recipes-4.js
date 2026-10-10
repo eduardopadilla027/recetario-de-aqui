@@ -82,6 +82,9 @@
  * Trigésima tercera tanda: otros cortes (falda rellena, picanha, ribeye, short ribs,
  * osobuco, pecho de res, solomillo, cerdo desmenuzado, panceta, cordero) y aves (pato,
  * codornices, gallinitas, pollo en mariposa, pechuga y muslos de pavo, higaditos).
+ * Trigésima cuarta tanda: tés tradicionales que faltaban (maguey, anamú, poleo sólo
+ * para adultos, hojas de aguacate y de mangó, llantén, flor de saúco, toronjil,
+ * mejorana y cundeamor), cada uno con su precaución.
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -19801,6 +19804,318 @@ recipes.push(
         "Sauté the onions in the oil 8 minutes until soft and golden. Add the garlic 1 minute and remove the mixture.",
         "Sear the livers over high heat 2 to 3 minutes per side, until cooked through (165 °F, no pink: undercooked chicken livers can carry Campylobacter).",
         "Return the onions, add the vinegar and parsley, and toss. Serve with white rice or on toast."
+      ]
+    }
+  },
+
+  // ── Trigésima cuarta tanda (2026-10): tés tradicionales que faltaban ──
+  {
+    id: "te-maguey",
+    category: "calientes",
+    name: { es: "Té de Maguey", en: "Maguey (Agave) Tea" },
+    time: "20 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 pedazo de penca de maguey de 2 pulgadas, sin espinas",
+        "2 tazas de agua",
+        "Miel al gusto"
+      ],
+      en: [
+        "1 piece (2 inches) of maguey (agave) leaf, spines removed",
+        "2 cups water",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Con guantes, corte las espinas y la orilla de la penca y lave el pedazo: la savia cruda irrita la piel y la boca.",
+        "Pártalo en tiritas y hiérvalo en el agua a fuego bajo 15 minutos.",
+        "Cuele bien y endulce. Use poca cantidad: un pedazo pequeño basta para dos tazas."
+      ],
+      en: [
+        "Wearing gloves, trim the spines and edges of the leaf and rinse the piece: the raw sap irritates skin and mouth.",
+        "Cut it into strips and simmer in the water 15 minutes.",
+        "Strain well and sweeten. Use a small amount: one small piece is enough for two cups."
+      ]
+    }
+  },
+  {
+    id: "te-anamu",
+    category: "calientes",
+    name: { es: "Té de Anamú", en: "Anamú (Guinea Hen Weed) Tea" },
+    time: "15 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "4 hojas de anamú, lavadas",
+        "2 tazas de agua",
+        "Miel al gusto"
+      ],
+      en: [
+        "4 anamú (guinea hen weed) leaves, washed",
+        "2 cups water",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua, añada las hojas y cocine a fuego bajo 5 minutos.",
+        "Apague, tape y deje reposar 5 minutos.",
+        "Cuele y endulce. Tiene olor fuerte a ajo: es normal en esta planta. Tómelo pocos días, no como costumbre."
+      ],
+      en: [
+        "Boil the water, add the leaves and simmer 5 minutes.",
+        "Turn off, cover and steep 5 minutes.",
+        "Strain and sweeten. It smells strongly of garlic: that's normal for this plant. Drink it for a few days only, not as a habit."
+      ]
+    }
+  },
+  {
+    id: "te-poleo",
+    category: "calientes",
+    name: { es: "Té de Poleo (Sólo Adultos)", en: "Pennyroyal Tea (Adults Only)" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "3 hojitas de poleo fresco (o ½ cucharadita seco)",
+        "2 tazas de agua",
+        "Miel al gusto"
+      ],
+      en: [
+        "3 small fresh pennyroyal leaves (or ½ teaspoon dried)",
+        "2 cups water",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua, apague y añada el poleo.",
+        "Tape y deje reposar sólo 3 minutos.",
+        "Cuele y endulce. Use muy poca cantidad y nunca aceite de poleo: lea la precaución en Alergias y seguridad antes de tomarlo."
+      ],
+      en: [
+        "Boil the water, turn off and add the pennyroyal.",
+        "Cover and steep only 3 minutes.",
+        "Strain and sweeten. Use a very small amount and never pennyroyal oil: read the caution under Allergies & safety before drinking it."
+      ]
+    }
+  },
+  {
+    id: "te-hojas-aguacate",
+    category: "calientes",
+    name: { es: "Té de Hojas de Aguacate", en: "Avocado Leaf Tea" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 hojas secas de aguacate",
+        "4 tazas de agua",
+        "1 raja de canela",
+        "Miel al gusto"
+      ],
+      en: [
+        "3 dried avocado leaves",
+        "4 cups water",
+        "1 cinnamon stick",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Tueste las hojas 30 segundos en un sartén seco para que suelten el aroma, parecido al anís.",
+        "Hierva el agua con la canela, añada las hojas y cocine 5 minutos a fuego bajo.",
+        "Cuele y endulce. Las hojas del aguacate de cocina mexicano huelen a anís; si las suyas no huelen a nada, no las use."
+      ],
+      en: [
+        "Toast the leaves 30 seconds in a dry skillet to bring out their anise-like aroma.",
+        "Boil the water with the cinnamon, add the leaves and simmer 5 minutes.",
+        "Strain and sweeten. Mexican culinary avocado leaves smell of anise; if yours have no scent, don't use them."
+      ]
+    }
+  },
+  {
+    id: "te-hojas-mango",
+    category: "calientes",
+    name: { es: "Té de Hojas de Mangó", en: "Mango Leaf Tea" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "6 hojas tiernas de mangó, lavadas",
+        "4 tazas de agua",
+        "Miel al gusto"
+      ],
+      en: [
+        "6 young mango leaves, washed",
+        "4 cups water",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Parta las hojas en pedazos (las tiernas, rojizas o verde claro, son las que se usan).",
+        "Hierva el agua, añada las hojas y cocine a fuego bajo 10 minutos.",
+        "Cuele y endulce si quiere. Tiene un sabor herbal y un poco amargo."
+      ],
+      en: [
+        "Tear the leaves into pieces (the young reddish or light green ones are used).",
+        "Boil the water, add the leaves and simmer 10 minutes.",
+        "Strain and sweeten if you like. It tastes herbal and slightly bitter."
+      ]
+    }
+  },
+  {
+    id: "te-llanten",
+    category: "calientes",
+    name: { es: "Té de Llantén", en: "Plantain Leaf (Llantén) Tea" },
+    time: "15 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "3 hojas de llantén, bien lavadas",
+        "2 tazas de agua",
+        "Miel al gusto"
+      ],
+      en: [
+        "3 llantén (broadleaf plantain herb) leaves, well washed",
+        "2 cups water",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Asegúrese de que es llantén: hojas anchas con venas paralelas que salen de la base y una espiga en el centro. No es el plátano que se come.",
+        "Hierva el agua, añada las hojas picadas y cocine 5 minutos.",
+        "Apague, deje reposar 5 minutos, cuele y endulce."
+      ],
+      en: [
+        "Make sure it's llantén: broad leaves with parallel veins from the base and a flower spike in the center. It's not the cooking plantain.",
+        "Boil the water, add the chopped leaves and simmer 5 minutes.",
+        "Turn off, steep 5 minutes, strain and sweeten."
+      ]
+    }
+  },
+  {
+    id: "te-flor-sauco",
+    category: "calientes",
+    name: { es: "Té de Flor de Saúco", en: "Elderflower Tea" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 cucharada de flores de saúco secas",
+        "2 tazas de agua",
+        "Miel y limón al gusto"
+      ],
+      en: [
+        "1 tablespoon dried elderflowers",
+        "2 cups water",
+        "Honey and lime to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua y apague.",
+        "Añada las flores, tape y deje reposar 8 minutos.",
+        "Cuele bien y endulce con miel y limón. Use sólo las flores: las hojas, los tallos y las bayas verdes del saúco son tóxicos."
+      ],
+      en: [
+        "Boil the water and turn off.",
+        "Add the flowers, cover and steep 8 minutes.",
+        "Strain well and sweeten with honey and lime. Use only the flowers: elder leaves, stems and unripe berries are toxic."
+      ]
+    }
+  },
+  {
+    id: "te-toronjil",
+    category: "calientes",
+    name: { es: "Té de Toronjil", en: "Lemon Balm (Toronjil) Tea" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "10 hojas de toronjil fresco",
+        "2 tazas de agua",
+        "Miel al gusto"
+      ],
+      en: [
+        "10 fresh lemon balm (toronjil) leaves",
+        "2 cups water",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Estruje un poco las hojas para que suelten el olor a limón.",
+        "Hierva el agua, apague, añada el toronjil, tape y deje reposar 7 minutos.",
+        "Cuele y endulce. Es de la familia de la menta: suave y fresco, para tomarlo de noche."
+      ],
+      en: [
+        "Crumple the leaves slightly to release their lemony scent.",
+        "Boil the water, turn off, add the lemon balm, cover and steep 7 minutes.",
+        "Strain and sweeten. It's in the mint family: mild and fresh, for bedtime."
+      ]
+    }
+  },
+  {
+    id: "te-mejorana",
+    category: "calientes",
+    name: { es: "Té de Mejorana", en: "Marjoram Tea" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 cucharadita de mejorana seca (o 2 ramitas frescas)",
+        "2 tazas de agua",
+        "Miel al gusto"
+      ],
+      en: [
+        "1 teaspoon dried marjoram (or 2 fresh sprigs)",
+        "2 cups water",
+        "Honey to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua y apague.",
+        "Añada la mejorana, tape y deje reposar 5 minutos.",
+        "Cuele y endulce. Sabe parecido al orégano, pero más dulce y suave."
+      ],
+      en: [
+        "Boil the water and turn off.",
+        "Add the marjoram, cover and steep 5 minutes.",
+        "Strain and sweeten. It tastes like oregano, but sweeter and milder."
+      ]
+    }
+  },
+  {
+    id: "te-cundeamor",
+    category: "calientes",
+    name: { es: "Té de Cundeamor", en: "Cundeamor (Bitter Melon Vine) Tea" },
+    time: "15 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 ramita de cundeamor con 5 o 6 hojas, lavada",
+        "2 tazas de agua"
+      ],
+      en: [
+        "1 sprig of cundeamor (bitter melon vine) with 5 or 6 leaves, washed",
+        "2 cups water"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua, añada la ramita y cocine 5 minutos a fuego bajo.",
+        "Apague, deje reposar 5 minutos y cuele.",
+        "Es muy amargo; no lo endulce si lo toma por el azúcar. Las semillas rojas y la fruta madura no se usan. Lea la precaución antes de tomarlo."
+      ],
+      en: [
+        "Boil the water, add the sprig and simmer 5 minutes.",
+        "Turn off, steep 5 minutes and strain.",
+        "It's very bitter; don't sweeten it if you take it for blood sugar. The red seeds and ripe fruit aren't used. Read the caution before drinking it."
       ]
     }
   }

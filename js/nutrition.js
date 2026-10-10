@@ -288,7 +288,7 @@ const NUTRI_FOODS = [
   F("granadina", 268, 0, 67, 60, 0, 0, 0, 30, { cup: 320 }),
   F("te negro|te verde|te suelto", 1, 0, 0.3, 0, 0, 0, 0, 3, { cup: 2, u: 2 }),
   // Hojas y semillas para té: se cuelan, casi no aportan.
-  F("hojas de parcha|hojas de limon|hojas de guanabana|moringa|semillas de hinojo|hinojo", 5, 0, 1, 0, 0, 0, 0, 1, { cup: 30, u: 0.5 }),
+  F("hojas de parcha|hojas de limon|hojas de guanabana|moringa|semillas de hinojo|hinojo|penca de maguey|maguey|anamu|poleo|hojas secas de aguacate|hojas de aguacate|hojas tiernas de mango|hojas de mango|llanten|flores de sauco|sauco|toronjil|mejorana|cundeamor", 5, 0, 1, 0, 0, 0, 0, 1, { cup: 30, u: 0.5 }),
   F("curcuma", 312, 9.7, 67, 3.2, 22, 3.3, 1.8, 27, { cup: 110, u: 0.2 }),
   F("cafe|cafe negro", 1, 0.1, 0, 0, 0, 0, 0, 2, { cup: 240 }),
   F("agua|hielo", 0, 0, 0, 0, 0, 0, 0, 0, { cup: 240 }),

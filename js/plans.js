@@ -194,7 +194,7 @@ const SEASONS = {
   cuaresma: (r, nm) => r.category === "pescados" || /bacalao|serenata|gazpacho|atun|sardina|camaron|pescado|chillo|mero|pulpo|carrucho|juey|habichuela|garbanzo|lenteja|tortilla espanola|majarete|arroz con dulce/.test(nm),
   verano: (r, nm) => ["ensaladas", "jugos"].includes(r.category) || /ceviche|parrilla|carbon|pincho|limber|piragua|helado|frio|fria|coco|mango|parcha|pina|playa|alcapurria|bacalaito|empanadilla|pastelillo|tostones|sandia|yogur|paleta|gazpacho/.test(nm),
   gracias: (r, nm) => /pavo|pavochon|calabaza|batata|mofongo relleno|relleno|arroz con gandules|pie de|flan de calabaza|cranberry|arandano/.test(nm),
-  lluvia: (r, nm) => r.category === "sopas" || r.category === "calientes" || /asopao|sancocho|caldo|sopon|guisad|fricase|chocolate caliente|avena|cafe con leche|majarete|mazamorra|crema de/.test(nm)
+  lluvia: (r, nm) => r.category === "sopas" || (r.category === "calientes" && !(typeof TEA_HIGH !== "undefined" && TEA_HIGH.has(r.id))) || /asopao|sancocho|caldo|sopon|guisad|fricase|chocolate caliente|avena|cafe con leche|majarete|mazamorra|crema de/.test(nm)
 };
 function autoSeason(d = new Date()) {
   const m = d.getMonth() + 1, day = d.getDate();
