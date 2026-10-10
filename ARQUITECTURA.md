@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.3.0 · **Recetas:** 489 en 24 categorías
+> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.4.0 · **Recetas:** 497 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -55,7 +55,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos que faltaban y tragos tropicales, en tres tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos que faltaban, tragos tropicales y platos de pueblos, en cuatro tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   └── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
@@ -90,6 +90,8 @@ cocine-a-gusto/
 - Unidades en español: taza, cucharada, cucharadita, libra, onza, lata, sobre, diente, ramita… (ver `NUTRI_UNITS`).
 - Fritura: `"Aceite vegetal para freír"` (la nutrición suma ~½ cucharada absorbida por porción).
 - Lo opcional lleva la palabra "opcional" (no se suma). Sal o aceite "para el agua" tampoco.
+- **Platos de un pueblo:** el pueblo va entre paréntesis en el nombre ("Pasteles de Pollo (Orocovis)") y el último paso explica
+  el vínculo con el lugar. Sólo se atribuye un plato a un pueblo cuando la tradición es conocida; no se inventan orígenes.
 - Pasos en **usted** ("Hierva…", "Añada…"), temperaturas en °F, nombres boricuas (china, guineo, habichuelas, gandules…).
 - `ingredients.es` es la fuente de la nutrición y de los alérgenos: el inglés es sólo traducción.
 
@@ -106,20 +108,20 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | granos | Granos y Legumbres | 10 |
 | ensaladas | Ensaladas | 11 |
 | sopas | Sopas | 29 |
-| carnes | Carnes | 46 |
+| carnes | Carnes | 47 |
 | aves | Aves | 27 |
 | pescados | Pescado y Mariscos | 37 |
-| huevos | Huevos y Queso | 10 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 27 |
+| huevos | Huevos y Queso | 11 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 29 |
 | pastas | Pastas | 17 |
-| bizcochos | Bizcochos | 9 |
+| bizcochos | Bizcochos | 10 |
 | galletitas | Galletitas | 18 |
 | pasteles_dulces | Pasteles Dulces | 8 |
 | panes | Pan y Panecillos | 26 |
 | emparedados | Emparedados | 9 |
-| postres | Helados, Budines, Flan y Otros Postres | 51 |
+| postres | Helados, Budines, Flan y Otros Postres | 53 |
 | arroces | Arroces y Habichuelas | 23 |
-| vegetales | Vegetales y Viandas | 28 |
+| vegetales | Vegetales y Viandas | 29 |
 | salsas | Salsas y Aderezos | 12 |
 | bebidas | Bebidas | 15 |
 | jugos | Jugos Naturales | 14 |
@@ -154,7 +156,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 489). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 497). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -199,6 +201,24 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-09 — v1.4.0 · Platos típicos de pueblos
+- *Pedido:* buscar más platos típicos de Loíza, Ponce, Mayagüez, Orocovis, Luquillo, Fajardo, Humacao, Naguabo, Arecibo,
+  Hatillo, Aguadilla u otros pueblos.
+- Cuarta tanda en `js/recipes-4.js` (versiones propias, con el pueblo en el nombre):
+  - Arepas Rellenas de Pulpo (Piñones, Loíza) y Empanadillas de Pulpo (Luquillo) — entremeses.
+  - Pasteles de Pollo (Orocovis, sede del Festival Nacional del Pastel) — vegetales y viandas.
+  - Lechón a la Vara (Guavate, Cayey — Ruta del Lechón) — carnes.
+  - Queso de Hoja (Hatillo, centro lechero) — huevos y queso.
+  - Helado de Arroz con Habichuelas (Lares) y Brazo Gitano de Guayaba y Queso (Mayagüez) — postres.
+  - Bizcocho de Café (Yauco, Pueblo del Café) — bizcochos.
+- Ya estaban en el recetario platos de otros pueblos pedidos: Domplines de Loíza, Marrayo (Loíza), Alcapurrias de Jueyes
+  (Luquillo/Piñones), Frituras de Cetí (Arecibo). No se añadió un plato "típico" de Ponce, Fajardo, Humacao, Naguabo ni
+  Aguadilla para no atribuir orígenes sin una tradición clara.
+- Sal del lechón: ½ taza para 45 libras. En el queso de hoja la sal va en el agua de estirar (no se suma).
+- Total: **489 → 497 recetas**.
+- *Verificado:* datos en Node ✔ (0 ingredientes sin contar); navegador: las 8 recetas en ES y EN a 375 px, con sus tres
+  pestañas, sin errores ni desbordes.
 
 ### 2026-10-09 — v1.3.0 · 12 tragos tropicales
 - *Pedido:* buscar más recetas de tragos tropicales.

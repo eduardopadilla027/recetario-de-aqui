@@ -8,6 +8,8 @@
  * mofongo de mariscos, pastas criollas, marrayo, coquimol, polvo de amor y
  * ponqué. Tercera tanda: tragos tropicales (mai tai, planter's punch,
  * daiquirí de mangó, mojito de parcha, coco loco, pitorro de parcha…).
+ * Cuarta tanda: platos típicos de pueblos (Piñones-Loíza, Luquillo, Orocovis,
+ * Guavate-Cayey, Hatillo, Lares, Mayagüez, Yauco).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -2200,6 +2202,392 @@ recipes.push(
         "Refrigerate at least 1 hour.",
         "Right before serving, add the ice, club soda and fruit wheels.",
         "Ladle into glasses with ice. It's the punch of backyard parties."
+      ]
+    }
+  },
+
+  // ── Cuarta tanda (2026-10): platos típicos de pueblos ──
+  {
+    id: "arepas-rellenas-pulpo",
+    category: "entremeses",
+    name: { es: "Arepas Rellenas de Pulpo (Piñones, Loíza)", en: "Octopus-Stuffed Coconut Arepas (Piñones, Loíza)" },
+    time: "1 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 tazas de harina de trigo",
+        "1 taza de leche de coco",
+        "2 cucharadas de azúcar",
+        "1 cucharadita de polvo de hornear",
+        "1 cucharadita de sal",
+        "2 cucharadas de mantequilla, derretida",
+        "Relleno: 1 libra de pulpo cocido, picado",
+        "¼ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "2 cucharadas de aceite de oliva",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "3 cups all-purpose flour",
+        "1 cup coconut milk",
+        "2 tablespoons sugar",
+        "1 teaspoon baking powder",
+        "1 teaspoon salt",
+        "2 tablespoons butter, melted",
+        "Filling: 1 pound cooked octopus, chopped",
+        "¼ cup sofrito",
+        "½ cup tomato sauce",
+        "2 tablespoons olive oil",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Para la masa: mezcle la harina, el azúcar, el polvo de hornear y la sal. Añada la leche de coco y la mantequilla y amase hasta tener una masa suave. Repose tapada 20 minutos.",
+        "Para el relleno: sofría el sofrito en el aceite de oliva, añada el pulpo y la salsa de tomate y cocine 8 minutos, hasta que la salsa espese.",
+        "Divida la masa en 8 bolas y aplánelas en discos de 5 pulgadas y ¼ de pulgada de grueso.",
+        "Fría en aceite a 350°F, 2–3 minutos por lado, hasta que inflen y doren. Escurra.",
+        "Abra cada arepa por un lado, como un bolsillo, y rellénela con el pulpo. Así las venden en los kioscos de Piñones, en Loíza, donde la arepa de coco es herencia de la cocina afrocaribeña del pueblo."
+      ],
+      en: [
+        "For the dough: mix the flour, sugar, baking powder and salt. Add the coconut milk and butter and knead into a soft dough. Rest covered 20 minutes.",
+        "For the filling: sauté the sofrito in the olive oil, add the octopus and tomato sauce and cook 8 minutes, until the sauce thickens.",
+        "Divide the dough into 8 balls and flatten into 5-inch disks, ¼ inch thick.",
+        "Fry in oil at 350°F, 2–3 minutes per side, until puffed and golden. Drain.",
+        "Slit each arepa open on one side like a pocket and stuff it with the octopus. That's how they're sold at the kiosks of Piñones, in Loíza, where the coconut arepa is part of the town's Afro-Caribbean culinary heritage."
+      ]
+    }
+  },
+  {
+    id: "empanadillas-pulpo",
+    category: "entremeses",
+    name: { es: "Empanadillas de Pulpo (Luquillo)", en: "Octopus Turnovers (Luquillo)" },
+    time: "45 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "10 discos para empanadillas",
+        "1 libra de pulpo cocido, picado",
+        "¼ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "½ cucharadita de pimentón",
+        "2 cucharadas de aceite de oliva",
+        "1 huevo, batido (para sellar)",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "10 turnover wrappers (discos)",
+        "1 pound cooked octopus, chopped",
+        "¼ cup sofrito",
+        "½ cup tomato sauce",
+        "½ teaspoon paprika",
+        "2 tablespoons olive oil",
+        "1 egg, beaten (for sealing)",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite de oliva 2 minutos.",
+        "Añada el pulpo, la salsa de tomate y el pimentón y cocine 8 minutos, hasta que la salsa se seque. Deje enfriar.",
+        "Ponga 2 cucharadas de relleno en cada disco, pinte el borde con huevo, doble y selle con un tenedor.",
+        "Fría en aceite a 350°F, 2 minutos por lado, hasta que estén doradas.",
+        "Sirva calientes, como en los kioscos de Luquillo, frente a la playa, con un jugo de coco o una cerveza fría."
+      ],
+      en: [
+        "Sauté the sofrito in the olive oil 2 minutes.",
+        "Add the octopus, tomato sauce and paprika and cook 8 minutes, until the sauce dries. Let cool.",
+        "Place 2 tablespoons of filling on each wrapper, brush the edge with egg, fold and seal with a fork.",
+        "Fry in oil at 350°F, 2 minutes per side, until golden.",
+        "Serve hot, as at the Luquillo kiosks facing the beach, with coconut water or an ice-cold beer."
+      ]
+    }
+  },
+  {
+    id: "pasteles-pollo",
+    category: "vegetales",
+    name: { es: "Pasteles de Pollo (Orocovis)", en: "Chicken Pasteles (Orocovis)" },
+    time: "3 hr",
+    servings: 20,
+    ingredients: {
+      es: [
+        "Masa: 10 guineos verdes",
+        "2 libras de yautía blanca",
+        "1 libra de calabaza",
+        "½ taza de leche",
+        "½ taza de aceite de achiote (más para untar las hojas)",
+        "2 cucharaditas de sal",
+        "Relleno: 3 libras de muslos de pollo, sin hueso y en cubitos",
+        "½ taza de sofrito",
+        "2 sobres de sazón con achiote",
+        "½ taza de salsa de tomate",
+        "½ taza de aceitunas rellenas, picadas",
+        "1 lata de 15 onzas de garbanzos, escurridos",
+        "Para envolver: 20 hojas de plátano, limpias y pasadas por el fuego",
+        "Papel de pastel",
+        "Hilo de cocina"
+      ],
+      en: [
+        "Dough: 10 green bananas",
+        "2 pounds white yautía (taro root)",
+        "1 pound calabaza (West Indian pumpkin)",
+        "½ cup milk",
+        "½ cup annatto oil (plus more for the leaves)",
+        "2 teaspoons salt",
+        "Filling: 3 pounds boneless chicken thighs, diced",
+        "½ cup sofrito",
+        "2 packets sazón with annatto",
+        "½ cup tomato sauce",
+        "½ cup stuffed olives, chopped",
+        "1 can (15 oz) chickpeas, drained",
+        "For wrapping: 20 plantain leaves, cleaned and passed over the flame",
+        "Pastel paper",
+        "Kitchen twine"
+      ]
+    },
+    steps: {
+      es: [
+        "Para el relleno: sofría el pollo con el sofrito, el sazón, la salsa de tomate, las aceitunas y los garbanzos por 20 minutos. Deje enfriar.",
+        "Para la masa: pele y ralle bien fino los guineos, la yautía y la calabaza. Mézclelos con la leche, el aceite de achiote y la sal hasta tener una masa suave.",
+        "Sobre papel de pastel, ponga una hoja de plátano untada de achiote, extienda 3 cucharadas de masa, añada 2 cucharadas de relleno en el centro y doble la hoja y el papel para cerrar.",
+        "Amarre los pasteles de dos en dos con el hilo. Se pueden congelar crudos hasta 3 meses.",
+        "Hierva en abundante agua con sal por 1 hora (1 hora y 15 minutos si están congelados). Orocovis, en el centro de la isla, celebra cada año el Festival Nacional del Pastel."
+      ],
+      en: [
+        "For the filling: sauté the chicken with the sofrito, sazón, tomato sauce, olives and chickpeas for 20 minutes. Let cool.",
+        "For the dough: peel and finely grate the green bananas, yautía and calabaza. Mix with the milk, annatto oil and salt into a soft dough.",
+        "On pastel paper, lay a plantain leaf brushed with annatto oil, spread 3 tablespoons of dough, add 2 tablespoons of filling in the center and fold the leaf and paper to close.",
+        "Tie the pasteles in pairs with the twine. They can be frozen raw for up to 3 months.",
+        "Boil in plenty of salted water for 1 hour (1 hour 15 minutes if frozen). Orocovis, in the center of the island, holds the National Pastel Festival every year."
+      ]
+    }
+  },
+  {
+    id: "lechon-a-la-vara",
+    category: "carnes",
+    name: { es: "Lechón a la Vara (Guavate, Cayey)", en: "Spit-Roasted Whole Pig (Guavate, Cayey)" },
+    time: "8 hr + 1 noche de adobo",
+    servings: 50,
+    ingredients: {
+      es: [
+        "1 lechón entero de 45 libras, limpio",
+        "2 tazas de ajo majado",
+        "½ taza de orégano",
+        "½ taza de sal",
+        "2 cucharadas de pimienta",
+        "1 taza de jugo de naranja agria",
+        "1 taza de aceite de achiote",
+        "Una vara de metal o de madera dura, alambre y carbón para asar"
+      ],
+      en: [
+        "1 whole pig (45 pounds), cleaned",
+        "2 cups mashed garlic",
+        "½ cup oregano",
+        "½ cup salt",
+        "2 tablespoons pepper",
+        "1 cup sour orange juice",
+        "1 cup annatto oil",
+        "A metal or hardwood spit, wire and charcoal for roasting"
+      ]
+    },
+    steps: {
+      es: [
+        "La noche antes: mezcle el ajo, el orégano, la sal, la pimienta y la naranja agria. Haga cortes profundos en la carne (no en el cuero) y frote el adobo por dentro y por fuera. Refrigere o mantenga en hielo.",
+        "Atraviese el lechón con la vara de la cola a la cabeza y amárrelo bien con alambre para que gire con la vara.",
+        "Prepare un fuego de carbón parejo y coloque el lechón a 2 pies por encima. Gire despacio y sin parar (a mano o con motor) durante 6–8 horas, añadiendo carbón para mantener el calor.",
+        "En la última hora, unte el cuero con aceite de achiote y acerque un poco el fuego para que el cuero se infle y quede crujiente.",
+        "Está listo cuando la parte más gruesa del pernil y la paleta llegue a 190°F y la carne se separe sola. Así se asa en las lechoneras de Guavate, en Cayey, la famosa Ruta del Lechón."
+      ],
+      en: [
+        "The night before: mix the garlic, oregano, salt, pepper and sour orange juice. Make deep cuts in the meat (not the skin) and rub the adobo inside and out. Refrigerate or keep on ice.",
+        "Run the spit through the pig from tail to head and tie it firmly with wire so it turns with the spit.",
+        "Build an even charcoal fire and set the pig 2 feet above it. Turn slowly and constantly (by hand or with a motor) for 6–8 hours, adding charcoal to keep the heat.",
+        "In the last hour, brush the skin with annatto oil and bring the fire a little closer so the skin puffs and turns crisp.",
+        "It's done when the thickest part of the leg and shoulder reaches 190°F and the meat pulls apart on its own. That's how it's roasted at the lechoneras of Guavate, in Cayey, the famous Pork Route (Ruta del Lechón)."
+      ]
+    }
+  },
+  {
+    id: "queso-de-hoja",
+    category: "huevos",
+    name: { es: "Queso de Hoja (Hatillo)", en: "Queso de Hoja (Layered Stretched Cheese, Hatillo)" },
+    time: "2 hr 30 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 galón de leche entera (no ultrapasteurizada)",
+        "Renina líquida (cuajo para queso), la cantidad que indique el envase para 1 galón",
+        "1 cucharada de sal (para el agua de estirar)",
+        "8 tazas de agua"
+      ],
+      en: [
+        "1 gallon whole milk (not ultra-pasteurized)",
+        "Liquid rennet, the amount the package indicates for 1 gallon",
+        "1 tablespoon salt (for the stretching water)",
+        "8 cups water"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente la leche a 90°F, retire del fuego, añada la renina disuelta en un poco de agua fría y mezcle 30 segundos. Tape y deje reposar 45 minutos, hasta que cuaje firme.",
+        "Corte la cuajada en cuadros de 1 pulgada y caliéntela despacio hasta 105°F, moviendo con suavidad. Escurra en un colador con tela y guarde la cuajada.",
+        "Caliente el agua con la sal a 175°F. Sumerja la cuajada por partes con una cuchara de madera hasta que se ablande y se pueda estirar.",
+        "Estire la masa con las manos (use guantes: está muy caliente) y dóblela sobre sí misma varias veces, como un libro, para formar las capas u \"hojas\".",
+        "Enfríe el queso en agua con hielo y refrigere. Se come fresco, en lascas, con pan o con guayaba. Hatillo es el centro de la industria lechera de la isla."
+      ],
+      en: [
+        "Heat the milk to 90°F, remove from heat, add the rennet dissolved in a little cold water and stir 30 seconds. Cover and let rest 45 minutes, until firmly set.",
+        "Cut the curd into 1-inch squares and heat it slowly to 105°F, stirring gently. Drain in a cloth-lined colander and keep the curd.",
+        "Heat the water with the salt to 175°F. Dip the curd in batches with a wooden spoon until it softens and can be stretched.",
+        "Stretch the curd by hand (wear gloves: it's very hot) and fold it over itself several times, like a book, to form the layers or \"leaves\" (hojas).",
+        "Cool the cheese in ice water and refrigerate. It's eaten fresh, sliced, with bread or with guava paste. Hatillo is the center of the island's dairy industry."
+      ]
+    }
+  },
+  {
+    id: "helado-arroz-habichuelas",
+    category: "postres",
+    name: { es: "Helado de Arroz con Habichuelas (Lares)", en: "Rice and Beans Ice Cream (Lares)" },
+    time: "30 min + 6 hr de congelador",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 taza de habichuelas rosadas, cocidas y escurridas",
+        "1 taza de arroz cocido",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 lata de 14 onzas de leche condensada",
+        "2 tazas de crema de leche (heavy cream)",
+        "1 cucharadita de vainilla",
+        "½ cucharadita de canela en polvo",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "1 cup pink beans, cooked and drained",
+        "1 cup cooked rice",
+        "1 can (12 oz) evaporated milk",
+        "1 can (14 oz) sweetened condensed milk",
+        "2 cups heavy cream",
+        "1 teaspoon vanilla",
+        "½ teaspoon ground cinnamon",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Enjuague las habichuelas para quitarles el caldo salado y licúelas con la leche evaporada hasta que estén muy finas.",
+        "Añada la leche condensada, la vainilla, la canela y la sal y licúe unos segundos más.",
+        "Bata la crema de leche hasta que forme picos suaves e incorpórela con movimientos envolventes.",
+        "Añada el arroz cocido (frío) y mezcle: los granos quedan enteros en el helado.",
+        "Congele en una heladera, o en el congelador moviendo cada 30 minutos durante las primeras 3 horas. Es uno de los sabores criollos que hicieron famosa a la heladería de la plaza de Lares."
+      ],
+      en: [
+        "Rinse the beans to remove the salty broth and blend them with the evaporated milk until very smooth.",
+        "Add the condensed milk, vanilla, cinnamon and salt and blend a few more seconds.",
+        "Whip the cream to soft peaks and fold it in.",
+        "Add the cooked (cold) rice and mix: the grains stay whole in the ice cream.",
+        "Freeze in an ice cream maker, or in the freezer stirring every 30 minutes for the first 3 hours. It's one of the Creole flavors that made the ice cream shop on the Lares town square famous."
+      ]
+    }
+  },
+  {
+    id: "brazo-gitano-guayaba-queso",
+    category: "postres",
+    name: { es: "Brazo Gitano de Guayaba y Queso (Mayagüez)", en: "Guava and Cream Cheese Swiss Roll (Mayagüez)" },
+    time: "1 hr + 2 hr de frío",
+    servings: 12,
+    ingredients: {
+      es: [
+        "5 huevos, separados",
+        "¾ taza de azúcar",
+        "1 taza de harina de trigo",
+        "1 cucharadita de polvo de hornear",
+        "¼ cucharadita de sal",
+        "1 cucharadita de vainilla",
+        "Relleno: 8 onzas de queso crema, blando",
+        "¼ taza de azúcar en polvo",
+        "8 onzas de pasta de guayaba",
+        "2 cucharadas de agua",
+        "Azúcar en polvo para decorar"
+      ],
+      en: [
+        "5 eggs, separated",
+        "¾ cup sugar",
+        "1 cup all-purpose flour",
+        "1 teaspoon baking powder",
+        "¼ teaspoon salt",
+        "1 teaspoon vanilla",
+        "Filling: 8 oz cream cheese, softened",
+        "¼ cup powdered sugar",
+        "8 oz guava paste",
+        "2 tablespoons water",
+        "Powdered sugar for dusting"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 375°F y forre un molde de 10 × 15 pulgadas con papel encerado engrasado.",
+        "Bata las claras a punto de nieve con la mitad del azúcar. Aparte, bata las yemas con el resto del azúcar y la vainilla hasta que estén pálidas. Una ambas mezclas y añada la harina cernida con el polvo de hornear y la sal, con movimientos envolventes.",
+        "Extienda en el molde y hornee 10–12 minutos, hasta que esté dorado y rebote al tocarlo. Voltéelo sobre un paño espolvoreado con azúcar en polvo, quite el papel y enróllelo caliente con el paño. Deje enfriar.",
+        "Derrita la guayaba con el agua a fuego bajo hasta tener una crema untable. Bata el queso crema con el azúcar en polvo.",
+        "Desenrolle el bizcocho, unte el queso y luego la guayaba, y vuelva a enrollar. Refrigere 2 horas y espolvoree azúcar en polvo. Mayagüez es famosa en toda la isla por sus brazos gitanos."
+      ],
+      en: [
+        "Heat the oven to 375°F and line a 10 × 15-inch pan with greased wax paper.",
+        "Beat the whites to stiff peaks with half the sugar. Separately, beat the yolks with the rest of the sugar and the vanilla until pale. Combine both and fold in the flour sifted with the baking powder and salt.",
+        "Spread in the pan and bake 10–12 minutes, until golden and springy. Turn out onto a towel dusted with powdered sugar, peel off the paper and roll it up warm with the towel. Let cool.",
+        "Melt the guava paste with the water over low heat into a spreadable cream. Beat the cream cheese with the powdered sugar.",
+        "Unroll the cake, spread the cream cheese and then the guava, and roll it up again. Refrigerate 2 hours and dust with powdered sugar. Mayagüez is famous across the island for its brazos gitanos."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-cafe",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Café (Yauco)", en: "Coffee Cake (Yauco)" },
+    time: "1 hr 15 min",
+    servings: 14,
+    ingredients: {
+      es: [
+        "1 taza de café colado fuerte, a temperatura ambiente",
+        "½ taza de mantequilla, blanda",
+        "1½ tazas de azúcar",
+        "3 huevos",
+        "2½ tazas de harina de trigo",
+        "2 cucharaditas de polvo de hornear",
+        "¼ cucharadita de sal",
+        "1 cucharadita de canela en polvo",
+        "1 cucharadita de vainilla",
+        "Glaseado: 1 taza de azúcar en polvo",
+        "3 cucharadas de café colado"
+      ],
+      en: [
+        "1 cup strong brewed coffee, at room temperature",
+        "½ cup butter, softened",
+        "1½ cups sugar",
+        "3 eggs",
+        "2½ cups all-purpose flour",
+        "2 teaspoons baking powder",
+        "¼ teaspoon salt",
+        "1 teaspoon ground cinnamon",
+        "1 teaspoon vanilla",
+        "Glaze: 1 cup powdered sugar",
+        "3 tablespoons brewed coffee"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y engrase y enharine un molde de tubo.",
+        "Bata la mantequilla con el azúcar hasta que esté cremosa. Añada los huevos de uno en uno y la vainilla.",
+        "Cierna la harina con el polvo de hornear, la sal y la canela. Añádala alternando con el café, empezando y terminando con harina.",
+        "Hornee 45–50 minutos, hasta que un palillo salga limpio. Deje enfriar 15 minutos y desmolde.",
+        "Mezcle el azúcar en polvo con el café y bañe el bizcocho. Use café de la zona cafetalera: Yauco es conocido como el Pueblo del Café."
+      ],
+      en: [
+        "Heat the oven to 350°F and grease and flour a tube pan.",
+        "Beat the butter with the sugar until creamy. Add the eggs one at a time and the vanilla.",
+        "Sift the flour with the baking powder, salt and cinnamon. Add it alternately with the coffee, starting and ending with flour.",
+        "Bake 45–50 minutes, until a toothpick comes out clean. Cool 15 minutes and unmold.",
+        "Mix the powdered sugar with the coffee and pour over the cake. Use coffee from the coffee region: Yauco is known as the Coffee Town (Pueblo del Café)."
       ]
     }
   }
