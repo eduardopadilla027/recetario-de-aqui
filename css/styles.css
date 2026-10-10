@@ -333,6 +333,14 @@ main:focus { outline: none; }
 .chip[aria-pressed="true"] .icon { fill: currentColor; }
 .chip-clear { border-style: dashed; }
 
+/* Lo que entendió el buscador inteligente */
+.search-understood { display: flex; flex-direction: column; gap: 4px; margin: 6px 0 0; font-size: .875rem; color: var(--ink-2, #5B4636); }
+.su-line { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; }
+.su-label { font-weight: 700; color: var(--ink, #2B1D14); }
+.su-chip { display: inline-block; padding: 1px 8px; border-radius: 999px; background: var(--sand, #F3E9DA); border: 1px solid var(--line, #E6D8C4); color: var(--ink, #2B1D14); }
+.su-sep { color: var(--line, #E6D8C4); padding: 0 2px; }
+.su-note { font-size: .8125rem; }
+
 /* Grupos por categoría (acordeón) */
 .category-section { border-top: 1px solid var(--line); }
 .category-section:last-child { border-bottom: 1px solid var(--line); }

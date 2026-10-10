@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.7.0 · **Recetas:** 530 en 24 categorías
+> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.8.0 · **Recetas:** 530 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -12,7 +12,8 @@
 
 Recetario digital de **cocina tradicional puertorriqueña**, bilingüe (español / inglés). Permite:
 
-- Buscar por nombre o ingrediente, filtrar por categoría, por "rápidas" (≤ 30 min) y por favoritos.
+- **Buscador inteligente:** por nombre, ingredientes o una idea ("postre sin huevo", "navidad"), con sinónimos,
+  errores de escritura y español/inglés (§7.1). Filtrar por categoría, por "rápidas" (≤ 30 min) y por favoritos.
 - Ver cada receta con ingredientes, pasos y **porciones ajustables** (las cantidades se recalculan).
 - Ver una **estimación nutricional** por porción calculada de los ingredientes.
 - Ver **alérgenos, alertas y manejo seguro** deducidos de los ingredientes.
@@ -58,6 +59,7 @@ cocine-a-gusto/
 │   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, y más bebidas tropicales, en siete tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
+│   ├── search.js         buscador inteligente (smartSearch), sin servidor
 │   └── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
 ├── images/               (vacía: reservada para fotos)
 ├── .claude/launch.json   servidor local para la vista previa
@@ -67,7 +69,7 @@ cocine-a-gusto/
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js`
-→ `nutrition.js` → `advisories.js` → `app.js`. Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
+→ `nutrition.js` → `advisories.js` → `search.js` → `app.js`. Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
 ## 5. Modelo de datos: la receta
 
@@ -149,6 +151,34 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 - **Accesibilidad:** enlace "Saltar al contenido", pestañas con `role="tab"`, `aria-live` en conteos, foco visible,
   contraste AA de los tokens de color, `prefers-reduced-motion` e impresión limpia de la receta.
 
+### 7.1 Buscador inteligente (`js/search.js`)
+
+Funciona todo en el navegador (sin servidor ni servicios externos, gratis y al instante). `smartSearch(texto, { isQuick, lang })`
+devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` filtra con ella, **ordena por relevancia**
+(y los grupos de categoría por su mejor receta) y muestra bajo el conteo la línea *Busco · Sin · Ideas · Corregí*
+(`#search-understood`, textos en `translations.*.understood`).
+
+- **Dónde busca:** nombre (vale 6), ingredientes (3) y pasos (1) de cada receta, **en español e inglés a la vez**
+  (así "chicken rice" encuentra "Arroz con Pollo" y "loiza" encuentra los platos de Loíza que lo mencionan en los pasos).
+- **Normaliza:** sin acentos ni mayúsculas; singular y plural ("limones" = "limón"); ignora palabras vacías
+  (y, con, de, para, receta, algo, quiero, and, with…). Las palabras pueden ir en cualquier orden.
+- **Sinónimos** (`S_GROUPS`): china = naranja = orange, parcha = maracuyá = chinola, habichuela = frijol = bean,
+  guineo = banana, juey = cangrejo, negro = negra, etc. **Términos generales** (`S_EXPAND`, cuentan la mitad):
+  "mariscos" incluye camarón, pulpo, langosta…; "carne" incluye res, cerdo, pollo…
+- **Categorías por su nombre** (`S_CATS`): "postres", "tragos", "sopas", "frituras"…
+- **Errores de escritura:** si una palabra no existe en el recetario, se corrige a la más parecida (distancia de edición
+  1–2), prefiriendo las que más aparecen en nombres ("polo" → "pollo").
+- **Exclusiones:** "sin X", "no X", "without X", "libre de X", "X free". Alérgenos (gluten, leche/lactosa, huevo,
+  pescado, mariscos, nueces, maní, ajonjolí, soya, coco) usan `getAdvisories`; "sin alcohol" usa las alertas de alcohol
+  ("trago sin alcohol" busca entre todas las bebidas); "sin carne" excluye carnes, aves y pescados; cualquier otra palabra
+  excluye las recetas que la llevan en los ingredientes.
+- **Ideas** (`S_IDEAS`): navidad, playa/kioscos, desayuno, rápido (≤ 30 min), vegetariano, picante, frío y refrescante,
+  saludable/ligero (< 350 kcal y sin freír), con alcohol, para niños (sin alcohol, cafeína ni crudos).
+- **Orden:** suma de puntuaciones + desempates (el nombre contiene la frase buscada, empieza con ella, o la búsqueda cubre
+  la mayor parte del nombre: "Arroz con Pollo" antes que "Sopón de Pollo con Arroz").
+- **Si nada tiene todas las palabras**, muestra las recetas que tienen alguna y lo dice ("Ninguna receta tiene todo…").
+- Rendimiento: índice por receta en caché; cada búsqueda tarda unos milisegundos (la primera con alérgenos, ~0.25 s).
+
 ## 8. Estimación nutricional (`js/nutrition.js`)
 
 - `NUTRI_FOODS`: alimentos con palabras clave (sin acentos) y valores por 100 g (kcal, proteína, carbohidratos, azúcares,
@@ -201,6 +231,20 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-09 — v1.8.0 · Buscador inteligente
+- *Pedido:* mejorar el buscador "con AI" para buscar por ingredientes de cualquier receta o por palabras clave. Se eligió
+  el **buscador inteligente dentro de la app** (sin servidor ni clave de API, gratis y sin enviar datos).
+- Nuevo `js/search.js` (ver §7.1): español e inglés a la vez, sinónimos boricuas, plurales, errores de escritura,
+  exclusiones "sin …" (alérgenos, alcohol, carne o cualquier ingrediente), ideas (navidad, playa, desayuno, rápido,
+  vegetariano, picante, frío, ligero, con alcohol, para niños), categorías por nombre y búsqueda en los pasos (pueblos).
+- `app.js`: `matches` usa `smartSearch`; resultados y grupos ordenados por relevancia; línea "Busco · Sin · Ideas ·
+  Corregí" bajo el conteo (`renderUnderstood`); nuevo texto del campo: "Plato, ingrediente o idea: pollo y arroz, postre
+  sin huevo, navidad…" (ES/EN).
+- `index.html`: `<script src="js/search.js">` antes de `app.js` y `<p id="search-understood">`. `styles.css`: estilos `.su-*`.
+- *Verificado:* 40 búsquedas de prueba en Node (p. ej. "pollo y arroz" → Arroz con Pollo primero; "polo" → pollo;
+  "trago sin alcohol" → sólo bebidas sin alcohol; "frijoles negros" → habichuelas negras; "loiza" → platos de Loíza);
+  navegador a 375 px en ES y EN: sin errores ni desbordes, la línea aparece y desaparece al borrar la búsqueda.
 
 ### 2026-10-09 — v1.7.0 · Más tragos y bebidas tropicales
 - *Pedido:* buscar más tragos y bebidas tropicales.

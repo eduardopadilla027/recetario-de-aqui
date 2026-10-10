@@ -20,8 +20,8 @@ const translations = {
     subtitle: "Recetario de Cocina Puertorriqueña",
     author: "Versión 1.0",
     heroTitle: ["El Sabor de la Cocina", "Puertorriqueña"], // [texto, palabra destacada]
-    searchPlaceholder: "Buscar por nombre o ingrediente…",
-    searchLabel: "Buscar recetas por nombre o ingrediente",
+    searchPlaceholder: "Plato, ingrediente o idea: pollo y arroz, postre sin huevo, navidad…",
+    searchLabel: "Buscar recetas por nombre, ingredientes o una idea (por ejemplo: postre sin huevo)",
     searchBtn: "Buscar",
     clearSearch: "Borrar búsqueda",
     ingredients: "Ingredientes",
@@ -53,6 +53,7 @@ const translations = {
     filterQuick: "≤ 30 min",
     clearFilters: "Quitar filtros",
     countFound: (n) => (n === 1 ? "1 receta encontrada" : `${n} recetas encontradas`),
+    understood: { looking: "Busco", without: "Sin", ideas: "Ideas", corrected: "Corregí", partial: "Ninguna receta tiene todo: estas son las más parecidas.", order: "Ordenadas por relevancia." },
     statsHero: (n, c) => `<strong>${n}</strong> recetas tradicionales · <strong>${c}</strong> categorías`,
     emptyTitle: "No encontramos recetas",
     emptyText: "Prueba con otra palabra o ingrediente, o quita algún filtro.",
@@ -132,8 +133,8 @@ const translations = {
     subtitle: "Puerto Rican Cookbook",
     author: "Version 1.0",
     heroTitle: ["The Flavor of", "Puerto Rican Cooking"],
-    searchPlaceholder: "Search by name or ingredient…",
-    searchLabel: "Search recipes by name or ingredient",
+    searchPlaceholder: "Dish, ingredient or idea: chicken and rice, dessert without eggs, christmas…",
+    searchLabel: "Search recipes by name, ingredients or an idea (for example: dessert without eggs)",
     searchBtn: "Search",
     clearSearch: "Clear search",
     ingredients: "Ingredients",
@@ -165,6 +166,7 @@ const translations = {
     filterQuick: "≤ 30 min",
     clearFilters: "Clear filters",
     countFound: (n) => (n === 1 ? "1 recipe found" : `${n} recipes found`),
+    understood: { looking: "Looking for", without: "Without", ideas: "Ideas", corrected: "Corrected", partial: "No recipe has everything: these are the closest.", order: "Sorted by relevance." },
     statsHero: (n, c) => `<strong>${n}</strong> traditional recipes · <strong>${c}</strong> categories`,
     emptyTitle: "No recipes found",
     emptyText: "Try another word or ingredient, or remove a filter.",
@@ -505,20 +507,47 @@ function hasFilters() {
   return Boolean(searchQuery || selectedNavCategory || onlyFavorites || onlyQuick);
 }
 
+/* Búsqueda inteligente (js/search.js): se calcula una vez por texto e idioma. */
+let searchCache = { q: null, lang: null, res: null };
+function currentSearch() {
+  if (!searchQuery) return null;
+  if (searchCache.q !== searchQuery || searchCache.lang !== currentLang) {
+    searchCache = { q: searchQuery, lang: currentLang, res: smartSearch(searchQuery, { isQuick, lang: currentLang }) };
+  }
+  return searchCache.res;
+}
+const searchScore = (r) => { const s = currentSearch(); return s ? s.scores.get(r.id) || 0 : 0; };
+const byScore = (a, b) => searchScore(b) - searchScore(a);
+
 function matches(r) {
   if (selectedNavCategory && r.category !== selectedNavCategory) return false;
   if (onlyFavorites && !favorites.has(r.id)) return false;
   if (onlyQuick && !isQuick(r)) return false;
-  if (searchQuery) {
-    // Busca en el nombre y los ingredientes (como antes), sin distinguir acentos.
-    const hay = norm(r.name[currentLang] + " " + r.ingredients[currentLang].join(" "));
-    if (!norm(searchQuery).split(/\s+/).every((w) => hay.includes(w))) return false;
-  }
+  const s = currentSearch();
+  if (s && !s.scores.has(r.id)) return false;
   return true;
 }
 
 function getFilteredRecipes(category) {
-  return recipes.filter((r) => r.category === category && matches(r));
+  const list = recipes.filter((r) => r.category === category && matches(r));
+  return currentSearch() ? list.sort(byScore) : list;
+}
+
+/* Lo que entendió el buscador: términos, exclusiones, ideas y correcciones. */
+function renderUnderstood() {
+  const box = $("search-understood");
+  const s = currentSearch();
+  if (!s) { box.hidden = true; box.innerHTML = ""; return; }
+  const u = t().understood;
+  const chip = (txt) => `<span class="su-chip">${esc(txt)}</span>`;
+  const parts = [];
+  if (s.terms.length) parts.push(`<span class="su-label">${u.looking}:</span> ${s.terms.map((x) => chip(x.text)).join(" ")}`);
+  if (s.excludes.length) parts.push(`<span class="su-label">${u.without}:</span> ${s.excludes.map((x) => chip(x.text)).join(" ")}`);
+  if (s.ideas.length) parts.push(`<span class="su-label">${u.ideas}:</span> ${s.ideas.map((x) => chip(x.label[currentLang])).join(" ")}`);
+  if (s.corrections.length) parts.push(`<span class="su-label">${u.corrected}:</span> ${s.corrections.map((c) => chip(`${c.from} → ${c.to}`)).join(" ")}`);
+  box.innerHTML = `<span class="su-line">${parts.join('<span class="su-sep" aria-hidden="true">·</span>')}</span>` +
+    (s.partial ? `<span class="su-note">${u.partial}</span>` : (s.terms.length && s.scores.size > 1 ? `<span class="su-note">${u.order}</span>` : ""));
+  box.hidden = false;
 }
 
 /* ------------------------------------------------------------ render ---- */
@@ -562,9 +591,11 @@ function renderCategories() {
   const active = hasFilters();
   $("recetas").hidden = !active;
   $("filter-clear").hidden = !active;
-  if (!active) { container.innerHTML = ""; return; }
+  if (!active) { container.innerHTML = ""; renderUnderstood(); return; }
 
   const filtered = recipes.filter(matches);
+  if (currentSearch()) filtered.sort(byScore);
+  renderUnderstood();
   let heading = tr.results;
   if (searchQuery) heading = tr.resultsFor(searchQuery);
   else if (selectedNavCategory) heading = tr.categories[selectedNavCategory];
@@ -584,7 +615,10 @@ function renderCategories() {
 
   // Búsqueda, favoritas o rápidas: resultados agrupados por categoría (sólo
   // las que tienen alguno), con el recuento de cada grupo.
-  container.innerHTML = categoryOrder.map((cat) => {
+  const groups = currentSearch()
+    ? [...categoryOrder].sort((a, b) => Math.max(0, ...getFilteredRecipes(b).map(searchScore)) - Math.max(0, ...getFilteredRecipes(a).map(searchScore)))
+    : categoryOrder;
+  container.innerHTML = groups.map((cat) => {
     const catRecipes = getFilteredRecipes(cat);
     if (catRecipes.length === 0) return "";
     const total = recipes.filter((r) => r.category === cat).length;
