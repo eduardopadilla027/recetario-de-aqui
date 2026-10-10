@@ -334,6 +334,7 @@ const dishIcons = [
 const meatIcons = {
   carnes: [
     [/chuleta|churrasco|albondiga|longaniza|salchicha|morcilla|conejo|pincho|mofongo/, null],
+    [/jamonilla/, "svg:ic-jamonilla"],
     [/costill/, "svg:ic-costillas"],
     [/jamon/, "svg:ic-jamon"],
     [/encebollad|con cebolla/, "svg:ic-encebollado"],
@@ -365,7 +366,7 @@ const meatIcons = {
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
   [/gelatina de mosaico/, "svg:ic-gelatina-mosaico"],
-  [/gelatina de (parcha|pina)/, "svg:ic-gelatina-amarilla"],
+  [/gelatina de (parcha|pina)|gelatinas de ron con parcha/, "svg:ic-gelatina-amarilla"],
   [/gelatina de (leche|coco|coquito)/, "svg:ic-gelatina-blanca"],
   [/gelatina de cafe/, "svg:ic-gelatina-cafe"],
   [/gelatina de guayaba/, "svg:ic-gelatina-guayaba"],
@@ -407,7 +408,7 @@ const dessertIcons = [
   [/canela y azucar/, "svg:ic-galleta-canela"],
   [/mantequilla de mani/, "svg:ic-galleta-mani"],
   [/^royales/, "svg:ic-galleta-tenedor"],
-  [/avena/, "svg:ic-galleta-avena"],
+  [/^galletas.*avena/, "svg:ic-galleta-avena"],
   [/pasas al ron/, "svg:ic-galleta-pasas"],
   [/galletas de (calabaza|batata)/, "svg:ic-galleta-naranja"],
   [/galletas de parcha/, "svg:ic-galleta-parcha"],
@@ -443,7 +444,18 @@ const dessertIcons = [
   [/^aderezo cremoso de cilantro/, "svg:ic-salsa-cilantro"],
   [/^salsa de champinones/, "svg:ic-salsa-champinones"],
   [/^adobo mojado/, "svg:ic-pilon-adobo"],
-  [/^salsa de pique/, "svg:ic-salsa-pique"]
+  [/^salsa de pique/, "svg:ic-salsa-pique"],
+  // Yogures.
+  [/^jamonilla/, "svg:ic-jamonilla"],
+  [/^parfait de yogur/, "svg:ic-yogur-parfait"],
+  [/^yogur con pina/, "svg:ic-yogur-pina-coco"],
+  [/^bowl de yogur/, "svg:ic-yogur-parcha"],
+  [/^yogur griego con salsita de guayaba/, "svg:ic-yogur-guayaba"],
+  [/^yogur helado/, "svg:ic-yogur-helado"],
+  [/^yogur casero/, "svg:ic-yogur-frasco"],
+  [/^avena fria con yogur/, "svg:ic-avena-fria"],
+  [/^paletas de yogur/, "svg:ic-paletas-yogur"],
+  [/^salsa de yogur/, "svg:ic-salsa-yogur"]
 ];
 
 function dishIcon(recipe) {

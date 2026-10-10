@@ -10,7 +10,7 @@
 
 /* Alérgenos: expresión sobre cada línea de ingredientes (sin acentos). */
 const ALLERGENS = [
-  ["gluten", /\bharina\b(?!\s+de\s+(maiz|arroz|platano|yuca|coco|pana))|\bpan(es)?\b|pan rallado|\bgalletas?\b|\bespaguetis?\b|\bfideos?\b|\bcoditos?\b|\bmacarrones\b|\blasana\b|\bcanelones\b|\bmanicotti\b|\bpasta\b(?!\s+de\s+(tomate|guayaba))|hojaldre|\bdiscos?\b|masas? para pie|mezcla (para|de) bizcocho|\bfarina\b|crema de trigo|\bcerveza\b|\bmalta\b|salsa de soya|\bavena\b|\bbizcocho\b/],
+  ["gluten", /\bharina\b(?!\s+de\s+(maiz|arroz|platano|yuca|coco|pana))|\bpan(es)?\b|pan rallado|\bgalletas?\b|\bespaguetis?\b|\bfideos?\b|\bcoditos?\b|\bmacarrones\b|\blasana\b|\bcanelones\b|\bmanicotti\b|\bpasta\b(?!\s+de\s+(tomate|guayaba))|hojaldre|\bdiscos?\b|masas? para pie|mezcla (para|de) bizcocho|\bfarina\b|crema de trigo|\bcerveza\b|\bmalta\b|salsa de soya|\bavena\b|\bgranola\b|\bbizcocho\b/],
   ["milk", /\bleches?\b(?!\s+de\s+coco)|(?<!pano de )\bquesos?\b|mantequilla(?!\s+de\s+mani)|\bcrema\b(?!\s+de\s+(coco|arroz|trigo|pana|calabaza))|ricotta|parmesano|mantecado|\bhelado\b|\byogur/],
   ["egg", /\bhuevos?\b|\byemas?\b|\bclaras?\b|mayonesa|merengue/],
   ["fish", /\bpescado|bacalao|bacalaito|\batun\b|\bmero\b|\bchillo\b|(?<!ron )\bdorado\b|mahi|tilapia|\bpargo\b|\bsierra\b|salsa inglesa|anchoa|sardina|salmon|\bceti\b|\bfiletes? de (pescado|mero|chillo|dorado|pargo)/],

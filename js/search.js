@@ -63,6 +63,7 @@ const S_EXPAND = {
   legume: "grano legumbre legume habichuela frijol gandul garbanzo lenteja bean",
   vianda: "vianda yuca yautia name batata platano guineo pana malanga",
   fruta: "fruta fruit mango pina coco guayaba parcha lechosa china acerola tamarindo guanabana fresa mamey carambola",
+  tropical: "tropical mango pina coco guayaba parcha lechosa guanabana tamarindo acerola mamey carambola",
   fruit: "fruta fruit mango pina coco guayaba parcha lechosa china acerola tamarindo guanabana fresa mamey carambola"
 };
 

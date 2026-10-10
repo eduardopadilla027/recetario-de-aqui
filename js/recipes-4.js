@@ -38,6 +38,8 @@
  * Decimosexta tanda: pies tropicales (piña, mangó, parcha con merengue, limón, guineo,
  * piña colada, calabaza, guanábana) y salsas y aderezos para carnes y pollo
  * (chimichurri, BBQ de guayaba y tamarindo, mojo de naranja agria, adobo mojado…).
+ * Decimoséptima tanda: yogures tropicales (casero, parfaits y bowls con mangó, piña,
+ * parcha y guayaba, batidas, yogur helado, paletas, avena fría y salsa de yogur).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -9624,6 +9626,429 @@ recipes.push(
         "Add the pique, honey, paprika and salt, and stir until combined.",
         "Toss with freshly fried or baked wings in a large container and shake to coat.",
         "Adjust the heat with more or less pique. Not suitable for babies under 1 year because of the honey."
+      ]
+    }
+  },
+
+  // ── Decimoséptima tanda (2026-10): yogures tropicales ──
+  {
+    id: "yogur-casero",
+    category: "cereales",
+    name: { es: "Yogur Casero", en: "Homemade Yogurt" },
+    time: "20 min + 8 hr de reposo",
+    servings: 8,
+    ingredients: {
+      es: [
+        "8 tazas (½ galón) de leche entera",
+        "¼ taza de yogur natural con cultivos vivos (de iniciador)"
+      ],
+      en: [
+        "8 cups (½ gallon) whole milk",
+        "¼ cup plain yogurt with live cultures (as a starter)"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente la leche a fuego medio, moviendo, hasta 180°F (casi hierve). Esto cambia las proteínas y el yogur sale más espeso.",
+        "Deje refrescar hasta 110°F: debe sentirse tibia, no caliente (si está muy caliente, mata los cultivos).",
+        "Mezcle el yogur iniciador con una taza de la leche tibia y añádalo al resto.",
+        "Tape y mantenga tibio de 8 a 10 horas sin mover: dentro del horno apagado con la luz encendida, o envuelto en toallas.",
+        "Refrigere 4 horas. Para yogur griego, cuélelo en un paño 2 horas en la nevera. Guarde ¼ taza para la próxima tanda; dura 2 semanas."
+      ],
+      en: [
+        "Heat the milk over medium heat, stirring, to 180°F (almost boiling). This changes the proteins and makes thicker yogurt.",
+        "Cool to 110°F: it should feel warm, not hot (too hot kills the cultures).",
+        "Whisk the starter yogurt with a cup of the warm milk and add it to the rest.",
+        "Cover and keep warm 8 to 10 hours without moving: inside the turned-off oven with the light on, or wrapped in towels.",
+        "Refrigerate 4 hours. For Greek yogurt, strain it in a cloth 2 hours in the fridge. Save ¼ cup for the next batch; it keeps 2 weeks."
+      ]
+    }
+  },
+  {
+    id: "parfait-yogur-mango",
+    category: "frutas",
+    name: { es: "Parfait de Yogur con Mangó y Granola", en: "Mango Yogurt Parfait with Granola" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1½ tazas de yogur griego natural",
+        "1 mangó maduro en cubitos",
+        "½ taza de granola",
+        "2 cucharaditas de miel",
+        "2 cucharadas de coco rallado, tostado"
+      ],
+      en: [
+        "1½ cups plain Greek yogurt",
+        "1 ripe mango, diced",
+        "½ cup granola",
+        "2 teaspoons honey",
+        "2 tablespoons shredded coconut, toasted"
+      ]
+    },
+    steps: {
+      es: [
+        "En dos vasos, ponga una capa de yogur, una de mangó y una de granola.",
+        "Repita las capas y termine con mangó.",
+        "Rocíe la miel y espolvoree el coco tostado.",
+        "Sirva enseguida para que la granola esté crujiente. No apto para menores de 1 año por la miel."
+      ],
+      en: [
+        "In two glasses, layer yogurt, mango and granola.",
+        "Repeat the layers and finish with mango.",
+        "Drizzle the honey and sprinkle with the toasted coconut.",
+        "Serve right away so the granola stays crunchy. Not for babies under 1 year because of the honey."
+      ]
+    }
+  },
+  {
+    id: "yogur-pina-coco",
+    category: "frutas",
+    name: { es: "Yogur con Piña y Coco Tostado", en: "Yogurt with Pineapple and Toasted Coconut" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1½ tazas de yogur natural",
+        "1 taza de piña fresca en cubitos",
+        "¼ taza de coco rallado",
+        "2 cucharadas de nueces o almendras picadas",
+        "½ cucharadita de vainilla",
+        "1 pizca de canela en polvo"
+      ],
+      en: [
+        "1½ cups plain yogurt",
+        "1 cup fresh pineapple, diced",
+        "¼ cup shredded coconut",
+        "2 tablespoons chopped walnuts or almonds",
+        "½ teaspoon vanilla",
+        "1 pinch of ground cinnamon"
+      ]
+    },
+    steps: {
+      es: [
+        "Tueste el coco y las nueces en un sartén seco 3 minutos, moviendo, hasta que doren.",
+        "Mezcle el yogur con la vainilla.",
+        "Sirva el yogur en tazones, ponga la piña encima y luego el coco y las nueces tostadas. Espolvoree canela.",
+        "La piña madura endulza sola: no hace falta azúcar."
+      ],
+      en: [
+        "Toast the coconut and nuts in a dry skillet 3 minutes, stirring, until golden.",
+        "Mix the yogurt with the vanilla.",
+        "Spoon the yogurt into bowls, top with the pineapple, then the toasted coconut and nuts. Dust with cinnamon.",
+        "Ripe pineapple sweetens it on its own: no sugar needed."
+      ]
+    }
+  },
+  {
+    id: "bowl-yogur-parcha",
+    category: "frutas",
+    name: { es: "Bowl de Yogur con Parcha, Guineo y Miel", en: "Passion Fruit, Banana and Honey Yogurt Bowl" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1½ tazas de yogur griego natural",
+        "2 parchas (la pulpa con semillas)",
+        "1 guineo maduro en ruedas",
+        "½ taza de fresas en lascas",
+        "¼ taza de granola",
+        "1 cucharada de miel"
+      ],
+      en: [
+        "1½ cups plain Greek yogurt",
+        "2 passion fruits (pulp with seeds)",
+        "1 ripe banana, sliced",
+        "½ cup sliced strawberries",
+        "¼ cup granola",
+        "1 tablespoon honey"
+      ]
+    },
+    steps: {
+      es: [
+        "Reparta el yogur en dos tazones y alíselo con una cuchara.",
+        "Acomode el guineo y las fresas en filas, y la granola a un lado.",
+        "Ponga la pulpa de parcha en el centro y rocíe la miel.",
+        "La acidez de la parcha y lo dulce del guineo se balancean. No apto para menores de 1 año por la miel."
+      ],
+      en: [
+        "Divide the yogurt between two bowls and smooth it with a spoon.",
+        "Arrange the banana and strawberries in rows, and the granola to one side.",
+        "Spoon the passion fruit pulp in the center and drizzle with honey.",
+        "The tang of the passion fruit balances the sweet banana. Not for babies under 1 year because of the honey."
+      ]
+    }
+  },
+  {
+    id: "yogur-griego-guayaba",
+    category: "frutas",
+    name: { es: "Yogur Griego con Salsita de Guayaba", en: "Greek Yogurt with Guava Sauce" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 tazas de yogur griego natural",
+        "4 onzas de pasta de guayaba",
+        "¼ taza de agua",
+        "1 cucharada de jugo de limón",
+        "2 onzas de queso blanco del país, en cubitos",
+        "¼ taza de galletas María trituradas"
+      ],
+      en: [
+        "3 cups plain Greek yogurt",
+        "4 oz guava paste",
+        "¼ cup water",
+        "1 tablespoon lime juice",
+        "2 oz local white cheese (queso blanco), cubed",
+        "¼ cup crushed Maria cookies"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la pasta de guayaba con el agua y el limón a fuego bajo, moviendo, hasta tener una salsita. Deje enfriar.",
+        "Sirva el yogur en vasitos o tazones.",
+        "Ponga encima la salsita de guayaba, los cubitos de queso y la galleta triturada.",
+        "Sabe a pastelillo de guayaba y queso, pero más liviano."
+      ],
+      en: [
+        "Melt the guava paste with the water and lime juice over low heat, stirring, into a sauce. Let cool.",
+        "Spoon the yogurt into small glasses or bowls.",
+        "Top with the guava sauce, the cheese cubes and the crushed cookies.",
+        "It tastes like a guava and cheese pastry, but lighter."
+      ]
+    }
+  },
+  {
+    id: "batida-yogur-mango-parcha",
+    category: "bebidas",
+    name: { es: "Batida de Yogur con Mangó y Parcha", en: "Mango Passion Fruit Yogurt Smoothie" },
+    time: "5 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de yogur natural",
+        "1½ tazas de mangó congelado en cubos",
+        "¼ taza de pulpa de parcha",
+        "½ taza de jugo de china",
+        "1 cucharada de miel"
+      ],
+      en: [
+        "1 cup plain yogurt",
+        "1½ cups frozen mango chunks",
+        "¼ cup passion fruit pulp",
+        "½ cup orange juice",
+        "1 tablespoon honey"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga todo en la licuadora: primero los líquidos y el yogur, luego el mangó congelado.",
+        "Licúe 1 minuto, hasta que esté espesa y lisa. Si está muy espesa, añada un chorrito de jugo.",
+        "Sirva enseguida. Con el mangó congelado no hace falta hielo y no se agua."
+      ],
+      en: [
+        "Put everything in the blender: liquids and yogurt first, then the frozen mango.",
+        "Blend 1 minute, until thick and smooth. If too thick, add a splash of juice.",
+        "Serve right away. With frozen mango you don't need ice and it doesn't get watery."
+      ]
+    }
+  },
+  {
+    id: "batida-yogur-pina-colada",
+    category: "bebidas",
+    name: { es: "Batida de Yogur Piña Colada (Sin Alcohol)", en: "Piña Colada Yogurt Smoothie (Alcohol-Free)" },
+    time: "5 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de yogur natural",
+        "1½ tazas de piña congelada en cubos",
+        "½ taza de leche de coco",
+        "1 guineo maduro",
+        "1 cucharada de crema de coco"
+      ],
+      en: [
+        "1 cup plain yogurt",
+        "1½ cups frozen pineapple chunks",
+        "½ cup coconut milk",
+        "1 ripe banana",
+        "1 tablespoon cream of coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe el yogur con la leche de coco, el guineo y la crema de coco.",
+        "Añada la piña congelada y licúe hasta que quede espesa.",
+        "Sirva en vasos con un pedacito de piña en el borde. El sabor del trago, para el desayuno."
+      ],
+      en: [
+        "Blend the yogurt with the coconut milk, banana and cream of coconut.",
+        "Add the frozen pineapple and blend until thick.",
+        "Serve in glasses with a pineapple wedge on the rim. The flavor of the drink, for breakfast."
+      ]
+    }
+  },
+  {
+    id: "yogur-helado-mango",
+    category: "postres",
+    name: { es: "Yogur Helado de Mangó", en: "Mango Frozen Yogurt" },
+    time: "10 min + 4 hr de congelador",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 tazas de mangó congelado en cubos",
+        "1 taza de yogur griego natural",
+        "3 cucharadas de miel",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "3 cups frozen mango chunks",
+        "1 cup plain Greek yogurt",
+        "3 tablespoons honey",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga todo en el procesador de alimentos y procese 2–3 minutos, raspando los lados, hasta que esté cremoso.",
+        "Sírvalo enseguida, suave como helado de máquina.",
+        "Para que quede firme, páselo a un envase y congele 4 horas; sáquelo 10 minutos antes de servir.",
+        "No apto para menores de 1 año por la miel."
+      ],
+      en: [
+        "Put everything in a food processor and process 2–3 minutes, scraping the sides, until creamy.",
+        "Serve right away, soft like soft-serve.",
+        "For a firmer texture, transfer to a container and freeze 4 hours; take it out 10 minutes before serving.",
+        "Not for babies under 1 year because of the honey."
+      ]
+    }
+  },
+  {
+    id: "paletas-yogur-tropicales",
+    category: "postres",
+    name: { es: "Paletas de Yogur y Frutas Tropicales", en: "Tropical Fruit Yogurt Pops" },
+    time: "15 min + 6 hr de congelador",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de yogur natural",
+        "¼ taza de miel",
+        "1 cucharadita de vainilla",
+        "½ taza de mangó en cubitos",
+        "½ taza de piña en cubitos",
+        "½ taza de fresas picadas",
+        "2 cucharadas de pulpa de parcha"
+      ],
+      en: [
+        "2 cups plain yogurt",
+        "¼ cup honey",
+        "1 teaspoon vanilla",
+        "½ cup diced mango",
+        "½ cup diced pineapple",
+        "½ cup chopped strawberries",
+        "2 tablespoons passion fruit pulp"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el yogur con la miel y la vainilla.",
+        "Reparta las frutas en 8 moldes de paleta (o vasitos de papel).",
+        "Llene con el yogur, moviendo con un palito para que baje entre las frutas, y ponga encima unas gotas de parcha.",
+        "Ponga los palitos y congele 6 horas. Para desmoldar, pase el molde por agua tibia unos segundos.",
+        "No apto para menores de 1 año por la miel; para los bebés, endulce con guineo majado."
+      ],
+      en: [
+        "Mix the yogurt with the honey and vanilla.",
+        "Divide the fruit among 8 popsicle molds (or paper cups).",
+        "Fill with the yogurt, stirring with a stick so it settles between the fruit, and top with a few drops of passion fruit.",
+        "Insert the sticks and freeze 6 hours. To unmold, run the mold under warm water a few seconds.",
+        "Not for babies under 1 year because of the honey; for babies, sweeten with mashed banana."
+      ]
+    }
+  },
+  {
+    id: "avena-fria-yogur-guineo",
+    category: "cereales",
+    name: { es: "Avena Fría con Yogur, Guineo y Coco", en: "Overnight Oats with Yogurt, Banana and Coconut" },
+    time: "10 min + toda la noche",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de avena",
+        "¾ taza de yogur natural",
+        "¾ taza de leche de coco (o leche)",
+        "1 guineo maduro, majado",
+        "1 cucharada de miel",
+        "½ cucharadita de canela en polvo",
+        "2 cucharadas de coco rallado",
+        "½ taza de mangó o piña en cubitos para servir"
+      ],
+      en: [
+        "1 cup rolled oats",
+        "¾ cup plain yogurt",
+        "¾ cup coconut milk (or milk)",
+        "1 ripe banana, mashed",
+        "1 tablespoon honey",
+        "½ teaspoon ground cinnamon",
+        "2 tablespoons shredded coconut",
+        "½ cup diced mango or pineapple for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la avena, el yogur, la leche de coco, el guineo, la miel y la canela.",
+        "Reparta en dos frascos, tape y refrigere toda la noche: la avena se ablanda sin cocinar.",
+        "Por la mañana, mueva y ponga encima la fruta y el coco rallado.",
+        "Se come fría; dura 2 días en la nevera. No apto para menores de 1 año por la miel."
+      ],
+      en: [
+        "Mix the oats, yogurt, coconut milk, banana, honey and cinnamon.",
+        "Divide between two jars, cover and refrigerate overnight: the oats soften without cooking.",
+        "In the morning, stir and top with the fruit and shredded coconut.",
+        "Eat it cold; it keeps 2 days in the fridge. Not for babies under 1 year because of the honey."
+      ]
+    }
+  },
+  {
+    id: "salsa-yogur-pepino-recao",
+    category: "salsas",
+    name: { es: "Salsa de Yogur con Pepino y Recao", en: "Yogurt Sauce with Cucumber and Culantro" },
+    time: "15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1½ tazas de yogur griego natural",
+        "1 pepino, sin semillas y rallado",
+        "2 cucharadas de recao picado fino",
+        "1 cucharada de menta o yerbabuena picada",
+        "1 diente de ajo, majado",
+        "1 cucharada de jugo de limón",
+        "1 cucharada de aceite de oliva",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1½ cups plain Greek yogurt",
+        "1 cucumber, seeded and grated",
+        "2 tablespoons finely chopped culantro",
+        "1 tablespoon chopped mint",
+        "1 garlic clove, mashed",
+        "1 tablespoon lime juice",
+        "1 tablespoon olive oil",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga el pepino rallado con una pizca de sal en un colador 10 minutos y exprímalo bien con las manos (si no, la salsa queda aguada).",
+        "Mezcle el yogur con el pepino, el recao, la menta, el ajo, el limón y la sal.",
+        "Rocíe el aceite por encima.",
+        "Fresca y liviana para pinchos, pollo a la plancha, chuletas, alcapurrias o con pan de agua."
+      ],
+      en: [
+        "Put the grated cucumber with a pinch of salt in a colander 10 minutes and squeeze it well with your hands (otherwise the sauce gets watery).",
+        "Mix the yogurt with the cucumber, culantro, mint, garlic, lime juice and salt.",
+        "Drizzle the oil on top.",
+        "Fresh and light for skewers, grilled chicken, pork chops, alcapurrias or with Puerto Rican water bread."
       ]
     }
   }
