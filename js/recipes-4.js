@@ -58,6 +58,9 @@
  * dark & stormy, guanábana colada, michelada boricua).
  * Vigesimoquinta tanda: más emparedados (desayuno, churrasco, pescado frito, lechón,
  * choripán, queso con guayaba, jibarito de pollo, club, wrap, pavochón).
+ * Vigesimosexta tanda: más sopas, cremas y asopaos (langosta, pulpo, bacalao, gallina,
+ * habichuelas coloradas, guingambó, coditos, res con mazorca, apio, ñame, brócoli,
+ * champiñones).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -14201,6 +14204,568 @@ recipes.push(
         "Toast the rolls and spread with mayonnaise.",
         "Build with the cheese, the warm turkey and the coleslaw on top.",
         "Leftover turkey should have gone into the fridge within 2 hours of cooking and be eaten within 3–4 days."
+      ]
+    }
+  },
+
+  // ── Vigesimosexta tanda (2026-10): más sopas, cremas y asopaos ──
+  {
+    id: "asopao-langosta",
+    category: "sopas",
+    name: { es: "Asopao de Langosta", en: "Lobster Asopao" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 colas de langosta (unas 1½ libras con carapacho)",
+        "8 tazas de agua",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 sobre de sazón",
+        "1½ tazas de arroz de grano corto, lavado",
+        "½ taza de petit pois",
+        "10 aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "1 pimiento morrón asado en tiritas",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "3 lobster tails (about 1½ lb with shell)",
+        "8 cups water",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 packet sazón",
+        "1½ cups short-grain rice, rinsed",
+        "½ cup peas",
+        "10 stuffed olives",
+        "1 tablespoon capers",
+        "1 roasted red pepper in strips",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las colas en el agua 5 minutos. Sáquelas, enfríelas en agua con hielo, saque la carne y córtela en trozos. Devuelva los carapachos al agua y hierva 15 minutos más para hacer el caldo; cuélelo.",
+        "En un caldero, sofría el sofrito en el aceite de achiote 3 minutos. Añada la salsa de tomate, el sazón, las aceitunas y las alcaparras.",
+        "Añada el caldo y la sal y deje hervir. Añada el arroz y cocine a fuego medio 18–20 minutos, moviendo de vez en cuando, hasta que esté blando y espese un poco.",
+        "Añada la langosta y los petit pois los últimos 3 minutos (si se cocina más, se pone dura).",
+        "Sirva caliente con el pimiento por encima y tostones. El asopao espesa al reposar: añada caldo caliente si hace falta."
+      ],
+      en: [
+        "Boil the tails in the water 5 minutes. Remove, chill in ice water, take out the meat and cut it into chunks. Return the shells to the water and boil 15 more minutes to make the broth; strain it.",
+        "In a caldero, sauté the sofrito in the annatto oil 3 minutes. Add the tomato sauce, sazón, olives and capers.",
+        "Add the broth and salt and bring to a boil. Add the rice and cook over medium heat 18–20 minutes, stirring now and then, until soft and slightly thick.",
+        "Add the lobster and peas for the last 3 minutes (cooked longer, it turns tough).",
+        "Serve hot topped with the pepper and with tostones. Asopao thickens as it sits: add hot broth if needed."
+      ]
+    }
+  },
+  {
+    id: "asopao-pulpo",
+    category: "sopas",
+    name: { es: "Asopao de Pulpo", en: "Octopus Asopao" },
+    time: "2 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de pulpo, limpio",
+        "10 tazas de agua",
+        "2 hojas de laurel",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 sobre de sazón",
+        "1½ tazas de arroz de grano corto, lavado",
+        "10 aceitunas rellenas",
+        "1 cucharadita de sal",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "2 lb octopus, cleaned",
+        "10 cups water",
+        "2 bay leaves",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 packet sazón",
+        "1½ cups short-grain rice, rinsed",
+        "10 stuffed olives",
+        "1 teaspoon salt",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el pulpo en el agua con el laurel, tapado, 50–60 minutos, hasta que un tenedor entre fácil en la parte gruesa. Sáquelo, córtelo en trocitos y guarde 7 tazas del agua.",
+        "Sofría el sofrito en el aceite 3 minutos; añada la salsa de tomate, el sazón y las aceitunas.",
+        "Añada el agua del pulpo y la sal, deje hervir y añada el arroz. Cocine 18–20 minutos, moviendo de vez en cuando.",
+        "Añada el pulpo los últimos 5 minutos para que se caliente. Espolvoree el cilantro y sirva con tostones y aguacate."
+      ],
+      en: [
+        "Boil the octopus in the water with the bay leaves, covered, 50–60 minutes, until a fork goes in easily at the thick part. Remove, cut into bits and save 7 cups of the water.",
+        "Sauté the sofrito in the oil 3 minutes; add the tomato sauce, sazón and olives.",
+        "Add the octopus water and salt, bring to a boil and add the rice. Cook 18–20 minutes, stirring now and then.",
+        "Add the octopus for the last 5 minutes to heat through. Sprinkle the cilantro and serve with tostones and avocado."
+      ]
+    }
+  },
+  {
+    id: "asopao-bacalao",
+    category: "sopas",
+    name: { es: "Asopao de Bacalao", en: "Salt Cod Asopao" },
+    time: "45 min + desalar el bacalao",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de bacalao, desalado y en lascas",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 papa en cubitos",
+        "1½ tazas de arroz de grano corto, lavado",
+        "8 tazas de agua",
+        "10 aceitunas rellenas",
+        "½ taza de petit pois"
+      ],
+      en: [
+        "1 lb salt cod, desalted and flaked",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 potato, diced",
+        "1½ cups short-grain rice, rinsed",
+        "8 cups water",
+        "10 stuffed olives",
+        "½ cup peas"
+      ]
+    },
+    steps: {
+      es: [
+        "Desale el bacalao de 8 a 12 horas en la nevera, cambiando el agua 3 o 4 veces.",
+        "Sofría el sofrito en el aceite 3 minutos. Añada la salsa de tomate, el bacalao y las aceitunas, y cocine 3 minutos.",
+        "Añada el agua y la papa, deje hervir y añada el arroz. Cocine 18–20 minutos, moviendo de vez en cuando, hasta que el arroz esté blando.",
+        "Añada los petit pois al final. Pruebe antes de salar: el bacalao ya trae sal. Es el asopao de Cuaresma."
+      ],
+      en: [
+        "Desalt the cod 8 to 12 hours in the fridge, changing the water 3 or 4 times.",
+        "Sauté the sofrito in the oil 3 minutes. Add the tomato sauce, cod and olives, and cook 3 minutes.",
+        "Add the water and potato, bring to a boil and add the rice. Cook 18–20 minutes, stirring now and then, until the rice is soft.",
+        "Add the peas at the end. Taste before salting: the cod is already salty. It's the Lenten asopao."
+      ]
+    }
+  },
+  {
+    id: "sopa-gallina-criolla",
+    category: "sopas",
+    name: { es: "Sopa de Gallina Criolla", en: "Creole Hen Soup" },
+    time: "2 hr 30 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 gallina de 3–4 libras, en presas",
+        "14 tazas de agua",
+        "1 cebolla en cuartos",
+        "4 dientes de ajo, majados",
+        "4 hojas de recao",
+        "1 libra de calabaza en trozos",
+        "1 libra de yautía en trozos",
+        "2 zanahorias en ruedas",
+        "1 taza de fideos finos",
+        "2 cucharaditas de sal"
+      ],
+      en: [
+        "1 stewing hen, 3–4 lb, cut into pieces",
+        "14 cups water",
+        "1 onion, quartered",
+        "4 garlic cloves, mashed",
+        "4 culantro leaves",
+        "1 lb calabaza in chunks",
+        "1 lb yautía (taro) in chunks",
+        "2 carrots, sliced",
+        "1 cup thin noodles",
+        "2 teaspoons salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga la gallina en el agua fría con la cebolla, el ajo y el recao. Hierva y quite la espuma; cocine a fuego bajo 1½–2 horas, hasta que la carne se despegue del hueso (la gallina es más dura que el pollo, pero da más sabor).",
+        "Saque la gallina, desmenúcela sin piel ni huesos y devuélvala al caldo.",
+        "Añada la calabaza, la yautía, la zanahoria y la sal, y cocine 20 minutos. La calabaza se deshace y espesa el caldo.",
+        "Añada los fideos los últimos 8 minutos. Sirva caliente: es la sopa de los días de catarro."
+      ],
+      en: [
+        "Put the hen in the cold water with the onion, garlic and culantro. Bring to a boil and skim the foam; simmer 1½–2 hours, until the meat comes off the bone (hen is tougher than chicken, but more flavorful).",
+        "Remove the hen, shred it without skin or bones and return it to the broth.",
+        "Add the calabaza, yautía, carrot and salt, and cook 20 minutes. The calabaza breaks down and thickens the broth.",
+        "Add the noodles for the last 8 minutes. Serve hot: it's the soup for days when you have a cold."
+      ]
+    }
+  },
+  {
+    id: "sopa-habichuelas-coloradas",
+    category: "sopas",
+    name: { es: "Sopa de Habichuelas Coloradas con Calabaza", en: "Red Bean Soup with Calabaza" },
+    time: "1 hr 15 min + remojo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de habichuelas coloradas secas, remojadas toda la noche",
+        "10 tazas de agua",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "2 onzas de jamón de cocinar en cubitos",
+        "¼ taza de salsa de tomate",
+        "1 libra de calabaza en cubos",
+        "1 papa en cubos",
+        "1 sobre de sazón",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "1 lb dried red kidney beans, soaked overnight",
+        "10 cups water",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "2 oz cooking ham, diced",
+        "¼ cup tomato sauce",
+        "1 lb calabaza, cubed",
+        "1 potato, cubed",
+        "1 packet sazón",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Escurra las habichuelas, cúbralas con el agua y hiérvalas a fuego vivo 10 minutos (las habichuelas coloradas crudas tienen una sustancia que se elimina con ese hervor fuerte); luego a fuego bajo 45 minutos, hasta que estén blandas.",
+        "Aparte, sofría el sofrito y el jamón en el aceite 3 minutos y añada la salsa de tomate y el sazón.",
+        "Añada el sofrito, la calabaza, la papa y la sal a las habichuelas y cocine 20 minutos.",
+        "Maje unas cuantas habichuelas y calabaza contra la olla para espesar. Sirva con arroz blanco aparte o pan."
+      ],
+      en: [
+        "Drain the beans, cover with the water and boil hard 10 minutes (raw red kidney beans have a substance that this hard boil removes); then simmer 45 minutes, until tender.",
+        "Separately, sauté the sofrito and ham in the oil 3 minutes and add the tomato sauce and sazón.",
+        "Add the sofrito, calabaza, potato and salt to the beans and cook 20 minutes.",
+        "Mash some beans and calabaza against the pot to thicken. Serve with white rice on the side or bread."
+      ]
+    }
+  },
+  {
+    id: "sopa-guingambo",
+    category: "sopas",
+    name: { es: "Sopa de Guingambó (Quimbombó)", en: "Okra (Guingambó) Soup" },
+    time: "50 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de guingambó (quimbombó) en ruedas",
+        "1 cucharada de vinagre",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "½ libra de carne de cerdo o jamón de cocinar en cubitos",
+        "2 tomates picados",
+        "8 tazas de caldo de pollo",
+        "1 libra de calabaza en cubos",
+        "½ libra de ñame en cubos",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "1 lb okra (guingambó), sliced",
+        "1 tablespoon vinegar",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "½ lb pork or cooking ham, diced",
+        "2 tomatoes, chopped",
+        "8 cups chicken broth",
+        "1 lb calabaza, cubed",
+        "½ lb ñame (yam), cubed",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el guingambó con el vinagre y déjelo 15 minutos; enjuáguelo (así suelta menos baba).",
+        "Dore la carne en el aceite 5 minutos. Añada el sofrito y los tomates y cocine 5 minutos.",
+        "Añada el caldo, la calabaza, el ñame y la sal y cocine 15 minutos.",
+        "Añada el guingambó y cocine 10 minutos más, hasta que esté tierno. Espesa solo. Sirva con arroz blanco."
+      ],
+      en: [
+        "Toss the okra with the vinegar and let sit 15 minutes; rinse it (so it gets less slimy).",
+        "Brown the meat in the oil 5 minutes. Add the sofrito and tomatoes and cook 5 minutes.",
+        "Add the broth, calabaza, yam and salt and cook 15 minutes.",
+        "Add the okra and cook 10 more minutes, until tender. It thickens on its own. Serve with white rice."
+      ]
+    }
+  },
+  {
+    id: "sopa-coditos-salchichas",
+    category: "sopas",
+    name: { es: "Sopa de Coditos con Salchichas", en: "Elbow Pasta Soup with Vienna Sausages" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 cucharadas de aceite",
+        "¼ taza de sofrito",
+        "1 lata de 4.6 onzas de salchichas, en ruedas",
+        "¼ taza de salsa de tomate",
+        "1 sobre de sazón",
+        "8 tazas de caldo de pollo",
+        "2 papas en cubitos",
+        "1 zanahoria en cubitos",
+        "1 taza de coditos"
+      ],
+      en: [
+        "2 tablespoons oil",
+        "¼ cup sofrito",
+        "1 can (4.6 oz) Vienna sausages, sliced",
+        "¼ cup tomato sauce",
+        "1 packet sazón",
+        "8 cups chicken broth",
+        "2 potatoes, diced",
+        "1 carrot, diced",
+        "1 cup elbow pasta"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito y las salchichas en el aceite 3 minutos.",
+        "Añada la salsa de tomate, el sazón, el caldo, las papas y la zanahoria, y cocine 12 minutos.",
+        "Añada los coditos y cocine 8–10 minutos, hasta que estén blandos.",
+        "Pruebe y ajuste la sal (el caldo y las salchichas ya traen). La sopa de los nenes en días de lluvia."
+      ],
+      en: [
+        "Sauté the sofrito and sausages in the oil 3 minutes.",
+        "Add the tomato sauce, sazón, broth, potatoes and carrot, and cook 12 minutes.",
+        "Add the pasta and cook 8–10 minutes, until tender.",
+        "Taste and adjust the salt (the broth and sausages are already salty). The kids' soup for rainy days."
+      ]
+    }
+  },
+  {
+    id: "sopa-res-vegetales-maiz",
+    category: "sopas",
+    name: { es: "Sopa de Res con Vegetales y Mazorca", en: "Beef Vegetable Soup with Corn on the Cob" },
+    time: "2 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 libras de carne de res para sopa (falda o pecho), en trozos",
+        "12 tazas de agua",
+        "½ taza de sofrito",
+        "2 mazorcas de maíz, en ruedas",
+        "1 libra de calabaza en trozos",
+        "2 papas en trozos",
+        "2 zanahorias en ruedas",
+        "1 taza de repollo picado",
+        "1 sobre de sazón",
+        "2 cucharaditas de sal"
+      ],
+      en: [
+        "2 lb beef for soup (flank or brisket), in chunks",
+        "12 cups water",
+        "½ cup sofrito",
+        "2 ears of corn, cut into rounds",
+        "1 lb calabaza in chunks",
+        "2 potatoes in chunks",
+        "2 carrots, sliced",
+        "1 cup chopped cabbage",
+        "1 packet sazón",
+        "2 teaspoons salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la carne en el agua, quitando la espuma, y cocine a fuego bajo 1 hora, hasta que esté casi blanda.",
+        "Añada el sofrito, el sazón y la sal.",
+        "Añada el maíz, la calabaza, las papas y la zanahoria y cocine 25 minutos.",
+        "Añada el repollo los últimos 10 minutos. Sirva con un pedazo de mazorca en cada plato."
+      ],
+      en: [
+        "Bring the meat to a boil in the water, skimming the foam, and simmer 1 hour, until nearly tender.",
+        "Add the sofrito, sazón and salt.",
+        "Add the corn, calabaza, potatoes and carrot and cook 25 minutes.",
+        "Add the cabbage for the last 10 minutes. Serve with a piece of corn in each bowl."
+      ]
+    }
+  },
+  {
+    id: "crema-apio",
+    category: "sopas",
+    name: { es: "Crema de Apio del País", en: "Cream of Arracacha (Puerto Rican Apio)" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de apio del país (arracacha), pelado y en trozos",
+        "2 cucharadas de mantequilla",
+        "1 cebolla picada",
+        "3 dientes de ajo, picados",
+        "6 tazas de caldo de pollo o de vegetales",
+        "½ taza de leche",
+        "1 cucharadita de sal",
+        "¼ cucharadita de nuez moscada",
+        "2 cucharadas de cebollín picado"
+      ],
+      en: [
+        "2 lb arracacha (Puerto Rican apio), peeled and in chunks",
+        "2 tablespoons butter",
+        "1 onion, chopped",
+        "3 garlic cloves, minced",
+        "6 cups chicken or vegetable broth",
+        "½ cup milk",
+        "1 teaspoon salt",
+        "¼ teaspoon nutmeg",
+        "2 tablespoons chopped scallion"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría la cebolla y el ajo en la mantequilla 5 minutos, sin dorar.",
+        "Añada el apio y el caldo y hierva 20–25 minutos, hasta que el apio esté muy blando.",
+        "Licúe por tandas (llenando la licuadora sólo hasta la mitad y tapando con un paño: el vapor empuja la tapa) hasta que esté cremoso.",
+        "Devuelva a la olla con la leche, la sal y la nuez moscada y caliente sin hervir. Decore con cebollín. El apio le da un sabor dulce y perfumado, entre papa y zanahoria."
+      ],
+      en: [
+        "Sauté the onion and garlic in the butter 5 minutes, without browning.",
+        "Add the arracacha and broth and boil 20–25 minutes, until very soft.",
+        "Blend in batches (filling the blender only halfway and covering with a towel: steam pushes the lid) until creamy.",
+        "Return to the pot with the milk, salt and nutmeg and heat without boiling. Garnish with scallion. Arracacha tastes sweet and fragrant, between potato and carrot."
+      ]
+    }
+  },
+  {
+    id: "crema-name",
+    category: "sopas",
+    name: { es: "Crema de Ñame con Ajo Asado", en: "Cream of Ñame (Yam) with Roasted Garlic" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 cabeza de ajo",
+        "1 cucharada de aceite de oliva",
+        "2 libras de ñame, pelado y en trozos",
+        "1 cebolla picada",
+        "6 tazas de caldo de pollo",
+        "½ taza de crema de leche (heavy cream)",
+        "1 cucharadita de sal",
+        "¼ cucharadita de pimienta blanca"
+      ],
+      en: [
+        "1 head of garlic",
+        "1 tablespoon olive oil",
+        "2 lb ñame (yam), peeled and in chunks",
+        "1 onion, chopped",
+        "6 cups chicken broth",
+        "½ cup heavy cream",
+        "1 teaspoon salt",
+        "¼ teaspoon white pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400°F. Corte la punta de la cabeza de ajo, rocíela con el aceite, envuélvala en papel de aluminio y hornee 40 minutos, hasta que esté blanda y dulce.",
+        "Mientras, hierva el ñame y la cebolla en el caldo 25 minutos, hasta que el ñame esté blando. Use guantes o aceite en las manos al pelar el ñame: puede picar.",
+        "Exprima el ajo asado en la olla y licúe por tandas, con cuidado con el vapor.",
+        "Añada la crema, la sal y la pimienta y caliente sin hervir. Si espesa demasiado, añada caldo."
+      ],
+      en: [
+        "Heat the oven to 400°F. Cut the top off the garlic head, drizzle with the oil, wrap in foil and roast 40 minutes, until soft and sweet.",
+        "Meanwhile, boil the yam and onion in the broth 25 minutes, until the yam is soft. Wear gloves or oil your hands when peeling yam: it can itch.",
+        "Squeeze the roasted garlic into the pot and blend in batches, carefully with the steam.",
+        "Add the cream, salt and pepper and heat without boiling. If it gets too thick, add broth."
+      ]
+    }
+  },
+  {
+    id: "crema-brocoli-queso",
+    category: "sopas",
+    name: { es: "Crema de Brócoli con Queso", en: "Broccoli Cheese Soup" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 cucharadas de mantequilla",
+        "1 cebolla picada",
+        "2 dientes de ajo, picados",
+        "3 cucharadas de harina de trigo",
+        "4 tazas de caldo de vegetales o de pollo",
+        "2 tazas de leche",
+        "2 cabezas de brócoli, en arbolitos pequeños",
+        "1 zanahoria rallada",
+        "2 tazas de queso cheddar rallado",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "3 tablespoons butter",
+        "1 onion, chopped",
+        "2 garlic cloves, minced",
+        "3 tablespoons all-purpose flour",
+        "4 cups vegetable or chicken broth",
+        "2 cups milk",
+        "2 heads broccoli, in small florets",
+        "1 carrot, grated",
+        "2 cups shredded cheddar cheese",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría la cebolla y el ajo en la mantequilla 5 minutos. Añada la harina y mueva 1 minuto.",
+        "Añada el caldo poco a poco, moviendo para que no se hagan grumos, y luego la leche.",
+        "Añada el brócoli y la zanahoria y cocine a fuego bajo 15 minutos, hasta que el brócoli esté tierno.",
+        "Licúe la mitad para que quede cremosa con pedacitos. Apague el fuego y añada el queso poco a poco hasta que se derrita (si hierve con el queso, se corta)."
+      ],
+      en: [
+        "Sauté the onion and garlic in the butter 5 minutes. Add the flour and stir 1 minute.",
+        "Add the broth gradually, stirring so no lumps form, then the milk.",
+        "Add the broccoli and carrot and simmer 15 minutes, until the broccoli is tender.",
+        "Blend half so it's creamy with bits. Turn off the heat and add the cheese gradually until melted (if it boils with the cheese, it curdles)."
+      ]
+    }
+  },
+  {
+    id: "crema-champinones",
+    category: "sopas",
+    name: { es: "Crema de Champiñones", en: "Cream of Mushroom Soup" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de champiñones en lascas",
+        "3 cucharadas de mantequilla",
+        "1 cebolla picada",
+        "2 dientes de ajo, picados",
+        "2 cucharadas de harina de trigo",
+        "4 tazas de caldo de pollo o de vegetales",
+        "½ taza de crema de leche (heavy cream)",
+        "½ cucharadita de tomillo u orégano",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 lb mushrooms, sliced",
+        "3 tablespoons butter",
+        "1 onion, chopped",
+        "2 garlic cloves, minced",
+        "2 tablespoons all-purpose flour",
+        "4 cups chicken or vegetable broth",
+        "½ cup heavy cream",
+        "½ teaspoon thyme or oregano",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Dore los champiñones en la mantequilla a fuego alto 8 minutos, sin moverlos mucho (el dorado es el sabor). Separe un puñado para decorar.",
+        "Añada la cebolla y el ajo y cocine 4 minutos. Espolvoree la harina y mueva 1 minuto.",
+        "Añada el caldo y el tomillo y cocine 10 minutos. Licúe con cuidado por el vapor.",
+        "Añada la crema, sazone y caliente sin hervir. Sirva con los champiñones separados por encima y pan tostado."
+      ],
+      en: [
+        "Brown the mushrooms in the butter over high heat 8 minutes, without stirring too much (browning is the flavor). Set a handful aside for garnish.",
+        "Add the onion and garlic and cook 4 minutes. Sprinkle the flour and stir 1 minute.",
+        "Add the broth and thyme and cook 10 minutes. Blend carefully with the steam.",
+        "Add the cream, season and heat without boiling. Serve topped with the reserved mushrooms and toast."
       ]
     }
   }

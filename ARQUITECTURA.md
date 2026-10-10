@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.0.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 759 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.1.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 771 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, y más emparedados, en veinticinco tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, y más sopas, cremas y asopaos, en veintiséis tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -113,7 +113,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | cereales | Cereales | 10 |
 | granos | Granos y Legumbres | 10 |
 | ensaladas | Ensaladas | 24 |
-| sopas | Sopas | 31 |
+| sopas | Sopas | 43 |
 | carnes | Carnes | 52 |
 | aves | Aves | 40 |
 | pescados | Pescado y Mariscos | 46 |
@@ -186,7 +186,10 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   rueda de cítrico, yerbabuena, sorbeto, borde de sal o de coco, degradado del sunrise, capas del dark & stormy).
   **Emparedados:** pan largo con el relleno de cada uno (churrasco, bistec y tripleta; lechón y pernil; choripán;
   pavochón), pan de hamburguesa con pescado, desayuno en pan sobao, triángulos de queso con guayaba, club de dos pisos,
-  wrap cortado y jibaritos con tostones como pan.
+  wrap cortado y jibaritos con tostones como pan. **Sopas:** tazón de barro con el contenido de cada una: asopaos rojizos
+  con arroz, aceitunas y su marisco o carne; cremas lisas con espiral y adorno, del color de su vianda o vegetal; sopas de
+  caldo con fideos, habichuelas rojas/negras/blancas, garbanzos, lentejas, sancocho con mazorca, pescado, guingambó,
+  albóndigas, plátano, coditos o mondongo. Los gazpachos conservan 🍅 y 🥭.
 - **Carnes y aves (`meatIcons`):** antes de `dishIcons`, las recetas de las categorías `carnes` y `aves` buscan su
   dibujo por tipo de plato con una lista de expresiones en orden (gana la primera): guiso en caldero (`ic-guiso-carne`,
   `ic-fricase-pollo`, ambos sobre `ic-caldero`), encebollado, empanado, desmenuzado (ropa vieja, salpicón), picadillo,
@@ -276,7 +279,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 759). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 771). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -321,6 +324,19 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v3.1.0 · Más sopas, cremas y asopaos
+- *Pedido:* más recetas de sopas y asopaos.
+- Vigesimosexta tanda en `js/recipes-4.js` (versiones propias), 12 recetas: asopao de langosta, de pulpo y de bacalao;
+  sopa de gallina criolla, de habichuelas coloradas con calabaza (con el hervor fuerte de 10 minutos que piden las
+  habichuelas coloradas), de guingambó, de coditos con salchichas y de res con vegetales y mazorca; cremas de apio del
+  país, de ñame con ajo asado, de brócoli con queso y de champiñones (licuar caliente por tandas y con un paño).
+- **Nutrición:** "apio" en la tabla es el apio de tallo (celery); nueva entrada "apio del país" (arracacha, la raíz de
+  los sancochos). Nuevos también queso cheddar y tomillo.
+- **Iconos:** 30 tazones (§7) para todas las sopas, cremas y asopaos (antes todos 🍲).
+- Total: **759 → 771 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador: "asopao", "sopa", "crema", "sopa de pollo", "apio" ✔;
+  navegador: las 12 recetas en ES y EN a 375 px sin errores ni desbordes ✔; dibujos revisados ✔.
 
 ### 2026-10-10 — v3.0.0 · Planes de comida
 - *Pedidos:* una pestaña de consulta con estas recetas y opciones predeterminadas para dietas de rebajar y ganar masa
