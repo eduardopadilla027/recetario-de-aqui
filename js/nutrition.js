@@ -66,6 +66,17 @@ const NUTRI_FOODS = [
   F("cabro|chivo|cabrito", 109, 20.6, 0, 0, 0, 2.3, 0.7, 82),
   F("conejo", 136, 20, 0, 0, 0, 5.5, 1.7, 45, { u: 1400 }),
   F("ternera", 112, 20, 0, 0, 0, 3, 1, 80, { u: 150 }),
+  // Otros cortes (tanda 33). Crudos, por 100 g tal como se compran (con hueso cuando lo llevan).
+  F("ribeye|rib eye", 291, 24, 0, 0, 0, 22, 9, 55),
+  F("osobuco|jarrete", 150, 20, 0, 0, 0, 7.5, 2.8, 70),
+  F("pecho de res|brisket", 250, 18, 0, 0, 0, 20, 8, 60),
+  F("solomillo|solomillo de cerdo|tenderloin", 120, 21, 0, 0, 0, 3.5, 1.2, 50),
+  F("panceta|barriga de cerdo|pork belly", 518, 9.3, 0, 0, 0, 53, 19, 32),
+  F("cordero|pierna de cordero|chuletas de cordero", 250, 17, 0, 0, 0, 20, 8.5, 60),
+  F("pato", 200, 11, 0, 0, 0, 17, 5.5, 45),
+  F("codorniz|codornices", 192, 19.6, 0, 0, 0, 12, 3.4, 53, { u: 120 }),
+  F("gallinita|gallinitas|cornish", 150, 12.6, 0, 0, 0, 10.5, 3, 60, { u: 560 }),
+  F("higaditos|higado de pollo|higados de pollo", 119, 17, 0.7, 0, 0, 4.8, 1.6, 71),
   // Pescados y mariscos
   F("almeja|mejillon", 86, 14.7, 3.6, 0, 0, 1, 0.2, 600, { u: 12, can: 283 }),
   F("hoja de platano", 0, 0, 0, 0, 0, 0, 0, 0),

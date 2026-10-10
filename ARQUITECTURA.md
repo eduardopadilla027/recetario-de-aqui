@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.9.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 869 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.10.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 887 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, y más tés, en treinta y dos tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, y otros cortes de carnes y aves, en treinta y tres tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -114,8 +114,8 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | granos | Granos y Legumbres | 19 |
 | ensaladas | Ensaladas | 24 |
 | sopas | Sopas | 44 |
-| carnes | Carnes | 52 |
-| aves | Aves | 40 |
+| carnes | Carnes | 63 |
+| aves | Aves | 47 |
 | pescados | Pescado y Mariscos | 57 |
 | huevos | Huevos y Queso | 12 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 39 |
@@ -209,6 +209,11 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   **Tés (`ic-te-*`):** taza en su platito con el color de cada té y, al lado, su hoja, flor o especia (naranjo,
   yerbabuena, manzanillas, canela y clavos, anís estrellado, orégano brujo, albahaca, cáscara de piña, guayaba, tilo,
   limoncillo, jengibre, hoja y flor de parcha, limón, guanábana, moringa, cúrcuma, jamaica, romero, hinojo, chai…).
+  **Otros cortes (`ic-corte-*`, tanda 33):** van al principio de `meatIcons` (carnes y aves) para que no los tomen
+  "chuleta" ni "costill": ruedas de falda rellena, picanha en C con su grasa, ribeye con marcas y mantequilla, short
+  ribs con hueso, osobuco con tuétano, brisket en lascas, medallones de solomillo, cerdo desmenuzado, panceta con
+  cuero, pierna y chuletitas de cordero, pato, codornices, gallinitas, pollo en mariposa en la parrilla, pechuga de pavo,
+  muslo de pavo guisado e higaditos con cebolla.
   **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
@@ -317,7 +322,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 869). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 887). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -371,6 +376,29 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v3.10.0 · Otros cortes de carnes y aves
+- *Pedido:* recetas de otros cortes de carnes y aves.
+- Trigésima tercera tanda en `js/recipes-4.js` (versiones propias), 18 recetas:
+  - **11 carnes:** falda de res rellena de vegetales, picanha a la parrilla con mojo, ribeye a la plancha con mantequilla
+    de ajo y recao, short ribs guisadas, osobuco a la criolla, pecho de res (brisket) al horno, solomillo de cerdo con
+    glaseado de parcha, cerdo desmenuzado con mojo, panceta crujiente, pierna de cordero al horno y chuletitas de
+    cordero al ajillo.
+  - **7 aves:** pato guisado, codornices al ajillo, gallinitas rellenas de arroz con gandules, pollo en mariposa a la
+    parrilla, pechuga de pavo al horno, muslos de pavo guisados e higaditos de pollo encebollados.
+  - Cada una con su temperatura del USDA (145 °F res, cerdo y cordero; 165 °F aves e higaditos; ~195-200 °F para
+    desmenuzar el cerdo y el brisket).
+- **Nutrición:** nuevos ribeye, osobuco, pecho de res, solomillo, panceta, cordero, pato y gallinitas (enteros, tal como
+  se compran), codornices e higaditos. El "adobo casero" se escribe con sus ingredientes (ajo, orégano, sal y pimienta)
+  para no contarlo como adobo de sobre.
+- **Alertas:** la alerta de sazón/adobo comercial ya no sale con "adobo casero" ni "adobo seco"; el manejo seguro reconoce
+  pato, codornices, gallinitas, higaditos (aves), panceta y solomillo (cerdo), y ribeye, picanha, osobuco y cordero (res y
+  otras carnes). El buscador y los planes vegetarianos también excluyen cordero, pato, codorniz y panceta.
+- **Iconos:** 18 dibujos nuevos (§7).
+- Total: **869 → 887 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador: "cordero", "pato", "ribeye", "brisket", "codornices" ✔; plan
+  vegetariano sin estas recetas ✔; navegador: las 18 en ES y EN a 375 px, con su consejo de temperatura, sin errores ni
+  desbordes ✔.
 
 ### 2026-10-10 — v3.9.0 · Más tés
 - *Pedido:* más recetas de té.

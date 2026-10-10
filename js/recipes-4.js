@@ -79,6 +79,9 @@
  * refresco de jengibre, spritzer de parcha, té helado, frappé de café, agua de pepino).
  * Trigésima segunda tanda: más tés (hojas de parcha, de limón y de guanábana, moringa,
  * cúrcuma y jengibre, jamaica caliente, romero, hinojo, té verde, cáscara de china, chai).
+ * Trigésima tercera tanda: otros cortes (falda rellena, picanha, ribeye, short ribs,
+ * osobuco, pecho de res, solomillo, cerdo desmenuzado, panceta, cordero) y aves (pato,
+ * codornices, gallinitas, pollo en mariposa, pechuga y muslos de pavo, higaditos).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -18968,6 +18971,836 @@ recipes.push(
         "Simmer the water with the cinnamon, cloves, star anise, ginger and nutmeg 5 minutes.",
         "Turn off, add the tea and steep 4 minutes.",
         "Add the milk and sugar and heat without boiling. Strain and serve dusted with cinnamon. It has caffeine."
+      ]
+    }
+  },
+
+  // ── Trigésima tercera tanda (2026-10): otros cortes de carnes y aves ──
+  {
+    id: "falda-rellena",
+    category: "carnes",
+    name: { es: "Falda de Res Rellena de Vegetales", en: "Stuffed Flank Steak with Vegetables" },
+    time: "1 hr 45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de falda de res en una pieza, abierta en mariposa",
+        "4 dientes de ajo machacados",
+        "1 cucharadita de orégano",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "2 cucharadas de jugo de naranja agria",
+        "1 zanahoria en tiras",
+        "1 pimiento rojo en tiras",
+        "2 huevos hervidos en cuartos",
+        "10 aceitunas rellenas",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "1 taza de caldo de res",
+        "1 hoja de laurel"
+      ],
+      en: [
+        "2 lb flank steak in one piece, butterflied",
+        "4 garlic cloves, crushed",
+        "1 teaspoon oregano",
+        "1 teaspoon salt",
+        "½ teaspoon black pepper",
+        "2 tablespoons sour orange juice",
+        "1 carrot, in strips",
+        "1 red bell pepper, in strips",
+        "2 hard-boiled eggs, quartered",
+        "10 stuffed olives",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 can (8 oz) tomato sauce",
+        "1 cup beef broth",
+        "1 bay leaf"
+      ]
+    },
+    steps: {
+      es: [
+        "Ablande la falda con un mazo hasta que quede pareja, de ½ pulgada. Sazónela con el ajo, el orégano, la sal, la pimienta y la naranja agria y déjela 30 minutos.",
+        "Acomode encima, a lo largo, la zanahoria, el pimiento, los huevos y las aceitunas. Enróllela en el sentido de la fibra (así al cortar las ruedas salen contra la fibra y tiernas) y amárrela con hilo de cocina.",
+        "Dórela por todos lados en el aceite en un caldero. Añada el sofrito, la salsa de tomate, el caldo y el laurel.",
+        "Tape y cocine a fuego bajo 1 hora y 15 minutos, volteándola a mitad, hasta que esté blanda. Repose 10 minutos, quite el hilo y corte en ruedas con la salsa."
+      ],
+      en: [
+        "Pound the flank to an even ½ inch. Season with the garlic, oregano, salt, pepper and sour orange and let sit 30 minutes.",
+        "Lay the carrot, bell pepper, eggs and olives lengthwise on top. Roll it up with the grain (so the slices are cut across the grain and tender) and tie with kitchen twine.",
+        "Brown it on all sides in the oil in a caldero. Add the sofrito, tomato sauce, broth and bay leaf.",
+        "Cover and cook over low heat 1 hour 15 minutes, turning halfway, until tender. Rest 10 minutes, remove the twine and slice into rounds with the sauce."
+      ]
+    }
+  },
+  {
+    id: "picanha-parrilla",
+    category: "carnes",
+    name: { es: "Punta Trasera (Picanha) a la Parrilla con Mojo", en: "Grilled Picanha (Top Sirloin Cap) with Mojo" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2½ libras de punta trasera (picanha) con su capa de grasa",
+        "2 cucharaditas de sal gruesa",
+        "1 cucharadita de pimienta",
+        "⅓ taza de aceite de oliva para el mojo",
+        "6 dientes de ajo machacados para el mojo",
+        "2 cucharadas de jugo de limón para el mojo"
+      ],
+      en: [
+        "2½ lb picanha (top sirloin cap) with its fat cap",
+        "2 teaspoons coarse salt",
+        "1 teaspoon black pepper",
+        "⅓ cup olive oil for the mojo",
+        "6 garlic cloves, crushed, for the mojo",
+        "2 tablespoons lime juice for the mojo"
+      ]
+    },
+    steps: {
+      es: [
+        "Marque la grasa en rombos sin cortar la carne. Corte la pieza en filetes de 1½ pulgadas a favor de la fibra y dóblelos en forma de C con la grasa por fuera (o póngalos en pincho, como en Brasil).",
+        "Sazone con la sal gruesa y la pimienta 30 minutos antes.",
+        "Ase a fuego directo medio-alto con la grasa hacia abajo 3 minutos para dorarla, y luego 4 a 5 minutos por lado, hasta 130 °F para término medio o 145 °F según el USDA.",
+        "Repose 5 minutos, corte en lascas finas contra la fibra y sirva con el mojo (el aceite tibio con el ajo y el limón). Tip de parrilla: la grasa que gotea levanta llamas; tenga una zona sin carbón para mover la carne si se aviva el fuego."
+      ],
+      en: [
+        "Score the fat in a diamond pattern without cutting the meat. Cut the roast into 1½-inch steaks with the grain and bend them into a C with the fat outside (or skewer them, Brazilian style).",
+        "Season with the coarse salt and pepper 30 minutes ahead.",
+        "Grill over medium-high direct heat fat side down 3 minutes to render, then 4 to 5 minutes per side, to 130 °F for medium or 145 °F per USDA.",
+        "Rest 5 minutes, slice thin against the grain and serve with the mojo (the warm oil with the garlic and lime). Grill tip: dripping fat causes flare-ups; keep a coal-free zone to move the meat to if the fire flares."
+      ]
+    }
+  },
+  {
+    id: "ribeye-mantequilla-ajo",
+    category: "carnes",
+    name: { es: "Ribeye a la Plancha con Mantequilla de Ajo y Recao", en: "Pan-Seared Ribeye with Garlic Culantro Butter" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de ribeye (2 bistecs de 1 pulgada)",
+        "1 cucharadita de sal gruesa",
+        "½ cucharadita de pimienta",
+        "1 cucharada de aceite vegetal",
+        "3 cucharadas de mantequilla",
+        "3 dientes de ajo machacados",
+        "2 hojas de recao picadas"
+      ],
+      en: [
+        "1½ lb ribeye (2 one-inch steaks)",
+        "1 teaspoon coarse salt",
+        "½ teaspoon black pepper",
+        "1 tablespoon vegetable oil",
+        "3 tablespoons butter",
+        "3 garlic cloves, crushed",
+        "2 culantro leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Saque los bistecs de la nevera 30 minutos antes, séquelos y sazónelos con la sal y la pimienta.",
+        "Caliente un sartén de hierro a fuego alto con el aceite hasta que humee. Selle los bistecs 3 a 4 minutos por lado sin moverlos.",
+        "Baje el fuego, añada la mantequilla, el ajo y el recao, y báñelos con la mantequilla 1 minuto con una cuchara. Cocine hasta 145 °F en el centro (USDA) o al término que guste.",
+        "Repose 5 minutos antes de cortar para que no se salgan los jugos. Corte en lascas para 4 (6 onzas por persona) y sirva con la mantequilla del sartén, tostones y ensalada."
+      ],
+      en: [
+        "Take the steaks out of the fridge 30 minutes ahead, pat dry and season with the salt and pepper.",
+        "Heat a cast-iron skillet over high heat with the oil until smoking. Sear the steaks 3 to 4 minutes per side without moving them.",
+        "Lower the heat, add the butter, garlic and culantro, and baste with a spoon 1 minute. Cook to 145 °F in the center (USDA) or your preferred doneness.",
+        "Rest 5 minutes before slicing so the juices stay in. Slice to serve 4 (6 oz each) with the pan butter, tostones and salad."
+      ]
+    }
+  },
+  {
+    id: "short-ribs-guisadas",
+    category: "carnes",
+    name: { es: "Costillas de Res Guisadas (Short Ribs) a la Criolla", en: "Creole Braised Beef Short Ribs" },
+    time: "3 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "4 libras de costillas de res cortas (short ribs)",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "2 cucharadas de aceite vegetal",
+        "½ taza de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "1 taza de vino tinto",
+        "2 tazas de caldo de res",
+        "2 zanahorias en trozos",
+        "1 libra de papas en trozos",
+        "1 hoja de laurel",
+        "10 aceitunas rellenas"
+      ],
+      en: [
+        "4 lb beef short ribs",
+        "1 teaspoon salt",
+        "½ teaspoon black pepper",
+        "2 tablespoons vegetable oil",
+        "½ cup sofrito",
+        "1 can (8 oz) tomato sauce",
+        "1 cup red wine",
+        "2 cups beef broth",
+        "2 carrots, in chunks",
+        "1 lb potatoes, in chunks",
+        "1 bay leaf",
+        "10 stuffed olives"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone las costillas y dórelas bien por todos lados en el aceite, por tandas, en un caldero grande. Sáquelas y bote casi toda la grasa.",
+        "Sofría el sofrito 3 minutos, añada el vino y raspe el fondo. Añada la salsa de tomate, el caldo y el laurel, y devuelva las costillas.",
+        "Tape y cocine a fuego bajo 2 horas (o en el horno a 325 °F).",
+        "Añada las zanahorias, las papas y las aceitunas, y cocine 30 minutos más, hasta que la carne se despegue del hueso. Quite la grasa de encima antes de servir."
+      ],
+      en: [
+        "Season the ribs and brown them well on all sides in the oil, in batches, in a large caldero. Remove and pour off most of the fat.",
+        "Sauté the sofrito 3 minutes, add the wine and scrape the bottom. Add the tomato sauce, broth and bay leaf, and return the ribs.",
+        "Cover and cook over low heat 2 hours (or in a 325 °F oven).",
+        "Add the carrots, potatoes and olives and cook 30 more minutes, until the meat falls off the bone. Skim the fat from the top before serving."
+      ]
+    }
+  },
+  {
+    id: "osobuco-criollo",
+    category: "carnes",
+    name: { es: "Osobuco de Res a la Criolla", en: "Creole-Style Beef Osso Buco" },
+    time: "2 hr 45 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 libras de osobuco de res (jarrete), en 4 ruedas de 1½ pulgadas",
+        "1 cucharadita de sal",
+        "¼ taza de harina",
+        "2 cucharadas de aceite de oliva",
+        "1 cebolla picada",
+        "1 zanahoria picada",
+        "2 tallos de apio picados",
+        "3 dientes de ajo picados",
+        "1 lata de 14 onzas de tomates triturados",
+        "½ taza de vino blanco",
+        "2 tazas de caldo de res",
+        "2 cucharadas de recao picado",
+        "1 cucharadita de ralladura de limón"
+      ],
+      en: [
+        "3 lb beef osso buco (shank), in 4 slices 1½ inches thick",
+        "1 teaspoon salt",
+        "¼ cup flour",
+        "2 tablespoons olive oil",
+        "1 onion, chopped",
+        "1 carrot, chopped",
+        "2 celery stalks, chopped",
+        "3 garlic cloves, chopped",
+        "1 can (14 oz) crushed tomatoes",
+        "½ cup white wine",
+        "2 cups beef broth",
+        "2 tablespoons chopped culantro",
+        "1 teaspoon lime zest"
+      ]
+    },
+    steps: {
+      es: [
+        "Amarre cada rueda por el borde con hilo para que no se deshaga. Sazone con la sal y pase por la harina.",
+        "Dore las ruedas en el aceite 4 minutos por lado. Sáquelas.",
+        "Sofría la cebolla, la zanahoria, el apio y el ajo 6 minutos. Añada el vino, los tomates y el caldo, y devuelva la carne.",
+        "Tape y cocine a fuego bajo 2 horas, hasta que la carne esté muy blanda. Mezcle el recao con la ralladura y espárzalo encima. El tuétano del hueso se come con cuchara."
+      ],
+      en: [
+        "Tie each slice around the edge with twine so it holds its shape. Season with the salt and dredge in the flour.",
+        "Brown the slices in the oil 4 minutes per side. Remove.",
+        "Sauté the onion, carrot, celery and garlic 6 minutes. Add the wine, tomatoes and broth, and return the meat.",
+        "Cover and cook over low heat 2 hours, until very tender. Mix the culantro with the zest and sprinkle on top. Scoop out the bone marrow with a spoon."
+      ]
+    }
+  },
+  {
+    id: "pecho-res-horno",
+    category: "carnes",
+    name: { es: "Pecho de Res al Horno con Adobo y Cebolla (Brisket)", en: "Oven Brisket with Adobo and Onions" },
+    time: "4 hr 30 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "5 libras de pecho de res (brisket)",
+        "2 cucharadas de adobo seco BBQ",
+        "3 cebollas en ruedas",
+        "6 dientes de ajo machacados",
+        "1 taza de caldo de res",
+        "½ taza de salsa bbq",
+        "2 cucharadas de vinagre"
+      ],
+      en: [
+        "5 lb beef brisket",
+        "2 tablespoons BBQ dry rub",
+        "3 onions, sliced into rings",
+        "6 garlic cloves, crushed",
+        "1 cup beef broth",
+        "½ cup BBQ sauce",
+        "2 tablespoons vinegar"
+      ]
+    },
+    steps: {
+      es: [
+        "Frote el pecho con el adobo seco y déjelo en la nevera de un día para otro (o por lo menos 2 horas).",
+        "Caliente el horno a 300 °F. Ponga la cebolla y el ajo en un molde hondo, el pecho encima con la grasa hacia arriba, y vierta el caldo con el vinagre.",
+        "Tape bien con papel de aluminio y hornee 4 horas, hasta que un tenedor entre sin esfuerzo (unos 200 °F por dentro).",
+        "Destape, unte la salsa bbq y hornee 20 minutos a 400 °F. Repose 20 minutos y corte en lascas finas contra la fibra. Sirva con la cebolla y el jugo del molde."
+      ],
+      en: [
+        "Rub the brisket with the dry rub and refrigerate overnight (or at least 2 hours).",
+        "Heat the oven to 300 °F. Put the onions and garlic in a deep pan, the brisket on top fat side up, and pour in the broth with the vinegar.",
+        "Cover tightly with foil and bake 4 hours, until a fork slides in easily (about 200 °F inside).",
+        "Uncover, brush with the BBQ sauce and bake 20 minutes at 400 °F. Rest 20 minutes and slice thin against the grain. Serve with the onions and pan juices."
+      ]
+    }
+  },
+  {
+    id: "solomillo-cerdo-parcha",
+    category: "carnes",
+    name: { es: "Solomillo de Cerdo con Glaseado de Parcha", en: "Pork Tenderloin with Passion Fruit Glaze" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de solomillo de cerdo (2 piezas)",
+        "2 dientes de ajo machacados",
+        "½ cucharadita de orégano",
+        "½ cucharadita de sal",
+        "¼ cucharadita de pimienta",
+        "1 cucharada de aceite de oliva",
+        "½ taza de pulpa de parcha",
+        "3 cucharadas de azúcar morena",
+        "1 cucharada de salsa de soya",
+        "1 diente de ajo rallado"
+      ],
+      en: [
+        "2 lb pork tenderloin (2 pieces)",
+        "2 garlic cloves, crushed",
+        "½ teaspoon oregano",
+        "½ teaspoon salt",
+        "¼ teaspoon black pepper",
+        "1 tablespoon olive oil",
+        "½ cup passion fruit pulp",
+        "3 tablespoons brown sugar",
+        "1 tablespoon soy sauce",
+        "1 garlic clove, grated"
+      ]
+    },
+    steps: {
+      es: [
+        "Quítele al solomillo la telita plateada con un cuchillo fino (si se deja, se encoge y queda duro). Sazone con el ajo, el orégano, la sal y la pimienta.",
+        "Hierva la parcha, el azúcar, la soya y el ajo 5 minutos hasta que espese como sirop.",
+        "Caliente el horno a 425 °F. Dore los solomillos en el aceite en un sartén que vaya al horno, 2 minutos por lado. Úntelos con la mitad del glaseado.",
+        "Hornee 15 minutos, hasta 145 °F en el centro. Repose 5 minutos (queda rosadito y jugoso, y es seguro), corte en medallones y bañe con el resto del glaseado."
+      ],
+      en: [
+        "Trim the silver skin off the tenderloin with a thin knife (left on, it shrinks and turns tough). Season with the garlic, oregano, salt and pepper.",
+        "Boil the passion fruit, sugar, soy sauce and garlic 5 minutes until syrupy.",
+        "Heat the oven to 425 °F. Brown the tenderloins in the oil in an ovenproof skillet, 2 minutes per side. Brush with half the glaze.",
+        "Roast 15 minutes, to 145 °F in the center. Rest 5 minutes (it stays slightly pink, juicy and safe), slice into medallions and spoon over the remaining glaze."
+      ]
+    }
+  },
+  {
+    id: "cerdo-desmenuzado",
+    category: "carnes",
+    name: { es: "Cerdo Desmenuzado con Mojo (Pulled Pork Boricua)", en: "Puerto Rican Pulled Pork with Mojo" },
+    time: "5 hr",
+    servings: 10,
+    ingredients: {
+      es: [
+        "5 libras de paleta de cerdo sin hueso",
+        "10 dientes de ajo",
+        "1 cucharada de orégano",
+        "1 cucharada de sal",
+        "1 cucharadita de pimienta",
+        "1 taza de jugo de naranja agria",
+        "2 cucharadas de aceite de oliva",
+        "2 cebollas en ruedas"
+      ],
+      en: [
+        "5 lb boneless pork shoulder",
+        "10 garlic cloves",
+        "1 tablespoon oregano",
+        "1 tablespoon salt",
+        "1 teaspoon black pepper",
+        "1 cup sour orange juice",
+        "2 tablespoons olive oil",
+        "2 onions, sliced into rings"
+      ]
+    },
+    steps: {
+      es: [
+        "Maje el ajo con el orégano, la sal y la pimienta en el pilón y mézclelo con el aceite y la mitad de la naranja agria. Corte la paleta en 4 trozos y adóbela; déjela en la nevera de un día para otro.",
+        "Ponga la cebolla en una olla de hierro u olla lenta, la carne encima y el resto de la naranja agria.",
+        "Tape y cocine en el horno a 300 °F 4½ horas (o en la olla lenta 8 horas en bajo), hasta unos 195 °F, cuando se deshace con dos tenedores.",
+        "Desmenúcela, mézclela con el jugo y la cebolla, y dórela unos minutos en un sartén caliente para que coja puntitas tostadas. Sirva en pan, con arroz y habichuelas, o en tostones."
+      ],
+      en: [
+        "Mash the garlic with the oregano, salt and pepper in the pilón and mix with the oil and half the sour orange. Cut the shoulder into 4 pieces and rub with it; refrigerate overnight.",
+        "Put the onions in a Dutch oven or slow cooker, the meat on top and the remaining sour orange juice.",
+        "Cover and cook in a 300 °F oven 4½ hours (or 8 hours on low in a slow cooker), to about 195 °F, when it falls apart with two forks.",
+        "Shred it, toss with the juices and onions, and crisp it a few minutes in a hot skillet. Serve on bread, with rice and beans, or on tostones."
+      ]
+    }
+  },
+  {
+    id: "panceta-crujiente",
+    category: "carnes",
+    name: { es: "Panceta de Cerdo Crujiente con Mojo", en: "Crispy Pork Belly with Mojo" },
+    time: "2 hr 30 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "3 libras de panceta (barriga de cerdo) con cuero",
+        "1 cucharada de sal gruesa",
+        "1 cucharadita de orégano",
+        "1 cucharadita de ajo en polvo",
+        "1 cucharadita de vinagre",
+        "⅓ taza de aceite de oliva para el mojo",
+        "6 dientes de ajo machacados para el mojo",
+        "2 cucharadas de jugo de limón para el mojo"
+      ],
+      en: [
+        "3 lb skin-on pork belly",
+        "1 tablespoon coarse salt",
+        "1 teaspoon oregano",
+        "1 teaspoon garlic powder",
+        "1 teaspoon vinegar",
+        "⅓ cup olive oil for the mojo",
+        "6 garlic cloves, crushed, for the mojo",
+        "2 tablespoons lime juice for the mojo"
+      ]
+    },
+    steps: {
+      es: [
+        "Seque bien el cuero y pínchelo por todos lados con un tenedor o la punta de un cuchillo, sin llegar a la carne. Frote la carne (no el cuero) con el orégano y el ajo.",
+        "Unte el cuero con el vinagre y cúbralo con la sal gruesa. Déjelo destapado en la nevera de un día para otro: así se seca y cruje como el del lechón.",
+        "Quite el exceso de sal. Hornee a 325 °F 1½ horas, y luego suba a 450 °F 20 a 30 minutos, hasta que el cuero se infle y cruja (vigile que no se queme).",
+        "Repose 10 minutos, corte en cuadros con un cuchillo de sierra y sirva con el mojo (el aceite tibio con el ajo y el limón). Es muy grasosa: una porción pequeña con ensalada va bien."
+      ],
+      en: [
+        "Dry the skin well and prick it all over with a fork or knife tip, without reaching the meat. Rub the meat (not the skin) with the oregano and garlic.",
+        "Brush the skin with the vinegar and cover with the coarse salt. Leave it uncovered in the fridge overnight: it dries and crackles like lechón skin.",
+        "Brush off excess salt. Roast at 325 °F for 1½ hours, then raise to 450 °F for 20 to 30 minutes, until the skin puffs and crackles (watch it doesn't burn).",
+        "Rest 10 minutes, cut into squares with a serrated knife and serve with the mojo (the warm oil with the garlic and lime). It's very rich: a small portion with salad works well."
+      ]
+    }
+  },
+  {
+    id: "pierna-cordero",
+    category: "carnes",
+    name: { es: "Pierna de Cordero al Horno con Ajo, Romero y Naranja Agria", en: "Roast Leg of Lamb with Garlic, Rosemary and Sour Orange" },
+    time: "2 hr 30 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "5 libras de pierna de cordero con hueso",
+        "8 dientes de ajo en lascas",
+        "3 ramitas de romero",
+        "1 cucharada de sal",
+        "1 cucharadita de pimienta",
+        "½ taza de jugo de naranja agria",
+        "3 cucharadas de aceite de oliva",
+        "2 libras de papas pequeñas"
+      ],
+      en: [
+        "5 lb bone-in leg of lamb",
+        "8 garlic cloves, sliced",
+        "3 rosemary sprigs",
+        "1 tablespoon salt",
+        "1 teaspoon black pepper",
+        "½ cup sour orange juice",
+        "3 tablespoons olive oil",
+        "2 lb small potatoes"
+      ]
+    },
+    steps: {
+      es: [
+        "Haga cortecitos en la pierna y meta en cada uno una lasca de ajo y unas hojitas de romero, como se hace con el pernil.",
+        "Frote con la sal, la pimienta, la naranja agria y el aceite. Déjela adobando por lo menos 4 horas en la nevera.",
+        "Ponga las papas alrededor y hornee a 350 °F unos 1½ horas, hasta 145 °F en lo más grueso (sin tocar el hueso) para término medio, o hasta 160 °F si la quiere más cocida.",
+        "Repose 15 minutos tapada con papel de aluminio y corte en lascas. Sirva con las papas y el jugo del molde."
+      ],
+      en: [
+        "Make small slits in the leg and push a garlic slice and some rosemary leaves into each, as with pernil.",
+        "Rub with the salt, pepper, sour orange and oil. Marinate at least 4 hours in the refrigerator.",
+        "Arrange the potatoes around it and roast at 350 °F about 1½ hours, to 145 °F in the thickest part (not touching the bone) for medium, or 160 °F if you prefer it more done.",
+        "Rest 15 minutes tented with foil and slice. Serve with the potatoes and pan juices."
+      ]
+    }
+  },
+  {
+    id: "chuletas-cordero",
+    category: "carnes",
+    name: { es: "Chuletitas de Cordero al Ajillo", en: "Garlic Lamb Chops" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de chuletas de cordero (8 chuletas)",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "3 cucharadas de aceite de oliva",
+        "6 dientes de ajo en lascas",
+        "1 cucharadita de romero picado",
+        "2 cucharadas de jugo de limón",
+        "2 cucharadas de perejil picado"
+      ],
+      en: [
+        "2 lb lamb chops (8 chops)",
+        "1 teaspoon salt",
+        "½ teaspoon black pepper",
+        "3 tablespoons olive oil",
+        "6 garlic cloves, sliced",
+        "1 teaspoon chopped rosemary",
+        "2 tablespoons lime juice",
+        "2 tablespoons chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone las chuletas con la sal, la pimienta y el romero.",
+        "Dórelas en 1 cucharada de aceite a fuego alto, 3 minutos por lado, hasta 145 °F. Sáquelas y repóselas.",
+        "Baje el fuego, añada el resto del aceite y el ajo, y dórelo 1 minuto sin quemarlo. Apague y añada el limón y el perejil.",
+        "Bañe las chuletas con el ajillo. Se comen con la mano por el huesito."
+      ],
+      en: [
+        "Season the chops with the salt, pepper and rosemary.",
+        "Sear in 1 tablespoon of oil over high heat, 3 minutes per side, to 145 °F. Remove and let rest.",
+        "Lower the heat, add the remaining oil and garlic, and toast 1 minute without burning. Turn off and add the lime juice and parsley.",
+        "Spoon the garlic sauce over the chops. Eat them by hand, holding the bone."
+      ]
+    }
+  },
+  {
+    id: "pato-guisado",
+    category: "aves",
+    name: { es: "Pato Guisado a la Criolla", en: "Creole Stewed Duck" },
+    time: "2 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "5 libras de pato en presas (1 pato)",
+        "4 dientes de ajo machacados",
+        "1 cucharadita de orégano",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "2 cucharadas de jugo de naranja agria",
+        "½ taza de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "½ taza de vino tinto",
+        "1½ tazas de caldo de pollo",
+        "1 libra de papas en trozos",
+        "10 aceitunas rellenas",
+        "1 cucharada de alcaparras"
+      ],
+      en: [
+        "5 lb duck, cut into pieces (1 duck)",
+        "4 garlic cloves, crushed",
+        "1 teaspoon oregano",
+        "1 teaspoon salt",
+        "½ teaspoon black pepper",
+        "2 tablespoons sour orange juice",
+        "½ cup sofrito",
+        "1 can (8 oz) tomato sauce",
+        "½ cup red wine",
+        "1½ cups chicken broth",
+        "1 lb potatoes, in chunks",
+        "10 stuffed olives",
+        "1 tablespoon capers"
+      ]
+    },
+    steps: {
+      es: [
+        "Quite la grasa que sobra y sazone las presas con el ajo, el orégano, la sal, la pimienta y la naranja agria. Déjelas 1 hora en la nevera.",
+        "Dore las presas con la piel hacia abajo en un caldero sin aceite, a fuego medio, 10 minutos, hasta que suelten la grasa. Saque las presas y deje sólo 2 cucharadas de grasa (guarde el resto para freír papas).",
+        "Sofría el sofrito, añada el vino, la salsa de tomate y el caldo, y devuelva el pato. Tape y cocine a fuego bajo 1 hora.",
+        "Añada las papas, las aceitunas y las alcaparras, y cocine 25 minutos más, hasta 165 °F y la carne blanda. Quite la grasa de encima antes de servir."
+      ],
+      en: [
+        "Trim the excess fat and season the pieces with the garlic, oregano, salt, pepper and sour orange. Refrigerate 1 hour.",
+        "Brown the pieces skin side down in a dry caldero over medium heat 10 minutes, until the fat renders. Remove the duck and leave just 2 tablespoons of fat (save the rest for frying potatoes).",
+        "Sauté the sofrito, add the wine, tomato sauce and broth, and return the duck. Cover and cook over low heat 1 hour.",
+        "Add the potatoes, olives and capers and cook 25 more minutes, to 165 °F and tender. Skim the fat from the top before serving."
+      ]
+    }
+  },
+  {
+    id: "codornices-ajillo",
+    category: "aves",
+    name: { es: "Codornices al Ajillo", en: "Garlic Quail" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "8 codornices limpias, abiertas por el espinazo",
+        "2 dientes de ajo machacados",
+        "½ cucharadita de orégano",
+        "½ cucharadita de sal",
+        "¼ cucharadita de pimienta",
+        "4 cucharadas de aceite de oliva",
+        "8 dientes de ajo en lascas",
+        "½ taza de vino blanco",
+        "2 cucharadas de jugo de limón",
+        "2 cucharadas de perejil picado"
+      ],
+      en: [
+        "8 cleaned quail, split down the backbone",
+        "2 garlic cloves, crushed",
+        "½ teaspoon oregano",
+        "½ teaspoon salt",
+        "¼ teaspoon black pepper",
+        "4 tablespoons olive oil",
+        "8 garlic cloves, sliced",
+        "½ cup white wine",
+        "2 tablespoons lime juice",
+        "2 tablespoons chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Aplaste un poco las codornices abiertas y sazónelas con el ajo, el orégano, la sal y la pimienta.",
+        "Dórelas en 2 cucharadas de aceite a fuego medio-alto, 4 minutos por lado, con la piel primero. Sáquelas.",
+        "Dore el ajo en el resto del aceite 1 minuto, añada el vino y hierva 2 minutos. Devuelva las codornices, tape y cocine 8 minutos a fuego bajo, hasta 165 °F.",
+        "Añada el limón y el perejil. Son pequeñitas: dos por persona, con arroz blanco o tostones."
+      ],
+      en: [
+        "Flatten the split quail slightly and season with the garlic, oregano, salt and pepper.",
+        "Brown them in 2 tablespoons of oil over medium-high heat, 4 minutes per side, skin side first. Remove.",
+        "Toast the garlic in the remaining oil 1 minute, add the wine and boil 2 minutes. Return the quail, cover and cook 8 minutes over low heat, to 165 °F.",
+        "Add the lime juice and parsley. They're tiny: two per person, with white rice or tostones."
+      ]
+    }
+  },
+  {
+    id: "gallinitas-rellenas",
+    category: "aves",
+    name: { es: "Gallinitas (Cornish Hens) Rellenas de Arroz con Gandules", en: "Cornish Hens Stuffed with Rice and Pigeon Peas" },
+    time: "1 hr 30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 gallinitas (cornish hens) de 1¼ libras",
+        "4 dientes de ajo machacados",
+        "1 cucharadita de orégano",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "2 cucharadas de aceite de achiote",
+        "¼ taza de jugo de naranja agria",
+        "2 tazas de arroz cocido con gandules, frío",
+        "2 cucharadas de mantequilla derretida"
+      ],
+      en: [
+        "4 Cornish hens (1¼ lb each)",
+        "4 garlic cloves, crushed",
+        "1 teaspoon oregano",
+        "1 teaspoon salt",
+        "½ teaspoon black pepper",
+        "2 tablespoons annatto oil",
+        "¼ cup sour orange juice",
+        "2 cups cooked, cooled rice with pigeon peas",
+        "2 tablespoons melted butter"
+      ]
+    },
+    steps: {
+      es: [
+        "Seque las gallinitas por dentro y por fuera, y sazónelas con el ajo, el orégano, la sal, la pimienta, el aceite de achiote y la naranja agria. Déjelas 1 hora en la nevera.",
+        "Rellene cada una con ½ taza del arroz frío, sin apretar, y amarre las patitas con hilo.",
+        "Hornee a 375 °F 1 hora, untándolas con la mantequilla a mitad, hasta que el muslo llegue a 165 °F y el centro del relleno también.",
+        "Repose 10 minutos. Va una gallinita por persona: es el pavo relleno de las mesas pequeñas."
+      ],
+      en: [
+        "Pat the hens dry inside and out and season with the garlic, oregano, salt, pepper, annatto oil and sour orange. Refrigerate 1 hour.",
+        "Stuff each with ½ cup of the cold rice, loosely, and tie the legs with twine.",
+        "Roast at 375 °F for 1 hour, brushing with the butter halfway, until the thigh reaches 165 °F and the center of the stuffing does too.",
+        "Rest 10 minutes. One hen per person: the stuffed turkey for small tables."
+      ]
+    }
+  },
+  {
+    id: "pollo-mariposa-parrilla",
+    category: "aves",
+    name: { es: "Pollo Abierto (en Mariposa) a la Parrilla con Mojo", en: "Grilled Spatchcock Chicken with Mojo" },
+    time: "1 hr 15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 pollo entero de 4 libras",
+        "6 dientes de ajo machacados",
+        "1 cucharada de orégano",
+        "2 cucharaditas de sal",
+        "½ cucharadita de pimienta",
+        "½ taza de jugo de naranja agria",
+        "3 cucharadas de aceite de oliva"
+      ],
+      en: [
+        "1 whole chicken (4 lb)",
+        "6 garlic cloves, crushed",
+        "1 tablespoon oregano",
+        "2 teaspoons salt",
+        "½ teaspoon black pepper",
+        "½ cup sour orange juice",
+        "3 tablespoons olive oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Con unas tijeras de cocina, corte el espinazo a lo largo por ambos lados y sáquelo. Voltee el pollo y aplaste la pechuga con la mano hasta que quede plano.",
+        "Mezcle el ajo, el orégano, la sal, la pimienta, la naranja agria y el aceite, y adobe el pollo (también bajo la piel) 2 horas o de un día para otro.",
+        "Ase a fuego indirecto medio (350 °F) con la piel hacia arriba 40 minutos, y termine 5 a 10 minutos a fuego directo con la piel hacia abajo para que se dore, hasta 165 °F en el muslo.",
+        "Tip de parrilla: abierto se cocina en la mitad del tiempo y parejo, sin que la pechuga se seque mientras el muslo se termina. Repose 10 minutos antes de cortar."
+      ],
+      en: [
+        "With kitchen shears, cut along both sides of the backbone and remove it. Flip the chicken and press the breast flat with your hand.",
+        "Mix the garlic, oregano, salt, pepper, sour orange and oil, and marinate the chicken (under the skin too) 2 hours or overnight.",
+        "Grill over medium indirect heat (350 °F) skin side up 40 minutes, then finish 5 to 10 minutes over direct heat skin side down to brown, to 165 °F in the thigh.",
+        "Grill tip: opened flat it cooks in half the time and evenly, without drying the breast while the thigh finishes. Rest 10 minutes before carving."
+      ]
+    }
+  },
+  {
+    id: "pechuga-pavo-horno",
+    category: "aves",
+    name: { es: "Pechuga de Pavo al Horno con Adobo y Mojo", en: "Roast Turkey Breast with Adobo and Mojo" },
+    time: "2 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "6 libras de pechuga de pavo con hueso y piel",
+        "8 dientes de ajo machacados",
+        "1 cucharada de orégano",
+        "1 cucharada de sal",
+        "1 cucharadita de pimienta",
+        "3 cucharadas de aceite de oliva",
+        "¼ taza de jugo de naranja agria",
+        "1 taza de caldo de pollo"
+      ],
+      en: [
+        "6 lb bone-in, skin-on turkey breast",
+        "8 garlic cloves, crushed",
+        "1 tablespoon oregano",
+        "1 tablespoon salt",
+        "1 teaspoon black pepper",
+        "3 tablespoons olive oil",
+        "¼ cup sour orange juice",
+        "1 cup chicken broth"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el ajo, el orégano, la sal, la pimienta, el aceite y la naranja agria. Despegue la piel con los dedos y unte la mitad debajo y el resto por fuera. Adóbela de un día para otro.",
+        "Póngala en un molde con el caldo en el fondo y hornee a 350 °F unos 1½ horas, bañándola con el jugo cada 30 minutos.",
+        "Está lista a 165 °F en lo más grueso, sin tocar el hueso. Si la piel se dora muy rápido, cúbrala con papel de aluminio.",
+        "Repose 15 minutos y corte en lascas. Es el pavo de las familias pequeñas: sin descongelar un pavo entero ni horas de horno."
+      ],
+      en: [
+        "Mix the garlic, oregano, salt, pepper, oil and sour orange. Loosen the skin with your fingers and rub half under it and the rest outside. Marinate overnight.",
+        "Place in a pan with the broth in the bottom and roast at 350 °F about 1½ hours, basting every 30 minutes.",
+        "It's done at 165 °F in the thickest part, not touching the bone. If the skin browns too fast, tent with foil.",
+        "Rest 15 minutes and slice. Turkey for small families: no thawing a whole bird or hours in the oven."
+      ]
+    }
+  },
+  {
+    id: "muslos-pavo-guisados",
+    category: "aves",
+    name: { es: "Muslos de Pavo Guisados con Papas", en: "Stewed Turkey Thighs with Potatoes" },
+    time: "2 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 libras de muslos de pavo",
+        "4 dientes de ajo machacados",
+        "1 cucharadita de orégano",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "2 tazas de caldo de pollo",
+        "1 libra de papas en trozos",
+        "2 zanahorias en ruedas",
+        "10 aceitunas rellenas",
+        "1 hoja de laurel"
+      ],
+      en: [
+        "3 lb turkey thighs",
+        "4 garlic cloves, crushed",
+        "1 teaspoon oregano",
+        "1 teaspoon salt",
+        "½ teaspoon black pepper",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 can (8 oz) tomato sauce",
+        "2 cups chicken broth",
+        "1 lb potatoes, in chunks",
+        "2 carrots, sliced",
+        "10 stuffed olives",
+        "1 bay leaf"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone los muslos con el ajo, el orégano, la sal y la pimienta, y dórelos en el aceite por todos lados.",
+        "Añada el sofrito, la salsa de tomate, el caldo y el laurel. Tape y cocine a fuego bajo 1 hora.",
+        "Añada las papas, las zanahorias y las aceitunas, y cocine 30 minutos más, hasta que la carne se despegue del hueso (165 °F o más).",
+        "Saque los muslos, quite la piel y los huesos y devuelva la carne en pedazos a la salsa. Sirva con arroz blanco."
+      ],
+      en: [
+        "Season the thighs with the garlic, oregano, salt and pepper and brown them on all sides in the oil.",
+        "Add the sofrito, tomato sauce, broth and bay leaf. Cover and cook over low heat 1 hour.",
+        "Add the potatoes, carrots and olives and cook 30 more minutes, until the meat comes off the bone (165 °F or more).",
+        "Remove the thighs, discard skin and bones and return the meat in pieces to the sauce. Serve with white rice."
+      ]
+    }
+  },
+  {
+    id: "higaditos-pollo",
+    category: "aves",
+    name: { es: "Higaditos de Pollo Encebollados", en: "Chicken Livers with Onions" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de higaditos de pollo limpios",
+        "1 taza de leche",
+        "½ cucharadita de sal",
+        "¼ cucharadita de pimienta",
+        "2 cucharadas de aceite de oliva",
+        "2 cebollas en ruedas",
+        "2 dientes de ajo picados",
+        "2 cucharadas de vinagre",
+        "1 cucharada de perejil picado"
+      ],
+      en: [
+        "1 lb cleaned chicken livers",
+        "1 cup milk",
+        "½ teaspoon salt",
+        "¼ teaspoon black pepper",
+        "2 tablespoons olive oil",
+        "2 onions, sliced into rings",
+        "2 garlic cloves, chopped",
+        "2 tablespoons vinegar",
+        "1 tablespoon chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Quíteles los nervios y las partes verdosas a los higaditos y remójelos en la leche 30 minutos para suavizar el sabor. Escúrralos, séquelos y sazónelos.",
+        "Sofría la cebolla en el aceite 8 minutos hasta que esté blanda y dorada. Añada el ajo 1 minuto y saque la mezcla.",
+        "Dore los higaditos a fuego alto 2 a 3 minutos por lado, hasta que estén cocidos por dentro (165 °F, sin rosado: los hígados de pollo poco cocidos pueden transmitir Campylobacter).",
+        "Devuelva la cebolla, añada el vinagre y el perejil, y mezcle. Sirva con arroz blanco o en tostadas."
+      ],
+      en: [
+        "Trim the sinew and any green spots from the livers and soak them in the milk 30 minutes to mellow the flavor. Drain, pat dry and season.",
+        "Sauté the onions in the oil 8 minutes until soft and golden. Add the garlic 1 minute and remove the mixture.",
+        "Sear the livers over high heat 2 to 3 minutes per side, until cooked through (165 °F, no pink: undercooked chicken livers can carry Campylobacter).",
+        "Return the onions, add the vinegar and parsley, and toss. Serve with white rice or on toast."
       ]
     }
   }

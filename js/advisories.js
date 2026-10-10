@@ -306,7 +306,7 @@ function getAdvisories(recipe) {
   if (has(/\bquenepas?\b/)) push("quenepa", "caution");
   if (has(/\bcarambolas?\b/)) push("starfruit", "high");
   // Sazón o adobo de sobre/frasco (con cantidad); "Adobo: ajo, orégano…" es casero.
-  if (has(/\bsazon\b(?!\s+casero)|\d[^\n:]*\badobo\b|adobo al gusto/) && !/^(sazon-casero|adobo)$/.test(recipe.id)) push("sazon", "info");
+  if (has(/\bsazon\b(?!\s+casero)|\d[^\n:]*\badobo\b(?!\s+(casero|seco))|adobo al gusto/) && !/^(sazon-casero|adobo)$/.test(recipe.id)) push("sazon", "info");
 
   // Alertas nutricionales, con los mismos umbrales que usan las etiquetas:
   // "alto" = 20% o más del valor diario por porción.
@@ -328,10 +328,10 @@ function getAdvisories(recipe) {
   const raw = lines.filter((l) => !/\bcaldos?\b|consome|chicharron/.test(l))
     .map((l) => l.replace(/\([^)]*\)/g, "")).join("\n");
   const hasRaw = (rx) => rx.test(raw);
-  const poultry = hasRaw(/\b(pollos?|pavos?|gallinas?|guineas?|pechugas?|muslos?|alitas?|mollejas?)\b/);
-  const pork = hasRaw(/\b(cerdo|pernil|lechon|chuletas?|costillas?|costillar|masitas|paleta|patitas?|cuero|longaniza)\b/);
+  const poultry = hasRaw(/\b(pollos?|pavos?|gallinas?|guineas?|pechugas?|muslos?|alitas?|mollejas?|patos?|codorniz|codornices|gallinitas?|higaditos)\b/);
+  const pork = hasRaw(/\b(cerdo|pernil|lechon|panceta|solomillo|chuletas?|costillas?|costillar|masitas|paleta|patitas?|cuero|longaniza)\b/);
   const ground = hasRaw(/carne molida|picadillo|albondiga/);
-  const beef = hasRaw(/\b(res|bistecs?|falda|churrasco|rabo|cabro|chivo|cabrito|conejo|ternera|palomilla|boliche|lengua)\b|\bcarne\b(?!\s+(molida|de\s+(juey|cangrejo|cerdo)))/);
+  const beef = hasRaw(/\b(res|bistecs?|falda|churrasco|ribeye|picanha|punta trasera|osobuco|jarrete|cordero|rabo|cabro|chivo|cabrito|conejo|ternera|palomilla|boliche|lengua)\b|\bcarne\b(?!\s+(molida|de\s+(juey|cangrejo|cerdo)))/);
   const offal = hasRaw(/\b(higado|mondongo|callos?|lengua|mollejas?|gandinga|cuajo|sangre|tripas?)\b/);
   const fish = hasRaw(/\bpescado|bacalao|\batun\b|\bmero\b|\bchillo\b|(?<!ron )\bdorado\b|mahi|tilapia|\bpargo\b|\bsierra\b|salmon|sardina/);
   const shellfish = hasRaw(ALLERGENS[4][1]) || hasRaw(ALLERGENS[5][1]);

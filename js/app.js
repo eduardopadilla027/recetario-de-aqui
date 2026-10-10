@@ -335,6 +335,18 @@ const dishIcons = [
  * piezas con dibujo propio (chuleta, churrasco, embutidos…) siguen por dishIcons. */
 const meatIcons = {
   carnes: [
+    // Otros cortes (tanda 33): primero, para que no los tomen "chuleta", "costill" ni las reglas generales.
+    [/^falda de res rellena/, "svg:ic-corte-falda-rellena"],
+    [/picanha/, "svg:ic-corte-picanha"],
+    [/^ribeye/, "svg:ic-corte-ribeye"],
+    [/short ribs/, "svg:ic-corte-short-ribs"],
+    [/^osobuco/, "svg:ic-corte-osobuco"],
+    [/^pecho de res/, "svg:ic-corte-brisket"],
+    [/^solomillo/, "svg:ic-corte-solomillo"],
+    [/^cerdo desmenuzado/, "svg:ic-corte-desmenuzado"],
+    [/^panceta/, "svg:ic-corte-panceta"],
+    [/^pierna de cordero/, "svg:ic-corte-pierna-cordero"],
+    [/^chuletitas de cordero/, "svg:ic-corte-chuletas-cordero"],
     [/chuleta|churrasco|albondiga|longaniza|salchicha|morcilla|conejo|pincho|mofongo/, null],
     [/jamonilla/, "svg:ic-jamonilla"],
     [/napolitana/, "svg:ic-parmesana"],
@@ -355,6 +367,14 @@ const meatIcons = {
     [/./, "svg:ic-guiso-carne"]
   ],
   aves: [
+    // Otras aves y cortes (tanda 33).
+    [/^pato/, "svg:ic-corte-pato"],
+    [/^codornices/, "svg:ic-corte-codornices"],
+    [/^gallinitas/, "svg:ic-corte-gallinitas"],
+    [/^pollo abierto/, "svg:ic-corte-pollo-mariposa"],
+    [/^pechuga de pavo/, "svg:ic-corte-pechuga-pavo"],
+    [/^muslos de pavo/, "svg:ic-corte-muslos-pavo"],
+    [/^higaditos/, "svg:ic-corte-higaditos"],
     [/pincho|pastelon/, null],
     [/^muslos de pollo al carbon/, "svg:ic-parrilla-muslos"],
     [/parmesana/, "svg:ic-parmesana"],
