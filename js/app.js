@@ -340,7 +340,11 @@ const meatIcons = {
     [/empanad/, "svg:ic-empanado"],
     [/ropa vieja|salpicon/, "svg:ic-desmenuzada"],
     [/picadillo/, "svg:ic-picadillo"],
-    [/pernil|lechon|asad|rellen|mechada/, "svg:ic-pernil"],
+    [/lechon a la vara/, "svg:ic-lechon-vara"],
+    [/lechon/, "svg:ic-lechon"],
+    [/lengua/, "svg:ic-lengua-rellena"],
+    [/mechada|lomo de cerdo relleno/, "svg:ic-carne-mechada"],
+    [/pernil|asad|rellen/, "svg:ic-pernil"],
     [/chicharron|masitas|frit/, "svg:ic-masitas"],
     [/./, "svg:ic-guiso-carne"]
   ],
