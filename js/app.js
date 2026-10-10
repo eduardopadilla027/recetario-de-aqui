@@ -18,7 +18,7 @@ const translations = {
   es: {
     siteTitle: BRAND,
     subtitle: "Recetario de Cocina Puertorriqueña",
-    author: "Versión 1.0",
+    author: "Versión 2.0 · Revisada el 10 de octubre de 2026",
     heroTitle: ["El Sabor de la Cocina", "Puertorriqueña"], // [texto, palabra destacada]
     searchPlaceholder: "Plato, ingrediente o idea: pollo y arroz, postre sin huevo, navidad…",
     searchLabel: "Buscar recetas por nombre, ingredientes o una idea (por ejemplo: postre sin huevo)",
@@ -31,7 +31,7 @@ const translations = {
     servingOne: "porción",
     recipeCount: "recetas",
     recipeOne: "receta",
-    footer: "Recetas de la cocina tradicional puertorriqueña · Versión 1.0",
+    footer: "Recetas de la cocina tradicional puertorriqueña · Versión 2.0 · Revisión: 10 de octubre de 2026",
     skip: "Saltar al contenido",
     menu: "Abrir menú",
     mainNav: "Navegación principal",
@@ -131,7 +131,7 @@ const translations = {
   en: {
     siteTitle: BRAND,
     subtitle: "Puerto Rican Cookbook",
-    author: "Version 1.0",
+    author: "Version 2.0 · Revised October 10, 2026",
     heroTitle: ["The Flavor of", "Puerto Rican Cooking"],
     searchPlaceholder: "Dish, ingredient or idea: chicken and rice, dessert without eggs, christmas…",
     searchLabel: "Search recipes by name, ingredients or an idea (for example: dessert without eggs)",
@@ -144,7 +144,7 @@ const translations = {
     servingOne: "serving",
     recipeCount: "recipes",
     recipeOne: "recipe",
-    footer: "Traditional Puerto Rican recipes · Version 1.0",
+    footer: "Traditional Puerto Rican recipes · Version 2.0 · Revised October 10, 2026",
     skip: "Skip to content",
     menu: "Open menu",
     mainNav: "Main navigation",
@@ -447,6 +447,14 @@ const dessertIcons = [
   [/^salsa de pique/, "svg:ic-salsa-pique"],
   // Yogures.
   [/^jamonilla/, "svg:ic-jamonilla"],
+  // Platos de huevo.
+  [/^tortilla espanola/, "svg:ic-tortilla-espanola"],
+  [/^tortilla de amarillos/, "svg:ic-tortilla-amarillos"],
+  [/^tortilla de jamon/, "svg:ic-tortilla-jamon-queso"],
+  [/^revoltillo de bacalao/, "svg:ic-revoltillo-bacalao"],
+  [/^revoltillo/, "svg:ic-revoltillo-salchichas"],
+  [/^huevos rellenos/, "svg:ic-huevos-rellenos"],
+  [/^huevos habaneros/, "svg:ic-huevos-habaneros"],
   [/^parfait de yogur/, "svg:ic-yogur-parfait"],
   [/^yogur con pina/, "svg:ic-yogur-pina-coco"],
   [/^bowl de yogur/, "svg:ic-yogur-parcha"],
