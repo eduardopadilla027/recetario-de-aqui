@@ -373,6 +373,15 @@ const meatIcons = {
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
   [/^milanesa|a la milanesa/, "svg:ic-empanado"],
+  // Cheesecakes.
+  [/^cheesecake de parcha/, "svg:ic-cheesecake-parcha"],
+  [/^cheesecake de mango/, "svg:ic-cheesecake-mango"],
+  [/^cheesecake de coco/, "svg:ic-cheesecake-coco"],
+  [/^cheesecake de pina colada/, "svg:ic-cheesecake-pina-colada"],
+  [/^cheesecake de coquito/, "svg:ic-cheesecake-coquito"],
+  [/^cheesecake de guanabana/, "svg:ic-cheesecake-guanabana"],
+  [/^mini cheesecakes/, "svg:ic-mini-cheesecakes"],
+  [/^tarta de queso con guayaba|^cheesecake/, "svg:ic-cheesecake-guayaba"],
   // Dulces y mermeladas de frutas.
   [/^dulce de cerezas/, "svg:ic-dulce-acerola"],
   [/^mermelada de acerola/, "svg:ic-mermelada-acerola"],

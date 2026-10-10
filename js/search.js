@@ -48,7 +48,7 @@ const S_GROUPS = [
   "verde green", "maduro madura ripe", "tierno tierna tender", "relleno rellena stuffed", "frito frita fritura fried fritter", "guisado guisada stew stewed guiso",
   "asado asada roast roasted", "empanadilla pastelillo turnover empanada", "bizcocho cake torta ponque",
   "sopa soup", "ensalada salad", "salsa sauce", "flan custard", "dulce sweet", "postre dessert",
-  "jengibre ginger", "canela cinnamon", "vainilla vanilla", "carambola starfruit", "mamey", "acerola cereza cherry", "jalea mermelada jam jelly preserves", "hojaldre puff milhojas palmera",
+  "jengibre ginger", "canela cinnamon", "vainilla vanilla", "carambola starfruit", "mamey", "acerola cereza cherry", "cheesecake chesecake cheescake", "jalea mermelada jam jelly preserves", "hojaldre puff milhojas palmera",
   "chuleta chop", "pernil shoulder", "lechon suckling", "mariscada", "mofongo", "tostone", "alcapurria", "pastel"
 ].map((g) => g.split(" ").map(sStem));
 
@@ -188,6 +188,9 @@ const sWeak = (w) => {
 
 const sCatsFor = (w) => Object.keys(S_CATS).filter((cat) => S_CATS[cat].split(" ").map(sStem).includes(w));
 const sIdeaFor = (w) => S_IDEAS.find((idea) => idea.words.includes(w));
+/* "sin horno" / "no bake": recetas cuyos pasos no usan el horno (no es excluir la palabra "horno"). */
+const S_NOBAKE = { words: [], label: { es: "Sin horno", en: "No-bake" },
+  test: (r, x) => !/\bhorno\b|\bhornee\b|\bhornea|\boven\b|\bbake\b|\bbaked\b/.test(x.stepsAll) };
 
 /* ---------------------------------------------------------------- consulta ---- */
 
@@ -216,6 +219,10 @@ function smartSearch(query, ctx) {
     if ((w === "para" || w === "for") && terms.length) { afterPara = true; continue; }
     // Exclusiones: "sin X", "no X", "without X", "libre de X", "X free".
     let negate = false;
+    if (["sin", "no", "without"].includes(w) && ["horno", "bake", "hornear", "baking", "oven"].includes(words[i + 1])) {
+      if (!ideas.includes(S_NOBAKE)) ideas.push(S_NOBAKE);
+      i++; continue;
+    }
     if (!isName && ["sin", "no", "without", "excepto", "except"].includes(w) && words[i + 1]) { negate = true; w = words[++i]; }
     else if (!isName && w === "libre" && words[i + 1] === "de" && words[i + 2]) { negate = true; i += 2; w = words[i]; }
     else if (!isName && words[i + 1] === "free") { negate = true; i++; }

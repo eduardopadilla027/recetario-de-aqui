@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 2.6.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 731 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 2.7.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 738 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, y dulces de frutas tropicales, berenjena y hojaldre, en veintidós tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, y cheesecakes tropicales, en veintitrés tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -124,7 +124,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | pasteles_dulces | Pasteles Dulces | 21 |
 | panes | Pan y Panecillos | 30 |
 | emparedados | Emparedados | 11 |
-| postres | Helados, Budines, Flan y Otros Postres | 86 |
+| postres | Helados, Budines, Flan y Otros Postres | 93 |
 | arroces | Arroces y Habichuelas | 33 |
 | vegetales | Vegetales y Viandas | 56 |
 | salsas | Salsas y Aderezos | 37 |
@@ -178,7 +178,9 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   usan las versiones de chocolate. **Conservas:** frasco con tapa de tela a cuadros, color de la fruta y su fruta en la
   etiqueta (acerola, guayaba, grosella, carambola, mangó, parcha, piña). **Berenjena:** guisada, escabeche en frasco,
   frita, lasaña, dip, revoltillo y pastelón. **Hojaldre:** palmeras, milhojas, trenza, tarta salada, empanada gallega y
-  pastelillos de hojaldre; cachitos 🥐.
+  pastelillos de hojaldre; cachitos 🥐. **Cheesecakes:** pedazo con base de galleta, relleno cremoso y la cubierta de
+  cada sabor (parcha con semillas, mangó en cubitos, coco, piña colada, coquito con canela, guanábana con menta,
+  guayaba); los mini van en capacillos. La tarta de queso con guayaba usa el de guayaba.
 - **Carnes y aves (`meatIcons`):** antes de `dishIcons`, las recetas de las categorías `carnes` y `aves` buscan su
   dibujo por tipo de plato con una lista de expresiones en orden (gana la primera): guiso en caldero (`ic-guiso-carne`,
   `ic-fricase-pollo`, ambos sobre `ic-caldero`), encebollado, empanado, desmenuzado (ropa vieja, salpicón), picadillo,
@@ -211,6 +213,8 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   ("adobo sin sal", "pina colada sin alcohol"), se muestran esas recetas y "sin" no excluye; si no, la exclusión
   funciona como siempre ("trago sin alcohol", "postre sin huevo"). Las palabras adobo, marinada, sazón y rub cuentan
   como la categoría salsas ("adobo para pollo" usa la regla "X para Y").
+- **"Sin horno" / "no bake":** es una idea (pasos que no usan el horno), no la exclusión de la palabra "horno"
+  ("cheesecake sin horno", "pie sin horno"). Sinónimo cheesecake = chesecake = cheescake.
 - **Sinónimos nuevos:** cereza = acerola (en Puerto Rico la "cereza" es la acerola), jalea = mermelada, hojaldre =
   milhojas = palmera. "postre" también cubre pasteles dulces, bizcochos y galletitas ("postre de hojaldre").
 - **Empanados:** `empanado`, `empanada` y `breaded` amplían a milanesa, parmesana y panko ("pechuga empanada",
@@ -238,7 +242,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 731). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 738). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -283,6 +287,20 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v2.7.0 · Cheesecakes tropicales
+- *Pedido:* recetas de cheesecake tropicales.
+- Vigesimotercera tanda en `js/recipes-4.js` (versiones propias), 7 recetas (ya existía la tarta de queso con guayaba):
+  cheesecake de parcha, de mangó (con vetas), de coco, de piña colada y de coquito (ambos sin alcohol), de guanábana sin
+  horno y mini cheesecakes de guayaba.
+- Técnica en las recetas: ingredientes a temperatura ambiente, batir a velocidad baja y añadir los huevos sin batir de
+  más, baño de María con el molde envuelto, sacar cuando el centro apenas tiembla (unos 150°F), enfriar 1 hora en el
+  horno apagado con la puerta entreabierta, nevera toda la noche y cuchillo caliente para cortar.
+- **Iconos y buscador:** ver §7 y §7.1 (8 dibujos; idea "Sin horno").
+- Total: **731 → 738 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador: "chesecake tropicales" (con el error de escritura), "cheesecake",
+  "cheesecake sin horno", "pie sin horno" ✔; navegador: las 7 recetas en ES y EN a 375 px sin errores ni desbordes y la
+  idea "Sin horno" en la búsqueda ✔; dibujos revisados ✔.
 
 ### 2026-10-10 — v2.6.0 · Dulces de frutas tropicales, berenjena y hojaldre
 - *Pedidos:* dulces de cereza o grosellas y de otras frutas tropicales; platos con berenjena; platos y postres con masa

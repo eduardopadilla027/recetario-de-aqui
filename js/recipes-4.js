@@ -51,6 +51,8 @@
  * panko al horno, berenjena) y recetas con Nutella.
  * Vigesimosegunda tanda: dulces y mermeladas de frutas tropicales (acerola, guayaba,
  * grosella, carambola, mangó, parcha, piña), platos con berenjena y hojaldre.
+ * Vigesimotercera tanda: cheesecakes tropicales (parcha, mangó, coco, piña colada,
+ * coquito, guanábana y mini de guayaba).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -13032,6 +13034,347 @@ recipes.push(
         "Spread the cream cheese down the center strip, then the pineapple jam and coconut.",
         "Cut the side strips into 1-inch diagonal strips and fold them over the filling, alternating, like a braid.",
         "Brush with egg, sprinkle the sugar and bake 25 minutes, until golden. Let cool 10 minutes before slicing."
+      ]
+    }
+  },
+
+  // ── Vigesimotercera tanda (2026-10): cheesecakes tropicales ──
+  {
+    id: "cheesecake-parcha",
+    category: "postres",
+    name: { es: "Cheesecake de Parcha", en: "Passion Fruit Cheesecake" },
+    time: "1 hr 45 min + toda la noche",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de galleta molida (María o graham)",
+        "⅓ taza de mantequilla, derretida",
+        "24 onzas de queso crema, a temperatura ambiente",
+        "1 taza de azúcar",
+        "3 huevos, a temperatura ambiente",
+        "½ taza de crema agria",
+        "⅓ taza de pulpa de parcha, colada",
+        "1 cucharadita de vainilla",
+        "Cubierta: ½ taza de pulpa de parcha (con semillas)",
+        "¼ taza de azúcar",
+        "1 cucharada de maicena"
+      ],
+      en: [
+        "1½ cups cookie crumbs (Maria or graham)",
+        "⅓ cup butter, melted",
+        "24 oz cream cheese, at room temperature",
+        "1 cup sugar",
+        "3 eggs, at room temperature",
+        "½ cup sour cream",
+        "⅓ cup passion fruit pulp, strained",
+        "1 teaspoon vanilla",
+        "Topping: ½ cup passion fruit pulp (with seeds)",
+        "¼ cup sugar",
+        "1 tablespoon cornstarch"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 325°F. Mezcle la galleta con la mantequilla, apriétela en el fondo de un molde de 9 pulgadas de aro desmontable y hornee 10 minutos. Envuelva el molde por fuera con papel de aluminio grueso (para el baño de María).",
+        "Bata el queso crema con el azúcar a velocidad baja hasta que esté liso, raspando los lados. Añada los huevos de uno en uno, batiendo sólo hasta que se integren (el aire de más hace que se agriete).",
+        "Añada la crema agria, la parcha y la vainilla. Vierta sobre la base.",
+        "Hornee a baño de María 55–65 minutos, hasta que los bordes estén firmes y el centro todavía tiemble un poco (unos 150°F). Apague el horno, abra la puerta un poco y deje el cheesecake adentro 1 hora.",
+        "Para la cubierta: hierva la parcha con el azúcar y la maicena 2 minutos, moviendo, hasta que espese. Deje refrescar.",
+        "Pase un cuchillo por el borde, refrigere toda la noche y cubra con la salsa de parcha antes de servir. Para cortar limpio, moje el cuchillo en agua caliente y séquelo entre corte y corte."
+      ],
+      en: [
+        "Heat the oven to 325°F. Mix the crumbs with the butter, press into the bottom of a 9-inch springform pan and bake 10 minutes. Wrap the outside of the pan in heavy foil (for the water bath).",
+        "Beat the cream cheese with the sugar on low speed until smooth, scraping the sides. Add the eggs one at a time, beating only until combined (extra air makes it crack).",
+        "Add the sour cream, passion fruit and vanilla. Pour over the crust.",
+        "Bake in a water bath 55–65 minutes, until the edges are set and the center still jiggles a little (about 150°F). Turn off the oven, crack the door and leave the cheesecake inside 1 hour.",
+        "For the topping: boil the passion fruit with the sugar and cornstarch 2 minutes, stirring, until thick. Let cool.",
+        "Run a knife around the edge, refrigerate overnight and top with the passion fruit sauce before serving. For clean slices, dip the knife in hot water and wipe it between cuts."
+      ]
+    }
+  },
+  {
+    id: "cheesecake-mango",
+    category: "postres",
+    name: { es: "Cheesecake de Mangó", en: "Mango Cheesecake" },
+    time: "1 hr 45 min + toda la noche",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de galleta molida",
+        "⅓ taza de mantequilla, derretida",
+        "24 onzas de queso crema, a temperatura ambiente",
+        "¾ taza de azúcar",
+        "3 huevos, a temperatura ambiente",
+        "1 taza de puré de mangó maduro",
+        "1 cucharada de jugo de limón",
+        "2 cucharadas de maicena",
+        "1 mangó en cubitos para decorar"
+      ],
+      en: [
+        "1½ cups cookie crumbs",
+        "⅓ cup butter, melted",
+        "24 oz cream cheese, at room temperature",
+        "¾ cup sugar",
+        "3 eggs, at room temperature",
+        "1 cup ripe mango purée",
+        "1 tablespoon lime juice",
+        "2 tablespoons cornstarch",
+        "1 mango, diced, for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 325°F. Haga la base con la galleta y la mantequilla en un molde de 9 pulgadas y hornee 10 minutos. Envuelva el molde con papel de aluminio.",
+        "Bata el queso crema con el azúcar y la maicena a velocidad baja hasta que esté liso. Añada los huevos de uno en uno, sin batir de más.",
+        "Separe ½ taza de la mezcla y mézclela con ⅓ taza del puré de mangó. Al resto añada el mangó que queda y el limón.",
+        "Vierta la mezcla grande sobre la base, ponga cucharadas de la mezcla separada y pase un palillo para hacer vetas.",
+        "Hornee a baño de María 60 minutos, hasta que el centro apenas tiemble. Deje 1 hora en el horno apagado con la puerta entreabierta.",
+        "Refrigere toda la noche y decore con los cubitos de mangó al servir."
+      ],
+      en: [
+        "Heat the oven to 325°F. Make the crust with the crumbs and butter in a 9-inch pan and bake 10 minutes. Wrap the pan in foil.",
+        "Beat the cream cheese with the sugar and cornstarch on low speed until smooth. Add the eggs one at a time, without overmixing.",
+        "Set aside ½ cup of the batter and mix it with ⅓ cup of the mango purée. Add the remaining mango and the lime juice to the rest.",
+        "Pour the large batch over the crust, dollop the reserved batter on top and swirl with a toothpick.",
+        "Bake in a water bath 60 minutes, until the center barely jiggles. Leave 1 hour in the turned-off oven with the door cracked.",
+        "Refrigerate overnight and garnish with the diced mango to serve."
+      ]
+    }
+  },
+  {
+    id: "cheesecake-coco",
+    category: "postres",
+    name: { es: "Cheesecake de Coco", en: "Coconut Cheesecake" },
+    time: "1 hr 45 min + toda la noche",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de galleta molida",
+        "½ taza de coco rallado",
+        "⅓ taza de mantequilla, derretida",
+        "24 onzas de queso crema, a temperatura ambiente",
+        "½ taza de azúcar",
+        "½ taza de crema de coco",
+        "3 huevos, a temperatura ambiente",
+        "½ taza de leche de coco",
+        "1 cucharadita de vainilla",
+        "½ taza de coco rallado, tostado, para decorar"
+      ],
+      en: [
+        "1½ cups cookie crumbs",
+        "½ cup shredded coconut",
+        "⅓ cup butter, melted",
+        "24 oz cream cheese, at room temperature",
+        "½ cup sugar",
+        "½ cup cream of coconut",
+        "3 eggs, at room temperature",
+        "½ cup coconut milk",
+        "1 teaspoon vanilla",
+        "½ cup shredded coconut, toasted, for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 325°F. Mezcle la galleta, el coco y la mantequilla, apriete en el molde y hornee 10 minutos. Envuelva el molde con papel de aluminio.",
+        "Bata el queso crema con el azúcar y la crema de coco a velocidad baja. Añada los huevos de uno en uno, luego la leche de coco y la vainilla.",
+        "Vierta sobre la base y hornee a baño de María 60–65 minutos, hasta que el centro apenas tiemble.",
+        "Deje 1 hora en el horno apagado con la puerta entreabierta, y luego refrigere toda la noche.",
+        "Cubra con el coco tostado justo antes de servir para que se mantenga crujiente."
+      ],
+      en: [
+        "Heat the oven to 325°F. Mix the crumbs, coconut and butter, press into the pan and bake 10 minutes. Wrap the pan in foil.",
+        "Beat the cream cheese with the sugar and cream of coconut on low speed. Add the eggs one at a time, then the coconut milk and vanilla.",
+        "Pour over the crust and bake in a water bath 60–65 minutes, until the center barely jiggles.",
+        "Leave 1 hour in the turned-off oven with the door cracked, then refrigerate overnight.",
+        "Top with the toasted coconut right before serving so it stays crisp."
+      ]
+    }
+  },
+  {
+    id: "cheesecake-pina-colada",
+    category: "postres",
+    name: { es: "Cheesecake de Piña Colada (Sin Alcohol)", en: "Piña Colada Cheesecake (Alcohol-Free)" },
+    time: "1 hr 45 min + toda la noche",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de galleta molida",
+        "⅓ taza de mantequilla, derretida",
+        "24 onzas de queso crema, a temperatura ambiente",
+        "½ taza de azúcar",
+        "½ taza de crema de coco",
+        "3 huevos, a temperatura ambiente",
+        "1 lata de 8 onzas de piña triturada, muy bien escurrida",
+        "Cubierta: 1 lata de 8 onzas de piña triturada con su jugo",
+        "2 cucharadas de azúcar",
+        "1 cucharada de maicena",
+        "¼ taza de coco rallado, tostado"
+      ],
+      en: [
+        "1½ cups cookie crumbs",
+        "⅓ cup butter, melted",
+        "24 oz cream cheese, at room temperature",
+        "½ cup sugar",
+        "½ cup cream of coconut",
+        "3 eggs, at room temperature",
+        "1 can (8 oz) crushed pineapple, very well drained",
+        "Topping: 1 can (8 oz) crushed pineapple with its juice",
+        "2 tablespoons sugar",
+        "1 tablespoon cornstarch",
+        "¼ cup shredded coconut, toasted"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 325°F. Haga la base con la galleta y la mantequilla y hornee 10 minutos. Envuelva el molde con papel de aluminio.",
+        "Bata el queso crema con el azúcar y la crema de coco. Añada los huevos de uno en uno y luego la piña escurrida (apriétela en un colador: el jugo de más lo deja aguado).",
+        "Hornee a baño de María 60–65 minutos y deje 1 hora en el horno apagado con la puerta entreabierta. Refrigere toda la noche.",
+        "Para la cubierta: hierva la piña con su jugo, el azúcar y la maicena 2 minutos, hasta que espese. Deje enfriar.",
+        "Cubra el cheesecake con la piña y el coco tostado. Todo el sabor del trago, sin alcohol."
+      ],
+      en: [
+        "Heat the oven to 325°F. Make the crust with the crumbs and butter and bake 10 minutes. Wrap the pan in foil.",
+        "Beat the cream cheese with the sugar and cream of coconut. Add the eggs one at a time, then the drained pineapple (press it in a strainer: extra juice makes it watery).",
+        "Bake in a water bath 60–65 minutes and leave 1 hour in the turned-off oven with the door cracked. Refrigerate overnight.",
+        "For the topping: boil the pineapple with its juice, the sugar and cornstarch 2 minutes, until thick. Let cool.",
+        "Top the cheesecake with the pineapple and toasted coconut. All the flavor of the drink, without alcohol."
+      ]
+    }
+  },
+  {
+    id: "cheesecake-coquito",
+    category: "postres",
+    name: { es: "Cheesecake de Coquito (Sin Alcohol)", en: "Coquito Cheesecake (Alcohol-Free)" },
+    time: "1 hr 45 min + toda la noche",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de galleta molida",
+        "1 cucharadita de canela en polvo",
+        "⅓ taza de mantequilla, derretida",
+        "24 onzas de queso crema, a temperatura ambiente",
+        "½ taza de leche condensada",
+        "½ taza de crema de coco",
+        "3 huevos, a temperatura ambiente",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de canela en polvo (para el relleno)",
+        "¼ cucharadita de nuez moscada",
+        "1 pizca de clavo molido"
+      ],
+      en: [
+        "1½ cups cookie crumbs",
+        "1 teaspoon ground cinnamon",
+        "⅓ cup butter, melted",
+        "24 oz cream cheese, at room temperature",
+        "½ cup sweetened condensed milk",
+        "½ cup cream of coconut",
+        "3 eggs, at room temperature",
+        "1 teaspoon vanilla",
+        "1 teaspoon ground cinnamon (for the filling)",
+        "¼ teaspoon nutmeg",
+        "1 pinch of ground cloves"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 325°F. Mezcle la galleta con la canela y la mantequilla, haga la base y hornee 10 minutos. Envuelva el molde con papel de aluminio.",
+        "Bata el queso crema con la leche condensada y la crema de coco a velocidad baja. Añada los huevos de uno en uno, la vainilla y las especias.",
+        "Hornee a baño de María 60–65 minutos, hasta que el centro apenas tiemble. Deje 1 hora en el horno apagado con la puerta entreabierta.",
+        "Refrigere toda la noche y espolvoree canela al servir. Es el postre de Navidad que sabe a coquito; para adultos se le pueden añadir 2 cucharadas de ron a la mezcla."
+      ],
+      en: [
+        "Heat the oven to 325°F. Mix the crumbs with the cinnamon and butter, make the crust and bake 10 minutes. Wrap the pan in foil.",
+        "Beat the cream cheese with the condensed milk and cream of coconut on low speed. Add the eggs one at a time, the vanilla and the spices.",
+        "Bake in a water bath 60–65 minutes, until the center barely jiggles. Leave 1 hour in the turned-off oven with the door cracked.",
+        "Refrigerate overnight and dust with cinnamon to serve. It's the Christmas dessert that tastes like coquito; for adults you can add 2 tablespoons of rum to the batter."
+      ]
+    }
+  },
+  {
+    id: "cheesecake-guanabana",
+    category: "postres",
+    name: { es: "Cheesecake de Guanábana (Sin Horno)", en: "No-Bake Soursop Cheesecake" },
+    time: "30 min + 6 hr de nevera",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1½ tazas de galleta molida",
+        "⅓ taza de mantequilla, derretida",
+        "16 onzas de queso crema, a temperatura ambiente",
+        "½ taza de azúcar en polvo",
+        "1½ tazas de pulpa de guanábana, sin semillas",
+        "1 sobre de gelatina sin sabor",
+        "¼ taza de agua fría",
+        "1 taza de crema espesa (heavy cream), bien fría"
+      ],
+      en: [
+        "1½ cups cookie crumbs",
+        "⅓ cup butter, melted",
+        "16 oz cream cheese, at room temperature",
+        "½ cup powdered sugar",
+        "1½ cups soursop pulp, seeded",
+        "1 envelope unflavored gelatin",
+        "¼ cup cold water",
+        "1 cup heavy cream, very cold"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la galleta con la mantequilla y apriétela en un molde de aro desmontable. Refrigere.",
+        "Hidrate la gelatina en el agua fría 5 minutos y derrítala 20 segundos en el microondas.",
+        "Bata el queso crema con el azúcar en polvo y la guanábana hasta que esté liso; añada la gelatina tibia batiendo.",
+        "Bata la crema hasta que forme picos suaves y únala con cuidado a la mezcla.",
+        "Vierta en la base y refrigere 6 horas o toda la noche, hasta que esté firme. Fresco y ácido; ideal para los días de calor."
+      ],
+      en: [
+        "Mix the crumbs with the butter and press into a springform pan. Refrigerate.",
+        "Bloom the gelatin in the cold water 5 minutes and melt it 20 seconds in the microwave.",
+        "Beat the cream cheese with the powdered sugar and soursop until smooth; beat in the warm gelatin.",
+        "Whip the cream to soft peaks and gently fold it into the mixture.",
+        "Pour into the crust and refrigerate 6 hours or overnight, until firm. Fresh and tangy; ideal for hot days."
+      ]
+    }
+  },
+  {
+    id: "mini-cheesecakes-guayaba",
+    category: "postres",
+    name: { es: "Mini Cheesecakes de Guayaba", en: "Mini Guava Cheesecakes" },
+    time: "45 min + 3 hr de nevera",
+    servings: 12,
+    ingredients: {
+      es: [
+        "12 galletas María",
+        "16 onzas de queso crema, a temperatura ambiente",
+        "½ taza de azúcar",
+        "2 huevos, a temperatura ambiente",
+        "1 cucharadita de vainilla",
+        "4 onzas de pasta de guayaba",
+        "2 cucharadas de agua"
+      ],
+      en: [
+        "12 Maria cookies",
+        "16 oz cream cheese, at room temperature",
+        "½ cup sugar",
+        "2 eggs, at room temperature",
+        "1 teaspoon vanilla",
+        "4 oz guava paste",
+        "2 tablespoons water"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 325°F. Ponga 12 capacillos de papel en un molde de muffins y una galleta María en el fondo de cada uno.",
+        "Bata el queso crema con el azúcar, luego los huevos de uno en uno y la vainilla, sin batir de más.",
+        "Derrita la guayaba con el agua a fuego bajo hasta tener una salsita.",
+        "Reparta la mezcla de queso en los capacillos, ponga encima una cucharadita de guayaba y pase un palillo para hacer vetas.",
+        "Hornee 18–20 minutos, hasta que estén firmes con el centro apenas tembloroso. Enfríe y refrigere 3 horas. No necesitan baño de María porque son pequeños."
+      ],
+      en: [
+        "Heat the oven to 325°F. Line a muffin pan with 12 paper liners and put a Maria cookie in the bottom of each.",
+        "Beat the cream cheese with the sugar, then the eggs one at a time and the vanilla, without overmixing.",
+        "Melt the guava with the water over low heat into a sauce.",
+        "Divide the cheese batter among the liners, top with a teaspoon of guava and swirl with a toothpick.",
+        "Bake 18–20 minutes, until set with the center barely wobbly. Cool and refrigerate 3 hours. They don't need a water bath because they're small."
       ]
     }
   }
