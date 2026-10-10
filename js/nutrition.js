@@ -125,6 +125,9 @@ const NUTRI_FOODS = [
   F("azucar", 387, 0, 100, 100, 0, 0, 0, 1, { cup: 200 }),
   F("azucar morena", 380, 0.1, 98, 97, 0, 0, 0, 28, { cup: 213 }),
   F("azucar en polvo", 389, 0, 100, 98, 0, 0, 0, 2, { cup: 120 }),
+  // Gelatina en polvo con sabor (de caja) y sin sabor (sobres de ¼ onza, 7 g).
+  F("gelatina|gelatina en polvo", 370, 7.8, 85, 81, 0, 0, 0, 470, { can: 85, sobre: 85 }),
+  F("gelatina sin sabor|grenetina", 335, 85, 0, 0, 0, 0.1, 0, 196, { sobre: 7 }),
   F("miel", 304, 0.3, 82, 82, 0.2, 0, 0, 4, { cup: 339 }),
   F("melao|melaza", 290, 0, 75, 74, 0, 0.1, 0, 37, { cup: 328 }),
   F("almibar|almibar simple", 260, 0, 67, 67, 0, 0, 0, 1, { cup: 320 }),
@@ -213,6 +216,7 @@ const NUTRI_FOODS = [
   F("manzana", 52, 0.3, 14, 10, 2.4, 0.2, 0, 1, { u: 180, cup: 125 }),
   F("fresa", 32, 0.7, 7.7, 4.9, 2, 0.3, 0, 1, { cup: 150 }),
   F("frambuesa", 52, 1.2, 12, 4.4, 6.5, 0.7, 0, 1, { cup: 123 }),
+  F("coctel de frutas|fruit cocktail", 57, 0.4, 15, 13, 1, 0.1, 0, 5, { can: 425, cup: 245 }),
   F("carambola", 31, 1, 6.7, 4, 2.8, 0.3, 0, 2, { u: 90, cup: 110 }),
   // Cidra: se usa la parte blanca de la cáscara (la pulpa se bota).
   F("cidra", 30, 0.5, 9, 3, 3, 0.2, 0, 2, { u: 300 }),

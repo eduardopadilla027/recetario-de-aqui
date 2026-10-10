@@ -24,6 +24,8 @@
  * majados de malanga.
  * Undécima tanda: cupcakes, bizcochos (zanahoria, marmoleado, parcha), donas,
  * rollos de canela y churros.
+ * Duodécima tanda: gelatinas (mosaico, leche, coco, parcha, café, coquito,
+ * guayaba, piña colada y chupitos de ron con parcha).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -5966,6 +5968,420 @@ recipes.push(
         "Put the dough in a piping bag with a star tip and fry 5-inch strips in oil at 350°F, 2–3 minutes, until golden.",
         "Drain and roll right away in the cinnamon sugar.",
         "For the sauce: heat the milk and melt the chocolate in it. Serve the churros hot for dipping, as at the patron saint festivals."
+      ]
+    }
+  },
+
+  // ── Duodécima tanda (2026-10): gelatinas ──
+  {
+    id: "gelatina-mosaico",
+    category: "postres",
+    name: { es: "Gelatina de Mosaico", en: "Mosaic (Stained Glass) Gelatin" },
+    time: "40 min + 8 hr de nevera",
+    servings: 16,
+    ingredients: {
+      es: [
+        "1 caja de 3 onzas de gelatina de fresa",
+        "1 caja de 3 onzas de gelatina de limón",
+        "1 caja de 3 onzas de gelatina de uva",
+        "3 tazas de agua hirviendo (1 para cada caja)",
+        "Base blanca: 2 sobres de gelatina sin sabor (¼ onza cada uno)",
+        "½ taza de agua fría",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "1 box (3 oz) strawberry gelatin",
+        "1 box (3 oz) lime gelatin",
+        "1 box (3 oz) grape gelatin",
+        "3 cups boiling water (1 for each box)",
+        "White base: 2 envelopes unflavored gelatin (¼ oz each)",
+        "½ cup cold water",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva cada caja de gelatina en 1 taza de agua hirviendo, en tres moldes cuadrados separados. Refrigere 4 horas, hasta que estén firmes, y córtelas en cubitos.",
+        "Para la base: espolvoree la gelatina sin sabor sobre el agua fría y deje que se hidrate 5 minutos. Caliéntela en el microondas 20–30 segundos, hasta que se disuelva (sin hervir).",
+        "Mezcle la leche condensada, la evaporada y la vainilla y añada la gelatina disuelta, batiendo.",
+        "Reparta los cubitos de colores en un molde engrasado y vierta encima la mezcla blanca, que debe estar a temperatura ambiente (si está caliente derrite los cubitos).",
+        "Refrigere toda la noche y desmolde: al cortarla se ve como un vitral. Es la gelatina de los cumpleaños y las fiestas."
+      ],
+      en: [
+        "Dissolve each gelatin box in 1 cup of boiling water, in three separate square pans. Refrigerate 4 hours, until firm, and cut into small cubes.",
+        "For the base: sprinkle the unflavored gelatin over the cold water and let it bloom 5 minutes. Microwave 20–30 seconds, until dissolved (without boiling).",
+        "Mix the condensed milk, evaporated milk and vanilla and whisk in the dissolved gelatin.",
+        "Scatter the colored cubes in a greased mold and pour the white mixture over them, at room temperature (if it's hot it melts the cubes).",
+        "Refrigerate overnight and unmold: when sliced it looks like stained glass. It's the gelatin of birthdays and parties."
+      ]
+    }
+  },
+  {
+    id: "gelatina-leche",
+    category: "postres",
+    name: { es: "Gelatina de Leche Condensada", en: "Condensed Milk Gelatin" },
+    time: "20 min + 4 hr de nevera",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 sobres de gelatina sin sabor (¼ onza cada uno)",
+        "½ taza de agua fría",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 taza de leche",
+        "1 cucharadita de vainilla",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "2 envelopes unflavored gelatin (¼ oz each)",
+        "½ cup cold water",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "1 cup milk",
+        "1 teaspoon vanilla",
+        "Ground cinnamon for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Espolvoree la gelatina sobre el agua fría y deje hidratar 5 minutos.",
+        "Caliente la leche hasta que humee (sin hervir), retire y disuelva en ella la gelatina hidratada.",
+        "Añada la leche condensada, la evaporada y la vainilla y mezcle bien.",
+        "Vierta en un molde engrasado o en vasitos y refrigere 4 horas, hasta que cuaje.",
+        "Desmolde y espolvoree canela."
+      ],
+      en: [
+        "Sprinkle the gelatin over the cold water and let it bloom 5 minutes.",
+        "Heat the milk until steaming (not boiling), remove and dissolve the bloomed gelatin in it.",
+        "Add the condensed milk, evaporated milk and vanilla and mix well.",
+        "Pour into a greased mold or small cups and refrigerate 4 hours, until set.",
+        "Unmold and dust with cinnamon."
+      ]
+    }
+  },
+  {
+    id: "gelatina-coco",
+    category: "postres",
+    name: { es: "Gelatina de Coco", en: "Coconut Gelatin" },
+    time: "20 min + 4 hr de nevera",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 sobres de gelatina sin sabor (¼ onza cada uno)",
+        "½ taza de agua fría",
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 lata de 15 onzas de crema de coco",
+        "1 taza de leche",
+        "½ taza de coco rallado, tostado"
+      ],
+      en: [
+        "2 envelopes unflavored gelatin (¼ oz each)",
+        "½ cup cold water",
+        "1 can (13.5 oz) coconut milk",
+        "1 can (15 oz) cream of coconut",
+        "1 cup milk",
+        "½ cup shredded coconut, toasted"
+      ]
+    },
+    steps: {
+      es: [
+        "Hidrate la gelatina en el agua fría 5 minutos.",
+        "Caliente la leche de coco con la leche hasta que humee y disuelva en ella la gelatina.",
+        "Retire del fuego y añada la crema de coco, mezclando bien.",
+        "Vierta en un molde o en vasitos y refrigere 4 horas.",
+        "Sirva con el coco tostado por encima. Es como un tembleque, pero más firme y sin maicena."
+      ],
+      en: [
+        "Bloom the gelatin in the cold water 5 minutes.",
+        "Heat the coconut milk with the milk until steaming and dissolve the gelatin in it.",
+        "Remove from heat and add the cream of coconut, mixing well.",
+        "Pour into a mold or small cups and refrigerate 4 hours.",
+        "Serve topped with the toasted coconut. It's like a tembleque, but firmer and without cornstarch."
+      ]
+    }
+  },
+  {
+    id: "gelatina-parcha",
+    category: "postres",
+    name: { es: "Gelatina de Parcha Natural", en: "Fresh Passion Fruit Gelatin" },
+    time: "20 min + 4 hr de nevera",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 sobres de gelatina sin sabor (¼ onza cada uno)",
+        "½ taza de agua fría",
+        "1 taza de pulpa de parcha, colada",
+        "2 tazas de agua",
+        "¾ taza de azúcar"
+      ],
+      en: [
+        "2 envelopes unflavored gelatin (¼ oz each)",
+        "½ cup cold water",
+        "1 cup passion fruit pulp, strained",
+        "2 cups water",
+        "¾ cup sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Hidrate la gelatina en el agua fría 5 minutos.",
+        "Caliente las 2 tazas de agua con el azúcar hasta que se disuelva, retire del fuego y disuelva la gelatina.",
+        "Añada la pulpa de parcha y mezcle.",
+        "Vierta en vasitos y refrigere 4 horas.",
+        "Sin colorantes ni sabores artificiales: sólo el color y el ácido de la parcha. Puede guardar unas semillas para decorar."
+      ],
+      en: [
+        "Bloom the gelatin in the cold water 5 minutes.",
+        "Heat the 2 cups of water with the sugar until dissolved, remove from heat and dissolve the gelatin.",
+        "Add the passion fruit pulp and mix.",
+        "Pour into small cups and refrigerate 4 hours.",
+        "No coloring or artificial flavors: just the color and tang of passion fruit. Save a few seeds to garnish."
+      ]
+    }
+  },
+  {
+    id: "gelatina-cafe",
+    category: "postres",
+    name: { es: "Gelatina de Café", en: "Coffee Gelatin" },
+    time: "20 min + 4 hr de nevera",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 sobres de gelatina sin sabor (¼ onza cada uno)",
+        "½ taza de agua fría",
+        "3 tazas de café colado fuerte, caliente",
+        "½ taza de azúcar",
+        "Para servir: ½ taza de leche condensada o de crema batida"
+      ],
+      en: [
+        "2 envelopes unflavored gelatin (¼ oz each)",
+        "½ cup cold water",
+        "3 cups strong brewed coffee, hot",
+        "½ cup sugar",
+        "To serve: ½ cup sweetened condensed milk or whipped cream"
+      ]
+    },
+    steps: {
+      es: [
+        "Hidrate la gelatina en el agua fría 5 minutos.",
+        "Disuelva el azúcar y la gelatina en el café caliente.",
+        "Vierta en un molde cuadrado y refrigere 4 horas.",
+        "Corte en cubitos y sirva en vasos con un chorrito de leche condensada o con crema batida."
+      ],
+      en: [
+        "Bloom the gelatin in the cold water 5 minutes.",
+        "Dissolve the sugar and gelatin in the hot coffee.",
+        "Pour into a square pan and refrigerate 4 hours.",
+        "Cut into cubes and serve in glasses with a drizzle of condensed milk or with whipped cream."
+      ]
+    }
+  },
+  {
+    id: "gelatina-fresa-frutas",
+    category: "postres",
+    name: { es: "Gelatina de Fresa con Frutas", en: "Strawberry Gelatin with Fruit" },
+    time: "15 min + 4 hr de nevera",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 cajas de 3 onzas de gelatina de fresa",
+        "2 tazas de agua hirviendo",
+        "1½ tazas de agua fría",
+        "1 taza de fresas, en rebanadas",
+        "1 lata de 15 onzas de coctel de frutas, escurrido",
+        "1 guineo maduro, en ruedas"
+      ],
+      en: [
+        "2 boxes (3 oz each) strawberry gelatin",
+        "2 cups boiling water",
+        "1½ cups cold water",
+        "1 cup strawberries, sliced",
+        "1 can (15 oz) fruit cocktail, drained",
+        "1 ripe banana, sliced"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la gelatina en el agua hirviendo, moviendo 2 minutos. Añada el agua fría.",
+        "Refrigere 1 hora, hasta que empiece a espesar: así la fruta queda repartida y no se va al fondo.",
+        "Incorpore las fresas, el coctel de frutas y el guineo.",
+        "Vierta en un molde o en vasitos y refrigere 3 horas más.",
+        "No use piña, lechosa ni kiwi frescos: tienen enzimas que no dejan cuajar la gelatina (enlatados sí funcionan)."
+      ],
+      en: [
+        "Dissolve the gelatin in the boiling water, stirring 2 minutes. Add the cold water.",
+        "Refrigerate 1 hour, until it starts to thicken: this keeps the fruit suspended instead of sinking.",
+        "Fold in the strawberries, fruit cocktail and banana.",
+        "Pour into a mold or small cups and refrigerate 3 more hours.",
+        "Don't use fresh pineapple, papaya or kiwi: their enzymes keep gelatin from setting (canned ones work)."
+      ]
+    }
+  },
+  {
+    id: "gelatina-coquito",
+    category: "postres",
+    name: { es: "Gelatina de Coquito", en: "Coquito Gelatin" },
+    time: "20 min + 6 hr de nevera",
+    servings: 10,
+    ingredients: {
+      es: [
+        "3 sobres de gelatina sin sabor (¼ onza cada uno)",
+        "¾ taza de agua fría",
+        "1 lata de 15 onzas de crema de coco",
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de canela en polvo",
+        "¼ cucharadita de nuez moscada"
+      ],
+      en: [
+        "3 envelopes unflavored gelatin (¼ oz each)",
+        "¾ cup cold water",
+        "1 can (15 oz) cream of coconut",
+        "1 can (13.5 oz) coconut milk",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "1 teaspoon vanilla",
+        "1 teaspoon ground cinnamon",
+        "¼ teaspoon nutmeg"
+      ]
+    },
+    steps: {
+      es: [
+        "Hidrate la gelatina en el agua fría 5 minutos y disuélvala en el microondas 30 segundos, sin hervir.",
+        "Licúe la crema de coco, la leche de coco, la condensada, la evaporada, la vainilla, la canela y la nuez moscada.",
+        "Añada la gelatina disuelta con la licuadora en marcha.",
+        "Vierta en un molde engrasado y refrigere 6 horas o toda la noche.",
+        "Desmolde y espolvoree canela: todo el sabor del coquito navideño, sin alcohol, para que la coman también los niños."
+      ],
+      en: [
+        "Bloom the gelatin in the cold water 5 minutes and dissolve it in the microwave 30 seconds, without boiling.",
+        "Blend the cream of coconut, coconut milk, condensed milk, evaporated milk, vanilla, cinnamon and nutmeg.",
+        "Add the dissolved gelatin with the blender running.",
+        "Pour into a greased mold and refrigerate 6 hours or overnight.",
+        "Unmold and dust with cinnamon: all the flavor of Christmas coquito, without alcohol, so the kids can have it too."
+      ]
+    }
+  },
+  {
+    id: "gelatina-guayaba",
+    category: "postres",
+    name: { es: "Gelatina de Guayaba", en: "Guava Gelatin" },
+    time: "20 min + 4 hr de nevera",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 sobres de gelatina sin sabor (¼ onza cada uno)",
+        "½ taza de agua fría",
+        "3 tazas de néctar de guayaba",
+        "¼ taza de azúcar",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "2 envelopes unflavored gelatin (¼ oz each)",
+        "½ cup cold water",
+        "3 cups guava nectar",
+        "¼ cup sugar",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Hidrate la gelatina en el agua fría 5 minutos.",
+        "Caliente 1 taza del néctar con el azúcar hasta que humee, retire y disuelva la gelatina.",
+        "Añada el resto del néctar y el limón.",
+        "Vierta en un molde o en vasitos y refrigere 4 horas.",
+        "Sirva con una lasca de queso blanco del país al lado, como la guayaba con queso de siempre."
+      ],
+      en: [
+        "Bloom the gelatin in the cold water 5 minutes.",
+        "Heat 1 cup of the nectar with the sugar until steaming, remove and dissolve the gelatin.",
+        "Add the rest of the nectar and the lime.",
+        "Pour into a mold or small cups and refrigerate 4 hours.",
+        "Serve with a slice of fresh white cheese on the side, like the classic guava and cheese."
+      ]
+    }
+  },
+  {
+    id: "gelatina-pina-colada",
+    category: "postres",
+    name: { es: "Gelatina de Piña Colada", en: "Piña Colada Gelatin" },
+    time: "25 min + 6 hr de nevera",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 caja de 3 onzas de gelatina de piña",
+        "1 taza de agua hirviendo",
+        "1 lata de 20 onzas de piña triturada, con su jugo",
+        "Capa de coco: 2 sobres de gelatina sin sabor (¼ onza cada uno)",
+        "½ taza de agua fría",
+        "1 lata de 15 onzas de crema de coco",
+        "1 lata de 12 onzas de leche evaporada"
+      ],
+      en: [
+        "1 box (3 oz) pineapple gelatin",
+        "1 cup boiling water",
+        "1 can (20 oz) crushed pineapple, with its juice",
+        "Coconut layer: 2 envelopes unflavored gelatin (¼ oz each)",
+        "½ cup cold water",
+        "1 can (15 oz) cream of coconut",
+        "1 can (12 oz) evaporated milk"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la gelatina de piña en el agua hirviendo y añada la piña de lata con su jugo. Vierta en un molde y refrigere 2 horas, hasta que esté firme. Use piña de lata: la fresca no deja cuajar.",
+        "Para la capa de coco: hidrate la gelatina sin sabor en el agua fría 5 minutos y disuélvala en el microondas 30 segundos.",
+        "Mezcle la crema de coco con la leche evaporada y añada la gelatina disuelta. Deje que llegue a temperatura ambiente.",
+        "Vierta la capa de coco con cuidado sobre la de piña y refrigere 4 horas más.",
+        "Corte en cuadros: dos capas con el sabor del trago nacional, sin alcohol."
+      ],
+      en: [
+        "Dissolve the pineapple gelatin in the boiling water and add the canned pineapple with its juice. Pour into a pan and refrigerate 2 hours, until firm. Use canned pineapple: fresh won't let it set.",
+        "For the coconut layer: bloom the unflavored gelatin in the cold water 5 minutes and dissolve it in the microwave 30 seconds.",
+        "Mix the cream of coconut with the evaporated milk and add the dissolved gelatin. Let it come to room temperature.",
+        "Gently pour the coconut layer over the pineapple layer and refrigerate 4 more hours.",
+        "Cut into squares: two layers with the flavor of the national drink, without alcohol."
+      ]
+    }
+  },
+  {
+    id: "gelatinas-ron-parcha",
+    category: "cocteles",
+    name: { es: "Gelatinas de Ron con Parcha (Chupitos)", en: "Passion Fruit Rum Gelatin Shots" },
+    time: "15 min + 4 hr de nevera",
+    servings: 16,
+    ingredients: {
+      es: [
+        "1 caja de 3 onzas de gelatina de limón o de piña",
+        "1 taza de agua hirviendo",
+        "½ taza de pulpa de parcha, colada",
+        "½ taza de ron blanco, frío"
+      ],
+      en: [
+        "1 box (3 oz) lime or pineapple gelatin",
+        "1 cup boiling water",
+        "½ cup passion fruit pulp, strained",
+        "½ cup white rum, cold"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la gelatina en el agua hirviendo, moviendo 2 minutos.",
+        "Añada la parcha y deje refrescar 10 minutos; luego añada el ron frío (si se añade caliente se evapora).",
+        "Reparta en 16 vasitos de 2 onzas.",
+        "Refrigere 4 horas. Sólo para adultos: márquelos bien para que no los confundan con las gelatinas de los niños."
+      ],
+      en: [
+        "Dissolve the gelatin in the boiling water, stirring 2 minutes.",
+        "Add the passion fruit and let cool 10 minutes; then add the cold rum (if added hot it evaporates).",
+        "Divide among 16 two-ounce cups.",
+        "Refrigerate 4 hours. Adults only: label them clearly so they aren't mixed up with the kids' gelatins."
       ]
     }
   }

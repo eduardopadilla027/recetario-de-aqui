@@ -33,7 +33,7 @@ const S_STOP = new Set(("y e o u de del la el los las lo un una unos unas con pa
 /* Sinónimos y traducciones (simétricos dentro de cada grupo). */
 const S_GROUPS = [
   "china naranja orange", "guineo banana banano", "platano plantain", "habichuela frijol bean judia poroto",
-  "gandul guandu pigeon", "cerdo puerco chancho pork marrano", "res beef vaca", "pollo chicken", "dona donut doughnut", "cupcake bizcochito magdalena", "alita ala wing", "pechuga breast", "muslo thigh", "gallina hen",
+  "gandul guandu pigeon", "cerdo puerco chancho pork marrano", "res beef vaca", "pollo chicken", "gelatina jello gelatin", "dona donut doughnut", "cupcake bizcochito magdalena", "alita ala wing", "pechuga breast", "muslo thigh", "gallina hen",
   "pavo turkey", "camaron shrimp gamba langostino prawn", "pescado fish", "bacalao codfish cod bacalaito",
   "juey cangrejo crab", "pulpo octopus", "calamar squid calamari", "langosta lobster", "carrucho conch caracol",
   "ostion ostra oyster", "parcha maracuya chinola passion passionfruit", "lechosa papaya", "batata boniato camote",
