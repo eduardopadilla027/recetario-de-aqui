@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.5.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 829 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.5.1 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 829 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -196,6 +196,10 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   pescados en plato o tazón de barro con lo que llevan (`ic-pes-*`: filete con limón, camarones en C, anillos de calamar,
   almejas y mejillones abiertos, papillote, tacos abiertos, tortitas); salsas en tazoncito blanco del color de la salsa o
   en aceitera para las vinagretas; cereales en tazón de desayuno, molde, frasco de granola o pila de panqueques.
+  **Pescados (`ic-pez-*`, antes 🐟):** chillo entero frito o al horno con vegetales, filetes (al mojo, en salsa criolla,
+  empanado, dorado con marcas de plancha y mangó), ruedas de sierra con el hueso, guisados en tazón de barro (bacalao,
+  con berenjena, salmón, atún, en salsa de coco), bacalao a la vizcaína en cazuela, escabeche con aros de cebolla, ceviche
+  en copa, pescado en hoja de plátano, mojo isleño, bacalaítos, frituras de cetí, chicharrones en cono y gazpacho de bacalao.
   **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
@@ -347,6 +351,12 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v3.5.1 · Dibujos de los pescados
+- *Pedido:* dibujar los iconos de los pescados que usaban 🐟.
+- 21 dibujos nuevos (`ic-pez-*`, §7) para los 18 pescados, bacalaítos, chicharrones de pescado y gazpacho de bacalao;
+  ya ninguna receta usa 🐟.
+- *Verificado:* los 21 con su dibujo en el navegador ✔; sin errores en la consola ✔.
 
 ### 2026-10-10 — v3.5.0 · Más pescados y mariscos, salsas y aderezos, y cereales
 - *Pedido:* más recetas de pescados y mariscos, salsas y aderezos, y cereales.

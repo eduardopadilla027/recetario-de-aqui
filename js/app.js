@@ -375,6 +375,28 @@ const meatIcons = {
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
   [/^milanesa|a la milanesa/, "svg:ic-empanado"],
+  // Pescados que antes usaban 🐟: entero, filete, ruedas, guisado o frituras según el plato.
+  [/^bacalao guisado con berenjena/, "svg:ic-pez-bacalao-berenjena"],
+  [/^bacalao guisado/, "svg:ic-pez-bacalao-guisado"],
+  [/^bacalao a la vizcaina/, "svg:ic-pez-vizcaina"],
+  [/^chillo frito/, "svg:ic-pez-chillo-frito"],
+  [/^chillo al horno/, "svg:ic-pez-chillo-horno"],
+  [/^bacalaitos/, "svg:ic-pez-bacalaitos"],
+  [/^pescado en escabeche/, "svg:ic-pez-escabeche"],
+  [/^ceviche puertorriqueno/, "svg:ic-pez-ceviche"],
+  [/^filete de pescado al mojo/, "svg:ic-pez-filete-mojo"],
+  [/^mero en salsa criolla/, "svg:ic-pez-mero-criolla"],
+  [/^filete de pescado empanado/, "svg:ic-pez-empanado"],
+  [/^pescado en salsa de coco/, "svg:ic-pez-salsa-coco"],
+  [/^ruedas de sierra/, "svg:ic-pez-ruedas"],
+  [/^dorado a la plancha/, "svg:ic-pez-dorado-mango"],
+  [/^pescado asado en hoja de platano/, "svg:ic-pez-hoja-platano"],
+  [/^pescado al mojo isleno/, "svg:ic-pez-mojo-isleno"],
+  [/^salmon guisado/, "svg:ic-pez-salmon-guisado"],
+  [/^atun guisado/, "svg:ic-pez-atun-guisado"],
+  [/^frituras de ceti/, "svg:ic-pez-ceti"],
+  [/^chicharrones de pescado/, "svg:ic-pez-chicharrones"],
+  [/^gazpacho de bacalao/, "svg:ic-pez-gazpacho-bacalao"],
   // Pescados y mariscos, salsas y aderezos, y cereales (tanda 29).
   [/^tilapia al horno/, "svg:ic-pes-tilapia"],
   [/^camarones en salsa de parcha/, "svg:ic-pes-camarones-parcha"],
