@@ -67,6 +67,10 @@
  * Vigesimoctava tanda: vegetarianas (jaca mechada, tofu guisado, canoas con lentejas,
  * mofongo de vegetales, coliflor con BBQ de guayaba, pinchos con queso de freír,
  * sancocho vegetariano, hamburguesa de habichuelas negras, quinoa con gandules…).
+ * Vigesimonovena tanda: más pescados y mariscos (tilapia, calamares, almejas,
+ * mejillones, salmón con guayaba, tacos de pescado…), salsas y aderezos (tártara,
+ * cóctel, vinagretas, ranch de recao, teriyaki de piña, pesto, queso) y cereales
+ * (avena horneada, granola, quinoa con leche, panqueques de avena, avena salada).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -16256,6 +16260,1144 @@ recipes.push(
         "Mash the lentils and mix with the breadcrumbs, egg, Parmesan, garlic, oregano and ¼ teaspoon of the salt. Shape 16 balls.",
         "Bake the balls on a greased sheet pan at 400 °F for 20 minutes, turning halfway; baked, they don't fall apart like fried ones.",
         "Sauté the sofrito in the oil 3 minutes, add the tomato sauce, broth and remaining salt, and cook 5 minutes. Add the lentil balls, cook 5 minutes without stirring hard and serve with rice or spaghetti."
+      ]
+    }
+  },
+
+  // ── Vigesimonovena tanda (2026-10): más pescados y mariscos, salsas y aderezos, y cereales ──
+  {
+    id: "tilapia-ajo-limon",
+    category: "pescados",
+    name: { es: "Tilapia al Horno con Ajo y Limón", en: "Baked Tilapia with Garlic and Lime" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de tilapia (6 onzas cada uno)",
+        "3 cucharadas de mantequilla derretida",
+        "4 dientes de ajo machacados",
+        "3 cucharadas de jugo de limón",
+        "1 cucharadita de ralladura de limón",
+        "½ cucharadita de pimentón",
+        "½ cucharadita de sal",
+        "¼ cucharadita de pimienta",
+        "2 cucharadas de perejil picado"
+      ],
+      en: [
+        "4 tilapia fillets (6 oz each)",
+        "3 tablespoons melted butter",
+        "4 garlic cloves, crushed",
+        "3 tablespoons lime juice",
+        "1 teaspoon lime zest",
+        "½ teaspoon paprika",
+        "½ teaspoon salt",
+        "¼ teaspoon black pepper",
+        "2 tablespoons chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400 °F. Seque los filetes con papel toalla y póngalos en un molde engrasado.",
+        "Mezcle la mantequilla, el ajo, el jugo y la ralladura de limón. Sazone el pescado con la sal, la pimienta y el pimentón, y báñelo con la mezcla.",
+        "Hornee 10 a 12 minutos, hasta que el pescado se separe fácil con un tenedor y llegue a 145 °F por dentro.",
+        "Báñelo con el jugo del molde y espolvoree el perejil. Sirva con arroz blanco y ensalada o con viandas."
+      ],
+      en: [
+        "Heat the oven to 400 °F. Pat the fillets dry with paper towels and place them in a greased baking dish.",
+        "Mix the butter, garlic, lime juice and zest. Season the fish with the salt, pepper and paprika, and spoon the mixture over it.",
+        "Bake 10 to 12 minutes, until the fish flakes easily with a fork and reaches 145 °F inside.",
+        "Spoon the pan juices over it and sprinkle with the parsley. Serve with white rice and salad or with root vegetables."
+      ]
+    }
+  },
+  {
+    id: "camarones-parcha",
+    category: "pescados",
+    name: { es: "Camarones en Salsa de Parcha", en: "Shrimp in Passion Fruit Sauce" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de camarones grandes, pelados y limpios",
+        "2 cucharadas de aceite de oliva",
+        "3 dientes de ajo picados",
+        "½ taza de pulpa de parcha sin semillas",
+        "2 cucharadas de azúcar morena",
+        "1 cucharada de salsa de soya",
+        "1 cucharadita de maicena disuelta en 2 cucharadas de agua",
+        "½ cucharadita de sal",
+        "2 cebollines picados"
+      ],
+      en: [
+        "1½ lb large shrimp, peeled and deveined",
+        "2 tablespoons olive oil",
+        "3 garlic cloves, chopped",
+        "½ cup seedless passion fruit pulp",
+        "2 tablespoons brown sugar",
+        "1 tablespoon soy sauce",
+        "1 teaspoon cornstarch dissolved in 2 tablespoons water",
+        "½ teaspoon salt",
+        "2 scallions, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Seque los camarones y sazónelos con la sal.",
+        "En un sartén grande a fuego alto, cocine los camarones en el aceite 1 a 2 minutos por lado, hasta que estén rosados. Sáquelos; si se pasan, quedan duros.",
+        "Baje el fuego, sofría el ajo 30 segundos y añada la parcha, el azúcar y la soya. Hierva 2 minutos, añada la maicena y mueva hasta que espese.",
+        "Devuelva los camarones, cúbralos con la salsa 1 minuto y sirva con el cebollín, con arroz blanco o tostones."
+      ],
+      en: [
+        "Pat the shrimp dry and season them with the salt.",
+        "In a large skillet over high heat, cook the shrimp in the oil 1 to 2 minutes per side, until pink. Remove them; overcooked, they turn tough.",
+        "Lower the heat, sauté the garlic 30 seconds and add the passion fruit, sugar and soy sauce. Boil 2 minutes, add the cornstarch and stir until thick.",
+        "Return the shrimp, coat them in the sauce 1 minute and serve with the scallions, over white rice or with tostones."
+      ]
+    }
+  },
+  {
+    id: "calamares-criolla",
+    category: "pescados",
+    name: { es: "Calamares Guisados a la Criolla", en: "Creole Stewed Squid" },
+    time: "1 hr",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de calamares limpios, en anillos",
+        "3 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 pimiento rojo en tiras",
+        "1 lata de 8 onzas de salsa de tomate",
+        "½ taza de vino blanco",
+        "10 aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "1 hoja de laurel",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "2 lb cleaned squid, in rings",
+        "3 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 red bell pepper, in strips",
+        "1 can (8 oz) tomato sauce",
+        "½ cup white wine",
+        "10 stuffed olives",
+        "1 tablespoon capers",
+        "1 bay leaf",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero, sofría el sofrito y el pimiento en el aceite 4 minutos.",
+        "Añada los calamares y cocine 3 minutos. Añada el vino y deje que hierva 2 minutos.",
+        "Añada la salsa de tomate, las aceitunas, las alcaparras, el laurel y la sal. Tape y cocine a fuego bajo 40 minutos, hasta que los calamares estén tiernos.",
+        "El calamar se cocina muy rápido (2 minutos) o muy lento (40 minutos o más); en el medio queda como goma. Sirva con arroz blanco o tostones."
+      ],
+      en: [
+        "In a caldero, sauté the sofrito and bell pepper in the oil 4 minutes.",
+        "Add the squid and cook 3 minutes. Add the wine and let it boil 2 minutes.",
+        "Add the tomato sauce, olives, capers, bay leaf and salt. Cover and cook over low heat 40 minutes, until the squid is tender.",
+        "Squid is cooked either very fast (2 minutes) or very slow (40 minutes or more); in between it turns rubbery. Serve with white rice or tostones."
+      ]
+    }
+  },
+  {
+    id: "salmon-guayaba",
+    category: "pescados",
+    name: { es: "Salmón Glaseado con Guayaba", en: "Guava-Glazed Salmon" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de salmón (6 onzas cada uno)",
+        "3 onzas de pasta de guayaba",
+        "2 cucharadas de jugo de limón",
+        "1 cucharada de salsa de soya",
+        "1 diente de ajo machacado",
+        "½ cucharadita de sal",
+        "1 cucharada de aceite de oliva"
+      ],
+      en: [
+        "4 salmon fillets (6 oz each)",
+        "3 oz guava paste",
+        "2 tablespoons lime juice",
+        "1 tablespoon soy sauce",
+        "1 garlic clove, crushed",
+        "½ teaspoon salt",
+        "1 tablespoon olive oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la pasta de guayaba con el limón, la soya y el ajo a fuego bajo, moviendo, hasta que quede un glaseado liso.",
+        "Caliente el horno a 400 °F. Seque el salmón, úntelo con el aceite y sazónelo con la sal. Póngalo en una bandeja con papel de hornear.",
+        "Hornee 8 minutos, bañe con el glaseado y hornee 4 a 6 minutos más, hasta que llegue a 145 °F en lo más grueso.",
+        "Sirva con el resto del glaseado. Queda bien con arroz con gandules o con ensalada de aguacate."
+      ],
+      en: [
+        "Melt the guava paste with the lime juice, soy sauce and garlic over low heat, stirring, until it forms a smooth glaze.",
+        "Heat the oven to 400 °F. Pat the salmon dry, brush it with the oil and season with the salt. Place on a parchment-lined sheet pan.",
+        "Bake 8 minutes, brush with the glaze and bake 4 to 6 more minutes, until it reaches 145 °F at the thickest part.",
+        "Serve with the remaining glaze. Goes well with rice with pigeon peas or avocado salad."
+      ]
+    }
+  },
+  {
+    id: "bacalao-papas-horno",
+    category: "pescados",
+    name: { es: "Bacalao al Horno con Papas y Cebolla", en: "Baked Salt Cod with Potatoes and Onion" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de bacalao sin espinas, desalado",
+        "2 libras de papas en ruedas finas",
+        "2 cebollas en ruedas",
+        "1 pimiento rojo en tiras",
+        "4 dientes de ajo en lascas",
+        "½ taza de aceite de oliva",
+        "1 lata de 8 onzas de salsa de tomate",
+        "12 aceitunas rellenas",
+        "¼ cucharadita de pimienta"
+      ],
+      en: [
+        "1 lb boneless salt cod, desalted",
+        "2 lb potatoes, thinly sliced",
+        "2 onions, sliced into rings",
+        "1 red bell pepper, in strips",
+        "4 garlic cloves, sliced",
+        "½ cup olive oil",
+        "1 can (8 oz) tomato sauce",
+        "12 stuffed olives",
+        "¼ teaspoon black pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Desale el bacalao la noche antes en agua fría, cambiando el agua 3 veces. Hiérvalo 5 minutos y desmenúcelo en lascas.",
+        "Hierva las papas 5 minutos en agua sin sal, para que se terminen en el horno sin quedar crudas.",
+        "En un molde, ponga capas de papas, bacalao, cebolla, pimiento y ajo. Mezcle la salsa de tomate con el aceite y la pimienta, y báñelo todo. Ponga las aceitunas encima.",
+        "Tape con papel de aluminio y hornee a 375 °F 30 minutos; destape y hornee 10 minutos más. No lleva sal: la da el bacalao. Pruebe un pedacito antes de hornear por si quedó muy salado."
+      ],
+      en: [
+        "Desalt the cod the night before in cold water, changing the water 3 times. Boil it 5 minutes and flake it.",
+        "Boil the potatoes 5 minutes in unsalted water so they finish in the oven without staying raw.",
+        "In a baking dish, layer the potatoes, cod, onion, bell pepper and garlic. Mix the tomato sauce with the oil and pepper, and pour it over everything. Top with the olives.",
+        "Cover with foil and bake at 375 °F for 30 minutes; uncover and bake 10 more minutes. No salt needed: the cod brings it. Taste a little piece before baking in case it is still too salty."
+      ]
+    }
+  },
+  {
+    id: "camarones-enchilados",
+    category: "pescados",
+    name: { es: "Camarones Enchilados", en: "Spicy Creole Shrimp (Camarones Enchilados)" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de camarones pelados y limpios",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 pimiento cubanela picado",
+        "1 ají picante picado (o al gusto)",
+        "1 lata de 8 onzas de salsa de tomate",
+        "¼ taza de vino blanco",
+        "1 cucharadita de pimentón",
+        "½ cucharadita de comino",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1½ lb shrimp, peeled and deveined",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 cubanelle pepper, chopped",
+        "1 hot pepper, chopped (or to taste)",
+        "1 can (8 oz) tomato sauce",
+        "¼ cup white wine",
+        "1 teaspoon paprika",
+        "½ teaspoon cumin",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito, el cubanela y el ají picante en el aceite 4 minutos.",
+        "Añada el pimentón y el comino, y luego el vino; hierva 1 minuto. Añada la salsa de tomate y la sal, y cocine 8 minutos a fuego bajo para que espese.",
+        "Añada los camarones y cocine 3 a 4 minutos, moviendo, sólo hasta que estén rosados y enroscados en forma de C (en forma de O están pasados).",
+        "Sirva con arroz blanco y amarillos. Para menos picante, quítele las semillas al ají."
+      ],
+      en: [
+        "Sauté the sofrito, cubanelle and hot pepper in the oil 4 minutes.",
+        "Add the paprika and cumin, then the wine; boil 1 minute. Add the tomato sauce and salt, and cook 8 minutes over low heat to thicken.",
+        "Add the shrimp and cook 3 to 4 minutes, stirring, just until pink and curled into a C (an O means overcooked).",
+        "Serve with white rice and sweet plantains. For less heat, seed the hot pepper."
+      ]
+    }
+  },
+  {
+    id: "almejas-salsa-verde",
+    category: "pescados",
+    name: { es: "Almejas en Salsa Verde con Recao", en: "Clams in Green Culantro Sauce" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "36 almejas frescas (unas 3 libras), cerradas",
+        "3 cucharadas de aceite de oliva",
+        "6 dientes de ajo picados",
+        "1 cucharada de harina",
+        "½ taza de vino blanco",
+        "½ taza de agua",
+        "½ taza de recao y perejil picados",
+        "1 limón en cuñas"
+      ],
+      en: [
+        "36 fresh clams (about 3 lb), closed",
+        "3 tablespoons olive oil",
+        "6 garlic cloves, chopped",
+        "1 tablespoon flour",
+        "½ cup white wine",
+        "½ cup water",
+        "½ cup chopped culantro and parsley",
+        "1 lime, in wedges"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga las almejas en agua fría con sal 30 minutos para que suelten la arena. Bote las que estén rotas o abiertas que no se cierren al tocarlas.",
+        "En un sartén hondo, sofría el ajo en el aceite 1 minuto, añada la harina y mueva 1 minuto.",
+        "Añada el vino y el agua, mueva hasta que espese un poco y añada las almejas. Tape y cocine 5 a 7 minutos, moviendo el sartén, hasta que se abran. Bote las que no se abran.",
+        "Añada el recao y el perejil, mueva y sirva con limón y pan para mojar la salsa. No lleva sal: las almejas la dan."
+      ],
+      en: [
+        "Soak the clams in cold salted water 30 minutes to purge the sand. Discard any that are cracked, or open and don't close when tapped.",
+        "In a deep skillet, sauté the garlic in the oil 1 minute, add the flour and stir 1 minute.",
+        "Add the wine and water, stir until slightly thick and add the clams. Cover and cook 5 to 7 minutes, shaking the pan, until they open. Discard any that stay closed.",
+        "Add the culantro and parsley, stir and serve with lime and bread to dip in the sauce. No salt needed: the clams bring it."
+      ]
+    }
+  },
+  {
+    id: "mejillones-sofrito",
+    category: "pescados",
+    name: { es: "Mejillones al Vino con Sofrito", en: "Mussels in Wine with Sofrito" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "48 mejillones (unas 3 libras), limpios",
+        "2 cucharadas de mantequilla",
+        "½ taza de sofrito",
+        "3 dientes de ajo picados",
+        "1 taza de vino blanco",
+        "1 taza de tomates picados",
+        "¼ taza de cilantro picado",
+        "1 limón en cuñas"
+      ],
+      en: [
+        "48 mussels (about 3 lb), cleaned",
+        "2 tablespoons butter",
+        "½ cup sofrito",
+        "3 garlic cloves, chopped",
+        "1 cup white wine",
+        "1 cup chopped tomatoes",
+        "¼ cup chopped cilantro",
+        "1 lime, in wedges"
+      ]
+    },
+    steps: {
+      es: [
+        "Restriegue los mejillones y quíteles la barbita tirando hacia la bisagra. Bote los rotos o abiertos que no se cierren al tocarlos.",
+        "En una olla ancha, sofría el sofrito y el ajo en la mantequilla 3 minutos. Añada el tomate y el vino, y deje hervir.",
+        "Añada los mejillones, tape y cocine 5 a 6 minutos a fuego alto, moviendo la olla, hasta que se abran. Bote los que sigan cerrados.",
+        "Sirva en platos hondos con el caldo, el cilantro y el limón, y pan o tostones para mojar."
+      ],
+      en: [
+        "Scrub the mussels and pull off the beards toward the hinge. Discard any that are cracked, or open and don't close when tapped.",
+        "In a wide pot, sauté the sofrito and garlic in the butter 3 minutes. Add the tomato and wine, and bring to a boil.",
+        "Add the mussels, cover and cook 5 to 6 minutes over high heat, shaking the pot, until they open. Discard any that stay closed.",
+        "Serve in deep bowls with the broth, cilantro and lime, and bread or tostones for dipping."
+      ]
+    }
+  },
+  {
+    id: "pescado-papillote",
+    category: "pescados",
+    name: { es: "Pescado en Papillote con Vegetales y Recao", en: "Fish en Papillote with Vegetables and Culantro" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de mero o chillo (6 onzas cada uno)",
+        "1 calabacín en ruedas finas",
+        "1 pimiento rojo en tiras",
+        "½ cebolla en tiras",
+        "8 tomates cherry partidos",
+        "4 hojas de recao picadas",
+        "4 cucharadas de aceite de oliva",
+        "2 dientes de ajo en lascas",
+        "1 limón en ruedas",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "4 grouper or snapper fillets (6 oz each)",
+        "1 zucchini, thinly sliced",
+        "1 red bell pepper, in strips",
+        "½ onion, in strips",
+        "8 cherry tomatoes, halved",
+        "4 culantro leaves, chopped",
+        "4 tablespoons olive oil",
+        "2 garlic cloves, sliced",
+        "1 lime, sliced",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400 °F. Corte 4 hojas grandes de papel de hornear (o papel de aluminio).",
+        "En el centro de cada una, ponga una cama de calabacín, pimiento y cebolla, y encima el pescado sazonado con la sal.",
+        "Cubra con el tomate, el recao, el ajo y las ruedas de limón, y báñelo con 1 cucharada de aceite. Doble el papel y cierre los bordes bien apretados para que no se escape el vapor.",
+        "Hornee 15 a 18 minutos. Sirva el paquete cerrado y ábralo en la mesa con cuidado: sale vapor muy caliente."
+      ],
+      en: [
+        "Heat the oven to 400 °F. Cut 4 large sheets of parchment paper (or foil).",
+        "In the center of each, make a bed of zucchini, bell pepper and onion, and lay the fish seasoned with the salt on top.",
+        "Top with the tomato, culantro, garlic and lime slices, and drizzle with 1 tablespoon of oil. Fold the paper and crimp the edges tightly so the steam can't escape.",
+        "Bake 15 to 18 minutes. Serve the packet closed and open it carefully at the table: very hot steam comes out."
+      ]
+    }
+  },
+  {
+    id: "tacos-pescado",
+    category: "pescados",
+    name: { es: "Tacos de Pescado con Salsa de Mangó", en: "Fish Tacos with Mango Salsa" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de filete de dorado o tilapia",
+        "1 cucharadita de adobo",
+        "1 cucharadita de pimentón",
+        "2 cucharadas de aceite de oliva",
+        "8 tortillas de maíz",
+        "1 mangó maduro en cubitos",
+        "¼ cebolla roja picada",
+        "2 cucharadas de cilantro picado",
+        "2 cucharadas de jugo de limón",
+        "2 tazas de repollo picado fino",
+        "¼ taza de mayonesa con ajo"
+      ],
+      en: [
+        "1½ lb mahi-mahi or tilapia fillet",
+        "1 teaspoon adobo",
+        "1 teaspoon paprika",
+        "2 tablespoons olive oil",
+        "8 corn tortillas",
+        "1 ripe mango, diced",
+        "¼ red onion, chopped",
+        "2 tablespoons chopped cilantro",
+        "2 tablespoons lime juice",
+        "2 cups finely shredded cabbage",
+        "¼ cup garlic mayonnaise"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el mangó, la cebolla, el cilantro y el limón para la salsa. Déjela reposar mientras cocina.",
+        "Sazone el pescado con el adobo y el pimentón. Cocínelo en el aceite a fuego medio-alto 3 a 4 minutos por lado, hasta que se separe con un tenedor. Desmenúcelo en trozos.",
+        "Caliente las tortillas en un sartén seco 30 segundos por lado.",
+        "Arme cada taco con repollo, pescado, salsa de mangó y un chorrito de mayo-ajo."
+      ],
+      en: [
+        "Mix the mango, onion, cilantro and lime juice for the salsa. Let it sit while you cook.",
+        "Season the fish with the adobo and paprika. Cook it in the oil over medium-high heat 3 to 4 minutes per side, until it flakes with a fork. Break it into chunks.",
+        "Warm the tortillas in a dry skillet 30 seconds per side.",
+        "Build each taco with cabbage, fish, mango salsa and a drizzle of garlic mayo."
+      ]
+    }
+  },
+  {
+    id: "tortitas-salmon",
+    category: "pescados",
+    name: { es: "Tortitas de Salmón", en: "Salmon Cakes" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 latas de 6 onzas de salmón, escurrido",
+        "1 huevo",
+        "½ taza de pan rallado",
+        "2 cucharadas de mayonesa",
+        "2 cucharadas de sofrito",
+        "1 cucharadita de mostaza",
+        "1 cucharada de jugo de limón",
+        "¼ cucharadita de pimienta",
+        "3 cucharadas de aceite de oliva"
+      ],
+      en: [
+        "2 cans (6 oz each) salmon, drained",
+        "1 egg",
+        "½ cup breadcrumbs",
+        "2 tablespoons mayonnaise",
+        "2 tablespoons sofrito",
+        "1 teaspoon mustard",
+        "1 tablespoon lime juice",
+        "¼ teaspoon black pepper",
+        "3 tablespoons olive oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Desmenuce el salmón y quítele la piel y las espinas grandes (las pequeñas se pueden dejar: son blandas y tienen calcio).",
+        "Mezcle con el huevo, el pan rallado, la mayonesa, el sofrito, la mostaza, el limón y la pimienta. Forme 8 tortitas y enfríelas 10 minutos para que no se rompan.",
+        "Cocínelas en el aceite a fuego medio 3 a 4 minutos por lado, hasta que estén doradas.",
+        "Sirva con salsa tártara de recao, ensalada o en pan como emparedado."
+      ],
+      en: [
+        "Flake the salmon and remove the skin and large bones (the small ones can stay: they are soft and full of calcium).",
+        "Mix with the egg, breadcrumbs, mayonnaise, sofrito, mustard, lime juice and pepper. Shape 8 cakes and chill them 10 minutes so they hold together.",
+        "Cook them in the oil over medium heat 3 to 4 minutes per side, until golden.",
+        "Serve with culantro tartar sauce, salad or in a bun as a sandwich."
+      ]
+    }
+  },
+  {
+    id: "salsa-tartara-recao",
+    category: "salsas",
+    name: { es: "Salsa Tártara con Recao", en: "Culantro Tartar Sauce" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "¾ taza de mayonesa",
+        "2 cucharadas de pepinillos picados",
+        "1 cucharada de alcaparras picadas",
+        "2 hojas de recao picadas finas",
+        "1 cucharada de cebolla picada fina",
+        "1 cucharada de jugo de limón",
+        "¼ cucharadita de pimienta"
+      ],
+      en: [
+        "¾ cup mayonnaise",
+        "2 tablespoons chopped pickles",
+        "1 tablespoon chopped capers",
+        "2 culantro leaves, finely chopped",
+        "1 tablespoon finely chopped onion",
+        "1 tablespoon lime juice",
+        "¼ teaspoon black pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle todos los ingredientes en un tazón.",
+        "Tape y enfríe por lo menos 30 minutos para que se mezclen los sabores.",
+        "Sirva con pescado frito, tortitas de salmón, bacalaítos o camarones empanados. Se guarda en la nevera hasta 5 días."
+      ],
+      en: [
+        "Mix all the ingredients in a bowl.",
+        "Cover and chill at least 30 minutes so the flavors blend.",
+        "Serve with fried fish, salmon cakes, codfish fritters or breaded shrimp. Keeps in the refrigerator up to 5 days."
+      ]
+    }
+  },
+  {
+    id: "salsa-coctel",
+    category: "salsas",
+    name: { es: "Salsa Cóctel para Mariscos", en: "Seafood Cocktail Sauce" },
+    time: "5 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "¾ taza de ketchup",
+        "2 cucharadas de jugo de limón",
+        "1 cucharadita de salsa inglesa",
+        "1 cucharadita de pique (o al gusto)",
+        "1 cucharada de cebolla rallada",
+        "1 cucharada de cilantro picado fino"
+      ],
+      en: [
+        "¾ cup ketchup",
+        "2 tablespoons lime juice",
+        "1 teaspoon Worcestershire sauce",
+        "1 teaspoon hot sauce (or to taste)",
+        "1 tablespoon grated onion",
+        "1 tablespoon finely chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle todos los ingredientes.",
+        "Enfríe 15 minutos y pruebe; añada más pique o limón al gusto.",
+        "Sirva con camarones hervidos, ostiones, cóctel de camarones o pescado frito."
+      ],
+      en: [
+        "Mix all the ingredients.",
+        "Chill 15 minutes and taste; add more hot sauce or lime to taste.",
+        "Serve with boiled shrimp, oysters, shrimp cocktail or fried fish."
+      ]
+    }
+  },
+  {
+    id: "salsa-coco-limon",
+    category: "salsas",
+    name: { es: "Salsa de Coco y Limón para Mariscos", en: "Coconut-Lime Sauce for Seafood" },
+    time: "15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 cucharada de aceite de oliva",
+        "2 dientes de ajo picados",
+        "1 cucharada de jengibre rallado",
+        "1 cucharadita de ralladura de limón",
+        "2 cucharadas de jugo de limón",
+        "1 cucharadita de azúcar",
+        "½ cucharadita de sal",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "1 can (13.5 oz) coconut milk",
+        "1 tablespoon olive oil",
+        "2 garlic cloves, chopped",
+        "1 tablespoon grated ginger",
+        "1 teaspoon lime zest",
+        "2 tablespoons lime juice",
+        "1 teaspoon sugar",
+        "½ teaspoon salt",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el ajo y el jengibre en el aceite 1 minuto, sin que se doren.",
+        "Añada la leche de coco, la ralladura, el azúcar y la sal, y hierva a fuego bajo 8 minutos, hasta que espese un poco.",
+        "Apague, añada el jugo de limón y el cilantro.",
+        "Úsela para cocinar camarones o pescado dentro de la salsa (3 a 5 minutos) o sírvala tibia aparte para mojar."
+      ],
+      en: [
+        "Sauté the garlic and ginger in the oil 1 minute, without browning.",
+        "Add the coconut milk, zest, sugar and salt, and simmer 8 minutes over low heat, until slightly thick.",
+        "Turn off the heat and add the lime juice and cilantro.",
+        "Use it to cook shrimp or fish in the sauce (3 to 5 minutes) or serve it warm on the side for dipping."
+      ]
+    }
+  },
+  {
+    id: "vinagreta-parcha",
+    category: "salsas",
+    name: { es: "Vinagreta de Parcha", en: "Passion Fruit Vinaigrette" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "¼ taza de pulpa de parcha con semillas",
+        "2 cucharadas de vinagre",
+        "1 cucharada de miel",
+        "1 cucharadita de mostaza",
+        "½ taza de aceite de oliva",
+        "¼ cucharadita de sal",
+        "¼ cucharadita de pimienta"
+      ],
+      en: [
+        "¼ cup passion fruit pulp with seeds",
+        "2 tablespoons vinegar",
+        "1 tablespoon honey",
+        "1 teaspoon mustard",
+        "½ cup olive oil",
+        "¼ teaspoon salt",
+        "¼ teaspoon black pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "En un frasco con tapa, ponga la parcha, el vinagre, la miel, la mostaza, la sal y la pimienta.",
+        "Añada el aceite, tape y bata fuerte 30 segundos, hasta que quede cremosa (la mostaza la mantiene unida).",
+        "Sirva sobre ensalada verde, de aguacate o de mariscos. Se guarda en la nevera 1 semana; bata otra vez antes de usar."
+      ],
+      en: [
+        "In a jar with a lid, put the passion fruit, vinegar, honey, mustard, salt and pepper.",
+        "Add the oil, close and shake hard 30 seconds, until creamy (the mustard holds it together).",
+        "Serve over green, avocado or seafood salad. Keeps in the refrigerator 1 week; shake again before using."
+      ]
+    }
+  },
+  {
+    id: "vinagreta-ajo-oregano",
+    category: "salsas",
+    name: { es: "Vinagreta Criolla de Ajo y Orégano", en: "Garlic and Oregano Creole Vinaigrette" },
+    time: "5 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "½ taza de aceite de oliva",
+        "3 cucharadas de vinagre",
+        "2 dientes de ajo machacados",
+        "1 cucharadita de orégano",
+        "1 cucharadita de mostaza",
+        "½ cucharadita de sal",
+        "¼ cucharadita de pimienta"
+      ],
+      en: [
+        "½ cup olive oil",
+        "3 tablespoons vinegar",
+        "2 garlic cloves, crushed",
+        "1 teaspoon oregano",
+        "1 teaspoon mustard",
+        "½ teaspoon salt",
+        "¼ teaspoon black pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Machaque el ajo con la sal y el orégano en el pilón hasta hacer una pasta.",
+        "Ponga la pasta en un frasco con el vinagre, la mostaza y la pimienta. Añada el aceite, tape y bata fuerte.",
+        "Sirva sobre ensalada de lechuga y tomate, aguacate, viandas hervidas o habichuelas tiernas."
+      ],
+      en: [
+        "Mash the garlic with the salt and oregano in the pilón (mortar) into a paste.",
+        "Put the paste in a jar with the vinegar, mustard and pepper. Add the oil, close and shake hard.",
+        "Serve over lettuce and tomato salad, avocado, boiled root vegetables or green beans."
+      ]
+    }
+  },
+  {
+    id: "aderezo-ranch-recao",
+    category: "salsas",
+    name: { es: "Aderezo Ranch de Recao", en: "Culantro Ranch Dressing" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "½ taza de mayonesa",
+        "½ taza de yogur griego natural",
+        "¼ taza de leche",
+        "3 hojas de recao picadas finas",
+        "1 cucharada de cebollino picado",
+        "½ cucharadita de ajo en polvo",
+        "½ cucharadita de cebolla en polvo",
+        "1 cucharada de jugo de limón",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "½ cup mayonnaise",
+        "½ cup plain Greek yogurt",
+        "¼ cup milk",
+        "3 culantro leaves, finely chopped",
+        "1 tablespoon chopped chives",
+        "½ teaspoon garlic powder",
+        "½ teaspoon onion powder",
+        "1 tablespoon lime juice",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata la mayonesa, el yogur y la leche hasta que quede liso.",
+        "Añada el recao, el cebollino, el ajo y la cebolla en polvo, el limón y la sal.",
+        "Enfríe 1 hora. Sirva con alitas, ensaladas, vegetales crudos o papas al horno. Se guarda 5 días en la nevera."
+      ],
+      en: [
+        "Whisk the mayonnaise, yogurt and milk until smooth.",
+        "Add the culantro, chives, garlic and onion powder, lime juice and salt.",
+        "Chill 1 hour. Serve with wings, salads, raw vegetables or baked potatoes. Keeps 5 days in the refrigerator."
+      ]
+    }
+  },
+  {
+    id: "salsa-teriyaki-pina",
+    category: "salsas",
+    name: { es: "Salsa Teriyaki de Piña", en: "Pineapple Teriyaki Sauce" },
+    time: "15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "½ taza de salsa de soya baja en sodio",
+        "½ taza de jugo de piña",
+        "¼ taza de azúcar morena",
+        "2 dientes de ajo rallados",
+        "1 cucharada de jengibre rallado",
+        "1 cucharada de maicena disuelta en 2 cucharadas de agua",
+        "¼ taza de piña triturada"
+      ],
+      en: [
+        "½ cup low-sodium soy sauce",
+        "½ cup pineapple juice",
+        "¼ cup brown sugar",
+        "2 garlic cloves, grated",
+        "1 tablespoon grated ginger",
+        "1 tablespoon cornstarch dissolved in 2 tablespoons water",
+        "¼ cup crushed pineapple"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla pequeña, hierva la soya, el jugo de piña, el azúcar, el ajo y el jengibre 3 minutos.",
+        "Añada la maicena y mueva 1 minuto, hasta que espese y brille. Añada la piña triturada.",
+        "Úsela para glasear pollo, cerdo, salmón o camarones los últimos minutos de cocción, o sírvala aparte. Se guarda 1 semana en la nevera."
+      ],
+      en: [
+        "In a small pot, boil the soy sauce, pineapple juice, sugar, garlic and ginger 3 minutes.",
+        "Add the cornstarch and stir 1 minute, until thick and glossy. Add the crushed pineapple.",
+        "Use it to glaze chicken, pork, salmon or shrimp during the last minutes of cooking, or serve it on the side. Keeps 1 week in the refrigerator."
+      ]
+    }
+  },
+  {
+    id: "pesto-recao-mani",
+    category: "salsas",
+    name: { es: "Pesto de Recao y Maní", en: "Culantro and Peanut Pesto" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de hojas de recao",
+        "1 taza de hojas de cilantro",
+        "¼ taza de maní tostado sin sal",
+        "2 dientes de ajo",
+        "¼ taza de queso parmesano rallado",
+        "½ taza de aceite de oliva",
+        "1 cucharada de jugo de limón",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "1 cup culantro leaves",
+        "1 cup cilantro leaves",
+        "¼ cup unsalted roasted peanuts",
+        "2 garlic cloves",
+        "¼ cup grated Parmesan cheese",
+        "½ cup olive oil",
+        "1 tablespoon lime juice",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Muela el maní y el ajo en el procesador hasta que estén finos.",
+        "Añada el recao, el cilantro, el queso, el limón y la sal, y procese mientras añade el aceite en un chorrito fino.",
+        "Úselo con pasta, sobre pescado o pollo a la plancha, en emparedados o con tostones. Cúbralo con un poco de aceite para que no se oscurezca; dura 4 días en la nevera."
+      ],
+      en: [
+        "Grind the peanuts and garlic in the food processor until fine.",
+        "Add the culantro, cilantro, cheese, lime juice and salt, and process while adding the oil in a thin stream.",
+        "Use it with pasta, over grilled fish or chicken, in sandwiches or with tostones. Cover it with a little oil so it doesn't darken; keeps 4 days in the refrigerator."
+      ]
+    }
+  },
+  {
+    id: "salsa-queso",
+    category: "salsas",
+    name: { es: "Salsa de Queso Casera", en: "Homemade Cheese Sauce" },
+    time: "15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 cucharadas de mantequilla",
+        "2 cucharadas de harina",
+        "1 taza de leche evaporada",
+        "½ taza de leche",
+        "1½ tazas de queso cheddar rallado",
+        "¼ cucharadita de pimentón",
+        "¼ cucharadita de ajo en polvo",
+        "1 cucharadita de pique (opcional)"
+      ],
+      en: [
+        "2 tablespoons butter",
+        "2 tablespoons flour",
+        "1 cup evaporated milk",
+        "½ cup milk",
+        "1½ cups shredded cheddar cheese",
+        "¼ teaspoon paprika",
+        "¼ teaspoon garlic powder",
+        "1 teaspoon hot sauce (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la mantequilla a fuego medio, añada la harina y mueva 1 minuto sin que se dore.",
+        "Añada las leches poco a poco, batiendo, y cocine 3 minutos hasta que espese.",
+        "Baje el fuego al mínimo y añada el queso por puñados, moviendo hasta que se derrita (con fuego alto se corta). Añada el pimentón, el ajo y el pique.",
+        "Sirva con papitas, tostones, nachos, brócoli o coditos. La leche evaporada la mantiene lisa al recalentarla."
+      ],
+      en: [
+        "Melt the butter over medium heat, add the flour and stir 1 minute without browning.",
+        "Add both milks gradually, whisking, and cook 3 minutes until thick.",
+        "Lower the heat to minimum and add the cheese by handfuls, stirring until melted (high heat makes it split). Add the paprika, garlic powder and hot sauce.",
+        "Serve with fries, tostones, nachos, broccoli or macaroni. The evaporated milk keeps it smooth when reheated."
+      ]
+    }
+  },
+  {
+    id: "avena-horneada-guineo",
+    category: "cereales",
+    name: { es: "Avena Horneada con Guineo y Coco", en: "Baked Oatmeal with Banana and Coconut" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de avena en hojuelas",
+        "¼ taza de coco rallado",
+        "1 cucharadita de polvo de hornear",
+        "1 cucharadita de canela",
+        "¼ cucharadita de sal",
+        "3 guineos maduros",
+        "1½ tazas de leche",
+        "1 huevo",
+        "¼ taza de azúcar morena",
+        "2 cucharadas de mantequilla derretida",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "2 cups rolled oats",
+        "¼ cup shredded coconut",
+        "1 teaspoon baking powder",
+        "1 teaspoon cinnamon",
+        "¼ teaspoon salt",
+        "3 ripe bananas",
+        "1½ cups milk",
+        "1 egg",
+        "¼ cup brown sugar",
+        "2 tablespoons melted butter",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 375 °F y engrase un molde de 8 × 8 pulgadas.",
+        "Mezcle la avena, el coco, el polvo de hornear, la canela y la sal.",
+        "Maje 2 guineos y bátalos con la leche, el huevo, el azúcar, la mantequilla y la vainilla. Únalo con la avena y vierta en el molde. Ponga encima el otro guineo en ruedas.",
+        "Hornee 30 minutos, hasta que esté firme y dorada. Sirva tibia; se guarda en la nevera 4 días y se recalienta en porciones."
+      ],
+      en: [
+        "Heat the oven to 375 °F and grease an 8 × 8-inch pan.",
+        "Mix the oats, coconut, baking powder, cinnamon and salt.",
+        "Mash 2 bananas and whisk them with the milk, egg, sugar, butter and vanilla. Combine with the oats and pour into the pan. Top with the remaining banana, sliced.",
+        "Bake 30 minutes, until set and golden. Serve warm; keeps 4 days in the refrigerator and reheats in portions."
+      ]
+    }
+  },
+  {
+    id: "granola-coco-mani",
+    category: "cereales",
+    name: { es: "Granola Casera de Coco y Maní", en: "Homemade Coconut Peanut Granola" },
+    time: "35 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "3 tazas de avena en hojuelas",
+        "1 taza de coco rallado sin azúcar",
+        "½ taza de maní sin sal",
+        "¼ taza de semillas de ajonjolí",
+        "⅓ taza de miel",
+        "¼ taza de aceite de coco o vegetal",
+        "1 cucharadita de canela",
+        "1 cucharadita de vainilla",
+        "¼ cucharadita de sal",
+        "½ taza de pasas"
+      ],
+      en: [
+        "3 cups rolled oats",
+        "1 cup unsweetened shredded coconut",
+        "½ cup unsalted peanuts",
+        "¼ cup sesame seeds",
+        "⅓ cup honey",
+        "¼ cup coconut or vegetable oil",
+        "1 teaspoon cinnamon",
+        "1 teaspoon vanilla",
+        "¼ teaspoon salt",
+        "½ cup raisins"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 325 °F. Mezcle la avena, el coco, el maní, el ajonjolí, la canela y la sal.",
+        "Caliente la miel con el aceite y la vainilla 30 segundos, viértalo sobre la avena y mezcle hasta que todo brille.",
+        "Extienda en una bandeja con papel de hornear y hornee 20 a 25 minutos, moviendo cada 8 minutos, hasta que esté dorada. Se pone crujiente al enfriarse.",
+        "Añada las pasas cuando esté fría. Guárdela en un frasco cerrado hasta 2 semanas. Sirva con leche o yogur y fruta."
+      ],
+      en: [
+        "Heat the oven to 325 °F. Mix the oats, coconut, peanuts, sesame seeds, cinnamon and salt.",
+        "Warm the honey with the oil and vanilla 30 seconds, pour it over the oats and stir until everything is glossy.",
+        "Spread on a parchment-lined sheet pan and bake 20 to 25 minutes, stirring every 8 minutes, until golden. It crisps as it cools.",
+        "Add the raisins once cool. Store in a closed jar up to 2 weeks. Serve with milk or yogurt and fruit."
+      ]
+    }
+  },
+  {
+    id: "avena-calabaza",
+    category: "cereales",
+    name: { es: "Avena con Calabaza y Especias", en: "Pumpkin Spice Oatmeal" },
+    time: "15 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de avena en hojuelas",
+        "1½ tazas de leche",
+        "½ taza de calabaza hervida y majada",
+        "2 cucharadas de azúcar morena",
+        "½ cucharadita de canela",
+        "¼ cucharadita de jengibre en polvo",
+        "1 pizca de nuez moscada",
+        "1 pizca de sal",
+        "2 cucharadas de nueces picadas"
+      ],
+      en: [
+        "1 cup rolled oats",
+        "1½ cups milk",
+        "½ cup boiled, mashed West Indian pumpkin (calabaza)",
+        "2 tablespoons brown sugar",
+        "½ teaspoon cinnamon",
+        "¼ teaspoon ground ginger",
+        "1 pinch nutmeg",
+        "1 pinch salt",
+        "2 tablespoons chopped walnuts"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, mezcle la leche, la calabaza, el azúcar, las especias y la sal, y caliente hasta que empiece a hervir.",
+        "Añada la avena y cocine a fuego bajo 5 minutos, moviendo, hasta que espese.",
+        "Sirva con las nueces encima. Use la calabaza que le sobre del sancocho o de las habichuelas."
+      ],
+      en: [
+        "In a pot, mix the milk, pumpkin, sugar, spices and salt, and heat until it starts to boil.",
+        "Add the oats and cook over low heat 5 minutes, stirring, until thick.",
+        "Serve topped with the walnuts. Use pumpkin left over from sancocho or beans."
+      ]
+    }
+  },
+  {
+    id: "quinoa-leche-canela",
+    category: "cereales",
+    name: { es: "Quinoa con Leche y Canela", en: "Quinoa Breakfast Porridge with Cinnamon" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 taza de quinoa, bien enjuagada",
+        "1 taza de agua",
+        "2 tazas de leche",
+        "1 raja de canela",
+        "3 clavos de olor",
+        "1 pizca de sal",
+        "3 cucharadas de azúcar",
+        "½ cucharadita de vainilla",
+        "2 cucharadas de pasas"
+      ],
+      en: [
+        "1 cup quinoa, well rinsed",
+        "1 cup water",
+        "2 cups milk",
+        "1 cinnamon stick",
+        "3 whole cloves",
+        "1 pinch salt",
+        "3 tablespoons sugar",
+        "½ teaspoon vanilla",
+        "2 tablespoons raisins"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la quinoa en el agua con la canela, los clavos y la sal, tapada, 10 minutos, hasta que absorba el agua.",
+        "Añada la leche y el azúcar, y cocine a fuego bajo 10 minutos más, moviendo, hasta que quede cremosa como un arroz con leche ligero.",
+        "Saque la canela y los clavos, añada la vainilla y las pasas. Sirva caliente o fría con canela en polvo."
+      ],
+      en: [
+        "Simmer the quinoa in the water with the cinnamon, cloves and salt, covered, 10 minutes, until the water is absorbed.",
+        "Add the milk and sugar, and cook over low heat 10 more minutes, stirring, until creamy like a light rice pudding.",
+        "Remove the cinnamon and cloves, add the vanilla and raisins. Serve hot or cold with ground cinnamon."
+      ]
+    }
+  },
+  {
+    id: "panqueques-avena-guineo",
+    category: "cereales",
+    name: { es: "Panqueques de Avena y Guineo", en: "Oat and Banana Pancakes" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ tazas de avena en hojuelas",
+        "2 guineos maduros",
+        "2 huevos",
+        "¾ taza de leche",
+        "1 cucharadita de polvo de hornear",
+        "½ cucharadita de canela",
+        "1 pizca de sal",
+        "1 cucharada de mantequilla para el sartén",
+        "¼ taza de miel o melao"
+      ],
+      en: [
+        "1½ cups rolled oats",
+        "2 ripe bananas",
+        "2 eggs",
+        "¾ cup milk",
+        "1 teaspoon baking powder",
+        "½ teaspoon cinnamon",
+        "1 pinch salt",
+        "1 tablespoon butter for the pan",
+        "¼ cup honey or cane syrup"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la avena hasta que quede como harina. Añada los guineos, los huevos, la leche, el polvo de hornear, la canela y la sal, y licúe hasta que esté liso.",
+        "Deje reposar la mezcla 5 minutos para que la avena absorba el líquido y espese.",
+        "En un sartén untado con mantequilla a fuego medio-bajo, eche ¼ taza de mezcla y cocine 2 a 3 minutos, hasta que salgan burbujas; voltee y cocine 1 a 2 minutos más.",
+        "Sirva con miel o melao y fruta picada. Sin trigo: sirven para quien evita el gluten si la avena es certificada sin gluten."
+      ],
+      en: [
+        "Blend the oats until they look like flour. Add the bananas, eggs, milk, baking powder, cinnamon and salt, and blend until smooth.",
+        "Let the batter rest 5 minutes so the oats absorb the liquid and thicken.",
+        "In a buttered skillet over medium-low heat, pour ¼ cup of batter and cook 2 to 3 minutes, until bubbles appear; flip and cook 1 to 2 more minutes.",
+        "Serve with honey or cane syrup and chopped fruit. No wheat: suitable for those avoiding gluten if the oats are certified gluten-free."
+      ]
+    }
+  },
+  {
+    id: "avena-salada-huevo",
+    category: "cereales",
+    name: { es: "Avena Salada con Huevo y Aguacate", en: "Savory Oatmeal with Egg and Avocado" },
+    time: "15 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de avena en hojuelas",
+        "2 tazas de agua",
+        "¼ cucharadita de sal",
+        "¼ taza de queso blanco del país rallado",
+        "2 huevos",
+        "1 cucharadita de aceite de oliva",
+        "½ aguacate en lascas",
+        "1 tomate picado",
+        "1 cebollín picado",
+        "1 pizca de pimienta"
+      ],
+      en: [
+        "1 cup rolled oats",
+        "2 cups water",
+        "¼ teaspoon salt",
+        "¼ cup grated Puerto Rican white cheese",
+        "2 eggs",
+        "1 teaspoon olive oil",
+        "½ avocado, sliced",
+        "1 tomato, chopped",
+        "1 scallion, chopped",
+        "1 pinch black pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con la sal, añada la avena y cocine 5 minutos a fuego bajo, moviendo. Apague y mezcle con el queso.",
+        "Fría los huevos en el aceite a fuego medio hasta que la clara esté cuajada (la yema como le guste).",
+        "Sirva la avena en dos tazones con el huevo, el aguacate, el tomate y el cebollín encima, y la pimienta.",
+        "Es un desayuno con más proteína y menos azúcar que la avena dulce; también queda bien con un chorrito de pique."
+      ],
+      en: [
+        "Boil the water with the salt, add the oats and cook 5 minutes over low heat, stirring. Turn off the heat and stir in the cheese.",
+        "Fry the eggs in the oil over medium heat until the whites are set (yolk as you like it).",
+        "Serve the oats in two bowls topped with the egg, avocado, tomato, scallion and pepper.",
+        "It's a breakfast with more protein and less sugar than sweet oatmeal; also good with a splash of hot sauce."
       ]
     }
   }

@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.4.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 803 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.5.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 829 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, y recetas vegetarianas, en veintiocho tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, en veintinueve tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -110,13 +110,13 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 |---|---|---|
 | calientes | Bebidas Calientes | 18 |
 | frutas | Frutas | 25 |
-| cereales | Cereales | 10 |
+| cereales | Cereales | 16 |
 | granos | Granos y Legumbres | 19 |
 | ensaladas | Ensaladas | 24 |
 | sopas | Sopas | 44 |
 | carnes | Carnes | 52 |
 | aves | Aves | 40 |
-| pescados | Pescado y Mariscos | 46 |
+| pescados | Pescado y Mariscos | 57 |
 | huevos | Huevos y Queso | 12 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 39 |
 | pastas | Pastas | 18 |
@@ -128,7 +128,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | postres | Helados, Budines, Flan y Otros Postres | 93 |
 | arroces | Arroces y Habichuelas | 42 |
 | vegetales | Vegetales y Viandas | 65 |
-| salsas | Salsas y Aderezos | 37 |
+| salsas | Salsas y Aderezos | 46 |
 | bebidas | Bebidas | 20 |
 | jugos | Jugos Naturales | 18 |
 | cocteles | Cócteles y Tragos | 47 |
@@ -192,7 +192,11 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   albóndigas, plátano, coditos o mondongo. Los gazpachos conservan 🍅 y 🥭. **Vegetarianos:** jaca mechada en salsa
   con pimiento y aceitunas, tofu guisado en tazón, ramitos de coliflor con salsa de guayaba, pinchos de queso de freír y
   vegetales, pimientos rellenos rojo y verde, serenata con viandas, huevo y aguacate, hamburguesa de habichuelas negras,
-  quinoa con gandules y penne en crema de calabaza (`ic-veg-*`, `ic-quinoa`, `ic-pasta-calabaza`). **Arroces:** montoncito en plato del color de
+  quinoa con gandules y penne en crema de calabaza (`ic-veg-*`, `ic-quinoa`, `ic-pasta-calabaza`). **Tanda 29:**
+  pescados en plato o tazón de barro con lo que llevan (`ic-pes-*`: filete con limón, camarones en C, anillos de calamar,
+  almejas y mejillones abiertos, papillote, tacos abiertos, tortitas); salsas en tazoncito blanco del color de la salsa o
+  en aceitera para las vinagretas; cereales en tazón de desayuno, molde, frasco de granola o pila de panqueques.
+  **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
   habichuelas va con su tazoncito al lado. **Granos:** tazón de barro con el grano y su salsa (habichuelas rojas,
@@ -298,7 +302,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 803). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 829). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -343,6 +347,24 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v3.5.0 · Más pescados y mariscos, salsas y aderezos, y cereales
+- *Pedido:* más recetas de pescados y mariscos, salsas y aderezos, y cereales.
+- Vigesimonovena tanda en `js/recipes-4.js` (versiones propias), 26 recetas:
+  - **11 pescados y mariscos:** tilapia al horno con ajo y limón, camarones en salsa de parcha, calamares guisados a la
+    criolla, salmón glaseado con guayaba, bacalao al horno con papas, camarones enchilados, almejas en salsa verde con
+    recao, mejillones al vino con sofrito, pescado en papillote, tacos de pescado con salsa de mangó y tortitas de salmón.
+  - **9 salsas y aderezos:** tártara con recao, cóctel para mariscos, coco y limón para mariscos, vinagreta de parcha,
+    vinagreta criolla de ajo y orégano, ranch de recao, teriyaki de piña, pesto de recao y maní, y salsa de queso.
+  - **6 cereales:** avena horneada con guineo y coco, granola de coco y maní, avena con calabaza, quinoa con leche y
+    canela, panqueques de avena y guineo, y avena salada con huevo y aguacate.
+- **Nutrición:** nuevos maní, mantequilla de maní, pepinillos y tortillas de maíz. Almejas y mejillones por unidad
+  (36 y 48) para contar sólo la carne, no la concha.
+- **Iconos:** 26 dibujos nuevos (§7).
+- Total: **803 → 829 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador: "mariscos", "pescado", "tilapia", "almejas", "salsa para
+  mariscos", "vinagreta", "aderezo", "cereal", "avena", "granola" ✔; navegador: las 26 recetas en ES y EN a 375 px sin
+  errores ni desbordes ✔.
 
 ### 2026-10-10 — v3.4.0 · Recetas vegetarianas
 - *Pedido:* buscar recetas vegetarianas.
