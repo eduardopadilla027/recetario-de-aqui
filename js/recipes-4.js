@@ -40,6 +40,8 @@
  * (chimichurri, BBQ de guayaba y tamarindo, mojo de naranja agria, adobo mojado…).
  * Decimoséptima tanda: yogures tropicales (casero, parfaits y bowls con mangó, piña,
  * parcha y guayaba, batidas, yogur helado, paletas, avena fría y salsa de yogur).
+ * Decimoctava tanda: paellas (mariscos clásica, negra, langosta, pulpo; valenciana,
+ * mixta, pollo y chorizo a la boricua, vegetales).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -10049,6 +10051,484 @@ recipes.push(
         "Mix the yogurt with the cucumber, culantro, mint, garlic, lime juice and salt.",
         "Drizzle the oil on top.",
         "Fresh and light for skewers, grilled chicken, pork chops, alcapurrias or with Puerto Rican water bread."
+      ]
+    }
+  },
+
+  // ── Decimoctava tanda (2026-10): paellas de mariscos y de carne ──
+  {
+    id: "paella-mariscos-clasica",
+    category: "arroces",
+    name: { es: "Paella de Mariscos Clásica", en: "Classic Seafood Paella" },
+    time: "1 hr 10 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano corto (tipo Valencia o bomba)",
+        "1 libra de camarones con cáscara",
+        "1 libra de mejillones, limpios",
+        "½ libra de almejas, remojadas en agua con sal 30 minutos",
+        "½ libra de calamares en anillos",
+        "¼ taza de aceite de oliva",
+        "1 cebolla picada fina",
+        "1 pimiento rojo picado",
+        "4 dientes de ajo, picados",
+        "1 tomate maduro rallado",
+        "½ cucharadita de hebras de azafrán",
+        "1 cucharadita de pimentón dulce",
+        "5 tazas de caldo de pescado o de mariscos, caliente",
+        "½ taza de guisantes (petit pois)",
+        "½ cucharadita de sal (pruebe el caldo antes)",
+        "1 limón en gajos para servir"
+      ],
+      en: [
+        "2 cups short-grain rice (Valencia or bomba type)",
+        "1 lb shrimp, shell on",
+        "1 lb mussels, cleaned",
+        "½ lb clams, soaked in salted water 30 minutes",
+        "½ lb squid rings",
+        "¼ cup olive oil",
+        "1 onion, finely chopped",
+        "1 red bell pepper, chopped",
+        "4 garlic cloves, minced",
+        "1 ripe tomato, grated",
+        "½ teaspoon saffron threads",
+        "1 teaspoon sweet paprika",
+        "5 cups hot fish or seafood broth",
+        "½ cup peas",
+        "½ teaspoon salt (taste the broth first)",
+        "1 lemon in wedges for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Tueste el azafrán 30 segundos en un sartén seco y desmorónelo en el caldo caliente.",
+        "En la paellera, caliente el aceite y dore los camarones 1 minuto por lado; sáquelos y resérvelos.",
+        "En el mismo aceite, sofría los calamares 2 minutos, luego la cebolla, el pimiento y el ajo 5 minutos. Añada el tomate y el pimentón y cocine 3 minutos más.",
+        "Añada el arroz y muévalo 1 minuto para que se impregne. Vierta el caldo con la sal, reparta el arroz parejo y desde aquí no lo mueva más.",
+        "Cocine a fuego medio-alto 10 minutos. Acomode los mejillones y las almejas hundiéndolos un poco, y siga a fuego medio-bajo 8–10 minutos, hasta que el arroz absorba el caldo.",
+        "Añada los camarones y los guisantes por encima. Suba el fuego 1–2 minutos para que se forme el socarrat (la costrita del fondo): suena como un crujido.",
+        "Tape con un paño 5 minutos. Descarte los mejillones y almejas que no abrieron y sirva con limón."
+      ],
+      en: [
+        "Toast the saffron 30 seconds in a dry skillet and crumble it into the hot broth.",
+        "In the paella pan, heat the oil and sear the shrimp 1 minute per side; remove and set aside.",
+        "In the same oil, sauté the squid 2 minutes, then the onion, pepper and garlic 5 minutes. Add the tomato and paprika and cook 3 more minutes.",
+        "Add the rice and stir 1 minute to coat it. Pour in the broth with the salt, spread the rice evenly and from here on don't stir it again.",
+        "Cook over medium-high heat 10 minutes. Arrange the mussels and clams, pressing them in a little, and continue over medium-low 8–10 minutes, until the rice absorbs the broth.",
+        "Add the shrimp and peas on top. Raise the heat 1–2 minutes to form the socarrat (the crust on the bottom): it sounds like a crackle.",
+        "Cover with a towel 5 minutes. Discard any mussels and clams that didn't open and serve with lemon."
+      ]
+    }
+  },
+  {
+    id: "paella-negra",
+    category: "arroces",
+    name: { es: "Paella Negra (Arroz Negro con Calamares)", en: "Black Paella (Squid Ink Rice)" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano corto",
+        "1½ libras de calamares en anillos (con sus tentáculos)",
+        "½ libra de camarones pelados",
+        "¼ taza de aceite de oliva",
+        "1 cebolla picada fina",
+        "1 pimiento verde picado",
+        "4 dientes de ajo, picados",
+        "1 tomate maduro rallado",
+        "2 sobres de tinta de calamar",
+        "5 tazas de caldo de pescado, caliente",
+        "½ cucharadita de sal (pruebe el caldo antes)",
+        "Alioli: ½ taza de mayonesa",
+        "2 dientes de ajo, majados"
+      ],
+      en: [
+        "2 cups short-grain rice",
+        "1½ lb squid rings (with tentacles)",
+        "½ lb peeled shrimp",
+        "¼ cup olive oil",
+        "1 onion, finely chopped",
+        "1 green bell pepper, chopped",
+        "4 garlic cloves, minced",
+        "1 ripe tomato, grated",
+        "2 packets squid ink",
+        "5 cups hot fish broth",
+        "½ teaspoon salt (taste the broth first)",
+        "Aioli: ½ cup mayonnaise",
+        "2 garlic cloves, mashed"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la tinta de calamar en el caldo caliente.",
+        "En la paellera, dore los camarones en el aceite 1 minuto por lado y resérvelos.",
+        "Sofría los calamares 3 minutos, añada la cebolla, el pimiento y el ajo y cocine 5 minutos. Añada el tomate y cocine 3 minutos.",
+        "Añada el arroz, muévalo 1 minuto y vierta el caldo negro con la sal. Reparta parejo y no lo mueva más.",
+        "Cocine 10 minutos a fuego medio-alto y 8–10 a fuego medio-bajo. Ponga los camarones encima los últimos 3 minutos.",
+        "Para el alioli, mezcle la mayonesa con el ajo majado. Deje reposar la paella 5 minutos tapada y sírvala con el alioli."
+      ],
+      en: [
+        "Dissolve the squid ink in the hot broth.",
+        "In the paella pan, sear the shrimp in the oil 1 minute per side and set aside.",
+        "Sauté the squid 3 minutes, add the onion, pepper and garlic and cook 5 minutes. Add the tomato and cook 3 minutes.",
+        "Add the rice, stir 1 minute and pour in the black broth with the salt. Spread evenly and don't stir again.",
+        "Cook 10 minutes over medium-high and 8–10 over medium-low. Put the shrimp on top for the last 3 minutes.",
+        "For the aioli, mix the mayonnaise with the mashed garlic. Let the paella rest covered 5 minutes and serve with the aioli."
+      ]
+    }
+  },
+  {
+    id: "paella-langosta-camarones",
+    category: "arroces",
+    name: { es: "Paella de Langosta y Camarones", en: "Lobster and Shrimp Paella" },
+    time: "1 hr 15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano corto",
+        "2 colas de langosta, partidas a lo largo",
+        "1 libra de camarones con cáscara",
+        "¼ taza de aceite de oliva",
+        "½ taza de sofrito",
+        "3 dientes de ajo, picados",
+        "1 pimiento rojo en tiritas",
+        "½ cucharadita de hebras de azafrán",
+        "1 cucharadita de pimentón",
+        "5 tazas de caldo de mariscos, caliente",
+        "½ taza de vino blanco",
+        "½ cucharadita de sal (pruebe el caldo antes)",
+        "1 limón en gajos"
+      ],
+      en: [
+        "2 cups short-grain rice",
+        "2 lobster tails, split lengthwise",
+        "1 lb shrimp, shell on",
+        "¼ cup olive oil",
+        "½ cup sofrito",
+        "3 garlic cloves, minced",
+        "1 red bell pepper, in strips",
+        "½ teaspoon saffron threads",
+        "1 teaspoon paprika",
+        "5 cups hot seafood broth",
+        "½ cup white wine",
+        "½ teaspoon salt (taste the broth first)",
+        "1 lemon in wedges"
+      ]
+    },
+    steps: {
+      es: [
+        "Tueste el azafrán y desmorónelo en el caldo caliente.",
+        "En la paellera, dore la langosta por el lado de la carne 2 minutos y los camarones 1 minuto por lado. Saque y reserve.",
+        "Sofría el sofrito, el ajo y el pimiento 4 minutos. Añada el pimentón y el vino y deje que se evapore la mitad.",
+        "Añada el arroz, muévalo 1 minuto y vierta el caldo con la sal. Reparta parejo y no lo mueva más.",
+        "Cocine 10 minutos a fuego medio-alto. Acomode la langosta y los camarones encima y siga 8–10 minutos a fuego medio-bajo.",
+        "Deje que se forme el socarrat 1–2 minutos a fuego alto, tape con un paño 5 minutos y sirva con limón. La langosta debe quedar blanca y opaca por dentro."
+      ],
+      en: [
+        "Toast the saffron and crumble it into the hot broth.",
+        "In the paella pan, sear the lobster flesh side down 2 minutes and the shrimp 1 minute per side. Remove and set aside.",
+        "Sauté the sofrito, garlic and pepper 4 minutes. Add the paprika and wine and let it reduce by half.",
+        "Add the rice, stir 1 minute and pour in the broth with the salt. Spread evenly and don't stir again.",
+        "Cook 10 minutes over medium-high. Arrange the lobster and shrimp on top and continue 8–10 minutes over medium-low.",
+        "Let the socarrat form 1–2 minutes over high heat, cover with a towel 5 minutes and serve with lemon. The lobster should be white and opaque inside."
+      ]
+    }
+  },
+  {
+    id: "paella-pulpo-camarones",
+    category: "arroces",
+    name: { es: "Paella de Pulpo y Camarones", en: "Octopus and Shrimp Paella" },
+    time: "1 hr 30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano corto",
+        "1½ libras de pulpo, hervido y en trozos",
+        "1 libra de camarones pelados",
+        "¼ taza de aceite de oliva",
+        "1 cebolla picada fina",
+        "1 pimiento rojo picado",
+        "4 dientes de ajo, picados",
+        "1 tomate maduro rallado",
+        "½ cucharadita de hebras de azafrán",
+        "1 cucharadita de pimentón dulce",
+        "5 tazas de caldo de pescado, caliente",
+        "½ cucharadita de sal (pruebe el caldo antes)",
+        "2 cucharadas de perejil picado"
+      ],
+      en: [
+        "2 cups short-grain rice",
+        "1½ lb octopus, boiled and cut in pieces",
+        "1 lb peeled shrimp",
+        "¼ cup olive oil",
+        "1 onion, finely chopped",
+        "1 red bell pepper, chopped",
+        "4 garlic cloves, minced",
+        "1 ripe tomato, grated",
+        "½ teaspoon saffron threads",
+        "1 teaspoon sweet paprika",
+        "5 cups hot fish broth",
+        "½ teaspoon salt (taste the broth first)",
+        "2 tablespoons chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Si el pulpo está crudo, hiérvalo 45 minutos a 1 hora, hasta que un tenedor entre fácil; use 2 tazas de esa agua como parte del caldo.",
+        "Tueste el azafrán y desmorónelo en el caldo caliente.",
+        "En la paellera, dore el pulpo en el aceite 3 minutos y resérvelo. Sofría la cebolla, el pimiento y el ajo 5 minutos, y añada el tomate y el pimentón.",
+        "Añada el arroz, muévalo 1 minuto y vierta el caldo con la sal. Reparta parejo y no lo mueva más.",
+        "Cocine 10 minutos a fuego medio-alto. Acomode el pulpo y los camarones encima y siga 8–10 minutos a fuego medio-bajo.",
+        "Forme el socarrat 1–2 minutos, deje reposar tapado 5 minutos y espolvoree el perejil."
+      ],
+      en: [
+        "If the octopus is raw, boil it 45 minutes to 1 hour, until a fork goes in easily; use 2 cups of that water as part of the broth.",
+        "Toast the saffron and crumble it into the hot broth.",
+        "In the paella pan, brown the octopus in the oil 3 minutes and set aside. Sauté the onion, pepper and garlic 5 minutes, and add the tomato and paprika.",
+        "Add the rice, stir 1 minute and pour in the broth with the salt. Spread evenly and don't stir again.",
+        "Cook 10 minutes over medium-high. Arrange the octopus and shrimp on top and continue 8–10 minutes over medium-low.",
+        "Form the socarrat 1–2 minutes, rest covered 5 minutes and sprinkle with the parsley."
+      ]
+    }
+  },
+  {
+    id: "paella-valenciana",
+    category: "arroces",
+    name: { es: "Paella Valenciana (de Pollo y Conejo)", en: "Valencian Paella (Chicken and Rabbit)" },
+    time: "1 hr 20 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano corto",
+        "1½ libras de muslos de pollo, en trozos",
+        "1 libra de conejo en trozos (o más pollo)",
+        "¼ taza de aceite de oliva",
+        "½ libra de habichuelas tiernas, en trozos",
+        "1 taza de habas o judías blancas cocidas",
+        "1 tomate maduro rallado",
+        "1 cucharadita de pimentón dulce",
+        "½ cucharadita de hebras de azafrán",
+        "6 tazas de agua o caldo de pollo, caliente",
+        "1½ cucharaditas de sal",
+        "1 ramita de romero fresco"
+      ],
+      en: [
+        "2 cups short-grain rice",
+        "1½ lb chicken thighs, in pieces",
+        "1 lb rabbit in pieces (or more chicken)",
+        "¼ cup olive oil",
+        "½ lb green beans, cut",
+        "1 cup cooked lima or white beans",
+        "1 ripe tomato, grated",
+        "1 teaspoon sweet paprika",
+        "½ teaspoon saffron threads",
+        "6 cups hot water or chicken broth",
+        "1½ teaspoons salt",
+        "1 sprig fresh rosemary"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone el pollo y el conejo con sal. En la paellera, dórelos en el aceite a fuego medio 15 minutos, volteando, hasta que estén bien dorados (de ahí sale el sabor).",
+        "Añada las habichuelas tiernas y sofría 3 minutos. Haga un hueco en el centro y sofría el tomate y el pimentón 2 minutos.",
+        "Vierta el agua caliente con el azafrán y la sal y hierva 15 minutos a fuego medio para hacer el caldo en la misma paellera.",
+        "Añada el arroz repartido parejo y las habas. Cocine 10 minutos a fuego medio-alto y 8–10 a fuego bajo, sin mover.",
+        "Ponga la ramita de romero encima los últimos 5 minutos. Forme el socarrat 1–2 minutos, retire el romero y deje reposar tapado 5 minutos.",
+        "El pollo debe llegar a 165°F por dentro. Es la paella original de Valencia: sin mariscos."
+      ],
+      en: [
+        "Season the chicken and rabbit with salt. In the paella pan, brown them in the oil over medium heat 15 minutes, turning, until well browned (that's where the flavor comes from).",
+        "Add the green beans and sauté 3 minutes. Make a well in the center and sauté the tomato and paprika 2 minutes.",
+        "Pour in the hot water with the saffron and salt and simmer 15 minutes over medium heat to make the broth right in the pan.",
+        "Add the rice spread evenly and the beans. Cook 10 minutes over medium-high and 8–10 over low, without stirring.",
+        "Put the rosemary sprig on top for the last 5 minutes. Form the socarrat 1–2 minutes, remove the rosemary and rest covered 5 minutes.",
+        "The chicken should reach 165°F inside. This is the original paella from Valencia: no seafood."
+      ]
+    }
+  },
+  {
+    id: "paella-mixta",
+    category: "arroces",
+    name: { es: "Paella Mixta (Pollo, Chorizo y Mariscos)", en: "Mixed Paella (Chicken, Chorizo and Seafood)" },
+    time: "1 hr 20 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2½ tazas de arroz de grano corto",
+        "1½ libras de muslos de pollo deshuesados, en trozos",
+        "4 onzas de chorizo español en ruedas",
+        "1 libra de camarones con cáscara",
+        "1 libra de mejillones, limpios",
+        "½ libra de calamares en anillos",
+        "¼ taza de aceite de oliva",
+        "1 cebolla picada fina",
+        "1 pimiento rojo en tiritas",
+        "4 dientes de ajo, picados",
+        "1 tomate maduro rallado",
+        "½ cucharadita de hebras de azafrán",
+        "1 cucharadita de pimentón",
+        "6 tazas de caldo de pollo, caliente",
+        "½ taza de guisantes (petit pois)",
+        "½ cucharadita de sal (pruebe el caldo antes)",
+        "1 limón en gajos"
+      ],
+      en: [
+        "2½ cups short-grain rice",
+        "1½ lb boneless chicken thighs, in pieces",
+        "4 oz Spanish chorizo, sliced",
+        "1 lb shrimp, shell on",
+        "1 lb mussels, cleaned",
+        "½ lb squid rings",
+        "¼ cup olive oil",
+        "1 onion, finely chopped",
+        "1 red bell pepper, in strips",
+        "4 garlic cloves, minced",
+        "1 ripe tomato, grated",
+        "½ teaspoon saffron threads",
+        "1 teaspoon paprika",
+        "6 cups hot chicken broth",
+        "½ cup peas",
+        "½ teaspoon salt (taste the broth first)",
+        "1 lemon in wedges"
+      ]
+    },
+    steps: {
+      es: [
+        "Tueste el azafrán y desmorónelo en el caldo caliente.",
+        "En la paellera, dore el chorizo 2 minutos y sáquelo. En esa grasa, dore el pollo sazonado con sal 8 minutos y sáquelo. Dore los camarones 1 minuto por lado y resérvelos aparte.",
+        "Sofría los calamares 2 minutos, luego la cebolla, el pimiento y el ajo 5 minutos. Añada el tomate y el pimentón.",
+        "Devuelva el pollo y el chorizo, añada el arroz y muévalo 1 minuto. Vierta el caldo con la sal, reparta parejo y no lo mueva más.",
+        "Cocine 10 minutos a fuego medio-alto. Acomode los mejillones y siga 8–10 minutos a fuego medio-bajo. Añada los camarones y los guisantes los últimos 3 minutos.",
+        "Forme el socarrat, deje reposar tapado 5 minutos, descarte los mejillones cerrados y sirva con limón. Es la de las fiestas: un poco de todo."
+      ],
+      en: [
+        "Toast the saffron and crumble it into the hot broth.",
+        "In the paella pan, brown the chorizo 2 minutes and remove. In that fat, brown the salted chicken 8 minutes and remove. Sear the shrimp 1 minute per side and set aside separately.",
+        "Sauté the squid 2 minutes, then the onion, pepper and garlic 5 minutes. Add the tomato and paprika.",
+        "Return the chicken and chorizo, add the rice and stir 1 minute. Pour in the broth with the salt, spread evenly and don't stir again.",
+        "Cook 10 minutes over medium-high. Arrange the mussels and continue 8–10 minutes over medium-low. Add the shrimp and peas for the last 3 minutes.",
+        "Form the socarrat, rest covered 5 minutes, discard any closed mussels and serve with lemon. It's the party one: a little of everything."
+      ]
+    }
+  },
+  {
+    id: "paella-pollo-chorizo-boricua",
+    category: "arroces",
+    name: { es: "Paella de Pollo y Chorizo a la Boricua", en: "Puerto Rican-Style Chicken and Chorizo Paella" },
+    time: "1 hr 15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano corto",
+        "2 libras de presas de pollo (muslos y encuentros)",
+        "4 onzas de chorizo en ruedas",
+        "3 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "10 aceitunas rellenas",
+        "1 sobre de sazón con azafrán",
+        "1 cucharadita de orégano",
+        "5 tazas de caldo de pollo, caliente",
+        "1 taza de gandules verdes",
+        "1 pimiento morrón asado en tiritas",
+        "½ cucharadita de sal (pruebe el caldo antes)"
+      ],
+      en: [
+        "2 cups short-grain rice",
+        "2 lb chicken pieces (thighs and drumsticks)",
+        "4 oz chorizo, sliced",
+        "3 tablespoons annatto oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "10 stuffed olives",
+        "1 packet sazón with saffron",
+        "1 teaspoon oregano",
+        "5 cups hot chicken broth",
+        "1 cup green pigeon peas",
+        "1 roasted red pepper, in strips",
+        "½ teaspoon salt (taste the broth first)"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el pollo con la sal y el orégano. En la paellera o un caldero ancho, dore el chorizo en el aceite de achiote y sáquelo; dore el pollo 10 minutos, volteando.",
+        "Añada el sofrito, la salsa de tomate, las aceitunas y el sazón, y cocine 4 minutos.",
+        "Añada el arroz y los gandules, muévalo 1 minuto y vierta el caldo. Devuelva el chorizo y reparta parejo.",
+        "Cocine 10 minutos a fuego medio-alto y 10 a fuego medio-bajo, sin mover, hasta que el pollo llegue a 165°F y el arroz esté suelto.",
+        "Decore con el pimiento morrón y deje reposar tapado 5 minutos. Con el sofrito y los gandules, queda entre paella y arroz con gandules."
+      ],
+      en: [
+        "Season the chicken with the salt and oregano. In the paella pan or a wide caldero, brown the chorizo in the annatto oil and remove; brown the chicken 10 minutes, turning.",
+        "Add the sofrito, tomato sauce, olives and sazón, and cook 4 minutes.",
+        "Add the rice and pigeon peas, stir 1 minute and pour in the broth. Return the chorizo and spread evenly.",
+        "Cook 10 minutes over medium-high and 10 over medium-low, without stirring, until the chicken reaches 165°F and the rice is fluffy.",
+        "Garnish with the roasted pepper and rest covered 5 minutes. With sofrito and pigeon peas, it lands between paella and arroz con gandules."
+      ]
+    }
+  },
+  {
+    id: "paella-vegetales",
+    category: "arroces",
+    name: { es: "Paella de Vegetales", en: "Vegetable Paella" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano corto",
+        "¼ taza de aceite de oliva",
+        "1 cebolla picada fina",
+        "1 pimiento rojo en tiritas",
+        "1 pimiento verde en tiritas",
+        "4 dientes de ajo, picados",
+        "1 berenjena pequeña en cubos",
+        "1 calabacín en medias lunas",
+        "½ libra de habichuelas tiernas, en trozos",
+        "1 lata de 14 onzas de corazones de alcachofa, en cuartos",
+        "1 tomate maduro rallado",
+        "½ cucharadita de hebras de azafrán",
+        "1 cucharadita de pimentón",
+        "5 tazas de caldo de vegetales, caliente",
+        "½ taza de guisantes (petit pois)",
+        "½ cucharadita de sal (pruebe el caldo antes)",
+        "1 limón en gajos"
+      ],
+      en: [
+        "2 cups short-grain rice",
+        "¼ cup olive oil",
+        "1 onion, finely chopped",
+        "1 red bell pepper, in strips",
+        "1 green bell pepper, in strips",
+        "4 garlic cloves, minced",
+        "1 small eggplant, cubed",
+        "1 zucchini, in half-moons",
+        "½ lb green beans, cut",
+        "1 can (14 oz) artichoke hearts, quartered",
+        "1 ripe tomato, grated",
+        "½ teaspoon saffron threads",
+        "1 teaspoon paprika",
+        "5 cups hot vegetable broth",
+        "½ cup peas",
+        "½ teaspoon salt (taste the broth first)",
+        "1 lemon in wedges"
+      ]
+    },
+    steps: {
+      es: [
+        "Tueste el azafrán y desmorónelo en el caldo caliente.",
+        "En la paellera, dore la berenjena y el calabacín en el aceite 5 minutos y sáquelos.",
+        "Sofría la cebolla, los pimientos, el ajo y las habichuelas tiernas 6 minutos. Añada el tomate y el pimentón y cocine 3 minutos.",
+        "Añada el arroz, muévalo 1 minuto y vierta el caldo con la sal. Reparta parejo y no lo mueva más.",
+        "Cocine 10 minutos a fuego medio-alto. Acomode la berenjena, el calabacín, las alcachofas y los guisantes encima, y siga 8–10 minutos a fuego medio-bajo.",
+        "Forme el socarrat, deje reposar tapado 5 minutos y sirva con limón. Apta para vegetarianos y veganos."
+      ],
+      en: [
+        "Toast the saffron and crumble it into the hot broth.",
+        "In the paella pan, brown the eggplant and zucchini in the oil 5 minutes and remove.",
+        "Sauté the onion, peppers, garlic and green beans 6 minutes. Add the tomato and paprika and cook 3 minutes.",
+        "Add the rice, stir 1 minute and pour in the broth with the salt. Spread evenly and don't stir again.",
+        "Cook 10 minutes over medium-high. Arrange the eggplant, zucchini, artichokes and peas on top and continue 8–10 minutes over medium-low.",
+        "Form the socarrat, rest covered 5 minutes and serve with lemon. Suitable for vegetarians and vegans."
       ]
     }
   }

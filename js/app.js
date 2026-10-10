@@ -447,6 +447,15 @@ const dessertIcons = [
   [/^salsa de pique/, "svg:ic-salsa-pique"],
   // Yogures.
   [/^jamonilla/, "svg:ic-jamonilla"],
+  // Paellas (🥘 era el mismo para todas).
+  [/^paella negra/, "svg:ic-paella-negra"],
+  [/^paella de langosta/, "svg:ic-paella-langosta"],
+  [/^paella de pulpo/, "svg:ic-paella-pulpo"],
+  [/^paella valenciana/, "svg:ic-paella-valenciana"],
+  [/^paella mixta/, "svg:ic-paella-mixta"],
+  [/^paella de pollo/, "svg:ic-paella-pollo-chorizo"],
+  [/^paella de vegetales/, "svg:ic-paella-vegetales"],
+  [/^paella/, "svg:ic-paella-mariscos"],
   // Platos de huevo.
   [/^tortilla espanola/, "svg:ic-tortilla-espanola"],
   [/^tortilla de amarillos/, "svg:ic-tortilla-amarillos"],
