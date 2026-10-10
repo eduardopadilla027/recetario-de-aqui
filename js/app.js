@@ -298,7 +298,7 @@ const dishIcons = [
   ["maiz", "🌽"], ["sorullito", "🌽"], ["guanime", "🌽"], ["funche", "🌽"], ["majarete", "🍮"], ["arepa", "🫓"], ["casabe", "🫓"],
   ["mazamorra", "🌽"], ["domplines", "🫓"], ["yaniqueques", "🫓"], ["mofongo de yuca", "🍠"], ["sopa borracha", "🍰"],
   ["ostiones", "🦪"], ["chicharrones de pescado", "🐟"], ["ceviche de camarones", "🦐"],
-  ["melcocha", "🍬"], ["cidra", "🍋"], ["torrejas", "🍞"], ["flor de jamaica", "🌺"], ["jugo de carambola", "⭐"], ["alitas", "🍗"], ["name", "🍠"], ["guacamole", "🥑"], ["salsa de aguacate", "🥑"], ["fricase de cerdo", "🍖"], ["polvo de amor", "🥥"], ["coquimol", "🥥"],
+  ["melcocha", "🍬"], ["cidra", "🍋"], ["torrejas", "🍞"], ["flor de jamaica", "🌺"], ["jugo de carambola", "⭐"], ["alitas", "🍗"], ["name", "🍠"], ["papita", "🥔"], ["malanga", "🍠"], ["guacamole", "🥑"], ["salsa de aguacate", "🥑"], ["fricase de cerdo", "🍖"], ["polvo de amor", "🥥"], ["coquimol", "🥥"],
   ["berenjena", "🍆"], ["calabaza", "🎃"], ["aguacate", "🥑"], ["repollo", "🥬"], ["chayote", "🥒"],
   ["coquito", "🥥"], ["coco", "🥥"], ["tembleque", "🍮"], ["besito", "🥥"],
   ["pina colada", "🍹"], ["pina", "🍍"], ["mango", "🥭"], ["papaya", "🥭"], ["lechosa", "🥭"], ["china", "🍊"], ["naranja", "🍊"], ["toronja", "🍊"], ["limon", "🍋"], ["limonada", "🍋"],

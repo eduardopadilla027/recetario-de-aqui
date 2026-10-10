@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.10.0 · **Recetas:** 551 en 24 categorías
+> **Última actualización:** 2026-10-09 · **Versión del documento:** 1.11.0 · **Recetas:** 563 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -56,7 +56,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, y viandas, majados y aguacate, en nueve tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, y papas y malanga, en diez tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -90,6 +90,8 @@ cocine-a-gusto/
 - La **cantidad va al inicio** de la línea: `"2 tazas de …"`, `"½ libra de …"`, `"1 lata de 15 onzas de …"`. Lo que no tiene
   cantidad ("Sal al gusto") no se escala ni se suma.
 - Unidades en español: taza, cucharada, cucharadita, libra, onza, lata, sobre, diente, ramita… (ver `NUTRI_UNITS`).
+- Ojo con palabras que la tabla usa para otra cosa: "papitas" son las papitas de bolsa (chips); para papas pequeñas
+  escriba "papas pequeñas". Revise siempre el resultado de la nutrición de una receta nueva.
 - Fritura: `"Aceite vegetal para freír"` (la nutrición suma ~½ cucharada absorbida por porción).
 - Lo opcional lleva la palabra "opcional" (no se suma). Sal o aceite "para el agua" tampoco.
 - **Platos de un pueblo:** el pueblo va entre paréntesis en el nombre ("Pasteles de Pollo (Orocovis)") y el último paso explica
@@ -114,7 +116,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | aves | Aves | 35 |
 | pescados | Pescado y Mariscos | 40 |
 | huevos | Huevos y Queso | 11 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 33 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 34 |
 | pastas | Pastas | 17 |
 | bizcochos | Bizcochos | 10 |
 | galletitas | Galletitas | 18 |
@@ -123,7 +125,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | emparedados | Emparedados | 10 |
 | postres | Helados, Budines, Flan y Otros Postres | 59 |
 | arroces | Arroces y Habichuelas | 25 |
-| vegetales | Vegetales y Viandas | 37 |
+| vegetales | Vegetales y Viandas | 48 |
 | salsas | Salsas y Aderezos | 15 |
 | bebidas | Bebidas | 17 |
 | jugos | Jugos Naturales | 18 |
@@ -186,7 +188,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 551). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 563). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -231,6 +233,21 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-09 — v1.11.0 · Papas y majados de malanga
+- *Pedido:* buscar recetas con papas (asadas, majadas o fritas) y recetas de majado de malanga.
+- Décima tanda en `js/recipes-4.js` (versiones propias):
+  - Vegetales y viandas: Papas Asadas con Ajo y Orégano, Papas Majadas con Ajo, Papas Fritas Caseras (doble fritura),
+    Papas Guisadas a la Criolla, Papas Rellenas al Horno, Papitas a la Mantequilla con Perejil, Papas con Chorizo,
+    Papas Gratinadas, Papas Fritas Encebolladas.
+  - Entremeses: Croquetas de Papa.
+  - Malanga: Majado de Malanga con Mojo de Ajo y Puré de Malanga para Bebés (sin sal, azúcar ni miel). En Puerto Rico
+    malanga y yautía son la misma vianda: ya existía el Majado de Yautía y el buscador ya trataba malanga = yautía.
+- Iconos: papitas 🥔, malanga 🍠.
+- Total: **551 → 563 recetas**.
+- *Verificado:* datos en Node ✔ (0 ingredientes sin contar; se corrigió "papitas" que contaba como chips); buscador:
+  "malanga", "majado de malanga", "papas", "papas fritas", "potatoes" ✔; navegador: las 12 recetas en ES y EN a 375 px,
+  sin errores ni desbordes.
 
 ### 2026-10-09 — v1.10.0 · Viandas, majados y aguacate
 - *Pedido:* buscar recetas de viandas y diferentes majados, incluyendo recetas con aguacate.

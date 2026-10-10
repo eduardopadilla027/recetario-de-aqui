@@ -20,6 +20,8 @@
  * mofongo, alitas fritas, en BBQ de guayaba, guisadas, agridulces…).
  * Novena tanda: viandas, majados (plátano, yuca, batata, guineo, ñame) y
  * recetas con aguacate.
+ * Décima tanda: papas (asadas, majadas, fritas, guisadas, gratinadas…) y
+ * majados de malanga.
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -4870,6 +4872,507 @@ recipes.push(
         "If too thick, add a little more water.",
         "Taste and adjust the lime and salt.",
         "Serve right away with tostones, fried yuca or fried pork. Keeps 1 day in the fridge, tightly covered."
+      ]
+    }
+  },
+
+  // ── Décima tanda (2026-10): papas asadas, majadas y fritas ──
+  {
+    id: "papas-asadas",
+    category: "vegetales",
+    name: { es: "Papas Asadas con Ajo y Orégano", en: "Roasted Potatoes with Garlic and Oregano" },
+    time: "50 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 libras de papas, con cáscara y en cascos",
+        "¼ taza de aceite de oliva",
+        "6 dientes de ajo, majados",
+        "1 cucharadita de orégano",
+        "1 cucharadita de pimentón",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "1 cucharada de perejil, picado"
+      ],
+      en: [
+        "3 pounds potatoes, skin on, cut into wedges",
+        "¼ cup olive oil",
+        "6 garlic cloves, mashed",
+        "1 teaspoon oregano",
+        "1 teaspoon paprika",
+        "1 teaspoon salt",
+        "½ teaspoon pepper",
+        "1 tablespoon parsley, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 425°F.",
+        "Mezcle las papas con el aceite, el ajo, el orégano, el pimentón, la sal y la pimienta.",
+        "Extiéndalas en una sola capa en una bandeja grande, con la parte cortada hacia abajo.",
+        "Hornee 35–40 minutos, volteando a la mitad, hasta que estén doradas por fuera y blandas por dentro.",
+        "Espolvoree el perejil y sirva con pollo asado, pernil o chuletas."
+      ],
+      en: [
+        "Heat the oven to 425°F.",
+        "Toss the potatoes with the oil, garlic, oregano, paprika, salt and pepper.",
+        "Spread them in a single layer on a large tray, cut side down.",
+        "Bake 35–40 minutes, turning halfway, until golden outside and tender inside.",
+        "Sprinkle with the parsley and serve with roast chicken, pork shoulder or pork chops."
+      ]
+    }
+  },
+  {
+    id: "papas-majadas-ajo",
+    category: "vegetales",
+    name: { es: "Papas Majadas con Ajo", en: "Garlic Mashed Potatoes" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 libras de papas, peladas y en trozos",
+        "4 dientes de ajo, pelados",
+        "4 cucharadas de mantequilla",
+        "¾ taza de leche caliente",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "3 pounds potatoes, peeled and cut into chunks",
+        "4 garlic cloves, peeled",
+        "4 tablespoons butter",
+        "¾ cup hot milk",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las papas con los dientes de ajo en agua con sal 15–20 minutos, hasta que estén muy blandas.",
+        "Escurra bien y deje que suelten el vapor 1 minuto: así no quedan aguadas.",
+        "Maje las papas con el ajo, la mantequilla y la leche caliente hasta que estén cremosas. No las licúe: se ponen pegajosas.",
+        "Ajuste la sal y la pimienta y sirva con carne guisada, bistec encebollado o pollo frito."
+      ],
+      en: [
+        "Boil the potatoes with the garlic cloves in salted water 15–20 minutes, until very soft.",
+        "Drain well and let them steam off 1 minute so they aren't watery.",
+        "Mash the potatoes with the garlic, butter and hot milk until creamy. Don't blend them: they turn gluey.",
+        "Adjust salt and pepper and serve with beef stew, steak and onions or fried chicken."
+      ]
+    }
+  },
+  {
+    id: "papas-fritas-caseras",
+    category: "vegetales",
+    name: { es: "Papas Fritas Caseras", en: "Homemade French Fries" },
+    time: "45 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de papas, peladas y en bastones",
+        "Aceite vegetal para freír",
+        "1 cucharadita de sal",
+        "½ cucharadita de adobo (opcional)"
+      ],
+      en: [
+        "2 pounds potatoes, peeled and cut into sticks",
+        "Vegetable oil for frying",
+        "1 teaspoon salt",
+        "½ teaspoon adobo (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje los bastones en agua fría 30 minutos para quitarles el almidón. Escurra y séquelos muy bien con un paño.",
+        "Primera fritura: fría a 325°F por tandas 5 minutos, sin que doren. Saque y deje reposar 10 minutos.",
+        "Segunda fritura: suba el aceite a 375°F y fría 2–3 minutos, hasta que estén doradas y crujientes.",
+        "Escurra sobre papel, sale enseguida y sirva con mayo-ketchup o con la carne frita del día."
+      ],
+      en: [
+        "Soak the sticks in cold water 30 minutes to remove the starch. Drain and dry them very well with a towel.",
+        "First fry: fry at 325°F in batches 5 minutes, without browning. Remove and rest 10 minutes.",
+        "Second fry: raise the oil to 375°F and fry 2–3 minutes, until golden and crisp.",
+        "Drain on paper, salt right away and serve with mayo-ketchup or with the day's fried pork."
+      ]
+    }
+  },
+  {
+    id: "papas-guisadas",
+    category: "vegetales",
+    name: { es: "Papas Guisadas a la Criolla", en: "Creole Stewed Potatoes" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de papas, peladas y en cubos",
+        "¼ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "1 cucharadita de sazón",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "1 hoja de laurel",
+        "1½ tazas de agua",
+        "1 cucharada de aceite de oliva",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 pounds potatoes, peeled and cubed",
+        "¼ cup sofrito",
+        "½ cup tomato sauce",
+        "1 teaspoon sazón",
+        "¼ cup stuffed olives",
+        "1 tablespoon capers",
+        "1 bay leaf",
+        "1½ cups water",
+        "1 tablespoon olive oil",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite 2 minutos.",
+        "Añada la salsa de tomate, el sazón, las aceitunas, las alcaparras y el laurel.",
+        "Agregue las papas y el agua. Tape y cocine a fuego medio-bajo 20 minutos, hasta que estén blandas y la salsa espese.",
+        "Ajuste la sal. Se comen con arroz blanco o como acompañante de un huevo frito o de pescado."
+      ],
+      en: [
+        "Sauté the sofrito in the oil 2 minutes.",
+        "Add the tomato sauce, sazón, olives, capers and bay leaf.",
+        "Add the potatoes and water. Cover and cook over medium-low heat 20 minutes, until tender and the sauce thickens.",
+        "Adjust the salt. Eat with white rice or as a side to a fried egg or fish."
+      ]
+    }
+  },
+  {
+    id: "papas-rellenas-horno",
+    category: "vegetales",
+    name: { es: "Papas Rellenas al Horno", en: "Twice-Baked Stuffed Potatoes" },
+    time: "1 hr 30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 papas grandes para hornear",
+        "4 cucharadas de mantequilla",
+        "½ taza de crema agria",
+        "1 taza de queso de papa (cheddar), rallado",
+        "4 lonjas de tocineta, cocidas y picadas",
+        "2 cebollines, picados",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "4 large baking potatoes",
+        "4 tablespoons butter",
+        "½ cup sour cream",
+        "1 cup cheddar cheese, shredded",
+        "4 slices bacon, cooked and chopped",
+        "2 scallions, chopped",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave las papas, pínchelas con un tenedor y hornéelas a 400°F por 1 hora, hasta que estén blandas.",
+        "Córtelas a lo largo y saque la pulpa con una cuchara, dejando ¼ de pulgada pegada a la cáscara.",
+        "Maje la pulpa con la mantequilla, la crema agria, la mitad del queso, la tocineta, sal y pimienta.",
+        "Rellene las cáscaras, cubra con el resto del queso y hornee 15 minutos más, hasta que gratinen.",
+        "Decore con el cebollín y sirva caliente."
+      ],
+      en: [
+        "Scrub the potatoes, prick with a fork and bake at 400°F for 1 hour, until tender.",
+        "Cut them lengthwise and scoop out the flesh, leaving ¼ inch attached to the skin.",
+        "Mash the flesh with the butter, sour cream, half the cheese, the bacon, salt and pepper.",
+        "Fill the skins, top with the rest of the cheese and bake 15 more minutes, until golden.",
+        "Garnish with the scallions and serve hot."
+      ]
+    }
+  },
+  {
+    id: "papitas-perejil",
+    category: "vegetales",
+    name: { es: "Papitas a la Mantequilla con Perejil", en: "Buttered Baby Potatoes with Parsley" },
+    time: "30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de papas pequeñas (papitas rojas o amarillas)",
+        "3 cucharadas de mantequilla",
+        "2 dientes de ajo, picaditos",
+        "2 cucharadas de perejil, picado",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 pounds small baby potatoes (red or yellow)",
+        "3 tablespoons butter",
+        "2 garlic cloves, finely chopped",
+        "2 tablespoons parsley, chopped",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las papitas enteras con cáscara en agua con sal 15 minutos, hasta que un cuchillo entre fácil. Escurra.",
+        "Derrita la mantequilla en un sartén grande y sofría el ajo 1 minuto.",
+        "Añada las papitas y saltee 5 minutos, hasta que se doren un poco.",
+        "Agregue el perejil, sal y pimienta y sirva con pescado o pollo."
+      ],
+      en: [
+        "Boil the whole potatoes, skin on, in salted water 15 minutes, until a knife slides in easily. Drain.",
+        "Melt the butter in a large skillet and sauté the garlic 1 minute.",
+        "Add the potatoes and toss 5 minutes, until lightly golden.",
+        "Add the parsley, salt and pepper and serve with fish or chicken."
+      ]
+    }
+  },
+  {
+    id: "papas-con-chorizo",
+    category: "vegetales",
+    name: { es: "Papas con Chorizo", en: "Potatoes with Chorizo" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de papas, peladas y en cubos pequeños",
+        "2 chorizos españoles, en ruedas",
+        "1 cebolla, picada",
+        "1 pimiento verde, picado",
+        "2 dientes de ajo, picados",
+        "2 cucharadas de aceite de oliva",
+        "½ cucharadita de pimentón",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 pounds potatoes, peeled and diced",
+        "2 Spanish chorizos, sliced",
+        "1 onion, chopped",
+        "1 green bell pepper, chopped",
+        "2 garlic cloves, chopped",
+        "2 tablespoons olive oil",
+        "½ teaspoon paprika",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las papas en agua con sal 8 minutos, sólo hasta que estén casi blandas. Escurra.",
+        "En un sartén grande, dore el chorizo en el aceite 3 minutos para que suelte su grasa.",
+        "Añada la cebolla, el pimiento y el ajo y sofría 4 minutos.",
+        "Agregue las papas y el pimentón y cocine 10 minutos, moviendo de vez en cuando, hasta que se doren.",
+        "Pruebe antes de salar: el chorizo ya trae sal. Sirva con huevos fritos o pan de agua."
+      ],
+      en: [
+        "Boil the potatoes in salted water 8 minutes, just until almost tender. Drain.",
+        "In a large skillet, brown the chorizo in the oil 3 minutes so it releases its fat.",
+        "Add the onion, bell pepper and garlic and sauté 4 minutes.",
+        "Add the potatoes and paprika and cook 10 minutes, stirring now and then, until golden.",
+        "Taste before salting: the chorizo is already salty. Serve with fried eggs or pan de agua."
+      ]
+    }
+  },
+  {
+    id: "papas-gratinadas",
+    category: "vegetales",
+    name: { es: "Papas Gratinadas", en: "Potatoes au Gratin" },
+    time: "1 hr 30 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 libras de papas, peladas y en ruedas finas",
+        "2 tazas de crema de leche (heavy cream)",
+        "1 taza de leche",
+        "3 dientes de ajo, majados",
+        "1½ tazas de queso suizo o mozzarella, rallado",
+        "½ taza de queso parmesano, rallado",
+        "2 cucharadas de mantequilla",
+        "¼ cucharadita de nuez moscada",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "3 pounds potatoes, peeled and thinly sliced",
+        "2 cups heavy cream",
+        "1 cup milk",
+        "3 garlic cloves, mashed",
+        "1½ cups Swiss or mozzarella cheese, shredded",
+        "½ cup grated Parmesan cheese",
+        "2 tablespoons butter",
+        "¼ teaspoon nutmeg",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 375°F y engrase un molde de 9 × 13 pulgadas con la mantequilla.",
+        "Caliente la crema, la leche, el ajo, la nuez moscada y la sal sin que hierva.",
+        "Acomode las papas en capas, cubriendo cada capa con un poco de la crema y del queso suizo.",
+        "Termine con la crema restante y el parmesano. Tape con papel de aluminio y hornee 45 minutos.",
+        "Destape y hornee 20–25 minutos más, hasta que esté dorado y burbujeante. Es el acompañante del pernil y el pavo en las fiestas."
+      ],
+      en: [
+        "Heat the oven to 375°F and butter a 9 × 13-inch dish.",
+        "Warm the cream, milk, garlic, nutmeg and salt without boiling.",
+        "Layer the potatoes, covering each layer with some of the cream and Swiss cheese.",
+        "Finish with the remaining cream and the Parmesan. Cover with foil and bake 45 minutes.",
+        "Uncover and bake 20–25 more minutes, until golden and bubbling. It's the side for roast pork and turkey at holiday meals."
+      ]
+    }
+  },
+  {
+    id: "croquetas-papa",
+    category: "entremeses",
+    name: { es: "Croquetas de Papa", en: "Potato Croquettes" },
+    time: "1 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 libras de papas, peladas y en trozos",
+        "2 cucharadas de mantequilla",
+        "½ taza de queso parmesano, rallado",
+        "¼ taza de jamón de cocinar, picadito",
+        "1 cucharada de perejil, picado",
+        "2 huevos (1 para la mezcla y 1 para empanar)",
+        "1 taza de pan rallado",
+        "Aceite vegetal para freír",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 pounds potatoes, peeled and cut into chunks",
+        "2 tablespoons butter",
+        "½ cup grated Parmesan cheese",
+        "¼ cup cooking ham, finely chopped",
+        "1 tablespoon parsley, chopped",
+        "2 eggs (1 for the mixture and 1 for breading)",
+        "1 cup breadcrumbs",
+        "Vegetable oil for frying",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las papas en agua con sal hasta que estén blandas, escúrralas bien y májelas con la mantequilla. Deje enfriar.",
+        "Mezcle con el queso, el jamón, el perejil, 1 huevo, sal y pimienta.",
+        "Forme croquetas alargadas, páselas por el otro huevo batido y luego por el pan rallado. Refrigere 15 minutos para que no se abran.",
+        "Fría en aceite a 350°F, 2–3 minutos, hasta que estén doradas.",
+        "Escurra y sirva calientes con mayo-ketchup."
+      ],
+      en: [
+        "Boil the potatoes in salted water until tender, drain well and mash with the butter. Let cool.",
+        "Mix with the cheese, ham, parsley, 1 egg, salt and pepper.",
+        "Shape into logs, dip in the other beaten egg and then in the breadcrumbs. Refrigerate 15 minutes so they hold together.",
+        "Fry in oil at 350°F, 2–3 minutes, until golden.",
+        "Drain and serve hot with mayo-ketchup."
+      ]
+    }
+  },
+  {
+    id: "papas-encebolladas",
+    category: "vegetales",
+    name: { es: "Papas Fritas Encebolladas", en: "Pan-Fried Potatoes with Onions" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de papas, peladas y en ruedas de ¼ de pulgada",
+        "2 cebollas grandes, en ruedas",
+        "⅓ taza de aceite de oliva",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta"
+      ],
+      en: [
+        "2 pounds potatoes, peeled and sliced ¼ inch thick",
+        "2 large onions, sliced",
+        "⅓ cup olive oil",
+        "1 teaspoon salt",
+        "½ teaspoon pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Seque bien las ruedas de papa con un paño.",
+        "Caliente el aceite en un sartén grande y fría las papas a fuego medio, tapadas, 10 minutos, volteando con cuidado.",
+        "Añada la cebolla y siga cocinando destapado 10–12 minutos, hasta que las papas estén doradas y la cebolla blanda y algo caramelizada.",
+        "Sale, añada pimienta y sirva con bistec, huevos fritos o chuletas."
+      ],
+      en: [
+        "Dry the potato slices well with a towel.",
+        "Heat the oil in a large skillet and fry the potatoes over medium heat, covered, 10 minutes, turning gently.",
+        "Add the onion and keep cooking uncovered 10–12 minutes, until the potatoes are golden and the onion soft and slightly caramelized.",
+        "Salt, add pepper and serve with steak, fried eggs or pork chops."
+      ]
+    }
+  }
+,
+  {
+    id: "majado-malanga-mojo",
+    category: "vegetales",
+    name: { es: "Majado de Malanga con Mojo de Ajo", en: "Mashed Malanga with Garlic Mojo" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de malanga (yautía), pelada y en trozos",
+        "2 cucharadas de mantequilla",
+        "½ taza de leche caliente",
+        "Mojo: ¼ taza de aceite de oliva",
+        "6 dientes de ajo, majados",
+        "1 cucharada de jugo de limón",
+        "1 cucharada de cilantro o perejil, picado",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 pounds malanga (yautía), peeled and cut into chunks",
+        "2 tablespoons butter",
+        "½ cup hot milk",
+        "Mojo: ¼ cup olive oil",
+        "6 garlic cloves, mashed",
+        "1 tablespoon lime juice",
+        "1 tablespoon cilantro or parsley, chopped",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele la malanga con guantes o con las manos aceitadas (la cáscara pica) y póngala en agua para que no se oscurezca.",
+        "Hierva en agua con sal 20–25 minutos, hasta que esté muy blanda. Escurra.",
+        "Maje caliente con la mantequilla y la leche hasta que esté suave y cremosa: la malanga queda más pegajosa que la papa, es normal.",
+        "Para el mojo: caliente el aceite con el ajo a fuego bajo 1 minuto sin dorar, retire y añada el limón, el cilantro y sal.",
+        "Sirva el majado con el mojo por encima, con carne guisada, bacalao o pollo. En la isla la malanga y la yautía son la misma vianda."
+      ],
+      en: [
+        "Peel the malanga with gloves or oiled hands (the skin itches) and keep it in water so it doesn't darken.",
+        "Boil in salted water 20–25 minutes, until very soft. Drain.",
+        "Mash while hot with the butter and milk until smooth and creamy: malanga is stickier than potato, that's normal.",
+        "For the mojo: warm the oil with the garlic over low heat 1 minute without browning, remove and add the lime, cilantro and salt.",
+        "Serve the mash topped with the mojo, with beef stew, salt cod or chicken. On the island, malanga and yautía are the same root vegetable."
+      ]
+    }
+  },
+  {
+    id: "pure-malanga-bebes",
+    category: "vegetales",
+    name: { es: "Puré de Malanga para Bebés", en: "Malanga Purée for Babies" },
+    time: "30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de malanga (yautía), pelada y en trozos",
+        "1 taza del agua de hervir, o leche materna o de fórmula",
+        "1 cucharadita de aceite de oliva (opcional)"
+      ],
+      en: [
+        "1 pound malanga (yautía), peeled and cut into chunks",
+        "1 cup of the cooking water, or breast milk or formula",
+        "1 teaspoon olive oil (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la malanga en agua sin sal 20–25 minutos, hasta que esté muy blanda.",
+        "Májela o lícuela con el líquido poco a poco hasta tener un puré liso, sin grumos. Para bebés más grandes, déjelo más espeso.",
+        "No añada sal, azúcar ni miel: los bebés menores de 1 año no deben comerlos.",
+        "Sirva tibio. Guarde en la nevera hasta 2 días o congele en porciones. Consulte con el pediatra antes de empezar alimentos sólidos."
+      ],
+      en: [
+        "Boil the malanga in unsalted water 20–25 minutes, until very soft.",
+        "Mash or blend it with the liquid little by little into a smooth purée with no lumps. For older babies, leave it thicker.",
+        "Don't add salt, sugar or honey: babies under 1 year should not have them.",
+        "Serve lukewarm. Keep in the fridge up to 2 days or freeze in portions. Check with the pediatrician before starting solid foods."
       ]
     }
   }
