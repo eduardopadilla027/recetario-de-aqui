@@ -711,4 +711,10 @@ main:focus { outline: none; }
 .plans-season-list { list-style: none; padding: 0; margin: var(--s-3) 0 0; display: grid; gap: 6px var(--s-4); grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 .plans-season-list a { color: var(--ink); font-weight: 600; text-decoration: none; }
 .plans-season-list a:hover { color: var(--achiote); text-decoration: underline; }
+.plan-sides { list-style: none; margin: 4px 0 0; padding: 6px 0 0; border-top: 1px dashed var(--line); display: flex; flex-direction: column; gap: 4px; }
+.plan-sides li { display: grid; grid-template-columns: 14px 1fr; column-gap: 4px; font-size: .88rem; }
+.plan-side-plus { color: var(--plantain); font-weight: 700; }
+.plan-sides a { color: var(--ink); font-weight: 600; text-decoration: none; }
+.plan-sides a:hover { color: var(--achiote); text-decoration: underline; }
+.plan-side-n { grid-column: 2; font-size: .78rem; color: var(--ink-3); }
 @media print { .plans-controls, .plans-actions, .goal-grid, .plans-more { display: none; } }

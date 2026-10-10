@@ -4,7 +4,10 @@
  * muscular, mantener, bajo en sodio, bajo en carbohidratos, bajo en azúcar, más
  * nutritivo), la época del año (Navidad, Cuaresma, verano, Acción de Gracias,
  * días de lluvia) y preferencias (vegetariano, rápidas), y arma un plan de
- * 1 o 7 días con desayuno, almuerzo, merienda y cena. Usa la nutrición
+ * 1 o 7 días con desayuno, almuerzo, merienda y cena. El almuerzo y la cena son
+ * plato principal + acompañantes según el objetivo (arroz y habichuelas para masa,
+ * ensalada o vegetales para rebajar…), salvo los platos completos (asopao, paella,
+ * arroz con…, sancocho, pastelón, sándwiches), que van solos. Usa la nutrición
  * ESTIMADA de cada receta (js/nutrition.js) y los alérgenos de
  * js/advisories.js. Si la persona pone sus datos, calcula las calorías del día
  * con Mifflin-St Jeor; si no, usa una meta típica del objetivo. Es orientación
@@ -38,6 +41,8 @@ const PLAN_T = {
     seasonSub: "Las recetas típicas de la época, incluidos postres y bebidas. En el plan salen primero las que cumplen su objetivo.",
     badges: { prot: "Alta en proteína", fib: "Alta en fibra", sugar: "Baja en azúcar", sodium: "Sodio moderado" },
     fiber: "fibra", sugarW: "azúcar",
+    sidesTitle: "Acompañantes",
+    withSide: "con",
     meTitle: "Mis datos (opcional)",
     meHelp: "Con sus datos se calcula la meta de calorías y proteína del día. Se guardan sólo en este navegador.",
     sex: "Sexo", female: "Mujer", male: "Hombre",
@@ -93,6 +98,8 @@ const PLAN_T = {
     seasonSub: "The typical recipes of the season, including desserts and drinks. In the plan, the ones that fit your goal come first.",
     badges: { prot: "High protein", fib: "High fiber", sugar: "Low sugar", sodium: "Moderate sodium" },
     fiber: "fiber", sugarW: "sugar",
+    sidesTitle: "Sides",
+    withSide: "with",
     meTitle: "My details (optional)",
     meHelp: "Your details are used to calculate the day's calorie and protein target. They're stored only in this browser.",
     sex: "Sex", female: "Female", male: "Male",
@@ -151,7 +158,7 @@ const PLAN_GOALS = {
   },
   masa: {
     typical: 2700, adjust: 0.12, protPerKg: 2.0, maxPortion: 2.5,
-    ok: { desayuno: (n) => n.p >= 15, main: (n) => n.p >= 30 && n.kcal >= 380, merienda: (n) => n.p >= 8 || n.kcal >= 250 },
+    ok: { desayuno: (n) => n.p >= 15, main: (n) => n.p >= 30 && n.kcal >= 250, merienda: (n) => n.p >= 8 || n.kcal >= 250 },
     score: (n) => n.p + n.kcal / 60
   },
   mantener: {
@@ -262,6 +269,33 @@ function slotOf(r) {
   if (MAIN_CATS.includes(r.category)) return "main";
   return null;
 }
+/* ── Acompañantes ── */
+// Qué tipo de acompañante es una receta (o null si es un plato principal o no aplica).
+const SIDE_MEAT_RX = /pollo|pernil|carne|salchich|longaniza|camaron|bacalao|atun|sardina|jueyes|langosta|pulpo|calamar|costillita|chorizo|salami|mollej|alita|guinea|cerdo|res\b|chicharron|picadillo/;
+function sideKind(r, n) {
+  const nm = planNorm(r.name.es);
+  if (r.category === "granos") return /hummus|crujientes/.test(nm) || SIDE_MEAT_RX.test(nm) ? null : "granos";
+  if (r.category === "arroces") return /^(arroz (blanco|integral|con gandules|con maiz|guisado con vegetales|apastelado)|moros)/.test(nm) && !SIDE_MEAT_RX.test(nm) ? "arroz" : null;
+  if (r.category === "ensaladas") return n.p < 12 && !SIDE_MEAT_RX.test(nm) ? "ensalada" : null;
+  if (r.category === "vegetales") {
+    if (/rellen|pastelon|lasana|parmesana/.test(nm) || SIDE_MEAT_RX.test(nm) || n.p >= 15) return null;
+    return /tostones|maduro|amarillo|yuca|papa|batata|name|yautia|malanga|pana\b|panapen|vianda|guineo|platano|majado|mofongo|pure|arepa|funche/.test(nm) ? "vianda" : "vegetal";
+  }
+  return null;
+}
+// Platos completos: llevan su almidón o su vianda y van sin acompañante.
+const isComplete = (r) => ["arroces", "sopas", "pastas", "emparedados"].includes(r.category) ||
+  /asopao|paella|sancocho|pastelon|lasana|mofongo|arroz con|wrap|ensalada de|con papas|con viandas|con yuca|con tostones|con (garbanzos|habichuelas|gandules|lentejas|arroz)|jibarito/.test(planNorm(r.name.es));
+// Por objetivo: qué acompañantes y con qué criterio. Cada grupo de "kinds" es un acompañante.
+const SIDE_RULES = {
+  rebajar: { kinds: [["ensalada", "vegetal", "granos"]], ok: (n) => n.kcal <= 250 && n.s <= 10, score: (n) => n.fib * 2 + n.p / 3 - n.kcal / 100 },
+  masa: { kinds: [["arroz", "vianda"], ["granos"]], ok: (n) => n.kcal >= 100, score: (n) => n.kcal / 50 + n.p / 2 },
+  mantener: { kinds: [["arroz", "vianda"], ["granos", "ensalada", "vegetal"]], ok: (n) => n.kcal <= 400, score: (n) => n.fib + n.p / 4 - n.sat / 2 },
+  sodio: { kinds: [["arroz", "vianda", "ensalada", "vegetal", "granos"]], ok: (n) => n.na <= 400, score: (n) => -n.na / 80 + n.fib },
+  lowcarb: { kinds: [["ensalada", "vegetal"]], ok: (n) => n.c <= 15, score: (n) => -n.c + n.fib * 2 },
+  azucar: { kinds: [["granos", "ensalada", "vegetal"]], ok: (n) => n.s <= 6, score: (n) => n.fib * 2 - n.s },
+  nutritivo: { kinds: [["granos"], ["ensalada", "vegetal"]], ok: (n) => n.fib >= 2 || n.p >= 5, score: (n) => n.fib * 3 + n.p / 3 - n.na / 500 }
+};
 function planInfo(r) {
   const e = estimateNutrition(r);
   const a = getAdvisories(r);
@@ -269,8 +303,9 @@ function planInfo(r) {
 }
 function candidates() {
   const g = PLAN_GOALS[plan.goal];
-  const pools = { desayuno: [], main: [], merienda: [] };
-  const loose = { desayuno: [], main: [], merienda: [] }; // respetan exclusiones aunque no el objetivo
+  const pools = { desayuno: [], main: [], merienda: [], side: [] };
+  const loose = { desayuno: [], main: [], merienda: [], side: [] }; // respetan exclusiones aunque no el objetivo
+  const sr = SIDE_RULES[plan.goal];
   const season = activeSeason();
   for (const r of recipes) {
     const slot = slotOf(r);
@@ -281,7 +316,13 @@ function candidates() {
     if (plan.avoid.some((k) => AVOID[k] && AVOID[k](info.allergens, r))) continue;
     if (plan.prefs.includes("veg") && !isVegetarian(r)) continue;
     if (plan.prefs.includes("quick") && !isQuick(r)) continue;
-    // Las ensaladas y los entremeses sin proteína no hacen un almuerzo: van de merienda.
+    // Acompañantes (arroz, granos, viandas, vegetales y ensaladas ligeras): no son plato principal.
+    const kind = slot === "main" ? sideKind(r, info.n) : null;
+    if (kind) {
+      const entry = { r, n: info.n, kind, score: sr.score(info.n) };
+      (sr.ok(info.n) ? pools.side : loose.side).push(entry);
+      continue;
+    }
     let s = slot;
     if (s === "main" && info.n.kcal < 180 && ["ensaladas", "vegetales"].includes(r.category)) s = "merienda";
     const inSeason0 = season !== "todo" && SEASONS[season](r, planNorm(r.name.es));
@@ -292,7 +333,15 @@ function candidates() {
   }
   // Si las exclusiones dejan una comida sin opciones, se usan las que más se acercan al objetivo.
   let relaxed = false;
-  for (const k in pools) {
+  pools.side.sort((x, y) => y.score - x.score);
+  // Acompañantes: si a un tipo que pide el objetivo no le queda ninguno, se usan los que más se acercan.
+  for (const group of sr.kinds) {
+    if (!pools.side.some((x) => group.includes(x.kind))) {
+      const extra = loose.side.filter((x) => group.includes(x.kind));
+      if (extra.length) { pools.side = pools.side.concat(extra); relaxed = true; }
+    }
+  }
+  for (const k of ["desayuno", "main", "merienda"]) {
     const min = k === "main" ? 6 : 3; // variedad mínima para no repetir todo el plan
     if (pools[k].length < min && loose[k].length) { pools[k] = pools[k].concat(loose[k]); relaxed = true; }
     pools[k].sort((x, y) => y.score - x.score);
@@ -331,8 +380,21 @@ function buildPlan(pools, target) {
       if (!item) { meals.push({ slot: slot.key, item: null }); continue; }
       usedDay.add(item.r.id);
       if (["almuerzo", "cena"].includes(slot.key)) { usedWeek.add(item.r.id); lastMainCat = item.r.category; }
-      const m = slot.key === "merienda" ? Math.min(1.5, portionFor(item, target.kcal * slot.share, 1.5)) : portionFor(item, target.kcal * slot.share, g.maxPortion);
-      meals.push({ slot: slot.key, item, m });
+      const slotKcal = target.kcal * slot.share;
+      if (slot.key === "merienda") { meals.push({ slot: slot.key, item, m: Math.min(1.5, portionFor(item, slotKcal, 1.5)) }); continue; }
+      // Almuerzo y cena: principal + acompañantes (menos los platos completos y el desayuno).
+      const sides = [];
+      if (["almuerzo", "cena"].includes(slot.key) && !isComplete(item.r)) {
+        for (const group of SIDE_RULES[plan.goal].kinds) {
+          const options = pools.side.filter((x) => group.includes(x.kind));
+          const side = pickFrom(options, usedDay, rand, null);
+          if (side) { usedDay.add(side.r.id); sides.push({ item: side }); }
+        }
+      }
+      const mainShare = sides.length ? 0.55 : 1;
+      const m = portionFor(item, slotKcal * mainShare, g.maxPortion);
+      for (const sd of sides) sd.m = Math.min(1.5, portionFor(sd.item, (slotKcal * (1 - mainShare)) / sides.length, 1.5));
+      meals.push({ slot: slot.key, item, m, sides });
     }
     days.push(meals);
   }
@@ -425,13 +487,21 @@ function mealHTML(meal) {
       <span class="plan-portion">${esc(tr.portions(meal.m))}</span>
       <span class="plan-nutri">${nutriLine(meal.item.n, meal.m)}</span>
       ${badgesHTML(meal.item.n, meal.m)}
+      ${(meal.sides || []).length ? `<ul class="plan-sides">${meal.sides.map((sd) => `
+        <li><span class="plan-side-plus" aria-hidden="true">+</span>
+          <a href="#/receta/${encodeURIComponent(sd.item.r.id)}" data-open="${esc(sd.item.r.id)}">${esc(sd.item.r.name[currentLang])}</a>
+          <span class="plan-side-n">${esc(tr.portions(sd.m))} · ${Math.round(sd.item.n.kcal * sd.m)} ${tr.kcal} · ${Math.round(sd.item.n.p * sd.m)} g ${tr.prot}</span></li>`).join("")}</ul>` : ""}
     </span>
   </li>`;
 }
 function dayHTML(meals, i, target) {
   const tr = pt();
   const tot = { kcal: 0, p: 0, c: 0, na: 0, fib: 0, s: 0 };
-  for (const x of meals) if (x.item) for (const k in tot) tot[k] += x.item.n[k] * x.m;
+  for (const x of meals) {
+    if (!x.item) continue;
+    for (const k in tot) tot[k] += x.item.n[k] * x.m;
+    for (const sd of x.sides || []) for (const k in tot) tot[k] += sd.item.n[k] * sd.m;
+  }
   const pctK = Math.min(130, Math.round((tot.kcal / target.kcal) * 100));
   const pctP = Math.min(130, Math.round((tot.p / target.protein) * 100));
   return `<article class="plan-day">
@@ -470,10 +540,10 @@ function badgesHTML(n, m = 1) {
 }
 function moreHTML(pools) {
   const tr = pt();
-  const groups = [["desayuno", pools.desayuno], ["almuerzo", pools.main], ["merienda", pools.merienda]];
+  const groups = [["desayuno", pools.desayuno], ["almuerzo", pools.main], ["acomp", pools.side], ["merienda", pools.merienda]];
   return groups.map(([k, list]) => `
     <div class="plans-more-group">
-      <h3 class="plans-more-slot">${esc(k === "almuerzo" ? `${tr.slots.almuerzo} / ${tr.slots.cena}` : tr.slots[k])} <span class="plans-count">${list.length}</span></h3>
+      <h3 class="plans-more-slot">${esc(k === "almuerzo" ? `${tr.slots.almuerzo} / ${tr.slots.cena}` : k === "acomp" ? tr.sidesTitle : tr.slots[k])} <span class="plans-count">${list.length}</span></h3>
       <ul class="plans-more-list">${list.slice(0, 12).map((x) => `
         <li><a href="#/receta/${encodeURIComponent(x.r.id)}" data-open="${esc(x.r.id)}">${esc(x.r.name[currentLang])}</a>
         <span class="plans-more-n">${Math.round(x.n.kcal)} ${tr.kcal} · ${Math.round(x.n.p)} g ${tr.prot} · ${esc(tr.perPortion)}</span>${badgesHTML(x.n)}</li>`).join("")}

@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.2.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 787 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.3.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 787 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -270,6 +270,15 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   del almuerzo. "Otro plan" cambia la semilla. Totales del día: calorías y proteína con barras, carbohidratos, fibra,
   azúcar y sodio. Etiquetas por comida (con la porción sugerida): alta en proteína (≥25 g), alta en fibra (≥5 g), baja en
   azúcar (≤5 g), sodio moderado (≤600 mg).
+- **Plato principal + acompañantes:** el almuerzo y la cena llevan acompañantes según el objetivo (`SIDE_RULES`):
+  masa → arroz o vianda + granos; rebajar → ensalada, vegetal o granos; mantener → arroz o vianda + granos, ensalada o
+  vegetal; bajo en carbohidratos → ensalada o vegetal; más nutritivo → granos + ensalada o vegetal; sodio y azúcar → uno
+  que cumpla su límite. `sideKind()` clasifica arroces sencillos, granos sin carne, ensaladas ligeras (<12 g de proteína)
+  y viandas o vegetales sin carne como acompañantes (no entran como plato principal). Los platos completos
+  (`isComplete()`: arroces, sopas, pastas, emparedados, asopao, paella, sancocho, pastelón, lasaña, mofongo, "arroz
+  con…", "con papas/yuca/tostones/garbanzos/habichuelas…", jibarito) van solos. Con acompañantes, el principal lleva el
+  55 % de las calorías de esa comida y los acompañantes se reparten el resto (porción hasta 1½). Los totales del día los
+  incluyen, y "Recetas que encajan" tiene un grupo "Acompañantes".
 - **Si las exclusiones dejan una comida con pocas opciones** (menos de 6 platos principales o 3 desayunos/meriendas), se
   completa con las que más se acercan al objetivo y se avisa.
 - **"Recetas que encajan":** las mejores 12 de cada comida para el objetivo, para consultar o cambiar.
@@ -329,6 +338,14 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v3.3.0 · Planes: plato principal + acompañantes
+- *Pedido:* que los planes armen el almuerzo y la cena con plato principal y acompañante (arroz, habichuelas, viandas…).
+- `js/plans.js`: `sideKind()`, `isComplete()` y `SIDE_RULES` por objetivo (§7.2); el plato principal de masa ahora pide
+  ≥250 kcal (antes ≥380), porque los acompañantes completan las calorías. Vista con filas "+" debajo del principal
+  (`.plan-sides` en `css/styles.css`).
+- *Verificado:* los 7 objetivos × vegetariano × exclusiones × 1 y 7 días (56 combinaciones) sin errores; ningún
+  acompañante con carne; ejemplo masa: "Mariscada Criolla + Arroz Guisado con Vegetales + Habichuelas Rosadas Guisadas".
 
 ### 2026-10-10 — v3.2.0 · Más arroces y granos
 - *Pedido:* más recetas de arroces y granos.
