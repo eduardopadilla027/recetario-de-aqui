@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.3.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 787 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.4.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 803 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, y más arroces y granos, en veintisiete tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, y recetas vegetarianas, en veintiocho tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -111,23 +111,23 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | calientes | Bebidas Calientes | 18 |
 | frutas | Frutas | 25 |
 | cereales | Cereales | 10 |
-| granos | Granos y Legumbres | 18 |
+| granos | Granos y Legumbres | 19 |
 | ensaladas | Ensaladas | 24 |
-| sopas | Sopas | 43 |
+| sopas | Sopas | 44 |
 | carnes | Carnes | 52 |
 | aves | Aves | 40 |
 | pescados | Pescado y Mariscos | 46 |
 | huevos | Huevos y Queso | 12 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 37 |
-| pastas | Pastas | 17 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 39 |
+| pastas | Pastas | 18 |
 | bizcochos | Bizcochos | 24 |
 | galletitas | Galletitas | 37 |
 | pasteles_dulces | Pasteles Dulces | 21 |
 | panes | Pan y Panecillos | 30 |
-| emparedados | Emparedados | 21 |
+| emparedados | Emparedados | 22 |
 | postres | Helados, Budines, Flan y Otros Postres | 93 |
-| arroces | Arroces y Habichuelas | 41 |
-| vegetales | Vegetales y Viandas | 56 |
+| arroces | Arroces y Habichuelas | 42 |
+| vegetales | Vegetales y Viandas | 65 |
 | salsas | Salsas y Aderezos | 37 |
 | bebidas | Bebidas | 20 |
 | jugos | Jugos Naturales | 18 |
@@ -189,7 +189,10 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   wrap cortado y jibaritos con tostones como pan. **Sopas:** tazón de barro con el contenido de cada una: asopaos rojizos
   con arroz, aceitunas y su marisco o carne; cremas lisas con espiral y adorno, del color de su vianda o vegetal; sopas de
   caldo con fideos, habichuelas rojas/negras/blancas, garbanzos, lentejas, sancocho con mazorca, pescado, guingambó,
-  albóndigas, plátano, coditos o mondongo. Los gazpachos conservan 🍅 y 🥭. **Arroces:** montoncito en plato del color de
+  albóndigas, plátano, coditos o mondongo. Los gazpachos conservan 🍅 y 🥭. **Vegetarianos:** jaca mechada en salsa
+  con pimiento y aceitunas, tofu guisado en tazón, ramitos de coliflor con salsa de guayaba, pinchos de queso de freír y
+  vegetales, pimientos rellenos rojo y verde, serenata con viandas, huevo y aguacate, hamburguesa de habichuelas negras,
+  quinoa con gandules y penne en crema de calabaza (`ic-veg-*`, `ic-quinoa`, `ic-pasta-calabaza`). **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
   habichuelas va con su tazoncito al lado. **Granos:** tazón de barro con el grano y su salsa (habichuelas rojas,
@@ -242,7 +245,8 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   pescado, mariscos, nueces, maní, ajonjolí, soya, coco) usan `getAdvisories`; "sin alcohol" usa las alertas de alcohol
   ("trago sin alcohol" busca entre todas las bebidas); "sin carne" excluye carnes, aves y pescados; cualquier otra palabra
   excluye las recetas que la llevan en los ingredientes.
-- **Ideas** (`S_IDEAS`): navidad, playa/kioscos, desayuno, rápido (≤ 30 min), vegetariano, picante, frío y refrescante,
+- **Ideas** (`S_IDEAS`): navidad, playa/kioscos, desayuno, rápido (≤ 30 min), vegetariano, vegano (además sin lácteos, huevo, miel ni
+  gelatina; la leche y crema de coco y la mantequilla de maní sí valen), picante, frío y refrescante,
   saludable/ligero (< 350 kcal y sin freír), con alcohol, para niños (sin alcohol, cafeína ni crudos).
 - **Orden:** suma de puntuaciones + desempates (el nombre contiene la frase buscada, empieza con ella, o la búsqueda cubre
   la mayor parte del nombre: "Arroz con Pollo" antes que "Sopón de Pollo con Arroz").
@@ -262,7 +266,8 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - **Época (`SEASONS`):** Navidad, Cuaresma y Semana Santa, verano y playa, Acción de Gracias y días de lluvia, por nombre y
   categoría; "Según la fecha de hoy" la elige con `autoSeason()`. Las recetas de la época van primero en el plan (sin dejar
   de cumplir el objetivo) y una lista aparte muestra todas las de la época, también postres y bebidas.
-- **Preferencias y exclusiones:** vegetariano (categoría + `S_MEAT_RX` + `PLAN_MEAT_EXTRA`: bistec, pechuga, gelatina…),
+- **Preferencias y exclusiones:** vegetariano (categoría + `S_MEAT_RX` + `PLAN_MEAT_EXTRA`: bistec, pechuga, gelatina…; "hamburguesa" no cuenta si es
+  vegetariana o es el pan, ni "picadillo" si es de lentejas),
   sólo rápidas (`isQuick`), y evitar gluten, leche, huevo, pescado, mariscos, maní y nueces (de `getAdvisories`) o cerdo.
   Nunca entran tragos con alcohol, salsas ni dulces en los planes.
 - **Plan:** 1 o 7 días; desayuno 25 %, almuerzo 35 %, merienda 10 % y cena 30 % de la meta. La porción sugerida (½ a 2½) se
@@ -293,7 +298,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 787). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 803). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -338,6 +343,27 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v3.4.0 · Recetas vegetarianas
+- *Pedido:* buscar recetas vegetarianas.
+- Vigesimoctava tanda en `js/recipes-4.js` (versiones propias), 16 recetas, todas vegetarianas y varias veganas:
+  - **Vegetales y viandas (9):** jaca mechada guisada (vegana), canoas de amarillo con picadillo de lentejas, mofongo
+    relleno de vegetales al ajillo, tofu guisado a la criolla, coliflor al horno con BBQ de guayaba, pinchos de vegetales y
+    queso de freír, chayotes rellenos de queso y maíz, pimientos rellenos de arroz, habichuelas y queso, y serenata
+    vegetariana de viandas, huevo y aguacate.
+  - **Otras:** sancocho vegetariano (sopas), hamburguesa vegetariana de habichuelas negras (emparedados), empanadillas de
+    espinaca y queso y croquetas de yuca y queso (entremeses), quinoa con gandules (arroces), pasta en crema de calabaza y
+    recao (pastas) y albóndigas de lentejas en salsa criolla (granos).
+- **Nutrición:** nuevos alimentos jaca verde, tofu, quinoa, coliflor y queso de freír. Menos sal en la jaca, el sancocho
+  (mitad caldo, mitad agua) y las albóndigas de lentejas.
+- **Buscador:** nueva idea "vegano/vegana" (§7.1). `S_MEAT_RX` ya no confunde "ham" con "hamburger"/"hamburguesa", que
+  sacaba de "vegetariano" las recetas con pan de hamburguesa.
+- **Planes:** `PLAN_MEAT_EXTRA` deja pasar la hamburguesa vegetariana, el pan de hamburguesa y el picadillo de lentejas.
+- **Iconos:** 9 dibujos nuevos (§7); los demás usan los de su tipo (mofongo, canoas, empanadillas, sancocho, albóndigas).
+- Total: **787 → 803 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador: "vegetariano", "vegano", "tofu", "quinoa", "jaca", "coliflor",
+  "hamburguesa vegetariana" ✔; plan vegetariano de 7 días usa las nuevas ✔; navegador: las 16 recetas en ES y EN a 375 px
+  sin errores ni desbordes ✔.
 
 ### 2026-10-10 — v3.3.0 · Planes: plato principal + acompañantes
 - *Pedido:* que los planes armen el almuerzo y la cena con plato principal y acompañante (arroz, habichuelas, viandas…).

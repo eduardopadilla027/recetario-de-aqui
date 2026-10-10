@@ -375,6 +375,16 @@ const meatIcons = {
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
   [/^milanesa|a la milanesa/, "svg:ic-empanado"],
+  // Platos vegetarianos con dibujo propio.
+  [/^jaca mechada/, "svg:ic-veg-jaca"],
+  [/^tofu/, "svg:ic-veg-tofu"],
+  [/^coliflor/, "svg:ic-veg-coliflor"],
+  [/^pinchos de vegetales/, "svg:ic-veg-pinchos"],
+  [/^pimientos rellenos/, "svg:ic-veg-pimientos"],
+  [/^serenata vegetariana/, "svg:ic-veg-serenata"],
+  [/^hamburguesa vegetariana/, "svg:ic-veg-hamburguesa"],
+  [/^quinoa/, "svg:ic-quinoa"],
+  [/^pasta en crema de calabaza/, "svg:ic-pasta-calabaza"],
   // Arroces y granos según lo que llevan (las paellas y los asopaos tienen su propio dibujo).
   [/^arroz blanco con habichuelas/, "svg:ic-arroz-habichuelas"],
   [/^arroz blanco/, "svg:ic-arroz-blanco"],

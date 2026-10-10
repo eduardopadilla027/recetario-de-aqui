@@ -64,6 +64,9 @@
  * Vigesimoséptima tanda: más arroces (gandules y coco, moros y cristianos, garbanzos,
  * vegetales, sardinas, atún, costillitas, integral) y granos (bacalao, lentejas con maduro,
  * habas, garbanzos crujientes, hummus, sin carne, majadas, guisantes).
+ * Vigesimoctava tanda: vegetarianas (jaca mechada, tofu guisado, canoas con lentejas,
+ * mofongo de vegetales, coliflor con BBQ de guayaba, pinchos con queso de freír,
+ * sancocho vegetariano, hamburguesa de habichuelas negras, quinoa con gandules…).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -15489,6 +15492,770 @@ recipes.push(
         "Add the potato and water and cook 10 minutes.",
         "Add the peas and salt and cook 6–8 more minutes, until tender but still green.",
         "A quick side for white rice, like the usual beans."
+      ]
+    }
+  },
+
+  // ── Vigesimoctava tanda (2026-10): recetas vegetarianas ──
+  {
+    id: "jaca-mechada",
+    category: "vegetales",
+    name: { es: "Jaca Mechada Guisada (Vegana)", en: "Shredded Stewed Jackfruit (Vegan)" },
+    time: "45 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 latas de 20 onzas de jaca verde en salmuera, escurrida y enjuagada",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 pimiento rojo en tiras",
+        "1 cebolla en tiras",
+        "¼ taza de salsa de tomate",
+        "10 aceitunas rellenas",
+        "1 cucharadita de orégano",
+        "½ cucharadita de comino",
+        "1 cucharada de salsa de soya",
+        "1 taza de caldo de vegetales"
+      ],
+      en: [
+        "2 cans (20 oz each) young green jackfruit in brine, drained and rinsed",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 red bell pepper, in strips",
+        "1 onion, in strips",
+        "¼ cup tomato sauce",
+        "10 stuffed olives",
+        "1 teaspoon oregano",
+        "½ teaspoon cumin",
+        "1 tablespoon soy sauce",
+        "1 cup vegetable broth"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte el centro duro de cada pedazo de jaca y sepárela con los dedos o dos tenedores en hebras, como carne mechada.",
+        "En un caldero, sofría el sofrito, el pimiento y la cebolla en el aceite 5 minutos. Añada la jaca y dórela 5 minutos más, moviendo.",
+        "Añada la salsa de tomate, las aceitunas, el orégano, el comino, la salsa de soya y el caldo. Tape y cocine a fuego bajo 20 minutos.",
+        "Destape y cocine 5 minutos más hasta que la salsa espese. Pruebe antes de añadir sal: la salmuera, la soya y las aceitunas ya traen bastante. Sirva con arroz blanco, en tacos o en pan."
+      ],
+      en: [
+        "Cut away the hard core of each jackfruit piece and pull it apart into shreds with your fingers or two forks, like shredded beef.",
+        "In a caldero, sauté the sofrito, bell pepper and onion in the oil 5 minutes. Add the jackfruit and brown it 5 more minutes, stirring.",
+        "Add the tomato sauce, olives, oregano, cumin, soy sauce and broth. Cover and cook over low heat 20 minutes.",
+        "Uncover and cook 5 more minutes until the sauce thickens. Taste before adding salt: the brine, soy sauce and olives already bring plenty. Serve with white rice, in tacos or on bread."
+      ]
+    }
+  },
+  {
+    id: "canoas-lentejas",
+    category: "vegetales",
+    name: { es: "Canoas de Amarillo con Picadillo de Lentejas", en: "Sweet Plantain Canoes with Lentil Picadillo" },
+    time: "1 hr",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 plátanos maduros (amarillos)",
+        "2 cucharadas de aceite de oliva",
+        "1 taza de lentejas secas",
+        "3 tazas de agua",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "2 cucharadas de pasas",
+        "8 aceitunas rellenas, picadas",
+        "½ cucharadita de comino",
+        "1 cucharadita de sal",
+        "1 taza de queso mozzarella rallado"
+      ],
+      en: [
+        "4 ripe (yellow) plantains",
+        "2 tablespoons olive oil",
+        "1 cup dried lentils",
+        "3 cups water",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "2 tablespoons raisins",
+        "8 stuffed olives, chopped",
+        "½ teaspoon cumin",
+        "1 teaspoon salt",
+        "1 cup shredded mozzarella cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las lentejas en el agua 20 minutos, hasta que estén blandas pero enteras. Escúrralas.",
+        "En un sartén, sofría el sofrito en 1 cucharada de aceite. Añada las lentejas, la salsa de tomate, las pasas, las aceitunas, el comino y la sal, y cocine 8 minutos hasta que quede como un picadillo seco.",
+        "Pele los amarillos, úntelos con el resto del aceite y hornéelos a 400 °F 20 minutos, volteándolos a mitad. Ábralos a lo largo sin partirlos, como una canoa.",
+        "Rellénelos con el picadillo, cúbralos con el queso y hornee 10 minutos más, hasta que el queso se derrita. Sin queso, quedan veganas."
+      ],
+      en: [
+        "Boil the lentils in the water 20 minutes, until tender but whole. Drain.",
+        "In a skillet, sauté the sofrito in 1 tablespoon of the oil. Add the lentils, tomato sauce, raisins, olives, cumin and salt, and cook 8 minutes until it looks like a dry picadillo.",
+        "Peel the plantains, brush them with the remaining oil and bake at 400 °F for 20 minutes, turning halfway. Slit them lengthwise without cutting through, like a canoe.",
+        "Fill them with the picadillo, top with the cheese and bake 10 more minutes, until the cheese melts. Without cheese, they are vegan."
+      ]
+    }
+  },
+  {
+    id: "mofongo-vegetales",
+    category: "vegetales",
+    name: { es: "Mofongo Relleno de Vegetales al Ajillo", en: "Mofongo Stuffed with Garlic Vegetables" },
+    time: "45 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 plátanos verdes",
+        "Aceite para freír",
+        "6 dientes de ajo machacados",
+        "3 cucharadas de aceite de oliva",
+        "1 calabacín en cubitos",
+        "1 taza de champiñones en lascas",
+        "1 pimiento rojo en tiras",
+        "½ cebolla en tiras",
+        "1 taza de brócoli en ramitos",
+        "½ taza de caldo de vegetales",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "4 green plantains",
+        "Oil for frying",
+        "6 garlic cloves, crushed",
+        "3 tablespoons olive oil",
+        "1 zucchini, diced",
+        "1 cup sliced mushrooms",
+        "1 red bell pepper, in strips",
+        "½ onion, in strips",
+        "1 cup broccoli florets",
+        "½ cup vegetable broth",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los plátanos, córtelos en ruedas de 1 pulgada y fríalos a 325 °F unos 8 minutos, hasta que estén blandos por dentro pero no dorados.",
+        "Para el relleno: sofría la mitad del ajo en el aceite de oliva 1 minuto. Añada el calabacín, los champiñones, el pimiento, la cebolla y el brócoli, y saltee 6 minutos. Añada el caldo y ½ cucharadita de sal, y cocine 2 minutos.",
+        "En el pilón, maje los plátanos calientes por tandas con el resto del ajo, la sal y un chorrito del caldo de los vegetales.",
+        "Forme cada mofongo como un tazón, rellénelo con los vegetales y báñelo con su salsita. Sirva enseguida."
+      ],
+      en: [
+        "Peel the plantains, cut them into 1-inch rounds and fry them at 325 °F about 8 minutes, until soft inside but not browned.",
+        "For the filling: sauté half the garlic in the olive oil 1 minute. Add the zucchini, mushrooms, bell pepper, onion and broccoli, and stir-fry 6 minutes. Add the broth and ½ teaspoon of the salt, and cook 2 minutes.",
+        "In the pilón (mortar), mash the hot plantains in batches with the remaining garlic, salt and a splash of the vegetable juices.",
+        "Shape each mofongo like a bowl, fill it with the vegetables and spoon the sauce over it. Serve right away."
+      ]
+    }
+  },
+  {
+    id: "tofu-guisado",
+    category: "vegetales",
+    name: { es: "Tofu Guisado a la Criolla", en: "Puerto Rican–Style Stewed Tofu" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 paquete de 14 onzas de tofu firme",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "1 sobre de sazón",
+        "¼ taza de salsa de tomate",
+        "2 papas en cubos",
+        "1 zanahoria en ruedas",
+        "10 aceitunas rellenas",
+        "1 taza de caldo de vegetales",
+        "½ cucharadita de orégano",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1 package (14 oz) firm tofu",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "1 packet sazón",
+        "¼ cup tomato sauce",
+        "2 potatoes, cubed",
+        "1 carrot, sliced",
+        "10 stuffed olives",
+        "1 cup vegetable broth",
+        "½ teaspoon oregano",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Escurra el tofu, envuélvalo en papel toalla y póngale un peso encima 15 minutos para sacarle el agua. Córtelo en cubos de 1 pulgada.",
+        "En un caldero, dore el tofu en el aceite de achiote 6 minutos, volteándolo con cuidado. Sáquelo.",
+        "En el mismo caldero, sofría el sofrito y el sazón 3 minutos. Añada la salsa de tomate, las papas, la zanahoria, las aceitunas, el caldo, el orégano y la sal. Tape y cocine 15 minutos, hasta que las papas estén blandas.",
+        "Devuelva el tofu, mueva con cuidado y cocine 5 minutos más para que coja el sabor. Sirva con arroz blanco y habichuelas."
+      ],
+      en: [
+        "Drain the tofu, wrap it in paper towels and set a weight on top for 15 minutes to press out the water. Cut into 1-inch cubes.",
+        "In a caldero, brown the tofu in the annatto oil 6 minutes, turning gently. Remove.",
+        "In the same caldero, sauté the sofrito and sazón 3 minutes. Add the tomato sauce, potatoes, carrot, olives, broth, oregano and salt. Cover and cook 15 minutes, until the potatoes are tender.",
+        "Return the tofu, stir gently and cook 5 more minutes so it takes on the flavor. Serve with white rice and beans."
+      ]
+    }
+  },
+  {
+    id: "coliflor-bbq-guayaba",
+    category: "vegetales",
+    name: { es: "Coliflor al Horno con BBQ de Guayaba", en: "Roasted Cauliflower with Guava BBQ Sauce" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 cabeza de coliflor en ramitos",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharadita de ajo en polvo",
+        "1 cucharadita de pimentón",
+        "½ cucharadita de sal",
+        "3 onzas de pasta de guayaba",
+        "½ taza de salsa bbq",
+        "2 cucharadas de jugo de limón",
+        "2 cebollines picados"
+      ],
+      en: [
+        "1 head cauliflower, cut into florets",
+        "2 tablespoons olive oil",
+        "1 teaspoon garlic powder",
+        "1 teaspoon paprika",
+        "½ teaspoon salt",
+        "3 oz guava paste",
+        "½ cup BBQ sauce",
+        "2 tablespoons lime juice",
+        "2 scallions, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 425 °F. Mezcle la coliflor con el aceite, el ajo en polvo, el pimentón y la sal, y extiéndala en una bandeja sin amontonar.",
+        "Hornee 20 minutos, volteando a mitad, hasta que tenga los bordes tostados.",
+        "Mientras, derrita la pasta de guayaba con la salsa bbq y el limón a fuego bajo, moviendo, hasta que quede una salsa lisa.",
+        "Bañe la coliflor con la mitad de la salsa y hornee 8 minutos más. Sirva con el resto de la salsa y el cebollín. Revise que la salsa bbq no tenga anchoas ni miel si es para veganos."
+      ],
+      en: [
+        "Heat the oven to 425 °F. Toss the cauliflower with the oil, garlic powder, paprika and salt, and spread it on a sheet pan without crowding.",
+        "Roast 20 minutes, turning halfway, until the edges are toasted.",
+        "Meanwhile, melt the guava paste with the BBQ sauce and lime juice over low heat, stirring, until smooth.",
+        "Coat the cauliflower with half the sauce and roast 8 more minutes. Serve with the remaining sauce and the scallions. Check the BBQ sauce has no anchovies or honey if it is for vegans."
+      ]
+    }
+  },
+  {
+    id: "pinchos-vegetales-queso",
+    category: "vegetales",
+    name: { es: "Pinchos de Vegetales y Queso de Freír", en: "Vegetable and Frying Cheese Skewers" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "8 onzas de queso de freír en cubos de 1 pulgada",
+        "1 calabacín en ruedas gruesas",
+        "1 pimiento rojo en cuadros",
+        "1 cebolla roja en cuadros",
+        "12 tomates cherry",
+        "1 taza de champiñones enteros",
+        "3 cucharadas de aceite de oliva",
+        "2 dientes de ajo machacados",
+        "1 cucharadita de orégano",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "8 oz frying cheese, in 1-inch cubes",
+        "1 zucchini, in thick rounds",
+        "1 red bell pepper, in squares",
+        "1 red onion, in squares",
+        "12 cherry tomatoes",
+        "1 cup whole mushrooms",
+        "3 tablespoons olive oil",
+        "2 garlic cloves, crushed",
+        "1 teaspoon oregano",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el aceite, el ajo, el orégano y el limón. Pase los vegetales por la mezcla.",
+        "Ensarte el queso y los vegetales alternándolos en 8 pinchos (si son de madera, remójelos antes 30 minutos).",
+        "Cocine a la parrilla o en un sartén de rayas a fuego medio-alto, 8 a 10 minutos, volteando cada 2 minutos, hasta que el queso tenga marcas y los vegetales estén tiernos.",
+        "Tip de parrilla: el queso de freír no se derrite, pero se pega en una parrilla fría o sucia; caliéntela bien, límpiela y úntele aceite antes de poner los pinchos."
+      ],
+      en: [
+        "Mix the oil, garlic, oregano and lime juice. Toss the vegetables in the mixture.",
+        "Thread the cheese and vegetables onto 8 skewers, alternating them (soak wooden skewers 30 minutes first).",
+        "Cook on the grill or in a grill pan over medium-high heat, 8 to 10 minutes, turning every 2 minutes, until the cheese has grill marks and the vegetables are tender.",
+        "Grill tip: frying cheese doesn't melt, but it sticks to a cold or dirty grill; heat it well, clean it and oil it before adding the skewers."
+      ]
+    }
+  },
+  {
+    id: "chayotes-rellenos-queso",
+    category: "vegetales",
+    name: { es: "Chayotes Rellenos de Queso y Maíz", en: "Chayotes Stuffed with Cheese and Corn" },
+    time: "50 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 chayotes partidos a lo largo",
+        "1 cucharada de mantequilla",
+        "¼ taza de sofrito",
+        "½ taza de maíz en grano",
+        "1 huevo batido",
+        "½ taza de queso blanco del país rallado",
+        "¼ taza de pan rallado",
+        "¼ cucharadita de sal",
+        "2 cucharadas de queso parmesano"
+      ],
+      en: [
+        "2 chayotes, halved lengthwise",
+        "1 tablespoon butter",
+        "¼ cup sofrito",
+        "½ cup corn kernels",
+        "1 egg, beaten",
+        "½ cup grated Puerto Rican white cheese",
+        "¼ cup breadcrumbs",
+        "¼ teaspoon salt",
+        "2 tablespoons Parmesan cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los chayotes en agua con sal 20 minutos, hasta que estén tiernos. Sáquele la semilla y la pulpa con una cuchara, dejando ¼ de pulgada en la cáscara.",
+        "Pique la pulpa y escúrrala bien. En un sartén, sofría el sofrito en la mantequilla 2 minutos, añada la pulpa y el maíz, y cocine 5 minutos hasta que se seque.",
+        "Fuera del fuego, mezcle con el huevo, el queso blanco, el pan rallado y la sal.",
+        "Rellene las cáscaras, espolvoree el parmesano y hornee a 375 °F 20 minutos, hasta que estén doraditos."
+      ],
+      en: [
+        "Boil the chayotes in salted water 20 minutes, until tender. Scoop out the seed and pulp with a spoon, leaving ¼ inch in the shell.",
+        "Chop the pulp and drain it well. In a skillet, sauté the sofrito in the butter 2 minutes, add the pulp and corn, and cook 5 minutes until dry.",
+        "Off the heat, mix in the egg, white cheese, breadcrumbs and salt.",
+        "Fill the shells, sprinkle with the Parmesan and bake at 375 °F for 20 minutes, until golden."
+      ]
+    }
+  },
+  {
+    id: "pimientos-rellenos-arroz-queso",
+    category: "vegetales",
+    name: { es: "Pimientos Rellenos de Arroz, Habichuelas y Queso", en: "Peppers Stuffed with Rice, Beans and Cheese" },
+    time: "50 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 pimientos grandes",
+        "2 tazas de arroz cocido",
+        "1 lata de 15 onzas de habichuelas rojas, escurridas",
+        "¼ taza de sofrito",
+        "1 cucharada de aceite de oliva",
+        "½ taza de salsa de tomate",
+        "½ cucharadita de comino",
+        "½ cucharadita de sal",
+        "1 taza de queso cheddar rallado"
+      ],
+      en: [
+        "4 large bell peppers",
+        "2 cups cooked rice",
+        "1 can (15 oz) red kidney beans, drained",
+        "¼ cup sofrito",
+        "1 tablespoon olive oil",
+        "½ cup tomato sauce",
+        "½ teaspoon cumin",
+        "½ teaspoon salt",
+        "1 cup shredded cheddar cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte la tapa de los pimientos, sáqueles las semillas y hiérvalos 4 minutos. Escúrralos boca abajo.",
+        "Sofría el sofrito en el aceite 2 minutos. Añada las habichuelas, la mitad de la salsa de tomate, el comino y la sal, y cocine 5 minutos. Mezcle con el arroz y la mitad del queso.",
+        "Rellene los pimientos, póngalos en un molde con el resto de la salsa de tomate en el fondo y cúbralos con papel de aluminio.",
+        "Hornee a 375 °F 25 minutos, destape, ponga el resto del queso y hornee 5 minutos más."
+      ],
+      en: [
+        "Cut the tops off the peppers, remove the seeds and boil them 4 minutes. Drain upside down.",
+        "Sauté the sofrito in the oil 2 minutes. Add the beans, half the tomato sauce, the cumin and salt, and cook 5 minutes. Mix with the rice and half the cheese.",
+        "Fill the peppers, set them in a baking dish with the remaining tomato sauce on the bottom and cover with foil.",
+        "Bake at 375 °F for 25 minutes, uncover, add the remaining cheese and bake 5 more minutes."
+      ]
+    }
+  },
+  {
+    id: "serenata-viandas-huevo",
+    category: "vegetales",
+    name: { es: "Serenata Vegetariana de Viandas, Huevo y Aguacate", en: "Vegetarian Serenata with Root Vegetables, Egg and Avocado" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de yautía en trozos",
+        "1 libra de batata en trozos",
+        "2 plátanos verdes en trozos",
+        "4 huevos hervidos en cuartos",
+        "1 aguacate en lascas",
+        "1 cebolla roja en ruedas finas",
+        "2 tomates en cuñas",
+        "¼ taza de aceite de oliva",
+        "3 cucharadas de vinagre",
+        "1 diente de ajo machacado",
+        "1 cucharadita de sal"
+      ],
+      en: [
+        "1 lb yautía (taro), in chunks",
+        "1 lb sweet potato, in chunks",
+        "2 green plantains, in chunks",
+        "4 hard-boiled eggs, quartered",
+        "1 avocado, sliced",
+        "1 red onion, in thin rings",
+        "2 tomatoes, in wedges",
+        "¼ cup olive oil",
+        "3 tablespoons vinegar",
+        "1 garlic clove, crushed",
+        "1 teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el plátano en agua con sal 10 minutos; añada la yautía y la batata y hierva 20 minutos más, hasta que estén tiernas. Escurra.",
+        "Bata el aceite, el vinagre, el ajo y la sal. Mezcle la cebolla en el aliño y déjela 10 minutos para que se suavice.",
+        "En una fuente, acomode las viandas calientes, los huevos, el aguacate y el tomate.",
+        "Báñelo todo con el aliño y la cebolla. Es la serenata de siempre sin bacalao; sirva tibia o fría."
+      ],
+      en: [
+        "Boil the plantain in salted water 10 minutes; add the yautía and sweet potato and boil 20 more minutes, until tender. Drain.",
+        "Whisk the oil, vinegar, garlic and salt. Toss the onion in the dressing and let it soften 10 minutes.",
+        "On a platter, arrange the hot root vegetables, eggs, avocado and tomato.",
+        "Spoon the dressing and onion over everything. It's the classic serenata without salt cod; serve warm or cold."
+      ]
+    }
+  },
+  {
+    id: "sancocho-vegetariano",
+    category: "sopas",
+    name: { es: "Sancocho Vegetariano", en: "Vegetarian Sancocho" },
+    time: "1 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "5 tazas de caldo de vegetales",
+        "5 tazas de agua",
+        "1 libra de calabaza en trozos",
+        "1 libra de yautía en trozos",
+        "1 libra de ñame en trozos",
+        "2 plátanos verdes en trozos",
+        "2 mazorcas de maíz en ruedas",
+        "1 lata de 15 onzas de garbanzos, escurridos",
+        "4 hojas de culantro",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "5 cups vegetable broth",
+        "5 cups water",
+        "1 lb West Indian pumpkin (calabaza), in chunks",
+        "1 lb yautía (taro), in chunks",
+        "1 lb yam (ñame), in chunks",
+        "2 green plantains, in chunks",
+        "2 ears of corn, in rounds",
+        "1 can (15 oz) chickpeas, drained",
+        "4 culantro leaves",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla grande, sofría el sofrito en el aceite 4 minutos y añada la salsa de tomate.",
+        "Añada el caldo y el agua, y deje hervir. Añada el plátano y cocine 10 minutos.",
+        "Añada la calabaza, la yautía, el ñame, el maíz, los garbanzos y el culantro. Cocine a fuego medio 30 minutos, hasta que las viandas estén blandas y la calabaza se deshaga y espese el caldo.",
+        "Pruebe la sal y sirva con arroz blanco y aguacate. Los garbanzos le dan la proteína que daría la carne."
+      ],
+      en: [
+        "In a large pot, sauté the sofrito in the oil 4 minutes and add the tomato sauce.",
+        "Add the broth and water, and bring to a boil. Add the plantain and cook 10 minutes.",
+        "Add the pumpkin, yautía, yam, corn, chickpeas and culantro. Cook over medium heat 30 minutes, until the root vegetables are soft and the pumpkin breaks down and thickens the broth.",
+        "Taste for salt and serve with white rice and avocado. The chickpeas bring the protein the meat would."
+      ]
+    }
+  },
+  {
+    id: "hamburguesa-habichuelas-negras",
+    category: "emparedados",
+    name: { es: "Hamburguesa Vegetariana de Habichuelas Negras", en: "Black Bean Veggie Burger" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 latas de 15 onzas de habichuelas negras, escurridas y secadas",
+        "½ taza de pan rallado",
+        "1 huevo",
+        "¼ taza de sofrito",
+        "½ taza de maíz en grano",
+        "1 cucharadita de comino",
+        "½ cucharadita de sal",
+        "2 cucharadas de aceite de oliva",
+        "4 panes de hamburguesa",
+        "1 aguacate en lascas",
+        "4 hojas de lechuga",
+        "1 tomate en ruedas"
+      ],
+      en: [
+        "2 cans (15 oz each) black beans, drained and patted dry",
+        "½ cup breadcrumbs",
+        "1 egg",
+        "¼ cup sofrito",
+        "½ cup corn kernels",
+        "1 teaspoon cumin",
+        "½ teaspoon salt",
+        "2 tablespoons olive oil",
+        "4 burger buns",
+        "1 avocado, sliced",
+        "4 lettuce leaves",
+        "1 tomato, sliced"
+      ]
+    },
+    steps: {
+      es: [
+        "Hornee las habichuelas extendidas en una bandeja a 350 °F 12 minutos para secarlas; así las tortas no quedan blandas.",
+        "Májelas con un tenedor, dejando algunas enteras. Mezcle con el pan rallado, el huevo, el sofrito, el maíz, el comino y la sal. Forme 4 tortas y enfríelas 10 minutos.",
+        "Cocine las tortas en el aceite a fuego medio 5 minutos por lado, hasta que tengan costra.",
+        "Sirva en el pan tostado con aguacate, lechuga y tomate. Para veganas, cambie el huevo por 1 cucharada de maicena con 3 de agua."
+      ],
+      en: [
+        "Bake the beans spread on a sheet pan at 350 °F for 12 minutes to dry them; this keeps the patties from being mushy.",
+        "Mash them with a fork, leaving some whole. Mix with the breadcrumbs, egg, sofrito, corn, cumin and salt. Shape 4 patties and chill them 10 minutes.",
+        "Cook the patties in the oil over medium heat 5 minutes per side, until crusty.",
+        "Serve on the toasted buns with avocado, lettuce and tomato. For vegan patties, swap the egg for 1 tablespoon cornstarch mixed with 3 of water."
+      ]
+    }
+  },
+  {
+    id: "empanadillas-espinaca-queso",
+    category: "entremeses",
+    name: { es: "Empanadillas de Espinaca y Queso", en: "Spinach and Cheese Turnovers" },
+    time: "40 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 paquete de 10 onzas de espinaca congelada, descongelada y exprimida",
+        "1 taza de queso mozzarella rallado",
+        "½ taza de queso blanco del país desmoronado",
+        "¼ taza de sofrito",
+        "1 cucharada de aceite de oliva",
+        "¼ cucharadita de nuez moscada",
+        "10 discos para empanadillas",
+        "Aceite para freír"
+      ],
+      en: [
+        "1 package (10 oz) frozen spinach, thawed and squeezed dry",
+        "1 cup shredded mozzarella cheese",
+        "½ cup crumbled Puerto Rican white cheese",
+        "¼ cup sofrito",
+        "1 tablespoon olive oil",
+        "¼ teaspoon nutmeg",
+        "10 turnover dough discs",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite de oliva 2 minutos, añada la espinaca y la nuez moscada, y cocine 3 minutos hasta que se seque. Enfríe.",
+        "Mezcle la espinaca con los dos quesos.",
+        "Ponga 2 cucharadas del relleno en cada disco, doble, moje el borde y selle con un tenedor.",
+        "Fríalas a 350 °F 2 a 3 minutos por lado, hasta que estén doradas. Escúrralas en papel toalla. También se pueden hornear a 400 °F 15 minutos, untadas con aceite."
+      ],
+      en: [
+        "Sauté the sofrito in the olive oil 2 minutes, add the spinach and nutmeg, and cook 3 minutes until dry. Cool.",
+        "Mix the spinach with both cheeses.",
+        "Place 2 tablespoons of filling on each disc, fold, wet the edge and seal with a fork.",
+        "Fry at 350 °F for 2 to 3 minutes per side, until golden. Drain on paper towels. They can also be baked at 400 °F for 15 minutes, brushed with oil."
+      ]
+    }
+  },
+  {
+    id: "croquetas-yuca-queso",
+    category: "entremeses",
+    name: { es: "Croquetas de Yuca y Queso", en: "Cassava and Cheese Croquettes" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de yuca pelada en trozos",
+        "1 cucharada de mantequilla",
+        "1 diente de ajo machacado",
+        "1 cucharadita de sal",
+        "4 onzas de queso mozzarella en 12 cubitos",
+        "1 huevo batido",
+        "1 taza de pan rallado",
+        "Aceite para freír"
+      ],
+      en: [
+        "2 lb cassava (yuca), peeled, in chunks",
+        "1 tablespoon butter",
+        "1 garlic clove, crushed",
+        "1 teaspoon salt",
+        "4 oz mozzarella cheese, in 12 cubes",
+        "1 egg, beaten",
+        "1 cup breadcrumbs",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la yuca en agua con sal 25 minutos, hasta que se abra. Sáquele la vena del centro.",
+        "Májela caliente con la mantequilla, el ajo y la sal hasta que quede una masa lisa. Déjela entibiar.",
+        "Tome 2 cucharadas de masa, ponga un cubito de queso en el centro y forme una croqueta cerrada. Páselas por el huevo y luego por el pan rallado.",
+        "Fríalas a 350 °F 3 minutos, hasta que estén doradas. Sirva con mayoketchup o salsa de ajo."
+      ],
+      en: [
+        "Boil the cassava in salted water 25 minutes, until it splits open. Remove the center fiber.",
+        "Mash it hot with the butter, garlic and salt until smooth. Let it cool slightly.",
+        "Take 2 tablespoons of dough, put a cheese cube in the center and shape a sealed croquette. Dip them in the egg, then in the breadcrumbs.",
+        "Fry at 350 °F for 3 minutes, until golden. Serve with mayo-ketchup or garlic sauce."
+      ]
+    }
+  },
+  {
+    id: "quinoa-gandules",
+    category: "arroces",
+    name: { es: "Quinoa con Gandules", en: "Quinoa with Pigeon Peas" },
+    time: "30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "10 aceitunas rellenas",
+        "1 cucharadita de comino",
+        "1 lata de 15 onzas de gandules verdes, escurridos",
+        "1½ tazas de quinoa, bien enjuagada",
+        "2½ tazas de caldo de vegetales",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "10 stuffed olives",
+        "1 teaspoon cumin",
+        "1 can (15 oz) green pigeon peas, drained",
+        "1½ cups quinoa, well rinsed",
+        "2½ cups vegetable broth",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Enjuague la quinoa en un colador fino hasta que el agua salga clara; así no amarga.",
+        "En un caldero, sofría el sofrito en el aceite de achiote 3 minutos. Añada la salsa de tomate, las aceitunas, el comino y los gandules.",
+        "Añada la quinoa, el caldo y la sal. Cuando hierva, tape y cocine a fuego bajo 15 minutos, hasta que absorba el líquido.",
+        "Apague, deje reposar tapado 5 minutos y suelte con un tenedor. Tiene más proteína y fibra que el arroz con gandules y sabe casi igual."
+      ],
+      en: [
+        "Rinse the quinoa in a fine strainer until the water runs clear; this removes the bitterness.",
+        "In a caldero, sauté the sofrito in the annatto oil 3 minutes. Add the tomato sauce, olives, cumin and pigeon peas.",
+        "Add the quinoa, broth and salt. Once it boils, cover and cook over low heat 15 minutes, until the liquid is absorbed.",
+        "Turn off the heat, let it rest covered 5 minutes and fluff with a fork. It has more protein and fiber than rice with pigeon peas and tastes almost the same."
+      ]
+    }
+  },
+  {
+    id: "pasta-calabaza-recao",
+    category: "pastas",
+    name: { es: "Pasta en Crema de Calabaza y Recao", en: "Pasta in Pumpkin and Culantro Cream" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "12 onzas de pasta corta (penne)",
+        "1 libra de calabaza en trozos",
+        "2 cucharadas de aceite de oliva",
+        "½ cebolla picada",
+        "3 dientes de ajo",
+        "1 taza de caldo de vegetales",
+        "½ taza de leche evaporada",
+        "4 hojas de recao picadas",
+        "¼ cucharadita de nuez moscada",
+        "1 cucharadita de sal",
+        "¼ taza de queso parmesano rallado"
+      ],
+      en: [
+        "12 oz short pasta (penne)",
+        "1 lb West Indian pumpkin (calabaza), in chunks",
+        "2 tablespoons olive oil",
+        "½ onion, chopped",
+        "3 garlic cloves",
+        "1 cup vegetable broth",
+        "½ cup evaporated milk",
+        "4 culantro (recao) leaves, chopped",
+        "¼ teaspoon nutmeg",
+        "1 teaspoon salt",
+        "¼ cup grated Parmesan cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la pasta en agua con sal según el paquete. Guarde ½ taza del agua y escúrrala.",
+        "En un sartén hondo, sofría la cebolla y el ajo en el aceite 3 minutos. Añada la calabaza y el caldo, tape y cocine 15 minutos, hasta que esté blanda.",
+        "Licúe la calabaza con su caldo, la leche evaporada, la nuez moscada y la sal hasta que quede una crema lisa (licúe caliente con la tapa entreabierta y un paño encima).",
+        "Devuelva la crema al sartén, añada la pasta y el recao, y suelte con el agua de la pasta si hace falta. Sirva con el parmesano."
+      ],
+      en: [
+        "Boil the pasta in salted water according to the package. Save ½ cup of the water and drain.",
+        "In a deep skillet, sauté the onion and garlic in the oil 3 minutes. Add the pumpkin and broth, cover and cook 15 minutes, until soft.",
+        "Blend the pumpkin with its broth, the evaporated milk, nutmeg and salt until smooth (blend hot with the lid ajar and a towel on top).",
+        "Return the cream to the skillet, add the pasta and culantro, and loosen with the pasta water if needed. Serve with the Parmesan."
+      ]
+    }
+  },
+  {
+    id: "albondigas-lentejas",
+    category: "granos",
+    name: { es: "Albóndigas de Lentejas en Salsa Criolla", en: "Lentil Balls in Creole Sauce" },
+    time: "1 hr",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 taza de lentejas secas",
+        "3 tazas de agua",
+        "½ taza de pan rallado",
+        "1 huevo",
+        "¼ taza de queso parmesano rallado",
+        "2 dientes de ajo machacados",
+        "1 cucharadita de orégano",
+        "½ cucharadita de sal",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "½ taza de caldo de vegetales"
+      ],
+      en: [
+        "1 cup dried lentils",
+        "3 cups water",
+        "½ cup breadcrumbs",
+        "1 egg",
+        "¼ cup grated Parmesan cheese",
+        "2 garlic cloves, crushed",
+        "1 teaspoon oregano",
+        "½ teaspoon salt",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 can (8 oz) tomato sauce",
+        "½ cup vegetable broth"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las lentejas en el agua 25 minutos, hasta que estén bien blandas. Escúrralas muy bien y déjelas enfriar.",
+        "Maje las lentejas y mézclelas con el pan rallado, el huevo, el parmesano, el ajo, el orégano y ¼ cucharadita de sal. Forme 16 bolitas.",
+        "Hornee las bolitas en una bandeja engrasada a 400 °F 20 minutos, volteándolas a mitad; horneadas no se rompen como fritas.",
+        "Sofría el sofrito en el aceite 3 minutos, añada la salsa de tomate, el caldo y el resto de la sal, y cocine 5 minutos. Añada las albóndigas, cocine 5 minutos sin revolver fuerte y sirva con arroz o espaguetis."
+      ],
+      en: [
+        "Boil the lentils in the water 25 minutes, until very soft. Drain them very well and let cool.",
+        "Mash the lentils and mix with the breadcrumbs, egg, Parmesan, garlic, oregano and ¼ teaspoon of the salt. Shape 16 balls.",
+        "Bake the balls on a greased sheet pan at 400 °F for 20 minutes, turning halfway; baked, they don't fall apart like fried ones.",
+        "Sauté the sofrito in the oil 3 minutes, add the tomato sauce, broth and remaining salt, and cook 5 minutes. Add the lentil balls, cook 5 minutes without stirring hard and serve with rice or spaghetti."
       ]
     }
   }

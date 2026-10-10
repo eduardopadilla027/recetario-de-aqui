@@ -207,7 +207,7 @@ function autoSeason(d = new Date()) {
 }
 const activeSeason = () => (plan.season === "auto" ? autoSeason() : plan.season);
 // Además de las carnes del buscador (S_MEAT_RX): cortes y nombres que allí no están.
-const PLAN_MEAT_EXTRA = /\b(bistec|churrasco|entrana|picadillo|carne molida|hamburguesa|pechuga|muslo|alita|pepperoni|salami|pastrami|almeja|mejillon|langostino|anchoa|caldo de pollo|caldo de res|caldo de pescado|gelatina)/;
+const PLAN_MEAT_EXTRA = /\b(bistec|churrasco|entrana|picadillo(?! de lentejas)|carne molida|(?<!de )hamburguesas?(?! vegetarian)|pechuga|muslo|alita|pepperoni|salami|pastrami|almeja|mejillon|langostino|anchoa|caldo de pollo|caldo de res|caldo de pescado|gelatina)/;
 const isVegetarian = (r) => { const t = planNorm(r.name.es + " " + r.ingredients.es.join(" ")); return !["carnes", "aves", "pescados"].includes(r.category) && !S_MEAT_RX.test(t) && !PLAN_MEAT_EXTRA.test(t); };
 function badgesOf(n, m = 1) {
   const b = [];

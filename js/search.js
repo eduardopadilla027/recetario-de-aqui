@@ -99,7 +99,7 @@ const S_ALLERGEN = {
   ajonjoli: ["sesame"], sesame: ["sesame"], soya: ["soy"], soy: ["soy"], coco: ["coconut"], coconut: ["coconut"]
 };
 
-const S_MEAT_RX = /\b(pollo|chicken|cerdo|pork|res|beef|carne|meat|jamon|ham|tocin|bacon|salchich|sausage|longaniza|chorizo|pavo|turkey|pernil|lechon|chuleta|chicharron|mollej|higado|gandinga|morcilla|cabro|conejo|guinea|gallina|pescado|fish|bacalao|cod|atun|tuna|sardina|salmon|camaron|shrimp|langost|lobster|pulpo|octopus|calamar|squid|carrucho|conch|juey|crab|ostion|oyster|ceti|mero|chillo|dorado|sierra|rinon|lengua|rabo|patita|cuero|mondongo|jamonilla|corned|carne bif)/;
+const S_MEAT_RX = /\b(pollo|chicken|cerdo|pork|res|beef|carne|meat|jamon|ham(?!burg)|tocin|bacon|salchich|sausage|longaniza|chorizo|pavo|turkey|pernil|lechon|chuleta|chicharron|mollej|higado|gandinga|morcilla|cabro|conejo|guinea|gallina|pescado|fish|bacalao|cod|atun|tuna|sardina|salmon|camaron|shrimp|langost|lobster|pulpo|octopus|calamar|squid|carrucho|conch|juey|crab|ostion|oyster|ceti|mero|chillo|dorado|sierra|rinon|lengua|rabo|patita|cuero|mondongo|jamonilla|corned|carne bif)/;
 const sIsAlcohol = (r) => getAdvisories(r).alerts.some((a) => a.key === "alcoholDrink" || a.key === "alcoholCooked");
 
 /* Ideas: palabras que no son ingredientes sino lo que la persona quiere. */
@@ -114,6 +114,9 @@ const S_IDEAS = [
     test: (r, x, ctx) => ctx.isQuick(r) },
   { words: "vegetariano vegetariana vegetarian veggie", label: { es: "Vegetarianas", en: "Vegetarian" },
     test: (r, x) => !["carnes", "aves", "pescados"].includes(r.category) && !S_MEAT_RX.test(x.ingAll) },
+  { words: "vegano vegana veganos veganas vegan", label: { es: "Veganas (sin carne, lácteos, huevo ni miel)", en: "Vegan (no meat, dairy, eggs or honey)" },
+    test: (r, x) => !["carnes", "aves", "pescados"].includes(r.category) && !S_MEAT_RX.test(x.ingAll) &&
+      !/\b(miel|honey|gelatina|gelatin|mantequilla|butter|leche|milk|queso|cheese|crema|cream|huevos?|eggs?|yemas?|claras?|yogur|mayonesa|mayo)\b/.test(x.ingAll.replace(/leche de coco|crema de coco|coconut (milk|cream)|mantequilla de mani|peanut butter|cream of tartar|cremor/g, "")) },
   { words: "picante spicy", label: { es: "Picantes", en: "Spicy" },
     test: (r, x) => /picante|pique|spicy|hot pepper|chile/.test(x.ingAll) },
   { words: "frio fria fresco fresca refrescante cold refreshing", label: { es: "Frías y refrescantes", en: "Cold and refreshing" },
