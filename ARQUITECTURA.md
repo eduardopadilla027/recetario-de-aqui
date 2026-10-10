@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 1.14.0 · **Recetas:** 598 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 1.15.0 · **Recetas:** 620 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -49,14 +49,14 @@ Las recetas son **versiones propias redactadas para esta app** (no copias de lib
 
 ```
 cocine-a-gusto/
-├── index.html            estructura de la página, sprite SVG (iconos, bandera, plátanos, embutidos) y orden de scripts
+├── index.html            estructura de la página, sprite SVG (iconos, bandera, plátanos, embutidos, yuca, pincho de camarones, albóndigas) y orden de scripts
 ├── css/styles.css        estilos (tokens en :root, responsive, movimiento reducido, impresión)
 ├── js/
 │   ├── recipes.js        crea el arreglo `const recipes = [...]` (recetas base)
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, y flanes y bizcochos de calabaza, en trece tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, y galletitas, ensaladas verdes y de granos y gazpachos, en catorce tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -110,8 +110,8 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | frutas | Frutas | 13 |
 | cereales | Cereales | 8 |
 | granos | Granos y Legumbres | 10 |
-| ensaladas | Ensaladas | 12 |
-| sopas | Sopas | 29 |
+| ensaladas | Ensaladas | 24 |
+| sopas | Sopas | 31 |
 | carnes | Carnes | 47 |
 | aves | Aves | 35 |
 | pescados | Pescado y Mariscos | 40 |
@@ -119,7 +119,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | entremeses | Croquetas, Buñuelos y Pastelillos | 34 |
 | pastas | Pastas | 17 |
 | bizcochos | Bizcochos | 23 |
-| galletitas | Galletitas | 18 |
+| galletitas | Galletitas | 26 |
 | pasteles_dulces | Pasteles Dulces | 8 |
 | panes | Pan y Panecillos | 29 |
 | emparedados | Emparedados | 10 |
@@ -148,7 +148,8 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   (½, ¼, ⅓…; enteros desde 10).
 - **Icono de cada plato (`dishIcon`):** busca palabras de `dishIcons` en el nombre en español; gana la que aparece primero
   y, en empate, la más larga. Sin coincidencia: el icono de la categoría. Valores `svg:<id>` usan dibujos del sprite
-  (plátano verde y maduro, longaniza, morcilla) porque no hay emoji correcto.
+  (plátano verde y maduro, longaniza, morcilla, yuca, pincho de camarones, albóndigas) porque no hay emoji
+  correcto (🍠 es batata, 🍢 es oden japonés, 🧆 es falafel).
 - **Idioma:** ES/EN con `translations`; se recuerda en `localStorage` (`rcb.lang`). Favoritos en `rcb.favorites`.
 - **Accesibilidad:** enlace "Saltar al contenido", pestañas con `role="tab"`, `aria-live` en conteos, foco visible,
   contraste AA de los tokens de color, `prefers-reduced-motion` e impresión limpia de la receta.
@@ -188,7 +189,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 598). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 620). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -233,6 +234,27 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v1.15.0 · Galletitas, ensaladas verdes y de granos, gazpachos e iconos nuevos
+- *Pedidos:* buscar recetas de galletitas y de ensaladas verdes y de granos; recetas de gazpacho; cambiar el icono de
+  los pinchos de camarones, de las yucas y de las albóndigas.
+- Decimocuarta tanda en `js/recipes-4.js` (versiones propias):
+  - **8 galletitas:** chispas de chocolate, mantequilla de maní, coquito, parcha, guineo y avena, canela y azúcar,
+    calabaza con especias, chocolate y coco.
+  - **6 ensaladas verdes:** berro y aguacate, espinaca con mangó y nueces, verde con vinagreta de parcha, pepino y
+    tomate, habichuelas tiernas, brócoli.
+  - **5 ensaladas de granos:** tres habichuelas, gandules, lentejas, frijoles negros y maíz, habichuelas blancas con atún.
+  - **3 gazpachos:** de bacalao con aguacate (el gazpacho boricua, ensaladas), de tomate (sopa fría) y de mangó (sopas).
+- **Nutrición:** nuevos alimentos berro y brócoli; unidades nuevas "mazo" (como manojo, 50 g) y "tira" (como lonja).
+- **Buscador:** ampliaciones `grano` / `legumbre` / `legume` → habichuela, frijol, gandul, garbanzo, lenteja; las claves
+  de `S_EXPAND` ahora se reconocen también en plural ("legumbres", "granos").
+- **Iconos:** dibujos SVG propios `ic-yuca` (yuca al mojo, frita, majada, mofongo de yuca), `ic-pincho-camarones` y
+  `ic-albondigas` (albóndigas guisadas); gazpacho 🍅, gazpacho de bacalao 🐟, gazpacho de mangó 🥭.
+- Total: **598 → 620 recetas**.
+- *Verificado:* datos en Node ✔ (0 ingredientes sin contar); buscador: "ensalada de granos", "ensalada de legumbres",
+  "bean salad", "ensalada verde", "galletas de mani", "gaspacho" (corrige a gazpacho), "sopa fria" ✔ y las consultas de
+  siempre sin cambios; navegador: las 22 recetas nuevas y las de pinchos y yuca en ES y EN a 375 px sin errores ni
+  desbordes ✔; los tres dibujos nuevos revisados a tamaño grande ✔.
 
 ### 2026-10-10 — v1.14.0 · Flanes y bizcochos de calabaza
 - *Pedido:* buscar recetas de flanes y de bizcochos de calabaza.

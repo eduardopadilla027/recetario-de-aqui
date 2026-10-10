@@ -58,6 +58,9 @@ const S_EXPAND = {
   seafood: "marisco seafood shellfish camaron langosta pulpo calamar carrucho juey cangrejo ostion",
   carne: "carne meat res cerdo pollo pavo cabro conejo chuleta pernil lechon bistec",
   meat: "carne meat res cerdo pollo pavo cabro conejo chuleta pernil lechon bistec",
+  grano: "grano legumbre legume habichuela frijol gandul garbanzo lenteja bean",
+  legumbre: "grano legumbre legume habichuela frijol gandul garbanzo lenteja bean",
+  legume: "grano legumbre legume habichuela frijol gandul garbanzo lenteja bean",
   vianda: "vianda yuca yautia name batata platano guineo pana malanga",
   fruta: "fruta fruit mango pina coco guayaba parcha lechosa china acerola tamarindo guanabana fresa mamey carambola",
   fruit: "fruta fruit mango pina coco guayaba parcha lechosa china acerola tamarindo guanabana fresa mamey carambola"
@@ -165,7 +168,12 @@ function sVariants(w) {
   return [...out];
 }
 /* Lo que incluye un término general ("marisco" → camarón, pulpo…): cuenta la mitad. */
-const sWeak = (w) => (S_EXPAND[w] ? S_EXPAND[w].split(" ").map(sStem).filter((v) => v !== w) : []);
+/* Claves también en plural ("legumbres" → legumbr), para que la ampliación no dependa de cómo se escriba. */
+const S_EXPAND_KEYS = new Map(Object.keys(S_EXPAND).flatMap((k) => [[k, k], [sStem(k + "s"), k], [sStem(k + "es"), k]]));
+const sWeak = (w) => {
+  const k = S_EXPAND_KEYS.get(w);
+  return k ? S_EXPAND[k].split(" ").map(sStem).filter((v) => v !== w) : [];
+};
 
 const sCatsFor = (w) => Object.keys(S_CATS).filter((cat) => S_CATS[cat].split(" ").map(sStem).includes(w));
 const sIdeaFor = (w) => S_IDEAS.find((idea) => idea.words.includes(w));

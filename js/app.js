@@ -266,11 +266,16 @@ const MADURO = "svg:ic-platano-maduro";
 /* Tampoco hay emoji de embutido (🌭 es un perro caliente en su pan). */
 const LONGANIZA = "svg:ic-longaniza";
 const MORCILLA = "svg:ic-morcilla";
+/* Ni de yuca (🍠 es batata) ni de pincho de camarones (🍢 es oden japonés). */
+const YUCA = "svg:ic-yuca";
+const PINCHO_CAMARONES = "svg:ic-pincho-camarones";
+/* Ni de albóndigas (🧆 es falafel). */
+const ALBONDIGAS = "svg:ic-albondigas";
 
 const dishIcons = [
   ["sopa", "🍲"], ["asopao", "🍲"], ["sancocho", "🍲"], ["caldo", "🍲"], ["sopon", "🍲"], ["mondongo", "🍲"], ["crema de calabaza", "🍲"], ["crema de pana", "🍲"], ["crema de yautia", "🍲"],
   ["ensalada", "🥗"], ["serenata", "🥗"], ["ensalada de frutas", "🍇"],
-  ["salsa", "🍅"], ["mojito isleno", "🍅"], ["salsa de mango", "🥭"],
+  ["salsa", "🍅"], ["mojito isleno", "🍅"], ["gazpacho", "🍅"], ["gazpacho de bacalao", "🐟"], ["gazpacho de mango", "🥭"], ["salsa de mango", "🥭"],
   ["ternera", "🥩"], ["chicharrones de pollo", "🍗"], ["rellenos de papa", "🥔"], ["surullito", "🌽"],
   ["guineito", VERDE], ["guineitos ninos", "🍌"], ["guingambo", "🥒"], ["grosella", "🍒"], ["pasta de guayaba", "🫙"], ["cascos de guayaba", "🫙"],
   ["maicena", "🥣"], ["cremita", "🥣"], ["guarapo", "🍵"], ["avena fria", "🥤"],
@@ -285,8 +290,8 @@ const dishIcons = [
   ["bacalao", "🐟"], ["bacalaito", "🐟"], ["pescado", "🐟"], ["chillo", "🐟"], ["filete", "🐟"], ["atun", "🐟"], ["ceviche", "🐟"],
   ["pavo", "🦃"], ["pavochon", "🦃"], ["molleja", "🍗"], ["guinea", "🍗"], ["muslo", "🍗"], ["pollo", "🍗"], ["pechuga", "🍗"], ["gallina", "🍗"],
   ["salchicha", LONGANIZA], ["longaniza", LONGANIZA], ["chorizo", LONGANIZA], ["salami", LONGANIZA],
-  ["lechon", "🍖"], ["pernil", "🍖"], ["chuleta", "🍖"], ["costilla", "🍖"], ["chicharron", "🍖"], ["patitas", "🍖"], ["masitas", "🍖"], ["pincho", "🍢"],
-  ["bistec", "🥩"], ["carne", "🥩"], ["rabo", "🥩"], ["ropa vieja", "🥩"], ["churrasco", "🥩"], ["higado", "🥩"], ["albondiga", "🧆"], ["picadillo", "🥩"], ["lengua", "🥩"], ["cabro", "🥩"], ["cabrito", "🥩"], ["carne de cerdo", "🍖"], ["costillita", "🍖"], ["cuajito", "🍖"], ["salpicon", "🥩"], ["lomo", "🍖"], ["jamon", "🍖"],
+  ["lechon", "🍖"], ["pernil", "🍖"], ["chuleta", "🍖"], ["costilla", "🍖"], ["chicharron", "🍖"], ["patitas", "🍖"], ["masitas", "🍖"], ["pincho", "🍢"], ["pinchos de camarones", PINCHO_CAMARONES], ["pincho de camarones", PINCHO_CAMARONES],
+  ["bistec", "🥩"], ["carne", "🥩"], ["rabo", "🥩"], ["ropa vieja", "🥩"], ["churrasco", "🥩"], ["higado", "🥩"], ["albondiga", ALBONDIGAS], ["picadillo", "🥩"], ["lengua", "🥩"], ["cabro", "🥩"], ["cabrito", "🥩"], ["carne de cerdo", "🍖"], ["costillita", "🍖"], ["cuajito", "🍖"], ["salpicon", "🥩"], ["lomo", "🍖"], ["jamon", "🍖"],
   ["espagueti", "🍝"], ["lasana", "🍝"], ["coditos", "🍝"], ["macarrones", "🍝"], ["canelones", "🍝"], ["fideos", "🍝"],
   ["tortilla", "🍳"], ["revoltillo", "🍳"], ["huevo", "🍳"],
   ["queso", "🧀"], ["quesito", "🥐"],
@@ -294,9 +299,9 @@ const dishIcons = [
   ["amarillo", MADURO], ["platanos maduros", MADURO], ["platano maduro", MADURO], ["pionono", MADURO], ["canoa", MADURO], ["pastelon", "🥘"],
   ["tostones de pana", "🍈"], ["mofongo de pana", "🍈"], ["bunuelos de pana", "🧆"], ["bunuelos de yautia", "🧆"],
   ["pasteles de", "🫔"], ["alcapurria", "🥟"], ["empanadilla", "🥟"], ["pastelillo", "🥟"], ["empanada", "🥟"], ["croqueta", "🥟"], ["relleno", "🥟"],
-  ["yuca", "🍠"], ["yautia", "🍠"], ["batata", "🍠"], ["panapen", "🍈"], ["pana", "🍈"], ["viandas", "🍠"], ["papa", "🥔"],
+  ["yuca", YUCA], ["yautia", "🍠"], ["batata", "🍠"], ["panapen", "🍈"], ["pana", "🍈"], ["viandas", "🍠"], ["papa", "🥔"],
   ["maiz", "🌽"], ["sorullito", "🌽"], ["guanime", "🌽"], ["funche", "🌽"], ["majarete", "🍮"], ["arepa", "🫓"], ["casabe", "🫓"],
-  ["mazamorra", "🌽"], ["domplines", "🫓"], ["yaniqueques", "🫓"], ["mofongo de yuca", "🍠"], ["sopa borracha", "🍰"],
+  ["mazamorra", "🌽"], ["domplines", "🫓"], ["yaniqueques", "🫓"], ["mofongo de yuca", YUCA], ["sopa borracha", "🍰"],
   ["ostiones", "🦪"], ["chicharrones de pescado", "🐟"], ["ceviche de camarones", "🦐"],
   ["melcocha", "🍬"], ["cidra", "🍋"], ["torrejas", "🍞"], ["flor de jamaica", "🌺"], ["jugo de carambola", "⭐"], ["alitas", "🍗"], ["name", "🍠"], ["papita", "🥔"], ["malanga", "🍠"],
   ["cupcake", "🧁"], ["donas", "🍩"], ["rollos de canela", "🥐"], ["churros", "🥖"], ["gelatina", "🍮"], ["guacamole", "🥑"], ["salsa de aguacate", "🥑"], ["fricase de cerdo", "🍖"], ["polvo de amor", "🥥"], ["coquimol", "🥥"],

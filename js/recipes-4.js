@@ -28,6 +28,10 @@
  * guayaba, piña colada y chupitos de ron con parcha).
  * Decimotercera tanda: flanes (chocolate, coquito, parcha, mangó, plátano
  * maduro, maíz, calabaza con queso crema y con coco) y bizcochos de calabaza.
+ * Decimocuarta tanda: galletitas (chispas de chocolate, maní, coquito, parcha…),
+ * ensaladas verdes (berro, espinaca, pepino, brócoli…) y de granos (tres
+ * habichuelas, gandules, lentejas, frijoles negros, habichuelas blancas con atún),
+ * y gazpachos (de bacalao con aguacate, de tomate y de mangó).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -7076,6 +7080,1030 @@ recipes.push(
         "Spread in the pan and bake 13–15 minutes. Turn it out right away onto a towel dusted with powdered sugar, peel off the paper and roll it up warm with the towel. Let cool rolled up.",
         "Beat the cream cheese with the butter, powdered sugar and vanilla. Unroll the cake, spread the filling and roll it up again without the towel.",
         "Wrap in plastic and refrigerate 2 hours before slicing into rounds."
+      ]
+    }
+  },
+
+  // ── Decimocuarta tanda (2026-10): galletitas, ensaladas verdes y ensaladas de granos ──
+  {
+    id: "galletas-chispas-chocolate",
+    category: "galletitas",
+    name: { es: "Galletas con Chispas de Chocolate", en: "Chocolate Chip Cookies" },
+    time: "40 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "2¼ tazas de harina de trigo",
+        "1 cucharadita de bicarbonato",
+        "½ cucharadita de sal",
+        "1 taza de mantequilla, blanda",
+        "¾ taza de azúcar",
+        "¾ taza de azúcar morena",
+        "2 huevos",
+        "2 cucharaditas de vainilla",
+        "2 tazas de chispas de chocolate semidulce"
+      ],
+      en: [
+        "2¼ cups all-purpose flour",
+        "1 teaspoon baking soda",
+        "½ teaspoon salt",
+        "1 cup butter, softened",
+        "¾ cup sugar",
+        "¾ cup brown sugar",
+        "2 eggs",
+        "2 teaspoons vanilla",
+        "2 cups semisweet chocolate chips"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 375°F y forre dos bandejas con papel de hornear.",
+        "Mezcle la harina con el bicarbonato y la sal.",
+        "Bata la mantequilla con los dos azúcares hasta que esté cremosa. Añada los huevos y la vainilla.",
+        "Añada la harina poco a poco y luego las chispas de chocolate.",
+        "Forme bolitas de una cucharada, sepárelas 2 pulgadas y hornee 9–11 minutos, hasta que los bordes estén dorados y el centro todavía blando. Deje 5 minutos en la bandeja antes de pasarlas a una rejilla."
+      ],
+      en: [
+        "Heat the oven to 375°F and line two sheet pans with parchment.",
+        "Mix the flour with the baking soda and salt.",
+        "Beat the butter with both sugars until creamy. Add the eggs and vanilla.",
+        "Add the flour gradually, then the chocolate chips.",
+        "Form tablespoon balls, space them 2 inches apart and bake 9–11 minutes, until the edges are golden and the center still soft. Leave 5 minutes on the pan before moving to a rack."
+      ]
+    }
+  },
+  {
+    id: "galletas-mantequilla-mani",
+    category: "galletitas",
+    name: { es: "Galletas de Mantequilla de Maní", en: "Peanut Butter Cookies" },
+    time: "35 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "1 taza de mantequilla de maní cremosa",
+        "½ taza de mantequilla, blanda",
+        "½ taza de azúcar",
+        "½ taza de azúcar morena",
+        "1 huevo",
+        "1 cucharadita de vainilla",
+        "1¼ tazas de harina de trigo",
+        "½ cucharadita de bicarbonato",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "1 cup creamy peanut butter",
+        "½ cup butter, softened",
+        "½ cup sugar",
+        "½ cup brown sugar",
+        "1 egg",
+        "1 teaspoon vanilla",
+        "1¼ cups all-purpose flour",
+        "½ teaspoon baking soda",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y forre dos bandejas con papel de hornear.",
+        "Bata la mantequilla de maní con la mantequilla y los azúcares. Añada el huevo y la vainilla.",
+        "Añada la harina mezclada con el bicarbonato y la sal.",
+        "Forme bolitas, póngalas en la bandeja y aplástelas con un tenedor haciendo una cruz.",
+        "Hornee 10–12 minutos. Salen blandas y se endurecen al enfriar."
+      ],
+      en: [
+        "Heat the oven to 350°F and line two sheet pans with parchment.",
+        "Beat the peanut butter with the butter and sugars. Add the egg and vanilla.",
+        "Add the flour mixed with the baking soda and salt.",
+        "Form balls, place them on the pan and press with a fork in a crisscross.",
+        "Bake 10–12 minutes. They come out soft and firm up as they cool."
+      ]
+    }
+  },
+  {
+    id: "galletas-coquito",
+    category: "galletitas",
+    name: { es: "Galletas de Coquito", en: "Coquito Cookies" },
+    time: "45 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "2 tazas de harina de trigo",
+        "½ cucharadita de polvo de hornear",
+        "¼ cucharadita de sal",
+        "1 cucharadita de canela en polvo",
+        "¼ cucharadita de nuez moscada",
+        "½ taza de mantequilla, blanda",
+        "½ taza de azúcar",
+        "½ taza de crema de coco",
+        "1 huevo",
+        "1 cucharadita de vainilla",
+        "1 taza de coco rallado",
+        "Glaseado: 1 taza de azúcar en polvo",
+        "2 cucharadas de crema de coco"
+      ],
+      en: [
+        "2 cups all-purpose flour",
+        "½ teaspoon baking powder",
+        "¼ teaspoon salt",
+        "1 teaspoon ground cinnamon",
+        "¼ teaspoon nutmeg",
+        "½ cup butter, softened",
+        "½ cup sugar",
+        "½ cup cream of coconut",
+        "1 egg",
+        "1 teaspoon vanilla",
+        "1 cup shredded coconut",
+        "Glaze: 1 cup powdered sugar",
+        "2 tablespoons cream of coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y forre dos bandejas con papel de hornear.",
+        "Mezcle la harina con el polvo de hornear, la sal y las especias.",
+        "Bata la mantequilla con el azúcar y la crema de coco. Añada el huevo y la vainilla, luego la harina y el coco rallado.",
+        "Forme bolitas de una cucharada y hornee 12–14 minutos, hasta que la base esté dorada.",
+        "Mezcle el azúcar en polvo con la crema de coco, bañe las galletas frías y espolvoree canela."
+      ],
+      en: [
+        "Heat the oven to 350°F and line two sheet pans with parchment.",
+        "Mix the flour with the baking powder, salt and spices.",
+        "Beat the butter with the sugar and cream of coconut. Add the egg and vanilla, then the flour and shredded coconut.",
+        "Form tablespoon balls and bake 12–14 minutes, until golden underneath.",
+        "Mix the powdered sugar with the cream of coconut, drizzle over the cooled cookies and dust with cinnamon."
+      ]
+    }
+  },
+  {
+    id: "galletas-parcha",
+    category: "galletitas",
+    name: { es: "Galletas de Parcha", en: "Passion Fruit Cookies" },
+    time: "40 min + 30 min de nevera",
+    servings: 24,
+    ingredients: {
+      es: [
+        "1 taza de mantequilla, blanda",
+        "½ taza de azúcar en polvo",
+        "2 tazas de harina de trigo",
+        "¼ cucharadita de sal",
+        "1 cucharadita de vainilla",
+        "Glaseado: 1½ tazas de azúcar en polvo",
+        "3 cucharadas de pulpa de parcha, colada"
+      ],
+      en: [
+        "1 cup butter, softened",
+        "½ cup powdered sugar",
+        "2 cups all-purpose flour",
+        "¼ teaspoon salt",
+        "1 teaspoon vanilla",
+        "Glaze: 1½ cups powdered sugar",
+        "3 tablespoons passion fruit pulp, strained"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata la mantequilla con el azúcar en polvo y la vainilla. Añada la harina y la sal hasta formar una masa.",
+        "Forme un cilindro, envuélvalo en plástico y refrigere 30 minutos.",
+        "Caliente el horno a 350°F. Corte ruedas de ¼ pulgada y hornee 12–14 minutos, sin que se doren.",
+        "Mezcle el azúcar en polvo con la parcha hasta tener un glaseado espeso.",
+        "Cubra las galletas frías con el glaseado y deje que endurezca 20 minutos."
+      ],
+      en: [
+        "Beat the butter with the powdered sugar and vanilla. Add the flour and salt to form a dough.",
+        "Shape into a log, wrap in plastic and refrigerate 30 minutes.",
+        "Heat the oven to 350°F. Slice ¼-inch rounds and bake 12–14 minutes, without browning.",
+        "Mix the powdered sugar with the passion fruit to a thick glaze.",
+        "Top the cooled cookies with the glaze and let it set 20 minutes."
+      ]
+    }
+  },
+  {
+    id: "galletas-guineo-avena",
+    category: "galletitas",
+    name: { es: "Galletas de Guineo y Avena", en: "Banana Oatmeal Cookies" },
+    time: "30 min",
+    servings: 18,
+    ingredients: {
+      es: [
+        "2 guineos bien maduros",
+        "1½ tazas de avena",
+        "¼ taza de mantequilla, derretida",
+        "¼ taza de azúcar morena",
+        "1 huevo",
+        "½ taza de harina de trigo",
+        "½ cucharadita de polvo de hornear",
+        "1 cucharadita de canela en polvo",
+        "1 pizca de sal",
+        "½ taza de pasas"
+      ],
+      en: [
+        "2 very ripe bananas",
+        "1½ cups rolled oats",
+        "¼ cup butter, melted",
+        "¼ cup brown sugar",
+        "1 egg",
+        "½ cup all-purpose flour",
+        "½ teaspoon baking powder",
+        "1 teaspoon ground cinnamon",
+        "1 pinch of salt",
+        "½ cup raisins"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y forre una bandeja con papel de hornear.",
+        "Maje los guineos con un tenedor y mézclelos con la mantequilla, el azúcar morena y el huevo.",
+        "Añada la avena, la harina, el polvo de hornear, la canela, la sal y las pasas.",
+        "Ponga cucharadas en la bandeja y aplánelas un poco (no se extienden solas).",
+        "Hornee 14–16 minutos, hasta que estén doradas. Son suaves, como un bizcochito."
+      ],
+      en: [
+        "Heat the oven to 350°F and line a sheet pan with parchment.",
+        "Mash the bananas with a fork and mix with the butter, brown sugar and egg.",
+        "Add the oats, flour, baking powder, cinnamon, salt and raisins.",
+        "Drop spoonfuls on the pan and flatten them a little (they don't spread on their own).",
+        "Bake 14–16 minutes, until golden. They're soft, like a little cake."
+      ]
+    }
+  },
+  {
+    id: "galletas-canela",
+    category: "galletitas",
+    name: { es: "Galletas de Canela y Azúcar", en: "Cinnamon Sugar Cookies (Snickerdoodles)" },
+    time: "35 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "2¾ tazas de harina de trigo",
+        "2 cucharaditas de cremor tártaro",
+        "1 cucharadita de bicarbonato",
+        "¼ cucharadita de sal",
+        "1 taza de mantequilla, blanda",
+        "1½ tazas de azúcar",
+        "2 huevos",
+        "Para cubrir: 3 cucharadas de azúcar",
+        "1 cucharada de canela en polvo"
+      ],
+      en: [
+        "2¾ cups all-purpose flour",
+        "2 teaspoons cream of tartar",
+        "1 teaspoon baking soda",
+        "¼ teaspoon salt",
+        "1 cup butter, softened",
+        "1½ cups sugar",
+        "2 eggs",
+        "For coating: 3 tablespoons sugar",
+        "1 tablespoon ground cinnamon"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400°F y forre dos bandejas con papel de hornear.",
+        "Mezcle la harina con el cremor tártaro, el bicarbonato y la sal.",
+        "Bata la mantequilla con el azúcar hasta que esté cremosa y añada los huevos. Añada la harina.",
+        "Forme bolitas y páselas por la mezcla de azúcar y canela.",
+        "Hornee 8–10 minutos: salen con grietas y blandas en el centro."
+      ],
+      en: [
+        "Heat the oven to 400°F and line two sheet pans with parchment.",
+        "Mix the flour with the cream of tartar, baking soda and salt.",
+        "Beat the butter with the sugar until creamy and add the eggs. Add the flour.",
+        "Form balls and roll them in the cinnamon sugar.",
+        "Bake 8–10 minutes: they come out crackled and soft in the center."
+      ]
+    }
+  },
+  {
+    id: "galletas-calabaza",
+    category: "galletitas",
+    name: { es: "Galletas de Calabaza con Especias", en: "Spiced Pumpkin Cookies" },
+    time: "40 min",
+    servings: 30,
+    ingredients: {
+      es: [
+        "1 taza de calabaza cocida y majada",
+        "½ taza de mantequilla, blanda",
+        "1 taza de azúcar morena",
+        "1 huevo",
+        "1 cucharadita de vainilla",
+        "2 tazas de harina de trigo",
+        "1 cucharadita de polvo de hornear",
+        "½ cucharadita de bicarbonato",
+        "1½ cucharaditas de canela en polvo",
+        "¼ cucharadita de jengibre molido",
+        "¼ cucharadita de sal",
+        "½ taza de pasas"
+      ],
+      en: [
+        "1 cup cooked, mashed calabaza (West Indian pumpkin)",
+        "½ cup butter, softened",
+        "1 cup brown sugar",
+        "1 egg",
+        "1 teaspoon vanilla",
+        "2 cups all-purpose flour",
+        "1 teaspoon baking powder",
+        "½ teaspoon baking soda",
+        "1½ teaspoons ground cinnamon",
+        "¼ teaspoon ground ginger",
+        "¼ teaspoon salt",
+        "½ cup raisins"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y forre dos bandejas con papel de hornear.",
+        "Bata la mantequilla con el azúcar morena. Añada el huevo, la vainilla y la calabaza bien escurrida.",
+        "Añada la harina mezclada con el polvo de hornear, el bicarbonato, las especias y la sal, y luego las pasas.",
+        "Ponga cucharadas en las bandejas y hornee 12–14 minutos.",
+        "Salen suaves, como bizcochitos. Espolvoree azúcar en polvo si quiere."
+      ],
+      en: [
+        "Heat the oven to 350°F and line two sheet pans with parchment.",
+        "Beat the butter with the brown sugar. Add the egg, vanilla and well-drained calabaza.",
+        "Add the flour mixed with the baking powder, baking soda, spices and salt, then the raisins.",
+        "Drop spoonfuls on the pans and bake 12–14 minutes.",
+        "They come out soft, like little cakes. Dust with powdered sugar if you like."
+      ]
+    }
+  },
+  {
+    id: "galletas-chocolate-coco",
+    category: "galletitas",
+    name: { es: "Galletas de Chocolate y Coco", en: "Chocolate Coconut Cookies" },
+    time: "35 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "1½ tazas de harina de trigo",
+        "½ taza de cocoa en polvo",
+        "1 cucharadita de bicarbonato",
+        "¼ cucharadita de sal",
+        "¾ taza de mantequilla, blanda",
+        "1 taza de azúcar",
+        "1 huevo",
+        "1 cucharadita de vainilla",
+        "1 taza de coco rallado"
+      ],
+      en: [
+        "1½ cups all-purpose flour",
+        "½ cup cocoa powder",
+        "1 teaspoon baking soda",
+        "¼ teaspoon salt",
+        "¾ cup butter, softened",
+        "1 cup sugar",
+        "1 egg",
+        "1 teaspoon vanilla",
+        "1 cup shredded coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y forre dos bandejas con papel de hornear.",
+        "Mezcle la harina con la cocoa, el bicarbonato y la sal.",
+        "Bata la mantequilla con el azúcar, añada el huevo y la vainilla, y luego la harina.",
+        "Añada ¾ taza del coco. Forme bolitas y páselas por el resto del coco.",
+        "Hornee 10–12 minutos. Deje enfriar en la bandeja: salen blandas y se afirman al enfriar."
+      ],
+      en: [
+        "Heat the oven to 350°F and line two sheet pans with parchment.",
+        "Mix the flour with the cocoa, baking soda and salt.",
+        "Beat the butter with the sugar, add the egg and vanilla, then the flour.",
+        "Add ¾ cup of the coconut. Form balls and roll them in the rest of the coconut.",
+        "Bake 10–12 minutes. Let cool on the pan: they come out soft and firm up as they cool."
+      ]
+    }
+  },
+  {
+    id: "ensalada-berro-aguacate",
+    category: "ensaladas",
+    name: { es: "Ensalada de Berro y Aguacate", en: "Watercress and Avocado Salad" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 mazos de berro, lavados y sin los tallos gruesos",
+        "1 aguacate en cubos",
+        "1 tomate en gajos",
+        "¼ cebolla roja en aros finos",
+        "3 cucharadas de aceite de oliva",
+        "1 cucharada de jugo de limón",
+        "1 diente de ajo, majado",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 bunches watercress, washed, thick stems removed",
+        "1 avocado, cubed",
+        "1 tomato, in wedges",
+        "¼ red onion, in thin rings",
+        "3 tablespoons olive oil",
+        "1 tablespoon lime juice",
+        "1 garlic clove, mashed",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave el berro en varias aguas y escúrralo muy bien (el agua diluye el aderezo).",
+        "Bata el aceite con el limón, el ajo, sal y pimienta.",
+        "Acomode el berro en un platón con el aguacate, el tomate y la cebolla.",
+        "Aliñe justo al servir: el berro se marchita rápido. Su sabor picantito va muy bien con frituras y carnes."
+      ],
+      en: [
+        "Wash the watercress in several changes of water and drain very well (water dilutes the dressing).",
+        "Whisk the oil with the lime juice, garlic, salt and pepper.",
+        "Arrange the watercress on a platter with the avocado, tomato and onion.",
+        "Dress right before serving: watercress wilts fast. Its peppery flavor goes great with fried foods and meats."
+      ]
+    }
+  },
+  {
+    id: "ensalada-espinaca-mango",
+    category: "ensaladas",
+    name: { es: "Ensalada de Espinaca con Mangó y Nueces", en: "Spinach Salad with Mango and Walnuts" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "6 tazas de espinaca tierna",
+        "1 mangó maduro en cubos",
+        "½ taza de nueces, tostadas",
+        "¼ cebolla roja en aros finos",
+        "½ taza de queso blanco del país, desmoronado",
+        "3 cucharadas de aceite de oliva",
+        "1 cucharada de vinagre",
+        "1 cucharadita de miel",
+        "1 cucharadita de mostaza",
+        "Sal al gusto"
+      ],
+      en: [
+        "6 cups baby spinach",
+        "1 ripe mango, cubed",
+        "½ cup walnuts, toasted",
+        "¼ red onion, in thin rings",
+        "½ cup local white cheese (queso blanco), crumbled",
+        "3 tablespoons olive oil",
+        "1 tablespoon vinegar",
+        "1 teaspoon honey",
+        "1 teaspoon mustard",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Tueste las nueces en un sartén seco 3–4 minutos, moviendo, y deje enfriar.",
+        "Bata el aceite con el vinagre, la miel, la mostaza y la sal.",
+        "Mezcle la espinaca con el mangó y la cebolla.",
+        "Aliñe, y reparta encima el queso y las nueces."
+      ],
+      en: [
+        "Toast the walnuts in a dry skillet 3–4 minutes, stirring, and let cool.",
+        "Whisk the oil with the vinegar, honey, mustard and salt.",
+        "Toss the spinach with the mango and onion.",
+        "Dress it and scatter the cheese and walnuts on top."
+      ]
+    }
+  },
+  {
+    id: "ensalada-verde-vinagreta-parcha",
+    category: "ensaladas",
+    name: { es: "Ensalada Verde con Vinagreta de Parcha", en: "Green Salad with Passion Fruit Vinaigrette" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 lechuga romana, picada",
+        "2 tazas de lechugas mixtas",
+        "1 pepino en medias lunas",
+        "1 taza de tomates pequeños, en mitades",
+        "½ pimiento verde en tiritas",
+        "Vinagreta: 3 cucharadas de pulpa de parcha",
+        "4 cucharadas de aceite de oliva",
+        "1 cucharadita de miel",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 head romaine lettuce, chopped",
+        "2 cups mixed greens",
+        "1 cucumber, in half-moons",
+        "1 cup cherry tomatoes, halved",
+        "½ green bell pepper, in strips",
+        "Vinaigrette: 3 tablespoons passion fruit pulp",
+        "4 tablespoons olive oil",
+        "1 teaspoon honey",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata la pulpa de parcha (con semillas o colada, a su gusto) con el aceite, la miel, sal y pimienta.",
+        "Mezcle las lechugas con el pepino, los tomates y el pimiento.",
+        "Aliñe justo antes de servir. La vinagreta se guarda en la nevera hasta 5 días."
+      ],
+      en: [
+        "Whisk the passion fruit pulp (with seeds or strained, as you like) with the oil, honey, salt and pepper.",
+        "Toss the lettuces with the cucumber, tomatoes and bell pepper.",
+        "Dress right before serving. The vinaigrette keeps in the fridge up to 5 days."
+      ]
+    }
+  },
+  {
+    id: "ensalada-pepino-tomate",
+    category: "ensaladas",
+    name: { es: "Ensalada de Pepino y Tomate", en: "Cucumber and Tomato Salad" },
+    time: "15 min + 20 min de nevera",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 pepinos en ruedas finas",
+        "3 tomates en gajos",
+        "½ cebolla roja en aros finos",
+        "2 cucharadas de cilantro picado",
+        "3 cucharadas de aceite de oliva",
+        "2 cucharadas de vinagre",
+        "½ cucharadita de sal",
+        "Pimienta al gusto"
+      ],
+      en: [
+        "2 cucumbers, thinly sliced",
+        "3 tomatoes, in wedges",
+        "½ red onion, in thin rings",
+        "2 tablespoons chopped cilantro",
+        "3 tablespoons olive oil",
+        "2 tablespoons vinegar",
+        "½ teaspoon salt",
+        "Pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el pepino, el tomate, la cebolla y el cilantro en un envase.",
+        "Bata el aceite con el vinagre, la sal y la pimienta, y aliñe.",
+        "Refrigere 20 minutos para que se mezclen los sabores. Se sirve bien fría, con arroz y habichuelas o en un pincho."
+      ],
+      en: [
+        "Combine the cucumber, tomato, onion and cilantro in a bowl.",
+        "Whisk the oil with the vinegar, salt and pepper, and dress.",
+        "Refrigerate 20 minutes so the flavors blend. Serve very cold, with rice and beans or at a cookout."
+      ]
+    }
+  },
+  {
+    id: "ensalada-habichuelas-tiernas",
+    category: "ensaladas",
+    name: { es: "Ensalada de Habichuelas Tiernas", en: "Green Bean Salad" },
+    time: "20 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de habichuelas tiernas, sin las puntas",
+        "1 tomate en cubos",
+        "¼ cebolla roja picada",
+        "1 huevo duro picado",
+        "3 cucharadas de aceite de oliva",
+        "1 cucharada de vinagre",
+        "1 diente de ajo, majado",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 lb green beans, ends trimmed",
+        "1 tomato, diced",
+        "¼ red onion, chopped",
+        "1 hard-boiled egg, chopped",
+        "3 tablespoons olive oil",
+        "1 tablespoon vinegar",
+        "1 garlic clove, mashed",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las habichuelas tiernas en agua con sal 4–5 minutos, hasta que estén tiernas pero crujientes.",
+        "Páselas enseguida a agua con hielo para que conserven el color verde. Escurra.",
+        "Bata el aceite con el vinagre, el ajo, sal y pimienta.",
+        "Mezcle las habichuelas con el tomate y la cebolla, aliñe y reparta el huevo por encima."
+      ],
+      en: [
+        "Boil the green beans in salted water 4–5 minutes, until tender but crisp.",
+        "Transfer them right away to ice water so they keep their green color. Drain.",
+        "Whisk the oil with the vinegar, garlic, salt and pepper.",
+        "Toss the beans with the tomato and onion, dress and scatter the egg on top."
+      ]
+    }
+  },
+  {
+    id: "ensalada-brocoli",
+    category: "ensaladas",
+    name: { es: "Ensalada de Brócoli", en: "Broccoli Salad" },
+    time: "20 min + 1 hr de nevera",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 cabezas de brócoli, en arbolitos pequeños",
+        "¼ cebolla roja picada",
+        "½ taza de pasas",
+        "4 tiras de tocineta, cocidas y desmenuzadas",
+        "½ taza de mayonesa",
+        "1 cucharada de vinagre",
+        "1 cucharada de azúcar",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 heads broccoli, in small florets",
+        "¼ red onion, chopped",
+        "½ cup raisins",
+        "4 strips bacon, cooked and crumbled",
+        "½ cup mayonnaise",
+        "1 tablespoon vinegar",
+        "1 tablespoon sugar",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la mayonesa con el vinagre, el azúcar y la sal.",
+        "Combine el brócoli crudo con la cebolla y las pasas, y añada el aderezo.",
+        "Refrigere 1 hora para que el brócoli se suavice un poco.",
+        "Añada la tocineta al servir para que se mantenga crujiente."
+      ],
+      en: [
+        "Mix the mayonnaise with the vinegar, sugar and salt.",
+        "Combine the raw broccoli with the onion and raisins, and add the dressing.",
+        "Refrigerate 1 hour so the broccoli softens a little.",
+        "Add the bacon when serving so it stays crisp."
+      ]
+    }
+  },
+  {
+    id: "ensalada-tres-habichuelas",
+    category: "ensaladas",
+    name: { es: "Ensalada de Tres Habichuelas", en: "Three Bean Salad" },
+    time: "15 min + 1 hr de nevera",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lata de 15 onzas de habichuelas rosadas, escurridas y enjuagadas",
+        "1 lata de 15 onzas de garbanzos, escurridos y enjuagados",
+        "1 lata de 15 onzas de habichuelas tiernas cortadas, escurridas",
+        "½ cebolla roja picada",
+        "½ pimiento verde picado",
+        "2 cucharadas de cilantro picado",
+        "¼ taza de aceite de oliva",
+        "¼ taza de vinagre",
+        "1 cucharada de azúcar",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1 can (15 oz) pink beans, drained and rinsed",
+        "1 can (15 oz) chickpeas, drained and rinsed",
+        "1 can (15 oz) cut green beans, drained",
+        "½ red onion, chopped",
+        "½ green bell pepper, chopped",
+        "2 tablespoons chopped cilantro",
+        "¼ cup olive oil",
+        "¼ cup vinegar",
+        "1 tablespoon sugar",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata el aceite con el vinagre, el azúcar y la sal hasta que el azúcar se disuelva.",
+        "Mezcle las habichuelas rosadas, los garbanzos y las habichuelas tiernas con la cebolla, el pimiento y el cilantro.",
+        "Aliñe y refrigere 1 hora como mínimo, moviendo una vez.",
+        "Mejora de un día para otro: es ideal para llevar a la playa o a un compartir."
+      ],
+      en: [
+        "Whisk the oil with the vinegar, sugar and salt until the sugar dissolves.",
+        "Combine the pink beans, chickpeas and green beans with the onion, bell pepper and cilantro.",
+        "Dress and refrigerate at least 1 hour, stirring once.",
+        "It gets better overnight: great to take to the beach or a potluck."
+      ]
+    }
+  },
+  {
+    id: "ensalada-gandules",
+    category: "ensaladas",
+    name: { es: "Ensalada de Gandules", en: "Pigeon Pea Salad" },
+    time: "15 min + 30 min de nevera",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 latas de 15 onzas de gandules verdes, escurridos y enjuagados",
+        "1 tomate en cubos",
+        "½ cebolla roja picada",
+        "½ pimiento rojo picado",
+        "2 cucharadas de recao o cilantro picado",
+        "3 cucharadas de aceite de oliva",
+        "2 cucharadas de jugo de limón",
+        "1 diente de ajo, majado",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "2 cans (15 oz) green pigeon peas, drained and rinsed",
+        "1 tomato, diced",
+        "½ red onion, chopped",
+        "½ red bell pepper, chopped",
+        "2 tablespoons chopped culantro or cilantro",
+        "3 tablespoons olive oil",
+        "2 tablespoons lime juice",
+        "1 garlic clove, mashed",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata el aceite con el limón, el ajo, sal y pimienta.",
+        "Mezcle los gandules con el tomate, la cebolla, el pimiento y el recao.",
+        "Aliñe y refrigere 30 minutos. Va muy bien con pernil o pollo asado."
+      ],
+      en: [
+        "Whisk the oil with the lime juice, garlic, salt and pepper.",
+        "Toss the pigeon peas with the tomato, onion, bell pepper and culantro.",
+        "Dress and refrigerate 30 minutes. Great with roast pork or chicken."
+      ]
+    }
+  },
+  {
+    id: "ensalada-lentejas",
+    category: "ensaladas",
+    name: { es: "Ensalada de Lentejas", en: "Lentil Salad" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 taza de lentejas secas",
+        "1 hoja de laurel",
+        "1 zanahoria rallada",
+        "1 tomate en cubos",
+        "½ cebolla roja picada",
+        "2 cucharadas de perejil picado",
+        "3 cucharadas de aceite de oliva",
+        "2 cucharadas de vinagre",
+        "½ cucharadita de comino",
+        "Sal y pimienta al gusto"
+      ],
+      en: [
+        "1 cup dried lentils",
+        "1 bay leaf",
+        "1 carrot, grated",
+        "1 tomato, diced",
+        "½ red onion, chopped",
+        "2 tablespoons chopped parsley",
+        "3 tablespoons olive oil",
+        "2 tablespoons vinegar",
+        "½ teaspoon cumin",
+        "Salt and pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Enjuague las lentejas y hiérvalas en agua con el laurel 18–20 minutos, hasta que estén tiernas pero enteras. Añada sal al final.",
+        "Escurra, quite el laurel y deje refrescar.",
+        "Bata el aceite con el vinagre, el comino, sal y pimienta.",
+        "Mezcle las lentejas tibias con la zanahoria, el tomate, la cebolla y el perejil, y aliñe (tibias absorben mejor el aderezo)."
+      ],
+      en: [
+        "Rinse the lentils and boil them in water with the bay leaf 18–20 minutes, until tender but whole. Add salt at the end.",
+        "Drain, remove the bay leaf and let cool slightly.",
+        "Whisk the oil with the vinegar, cumin, salt and pepper.",
+        "Toss the warm lentils with the carrot, tomato, onion and parsley, and dress (warm, they absorb the dressing better)."
+      ]
+    }
+  },
+  {
+    id: "ensalada-frijoles-negros-maiz",
+    category: "ensaladas",
+    name: { es: "Ensalada de Frijoles Negros y Maíz", en: "Black Bean and Corn Salad" },
+    time: "15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 latas de 15 onzas de habichuelas negras, escurridas y enjuagadas",
+        "1 lata de 15 onzas de maíz en grano, escurrido",
+        "1 aguacate en cubos",
+        "1 tomate en cubos",
+        "½ cebolla roja picada",
+        "½ pimiento rojo picado",
+        "¼ taza de cilantro picado",
+        "3 cucharadas de aceite de oliva",
+        "3 cucharadas de jugo de limón",
+        "½ cucharadita de comino",
+        "Sal al gusto"
+      ],
+      en: [
+        "2 cans (15 oz) black beans, drained and rinsed",
+        "1 can (15 oz) corn kernels, drained",
+        "1 avocado, cubed",
+        "1 tomato, diced",
+        "½ red onion, chopped",
+        "½ red bell pepper, chopped",
+        "¼ cup chopped cilantro",
+        "3 tablespoons olive oil",
+        "3 tablespoons lime juice",
+        "½ teaspoon cumin",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata el aceite con el limón, el comino y la sal.",
+        "Mezcle los frijoles con el maíz, el tomate, la cebolla, el pimiento y el cilantro, y aliñe.",
+        "Añada el aguacate al final, con cuidado para que no se deshaga.",
+        "Sirva como ensalada, como acompañante de carnes a la parrilla o con tostones."
+      ],
+      en: [
+        "Whisk the oil with the lime juice, cumin and salt.",
+        "Toss the beans with the corn, tomato, onion, bell pepper and cilantro, and dress.",
+        "Add the avocado last, gently so it doesn't fall apart.",
+        "Serve as a salad, alongside grilled meats or with tostones."
+      ]
+    }
+  },
+  {
+    id: "ensalada-habichuelas-blancas-atun",
+    category: "ensaladas",
+    name: { es: "Ensalada de Habichuelas Blancas con Atún", en: "White Bean and Tuna Salad" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 latas de 15 onzas de habichuelas blancas, escurridas y enjuagadas",
+        "2 latas de 5 onzas de atún en agua, escurrido",
+        "½ cebolla roja en tiritas finas",
+        "½ pimiento rojo picado",
+        "10 aceitunas rellenas, en ruedas",
+        "2 cucharadas de perejil picado",
+        "3 cucharadas de aceite de oliva",
+        "2 cucharadas de jugo de limón",
+        "Pimienta al gusto"
+      ],
+      en: [
+        "2 cans (15 oz) white beans, drained and rinsed",
+        "2 cans (5 oz) tuna in water, drained",
+        "½ red onion, in thin strips",
+        "½ red bell pepper, chopped",
+        "10 stuffed olives, sliced",
+        "2 tablespoons chopped parsley",
+        "3 tablespoons olive oil",
+        "2 tablespoons lime juice",
+        "Pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle las habichuelas con la cebolla, el pimiento, las aceitunas y el perejil.",
+        "Añada el atún en lascas, sin desmenuzarlo demasiado.",
+        "Aliñe con el aceite, el limón y pimienta. Pruebe antes de salar: el atún y las aceitunas ya traen sal.",
+        "Es un almuerzo completo y fresco, sin cocinar."
+      ],
+      en: [
+        "Combine the beans with the onion, bell pepper, olives and parsley.",
+        "Add the tuna in flakes, without breaking it up too much.",
+        "Dress with the oil, lime juice and pepper. Taste before salting: the tuna and olives are already salty.",
+        "It's a complete, fresh lunch with no cooking."
+      ]
+    }
+  },
+  {
+    id: "gazpacho-bacalao",
+    category: "ensaladas",
+    name: { es: "Gazpacho de Bacalao con Aguacate", en: "Puerto Rican Salt Cod and Avocado Gazpacho" },
+    time: "30 min + desalar el bacalao",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de bacalao seco, sin espinas",
+        "2 aguacates en cubos",
+        "2 tomates en cubos",
+        "1 cebolla en ruedas finas",
+        "1 pimiento verde en tiritas",
+        "2 huevos duros en ruedas",
+        "⅓ taza de aceite de oliva",
+        "¼ taza de vinagre",
+        "1 diente de ajo, majado",
+        "Pimienta al gusto"
+      ],
+      en: [
+        "1 lb dried salt cod, boneless",
+        "2 avocados, cubed",
+        "2 tomatoes, diced",
+        "1 onion, thinly sliced",
+        "1 green bell pepper, in strips",
+        "2 hard-boiled eggs, sliced",
+        "⅓ cup olive oil",
+        "¼ cup vinegar",
+        "1 garlic clove, mashed",
+        "Pepper to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje el bacalao en agua fría de 8 a 12 horas en la nevera, cambiando el agua 3 o 4 veces.",
+        "Hiérvalo en agua limpia 10 minutos, escurra, deje refrescar y desmenúcelo en lascas.",
+        "Bata el aceite con el vinagre, el ajo y pimienta, y mezcle con el bacalao, la cebolla y el pimiento. Deje que se marine 15 minutos.",
+        "Añada el tomate y el aguacate con cuidado, y decore con el huevo.",
+        "Es el gazpacho boricua: una ensalada fresca de bacalao, pariente de la serenata, que se come con viandas, galletas o pan. Pruebe antes de salar."
+      ],
+      en: [
+        "Soak the cod in cold water 8 to 12 hours in the fridge, changing the water 3 or 4 times.",
+        "Boil it in fresh water 10 minutes, drain, let cool and flake it.",
+        "Whisk the oil with the vinegar, garlic and pepper, and toss with the cod, onion and bell pepper. Let it marinate 15 minutes.",
+        "Gently add the tomato and avocado, and garnish with the egg.",
+        "This is Puerto Rican gazpacho: a fresh salt cod salad, a cousin of serenata, eaten with root vegetables, crackers or bread. Taste before salting."
+      ]
+    }
+  },
+  {
+    id: "gazpacho-andaluz",
+    category: "sopas",
+    name: { es: "Gazpacho de Tomate (Sopa Fría)", en: "Tomato Gazpacho (Cold Soup)" },
+    time: "20 min + 2 hr de nevera",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de tomates maduros, en trozos",
+        "1 pepino pelado, en trozos",
+        "1 pimiento verde, en trozos",
+        "¼ cebolla",
+        "1 diente de ajo",
+        "1 rebanada de pan del día anterior, sin corteza",
+        "⅓ taza de aceite de oliva",
+        "2 cucharadas de vinagre",
+        "1 cucharadita de sal",
+        "1 taza de agua fría"
+      ],
+      en: [
+        "2 lb ripe tomatoes, in chunks",
+        "1 cucumber, peeled, in chunks",
+        "1 green bell pepper, in chunks",
+        "¼ onion",
+        "1 garlic clove",
+        "1 slice day-old bread, crust removed",
+        "⅓ cup olive oil",
+        "2 tablespoons vinegar",
+        "1 teaspoon salt",
+        "1 cup cold water"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje el pan en un poco del agua.",
+        "Licúe los tomates, el pepino, el pimiento, la cebolla, el ajo y el pan hasta que quede muy fino.",
+        "Con la licuadora andando, añada el aceite en hilo, luego el vinagre y la sal. Añada agua hasta la espesura que guste.",
+        "Cuele si lo quiere bien liso y refrigere 2 horas como mínimo: se sirve bien frío.",
+        "Sirva con cubitos de pepino, pimiento y pan tostado por encima. Viene de la cocina de España y es ideal para los días de calor."
+      ],
+      en: [
+        "Soak the bread in a little of the water.",
+        "Blend the tomatoes, cucumber, bell pepper, onion, garlic and bread until very smooth.",
+        "With the blender running, drizzle in the oil, then the vinegar and salt. Add water to the thickness you like.",
+        "Strain if you want it very smooth and refrigerate at least 2 hours: it's served very cold.",
+        "Serve topped with diced cucumber, bell pepper and toasted bread. It comes from Spanish cooking and is ideal on hot days."
+      ]
+    }
+  },
+  {
+    id: "gazpacho-mango",
+    category: "sopas",
+    name: { es: "Gazpacho de Mangó", en: "Mango Gazpacho" },
+    time: "15 min + 1 hr de nevera",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 mangós maduros, pelados y en trozos",
+        "1 pepino pelado, en trozos",
+        "½ pimiento rojo",
+        "¼ cebolla roja",
+        "2 cucharadas de jugo de limón",
+        "2 cucharadas de aceite de oliva",
+        "½ cucharadita de sal",
+        "½ taza de agua fría",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "3 ripe mangoes, peeled, in chunks",
+        "1 cucumber, peeled, in chunks",
+        "½ red bell pepper",
+        "¼ red onion",
+        "2 tablespoons lime juice",
+        "2 tablespoons olive oil",
+        "½ teaspoon salt",
+        "½ cup cold water",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Reserve un poco de mangó y de pepino en cubitos para decorar.",
+        "Licúe el resto del mangó con el pepino, el pimiento, la cebolla, el limón, el aceite, la sal y el agua hasta que quede liso.",
+        "Refrigere 1 hora como mínimo.",
+        "Sirva en vasitos o tazones con los cubitos reservados y el cilantro. Es dulce, ácido y muy refrescante."
+      ],
+      en: [
+        "Set aside a little diced mango and cucumber for garnish.",
+        "Blend the rest of the mango with the cucumber, bell pepper, onion, lime juice, oil, salt and water until smooth.",
+        "Refrigerate at least 1 hour.",
+        "Serve in small glasses or bowls with the reserved dice and cilantro. It's sweet, tangy and very refreshing."
       ]
     }
   }
