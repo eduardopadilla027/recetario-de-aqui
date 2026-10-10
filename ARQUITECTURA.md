@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 1.16.0 · **Recetas:** 620 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 1.17.0 · **Recetas:** 620 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -49,7 +49,7 @@ Las recetas son **versiones propias redactadas para esta app** (no copias de lib
 
 ```
 cocine-a-gusto/
-├── index.html            estructura de la página, sprite SVG (iconos, bandera, plátanos, embutidos, yuca, pincho de camarones, albóndigas, chuleta, churrasco y
+├── index.html            estructura de la página, sprite SVG (iconos, bandera, plátanos, embutidos, yuca, yautía, pincho de camarones, albóndigas, chuleta, churrasco y
 │                         los dibujos de carnes y aves por tipo de plato) y orden de scripts
 ├── css/styles.css        estilos (tokens en :root, responsive, movimiento reducido, impresión)
 ├── js/
@@ -149,7 +149,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   (½, ¼, ⅓…; enteros desde 10).
 - **Icono de cada plato (`dishIcon`):** busca palabras de `dishIcons` en el nombre en español; gana la que aparece primero
   y, en empate, la más larga. Sin coincidencia: el icono de la categoría. Valores `svg:<id>` usan dibujos del sprite
-  (plátano verde y maduro, longaniza, morcilla, yuca, pincho de camarones, albóndigas, chuleta, churrasco) porque
+  (plátano verde y maduro, longaniza, morcilla, yuca, yautía, pincho de camarones, albóndigas, chuleta, churrasco) porque
   no hay emoji correcto (🍠 es batata, 🍢 es oden japonés, 🧆 es falafel, 🍖 es carne de caricatura).
 - **Carnes y aves (`meatIcons`):** antes de `dishIcons`, las recetas de las categorías `carnes` y `aves` buscan su
   dibujo por tipo de plato con una lista de expresiones en orden (gana la primera): guiso en caldero (`ic-guiso-carne`,
@@ -242,6 +242,13 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v1.17.0 · Icono de yautía y malanga
+- *Pedido:* los iconos de yautía y malanga eran incorrectos (🍠 es batata).
+- Dibujo SVG nuevo `ic-yautia`: yautía entera (marrón, con anillos, pelitos y el tallito) y media yautía cortada (pulpa
+  blanca con pintas lilas). Lo usan Majado de Yautía, Majado de Malanga con Mojo de Ajo y Puré de Malanga para Bebés;
+  pan, buñuelos y crema de yautía conservan el icono de su tipo de plato (🍞 🧆 🍲).
+- *Verificado:* dibujo revisado a tamaño grande y de tarjeta; `dishIcon` devuelve `svg:ic-yautia` en las tres recetas ✔.
 
 ### 2026-10-10 — v1.16.0 · Iconos de carnes y aves
 - *Pedidos:* corregir el icono de las chuletas y del churrasco; los de carnes y pollos eran muy genéricos.

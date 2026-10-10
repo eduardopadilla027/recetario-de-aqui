@@ -268,6 +268,8 @@ const LONGANIZA = "svg:ic-longaniza";
 const MORCILLA = "svg:ic-morcilla";
 /* Ni de yuca (🍠 es batata) ni de pincho de camarones (🍢 es oden japonés). */
 const YUCA = "svg:ic-yuca";
+/* Yautía y malanga (en Puerto Rico, la misma vianda): tampoco tienen emoji. */
+const YAUTIA = "svg:ic-yautia";
 const PINCHO_CAMARONES = "svg:ic-pincho-camarones";
 /* Ni de albóndigas (🧆 es falafel). */
 const ALBONDIGAS = "svg:ic-albondigas";
@@ -302,11 +304,11 @@ const dishIcons = [
   ["amarillo", MADURO], ["platanos maduros", MADURO], ["platano maduro", MADURO], ["pionono", MADURO], ["canoa", MADURO], ["pastelon", "🥘"],
   ["tostones de pana", "🍈"], ["mofongo de pana", "🍈"], ["bunuelos de pana", "🧆"], ["bunuelos de yautia", "🧆"],
   ["pasteles de", "🫔"], ["alcapurria", "🥟"], ["empanadilla", "🥟"], ["pastelillo", "🥟"], ["empanada", "🥟"], ["croqueta", "🥟"], ["relleno", "🥟"],
-  ["yuca", YUCA], ["yautia", "🍠"], ["batata", "🍠"], ["panapen", "🍈"], ["pana", "🍈"], ["viandas", "🍠"], ["papa", "🥔"],
+  ["yuca", YUCA], ["yautia", YAUTIA], ["batata", "🍠"], ["panapen", "🍈"], ["pana", "🍈"], ["viandas", "🍠"], ["papa", "🥔"],
   ["maiz", "🌽"], ["sorullito", "🌽"], ["guanime", "🌽"], ["funche", "🌽"], ["majarete", "🍮"], ["arepa", "🫓"], ["casabe", "🫓"],
   ["mazamorra", "🌽"], ["domplines", "🫓"], ["yaniqueques", "🫓"], ["mofongo de yuca", YUCA], ["sopa borracha", "🍰"],
   ["ostiones", "🦪"], ["chicharrones de pescado", "🐟"], ["ceviche de camarones", "🦐"],
-  ["melcocha", "🍬"], ["cidra", "🍋"], ["torrejas", "🍞"], ["flor de jamaica", "🌺"], ["jugo de carambola", "⭐"], ["alitas", "🍗"], ["name", "🍠"], ["papita", "🥔"], ["malanga", "🍠"],
+  ["melcocha", "🍬"], ["cidra", "🍋"], ["torrejas", "🍞"], ["flor de jamaica", "🌺"], ["jugo de carambola", "⭐"], ["alitas", "🍗"], ["name", "🍠"], ["papita", "🥔"], ["malanga", YAUTIA],
   ["cupcake", "🧁"], ["donas", "🍩"], ["rollos de canela", "🥐"], ["churros", "🥖"], ["gelatina", "🍮"], ["guacamole", "🥑"], ["salsa de aguacate", "🥑"], ["fricase de cerdo", "🍖"], ["polvo de amor", "🥥"], ["coquimol", "🥥"],
   ["berenjena", "🍆"], ["calabaza", "🎃"], ["aguacate", "🥑"], ["repollo", "🥬"], ["chayote", "🥒"],
   ["coquito", "🥥"], ["coco", "🥥"], ["tembleque", "🍮"], ["besito", "🥥"],
