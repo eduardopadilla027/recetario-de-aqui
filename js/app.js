@@ -295,7 +295,7 @@ const dishIcons = [
   ["bacalao", "🐟"], ["bacalaito", "🐟"], ["pescado", "🐟"], ["chillo", "🐟"], ["filete", "🐟"], ["atun", "🐟"], ["ceviche", "🐟"],
   ["pavo", "🦃"], ["pavochon", "🦃"], ["molleja", "🍗"], ["guinea", "🍗"], ["muslo", "🍗"], ["pollo", "🍗"], ["pechuga", "🍗"], ["gallina", "🍗"],
   ["salchicha", LONGANIZA], ["longaniza", LONGANIZA], ["chorizo", LONGANIZA], ["salami", LONGANIZA],
-  ["lechon", "🍖"], ["pernil", "🍖"], ["chuleta", CHULETA], ["costilla", "🍖"], ["chicharron", "🍖"], ["patitas", "🍖"], ["masitas", "🍖"], ["pincho", "🍢"], ["pinchos de camarones", PINCHO_CAMARONES], ["pincho de camarones", PINCHO_CAMARONES],
+  ["lechon", "🍖"], ["pernil", "🍖"], ["chuleta", CHULETA], ["costilla", "🍖"], ["chicharron", "🍖"], ["patitas", "🍖"], ["masitas", "🍖"], ["pincho", "svg:ic-pincho-cerdo"], ["pinchos de pollo", "svg:ic-pincho-pollo"], ["pincho de pollo", "svg:ic-pincho-pollo"], ["pinchos de camarones", PINCHO_CAMARONES], ["pincho de camarones", PINCHO_CAMARONES],
   ["bistec", "🥩"], ["carne", "🥩"], ["rabo", "🥩"], ["ropa vieja", "🥩"], ["churrasco", CHURRASCO], ["higado", "🥩"], ["albondiga", ALBONDIGAS], ["picadillo", "🥩"], ["lengua", "🥩"], ["cabro", "🥩"], ["cabrito", "🥩"], ["carne de cerdo", "🍖"], ["costillita", "🍖"], ["cuajito", "🍖"], ["salpicon", "🥩"], ["lomo", "🍖"], ["jamon", "🍖"],
   ["espagueti", "🍝"], ["lasana", "🍝"], ["coditos", "🍝"], ["macarrones", "🍝"], ["canelones", "🍝"], ["fideos", "🍝"],
   ["tortilla", "🍳"], ["revoltillo", "🍳"], ["huevo", "🍳"],
