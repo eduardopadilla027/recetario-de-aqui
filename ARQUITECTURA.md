@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 1.18.0 · **Recetas:** 620 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 1.19.0 · **Recetas:** 620 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -49,7 +49,7 @@ Las recetas son **versiones propias redactadas para esta app** (no copias de lib
 
 ```
 cocine-a-gusto/
-├── index.html            estructura de la página, sprite SVG (iconos, bandera, plátanos, embutidos, yuca, yautía, chayote, pincho de camarones, albóndigas, chuleta, churrasco y
+├── index.html            estructura de la página, sprite SVG (iconos, bandera, plátanos, embutidos, yuca, yautía, ñame, viandas, chayote, pincho de camarones, albóndigas, chuleta, churrasco y
 │                         los dibujos de carnes, aves y postres por tipo de plato) y orden de scripts
 ├── css/styles.css        estilos (tokens en :root, responsive, movimiento reducido, impresión)
 ├── js/
@@ -149,7 +149,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   (½, ¼, ⅓…; enteros desde 10).
 - **Icono de cada plato (`dishIcon`):** busca palabras de `dishIcons` en el nombre en español; gana la que aparece primero
   y, en empate, la más larga. Sin coincidencia: el icono de la categoría. Valores `svg:<id>` usan dibujos del sprite
-  (plátano verde y maduro, longaniza, morcilla, yuca, yautía, pincho de camarones, albóndigas, chuleta, churrasco) porque
+  (plátano verde y maduro, longaniza, morcilla, yuca, yautía, ñame, viandas, pincho de camarones, albóndigas, chuleta, churrasco) porque
   no hay emoji correcto (🍠 es batata, 🍢 es oden japonés, 🧆 es falafel, 🍖 es carne de caricatura).
 - **Postres (`dessertIcons`):** después de `meatIcons` y antes de `dishIcons`, por nombre y en orden (gana la primera):
   flan (con caramelo; el color sigue al sabor: vainilla, queso, chocolate y flancocho, café, coco con hojuelas, guayaba,
@@ -247,6 +247,14 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v1.19.0 · Iconos de ñame y viandas
+- *Pedido:* iconos de ñame y viandas (salían con 🍠, que es batata).
+- Dibujos SVG nuevos: `ic-name` (ñame grande y nudoso, de cáscara áspera, con corte y una rueda de pulpa blanca) e
+  `ic-viandas` (surtido que reutiliza con `<use>` los dibujos de plátano verde, ñame y yautía, más dos ruedas de batata
+  de cáscara morada). Los usan Majado de Ñame, Viandas al Mojo y Viandas Hervidas con Bacalao; la sopa con viandas
+  conserva 🍲. 🍠 queda sólo para la batata.
+- *Verificado:* ambos dibujos revisados a tamaño grande y de tarjeta; `dishIcon` correcto en las tres recetas ✔.
 
 ### 2026-10-10 — v1.18.0 · Iconos de postres y chayote
 - *Pedido:* actualizar el icono del chayote (🥒 es pepinillo) y los de Helados, Budines, Flan y Otros Postres.
