@@ -26,6 +26,8 @@
  * rollos de canela y churros.
  * Duodécima tanda: gelatinas (mosaico, leche, coco, parcha, café, coquito,
  * guayaba, piña colada y chupitos de ron con parcha).
+ * Decimotercera tanda: flanes (chocolate, coquito, parcha, mangó, plátano
+ * maduro, maíz, calabaza con queso crema y con coco) y bizcochos de calabaza.
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -6382,6 +6384,698 @@ recipes.push(
         "Add the passion fruit and let cool 10 minutes; then add the cold rum (if added hot it evaporates).",
         "Divide among 16 two-ounce cups.",
         "Refrigerate 4 hours. Adults only: label them clearly so they aren't mixed up with the kids' gelatins."
+      ]
+    }
+  },
+
+  // ── Decimotercera tanda (2026-10): flanes y bizcochos de calabaza ──
+  {
+    id: "flan-chocolate",
+    category: "postres",
+    name: { es: "Flan de Chocolate", en: "Chocolate Flan" },
+    time: "1 hr 15 min + 4 hr de nevera",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 taza de azúcar (para el caramelo)",
+        "4 onzas de chocolate semidulce, picado",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 lata de 14 onzas de leche condensada",
+        "5 huevos",
+        "2 cucharadas de cocoa en polvo",
+        "1 cucharadita de vainilla",
+        "1 pizca de sal"
+      ],
+      en: [
+        "1 cup sugar (for the caramel)",
+        "4 oz semisweet chocolate, chopped",
+        "1 can (12 oz) evaporated milk",
+        "1 can (14 oz) sweetened condensed milk",
+        "5 eggs",
+        "2 tablespoons cocoa powder",
+        "1 teaspoon vanilla",
+        "1 pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F. Derrita el azúcar en un sartén hasta que tome color ámbar y cubra con ella el fondo de un molde de flan.",
+        "Caliente la leche evaporada sin que hierva, apague y añada el chocolate; mueva hasta que se derrita.",
+        "Licúe el chocolate con la leche condensada, los huevos, la cocoa, la vainilla y la sal. Cuele y vierta sobre el caramelo.",
+        "Hornee a baño de María 55–60 minutos, hasta que el centro tiemble apenas y un cuchillo salga limpio.",
+        "Deje enfriar, refrigere 4 horas como mínimo y desmolde volteándolo sobre un plato."
+      ],
+      en: [
+        "Heat the oven to 350°F. Melt the sugar in a skillet until amber and coat the bottom of a flan mold with it.",
+        "Heat the evaporated milk without boiling, turn off the heat and add the chocolate; stir until melted.",
+        "Blend the chocolate milk with the condensed milk, eggs, cocoa, vanilla and salt. Strain and pour over the caramel.",
+        "Bake in a water bath 55–60 minutes, until the center barely jiggles and a knife comes out clean.",
+        "Let cool, refrigerate at least 4 hours and unmold by flipping onto a plate."
+      ]
+    }
+  },
+  {
+    id: "flan-coquito",
+    category: "postres",
+    name: { es: "Flan de Coquito", en: "Coquito Flan" },
+    time: "1 hr 15 min + 4 hr de nevera",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 taza de azúcar (para el caramelo)",
+        "1 lata de 15 onzas de crema de coco",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 lata de 14 onzas de leche condensada",
+        "5 huevos",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de canela en polvo",
+        "¼ cucharadita de nuez moscada",
+        "1 pizca de clavo molido"
+      ],
+      en: [
+        "1 cup sugar (for the caramel)",
+        "1 can (15 oz) cream of coconut",
+        "1 can (12 oz) evaporated milk",
+        "1 can (14 oz) sweetened condensed milk",
+        "5 eggs",
+        "1 teaspoon vanilla",
+        "1 teaspoon ground cinnamon",
+        "¼ teaspoon nutmeg",
+        "1 pinch of ground cloves"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F. Haga el caramelo con el azúcar y cubra el fondo de un molde de flan.",
+        "Licúe la crema de coco, las dos leches, los huevos, la vainilla y las especias. Cuele para que quede bien liso.",
+        "Vierta sobre el caramelo y hornee a baño de María 1 hora, hasta que un cuchillo salga limpio.",
+        "Enfríe, refrigere toda la noche si puede y desmolde. Espolvoree canela por encima.",
+        "Es el sabor del coquito sin alcohol, así que lo pueden comer los niños. Si es sólo para adultos, se le pueden añadir ¼ taza de ron blanco a la mezcla."
+      ],
+      en: [
+        "Heat the oven to 350°F. Make the caramel with the sugar and coat the bottom of a flan mold.",
+        "Blend the cream of coconut, both milks, eggs, vanilla and spices. Strain so it's completely smooth.",
+        "Pour over the caramel and bake in a water bath 1 hour, until a knife comes out clean.",
+        "Cool, refrigerate overnight if you can and unmold. Dust with cinnamon.",
+        "It's the flavor of coquito without alcohol, so kids can eat it too. If it's for adults only, you can add ¼ cup white rum to the mix."
+      ]
+    }
+  },
+  {
+    id: "flan-parcha",
+    category: "postres",
+    name: { es: "Flan de Parcha", en: "Passion Fruit Flan" },
+    time: "1 hr 10 min + 4 hr de nevera",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 taza de azúcar (para el caramelo)",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "4 onzas de queso crema, blando",
+        "5 huevos",
+        "½ taza de pulpa de parcha, colada",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "1 cup sugar (for the caramel)",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "4 oz cream cheese, softened",
+        "5 eggs",
+        "½ cup passion fruit pulp, strained",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F. Haga el caramelo con el azúcar y cubra el fondo de un molde de flan.",
+        "Licúe el queso crema con la leche condensada hasta que no queden grumos. Añada la leche evaporada, los huevos y la vainilla.",
+        "Añada la parcha al final y licúe sólo unos segundos (la acidez la espesa enseguida). Vierta sobre el caramelo.",
+        "Hornee a baño de María 50–55 minutos, hasta que cuaje.",
+        "Enfríe, refrigere 4 horas y desmolde. Queda cremoso y ácido a la vez."
+      ],
+      en: [
+        "Heat the oven to 350°F. Make the caramel with the sugar and coat the bottom of a flan mold.",
+        "Blend the cream cheese with the condensed milk until no lumps remain. Add the evaporated milk, eggs and vanilla.",
+        "Add the passion fruit last and blend just a few seconds (its acidity thickens the mix quickly). Pour over the caramel.",
+        "Bake in a water bath 50–55 minutes, until set.",
+        "Cool, refrigerate 4 hours and unmold. It's creamy and tangy at the same time."
+      ]
+    }
+  },
+  {
+    id: "flan-mango",
+    category: "postres",
+    name: { es: "Flan de Mangó", en: "Mango Flan" },
+    time: "1 hr 10 min + 4 hr de nevera",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 taza de azúcar (para el caramelo)",
+        "2 mangós maduros, pelados (1½ tazas de pulpa)",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "5 huevos",
+        "1 cucharada de jugo de limón",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "1 cup sugar (for the caramel)",
+        "2 ripe mangoes, peeled (1½ cups pulp)",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "5 eggs",
+        "1 tablespoon lime juice",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F. Haga el caramelo con el azúcar y cubra el fondo de un molde de flan.",
+        "Licúe la pulpa de mangó hasta que quede un puré fino. Cuele si el mangó es fibroso.",
+        "Licúe el puré con las leches, los huevos, el limón y la vainilla. Vierta sobre el caramelo.",
+        "Hornee a baño de María 55–60 minutos, hasta que un cuchillo salga limpio.",
+        "Enfríe, refrigere 4 horas y desmolde. Decore con cubitos de mangó."
+      ],
+      en: [
+        "Heat the oven to 350°F. Make the caramel with the sugar and coat the bottom of a flan mold.",
+        "Blend the mango pulp into a smooth purée. Strain if the mango is fibrous.",
+        "Blend the purée with the milks, eggs, lime juice and vanilla. Pour over the caramel.",
+        "Bake in a water bath 55–60 minutes, until a knife comes out clean.",
+        "Cool, refrigerate 4 hours and unmold. Garnish with diced mango."
+      ]
+    }
+  },
+  {
+    id: "flan-platano-maduro",
+    category: "postres",
+    name: { es: "Flan de Plátano Maduro", en: "Sweet Plantain Flan" },
+    time: "1 hr 20 min + 4 hr de nevera",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 taza de azúcar (para el caramelo)",
+        "2 plátanos maduros (bien amarillos con manchas negras)",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "5 huevos",
+        "1 cucharadita de canela en polvo",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "1 cup sugar (for the caramel)",
+        "2 ripe plantains (very yellow with black spots)",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "5 eggs",
+        "1 teaspoon ground cinnamon",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los plátanos pelados y en trozos 15 minutos, hasta que estén blandos. Escurra y deje refrescar.",
+        "Caliente el horno a 350°F. Haga el caramelo con el azúcar y cubra el fondo de un molde de flan.",
+        "Licúe los plátanos con las leches, los huevos, la canela y la vainilla hasta que quede bien liso. Cuele y vierta sobre el caramelo.",
+        "Hornee a baño de María 1 hora, hasta que un cuchillo salga limpio.",
+        "Enfríe, refrigere 4 horas y desmolde. Tiene una textura más densa, como de budín."
+      ],
+      en: [
+        "Boil the peeled plantains in chunks 15 minutes, until soft. Drain and let cool.",
+        "Heat the oven to 350°F. Make the caramel with the sugar and coat the bottom of a flan mold.",
+        "Blend the plantains with the milks, eggs, cinnamon and vanilla until very smooth. Strain and pour over the caramel.",
+        "Bake in a water bath 1 hour, until a knife comes out clean.",
+        "Cool, refrigerate 4 hours and unmold. It has a denser, pudding-like texture."
+      ]
+    }
+  },
+  {
+    id: "flan-maiz",
+    category: "postres",
+    name: { es: "Flan de Maíz", en: "Sweet Corn Flan" },
+    time: "1 hr 15 min + 4 hr de nevera",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 taza de azúcar (para el caramelo)",
+        "1 lata de 15 onzas de maíz en grano, escurrido",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "4 huevos",
+        "1 cucharadita de vainilla",
+        "½ cucharadita de canela en polvo"
+      ],
+      en: [
+        "1 cup sugar (for the caramel)",
+        "1 can (15 oz) corn kernels, drained",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "4 eggs",
+        "1 teaspoon vanilla",
+        "½ teaspoon ground cinnamon"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F. Haga el caramelo con el azúcar y cubra el fondo de un molde de flan.",
+        "Licúe el maíz con la leche evaporada 2 minutos y cuele apretando con una cuchara para sacar todo el jugo (descarte el bagazo).",
+        "Licúe ese líquido con la leche condensada, los huevos, la vainilla y la canela. Vierta sobre el caramelo.",
+        "Hornee a baño de María 1 hora, hasta que un cuchillo salga limpio.",
+        "Enfríe, refrigere 4 horas y desmolde. Sabe a majarete, pero con caramelo."
+      ],
+      en: [
+        "Heat the oven to 350°F. Make the caramel with the sugar and coat the bottom of a flan mold.",
+        "Blend the corn with the evaporated milk 2 minutes and strain, pressing with a spoon to get all the liquid (discard the pulp).",
+        "Blend that liquid with the condensed milk, eggs, vanilla and cinnamon. Pour over the caramel.",
+        "Bake in a water bath 1 hour, until a knife comes out clean.",
+        "Cool, refrigerate 4 hours and unmold. It tastes like majarete, but with caramel."
+      ]
+    }
+  },
+  {
+    id: "flan-calabaza-queso",
+    category: "postres",
+    name: { es: "Flan de Calabaza y Queso Crema", en: "Pumpkin Cream Cheese Flan" },
+    time: "1 hr 30 min + 6 hr de nevera",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 taza de azúcar (para el caramelo)",
+        "1½ tazas de calabaza cocida y majada",
+        "8 onzas de queso crema, blando",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "5 huevos",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de canela en polvo",
+        "¼ cucharadita de jengibre molido",
+        "¼ cucharadita de nuez moscada"
+      ],
+      en: [
+        "1 cup sugar (for the caramel)",
+        "1½ cups cooked, mashed calabaza (West Indian pumpkin)",
+        "8 oz cream cheese, softened",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "5 eggs",
+        "1 teaspoon vanilla",
+        "1 teaspoon ground cinnamon",
+        "¼ teaspoon ground ginger",
+        "¼ teaspoon nutmeg"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la calabaza pelada y en trozos 15–20 minutos, hasta que esté blanda. Escurra muy bien (dejarla en el colador 10 minutos evita un flan aguado) y maje.",
+        "Caliente el horno a 350°F. Haga el caramelo con el azúcar y cubra el fondo de un molde de flan.",
+        "Licúe el queso crema con la leche condensada hasta que esté liso. Añada la calabaza, la leche evaporada, los huevos, la vainilla y las especias, y licúe. Cuele.",
+        "Vierta sobre el caramelo y hornee a baño de María 1 hora 10 minutos, hasta que un cuchillo salga limpio.",
+        "Enfríe y refrigere 6 horas o toda la noche: el queso crema necesita ese tiempo para que corte limpio. Desmolde."
+      ],
+      en: [
+        "Boil the peeled calabaza in chunks 15–20 minutes, until soft. Drain very well (leaving it in the colander 10 minutes prevents a watery flan) and mash.",
+        "Heat the oven to 350°F. Make the caramel with the sugar and coat the bottom of a flan mold.",
+        "Blend the cream cheese with the condensed milk until smooth. Add the calabaza, evaporated milk, eggs, vanilla and spices, and blend. Strain.",
+        "Pour over the caramel and bake in a water bath 1 hour 10 minutes, until a knife comes out clean.",
+        "Cool and refrigerate 6 hours or overnight: the cream cheese needs that time to slice cleanly. Unmold."
+      ]
+    }
+  },
+  {
+    id: "flan-calabaza-coco",
+    category: "postres",
+    name: { es: "Flan de Calabaza y Coco", en: "Pumpkin Coconut Flan" },
+    time: "1 hr 20 min + 4 hr de nevera",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 taza de azúcar (para el caramelo)",
+        "1½ tazas de calabaza cocida y majada",
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 lata de 14 onzas de leche condensada",
+        "5 huevos",
+        "1 cucharadita de canela en polvo",
+        "1 cucharadita de vainilla",
+        "¼ taza de coco rallado, tostado"
+      ],
+      en: [
+        "1 cup sugar (for the caramel)",
+        "1½ cups cooked, mashed calabaza (West Indian pumpkin)",
+        "1 can (13.5 oz) coconut milk",
+        "1 can (14 oz) sweetened condensed milk",
+        "5 eggs",
+        "1 teaspoon ground cinnamon",
+        "1 teaspoon vanilla",
+        "¼ cup shredded coconut, toasted"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F. Haga el caramelo con el azúcar y cubra el fondo de un molde de flan.",
+        "Licúe la calabaza bien escurrida con la leche de coco, la leche condensada, los huevos, la canela y la vainilla. Cuele y vierta sobre el caramelo.",
+        "Hornee a baño de María 1 hora, hasta que un cuchillo salga limpio.",
+        "Enfríe, refrigere 4 horas y desmolde.",
+        "Decore con el coco tostado justo antes de servir para que no se ablande."
+      ],
+      en: [
+        "Heat the oven to 350°F. Make the caramel with the sugar and coat the bottom of a flan mold.",
+        "Blend the well-drained calabaza with the coconut milk, condensed milk, eggs, cinnamon and vanilla. Strain and pour over the caramel.",
+        "Bake in a water bath 1 hour, until a knife comes out clean.",
+        "Cool, refrigerate 4 hours and unmold.",
+        "Top with the toasted coconut right before serving so it stays crisp."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-calabaza-queso-crema",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Calabaza con Frosting de Queso Crema", en: "Pumpkin Cake with Cream Cheese Frosting" },
+    time: "1 hr 15 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "2 tazas de calabaza cocida y majada",
+        "2 tazas de harina de trigo",
+        "1½ tazas de azúcar",
+        "1 taza de aceite",
+        "4 huevos",
+        "2 cucharaditas de polvo de hornear",
+        "1 cucharadita de bicarbonato",
+        "2 cucharaditas de canela en polvo",
+        "½ cucharadita de jengibre molido",
+        "½ cucharadita de sal",
+        "Frosting: 8 onzas de queso crema, blando",
+        "¼ taza de mantequilla, blanda",
+        "2 tazas de azúcar en polvo",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "2 cups cooked, mashed calabaza (West Indian pumpkin)",
+        "2 cups all-purpose flour",
+        "1½ cups sugar",
+        "1 cup oil",
+        "4 eggs",
+        "2 teaspoons baking powder",
+        "1 teaspoon baking soda",
+        "2 teaspoons ground cinnamon",
+        "½ teaspoon ground ginger",
+        "½ teaspoon salt",
+        "Frosting: 8 oz cream cheese, softened",
+        "¼ cup butter, softened",
+        "2 cups powdered sugar",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y engrase un molde de 9 × 13 pulgadas.",
+        "Bata los huevos con el azúcar y el aceite. Añada la calabaza (bien escurrida) y mezcle.",
+        "Cierna la harina con el polvo de hornear, el bicarbonato, las especias y la sal, y únala a la mezcla sin batir de más.",
+        "Hornee 30–35 minutos, hasta que un palillo salga limpio. Deje enfriar por completo en el molde.",
+        "Para el frosting: bata el queso crema con la mantequilla, añada el azúcar en polvo y la vainilla y bata hasta que esté cremoso. Cubra el bizcocho y guárdelo en la nevera."
+      ],
+      en: [
+        "Heat the oven to 350°F and grease a 9 × 13-inch pan.",
+        "Beat the eggs with the sugar and oil. Add the calabaza (well drained) and mix.",
+        "Sift the flour with the baking powder, baking soda, spices and salt, and fold it in without overmixing.",
+        "Bake 30–35 minutes, until a toothpick comes out clean. Let cool completely in the pan.",
+        "For the frosting: beat the cream cheese with the butter, add the powdered sugar and vanilla and beat until creamy. Frost the cake and keep it refrigerated."
+      ]
+    }
+  },
+  {
+    id: "cupcakes-calabaza",
+    category: "bizcochos",
+    name: { es: "Cupcakes de Calabaza", en: "Pumpkin Cupcakes" },
+    time: "50 min",
+    servings: 18,
+    ingredients: {
+      es: [
+        "1½ tazas de calabaza cocida y majada",
+        "1¾ tazas de harina de trigo",
+        "1 taza de azúcar morena",
+        "½ taza de aceite",
+        "3 huevos",
+        "1½ cucharaditas de polvo de hornear",
+        "½ cucharadita de bicarbonato",
+        "1½ cucharaditas de canela en polvo",
+        "¼ cucharadita de nuez moscada",
+        "¼ cucharadita de sal",
+        "Frosting: 4 onzas de queso crema, blando",
+        "2 cucharadas de mantequilla, blanda",
+        "1½ tazas de azúcar en polvo",
+        "½ cucharadita de canela en polvo"
+      ],
+      en: [
+        "1½ cups cooked, mashed calabaza (West Indian pumpkin)",
+        "1¾ cups all-purpose flour",
+        "1 cup brown sugar",
+        "½ cup oil",
+        "3 eggs",
+        "1½ teaspoons baking powder",
+        "½ teaspoon baking soda",
+        "1½ teaspoons ground cinnamon",
+        "¼ teaspoon nutmeg",
+        "¼ teaspoon salt",
+        "Frosting: 4 oz cream cheese, softened",
+        "2 tablespoons butter, softened",
+        "1½ cups powdered sugar",
+        "½ teaspoon ground cinnamon"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y ponga 18 capacillos de papel en moldes de muffins.",
+        "Bata los huevos con el azúcar morena y el aceite. Añada la calabaza.",
+        "Cierna la harina con el polvo de hornear, el bicarbonato, las especias y la sal, y únala sin batir de más.",
+        "Llene los capacillos a ⅔ y hornee 18–22 minutos, hasta que un palillo salga limpio. Deje enfriar por completo.",
+        "Para el frosting: bata el queso crema con la mantequilla, el azúcar en polvo y la canela. Decore con manga o cuchara."
+      ],
+      en: [
+        "Heat the oven to 350°F and line muffin pans with 18 paper liners.",
+        "Beat the eggs with the brown sugar and oil. Add the calabaza.",
+        "Sift the flour with the baking powder, baking soda, spices and salt, and fold it in without overmixing.",
+        "Fill the liners ⅔ full and bake 18–22 minutes, until a toothpick comes out clean. Let cool completely.",
+        "For the frosting: beat the cream cheese with the butter, powdered sugar and cinnamon. Pipe or spread on top."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-calabaza-coco",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Calabaza y Coco", en: "Pumpkin Coconut Cake" },
+    time: "1 hr 15 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de calabaza cocida y majada",
+        "2 tazas de harina de trigo",
+        "1 taza de azúcar",
+        "½ taza de mantequilla, derretida",
+        "3 huevos",
+        "¾ taza de leche de coco",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de bicarbonato",
+        "1 cucharadita de canela en polvo",
+        "½ cucharadita de sal",
+        "1 taza de coco rallado",
+        "Glaseado: 1 taza de azúcar en polvo",
+        "3 cucharadas de leche de coco"
+      ],
+      en: [
+        "1½ cups cooked, mashed calabaza (West Indian pumpkin)",
+        "2 cups all-purpose flour",
+        "1 cup sugar",
+        "½ cup butter, melted",
+        "3 eggs",
+        "¾ cup coconut milk",
+        "2 teaspoons baking powder",
+        "½ teaspoon baking soda",
+        "1 teaspoon ground cinnamon",
+        "½ teaspoon salt",
+        "1 cup shredded coconut",
+        "Glaze: 1 cup powdered sugar",
+        "3 tablespoons coconut milk"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y engrase y enharine un molde Bundt.",
+        "Bata los huevos con el azúcar, la mantequilla, la leche de coco y la calabaza.",
+        "Cierna la harina con el polvo de hornear, el bicarbonato, la canela y la sal. Únala a la mezcla y añada ¾ taza del coco rallado.",
+        "Hornee 45–50 minutos, hasta que un palillo salga limpio. Deje 10 minutos en el molde y desmolde.",
+        "Mezcle el azúcar en polvo con la leche de coco, bañe el bizcocho frío y espolvoree el resto del coco."
+      ],
+      en: [
+        "Heat the oven to 350°F and grease and flour a Bundt pan.",
+        "Beat the eggs with the sugar, butter, coconut milk and calabaza.",
+        "Sift the flour with the baking powder, baking soda, cinnamon and salt. Fold it in and add ¾ cup of the shredded coconut.",
+        "Bake 45–50 minutes, until a toothpick comes out clean. Leave 10 minutes in the pan and unmold.",
+        "Mix the powdered sugar with the coconut milk, drizzle over the cooled cake and sprinkle with the rest of the coconut."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-calabaza-pasas-nueces",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Calabaza con Pasas y Nueces", en: "Pumpkin Cake with Raisins and Walnuts" },
+    time: "1 hr 20 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 tazas de calabaza cocida y majada",
+        "2 tazas de harina de trigo",
+        "1 taza de azúcar",
+        "½ taza de azúcar morena",
+        "¾ taza de aceite",
+        "4 huevos",
+        "2 cucharaditas de polvo de hornear",
+        "1 cucharadita de bicarbonato",
+        "2 cucharaditas de canela en polvo",
+        "¼ cucharadita de clavo molido",
+        "½ cucharadita de sal",
+        "¾ taza de pasas",
+        "¾ taza de nueces, picadas"
+      ],
+      en: [
+        "2 cups cooked, mashed calabaza (West Indian pumpkin)",
+        "2 cups all-purpose flour",
+        "1 cup sugar",
+        "½ cup brown sugar",
+        "¾ cup oil",
+        "4 eggs",
+        "2 teaspoons baking powder",
+        "1 teaspoon baking soda",
+        "2 teaspoons ground cinnamon",
+        "¼ teaspoon ground cloves",
+        "½ teaspoon salt",
+        "¾ cup raisins",
+        "¾ cup walnuts, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y engrase un molde de tubo o Bundt.",
+        "Bata los huevos con los dos azúcares y el aceite. Añada la calabaza.",
+        "Cierna la harina con el polvo de hornear, el bicarbonato, las especias y la sal, y únala sin batir de más.",
+        "Pase las pasas y las nueces por una cucharada de harina (así no se hunden) y añádalas a la mezcla.",
+        "Hornee 55–60 minutos, hasta que un palillo salga limpio. Enfríe 15 minutos y desmolde. Espolvoree azúcar en polvo."
+      ],
+      en: [
+        "Heat the oven to 350°F and grease a tube or Bundt pan.",
+        "Beat the eggs with both sugars and the oil. Add the calabaza.",
+        "Sift the flour with the baking powder, baking soda, spices and salt, and fold it in without overmixing.",
+        "Toss the raisins and walnuts in a tablespoon of flour (so they don't sink) and add them to the batter.",
+        "Bake 55–60 minutes, until a toothpick comes out clean. Cool 15 minutes and unmold. Dust with powdered sugar."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-calabaza-marmoleado",
+    category: "bizcochos",
+    name: { es: "Bizcocho Marmoleado de Calabaza y Chocolate", en: "Pumpkin Chocolate Marble Cake" },
+    time: "1 hr 20 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de calabaza cocida y majada",
+        "2½ tazas de harina de trigo",
+        "1½ tazas de azúcar",
+        "1 taza de mantequilla, blanda",
+        "4 huevos",
+        "½ taza de leche",
+        "2½ cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "1½ cucharaditas de canela en polvo",
+        "⅓ taza de cocoa en polvo",
+        "2 cucharadas de leche (para la parte de chocolate)"
+      ],
+      en: [
+        "1½ cups cooked, mashed calabaza (West Indian pumpkin)",
+        "2½ cups all-purpose flour",
+        "1½ cups sugar",
+        "1 cup butter, softened",
+        "4 eggs",
+        "½ cup milk",
+        "2½ teaspoons baking powder",
+        "½ teaspoon salt",
+        "1½ teaspoons ground cinnamon",
+        "⅓ cup cocoa powder",
+        "2 tablespoons milk (for the chocolate part)"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y engrase y enharine un molde Bundt.",
+        "Bata la mantequilla con el azúcar hasta que esté cremosa y añada los huevos de uno en uno.",
+        "Cierna la harina con el polvo de hornear y la sal, y añádala alternando con la leche. Divida la mezcla en dos.",
+        "A una mitad añada la calabaza y la canela; a la otra, la cocoa con las 2 cucharadas de leche.",
+        "Alterne cucharadas de las dos mezclas en el molde y pase un cuchillo en zigzag una sola vez para marmolear.",
+        "Hornee 50–55 minutos, hasta que un palillo salga limpio. Enfríe 15 minutos y desmolde."
+      ],
+      en: [
+        "Heat the oven to 350°F and grease and flour a Bundt pan.",
+        "Beat the butter with the sugar until creamy and add the eggs one at a time.",
+        "Sift the flour with the baking powder and salt, and add it alternately with the milk. Divide the batter in two.",
+        "To one half add the calabaza and cinnamon; to the other, the cocoa with the 2 tablespoons of milk.",
+        "Alternate spoonfuls of both batters in the pan and run a knife through in a zigzag just once to marble.",
+        "Bake 50–55 minutes, until a toothpick comes out clean. Cool 15 minutes and unmold."
+      ]
+    }
+  },
+  {
+    id: "brazo-gitano-calabaza",
+    category: "bizcochos",
+    name: { es: "Brazo Gitano de Calabaza con Queso Crema", en: "Pumpkin Roll with Cream Cheese Filling" },
+    time: "1 hr + 2 hr de nevera",
+    servings: 10,
+    ingredients: {
+      es: [
+        "3 huevos",
+        "1 taza de azúcar",
+        "⅔ taza de calabaza cocida y majada",
+        "¾ taza de harina de trigo",
+        "1 cucharadita de polvo de hornear",
+        "1½ cucharaditas de canela en polvo",
+        "¼ cucharadita de jengibre molido",
+        "¼ cucharadita de sal",
+        "Relleno: 8 onzas de queso crema, blando",
+        "2 cucharadas de mantequilla, blanda",
+        "1 taza de azúcar en polvo",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "3 eggs",
+        "1 cup sugar",
+        "⅔ cup cooked, mashed calabaza (West Indian pumpkin)",
+        "¾ cup all-purpose flour",
+        "1 teaspoon baking powder",
+        "1½ teaspoons ground cinnamon",
+        "¼ teaspoon ground ginger",
+        "¼ teaspoon salt",
+        "Filling: 8 oz cream cheese, softened",
+        "2 tablespoons butter, softened",
+        "1 cup powdered sugar",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 375°F. Forre con papel de hornear engrasado una bandeja de 10 × 15 pulgadas.",
+        "Bata los huevos con el azúcar 5 minutos, hasta que estén pálidos y espesos. Añada la calabaza.",
+        "Cierna la harina con el polvo de hornear, las especias y la sal, y únala con espátula, con movimientos envolventes.",
+        "Extienda en la bandeja y hornee 13–15 minutos. Vuélquelo enseguida sobre un paño espolvoreado con azúcar en polvo, quite el papel y enróllelo caliente con el paño. Deje enfriar así enrollado.",
+        "Bata el queso crema con la mantequilla, el azúcar en polvo y la vainilla. Desenrolle el bizcocho, unte el relleno y vuelva a enrollar sin el paño.",
+        "Envuelva en plástico y refrigere 2 horas antes de cortar en ruedas."
+      ],
+      en: [
+        "Heat the oven to 375°F. Line a 10 × 15-inch sheet pan with greased parchment.",
+        "Beat the eggs with the sugar 5 minutes, until pale and thick. Add the calabaza.",
+        "Sift the flour with the baking powder, spices and salt, and fold it in gently with a spatula.",
+        "Spread in the pan and bake 13–15 minutes. Turn it out right away onto a towel dusted with powdered sugar, peel off the paper and roll it up warm with the towel. Let cool rolled up.",
+        "Beat the cream cheese with the butter, powdered sugar and vanilla. Unroll the cake, spread the filling and roll it up again without the towel.",
+        "Wrap in plastic and refrigerate 2 hours before slicing into rounds."
       ]
     }
   }
