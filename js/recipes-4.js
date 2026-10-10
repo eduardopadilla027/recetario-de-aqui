@@ -32,6 +32,9 @@
  * ensaladas verdes (berro, espinaca, pepino, brócoli…) y de granos (tres
  * habichuelas, gandules, lentejas, frijoles negros, habichuelas blancas con atún),
  * y gazpachos (de bacalao con aguacate, de tomate y de mangó).
+ * Decimoquinta tanda: galletas (cucas de melao de panadería, muñequitos de jengibre,
+ * melao y especias, Marías, espirales de guayaba, alfajores…) y más postres (natilla
+ * de chocolate, tembleque de calabaza, helados de guayaba y mangó…).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -8104,6 +8107,701 @@ recipes.push(
         "Blend the rest of the mango with the cucumber, bell pepper, onion, lime juice, oil, salt and water until smooth.",
         "Refrigerate at least 1 hour.",
         "Serve in small glasses or bowls with the reserved dice and cilantro. It's sweet, tangy and very refreshing."
+      ]
+    }
+  },
+
+  // ── Decimoquinta tanda (2026-10): galletas (cucas, jengibre…) y más postres ──
+  {
+    id: "cucas-melao-panaderia",
+    category: "galletitas",
+    name: { es: "Cucas de Melao de Panadería (Grandes y Finas)", en: "Bakery-Style Molasses Cucas (Large and Thin)" },
+    time: "45 min + 1 hr de nevera",
+    servings: 16,
+    ingredients: {
+      es: [
+        "3 tazas de harina de trigo",
+        "1 cucharadita de bicarbonato",
+        "½ cucharadita de sal",
+        "2 cucharaditas de jengibre en polvo",
+        "1 cucharadita de canela en polvo",
+        "½ cucharadita de clavo molido",
+        "½ taza de manteca vegetal o mantequilla, blanda",
+        "½ taza de azúcar morena",
+        "¾ taza de melao de caña",
+        "1 huevo"
+      ],
+      en: [
+        "3 cups all-purpose flour",
+        "1 teaspoon baking soda",
+        "½ teaspoon salt",
+        "2 teaspoons ground ginger",
+        "1 teaspoon ground cinnamon",
+        "½ teaspoon ground cloves",
+        "½ cup vegetable shortening or butter, softened",
+        "½ cup brown sugar",
+        "¾ cup cane molasses",
+        "1 egg"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la harina con el bicarbonato, la sal y las especias.",
+        "Bata la manteca con el azúcar morena, añada el melao y el huevo, y luego la harina hasta tener una masa firme y oscura.",
+        "Envuelva en plástico y refrigere 1 hora (así se estira sin pegarse).",
+        "Caliente el horno a 350°F. Estire la masa a ⅛ de pulgada sobre harina y corte círculos grandes con el borde de una lata o un plato pequeño.",
+        "Hornee 10–12 minutos en bandejas engrasadas. Salen blandas y se ponen crujientes al enfriar, como las de las panaderías de antes."
+      ],
+      en: [
+        "Mix the flour with the baking soda, salt and spices.",
+        "Beat the shortening with the brown sugar, add the molasses and egg, then the flour until you have a firm, dark dough.",
+        "Wrap in plastic and refrigerate 1 hour (so it rolls out without sticking).",
+        "Heat the oven to 350°F. Roll the dough ⅛ inch thick on a floured surface and cut large circles with the rim of a can or a small plate.",
+        "Bake 10–12 minutes on greased sheet pans. They come out soft and turn crisp as they cool, like the old-time bakery ones."
+      ]
+    }
+  },
+  {
+    id: "munequitos-jengibre",
+    category: "galletitas",
+    name: { es: "Muñequitos de Jengibre Glaseados", en: "Iced Gingerbread People" },
+    time: "1 hr + 2 hr de nevera",
+    servings: 24,
+    ingredients: {
+      es: [
+        "3 tazas de harina de trigo",
+        "1 cucharadita de bicarbonato",
+        "¼ cucharadita de sal",
+        "1 cucharada de jengibre en polvo",
+        "1½ cucharaditas de canela en polvo",
+        "¼ cucharadita de clavo molido",
+        "¾ taza de mantequilla, blanda",
+        "¾ taza de azúcar morena",
+        "1 huevo",
+        "½ taza de melao",
+        "Glaseado: 1½ tazas de azúcar en polvo",
+        "2 cucharadas de leche"
+      ],
+      en: [
+        "3 cups all-purpose flour",
+        "1 teaspoon baking soda",
+        "¼ teaspoon salt",
+        "1 tablespoon ground ginger",
+        "1½ teaspoons ground cinnamon",
+        "¼ teaspoon ground cloves",
+        "¾ cup butter, softened",
+        "¾ cup brown sugar",
+        "1 egg",
+        "½ cup molasses",
+        "Icing: 1½ cups powdered sugar",
+        "2 tablespoons milk"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la harina con el bicarbonato, la sal y las especias.",
+        "Bata la mantequilla con el azúcar morena, añada el huevo y el melao, y luego la harina.",
+        "Divida la masa en dos discos, envuélvalos y refrigere 2 horas.",
+        "Caliente el horno a 350°F. Estire a ¼ de pulgada y corte muñequitos (o estrellas y arbolitos). Hornee 8–10 minutos.",
+        "Mezcle el azúcar en polvo con la leche hasta tener un glaseado espeso y decore con manga o con una bolsita con la punta cortada. Deje secar 1 hora."
+      ],
+      en: [
+        "Mix the flour with the baking soda, salt and spices.",
+        "Beat the butter with the brown sugar, add the egg and molasses, then the flour.",
+        "Divide the dough into two disks, wrap and refrigerate 2 hours.",
+        "Heat the oven to 350°F. Roll ¼ inch thick and cut out people (or stars and trees). Bake 8–10 minutes.",
+        "Mix the powdered sugar with the milk to a thick icing and decorate with a piping bag or a small bag with the tip snipped. Let dry 1 hour."
+      ]
+    }
+  },
+  {
+    id: "galletas-melao-especias",
+    category: "galletitas",
+    name: { es: "Galletas Blandas de Melao y Especias", en: "Soft Molasses Spice Cookies" },
+    time: "35 min + 30 min de nevera",
+    servings: 24,
+    ingredients: {
+      es: [
+        "2¼ tazas de harina de trigo",
+        "2 cucharaditas de bicarbonato",
+        "¼ cucharadita de sal",
+        "1½ cucharaditas de jengibre en polvo",
+        "1 cucharadita de canela en polvo",
+        "¼ cucharadita de clavo molido",
+        "¾ taza de mantequilla, derretida",
+        "1 taza de azúcar morena",
+        "1 huevo",
+        "¼ taza de melao",
+        "Para cubrir: ¼ taza de azúcar"
+      ],
+      en: [
+        "2¼ cups all-purpose flour",
+        "2 teaspoons baking soda",
+        "¼ teaspoon salt",
+        "1½ teaspoons ground ginger",
+        "1 teaspoon ground cinnamon",
+        "¼ teaspoon ground cloves",
+        "¾ cup butter, melted",
+        "1 cup brown sugar",
+        "1 egg",
+        "¼ cup molasses",
+        "For coating: ¼ cup sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la harina con el bicarbonato, la sal y las especias.",
+        "Bata la mantequilla derretida con el azúcar morena, el huevo y el melao. Añada la harina y refrigere la masa 30 minutos.",
+        "Caliente el horno a 350°F. Forme bolitas de una cucharada y páselas por el azúcar.",
+        "Hornee 9–10 minutos: salen agrietadas por encima y blanditas por dentro. Deje 5 minutos en la bandeja."
+      ],
+      en: [
+        "Mix the flour with the baking soda, salt and spices.",
+        "Whisk the melted butter with the brown sugar, egg and molasses. Add the flour and chill the dough 30 minutes.",
+        "Heat the oven to 350°F. Form tablespoon balls and roll them in the sugar.",
+        "Bake 9–10 minutes: they come out crackled on top and soft inside. Leave 5 minutes on the pan."
+      ]
+    }
+  },
+  {
+    id: "galletas-jengibre-limon",
+    category: "galletitas",
+    name: { es: "Galletas de Jengibre Fresco y Limón", en: "Fresh Ginger and Lime Cookies" },
+    time: "35 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "2 tazas de harina de trigo",
+        "½ cucharadita de polvo de hornear",
+        "¼ cucharadita de sal",
+        "¾ taza de mantequilla, blanda",
+        "¾ taza de azúcar",
+        "1 huevo",
+        "2 cucharadas de jengibre fresco rallado",
+        "1 cucharada de ralladura de limón",
+        "Glaseado: 1 taza de azúcar en polvo",
+        "2 cucharadas de jugo de limón"
+      ],
+      en: [
+        "2 cups all-purpose flour",
+        "½ teaspoon baking powder",
+        "¼ teaspoon salt",
+        "¾ cup butter, softened",
+        "¾ cup sugar",
+        "1 egg",
+        "2 tablespoons grated fresh ginger",
+        "1 tablespoon lime zest",
+        "Glaze: 1 cup powdered sugar",
+        "2 tablespoons lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y forre dos bandejas con papel de hornear.",
+        "Bata la mantequilla con el azúcar, el jengibre y la ralladura hasta que esté cremosa. Añada el huevo.",
+        "Añada la harina mezclada con el polvo de hornear y la sal.",
+        "Forme bolitas, aplánelas con el fondo de un vaso y hornee 11–13 minutos, sin que se doren mucho.",
+        "Mezcle el azúcar en polvo con el limón y bañe las galletas frías. El jengibre fresco pica un poquito y refresca."
+      ],
+      en: [
+        "Heat the oven to 350°F and line two sheet pans with parchment.",
+        "Beat the butter with the sugar, ginger and zest until creamy. Add the egg.",
+        "Add the flour mixed with the baking powder and salt.",
+        "Form balls, flatten them with the bottom of a glass and bake 11–13 minutes, without browning much.",
+        "Mix the powdered sugar with the lime juice and glaze the cooled cookies. The fresh ginger gives a gentle, refreshing heat."
+      ]
+    }
+  },
+  {
+    id: "galletas-marias-caseras",
+    category: "galletitas",
+    name: { es: "Galletas María Caseras", en: "Homemade Maria Cookies" },
+    time: "45 min",
+    servings: 30,
+    ingredients: {
+      es: [
+        "2 tazas de harina de trigo",
+        "1 cucharadita de polvo de hornear",
+        "¼ cucharadita de sal",
+        "¼ taza de mantequilla, blanda",
+        "½ taza de azúcar",
+        "1 huevo",
+        "3 cucharadas de leche",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "2 cups all-purpose flour",
+        "1 teaspoon baking powder",
+        "¼ teaspoon salt",
+        "¼ cup butter, softened",
+        "½ cup sugar",
+        "1 egg",
+        "3 tablespoons milk",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y forre dos bandejas con papel de hornear.",
+        "Bata la mantequilla con el azúcar, añada el huevo, la leche y la vainilla, y luego la harina con el polvo de hornear y la sal.",
+        "Estire la masa muy fina (⅛ de pulgada) y corte círculos de 2½ pulgadas.",
+        "Pínchelas con un tenedor y, si quiere, marque un borde con la punta de un cuchillo.",
+        "Hornee 10–12 minutos, hasta que los bordes doren. Son las de mojar en el café con leche."
+      ],
+      en: [
+        "Heat the oven to 350°F and line two sheet pans with parchment.",
+        "Beat the butter with the sugar, add the egg, milk and vanilla, then the flour with the baking powder and salt.",
+        "Roll the dough very thin (⅛ inch) and cut 2½-inch circles.",
+        "Prick them with a fork and, if you like, mark a border with the tip of a knife.",
+        "Bake 10–12 minutes, until the edges are golden. They're the ones for dunking in café con leche."
+      ]
+    }
+  },
+  {
+    id: "galletas-pasas-ron",
+    category: "galletitas",
+    name: { es: "Galletas de Pasas al Ron", en: "Rum Raisin Cookies" },
+    time: "40 min + 1 hr de remojo",
+    servings: 24,
+    ingredients: {
+      es: [
+        "¾ taza de pasas",
+        "¼ taza de ron oscuro",
+        "2 tazas de harina de trigo",
+        "½ cucharadita de bicarbonato",
+        "¼ cucharadita de sal",
+        "½ cucharadita de canela en polvo",
+        "½ taza de mantequilla, blanda",
+        "¾ taza de azúcar morena",
+        "1 huevo"
+      ],
+      en: [
+        "¾ cup raisins",
+        "¼ cup dark rum",
+        "2 cups all-purpose flour",
+        "½ teaspoon baking soda",
+        "¼ teaspoon salt",
+        "½ teaspoon ground cinnamon",
+        "½ cup butter, softened",
+        "¾ cup brown sugar",
+        "1 egg"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje las pasas en el ron 1 hora (o caliéntelas juntas 1 minuto y deje refrescar).",
+        "Caliente el horno a 350°F y forre dos bandejas con papel de hornear.",
+        "Bata la mantequilla con el azúcar morena y el huevo. Añada la harina con el bicarbonato, la sal y la canela.",
+        "Añada las pasas con el ron que no absorbieron. Ponga cucharadas en las bandejas.",
+        "Hornee 11–13 minutos. El alcohol se evapora casi todo en el horno, pero queda el sabor a ron."
+      ],
+      en: [
+        "Soak the raisins in the rum 1 hour (or warm them together 1 minute and let cool).",
+        "Heat the oven to 350°F and line two sheet pans with parchment.",
+        "Beat the butter with the brown sugar and egg. Add the flour with the baking soda, salt and cinnamon.",
+        "Add the raisins with any rum they didn't absorb. Drop spoonfuls on the pans.",
+        "Bake 11–13 minutes. Most of the alcohol bakes off, but the rum flavor stays."
+      ]
+    }
+  },
+  {
+    id: "espirales-guayaba-queso",
+    category: "galletitas",
+    name: { es: "Espirales de Guayaba y Queso Crema", en: "Guava and Cream Cheese Pinwheel Cookies" },
+    time: "50 min + 1 hr de nevera",
+    servings: 30,
+    ingredients: {
+      es: [
+        "½ taza de mantequilla, blanda",
+        "4 onzas de queso crema, blando",
+        "½ taza de azúcar",
+        "1 huevo",
+        "1 cucharadita de vainilla",
+        "2 tazas de harina de trigo",
+        "½ cucharadita de polvo de hornear",
+        "¼ cucharadita de sal",
+        "8 onzas de pasta de guayaba"
+      ],
+      en: [
+        "½ cup butter, softened",
+        "4 oz cream cheese, softened",
+        "½ cup sugar",
+        "1 egg",
+        "1 teaspoon vanilla",
+        "2 cups all-purpose flour",
+        "½ teaspoon baking powder",
+        "¼ teaspoon salt",
+        "8 oz guava paste"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata la mantequilla con el queso crema y el azúcar. Añada el huevo, la vainilla y la harina con el polvo de hornear y la sal.",
+        "Derrita la pasta de guayaba con 1 cucharada de agua a fuego bajo, moviendo, hasta que se pueda untar. Deje refrescar.",
+        "Estire la masa entre dos papeles en un rectángulo de 10 × 12 pulgadas, unte la guayaba y enróllela como un brazo gitano.",
+        "Envuelva y refrigere 1 hora. Caliente el horno a 350°F.",
+        "Corte ruedas de ¼ de pulgada y hornee 12–14 minutos, hasta que los bordes doren."
+      ],
+      en: [
+        "Beat the butter with the cream cheese and sugar. Add the egg, vanilla and the flour with the baking powder and salt.",
+        "Melt the guava paste with 1 tablespoon of water over low heat, stirring, until spreadable. Let cool.",
+        "Roll the dough between two sheets of paper into a 10 × 12-inch rectangle, spread the guava and roll it up like a jelly roll.",
+        "Wrap and refrigerate 1 hour. Heat the oven to 350°F.",
+        "Slice ¼-inch rounds and bake 12–14 minutes, until the edges are golden."
+      ]
+    }
+  },
+  {
+    id: "alfajores-maicena",
+    category: "galletitas",
+    name: { es: "Alfajores de Maicena con Dulce de Leche", en: "Cornstarch Alfajores with Dulce de Leche" },
+    time: "50 min",
+    servings: 18,
+    ingredients: {
+      es: [
+        "1½ tazas de maicena",
+        "1 taza de harina de trigo",
+        "1 cucharadita de polvo de hornear",
+        "½ taza de mantequilla, blanda",
+        "½ taza de azúcar",
+        "2 yemas de huevo",
+        "1 cucharadita de vainilla",
+        "1 lata de 14 onzas de leche condensada, cocida como dulce de leche",
+        "½ taza de coco rallado"
+      ],
+      en: [
+        "1½ cups cornstarch",
+        "1 cup all-purpose flour",
+        "1 teaspoon baking powder",
+        "½ cup butter, softened",
+        "½ cup sugar",
+        "2 egg yolks",
+        "1 teaspoon vanilla",
+        "1 can (14 oz) sweetened condensed milk, cooked into dulce de leche",
+        "½ cup shredded coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "Para el dulce de leche: hierva la lata cerrada, siempre cubierta de agua, 2½ horas a fuego bajo. Deje enfriar por completo antes de abrirla (abrirla caliente es peligroso).",
+        "Caliente el horno a 350°F. Bata la mantequilla con el azúcar, las yemas y la vainilla, y añada la maicena, la harina y el polvo de hornear.",
+        "Estire a ¼ de pulgada y corte círculos de 2 pulgadas. Hornee 10 minutos, sin que doren.",
+        "Una las galletas frías de dos en dos con una cucharadita de dulce de leche.",
+        "Ruede el borde por el coco rallado."
+      ],
+      en: [
+        "For the dulce de leche: boil the closed can, always covered with water, 2½ hours over low heat. Let it cool completely before opening (opening it hot is dangerous).",
+        "Heat the oven to 350°F. Beat the butter with the sugar, yolks and vanilla, and add the cornstarch, flour and baking powder.",
+        "Roll ¼ inch thick and cut 2-inch circles. Bake 10 minutes, without browning.",
+        "Sandwich the cooled cookies in pairs with a teaspoon of dulce de leche.",
+        "Roll the edges in the shredded coconut."
+      ]
+    }
+  },
+  {
+    id: "galletas-avena-coco",
+    category: "galletitas",
+    name: { es: "Galletas de Avena y Coco", en: "Oatmeal Coconut Cookies" },
+    time: "35 min",
+    servings: 24,
+    ingredients: {
+      es: [
+        "1½ tazas de avena",
+        "1 taza de harina de trigo",
+        "1 taza de coco rallado",
+        "½ cucharadita de bicarbonato",
+        "¼ cucharadita de sal",
+        "½ taza de mantequilla, derretida",
+        "¾ taza de azúcar morena",
+        "1 huevo",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "1½ cups rolled oats",
+        "1 cup all-purpose flour",
+        "1 cup shredded coconut",
+        "½ teaspoon baking soda",
+        "¼ teaspoon salt",
+        "½ cup butter, melted",
+        "¾ cup brown sugar",
+        "1 egg",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y forre dos bandejas con papel de hornear.",
+        "Mezcle la avena, la harina, el coco, el bicarbonato y la sal.",
+        "Bata la mantequilla derretida con el azúcar morena, el huevo y la vainilla, y únalo a lo seco.",
+        "Ponga cucharadas en las bandejas y aplánelas un poco. Hornee 11–13 minutos, hasta que estén doradas.",
+        "Crujientes por fuera y masticables por dentro."
+      ],
+      en: [
+        "Heat the oven to 350°F and line two sheet pans with parchment.",
+        "Mix the oats, flour, coconut, baking soda and salt.",
+        "Whisk the melted butter with the brown sugar, egg and vanilla, and combine with the dry mix.",
+        "Drop spoonfuls on the pans and flatten slightly. Bake 11–13 minutes, until golden.",
+        "Crisp outside and chewy inside."
+      ]
+    }
+  },
+  {
+    id: "galletas-mantequilla-danesas",
+    category: "galletitas",
+    name: { es: "Galletas de Mantequilla Tipo Danesas", en: "Danish-Style Butter Cookies" },
+    time: "40 min",
+    servings: 30,
+    ingredients: {
+      es: [
+        "1 taza de mantequilla, blanda",
+        "⅔ taza de azúcar en polvo",
+        "1 huevo",
+        "1½ cucharaditas de vainilla",
+        "2¼ tazas de harina de trigo",
+        "¼ cucharadita de sal",
+        "2 cucharadas de azúcar gruesa para decorar"
+      ],
+      en: [
+        "1 cup butter, softened",
+        "⅔ cup powdered sugar",
+        "1 egg",
+        "1½ teaspoons vanilla",
+        "2¼ cups all-purpose flour",
+        "¼ teaspoon salt",
+        "2 tablespoons coarse sugar for decorating"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350°F y forre dos bandejas con papel de hornear.",
+        "Bata la mantequilla con el azúcar en polvo 3 minutos, hasta que esté muy cremosa. Añada el huevo y la vainilla.",
+        "Añada la harina y la sal sin batir de más: la masa debe quedar suave para pasar por la manga.",
+        "Con una manga y boquilla de estrella, forme anillos y rositas. Espolvoree el azúcar gruesa.",
+        "Hornee 12–14 minutos, hasta que los bordes doren. Se guardan en lata hasta 2 semanas."
+      ],
+      en: [
+        "Heat the oven to 350°F and line two sheet pans with parchment.",
+        "Beat the butter with the powdered sugar 3 minutes, until very creamy. Add the egg and vanilla.",
+        "Add the flour and salt without overmixing: the dough should stay soft enough to pipe.",
+        "With a piping bag and star tip, pipe rings and rosettes. Sprinkle with the coarse sugar.",
+        "Bake 12–14 minutes, until the edges are golden. They keep in a tin up to 2 weeks."
+      ]
+    }
+  },
+  {
+    id: "natilla-chocolate",
+    category: "postres",
+    name: { es: "Natilla de Chocolate", en: "Chocolate Natilla (Custard)" },
+    time: "25 min + 2 hr de nevera",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 tazas de leche",
+        "½ taza de azúcar",
+        "3 cucharadas de maicena",
+        "3 cucharadas de cocoa en polvo",
+        "3 yemas de huevo",
+        "2 onzas de chocolate semidulce, picado",
+        "1 cucharadita de vainilla",
+        "1 pizca de sal"
+      ],
+      en: [
+        "3 cups milk",
+        "½ cup sugar",
+        "3 tablespoons cornstarch",
+        "3 tablespoons cocoa powder",
+        "3 egg yolks",
+        "2 oz semisweet chocolate, chopped",
+        "1 teaspoon vanilla",
+        "1 pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, mezcle en frío la leche, el azúcar, la maicena, la cocoa, las yemas y la sal hasta que no queden grumos.",
+        "Cocine a fuego medio-bajo, moviendo sin parar, 10–12 minutos, hasta que espese y cubra la cuchara.",
+        "Retire del fuego y añada el chocolate y la vainilla; mueva hasta que el chocolate se derrita.",
+        "Reparta en copas, cubra con plástico tocando la superficie (para que no haga nata) y refrigere 2 horas."
+      ],
+      en: [
+        "In a pot, whisk the cold milk, sugar, cornstarch, cocoa, yolks and salt until no lumps remain.",
+        "Cook over medium-low heat, stirring constantly, 10–12 minutes, until thick and it coats the spoon.",
+        "Remove from the heat and add the chocolate and vanilla; stir until the chocolate melts.",
+        "Divide into cups, cover with plastic touching the surface (so no skin forms) and refrigerate 2 hours."
+      ]
+    }
+  },
+  {
+    id: "budin-pan-coco",
+    category: "postres",
+    name: { es: "Budín de Pan con Coco", en: "Coconut Bread Pudding" },
+    time: "1 hr 15 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 libra de pan de agua del día anterior, en pedazos",
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 lata de 14 onzas de leche condensada",
+        "4 huevos",
+        "½ taza de coco rallado",
+        "¼ taza de mantequilla, derretida",
+        "1 cucharadita de canela en polvo",
+        "1 cucharadita de vainilla",
+        "½ taza de pasas",
+        "1 taza de azúcar (para el caramelo)"
+      ],
+      en: [
+        "1 lb day-old Puerto Rican water bread, in pieces",
+        "1 can (13.5 oz) coconut milk",
+        "1 can (12 oz) evaporated milk",
+        "1 can (14 oz) sweetened condensed milk",
+        "4 eggs",
+        "½ cup shredded coconut",
+        "¼ cup butter, melted",
+        "1 teaspoon ground cinnamon",
+        "1 teaspoon vanilla",
+        "½ cup raisins",
+        "1 cup sugar (for the caramel)"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje el pan en la leche de coco y la evaporada 20 minutos, y májelo con las manos hasta que no queden pedazos grandes.",
+        "Caliente el horno a 350°F. Haga el caramelo con el azúcar y cubra un molde de 9 × 13 pulgadas o uno redondo.",
+        "Añada al pan la leche condensada, los huevos, el coco, la mantequilla, la canela, la vainilla y las pasas. Mezcle bien.",
+        "Vierta sobre el caramelo y hornee a baño de María 1 hora, hasta que un cuchillo salga limpio.",
+        "Enfríe, desmolde y corte en cuadros."
+      ],
+      en: [
+        "Soak the bread in the coconut and evaporated milks 20 minutes and mash it with your hands until no big pieces remain.",
+        "Heat the oven to 350°F. Make the caramel with the sugar and coat a 9 × 13-inch or round pan.",
+        "Add the condensed milk, eggs, coconut, butter, cinnamon, vanilla and raisins to the bread. Mix well.",
+        "Pour over the caramel and bake in a water bath 1 hour, until a knife comes out clean.",
+        "Cool, unmold and cut into squares."
+      ]
+    }
+  },
+  {
+    id: "tembleque-calabaza",
+    category: "postres",
+    name: { es: "Tembleque de Calabaza", en: "Pumpkin Tembleque" },
+    time: "25 min + 4 hr de nevera",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 latas de 13.5 onzas de leche de coco",
+        "1 taza de calabaza cocida y majada",
+        "½ taza de azúcar",
+        "½ taza de maicena",
+        "¼ cucharadita de sal",
+        "1 cucharadita de canela en polvo",
+        "½ cucharadita de vainilla",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "2 cans (13.5 oz) coconut milk",
+        "1 cup cooked, mashed calabaza (West Indian pumpkin)",
+        "½ cup sugar",
+        "½ cup cornstarch",
+        "¼ teaspoon salt",
+        "1 teaspoon ground cinnamon",
+        "½ teaspoon vanilla",
+        "Ground cinnamon for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la leche de coco con la calabaza bien escurrida hasta que quede lisa.",
+        "Páselo a una olla y añada el azúcar, la maicena, la sal y la canela. Mezcle en frío hasta disolver la maicena.",
+        "Cocine a fuego medio, moviendo sin parar, hasta que hierva y espese mucho (unos 10 minutos). Añada la vainilla.",
+        "Vierta en un molde mojado con agua fría (así desmolda fácil) y refrigere 4 horas.",
+        "Desmolde y espolvoree canela. Es el tembleque de siempre con el color y el sabor de la calabaza."
+      ],
+      en: [
+        "Blend the coconut milk with the well-drained calabaza until smooth.",
+        "Transfer to a pot and add the sugar, cornstarch, salt and cinnamon. Whisk cold until the cornstarch dissolves.",
+        "Cook over medium heat, stirring constantly, until it boils and thickens a lot (about 10 minutes). Add the vanilla.",
+        "Pour into a mold rinsed with cold water (so it unmolds easily) and refrigerate 4 hours.",
+        "Unmold and dust with cinnamon. It's the classic tembleque with the color and flavor of calabaza."
+      ]
+    }
+  },
+  {
+    id: "helado-guayaba",
+    category: "postres",
+    name: { es: "Helado de Guayaba (Sin Máquina)", en: "No-Churn Guava Ice Cream" },
+    time: "20 min + 6 hr de congelador",
+    servings: 8,
+    ingredients: {
+      es: [
+        "8 onzas de pasta de guayaba",
+        "¼ taza de agua",
+        "2 tazas de crema espesa (heavy cream), bien fría",
+        "1 lata de 14 onzas de leche condensada",
+        "4 onzas de queso crema, blando",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "8 oz guava paste",
+        "¼ cup water",
+        "2 cups heavy cream, very cold",
+        "1 can (14 oz) sweetened condensed milk",
+        "4 oz cream cheese, softened",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la pasta de guayaba con el agua a fuego bajo, moviendo, hasta tener un sirope espeso. Deje enfriar.",
+        "Bata el queso crema con la leche condensada y la vainilla hasta que esté liso.",
+        "Bata la crema hasta que forme picos firmes y únala con cuidado a la mezcla de queso.",
+        "Vierta la mitad en un molde, ponga cucharadas de guayaba, repita y pase un cuchillo para hacer vetas.",
+        "Cubra y congele 6 horas. Sabe a pastelillo de guayaba y queso."
+      ],
+      en: [
+        "Melt the guava paste with the water over low heat, stirring, into a thick syrup. Let cool.",
+        "Beat the cream cheese with the condensed milk and vanilla until smooth.",
+        "Whip the cream to stiff peaks and gently fold it into the cheese mixture.",
+        "Pour half into a pan, add spoonfuls of guava, repeat and run a knife through to swirl.",
+        "Cover and freeze 6 hours. It tastes like a guava and cheese pastry."
+      ]
+    }
+  },
+  {
+    id: "helado-mango",
+    category: "postres",
+    name: { es: "Helado de Mangó (Sin Máquina)", en: "No-Churn Mango Ice Cream" },
+    time: "15 min + 6 hr de congelador",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 mangós maduros, pelados (2 tazas de pulpa)",
+        "1 cucharada de jugo de limón",
+        "2 tazas de crema espesa (heavy cream), bien fría",
+        "1 lata de 14 onzas de leche condensada",
+        "1 pizca de sal"
+      ],
+      en: [
+        "3 ripe mangoes, peeled (2 cups pulp)",
+        "1 tablespoon lime juice",
+        "2 cups heavy cream, very cold",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 pinch of salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la pulpa de mangó con el limón y la sal hasta tener un puré fino.",
+        "Mezcle el puré con la leche condensada.",
+        "Bata la crema hasta que forme picos firmes y únala con cuidado a la mezcla de mangó, sin perder el aire.",
+        "Vierta en un molde, cubra y congele 6 horas. Sáquelo 5 minutos antes de servir para que se pueda servir con cuchara."
+      ],
+      en: [
+        "Blend the mango pulp with the lime juice and salt into a smooth purée.",
+        "Mix the purée with the condensed milk.",
+        "Whip the cream to stiff peaks and gently fold it into the mango mixture, keeping the air in.",
+        "Pour into a pan, cover and freeze 6 hours. Take it out 5 minutes before serving so it scoops easily."
       ]
     }
   }
