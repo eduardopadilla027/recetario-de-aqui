@@ -41,6 +41,8 @@ const translations = {
     navRecipes: "Recetas",
     navFavorites: "Favoritas",
     navPlans: "Planes",
+    navTribute: "Dedicatoria",
+    footerTribute: "Dedicado al Master Chef Alfredo Ayala Colón",
     categoriesTitle: "Explora por categoría",
     categoriesSub: "Elige una categoría para ver sus recetas. Vuelve a pulsarla para cerrarla.",
     showing: "Mostrando",
@@ -155,6 +157,8 @@ const translations = {
     navRecipes: "Recipes",
     navFavorites: "Favorites",
     navPlans: "Meal plans",
+    navTribute: "Dedication",
+    footerTribute: "Dedicated to Master Chef Alfredo Ayala Colón",
     categoriesTitle: "Browse by category",
     categoriesSub: "Pick a category to see its recipes. Tap it again to close it.",
     showing: "Showing",
@@ -1307,6 +1311,7 @@ function switchLang(lang) {
   renderHome();
   if (current) renderModal(current);
   if (!$("view-plans").hidden) renderPlansShell();
+  if (!$("view-tribute").hidden) { renderTribute(); document.title = `${trt().title} — ${BRAND}`; }
 }
 
 /* ------------------------------------------------------------ detalle ---- */
@@ -1526,6 +1531,7 @@ function showRecipe(id) {
   renderModal(recipe);
   $("view-home").hidden = true;
   $("view-plans").hidden = true;
+  $("view-tribute").hidden = true;
   $("view-recipe").hidden = false;
   window.scrollTo(0, 0);
   $("modal-title").focus({ preventScroll: true });
@@ -1541,6 +1547,7 @@ function showHome(anchor) {
   document.title = `${BRAND} — ${t().subtitle}`;
   $("view-recipe").hidden = true;
   $("view-plans").hidden = true;
+  $("view-tribute").hidden = true;
   $("view-home").hidden = false;
   if (fromRecipe && !explicit) {
     // "Atrás": volver al mismo punto de los resultados y a la tarjeta abierta,
@@ -1577,6 +1584,7 @@ function route() {
   const m = hash.match(/^#\/receta\/(.+)$/);
   if (m) { showRecipe(m[1]); return; }
   if (hash === "#/planes") { showPlans(); return; }
+  if (hash === "#/dedicatoria") { showTribute(); return; }
   const anchor = hash.startsWith("#") && !hash.startsWith("#/") ? hash.slice(1) : null;
   showHome(anchor);
 }

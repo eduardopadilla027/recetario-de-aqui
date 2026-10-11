@@ -738,3 +738,35 @@ main:focus { outline: none; }
 .pairing-chip:hover { background: var(--plantain); color: #fff; border-color: var(--plantain); }
 .pairing-chip:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 @media print { .pairing-chip { border: none; padding: 0 8px 0 0; } }
+
+/* ---------- Dedicatoria (js/tribute.js) ---------- */
+.footer-dedication { margin: 0 0 4px; font-size: .9rem; }
+.footer-dedication a { color: var(--gold); text-decoration: none; font-style: italic; }
+.footer-dedication a:hover { text-decoration: underline; }
+.tribute-view { padding: clamp(24px, 4vw, 48px) 0 var(--s-8); }
+.tribute-wrap { max-width: 860px; }
+.tribute-card { background: var(--ivory); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow); padding: clamp(20px, 4vw, 44px); }
+.tribute-head { display: flex; align-items: center; gap: clamp(16px, 4vw, 32px); margin-bottom: var(--s-5); }
+.tribute-photo { flex: none; width: clamp(110px, 24vw, 168px); aspect-ratio: 1; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 4px var(--ivory), 0 0 0 6px var(--gold); background: var(--sand); }
+.tribute-portrait, .tribute-img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.tribute-kicker { margin: 0 0 var(--s-1); font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--plantain); }
+.tribute-head .section-title { margin: 0; }
+.tribute-tagline { margin: var(--s-2) 0 0; color: var(--ink-2); }
+.tribute-dedication { font-family: var(--font-accent); font-size: var(--step-1); line-height: 1.6; color: var(--ink); background: var(--sand); border-left: 4px solid var(--achiote); border-radius: var(--radius-sm); padding: var(--s-4) var(--s-5); }
+.tribute-dedication p { margin: 0; }
+.tribute-dedication p + p { margin-top: var(--s-3); }
+.tribute-block { margin-top: var(--s-6); }
+.tribute-h2 { font-size: var(--step-2); margin: 0 0 var(--s-4); color: var(--achiote); }
+.tribute-h3 { font-size: var(--step-0); margin: 0 0 var(--s-2); }
+.tribute-timeline { list-style: none; margin: 0; padding: 0 0 0 var(--s-5); border-left: 2px solid var(--line); }
+.tribute-timeline li { position: relative; padding-bottom: var(--s-4); }
+.tribute-timeline li::before { content: ""; position: absolute; left: calc(var(--s-5) * -1 - 7px); top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 3px var(--ivory); }
+.tribute-timeline h3 { margin: 0 0 var(--s-1); font-size: var(--step-0); color: var(--ink); }
+.tribute-timeline p, .tribute-legacy li { margin: 0; color: var(--ink-2); line-height: 1.6; }
+.tribute-legacy { margin: 0; padding-left: 1.2em; display: grid; gap: var(--s-2); }
+.tribute-quote { margin: var(--s-5) 0 0; text-align: center; font-family: var(--font-accent); font-style: italic; font-size: var(--step-2); color: var(--plantain); }
+.tribute-sources { margin-top: var(--s-6); padding-top: var(--s-4); border-top: 1px solid var(--line); font-size: .85rem; color: var(--ink-3); }
+.tribute-sources p { margin: 0 0 var(--s-2); }
+.tribute-sources ul { margin: 0; padding-left: 1.2em; }
+.tribute-sources a { color: var(--achiote); overflow-wrap: anywhere; }
+@media (max-width: 560px) { .tribute-head { flex-direction: column; text-align: center; } }

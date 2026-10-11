@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.22.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.23.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -65,8 +65,9 @@ cocine-a-gusto/
 │   ├── families.js       familias de recetas por categoría (flanes, tembleques…; res, cerdo…) y su orden
 │   ├── pairings.js       "Combina mejor con" de las salsas y aderezos (getPairings)
 │   ├── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
+│   ├── tribute.js        dedicatoria al Master Chef Alfredo Ayala Colón (#/dedicatoria): biografía ES/EN y fuentes
 │   └── plans.js          planes de comida (#/planes): objetivos, época, preferencias, plan de 1 o 7 días
-├── images/               (vacía: reservada para fotos)
+├── images/               (vacía: reservada para fotos; la de la dedicatoria va aquí, ver §7.3)
 ├── .claude/launch.json   servidor local para la vista previa
 ├── .vercelignore         archivos que no se publican en Vercel
 ├── ARQUITECTURA.md       este documento (fuente de verdad)
@@ -74,7 +75,7 @@ cocine-a-gusto/
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js`
-→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
+→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `tribute.js` → `app.js` → `plans.js` (usa funciones de `app.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
 ## 5. Modelo de datos: la receta
 
@@ -330,6 +331,22 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - **Si nada tiene todas las palabras**, muestra las recetas que tienen alguna y lo dice ("Ninguna receta tiene todo…").
 - Rendimiento: índice por receta en caché; cada búsqueda tarda unos milisegundos (la primera con alérgenos, ~0.25 s).
 
+### 7.3 Dedicatoria (`js/tribute.js`, ruta `#/dedicatoria`)
+
+- **Qué es:** página dedicada al **Master Chef Alfredo Ayala Colón** (Barranquitas; padre de la nueva cocina
+  puertorriqueña; fallecido en 2016). Lleva una dedicatoria, su vida en una línea de tiempo (ingeniería en la UPR,
+  California 1979, Ali-Oli 1981 y el Tenedor de Oro, Jamin de Robuchon 1986, Yuquiyú y Chayote, sus otros restaurantes,
+  James Beard House y Great Chefs of the Caribbean), su legado (alumnos como Mario Pagán y José Santaella, becas de
+  hotelería, sala en la UAGM de Carolina), una frase de cierre y las **fuentes** con enlace (`TRIBUTE_SOURCES`).
+  Textos en `TRIBUTE_TEXT` (ES/EN), redactados con palabras propias a partir de las fuentes.
+- **Enlaces:** "Dedicatoria" en el menú del encabezado y en el del pie, y la línea "Dedicado al Master Chef Alfredo Ayala
+  Colón" en el pie (textos `navTribute` y `footerTribute` de `app.js`). `route()` abre `showTribute()`; la vista
+  se oculta al ir al inicio, a una receta o a los planes, y se redibuja al cambiar de idioma.
+- **Foto:** no hay foto de licencia libre (Wikimedia Commons y Wikipedia no tienen) y las de la prensa tienen derechos, así
+  que se muestra un retrato dibujado (gorro de chef con "AA"). Para poner una foto con permiso: copiarla en `images/` y
+  poner su ruta en `TRIBUTE_PHOTO` y el crédito en `TRIBUTE_PHOTO_CREDIT`. Con `TRIBUTE_PHOTO` vacío no se pide
+  ningún archivo.
+
 ### 7.2 Planes de comida (`js/plans.js`, ruta `#/planes`)
 - **Acceso:** enlace "Planes" / "Meal plans" en el menú y en el pie. Vista `<section id="view-plans">`; `route()` llama a
   `showPlans()`; `showHome()` y `showRecipe()` la ocultan. Desde un plan, una receta se abre con `data-open` y "Atrás"
@@ -448,6 +465,16 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-11 — v3.23.0 · Dedicatoria al Master Chef Alfredo Ayala Colón
+- *Pedido:* una dedicatoria al Master Chef Alfredo Ayala Colón, con su biografía y una foto, enlazada en el encabezado y
+  el pie de la aplicación.
+- Nuevo `js/tribute.js` y vista `#/dedicatoria` (§7.3); enlaces "Dedicatoria" en el menú y en el pie, y línea de
+  dedicatoria en el pie; estilos `.tribute-*` y `.footer-dedication`.
+- Biografía de Great Chefs, Metro Puerto Rico (2014 y 2019), Noticel, El Nuevo Día y el San Francisco Chronicle.
+- **Foto:** retrato dibujado hasta tener una foto con permiso de uso (no se encontró ninguna de licencia libre).
+- *Verificado:* menú y pie llevan a la página; ES y EN; a 375 px sin desbordes; al ir a una receta o a los planes la
+  dedicatoria se oculta; sin errores en la consola ✔.
 
 ### 2026-10-11 — v3.22.0 · Grosellas en dulces y salsas
 - *Pedido:* recetas de grosellas, dulces y salsas.
