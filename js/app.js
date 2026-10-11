@@ -1374,12 +1374,18 @@ function renderSafety(recipe) {
     ? `${icon("i-alert")}<span><strong>${at.contains}</strong> ${adv.allergens.map((a) => esc(at.allergens[a.key])).join(" · ")}</span>`
     : "";
 
+  // Sustitutos de js/substitutes.js para cada alérgeno, según la línea donde aparece.
+  const subsHTML = (al) => {
+    const subs = getSubstitutes(recipe, al);
+    return subs.length ? `<span class="allergen-sub"><strong>${esc(SUBS_TEXT[currentLang].label)}</strong> ${subs.map((t) => `<span class="allergen-sub-item">${esc(t[currentLang])}</span>`).join("")}</span>` : "";
+  };
   const allergens = adv.allergens.length
     ? `<ul class="allergen-list">${adv.allergens.map((a) => `
         <li>
           <span class="allergen-chip">${esc(at.allergens[a.key])}</span>
           <span class="allergen-src">${at.foundIn} ${a.items.map((i) => esc(ings[i])).join("; ")}</span>
-        </li>`).join("")}</ul>`
+          ${subsHTML(a)}
+        </li>`).join("")}</ul><p class="allergen-subs-note">${esc(SUBS_TEXT[currentLang].note)}</p>`
     : `<p class="advice-empty">${at.allergensNone}</p>`;
 
   const alertText = (a) => {

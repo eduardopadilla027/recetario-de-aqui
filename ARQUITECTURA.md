@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.17.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 959 en 24 categorías
+> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.18.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 959 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -60,6 +60,7 @@ cocine-a-gusto/
 │   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, y más arroces, en treinta y nueve tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
+│   ├── substitutes.js    sustitutos para cada alérgeno según el ingrediente (getSubstitutes)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
 │   ├── families.js       familias de recetas por categoría (flanes, tembleques…; res, cerdo…) y su orden
 │   ├── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
@@ -72,7 +73,7 @@ cocine-a-gusto/
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js`
-→ `nutrition.js` → `advisories.js` → `search.js` → `families.js` → `app.js` → `plans.js` (usa funciones de `app.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
+→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `app.js` → `plans.js` (usa funciones de `app.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
 ## 5. Modelo de datos: la receta
 
@@ -367,6 +368,15 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 
 - **Alérgenos** (`ALLERGENS`): expresiones regulares sobre cada línea de ingredientes: gluten, leche, huevo, pescado,
   crustáceos, moluscos, nueces, maní, ajonjolí, soya, coco y sulfitos. Se muestran con la línea donde aparecen.
+- **Sustitutos** (`js/substitutes.js`): debajo de cada alérgeno, "Puede usar:" con el sustituto de cada ingrediente donde
+  aparece (`ALLERGEN_SUBS`: harina → mezcla sin gluten 1 a 1, pan rallado, pasta, salsa de soya, avena certificada;
+  leche evaporada → leche de coco, condensada de coco, crema de coco, mantequilla → aceite o margarina vegetal, quesos
+  vegetales; nueces → semillas; maní → girasol; vino → caldo con vinagre o jugo de uva; etc.); si ninguno aplica, el
+  general del alérgeno. El huevo se decide según su papel: base del plato (flan, tortilla, revoltillo, merengue… →
+  "no tiene buen sustituto", `EGG_IS_BASE`), masas horneadas (linaza o puré de guineo), empanizar (leche, mostaza o
+  aquafaba), unir, huevo duro, sellar o barnizar, revuelto o frito (tofu revuelto), yemas en cremas (más maicena) y
+  torrejas. Una nota recuerda revisar etiquetas por la contaminación cruzada. Las 1,356 apariciones de alérgenos en las
+  recetas tienen al menos un sustituto o la indicación de que no lo hay.
 - **Alertas** (`getAdvisories`): pescado crudo (ceviche), huevo crudo (`RAW_EGG_IDS` + bebidas con huevo), alcohol
   (bebida o cocinado), miel (bebés), anís estrellado, cafeína, tés de hierbas, ciguatera, mercurio (atún), veda de
   mariscos, toronja con medicamentos, quenepa (atragantamiento), carambola (peligrosa con enfermedad renal), sazón/adobo comerciales (sodio y glutamato) y alertas
@@ -419,6 +429,15 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-11 — v3.18.0 · Sustitutos para los alérgenos
+- *Pedido:* cuando una receta tenga un alérgeno, recomendar un sustituto si aplica.
+- Nuevo `js/substitutes.js` (`ALLERGEN_SUBS`, `EGG_IS_BASE`, `EGG_TEXT`, `SUBS_TEXT`, `getSubstitutes`), en español e
+  inglés (§9). `app.js` (`renderSafety`): bloque verde "Puede usar:" bajo cada alérgeno, un sustituto por línea, y la
+  nota de precaución al final de la lista. Estilos `.allergen-sub`, `.allergen-sub-item` y `.allergen-subs-note`.
+- *Verificado:* en Node, las 1,356 apariciones de alérgenos tienen sustituto (o "no tiene buen sustituto"); el papel del
+  huevo revisado receta por receta en los casos dudosos; en el navegador, las 1,284 recetas con alérgenos en ES y EN sin
+  errores, y sin desbordes a 375 px ✔.
 
 ### 2026-10-11 — v3.17.0 · Más arroces (con cilantro y otros)
 - *Pedido:* más recetas de arroz, por ejemplo con cilantro.
