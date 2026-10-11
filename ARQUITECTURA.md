@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.18.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 959 en 24 categorías
+> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.19.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 973 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, y más arroces, en treinta y nueve tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, y recetas veganas, en cuarenta tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── substitutes.js    sustitutos para cada alérgeno según el ingrediente (getSubstitutes)
@@ -114,24 +114,24 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | frutas | Frutas | 27 |
 | cereales | Cereales | 16 |
 | granos | Granos y Legumbres | 19 |
-| ensaladas | Ensaladas | 24 |
-| sopas | Sopas | 44 |
+| ensaladas | Ensaladas | 25 |
+| sopas | Sopas | 45 |
 | carnes | Carnes | 63 |
 | aves | Aves | 47 |
 | pescados | Pescado y Mariscos | 57 |
-| huevos | Huevos y Queso | 12 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 51 |
+| huevos | Huevos y Queso | 13 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 53 |
 | pastas | Pastas | 18 |
-| bizcochos | Bizcochos | 38 |
+| bizcochos | Bizcochos | 39 |
 | galletitas | Galletitas | 37 |
 | pasteles_dulces | Pasteles Dulces | 22 |
 | panes | Pan y Panecillos | 40 |
-| emparedados | Emparedados | 22 |
-| postres | Helados, Budines, Flan y Otros Postres | 103 |
+| emparedados | Emparedados | 23 |
+| postres | Helados, Budines, Flan y Otros Postres | 105 |
 | arroces | Arroces y Habichuelas | 54 |
-| vegetales | Vegetales y Viandas | 81 |
-| salsas | Salsas y Aderezos | 46 |
-| bebidas | Bebidas | 34 |
+| vegetales | Vegetales y Viandas | 83 |
+| salsas | Salsas y Aderezos | 48 |
+| bebidas | Bebidas | 35 |
 | jugos | Jugos Naturales | 18 |
 | cocteles | Cócteles y Tragos | 47 |
 
@@ -252,6 +252,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   **Arroces (tanda 39):** el mismo montoncito de los arroces, del color de cada uno y con lo que lleva encima
   (cilantro y limón, verde de recao con ají, ajo tostado, achiote con aceitunas, calabaza, espinaca y garbanzos,
   champiñones, amarillos y queso, piña y jamón, tocineta y pimientos, huevo y vegetales); el cremoso, en tazón.
+  **Veganas (`ic-vg-*`, tanda 40):** cada una con su forma y una hojita verde en un círculo arriba a la derecha.
   **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
@@ -306,7 +307,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   pescado, mariscos, nueces, maní, ajonjolí, soya, coco) usan `getAdvisories`; "sin alcohol" usa las alertas de alcohol
   ("trago sin alcohol" busca entre todas las bebidas); "sin carne" excluye carnes, aves y pescados; cualquier otra palabra
   excluye las recetas que la llevan en los ingredientes.
-- **Ideas** (`S_IDEAS`): navidad, playa/kioscos, desayuno, rápido (≤ 30 min), vegetariano, vegano (además sin lácteos, huevo, miel ni
+- **Ideas** (`S_IDEAS`): navidad, playa/kioscos, desayuno, rápido (≤ 30 min), vegetariano, vegano (las recetas con "vegano" en el nombre van primero; además sin lácteos, huevo, miel ni
   gelatina; la leche y crema de coco y la mantequilla de maní sí valen), picante, frío y refrescante,
   saludable/ligero (< 350 kcal y sin freír), con alcohol, "mocktail" (tragos sin alcohol), para niños (sin alcohol, cafeína ni crudos).
   "Trago/bebida sin alcohol" y "mocktail" ponen primero las recetas cuyo nombre dice "sin alcohol".
@@ -360,7 +361,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 959). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 973). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -429,6 +430,24 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-11 — v3.19.0 · Recetas veganas
+- *Pedido:* más recetas veganas.
+- Cuadragésima tanda en `js/recipes-4.js` (versiones propias), 14 recetas sin carne, lácteos, huevo ni miel: picadillo
+  de setas y lentejas, pastelón de amarillos con lentejas (la maicena une las capas en vez del huevo), alcapurrias de jaca,
+  empanadillas de gandules y calabaza (con discos veganos), asopao de gandules y calabaza, revoltillo de tofu con
+  sofrito, hamburguesa de garbanzos y plátano, ensalada de quinoa con mangó y habichuelas negras, flan de coco (con agar),
+  bizcocho de chocolate (vinagre y bicarbonato), mantecado de guineo y coco, coquito vegano, mayo-ajo con aquafaba y salsa
+  tipo queso de viandas.
+- **Alérgenos:** "leche de avena, almendra, soya o arroz" y "leche condensada o evaporada de coco" ya no cuentan como
+  leche. **Nutrición:** nuevas leches vegetales, leche condensada de coco, levadura nutricional, aquafaba y agar.
+- **Buscador:** la idea "vegano" no cuenta las leches ni las mayonesas o quesos "veganos/vegetales" como lácteos, y pone
+  primero las recetas con "vegano" en el nombre ("postre vegano", "vegano").
+- **Iconos:** 14 dibujos nuevos con la hojita de vegano (§7). El picadillo vegano antes salía con 🥩 y el revoltillo de
+  tofu con el dibujo de salchichas.
+- Total: **959 → 973 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); las 14 salen en "vegano" y "vegetariano", y las que llevan leche o huevo
+  siguen fuera ✔; navegador: las 14 en ES y EN a 375 px sin errores ni desbordes ✔.
 
 ### 2026-10-11 — v3.18.0 · Sustitutos para los alérgenos
 - *Pedido:* cuando una receta tenga un alérgeno, recomendar un sustituto si aplica.

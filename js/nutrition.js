@@ -152,6 +152,12 @@ const NUTRI_FOODS = [
   F("pistacho|pistachos", 562, 20, 28, 7.7, 10, 45, 5.6, 1, { cup: 123 }),
   F("dulce de leche|cajeta", 315, 6.8, 55, 50, 0, 7.4, 4.6, 129, { can: 370, cup: 300 }),
   F("coquito sin alcohol", 260, 4, 30, 28, 1, 14, 11, 70, { cup: 250 }),
+  // Ingredientes veganos (tanda 40).
+  F("leche de avena|leche de almendra|leche de soya|leche de arroz|leche vegetal", 46, 1, 7, 4, 0.8, 1.5, 0.2, 40, { cup: 240 }),
+  F("leche condensada de coco", 320, 2.5, 52, 50, 0, 12, 10, 40, { can: 310, cup: 300 }),
+  F("levadura nutricional", 325, 50, 36, 0, 22, 4, 1, 50, { cup: 60 }),
+  F("aquafaba", 18, 1, 3, 0, 0, 0, 0, 30, { cup: 240 }),
+  F("agar agar|agar", 0, 0, 0, 0, 0, 0, 0, 0, { cup: 100 }),
   F("mani|cacahuate", 585, 24, 21, 4.2, 8, 50, 7, 6, { cup: 146 }),
   F("mantequilla de mani", 588, 25, 20, 9, 6, 50, 10, 430, { cup: 258 }),
   F("mermelada|jalea", 250, 0.4, 63, 50, 1, 0.1, 0, 30, { cup: 320 }),

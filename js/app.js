@@ -394,6 +394,21 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Recetas veganas (tanda 40), con la hojita verde.
+  [/^picadillo vegano/, "svg:ic-vg-picadillo"],
+  [/^pastelon vegano/, "svg:ic-vg-pastelon"],
+  [/^alcapurrias veganas/, "svg:ic-vg-alcapurrias"],
+  [/^empanadillas veganas/, "svg:ic-vg-empanadillas"],
+  [/^asopao vegano/, "svg:ic-vg-asopao"],
+  [/^revoltillo vegano/, "svg:ic-vg-revoltillo-tofu"],
+  [/^hamburguesa vegana/, "svg:ic-vg-hamburguesa"],
+  [/^ensalada de quinoa/, "svg:ic-vg-quinoa-mango"],
+  [/^flan vegano/, "svg:ic-vg-flan-coco"],
+  [/^bizcocho vegano/, "svg:ic-vg-bizcocho-chocolate"],
+  [/^mantecado vegano/, "svg:ic-vg-nice-cream"],
+  [/^coquito vegano/, "svg:ic-vg-coquito"],
+  [/^mayo-ajo vegana/, "svg:ic-vg-mayo-ajo"],
+  [/^salsa vegana tipo queso/, "svg:ic-vg-salsa-queso"],
   // Arroces de hierbas, vegetales y sabores (tanda 39).
   [/^arroz con cilantro/, "svg:ic-arroz-cilantro"],
   [/^arroz verde/, "svg:ic-arroz-verde"],

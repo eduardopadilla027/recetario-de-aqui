@@ -118,7 +118,7 @@ const S_IDEAS = [
     test: (r, x) => !["carnes", "aves", "pescados"].includes(r.category) && !S_MEAT_RX.test(x.ingAll) },
   { words: "vegano vegana veganos veganas vegan", label: { es: "Veganas (sin carne, lácteos, huevo ni miel)", en: "Vegan (no meat, dairy, eggs or honey)" },
     test: (r, x) => !["carnes", "aves", "pescados"].includes(r.category) && !S_MEAT_RX.test(x.ingAll) &&
-      !/\b(miel|honey|gelatina|gelatin|mantequilla|butter|leche|milk|queso|cheese|crema|cream|huevos?|eggs?|yemas?|claras?|yogur|mayonesa|mayo)\b/.test(x.ingAll.replace(/leche de coco|crema de coco|coconut (milk|cream)|mantequilla de mani|peanut butter|cream of tartar|cremor/g, "")) },
+      !/\b(miel|honey|gelatina|gelatin|mantequilla|butter|leche|milk|queso|cheese|crema|cream|huevos?|eggs?|yemas?|claras?|yogur|mayonesa|mayo)\b/.test(x.ingAll.replace(/(mayonesa|mayo|quesos?|crema|mantequilla|leche|yogur) (veganos?|veganas?|vegetal(es)?)|leche (condensada |evaporada )?de (coco|avena|almendra|soya|arroz)|leche vegetal|crema de coco|(sweetened )?(condensed )?coconut (milk|cream)|(oat|almond|soy|rice|plant) milk|mantequilla de mani|peanut butter|cream of tartar|cremor|veganos?|veganas?|vegan/g, "")) },
   { words: "picante spicy", label: { es: "Picantes", en: "Spicy" },
     test: (r, x) => /picante|pique|spicy|hot pepper|chile/.test(x.ingAll) },
   { words: "frio fria fresco fresca refrescante cold refreshing", label: { es: "Frías y refrescantes", en: "Cold and refreshing" },
@@ -345,6 +345,10 @@ function smartSearch(query, ctx) {
     const named = new Map();
     for (const r of recipes) if (nameHas(r)) named.set(r.id, (scores.get(r.id) || 0) + 20);
     return { scores: named, terms, excludes: [], ideas: [], corrections, partial: false };
+  }
+  // "Vegano": primero las recetas que lo son por nombre (flan vegano, coquito vegano…).
+  if (ideas.some((i) => i.label.en.startsWith("Vegan ("))) {
+    for (const r of recipes) if (scores.has(r.id) && /vegan/.test(sNorm(r.name.es + " " + r.name.en))) scores.set(r.id, scores.get(r.id) + 3);
   }
   // "Trago sin alcohol": primero las versiones sin alcohol de los tragos (mojito, daiquirí, coquito… sin alcohol).
   if (excludes.some((e) => ["alcohol", "alcoholico", "alcoholica", "ron", "rum", "licor"].includes(e.stem)) || ideas.some((i) => i.label.en === "Alcohol-free drinks")) {

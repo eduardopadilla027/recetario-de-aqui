@@ -100,6 +100,9 @@
  * Trigésima novena tanda: más arroces (cilantro y limón, verde con recao, ajo tostado,
  * amarillo con achiote, calabaza, espinaca y garbanzos, champiñones, amarillos y queso,
  * cremoso con queso del país, fritos con piña y con huevo, tocineta y pimientos).
+ * Cuadragésima tanda: veganas (picadillo de setas, pastelón, alcapurrias de jaca,
+ * empanadillas, asopao, revoltillo de tofu, hamburguesa, ensalada de quinoa, flan,
+ * bizcocho de chocolate, mantecado de guineo, coquito, mayo-ajo y "queso" de viandas).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -22937,6 +22940,652 @@ recipes.push(
         "Add the remaining oil, garlic and vegetables, and stir-fry 3 minutes.",
         "Add the cold rice and stir-fry 4 minutes, breaking up clumps, until hot and lightly toasted.",
         "Add the soy sauce, sesame oil, egg and scallions, and toss. The quickest way to use up leftover rice."
+      ]
+    }
+  },
+
+  // ── Cuadragésima tanda (2026-10): recetas veganas ──
+  {
+    id: "picadillo-setas-vegano",
+    category: "vegetales",
+    name: { es: "Picadillo Vegano de Setas y Lentejas", en: "Vegan Mushroom and Lentil Picadillo" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de champiñones picados finos",
+        "1 taza de lentejas cocidas",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "10 aceitunas rellenas picadas",
+        "2 cucharadas de pasas",
+        "1 cucharadita de comino",
+        "1 cucharadita de orégano",
+        "1 cucharada de salsa de soya",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1 lb mushrooms, finely chopped",
+        "1 cup cooked lentils",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "10 stuffed olives, chopped",
+        "2 tablespoons raisins",
+        "1 teaspoon cumin",
+        "1 teaspoon oregano",
+        "1 tablespoon soy sauce",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "En un sartén grande a fuego alto, cocine los champiñones en el aceite 10 minutos, hasta que suelten el agua, se sequen y empiecen a dorarse: así cogen textura de carne molida.",
+        "Añada el sofrito y cocine 3 minutos. Añada la salsa de tomate, el comino, el orégano y la soya.",
+        "Añada las lentejas, las aceitunas, las pasas y la sal, y cocine 8 minutos más hasta que esté seco.",
+        "Úselo como el picadillo de siempre: con arroz, en pastelón, piononos, empanadillas o tacos."
+      ],
+      en: [
+        "In a large skillet over high heat, cook the mushrooms in the oil 10 minutes, until they release their water, dry out and start to brown: that gives them a ground-meat texture.",
+        "Add the sofrito and cook 3 minutes. Add the tomato sauce, cumin, oregano and soy sauce.",
+        "Add the lentils, olives, raisins and salt, and cook 8 more minutes until dry.",
+        "Use it like regular picadillo: with rice, in pastelón, piononos, turnovers or tacos."
+      ]
+    }
+  },
+  {
+    id: "pastelon-vegano",
+    category: "vegetales",
+    name: { es: "Pastelón Vegano de Amarillos con Lentejas", en: "Vegan Sweet Plantain Pastelón with Lentils" },
+    time: "1 hr 15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "6 plátanos maduros (amarillos)",
+        "3 cucharadas de aceite de oliva",
+        "1 taza de lentejas secas",
+        "3 tazas de agua",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "10 aceitunas rellenas picadas",
+        "1 cucharadita de comino",
+        "1 cucharadita de sal",
+        "1 taza de habichuelas tiernas picadas",
+        "2 cucharadas de maicena disuelta en ½ taza de agua"
+      ],
+      en: [
+        "6 ripe (yellow) plantains",
+        "3 tablespoons olive oil",
+        "1 cup dried lentils",
+        "3 cups water",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "10 stuffed olives, chopped",
+        "1 teaspoon cumin",
+        "1 teaspoon salt",
+        "1 cup chopped green beans",
+        "2 tablespoons cornstarch dissolved in ½ cup water"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las lentejas en el agua 20 minutos y escúrralas. Sofría el sofrito en 1 cucharada de aceite, añada las lentejas, la salsa de tomate, las aceitunas, el comino y ½ cucharadita de sal, y cocine hasta que se seque.",
+        "Pele los amarillos, córtelos a lo largo en lascas y dórelos en el resto del aceite (o úntelos con aceite y hornéelos a 400 °F 15 minutos).",
+        "En un molde engrasado, haga capas de amarillos, lentejas y habichuelas tiernas, y termine con amarillos. Bañe con la maicena disuelta en agua con el resto de la sal: hace el trabajo del huevo y une las capas.",
+        "Hornee a 350 °F 30 minutos, hasta que cuaje. Repose 10 minutos antes de cortar."
+      ],
+      en: [
+        "Boil the lentils in the water 20 minutes and drain. Sauté the sofrito in 1 tablespoon of oil, add the lentils, tomato sauce, olives, cumin and ½ teaspoon salt, and cook until dry.",
+        "Peel the plantains, slice lengthwise and brown them in the remaining oil (or brush with oil and bake at 400 °F for 15 minutes).",
+        "In a greased dish, layer plantains, lentils and green beans, ending with plantains. Pour over the cornstarch slurry with the remaining salt: it does the egg's job and binds the layers.",
+        "Bake at 350 °F for 30 minutes, until set. Rest 10 minutes before cutting."
+      ]
+    }
+  },
+  {
+    id: "alcapurrias-jaca",
+    category: "entremeses",
+    name: { es: "Alcapurrias Veganas de Jaca", en: "Vegan Jackfruit Alcapurrias" },
+    time: "1 hr 30 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 libra de yautía blanca pelada y rallada fina",
+        "1 libra de guineos verdes pelados y rallados finos",
+        "2 cucharadas de aceite de achiote",
+        "1 cucharadita de sal",
+        "1 lata de 20 onzas de jaca verde en salmuera, escurrida y desmenuzada",
+        "¼ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 cucharadita de comino",
+        "1 cucharada de aceite de oliva",
+        "Aceite para freír"
+      ],
+      en: [
+        "1 lb white taro (yautía), peeled and finely grated",
+        "1 lb green bananas, peeled and finely grated",
+        "2 tablespoons annatto oil",
+        "1 teaspoon salt",
+        "1 can (20 oz) young green jackfruit in brine, drained and shredded",
+        "¼ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 teaspoon cumin",
+        "1 tablespoon olive oil",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite de oliva, añada la jaca, la salsa de tomate y el comino, y cocine 10 minutos hasta que se seque como un picadillo. Enfríe.",
+        "Mezcle la yautía y el guineo rallados con el aceite de achiote y la sal. Enfríe la masa 30 minutos.",
+        "Sobre papel encerado o una hoja de plátano untada de achiote, extienda 3 cucharadas de masa, ponga el relleno y cierre en forma de torpedo.",
+        "Fríalas a 350 °F 5 a 6 minutos, hasta que estén doradas. La masa tradicional ya es vegana: sólo cambia el relleno."
+      ],
+      en: [
+        "Sauté the sofrito in the olive oil, add the jackfruit, tomato sauce and cumin, and cook 10 minutes until dry like picadillo. Cool.",
+        "Mix the grated taro and green banana with the annatto oil and salt. Chill the dough 30 minutes.",
+        "On wax paper or a banana leaf brushed with annatto oil, spread 3 tablespoons of dough, add the filling and close into a torpedo shape.",
+        "Fry at 350 °F for 5 to 6 minutes, until golden. The traditional dough is already vegan: only the filling changes."
+      ]
+    }
+  },
+  {
+    id: "empanadillas-gandules-calabaza",
+    category: "entremeses",
+    name: { es: "Empanadillas Veganas de Gandules y Calabaza", en: "Vegan Pigeon Pea and Pumpkin Turnovers" },
+    time: "50 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 lata de 15 onzas de gandules verdes, escurridos",
+        "1 taza de calabaza en cubitos",
+        "2 cucharadas de aceite de achiote",
+        "¼ taza de sofrito",
+        "2 cucharadas de salsa de tomate",
+        "½ cucharadita de comino",
+        "½ cucharadita de sal",
+        "12 discos para empanadillas veganos (revise la etiqueta)",
+        "Aceite para freír"
+      ],
+      en: [
+        "1 can (15 oz) green pigeon peas, drained",
+        "1 cup diced West Indian pumpkin (calabaza)",
+        "2 tablespoons annatto oil",
+        "¼ cup sofrito",
+        "2 tablespoons tomato sauce",
+        "½ teaspoon cumin",
+        "½ teaspoon salt",
+        "12 vegan turnover discs (check the label)",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite de achiote, añada la calabaza y cocine tapado 8 minutos hasta que esté blanda.",
+        "Añada los gandules, la salsa de tomate, el comino y la sal, y maje un poco con el tenedor. Cocine hasta que se seque y enfríe.",
+        "Rellene los discos con 2 cucharadas, doble, moje el borde con agua (no con huevo) y selle con un tenedor.",
+        "Fríalas a 350 °F hasta que estén doradas. Lea la etiqueta de los discos: muchos son veganos, pero algunos llevan huevo o manteca."
+      ],
+      en: [
+        "Sauté the sofrito in the annatto oil, add the pumpkin and cook covered 8 minutes until soft.",
+        "Add the pigeon peas, tomato sauce, cumin and salt, and mash lightly with a fork. Cook until dry and cool.",
+        "Fill the discs with 2 tablespoons, fold, wet the edge with water (not egg) and seal with a fork.",
+        "Fry at 350 °F until golden. Read the disc label: many are vegan, but some contain egg or lard."
+      ]
+    }
+  },
+  {
+    id: "asopao-vegano-gandules",
+    category: "sopas",
+    name: { es: "Asopao Vegano de Gandules y Calabaza", en: "Vegan Pigeon Pea and Pumpkin Asopao" },
+    time: "50 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "10 aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "1 taza de arroz de grano mediano, lavado",
+        "4 tazas de caldo de vegetales",
+        "4 tazas de agua",
+        "1 lata de 15 onzas de gandules verdes, con su líquido",
+        "2 tazas de calabaza en cubos",
+        "4 hojas de recao picadas",
+        "Sal al gusto"
+      ],
+      en: [
+        "3 tablespoons annatto oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "10 stuffed olives",
+        "1 tablespoon capers",
+        "1 cup medium-grain rice, rinsed",
+        "4 cups vegetable broth",
+        "4 cups water",
+        "1 can (15 oz) green pigeon peas, with their liquid",
+        "2 cups cubed West Indian pumpkin (calabaza)",
+        "4 culantro leaves, chopped",
+        "Salt to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, sofría el sofrito en el aceite de achiote 4 minutos. Añada la salsa de tomate, las aceitunas y las alcaparras.",
+        "Añada el caldo, el agua, los gandules con su líquido y la calabaza, y deje hervir.",
+        "Añada el arroz y cocine a fuego medio 20 minutos, moviendo de vez en cuando, hasta que el arroz esté blando y el caldo espese con la calabaza.",
+        "Añada el recao, pruebe la sal y sirva enseguida (el asopao sigue espesando). Con aguacate y tostones queda completo."
+      ],
+      en: [
+        "In a pot, sauté the sofrito in the annatto oil 4 minutes. Add the tomato sauce, olives and capers.",
+        "Add the broth, water, pigeon peas with their liquid and the pumpkin, and bring to a boil.",
+        "Add the rice and cook over medium heat 20 minutes, stirring now and then, until the rice is soft and the broth thickens with the pumpkin.",
+        "Add the culantro, taste for salt and serve right away (asopao keeps thickening). With avocado and tostones it's a full meal."
+      ]
+    }
+  },
+  {
+    id: "revoltillo-tofu",
+    category: "huevos",
+    name: { es: "Revoltillo Vegano de Tofu con Sofrito", en: "Vegan Tofu Scramble with Sofrito" },
+    time: "20 min",
+    servings: 3,
+    ingredients: {
+      es: [
+        "1 paquete de 14 onzas de tofu firme, escurrido",
+        "2 cucharadas de aceite de oliva",
+        "¼ taza de sofrito",
+        "½ pimiento rojo picado",
+        "¼ cucharadita de cúrcuma",
+        "2 cucharadas de levadura nutricional",
+        "½ cucharadita de sal",
+        "¼ cucharadita de pimienta",
+        "1 tomate picado",
+        "2 cebollines picados"
+      ],
+      en: [
+        "1 package (14 oz) firm tofu, drained",
+        "2 tablespoons olive oil",
+        "¼ cup sofrito",
+        "½ red bell pepper, chopped",
+        "¼ teaspoon turmeric",
+        "2 tablespoons nutritional yeast",
+        "½ teaspoon salt",
+        "¼ teaspoon black pepper",
+        "1 tomato, chopped",
+        "2 scallions, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Seque el tofu con papel toalla y desmorónelo con las manos en pedazos irregulares, como huevo revuelto.",
+        "Sofría el sofrito y el pimiento en el aceite 3 minutos.",
+        "Añada el tofu, la cúrcuma (le da el color amarillo), la levadura nutricional (el sabor a queso), la sal y la pimienta, y cocine 5 minutos moviendo.",
+        "Añada el tomate y el cebollín y sirva con pan, tostones o aguacate. Tiene tanta proteína como los huevos."
+      ],
+      en: [
+        "Pat the tofu dry and crumble it by hand into uneven pieces, like scrambled eggs.",
+        "Sauté the sofrito and bell pepper in the oil 3 minutes.",
+        "Add the tofu, turmeric (for the yellow color), nutritional yeast (for a cheesy flavor), salt and pepper, and cook 5 minutes, stirring.",
+        "Add the tomato and scallions and serve with bread, tostones or avocado. It has as much protein as eggs."
+      ]
+    }
+  },
+  {
+    id: "hamburguesa-garbanzos-platano",
+    category: "emparedados",
+    name: { es: "Hamburguesa Vegana de Garbanzos y Plátano", en: "Vegan Chickpea and Plantain Burger" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 lata de 15 onzas de garbanzos, escurridos y secados",
+        "1 plátano maduro (amarillo) hervido y majado",
+        "¼ taza de sofrito",
+        "½ taza de harina de garbanzo o de trigo",
+        "1 cucharadita de comino",
+        "½ cucharadita de pimentón",
+        "½ cucharadita de sal",
+        "2 cucharadas de aceite de oliva",
+        "4 panes de hamburguesa veganos",
+        "1 aguacate en lascas",
+        "4 hojas de lechuga",
+        "1 tomate en ruedas"
+      ],
+      en: [
+        "1 can (15 oz) chickpeas, drained and patted dry",
+        "1 ripe (yellow) plantain, boiled and mashed",
+        "¼ cup sofrito",
+        "½ cup chickpea or wheat flour",
+        "1 teaspoon cumin",
+        "½ teaspoon paprika",
+        "½ teaspoon salt",
+        "2 tablespoons olive oil",
+        "4 vegan burger buns",
+        "1 avocado, sliced",
+        "4 lettuce leaves",
+        "1 tomato, sliced"
+      ]
+    },
+    steps: {
+      es: [
+        "Maje los garbanzos con un tenedor dejando algunos pedacitos, y mézclelos con el amarillo majado, el sofrito, la harina, el comino, el pimentón y la sal. El amarillo une la mezcla sin huevo.",
+        "Forme 4 tortas y enfríelas 15 minutos para que no se rompan.",
+        "Cocínelas en el aceite a fuego medio 4 a 5 minutos por lado, hasta que estén doradas.",
+        "Sirva en el pan con aguacate, lechuga y tomate. Revise que el pan no lleve leche ni huevo."
+      ],
+      en: [
+        "Mash the chickpeas with a fork, leaving some chunks, and mix with the mashed plantain, sofrito, flour, cumin, paprika and salt. The plantain binds it without egg.",
+        "Shape 4 patties and chill 15 minutes so they hold together.",
+        "Cook in the oil over medium heat 4 to 5 minutes per side, until golden.",
+        "Serve on the buns with avocado, lettuce and tomato. Check that the buns contain no milk or egg."
+      ]
+    }
+  },
+  {
+    id: "ensalada-quinoa-mango",
+    category: "ensaladas",
+    name: { es: "Ensalada de Quinoa con Mangó y Habichuelas Negras", en: "Quinoa Salad with Mango and Black Beans" },
+    time: "30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 taza de quinoa, bien enjuagada",
+        "2 tazas de agua",
+        "1 lata de 15 onzas de habichuelas negras, escurridas",
+        "1 mangó maduro en cubitos",
+        "1 pimiento rojo picado",
+        "¼ taza de cebolla roja picada",
+        "¼ taza de cilantro picado",
+        "¼ taza de jugo de limón",
+        "3 cucharadas de aceite de oliva",
+        "½ cucharadita de comino",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1 cup quinoa, well rinsed",
+        "2 cups water",
+        "1 can (15 oz) black beans, drained",
+        "1 ripe mango, diced",
+        "1 red bell pepper, chopped",
+        "¼ cup chopped red onion",
+        "¼ cup chopped cilantro",
+        "¼ cup lime juice",
+        "3 tablespoons olive oil",
+        "½ teaspoon cumin",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la quinoa en el agua, tapada, 15 minutos, hasta que absorba el agua. Suéltela con un tenedor y déjela enfriar.",
+        "Bata el limón, el aceite, el comino y la sal.",
+        "Mezcle la quinoa con las habichuelas, el mangó, el pimiento, la cebolla y el cilantro, y bañe con el aliño.",
+        "Sirva fría. Es plato completo: la quinoa y las habichuelas juntas dan proteína completa."
+      ],
+      en: [
+        "Simmer the quinoa in the water, covered, 15 minutes, until absorbed. Fluff with a fork and cool.",
+        "Whisk the lime juice, oil, cumin and salt.",
+        "Toss the quinoa with the beans, mango, bell pepper, onion and cilantro, and dress.",
+        "Serve cold. A complete meal: quinoa and beans together give complete protein."
+      ]
+    }
+  },
+  {
+    id: "flan-vegano-coco",
+    category: "postres",
+    name: { es: "Flan Vegano de Coco", en: "Vegan Coconut Flan" },
+    time: "30 min + 4 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "¾ taza de azúcar para el caramelo",
+        "2 latas de 13.5 onzas de leche de coco",
+        "½ taza de azúcar",
+        "¼ taza de maicena",
+        "1 cucharadita de agar agar en polvo",
+        "1 cucharadita de vainilla",
+        "1 pizca de sal",
+        "¼ cucharadita de cúrcuma (para el color)"
+      ],
+      en: [
+        "¾ cup sugar for the caramel",
+        "2 cans (13.5 oz each) coconut milk",
+        "½ cup sugar",
+        "¼ cup cornstarch",
+        "1 teaspoon agar agar powder",
+        "1 teaspoon vanilla",
+        "1 pinch salt",
+        "¼ teaspoon turmeric (for color)"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita el azúcar del caramelo en un sartén a fuego medio, sin mover, hasta que esté dorado. Viértalo en un molde de flan y cubra el fondo.",
+        "En una olla fría, bata la leche de coco, el azúcar, la maicena, el agar agar, la sal y la cúrcuma hasta que no queden grumos.",
+        "Cocine a fuego medio moviendo sin parar hasta que hierva, y deje hervir 2 minutos (el agar necesita hervir para cuajar). Apague y añada la vainilla.",
+        "Vierta sobre el caramelo y enfríe 4 horas. Desmolde pasando un cuchillo por el borde. Sin huevo ni leche, cuaja como un flan gracias al agar."
+      ],
+      en: [
+        "Melt the caramel sugar in a skillet over medium heat, without stirring, until golden. Pour into a flan mold and coat the bottom.",
+        "In a cold pot, whisk the coconut milk, sugar, cornstarch, agar agar, salt and turmeric until smooth.",
+        "Cook over medium heat stirring constantly until it boils, and boil 2 minutes (agar must boil to set). Turn off and add the vanilla.",
+        "Pour over the caramel and chill 4 hours. Unmold by running a knife around the edge. No egg or dairy: agar sets it like flan."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-vegano-chocolate",
+    category: "bizcochos",
+    name: { es: "Bizcocho Vegano de Chocolate", en: "Vegan Chocolate Cake" },
+    time: "50 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de harina",
+        "1 taza de azúcar",
+        "⅓ taza de cocoa",
+        "1 cucharadita de bicarbonato",
+        "½ cucharadita de sal",
+        "1 taza de agua o café frío",
+        "⅓ taza de aceite vegetal",
+        "1 cucharada de vinagre",
+        "1 cucharadita de vainilla",
+        "½ taza de chocolate amargo vegano en trocitos para el glaseado",
+        "¼ taza de leche de coco para el glaseado"
+      ],
+      en: [
+        "1½ cups flour",
+        "1 cup sugar",
+        "⅓ cup cocoa",
+        "1 teaspoon baking soda",
+        "½ teaspoon salt",
+        "1 cup water or cold coffee",
+        "⅓ cup vegetable oil",
+        "1 tablespoon vinegar",
+        "1 teaspoon vanilla",
+        "½ cup vegan dark chocolate, chopped, for the glaze",
+        "¼ cup coconut milk for the glaze"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de 8 × 8 pulgadas.",
+        "Mezcle la harina, el azúcar, la cocoa, el bicarbonato y la sal. Añada el agua, el aceite, el vinagre y la vainilla, y bata sólo hasta que esté liso. El vinagre con el bicarbonato es lo que lo levanta sin huevo.",
+        "Hornee enseguida 30 a 35 minutos, hasta que un palillo salga limpio. Enfríe.",
+        "Caliente la leche de coco, viértala sobre el chocolate, espere 2 minutos y mueva hasta que esté liso. Báñelo sobre el bizcocho."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease an 8 × 8-inch pan.",
+        "Mix the flour, sugar, cocoa, baking soda and salt. Add the water, oil, vinegar and vanilla, and whisk just until smooth. Vinegar plus baking soda is what lifts it without eggs.",
+        "Bake right away 30 to 35 minutes, until a toothpick comes out clean. Cool.",
+        "Warm the coconut milk, pour over the chocolate, wait 2 minutes and stir until smooth. Spread over the cake."
+      ]
+    }
+  },
+  {
+    id: "nice-cream-guineo-coco",
+    category: "postres",
+    name: { es: "Mantecado Vegano de Guineo y Coco (Sin Máquina)", en: "Vegan Banana Coconut Ice Cream (No Machine)" },
+    time: "10 min + 4 hr",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 guineos maduros en ruedas, congelados",
+        "½ taza de leche de coco",
+        "1 cucharadita de vainilla",
+        "1 pizca de canela",
+        "2 cucharadas de coco rallado tostado"
+      ],
+      en: [
+        "4 ripe bananas, sliced and frozen",
+        "½ cup coconut milk",
+        "1 teaspoon vanilla",
+        "1 pinch cinnamon",
+        "2 tablespoons toasted shredded coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "Congele las ruedas de guineo en una bandeja por lo menos 4 horas (sueltas, para que no se peguen).",
+        "Procese el guineo congelado con la leche de coco, la vainilla y la canela, raspando los lados, hasta que quede cremoso como un mantecado (3 a 4 minutos).",
+        "Sírvalo enseguida, suave, o congélelo 1 hora para que esté más firme.",
+        "Riegue el coco tostado. Sin azúcar añadida: el guineo bien maduro es lo que lo endulza. Pruebe añadir mangó o parcha congelada."
+      ],
+      en: [
+        "Freeze the banana slices on a tray at least 4 hours (spread out so they don't stick).",
+        "Process the frozen banana with the coconut milk, vanilla and cinnamon, scraping the sides, until creamy like soft-serve (3 to 4 minutes).",
+        "Serve right away, soft, or freeze 1 hour to firm up.",
+        "Sprinkle with the toasted coconut. No added sugar: very ripe banana sweetens it. Try adding frozen mango or passion fruit."
+      ]
+    }
+  },
+  {
+    id: "coquito-vegano",
+    category: "bebidas",
+    name: { es: "Coquito Vegano (Sin Alcohol)", en: "Vegan Coquito (Alcohol-Free)" },
+    time: "10 min + 4 hr",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 latas de 13.5 onzas de leche de coco",
+        "1 lata de 11 onzas de leche condensada de coco",
+        "1 taza de leche de avena",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de canela en polvo",
+        "¼ cucharadita de nuez moscada",
+        "2 rajas de canela para el frasco"
+      ],
+      en: [
+        "2 cans (13.5 oz each) coconut milk",
+        "1 can (11 oz) sweetened condensed coconut milk",
+        "1 cup oat milk",
+        "1 teaspoon vanilla",
+        "1 teaspoon ground cinnamon",
+        "¼ teaspoon nutmeg",
+        "2 cinnamon sticks for the bottle"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe todo menos las rajas de canela 2 minutos.",
+        "Vierta en botellas limpias con una raja de canela y enfríe 4 horas.",
+        "Agite antes de servir: la grasa del coco sube en la nevera.",
+        "Sin leche de vaca, huevo ni alcohol. Si lo quiere con ron, añada ½ taza de ron blanco (y deja de ser para niños y para quien conduce)."
+      ],
+      en: [
+        "Blend everything except the cinnamon sticks 2 minutes.",
+        "Pour into clean bottles with a cinnamon stick and chill 4 hours.",
+        "Shake before serving: the coconut fat rises in the fridge.",
+        "No dairy, egg or alcohol. If you want it with rum, add ½ cup white rum (and it's no longer for kids or drivers)."
+      ]
+    }
+  },
+  {
+    id: "mayo-ajo-vegana",
+    category: "salsas",
+    name: { es: "Mayo-Ajo Vegana con Aquafaba", en: "Vegan Garlic Mayo with Aquafaba" },
+    time: "10 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "¼ taza de aquafaba (el líquido de una lata de garbanzos)",
+        "1 cucharadita de mostaza",
+        "1 cucharada de jugo de limón",
+        "¼ cucharadita de sal",
+        "¾ taza de aceite vegetal",
+        "3 dientes de ajo rallados"
+      ],
+      en: [
+        "¼ cup aquafaba (liquid from a can of chickpeas)",
+        "1 teaspoon mustard",
+        "1 tablespoon lime juice",
+        "¼ teaspoon salt",
+        "¾ cup vegetable oil",
+        "3 garlic cloves, grated"
+      ]
+    },
+    steps: {
+      es: [
+        "En un vaso alto, ponga la aquafaba, la mostaza, el limón y la sal.",
+        "Con la licuadora de mano en el fondo, añada el aceite en un chorrito muy fino mientras licúa, subiendo poco a poco: en 1 minuto espesa como mayonesa.",
+        "Añada el ajo y mezcle.",
+        "Guárdela en la nevera hasta 1 semana. Sirva con tostones, sorullitos, bacalaítos o papas fritas."
+      ],
+      en: [
+        "In a tall cup, add the aquafaba, mustard, lime juice and salt.",
+        "With an immersion blender at the bottom, add the oil in a very thin stream while blending, moving up slowly: in 1 minute it thickens like mayo.",
+        "Stir in the garlic.",
+        "Refrigerate up to 1 week. Serve with tostones, sorullitos, codfish fritters or fries."
+      ]
+    }
+  },
+  {
+    id: "salsa-queso-vegana",
+    category: "salsas",
+    name: { es: "Salsa Vegana Tipo Queso de Viandas (para Nachos)", en: "Vegan Root-Vegetable \"Cheese\" Sauce (for Nachos)" },
+    time: "30 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 papa mediana pelada en cubos",
+        "1 zanahoria en ruedas",
+        "1 taza de calabaza en cubos",
+        "⅓ taza de aceite de oliva",
+        "¼ taza de levadura nutricional",
+        "1 cucharada de jugo de limón",
+        "1 diente de ajo",
+        "½ cucharadita de pimentón",
+        "1 cucharadita de sal",
+        "½ taza del agua de hervir"
+      ],
+      en: [
+        "1 medium potato, peeled and cubed",
+        "1 carrot, sliced",
+        "1 cup cubed West Indian pumpkin (calabaza)",
+        "⅓ cup olive oil",
+        "¼ cup nutritional yeast",
+        "1 tablespoon lime juice",
+        "1 garlic clove",
+        "½ teaspoon paprika",
+        "1 teaspoon salt",
+        "½ cup of the cooking water"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la papa, la zanahoria y la calabaza 15 minutos, hasta que estén muy blandas. Guarde ½ taza del agua.",
+        "Licúe los vegetales calientes con el aceite, la levadura nutricional, el limón, el ajo, el pimentón y la sal, añadiendo el agua poco a poco, hasta que quede lisa y elástica.",
+        "Pruebe y ajuste la sal y el limón.",
+        "Sírvala tibia con nachos, papas, brócoli o coditos. Es anaranjada y cremosa como la de queso, sin leche."
+      ],
+      en: [
+        "Boil the potato, carrot and pumpkin 15 minutes, until very soft. Save ½ cup of the water.",
+        "Blend the hot vegetables with the oil, nutritional yeast, lime juice, garlic, paprika and salt, adding the water gradually, until smooth and stretchy.",
+        "Taste and adjust the salt and lime.",
+        "Serve warm with nachos, fries, broccoli or macaroni. Orange and creamy like cheese sauce, without dairy."
       ]
     }
   }
