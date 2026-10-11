@@ -94,6 +94,9 @@
  * Trigésima séptima tanda: bizcochos mojados y con licor (brandy, amaretto, almendra,
  * vainilla, coquito, café, dulce de leche, piña colada) y de sabores (limón, red velvet,
  * pistacho, mantequilla).
+ * Trigésima octava tanda: panqueques (clásicos, guineo, coco con parcha, calabaza,
+ * chocolate, guayaba y queso, piña volteados, yogur griego, harina de plátano sin
+ * gluten, y salados de maíz con queso del país).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -21929,6 +21932,480 @@ recipes.push(
         "Beat the butter with the sugar 5 minutes, until pale and fluffy: that air is what lifts the cake.",
         "Add the eggs one at a time, beating well. Add the flour with the baking powder and salt, alternating with the milk, vanilla and zest, without overmixing.",
         "Bake 45 to 55 minutes (bundt) or 30 to 35 (rounds), until a toothpick comes out clean. The base for any filling, soak or frosting."
+      ]
+    }
+  },
+
+  // ── Trigésima octava tanda (2026-10): panqueques ──
+  {
+    id: "panqueques-clasicos",
+    category: "panes",
+    name: { es: "Panqueques Esponjosos Clásicos", en: "Classic Fluffy Pancakes" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 tazas de harina",
+        "2 cucharadas de azúcar",
+        "1 cucharada de polvo de hornear",
+        "¼ cucharadita de sal",
+        "1½ tazas de leche",
+        "2 huevos",
+        "3 cucharadas de mantequilla derretida",
+        "1 cucharadita de vainilla",
+        "1 cucharada de mantequilla para el sartén",
+        "¼ taza de melao o miel para servir"
+      ],
+      en: [
+        "2 cups flour",
+        "2 tablespoons sugar",
+        "1 tablespoon baking powder",
+        "¼ teaspoon salt",
+        "1½ cups milk",
+        "2 eggs",
+        "3 tablespoons melted butter",
+        "1 teaspoon vanilla",
+        "1 tablespoon butter for the pan",
+        "¼ cup cane syrup or honey to serve"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la harina, el azúcar, el polvo de hornear y la sal. Aparte, bata la leche, los huevos, la mantequilla derretida y la vainilla.",
+        "Una las dos mezclas con una paleta, sólo hasta que no se vea harina seca: los grumitos están bien. Si la bate de más, los panqueques quedan duros y planos.",
+        "Deje reposar la mezcla 5 minutos. Caliente un sartén a fuego medio-bajo y úntelo con un poquito de mantequilla.",
+        "Eche ¼ taza de mezcla por panqueque. Voltéelo cuando salgan burbujas en la superficie y los bordes se vean secos (2 a 3 minutos) y cocine 1 minuto más. Sirva con melao, miel o fruta."
+      ],
+      en: [
+        "Mix the flour, sugar, baking powder and salt. Separately whisk the milk, eggs, melted butter and vanilla.",
+        "Combine with a spatula just until no dry flour shows: small lumps are fine. Overmixed, the pancakes turn tough and flat.",
+        "Let the batter rest 5 minutes. Heat a skillet over medium-low and brush with a little butter.",
+        "Pour ¼ cup of batter per pancake. Flip when bubbles appear on top and the edges look dry (2 to 3 minutes), then cook 1 more minute. Serve with cane syrup, honey or fruit."
+      ]
+    }
+  },
+  {
+    id: "panqueques-guineo",
+    category: "panes",
+    name: { es: "Panqueques de Guineo con Canela", en: "Banana Cinnamon Pancakes" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 guineos bien maduros",
+        "1½ tazas de harina",
+        "1 cucharada de azúcar morena",
+        "2 cucharaditas de polvo de hornear",
+        "1 cucharadita de canela",
+        "¼ cucharadita de sal",
+        "1 taza de leche",
+        "1 huevo",
+        "2 cucharadas de mantequilla derretida",
+        "1 guineo en ruedas para servir",
+        "¼ taza de melao o miel"
+      ],
+      en: [
+        "2 very ripe bananas",
+        "1½ cups flour",
+        "1 tablespoon brown sugar",
+        "2 teaspoons baking powder",
+        "1 teaspoon cinnamon",
+        "¼ teaspoon salt",
+        "1 cup milk",
+        "1 egg",
+        "2 tablespoons melted butter",
+        "1 banana, sliced, to serve",
+        "¼ cup cane syrup or honey"
+      ]
+    },
+    steps: {
+      es: [
+        "Maje los guineos con un tenedor y bátalos con la leche, el huevo y la mantequilla.",
+        "Añada la harina, el azúcar, el polvo de hornear, la canela y la sal, y mezcle sin batir de más.",
+        "Cocine ¼ taza de mezcla por panqueque en un sartén engrasado a fuego medio-bajo, 2 a 3 minutos por lado. El guineo los dora más rápido: baje el fuego si se oscurecen.",
+        "Sirva con las ruedas de guineo y el melao. Use los guineos con la cáscara negrita: son los más dulces."
+      ],
+      en: [
+        "Mash the bananas with a fork and whisk with the milk, egg and butter.",
+        "Add the flour, sugar, baking powder, cinnamon and salt, and mix without overmixing.",
+        "Cook ¼ cup of batter per pancake in a greased skillet over medium-low, 2 to 3 minutes per side. The banana browns them faster: lower the heat if they darken.",
+        "Serve with the banana slices and cane syrup. Use bananas with black-speckled peels: they're the sweetest."
+      ]
+    }
+  },
+  {
+    id: "panqueques-coco-parcha",
+    category: "panes",
+    name: { es: "Panqueques de Coco con Sirop de Parcha", en: "Coconut Pancakes with Passion Fruit Syrup" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ tazas de harina",
+        "½ taza de coco rallado",
+        "2 cucharadas de azúcar",
+        "2 cucharaditas de polvo de hornear",
+        "¼ cucharadita de sal",
+        "1 taza de leche de coco",
+        "½ taza de leche",
+        "1 huevo",
+        "2 cucharadas de aceite de coco derretido",
+        "½ taza de pulpa de parcha para el sirop",
+        "⅓ taza de azúcar para el sirop"
+      ],
+      en: [
+        "1½ cups flour",
+        "½ cup shredded coconut",
+        "2 tablespoons sugar",
+        "2 teaspoons baking powder",
+        "¼ teaspoon salt",
+        "1 cup coconut milk",
+        "½ cup milk",
+        "1 egg",
+        "2 tablespoons melted coconut oil",
+        "½ cup passion fruit pulp for the syrup",
+        "⅓ cup sugar for the syrup"
+      ]
+    },
+    steps: {
+      es: [
+        "Para el sirop, hierva la parcha con el azúcar 4 minutos hasta que espese un poco. Déjelo tibio.",
+        "Mezcle la harina, el coco, el azúcar, el polvo de hornear y la sal. Añada la leche de coco, la leche, el huevo y el aceite, y mezcle sin batir de más.",
+        "Cocine ¼ taza por panqueque en un sartén engrasado a fuego medio-bajo, 2 a 3 minutos por lado.",
+        "Sirva con el sirop de parcha por encima y más coco tostado si quiere."
+      ],
+      en: [
+        "For the syrup, boil the passion fruit with the sugar 4 minutes until slightly thick. Keep warm.",
+        "Mix the flour, coconut, sugar, baking powder and salt. Add the coconut milk, milk, egg and oil, and mix without overmixing.",
+        "Cook ¼ cup per pancake in a greased skillet over medium-low, 2 to 3 minutes per side.",
+        "Serve with the passion fruit syrup on top and more toasted coconut if you like."
+      ]
+    }
+  },
+  {
+    id: "panqueques-calabaza",
+    category: "panes",
+    name: { es: "Panqueques de Calabaza con Especias", en: "Pumpkin Spice Pancakes" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "¾ taza de calabaza hervida y majada",
+        "1½ tazas de harina",
+        "2 cucharadas de azúcar morena",
+        "2 cucharaditas de polvo de hornear",
+        "1 cucharadita de canela",
+        "¼ cucharadita de jengibre en polvo",
+        "¼ cucharadita de nuez moscada",
+        "¼ cucharadita de sal",
+        "1¼ tazas de leche",
+        "1 huevo",
+        "2 cucharadas de mantequilla derretida",
+        "¼ taza de nueces picadas"
+      ],
+      en: [
+        "¾ cup boiled, mashed West Indian pumpkin (calabaza)",
+        "1½ cups flour",
+        "2 tablespoons brown sugar",
+        "2 teaspoons baking powder",
+        "1 teaspoon cinnamon",
+        "¼ teaspoon ground ginger",
+        "¼ teaspoon nutmeg",
+        "¼ teaspoon salt",
+        "1¼ cups milk",
+        "1 egg",
+        "2 tablespoons melted butter",
+        "¼ cup chopped walnuts"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata la calabaza con la leche, el huevo y la mantequilla.",
+        "Añada la harina, el azúcar, el polvo de hornear, las especias y la sal, y mezcle sin batir de más.",
+        "Cocine ¼ taza por panqueque a fuego medio-bajo, 3 minutos por lado: con calabaza tardan un poco más en cuajar por dentro.",
+        "Sirva con las nueces y melao. Use la calabaza que le sobre del sancocho o de las habichuelas."
+      ],
+      en: [
+        "Whisk the pumpkin with the milk, egg and butter.",
+        "Add the flour, sugar, baking powder, spices and salt, and mix without overmixing.",
+        "Cook ¼ cup per pancake over medium-low, 3 minutes per side: with pumpkin they take a bit longer to set inside.",
+        "Serve with the walnuts and cane syrup. Use pumpkin left over from sancocho or beans."
+      ]
+    }
+  },
+  {
+    id: "panqueques-chocolate",
+    category: "panes",
+    name: { es: "Panqueques con Chispas de Chocolate", en: "Chocolate Chip Pancakes" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 tazas de harina",
+        "2 cucharadas de azúcar",
+        "1 cucharada de polvo de hornear",
+        "¼ cucharadita de sal",
+        "1½ tazas de leche",
+        "2 huevos",
+        "3 cucharadas de mantequilla derretida",
+        "1 cucharadita de vainilla",
+        "½ taza de chispas de chocolate",
+        "½ taza de fresas en mitades para servir"
+      ],
+      en: [
+        "2 cups flour",
+        "2 tablespoons sugar",
+        "1 tablespoon baking powder",
+        "¼ teaspoon salt",
+        "1½ cups milk",
+        "2 eggs",
+        "3 tablespoons melted butter",
+        "1 teaspoon vanilla",
+        "½ cup chocolate chips",
+        "½ cup strawberries, halved, to serve"
+      ]
+    },
+    steps: {
+      es: [
+        "Prepare la mezcla como la de los panqueques clásicos: secos por un lado, mojados por otro, y únalos sin batir de más.",
+        "Eche ¼ taza de mezcla en el sartén y riegue enseguida unas chispas de chocolate encima (si las mezcla en la masa, se van al fondo y se queman).",
+        "Voltee cuando salgan burbujas y cocine 1 minuto más a fuego medio-bajo.",
+        "Sirva con las fresas. Son los favoritos de los niños para el desayuno del domingo."
+      ],
+      en: [
+        "Make the batter like the classic pancakes: dry on one side, wet on the other, and combine without overmixing.",
+        "Pour ¼ cup of batter into the skillet and immediately scatter a few chocolate chips on top (mixed into the batter, they sink and burn).",
+        "Flip when bubbles appear and cook 1 more minute over medium-low.",
+        "Serve with the strawberries. Kids' favorite for Sunday breakfast."
+      ]
+    }
+  },
+  {
+    id: "panqueques-guayaba-queso",
+    category: "panes",
+    name: { es: "Panqueques Rellenos de Guayaba y Queso", en: "Guava and Cheese Stuffed Pancakes" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 tazas de harina",
+        "2 cucharadas de azúcar",
+        "1 cucharada de polvo de hornear",
+        "¼ cucharadita de sal",
+        "1½ tazas de leche",
+        "2 huevos",
+        "3 cucharadas de mantequilla derretida",
+        "4 onzas de pasta de guayaba en lascas finas",
+        "4 onzas de queso crema blando",
+        "2 cucharadas de azúcar en polvo"
+      ],
+      en: [
+        "2 cups flour",
+        "2 tablespoons sugar",
+        "1 tablespoon baking powder",
+        "¼ teaspoon salt",
+        "1½ cups milk",
+        "2 eggs",
+        "3 tablespoons melted butter",
+        "4 oz guava paste, thinly sliced",
+        "4 oz cream cheese, softened",
+        "2 tablespoons powdered sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Prepare la mezcla de los panqueques clásicos. Bata el queso crema con el azúcar en polvo.",
+        "Eche 3 cucharadas de mezcla en el sartén, ponga encima una lasca de guayaba y una cucharadita de queso crema, y cubra con 2 cucharadas más de mezcla.",
+        "Cocine a fuego bajo 3 minutos, voltee con cuidado y cocine 2 minutos más, para que la guayaba se derrita sin que se quemen.",
+        "Sirva calientes con un poquito más de queso crema. Es el pastelillo de guayaba y queso hecho panqueque."
+      ],
+      en: [
+        "Make the classic pancake batter. Beat the cream cheese with the powdered sugar.",
+        "Pour 3 tablespoons of batter into the skillet, top with a slice of guava and a teaspoon of cream cheese, and cover with 2 more tablespoons of batter.",
+        "Cook over low heat 3 minutes, flip carefully and cook 2 more minutes, so the guava melts without burning.",
+        "Serve hot with a little more cream cheese. The guava-and-cheese pastry, as a pancake."
+      ]
+    }
+  },
+  {
+    id: "panqueques-pina-volteados",
+    category: "panes",
+    name: { es: "Panqueques de Piña Volteados", en: "Pineapple Upside-Down Pancakes" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 tazas de harina",
+        "2 cucharadas de azúcar",
+        "1 cucharada de polvo de hornear",
+        "¼ cucharadita de sal",
+        "1½ tazas de leche",
+        "2 huevos",
+        "3 cucharadas de mantequilla derretida",
+        "8 ruedas de piña en almíbar, escurridas",
+        "3 cucharadas de azúcar morena",
+        "8 cerezas marrasquino"
+      ],
+      en: [
+        "2 cups flour",
+        "2 tablespoons sugar",
+        "1 tablespoon baking powder",
+        "¼ teaspoon salt",
+        "1½ cups milk",
+        "2 eggs",
+        "3 tablespoons melted butter",
+        "8 canned pineapple rings in syrup, drained",
+        "3 tablespoons brown sugar",
+        "8 maraschino cherries"
+      ]
+    },
+    steps: {
+      es: [
+        "Prepare la mezcla de los panqueques clásicos.",
+        "En un sartén engrasado a fuego medio-bajo, ponga una rueda de piña, espolvoree un poco de azúcar morena y una cereza en el hueco, y cocine 1 minuto para que se acaramele.",
+        "Eche ¼ taza de mezcla por encima de la piña. Cuando salgan burbujas, voltee y cocine 2 minutos más.",
+        "Sirva con la piña caramelizada hacia arriba, como el bizcocho de piña volteado."
+      ],
+      en: [
+        "Make the classic pancake batter.",
+        "In a greased skillet over medium-low, place a pineapple ring, sprinkle some brown sugar and set a cherry in the hole, and cook 1 minute to caramelize.",
+        "Pour ¼ cup of batter over the pineapple. When bubbles appear, flip and cook 2 more minutes.",
+        "Serve caramelized pineapple side up, like pineapple upside-down cake."
+      ]
+    }
+  },
+  {
+    id: "panqueques-proteina",
+    category: "panes",
+    name: { es: "Panqueques de Yogur Griego (Altos en Proteína)", en: "Greek Yogurt Protein Pancakes" },
+    time: "20 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de yogur griego natural",
+        "2 huevos",
+        "½ taza de avena en hojuelas molida",
+        "1 cucharadita de polvo de hornear",
+        "½ cucharadita de canela",
+        "1 pizca de sal",
+        "1 cucharadita de aceite para el sartén",
+        "½ taza de fresas o mangó picado"
+      ],
+      en: [
+        "1 cup plain Greek yogurt",
+        "2 eggs",
+        "½ cup rolled oats, ground",
+        "1 teaspoon baking powder",
+        "½ teaspoon cinnamon",
+        "1 pinch salt",
+        "1 teaspoon oil for the pan",
+        "½ cup chopped strawberries or mango"
+      ]
+    },
+    steps: {
+      es: [
+        "Muela la avena en la licuadora hasta que parezca harina.",
+        "Bata el yogur con los huevos y añada la avena, el polvo de hornear, la canela y la sal. Deje reposar 5 minutos para que espese.",
+        "Cocine 3 cucharadas por panqueque en un sartén apenas engrasado a fuego bajo, 2 a 3 minutos por lado (se queman fácil por la proteína).",
+        "Sirva con la fruta. Sin azúcar añadida y con más proteína: buena opción para los planes de masa muscular."
+      ],
+      en: [
+        "Grind the oats in the blender until floury.",
+        "Whisk the yogurt with the eggs and add the oats, baking powder, cinnamon and salt. Rest 5 minutes to thicken.",
+        "Cook 3 tablespoons per pancake in a barely greased skillet over low heat, 2 to 3 minutes per side (the protein makes them scorch easily).",
+        "Serve with the fruit. No added sugar and more protein: a good option for muscle-gain plans."
+      ]
+    }
+  },
+  {
+    id: "panqueques-harina-platano",
+    category: "panes",
+    name: { es: "Panqueques de Harina de Plátano (Sin Gluten)", en: "Plantain Flour Pancakes (Gluten-Free)" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ tazas de harina de plátano verde",
+        "2 cucharadas de azúcar",
+        "2 cucharaditas de polvo de hornear sin gluten",
+        "½ cucharadita de canela",
+        "¼ cucharadita de sal",
+        "1½ tazas de leche",
+        "2 huevos",
+        "2 cucharadas de aceite de coco derretido",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "1½ cups green plantain flour",
+        "2 tablespoons sugar",
+        "2 teaspoons gluten-free baking powder",
+        "½ teaspoon cinnamon",
+        "¼ teaspoon salt",
+        "1½ cups milk",
+        "2 eggs",
+        "2 tablespoons melted coconut oil",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la harina de plátano, el azúcar, el polvo de hornear, la canela y la sal. Añada la leche, los huevos, el aceite y la vainilla, y bata hasta que esté lisa.",
+        "Deje reposar 10 minutos: la harina de plátano absorbe mucho líquido. Si queda muy espesa, añada un chorrito de leche.",
+        "Cocine 3 cucharadas por panqueque a fuego medio-bajo, 2 a 3 minutos por lado.",
+        "No llevan trigo: revise que el polvo de hornear diga \"sin gluten\" y cocínelos en un sartén limpio si es para alguien celíaco."
+      ],
+      en: [
+        "Mix the plantain flour, sugar, baking powder, cinnamon and salt. Add the milk, eggs, oil and vanilla, and whisk until smooth.",
+        "Rest 10 minutes: plantain flour absorbs a lot of liquid. If it's too thick, add a splash of milk.",
+        "Cook 3 tablespoons per pancake over medium-low, 2 to 3 minutes per side.",
+        "No wheat: check that the baking powder says \"gluten-free\" and use a clean pan if it's for someone with celiac disease."
+      ]
+    }
+  },
+  {
+    id: "panqueques-maiz-queso",
+    category: "panes",
+    name: { es: "Panqueques Salados de Maíz y Queso del País", en: "Savory Corn and White Cheese Pancakes" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 taza de harina de maíz",
+        "½ taza de harina",
+        "1 cucharadita de polvo de hornear",
+        "½ cucharadita de sal",
+        "1 taza de leche",
+        "1 huevo",
+        "2 cucharadas de mantequilla derretida",
+        "1 taza de maíz en grano",
+        "½ taza de queso blanco del país rallado",
+        "2 cebollines picados"
+      ],
+      en: [
+        "1 cup cornmeal",
+        "½ cup flour",
+        "1 teaspoon baking powder",
+        "½ teaspoon salt",
+        "1 cup milk",
+        "1 egg",
+        "2 tablespoons melted butter",
+        "1 cup corn kernels",
+        "½ cup grated Puerto Rican white cheese",
+        "2 scallions, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la harina de maíz, la harina, el polvo de hornear y la sal. Añada la leche, el huevo y la mantequilla.",
+        "Añada el maíz, el queso y el cebollín.",
+        "Cocine 3 cucharadas por panqueque en un sartén engrasado a fuego medio, 3 minutos por lado, hasta que estén dorados.",
+        "Sirva con huevo frito, aguacate o un chorrito de pique: son para el desayuno salado, como una arepita."
+      ],
+      en: [
+        "Mix the cornmeal, flour, baking powder and salt. Add the milk, egg and butter.",
+        "Fold in the corn, cheese and scallions.",
+        "Cook 3 tablespoons per pancake in a greased skillet over medium heat, 3 minutes per side, until golden.",
+        "Serve with a fried egg, avocado or a splash of hot sauce: for a savory breakfast, like a little arepa."
       ]
     }
   }

@@ -298,6 +298,13 @@ function smartSearch(query, ctx) {
   const excluded = (r, x) => excludes.some((e) => {
     const allergens = S_ALLERGEN[e.stem];
     if (allergens && getAdvisories(r).allergens.some((a) => allergens.includes(a.key))) return true;
+    // Para alérgenos, la palabra en "sin gluten", "gluten-free"… no cuenta como que lo lleva.
+    if (allergens) {
+      const vs = [...sVariants(e.stem), ...sWeak(e.stem)].filter((v) => v.length > 2);
+      const neg = new RegExp(`\\b(sin|libre de|without|no) (${vs.join("|")})\\w*|\\b(${vs.join("|")})\\w*[- ]free`, "g");
+      const txt = (x.nameAll + " " + x.ingAll).replace(neg, " ");
+      return vs.some((v) => new RegExp(`\\b${v}`).test(txt));
+    }
     if (["alcohol", "alcoholico", "alcoholica", "ron", "rum", "licor", "liquor", "booze"].includes(e.stem)) return sIsAlcohol(r);
     if (["carne", "meat"].includes(e.stem)) return ["carnes", "aves", "pescados"].includes(r.category) || S_MEAT_RX.test(x.ingAll);
     return [...sVariants(e.stem), ...sWeak(e.stem)].some((v) => x.ing.has(v) || x.name.has(v));

@@ -394,6 +394,17 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Panqueques (tanda 38), antes de la regla general de panqueques.
+  [/^panqueques esponjosos/, "svg:ic-pq-clasicos"],
+  [/^panqueques de guineo/, "svg:ic-pq-guineo"],
+  [/^panqueques de coco/, "svg:ic-pq-coco-parcha"],
+  [/^panqueques de calabaza/, "svg:ic-pq-calabaza"],
+  [/^panqueques con chispas/, "svg:ic-pq-chocolate"],
+  [/^panqueques rellenos de guayaba/, "svg:ic-pq-guayaba-queso"],
+  [/^panqueques de pina/, "svg:ic-pq-pina"],
+  [/^panqueques de yogur/, "svg:ic-pq-proteina"],
+  [/^panqueques de harina de platano/, "svg:ic-pq-harina-platano"],
+  [/^panqueques salados/, "svg:ic-pq-maiz-queso"],
   // Rosquillas de viento y donas (antes las tres 🍩).
   [/^rosquillas de viento/, "svg:ic-pan-rosquillas"],
   [/^donas glaseadas/, "svg:ic-pan-donas-glaseadas"],

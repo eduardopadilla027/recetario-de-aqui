@@ -113,6 +113,7 @@ const RECIPE_FAMILIES = {
     ["otros", { es: "Otros pasteles", en: "Other pastries" }, null]
   ],
   panes: [
+    ["panqueques", { es: "Panqueques", en: "Pancakes" }, /^panqueques/],
     ["agua", { es: "Pan de agua, sobao y de molde", en: "Water bread, sobao and sandwich bread" }, /pan de agua|sobao|manteca|pan de mantequilla|molde|tostado|pan con ajo/],
     ["dulces", { es: "Panes dulces y donas", en: "Sweet breads and doughnuts" }, null],
     ["viandas", { es: "De viandas y maíz", en: "Root vegetable and corn breads" }, /yautia|maiz|casabe|arepas|panapen/],
@@ -192,7 +193,7 @@ const FAMILY_MATCH_ORDER = {
   entremeses: ["empanadillas", "croquetas", "otros", "alcapurrias", "bolitas", "mar", "masa"],
   bizcochos: ["cupcakes", "otros", "mojados", "calabaza", "frutas", "clasicos"],
   galletitas: ["jengibre", "mantequilla", "frutas", "otras"],
-  panes: ["salados", "agua", "viandas", "dulces"],
+  panes: ["panqueques", "salados", "agua", "viandas", "dulces"],
   vegetales: ["pasteles", "mofongos", "berenjenas", "papas", "platanos", "viandas", "rellenos", "otros"],
   arroces: ["paellas", "mar", "carnes", "granos", "otros"],
   postres: ["cheesecakes", "flanes", "gelatinas", "helados", "tembleques", "arroces", "budines", "bizcochos", "dulces"],
