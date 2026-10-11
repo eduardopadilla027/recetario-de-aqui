@@ -729,3 +729,12 @@ main:focus { outline: none; }
 .family-head { display: flex; align-items: baseline; gap: 10px; margin: 0 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); font-family: inherit; }
 .family-name { font-size: 1.05rem; font-weight: 700; color: var(--ink); }
 .family-count { font-size: .82rem; color: var(--ink-3); font-weight: 600; }
+
+/* "Combina mejor con" (salsas y aderezos) */
+.pairings { margin-top: var(--s-5); padding: var(--s-3) var(--s-4); background: var(--plantain-50); border-left: 4px solid var(--plantain); border-radius: var(--radius-sm); }
+.pairings-title { margin: 0 0 var(--s-2); font-size: var(--step-0); font-weight: 700; color: var(--plantain); }
+.pairing-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.pairing-chip { font: inherit; font-size: .9rem; font-weight: 600; color: var(--plantain); background: var(--ivory); border: 1px solid #B9D1B0; border-radius: 999px; padding: 6px 14px; min-height: 36px; cursor: pointer; }
+.pairing-chip:hover { background: var(--plantain); color: #fff; border-color: var(--plantain); }
+.pairing-chip:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+@media print { .pairing-chip { border: none; padding: 0 8px 0 0; } }

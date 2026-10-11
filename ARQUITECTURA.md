@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.20.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 978 en 24 categorías
+> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.21.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 996 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,12 +57,13 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, y desayunos y meriendas veganos, en cuarenta y una tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, y más salsas y aderezos y platos fuertes veganos, en cuarenta y dos tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── substitutes.js    sustitutos para cada alérgeno según el ingrediente (getSubstitutes)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
 │   ├── families.js       familias de recetas por categoría (flanes, tembleques…; res, cerdo…) y su orden
+│   ├── pairings.js       "Combina mejor con" de las salsas y aderezos (getPairings)
 │   ├── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
 │   └── plans.js          planes de comida (#/planes): objetivos, época, preferencias, plan de 1 o 7 días
 ├── images/               (vacía: reservada para fotos)
@@ -73,7 +74,7 @@ cocine-a-gusto/
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js`
-→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `app.js` → `plans.js` (usa funciones de `app.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
+→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
 ## 5. Modelo de datos: la receta
 
@@ -113,7 +114,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | calientes | Bebidas Calientes | 39 |
 | frutas | Frutas | 27 |
 | cereales | Cereales | 18 |
-| granos | Granos y Legumbres | 19 |
+| granos | Granos y Legumbres | 22 |
 | ensaladas | Ensaladas | 25 |
 | sopas | Sopas | 45 |
 | carnes | Carnes | 63 |
@@ -121,16 +122,16 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | pescados | Pescado y Mariscos | 57 |
 | huevos | Huevos y Queso | 13 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 54 |
-| pastas | Pastas | 18 |
+| pastas | Pastas | 19 |
 | bizcochos | Bizcochos | 39 |
 | galletitas | Galletitas | 37 |
 | pasteles_dulces | Pasteles Dulces | 22 |
 | panes | Pan y Panecillos | 41 |
 | emparedados | Emparedados | 23 |
 | postres | Helados, Budines, Flan y Otros Postres | 105 |
-| arroces | Arroces y Habichuelas | 54 |
-| vegetales | Vegetales y Viandas | 83 |
-| salsas | Salsas y Aderezos | 48 |
+| arroces | Arroces y Habichuelas | 55 |
+| vegetales | Vegetales y Viandas | 86 |
+| salsas | Salsas y Aderezos | 58 |
 | bebidas | Bebidas | 36 |
 | jugos | Jugos Naturales | 18 |
 | cocteles | Cócteles y Tragos | 47 |
@@ -140,6 +141,12 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 
 ## 7. Interfaz y navegación (`js/app.js`)
 
+- **"Combina mejor con" (`js/pairings.js`):** en las salsas y aderezos, debajo de la preparación, un recuadro verde con
+  botones de con qué platos se usan mejor: carnes, aves, pescados y mariscos, viandas y frituras, ensaladas, vegetales y
+  tofu, arroz y granos, pastas, y sándwiches y hamburguesas. `getPairings()` lo saca del nombre y los pasos en español
+  (`PAIR_KINDS`: "Sirva con pernil, pollo…"; no cuenta "sin carne…") y `PAIRINGS_EXTRA` completa a mano las que no lo
+  dicen (sofrito, recaíto, sazón, pique…). Cada botón lleva a su categoría (`goToCategory()`, lo mismo que la insignia de
+  la receta). Hoy las 58 salsas tienen al menos una combinación.
 - **Orden por familia (`js/families.js`):** al elegir una categoría (sin búsqueda), las recetas salen agrupadas por familia
   con un subtítulo y su número (p. ej. postres: flanes, tembleques/majaretes/natillas, arroces dulces, budines,
   cheesecakes, gelatinas, helados/limbers/piraguas, bizcochos y tres leches, dulces de coco y frutas; carnes: res, cerdo,
@@ -253,6 +260,10 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   (cilantro y limón, verde de recao con ají, ajo tostado, achiote con aceitunas, calabaza, espinaca y garbanzos,
   champiñones, amarillos y queso, piña y jamón, tocineta y pimientos, huevo y vegetales); el cremoso, en tazón.
   **Veganas (`ic-vg-*`, tanda 40):** cada una con su forma y una hojita verde en un círculo arriba a la derecha.
+  **Salsas y aderezos (`ic-sz-*`, tanda 42):** tazón con el color de la salsa y su fruta al lado (grosellas, acerolas,
+  parcha, tostón, aguacate, maní), aceitera de vinagreta, botella de pique con piña y ajíes, sartén de cebolla y frasco de
+  jalea; las veganas, con la hojita. Los platos fuertes veganos de la tanda 42 siguen el estilo `ic-vg-*` (cazuela de
+  barro, pinchos, plato de mamposteao y de espaguetis, tacos).
   **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
@@ -345,9 +356,10 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   masa → arroz o vianda + granos; rebajar → ensalada, vegetal o granos; mantener → arroz o vianda + granos, ensalada o
   vegetal; bajo en carbohidratos → ensalada o vegetal; más nutritivo → granos + ensalada o vegetal; sodio y azúcar → uno
   que cumpla su límite. `sideKind()` clasifica arroces sencillos, granos sin carne, ensaladas ligeras (<12 g de proteína)
-  y viandas o vegetales sin carne como acompañantes (no entran como plato principal). Los platos completos
+  y viandas o vegetales sin carne como acompañantes (no entran como plato principal), menos los platos fuertes veganos
+  ("vegano" en el nombre), el chili y los tacos, que van de principal. Los platos completos
   (`isComplete()`: arroces, sopas, pastas, emparedados, asopao, paella, sancocho, pastelón, lasaña, mofongo, "arroz
-  con…", "con papas/yuca/tostones/garbanzos/habichuelas…", jibarito) van solos. Con acompañantes, el principal lleva el
+  con…", "con papas/yuca/tostones/garbanzos/habichuelas…", jibarito, tacos) van solos. Con acompañantes, el principal lleva el
   55 % de las calorías de esa comida y los acompañantes se reparten el resto (porción hasta 1½). Los totales del día los
   incluyen, y "Recetas que encajan" tiene un grupo "Acompañantes".
 - **Si las exclusiones dejan una comida con pocas opciones** (menos de 6 platos principales o 3 desayunos/meriendas), se
@@ -364,7 +376,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 978). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 996). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -433,6 +445,24 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-11 — v3.21.0 · Más salsas y aderezos, "Combina mejor con" y platos fuertes veganos
+- *Pedido:* más salsas y aderezos (p. ej. de grosella o de cereza) y más veganas; y en salsas y aderezos, recomendar con
+  qué se combinan mejor (carnes, aves, pescado, viandas, ensaladas).
+- Cuadragésima segunda tanda en `js/recipes-4.js` (versiones propias), 18 recetas. **Salsas y aderezos (10):** salsa
+  agridulce de grosellas, salsa de cereza del país (acerola), vinagreta de mangó y cilantro, pique de piña, mojo de parcha,
+  mayo-ketchup de mangó, aderezo cremoso de aguacate (vegano), salsa de maní con lima (vegana), salsa de cebolla
+  caramelizada y jalea de ají picante (vegana). **Platos fuertes veganos (8):** garbanzos con calabaza y espinaca, tofu en
+  salsa de coco y achiote, lentejas con viandas, pinchos de tofu y piña, arroz mamposteao, espaguetis con boloñesa de
+  lentejas, chili boricua de habichuelas y maíz, y tacos de jaca al pastor. **Nutrición:** nuevos chile en polvo y pectina.
+- Nuevo `js/pairings.js` y recuadro **"Combina mejor con"** en las 58 salsas (§7); `goToCategory()` en `app.js`.
+- **Planes:** los platos fuertes veganos, el chili y los tacos ya no se toman por acompañantes (`sideKind()`); el plan
+  vegano pasa de 10 a 17 platos principales.
+- **Iconos:** 18 dibujos nuevos (§7).
+- Total: **978 → 996 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador sin búsquedas vacías ✔ ("salsa de grosella", "salsa de cereza",
+  "tofu"); los 9 objetivos × 1 y 7 días sin errores, vegano de 7 días con 28 recetas distintas, todas veganas ✔; las 58
+  salsas y los 8 platos en ES y EN a 375 px sin errores ni desbordes, y el botón lleva a la categoría ✔.
 
 ### 2026-10-11 — v3.20.0 · Planes vegetariano y vegano
 - *Pedido:* en Planes, un plan de comida "Vegetariano" y otro "Vegano" que busque todas las recetas de esa familia.

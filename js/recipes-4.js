@@ -105,6 +105,10 @@
  * bizcocho de chocolate, mantecado de guineo, coquito, mayo-ajo y "queso" de viandas).
  * Cuadragésima primera tanda: desayunos y meriendas veganos para el plan vegano (avena de
  * coco, panqueques de guineo, pudín de chía, batida de mangó y avena, tostones con guacamole).
+ * Cuadragésima segunda tanda: salsas y aderezos (grosellas, cereza del país, vinagreta de mangó,
+ * pique de piña, mojo de parcha, mayo-ketchup de mangó, aguacate, maní, cebolla caramelizada,
+ * jalea de ají) y platos fuertes veganos (garbanzos con calabaza, tofu en coco, lentejas con
+ * viandas, pinchos de tofu, mamposteao, boloñesa de lentejas, chili, tacos de jaca).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -23805,6 +23809,810 @@ recipes.push(
         "Mash the avocados with the lime juice and salt, and stir in the culantro, onion and tomato.",
         "Serve the tostones topped with or alongside the guacamole.",
         "A vegan snack with healthy fat from avocado; for less oil, brush the tostones with oil and bake at 425 °F."
+      ]
+    }
+  },
+
+  // ── Cuadragésima segunda tanda (2026-10): más salsas y aderezos, y platos fuertes veganos ──
+  {
+    id: "salsa-grosella",
+    category: "salsas",
+    name: { es: "Salsa Agridulce de Grosellas para Cerdo y Pollo", en: "Sweet-and-Sour Gooseberry Sauce for Pork and Chicken" },
+    time: "35 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de grosellas lavadas",
+        "1 taza de agua",
+        "½ taza de azúcar morena",
+        "2 cucharadas de vinagre",
+        "1 diente de ajo machacado",
+        "½ cucharadita de jengibre rallado",
+        "¼ cucharadita de sal",
+        "1 cucharadita de maicena disuelta en 1 cucharada de agua"
+      ],
+      en: [
+        "2 cups Otaheite gooseberries (grosellas), washed",
+        "1 cup water",
+        "½ cup brown sugar",
+        "2 tablespoons vinegar",
+        "1 garlic clove, crushed",
+        "½ teaspoon grated ginger",
+        "¼ teaspoon salt",
+        "1 teaspoon cornstarch dissolved in 1 tablespoon water"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las grosellas en el agua 15 minutos, hasta que se ablanden y la piel se abra.",
+        "Májelas con un tenedor o pase por un colador para sacar las semillas.",
+        "Devuelva el puré a la olla con el azúcar, el vinagre, el ajo, el jengibre y la sal, y cocine 8 minutos. Añada la maicena y mueva 1 minuto hasta que brille.",
+        "Sirva tibia con pernil, chuletas, pollo asado o costillas. Es ácida como la grosella: ajuste el azúcar a su gusto."
+      ],
+      en: [
+        "Simmer the gooseberries in the water 15 minutes, until soft and the skins split.",
+        "Mash with a fork or press through a strainer to remove the seeds.",
+        "Return the purée to the pot with the sugar, vinegar, garlic, ginger and salt, and cook 8 minutes. Add the cornstarch and stir 1 minute until glossy.",
+        "Serve warm with pernil, pork chops, roast chicken or ribs. It's tart like the fruit: adjust the sugar to taste."
+      ]
+    }
+  },
+  {
+    id: "salsa-acerola",
+    category: "salsas",
+    name: { es: "Salsa de Cereza del País (Acerola) para Carnes", en: "Acerola Cherry Sauce for Meats" },
+    time: "30 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de acerolas (cerezas del país), sin semillas",
+        "½ taza de agua",
+        "⅓ taza de azúcar",
+        "2 cucharadas de vinagre",
+        "1 cucharada de salsa de soya",
+        "½ cebolla picada fina",
+        "1 cucharada de aceite de oliva",
+        "1 cucharadita de maicena disuelta en 1 cucharada de agua"
+      ],
+      en: [
+        "2 cups acerola cherries (cerezas del país), pitted",
+        "½ cup water",
+        "⅓ cup sugar",
+        "2 tablespoons vinegar",
+        "1 tablespoon soy sauce",
+        "½ onion, finely chopped",
+        "1 tablespoon olive oil",
+        "1 teaspoon cornstarch dissolved in 1 tablespoon water"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría la cebolla en el aceite 4 minutos, hasta que esté blanda.",
+        "Añada las acerolas, el agua y el azúcar, y cocine 10 minutos aplastándolas con la cuchara.",
+        "Añada el vinagre y la soya, y cocine 3 minutos. Añada la maicena y mueva hasta que espese.",
+        "Sirva con lechón, pavo, jamón glaseado o pato. La acerola tiene muchísima vitamina C y un sabor ácido que corta la grasa."
+      ],
+      en: [
+        "Sauté the onion in the oil 4 minutes, until soft.",
+        "Add the acerolas, water and sugar, and cook 10 minutes, crushing them with the spoon.",
+        "Add the vinegar and soy sauce and cook 3 minutes. Add the cornstarch and stir until thick.",
+        "Serve with roast pork, turkey, glazed ham or duck. Acerola is packed with vitamin C and its tartness cuts through the fat."
+      ]
+    }
+  },
+  {
+    id: "vinagreta-mango",
+    category: "salsas",
+    name: { es: "Vinagreta de Mangó y Cilantro", en: "Mango Cilantro Vinaigrette" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de mangó maduro en cubos",
+        "¼ taza de vinagre",
+        "2 cucharadas de jugo de limón",
+        "⅓ taza de aceite de oliva",
+        "2 cucharadas de cilantro",
+        "1 cucharadita de mostaza",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "1 cup ripe mango, cubed",
+        "¼ cup vinegar",
+        "2 tablespoons lime juice",
+        "⅓ cup olive oil",
+        "2 tablespoons cilantro",
+        "1 teaspoon mustard",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe todo hasta que quede liso y cremoso.",
+        "Pruebe: si el mangó está muy dulce, añada un poquito más de limón.",
+        "Sirva sobre ensaladas verdes, de aguacate o de camarones, o como salsa para pescado. Dura 5 días en la nevera."
+      ],
+      en: [
+        "Blend everything until smooth and creamy.",
+        "Taste: if the mango is very sweet, add a bit more lime juice.",
+        "Serve over green, avocado or shrimp salads, or as a sauce for fish. Keeps 5 days in the fridge."
+      ]
+    }
+  },
+  {
+    id: "pique-pina",
+    category: "salsas",
+    name: { es: "Pique de Piña", en: "Pineapple Hot Sauce" },
+    time: "10 min + 3 días",
+    servings: 16,
+    ingredients: {
+      es: [
+        "Cáscara y corazón de 1 piña, bien lavados",
+        "1 taza de vinagre",
+        "6 ajíes picantes partidos",
+        "4 dientes de ajo",
+        "4 granos de pimienta",
+        "1 cucharadita de sal",
+        "1 cucharadita de azúcar"
+      ],
+      en: [
+        "Peel and core of 1 pineapple, well washed",
+        "1 cup vinegar",
+        "6 hot peppers, halved",
+        "4 garlic cloves",
+        "4 black peppercorns",
+        "1 teaspoon salt",
+        "1 teaspoon sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte la cáscara y el corazón de la piña en tiras que quepan en una botella limpia.",
+        "Meta la piña, los ajíes, el ajo y la pimienta en la botella.",
+        "Caliente el vinagre con la sal y el azúcar hasta que se disuelvan, deje entibiar y viértalo en la botella.",
+        "Tape y deje reposar 3 días antes de usar. Guárdelo en la nevera; añada vinagre según lo vaya usando. Use guantes con los ajíes."
+      ],
+      en: [
+        "Cut the pineapple peel and core into strips that fit in a clean bottle.",
+        "Put the pineapple, peppers, garlic and peppercorns in the bottle.",
+        "Warm the vinegar with the salt and sugar until dissolved, let cool slightly and pour into the bottle.",
+        "Cap and let rest 3 days before using. Keep refrigerated; top up with vinegar as you use it. Wear gloves with the peppers."
+      ]
+    }
+  },
+  {
+    id: "mojo-parcha",
+    category: "salsas",
+    name: { es: "Mojo de Parcha", en: "Passion Fruit Mojo" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "½ taza de aceite de oliva",
+        "6 dientes de ajo machacados",
+        "⅓ taza de pulpa de parcha colada",
+        "2 cucharadas de jugo de naranja agria",
+        "½ cucharadita de orégano",
+        "½ cucharadita de sal",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "½ cup olive oil",
+        "6 garlic cloves, crushed",
+        "⅓ cup strained passion fruit pulp",
+        "2 tablespoons sour orange juice",
+        "½ teaspoon oregano",
+        "½ teaspoon salt",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el aceite con el ajo a fuego bajo 2 minutos, sin que se dore. Apague.",
+        "Añada la parcha, la naranja agria, el orégano y la sal, y bata.",
+        "Añada el cilantro al servir.",
+        "Báñelo sobre pescado a la parrilla, camarones, yuca hervida o tostones. Es el mojo de siempre con el perfume ácido de la parcha."
+      ],
+      en: [
+        "Warm the oil with the garlic over low heat 2 minutes, without browning. Turn off.",
+        "Add the passion fruit, sour orange, oregano and salt, and whisk.",
+        "Stir in the cilantro to serve.",
+        "Spoon over grilled fish, shrimp, boiled cassava or tostones. Classic mojo with the tart perfume of passion fruit."
+      ]
+    }
+  },
+  {
+    id: "salsa-rosada-mango",
+    category: "salsas",
+    name: { es: "Mayo-Ketchup de Mangó", en: "Mango Mayo-Ketchup" },
+    time: "5 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "½ taza de mayonesa",
+        "3 cucharadas de ketchup",
+        "¼ taza de mangó maduro majado",
+        "1 diente de ajo rallado",
+        "1 cucharadita de jugo de limón",
+        "1 pizca de pimentón"
+      ],
+      en: [
+        "½ cup mayonnaise",
+        "3 tablespoons ketchup",
+        "¼ cup mashed ripe mango",
+        "1 garlic clove, grated",
+        "1 teaspoon lime juice",
+        "1 pinch paprika"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la mayonesa, el ketchup y el mangó hasta que esté liso (o licúe 10 segundos).",
+        "Añada el ajo, el limón y el pimentón.",
+        "Sirva con tostones, papas fritas, sorullitos o hamburguesas. Con mayonesa vegana queda vegana."
+      ],
+      en: [
+        "Mix the mayonnaise, ketchup and mango until smooth (or blend 10 seconds).",
+        "Add the garlic, lime juice and paprika.",
+        "Serve with tostones, fries, sorullitos or burgers. With vegan mayo it's vegan."
+      ]
+    }
+  },
+  {
+    id: "aderezo-aguacate-cilantro",
+    category: "salsas",
+    name: { es: "Aderezo Cremoso de Aguacate y Cilantro (Vegano)", en: "Creamy Avocado Cilantro Dressing (Vegan)" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 aguacate maduro",
+        "½ taza de cilantro",
+        "¼ taza de jugo de limón",
+        "¼ taza de aceite de oliva",
+        "½ taza de agua",
+        "1 diente de ajo",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1 ripe avocado",
+        "½ cup cilantro",
+        "¼ cup lime juice",
+        "¼ cup olive oil",
+        "½ cup water",
+        "1 garlic clove",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe todo hasta que quede cremoso y liso.",
+        "Añada agua si lo quiere más líquido para ensaladas, o menos para mojar.",
+        "Guárdelo en un frasco con un plástico pegado encima para que no se oscurezca; dura 2 días en la nevera.",
+        "Sirva sobre ensaladas, tacos, bowls de arroz y habichuelas o vegetales asados."
+      ],
+      en: [
+        "Blend everything until creamy and smooth.",
+        "Add water for a thinner salad dressing, or less for a dip.",
+        "Store in a jar with plastic pressed on top so it doesn't darken; keeps 2 days in the fridge.",
+        "Serve over salads, tacos, rice-and-bean bowls or roasted vegetables."
+      ]
+    }
+  },
+  {
+    id: "salsa-mani",
+    category: "salsas",
+    name: { es: "Salsa de Maní con Lima (Vegana)", en: "Peanut Lime Sauce (Vegan)" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "½ taza de mantequilla de maní cremosa",
+        "3 cucharadas de salsa de soya",
+        "2 cucharadas de jugo de limón",
+        "1 cucharada de azúcar morena",
+        "1 diente de ajo rallado",
+        "1 cucharadita de jengibre rallado",
+        "½ taza de agua tibia",
+        "¼ cucharadita de hojuelas de ají"
+      ],
+      en: [
+        "½ cup creamy peanut butter",
+        "3 tablespoons soy sauce",
+        "2 tablespoons lime juice",
+        "1 tablespoon brown sugar",
+        "1 garlic clove, grated",
+        "1 teaspoon grated ginger",
+        "½ cup warm water",
+        "¼ teaspoon chili flakes"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata la mantequilla de maní con la soya, el limón, el azúcar, el ajo y el jengibre.",
+        "Añada el agua tibia poco a poco, batiendo, hasta que quede como una salsa espesa que corre.",
+        "Añada el ají y pruebe.",
+        "Sirva con pinchos de tofu o de pollo, vegetales, arroz o como aderezo de ensalada de repollo. Lleva maní y soya."
+      ],
+      en: [
+        "Whisk the peanut butter with the soy sauce, lime juice, sugar, garlic and ginger.",
+        "Add the warm water gradually, whisking, until it's a thick, pourable sauce.",
+        "Add the chili flakes and taste.",
+        "Serve with tofu or chicken skewers, vegetables, rice or as a cabbage-salad dressing. Contains peanuts and soy."
+      ]
+    }
+  },
+  {
+    id: "salsa-cebolla-caramelizada",
+    category: "salsas",
+    name: { es: "Salsa de Cebolla Caramelizada para Carnes", en: "Caramelized Onion Sauce for Meats" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 cebollas grandes en tiras finas",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharada de mantequilla",
+        "1 cucharadita de azúcar",
+        "½ cucharadita de sal",
+        "2 dientes de ajo picados",
+        "1 taza de caldo de res",
+        "1 cucharada de vinagre",
+        "1 cucharadita de tomillo"
+      ],
+      en: [
+        "3 large onions, thinly sliced",
+        "2 tablespoons olive oil",
+        "1 tablespoon butter",
+        "1 teaspoon sugar",
+        "½ teaspoon salt",
+        "2 garlic cloves, chopped",
+        "1 cup beef broth",
+        "1 tablespoon vinegar",
+        "1 teaspoon thyme"
+      ]
+    },
+    steps: {
+      es: [
+        "Cocine la cebolla en el aceite y la mantequilla a fuego medio-bajo 30 minutos, moviendo de vez en cuando, hasta que esté marrón dorada y dulce (sin apurarla: si sube el fuego, se quema en vez de caramelizar).",
+        "Añada el azúcar, la sal y el ajo, y cocine 2 minutos.",
+        "Añada el caldo, el vinagre y el tomillo, raspe el fondo y cocine 5 minutos hasta que espese.",
+        "Sirva sobre bistec, churrasco, chuletas o hamburguesas."
+      ],
+      en: [
+        "Cook the onions in the oil and butter over medium-low heat 30 minutes, stirring now and then, until deep golden and sweet (don't rush: high heat burns instead of caramelizing).",
+        "Add the sugar, salt and garlic, and cook 2 minutes.",
+        "Add the broth, vinegar and thyme, scrape the bottom and cook 5 minutes until thickened.",
+        "Serve over steak, churrasco, pork chops or burgers."
+      ]
+    }
+  },
+  {
+    id: "jalea-aji-picante",
+    category: "salsas",
+    name: { es: "Jalea de Ají Picante y Pimiento (Vegana)", en: "Hot Pepper Jelly (Vegan)" },
+    time: "40 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "2 pimientos rojos picados finos",
+        "4 ajíes picantes picados finos",
+        "1 taza de vinagre",
+        "2 tazas de azúcar",
+        "1 cucharada de pectina en polvo",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "2 red bell peppers, finely chopped",
+        "4 hot peppers, finely chopped",
+        "1 cup vinegar",
+        "2 cups sugar",
+        "1 tablespoon powdered pectin",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Con guantes, pique los ajíes. Hierva los pimientos y los ajíes en el vinagre 10 minutos.",
+        "Mezcle la pectina con ¼ taza del azúcar, añádala y hierva 1 minuto. Añada el resto del azúcar y el limón.",
+        "Hierva fuerte 3 a 5 minutos, moviendo, hasta que una gota en un plato frío se arrugue al empujarla.",
+        "Vierta en frascos limpios y calientes, tape y enfríe. Sirva sobre queso crema con galletas, o como glaseado de pollo y cerdo."
+      ],
+      en: [
+        "Wearing gloves, chop the hot peppers. Boil the bell peppers and hot peppers in the vinegar 10 minutes.",
+        "Mix the pectin with ¼ cup of the sugar, add it and boil 1 minute. Add the remaining sugar and lime juice.",
+        "Boil hard 3 to 5 minutes, stirring, until a drop on a cold plate wrinkles when pushed.",
+        "Pour into clean hot jars, cap and cool. Serve over cream cheese with crackers, or as a glaze for chicken and pork."
+      ]
+    }
+  },
+  {
+    id: "garbanzos-calabaza-espinaca",
+    category: "granos",
+    name: { es: "Garbanzos Guisados con Calabaza y Espinaca (Vegano)", en: "Stewed Chickpeas with Pumpkin and Spinach (Vegan)" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 latas de 15 onzas de garbanzos, escurridos",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "2 tazas de calabaza en cubos",
+        "1½ tazas de caldo de vegetales",
+        "1 cucharadita de comino",
+        "½ cucharadita de pimentón",
+        "4 tazas de espinaca fresca",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "2 cans (15 oz each) chickpeas, drained",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "2 cups cubed West Indian pumpkin (calabaza)",
+        "1½ cups vegetable broth",
+        "1 teaspoon cumin",
+        "½ teaspoon paprika",
+        "4 cups fresh spinach",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite de achiote 3 minutos. Añada la salsa de tomate, el comino y el pimentón.",
+        "Añada los garbanzos, la calabaza, el caldo y la sal. Tape y cocine 15 minutos, hasta que la calabaza esté blanda y espese el guiso.",
+        "Añada la espinaca y mueva 2 minutos hasta que se encoja.",
+        "Sirva con arroz blanco. Plato fuerte vegano con proteína y hierro (añádale limón para aprovecharlo)."
+      ],
+      en: [
+        "Sauté the sofrito in the annatto oil 3 minutes. Add the tomato sauce, cumin and paprika.",
+        "Add the chickpeas, pumpkin, broth and salt. Cover and cook 15 minutes, until the pumpkin is soft and the stew thickens.",
+        "Add the spinach and stir 2 minutes until wilted.",
+        "Serve with white rice. A hearty vegan main with protein and iron (add lime to absorb it)."
+      ]
+    }
+  },
+  {
+    id: "tofu-coco-achiote",
+    category: "vegetales",
+    name: { es: "Tofu en Salsa de Coco y Achiote (Vegano)", en: "Tofu in Coconut Annatto Sauce (Vegan)" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 paquete de 14 onzas de tofu firme, prensado y en cubos",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "1 lata de 13.5 onzas de leche de coco",
+        "½ cucharadita de comino",
+        "½ cucharadita de sal",
+        "1 pimiento rojo en tiras",
+        "1 taza de habichuelas tiernas picadas",
+        "2 cucharadas de cilantro picado",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "1 package (14 oz) firm tofu, pressed and cubed",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "1 can (13.5 oz) coconut milk",
+        "½ teaspoon cumin",
+        "½ teaspoon salt",
+        "1 red bell pepper, in strips",
+        "1 cup chopped green beans",
+        "2 tablespoons chopped cilantro",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Dore el tofu en el aceite de achiote 6 minutos, volteando con cuidado. Sáquelo.",
+        "Sofría el sofrito y el pimiento 3 minutos en el mismo caldero. Añada la leche de coco, el comino y la sal, y deje hervir.",
+        "Añada las habichuelas tiernas y el tofu, y cocine a fuego bajo 10 minutos hasta que la salsa espese.",
+        "Termine con el cilantro y el limón. Sirva con arroz blanco o tostones."
+      ],
+      en: [
+        "Brown the tofu in the annatto oil 6 minutes, turning gently. Remove.",
+        "Sauté the sofrito and bell pepper 3 minutes in the same caldero. Add the coconut milk, cumin and salt, and bring to a boil.",
+        "Add the green beans and tofu and simmer 10 minutes until the sauce thickens.",
+        "Finish with the cilantro and lime juice. Serve with white rice or tostones."
+      ]
+    }
+  },
+  {
+    id: "lentejas-viandas-vegano",
+    category: "granos",
+    name: { es: "Lentejas Guisadas con Viandas (Vegano)", en: "Stewed Lentils with Root Vegetables (Vegan)" },
+    time: "50 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1½ tazas de lentejas secas, lavadas",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "6 tazas de agua",
+        "1 libra de yautía en cubos",
+        "1 papa en cubos",
+        "1 zanahoria en ruedas",
+        "1 cucharadita de comino",
+        "1 hoja de laurel",
+        "1 cucharadita de sal",
+        "2 hojas de recao picadas"
+      ],
+      en: [
+        "1½ cups dried lentils, rinsed",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "6 cups water",
+        "1 lb taro (yautía), cubed",
+        "1 potato, cubed",
+        "1 carrot, sliced",
+        "1 teaspoon cumin",
+        "1 bay leaf",
+        "1 teaspoon salt",
+        "2 culantro leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite 3 minutos y añada la salsa de tomate y el comino.",
+        "Añada las lentejas, el agua y el laurel, y cocine 15 minutos.",
+        "Añada la yautía, la papa, la zanahoria y la sal, y cocine 20 minutos más, hasta que todo esté blando y espeso.",
+        "Añada el recao y sirva solo o con arroz. Es un plato completo y barato: proteína de la lenteja y energía de las viandas."
+      ],
+      en: [
+        "Sauté the sofrito in the oil 3 minutes and add the tomato sauce and cumin.",
+        "Add the lentils, water and bay leaf, and cook 15 minutes.",
+        "Add the taro, potato, carrot and salt, and cook 20 more minutes, until everything is soft and thick.",
+        "Stir in the culantro and serve on its own or with rice. A complete, inexpensive meal: protein from lentils and energy from root vegetables."
+      ]
+    }
+  },
+  {
+    id: "pinchos-tofu-pina",
+    category: "vegetales",
+    name: { es: "Pinchos de Tofu y Piña al Pique (Vegano)", en: "Tofu and Pineapple Skewers with Hot Sauce (Vegan)" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 paquete de 14 onzas de tofu extra firme, prensado y en cubos",
+        "2 tazas de piña en cubos",
+        "1 pimiento rojo en cuadros",
+        "1 cebolla roja en cuadros",
+        "3 cucharadas de salsa de soya",
+        "2 cucharadas de azúcar morena",
+        "1 cucharada de pique de piña o salsa picante",
+        "1 cucharada de aceite vegetal",
+        "1 diente de ajo rallado"
+      ],
+      en: [
+        "1 package (14 oz) extra-firm tofu, pressed and cubed",
+        "2 cups pineapple chunks",
+        "1 red bell pepper, in squares",
+        "1 red onion, in squares",
+        "3 tablespoons soy sauce",
+        "2 tablespoons brown sugar",
+        "1 tablespoon pineapple hot sauce or other hot sauce",
+        "1 tablespoon vegetable oil",
+        "1 garlic clove, grated"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la soya, el azúcar, el pique, el aceite y el ajo, y marine el tofu 20 minutos.",
+        "Ensarte el tofu, la piña, el pimiento y la cebolla alternándolos en 8 pinchos (si son de madera, remójelos antes 30 minutos).",
+        "Ase a fuego medio-alto 8 a 10 minutos, volteando y untando con el marinado, hasta que tengan marcas.",
+        "Tip de parrilla: el tofu se pega en la parrilla fría; caliéntela bien y úntele aceite. Sirva con arroz o con salsa de maní."
+      ],
+      en: [
+        "Mix the soy sauce, sugar, hot sauce, oil and garlic, and marinate the tofu 20 minutes.",
+        "Thread the tofu, pineapple, bell pepper and onion alternately on 8 skewers (soak wooden skewers 30 minutes first).",
+        "Grill over medium-high heat 8 to 10 minutes, turning and brushing with the marinade, until marked.",
+        "Grill tip: tofu sticks to a cold grill; heat it well and oil it. Serve with rice or peanut sauce."
+      ]
+    }
+  },
+  {
+    id: "mamposteao-vegano",
+    category: "arroces",
+    name: { es: "Arroz Mamposteao Vegano", en: "Vegan Arroz Mamposteao" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 tazas de arroz cocido (blanco)",
+        "1 lata de 15 onzas de habichuelas rosadas, con un poco de su líquido",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "½ pimiento rojo picado",
+        "¼ taza de salsa de tomate",
+        "½ cucharadita de comino",
+        "½ cucharadita de sal",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "3 cups cooked white rice",
+        "1 can (15 oz) pink beans, with some of their liquid",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "½ red bell pepper, chopped",
+        "¼ cup tomato sauce",
+        "½ teaspoon cumin",
+        "½ teaspoon salt",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "En un sartén grande, sofría el sofrito y el pimiento en el aceite de achiote 4 minutos.",
+        "Añada la salsa de tomate, el comino y la sal, y luego las habichuelas con un poco de su líquido. Cocine 3 minutos.",
+        "Añada el arroz y mezcle a fuego medio 5 minutos, hasta que el arroz coja el color y se pegue un poquito al fondo.",
+        "Termine con el cilantro. Sin tocineta ni jamón: el sabor lo pone el sofrito con achiote."
+      ],
+      en: [
+        "In a large skillet, sauté the sofrito and bell pepper in the annatto oil 4 minutes.",
+        "Add the tomato sauce, cumin and salt, then the beans with some of their liquid. Cook 3 minutes.",
+        "Add the rice and stir over medium heat 5 minutes, until the rice takes on color and crisps a bit on the bottom.",
+        "Finish with the cilantro. No bacon or ham: the flavor comes from the annatto sofrito."
+      ]
+    }
+  },
+  {
+    id: "espaguetis-lentejas",
+    category: "pastas",
+    name: { es: "Espaguetis con Boloñesa de Lentejas (Vegano)", en: "Spaghetti with Lentil Bolognese (Vegan)" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de espaguetis secos",
+        "1 taza de lentejas secas",
+        "3 tazas de agua",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 zanahoria rallada",
+        "1 lata de 28 onzas de tomates triturados",
+        "1 cucharadita de orégano",
+        "1 cucharadita de albahaca seca",
+        "1 cucharadita de sal",
+        "1 cucharadita de azúcar"
+      ],
+      en: [
+        "1 lb dried spaghetti",
+        "1 cup dried lentils",
+        "3 cups water",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 carrot, grated",
+        "1 can (28 oz) crushed tomatoes",
+        "1 teaspoon oregano",
+        "1 teaspoon dried basil",
+        "1 teaspoon salt",
+        "1 teaspoon sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las lentejas en el agua 20 minutos, hasta que estén blandas pero enteras. Escúrralas.",
+        "Sofría el sofrito y la zanahoria en el aceite 5 minutos. Añada los tomates, el orégano, la albahaca, la sal y el azúcar, y cocine 10 minutos.",
+        "Añada las lentejas y cocine 10 minutos más, hasta que la salsa espese como una boloñesa.",
+        "Hierva los espaguetis según el paquete y sírvalos con la salsa. Los espaguetis secos normalmente no llevan huevo: revise la etiqueta."
+      ],
+      en: [
+        "Boil the lentils in the water 20 minutes, until tender but whole. Drain.",
+        "Sauté the sofrito and carrot in the oil 5 minutes. Add the tomatoes, oregano, basil, salt and sugar, and cook 10 minutes.",
+        "Add the lentils and cook 10 more minutes, until thick like a bolognese.",
+        "Cook the spaghetti per the package and serve with the sauce. Dried spaghetti usually has no egg: check the label."
+      ]
+    }
+  },
+  {
+    id: "chili-habichuelas-maiz",
+    category: "granos",
+    name: { es: "Chili Boricua de Habichuelas y Maíz (Vegano)", en: "Puerto Rican Bean and Corn Chili (Vegan)" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 latas de 15 onzas de habichuelas rojas, escurridas",
+        "1 lata de 15 onzas de habichuelas negras, escurridas",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 pimiento verde picado",
+        "1 lata de 14 onzas de tomates en cubitos",
+        "1 taza de maíz en grano",
+        "1 taza de calabaza en cubos",
+        "1 cucharada de chile en polvo",
+        "1 cucharadita de comino",
+        "1½ tazas de caldo de vegetales",
+        "½ cucharadita de sal",
+        "1 aguacate en cubos para servir"
+      ],
+      en: [
+        "2 cans (15 oz each) red kidney beans, drained",
+        "1 can (15 oz) black beans, drained",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 green bell pepper, chopped",
+        "1 can (14 oz) diced tomatoes",
+        "1 cup corn kernels",
+        "1 cup cubed West Indian pumpkin (calabaza)",
+        "1 tablespoon chili powder",
+        "1 teaspoon cumin",
+        "1½ cups vegetable broth",
+        "½ teaspoon salt",
+        "1 avocado, cubed, to serve"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito y el pimiento en el aceite 4 minutos. Añada el chile en polvo y el comino 1 minuto.",
+        "Añada las habichuelas, los tomates, el maíz, la calabaza, el caldo y la sal.",
+        "Cocine a fuego bajo 25 minutos, moviendo de vez en cuando, hasta que la calabaza se deshaga y espese.",
+        "Sirva con aguacate, cilantro y arroz o tostones. Mejor al otro día."
+      ],
+      en: [
+        "Sauté the sofrito and bell pepper in the oil 4 minutes. Add the chili powder and cumin 1 minute.",
+        "Add the beans, tomatoes, corn, pumpkin, broth and salt.",
+        "Simmer 25 minutes, stirring now and then, until the pumpkin breaks down and thickens it.",
+        "Serve with avocado, cilantro and rice or tostones. Even better the next day."
+      ]
+    }
+  },
+  {
+    id: "tacos-jaca-pastor",
+    category: "vegetales",
+    name: { es: "Tacos de Jaca al Pastor con Piña (Veganos)", en: "Jackfruit al Pastor Tacos with Pineapple (Vegan)" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 latas de 20 onzas de jaca verde en salmuera, escurrida y desmenuzada",
+        "2 cucharadas de aceite de achiote",
+        "¼ taza de jugo de piña",
+        "2 cucharadas de vinagre",
+        "1 cucharadita de comino",
+        "1 cucharadita de orégano",
+        "1 cucharada de chile en polvo",
+        "2 dientes de ajo machacados",
+        "1 taza de piña en cubitos",
+        "12 tortillas de maíz",
+        "¼ taza de cebolla picada",
+        "¼ taza de cilantro picado",
+        "1 limón en cuñas"
+      ],
+      en: [
+        "2 cans (20 oz each) young green jackfruit in brine, drained and shredded",
+        "2 tablespoons annatto oil",
+        "¼ cup pineapple juice",
+        "2 tablespoons vinegar",
+        "1 teaspoon cumin",
+        "1 teaspoon oregano",
+        "1 tablespoon chili powder",
+        "2 garlic cloves, crushed",
+        "1 cup diced pineapple",
+        "12 corn tortillas",
+        "¼ cup chopped onion",
+        "¼ cup chopped cilantro",
+        "1 lime, in wedges"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el jugo de piña, el vinagre, las especias y el ajo, y marine la jaca 15 minutos.",
+        "Dore la jaca en el aceite de achiote a fuego alto 10 minutos, aplastándola, hasta que tenga puntas tostadas.",
+        "Dore aparte la piña 3 minutos en un sartén seco.",
+        "Caliente las tortillas y sirva la jaca con la piña, la cebolla, el cilantro y el limón."
+      ],
+      en: [
+        "Mix the pineapple juice, vinegar, spices and garlic, and marinate the jackfruit 15 minutes.",
+        "Sear the jackfruit in the annatto oil over high heat 10 minutes, pressing it, until crisp at the edges.",
+        "Separately brown the pineapple 3 minutes in a dry skillet.",
+        "Warm the tortillas and serve the jackfruit with the pineapple, onion, cilantro and lime."
       ]
     }
   }

@@ -394,6 +394,25 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Salsas y aderezos, y platos fuertes veganos (tanda 42).
+  [/^salsa agridulce de grosellas/, "svg:ic-sz-grosella"],
+  [/^salsa de cereza del pais/, "svg:ic-sz-acerola"],
+  [/^vinagreta de mango/, "svg:ic-sz-vinagreta-mango"],
+  [/^pique de pina/, "svg:ic-sz-pique-pina"],
+  [/^mojo de parcha/, "svg:ic-sz-mojo-parcha"],
+  [/^mayo-ketchup de mango/, "svg:ic-sz-mayo-ketchup-mango"],
+  [/^aderezo cremoso de aguacate/, "svg:ic-sz-aderezo-aguacate"],
+  [/^salsa de mani/, "svg:ic-sz-mani"],
+  [/^salsa de cebolla caramelizada/, "svg:ic-sz-cebolla-caramelizada"],
+  [/^jalea de aji picante/, "svg:ic-sz-jalea-aji"],
+  [/^garbanzos guisados con calabaza/, "svg:ic-vg-garbanzos-calabaza"],
+  [/^tofu en salsa de coco/, "svg:ic-vg-tofu-coco"],
+  [/^lentejas guisadas con viandas/, "svg:ic-vg-lentejas-viandas"],
+  [/^pinchos de tofu/, "svg:ic-vg-pinchos-tofu"],
+  [/^arroz mamposteao vegano/, "svg:ic-vg-mamposteao"],
+  [/^espaguetis con bolo/, "svg:ic-vg-espaguetis-lentejas"],
+  [/^chili boricua/, "svg:ic-vg-chili"],
+  [/^tacos de jaca/, "svg:ic-vg-tacos-jaca"],
   // Recetas veganas (tanda 40), con la hojita verde.
   [/^picadillo vegano/, "svg:ic-vg-picadillo"],
   [/^pastelon vegano/, "svg:ic-vg-pastelon"],
@@ -1295,10 +1314,23 @@ function renderModal(recipe) {
   $("modal-ingredients-title").textContent = tr.ingredients;
   $("modal-steps-title").textContent = tr.steps;
   $("modal-steps-list").innerHTML = recipe.steps[currentLang].map((s) => `<li>${esc(s)}</li>`).join("");
+  renderPairings(recipe);
   renderFavButton();
   renderIngredients();
   renderNutrition(recipe);
   renderSafety(recipe);
+}
+
+/* Salsas y aderezos: con qué platos combinan mejor (js/pairings.js). Cada uno lleva a su categoría. */
+function renderPairings(recipe) {
+  const box = $("modal-pairings");
+  const pairs = getPairings(recipe);
+  box.hidden = !pairs.length;
+  const pt = PAIR_TEXT[currentLang];
+  box.innerHTML = pairs.length
+    ? `<h3 class="pairings-title">${esc(pt.label)}</h3><ul class="pairing-list">${pairs.map((p) => `
+        <li><button type="button" class="pairing-chip" data-pair-cat="${p.category}" aria-label="${esc(pt.go(p.label[currentLang].toLowerCase()))}">${esc(p.label[currentLang])}</button></li>`).join("")}</ul>`
+    : "";
 }
 
 /* Pestaña de información nutricional: estimación de js/nutrition.js. */
@@ -1513,6 +1545,15 @@ function showHome(anchor) {
   }
 }
 
+/* Ir a los resultados de una categoría (insignia de la receta y "Combina mejor con"). */
+function goToCategory(cat) {
+  selectedNavCategory = cat;
+  searchQuery = ""; $("search-input").value = ""; $("search-clear").hidden = true;
+  renderNavPills(); renderCategories();
+  explicitNav = true;
+  location.hash = "#recetas";
+}
+
 function goBack() {
   if (cameFromHome) history.back();
   else location.hash = "#/";
@@ -1640,6 +1681,8 @@ function setupEventListeners() {
     const open = e.target.closest("[data-open]");
     if (open) { cameFromHome = true; return; } // el href hace el resto (#/receta/id)
     if (e.target.closest('[data-action="clear-filters"]')) { clearFilters(); return; }
+    const pair = e.target.closest("[data-pair-cat]");
+    if (pair) { goToCategory(pair.dataset.pairCat); return; }
     // Enlaces del menú, del pie y la marca: navegación pedida, no un "atrás".
     const anchorLink = e.target.closest('a[href^="#"]');
     if (anchorLink) {
@@ -1670,13 +1713,7 @@ function setupEventListeners() {
 
   // Detalle
   $("back-btn").addEventListener("click", goBack);
-  $("modal-badge").addEventListener("click", () => {
-    selectedNavCategory = $("modal-badge").dataset.category;
-    searchQuery = ""; $("search-input").value = ""; $("search-clear").hidden = true;
-    renderNavPills(); renderCategories();
-    explicitNav = true;
-    location.hash = "#recetas";
-  });
+  $("modal-badge").addEventListener("click", () => goToCategory($("modal-badge").dataset.category));
   $("fav-btn").addEventListener("click", () => current && toggleFavorite(current.id, $("fav-btn")));
   $("print-btn").addEventListener("click", () => window.print());
   $("share-btn").addEventListener("click", shareRecipe);

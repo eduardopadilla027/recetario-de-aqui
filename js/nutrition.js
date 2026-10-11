@@ -159,6 +159,7 @@ const NUTRI_FOODS = [
   F("aquafaba", 18, 1, 3, 0, 0, 0, 0, 30, { cup: 240 }),
   F("chia|semillas de chia", 486, 17, 42, 0, 34, 31, 3.3, 16, { cup: 170 }),
   F("agar agar|agar", 0, 0, 0, 0, 0, 0, 0, 0, { cup: 100 }),
+  F("pectina|pectina en polvo", 325, 0.3, 90, 0, 86, 0.3, 0, 200, { cup: 120 }),
   F("mani|cacahuate", 585, 24, 21, 4.2, 8, 50, 7, 6, { cup: 146 }),
   F("mantequilla de mani", 588, 25, 20, 9, 6, 50, 10, 430, { cup: 258 }),
   F("mermelada|jalea", 250, 0.4, 63, 50, 1, 0.1, 0, 30, { cup: 320 }),
@@ -324,7 +325,7 @@ const NUTRI_FOODS = [
   F("bicarbonato", 0, 0, 0, 0, 0, 0, 0, 27360, { cup: 220 }),
   F("vainilla", 288, 0.1, 12.6, 12.6, 0, 0.1, 0, 9, { cup: 208 }),
   F("levadura", 325, 40, 41, 0, 27, 7.6, 1, 50, { cup: 150, sobre: 7 }),
-  F("canela|clavo|clavos de olor|oregano|comino|pimienta|nuez moscada|laurel|anis|jengibre|achiote|pimenton|cilantro en polvo|coriandro|hojuelas de aji|ajo en polvo|cremor tartaro|colorante|especia", 300, 8, 60, 3, 30, 6, 1, 30, { cup: 110, u: 0.2 })
+  F("canela|clavo|clavos de olor|oregano|comino|pimienta|nuez moscada|laurel|anis|jengibre|achiote|pimenton|cilantro en polvo|coriandro|hojuelas de aji|ajo en polvo|cremor tartaro|chile en polvo|colorante|especia", 300, 8, 60, 3, 30, 6, 1, 30, { cup: 110, u: 0.2 })
 ];
 
 /* Unidades → cómo se pasan a gramos. `g` fijo, o una medida del alimento. */

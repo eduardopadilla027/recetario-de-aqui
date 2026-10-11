@@ -301,6 +301,8 @@ function slotOf(r) {
 const SIDE_MEAT_RX = /pollo|pernil|carne|salchich|longaniza|camaron|bacalao|atun|sardina|jueyes|langosta|pulpo|calamar|costillita|chorizo|salami|mollej|alita|guinea|cerdo|res\b|chicharron|picadillo/;
 function sideKind(r, n) {
   const nm = planNorm(r.name.es);
+  // Los platos fuertes veganos (guisos de granos, tofu, jaca) y el chili o los tacos van de principal.
+  if (/\bvegan[oa]s?\b|\bchili\b|^tacos/.test(nm)) return null;
   if (r.category === "granos") return /hummus|crujientes/.test(nm) || SIDE_MEAT_RX.test(nm) ? null : "granos";
   if (r.category === "arroces") return /^(arroz (blanco|integral|con gandules|con maiz|guisado con vegetales|apastelado|con cilantro|verde|con ajo|amarillo|con calabaza|con champinones)|moros)/.test(nm) && !SIDE_MEAT_RX.test(nm) ? "arroz" : null;
   if (r.category === "ensaladas") return n.p < 12 && !SIDE_MEAT_RX.test(nm) ? "ensalada" : null;
@@ -312,7 +314,7 @@ function sideKind(r, n) {
 }
 // Platos completos: llevan su almidón o su vianda y van sin acompañante.
 const isComplete = (r) => ["arroces", "sopas", "pastas", "emparedados"].includes(r.category) ||
-  /asopao|paella|sancocho|pastelon|lasana|mofongo|arroz con|wrap|ensalada de|con papas|con viandas|con yuca|con tostones|con (garbanzos|habichuelas|gandules|lentejas|arroz)|jibarito/.test(planNorm(r.name.es));
+  /asopao|paella|sancocho|pastelon|lasana|mofongo|arroz con|wrap|ensalada de|con papas|con viandas|con yuca|con tostones|con (garbanzos|habichuelas|gandules|lentejas|arroz)|jibarito|^tacos/.test(planNorm(r.name.es));
 // Por objetivo: qué acompañantes y con qué criterio. Cada grupo de "kinds" es un acompañante.
 const SIDE_RULES = {
   rebajar: { kinds: [["ensalada", "vegetal", "granos"]], ok: (n) => n.kcal <= 250 && n.s <= 10, score: (n) => n.fib * 2 + n.p / 3 - n.kcal / 100 },
