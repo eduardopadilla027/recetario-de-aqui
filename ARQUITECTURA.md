@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.15.1 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 937 en 24 categorías
+> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.16.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 947 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, y bizcochos mojados y de sabores, en treinta y siete tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, y panqueques, en treinta y ocho tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -124,7 +124,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | bizcochos | Bizcochos | 38 |
 | galletitas | Galletitas | 37 |
 | pasteles_dulces | Pasteles Dulces | 22 |
-| panes | Pan y Panecillos | 30 |
+| panes | Pan y Panecillos | 40 |
 | emparedados | Emparedados | 22 |
 | postres | Helados, Budines, Flan y Otros Postres | 103 |
 | arroces | Arroces y Habichuelas | 42 |
@@ -150,7 +150,9 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   Una receta nueva se clasifica sola por su nombre: revise que caiga en la familia correcta. Entremeses: empanadillas y
   pastelillos; alcapurrias y frituras de plátano y yuca; bolitas, buñuelos y rellenos; bacalaítos y frituras de mar;
   croquetas; sorullitos, domplines y otras frituras; otros. Vegetales: tostones y amarillos; mofongos y majados;
-  pasteles y pastelones; viandas; papas; berenjenas; rellenos y gratinados; guisados, salteados y asados.
+  pasteles y pastelones; viandas; papas; berenjenas; rellenos y gratinados; guisados, salteados y asados. Panes:
+  panqueques (primero, por ser de desayuno); pan de agua, sobao y de molde; dulces y donas; de viandas y maíz; con
+  queso y jamón.
 
 - **Rutas por hash:** `#/` inicio · anclas `#categorias`, `#rapidas`, `#recetas` · detalle `#/receta/<id>`
   (URL propia: se comparte y "Atrás" vuelve a la misma posición).
@@ -241,6 +243,10 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   con canela, café con crema y cocoa, dulce de leche, piña colada), bizcocho de limón glaseado y red velvet en capas.
   **Rosquillas y donas (`ic-pan-*`):** rosquillas de viento como aros dorados sin glaseado, rebozados en azúcar con
   canela; donas glaseadas (rosado y chocolate, con grageas); donas rellenas con azúcar en polvo y la guayaba saliendo.
+  **Panqueques (`ic-pq-*`, tanda 38):** pilas del color de cada masa con su cobertura (mantequilla y melao, guineo,
+  sirop de parcha con semillas, nueces, chispas y fresas, guayaba y queso crema entre capas, rueda de piña con cereza,
+  yogur con fruta, sello verde "sin gluten" en el de harina de plátano, huevo frito en el salado de maíz). Van antes
+  de la regla general de panqueques (`ic-panqueques`, que sigue para el de avena y guineo).
   **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
@@ -349,7 +355,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 937). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 947). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -409,6 +415,21 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-11 — v3.16.0 · Panqueques
+- *Pedido:* recetas de panqueques.
+- Trigésima octava tanda en `js/recipes-4.js` (versiones propias), 10 recetas en **panes** (familia nueva
+  "Panqueques"): esponjosos clásicos (con el truco de no batir de más), de guineo con canela, de coco con sirop de
+  parcha, de calabaza con especias, con chispas de chocolate, rellenos de guayaba y queso crema, de piña volteados, de
+  yogur griego (altos en proteína y sin azúcar añadida), de harina de plátano sin gluten y salados de maíz con queso del
+  país. El de avena y guineo sigue en cereales.
+- **Buscador:** en las exclusiones por alérgeno, "sin gluten", "gluten-free"… en el nombre o los ingredientes ya no
+  cuentan como que la receta lleva gluten ("panqueques sin gluten" encuentra el de harina de plátano; antes, nada).
+- **Iconos:** 10 dibujos nuevos (§7).
+- Total: **937 → 947 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador: "panqueques", "pancakes", "panqueques sin gluten", "postre sin
+  huevo" y "galletas sin maní" (mismos resultados que antes) ✔; navegador: los 10 en ES y EN a 375 px sin errores ni
+  desbordes ✔.
 
 ### 2026-10-11 — v3.15.1 · Icono de las rosquillas de viento
 - *Pedido:* corregir el icono de las rosquillas de viento (usaban 🍩, igual que las donas).
