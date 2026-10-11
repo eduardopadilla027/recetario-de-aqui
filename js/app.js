@@ -394,6 +394,10 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Rosquillas de viento y donas (antes las tres 🍩).
+  [/^rosquillas de viento/, "svg:ic-pan-rosquillas"],
+  [/^donas glaseadas/, "svg:ic-pan-donas-glaseadas"],
+  [/^donas rellenas de guayaba/, "svg:ic-pan-donas-guayaba"],
   // Bizcochos mojados, con licor y de sabores (tanda 37).
   [/^bizcocho mojado de brandy/, "svg:ic-biz-brandy"],
   [/^bizcocho de almendra con amaretto/, "svg:ic-biz-amaretto"],

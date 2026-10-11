@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.15.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 937 en 24 categorías
+> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.15.1 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 937 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -239,6 +239,8 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   **Bizcochos (`ic-biz-*`, tanda 37):** bundts con su glaseado y adorno (brandy y amaretto con su botellita, pistacho,
   mantequilla), pedazos de bizcocho mojado con la base húmeda y su cubierta (almendras, almíbar con vainilla, coquito
   con canela, café con crema y cocoa, dulce de leche, piña colada), bizcocho de limón glaseado y red velvet en capas.
+  **Rosquillas y donas (`ic-pan-*`):** rosquillas de viento como aros dorados sin glaseado, rebozados en azúcar con
+  canela; donas glaseadas (rosado y chocolate, con grageas); donas rellenas con azúcar en polvo y la guayaba saliendo.
   **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
@@ -407,6 +409,12 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-11 — v3.15.1 · Icono de las rosquillas de viento
+- *Pedido:* corregir el icono de las rosquillas de viento (usaban 🍩, igual que las donas).
+- 3 dibujos nuevos (§7): rosquillas de viento (aros fritos con azúcar con canela, como dice la receta), donas glaseadas
+  y donas rellenas de guayaba, para que ya no se confundan entre sí.
+- *Verificado:* las tres con su dibujo en el navegador ✔.
 
 ### 2026-10-11 — v3.15.0 · Bizcochos mojados, con licor y de sabores
 - *Pedido:* más bizcochos, por ejemplo con brandy o amaretto, y mojados con sabor a almendra, vainilla y otros.
