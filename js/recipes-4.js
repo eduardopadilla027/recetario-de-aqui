@@ -88,6 +88,9 @@
  * Trigésima quinta tanda: entremeses y frituras (alcapurrias de yuca y de pulpo,
  * empanadillas de bacalao y de chapín, croquetas de pollo, rellenos de yuca, taquitos,
  * deditos de queso, bolitas de amarillo, de mofongo y de malanga, buñuelos de ñame).
+ * Trigésima sexta tanda: vegetales y viandas (ñame frito, chips de viandas, batatas
+ * fritas, yuca en escabeche, malanga gratinada, mofongo de amarillo, calabaza, calabacín,
+ * repollo, coliflor, brócoli, espinacas, chayote, maíz, champiñones, habichuelas tiernas).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -20639,6 +20642,686 @@ recipes.push(
         "When warm, add the eggs, flour, salt and aniseed, and beat into a soft dough.",
         "With two spoons, drop portions into 350 °F oil and fry 3 to 4 minutes, until golden.",
         "Serve hot, plain with salt or, as in Holy Week, drizzled with cinnamon syrup."
+      ]
+    }
+  },
+
+  // ── Trigésima sexta tanda (2026-10): más vegetales y viandas ──
+  {
+    id: "name-frito-mojo",
+    category: "vegetales",
+    name: { es: "Ñame Frito con Mojo de Ajo", en: "Fried Yam (Ñame) with Garlic Mojo" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de ñame pelado en bastones",
+        "1 cucharadita de sal para el agua",
+        "Aceite para freír",
+        "⅓ taza de aceite de oliva para el mojo",
+        "5 dientes de ajo machacados para el mojo",
+        "2 cucharadas de jugo de limón para el mojo"
+      ],
+      en: [
+        "2 lb yam (ñame), peeled and cut into sticks",
+        "1 teaspoon salt for the water",
+        "Oil for frying",
+        "⅓ cup olive oil for the mojo",
+        "5 garlic cloves, crushed, for the mojo",
+        "2 tablespoons lime juice for the mojo"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el ñame en agua con sal 10 minutos, hasta que esté casi tierno. Escúrralo y séquelo bien.",
+        "Fríalo a 350 °F, por tandas, 5 a 6 minutos, hasta que esté dorado y crujiente por fuera.",
+        "Para el mojo, caliente el aceite de oliva con el ajo a fuego bajo 2 minutos, sin dorarlo, y apague. Añada el limón.",
+        "Bañe el ñame con el mojo y sirva enseguida. Hervirlo antes hace que quede cremoso por dentro."
+      ],
+      en: [
+        "Boil the yam in salted water 10 minutes, until almost tender. Drain and dry well.",
+        "Fry at 350 °F, in batches, 5 to 6 minutes, until golden and crisp outside.",
+        "For the mojo, warm the olive oil with the garlic over low heat 2 minutes, without browning, and turn off. Add the lime juice.",
+        "Spoon the mojo over the yam and serve right away. Parboiling keeps it creamy inside."
+      ]
+    }
+  },
+  {
+    id: "chips-viandas",
+    category: "vegetales",
+    name: { es: "Chips de Viandas (Yautía, Malanga y Batata)", en: "Root Vegetable Chips (Taro, Malanga and Sweet Potato)" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "½ libra de yautía pelada",
+        "½ libra de malanga pelada",
+        "½ libra de batata pelada",
+        "Aceite para freír",
+        "1 cucharadita de sal",
+        "½ cucharadita de ajo en polvo"
+      ],
+      en: [
+        "½ lb taro (yautía), peeled",
+        "½ lb malanga, peeled",
+        "½ lb sweet potato, peeled",
+        "Oil for frying",
+        "1 teaspoon salt",
+        "½ teaspoon garlic powder"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte las viandas en lascas bien finas con una mandolina (con guarda para los dedos). Póngalas en agua fría para que no se oscurezcan.",
+        "Escúrralas y séquelas muy bien con papel toalla: con agua, el aceite salpica y no quedan crujientes.",
+        "Fríalas por tandas a 350 °F, 2 a 3 minutos, hasta que dejen de burbujear y estén doradas. La batata se dora más rápido: vigílela.",
+        "Escúrralas en papel toalla y sazone en caliente con la sal y el ajo en polvo."
+      ],
+      en: [
+        "Slice the roots paper-thin on a mandoline (with the hand guard). Keep them in cold water so they don't darken.",
+        "Drain and dry very well with paper towels: wet slices splatter and won't crisp.",
+        "Fry in batches at 350 °F, 2 to 3 minutes, until the bubbling stops and they're golden. Sweet potato browns faster: watch it.",
+        "Drain on paper towels and season while hot with the salt and garlic powder."
+      ]
+    }
+  },
+  {
+    id: "batatas-fritas-mayoajo",
+    category: "vegetales",
+    name: { es: "Batatas Fritas con Mayo-Ajo", en: "Sweet Potato Fries with Garlic Mayo" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de batata en bastones",
+        "2 cucharadas de maicena",
+        "Aceite para freír",
+        "1 cucharadita de sal",
+        "¼ cucharadita de pimentón",
+        "½ taza de mayonesa",
+        "2 dientes de ajo rallados",
+        "1 cucharadita de jugo de limón"
+      ],
+      en: [
+        "2 lb sweet potato, cut into fries",
+        "2 tablespoons cornstarch",
+        "Oil for frying",
+        "1 teaspoon salt",
+        "¼ teaspoon paprika",
+        "½ cup mayonnaise",
+        "2 garlic cloves, grated",
+        "1 teaspoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje los bastones en agua fría 30 minutos, escúrralos, séquelos bien y espolvoréelos con la maicena (así quedan más crujientes).",
+        "Fríalos a 325 °F 4 minutos, sáquelos y déjelos 5 minutos. Fríalos otra vez a 375 °F 2 minutos, hasta que estén crujientes.",
+        "Sazone con la sal y el pimentón.",
+        "Mezcle la mayonesa con el ajo y el limón, y sírvala aparte para mojar."
+      ],
+      en: [
+        "Soak the fries in cold water 30 minutes, drain, dry well and dust with the cornstarch (it makes them crisper).",
+        "Fry at 325 °F for 4 minutes, remove and rest 5 minutes. Fry again at 375 °F for 2 minutes, until crisp.",
+        "Season with the salt and paprika.",
+        "Mix the mayonnaise with the garlic and lime juice, and serve on the side for dipping."
+      ]
+    }
+  },
+  {
+    id: "yuca-escabeche",
+    category: "vegetales",
+    name: { es: "Yuca en Escabeche", en: "Pickled Cassava (Yuca en Escabeche)" },
+    time: "45 min + 4 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de yuca pelada en trozos",
+        "1 cucharadita de sal para el agua",
+        "¾ taza de aceite de oliva",
+        "½ taza de vinagre",
+        "2 cebollas en ruedas finas",
+        "4 dientes de ajo en lascas",
+        "1 hoja de laurel",
+        "10 granos de pimienta",
+        "12 aceitunas rellenas",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "2 lb cassava (yuca), peeled, in chunks",
+        "1 teaspoon salt for the water",
+        "¾ cup olive oil",
+        "½ cup vinegar",
+        "2 onions, thinly sliced",
+        "4 garlic cloves, sliced",
+        "1 bay leaf",
+        "10 black peppercorns",
+        "12 stuffed olives",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la yuca en agua con sal 25 minutos, hasta que se abra. Escúrrala, sáquele la vena y córtela en trozos de 1 pulgada.",
+        "En un sartén, caliente el aceite con la cebolla, el ajo, el laurel y la pimienta a fuego bajo 10 minutos, hasta que la cebolla se ablande. Añada el vinagre, la sal y las aceitunas, y hierva 1 minuto.",
+        "Ponga la yuca en un recipiente de cristal y báñela con el escabeche caliente.",
+        "Tape y enfríe por lo menos 4 horas (mejor de un día para otro). Guárdela en la nevera hasta 5 días y sírvala a temperatura ambiente."
+      ],
+      en: [
+        "Boil the cassava in salted water 25 minutes, until it splits. Drain, remove the fiber and cut into 1-inch pieces.",
+        "In a skillet, warm the oil with the onion, garlic, bay leaf and peppercorns over low heat 10 minutes, until the onion softens. Add the vinegar, salt and olives, and boil 1 minute.",
+        "Place the cassava in a glass container and pour the hot escabeche over it.",
+        "Cover and chill at least 4 hours (overnight is best). Keep refrigerated up to 5 days and serve at room temperature."
+      ]
+    }
+  },
+  {
+    id: "malanga-gratinada",
+    category: "vegetales",
+    name: { es: "Malanga Gratinada con Queso", en: "Malanga Gratin with Cheese" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de malanga pelada en ruedas finas",
+        "2 cucharadas de mantequilla",
+        "2 dientes de ajo picados",
+        "2 cucharadas de harina",
+        "1½ tazas de leche",
+        "½ taza de leche evaporada",
+        "1 cucharadita de sal",
+        "¼ cucharadita de nuez moscada",
+        "1 taza de queso cheddar rallado",
+        "¼ taza de queso parmesano rallado"
+      ],
+      en: [
+        "2 lb malanga, peeled and thinly sliced",
+        "2 tablespoons butter",
+        "2 garlic cloves, chopped",
+        "2 tablespoons flour",
+        "1½ cups milk",
+        "½ cup evaporated milk",
+        "1 teaspoon salt",
+        "¼ teaspoon nutmeg",
+        "1 cup shredded cheddar cheese",
+        "¼ cup grated Parmesan cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las ruedas de malanga 5 minutos en agua con sal, sólo para ablandarlas un poco. Escúrralas.",
+        "Derrita la mantequilla, sofría el ajo 1 minuto, añada la harina y luego las leches poco a poco, batiendo, hasta que espese. Añada la sal y la nuez moscada.",
+        "En un molde engrasado, haga capas de malanga, salsa y queso cheddar. Termine con salsa y el parmesano.",
+        "Hornee a 375 °F 30 minutos, hasta que burbujee y esté dorado. Repose 10 minutos antes de cortar."
+      ],
+      en: [
+        "Boil the malanga slices 5 minutes in salted water, just to soften slightly. Drain.",
+        "Melt the butter, sauté the garlic 1 minute, add the flour, then both milks gradually, whisking, until thick. Add the salt and nutmeg.",
+        "In a greased dish, layer malanga, sauce and cheddar. Finish with sauce and the Parmesan.",
+        "Bake at 375 °F for 30 minutes, until bubbling and golden. Rest 10 minutes before cutting."
+      ]
+    }
+  },
+  {
+    id: "mofongo-amarillo",
+    category: "vegetales",
+    name: { es: "Mofongo de Amarillo (Maduro)", en: "Sweet Plantain Mofongo" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 plátanos maduros (amarillos), pintones",
+        "Aceite para freír",
+        "4 dientes de ajo machacados",
+        "2 cucharadas de mantequilla",
+        "½ taza de chicharrón triturado",
+        "¼ cucharadita de sal",
+        "½ taza de caldo de pollo caliente"
+      ],
+      en: [
+        "4 ripe (yellow) plantains, not too soft",
+        "Oil for frying",
+        "4 garlic cloves, crushed",
+        "2 tablespoons butter",
+        "½ cup crushed pork cracklings",
+        "¼ teaspoon salt",
+        "½ cup hot chicken broth"
+      ]
+    },
+    steps: {
+      es: [
+        "Use amarillos pintones (amarillos con algunas manchas, todavía firmes): si están muy maduros, el mofongo queda aguado.",
+        "Pélelos, córtelos en ruedas de 1 pulgada y fríalos a 325 °F 4 minutos, hasta que estén dorados.",
+        "En el pilón, májelos calientes por tandas con el ajo, la mantequilla, el chicharrón, la sal y chorritos del caldo.",
+        "Forme bolas o tazones y sirva enseguida. Es dulce y salado: va muy bien con carne frita, camarones al ajillo o pollo guisado."
+      ],
+      en: [
+        "Use half-ripe plantains (yellow with some spots, still firm): overripe ones make a mushy mofongo.",
+        "Peel, cut into 1-inch rounds and fry at 325 °F for 4 minutes, until golden.",
+        "In the pilón, mash them hot in batches with the garlic, butter, cracklings, salt and splashes of broth.",
+        "Shape into balls or bowls and serve right away. Sweet and savory: great with fried pork, garlic shrimp or stewed chicken."
+      ]
+    }
+  },
+  {
+    id: "calabaza-guisada",
+    category: "vegetales",
+    name: { es: "Calabaza Guisada a la Criolla", en: "Creole Stewed Pumpkin (Calabaza)" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de calabaza pelada en cubos",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 taza de caldo de vegetales",
+        "½ cucharadita de comino",
+        "½ cucharadita de sal",
+        "2 hojas de recao picadas"
+      ],
+      en: [
+        "2 lb West Indian pumpkin (calabaza), peeled and cubed",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 cup vegetable broth",
+        "½ teaspoon cumin",
+        "½ teaspoon salt",
+        "2 culantro leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite de achiote 3 minutos y añada la salsa de tomate y el comino.",
+        "Añada la calabaza, el caldo y la sal. Tape y cocine a fuego bajo 15 a 20 minutos, hasta que esté tierna pero sin deshacerse.",
+        "Destape, añada el recao y cocine 3 minutos más para que la salsa espese con la misma calabaza.",
+        "Sirva con arroz blanco o como acompañante. Es una forma económica de comer vegetales con sabor a guiso."
+      ],
+      en: [
+        "Sauté the sofrito in the annatto oil 3 minutes and add the tomato sauce and cumin.",
+        "Add the pumpkin, broth and salt. Cover and simmer 15 to 20 minutes, until tender but not falling apart.",
+        "Uncover, add the culantro and cook 3 more minutes so the sauce thickens with the pumpkin itself.",
+        "Serve with white rice or as a side. An inexpensive way to eat vegetables with stew flavor."
+      ]
+    }
+  },
+  {
+    id: "calabacin-ajillo",
+    category: "vegetales",
+    name: { es: "Calabacín al Ajillo", en: "Garlic Zucchini" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 calabacines en medias lunas",
+        "2 cucharadas de aceite de oliva",
+        "4 dientes de ajo en lascas",
+        "¼ cucharadita de hojuelas de ají",
+        "½ cucharadita de sal",
+        "1 cucharada de jugo de limón",
+        "2 cucharadas de queso parmesano rallado"
+      ],
+      en: [
+        "2 zucchini, in half-moons",
+        "2 tablespoons olive oil",
+        "4 garlic cloves, sliced",
+        "¼ teaspoon chili flakes",
+        "½ teaspoon salt",
+        "1 tablespoon lime juice",
+        "2 tablespoons grated Parmesan cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el aceite a fuego medio-alto y dore el ajo con el ají 1 minuto.",
+        "Añada el calabacín en una sola capa y cocine 4 a 5 minutos, moviendo poco, hasta que tenga bordes dorados y siga firme.",
+        "Sazone con la sal y el limón, y espolvoree el parmesano.",
+        "Si lo amontona en el sartén, suelta agua y queda hervido en vez de dorado: mejor por tandas."
+      ],
+      en: [
+        "Heat the oil over medium-high and toast the garlic with the chili flakes 1 minute.",
+        "Add the zucchini in a single layer and cook 4 to 5 minutes, stirring little, until browned at the edges and still firm.",
+        "Season with the salt and lime juice, and sprinkle with the Parmesan.",
+        "Crowded in the pan, it releases water and steams instead of browning: cook in batches."
+      ]
+    }
+  },
+  {
+    id: "repollo-guisado",
+    category: "vegetales",
+    name: { es: "Repollo Guisado con Jamón", en: "Stewed Cabbage with Ham" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 repollo mediano picado en tiras",
+        "2 cucharadas de aceite de oliva",
+        "4 onzas de jamón de cocinar en cubitos",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 papa en cubitos",
+        "½ taza de agua",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1 medium cabbage, cut into strips",
+        "2 tablespoons olive oil",
+        "4 oz cooking ham, diced",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 potato, diced",
+        "½ cup water",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el jamón en el aceite 3 minutos, añada el sofrito y la salsa de tomate, y cocine 3 minutos más.",
+        "Añada la papa, el agua y la sal, tape y cocine 8 minutos.",
+        "Añada el repollo, mueva para que coja la salsa, tape y cocine 12 a 15 minutos a fuego bajo, moviendo de vez en cuando, hasta que esté tierno.",
+        "Sirva con arroz blanco. Sin el jamón y con caldo de vegetales queda vegetariano."
+      ],
+      en: [
+        "Sauté the ham in the oil 3 minutes, add the sofrito and tomato sauce, and cook 3 more minutes.",
+        "Add the potato, water and salt, cover and cook 8 minutes.",
+        "Add the cabbage, toss to coat, cover and cook 12 to 15 minutes over low heat, stirring now and then, until tender.",
+        "Serve with white rice. Without the ham and with vegetable broth, it's vegetarian."
+      ]
+    }
+  },
+  {
+    id: "coliflor-gratinada",
+    category: "vegetales",
+    name: { es: "Coliflor Gratinada", en: "Cauliflower Gratin" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 cabeza de coliflor en ramitos",
+        "2 cucharadas de mantequilla",
+        "2 cucharadas de harina",
+        "1½ tazas de leche",
+        "½ cucharadita de sal",
+        "¼ cucharadita de nuez moscada",
+        "1 taza de queso cheddar rallado",
+        "¼ taza de pan rallado"
+      ],
+      en: [
+        "1 head cauliflower, cut into florets",
+        "2 tablespoons butter",
+        "2 tablespoons flour",
+        "1½ cups milk",
+        "½ teaspoon salt",
+        "¼ teaspoon nutmeg",
+        "1 cup shredded cheddar cheese",
+        "¼ cup breadcrumbs"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la coliflor en agua con sal 5 minutos, hasta que esté casi tierna. Escúrrala muy bien y póngala en un molde.",
+        "Derrita la mantequilla, añada la harina y mueva 1 minuto. Añada la leche poco a poco, batiendo, hasta que espese. Añada la sal, la nuez moscada y la mitad del queso.",
+        "Bañe la coliflor con la salsa y cubra con el resto del queso y el pan rallado.",
+        "Hornee a 400 °F 20 minutos, hasta que esté dorada por encima."
+      ],
+      en: [
+        "Boil the cauliflower in salted water 5 minutes, until almost tender. Drain very well and place in a baking dish.",
+        "Melt the butter, add the flour and stir 1 minute. Add the milk gradually, whisking, until thick. Add the salt, nutmeg and half the cheese.",
+        "Pour the sauce over the cauliflower and top with the remaining cheese and the breadcrumbs.",
+        "Bake at 400 °F for 20 minutes, until golden on top."
+      ]
+    }
+  },
+  {
+    id: "brocoli-ajo",
+    category: "vegetales",
+    name: { es: "Brócoli Salteado con Ajo y Limón", en: "Garlic Lemon Broccoli" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de brócoli en ramitos",
+        "2 cucharadas de aceite de oliva",
+        "3 dientes de ajo en lascas",
+        "¼ taza de agua",
+        "½ cucharadita de sal",
+        "1 cucharada de jugo de limón",
+        "1 cucharadita de ralladura de limón"
+      ],
+      en: [
+        "1 lb broccoli florets",
+        "2 tablespoons olive oil",
+        "3 garlic cloves, sliced",
+        "¼ cup water",
+        "½ teaspoon salt",
+        "1 tablespoon lime juice",
+        "1 teaspoon lime zest"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el aceite a fuego medio-alto y saltee el brócoli 3 minutos, hasta que tenga puntitos dorados.",
+        "Añada el ajo y el agua, tape y cocine 3 minutos al vapor, hasta que esté verde brillante y tierno pero firme.",
+        "Destape, deje que se evapore el agua y sazone con la sal, el limón y la ralladura.",
+        "Sírvalo enseguida: si se pasa de cocción se pone verde oscuro y blando."
+      ],
+      en: [
+        "Heat the oil over medium-high and sauté the broccoli 3 minutes, until lightly browned in spots.",
+        "Add the garlic and water, cover and steam 3 minutes, until bright green and tender-crisp.",
+        "Uncover, let the water evaporate and season with the salt, lime juice and zest.",
+        "Serve right away: overcooked, it turns dark and soft."
+      ]
+    }
+  },
+  {
+    id: "espinacas-ajo",
+    category: "vegetales",
+    name: { es: "Espinacas Salteadas con Ajo y Garbanzos", en: "Sautéed Spinach with Garlic and Chickpeas" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "10 onzas de espinaca fresca",
+        "2 cucharadas de aceite de oliva",
+        "3 dientes de ajo en lascas",
+        "1 lata de 15 onzas de garbanzos, escurridos",
+        "½ cucharadita de pimentón",
+        "½ cucharadita de comino",
+        "½ cucharadita de sal",
+        "1 cucharada de vinagre"
+      ],
+      en: [
+        "10 oz fresh spinach",
+        "2 tablespoons olive oil",
+        "3 garlic cloves, sliced",
+        "1 can (15 oz) chickpeas, drained",
+        "½ teaspoon paprika",
+        "½ teaspoon cumin",
+        "½ teaspoon salt",
+        "1 tablespoon vinegar"
+      ]
+    },
+    steps: {
+      es: [
+        "Dore el ajo en el aceite 1 minuto. Añada los garbanzos, el pimentón y el comino, y cocine 4 minutos hasta que estén un poco crujientes.",
+        "Añada la espinaca por puñados, moviendo, hasta que se encoja (2 a 3 minutos).",
+        "Sazone con la sal y el vinagre.",
+        "Sirva como acompañante o como plato vegetariano con arroz. Tiene proteína y hierro de los garbanzos y la espinaca."
+      ],
+      en: [
+        "Toast the garlic in the oil 1 minute. Add the chickpeas, paprika and cumin, and cook 4 minutes until slightly crisp.",
+        "Add the spinach by handfuls, stirring, until wilted (2 to 3 minutes).",
+        "Season with the salt and vinegar.",
+        "Serve as a side or as a vegetarian main with rice. Chickpeas and spinach bring protein and iron."
+      ]
+    }
+  },
+  {
+    id: "chayote-guisado",
+    category: "vegetales",
+    name: { es: "Chayote Guisado a la Criolla", en: "Creole Stewed Chayote" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 chayotes pelados en cubos",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 papa en cubitos",
+        "½ taza de caldo de vegetales",
+        "8 aceitunas rellenas",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "3 chayotes, peeled and cubed",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 potato, diced",
+        "½ cup vegetable broth",
+        "8 stuffed olives",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele el chayote debajo del agua o con guantes: su savia deja las manos pegajosas y tirantes.",
+        "Sofría el sofrito en el aceite de achiote 3 minutos y añada la salsa de tomate.",
+        "Añada el chayote, la papa, el caldo, las aceitunas y la sal. Tape y cocine 20 minutos a fuego bajo, hasta que estén tiernos.",
+        "Sirva con arroz blanco. Se le puede añadir carne molida o camarones para hacerlo plato principal."
+      ],
+      en: [
+        "Peel chayote under running water or with gloves: its sap leaves your hands sticky and tight.",
+        "Sauté the sofrito in the annatto oil 3 minutes and add the tomato sauce.",
+        "Add the chayote, potato, broth, olives and salt. Cover and simmer 20 minutes, until tender.",
+        "Serve with white rice. Add ground beef or shrimp to make it a main dish."
+      ]
+    }
+  },
+  {
+    id: "maiz-guisado",
+    category: "vegetales",
+    name: { es: "Maíz Guisado en Salsa Criolla", en: "Creole Stewed Corn" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 tazas de maíz en grano (fresco o congelado)",
+        "2 cucharadas de aceite de achiote",
+        "¼ taza de sofrito",
+        "1 pimiento rojo picado",
+        "¼ taza de salsa de tomate",
+        "½ taza de caldo de vegetales",
+        "½ cucharadita de sal",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "3 cups corn kernels (fresh or frozen)",
+        "2 tablespoons annatto oil",
+        "¼ cup sofrito",
+        "1 red bell pepper, chopped",
+        "¼ cup tomato sauce",
+        "½ cup vegetable broth",
+        "½ teaspoon salt",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito y el pimiento en el aceite de achiote 4 minutos.",
+        "Añada el maíz, la salsa de tomate, el caldo y la sal.",
+        "Cocine a fuego medio 12 minutos, moviendo de vez en cuando, hasta que la salsa espese y el maíz esté tierno.",
+        "Añada el cilantro y sirva con arroz blanco o como relleno de pastelón o empanadillas vegetarianas."
+      ],
+      en: [
+        "Sauté the sofrito and bell pepper in the annatto oil 4 minutes.",
+        "Add the corn, tomato sauce, broth and salt.",
+        "Cook over medium heat 12 minutes, stirring occasionally, until the sauce thickens and the corn is tender.",
+        "Stir in the cilantro and serve with white rice or as a filling for vegetarian pastelón or turnovers."
+      ]
+    }
+  },
+  {
+    id: "champinones-ajillo",
+    category: "vegetales",
+    name: { es: "Champiñones al Ajillo", en: "Garlic Mushrooms" },
+    time: "20 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de champiñones en mitades",
+        "3 cucharadas de aceite de oliva",
+        "6 dientes de ajo en lascas",
+        "¼ cucharadita de hojuelas de ají",
+        "¼ taza de vino blanco",
+        "½ cucharadita de sal",
+        "2 cucharadas de perejil picado"
+      ],
+      en: [
+        "1 lb mushrooms, halved",
+        "3 tablespoons olive oil",
+        "6 garlic cloves, sliced",
+        "¼ teaspoon chili flakes",
+        "¼ cup white wine",
+        "½ teaspoon salt",
+        "2 tablespoons chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Limpie los champiñones con un paño húmedo (no los remoje: chupan agua y no se doran).",
+        "Caliente el aceite a fuego alto y dore los champiñones 5 minutos sin moverlos mucho, hasta que estén dorados.",
+        "Baje el fuego, añada el ajo y el ají y cocine 1 minuto. Añada el vino y deje que se evapore 2 minutos.",
+        "Sazone con la sal, espolvoree el perejil y sirva con pan para mojar el ajillo."
+      ],
+      en: [
+        "Wipe the mushrooms with a damp cloth (don't soak them: they absorb water and won't brown).",
+        "Heat the oil over high heat and sear the mushrooms 5 minutes, stirring little, until browned.",
+        "Lower the heat, add the garlic and chili flakes and cook 1 minute. Add the wine and let it evaporate 2 minutes.",
+        "Season with the salt, sprinkle with parsley and serve with bread for the garlic oil."
+      ]
+    }
+  },
+  {
+    id: "habichuelas-tiernas-salteadas",
+    category: "vegetales",
+    name: { es: "Habichuelas Tiernas Salteadas con Ajo y Almendras", en: "Green Beans with Garlic and Almonds" },
+    time: "20 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de habichuelas tiernas, sin puntas",
+        "1 cucharada de mantequilla",
+        "1 cucharada de aceite de oliva",
+        "3 dientes de ajo picados",
+        "¼ taza de almendras en lascas",
+        "½ cucharadita de sal",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "1 lb green beans, trimmed",
+        "1 tablespoon butter",
+        "1 tablespoon olive oil",
+        "3 garlic cloves, chopped",
+        "¼ cup sliced almonds",
+        "½ teaspoon salt",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las habichuelas tiernas en agua con sal 4 minutos y páselas a agua con hielo para que se queden verdes y crujientes. Escúrralas.",
+        "Tueste las almendras en un sartén seco 2 minutos y sáquelas.",
+        "Derrita la mantequilla con el aceite, dore el ajo 1 minuto, añada las habichuelas y saltee 3 minutos.",
+        "Sazone con la sal y el limón, y sirva con las almendras por encima."
+      ],
+      en: [
+        "Boil the green beans in salted water 4 minutes and plunge into ice water so they stay green and crisp. Drain.",
+        "Toast the almonds in a dry skillet 2 minutes and remove.",
+        "Melt the butter with the oil, toast the garlic 1 minute, add the beans and sauté 3 minutes.",
+        "Season with the salt and lime juice, and serve topped with the almonds."
       ]
     }
   }

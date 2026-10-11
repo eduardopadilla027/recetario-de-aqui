@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.13.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 909 en 24 categorías
+> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.14.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 925 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, y más entremeses y frituras, en treinta y cinco tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, y más vegetales y viandas, en treinta y seis tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -128,7 +128,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | emparedados | Emparedados | 22 |
 | postres | Helados, Budines, Flan y Otros Postres | 103 |
 | arroces | Arroces y Habichuelas | 42 |
-| vegetales | Vegetales y Viandas | 65 |
+| vegetales | Vegetales y Viandas | 81 |
 | salsas | Salsas y Aderezos | 46 |
 | bebidas | Bebidas | 34 |
 | jugos | Jugos Naturales | 18 |
@@ -149,7 +149,8 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   "pechuga de pavo" antes que las pechugas). Favoritas y rápidas también siguen este orden; al buscar, por parecido.
   Una receta nueva se clasifica sola por su nombre: revise que caiga en la familia correcta. Entremeses: empanadillas y
   pastelillos; alcapurrias y frituras de plátano y yuca; bolitas, buñuelos y rellenos; bacalaítos y frituras de mar;
-  croquetas; sorullitos, domplines y otras frituras; otros.
+  croquetas; sorullitos, domplines y otras frituras; otros. Vegetales: tostones y amarillos; mofongos y majados;
+  pasteles y pastelones; viandas; papas; berenjenas; rellenos y gratinados; guisados, salteados y asados.
 
 - **Rutas por hash:** `#/` inicio · anclas `#categorias`, `#rapidas`, `#recetas` · detalle `#/receta/<id>`
   (URL propia: se comparte y "Atrás" vuelve a la misma posición).
@@ -232,6 +233,9 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   espinaca, pizza, bacalao, pescado); pastelillos más pálidos y con burbujas; alcapurrias en torpedo con el relleno a la
   vista; croquetas empanadas con el centro de su color; rellenos ovalados; bolitas, buñuelos y almojábanas; sorullitos,
   piononos, arañitas, tostones rellenos, domplines, yaniqueques, taquitos y deditos de queso.
+  **Vegetales y viandas (`ic-veg-*`, tanda 36):** bastones de ñame con mojo, chips de tres colores, batatas fritas con
+  mayo-ajo, frasco de yuca en escabeche, molde gratinado, mofongo de amarillo, tazones de calabaza, repollo, chayote y
+  maíz, ramitos de brócoli, espinacas con garbanzos, sartén de champiñones y habichuelas tiernas con almendras.
   **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
@@ -340,7 +344,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 909). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 925). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -397,6 +401,21 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-11 — v3.14.0 · Más vegetales y viandas
+- *Pedido:* más recetas de vegetales y viandas.
+- Trigésima sexta tanda en `js/recipes-4.js` (versiones propias), 16 recetas en **vegetales**:
+  - **Viandas (6):** ñame frito con mojo de ajo, chips de yautía, malanga y batata, batatas fritas con mayo-ajo, yuca en
+    escabeche, malanga gratinada con queso y mofongo de amarillo.
+  - **Vegetales (10):** calabaza guisada, calabacín al ajillo, repollo guisado con jamón, coliflor gratinada, brócoli con
+    ajo y limón, espinacas con garbanzos, chayote guisado, maíz guisado, champiñones al ajillo y habichuelas tiernas con
+    ajo y almendras.
+  - La sal del agua de hervir va como "para el agua" (no se suma al plato).
+- **Familias:** "Otros vegetales" se divide en "Rellenos y gratinados" y "Vegetales guisados, salteados y asados" (§7).
+- **Iconos:** 16 dibujos nuevos (§7).
+- Total: **909 → 925 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador ✔; navegador: las 16 en ES y EN a 375 px sin errores ni
+  desbordes ✔.
 
 ### 2026-10-11 — v3.13.0 · Más entremeses y frituras
 - *Pedido:* más recetas de entremeses y frituras.

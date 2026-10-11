@@ -149,7 +149,8 @@ const RECIPE_FAMILIES = {
     ["viandas", { es: "Yuca, pana y otras viandas", en: "Cassava, breadfruit and other roots" }, /yuca|pana|batata|viandas|malanga|name|yautia/],
     ["papas", { es: "Papas", en: "Potatoes" }, /papas|papitas/],
     ["berenjenas", { es: "Berenjenas", en: "Eggplant" }, /berenjena/],
-    ["otros", { es: "Otros vegetales", en: "Other vegetables" }, null]
+    ["rellenos", { es: "Rellenos y gratinados", en: "Stuffed and gratin vegetables" }, /rellen|gratinad|pimientos/],
+    ["otros", { es: "Vegetales guisados, salteados y asados", en: "Stewed, sautéed and roasted vegetables" }, null]
   ],
   salsas: [
     ["bases", { es: "Sofrito y sazones", en: "Sofrito and seasonings" }, /^(sofrito|recaito|sazon|aceite de achiote)/],
@@ -191,7 +192,7 @@ const FAMILY_MATCH_ORDER = {
   bizcochos: ["cupcakes", "otros", "calabaza", "frutas", "clasicos"],
   galletitas: ["jengibre", "mantequilla", "frutas", "otras"],
   panes: ["salados", "agua", "viandas", "dulces"],
-  vegetales: ["pasteles", "mofongos", "berenjenas", "papas", "platanos", "viandas", "otros"],
+  vegetales: ["pasteles", "mofongos", "berenjenas", "papas", "platanos", "viandas", "rellenos", "otros"],
   arroces: ["paellas", "mar", "carnes", "granos", "otros"],
   postres: ["cheesecakes", "flanes", "gelatinas", "helados", "tembleques", "arroces", "budines", "bizcochos", "dulces"],
   bebidas: ["batidas", "sinalcohol", "cafe", "tipicas"],

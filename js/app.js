@@ -394,6 +394,23 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Vegetales y viandas (tanda 36).
+  [/^name frito/, "svg:ic-veg-name-frito"],
+  [/^chips de viandas/, "svg:ic-veg-chips"],
+  [/^batatas fritas/, "svg:ic-veg-batatas-fritas"],
+  [/^yuca en escabeche/, "svg:ic-veg-yuca-escabeche"],
+  [/^malanga gratinada/, "svg:ic-veg-malanga-gratinada"],
+  [/^mofongo de amarillo/, "svg:ic-veg-mofongo-amarillo"],
+  [/^calabaza guisada/, "svg:ic-veg-calabaza-guisada"],
+  [/^calabacin al ajillo/, "svg:ic-veg-calabacin"],
+  [/^repollo guisado/, "svg:ic-veg-repollo-guisado"],
+  [/^coliflor gratinada/, "svg:ic-veg-coliflor-gratinada"],
+  [/^brocoli salteado/, "svg:ic-veg-brocoli"],
+  [/^espinacas salteadas/, "svg:ic-veg-espinacas-garbanzos"],
+  [/^chayote guisado/, "svg:ic-veg-chayote-guisado"],
+  [/^maiz guisado/, "svg:ic-veg-maiz-guisado"],
+  [/^champinones al ajillo/, "svg:ic-veg-champinones"],
+  [/^habichuelas tiernas salteadas/, "svg:ic-veg-habichuelas-tiernas"],
   // Entremeses y frituras: cada uno con su forma (antes casi todos 🥟).
   [/^empanadillas de chaparro/, "svg:ic-ent-emp-chaparro"],
   [/^empanadillas de pizza/, "svg:ic-ent-emp-pizza"],
