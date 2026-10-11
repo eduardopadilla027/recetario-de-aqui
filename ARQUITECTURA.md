@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.16.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 947 en 24 categorías
+> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.17.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 959 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, y panqueques, en treinta y ocho tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, y más arroces, en treinta y nueve tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -127,7 +127,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | panes | Pan y Panecillos | 40 |
 | emparedados | Emparedados | 22 |
 | postres | Helados, Budines, Flan y Otros Postres | 103 |
-| arroces | Arroces y Habichuelas | 42 |
+| arroces | Arroces y Habichuelas | 54 |
 | vegetales | Vegetales y Viandas | 81 |
 | salsas | Salsas y Aderezos | 46 |
 | bebidas | Bebidas | 34 |
@@ -152,7 +152,8 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   croquetas; sorullitos, domplines y otras frituras; otros. Vegetales: tostones y amarillos; mofongos y majados;
   pasteles y pastelones; viandas; papas; berenjenas; rellenos y gratinados; guisados, salteados y asados. Panes:
   panqueques (primero, por ser de desayuno); pan de agua, sobao y de molde; dulces y donas; de viandas y maíz; con
-  queso y jamón.
+  queso y jamón. Arroces: con gandules, habichuelas y garbanzos; con pollo y carnes; con pescado y mariscos;
+  fritos; paellas; arroz blanco, de hierbas y de sabores.
 
 - **Rutas por hash:** `#/` inicio · anclas `#categorias`, `#rapidas`, `#recetas` · detalle `#/receta/<id>`
   (URL propia: se comparte y "Atrás" vuelve a la misma posición).
@@ -247,6 +248,9 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   sirop de parcha con semillas, nueces, chispas y fresas, guayaba y queso crema entre capas, rueda de piña con cereza,
   yogur con fruta, sello verde "sin gluten" en el de harina de plátano, huevo frito en el salado de maíz). Van antes
   de la regla general de panqueques (`ic-panqueques`, que sigue para el de avena y guineo).
+  **Arroces (tanda 39):** el mismo montoncito de los arroces, del color de cada uno y con lo que lleva encima
+  (cilantro y limón, verde de recao con ají, ajo tostado, achiote con aceitunas, calabaza, espinaca y garbanzos,
+  champiñones, amarillos y queso, piña y jamón, tocineta y pimientos, huevo y vegetales); el cremoso, en tazón.
   **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
@@ -355,7 +359,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 947). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 959). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -415,6 +419,20 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-11 — v3.17.0 · Más arroces (con cilantro y otros)
+- *Pedido:* más recetas de arroz, por ejemplo con cilantro.
+- Trigésima novena tanda en `js/recipes-4.js` (versiones propias), 12 recetas en **arroces**: con cilantro y limón
+  (el cilantro se añade al final para que no pierda color ni olor), verde con recao y ají dulce, con ajo tostado,
+  amarillo con achiote (sin sazón de sobre), con calabaza, con espinaca y garbanzos (vegetariano y completo), con
+  champiñones, con amarillos y queso, cremoso con queso del país, frito con piña y jamón, con tocineta y pimientos, y
+  frito con huevo y vegetales (con arroz del día anterior). Menos sal añadida en los que llevan caldo.
+- **Familias:** nueva "Arroces fritos" (chino, con piña, con huevo); los garbanzos van con los granos y la tocineta con
+  las carnes; la familia general pasa a "Arroz blanco, de hierbas y de sabores" (§7).
+- **Iconos:** 12 dibujos nuevos (§7).
+- Total: **947 → 959 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador: "arroz con cilantro", "arroz verde", "arroz frito", "arroz
+  con queso" ✔; navegador: las 12 en ES y EN a 375 px sin errores ni desbordes ✔.
 
 ### 2026-10-11 — v3.16.0 · Panqueques
 - *Pedido:* recetas de panqueques.

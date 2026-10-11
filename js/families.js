@@ -138,11 +138,12 @@ const RECIPE_FAMILIES = {
     ["dulces", { es: "Dulces de coco y frutas", en: "Coconut and fruit sweets" }, null]
   ],
   arroces: [
-    ["granos", { es: "Con gandules y habichuelas", en: "With pigeon peas and beans" }, /gandules|habichuelas|moros|mamposteao/],
-    ["carnes", { es: "Con pollo y carnes", en: "With chicken and meats" }, /pollo|alitas|guinea|mollejas|pernil|costillitas|longaniza|salchichas|carne bif|salami|locrio|chorizo/],
+    ["granos", { es: "Con gandules, habichuelas y garbanzos", en: "With pigeon peas, beans and chickpeas" }, /gandules|habichuelas|moros|mamposteao|garbanzos/],
+    ["carnes", { es: "Con pollo y carnes", en: "With chicken and meats" }, /pollo|alitas|guinea|mollejas|pernil|costillitas|longaniza|salchichas|carne bif|salami|locrio|chorizo|tocineta/],
     ["mar", { es: "Con pescado y mariscos", en: "With fish and seafood" }, /camarones|langosta|jueyes|pulpo|calamares|bacalao|atun|sardinas/],
+    ["fritos", { es: "Arroces fritos", en: "Fried rice" }, /chino|frito/],
     ["paellas", { es: "Paellas", en: "Paellas" }, /paella/],
-    ["otros", { es: "Arroz blanco y otros", en: "White rice and others" }, null]
+    ["otros", { es: "Arroz blanco, de hierbas y de sabores", en: "White, herb and flavored rice" }, null]
   ],
   vegetales: [
     ["platanos", { es: "Tostones, amarillos y guineítos", en: "Tostones, sweet plantains and green bananas" }, /tostones|amarillo|platanutres|maduros|guineitos|guineos/],
@@ -195,7 +196,7 @@ const FAMILY_MATCH_ORDER = {
   galletitas: ["jengibre", "mantequilla", "frutas", "otras"],
   panes: ["panqueques", "salados", "agua", "viandas", "dulces"],
   vegetales: ["pasteles", "mofongos", "berenjenas", "papas", "platanos", "viandas", "rellenos", "otros"],
-  arroces: ["paellas", "mar", "carnes", "granos", "otros"],
+  arroces: ["paellas", "mar", "fritos", "carnes", "granos", "otros"],
   postres: ["cheesecakes", "flanes", "gelatinas", "helados", "tembleques", "arroces", "budines", "bizcochos", "dulces"],
   bebidas: ["batidas", "sinalcohol", "cafe", "tipicas"],
   salsas: ["bases", "adobos", "aderezos", "bbq", "mojos", "salsas"],

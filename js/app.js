@@ -394,6 +394,19 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Arroces de hierbas, vegetales y sabores (tanda 39).
+  [/^arroz con cilantro/, "svg:ic-arroz-cilantro"],
+  [/^arroz verde/, "svg:ic-arroz-verde"],
+  [/^arroz con ajo/, "svg:ic-arroz-ajo"],
+  [/^arroz amarillo/, "svg:ic-arroz-amarillo"],
+  [/^arroz con calabaza/, "svg:ic-arroz-calabaza"],
+  [/^arroz con espinaca/, "svg:ic-arroz-espinaca"],
+  [/^arroz con champinones/, "svg:ic-arroz-champinones"],
+  [/^arroz con amarillos/, "svg:ic-arroz-amarillos-queso"],
+  [/^arroz cremoso/, "svg:ic-arroz-cremoso"],
+  [/^arroz frito con pina/, "svg:ic-arroz-frito-pina"],
+  [/^arroz con tocineta/, "svg:ic-arroz-tocineta"],
+  [/^arroz frito con huevo/, "svg:ic-arroz-frito-huevo"],
   // Panqueques (tanda 38), antes de la regla general de panqueques.
   [/^panqueques esponjosos/, "svg:ic-pq-clasicos"],
   [/^panqueques de guineo/, "svg:ic-pq-guineo"],

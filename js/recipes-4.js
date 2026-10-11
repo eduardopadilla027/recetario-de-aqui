@@ -97,6 +97,9 @@
  * Trigésima octava tanda: panqueques (clásicos, guineo, coco con parcha, calabaza,
  * chocolate, guayaba y queso, piña volteados, yogur griego, harina de plátano sin
  * gluten, y salados de maíz con queso del país).
+ * Trigésima novena tanda: más arroces (cilantro y limón, verde con recao, ajo tostado,
+ * amarillo con achiote, calabaza, espinaca y garbanzos, champiñones, amarillos y queso,
+ * cremoso con queso del país, fritos con piña y con huevo, tocineta y pimientos).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -22406,6 +22409,534 @@ recipes.push(
         "Fold in the corn, cheese and scallions.",
         "Cook 3 tablespoons per pancake in a greased skillet over medium heat, 3 minutes per side, until golden.",
         "Serve with a fried egg, avocado or a splash of hot sauce: for a savory breakfast, like a little arepa."
+      ]
+    }
+  },
+
+  // ── Trigésima novena tanda (2026-10): más arroces (de hierbas, vegetales y sabores) ──
+  {
+    id: "arroz-cilantro-limon",
+    category: "arroces",
+    name: { es: "Arroz con Cilantro y Limón", en: "Cilantro Lime Rice" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano largo, lavado",
+        "2 cucharadas de aceite de oliva",
+        "2 dientes de ajo picados",
+        "3 tazas de agua",
+        "1 cucharadita de sal",
+        "1 taza de cilantro fresco picado (hojas y tallitos tiernos)",
+        "3 cucharadas de jugo de limón",
+        "1 cucharadita de ralladura de limón"
+      ],
+      en: [
+        "2 cups long-grain rice, rinsed",
+        "2 tablespoons olive oil",
+        "2 garlic cloves, chopped",
+        "3 cups water",
+        "1 teaspoon salt",
+        "1 cup chopped fresh cilantro (leaves and tender stems)",
+        "3 tablespoons lime juice",
+        "1 teaspoon lime zest"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero, sofría el ajo en el aceite 30 segundos y añada el arroz. Muévalo 2 minutos para que se tueste un poco: así queda suelto.",
+        "Añada el agua y la sal, y deje hervir hasta que el agua baje al nivel del arroz.",
+        "Tape y cocine a fuego bajo 20 minutos sin destapar. Apague y deje reposar tapado 5 minutos.",
+        "Suelte el arroz con un tenedor y mezcle el cilantro, el limón y la ralladura justo antes de servir (si se cocina el cilantro, pierde el color y el olor). Va con pescado, pollo, camarones o habichuelas."
+      ],
+      en: [
+        "In a caldero, sauté the garlic in the oil 30 seconds and add the rice. Stir 2 minutes to toast lightly: it keeps the grains separate.",
+        "Add the water and salt, and boil until the water drops to the level of the rice.",
+        "Cover and cook over low heat 20 minutes without lifting the lid. Turn off and rest covered 5 minutes.",
+        "Fluff with a fork and fold in the cilantro, lime juice and zest right before serving (cooked cilantro loses its color and aroma). Great with fish, chicken, shrimp or beans."
+      ]
+    }
+  },
+  {
+    id: "arroz-verde-recao",
+    category: "arroces",
+    name: { es: "Arroz Verde con Recao y Ají Dulce", en: "Green Rice with Culantro and Sweet Peppers" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano mediano, lavado",
+        "1 taza de hojas de recao",
+        "½ taza de cilantro",
+        "6 ajíes dulces sin semillas",
+        "½ cebolla",
+        "3 dientes de ajo",
+        "2½ tazas de caldo de vegetales",
+        "2 cucharadas de aceite de oliva",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "2 cups medium-grain rice, rinsed",
+        "1 cup culantro (recao) leaves",
+        "½ cup cilantro",
+        "6 sweet peppers (ajíes dulces), seeded",
+        "½ onion",
+        "3 garlic cloves",
+        "2½ cups vegetable broth",
+        "2 tablespoons olive oil",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe el recao, el cilantro, los ajíes, la cebolla y el ajo con el caldo hasta que quede un líquido verde y liso.",
+        "En un caldero, sofría el arroz en el aceite 2 minutos. Añada el líquido verde y la sal, y deje hervir hasta que baje al nivel del arroz.",
+        "Tape y cocine a fuego bajo 20 minutos. Voltee el arroz de abajo hacia arriba, tape y deje 5 minutos más.",
+        "Queda verde y con todo el sabor del sofrito fresco. Es un buen acompañante para carnes guisadas y pescados."
+      ],
+      en: [
+        "Blend the culantro, cilantro, sweet peppers, onion and garlic with the broth into a smooth green liquid.",
+        "In a caldero, sauté the rice in the oil 2 minutes. Add the green liquid and salt, and boil until it drops to the level of the rice.",
+        "Cover and cook over low heat 20 minutes. Turn the rice from bottom to top, cover and leave 5 more minutes.",
+        "It turns green with all the flavor of fresh sofrito. A great side for stews and fish."
+      ]
+    }
+  },
+  {
+    id: "arroz-ajo",
+    category: "arroces",
+    name: { es: "Arroz con Ajo Tostado", en: "Toasted Garlic Rice" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano largo, lavado",
+        "3 cucharadas de aceite de oliva",
+        "8 dientes de ajo en lascas finas",
+        "3 tazas de agua",
+        "1 cucharadita de sal",
+        "2 cebollines picados"
+      ],
+      en: [
+        "2 cups long-grain rice, rinsed",
+        "3 tablespoons olive oil",
+        "8 garlic cloves, thinly sliced",
+        "3 cups water",
+        "1 teaspoon salt",
+        "2 scallions, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "En el caldero, dore el ajo en el aceite a fuego medio-bajo, moviendo, hasta que esté dorado claro (2 a 3 minutos). Sáquelo con una cuchara y déjelo en papel toalla: se pone crujiente.",
+        "En el mismo aceite con sabor a ajo, sofría el arroz 2 minutos. Añada el agua y la sal, y deje hervir hasta que baje al nivel del arroz.",
+        "Tape y cocine a fuego bajo 20 minutos. Deje reposar tapado 5 minutos.",
+        "Sirva con el ajo crujiente y el cebollín por encima. Si el ajo se oscurece demasiado, amarga: sáquelo apenas esté dorado."
+      ],
+      en: [
+        "In the caldero, fry the garlic in the oil over medium-low, stirring, until light golden (2 to 3 minutes). Lift it out onto paper towels: it turns crisp.",
+        "In the same garlic-flavored oil, sauté the rice 2 minutes. Add the water and salt, and boil until it drops to the level of the rice.",
+        "Cover and cook over low heat 20 minutes. Rest covered 5 minutes.",
+        "Serve topped with the crispy garlic and scallions. If the garlic gets too dark it turns bitter: pull it as soon as it's golden."
+      ]
+    }
+  },
+  {
+    id: "arroz-amarillo-achiote",
+    category: "arroces",
+    name: { es: "Arroz Amarillo con Achiote (Sin Sazón de Sobre)", en: "Annatto Yellow Rice (No Packet Seasoning)" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano mediano, lavado",
+        "3 cucharadas de aceite de achiote",
+        "¼ taza de sofrito",
+        "½ cucharadita de comino",
+        "½ cucharadita de orégano",
+        "½ cucharadita de ajo en polvo",
+        "2½ tazas de caldo de pollo bajo en sodio",
+        "½ cucharadita de sal",
+        "10 aceitunas rellenas"
+      ],
+      en: [
+        "2 cups medium-grain rice, rinsed",
+        "3 tablespoons annatto oil",
+        "¼ cup sofrito",
+        "½ teaspoon cumin",
+        "½ teaspoon oregano",
+        "½ teaspoon garlic powder",
+        "2½ cups low-sodium chicken broth",
+        "½ teaspoon salt",
+        "10 stuffed olives"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite de achiote 2 minutos. Añada el comino, el orégano y el ajo en polvo.",
+        "Añada el arroz y muévalo 1 minuto para que se pinte de amarillo. Añada el caldo, la sal y las aceitunas.",
+        "Deje hervir hasta que el líquido baje al nivel del arroz, tape y cocine a fuego bajo 20 minutos.",
+        "Voltee de abajo hacia arriba y sirva. El achiote le da el color sin el colorante ni el glutamato del sazón de sobre, y con menos sodio."
+      ],
+      en: [
+        "Sauté the sofrito in the annatto oil 2 minutes. Add the cumin, oregano and garlic powder.",
+        "Add the rice and stir 1 minute to coat it yellow. Add the broth, salt and olives.",
+        "Boil until the liquid drops to the level of the rice, cover and cook over low heat 20 minutes.",
+        "Turn from bottom to top and serve. Annatto gives the color without packet seasoning's dyes and MSG, and with less sodium."
+      ]
+    }
+  },
+  {
+    id: "arroz-calabaza",
+    category: "arroces",
+    name: { es: "Arroz con Calabaza", en: "Rice with Pumpkin (Calabaza)" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano mediano, lavado",
+        "2 tazas de calabaza en cubitos",
+        "2 cucharadas de aceite de achiote",
+        "¼ taza de sofrito",
+        "2 onzas de jamón de cocinar en cubitos",
+        "2½ tazas de caldo de pollo",
+        "½ cucharadita de sal",
+        "2 hojas de recao picadas"
+      ],
+      en: [
+        "2 cups medium-grain rice, rinsed",
+        "2 cups diced West Indian pumpkin (calabaza)",
+        "2 tablespoons annatto oil",
+        "¼ cup sofrito",
+        "2 oz cooking ham, diced",
+        "2½ cups chicken broth",
+        "½ teaspoon salt",
+        "2 culantro leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el jamón y el sofrito en el aceite de achiote 3 minutos. Añada la calabaza y cocine 3 minutos más.",
+        "Añada el arroz, mueva y añada el caldo y la sal. Deje hervir hasta que baje al nivel del arroz.",
+        "Tape y cocine a fuego bajo 20 minutos. La calabaza se ablanda y pinta el arroz de anaranjado.",
+        "Voltee, añada el recao y sirva. Sin el jamón y con caldo de vegetales queda vegetariano."
+      ],
+      en: [
+        "Sauté the ham and sofrito in the annatto oil 3 minutes. Add the pumpkin and cook 3 more minutes.",
+        "Add the rice, stir, then add the broth and salt. Boil until it drops to the level of the rice.",
+        "Cover and cook over low heat 20 minutes. The pumpkin softens and turns the rice orange.",
+        "Turn the rice, add the culantro and serve. Without the ham and with vegetable broth, it's vegetarian."
+      ]
+    }
+  },
+  {
+    id: "arroz-espinaca-garbanzos",
+    category: "arroces",
+    name: { es: "Arroz con Espinaca y Garbanzos", en: "Rice with Spinach and Chickpeas" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano largo, lavado",
+        "2 cucharadas de aceite de oliva",
+        "¼ taza de sofrito",
+        "1 cucharadita de pimentón",
+        "½ cucharadita de comino",
+        "1 lata de 15 onzas de garbanzos, escurridos",
+        "3 tazas de caldo de vegetales",
+        "½ cucharadita de sal",
+        "4 tazas de espinaca fresca"
+      ],
+      en: [
+        "2 cups long-grain rice, rinsed",
+        "2 tablespoons olive oil",
+        "¼ cup sofrito",
+        "1 teaspoon paprika",
+        "½ teaspoon cumin",
+        "1 can (15 oz) chickpeas, drained",
+        "3 cups vegetable broth",
+        "½ teaspoon salt",
+        "4 cups fresh spinach"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite 2 minutos, añada el pimentón, el comino y los garbanzos, y cocine 2 minutos.",
+        "Añada el arroz, el caldo y la sal. Deje hervir hasta que baje al nivel del arroz, tape y cocine a fuego bajo 20 minutos.",
+        "Apague, ponga la espinaca encima, tape y deje 5 minutos: el vapor la cocina.",
+        "Mezcle y sirva. Es un plato completo vegetariano, con la proteína de los garbanzos."
+      ],
+      en: [
+        "Sauté the sofrito in the oil 2 minutes, add the paprika, cumin and chickpeas, and cook 2 minutes.",
+        "Add the rice, broth and salt. Boil until it drops to the level of the rice, cover and cook over low heat 20 minutes.",
+        "Turn off, lay the spinach on top, cover and leave 5 minutes: the steam cooks it.",
+        "Stir and serve. A complete vegetarian dish, with protein from the chickpeas."
+      ]
+    }
+  },
+  {
+    id: "arroz-champinones",
+    category: "arroces",
+    name: { es: "Arroz con Champiñones y Cebolla", en: "Mushroom and Onion Rice" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano largo, lavado",
+        "2 cucharadas de mantequilla",
+        "1 cucharada de aceite de oliva",
+        "1 libra de champiñones en lascas",
+        "1 cebolla en tiras",
+        "2 dientes de ajo picados",
+        "3 tazas de caldo de pollo",
+        "½ cucharadita de sal",
+        "2 cucharadas de perejil picado"
+      ],
+      en: [
+        "2 cups long-grain rice, rinsed",
+        "2 tablespoons butter",
+        "1 tablespoon olive oil",
+        "1 lb mushrooms, sliced",
+        "1 onion, in strips",
+        "2 garlic cloves, chopped",
+        "3 cups chicken broth",
+        "½ teaspoon salt",
+        "2 tablespoons chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Dore los champiñones en la mantequilla y el aceite a fuego alto 6 minutos, sin moverlos mucho. Añada la cebolla y el ajo y cocine 4 minutos más.",
+        "Añada el arroz y muévalo 1 minuto. Añada el caldo y la sal, y deje hervir hasta que baje al nivel del arroz.",
+        "Tape y cocine a fuego bajo 20 minutos. Repose 5 minutos.",
+        "Suelte con un tenedor y sirva con el perejil. Va muy bien con bistec, chuletas o pollo al horno."
+      ],
+      en: [
+        "Brown the mushrooms in the butter and oil over high heat 6 minutes, stirring little. Add the onion and garlic and cook 4 more minutes.",
+        "Add the rice and stir 1 minute. Add the broth and salt, and boil until it drops to the level of the rice.",
+        "Cover and cook over low heat 20 minutes. Rest 5 minutes.",
+        "Fluff with a fork and serve with the parsley. Great with steak, pork chops or roast chicken."
+      ]
+    }
+  },
+  {
+    id: "arroz-amarillos-queso",
+    category: "arroces",
+    name: { es: "Arroz con Amarillos y Queso", en: "Rice with Sweet Plantains and Cheese" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano mediano, lavado",
+        "2 plátanos maduros (amarillos) en cubos",
+        "3 cucharadas de mantequilla",
+        "¼ taza de sofrito",
+        "2½ tazas de caldo de pollo",
+        "½ cucharadita de sal",
+        "1 taza de queso mozzarella rallado",
+        "½ taza de queso blanco del país desmoronado"
+      ],
+      en: [
+        "2 cups medium-grain rice, rinsed",
+        "2 ripe (yellow) plantains, cubed",
+        "3 tablespoons butter",
+        "¼ cup sofrito",
+        "2½ cups chicken broth",
+        "½ teaspoon salt",
+        "1 cup shredded mozzarella cheese",
+        "½ cup crumbled Puerto Rican white cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Dore los cubos de amarillo en 2 cucharadas de mantequilla 5 minutos y sáquelos.",
+        "En el mismo caldero, sofría el sofrito en el resto de la mantequilla, añada el arroz, el caldo y la sal, y deje hervir hasta que baje al nivel del arroz.",
+        "Ponga los amarillos encima, tape y cocine a fuego bajo 20 minutos.",
+        "Apague, riegue los quesos, tape 5 minutos para que se derritan y mezcle con cuidado. Dulce y salado, como un pastelón en arroz."
+      ],
+      en: [
+        "Brown the plantain cubes in 2 tablespoons of the butter 5 minutes and remove.",
+        "In the same caldero, sauté the sofrito in the remaining butter, add the rice, broth and salt, and boil until it drops to the level of the rice.",
+        "Lay the plantains on top, cover and cook over low heat 20 minutes.",
+        "Turn off, scatter the cheeses, cover 5 minutes to melt and fold gently. Sweet and savory, like pastelón in rice form."
+      ]
+    }
+  },
+  {
+    id: "arroz-cremoso-queso",
+    category: "arroces",
+    name: { es: "Arroz Cremoso con Queso del País", en: "Creamy Rice with Puerto Rican White Cheese" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1½ tazas de arroz de grano corto o mediano",
+        "2 cucharadas de mantequilla",
+        "½ cebolla picada fina",
+        "4 tazas de caldo de pollo caliente",
+        "½ taza de leche",
+        "1 taza de queso blanco del país rallado",
+        "¼ taza de queso parmesano rallado",
+        "¼ cucharadita de pimienta",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "1½ cups short- or medium-grain rice",
+        "2 tablespoons butter",
+        "½ onion, finely chopped",
+        "4 cups hot chicken broth",
+        "½ cup milk",
+        "1 cup grated Puerto Rican white cheese",
+        "¼ cup grated Parmesan cheese",
+        "¼ teaspoon black pepper",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría la cebolla en la mantequilla 3 minutos, añada el arroz sin lavar y muévalo 2 minutos.",
+        "Añada el caldo caliente de taza en taza, moviendo a menudo y esperando que se absorba antes de echar más, unos 20 minutos.",
+        "Cuando el arroz esté tierno pero con un poquito de firmeza, añada la leche, los quesos y la pimienta, y mueva hasta que esté cremoso.",
+        "Sirva enseguida con el cilantro. Aquí el arroz no se lava: el almidón es lo que lo pone cremoso."
+      ],
+      en: [
+        "Sauté the onion in the butter 3 minutes, add the unrinsed rice and stir 2 minutes.",
+        "Add the hot broth a cup at a time, stirring often and letting it absorb before adding more, about 20 minutes.",
+        "When the rice is tender with a little bite, add the milk, cheeses and pepper, and stir until creamy.",
+        "Serve right away with the cilantro. The rice isn't rinsed here: its starch is what makes it creamy."
+      ]
+    }
+  },
+  {
+    id: "arroz-frito-pina",
+    category: "arroces",
+    name: { es: "Arroz Frito con Piña y Jamón", en: "Pineapple and Ham Fried Rice" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 tazas de arroz cocido del día anterior, frío",
+        "2 cucharadas de aceite vegetal",
+        "1 taza de jamón de cocinar en cubitos",
+        "1 taza de piña fresca en cubitos",
+        "½ pimiento rojo picado",
+        "3 cebollines picados",
+        "2 huevos batidos",
+        "2 cucharadas de salsa de soya",
+        "½ cucharadita de jengibre rallado"
+      ],
+      en: [
+        "4 cups day-old cooked rice, cold",
+        "2 tablespoons vegetable oil",
+        "1 cup diced cooking ham",
+        "1 cup diced fresh pineapple",
+        "½ red bell pepper, chopped",
+        "3 scallions, chopped",
+        "2 eggs, beaten",
+        "2 tablespoons soy sauce",
+        "½ teaspoon grated ginger"
+      ]
+    },
+    steps: {
+      es: [
+        "Use arroz frío del día anterior: el recién hecho se pega y queda pastoso.",
+        "En un sartén grande a fuego alto, saltee el jamón y la piña en el aceite 4 minutos, hasta que la piña se dore. Añada el pimiento y el jengibre 1 minuto.",
+        "Corra todo a un lado, revuelva los huevos en el espacio libre y mézclelos.",
+        "Añada el arroz y la soya y saltee 4 minutos, aplastando los grumos. Termine con el cebollín."
+      ],
+      en: [
+        "Use cold day-old rice: freshly cooked rice sticks and turns mushy.",
+        "In a large skillet over high heat, stir-fry the ham and pineapple in the oil 4 minutes, until the pineapple browns. Add the bell pepper and ginger 1 minute.",
+        "Push everything to one side, scramble the eggs in the empty space and mix them in.",
+        "Add the rice and soy sauce and stir-fry 4 minutes, breaking up clumps. Finish with the scallions."
+      ]
+    }
+  },
+  {
+    id: "arroz-tocineta-pimientos",
+    category: "arroces",
+    name: { es: "Arroz con Tocineta y Pimientos", en: "Rice with Bacon and Peppers" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de arroz de grano mediano, lavado",
+        "6 onzas de tocineta picada (6 tiras)",
+        "1 pimiento rojo en tiras",
+        "1 pimiento verde en tiras",
+        "½ cebolla en tiras",
+        "¼ taza de salsa de tomate",
+        "2½ tazas de agua",
+        "½ cucharadita de sal",
+        "½ cucharadita de orégano"
+      ],
+      en: [
+        "2 cups medium-grain rice, rinsed",
+        "6 oz bacon, chopped (6 strips)",
+        "1 red bell pepper, in strips",
+        "1 green bell pepper, in strips",
+        "½ onion, in strips",
+        "¼ cup tomato sauce",
+        "2½ cups water",
+        "½ teaspoon salt",
+        "½ teaspoon oregano"
+      ]
+    },
+    steps: {
+      es: [
+        "En el caldero, dore la tocineta a fuego medio hasta que esté crujiente. Saque la mitad para decorar y bote casi toda la grasa, dejando 2 cucharadas.",
+        "Sofría los pimientos y la cebolla en esa grasa 5 minutos. Añada la salsa de tomate y el orégano.",
+        "Añada el arroz, el agua y la sal (la tocineta ya trae sal). Deje hervir hasta que baje al nivel del arroz, tape y cocine a fuego bajo 20 minutos.",
+        "Voltee y sirva con la tocineta crujiente por encima."
+      ],
+      en: [
+        "In the caldero, cook the bacon over medium heat until crisp. Set half aside for topping and pour off most of the fat, leaving 2 tablespoons.",
+        "Sauté the peppers and onion in that fat 5 minutes. Add the tomato sauce and oregano.",
+        "Add the rice, water and salt (the bacon is already salty). Boil until it drops to the level of the rice, cover and cook over low heat 20 minutes.",
+        "Turn the rice and serve topped with the crispy bacon."
+      ]
+    }
+  },
+  {
+    id: "arroz-frito-huevo",
+    category: "arroces",
+    name: { es: "Arroz Frito con Huevo y Vegetales", en: "Egg and Vegetable Fried Rice" },
+    time: "20 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 tazas de arroz cocido del día anterior, frío",
+        "2 cucharadas de aceite vegetal",
+        "3 huevos batidos",
+        "1 taza de vegetales mixtos congelados (zanahoria, guisantes y maíz)",
+        "2 dientes de ajo picados",
+        "3 cebollines picados",
+        "2 cucharadas de salsa de soya",
+        "1 cucharadita de aceite de ajonjolí"
+      ],
+      en: [
+        "4 cups day-old cooked rice, cold",
+        "2 tablespoons vegetable oil",
+        "3 eggs, beaten",
+        "1 cup frozen mixed vegetables (carrot, peas and corn)",
+        "2 garlic cloves, chopped",
+        "3 scallions, chopped",
+        "2 tablespoons soy sauce",
+        "1 teaspoon sesame oil"
+      ]
+    },
+    steps: {
+      es: [
+        "En un sartén grande a fuego alto, revuelva los huevos en 1 cucharada de aceite hasta que cuajen. Sáquelos.",
+        "Añada el resto del aceite, el ajo y los vegetales, y saltee 3 minutos.",
+        "Añada el arroz frío y saltee 4 minutos, aplastando los grumos, hasta que esté caliente y un poco tostado.",
+        "Añada la soya, el aceite de ajonjolí, el huevo y el cebollín, y mezcle. Es la forma más rápida de aprovechar el arroz que sobró."
+      ],
+      en: [
+        "In a large skillet over high heat, scramble the eggs in 1 tablespoon of the oil until set. Remove.",
+        "Add the remaining oil, garlic and vegetables, and stir-fry 3 minutes.",
+        "Add the cold rice and stir-fry 4 minutes, breaking up clumps, until hot and lightly toasted.",
+        "Add the soy sauce, sesame oil, egg and scallions, and toss. The quickest way to use up leftover rice."
       ]
     }
   }
