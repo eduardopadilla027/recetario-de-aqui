@@ -394,6 +394,19 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Bizcochos mojados, con licor y de sabores (tanda 37).
+  [/^bizcocho mojado de brandy/, "svg:ic-biz-brandy"],
+  [/^bizcocho de almendra con amaretto/, "svg:ic-biz-amaretto"],
+  [/^bizcocho mojado de almendra/, "svg:ic-biz-mojado-almendra"],
+  [/^bizcocho mojado de vainilla/, "svg:ic-biz-mojado-vainilla"],
+  [/^bizcocho mojado de coquito/, "svg:ic-biz-mojado-coquito"],
+  [/^bizcocho mojado de cafe/, "svg:ic-biz-mojado-cafe"],
+  [/^bizcocho mojado de dulce de leche/, "svg:ic-biz-mojado-dulce-leche"],
+  [/^bizcocho mojado de pina colada/, "svg:ic-biz-mojado-pina-colada"],
+  [/^bizcocho de limon/, "svg:ic-biz-limon"],
+  [/^bizcocho red velvet/, "svg:ic-biz-red-velvet"],
+  [/^bizcocho de pistacho/, "svg:ic-biz-pistacho"],
+  [/^bizcocho de mantequilla/, "svg:ic-biz-mantequilla"],
   // Vegetales y viandas (tanda 36).
   [/^name frito/, "svg:ic-veg-name-frito"],
   [/^chips de viandas/, "svg:ic-veg-chips"],

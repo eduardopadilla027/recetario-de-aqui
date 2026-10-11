@@ -94,7 +94,8 @@ const RECIPE_FAMILIES = {
   ],
   bizcochos: [
     ["clasicos", { es: "Clásicos", en: "Classics" }, null],
-    ["frutas", { es: "De frutas y coco", en: "Fruit and coconut cakes" }, /^(?!.*cumpleanos).*(pina|guayaba|china|parcha|coco|guineo|mango|zanahoria)/],
+    ["mojados", { es: "Mojados y con licor", en: "Soaked and liquor cakes" }, /mojado|brandy|amaretto/],
+    ["frutas", { es: "De frutas y coco", en: "Fruit and coconut cakes" }, /^(?!.*cumpleanos).*(pina|guayaba|china|parcha|coco|guineo|mango|zanahoria|limon)/],
     ["calabaza", { es: "De calabaza", en: "Pumpkin cakes" }, /calabaza/],
     ["cupcakes", { es: "Cupcakes", en: "Cupcakes" }, /cupcakes/],
     ["otros", { es: "Brazos gitanos y brownies", en: "Rolled cakes and brownies" }, /brazo gitano|brownies/]
@@ -189,7 +190,7 @@ const FAMILY_MATCH_ORDER = {
   ensaladas: ["granos", "mariscos", "papa", "verdes"],
   sopas: ["asopaos", "frias", "cremas", "sancochos", "granos", "pescado", "carnes", "vegetales"],
   entremeses: ["empanadillas", "croquetas", "otros", "alcapurrias", "bolitas", "mar", "masa"],
-  bizcochos: ["cupcakes", "otros", "calabaza", "frutas", "clasicos"],
+  bizcochos: ["cupcakes", "otros", "mojados", "calabaza", "frutas", "clasicos"],
   galletitas: ["jengibre", "mantequilla", "frutas", "otras"],
   panes: ["salados", "agua", "viandas", "dulces"],
   vegetales: ["pasteles", "mofongos", "berenjenas", "papas", "platanos", "viandas", "rellenos", "otros"],

@@ -163,6 +163,8 @@ const TEA_INFO = {
     en: ["nausea, colds and digestion.", "It can cause heartburn. If you take blood thinners or have gallstones, ask your doctor."]
   }
 };
+// Postres cuyo licor se añade sin cocinar (almíbar o glaseado fuera del fuego): el alcohol se queda.
+const RAW_ALCOHOL_IDS = new Set(["bizcocho-brandy", "bizcocho-amaretto", "bizcocho-ron"]);
 // Tés con riesgos serios: su precaución va en rojo (alta).
 const TEA_HIGH = new Set(["te-poleo", "te-anamu", "te-cundeamor", "te-hoja-guanabana"]);
 // Tragos estándar con un decimal y horas aproximadas que tarda el cuerpo en eliminarlos (≈ 1 trago por hora).
@@ -197,6 +199,7 @@ const ADVICE_TEXT = {
         : "Bebida alcohólica: el ron va al gusto, así que cuente cada 1½ oz de ron (o 5 oz de vino, o una cerveza de 12 oz) como un trago estándar. No apta para menores de 18 años ni en el embarazo. Tome con moderación.",
       drinkDriving: (d) => `Si va a conducir: la Ley 22 de Vehículos y Tránsito de Puerto Rico prohíbe conducir con 0.08% o más de alcohol en la sangre (21 años o más) y con 0.02% o más si tiene de 18 a 20 años o maneja motora, camión, guagua escolar, vehículo pesado o de transporte público; los menores de 18, nada. Un solo trago estándar puede llevar a muchas personas a 0.02%, y 2 o 3 en una hora a 0.08%, sobre todo con menos peso o sin haber comido. ${d ? `Esta porción (≈ ${fmtDrinks(d)} ${d >= 1.05 ? "tragos" : "trago"}) tarda unas ${drinkHours(d)} ${drinkHours(d) > 1 ? "horas" : "hora"} en eliminarse; ` : "El cuerpo elimina más o menos un trago estándar por hora; "}el café, el agua fría o una ducha no lo bajan. No hay una cantidad segura para conducir: si toma, designe un conductor o pida transporte.`,
       alcoholCooked: "Lleva alcohol. Una parte se evapora al cocinar, pero no todo: téngalo en cuenta con niños, en el embarazo o si evita el alcohol.",
+      alcoholRaw: (g, d) => `Lleva licor sin cocinar (en el almíbar o el glaseado), así que el alcohol se queda${g ? `: cada porción tiene ≈ ${g} g de alcohol (${fmtDrinks(d)} ${d >= 1.05 ? "tragos estándar" : "trago estándar"})` : ""}. No es para niños, embarazadas ni quien evite el alcohol, y cuenta para el límite de la Ley 22 si va a conducir.`,
       rawEgg: "Lleva huevo crudo o poco cocido, con riesgo de salmonela. Use huevos pasteurizados y evítelo en el embarazo, en niños pequeños, envejecientes y personas con las defensas bajas.",
       rawFish: "El pescado del ceviche no se cocina: el limón no mata las bacterias ni los parásitos como el calor. Use pescado muy fresco de una pescadería confiable (mejor si fue congelado antes) y evítelo en el embarazo, en niños pequeños, envejecientes y personas con las defensas bajas.",
       honey: "No les dé miel a bebés menores de 1 año (riesgo de botulismo infantil).",
@@ -261,6 +264,7 @@ const ADVICE_TEXT = {
         : "Alcoholic drink: the rum is to taste, so count every 1½ oz of rum (or 5 oz of wine, or a 12 oz beer) as one standard drink. Not for anyone under 18 or during pregnancy. Drink in moderation.",
       drinkDriving: (d) => `If you'll be driving: Puerto Rico's Vehicle and Traffic Law 22 prohibits driving with a blood alcohol content of 0.08% or more (age 21 and over) and 0.02% or more if you are 18 to 20 or drive a motorcycle, truck, school bus, heavy vehicle or public transport; under 18, none at all. A single standard drink can bring many people to 0.02%, and 2 or 3 within an hour to 0.08%, especially at lower body weight or on an empty stomach. ${d ? `This serving (≈ ${fmtDrinks(d)} ${d >= 1.05 ? "drinks" : "drink"}) takes about ${drinkHours(d)} ${drinkHours(d) > 1 ? "hours" : "hour"} to clear; ` : "The body clears roughly one standard drink per hour; "}coffee, cold water or a shower won't lower it. There is no safe amount for driving: if you drink, use a designated driver or get a ride.`,
       alcoholCooked: "Contains alcohol. Some evaporates during cooking, but not all: keep that in mind for children, pregnancy, or if you avoid alcohol.",
+      alcoholRaw: (g, d) => `Contains uncooked liquor (in the syrup or glaze), so the alcohol stays${g ? `: each serving has ≈ ${g} g of alcohol (${fmtDrinks(d)} standard ${d >= 1.05 ? "drinks" : "drink"})` : ""}. Not for children, pregnancy or anyone avoiding alcohol, and it counts toward the Law 22 limit if you'll drive.`,
       rawEgg: "Contains raw or undercooked egg, with a salmonella risk. Use pasteurized eggs and avoid it during pregnancy and for young children, older adults, and people with weakened immunity.",
       rawFish: "Ceviche fish is not cooked: lime juice does not kill bacteria or parasites the way heat does. Use very fresh fish from a trusted fishmonger (ideally previously frozen) and avoid it during pregnancy and for young children, older adults, and people with weakened immunity.",
       honey: "Do not give honey to babies under 1 year old (risk of infant botulism).",
@@ -322,7 +326,7 @@ function getAdvisories(recipe) {
   const alerts = [];
   const push = (key, level, args = []) => alerts.push({ key, level, args });
   const isDrink = ["bebidas", "jugos", "cocteles", "calientes"].includes(cat);
-  const alcohol = /\b(ron|licor|pitorro|cerveza|limoncello)\b|(?<!vinagre de )\bvinos?\b/;
+  const alcohol = /\b(ron|licor|pitorro|cerveza|limoncello|brandy|amaretto)\b|(?<!vinagre de )\bvinos?\b/;
 
   if (/ceviche/.test(name)) push("rawFish", "high");
   // Las bebidas con yemas cocidas a 160 °F (ponche de crema sin alcohol) no llevan la alerta.
@@ -335,6 +339,8 @@ function getAdvisories(recipe) {
   if (!virgin && (cat === "cocteles" || (isDrink && has(alcohol)))) {
     push("alcoholDrink", "high", alcG >= 1 ? [Math.round(alcG), drinks] : []);
     push("drinkDriving", "high", [alcG >= 1 ? drinks : 0]);
+  } else if (has(alcohol) && RAW_ALCOHOL_IDS.has(recipe.id)) {
+    push("alcoholRaw", "high", alcG >= 1 ? [Math.round(alcG), drinks] : []);
   } else if (has(alcohol)) push("alcoholCooked", "caution");
   if (has(/\bmiel\b/)) push("honey", "caution");
   if (has(/anis estrellado/)) push("starAnise", "caution");

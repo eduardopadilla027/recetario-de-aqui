@@ -149,6 +149,9 @@ const NUTRI_FOODS = [
   F("nueces|nuez", 654, 15, 14, 2.6, 6.7, 65, 6, 2, { cup: 117 }),
   F("almendra|almendras molidas", 579, 21, 22, 4.4, 12.5, 50, 3.8, 1, { cup: 95, u: 1.2 }),
   F("ajonjoli", 573, 17.7, 23, 0.3, 11.8, 49.7, 7, 11, { cup: 144 }),
+  F("pistacho|pistachos", 562, 20, 28, 7.7, 10, 45, 5.6, 1, { cup: 123 }),
+  F("dulce de leche|cajeta", 315, 6.8, 55, 50, 0, 7.4, 4.6, 129, { can: 370, cup: 300 }),
+  F("coquito sin alcohol", 260, 4, 30, 28, 1, 14, 11, 70, { cup: 250 }),
   F("mani|cacahuate", 585, 24, 21, 4.2, 8, 50, 7, 6, { cup: 146 }),
   F("mantequilla de mani", 588, 25, 20, 9, 6, 50, 10, 430, { cup: 258 }),
   F("mermelada|jalea", 250, 0.4, 63, 50, 1, 0.1, 0, 30, { cup: 320 }),
@@ -277,6 +280,8 @@ const NUTRI_FOODS = [
   F("agua de coco", 19, 0.7, 3.7, 2.6, 1.1, 0.2, 0.2, 105, { cup: 240 }),
   F("ron|pitorro", 231, 0, 0, 0, 0, 0, 0, 1, { cup: 240, can: 750 }),
   F("tequila", 231, 0, 0, 0, 0, 0, 0, 1, { cup: 240, can: 750 }),
+  F("brandy|cognac|conac", 231, 0, 0, 0, 0, 0, 0, 1, { cup: 240, can: 750 }),
+  F("amaretto|licor de almendra", 310, 0, 33, 33, 0, 0, 0, 5, { cup: 240, can: 750 }),
   F("vino", 83, 0.1, 2.6, 0.6, 0, 0, 0, 5, { cup: 240, can: 750 }),
   F("vino dulce", 160, 0.2, 14, 8, 0, 0, 0, 9, { cup: 240, can: 750 }),
   F("licor|licor de anis", 330, 0, 35, 35, 0, 0, 0, 5, { cup: 240, can: 750 }),
@@ -471,7 +476,7 @@ const nutriCache = new Map();
 /* Alcohol (etanol) en gramos por cada 100 g de la bebida, según la primera palabra clave del alimento:
  * ron, pitorro, tequila y cachaça ≈ 40% vol.; vino ≈ 12%; vino dulce ≈ 16%; licores ≈ 25%; cerveza ≈ 5%.
  * Con esto la pestaña de seguridad calcula los tragos estándar (14 g de alcohol) de cada porción. */
-const NUTRI_ALCOHOL = { "ron": 33, "tequila": 33, "cachaca": 33, "vino": 9.6, "vino dulce": 12.7, "licor": 19, "cerveza": 3.9 };
+const NUTRI_ALCOHOL = { "ron": 33, "tequila": 33, "cachaca": 33, "brandy": 33, "amaretto": 22, "vino": 9.6, "vino dulce": 12.7, "licor": 19, "cerveza": 3.9 };
 
 function estimateNutrition(recipe) {
   if (nutriCache.has(recipe.id)) return nutriCache.get(recipe.id);

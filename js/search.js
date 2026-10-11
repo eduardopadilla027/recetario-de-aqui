@@ -54,6 +54,8 @@ const S_GROUPS = [
 
 /* Ampliaciones en un solo sentido: un término general incluye los particulares. */
 const S_EXPAND = {
+  licor: "licor liquor ron rum brandy amaretto pitorro tequila vino wine",
+  liquor: "licor liquor ron rum brandy amaretto pitorro tequila vino wine",
   marisco: "marisco seafood shellfish camaron langosta pulpo calamar carrucho juey cangrejo ostion almeja mejillon",
   seafood: "marisco seafood shellfish camaron langosta pulpo calamar carrucho juey cangrejo ostion",
   carne: "carne meat res cerdo pollo pavo cabro conejo chuleta pernil lechon bistec",
@@ -100,7 +102,7 @@ const S_ALLERGEN = {
 };
 
 const S_MEAT_RX = /\b(pollo|chicken|cerdo|pork|res|beef|carne|meat|jamon|ham(?!burg)|tocin|bacon|salchich|sausage|longaniza|chorizo|pavo|turkey|pernil|lechon|chuleta|chicharron|mollej|higado|gandinga|morcilla|cabro|conejo|cordero|lamb|pato|duck|codorni|quail|panceta|guinea|gallina|pescado|fish|bacalao|cod|atun|tuna|sardina|salmon|camaron|shrimp|langost|lobster|pulpo|octopus|calamar|squid|carrucho|conch|juey|crab|ostion|oyster|ceti|mero|chillo|dorado|sierra|rinon|lengua|rabo|patita|cuero|mondongo|jamonilla|corned|carne bif)/;
-const sIsAlcohol = (r) => getAdvisories(r).alerts.some((a) => a.key === "alcoholDrink" || a.key === "alcoholCooked");
+const sIsAlcohol = (r) => getAdvisories(r).alerts.some((a) => ["alcoholDrink", "alcoholCooked", "alcoholRaw"].includes(a.key));
 
 /* Ideas: palabras que no son ingredientes sino lo que la persona quiere. */
 const S_IDEAS = [
@@ -129,7 +131,7 @@ const S_IDEAS = [
     test: (r) => ["bebidas", "jugos", "cocteles"].includes(r.category) && !sIsAlcohol(r) },
   { words: "nino ninos kid kids infantil", label: { es: "Para niños (sin alcohol ni cafeína)", en: "Kid-friendly (no alcohol or caffeine)" },
     // Tampoco los tés que no son para niños (poleo, anamú, anís estrellado, orégano brujo…).
-    test: (r) => !getAdvisories(r).alerts.some((a) => ["alcoholDrink", "alcoholCooked", "caffeine", "rawEgg", "rawFish", "starAnise"].includes(a.key)) &&
+    test: (r) => !getAdvisories(r).alerts.some((a) => ["alcoholDrink", "alcoholCooked", "alcoholRaw", "caffeine", "rawEgg", "rawFish", "starAnise"].includes(a.key)) &&
       !(typeof TEA_INFO !== "undefined" && TEA_INFO[r.id] && (TEA_HIGH.has(r.id) || /niños/.test(TEA_INFO[r.id].es[1]))) }
 ].map((idea) => ({ ...idea, words: idea.words.split(" ").map(sStem) }));
 

@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.14.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 925 en 24 categorías
+> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.15.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 937 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, y más vegetales y viandas, en treinta y seis tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, y bizcochos mojados y de sabores, en treinta y siete tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -121,7 +121,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | huevos | Huevos y Queso | 12 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 51 |
 | pastas | Pastas | 18 |
-| bizcochos | Bizcochos | 26 |
+| bizcochos | Bizcochos | 38 |
 | galletitas | Galletitas | 37 |
 | pasteles_dulces | Pasteles Dulces | 22 |
 | panes | Pan y Panecillos | 30 |
@@ -236,6 +236,9 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   **Vegetales y viandas (`ic-veg-*`, tanda 36):** bastones de ñame con mojo, chips de tres colores, batatas fritas con
   mayo-ajo, frasco de yuca en escabeche, molde gratinado, mofongo de amarillo, tazones de calabaza, repollo, chayote y
   maíz, ramitos de brócoli, espinacas con garbanzos, sartén de champiñones y habichuelas tiernas con almendras.
+  **Bizcochos (`ic-biz-*`, tanda 37):** bundts con su glaseado y adorno (brandy y amaretto con su botellita, pistacho,
+  mantequilla), pedazos de bizcocho mojado con la base húmeda y su cubierta (almendras, almíbar con vainilla, coquito
+  con canela, café con crema y cocoa, dulce de leche, piña colada), bizcocho de limón glaseado y red velvet en capas.
   **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
@@ -344,7 +347,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 925). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 937). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -362,6 +365,9 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   Ley 22 de Vehículos y Tránsito de Puerto Rico: 0.08% (21 años o más) y 0.02% (18 a 20 años, motoras, camiones, guaguas
   escolares, vehículos pesados y de transporte público; menores de 18, nada), cuántas horas tarda en eliminarse esa
   porción (≈ 1 trago por hora) y que no hay una cantidad segura para conducir. Los cócteles "sin alcohol" no la llevan.
+  Los postres cuyo licor va sin cocinar (`RAW_ALCOHOL_IDS`: bizcochos de brandy, de amaretto y de ron) llevan la alerta
+  alta `alcoholRaw` con los gramos y tragos por porción, en vez de "una parte se evapora"; el buscador los cuenta como
+  con alcohol ("sin alcohol", "para niños").
 - **Tés** (`TEA_INFO`, por id, 33 tés): uso tradicional en Puerto Rico (aclarando que es remedio casero y no sustituye al
   médico) y una precaución propia de cada planta (manzanilla y alergia a la familia de la margarita, canela y cumarina,
   anís estrellado japonés, tilo y sedantes, hojas de guayaba con medicinas para la diabetes…). Los de riesgo serio
@@ -401,6 +407,24 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-11 — v3.15.0 · Bizcochos mojados, con licor y de sabores
+- *Pedido:* más bizcochos, por ejemplo con brandy o amaretto, y mojados con sabor a almendra, vainilla y otros.
+- Trigésima séptima tanda en `js/recipes-4.js` (versiones propias), 12 recetas en **bizcochos**:
+  - **Con licor (2):** bizcocho mojado de brandy y bizcocho de almendra con amaretto (con la opción sin licor).
+  - **Mojados (6):** de almendra (leches con extracto), de vainilla con almíbar (sin licor), de coquito sin alcohol, de
+    café, de dulce de leche y de piña colada sin alcohol.
+  - **Sabores (4):** limón con glaseado, red velvet con frosting de queso crema, pistacho y mantequilla (la base).
+- **Nutrición:** nuevos brandy, amaretto (con su alcohol en `NUTRI_ALCOHOL`), pistacho, dulce de leche y coquito sin
+  alcohol. **Alertas:** nueva `alcoholRaw` para el licor sin cocinar (§9), también para el bizcocho de ron que ya
+  existía (su glaseado lleva el ron fuera del fuego).
+- **Buscador:** "licor" incluye ron, brandy, amaretto, pitorro, tequila y vino ("bizcocho con licor", "postre con licor");
+  "sin alcohol" y "para niños" dejan fuera los postres con licor sin cocinar.
+- **Familias:** nueva familia "Mojados y con licor" en bizcochos; el de limón va con los de frutas (§7).
+- **Iconos:** 12 dibujos nuevos (§7).
+- Total: **925 → 937 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador ✔; navegador: los 12 en ES y EN a 375 px sin errores ni
+  desbordes, con la alerta del licor sin cocinar ✔.
 
 ### 2026-10-11 — v3.14.0 · Más vegetales y viandas
 - *Pedido:* más recetas de vegetales y viandas.

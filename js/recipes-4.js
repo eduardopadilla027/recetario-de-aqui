@@ -91,6 +91,9 @@
  * Trigésima sexta tanda: vegetales y viandas (ñame frito, chips de viandas, batatas
  * fritas, yuca en escabeche, malanga gratinada, mofongo de amarillo, calabaza, calabacín,
  * repollo, coliflor, brócoli, espinacas, chayote, maíz, champiñones, habichuelas tiernas).
+ * Trigésima séptima tanda: bizcochos mojados y con licor (brandy, amaretto, almendra,
+ * vainilla, coquito, café, dulce de leche, piña colada) y de sabores (limón, red velvet,
+ * pistacho, mantequilla).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -21322,6 +21325,610 @@ recipes.push(
         "Toast the almonds in a dry skillet 2 minutes and remove.",
         "Melt the butter with the oil, toast the garlic 1 minute, add the beans and sauté 3 minutes.",
         "Season with the salt and lime juice, and serve topped with the almonds."
+      ]
+    }
+  },
+
+  // ── Trigésima séptima tanda (2026-10): bizcochos mojados y de sabores ──
+  {
+    id: "bizcocho-brandy",
+    category: "bizcochos",
+    name: { es: "Bizcocho Mojado de Brandy", en: "Brandy-Soaked Cake" },
+    time: "1 hr 15 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "1 taza de mantequilla blanda",
+        "2 tazas de azúcar",
+        "5 huevos",
+        "3 tazas de harina",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "1 taza de leche",
+        "2 cucharaditas de vainilla",
+        "1 taza de azúcar para el almíbar",
+        "½ taza de agua para el almíbar",
+        "½ taza de brandy para el almíbar",
+        "¼ taza de mantequilla para el almíbar"
+      ],
+      en: [
+        "1 cup softened butter",
+        "2 cups sugar",
+        "5 eggs",
+        "3 cups flour",
+        "2 teaspoons baking powder",
+        "½ teaspoon salt",
+        "1 cup milk",
+        "2 teaspoons vanilla",
+        "1 cup sugar for the syrup",
+        "½ cup water for the syrup",
+        "½ cup brandy for the syrup",
+        "¼ cup butter for the syrup"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 325 °F y engrase y enharine un molde con hueco (bundt) de 10 pulgadas.",
+        "Bata la mantequilla con el azúcar 4 minutos hasta que esté cremosa. Añada los huevos uno a uno. Añada la harina mezclada con el polvo de hornear y la sal, alternando con la leche y la vainilla.",
+        "Hornee 55 a 60 minutos, hasta que un palillo salga limpio. Déjelo en el molde.",
+        "Hierva el agua, el azúcar y la mantequilla 3 minutos, apague y añada el brandy. Pinche el bizcocho caliente por todas partes y báñelo poco a poco con el almíbar. Desmolde al otro día. El brandy va sin cocinar: no es para niños ni para quien vaya a conducir."
+      ],
+      en: [
+        "Heat the oven to 325 °F and grease and flour a 10-inch bundt pan.",
+        "Beat the butter with the sugar 4 minutes until creamy. Add the eggs one at a time. Add the flour mixed with the baking powder and salt, alternating with the milk and vanilla.",
+        "Bake 55 to 60 minutes, until a toothpick comes out clean. Leave it in the pan.",
+        "Boil the water, sugar and butter 3 minutes, turn off and add the brandy. Poke the warm cake all over and slowly spoon the syrup over it. Unmold the next day. The brandy isn't cooked: not for kids or anyone who will drive."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-amaretto",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Almendra con Amaretto", en: "Almond Amaretto Cake" },
+    time: "1 hr 15 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "1 taza de mantequilla blanda",
+        "1¾ tazas de azúcar",
+        "5 huevos",
+        "2½ tazas de harina",
+        "½ taza de almendras molidas",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "1 taza de leche",
+        "1 cucharadita de extracto de almendra",
+        "¾ taza de azúcar para el almíbar",
+        "½ taza de agua para el almíbar",
+        "⅓ taza de amaretto para el almíbar",
+        "½ taza de almendras en lascas tostadas"
+      ],
+      en: [
+        "1 cup softened butter",
+        "1¾ cups sugar",
+        "5 eggs",
+        "2½ cups flour",
+        "½ cup ground almonds",
+        "2 teaspoons baking powder",
+        "½ teaspoon salt",
+        "1 cup milk",
+        "1 teaspoon almond extract",
+        "¾ cup sugar for the syrup",
+        "½ cup water for the syrup",
+        "⅓ cup amaretto for the syrup",
+        "½ cup toasted sliced almonds"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 325 °F y engrase y enharine un molde bundt de 10 pulgadas. Riegue las almendras en lascas en el fondo.",
+        "Bata la mantequilla con el azúcar hasta que esté cremosa y añada los huevos uno a uno. Mezcle la harina, las almendras molidas, el polvo de hornear y la sal, y añádalos alternando con la leche y el extracto.",
+        "Vierta sobre las almendras y hornee 55 a 60 minutos, hasta que un palillo salga limpio.",
+        "Hierva el agua con el azúcar 3 minutos, apague y añada el amaretto. Pinche el bizcocho caliente y báñelo con el almíbar. Desmolde frío: las almendras quedan arriba. Para niños, cambie el amaretto por agua y 1 cucharadita más de extracto de almendra."
+      ],
+      en: [
+        "Heat the oven to 325 °F and grease and flour a 10-inch bundt pan. Scatter the sliced almonds in the bottom.",
+        "Beat the butter with the sugar until creamy and add the eggs one at a time. Mix the flour, ground almonds, baking powder and salt, and add alternating with the milk and extract.",
+        "Pour over the almonds and bake 55 to 60 minutes, until a toothpick comes out clean.",
+        "Boil the water with the sugar 3 minutes, turn off and add the amaretto. Poke the warm cake and spoon the syrup over it. Unmold when cool: the almonds end up on top. For kids, swap the amaretto for water and 1 more teaspoon of almond extract."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-mojado-almendra",
+    category: "bizcochos",
+    name: { es: "Bizcocho Mojado de Almendra", en: "Almond Soaked Cake" },
+    time: "1 hr 10 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "3 tazas de harina",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "1 taza de mantequilla blanda",
+        "2 tazas de azúcar",
+        "4 huevos",
+        "1 taza de leche",
+        "2 cucharaditas de extracto de almendra",
+        "1 lata de 12 onzas de leche evaporada para mojar",
+        "½ taza de leche condensada para mojar",
+        "1 cucharadita de extracto de almendra para mojar",
+        "½ taza de almendras en lascas tostadas"
+      ],
+      en: [
+        "3 cups flour",
+        "2 teaspoons baking powder",
+        "½ teaspoon salt",
+        "1 cup softened butter",
+        "2 cups sugar",
+        "4 eggs",
+        "1 cup milk",
+        "2 teaspoons almond extract",
+        "1 can (12 oz) evaporated milk for soaking",
+        "½ cup sweetened condensed milk for soaking",
+        "1 teaspoon almond extract for soaking",
+        "½ cup toasted sliced almonds"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.",
+        "Bata la mantequilla con el azúcar hasta que esté cremosa y añada los huevos uno a uno. Añada la harina con el polvo de hornear y la sal, alternando con la leche y el extracto.",
+        "Hornee 35 a 40 minutos, hasta que un palillo salga limpio.",
+        "Mezcle la leche evaporada, la condensada y el extracto. Pinche el bizcocho tibio y báñelo poco a poco hasta que lo absorba. Cubra con las almendras y enfríe 3 horas. Guárdelo en la nevera."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 9 × 13-inch pan.",
+        "Beat the butter with the sugar until creamy and add the eggs one at a time. Add the flour with the baking powder and salt, alternating with the milk and extract.",
+        "Bake 35 to 40 minutes, until a toothpick comes out clean.",
+        "Mix the evaporated milk, condensed milk and extract. Poke the warm cake and pour slowly until absorbed. Top with the almonds and chill 3 hours. Keep refrigerated."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-mojado-vainilla",
+    category: "bizcochos",
+    name: { es: "Bizcocho Mojado de Vainilla con Almíbar", en: "Vanilla Syrup-Soaked Cake" },
+    time: "1 hr 10 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "3 tazas de harina",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "1 taza de mantequilla blanda",
+        "2 tazas de azúcar",
+        "4 huevos",
+        "1 taza de leche",
+        "1 cucharada de vainilla",
+        "1 taza de azúcar para el almíbar",
+        "1 taza de agua para el almíbar",
+        "1 raja de canela para el almíbar",
+        "2 cucharaditas de vainilla para el almíbar"
+      ],
+      en: [
+        "3 cups flour",
+        "2 teaspoons baking powder",
+        "½ teaspoon salt",
+        "1 cup softened butter",
+        "2 cups sugar",
+        "4 eggs",
+        "1 cup milk",
+        "1 tablespoon vanilla",
+        "1 cup sugar for the syrup",
+        "1 cup water for the syrup",
+        "1 cinnamon stick for the syrup",
+        "2 teaspoons vanilla for the syrup"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.",
+        "Bata la mantequilla con el azúcar y añada los huevos uno a uno. Añada la harina con el polvo de hornear y la sal, alternando con la leche y la vainilla. Hornee 35 a 40 minutos.",
+        "Hierva el agua con el azúcar y la canela 5 minutos. Apague, saque la canela y añada la vainilla.",
+        "Pinche el bizcocho caliente y báñelo con el almíbar tibio. Es el bizcocho mojado de las fiestas, sin licor: lo pueden comer los niños."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 9 × 13-inch pan.",
+        "Beat the butter with the sugar and add the eggs one at a time. Add the flour with the baking powder and salt, alternating with the milk and vanilla. Bake 35 to 40 minutes.",
+        "Boil the water with the sugar and cinnamon 5 minutes. Turn off, remove the cinnamon and add the vanilla.",
+        "Poke the hot cake and pour the warm syrup over it. The party soaked cake, without liquor: kids can have it."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-mojado-coquito",
+    category: "bizcochos",
+    name: { es: "Bizcocho Mojado de Coquito (Sin Alcohol)", en: "Coquito-Soaked Cake (Alcohol-Free)" },
+    time: "1 hr + 3 hr",
+    servings: 16,
+    ingredients: {
+      es: [
+        "3 tazas de harina",
+        "2 cucharaditas de polvo de hornear",
+        "1 cucharadita de canela",
+        "½ cucharadita de sal",
+        "1 taza de mantequilla blanda",
+        "1¾ tazas de azúcar",
+        "4 huevos",
+        "1 taza de leche de coco",
+        "1 cucharadita de vainilla",
+        "2 tazas de coquito sin alcohol para mojar",
+        "½ taza de coco rallado tostado"
+      ],
+      en: [
+        "3 cups flour",
+        "2 teaspoons baking powder",
+        "1 teaspoon cinnamon",
+        "½ teaspoon salt",
+        "1 cup softened butter",
+        "1¾ cups sugar",
+        "4 eggs",
+        "1 cup coconut milk",
+        "1 teaspoon vanilla",
+        "2 cups alcohol-free coquito for soaking",
+        "½ cup toasted shredded coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.",
+        "Bata la mantequilla con el azúcar y añada los huevos uno a uno. Mezcle la harina, el polvo de hornear, la canela y la sal, y añádalos alternando con la leche de coco y la vainilla. Hornee 35 a 40 minutos.",
+        "Pinche el bizcocho tibio y báñelo poco a poco con el coquito sin alcohol (vea la receta en Bebidas).",
+        "Cubra con el coco tostado y canela, y enfríe 3 horas. Guárdelo en la nevera: sabe a Navidad."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 9 × 13-inch pan.",
+        "Beat the butter with the sugar and add the eggs one at a time. Mix the flour, baking powder, cinnamon and salt, and add alternating with the coconut milk and vanilla. Bake 35 to 40 minutes.",
+        "Poke the warm cake and slowly pour the alcohol-free coquito over it (see the recipe under Drinks).",
+        "Top with the toasted coconut and cinnamon, and chill 3 hours. Keep refrigerated: it tastes like Christmas."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-mojado-cafe",
+    category: "bizcochos",
+    name: { es: "Bizcocho Mojado de Café", en: "Coffee-Soaked Cake" },
+    time: "1 hr + 2 hr",
+    servings: 16,
+    ingredients: {
+      es: [
+        "3 tazas de harina",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "1 taza de mantequilla blanda",
+        "2 tazas de azúcar",
+        "4 huevos",
+        "1 taza de café colao fuerte, frío",
+        "1 cucharadita de vainilla",
+        "1 taza de café colao fuerte para mojar",
+        "½ taza de leche condensada para mojar",
+        "1 taza de crema de leche batida para cubrir",
+        "1 cucharada de cocoa"
+      ],
+      en: [
+        "3 cups flour",
+        "2 teaspoons baking powder",
+        "½ teaspoon salt",
+        "1 cup softened butter",
+        "2 cups sugar",
+        "4 eggs",
+        "1 cup strong brewed coffee, cold",
+        "1 teaspoon vanilla",
+        "1 cup strong brewed coffee for soaking",
+        "½ cup sweetened condensed milk for soaking",
+        "1 cup heavy cream, whipped, for topping",
+        "1 tablespoon cocoa"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.",
+        "Bata la mantequilla con el azúcar y añada los huevos uno a uno. Añada la harina con el polvo de hornear y la sal, alternando con el café frío y la vainilla. Hornee 35 a 40 minutos.",
+        "Mezcle el café para mojar con la leche condensada. Pinche el bizcocho tibio y báñelo poco a poco.",
+        "Enfríe 2 horas, cubra con la crema batida y espolvoree la cocoa. Lleva cafeína. Con café de Yauco o de Jayuya queda mejor."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 9 × 13-inch pan.",
+        "Beat the butter with the sugar and add the eggs one at a time. Add the flour with the baking powder and salt, alternating with the cold coffee and vanilla. Bake 35 to 40 minutes.",
+        "Mix the soaking coffee with the condensed milk. Poke the warm cake and pour slowly over it.",
+        "Chill 2 hours, top with the whipped cream and dust with cocoa. It has caffeine. Best with Yauco or Jayuya coffee."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-mojado-dulce-leche",
+    category: "bizcochos",
+    name: { es: "Bizcocho Mojado de Dulce de Leche", en: "Dulce de Leche Soaked Cake" },
+    time: "1 hr + 3 hr",
+    servings: 16,
+    ingredients: {
+      es: [
+        "3 tazas de harina",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "1 taza de mantequilla blanda",
+        "1¾ tazas de azúcar",
+        "4 huevos",
+        "1 taza de leche",
+        "2 cucharaditas de vainilla",
+        "1 lata de 12 onzas de leche evaporada para mojar",
+        "1 lata de 13 onzas de dulce de leche"
+      ],
+      en: [
+        "3 cups flour",
+        "2 teaspoons baking powder",
+        "½ teaspoon salt",
+        "1 cup softened butter",
+        "1¾ cups sugar",
+        "4 eggs",
+        "1 cup milk",
+        "2 teaspoons vanilla",
+        "1 can (12 oz) evaporated milk for soaking",
+        "1 can (13 oz) dulce de leche"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.",
+        "Bata la mantequilla con el azúcar y añada los huevos uno a uno. Añada la harina con el polvo de hornear y la sal, alternando con la leche y la vainilla. Hornee 35 a 40 minutos.",
+        "Licúe la leche evaporada con la mitad del dulce de leche. Pinche el bizcocho tibio y báñelo con la mezcla.",
+        "Caliente el resto del dulce de leche 20 segundos para que corra y úntelo por encima. Enfríe 3 horas y guárdelo en la nevera."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 9 × 13-inch pan.",
+        "Beat the butter with the sugar and add the eggs one at a time. Add the flour with the baking powder and salt, alternating with the milk and vanilla. Bake 35 to 40 minutes.",
+        "Blend the evaporated milk with half the dulce de leche. Poke the warm cake and pour the mixture over it.",
+        "Warm the remaining dulce de leche 20 seconds so it flows and spread it on top. Chill 3 hours and keep refrigerated."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-mojado-pina-colada",
+    category: "bizcochos",
+    name: { es: "Bizcocho Mojado de Piña Colada (Sin Alcohol)", en: "Piña Colada Soaked Cake (Alcohol-Free)" },
+    time: "1 hr + 3 hr",
+    servings: 16,
+    ingredients: {
+      es: [
+        "3 tazas de harina",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "1 taza de mantequilla blanda",
+        "1¾ tazas de azúcar",
+        "4 huevos",
+        "1 taza de jugo de piña",
+        "1 cucharadita de vainilla",
+        "1 taza de crema de coco para mojar",
+        "½ taza de jugo de piña para mojar",
+        "1 lata de 20 onzas de piña triturada, escurrida",
+        "½ taza de coco rallado tostado"
+      ],
+      en: [
+        "3 cups flour",
+        "2 teaspoons baking powder",
+        "½ teaspoon salt",
+        "1 cup softened butter",
+        "1¾ cups sugar",
+        "4 eggs",
+        "1 cup pineapple juice",
+        "1 teaspoon vanilla",
+        "1 cup cream of coconut for soaking",
+        "½ cup pineapple juice for soaking",
+        "1 can (20 oz) crushed pineapple, drained",
+        "½ cup toasted shredded coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.",
+        "Bata la mantequilla con el azúcar y añada los huevos uno a uno. Añada la harina con el polvo de hornear y la sal, alternando con el jugo de piña y la vainilla. Hornee 35 a 40 minutos.",
+        "Mezcle la crema de coco con el jugo de piña. Pinche el bizcocho tibio y báñelo poco a poco.",
+        "Cubra con la piña triturada y el coco tostado, y enfríe 3 horas. Todo el sabor de la piña colada, sin ron."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 9 × 13-inch pan.",
+        "Beat the butter with the sugar and add the eggs one at a time. Add the flour with the baking powder and salt, alternating with the pineapple juice and vanilla. Bake 35 to 40 minutes.",
+        "Mix the cream of coconut with the pineapple juice. Poke the warm cake and pour slowly over it.",
+        "Top with the crushed pineapple and toasted coconut, and chill 3 hours. All the piña colada flavor, without rum."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-limon",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Limón con Glaseado", en: "Glazed Lime Pound Cake" },
+    time: "1 hr 15 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 taza de mantequilla blanda",
+        "1½ tazas de azúcar",
+        "4 huevos",
+        "2 cucharadas de ralladura de limón",
+        "¼ taza de jugo de limón",
+        "2½ tazas de harina",
+        "1½ cucharaditas de polvo de hornear",
+        "¼ cucharadita de sal",
+        "½ taza de leche",
+        "1 taza de azúcar en polvo para el glaseado",
+        "2 cucharadas de jugo de limón para el glaseado"
+      ],
+      en: [
+        "1 cup softened butter",
+        "1½ cups sugar",
+        "4 eggs",
+        "2 tablespoons lime zest",
+        "¼ cup lime juice",
+        "2½ cups flour",
+        "1½ teaspoons baking powder",
+        "¼ teaspoon salt",
+        "½ cup milk",
+        "1 cup powdered sugar for the glaze",
+        "2 tablespoons lime juice for the glaze"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 325 °F y engrase y enharine un molde de pan de 9 × 5 o uno bundt.",
+        "Frote la ralladura con el azúcar con los dedos (suelta el aceite y el sabor). Bátalo con la mantequilla hasta que esté cremoso y añada los huevos uno a uno.",
+        "Añada la harina con el polvo de hornear y la sal, alternando con la leche y el jugo de limón. Hornee 55 a 65 minutos, hasta que un palillo salga limpio.",
+        "Mezcle el azúcar en polvo con el limón y báñelo sobre el bizcocho frío. Con limón del país queda más perfumado."
+      ],
+      en: [
+        "Heat the oven to 325 °F and grease and flour a 9 × 5 loaf or bundt pan.",
+        "Rub the zest into the sugar with your fingers (it releases the oil and flavor). Beat with the butter until creamy and add the eggs one at a time.",
+        "Add the flour with the baking powder and salt, alternating with the milk and lime juice. Bake 55 to 65 minutes, until a toothpick comes out clean.",
+        "Mix the powdered sugar with the lime juice and drizzle over the cooled cake. Key limes make it more fragrant."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-red-velvet",
+    category: "bizcochos",
+    name: { es: "Bizcocho Red Velvet con Frosting de Queso Crema", en: "Red Velvet Cake with Cream Cheese Frosting" },
+    time: "1 hr 15 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "2½ tazas de harina",
+        "1½ tazas de azúcar",
+        "1 cucharada de cocoa",
+        "1 cucharadita de bicarbonato",
+        "½ cucharadita de sal",
+        "1½ tazas de aceite vegetal",
+        "1 taza de leche con 1 cucharada de vinagre (en vez de suero de leche)",
+        "2 huevos",
+        "2 cucharadas de colorante rojo",
+        "1 cucharadita de vainilla",
+        "8 onzas de queso crema blando",
+        "½ taza de mantequilla blanda para el frosting",
+        "3 tazas de azúcar en polvo"
+      ],
+      en: [
+        "2½ cups flour",
+        "1½ cups sugar",
+        "1 tablespoon cocoa",
+        "1 teaspoon baking soda",
+        "½ teaspoon salt",
+        "1½ cups vegetable oil",
+        "1 cup milk with 1 tablespoon vinegar (instead of buttermilk)",
+        "2 eggs",
+        "2 tablespoons red food coloring",
+        "1 teaspoon vanilla",
+        "8 oz cream cheese, softened",
+        "½ cup softened butter for the frosting",
+        "3 cups powdered sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase y enharine dos moldes redondos de 9 pulgadas.",
+        "Mezcle la harina, el azúcar, la cocoa, el bicarbonato y la sal. Aparte, bata el aceite, la leche con vinagre, los huevos, el colorante y la vainilla. Una las dos mezclas sin batir de más.",
+        "Hornee 25 a 30 minutos y enfríe por completo.",
+        "Bata el queso crema con la mantequilla y el azúcar en polvo hasta que esté cremoso. Rellene y cubra el bizcocho. Guárdelo en la nevera por el queso crema."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease and flour two 9-inch round pans.",
+        "Mix the flour, sugar, cocoa, baking soda and salt. Separately whisk the oil, milk with vinegar, eggs, coloring and vanilla. Combine without overmixing.",
+        "Bake 25 to 30 minutes and cool completely.",
+        "Beat the cream cheese with the butter and powdered sugar until creamy. Fill and frost the cake. Keep refrigerated because of the cream cheese."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-pistacho",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Pistacho", en: "Pistachio Cake" },
+    time: "1 hr 10 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 taza de pistachos sin sal, pelados",
+        "2 tazas de harina",
+        "2 cucharaditas de polvo de hornear",
+        "¼ cucharadita de sal",
+        "1 taza de mantequilla blanda",
+        "1½ tazas de azúcar",
+        "4 huevos",
+        "¾ taza de leche",
+        "1 cucharadita de vainilla",
+        "½ cucharadita de extracto de almendra",
+        "1 taza de azúcar en polvo para el glaseado",
+        "2 cucharadas de leche para el glaseado"
+      ],
+      en: [
+        "1 cup unsalted shelled pistachios",
+        "2 cups flour",
+        "2 teaspoons baking powder",
+        "¼ teaspoon salt",
+        "1 cup softened butter",
+        "1½ cups sugar",
+        "4 eggs",
+        "¾ cup milk",
+        "1 teaspoon vanilla",
+        "½ teaspoon almond extract",
+        "1 cup powdered sugar for the glaze",
+        "2 tablespoons milk for the glaze"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde bundt. Muela ¾ de los pistachos en el procesador hasta que parezcan harina gruesa (sin llegar a pasta) y pique el resto.",
+        "Bata la mantequilla con el azúcar y añada los huevos uno a uno. Mezcle la harina, los pistachos molidos, el polvo de hornear y la sal, y añádalos alternando con la leche, la vainilla y el extracto.",
+        "Hornee 45 a 50 minutos, hasta que un palillo salga limpio. Enfríe y desmolde.",
+        "Mezcle el azúcar en polvo con la leche, báñelo encima y riegue los pistachos picados. Lleva frutos secos."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a bundt pan. Grind ¾ of the pistachios in the processor to a coarse meal (not a paste) and chop the rest.",
+        "Beat the butter with the sugar and add the eggs one at a time. Mix the flour, ground pistachios, baking powder and salt, and add alternating with the milk, vanilla and extract.",
+        "Bake 45 to 50 minutes, until a toothpick comes out clean. Cool and unmold.",
+        "Mix the powdered sugar with the milk, drizzle on top and scatter the chopped pistachios. Contains tree nuts."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-mantequilla",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Mantequilla (Ponqué de Mantequilla)", en: "Butter Cake" },
+    time: "1 hr 10 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 taza de mantequilla blanda",
+        "2 tazas de azúcar",
+        "4 huevos a temperatura ambiente",
+        "3 tazas de harina",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "1 taza de leche a temperatura ambiente",
+        "2 cucharaditas de vainilla",
+        "1 cucharadita de ralladura de limón"
+      ],
+      en: [
+        "1 cup softened butter",
+        "2 cups sugar",
+        "4 eggs at room temperature",
+        "3 cups flour",
+        "2 teaspoons baking powder",
+        "½ teaspoon salt",
+        "1 cup milk at room temperature",
+        "2 teaspoons vanilla",
+        "1 teaspoon lime zest"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase y enharine un molde bundt o dos redondos.",
+        "Bata la mantequilla con el azúcar 5 minutos, hasta que esté pálida y esponjosa: ese aire es el que levanta el bizcocho.",
+        "Añada los huevos uno a uno, batiendo bien. Añada la harina con el polvo de hornear y la sal, alternando con la leche, la vainilla y la ralladura, sin batir de más.",
+        "Hornee 45 a 55 minutos (bundt) o 30 a 35 (redondos), hasta que un palillo salga limpio. Es la base para cualquier relleno, mojado o frosting."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease and flour a bundt pan or two round pans.",
+        "Beat the butter with the sugar 5 minutes, until pale and fluffy: that air is what lifts the cake.",
+        "Add the eggs one at a time, beating well. Add the flour with the baking powder and salt, alternating with the milk, vanilla and zest, without overmixing.",
+        "Bake 45 to 55 minutes (bundt) or 30 to 35 (rounds), until a toothpick comes out clean. The base for any filling, soak or frosting."
       ]
     }
   }
