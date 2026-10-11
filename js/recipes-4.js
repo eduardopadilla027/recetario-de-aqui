@@ -103,6 +103,8 @@
  * Cuadragésima tanda: veganas (picadillo de setas, pastelón, alcapurrias de jaca,
  * empanadillas, asopao, revoltillo de tofu, hamburguesa, ensalada de quinoa, flan,
  * bizcocho de chocolate, mantecado de guineo, coquito, mayo-ajo y "queso" de viandas).
+ * Cuadragésima primera tanda: desayunos y meriendas veganos para el plan vegano (avena de
+ * coco, panqueques de guineo, pudín de chía, batida de mangó y avena, tostones con guacamole).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -23586,6 +23588,223 @@ recipes.push(
         "Blend the hot vegetables with the oil, nutritional yeast, lime juice, garlic, paprika and salt, adding the water gradually, until smooth and stretchy.",
         "Taste and adjust the salt and lime.",
         "Serve warm with nachos, fries, broccoli or macaroni. Orange and creamy like cheese sauce, without dairy."
+      ]
+    }
+  },
+
+  // ── Cuadragésima primera tanda (2026-10): desayunos y meriendas veganos ──
+  {
+    id: "avena-vegana-coco",
+    category: "cereales",
+    name: { es: "Avena Vegana de Coco y Canela", en: "Vegan Coconut Cinnamon Oatmeal" },
+    time: "15 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de avena en hojuelas",
+        "½ taza de leche de coco",
+        "1½ tazas de agua",
+        "1 raja de canela",
+        "1 pizca de sal",
+        "2 cucharadas de azúcar morena",
+        "½ cucharadita de vainilla",
+        "1 guineo en ruedas",
+        "2 cucharadas de coco rallado tostado"
+      ],
+      en: [
+        "1 cup rolled oats",
+        "½ cup coconut milk",
+        "1½ cups water",
+        "1 cinnamon stick",
+        "1 pinch salt",
+        "2 tablespoons brown sugar",
+        "½ teaspoon vanilla",
+        "1 banana, sliced",
+        "2 tablespoons toasted shredded coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la leche de coco y el agua con la canela y la sal.",
+        "Añada la avena y cocine a fuego bajo 5 minutos, moviendo, hasta que espese.",
+        "Saque la canela y añada el azúcar y la vainilla.",
+        "Sirva con el guineo y el coco tostado. Es la avena criolla de siempre, con leche de coco en vez de leche de vaca."
+      ],
+      en: [
+        "Boil the coconut milk and water with the cinnamon and salt.",
+        "Add the oats and cook over low heat 5 minutes, stirring, until thick.",
+        "Remove the cinnamon and stir in the sugar and vanilla.",
+        "Serve with the banana and toasted coconut. Classic creole oatmeal, with coconut milk instead of cow's milk."
+      ]
+    }
+  },
+  {
+    id: "panqueques-veganos-guineo",
+    category: "panes",
+    name: { es: "Panqueques Veganos de Guineo", en: "Vegan Banana Pancakes" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ tazas de harina",
+        "1 cucharada de polvo de hornear",
+        "1 cucharada de azúcar",
+        "½ cucharadita de canela",
+        "¼ cucharadita de sal",
+        "1 guineo bien maduro majado",
+        "1¼ tazas de leche de avena",
+        "2 cucharadas de aceite vegetal",
+        "1 cucharadita de vinagre",
+        "¼ taza de melao para servir"
+      ],
+      en: [
+        "1½ cups flour",
+        "1 tablespoon baking powder",
+        "1 tablespoon sugar",
+        "½ teaspoon cinnamon",
+        "¼ teaspoon salt",
+        "1 very ripe banana, mashed",
+        "1¼ cups oat milk",
+        "2 tablespoons vegetable oil",
+        "1 teaspoon vinegar",
+        "¼ cup cane syrup to serve"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la harina, el polvo de hornear, el azúcar, la canela y la sal.",
+        "Bata el guineo majado con la leche de avena, el aceite y el vinagre. El guineo hace el trabajo del huevo.",
+        "Una las dos mezclas sin batir de más y deje reposar 5 minutos.",
+        "Cocine ¼ taza por panqueque en un sartén engrasado a fuego medio-bajo, 2 a 3 minutos por lado. Sirva con melao (la miel no es vegana)."
+      ],
+      en: [
+        "Mix the flour, baking powder, sugar, cinnamon and salt.",
+        "Whisk the mashed banana with the oat milk, oil and vinegar. The banana does the egg's job.",
+        "Combine without overmixing and rest 5 minutes.",
+        "Cook ¼ cup per pancake in a greased skillet over medium-low, 2 to 3 minutes per side. Serve with cane syrup (honey isn't vegan)."
+      ]
+    }
+  },
+  {
+    id: "pudin-chia-mango",
+    category: "cereales",
+    name: { es: "Pudín de Chía con Coco y Mangó", en: "Coconut Chia Pudding with Mango" },
+    time: "10 min + 4 hr",
+    servings: 2,
+    ingredients: {
+      es: [
+        "¼ taza de semillas de chía",
+        "½ taza de leche de coco",
+        "½ taza de leche de avena",
+        "1 cucharada de azúcar morena",
+        "½ cucharadita de vainilla",
+        "1 mangó maduro en cubitos",
+        "1 cucharada de pulpa de parcha"
+      ],
+      en: [
+        "¼ cup chia seeds",
+        "½ cup coconut milk",
+        "½ cup oat milk",
+        "1 tablespoon brown sugar",
+        "½ teaspoon vanilla",
+        "1 ripe mango, diced",
+        "1 tablespoon passion fruit pulp"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la chía con las leches, el azúcar y la vainilla.",
+        "Espere 5 minutos y vuelva a mezclar para que no se formen grumos.",
+        "Tape y enfríe por lo menos 4 horas (o de un día para otro): la chía absorbe el líquido y espesa como un pudín.",
+        "Sirva con el mangó y la parcha. Se prepara la noche antes y está listo para llevar."
+      ],
+      en: [
+        "Mix the chia with both milks, sugar and vanilla.",
+        "Wait 5 minutes and stir again so it doesn't clump.",
+        "Cover and chill at least 4 hours (or overnight): chia absorbs the liquid and thickens like pudding.",
+        "Serve with the mango and passion fruit. Make it the night before for a grab-and-go breakfast."
+      ]
+    }
+  },
+  {
+    id: "batida-vegana-mango-avena",
+    category: "bebidas",
+    name: { es: "Batida Vegana de Mangó y Avena", en: "Vegan Mango Oat Shake" },
+    time: "5 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1½ tazas de mangó congelado",
+        "1 guineo maduro",
+        "¼ taza de avena en hojuelas",
+        "1½ tazas de leche de avena",
+        "1 cucharada de jugo de limón",
+        "½ taza de hielo"
+      ],
+      en: [
+        "1½ cups frozen mango",
+        "1 ripe banana",
+        "¼ cup rolled oats",
+        "1½ cups oat milk",
+        "1 tablespoon lime juice",
+        "½ cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la avena con la leche de avena 30 segundos para que se ablande.",
+        "Añada el mangó, el guineo, el limón y el hielo, y licúe hasta que esté espesa y lisa.",
+        "Sirva enseguida. Sin azúcar añadida: la endulzan las frutas."
+      ],
+      en: [
+        "Blend the oats with the oat milk 30 seconds to soften.",
+        "Add the mango, banana, lime juice and ice, and blend until thick and smooth.",
+        "Serve right away. No added sugar: the fruit sweetens it."
+      ]
+    }
+  },
+  {
+    id: "tostones-guacamole-recao",
+    category: "entremeses",
+    name: { es: "Tostones con Guacamole de Recao", en: "Tostones with Culantro Guacamole" },
+    time: "30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 plátanos verdes",
+        "Aceite para freír",
+        "½ cucharadita de sal para los tostones",
+        "2 aguacates maduros",
+        "2 cucharadas de jugo de limón",
+        "3 hojas de recao picadas",
+        "¼ taza de cebolla roja picada",
+        "1 tomate picado",
+        "½ cucharadita de sal para el guacamole"
+      ],
+      en: [
+        "3 green plantains",
+        "Oil for frying",
+        "½ teaspoon salt for the tostones",
+        "2 ripe avocados",
+        "2 tablespoons lime juice",
+        "3 culantro leaves, chopped",
+        "¼ cup chopped red onion",
+        "1 tomato, chopped",
+        "½ teaspoon salt for the guacamole"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los plátanos, córtelos en ruedas de 1 pulgada y fríalos a 325 °F 5 minutos. Aplástelos con la tostonera y fríalos otra vez a 375 °F hasta que estén crujientes. Sazone con sal.",
+        "Maje los aguacates con el limón y la sal, y mezcle el recao, la cebolla y el tomate.",
+        "Sirva los tostones con el guacamole encima o al lado.",
+        "Es una merienda vegana con grasa buena del aguacate; para menos aceite, hornee los tostones untados con aceite a 425 °F."
+      ],
+      en: [
+        "Peel the plantains, cut into 1-inch rounds and fry at 325 °F for 5 minutes. Flatten with a tostonera and fry again at 375 °F until crisp. Season with salt.",
+        "Mash the avocados with the lime juice and salt, and stir in the culantro, onion and tomato.",
+        "Serve the tostones topped with or alongside the guacamole.",
+        "A vegan snack with healthy fat from avocado; for less oil, brush the tostones with oil and bake at 425 °F."
       ]
     }
   }

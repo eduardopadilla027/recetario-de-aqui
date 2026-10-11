@@ -157,6 +157,7 @@ const NUTRI_FOODS = [
   F("leche condensada de coco", 320, 2.5, 52, 50, 0, 12, 10, 40, { can: 310, cup: 300 }),
   F("levadura nutricional", 325, 50, 36, 0, 22, 4, 1, 50, { cup: 60 }),
   F("aquafaba", 18, 1, 3, 0, 0, 0, 0, 30, { cup: 240 }),
+  F("chia|semillas de chia", 486, 17, 42, 0, 34, 31, 3.3, 16, { cup: 170 }),
   F("agar agar|agar", 0, 0, 0, 0, 0, 0, 0, 0, { cup: 100 }),
   F("mani|cacahuate", 585, 24, 21, 4.2, 8, 50, 7, 6, { cup: 146 }),
   F("mantequilla de mani", 588, 25, 20, 9, 6, 50, 10, 430, { cup: 258 }),

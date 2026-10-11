@@ -30,7 +30,9 @@ const PLAN_T = {
       sodio: ["Bajo en sodio", "Para cuidar la presión: poco sodio por plato."],
       lowcarb: ["Bajo en carbohidratos", "Proteína y vegetales; pocos almidones y azúcar."],
       azucar: ["Bajo en azúcar", "Poca azúcar por plato y más fibra; para quien cuida el azúcar."],
-      nutritivo: ["Más nutritivo", "Más fibra, proteína y vegetales; menos grasa saturada y sodio."]
+      nutritivo: ["Más nutritivo", "Más fibra, proteína y vegetales; menos grasa saturada y sodio."],
+      vegetariano: ["Vegetariano", "Sin carne, pollo ni pescado; con huevo, queso y mucho grano."],
+      vegano: ["Vegano", "Sólo plantas: sin carne, lácteos, huevo ni miel; proteína de granos y tofu."]
     },
     seasonLabel: "Época",
     seasons: { auto: "Según la fecha de hoy", todo: "Todo el año", navidad: "Navidad", cuaresma: "Cuaresma y Semana Santa", verano: "Verano y playa", gracias: "Acción de Gracias", lluvia: "Días de lluvia" },
@@ -73,7 +75,9 @@ const PLAN_T = {
       sodio: "La recomendación general es menos de 2,300 mg de sodio al día (1,500 mg si su médico se lo indica). Pruebe antes de salar y use adobo sin sal.",
       lowcarb: "Si tiene diabetes o toma medicamentos para el azúcar, hable con su médico antes de bajar mucho los carbohidratos.",
       azucar: "Se busca menos de 25–50 g de azúcar añadida al día. Si tiene diabetes, su médico o educador en diabetes le dirá cuántos carbohidratos le tocan en cada comida.",
-      nutritivo: "Un plato nutritivo tiene la mitad de vegetales, un cuarto de proteína y un cuarto de vianda, arroz o grano."
+      nutritivo: "Un plato nutritivo tiene la mitad de vegetales, un cuarto de proteína y un cuarto de vianda, arroz o grano.",
+      vegetariano: "Combine granos (habichuelas, garbanzos, gandules, lentejas) con arroz o maíz para una proteína completa; el huevo y el queso también suman.",
+      vegano: "Incluya habichuelas, garbanzos, lentejas, tofu o quinoa en cada comida principal. La vitamina B12 sólo viene de alimentos fortificados o suplementos: hable con su médico. Coma el hierro de los granos y la espinaca con vitamina C (limón, china) para aprovecharlo mejor."
     }
   },
   en: {
@@ -87,7 +91,9 @@ const PLAN_T = {
       sodio: ["Low sodium", "For blood pressure: little sodium per dish."],
       lowcarb: ["Low carb", "Protein and vegetables; few starches and sugar."],
       azucar: ["Low sugar", "Little sugar per dish and more fiber; for those watching sugar."],
-      nutritivo: ["Most nutritious", "More fiber, protein and vegetables; less saturated fat and sodium."]
+      nutritivo: ["Most nutritious", "More fiber, protein and vegetables; less saturated fat and sodium."],
+      vegetariano: ["Vegetarian", "No meat, chicken or fish; with eggs, cheese and plenty of beans."],
+      vegano: ["Vegan", "Plants only: no meat, dairy, eggs or honey; protein from beans and tofu."]
     },
     seasonLabel: "Season",
     seasons: { auto: "Based on today's date", todo: "All year", navidad: "Christmas", cuaresma: "Lent and Holy Week", verano: "Summer and beach", gracias: "Thanksgiving", lluvia: "Rainy days" },
@@ -130,7 +136,9 @@ const PLAN_T = {
       sodio: "The general guideline is under 2,300 mg of sodium a day (1,500 mg if your doctor says so). Taste before salting and use salt-free adobo.",
       lowcarb: "If you have diabetes or take blood-sugar medication, talk to your doctor before cutting carbs a lot.",
       azucar: "Aim for under 25–50 g of added sugar a day. If you have diabetes, your doctor or diabetes educator will tell you how many carbs fit each meal.",
-      nutritivo: "A nutritious plate is half vegetables, a quarter protein and a quarter root vegetable, rice or grain."
+      nutritivo: "A nutritious plate is half vegetables, a quarter protein and a quarter root vegetable, rice or grain.",
+      vegetariano: "Pair beans, chickpeas, pigeon peas or lentils with rice or corn for complete protein; eggs and cheese help too.",
+      vegano: "Include beans, chickpeas, lentils, tofu or quinoa at every main meal. Vitamin B12 only comes from fortified foods or supplements: talk to your doctor. Eat iron from beans and spinach with vitamin C (lime, orange) to absorb it better."
     }
   }
 };
@@ -185,7 +193,18 @@ const PLAN_GOALS = {
     typical: 2000, adjust: 0, protPerKg: 1.3, maxPortion: 2,
     ok: { desayuno: (n) => n.kcal >= 150 && n.sat <= 8, main: (n) => n.p >= 18 && n.fib >= 3 && n.sat <= 10 && n.na <= 1200, merienda: (n) => n.fib >= 2 || n.p >= 8 },
     score: (n) => n.fib * 3 + n.p / 3 - n.sat - n.na / 500 - n.s / 4
+  },
+  vegetariano: {
+    typical: 2000, adjust: 0, protPerKg: 1.1, maxPortion: 2, diet: "veg",
+    ok: { desayuno: (n) => n.kcal >= 150, main: (n) => n.kcal >= 250 && n.p >= 10, merienda: (n) => n.kcal <= 400 },
+    score: (n) => (n.p / Math.max(n.kcal, 50)) * 60 + n.fib * 1.5 - n.sat * 0.3
+  },
+  vegano: {
+    typical: 2000, adjust: 0, protPerKg: 1.1, maxPortion: 2, diet: "vegan",
+    ok: { desayuno: (n) => n.kcal >= 120, main: (n) => n.kcal >= 220 && n.p >= 8, merienda: (n) => n.kcal <= 400 },
+    score: (n) => (n.p / Math.max(n.kcal, 50)) * 70 + n.fib * 2 - n.sat * 0.3
   }
+
 };
 
 /* ── Épocas: platos típicos por nombre (y categoría) ── */
@@ -209,6 +228,13 @@ const activeSeason = () => (plan.season === "auto" ? autoSeason() : plan.season)
 // Además de las carnes del buscador (S_MEAT_RX): cortes y nombres que allí no están.
 const PLAN_MEAT_EXTRA = /\b(bistec|churrasco|entrana|picadillo(?! de lentejas)|carne molida|(?<!de )hamburguesas?(?! vegetarian)|pechuga|muslo|alita|pepperoni|salami|pastrami|almeja|mejillon|langostino|anchoa|caldo de pollo|caldo de res|caldo de pescado|gelatina)/;
 const isVegetarian = (r) => { const t = planNorm(r.name.es + " " + r.ingredients.es.join(" ")); return !["carnes", "aves", "pescados"].includes(r.category) && !S_MEAT_RX.test(t) && !PLAN_MEAT_EXTRA.test(t); };
+const isVegan = (r) => isVegetarian(r) && !getAdvisories(r).allergens.some((a) => a.key === "milk" || a.key === "egg") && !getAdvisories(r).alerts.some((a) => a.key === "honey");
+// La dieta del objetivo (vegetariano, vegano) y la preferencia "vegetariano" valen para todo el plan.
+const dietOk = (r) => {
+  const d = PLAN_GOALS[plan.goal].diet;
+  if ((d === "veg" || plan.prefs.includes("veg")) && !isVegetarian(r)) return false;
+  return d !== "vegan" || isVegan(r);
+};
 function badgesOf(n, m = 1) {
   const b = [];
   n = { p: n.p * m, fib: n.fib * m, s: n.s * m, na: n.na * m };
@@ -260,6 +286,7 @@ function planTargets() {
 const EXCLUDED_CATS = new Set(["cocteles", "salsas", "postres", "bizcochos", "galletitas", "pasteles_dulces", "calientes", "jugos", "panes"]);
 function slotOf(r) {
   const nm = planNorm(r.name.es);
+  if (/^panqueques/.test(nm)) return "desayuno";
   if (EXCLUDED_CATS.has(r.category)) return null;
   if (/dulce|mermelada|jalea|almibar|pasta de guayaba|cascos|queso blanco casero|queso de hoja|yogur casero/.test(nm)) return null;
   if (["huevos", "cereales"].includes(r.category) || /desayuno|parfait|bowl de yogur|avena|batida de yogur/.test(nm)) return "desayuno";
@@ -275,7 +302,7 @@ const SIDE_MEAT_RX = /pollo|pernil|carne|salchich|longaniza|camaron|bacalao|atun
 function sideKind(r, n) {
   const nm = planNorm(r.name.es);
   if (r.category === "granos") return /hummus|crujientes/.test(nm) || SIDE_MEAT_RX.test(nm) ? null : "granos";
-  if (r.category === "arroces") return /^(arroz (blanco|integral|con gandules|con maiz|guisado con vegetales|apastelado)|moros)/.test(nm) && !SIDE_MEAT_RX.test(nm) ? "arroz" : null;
+  if (r.category === "arroces") return /^(arroz (blanco|integral|con gandules|con maiz|guisado con vegetales|apastelado|con cilantro|verde|con ajo|amarillo|con calabaza|con champinones)|moros)/.test(nm) && !SIDE_MEAT_RX.test(nm) ? "arroz" : null;
   if (r.category === "ensaladas") return n.p < 12 && !SIDE_MEAT_RX.test(nm) ? "ensalada" : null;
   if (r.category === "vegetales") {
     if (/rellen|pastelon|lasana|parmesana/.test(nm) || SIDE_MEAT_RX.test(nm) || n.p >= 15) return null;
@@ -294,6 +321,8 @@ const SIDE_RULES = {
   sodio: { kinds: [["arroz", "vianda", "ensalada", "vegetal", "granos"]], ok: (n) => n.na <= 400, score: (n) => -n.na / 80 + n.fib },
   lowcarb: { kinds: [["ensalada", "vegetal"]], ok: (n) => n.c <= 15, score: (n) => -n.c + n.fib * 2 },
   azucar: { kinds: [["granos", "ensalada", "vegetal"]], ok: (n) => n.s <= 6, score: (n) => n.fib * 2 - n.s },
+  vegetariano: { kinds: [["arroz", "vianda"], ["granos", "ensalada", "vegetal"]], ok: (n) => n.kcal <= 400, score: (n) => n.p / 2 + n.fib - n.sat / 2 },
+  vegano: { kinds: [["arroz", "vianda"], ["granos"]], ok: (n) => n.kcal <= 400, score: (n) => n.p / 2 + n.fib * 1.5 },
   nutritivo: { kinds: [["granos"], ["ensalada", "vegetal"]], ok: (n) => n.fib >= 2 || n.p >= 5, score: (n) => n.fib * 3 + n.p / 3 - n.na / 500 }
 };
 function planInfo(r) {
@@ -314,7 +343,7 @@ function candidates() {
     if (info.alcohol) continue;
     if (g.noFried && info.frying) continue;
     if (plan.avoid.some((k) => AVOID[k] && AVOID[k](info.allergens, r))) continue;
-    if (plan.prefs.includes("veg") && !isVegetarian(r)) continue;
+    if (!dietOk(r)) continue;
     if (plan.prefs.includes("quick") && !isQuick(r)) continue;
     // Acompañantes (arroz, granos, viandas, vegetales y ensaladas ligeras): no son plato principal.
     const kind = slot === "main" ? sideKind(r, info.n) : null;
@@ -404,7 +433,7 @@ function buildPlan(pools, target) {
 /* ── Vista ── */
 function goalButtonsHTML() {
   const tr = pt();
-  const icons = { rebajar: "🥗", masa: "💪", mantener: "⚖️", sodio: "🧂", lowcarb: "🥩", azucar: "🍬", nutritivo: "🥦" };
+  const icons = { rebajar: "🥗", masa: "💪", mantener: "⚖️", sodio: "🧂", lowcarb: "🥩", azucar: "🍬", nutritivo: "🥦", vegetariano: "🥕", vegano: "🌱" };
   return Object.keys(PLAN_GOALS).map((k) => `
     <button type="button" class="goal-card" role="radio" aria-checked="${plan.goal === k}" data-goal="${k}">
       <span class="goal-icon" aria-hidden="true">${icons[k]}</span>
@@ -527,7 +556,7 @@ function seasonList() {
     if (["salsas"].includes(r.category)) continue;
     const info = planInfo(r);
     if (plan.avoid.some((k) => AVOID[k] && AVOID[k](info.allergens, r))) continue;
-    if (plan.prefs.includes("veg") && !isVegetarian(r)) continue;
+    if (!dietOk(r)) continue;
     if (plan.prefs.includes("quick") && !isQuick(r)) continue;
     out.push({ r, n: info.n, alcohol: info.alcohol, score: g.score(info.n) });
   }

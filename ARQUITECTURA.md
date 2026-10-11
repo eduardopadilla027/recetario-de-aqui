@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.19.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 973 en 24 categorías
+> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.20.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 978 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, y recetas veganas, en cuarenta tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, y desayunos y meriendas veganos, en cuarenta y una tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── substitutes.js    sustitutos para cada alérgeno según el ingrediente (getSubstitutes)
@@ -112,7 +112,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 |---|---|---|
 | calientes | Bebidas Calientes | 39 |
 | frutas | Frutas | 27 |
-| cereales | Cereales | 16 |
+| cereales | Cereales | 18 |
 | granos | Granos y Legumbres | 19 |
 | ensaladas | Ensaladas | 25 |
 | sopas | Sopas | 45 |
@@ -120,18 +120,18 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | aves | Aves | 47 |
 | pescados | Pescado y Mariscos | 57 |
 | huevos | Huevos y Queso | 13 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 53 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 54 |
 | pastas | Pastas | 18 |
 | bizcochos | Bizcochos | 39 |
 | galletitas | Galletitas | 37 |
 | pasteles_dulces | Pasteles Dulces | 22 |
-| panes | Pan y Panecillos | 40 |
+| panes | Pan y Panecillos | 41 |
 | emparedados | Emparedados | 23 |
 | postres | Helados, Budines, Flan y Otros Postres | 105 |
 | arroces | Arroces y Habichuelas | 54 |
 | vegetales | Vegetales y Viandas | 83 |
 | salsas | Salsas y Aderezos | 48 |
-| bebidas | Bebidas | 35 |
+| bebidas | Bebidas | 36 |
 | jugos | Jugos Naturales | 18 |
 | cocteles | Cócteles y Tragos | 47 |
 
@@ -321,7 +321,10 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   `showPlans()`; `showHome()` y `showRecipe()` la ocultan. Desde un plan, una receta se abre con `data-open` y "Atrás"
   vuelve al plan en la misma posición.
 - **Objetivos (`PLAN_GOALS`):** rebajar, ganar masa muscular, mantener, bajo en sodio, bajo en carbohidratos, bajo en
-  azúcar y más nutritivo. Cada uno trae: meta típica de calorías, ajuste sobre el gasto (rebajar −20 %, masa +12 %…),
+  azúcar, más nutritivo, **vegetariano** y **vegano**. Estos dos llevan `diet` ("veg" o "vegan"): `dietOk()` deja en el
+  plan (comidas, acompañantes, época y "Recetas que encajan") sólo las recetas de esa familia (`isVegetarian`; `isVegan`
+  = vegetariana y sin alérgeno de leche ni huevo ni alerta de miel), con criterios de proteína vegetal (plato principal
+  ≥ 10 g en vegetariano, ≥ 8 g en vegano) y acompañantes de arroz o vianda y granos. Cada uno trae: meta típica de calorías, ajuste sobre el gasto (rebajar −20 %, masa +12 %…),
   proteína por kilo (1.0–2.0 g/kg), porción máxima, criterios por comida (desayuno, plato principal, merienda) sobre la
   nutrición estimada por porción, y una puntuación para ordenar. Rebajar excluye frituras.
 - **Mis datos (opcional):** sexo, edad, peso (libras), estatura (pies y pulgadas) y actividad. Calorías con Mifflin-St Jeor
@@ -329,7 +332,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - **Época (`SEASONS`):** Navidad, Cuaresma y Semana Santa, verano y playa, Acción de Gracias y días de lluvia, por nombre y
   categoría; "Según la fecha de hoy" la elige con `autoSeason()`. Las recetas de la época van primero en el plan (sin dejar
   de cumplir el objetivo) y una lista aparte muestra todas las de la época, también postres y bebidas.
-- **Preferencias y exclusiones:** vegetariano (categoría + `S_MEAT_RX` + `PLAN_MEAT_EXTRA`: bistec, pechuga, gelatina…; "hamburguesa" no cuenta si es
+- **Preferencias y exclusiones:** vegetariano (también por el objetivo; categoría + `S_MEAT_RX` + `PLAN_MEAT_EXTRA`: bistec, pechuga, gelatina…; "hamburguesa" no cuenta si es
   vegetariana o es el pan, ni "picadillo" si es de lentejas),
   sólo rápidas (`isQuick`), y evitar gluten, leche, huevo, pescado, mariscos, maní y nueces (de `getAdvisories`) o cerdo.
   Nunca entran tragos con alcohol, salsas ni dulces en los planes.
@@ -361,7 +364,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 973). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 978). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -430,6 +433,19 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-11 — v3.20.0 · Planes vegetariano y vegano
+- *Pedido:* en Planes, un plan de comida "Vegetariano" y otro "Vegano" que busque todas las recetas de esa familia.
+- `js/plans.js`: dos objetivos nuevos (🥕 Vegetariano, 🌱 Vegano) con sus textos y notas en ES y EN (proteína completa
+  combinando granos y arroz o maíz; en vegano, granos o tofu en cada comida, vitamina B12 fortificada o en suplemento y
+  hierro con vitamina C); `isVegan()` y `dietOk()` (§7.2); acompañantes propios en `SIDE_RULES`. También: los
+  panqueques entran al desayuno y los arroces sencillos nuevos (cilantro, verde, ajo, amarillo, calabaza, champiñones)
+  sirven de acompañante en todos los planes.
+- Cuadragésima primera tanda en `js/recipes-4.js`, 5 recetas veganas de desayuno y merienda para que el plan vegano no
+  se repita tanto: avena de coco y canela, panqueques de guineo, pudín de chía con mangó, batida de mangó y avena, y
+  tostones con guacamole de recao. **Nutrición:** nueva chía.
+- *Verificado:* los 9 objetivos × preferencias × exclusiones × 1 y 7 días sin errores; planes de 7 días: vegetariano con
+  32–38 recetas distintas y vegano con 22–26, ninguna fuera de su familia; ES y EN y 375 px sin errores ni desbordes ✔.
 
 ### 2026-10-11 — v3.19.0 · Recetas veganas
 - *Pedido:* más recetas veganas.
