@@ -80,7 +80,7 @@ const NUTRI_FOODS = [
   // Pescados y mariscos
   F("almeja|mejillon", 86, 14.7, 3.6, 0, 0, 1, 0.2, 600, { u: 12, can: 283 }),
   F("hoja de platano", 0, 0, 0, 0, 0, 0, 0, 0),
-  F("pescado|filete|mero|chillo|dorado|mahi mahi|tilapia|pargo|sierra", 96, 20, 0, 0, 0, 1.7, 0.4, 60, { u: 170, sl: 170 }),
+  F("pescado|filete|carne de chapin|chapin|mero|chillo|dorado|mahi mahi|tilapia|pargo|sierra", 96, 20, 0, 0, 0, 1.7, 0.4, 60, { u: 170, sl: 170 }),
   F("bacalao", 290, 63, 0, 0, 0, 2.4, 0.5, 1500, { cup: 100 }),
   F("camaron", 85, 20, 0, 0, 0, 0.5, 0.1, 119, { u: 15, cup: 145 }),
   F("langosta", 112, 20.6, 2.4, 0, 0, 1.5, 0.2, 177, { u: 150 }),

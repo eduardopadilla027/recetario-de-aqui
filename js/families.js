@@ -79,8 +79,11 @@ const RECIPE_FAMILIES = {
   ],
   entremeses: [
     ["empanadillas", { es: "Empanadillas y pastelillos", en: "Turnovers" }, /empanadillas|pastelillos|tarta de hojaldre/],
-    ["alcapurrias", { es: "Alcapurrias, bacalaítos y frituras", en: "Alcapurrias, codfish fritters and fritters" }, null],
+    ["alcapurrias", { es: "Alcapurrias y frituras de plátano y yuca", en: "Alcapurrias and plantain and cassava fritters" }, /alcapurrias|piononos|tostones rellenos|aranitas|empanadas de yuca/],
+    ["bolitas", { es: "Bolitas, buñuelos y rellenos", en: "Fritter balls, buñuelos and stuffed fritters" }, /bolitas|bunuelos|barriguitas|rellenos de|almojabanas/],
+    ["mar", { es: "Bacalaítos y frituras de mar", en: "Codfish fritters and seafood fritters" }, /bacalaitos|calamares|pescado|pulpo/],
     ["croquetas", { es: "Croquetas", en: "Croquettes" }, /croquetas/],
+    ["masa", { es: "Sorullitos, domplines y otras frituras", en: "Sorullitos, dumplings and other fritters" }, null],
     ["otros", { es: "Otros entremeses", en: "Other appetizers" }, /mollejas|queso de freir/]
   ],
   pastas: [
@@ -184,7 +187,7 @@ const FAMILY_MATCH_ORDER = {
   pescados: ["frios", "mariscadas", "bacalao", "camarones", "langosta", "moluscos", "conchas", "pescados"],
   ensaladas: ["granos", "mariscos", "papa", "verdes"],
   sopas: ["asopaos", "frias", "cremas", "sancochos", "granos", "pescado", "carnes", "vegetales"],
-  entremeses: ["empanadillas", "croquetas", "otros", "alcapurrias"],
+  entremeses: ["empanadillas", "croquetas", "otros", "alcapurrias", "bolitas", "mar", "masa"],
   bizcochos: ["cupcakes", "otros", "calabaza", "frutas", "clasicos"],
   galletitas: ["jengibre", "mantequilla", "frutas", "otras"],
   panes: ["salados", "agua", "viandas", "dulces"],

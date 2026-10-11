@@ -13,7 +13,7 @@ const ALLERGENS = [
   ["gluten", /\bharina\b(?!\s+de\s+(maiz|arroz|platano|yuca|coco|pana))|\bpan(es)?\b|pan rallado|\bgalletas?\b|\bpanko\b|\bespaguetis?\b|\bfideos?\b|\bcoditos?\b|\bmacarrones\b|\blasana\b|\bcanelones\b|\bmanicotti\b|\bpasta\b(?!\s+de\s+(tomate|guayaba|ajonjoli|ajonjolí|mani|maní|tamarindo))|hojaldre|\bdiscos?\b|masas? para pie|mezcla (para|de) bizcocho|\bfarina\b|crema de trigo|\bcerveza\b|\bmalta\b|salsa de soya|\bavena\b|\bgranola\b|\bbizcocho\b/],
   ["milk", /\bleches?\b(?!\s+de\s+coco)|(?<!pano de )\bquesos?\b|mantequilla(?!\s+de\s+mani)|\bcrema\b(?!\s+de\s+(coco|arroz|trigo|pana|calabaza))|ricotta|parmesano|nutella|mantecado|\bhelado\b|\byogur/],
   ["egg", /\bhuevos?\b|\byemas?\b|\bclaras?\b|mayonesa|merengue/],
-  ["fish", /\bpescado|bacalao|bacalaito|\batun\b|\bmero\b|\bchillo\b|(?<!ron )\bdorado\b|mahi|tilapia|\bpargo\b|\bsierra\b|salsa inglesa|anchoa|sardina|salmon|\bceti\b|\bfiletes? de (pescado|mero|chillo|dorado|pargo)/],
+  ["fish", /\bpescado|chapin|bacalao|bacalaito|\batun\b|\bmero\b|\bchillo\b|(?<!ron )\bdorado\b|mahi|tilapia|\bpargo\b|\bsierra\b|salsa inglesa|anchoa|sardina|salmon|\bceti\b|\bfiletes? de (pescado|mero|chillo|dorado|pargo)/],
   ["crustacean", /camaron|langost|\bjuey|cangrejo/],
   ["mollusc", /\bpulpo\b|calamar|carrucho|caracol|ostion|\bostras?\b|almeja|mejillon/],
   ["treenut", /\bnuez\b(?!\s+moscada)|\bnueces\b|almendra|pistacho|avellana|nutella|maranon|pecana|mazapan/],
@@ -375,7 +375,7 @@ function getAdvisories(recipe) {
   const ground = hasRaw(/carne molida|picadillo|albondiga/);
   const beef = hasRaw(/\b(res|bistecs?|falda|churrasco|ribeye|picanha|punta trasera|osobuco|jarrete|cordero|rabo|cabro|chivo|cabrito|conejo|ternera|palomilla|boliche|lengua)\b|\bcarne\b(?!\s+(molida|de\s+(juey|cangrejo|cerdo)))/);
   const offal = hasRaw(/\b(higado|mondongo|callos?|lengua|mollejas?|gandinga|cuajo|sangre|tripas?)\b/);
-  const fish = hasRaw(/\bpescado|bacalao|\batun\b|\bmero\b|\bchillo\b|(?<!ron )\bdorado\b|mahi|tilapia|\bpargo\b|\bsierra\b|salmon|sardina/);
+  const fish = hasRaw(/\bpescado|chapin|bacalao|\batun\b|\bmero\b|\bchillo\b|(?<!ron )\bdorado\b|mahi|tilapia|\bpargo\b|\bsierra\b|salmon|sardina/);
   const shellfish = hasRaw(ALLERGENS[4][1]) || hasRaw(ALLERGENS[5][1]);
   const rawProtein = poultry || pork || beef || ground || offal || fish || shellfish;
 

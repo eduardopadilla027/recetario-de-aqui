@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.12.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 897 en 24 categorías
+> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.13.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 909 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, y tés tradicionales, en treinta y cuatro tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, y más entremeses y frituras, en treinta y cinco tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
@@ -119,7 +119,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | aves | Aves | 47 |
 | pescados | Pescado y Mariscos | 57 |
 | huevos | Huevos y Queso | 12 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 39 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 51 |
 | pastas | Pastas | 18 |
 | bizcochos | Bizcochos | 26 |
 | galletitas | Galletitas | 37 |
@@ -147,7 +147,9 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   muestran (clave, nombre ES/EN, expresión sobre el nombre en español sin acentos; la que no tiene expresión recoge el
   resto); `FAMILY_MATCH_ORDER` dice en qué orden se prueban cuando no es el mismo ("costillas de res" antes que el cerdo,
   "pechuga de pavo" antes que las pechugas). Favoritas y rápidas también siguen este orden; al buscar, por parecido.
-  Una receta nueva se clasifica sola por su nombre: revise que caiga en la familia correcta.
+  Una receta nueva se clasifica sola por su nombre: revise que caiga en la familia correcta. Entremeses: empanadillas y
+  pastelillos; alcapurrias y frituras de plátano y yuca; bolitas, buñuelos y rellenos; bacalaítos y frituras de mar;
+  croquetas; sorullitos, domplines y otras frituras; otros.
 
 - **Rutas por hash:** `#/` inicio · anclas `#categorias`, `#rapidas`, `#recetas` · detalle `#/receta/<id>`
   (URL propia: se comparte y "Atrás" vuelve a la misma posición).
@@ -225,6 +227,11 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   ribs con hueso, osobuco con tuétano, brisket en lascas, medallones de solomillo, cerdo desmenuzado, panceta con
   cuero, pierna y chuletitas de cordero, pato, codornices, gallinitas, pollo en mariposa en la parrilla, pechuga de pavo,
   muslo de pavo guisado e higaditos con cebolla.
+  **Entremeses (`ic-ent-*`):** todos con su forma (antes casi todos 🥟): empanadillas en media luna con el borde de
+  tenedor y una mordida que enseña el relleno, con su seña al lado (camarón, muela de juey, langosta, tentáculo, carrucho,
+  espinaca, pizza, bacalao, pescado); pastelillos más pálidos y con burbujas; alcapurrias en torpedo con el relleno a la
+  vista; croquetas empanadas con el centro de su color; rellenos ovalados; bolitas, buñuelos y almojábanas; sorullitos,
+  piononos, arañitas, tostones rellenos, domplines, yaniqueques, taquitos y deditos de queso.
   **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
@@ -333,7 +340,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 897). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 909). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -390,6 +397,20 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-11 — v3.13.0 · Más entremeses y frituras
+- *Pedido:* más recetas de entremeses y frituras.
+- Trigésima quinta tanda en `js/recipes-4.js` (versiones propias), 12 recetas: alcapurrias de yuca con carne y de pulpo,
+  empanadillas de bacalao y de chapín (con la piel del chapín, que tiene toxina, bien descartada), croquetas de pollo,
+  rellenos de yuca con queso, taquitos de pollo, deditos de queso, bolitas de amarillo con queso, bolitas de mofongo con
+  chicharrón, frituras de malanga y queso, y buñuelos de ñame.
+- **Nutrición:** "carne de chapín" cuenta como pescado. **Manejo seguro:** el chapín, como pescado.
+- **Buscador:** "para picar", "picadera", "picoteo", "botana" y "snack" llevan a los entremeses.
+- **Familias:** los entremeses pasan de 4 a 7 familias (§7).
+- **Iconos:** 49 dibujos para todos los entremeses (§7); bacalaítos y chicharrones de pescado ya tenían el suyo.
+- Total: **897 → 909 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador ✔; navegador: las 12 en ES y EN a 375 px sin errores ni
+  desbordes, los 51 entremeses con dibujo ✔.
 
 ### 2026-10-10 — v3.12.0 · Recetas en orden por familia
 - *Pedido:* evaluar todas las categorías y poner las recetas en orden por familia.

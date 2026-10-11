@@ -85,6 +85,9 @@
  * Trigésima cuarta tanda: tés tradicionales que faltaban (maguey, anamú, poleo sólo
  * para adultos, hojas de aguacate y de mangó, llantén, flor de saúco, toronjil,
  * mejorana y cundeamor), cada uno con su precaución.
+ * Trigésima quinta tanda: entremeses y frituras (alcapurrias de yuca y de pulpo,
+ * empanadillas de bacalao y de chapín, croquetas de pollo, rellenos de yuca, taquitos,
+ * deditos de queso, bolitas de amarillo, de mofongo y de malanga, buñuelos de ñame).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -20116,6 +20119,526 @@ recipes.push(
         "Boil the water, add the sprig and simmer 5 minutes.",
         "Turn off, steep 5 minutes and strain.",
         "It's very bitter; don't sweeten it if you take it for blood sugar. The red seeds and ripe fruit aren't used. Read the caution before drinking it."
+      ]
+    }
+  },
+
+  // ── Trigésima quinta tanda (2026-10): más entremeses y frituras ──
+  {
+    id: "alcapurrias-yuca",
+    category: "entremeses",
+    name: { es: "Alcapurrias de Yuca con Carne", en: "Cassava Alcapurrias with Beef" },
+    time: "1 hr 30 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 libras de yuca pelada, rallada fina y exprimida",
+        "2 cucharadas de aceite de achiote",
+        "1 cucharadita de sal",
+        "1 libra de carne molida de res",
+        "¼ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "8 aceitunas rellenas, picadas",
+        "½ cucharadita de sal para el relleno",
+        "Aceite para freír"
+      ],
+      en: [
+        "2 lb cassava (yuca), peeled, finely grated and squeezed dry",
+        "2 tablespoons annatto oil",
+        "1 teaspoon salt",
+        "1 lb ground beef",
+        "¼ cup sofrito",
+        "¼ cup tomato sauce",
+        "8 stuffed olives, chopped",
+        "½ teaspoon salt for the filling",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Para el relleno: dore la carne con el sofrito 8 minutos, añada la salsa de tomate, las aceitunas y la sal, y cocine hasta que se seque. Enfríe.",
+        "Exprima la yuca rallada en un paño hasta sacarle casi todo el líquido. Mézclela con el aceite de achiote y la sal: queda una masa que se puede moldear.",
+        "Sobre un pedazo de papel encerado o una hoja de plátano untada de achiote, extienda 3 cucharadas de masa, ponga 1 cucharada de relleno en el centro y cierre en forma de torpedo.",
+        "Fríalas a 350 °F, 4 a 5 minutos, volteándolas, hasta que estén doradas por fuera. La de yuca queda más crujiente y elástica que la de guineo y yautía."
+      ],
+      en: [
+        "For the filling: brown the beef with the sofrito 8 minutes, add the tomato sauce, olives and salt, and cook until dry. Cool.",
+        "Squeeze the grated cassava in a towel until almost all the liquid is out. Mix with the annatto oil and salt: it forms a moldable dough.",
+        "On a piece of wax paper or a banana leaf brushed with annatto oil, spread 3 tablespoons of dough, put 1 tablespoon of filling in the center and close into a torpedo shape.",
+        "Fry at 350 °F for 4 to 5 minutes, turning, until golden outside. Cassava alcapurrias are crispier and chewier than the green banana–taro kind."
+      ]
+    }
+  },
+  {
+    id: "alcapurrias-pulpo",
+    category: "entremeses",
+    name: { es: "Alcapurrias de Pulpo", en: "Octopus Alcapurrias" },
+    time: "1 hr 30 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 libra de yautía blanca pelada y rallada fina",
+        "1 libra de guineos verdes pelados y rallados finos",
+        "2 cucharadas de aceite de achiote",
+        "1 cucharadita de sal",
+        "1 libra de pulpo cocido y picado fino",
+        "¼ taza de sofrito",
+        "2 cucharadas de salsa de tomate",
+        "1 cucharada de aceite de oliva",
+        "Aceite para freír"
+      ],
+      en: [
+        "1 lb white taro (yautía), peeled and finely grated",
+        "1 lb green bananas, peeled and finely grated",
+        "2 tablespoons annatto oil",
+        "1 teaspoon salt",
+        "1 lb cooked octopus, finely chopped",
+        "¼ cup sofrito",
+        "2 tablespoons tomato sauce",
+        "1 tablespoon olive oil",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite de oliva 2 minutos, añada el pulpo y la salsa de tomate, y cocine 5 minutos hasta que se seque. Enfríe.",
+        "Mezcle la yautía y el guineo rallados con el aceite de achiote y la sal. Enfríe la masa 30 minutos en la nevera para que sea más fácil de manejar.",
+        "Sobre papel encerado o una hoja de plátano untada de achiote, extienda 3 cucharadas de masa, ponga el relleno en el centro y cierre en forma de torpedo.",
+        "Fríalas a 350 °F, 5 a 6 minutos, hasta que estén doradas. Son las de los kioscos de Luquillo y Piñones."
+      ],
+      en: [
+        "Sauté the sofrito in the olive oil 2 minutes, add the octopus and tomato sauce, and cook 5 minutes until dry. Cool.",
+        "Mix the grated taro and green banana with the annatto oil and salt. Chill the dough 30 minutes so it's easier to handle.",
+        "On wax paper or a banana leaf brushed with annatto oil, spread 3 tablespoons of dough, put filling in the center and close into a torpedo shape.",
+        "Fry at 350 °F for 5 to 6 minutes, until golden. These are the ones from the Luquillo and Piñones kiosks."
+      ]
+    }
+  },
+  {
+    id: "empanadillas-bacalao",
+    category: "entremeses",
+    name: { es: "Empanadillas de Bacalao", en: "Salt Cod Turnovers" },
+    time: "1 hr",
+    servings: 12,
+    ingredients: {
+      es: [
+        "½ libra de bacalao sin espinas, desalado",
+        "2 cucharadas de aceite de oliva",
+        "¼ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 papa pequeña hervida en cubitos",
+        "8 aceitunas rellenas, picadas",
+        "12 discos para empanadillas",
+        "Aceite para freír"
+      ],
+      en: [
+        "½ lb boneless salt cod, desalted",
+        "2 tablespoons olive oil",
+        "¼ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 small potato, boiled and diced",
+        "8 stuffed olives, chopped",
+        "12 turnover dough discs",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Desale el bacalao la noche antes, cambiando el agua 3 veces. Hiérvalo 5 minutos y desmenúcelo.",
+        "Sofría el sofrito en el aceite 2 minutos, añada el bacalao, la salsa de tomate, la papa y las aceitunas, y cocine 5 minutos hasta que se seque. Enfríe por completo.",
+        "Ponga 2 cucharadas del relleno en cada disco, doble, moje el borde y selle con un tenedor.",
+        "Fríalas a 350 °F, 2 a 3 minutos por lado, hasta que estén doradas y con burbujitas. Son de Cuaresma y de Semana Santa."
+      ],
+      en: [
+        "Desalt the cod the night before, changing the water 3 times. Boil it 5 minutes and flake it.",
+        "Sauté the sofrito in the oil 2 minutes, add the cod, tomato sauce, potato and olives, and cook 5 minutes until dry. Cool completely.",
+        "Place 2 tablespoons of filling on each disc, fold, wet the edge and seal with a fork.",
+        "Fry at 350 °F for 2 to 3 minutes per side, until golden and blistered. A Lent and Holy Week favorite."
+      ]
+    }
+  },
+  {
+    id: "empanadillas-chapin",
+    category: "entremeses",
+    name: { es: "Empanadillas de Chapín (Pescado)", en: "Trunkfish (Chapín) Turnovers" },
+    time: "1 hr",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 libra de carne de chapín (o filete de dorado), limpia",
+        "2 cucharadas de aceite de achiote",
+        "¼ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 cucharada de alcaparras",
+        "½ cucharadita de sal",
+        "12 discos para empanadillas",
+        "Aceite para freír"
+      ],
+      en: [
+        "1 lb trunkfish (chapín) meat, or mahi-mahi fillet, cleaned",
+        "2 tablespoons annatto oil",
+        "¼ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 tablespoon capers",
+        "½ teaspoon salt",
+        "12 turnover dough discs",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Compre el chapín ya limpio en la pescadería: su piel tiene una toxina y se bota completa. Hierva la carne 5 minutos y desmenúcela.",
+        "Sofría el sofrito en el aceite de achiote 2 minutos, añada el pescado, la salsa de tomate, las alcaparras y la sal, y cocine hasta que se seque. Enfríe.",
+        "Rellene los discos con 2 cucharadas, doble, moje el borde y selle con un tenedor.",
+        "Fríalas a 350 °F hasta que estén doradas, 2 a 3 minutos por lado. Son las famosas de los kioscos del oeste y de Luquillo."
+      ],
+      en: [
+        "Buy the trunkfish already cleaned at the fish market: its skin carries a toxin and is discarded entirely. Boil the meat 5 minutes and flake it.",
+        "Sauté the sofrito in the annatto oil 2 minutes, add the fish, tomato sauce, capers and salt, and cook until dry. Cool.",
+        "Fill the discs with 2 tablespoons, fold, wet the edge and seal with a fork.",
+        "Fry at 350 °F until golden, 2 to 3 minutes per side. The famous ones from the west coast and Luquillo kiosks."
+      ]
+    }
+  },
+  {
+    id: "croquetas-pollo",
+    category: "entremeses",
+    name: { es: "Croquetas de Pollo", en: "Chicken Croquettes" },
+    time: "1 hr + 2 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de pollo cocido y picado muy fino",
+        "3 cucharadas de mantequilla",
+        "¼ taza de cebolla picada fina",
+        "½ taza de harina",
+        "1½ tazas de leche",
+        "½ cucharadita de sal",
+        "¼ cucharadita de nuez moscada",
+        "2 huevos batidos",
+        "1½ tazas de pan rallado",
+        "Aceite para freír"
+      ],
+      en: [
+        "2 cups cooked chicken, very finely chopped",
+        "3 tablespoons butter",
+        "¼ cup finely chopped onion",
+        "½ cup flour",
+        "1½ cups milk",
+        "½ teaspoon salt",
+        "¼ teaspoon nutmeg",
+        "2 eggs, beaten",
+        "1½ cups breadcrumbs",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría la cebolla en la mantequilla 3 minutos, añada la harina y mueva 2 minutos. Añada la leche poco a poco, batiendo, y cocine hasta que la masa se despegue de la olla.",
+        "Añada el pollo, la sal y la nuez moscada. Extienda la masa en un plato, tape con plástico pegado y enfríe 2 horas (o de un día para otro): fría se moldea bien.",
+        "Forme croquetas de 2 pulgadas, páselas por huevo y luego por pan rallado (dos veces si quiere la costra más gruesa).",
+        "Fríalas a 350 °F, 2 a 3 minutos, hasta que estén doradas. Si el aceite está frío, se abren."
+      ],
+      en: [
+        "Sauté the onion in the butter 3 minutes, add the flour and stir 2 minutes. Add the milk gradually, whisking, and cook until the dough pulls away from the pot.",
+        "Add the chicken, salt and nutmeg. Spread the dough on a plate, press plastic wrap on top and chill 2 hours (or overnight): cold, it shapes easily.",
+        "Shape 2-inch croquettes, dip in egg, then breadcrumbs (twice for a thicker crust).",
+        "Fry at 350 °F for 2 to 3 minutes, until golden. If the oil isn't hot enough, they split."
+      ]
+    }
+  },
+  {
+    id: "rellenos-yuca",
+    category: "entremeses",
+    name: { es: "Rellenos de Yuca con Queso", en: "Cassava Fritters Stuffed with Cheese" },
+    time: "1 hr",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 libras de yuca pelada en trozos",
+        "1 huevo",
+        "2 cucharadas de mantequilla",
+        "1 cucharadita de sal",
+        "6 onzas de queso blanco del país en cubitos",
+        "¼ taza de maicena para cubrir",
+        "Aceite para freír"
+      ],
+      en: [
+        "2 lb cassava (yuca), peeled, in chunks",
+        "1 egg",
+        "2 tablespoons butter",
+        "1 teaspoon salt",
+        "6 oz Puerto Rican white cheese, in small cubes",
+        "¼ cup cornstarch for coating",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la yuca en agua con sal 25 minutos, hasta que se abra. Sáquele la vena del centro y májela caliente con la mantequilla y la sal.",
+        "Cuando esté tibia, añada el huevo y mezcle hasta que quede una masa lisa.",
+        "Tome 3 cucharadas de masa, aplánela en la mano, ponga un cubito de queso en el centro y cierre en forma de bolita alargada. Pásela por maicena.",
+        "Fríalos a 350 °F, 3 a 4 minutos, hasta que estén dorados. Por dentro, el queso queda derretido: cuidado al morder."
+      ],
+      en: [
+        "Boil the cassava in salted water 25 minutes, until it splits. Remove the center fiber and mash hot with the butter and salt.",
+        "When warm, add the egg and mix to a smooth dough.",
+        "Take 3 tablespoons of dough, flatten it in your hand, put a cheese cube in the center and close into an oval. Coat with cornstarch.",
+        "Fry at 350 °F for 3 to 4 minutes, until golden. The cheese melts inside: careful with the first bite."
+      ]
+    }
+  },
+  {
+    id: "taquitos-pollo",
+    category: "entremeses",
+    name: { es: "Taquitos de Pollo Fritos", en: "Fried Chicken Taquitos" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de pollo cocido y desmenuzado",
+        "¼ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "½ cucharadita de comino",
+        "½ cucharadita de sal",
+        "12 tortillas de maíz",
+        "Aceite para freír",
+        "½ taza de mayonesa con ketchup para mojar (mayo-ketchup)"
+      ],
+      en: [
+        "2 cups cooked, shredded chicken",
+        "¼ cup sofrito",
+        "¼ cup tomato sauce",
+        "½ teaspoon cumin",
+        "½ teaspoon salt",
+        "12 corn tortillas",
+        "Oil for frying",
+        "½ cup mayonnaise mixed with ketchup for dipping (mayo-ketchup)"
+      ]
+    },
+    steps: {
+      es: [
+        "Cocine el pollo con el sofrito, la salsa de tomate, el comino y la sal 5 minutos, hasta que se seque.",
+        "Caliente las tortillas 20 segundos en el microondas, tapadas con un paño húmedo, para que no se rompan al enrollarlas.",
+        "Ponga 2 cucharadas de pollo en cada tortilla, enróllela bien apretada y aguántela con un palillo.",
+        "Fríalos a 350 °F, 2 a 3 minutos, volteándolos, hasta que estén crujientes. Quite los palillos y sirva con el mayo-ketchup."
+      ],
+      en: [
+        "Cook the chicken with the sofrito, tomato sauce, cumin and salt 5 minutes, until dry.",
+        "Warm the tortillas 20 seconds in the microwave under a damp towel so they don't crack when rolled.",
+        "Put 2 tablespoons of chicken on each tortilla, roll tightly and secure with a toothpick.",
+        "Fry at 350 °F for 2 to 3 minutes, turning, until crisp. Remove the toothpicks and serve with the mayo-ketchup."
+      ]
+    }
+  },
+  {
+    id: "deditos-queso",
+    category: "entremeses",
+    name: { es: "Deditos de Queso", en: "Cheese Fingers" },
+    time: "45 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 tazas de harina",
+        "1 cucharadita de polvo de hornear",
+        "½ cucharadita de sal",
+        "1 cucharada de azúcar",
+        "4 cucharadas de mantequilla fría",
+        "1 huevo",
+        "⅓ taza de agua fría",
+        "12 onzas de queso blanco de freír en bastones de ½ pulgada",
+        "Aceite para freír"
+      ],
+      en: [
+        "2 cups flour",
+        "1 teaspoon baking powder",
+        "½ teaspoon salt",
+        "1 tablespoon sugar",
+        "4 tablespoons cold butter",
+        "1 egg",
+        "⅓ cup cold water",
+        "12 oz frying cheese, cut into ½-inch sticks",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la harina, el polvo de hornear, la sal y el azúcar. Añada la mantequilla y frote con los dedos hasta que parezca arena. Añada el huevo y el agua, y amase hasta que quede una masa lisa. Repose 15 minutos.",
+        "Extienda la masa bien fina y córtela en tiras de ¾ de pulgada.",
+        "Enrolle cada tira en espiral alrededor de un bastón de queso, cubriéndolo todo y apretando las puntas para que no se salga el queso.",
+        "Fríalos a 350 °F, 2 a 3 minutos, hasta que estén dorados. Sirva calientes, solos o con salsa de guayaba."
+      ],
+      en: [
+        "Mix the flour, baking powder, salt and sugar. Add the butter and rub with your fingertips until sandy. Add the egg and water and knead to a smooth dough. Rest 15 minutes.",
+        "Roll the dough very thin and cut into ¾-inch strips.",
+        "Wrap each strip in a spiral around a cheese stick, covering it completely and pinching the ends so the cheese doesn't leak.",
+        "Fry at 350 °F for 2 to 3 minutes, until golden. Serve hot, plain or with guava sauce."
+      ]
+    }
+  },
+  {
+    id: "bolitas-amarillo-queso",
+    category: "entremeses",
+    name: { es: "Bolitas de Amarillo Rellenas de Queso", en: "Sweet Plantain Balls Stuffed with Cheese" },
+    time: "45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 plátanos maduros (amarillos)",
+        "2 cucharadas de harina",
+        "¼ cucharadita de sal",
+        "1 pizca de canela",
+        "4 onzas de queso mozzarella en 16 cubitos",
+        "1 huevo batido",
+        "¾ taza de pan rallado",
+        "Aceite para freír"
+      ],
+      en: [
+        "3 ripe (yellow) plantains",
+        "2 tablespoons flour",
+        "¼ teaspoon salt",
+        "1 pinch cinnamon",
+        "4 oz mozzarella cheese, in 16 cubes",
+        "1 egg, beaten",
+        "¾ cup breadcrumbs",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los amarillos con cáscara, cortados en 3, unos 15 minutos, hasta que estén blandos. Pélelos y májelos con la harina, la sal y la canela.",
+        "Con las manos húmedas, tome 2 cucharadas de masa, ponga un cubito de queso en el centro y forme una bolita bien cerrada.",
+        "Pásela por el huevo y luego por el pan rallado.",
+        "Fríalas a 350 °F, 2 minutos, hasta que estén doradas. Dulces por fuera y con el queso derretido por dentro."
+      ],
+      en: [
+        "Boil the plantains in their skins, cut in thirds, about 15 minutes, until soft. Peel and mash with the flour, salt and cinnamon.",
+        "With wet hands, take 2 tablespoons of dough, put a cheese cube in the center and shape a tightly sealed ball.",
+        "Dip in the egg, then in the breadcrumbs.",
+        "Fry at 350 °F for 2 minutes, until golden. Sweet outside, with melted cheese inside."
+      ]
+    }
+  },
+  {
+    id: "bolitas-mofongo",
+    category: "entremeses",
+    name: { es: "Bolitas de Mofongo Rellenas de Chicharrón", en: "Mofongo Balls Stuffed with Pork Crackling" },
+    time: "45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "4 plátanos verdes",
+        "Aceite para freír",
+        "4 dientes de ajo machacados",
+        "2 cucharadas de aceite de oliva",
+        "½ cucharadita de sal",
+        "1 taza de chicharrón triturado",
+        "½ taza de mayonesa con ajo para mojar (mayo-ajo)"
+      ],
+      en: [
+        "4 green plantains",
+        "Oil for frying",
+        "4 garlic cloves, crushed",
+        "2 tablespoons olive oil",
+        "½ teaspoon salt",
+        "1 cup crushed pork cracklings",
+        "½ cup mayonnaise with garlic for dipping (garlic mayo)"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los plátanos, córtelos en ruedas de 1 pulgada y fríalos a 325 °F unos 8 minutos, hasta que estén blandos sin dorarse.",
+        "Májelos calientes en el pilón con el ajo, el aceite de oliva, la sal y la mitad del chicharrón.",
+        "Con las manos húmedas, forme bolitas de 1½ pulgadas, hundiendo un poco más de chicharrón en el centro.",
+        "Suba el aceite a 375 °F y fríalas 1 minuto para que queden crujientes por fuera. Sirva con el mayo-ajo, en palillos."
+      ],
+      en: [
+        "Peel the plantains, cut into 1-inch rounds and fry at 325 °F about 8 minutes, until soft but not browned.",
+        "Mash them hot in the pilón with the garlic, olive oil, salt and half the cracklings.",
+        "With wet hands, shape 1½-inch balls, pressing a little more crackling into the center.",
+        "Raise the oil to 375 °F and fry them 1 minute to crisp the outside. Serve on toothpicks with the garlic mayo."
+      ]
+    }
+  },
+  {
+    id: "bolitas-malanga",
+    category: "entremeses",
+    name: { es: "Frituras (Bolitas) de Malanga y Queso", en: "Malanga and Cheese Fritters" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de malanga pelada y rallada fina",
+        "1 huevo",
+        "½ taza de queso parmesano rallado",
+        "1 diente de ajo machacado",
+        "1 cucharada de recao picado",
+        "½ cucharadita de sal",
+        "Aceite para freír"
+      ],
+      en: [
+        "1 lb malanga, peeled and finely grated",
+        "1 egg",
+        "½ cup grated Parmesan cheese",
+        "1 garlic clove, crushed",
+        "1 tablespoon chopped culantro",
+        "½ teaspoon salt",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la malanga rallada con el huevo, el queso, el ajo, el recao y la sal hasta que quede una masa pegajosa.",
+        "Caliente el aceite a 350 °F. Con dos cucharitas, eche bolitas de masa al aceite, sin llenar el caldero.",
+        "Fríalas 3 a 4 minutos, volteándolas, hasta que estén doradas y esponjosas.",
+        "Escúrralas en papel toalla y sirva calientes, con pique o mayo-ajo. Use guantes al pelar la malanga: a algunas personas les pica la piel."
+      ],
+      en: [
+        "Mix the grated malanga with the egg, cheese, garlic, culantro and salt into a sticky batter.",
+        "Heat the oil to 350 °F. With two teaspoons, drop small balls of batter into the oil, without crowding.",
+        "Fry 3 to 4 minutes, turning, until golden and puffy.",
+        "Drain on paper towels and serve hot, with hot sauce or garlic mayo. Wear gloves when peeling malanga: it makes some people's skin itch."
+      ]
+    }
+  },
+  {
+    id: "bunuelos-name",
+    category: "entremeses",
+    name: { es: "Buñuelos de Ñame", en: "Yam (Ñame) Fritters" },
+    time: "50 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1½ libras de ñame pelado en trozos",
+        "2 huevos",
+        "2 cucharadas de mantequilla",
+        "2 cucharadas de harina",
+        "½ cucharadita de sal",
+        "¼ cucharadita de anís en grano machacado",
+        "Aceite para freír"
+      ],
+      en: [
+        "1½ lb yam (ñame), peeled, in chunks",
+        "2 eggs",
+        "2 tablespoons butter",
+        "2 tablespoons flour",
+        "½ teaspoon salt",
+        "¼ teaspoon crushed aniseed",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el ñame en agua con sal 25 minutos, hasta que esté blando. Escúrralo y májelo caliente con la mantequilla hasta que no queden grumos.",
+        "Cuando esté tibio, añada los huevos, la harina, la sal y el anís, y bata hasta que quede una masa suave.",
+        "Con dos cucharas, eche porciones de masa en aceite a 350 °F y fríalas 3 a 4 minutos, hasta que estén doradas.",
+        "Sirva calientes, solos con sal o, como en Semana Santa, bañados en almíbar de canela."
+      ],
+      en: [
+        "Boil the yam in salted water 25 minutes, until tender. Drain and mash hot with the butter until smooth.",
+        "When warm, add the eggs, flour, salt and aniseed, and beat into a soft dough.",
+        "With two spoons, drop portions into 350 °F oil and fry 3 to 4 minutes, until golden.",
+        "Serve hot, plain with salt or, as in Holy Week, drizzled with cinnamon syrup."
       ]
     }
   }

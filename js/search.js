@@ -83,7 +83,7 @@ const S_CATS = {
   aves: "ave poultry", pescados: "pescado fish marisco seafood", ensaladas: "ensalada salad",
   vegetales: "vegetal vegetable verdura vianda", postres: "postre dessert dulce sweet", bebidas: "bebida drink refresco",
   jugos: "jugo juice", cocteles: "coctel cocktail trago bebida alcoholica", panes: "pan bread",
-  salsas: "salsa sauce aderezo dip adobo marinada marinade sazon seasoning rub", entremeses: "entremes aperitivo appetizer picadera fritura fritter frituras",
+  salsas: "salsa sauce aderezo dip adobo marinada marinade sazon seasoning rub", entremeses: "entremes entremeses aperitivo appetizer picadera picaderas picar picoteo botana bocadito snack fritura fritter frituras",
   frutas: "fruta fruit almibar", cereales: "cereal avena oatmeal", granos: "grano legumbre legume",
   huevos: "huevo egg queso cheese", bizcochos: "bizcocho cake postre dessert", galletitas: "galleta cookie postre dessert",
   pasteles_dulces: "pie postre dessert hojaldre", emparedados: "sandwich emparedado", calientes: "te tea infusion caliente", pastas: "pasta"
