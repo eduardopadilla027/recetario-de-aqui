@@ -394,6 +394,17 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Grosellas (tanda 43).
+  [/^mermelada de grosellas/, "svg:ic-gr-mermelada"],
+  [/^grosellas curadas/, "svg:ic-gr-sal-limon"],
+  [/^limber de grosella/, "svg:ic-gr-limber"],
+  [/^pie de grosellas/, "svg:ic-gr-pie"],
+  [/^bizcocho volteado de grosellas/, "svg:ic-gr-bizcocho-volteado"],
+  [/^refresco de grosellas/, "svg:ic-gr-refresco"],
+  [/^chutney de grosellas/, "svg:ic-gr-chutney"],
+  [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
+  [/^pique de grosellas/, "svg:ic-gr-pique"],
+  [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
   // Salsas y aderezos, y platos fuertes veganos (tanda 42).
   [/^salsa agridulce de grosellas/, "svg:ic-sz-grosella"],
   [/^salsa de cereza del pais/, "svg:ic-sz-acerola"],

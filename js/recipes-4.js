@@ -109,6 +109,8 @@
  * pique de piña, mojo de parcha, mayo-ketchup de mangó, aguacate, maní, cebolla caramelizada,
  * jalea de ají) y platos fuertes veganos (garbanzos con calabaza, tofu en coco, lentejas con
  * viandas, pinchos de tofu, mamposteao, boloñesa de lentejas, chili, tacos de jaca).
+ * Cuadragésima tercera tanda: grosellas (mermelada, curadas con sal y limón, limber, pie,
+ * bizcocho volteado, refresco, chutney, glaseado para jamón, pique y vinagreta).
  * Versiones propias redactadas para esta app. Todas van en
  * categorías que ya existían. */
 recipes.push(
@@ -24613,6 +24615,424 @@ recipes.push(
         "Sear the jackfruit in the annatto oil over high heat 10 minutes, pressing it, until crisp at the edges.",
         "Separately brown the pineapple 3 minutes in a dry skillet.",
         "Warm the tortillas and serve the jackfruit with the pineapple, onion, cilantro and lime."
+      ]
+    }
+  },
+
+  // ── Cuadragésima tercera tanda (2026-10): grosellas en dulces y salsas ──
+  {
+    id: "mermelada-grosellas",
+    category: "frutas",
+    name: { es: "Mermelada de Grosellas con Canela", en: "Gooseberry (Grosella) Jam with Cinnamon" },
+    time: "1 hr",
+    servings: 16,
+    ingredients: {
+      es: [
+        "4 tazas de grosellas lavadas",
+        "1 taza de agua",
+        "2 tazas de azúcar",
+        "1 raja de canela",
+        "3 clavos de olor",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "4 cups Otaheite gooseberries (grosellas), washed",
+        "1 cup water",
+        "2 cups sugar",
+        "1 cinnamon stick",
+        "3 whole cloves",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las grosellas en el agua 15 minutos, hasta que se abran. Deje entibiar y saque la semilla dura de cada una con los dedos o un cuchillo.",
+        "Pique la pulpa en pedacitos (a diferencia de la jalea, la mermelada lleva la fruta) y devuélvala a la olla con el agua.",
+        "Añada el azúcar, la canela y los clavos, y cocine a fuego medio-bajo 30 a 35 minutos, moviendo, hasta que espese y se ponga rojiza.",
+        "Saque la canela y los clavos, añada el limón y vierta en frascos limpios y calientes. Sirva con queso blanco, galletas o pan tostado."
+      ],
+      en: [
+        "Simmer the gooseberries in the water 15 minutes, until they split. Let cool slightly and pop out the hard seed from each one with your fingers or a knife.",
+        "Chop the pulp into small pieces (unlike jelly, jam keeps the fruit) and return it to the pot with the water.",
+        "Add the sugar, cinnamon and cloves, and cook over medium-low heat 30 to 35 minutes, stirring, until thick and reddish.",
+        "Remove the cinnamon and cloves, stir in the lime juice and pour into clean, hot jars. Serve with white cheese, crackers or toast."
+      ]
+    }
+  },
+  {
+    id: "grosellas-sal-limon",
+    category: "frutas",
+    name: { es: "Grosellas Curadas con Sal, Limón y Ají", en: "Gooseberries Cured with Salt, Lime and Chili" },
+    time: "10 min + 2 hr",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 tazas de grosellas lavadas",
+        "1 cucharadita de sal",
+        "2 cucharadas de jugo de limón",
+        "1 cucharadita de azúcar",
+        "¼ cucharadita de hojuelas de ají"
+      ],
+      en: [
+        "2 cups Otaheite gooseberries (grosellas), washed",
+        "1 teaspoon salt",
+        "2 tablespoons lime juice",
+        "1 teaspoon sugar",
+        "¼ teaspoon chili flakes"
+      ]
+    },
+    steps: {
+      es: [
+        "Hágale un corte pequeño a cada grosella para que coja el sabor.",
+        "Mezcle la sal, el limón, el azúcar y el ají, y báñelas bien.",
+        "Tape y deje en la nevera por lo menos 2 horas, moviendo una vez.",
+        "Sírvalas frías como merienda, como se comen en el patio. Ojo: tienen una semilla dura por dentro. Por la sal, con moderación si cuida el sodio."
+      ],
+      en: [
+        "Make a small cut in each gooseberry so it absorbs the flavor.",
+        "Mix the salt, lime juice, sugar and chili flakes, and toss to coat well.",
+        "Cover and refrigerate at least 2 hours, stirring once.",
+        "Serve cold as a snack, the backyard way. Careful: each has a hard seed inside. Go easy if you watch sodium."
+      ]
+    }
+  },
+  {
+    id: "limber-grosella",
+    category: "postres",
+    name: { es: "Limber de Grosella", en: "Gooseberry Limber (Frozen Cup)" },
+    time: "30 min + 6 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de grosellas lavadas",
+        "3 tazas de agua",
+        "¾ taza de azúcar",
+        "1 pizca de sal",
+        "½ cucharadita de vainilla"
+      ],
+      en: [
+        "2 cups Otaheite gooseberries (grosellas), washed",
+        "3 cups water",
+        "¾ cup sugar",
+        "1 pinch salt",
+        "½ teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las grosellas en 2 tazas del agua 15 minutos. Saque las semillas.",
+        "Licúe la pulpa con el agua de hervir, la taza de agua restante, el azúcar, la sal y la vainilla. Cuele.",
+        "Vierta en vasitos plásticos y congele por lo menos 6 horas.",
+        "Para sacarlo, apriete el vasito o páselo un momento por agua tibia. Ácido y dulce a la vez, como el de la vecina."
+      ],
+      en: [
+        "Boil the gooseberries in 2 cups of the water 15 minutes. Remove the seeds.",
+        "Blend the pulp with the cooking water, the remaining cup of water, sugar, salt and vanilla. Strain.",
+        "Pour into small plastic cups and freeze at least 6 hours.",
+        "To unmold, squeeze the cup or dip it briefly in warm water. Tart and sweet at once, like the neighborhood limber."
+      ]
+    }
+  },
+  {
+    id: "pie-grosellas",
+    category: "postres",
+    name: { es: "Pie de Grosellas con Rejilla", en: "Lattice-Top Gooseberry Pie" },
+    time: "1 hr 20 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 discos de masa para pie (de 9 pulgadas)",
+        "4 tazas de grosellas sin semilla, en mitades",
+        "1 taza de azúcar",
+        "3 cucharadas de maicena",
+        "½ cucharadita de canela",
+        "1 pizca de sal",
+        "1 cucharada de mantequilla en pedacitos",
+        "1 huevo batido para barnizar",
+        "1 cucharada de azúcar para espolvorear"
+      ],
+      en: [
+        "2 pie crusts (9-inch)",
+        "4 cups seeded Otaheite gooseberries (grosellas), halved",
+        "1 cup sugar",
+        "3 tablespoons cornstarch",
+        "½ teaspoon cinnamon",
+        "1 pinch salt",
+        "1 tablespoon butter, in small pieces",
+        "1 beaten egg for brushing",
+        "1 tablespoon sugar for sprinkling"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400 °F. Forre un molde de pie con un disco de masa.",
+        "Mezcle las grosellas con el azúcar, la maicena, la canela y la sal, y deje 10 minutos para que suelten jugo. Viértalas en el molde y ponga la mantequilla encima.",
+        "Corte el otro disco en tiras y teja una rejilla encima. Selle el borde, barnice con el huevo y espolvoree el azúcar.",
+        "Hornee 20 minutos, baje a 350 °F y hornee 30 a 35 minutos más, hasta que burbujee por el centro. Deje enfriar 2 horas para que cuaje antes de cortar."
+      ],
+      en: [
+        "Heat the oven to 400 °F. Line a pie pan with one crust.",
+        "Toss the gooseberries with the sugar, cornstarch, cinnamon and salt, and let stand 10 minutes to release juice. Pour into the crust and dot with the butter.",
+        "Cut the other crust into strips and weave a lattice on top. Seal the edge, brush with the egg and sprinkle with sugar.",
+        "Bake 20 minutes, lower to 350 °F and bake 30 to 35 minutes more, until bubbling in the center. Cool 2 hours to set before slicing."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-volteado-grosellas",
+    category: "bizcochos",
+    name: { es: "Bizcocho Volteado de Grosellas", en: "Gooseberry Upside-Down Cake" },
+    time: "1 hr 10 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "¼ taza de mantequilla para el fondo",
+        "½ taza de azúcar morena",
+        "2 tazas de grosellas sin semilla, en mitades",
+        "1½ tazas de harina",
+        "1½ cucharaditas de polvo de hornear",
+        "¼ cucharadita de sal",
+        "½ taza de mantequilla para la mezcla, blanda",
+        "¾ taza de azúcar",
+        "2 huevos",
+        "1 cucharadita de vainilla",
+        "½ taza de leche"
+      ],
+      en: [
+        "¼ cup butter for the bottom",
+        "½ cup brown sugar",
+        "2 cups seeded Otaheite gooseberries (grosellas), halved",
+        "1½ cups flour",
+        "1½ teaspoons baking powder",
+        "¼ teaspoon salt",
+        "½ cup butter for the batter, softened",
+        "¾ cup sugar",
+        "2 eggs",
+        "1 teaspoon vanilla",
+        "½ cup milk"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F. Derrita la mantequilla del fondo en un molde redondo de 9 pulgadas, espolvoree el azúcar morena y acomode las grosellas encima.",
+        "Mezcle la harina, el polvo de hornear y la sal. Aparte, bata la mantequilla con el azúcar hasta que esté cremosa y añada los huevos uno a uno y la vainilla.",
+        "Añada la harina y la leche alternando, sin batir de más. Vierta sobre las grosellas.",
+        "Hornee 40 a 45 minutos, hasta que un palillo salga limpio. Espere 5 minutos y voltéelo en un plato: las grosellas quedan arriba, rojizas y brillosas."
+      ],
+      en: [
+        "Heat the oven to 350 °F. Melt the bottom butter in a 9-inch round pan, sprinkle the brown sugar and arrange the gooseberries on top.",
+        "Mix the flour, baking powder and salt. Separately, beat the butter with the sugar until creamy and add the eggs one at a time and the vanilla.",
+        "Add the flour and milk alternately, without overmixing. Pour over the gooseberries.",
+        "Bake 40 to 45 minutes, until a toothpick comes out clean. Wait 5 minutes and invert onto a plate: the gooseberries end up on top, glossy and reddish."
+      ]
+    }
+  },
+  {
+    id: "refresco-grosella",
+    category: "jugos",
+    name: { es: "Refresco de Grosellas", en: "Gooseberry Refresher" },
+    time: "25 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de grosellas lavadas",
+        "6 tazas de agua",
+        "½ taza de azúcar",
+        "1 raja de canela",
+        "1 cucharada de jengibre rallado",
+        "Hielo para servir"
+      ],
+      en: [
+        "2 cups Otaheite gooseberries (grosellas), washed",
+        "6 cups water",
+        "½ cup sugar",
+        "1 cinnamon stick",
+        "1 tablespoon grated ginger",
+        "Ice to serve"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las grosellas con 3 tazas del agua, la canela y el jengibre 15 minutos.",
+        "Aplaste las grosellas con un majador y cuele, apretando para sacar todo el jugo.",
+        "Añada el azúcar y las 3 tazas de agua restantes, y mezcle hasta que se disuelva.",
+        "Enfríe y sirva con mucho hielo. Ajuste el azúcar: la grosella es bien ácida."
+      ],
+      en: [
+        "Boil the gooseberries with 3 cups of the water, the cinnamon and ginger 15 minutes.",
+        "Mash the gooseberries with a masher and strain, pressing to get all the juice.",
+        "Add the sugar and the remaining 3 cups of water, and stir until dissolved.",
+        "Chill and serve over plenty of ice. Adjust the sugar: gooseberries are very tart."
+      ]
+    }
+  },
+  {
+    id: "chutney-grosellas",
+    category: "salsas",
+    name: { es: "Chutney de Grosellas y Jengibre", en: "Gooseberry Ginger Chutney" },
+    time: "45 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "3 tazas de grosellas sin semilla, picadas",
+        "1 cebolla picada fina",
+        "½ taza de pasas",
+        "¾ taza de azúcar morena",
+        "½ taza de vinagre",
+        "1 cucharada de jengibre rallado",
+        "1 diente de ajo picado",
+        "½ cucharadita de canela",
+        "½ cucharadita de sal",
+        "¼ cucharadita de hojuelas de ají"
+      ],
+      en: [
+        "3 cups seeded Otaheite gooseberries (grosellas), chopped",
+        "1 onion, finely chopped",
+        "½ cup raisins",
+        "¾ cup brown sugar",
+        "½ cup vinegar",
+        "1 tablespoon grated ginger",
+        "1 garlic clove, chopped",
+        "½ teaspoon cinnamon",
+        "½ teaspoon salt",
+        "¼ teaspoon chili flakes"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga todo en una olla y deje hervir, moviendo, hasta que el azúcar se disuelva.",
+        "Cocine a fuego bajo 30 a 35 minutos, moviendo de vez en cuando, hasta que espese y la fruta esté blanda.",
+        "Deje enfriar y guarde en frascos en la nevera; dura 3 semanas.",
+        "Sirva con pernil, chuletas, pavo o pollo asado, o sobre queso crema con galletas."
+      ],
+      en: [
+        "Put everything in a pot and bring to a boil, stirring, until the sugar dissolves.",
+        "Simmer 30 to 35 minutes, stirring now and then, until thick and the fruit is soft.",
+        "Let cool and store in jars in the fridge; keeps 3 weeks.",
+        "Serve with pernil, pork chops, turkey or roast chicken, or over cream cheese with crackers."
+      ]
+    }
+  },
+  {
+    id: "glaseado-grosella-jamon",
+    category: "salsas",
+    name: { es: "Glaseado de Grosellas para Jamón y Pernil", en: "Gooseberry Glaze for Ham and Pork Shoulder" },
+    time: "25 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 taza de jalea o mermelada de grosellas",
+        "¼ taza de azúcar morena",
+        "2 cucharadas de mostaza",
+        "2 cucharadas de jugo de naranja agria",
+        "¼ cucharadita de clavo molido",
+        "1 cucharada de mantequilla"
+      ],
+      en: [
+        "1 cup gooseberry (grosella) jelly or jam",
+        "¼ cup brown sugar",
+        "2 tablespoons mustard",
+        "2 tablespoons sour orange juice",
+        "¼ teaspoon ground cloves",
+        "1 tablespoon butter"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente la jalea con el azúcar, la mostaza, la naranja agria y el clavo a fuego bajo, moviendo, hasta que esté liso. Cocine 5 minutos.",
+        "Apague y añada la mantequilla.",
+        "En los últimos 30 minutos de horno, unte el jamón o el pernil con el glaseado cada 10 minutos para que se forme una capa brillosa.",
+        "Sirva el que sobre tibio al lado. Para Navidad queda rojizo y bonito; también va con pollo y pavo."
+      ],
+      en: [
+        "Heat the jelly with the sugar, mustard, sour orange and cloves over low heat, stirring, until smooth. Cook 5 minutes.",
+        "Turn off and stir in the butter.",
+        "During the last 30 minutes in the oven, brush the ham or pork shoulder with the glaze every 10 minutes to build a glossy coat.",
+        "Serve the rest warm on the side. Reddish and festive for Christmas; also good with chicken and turkey."
+      ]
+    }
+  },
+  {
+    id: "pique-grosella",
+    category: "salsas",
+    name: { es: "Pique de Grosellas y Ají Caballero", en: "Gooseberry and Hot Pepper Sauce" },
+    time: "30 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "2 tazas de grosellas lavadas",
+        "1 taza de agua",
+        "4 ajíes caballero o picantes, sin tallo",
+        "3 dientes de ajo",
+        "½ taza de vinagre",
+        "1 cucharadita de sal",
+        "1 cucharada de azúcar"
+      ],
+      en: [
+        "2 cups Otaheite gooseberries (grosellas), washed",
+        "1 cup water",
+        "4 bird peppers or other hot peppers, stems removed",
+        "3 garlic cloves",
+        "½ cup vinegar",
+        "1 teaspoon salt",
+        "1 tablespoon sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las grosellas en el agua 15 minutos y saque las semillas.",
+        "Con guantes, licúe la pulpa con el agua de hervir, los ajíes, el ajo, el vinagre, la sal y el azúcar hasta que esté liso.",
+        "Cocine 5 minutos a fuego bajo y vierta en una botella limpia.",
+        "Guárdelo en la nevera. Unas gotas sobre pescado frito, alcapurrias, tostones, habichuelas o arroz con pollo."
+      ],
+      en: [
+        "Boil the gooseberries in the water 15 minutes and remove the seeds.",
+        "Wearing gloves, blend the pulp with the cooking water, peppers, garlic, vinegar, salt and sugar until smooth.",
+        "Simmer 5 minutes and pour into a clean bottle.",
+        "Keep refrigerated. A few drops over fried fish, alcapurrias, tostones, beans or chicken and rice."
+      ]
+    }
+  },
+  {
+    id: "vinagreta-grosella",
+    category: "salsas",
+    name: { es: "Vinagreta de Grosellas y Miel", en: "Gooseberry Honey Vinaigrette" },
+    time: "25 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de grosellas lavadas",
+        "½ taza de agua",
+        "2 cucharadas de miel",
+        "2 cucharadas de vinagre",
+        "1 cucharadita de mostaza",
+        "⅓ taza de aceite de oliva",
+        "¼ cucharadita de sal",
+        "1 pizca de pimienta"
+      ],
+      en: [
+        "1 cup Otaheite gooseberries (grosellas), washed",
+        "½ cup water",
+        "2 tablespoons honey",
+        "2 tablespoons vinegar",
+        "1 teaspoon mustard",
+        "⅓ cup olive oil",
+        "¼ teaspoon salt",
+        "1 pinch pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las grosellas en el agua 15 minutos, saque las semillas y deje enfriar.",
+        "Licúe la pulpa con el agua de hervir, la miel, el vinagre, la mostaza, la sal y la pimienta.",
+        "Con la licuadora encendida, añada el aceite en un chorrito hasta que espese.",
+        "Sirva sobre ensaladas verdes con aguacate y queso, o sobre pescado a la plancha. Para que sea vegana, use melao en vez de miel."
+      ],
+      en: [
+        "Boil the gooseberries in the water 15 minutes, remove the seeds and let cool.",
+        "Blend the pulp with the cooking water, honey, vinegar, mustard, salt and pepper.",
+        "With the blender running, add the oil in a thin stream until thickened.",
+        "Serve over green salads with avocado and cheese, or over grilled fish. For a vegan version, use cane syrup instead of honey."
       ]
     }
   }

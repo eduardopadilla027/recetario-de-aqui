@@ -95,7 +95,7 @@ const RECIPE_FAMILIES = {
   bizcochos: [
     ["clasicos", { es: "Clásicos", en: "Classics" }, null],
     ["mojados", { es: "Mojados y con licor", en: "Soaked and liquor cakes" }, /mojado|brandy|amaretto/],
-    ["frutas", { es: "De frutas y coco", en: "Fruit and coconut cakes" }, /^(?!.*cumpleanos).*(pina|guayaba|china|parcha|coco|guineo|mango|zanahoria|limon)/],
+    ["frutas", { es: "De frutas y coco", en: "Fruit and coconut cakes" }, /^(?!.*cumpleanos).*(pina|guayaba|china|parcha|coco|guineo|mango|zanahoria|limon|grosella)/],
     ["calabaza", { es: "De calabaza", en: "Pumpkin cakes" }, /calabaza/],
     ["cupcakes", { es: "Cupcakes", en: "Cupcakes" }, /cupcakes/],
     ["otros", { es: "Brazos gitanos y brownies", en: "Rolled cakes and brownies" }, /brazo gitano|brownies/]
@@ -170,7 +170,7 @@ const RECIPE_FAMILIES = {
     ["tipicas", { es: "Bebidas típicas", en: "Traditional drinks" }, null]
   ],
   jugos: [
-    ["jugos", { es: "Jugos de frutas", en: "Fruit juices" }, /^jugo/],
+    ["jugos", { es: "Jugos de frutas", en: "Fruit juices" }, /^jugo|^refresco/],
     ["limonadas", { es: "Limonadas", en: "Lemonades" }, /limonada/],
     ["aguas", { es: "Agua de coco y guarapo", en: "Coconut water and cane juice" }, null]
   ],

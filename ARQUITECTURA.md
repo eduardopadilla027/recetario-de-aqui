@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.21.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 996 en 24 categorías
+> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.22.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -57,7 +57,7 @@ cocine-a-gusto/
 │   ├── recipes-extra.js  recipes.push(...) — ampliaciones por categoría (la más grande)
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
-│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, y más salsas y aderezos y platos fuertes veganos, en cuarenta y dos tandas (ver §13)
+│   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, más salsas y aderezos y platos fuertes veganos, y dulces y salsas de grosella, en cuarenta y tres tandas (ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── substitutes.js    sustitutos para cada alérgeno según el ingrediente (getSubstitutes)
@@ -112,7 +112,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | Clave | Nombre | Recetas |
 |---|---|---|
 | calientes | Bebidas Calientes | 39 |
-| frutas | Frutas | 27 |
+| frutas | Frutas | 29 |
 | cereales | Cereales | 18 |
 | granos | Granos y Legumbres | 22 |
 | ensaladas | Ensaladas | 25 |
@@ -123,17 +123,17 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | huevos | Huevos y Queso | 13 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 54 |
 | pastas | Pastas | 19 |
-| bizcochos | Bizcochos | 39 |
+| bizcochos | Bizcochos | 40 |
 | galletitas | Galletitas | 37 |
 | pasteles_dulces | Pasteles Dulces | 22 |
 | panes | Pan y Panecillos | 41 |
 | emparedados | Emparedados | 23 |
-| postres | Helados, Budines, Flan y Otros Postres | 105 |
+| postres | Helados, Budines, Flan y Otros Postres | 107 |
 | arroces | Arroces y Habichuelas | 55 |
 | vegetales | Vegetales y Viandas | 86 |
-| salsas | Salsas y Aderezos | 58 |
+| salsas | Salsas y Aderezos | 62 |
 | bebidas | Bebidas | 36 |
-| jugos | Jugos Naturales | 18 |
+| jugos | Jugos Naturales | 19 |
 | cocteles | Cócteles y Tragos | 47 |
 
 **Añadir una categoría:** clave en `categoryOrder`, nombre en `translations.es.categories` y `translations.en.categories`,
@@ -146,7 +146,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   tofu, arroz y granos, pastas, y sándwiches y hamburguesas. `getPairings()` lo saca del nombre y los pasos en español
   (`PAIR_KINDS`: "Sirva con pernil, pollo…"; no cuenta "sin carne…") y `PAIRINGS_EXTRA` completa a mano las que no lo
   dicen (sofrito, recaíto, sazón, pique…). Cada botón lleva a su categoría (`goToCategory()`, lo mismo que la insignia de
-  la receta). Hoy las 58 salsas tienen al menos una combinación.
+  la receta). Hoy las 62 salsas tienen al menos una combinación.
 - **Orden por familia (`js/families.js`):** al elegir una categoría (sin búsqueda), las recetas salen agrupadas por familia
   con un subtítulo y su número (p. ej. postres: flanes, tembleques/majaretes/natillas, arroces dulces, budines,
   cheesecakes, gelatinas, helados/limbers/piraguas, bizcochos y tres leches, dulces de coco y frutas; carnes: res, cerdo,
@@ -264,6 +264,9 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   parcha, tostón, aguacate, maní), aceitera de vinagreta, botella de pique con piña y ajíes, sartén de cebolla y frasco de
   jalea; las veganas, con la hojita. Los platos fuertes veganos de la tanda 42 siguen el estilo `ic-vg-*` (cazuela de
   barro, pinchos, plato de mamposteao y de espaguetis, tacos).
+  **Grosellas (`ic-gr-*`, tanda 43):** la grosella redonda con sus gajos (verde amarillenta cruda, rojiza cocida) junto a
+  cada forma: frasco de mermelada con canela, tazón de curadas con sal y limón, vaso de limber, pie con rejilla, bizcocho
+  volteado, vaso de refresco, chutney con pasas y jengibre, jamón glaseado, botella de pique y aceitera de vinagreta.
   **Arroces:** montoncito en plato del color de
   cada uno (blanco con vapor, amarillo de achiote, anaranjado, oscuro de habichuelas negras, integral, frito chino) con lo
   que lleva encima (gandules, pollo, mariscos, pescado, embutidos, costillitas, maíz, vegetales); el arroz con
@@ -376,7 +379,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 996). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,006). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -445,6 +448,20 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-11 — v3.22.0 · Grosellas en dulces y salsas
+- *Pedido:* recetas de grosellas, dulces y salsas.
+- Cuadragésima tercera tanda en `js/recipes-4.js` (versiones propias), 10 recetas que se suman al dulce, la jalea y la
+  salsa agridulce que ya había. **Dulces y bebidas (6):** mermelada de grosellas con canela, grosellas curadas con sal,
+  limón y ají, limber, pie con rejilla, bizcocho volteado y refresco. **Salsas (4):** chutney de grosellas y jengibre,
+  glaseado para jamón y pernil, pique de grosellas y ají caballero, y vinagreta de grosellas y miel. Todas explican sacar
+  la semilla dura.
+- **Familias:** "refresco" va con los jugos de frutas y "grosella" con los bizcochos de frutas.
+- **Iconos:** 10 dibujos nuevos (§7).
+- Total: **996 → 1,006 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); "grosella" da 13 recetas, "salsa de grosella" las 5 salsas, "postre de
+  grosella" los 3 postres; buscador sin búsquedas vacías ✔; las 4 salsas con "Combina mejor con"; las 10 en ES y EN a
+  375 px sin errores ni desbordes ✔.
 
 ### 2026-10-11 — v3.21.0 · Más salsas y aderezos, "Combina mejor con" y platos fuertes veganos
 - *Pedido:* más salsas y aderezos (p. ej. de grosella o de cereza) y más veganas; y en salsas y aderezos, recomendar con
