@@ -988,7 +988,8 @@ function matches(r) {
 
 function getFilteredRecipes(category) {
   const list = recipes.filter((r) => r.category === category && matches(r));
-  return currentSearch() ? list.sort(byScore) : list;
+  // Al buscar, por parecido; si no, por familia (js/families.js) y nombre.
+  return currentSearch() ? list.sort(byScore) : sortByFamily(list, currentLang);
 }
 
 /* Lo que entendió el buscador: términos, exclusiones, ideas y correcciones. */
@@ -1065,9 +1066,20 @@ function renderCategories() {
     return;
   }
 
-  // Una categoría elegida: rejilla directa, sin acordeón.
+  // Una categoría elegida: sin búsqueda, agrupada por familia con un subtítulo
+  // para cada una (flanes, tembleques…; res, cerdo…); al buscar, por parecido.
   if (selectedNavCategory) {
-    container.innerHTML = `<div class="recipe-grid">${filtered.map((r, i) => cardHTML(r, i)).join("")}</div>`;
+    if (currentSearch()) {
+      container.innerHTML = `<div class="recipe-grid">${filtered.map((r, i) => cardHTML(r, i)).join("")}</div>`;
+      return;
+    }
+    let n = 0;
+    const groups = groupByFamily(filtered, selectedNavCategory, currentLang);
+    container.innerHTML = groups.map((g) => `
+      <section class="family-group" aria-label="${esc(g.label || "")}">
+        ${g.label && groups.length > 1 ? `<h4 class="family-head"><span class="family-name">${esc(g.label)}</span><span class="family-count">${g.recipes.length}</span></h4>` : ""}
+        <div class="recipe-grid">${g.recipes.map((r) => cardHTML(r, n++)).join("")}</div>
+      </section>`).join("");
     return;
   }
 

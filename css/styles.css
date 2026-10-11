@@ -718,3 +718,9 @@ main:focus { outline: none; }
 .plan-sides a:hover { color: var(--achiote); text-decoration: underline; }
 .plan-side-n { grid-column: 2; font-size: .78rem; color: var(--ink-3); }
 @media print { .plans-controls, .plans-actions, .goal-grid, .plans-more { display: none; } }
+
+/* Familias dentro de una categoría (js/families.js) */
+.family-group + .family-group { margin-top: 28px; }
+.family-head { display: flex; align-items: baseline; gap: 10px; margin: 0 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); font-family: inherit; }
+.family-name { font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+.family-count { font-size: .82rem; color: var(--ink-3); font-weight: 600; }

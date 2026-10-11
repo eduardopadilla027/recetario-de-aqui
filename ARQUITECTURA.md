@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.11.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 897 en 24 categorías
+> **Última actualización:** 2026-10-10 · **Versión del documento:** 3.12.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 897 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -61,6 +61,7 @@ cocine-a-gusto/
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
+│   ├── families.js       familias de recetas por categoría (flanes, tembleques…; res, cerdo…) y su orden
 │   ├── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
 │   └── plans.js          planes de comida (#/planes): objetivos, época, preferencias, plan de 1 o 7 días
 ├── images/               (vacía: reservada para fotos)
@@ -71,7 +72,7 @@ cocine-a-gusto/
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js`
-→ `nutrition.js` → `advisories.js` → `search.js` → `app.js` → `plans.js` (usa funciones de `app.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
+→ `nutrition.js` → `advisories.js` → `search.js` → `families.js` → `app.js` → `plans.js` (usa funciones de `app.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
 ## 5. Modelo de datos: la receta
 
@@ -134,9 +135,19 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | cocteles | Cócteles y Tragos | 47 |
 
 **Añadir una categoría:** clave en `categoryOrder`, nombre en `translations.es.categories` y `translations.en.categories`,
-`categoryIcons` y `categoryTones`. En `advisories.js`, revisar si es bebida (`isDrink`).
+`categoryIcons`, `categoryTones` y sus familias en `RECIPE_FAMILIES` (`js/families.js`). En `advisories.js`, revisar si es bebida (`isDrink`).
 
 ## 7. Interfaz y navegación (`js/app.js`)
+
+- **Orden por familia (`js/families.js`):** al elegir una categoría (sin búsqueda), las recetas salen agrupadas por familia
+  con un subtítulo y su número (p. ej. postres: flanes, tembleques/majaretes/natillas, arroces dulces, budines,
+  cheesecakes, gelatinas, helados/limbers/piraguas, bizcochos y tres leches, dulces de coco y frutas; carnes: res, cerdo,
+  cabro/cordero/conejo, embutidos, vísceras; calientes: café, chocolate, tés de especias, tés de hojas y flores). Dentro de
+  cada familia, por orden alfabético del idioma activo. `RECIPE_FAMILIES[categoría]` = familias en el orden en que se
+  muestran (clave, nombre ES/EN, expresión sobre el nombre en español sin acentos; la que no tiene expresión recoge el
+  resto); `FAMILY_MATCH_ORDER` dice en qué orden se prueban cuando no es el mismo ("costillas de res" antes que el cerdo,
+  "pechuga de pavo" antes que las pechugas). Favoritas y rápidas también siguen este orden; al buscar, por parecido.
+  Una receta nueva se clasifica sola por su nombre: revise que caiga en la familia correcta.
 
 - **Rutas por hash:** `#/` inicio · anclas `#categorias`, `#rapidas`, `#recetas` · detalle `#/receta/<id>`
   (URL propia: se comparte y "Atrás" vuelve a la misma posición).
@@ -379,6 +390,17 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-10 — v3.12.0 · Recetas en orden por familia
+- *Pedido:* evaluar todas las categorías y poner las recetas en orden por familia.
+- Nuevo `js/families.js` (`RECIPE_FAMILIES`, `FAMILY_MATCH_ORDER`, `recipeFamily`, `sortByFamily`, `groupByFamily`):
+  familias para las 24 categorías (3 a 9 cada una). `app.js`: la vista de una categoría muestra un subtítulo por familia
+  (`.family-head` en `css/styles.css`); `getFilteredRecipes` ordena por familia y nombre cuando no hay búsqueda.
+- Revisión de casos dudosos: la carne frita y el mofongo de carne frita van en cerdo (en Puerto Rico la carne frita es de
+  cerdo); las gallinitas, en "otras aves"; el adobo mojado, en adobos; la vinagreta criolla, en aderezos; el bizcocho de
+  cumpleaños, en clásicos; las mallorcas, en panes dulces; las galletas de chocolate y coco, en chocolate.
+- *Verificado:* las 897 recetas clasificadas (ninguna perdida: cada categoría muestra todas); las 24 categorías en ES y EN
+  sin errores; a 375 px sin desbordes ✔.
 
 ### 2026-10-10 — v3.11.0 · Tés tradicionales: maguey, anamú, poleo y otros
 - *Pedido:* el té de maguey, anamú, poleo y otros que falten.
