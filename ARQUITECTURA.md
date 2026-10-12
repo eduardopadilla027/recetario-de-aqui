@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.4.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.5.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -390,6 +390,15 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   ≥ 10 g en vegetariano, ≥ 8 g en vegano) y acompañantes de arroz o vianda y granos. Cada uno trae: meta típica de calorías, ajuste sobre el gasto (rebajar −20 %, masa +12 %…),
   proteína por kilo (1.0–2.0 g/kg), porción máxima, criterios por comida (desayuno, plato principal, merienda) sobre la
   nutrición estimada por porción, y una puntuación para ordenar. Rebajar excluye frituras.
+- **Dieta en Preferencias (`plan.diet`, `PLAN_DIETS`):** Normal (de todo, al azar según el objetivo), Vegetariano o
+  Vegano, una sola a la vez; "Sólo rápidas" sigue aparte. `activeDiet()`: manda la dieta del objetivo (Vegetariano/Vegano)
+  y, si el objetivo no trae, la de Preferencias. La antigua casilla "Vegetariano" (`prefs: ["veg"]`) se convierte sola.
+- **Plan del período y guardado (`plan.saved`, `periodPlan()`):** con **1 día** el plan es el de hoy y mañana sale otro
+  al azar; con **7 días** cubre del día en que empezó al séptimo (cada día con su fecha) y al octavo empieza otro. El
+  azar sale de la fecha de inicio + `plan.seed` ("Otro plan" sube `seed`). El plan se guarda (ids de recetas y porciones
+  por día, `{ items: [...] }` porque Firestore no admite listas dentro de listas) en el navegador y en la cuenta, y al
+  volver se muestra el mismo mientras sigan iguales el período, `seed` y `planSig()` (objetivo, dieta, preferencias,
+  proteína, evitar, época y metas); si algo cambia o una receta ya no existe, se arma y guarda otro.
 - **Proteína del almuerzo y la cena (`plan.protein`, `PROTEINS`, `proteinsOf()`):** aves, pescado, mariscos, res, cerdo,
   cabro/cordero/conejo y granos y vegetales; una o varias. Se reconoce por el nombre y, si no, por la categoría y los
   ingredientes ("granos" = vegetariana sin otra proteína). Sólo filtra el plato principal (no desayuno, merienda ni
@@ -502,6 +511,16 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-12 — v4.5.0 · Planes: dieta Normal/Vegetariano/Vegano y plan que cambia cada día o cada 7 días
+- *Pedido:* en Preferencias, además de Vegetariano, incluir Vegano y Normal (cualquier receta sugerida al azar); que el
+  plan cambie a otras recetas al azar el próximo día (1 día) o los próximos 7 días (7 días), y que se guarde.
+- Preferencias: dieta Normal / Vegetariano / Vegano (§7.2). Plan del período con fechas, guardado en el navegador y en la
+  cuenta (`plan.saved`); "Mis datos" ya no dice que se guardan sólo en el navegador.
+- `cloudSavePlan()` atrapa también los errores síncronos de Firestore y los anota en la consola como aviso.
+- *Verificado:* el mismo plan al redibujar; otro al día siguiente (fecha simulada); en 7 días, igual al tercer día y otro
+  al octavo; días con su fecha (lunes 12 oct…); con Vegano todas las recetas son veganas; la casilla vieja "Vegetariano"
+  se convierte; el plan guardado no lleva listas dentro de listas y pasa por `cleanPlan()` sin cambios ✔.
 
 ### 2026-10-12 — v4.4.0 · Planes: proteína preferida
 - *Pedido:* en Planes, poder escoger otras preferencias: aves, pescado, carnes, etc.

@@ -506,8 +506,11 @@ function cloudSavePlan(p) {
   if (!fbDb || !authUser || authState !== "ready") return;
   clearTimeout(planSaveTimer);
   planSaveTimer = setTimeout(() => {
-    planRef().set({ plan: cleanPlan(p), updatedAt: firebase.firestore.FieldValue.serverTimestamp() })
-      .catch(() => { /* sin conexión: queda en este navegador y se sube en el próximo cambio */ });
+    // Si falla (sin conexión, datos no válidos) queda en este navegador y se sube en el próximo cambio.
+    try {
+      planRef().set({ plan: cleanPlan(p), updatedAt: firebase.firestore.FieldValue.serverTimestamp() })
+        .catch((err) => console.warn("Plan no guardado en la cuenta:", err.code || err));
+    } catch (err) { console.warn("Plan no guardado en la cuenta:", err.message || err); }
   }, 800);
 }
 

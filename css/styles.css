@@ -710,6 +710,8 @@ main:focus { outline: none; }
 .plans-season-pick select { font: inherit; font-weight: 400; padding: 8px 10px; border: 1.5px solid var(--line); border-radius: var(--radius-sm); background: #fff; }
 .chip-pref input:checked + span { background: var(--plantain-50); border-color: var(--plantain); color: var(--plantain); }
 .chip-pref input:checked + span::before { content: "✓ "; }
+.plans-period { margin: 0 0 var(--s-3); font-weight: 600; color: var(--ink); }
+.plans-saved { display: block; font-weight: 400; font-size: .88rem; color: var(--ink-3); }
 .plan-badges { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
 .plan-badge { font-size: .7rem; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--plantain-50); color: var(--plantain); }
 .plan-badge-prot { background: var(--achiote-50); color: var(--achiote-600); }

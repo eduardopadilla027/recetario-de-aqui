@@ -39,7 +39,12 @@ const PLAN_T = {
     seasons: { auto: "Según la fecha de hoy", todo: "Todo el año", navidad: "Navidad", cuaresma: "Cuaresma y Semana Santa", verano: "Verano y playa", gracias: "Acción de Gracias", lluvia: "Días de lluvia" },
     seasonNow: (name) => `Hoy: ${name}`,
     prefsLabel: "Preferencias",
-    prefs: { veg: "Vegetariano", quick: "Sólo rápidas (30 min o menos)" },
+    prefs: { quick: "Sólo rápidas (30 min o menos)" },
+    diets: { normal: "Normal (de todo)", veg: "Vegetariano", vegan: "Vegano" },
+    dietHelp: "Normal sugiere cualquier receta al azar según su objetivo.",
+    periodDay: (d) => `Plan de hoy, ${d}. Mañana le sugerimos otro.`,
+    periodWeek: (a, b, next) => `Plan del ${a} al ${b}. El ${next} empieza otro.`,
+    savedNote: "Se guarda en su cuenta: al volver verá el mismo plan hasta que toque cambiarlo.",
     protLabel: "Proteína del almuerzo y la cena",
     protHelp: "Escoja una o varias; sin ninguna, entra de todo.",
     protOpts: { aves: "Aves (pollo, pavo)", pescado: "Pescado", mariscos: "Mariscos", res: "Res", cerdo: "Cerdo", cabro: "Cabro, cordero y conejo", granos: "Granos y vegetales" },
@@ -50,7 +55,7 @@ const PLAN_T = {
     sidesTitle: "Acompañantes",
     withSide: "con",
     meTitle: "Mis datos (opcional)",
-    meHelp: "Con sus datos se calcula la meta de calorías y proteína del día. Se guardan sólo en este navegador.",
+    meHelp: "Con sus datos se calcula la meta de calorías y proteína del día. Se guardan en su cuenta; sólo usted los ve.",
     sex: "Sexo", female: "Mujer", male: "Hombre",
     age: "Edad", weight: "Peso (libras)", height: "Estatura", feet: "pies", inches: "pulgadas",
     activity: "Actividad",
@@ -103,7 +108,12 @@ const PLAN_T = {
     seasons: { auto: "Based on today's date", todo: "All year", navidad: "Christmas", cuaresma: "Lent and Holy Week", verano: "Summer and beach", gracias: "Thanksgiving", lluvia: "Rainy days" },
     seasonNow: (name) => `Today: ${name}`,
     prefsLabel: "Preferences",
-    prefs: { veg: "Vegetarian", quick: "Quick only (30 min or less)" },
+    prefs: { quick: "Quick only (30 min or less)" },
+    diets: { normal: "Regular (everything)", veg: "Vegetarian", vegan: "Vegan" },
+    dietHelp: "Regular suggests any recipe at random for your goal.",
+    periodDay: (d) => `Today's plan, ${d}. Tomorrow we'll suggest another.`,
+    periodWeek: (a, b, next) => `Plan from ${a} to ${b}. A new one starts ${next}.`,
+    savedNote: "Saved to your account: you'll see the same plan until it's time to change it.",
     protLabel: "Lunch and dinner protein",
     protHelp: "Pick one or more; with none, everything goes.",
     protOpts: { aves: "Poultry (chicken, turkey)", pescado: "Fish", mariscos: "Shellfish", res: "Beef", cerdo: "Pork", cabro: "Goat, lamb and rabbit", granos: "Beans and vegetables" },
@@ -114,7 +124,7 @@ const PLAN_T = {
     sidesTitle: "Sides",
     withSide: "with",
     meTitle: "My details (optional)",
-    meHelp: "Your details are used to calculate the day's calorie and protein target. They're stored only in this browser.",
+    meHelp: "Your details are used to calculate the day's calorie and protein target. They're saved to your account; only you can see them.",
     sex: "Sex", female: "Female", male: "Male",
     age: "Age", weight: "Weight (pounds)", height: "Height", feet: "feet", inches: "inches",
     activity: "Activity",
@@ -236,10 +246,12 @@ const activeSeason = () => (plan.season === "auto" ? autoSeason() : plan.season)
 const PLAN_MEAT_EXTRA = /\b(bistec|churrasco|entrana|picadillo(?! de lentejas)|carne molida|(?<!de )hamburguesas?(?! vegetarian)|pechuga|muslo|alita|pepperoni|salami|pastrami|almeja|mejillon|langostino|anchoa|caldo de pollo|caldo de res|caldo de pescado|gelatina)/;
 const isVegetarian = (r) => { const t = planNorm(r.name.es + " " + r.ingredients.es.join(" ")); return !["carnes", "aves", "pescados"].includes(r.category) && !S_MEAT_RX.test(t) && !PLAN_MEAT_EXTRA.test(t); };
 const isVegan = (r) => isVegetarian(r) && !getAdvisories(r).allergens.some((a) => a.key === "milk" || a.key === "egg") && !getAdvisories(r).alerts.some((a) => a.key === "honey");
-// La dieta del objetivo (vegetariano, vegano) y la preferencia "vegetariano" valen para todo el plan.
+// La dieta del objetivo (vegetariano, vegano) o, si no trae, la de Preferencias
+// (normal, vegetariano, vegano) vale para todo el plan.
+const activeDiet = () => PLAN_GOALS[plan.goal].diet || (plan.diet !== "normal" ? plan.diet : null);
 const dietOk = (r) => {
-  const d = PLAN_GOALS[plan.goal].diet;
-  if ((d === "veg" || plan.prefs.includes("veg")) && !isVegetarian(r)) return false;
+  const d = activeDiet();
+  if (d && !isVegetarian(r)) return false;
   return d !== "vegan" || isVegan(r);
 };
 /* ── Proteína preferida del plato principal ── */
@@ -269,8 +281,8 @@ function proteinsOf(r) {
   protCache.set(r.id, found);
   return found;
 }
-// La preferencia no aplica en los objetivos vegetariano y vegano (ya mandan la dieta).
-const protActive = () => plan.protein.length > 0 && !PLAN_GOALS[plan.goal].diet && !plan.prefs.includes("veg");
+// La preferencia no aplica con dieta vegetariana o vegana (ya manda la dieta).
+const protActive = () => plan.protein.length > 0 && !activeDiet();
 const protOk = (r) => !protActive() || proteinsOf(r).some((k) => plan.protein.includes(k));
 
 function badgesOf(n, m = 1) {
@@ -294,9 +306,11 @@ const AVOID = {
 const planNorm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
 /* ── Ajustes guardados ── */
-const PLAN_DEFAULTS = { goal: "rebajar", sex: "", age: "", weight: "", ft: "", inch: "", activity: "1", avoid: [], prefs: [], protein: [], season: "auto", days: 1, seed: 1 };
-let plan = { ...PLAN_DEFAULTS, avoid: [], prefs: [], protein: [] };
-try { Object.assign(plan, JSON.parse(readStore(PLAN_STORE) || "{}")); } catch { /* ajustes dañados: se usan los de fábrica */ }
+// `saved` = el plan sugerido del período (hoy, o 7 días desde `start`), para verlo igual al volver.
+const PLAN_DEFAULTS = { goal: "rebajar", diet: "normal", sex: "", age: "", weight: "", ft: "", inch: "", activity: "1", avoid: [], prefs: [], protein: [], season: "auto", days: 1, seed: 1, saved: null };
+const PLAN_DIETS = ["normal", "veg", "vegan"];
+let plan = cleanPlan(null);
+try { plan = cleanPlan(JSON.parse(readStore(PLAN_STORE) || "{}")); } catch { /* ajustes dañados: se usan los de fábrica */ }
 const savePlan = () => {
   writeStore(PLAN_STORE, JSON.stringify(plan));
   if (typeof cloudSavePlan === "function") cloudSavePlan(plan);
@@ -306,11 +320,31 @@ function cleanPlan(src) {
   const out = {};
   for (const [k, def] of Object.entries(PLAN_DEFAULTS)) {
     const v = src && src[k];
-    if (Array.isArray(def)) out[k] = Array.isArray(v) ? v.filter((x) => typeof x === "string").slice(0, 20) : [];
+    if (k === "saved") out[k] = cleanSaved(v);
+    else if (Array.isArray(def)) out[k] = Array.isArray(v) ? v.filter((x) => typeof x === "string").slice(0, 20) : [];
     else if (typeof def === "number") out[k] = Number.isFinite(+v) ? +v : def;
     else out[k] = typeof v === "string" ? v.slice(0, 40) : def;
   }
+  // Antes "Vegetariano" era una casilla de preferencias; ahora es la dieta.
+  if (src && Array.isArray(src.prefs) && src.prefs.includes("veg") && !(src.diet && src.diet !== "normal")) out.diet = "veg";
+  out.prefs = out.prefs.filter((p) => p === "quick");
+  if (!PLAN_DIETS.includes(out.diet)) out.diet = "normal";
+  if (![1, 7].includes(out.days)) out.days = 1;
   return out;
+}
+/* Plan guardado: { start: "AAAA-MM-DD", days, seed, sig, meals: [{ items: [{ slot, id, m, sides: [{ id, m }] }] }] }
+   (cada día es un objeto: Firestore no admite listas dentro de listas). */
+function cleanSaved(v) {
+  if (!v || typeof v !== "object" || typeof v.start !== "string" || !Array.isArray(v.meals)) return null;
+  const num = (x) => (Number.isFinite(+x) ? +x : 1);
+  const str = (x) => String(x || "").slice(0, 120);
+  return {
+    start: v.start.slice(0, 10), days: num(v.days), seed: num(v.seed), sig: String(v.sig || "").slice(0, 1500),
+    meals: v.meals.slice(0, 7).map((day) => ({ items: (day && Array.isArray(day.items) ? day.items.slice(0, 4) : []).map((x) => ({
+      slot: str(x && x.slot), id: x && x.id ? str(x.id) : null, m: num(x && x.m),
+      sides: Array.isArray(x && x.sides) ? x.sides.slice(0, 4).map((s) => ({ id: str(s && s.id), m: num(s && s.m) })) : []
+    })) }))
+  };
 }
 /* Ajustes de la cuenta (al entrar) o de fábrica (al salir, para que otra persona en
    el mismo navegador no vea los datos anteriores). */
@@ -459,9 +493,65 @@ function portionFor(item, slotKcal, max) {
   const m = Math.round((slotKcal / item.n.kcal) * 2) / 2;
   return Math.min(max, Math.max(0.5, m));
 }
-function buildPlan(pools, target) {
+/* ── Período del plan: cambia solo cada día (1 día) o cada 7 días (7 días) ── */
+const isoDay = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+const parseDay = (s) => { const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d); };
+const addDays = (s, n) => { const d = parseDay(s); d.setDate(d.getDate() + n); return isoDay(d); };
+function periodStart() {
+  const today = isoDay(new Date());
+  const sv = plan.saved;
+  // Un plan de 7 días sigue hasta su séptimo día; después empieza otro desde hoy.
+  if (sv && sv.days === plan.days && plan.days === 7 && sv.start <= today && today < addDays(sv.start, 7)) return sv.start;
+  return today;
+}
+function hashStr(s) { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0)) | 0; return Math.abs(h); }
+// Ajustes que cambian las recetas o las porciones: si cambian, se arma otro plan.
+const planSig = (target) => JSON.stringify([plan.goal, plan.diet, plan.prefs, plan.protein, plan.avoid, activeSeason(), target.kcal, target.protein]);
+function hydrateSaved(sv) {
+  const byId = (id) => recipes.find((r) => r.id === id);
+  const item = (id) => { const r = byId(id); return r ? { r, n: planInfo(r).n } : undefined; };
+  const days = [];
+  for (const day of sv.meals) {
+    const meals = [];
+    for (const x of day.items) {
+      const it = x.id ? item(x.id) : null;
+      if (it === undefined) return null; // una receta ya no existe: se arma otro
+      const sides = [];
+      for (const s of x.sides) { const si = item(s.id); if (!si) return null; sides.push({ item: si, m: s.m }); }
+      meals.push({ slot: x.slot, item: it, m: x.m, sides });
+    }
+    days.push(meals);
+  }
+  return days;
+}
+/* El plan del período: el guardado si sigue valiendo; si no, uno nuevo al azar que se guarda. */
+function periodPlan(pools, target) {
+  const start = periodStart();
+  const sig = planSig(target);
+  const sv = plan.saved;
+  if (sv && sv.start === start && sv.days === plan.days && sv.seed === plan.seed && sv.sig === sig) {
+    const days = hydrateSaved(sv);
+    if (days) return { start, days };
+  }
+  const days = buildPlan(pools, target, hashStr(start) + plan.seed * 7919 + Object.keys(PLAN_GOALS).indexOf(plan.goal) * 131);
+  plan.saved = {
+    start, days: plan.days, seed: plan.seed, sig,
+    meals: days.map((meals) => ({ items: meals.map((x) => ({
+      slot: x.slot, id: x.item ? x.item.r.id : null, m: x.m || 1,
+      sides: (x.sides || []).map((s) => ({ id: s.item.r.id, m: s.m }))
+    })) }))
+  };
+  savePlan();
+  return { start, days };
+}
+function dayName(iso, opts) {
+  const s = parseDay(iso).toLocaleDateString(currentLang === "es" ? "es-PR" : "en-US", opts);
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function buildPlan(pools, target, seed) {
   const g = PLAN_GOALS[plan.goal];
-  const rand = rng(plan.seed * 7919 + Object.keys(PLAN_GOALS).indexOf(plan.goal) * 131);
+  const rand = rng(seed);
   const usedWeek = new Set();
   const days = [];
   for (let d = 0; d < plan.days; d++) {
@@ -538,6 +628,8 @@ function renderPlansShell() {
           <select data-season>${Object.keys(tr.seasons).map((k) => `<option value="${k}" ${plan.season === k ? "selected" : ""}>${esc(k === "auto" ? `${tr.seasons.auto} (${tr.seasons[autoSeason()]})` : tr.seasons[k])}</option>`).join("")}</select>
         </label>
         <fieldset class="plans-avoid"><legend>${esc(tr.prefsLabel)}</legend>
+          <p class="plans-help">${esc(tr.dietHelp)}</p>
+          ${PLAN_DIETS.map((k) => `<label class="chip-check chip-pref chip-radio"><input type="radio" name="plan-diet" data-diet="${k}" ${plan.diet === k ? "checked" : ""}><span>${esc(tr.diets[k])}</span></label>`).join("")}
           ${Object.keys(tr.prefs).map((k) => `<label class="chip-check chip-pref"><input type="checkbox" data-pref="${k}" ${plan.prefs.includes(k) ? "checked" : ""}><span>${esc(tr.prefs[k])}</span></label>`).join("")}
         </fieldset>
         <fieldset class="plans-avoid"><legend>${esc(tr.protLabel)}</legend>
@@ -592,7 +684,7 @@ function mealHTML(meal) {
     </span>
   </li>`;
 }
-function dayHTML(meals, i, target) {
+function dayHTML(meals, i, target, iso) {
   const tr = pt();
   const tot = { kcal: 0, p: 0, c: 0, na: 0, fib: 0, s: 0 };
   for (const x of meals) {
@@ -603,7 +695,7 @@ function dayHTML(meals, i, target) {
   const pctK = Math.min(130, Math.round((tot.kcal / target.kcal) * 100));
   const pctP = Math.min(130, Math.round((tot.p / target.protein) * 100));
   return `<article class="plan-day">
-    ${plan.days > 1 ? `<h3 class="plan-day-title">${esc(tr.day(i + 1))}</h3>` : ""}
+    ${plan.days > 1 ? `<h3 class="plan-day-title">${esc(iso ? dayName(iso, { weekday: "long", day: "numeric", month: "short" }) : tr.day(i + 1))}</h3>` : ""}
     <ol class="plan-meals">${meals.map(mealHTML).join("")}</ol>
     <div class="plan-total">
       <span class="plan-total-label">${esc(tr.total)}</span>
@@ -662,6 +754,17 @@ function seasonHTML() {
     </ul>
   </section>`;
 }
+function planPeriodHTML(pools, target) {
+  const tr = pt();
+  const { start, days } = periodPlan(pools, target);
+  const long = { weekday: "long", day: "numeric", month: "long" };
+  const period = plan.days === 1
+    ? tr.periodDay(dayName(start, long).toLowerCase())
+    : tr.periodWeek(dayName(start, { day: "numeric", month: "long" }), dayName(addDays(start, 6), { day: "numeric", month: "long" }), dayName(addDays(start, 7), long).toLowerCase());
+  return (pools.relaxed ? `<p class="plans-warn">${esc(tr.relaxed)}</p>` : "") +
+    `<p class="plans-period">${esc(period)} <span class="plans-saved">${esc(tr.savedNote)}</span></p>` +
+    `<div class="plan-days${plan.days > 1 ? " week" : ""}">${days.map((d, i) => dayHTML(d, i, target, addDays(start, i))).join("")}</div>`;
+}
 function renderPlanOutput() {
   const tr = pt();
   const target = planTargets();
@@ -672,7 +775,7 @@ function renderPlanOutput() {
   const pools = candidates();
   const enough = pools.desayuno.length && pools.main.length >= 2 && pools.merienda.length;
   $("plans-output").innerHTML = enough
-    ? (pools.relaxed ? `<p class="plans-warn">${esc(tr.relaxed)}</p>` : "") + `<div class="plan-days${plan.days > 1 ? " week" : ""}">${buildPlan(pools, target).map((d, i) => dayHTML(d, i, target)).join("")}</div>`
+    ? planPeriodHTML(pools, target)
     : `<p class="plans-warn">${esc(tr.noMatch)}</p>`;
   $("plans-more").innerHTML = moreHTML(pools);
   $("plans-season").innerHTML = seasonHTML();
@@ -715,8 +818,9 @@ function setupPlans() {
   });
   v.addEventListener("change", (e) => {
     if (e.target.matches("[data-season]")) { plan.season = e.target.value; savePlan(); renderPlanOutput(); return; }
-    const k = e.target.dataset.avoid, p = e.target.dataset.pref, pr = e.target.dataset.prot;
-    if (k) plan.avoid = e.target.checked ? [...new Set([...plan.avoid, k])] : plan.avoid.filter((x) => x !== k);
+    const k = e.target.dataset.avoid, p = e.target.dataset.pref, pr = e.target.dataset.prot, dt = e.target.dataset.diet;
+    if (dt) plan.diet = dt;
+    else if (k) plan.avoid = e.target.checked ? [...new Set([...plan.avoid, k])] : plan.avoid.filter((x) => x !== k);
     else if (pr) plan.protein = e.target.checked ? [...new Set([...plan.protein, pr])] : plan.protein.filter((x) => x !== pr);
     else if (p) plan.prefs = e.target.checked ? [...new Set([...plan.prefs, p])] : plan.prefs.filter((x) => x !== p);
     else return;
