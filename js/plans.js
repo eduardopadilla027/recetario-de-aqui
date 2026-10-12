@@ -616,7 +616,7 @@ function showPlans() {
   current = null;
   $("view-home").hidden = true;
   $("view-recipe").hidden = true;
-  $("view-tribute").hidden = true;
+  $("view-admin").hidden = true;
   $("view-plans").hidden = false;
   document.title = `${pt().title} — ${BRAND}`;
   renderPlansShell();

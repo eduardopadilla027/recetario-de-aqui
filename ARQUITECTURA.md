@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-11 · **Versión del documento:** 3.23.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.0.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -18,6 +18,8 @@ Recetario digital de **cocina tradicional puertorriqueña**, bilingüe (español
 - Ver una **estimación nutricional** por porción calculada de los ingredientes.
 - Ver **alérgenos, alertas y manejo seguro** deducidos de los ingredientes.
 - Guardar favoritos, imprimir y compartir la receta (enlace propio por receta).
+- **Acceso con cuenta de correo validada** (Gmail, Outlook/Hotmail, Yahoo, iCloud u otro correo con enlace) y un
+  **panel de administración** con los usuarios y cuántas veces usa cada uno la app (§7.3). No se guardan contraseñas.
 
 Las recetas son **versiones propias redactadas para esta app** (no copias de libros ni webs).
 
@@ -34,13 +36,16 @@ Las recetas son **versiones propias redactadas para esta app** (no copias de lib
 
 **Publicar:** Vercel **no** está conectado al repositorio de GitHub: cada versión se publica a mano desde la carpeta con
 `vercel --prod` después de hacer commit y push a `master`. `.vercelignore` deja fuera de la web `ARQUITECTURA.md`,
-`CLAUDE.md` y `.claude/`.
+`CLAUDE.md`, `.claude/` y `firestore.rules`.
 
 ## 3. Stack
 
 - **HTML + CSS + JavaScript sin frameworks ni build.** Scripts clásicos (no módulos) cargados en orden desde `index.html`;
   todo comparte el ámbito global (`recipes`, `estimateNutrition`, `getAdvisories`…).
-- Sin backend ni base de datos: los datos están en archivos `.js`. Preferencias en `localStorage`.
+- Sin backend propio: las recetas están en archivos `.js`. Preferencias en `localStorage`.
+- **Acceso:** Firebase Authentication (Google, Microsoft, Yahoo, Apple y enlace por correo, sin contraseñas) y Cloud
+  Firestore (correo + conteo de usos). El SDK *compat* 10.14.1 se carga desde `www.gstatic.com` sólo si
+  `js/auth-config.js` tiene la configuración (§7.3).
 - Tipografía: Tahoma/Verdana del sistema; sólo la cursiva de "Puertorriqueña" viene de Google Fonts (Playfair Display).
 - Iconos de la interfaz: sprite SVG en `index.html` (sin emojis en la interfaz). Las "portadas" de los platos usan emojis
   o dibujos SVG propios mientras no haya fotos.
@@ -65,9 +70,11 @@ cocine-a-gusto/
 │   ├── families.js       familias de recetas por categoría (flanes, tembleques…; res, cerdo…) y su orden
 │   ├── pairings.js       "Combina mejor con" de las salsas y aderezos (getPairings)
 │   ├── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
-│   ├── tribute.js        dedicatoria al Master Chef Alfredo Ayala Colón (#/dedicatoria): biografía ES/EN y fuentes
-│   └── plans.js          planes de comida (#/planes): objetivos, época, preferencias, plan de 1 o 7 días
-├── images/               (vacía: reservada para fotos; la de la dedicatoria va aquí, ver §7.3)
+│   ├── plans.js          planes de comida (#/planes): objetivos, época, preferencias, plan de 1 o 7 días
+│   ├── auth-config.js    configuración web de Firebase y proveedores de correo que se muestran (§7.3)
+│   └── auth.js           pantalla de entrada, validación del correo, conteo de usos y panel #/admin (§7.3)
+├── images/               (vacía: reservada para fotos)
+├── firestore.rules       reglas de seguridad de Cloud Firestore (se pegan en la consola de Firebase)
 ├── .claude/launch.json   servidor local para la vista previa
 ├── .vercelignore         archivos que no se publican en Vercel
 ├── ARQUITECTURA.md       este documento (fuente de verdad)
@@ -75,7 +82,7 @@ cocine-a-gusto/
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js`
-→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `tribute.js` → `app.js` → `plans.js` (usa funciones de `app.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
+→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `auth-config.js` → `auth.js` (usa `app.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
 ## 5. Modelo de datos: la receta
 
@@ -331,21 +338,39 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - **Si nada tiene todas las palabras**, muestra las recetas que tienen alguna y lo dice ("Ninguna receta tiene todo…").
 - Rendimiento: índice por receta en caché; cada búsqueda tarda unos milisegundos (la primera con alérgenos, ~0.25 s).
 
-### 7.3 Dedicatoria (`js/tribute.js`, ruta `#/dedicatoria`)
+### 7.3 Acceso y administración (`js/auth.js`, `js/auth-config.js`, ruta `#/admin`)
 
-- **Qué es:** página dedicada al **Master Chef Alfredo Ayala Colón** (Barranquitas; padre de la nueva cocina
-  puertorriqueña; fallecido en 2016). Lleva una dedicatoria, su vida en una línea de tiempo (ingeniería en la UPR,
-  California 1979, Ali-Oli 1981 y el Tenedor de Oro, Jamin de Robuchon 1986, Yuquiyú y Chayote, sus otros restaurantes,
-  James Beard House y Great Chefs of the Caribbean), su legado (alumnos como Mario Pagán y José Santaella, becas de
-  hotelería, sala en la UAGM de Carolina), una frase de cierre y las **fuentes** con enlace (`TRIBUTE_SOURCES`).
-  Textos en `TRIBUTE_TEXT` (ES/EN), redactados con palabras propias a partir de las fuentes.
-- **Enlaces:** "Dedicatoria" en el menú del encabezado y en el del pie, y la línea "Dedicado al Master Chef Alfredo Ayala
-  Colón" en el pie (textos `navTribute` y `footerTribute` de `app.js`). `route()` abre `showTribute()`; la vista
-  se oculta al ir al inicio, a una receta o a los planes, y se redibuja al cambiar de idioma.
-- **Foto:** no hay foto de licencia libre (Wikimedia Commons y Wikipedia no tienen) y las de la prensa tienen derechos, así
-  que se muestra un retrato dibujado (gorro de chef con "AA"). Para poner una foto con permiso: copiarla en `images/` y
-  poner su ruta en `TRIBUTE_PHOTO` y el crédito en `TRIBUTE_PHOTO_CREDIT`. Con `TRIBUTE_PHOTO` vacío no se pide
-  ningún archivo.
+- **Pantalla de entrada:** `<body class="auth-locked">` oculta encabezado, contenido y pie hasta que haya una sesión con
+  el correo validado; mientras tanto se ve `#auth-gate` (ES/EN). La persona **escoge su proveedor de correo**: Gmail
+  (Google), Outlook/Hotmail/Live (Microsoft), Yahoo Mail, iCloud (Apple) u **"¿Otro correo?"**, que envía un enlace de
+  validación al buzón (Firebase *email link*, sin contraseña). Qué botones salen se decide en `AUTH_CONFIG.providers`
+  (Apple viene apagado: exige cuenta de Apple Developer).
+- **Validación:** con Google y con el enlace el correo llega validado. Si un proveedor lo entrega sin validar (algunas
+  cuentas de Microsoft), Firebase envía un mensaje de validación y la vista "Valide su correo" espera ("Ya lo validé" /
+  "Reenviar"). Si el enlace se abre en otro navegador, se pide el correo otra vez.
+- **Qué se guarda (Firestore `users/{uid}`):** `email`, `count` (veces que usa la app: +1 por sesión del navegador,
+  marcada en `sessionStorage`), `firstSeen`, `lastSeen` y `blocked` si un administrador suspende la cuenta.
+  **Nunca contraseñas**: la app no las ve. (Firebase Authentication guarda la cuenta: correo y proveedor.)
+- **Administradores:** los correos con documento en `admins/{correo}`. Ven "Administrador" en el menú y `#/admin`:
+  totales (usuarios, usos, activos en 7 días), búsqueda, tabla con correo, veces, primera y última vez y rol, acciones
+  **Hacer/Quitar admin** y **Suspender/Reactivar** (no sobre sí mismos) y **Exportar CSV**. En el encabezado está el
+  correo de la sesión y "Salir".
+- **Seguridad (`firestore.rules`):** cada quien lee sólo su registro; al crearlo sólo puede poner su correo validado y
+  `count = 1`; después sólo puede subir `count` exactamente 1 y `lastSeen`. Sólo los administradores leen a todos,
+  cambian `blocked` y crean o borran `admins`. Las recetas siguen siendo archivos públicos: el bloqueo es de la app.
+
+**Puesta en marcha (una vez, en https://console.firebase.google.com):**
+
+1. Crear un proyecto y una app **Web**; copiar `apiKey`, `authDomain`, `projectId` y `appId` en `js/auth-config.js`.
+2. **Authentication → Método de acceso:** activar *Correo electrónico/contraseña* con **Vínculo de correo electrónico
+   (acceso sin contraseña)**, y *Google*. Para Outlook: *Microsoft* (requiere registrar una app en Azure / Microsoft
+   Entra). Para Yahoo: *Yahoo* (app en developer.yahoo.com). Para iCloud: *Apple* y poner `apple: true`.
+3. **Authentication → Configuración → Dominios autorizados:** añadir `recetario-de-aqui.vercel.app` (localhost ya está).
+4. **Firestore Database:** crearla y publicar el contenido de `firestore.rules` en *Reglas*.
+5. **Primer administrador:** entrar una vez en la app con ese correo; luego en Firestore crear la colección `admins`
+   con un documento cuyo ID sea el correo **en minúsculas** (campos opcionales). Los demás se nombran desde `#/admin`.
+
+Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 
 ### 7.2 Planes de comida (`js/plans.js`, ruta `#/planes`)
 - **Acceso:** enlace "Planes" / "Meal plans" en el menú y en el pie. Vista `<section id="view-plans">`; `route()` llama a
@@ -465,6 +490,20 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-12 — v4.0.0 · Acceso con cuenta de correo y administrador; sin dedicatoria
+- *Pedido:* eliminar la dedicatoria; acceso con usuario administrador; los demás se registran con una cuenta de correo
+  validada por su proveedor, escogiendo entre los proveedores existentes; guardar sólo el correo y un conteo de usos, nunca
+  la contraseña.
+- **Dedicatoria eliminada:** fuera `js/tribute.js`, la vista `#/dedicatoria`, sus enlaces del menú y del pie, sus textos
+  y los estilos `.tribute-*`/`.footer-dedication`.
+- Nuevos `js/auth.js`, `js/auth-config.js` y `firestore.rules` (§7.3): pantalla de entrada (Gmail, Outlook, Yahoo,
+  iCloud u otro correo con enlace), validación del correo, conteo de usos, panel `#/admin` (usuarios, veces, roles,
+  suspender, CSV) y cuenta + "Salir" en el encabezado. Iconos `i-mail`, `i-lock` e `i-logout`.
+- **Pendiente del dueño:** crear el proyecto de Firebase y llenar `js/auth-config.js` (pasos en §7.3).
+- *Verificado:* pantalla de entrada ES/EN y a 375 px sin desbordes; "Acceso sin configurar" sin `apiKey`; panel de
+  administración con datos de prueba (tabla y fichas en móvil); planes y recetas siguen funcionando; sin errores en la
+  consola ✔. El inicio de sesión real queda por probar cuando haya proyecto de Firebase.
 
 ### 2026-10-11 — v3.23.0 · Dedicatoria al Master Chef Alfredo Ayala Colón
 - *Pedido:* una dedicatoria al Master Chef Alfredo Ayala Colón, con su biografía y una foto, enlazada en el encabezado y

@@ -1,0 +1,51 @@
+// Recetarios de Aquí · Reglas de Cloud Firestore (js/auth.js, ARQUITECTURA.md §7.3).
+// Publíquelas en la consola de Firebase: Firestore Database → Reglas → pegar → Publicar.
+//
+// users/{uid}:    { email, count, firstSeen, lastSeen, blocked? }  — sin contraseñas
+// admins/{email}: { addedBy, addedAt }  — el primer administrador se crea a mano en la consola
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function verified() {
+      return request.auth != null && request.auth.token.email_verified == true;
+    }
+    function myEmail() {
+      return request.auth.token.email.lower();
+    }
+    function isAdmin() {
+      return verified() && exists(/databases/$(database)/documents/admins/$(myEmail()));
+    }
+
+    match /users/{uid} {
+      // Cada persona ve su registro; los administradores ven todos.
+      allow read: if verified() && (request.auth.uid == uid || isAdmin());
+
+      // Primera vez: sólo su correo validado, count = 1 y las fechas del servidor.
+      allow create: if verified() && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['email', 'count', 'firstSeen', 'lastSeen'])
+        && request.resource.data.email == myEmail()
+        && request.resource.data.count == 1
+        && request.resource.data.firstSeen == request.time
+        && request.resource.data.lastSeen == request.time;
+
+      // Cada uso: count sube exactamente 1 y lastSeen es la hora del servidor.
+      allow update: if verified() && request.auth.uid == uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['count', 'lastSeen'])
+        && request.resource.data.count == resource.data.count + 1
+        && request.resource.data.lastSeen == request.time;
+
+      // Administradores: suspender o reactivar el acceso, o borrar el registro.
+      allow update: if isAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['blocked'])
+        && request.resource.data.blocked is bool;
+      allow delete: if isAdmin();
+    }
+
+    match /admins/{email} {
+      // Cada persona puede saber si ella misma es administradora.
+      allow read: if verified() && (email == myEmail() || isAdmin());
+      allow create, delete: if isAdmin();
+    }
+  }
+}
