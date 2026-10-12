@@ -40,6 +40,9 @@ const PLAN_T = {
     seasonNow: (name) => `Hoy: ${name}`,
     prefsLabel: "Preferencias",
     prefs: { veg: "Vegetariano", quick: "Sólo rápidas (30 min o menos)" },
+    protLabel: "Proteína del almuerzo y la cena",
+    protHelp: "Escoja una o varias; sin ninguna, entra de todo.",
+    protOpts: { aves: "Aves (pollo, pavo)", pescado: "Pescado", mariscos: "Mariscos", res: "Res", cerdo: "Cerdo", cabro: "Cabro, cordero y conejo", granos: "Granos y vegetales" },
     seasonTitle: (name) => `De temporada: ${name}`,
     seasonSub: "Las recetas típicas de la época, incluidos postres y bebidas. En el plan salen primero las que cumplen su objetivo.",
     badges: { prot: "Alta en proteína", fib: "Alta en fibra", sugar: "Baja en azúcar", sodium: "Sodio moderado" },
@@ -101,6 +104,9 @@ const PLAN_T = {
     seasonNow: (name) => `Today: ${name}`,
     prefsLabel: "Preferences",
     prefs: { veg: "Vegetarian", quick: "Quick only (30 min or less)" },
+    protLabel: "Lunch and dinner protein",
+    protHelp: "Pick one or more; with none, everything goes.",
+    protOpts: { aves: "Poultry (chicken, turkey)", pescado: "Fish", mariscos: "Shellfish", res: "Beef", cerdo: "Pork", cabro: "Goat, lamb and rabbit", granos: "Beans and vegetables" },
     seasonTitle: (name) => `In season: ${name}`,
     seasonSub: "The typical recipes of the season, including desserts and drinks. In the plan, the ones that fit your goal come first.",
     badges: { prot: "High protein", fib: "High fiber", sugar: "Low sugar", sodium: "Moderate sodium" },
@@ -236,6 +242,37 @@ const dietOk = (r) => {
   if ((d === "veg" || plan.prefs.includes("veg")) && !isVegetarian(r)) return false;
   return d !== "vegan" || isVegan(r);
 };
+/* ── Proteína preferida del plato principal ── */
+// Primero por el nombre; si el nombre no dice, por la categoría y los ingredientes.
+const PROTEINS = {
+  aves: /\b(pollo|pavo|pechugas?|muslos?|alitas?|gallina|codorni|guinea|pato|chicharrones de pollo)/,
+  pescado: /\b(pescado|bacalao|bacalaitos?|atun|salmon|chillo|mero|dorado|tilapia|sierra|carite|pargo|sardinas?|arenque|filete de pez|mahi|robalo|cetis?|trucha)/,
+  mariscos: /\b(camarones|camaron|langosta|langostinos?|jueyes|juey|cangrejo|pulpo|calamar(es)?|carrucho|almejas?|mejillones|ostiones|mariscos|vieiras)/,
+  res: /\b(res|carne de res|bistec|churrasco|entrana|carne molida|picadillo(?! de lentejas)|ternera|rabo|carne mechada|lengua|filete mignon|carne guisada|carne frita|hamburguesas?(?! vegetarian)|albondigas|carne bif|corned|costillas de res|pastelon de carne|roast beef|tasajo|mondongo|picanha|punta trasera)/,
+  cerdo: /\b(cerdo|pernil|lechon|chuletas?|costillas?(?! de res)|longaniza|chorizo|jamon|tocino|tocineta|cuchifritos?|gandinga|morcilla|chicharron(?! de pollo)|masitas|patitas|salchichas?|salami|salchichon)/,
+  cabro: /\b(cabro|cabrito|chivo|cordero|carnero|conejo)/
+};
+const protCache = new Map();
+function proteinsOf(r) {
+  if (protCache.has(r.id)) return protCache.get(r.id);
+  const nm = planNorm(r.name.es);
+  let found = Object.keys(PROTEINS).filter((k) => PROTEINS[k].test(nm));
+  if (!found.length) {
+    if (r.category === "aves") found = ["aves"];
+    else if (r.category === "pescados") found = ["pescado"];
+    else {
+      const ing = planNorm(r.ingredients.es.join(" "));
+      found = Object.keys(PROTEINS).filter((k) => PROTEINS[k].test(ing));
+    }
+  }
+  if (!found.length && isVegetarian(r)) found = ["granos"];
+  protCache.set(r.id, found);
+  return found;
+}
+// La preferencia no aplica en los objetivos vegetariano y vegano (ya mandan la dieta).
+const protActive = () => plan.protein.length > 0 && !PLAN_GOALS[plan.goal].diet && !plan.prefs.includes("veg");
+const protOk = (r) => !protActive() || proteinsOf(r).some((k) => plan.protein.includes(k));
+
 function badgesOf(n, m = 1) {
   const b = [];
   n = { p: n.p * m, fib: n.fib * m, s: n.s * m, na: n.na * m };
@@ -257,8 +294,8 @@ const AVOID = {
 const planNorm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
 /* ── Ajustes guardados ── */
-const PLAN_DEFAULTS = { goal: "rebajar", sex: "", age: "", weight: "", ft: "", inch: "", activity: "1", avoid: [], prefs: [], season: "auto", days: 1, seed: 1 };
-let plan = { ...PLAN_DEFAULTS, avoid: [], prefs: [] };
+const PLAN_DEFAULTS = { goal: "rebajar", sex: "", age: "", weight: "", ft: "", inch: "", activity: "1", avoid: [], prefs: [], protein: [], season: "auto", days: 1, seed: 1 };
+let plan = { ...PLAN_DEFAULTS, avoid: [], prefs: [], protein: [] };
 try { Object.assign(plan, JSON.parse(readStore(PLAN_STORE) || "{}")); } catch { /* ajustes dañados: se usan los de fábrica */ }
 const savePlan = () => {
   writeStore(PLAN_STORE, JSON.stringify(plan));
@@ -361,6 +398,7 @@ function candidates() {
   const loose = { desayuno: [], main: [], merienda: [], side: [] }; // respetan exclusiones aunque no el objetivo
   const sr = SIDE_RULES[plan.goal];
   const season = activeSeason();
+  const offProt = []; // platos principales de otra proteína: sólo si faltan opciones
   for (const r of recipes) {
     const slot = slotOf(r);
     if (!slot) continue;
@@ -379,6 +417,7 @@ function candidates() {
     }
     let s = slot;
     if (s === "main" && info.n.kcal < 180 && ["ensaladas", "vegetales"].includes(r.category)) s = "merienda";
+    if (s === "main" && !protOk(r)) { offProt.push({ r, n: info.n, loose: true, score: g.score(info.n) - 500 }); continue; }
     const inSeason0 = season !== "todo" && SEASONS[season](r, planNorm(r.name.es));
     if (!g.ok[s](info.n)) { loose[s].push({ r, n: info.n, inSeason: inSeason0, loose: true, score: g.score(info.n) + (inSeason0 ? 1000 : 0) }); continue; }
     const inSeason = season !== "todo" && SEASONS[season](r, planNorm(r.name.es));
@@ -398,6 +437,7 @@ function candidates() {
   for (const k of ["desayuno", "main", "merienda"]) {
     const min = k === "main" ? 6 : 3; // variedad mínima para no repetir todo el plan
     if (pools[k].length < min && loose[k].length) { pools[k] = pools[k].concat(loose[k]); relaxed = true; }
+    if (k === "main" && pools.main.length < 3 && offProt.length) { pools.main = pools.main.concat(offProt); relaxed = true; }
     pools[k].sort((x, y) => y.score - x.score);
   }
   pools.relaxed = relaxed;
@@ -499,6 +539,10 @@ function renderPlansShell() {
         </label>
         <fieldset class="plans-avoid"><legend>${esc(tr.prefsLabel)}</legend>
           ${Object.keys(tr.prefs).map((k) => `<label class="chip-check chip-pref"><input type="checkbox" data-pref="${k}" ${plan.prefs.includes(k) ? "checked" : ""}><span>${esc(tr.prefs[k])}</span></label>`).join("")}
+        </fieldset>
+        <fieldset class="plans-avoid"><legend>${esc(tr.protLabel)}</legend>
+          <p class="plans-help">${esc(tr.protHelp)}</p>
+          ${Object.keys(tr.protOpts).map((k) => `<label class="chip-check chip-pref"><input type="checkbox" data-prot="${k}" ${plan.protein.includes(k) ? "checked" : ""}><span>${esc(tr.protOpts[k])}</span></label>`).join("")}
         </fieldset>
         <fieldset class="plans-avoid"><legend>${esc(tr.avoid)}</legend>
           ${Object.keys(AVOID).map((k) => `<label class="chip-check"><input type="checkbox" data-avoid="${k}" ${plan.avoid.includes(k) ? "checked" : ""}><span>${esc(tr.avoidOpts[k])}</span></label>`).join("")}
@@ -671,8 +715,9 @@ function setupPlans() {
   });
   v.addEventListener("change", (e) => {
     if (e.target.matches("[data-season]")) { plan.season = e.target.value; savePlan(); renderPlanOutput(); return; }
-    const k = e.target.dataset.avoid, p = e.target.dataset.pref;
+    const k = e.target.dataset.avoid, p = e.target.dataset.pref, pr = e.target.dataset.prot;
     if (k) plan.avoid = e.target.checked ? [...new Set([...plan.avoid, k])] : plan.avoid.filter((x) => x !== k);
+    else if (pr) plan.protein = e.target.checked ? [...new Set([...plan.protein, pr])] : plan.protein.filter((x) => x !== pr);
     else if (p) plan.prefs = e.target.checked ? [...new Set([...plan.prefs, p])] : plan.prefs.filter((x) => x !== p);
     else return;
     savePlan(); renderPlanOutput();

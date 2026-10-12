@@ -659,6 +659,7 @@ main:focus { outline: none; }
 .plans-activity { grid-column: 1 / -1; }
 .plans-avoid legend { font-weight: 700; padding: 0 4px; }
 .plans-avoid { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.plans-avoid .plans-help { flex-basis: 100%; margin: 0 0 var(--s-1); }
 .chip-check { position: relative; }
 .chip-check input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
 .chip-check span { display: inline-block; padding: 6px 12px; border: 1.5px solid var(--line); border-radius: 999px; font-size: .88rem; background: #fff; }

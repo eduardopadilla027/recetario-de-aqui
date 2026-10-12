@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.3.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.4.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -390,6 +390,11 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   ≥ 10 g en vegetariano, ≥ 8 g en vegano) y acompañantes de arroz o vianda y granos. Cada uno trae: meta típica de calorías, ajuste sobre el gasto (rebajar −20 %, masa +12 %…),
   proteína por kilo (1.0–2.0 g/kg), porción máxima, criterios por comida (desayuno, plato principal, merienda) sobre la
   nutrición estimada por porción, y una puntuación para ordenar. Rebajar excluye frituras.
+- **Proteína del almuerzo y la cena (`plan.protein`, `PROTEINS`, `proteinsOf()`):** aves, pescado, mariscos, res, cerdo,
+  cabro/cordero/conejo y granos y vegetales; una o varias. Se reconoce por el nombre y, si no, por la categoría y los
+  ingredientes ("granos" = vegetariana sin otra proteína). Sólo filtra el plato principal (no desayuno, merienda ni
+  acompañantes). Si deja menos de 3 platos, entran los de otra proteína (aviso de plan ajustado). No aplica en los
+  objetivos vegetariano y vegano ni con la preferencia "Vegetariano".
 - **Mis datos (opcional):** sexo, edad, peso (libras), estatura (pies y pulgadas) y actividad. Calorías con Mifflin-St Jeor
   × factor de actividad (1.2–1.725) × ajuste del objetivo; mínimo 1,200 (mujer) o 1,500 (hombre), con aviso.
 - **Época (`SEASONS`):** Navidad, Cuaresma y Semana Santa, verano y playa, Acción de Gracias y días de lluvia, por nombre y
@@ -497,6 +502,14 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-12 — v4.4.0 · Planes: proteína preferida
+- *Pedido:* en Planes, poder escoger otras preferencias: aves, pescado, carnes, etc.
+- Nuevo grupo "Proteína del almuerzo y la cena" (§7.2) con aves, pescado, mariscos, res, cerdo, cabro/cordero/conejo y
+  granos y vegetales; se guarda con los demás ajustes (también en la cuenta).
+- Reparto de los 438 platos principales: aves 98, cerdo 98, granos y vegetales 109, res 56, mariscos 49, pescado 46,
+  cabro 5 (un plato puede tener varias).
+- *Verificado:* con pescado + mariscos, un plan de 7 días trae sólo platos de pescado y mariscos; sin desbordes ni errores ✔.
 
 ### 2026-10-12 — v4.3.0 · Planes guardados en la cuenta del usuario
 - *Pedido:* Planes no guardaba los datos del usuario que entró con su correo (sólo quedaban en el navegador).
