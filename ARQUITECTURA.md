@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.1.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.2.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -492,6 +492,13 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-12 — v4.2.0 · Proyecto de Firebase conectado
+- `js/auth-config.js` con la configuración web del proyecto de Firebase `recetario-de-aqui`.
+- Por ahora sólo se muestran **Gmail** y **"¿Otro correo?"**: Outlook (Microsoft) y Yahoo quedan en `false` hasta
+  registrar sus apps en Microsoft Entra y Yahoo Developer y activarlos en Firebase.
+- Los botones de proveedor ocupan todo el ancho cuando hay uno solo.
+- *Verificado:* el SDK de Firebase carga y se inicializa en localhost, pantalla de entrada sin errores en la consola ✔.
 
 ### 2026-10-12 — v4.1.0 · Administrador dueño
 - *Pedido:* el correo de administrador es eduardo.padilla027@gmail.com.

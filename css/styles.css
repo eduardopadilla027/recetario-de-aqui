@@ -752,7 +752,7 @@ body.auth-locked .site-header, body.auth-locked main, body.auth-locked .site-foo
 .auth-title:focus { outline: none; }
 .auth-text { color: var(--ink-2); line-height: 1.6; margin-bottom: var(--s-5); }
 .auth-h2 { font-size: var(--step--1); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--plantain); margin-bottom: var(--s-3); }
-.provider-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-2); }
+.provider-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--s-2); }
 .provider-btn { display: flex; align-items: center; gap: var(--s-3); min-height: 60px; padding: var(--s-2) var(--s-3); text-align: left; background: var(--ivory); border: 1.5px solid var(--line); border-radius: var(--radius); transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease); }
 .provider-btn:hover { border-color: var(--achiote); background: #fff; }
 .provider-btn:focus-visible, .auth-input:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }

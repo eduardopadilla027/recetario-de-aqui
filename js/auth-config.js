@@ -11,17 +11,17 @@
 
 const AUTH_CONFIG = {
   firebase: {
-    apiKey: "",
-    authDomain: "",       // p. ej. "recetario-de-aqui.firebaseapp.com"
-    projectId: "",        // p. ej. "recetario-de-aqui"
-    appId: ""
+    apiKey: "AIzaSyApbOc_xyRiQV1buF_xBLa73A05Vrt5GEU",
+    authDomain: "recetario-de-aqui.firebaseapp.com",
+    projectId: "recetario-de-aqui",
+    appId: "1:9586202974:web:bc6d5e9f3540e2d48997cf"
   },
   // Proveedores que se muestran en la pantalla de entrada. Active en la consola
   // de Firebase (Authentication → Método de acceso) cada uno que deje en true.
   providers: {
     google: true,      // Gmail
-    microsoft: true,   // Outlook, Hotmail, Live, MSN
-    yahoo: true,       // Yahoo Mail
+    microsoft: false,  // Outlook, Hotmail, Live, MSN
+    yahoo: false,      // Yahoo Mail
     apple: false,      // iCloud (requiere cuenta de Apple Developer)
     email: true        // cualquier otro correo: enlace de validación
   }
