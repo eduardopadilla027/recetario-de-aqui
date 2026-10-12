@@ -14,7 +14,8 @@
  * general, no consejo médico: la vista lo dice siempre.
  *
  * Depende de globales de app.js (t, currentLang, $, esc, coverHTML,
- * readStore, writeStore). Los ajustes se guardan sólo en este navegador. */
+ * readStore, writeStore). Los ajustes se guardan en este navegador y, con la sesión
+ * abierta, en la cuenta del usuario en Firestore (js/auth.js: cloudSavePlan). */
 
 const PLAN_STORE = "rcb.plan";
 
@@ -256,9 +257,31 @@ const AVOID = {
 const planNorm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
 /* ── Ajustes guardados ── */
-let plan = { goal: "rebajar", sex: "", age: "", weight: "", ft: "", inch: "", activity: "1", avoid: [], prefs: [], season: "auto", days: 1, seed: 1 };
+const PLAN_DEFAULTS = { goal: "rebajar", sex: "", age: "", weight: "", ft: "", inch: "", activity: "1", avoid: [], prefs: [], season: "auto", days: 1, seed: 1 };
+let plan = { ...PLAN_DEFAULTS, avoid: [], prefs: [] };
 try { Object.assign(plan, JSON.parse(readStore(PLAN_STORE) || "{}")); } catch { /* ajustes dañados: se usan los de fábrica */ }
-const savePlan = () => writeStore(PLAN_STORE, JSON.stringify(plan));
+const savePlan = () => {
+  writeStore(PLAN_STORE, JSON.stringify(plan));
+  if (typeof cloudSavePlan === "function") cloudSavePlan(plan);
+};
+/* Sólo las claves conocidas, con su tipo (para guardar o recibir de la nube). */
+function cleanPlan(src) {
+  const out = {};
+  for (const [k, def] of Object.entries(PLAN_DEFAULTS)) {
+    const v = src && src[k];
+    if (Array.isArray(def)) out[k] = Array.isArray(v) ? v.filter((x) => typeof x === "string").slice(0, 20) : [];
+    else if (typeof def === "number") out[k] = Number.isFinite(+v) ? +v : def;
+    else out[k] = typeof v === "string" ? v.slice(0, 40) : def;
+  }
+  return out;
+}
+/* Ajustes de la cuenta (al entrar) o de fábrica (al salir, para que otra persona en
+   el mismo navegador no vea los datos anteriores). */
+function applyPlan(data) {
+  plan = cleanPlan(data || PLAN_DEFAULTS);
+  writeStore(PLAN_STORE, JSON.stringify(plan));
+  if (!$("view-plans").hidden) renderPlansShell();
+}
 let plansScrollY = 0;
 
 /* ── Metas del día ── */

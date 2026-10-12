@@ -7,7 +7,8 @@
  *
  * En Cloud Firestore se guarda sólo, por persona (users/{uid}): el correo, cuántas
  * veces ha usado la app (count: +1 por sesión del navegador), la primera y la última
- * vez, y `blocked` si un administrador le quitó el acceso. Los administradores son
+ * vez, y `blocked` si un administrador le quitó el acceso. Los ajustes de Planes van
+ * aparte, en users/{uid}/data/plan, y sólo los lee la persona dueña. Los administradores son
  * los correos que tienen un documento en admins/{correo}. El dueño está fijo en
  * firestore.rules: al entrar, la app le crea su documento con owner: true (a los
  * demás ese intento se les niega y no pasa nada). ARQUITECTURA.md §7.3. Las reglas de firestore.rules
@@ -428,7 +429,9 @@ async function resendVerification() {
 
 async function signOut() {
   if (authUser) { try { sessionStorage.removeItem(AUTH_USE_KEY + authUser.uid); } catch { /* sin almacenamiento */ } }
+  clearTimeout(planSaveTimer);
   await fbAuth.signOut();
+  applyPlan(null); // los datos del plan quedan en la cuenta, no en este navegador
   if (location.hash === "#/admin") location.hash = "#/";
 }
 
@@ -474,6 +477,7 @@ async function onUser(user) {
     if (data.blocked) { setAuthState("blocked"); return; }
     authIsAdmin = await checkAdmin(user);
     setAuthState("ready");
+    loadUserPlan();
     if (location.hash === "#/admin") route();
   } catch (err) {
     setAuthState("signin", authError(err));
@@ -489,6 +493,31 @@ async function checkAdmin(user) {
     await ref.set({ owner: true, addedBy: lower(user.email), addedAt: firebase.firestore.FieldValue.serverTimestamp() });
     return true;
   } catch { return false; }
+}
+
+/* ------------------------------------------------------------ datos del usuario (Planes) ---- */
+
+/* users/{uid}/data/plan = { plan: {objetivo, datos, alergias, época…}, updatedAt }.
+   Sólo la persona dueña lo lee o escribe (firestore.rules); ni los administradores. */
+let planSaveTimer = null;
+function planRef() { return fbDb.collection("users").doc(authUser.uid).collection("data").doc("plan"); }
+
+function cloudSavePlan(p) {
+  if (!fbDb || !authUser || authState !== "ready") return;
+  clearTimeout(planSaveTimer);
+  planSaveTimer = setTimeout(() => {
+    planRef().set({ plan: cleanPlan(p), updatedAt: firebase.firestore.FieldValue.serverTimestamp() })
+      .catch(() => { /* sin conexión: queda en este navegador y se sube en el próximo cambio */ });
+  }, 800);
+}
+
+/* Al entrar: si la cuenta ya tiene ajustes se usan; si no, se suben los de este navegador. */
+async function loadUserPlan() {
+  try {
+    const snap = await planRef().get();
+    if (snap.exists && snap.data().plan) applyPlan(snap.data().plan);
+    else cloudSavePlan(plan);
+  } catch { /* sin conexión: se usan los de este navegador */ }
 }
 
 /* ------------------------------------------------------------ administración (#/admin) ---- */

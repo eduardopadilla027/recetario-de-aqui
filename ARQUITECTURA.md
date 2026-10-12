@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.2.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.3.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -351,6 +351,11 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - **Qué se guarda (Firestore `users/{uid}`):** `email`, `count` (veces que usa la app: +1 por sesión del navegador,
   marcada en `sessionStorage`), `firstSeen`, `lastSeen` y `blocked` si un administrador suspende la cuenta.
   **Nunca contraseñas**: la app no las ve. (Firebase Authentication guarda la cuenta: correo y proveedor.)
+- **Ajustes de Planes en la cuenta (`users/{uid}/data/plan`):** `{ plan, updatedAt }` con objetivo, datos personales
+  (sexo, edad, peso, estatura, actividad), alergias, preferencias, época y días. `savePlan()` (plans.js) los guarda en el
+  navegador y llama a `cloudSavePlan()` (auth.js, con 0.8 s de espera). Al entrar, `loadUserPlan()` trae los de la cuenta
+  (o sube los del navegador si la cuenta no tiene); al salir, `applyPlan(null)` deja el navegador con los de fábrica.
+  `cleanPlan()` sólo acepta las claves de `PLAN_DEFAULTS`. Sólo la persona dueña los lee: **ni los administradores**.
 - **Administradores:** los correos con documento en `admins/{correo}`. Ven "Administrador" en el menú y `#/admin`:
   totales (usuarios, usos, activos en 7 días), búsqueda, tabla con correo, veces, primera y última vez y rol, acciones
   **Hacer/Quitar admin** y **Suspender/Reactivar** (no sobre sí mismos) y **Exportar CSV**. En el encabezado está el
@@ -492,6 +497,15 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-12 — v4.3.0 · Planes guardados en la cuenta del usuario
+- *Pedido:* Planes no guardaba los datos del usuario que entró con su correo (sólo quedaban en el navegador).
+- Los ajustes de Planes se guardan en Firestore `users/{uid}/data/plan` y se cargan al entrar desde cualquier dispositivo;
+  al salir se borran del navegador (§7.3). `plans.js`: `PLAN_DEFAULTS`, `cleanPlan()`, `applyPlan()`; `auth.js`:
+  `cloudSavePlan()`, `loadUserPlan()`. `firestore.rules`: regla nueva para `users/{uid}/data/{docId}` (hay que volver a
+  publicarlas en la consola).
+- *Verificado:* con Firestore simulado, al entrar se cargan los datos de la cuenta en el formulario (claves extrañas
+  descartadas) y un cambio se sube una vez tras 0.8 s; sin errores en la consola ✔.
 
 ### 2026-10-12 — v4.2.0 · Proyecto de Firebase conectado
 - `js/auth-config.js` con la configuración web del proyecto de Firebase `recetario-de-aqui`.
