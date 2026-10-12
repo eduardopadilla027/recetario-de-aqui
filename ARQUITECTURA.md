@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.5.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.5.1 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -511,6 +511,19 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-12 — v4.5.1 · El último plan se conserva al volver a entrar
+- *Problema:* al entrar otra vez el mismo día no salía el último plan. Causas: (1) "Salir" cancelaba la subida pendiente
+  (0.8 s) y borraba la copia del navegador; (2) al entrar, antes de leer la cuenta, se armaba un plan de fábrica que
+  contaba como más reciente y se subía encima del de la cuenta.
+- Cada usuario tiene su copia en el navegador (`rcb.plan.<uid>`; la anónima `rcb.plan` se hereda la primera vez).
+  `plan.ts` marca el último cambio **de la persona** (`savePlan(true)` del plan armado solo no lo cambia); al entrar se
+  usa la copia más reciente, cuenta o navegador. Mientras se lee la cuenta no se sube nada (`planLoading`).
+- `flushPlanSave()` sube lo pendiente al salir, al cerrar o esconder la página. Si la cuenta lo rechaza
+  (`permission-denied`), un aviso dice que el plan quedó en el navegador (revisar las reglas de Firestore).
+- *Verificado (Firestore simulado con lectura lenta):* escoger Vegano, 7 días y "Otro plan", salir y entrar → mismo plan;
+  igual con el navegador borrado (sólo desde la cuenta); otra persona en el mismo navegador ve el de fábrica; y la
+  primera, de nuevo, su último plan ✔.
 
 ### 2026-10-12 — v4.5.0 · Planes: dieta Normal/Vegetariano/Vegano y plan que cambia cada día o cada 7 días
 - *Pedido:* en Preferencias, además de Vegetariano, incluir Vegano y Normal (cualquier receta sugerida al azar); que el

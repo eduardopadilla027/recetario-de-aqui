@@ -307,14 +307,32 @@ const planNorm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
 
 /* ── Ajustes guardados ── */
 // `saved` = el plan sugerido del período (hoy, o 7 días desde `start`), para verlo igual al volver.
-const PLAN_DEFAULTS = { goal: "rebajar", diet: "normal", sex: "", age: "", weight: "", ft: "", inch: "", activity: "1", avoid: [], prefs: [], protein: [], season: "auto", days: 1, seed: 1, saved: null };
+const PLAN_DEFAULTS = { goal: "rebajar", diet: "normal", sex: "", age: "", weight: "", ft: "", inch: "", activity: "1", avoid: [], prefs: [], protein: [], season: "auto", days: 1, seed: 1, ts: 0, saved: null };
 const PLAN_DIETS = ["normal", "veg", "vegan"];
-let plan = cleanPlan(null);
-try { plan = cleanPlan(JSON.parse(readStore(PLAN_STORE) || "{}")); } catch { /* ajustes dañados: se usan los de fábrica */ }
-const savePlan = () => {
-  writeStore(PLAN_STORE, JSON.stringify(plan));
+// Cada usuario tiene su copia en este navegador (rcb.plan.<uid>); sin sesión, rcb.plan.
+let planOwner = "";
+const planKey = () => (planOwner ? `${PLAN_STORE}.${planOwner}` : PLAN_STORE);
+function readLocalPlan() {
+  try { return cleanPlan(JSON.parse(readStore(planKey()) || "{}")); } catch { return cleanPlan(null); } // dañados: de fábrica
+}
+let plan = readLocalPlan();
+// `auto`: el plan del período se armó solo (no es un cambio de la persona) y no cuenta como más reciente.
+const savePlan = (auto = false) => {
+  if (!auto) plan.ts = Date.now(); // para saber cuál copia es la más reciente (navegador o cuenta)
+  writeStore(planKey(), JSON.stringify(plan));
   if (typeof cloudSavePlan === "function") cloudSavePlan(plan);
 };
+/* Al entrar o salir: usa la copia de ese usuario en este navegador. */
+function usePlanOwner(uid) {
+  // Primera vez con copias por usuario: hereda la copia anónima de antes (y la deja de fábrica).
+  if (uid && !readStore(`${PLAN_STORE}.${uid}`) && readStore(PLAN_STORE)) {
+    writeStore(`${PLAN_STORE}.${uid}`, readStore(PLAN_STORE));
+    writeStore(PLAN_STORE, JSON.stringify(cleanPlan(null)));
+  }
+  planOwner = uid || "";
+  plan = readLocalPlan();
+  if (!$("view-plans").hidden) renderPlansShell();
+}
 /* Sólo las claves conocidas, con su tipo (para guardar o recibir de la nube). */
 function cleanPlan(src) {
   const out = {};
@@ -346,11 +364,10 @@ function cleanSaved(v) {
     })) }))
   };
 }
-/* Ajustes de la cuenta (al entrar) o de fábrica (al salir, para que otra persona en
-   el mismo navegador no vea los datos anteriores). */
+/* Ajustes de la cuenta (al entrar, si son más recientes) o de fábrica. */
 function applyPlan(data) {
   plan = cleanPlan(data || PLAN_DEFAULTS);
-  writeStore(PLAN_STORE, JSON.stringify(plan));
+  writeStore(planKey(), JSON.stringify(plan));
   if (!$("view-plans").hidden) renderPlansShell();
 }
 let plansScrollY = 0;
@@ -510,6 +527,7 @@ const planSig = (target) => JSON.stringify([plan.goal, plan.diet, plan.prefs, pl
 function hydrateSaved(sv) {
   const byId = (id) => recipes.find((r) => r.id === id);
   const item = (id) => { const r = byId(id); return r ? { r, n: planInfo(r).n } : undefined; };
+  if (sv.meals.length !== sv.days || sv.meals.some((d) => !d.items.length)) return null; // incompleto o de otro formato
   const days = [];
   for (const day of sv.meals) {
     const meals = [];
@@ -541,7 +559,7 @@ function periodPlan(pools, target) {
       sides: (x.sides || []).map((s) => ({ id: s.item.r.id, m: s.m }))
     })) }))
   };
-  savePlan();
+  savePlan(true);
   return { start, days };
 }
 function dayName(iso, opts) {

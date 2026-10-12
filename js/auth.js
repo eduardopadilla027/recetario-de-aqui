@@ -429,9 +429,12 @@ async function resendVerification() {
 
 async function signOut() {
   if (authUser) { try { sessionStorage.removeItem(AUTH_USE_KEY + authUser.uid); } catch { /* sin almacenamiento */ } }
-  clearTimeout(planSaveTimer);
+  await flushPlanSave(); // el último plan sube a la cuenta antes de cerrar la sesión
   await fbAuth.signOut();
-  applyPlan(null); // los datos del plan quedan en la cuenta, no en este navegador
+  // Sin sesión se ve la copia anónima, que se deja de fábrica: el plan de la persona
+  // queda en su cuenta y en su propia copia de este navegador (rcb.plan.<uid>).
+  usePlanOwner("");
+  applyPlan(null);
   if (location.hash === "#/admin") location.hash = "#/";
 }
 
@@ -500,28 +503,53 @@ async function checkAdmin(user) {
 /* users/{uid}/data/plan = { plan: {objetivo, datos, alergias, época…}, updatedAt }.
    Sólo la persona dueña lo lee o escribe (firestore.rules); ni los administradores. */
 let planSaveTimer = null;
+let planPending = null;       // ajustes que esperan subir a la cuenta
+let planWarned = false;
 function planRef() { return fbDb.collection("users").doc(authUser.uid).collection("data").doc("plan"); }
 
-function cloudSavePlan(p) {
-  if (!fbDb || !authUser || authState !== "ready") return;
+/* Sube ya lo pendiente (al salir, al cerrar o esconder la página). Si falla, la copia
+   de este navegador (rcb.plan.<uid>) sigue ahí y se vuelve a subir en el próximo cambio. */
+function flushPlanSave() {
   clearTimeout(planSaveTimer);
-  planSaveTimer = setTimeout(() => {
-    // Si falla (sin conexión, datos no válidos) queda en este navegador y se sube en el próximo cambio.
-    try {
-      planRef().set({ plan: cleanPlan(p), updatedAt: firebase.firestore.FieldValue.serverTimestamp() })
-        .catch((err) => console.warn("Plan no guardado en la cuenta:", err.code || err));
-    } catch (err) { console.warn("Plan no guardado en la cuenta:", err.message || err); }
-  }, 800);
+  const p = planPending;
+  planPending = null;
+  if (!p || !fbDb || !authUser) return Promise.resolve();
+  try {
+    return planRef().set({ plan: cleanPlan(p), updatedAt: firebase.firestore.FieldValue.serverTimestamp() })
+      .catch(planSaveFailed);
+  } catch (err) { planSaveFailed(err); return Promise.resolve(); }
+}
+function planSaveFailed(err) {
+  console.warn("Plan no guardado en la cuenta:", (err && (err.code || err.message)) || err);
+  if (!planWarned && err && err.code === "permission-denied") {
+    planWarned = true;
+    toast(currentLang === "es" ? "El plan quedó en este navegador: la cuenta no aceptó guardarlo (revise las reglas de Firestore)." : "The plan stayed in this browser: your account didn't accept it (check the Firestore rules).");
+  }
+}
+let planLoading = false;      // leyendo la cuenta: no subir el plan de fábrica encima
+function cloudSavePlan(p) {
+  if (!fbDb || !authUser || authState !== "ready" || planLoading) return;
+  planPending = p;
+  clearTimeout(planSaveTimer);
+  planSaveTimer = setTimeout(flushPlanSave, 800);
 }
 
-/* Al entrar: si la cuenta ya tiene ajustes se usan; si no, se suben los de este navegador. */
+/* Al entrar: se usa la copia más reciente, la de la cuenta o la de este navegador. */
 async function loadUserPlan() {
+  planLoading = true;
+  clearTimeout(planSaveTimer);
+  planPending = null;
+  usePlanOwner(authUser.uid);
   try {
     const snap = await planRef().get();
-    if (snap.exists && snap.data().plan) applyPlan(snap.data().plan);
-    else cloudSavePlan(plan);
-  } catch { /* sin conexión: se usan los de este navegador */ }
+    planLoading = false;
+    const cloud = snap.exists && snap.data().plan;
+    if (cloud && (+cloud.ts || 0) >= (plan.ts || 0)) applyPlan(cloud);
+    else { cloudSavePlan(plan); flushPlanSave(); }
+  } catch (err) { planLoading = false; console.warn("No se leyó el plan de la cuenta:", err.code || err); }
 }
+window.addEventListener("pagehide", () => { flushPlanSave(); });
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") flushPlanSave(); });
 
 /* ------------------------------------------------------------ administración (#/admin) ---- */
 
