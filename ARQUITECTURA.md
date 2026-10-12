@@ -507,8 +507,8 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
 - *Pedido:* en Planes, poder escoger otras preferencias: aves, pescado, carnes, etc.
 - Nuevo grupo "Proteína del almuerzo y la cena" (§7.2) con aves, pescado, mariscos, res, cerdo, cabro/cordero/conejo y
   granos y vegetales; se guarda con los demás ajustes (también en la cuenta).
-- Reparto de los 438 platos principales: aves 98, cerdo 98, granos y vegetales 109, res 56, mariscos 49, pescado 46,
-  cabro 5 (un plato puede tener varias).
+- Reparto de los 438 platos principales: granos y vegetales 109, cerdo 100, aves 97, res 56, mariscos 49, pescado 46,
+  cabro 6; 2 sin clasificar (un plato puede tener varias).
 - *Verificado:* con pescado + mariscos, un plan de 7 días trae sólo platos de pescado y mariscos; sin desbordes ni errores ✔.
 
 ### 2026-10-12 — v4.3.0 · Planes guardados en la cuenta del usuario
