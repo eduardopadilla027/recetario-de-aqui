@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.0.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.1.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -367,8 +367,10 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
    Entra). Para Yahoo: *Yahoo* (app en developer.yahoo.com). Para iCloud: *Apple* y poner `apple: true`.
 3. **Authentication → Configuración → Dominios autorizados:** añadir `recetario-de-aqui.vercel.app` (localhost ya está).
 4. **Firestore Database:** crearla y publicar el contenido de `firestore.rules` en *Reglas*.
-5. **Primer administrador:** entrar una vez en la app con ese correo; luego en Firestore crear la colección `admins`
-   con un documento cuyo ID sea el correo **en minúsculas** (campos opcionales). Los demás se nombran desde `#/admin`.
+5. **Administrador dueño:** `eduardo.padilla027@gmail.com`, fijo en `firestore.rules` (`ownerEmail()`). Al entrar por
+   primera vez la app le crea `admins/eduardo.padilla027@gmail.com` con `owner: true`; sale como "Dueño" y nadie le
+   puede quitar el rol ni suspenderlo. Los demás administradores se nombran desde `#/admin`. Para cambiar de dueño se
+   edita `ownerEmail()` y se vuelven a publicar las reglas. El correo no va en el código del sitio.
 
 Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 
@@ -490,6 +492,12 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-12 — v4.1.0 · Administrador dueño
+- *Pedido:* el correo de administrador es eduardo.padilla027@gmail.com.
+- `firestore.rules`: `ownerEmail()` es administrador siempre; no se le puede quitar el rol (`owner: true`) ni suspender.
+- `js/auth.js`: `checkAdmin()` crea el documento de admin del dueño al entrar; el panel lo muestra como "Dueño" sin acciones.
+- *Verificado:* sintaxis de `auth.js` y panel con datos de prueba (fila del dueño sin acciones) ✔.
 
 ### 2026-10-12 — v4.0.0 · Acceso con cuenta de correo y administrador; sin dedicatoria
 - *Pedido:* eliminar la dedicatoria; acceso con usuario administrador; los demás se registran con una cuenta de correo

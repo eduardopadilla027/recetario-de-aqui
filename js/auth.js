@@ -8,8 +8,9 @@
  * En Cloud Firestore se guarda sólo, por persona (users/{uid}): el correo, cuántas
  * veces ha usado la app (count: +1 por sesión del navegador), la primera y la última
  * vez, y `blocked` si un administrador le quitó el acceso. Los administradores son
- * los correos que tienen un documento en admins/{correo}; el primero se crea a mano
- * en la consola de Firebase (ARQUITECTURA.md §7.3). Las reglas de firestore.rules
+ * los correos que tienen un documento en admins/{correo}. El dueño está fijo en
+ * firestore.rules: al entrar, la app le crea su documento con owner: true (a los
+ * demás ese intento se les niega y no pasa nada). ARQUITECTURA.md §7.3. Las reglas de firestore.rules
  * impiden que un usuario lea a otros o cambie su conteo más allá de +1.
  *
  * Depende de globales de app.js (currentLang, $, esc, switchLang, BRAND, route) y
@@ -85,6 +86,7 @@ const AUTH_T = {
     colRole: "Rol",
     colActions: "Acciones",
     roleAdmin: "Administrador",
+    roleOwner: "Dueño",
     roleUser: "Usuario",
     blockedTag: "Suspendido",
     makeAdmin: "Hacer admin",
@@ -161,6 +163,7 @@ const AUTH_T = {
     colRole: "Role",
     colActions: "Actions",
     roleAdmin: "Admin",
+    roleOwner: "Owner",
     roleUser: "User",
     blockedTag: "Suspended",
     makeAdmin: "Make admin",
@@ -188,6 +191,7 @@ let authMessage = "";         // error o aviso bajo el formulario
 let authSentTo = "";
 let adminUsers = [];          // filas cargadas en #/admin
 let adminEmails = new Set();
+let ownerEmails = new Set();  // administradores fijos (owner: true): sin acciones
 let adminFilter = "";
 
 const lower = (s) => String(s || "").trim().toLowerCase();
@@ -468,13 +472,23 @@ async function onUser(user) {
   try {
     const data = await recordUse(user);
     if (data.blocked) { setAuthState("blocked"); return; }
-    try { authIsAdmin = (await fbDb.collection("admins").doc(lower(user.email)).get()).exists; }
-    catch { authIsAdmin = false; }
+    authIsAdmin = await checkAdmin(user);
     setAuthState("ready");
     if (location.hash === "#/admin") route();
   } catch (err) {
     setAuthState("signin", authError(err));
   }
+}
+
+/* ¿Es administrador? Si no tiene documento en admins/, intenta crearlo como dueño:
+   las reglas sólo lo permiten al correo fijo de firestore.rules. */
+async function checkAdmin(user) {
+  const ref = fbDb.collection("admins").doc(lower(user.email));
+  try {
+    if ((await ref.get()).exists) return true;
+    await ref.set({ owner: true, addedBy: lower(user.email), addedAt: firebase.firestore.FieldValue.serverTimestamp() });
+    return true;
+  } catch { return false; }
 }
 
 /* ------------------------------------------------------------ administración (#/admin) ---- */
@@ -529,6 +543,7 @@ async function loadAdminData() {
     ]);
     adminUsers = users.docs.map((d) => ({ id: d.id, ...d.data() }));
     adminEmails = new Set(admins.docs.map((d) => d.id));
+    ownerEmails = new Set(admins.docs.filter((d) => d.data().owner).map((d) => d.id));
     renderAdminTable();
   } catch (err) { adminMsg(authError(err)); }
 }
@@ -559,13 +574,14 @@ function renderAdminTable() {
       <tbody>${rows.map((u) => {
         const isAdm = adminEmails.has(u.email);
         const self = u.email === me;
+        const fixed = self || ownerEmails.has(u.email);
         return `<tr>
           <td data-label="${esc(tr.colEmail)}" class="admin-email">${esc(u.email)}${self ? ` <span class="admin-you">(${esc(tr.you)})</span>` : ""}</td>
           <td data-label="${esc(tr.colCount)}" class="num">${n(u.count || 0)}</td>
           <td data-label="${esc(tr.colFirst)}" class="admin-date">${esc(fmtDate(u.firstSeen))}</td>
           <td data-label="${esc(tr.colLast)}" class="admin-date">${esc(fmtDate(u.lastSeen))}</td>
-          <td data-label="${esc(tr.colRole)}"><span class="role-tag${isAdm ? " is-admin" : ""}">${esc(isAdm ? tr.roleAdmin : tr.roleUser)}</span>${u.blocked ? ` <span class="role-tag is-blocked">${esc(tr.blockedTag)}</span>` : ""}</td>
-          <td data-label="${esc(tr.colActions)}" class="admin-actions">${self ? "—" : `
+          <td data-label="${esc(tr.colRole)}"><span class="role-tag${isAdm ? " is-admin" : ""}">${esc(ownerEmails.has(u.email) ? tr.roleOwner : isAdm ? tr.roleAdmin : tr.roleUser)}</span>${u.blocked ? ` <span class="role-tag is-blocked">${esc(tr.blockedTag)}</span>` : ""}</td>
+          <td data-label="${esc(tr.colActions)}" class="admin-actions">${fixed ? "—" : `
             <button type="button" class="btn btn-ghost btn-sm" data-admin="${isAdm ? "unadmin" : "admin"}" data-email="${esc(u.email)}">${esc(isAdm ? tr.removeAdmin : tr.makeAdmin)}</button>
             <button type="button" class="btn btn-ghost btn-sm" data-admin="${u.blocked ? "unblock" : "block"}" data-uid="${esc(u.id)}" data-email="${esc(u.email)}">${esc(u.blocked ? tr.unblock : tr.block)}</button>`}</td>
         </tr>`;

@@ -2,7 +2,10 @@
 // Publíquelas en la consola de Firebase: Firestore Database → Reglas → pegar → Publicar.
 //
 // users/{uid}:    { email, count, firstSeen, lastSeen, blocked? }  — sin contraseñas
-// admins/{email}: { addedBy, addedAt }  — el primer administrador se crea a mano en la consola
+// admins/{email}: { addedBy, addedAt, owner? }
+//
+// Dueño (administrador fijo): ownerEmail(). Al entrar, la app le crea admins/{su correo} con owner: true.
+// No se le puede quitar el rol ni suspender.
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -13,8 +16,14 @@ service cloud.firestore {
     function myEmail() {
       return request.auth.token.email.lower();
     }
+    function ownerEmail() {
+      return 'eduardo.padilla027@gmail.com';
+    }
+    function isOwner() {
+      return verified() && myEmail() == ownerEmail();
+    }
     function isAdmin() {
-      return verified() && exists(/databases/$(database)/documents/admins/$(myEmail()));
+      return isOwner() || (verified() && exists(/databases/$(database)/documents/admins/$(myEmail())));
     }
 
     match /users/{uid} {
@@ -36,16 +45,19 @@ service cloud.firestore {
         && request.resource.data.lastSeen == request.time;
 
       // Administradores: suspender o reactivar el acceso, o borrar el registro.
-      allow update: if isAdmin()
+      allow update: if isAdmin() && resource.data.email != ownerEmail()
         && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['blocked'])
         && request.resource.data.blocked is bool;
-      allow delete: if isAdmin();
+      allow delete: if isAdmin() && resource.data.email != ownerEmail();
     }
 
     match /admins/{email} {
       // Cada persona puede saber si ella misma es administradora.
       allow read: if verified() && (email == myEmail() || isAdmin());
-      allow create, delete: if isAdmin();
+      // Sólo el dueño puede marcarse owner: true (en su propio documento).
+      allow create: if isAdmin()
+        && (request.resource.data.get('owner', false) == false || (isOwner() && email == myEmail()));
+      allow delete: if isAdmin() && email != ownerEmail() && resource.data.get('owner', false) != true;
     }
   }
 }
