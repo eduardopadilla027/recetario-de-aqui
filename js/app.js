@@ -55,6 +55,7 @@ const translations = {
     filterQuick: "≤ 30 min",
     clearFilters: "Quitar filtros",
     countFound: (n) => (n === 1 ? "1 receta encontrada" : `${n} recetas encontradas`),
+    moreResults: (n) => `Ver más resultados (${n})`,
     understood: { looking: "Busco", without: "Sin", ideas: "Ideas", corrected: "Corregí", partial: "Ninguna receta tiene todo: estas son las más parecidas.", order: "Ordenadas por relevancia." },
     statsHero: (n, c) => `<strong>${n}</strong> recetas tradicionales · <strong>${c}</strong> categorías`,
     emptyTitle: "No encontramos recetas",
@@ -170,6 +171,7 @@ const translations = {
     filterQuick: "≤ 30 min",
     clearFilters: "Clear filters",
     countFound: (n) => (n === 1 ? "1 recipe found" : `${n} recipes found`),
+    moreResults: (n) => `Show more results (${n})`,
     understood: { looking: "Looking for", without: "Without", ideas: "Ideas", corrected: "Corrected", partial: "No recipe has everything: these are the closest.", order: "Sorted by relevance." },
     statsHero: (n, c) => `<strong>${n}</strong> traditional recipes · <strong>${c}</strong> categories`,
     emptyTitle: "No recipes found",
@@ -1122,6 +1124,9 @@ function hasFilters() {
 
 /* Búsqueda inteligente (js/search.js): se calcula una vez por texto e idioma. */
 let searchCache = { q: null, lang: null, res: null };
+/* Resultados de búsqueda por tandas: cuántas tarjetas se ven de la vista actual. */
+const RESULT_PAGE = 30;
+let resultView = { key: null, limit: RESULT_PAGE };
 function currentSearch() {
   if (!searchQuery) return null;
   if (searchCache.q !== searchQuery || searchCache.lang !== currentLang) {
@@ -1203,6 +1208,7 @@ function renderCategories() {
   // Sin búsqueda ni filtros no hay listado: la sección de resultados sólo
   // aparece al buscar, elegir una categoría, ver favoritas o las rápidas.
   const active = hasFilters();
+  $("view-home").classList.toggle("is-searching", Boolean(searchQuery));
   $("recetas").hidden = !active;
   $("filter-clear").hidden = !active;
   if (!active) { container.innerHTML = ""; renderUnderstood(); return; }
@@ -1221,11 +1227,22 @@ function renderCategories() {
     return;
   }
 
+  // Al buscar se dibujan las tarjetas por tandas (RESULT_PAGE): dibujar cientos
+  // en cada letra era lo lento en el celular. "Ver más" añade la siguiente tanda.
+  const viewKey = `${searchQuery}|${selectedNavCategory}|${onlyFavorites}|${onlyQuick}|${currentLang}`;
+  if (viewKey !== resultView.key) resultView = { key: viewKey, limit: RESULT_PAGE };
+  const paged = Boolean(currentSearch());
+  const limit = paged ? resultView.limit : Infinity;
+  const hidden = Math.max(0, filtered.length - limit);
+  const moreBtn = hidden
+    ? `<div class="more-results"><button type="button" class="btn btn-outline" data-action="more-results">${esc(tr.moreResults(hidden))}</button></div>`
+    : "";
+
   // Una categoría elegida: sin búsqueda, agrupada por familia con un subtítulo
   // para cada una (flanes, tembleques…; res, cerdo…); al buscar, por parecido.
   if (selectedNavCategory) {
     if (currentSearch()) {
-      container.innerHTML = `<div class="recipe-grid">${filtered.map((r, i) => cardHTML(r, i)).join("")}</div>`;
+      container.innerHTML = `<div class="recipe-grid">${filtered.slice(0, limit).map((r, i) => cardHTML(r, i)).join("")}</div>${moreBtn}`;
       return;
     }
     let n = 0;
@@ -1239,16 +1256,24 @@ function renderCategories() {
   }
 
   // Búsqueda, favoritas o rápidas: resultados agrupados por categoría (sólo
-  // las que tienen alguno), con el recuento de cada grupo.
-  const groups = currentSearch()
-    ? [...categoryOrder].sort((a, b) => Math.max(0, ...getFilteredRecipes(b).map(searchScore)) - Math.max(0, ...getFilteredRecipes(a).map(searchScore)))
-    : categoryOrder;
+  // las que tienen alguno), con el recuento de cada grupo. Se reparten en una
+  // sola pasada; al buscar, `filtered` ya viene por parecido, así que cada grupo
+  // sale en el orden de su mejor receta.
+  const buckets = new Map();
+  for (const r of filtered) {
+    if (!buckets.has(r.category)) buckets.set(r.category, []);
+    buckets.get(r.category).push(r);
+  }
+  const groups = paged ? [...buckets.keys()] : categoryOrder.filter((c) => buckets.has(c));
+  let left = limit;
   container.innerHTML = groups.map((cat) => {
-    const catRecipes = getFilteredRecipes(cat);
-    if (catRecipes.length === 0) return "";
+    if (left <= 0) return "";
+    const all = paged ? buckets.get(cat) : sortByFamily(buckets.get(cat), currentLang);
+    const catRecipes = all.slice(0, left);
+    left -= catRecipes.length;
     const total = recipes.filter((r) => r.category === cat).length;
     const [tone] = categoryTones[cat];
-    const countText = catRecipes.length !== total ? `${catRecipes.length} / ${total}` : `${total} ${tr.recipeCount}`;
+    const countText = all.length !== total ? `${all.length} / ${total}` : `${total} ${tr.recipeCount}`;
     return `
       <section class="category-section" id="cat-${cat}" aria-labelledby="cathead-${cat}">
         <h3 class="category-header" id="cathead-${cat}">
@@ -1260,7 +1285,7 @@ function renderCategories() {
           <div class="recipe-grid">${catRecipes.map((r, i) => cardHTML(r, i)).join("")}</div>
         </div>
       </section>`;
-  }).join("");
+  }).join("") + moreBtn;
 }
 
 function renderFavCount() {
@@ -1512,6 +1537,14 @@ function renderFavButton() {
   btn.setAttribute("aria-label", on ? t().removeFav(current.name[currentLang]) : t().addFav(current.name[currentLang]));
 }
 
+/* Saltar a una posición sin animación. El CSS tiene `scroll-behavior: smooth`,
+ * así que `scrollTo(0, 0)` se deslizaba poco a poco: al abrir una receta en el
+ * celular se veía primero el final y, si se tocaba la pantalla durante el
+ * deslizamiento, se quedaba abajo. Al cambiar de vista se salta al instante. */
+function jumpTo(y) {
+  window.scrollTo({ top: y, left: 0, behavior: "instant" });
+}
+
 function showRecipe(id) {
   const recipe = recipes.find((r) => r.id === id);
   if (!recipe) {
@@ -1531,7 +1564,7 @@ function showRecipe(id) {
   $("view-plans").hidden = true;
   $("view-admin").hidden = true;
   $("view-recipe").hidden = false;
-  window.scrollTo(0, 0);
+  jumpTo(0);
   $("modal-title").focus({ preventScroll: true });
 }
 
@@ -1550,14 +1583,14 @@ function showHome(anchor) {
   if (fromRecipe && !explicit) {
     // "Atrás": volver al mismo punto de los resultados y a la tarjeta abierta,
     // aunque la URL anterior fuera un ancla (#recetas).
-    window.scrollTo(0, homeScrollY);
+    jumpTo(homeScrollY);
     const link = lastId && document.querySelector(`[data-open="${CSS.escape(lastId)}"]`);
     if (link) link.focus({ preventScroll: true });
   } else if (anchor) {
     const el = document.getElementById(anchor);
-    if (el) el.scrollIntoView({ behavior: fromRecipe || reduceMotion() ? "auto" : "smooth", block: "start" });
+    if (el) el.scrollIntoView({ behavior: fromRecipe || reduceMotion() ? "instant" : "smooth", block: "start" });
   } else if (explicit) {
-    window.scrollTo(0, 0);
+    jumpTo(0);
   }
 }
 
@@ -1655,23 +1688,39 @@ function closeMenu() {
 }
 
 function setupEventListeners() {
-  // Búsqueda en vivo (como antes) + botón/Enter que lleva a los resultados.
+  // Búsqueda en vivo + botón/Enter que lleva a los resultados.
+  // - Espera a que se deje de escribir (SEARCH_DELAY) en vez de buscar y dibujar en cada letra.
+  // - Desde 2 letras (una sola daría las 1,006 recetas); con Enter busca aunque sea una.
+  // - Busca en todo el recetario: escribir quita la categoría elegida (antes buscaba sólo
+  //   dentro de ella sin decirlo, y "pollo" con Postres elegida daba 0 recetas).
+  // - Mientras hay búsqueda, la cuadrícula de categorías y las rápidas se esconden
+  //   (`.is-searching`) para que los resultados queden justo debajo del buscador.
   const input = $("search-input");
-  input.addEventListener("input", () => {
-    searchQuery = input.value.trim();
-    $("search-clear").hidden = !input.value;
+  const SEARCH_DELAY = 180;
+  let searchTimer = 0;
+  const runSearch = (text) => {
+    clearTimeout(searchTimer);
+    if (text === searchQuery) return;
+    searchQuery = text;
+    if (searchQuery && selectedNavCategory) { selectedNavCategory = null; renderNavPills(); }
     renderCategories();
+  };
+  input.addEventListener("input", () => {
+    $("search-clear").hidden = !input.value;
+    const text = input.value.trim();
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => runSearch(text.length >= 2 ? text : ""), text ? SEARCH_DELAY : 0);
   });
   $("search-form").addEventListener("submit", (e) => {
     e.preventDefault();
+    runSearch(input.value.trim());
     input.blur();
     scrollToResults();
   });
   $("search-clear").addEventListener("click", () => {
     input.value = "";
-    searchQuery = "";
     $("search-clear").hidden = true;
-    renderCategories();
+    runSearch("");
     input.focus();
   });
 
@@ -1698,6 +1747,15 @@ function setupEventListeners() {
     const open = e.target.closest("[data-open]");
     if (open) { cameFromHome = true; return; } // el href hace el resto (#/receta/id)
     if (e.target.closest('[data-action="clear-filters"]')) { clearFilters(); return; }
+    if (e.target.closest('[data-action="more-results"]')) {
+      // La siguiente tanda; el foco va a la primera tarjeta nueva.
+      const first = resultView.limit;
+      resultView.limit += RESULT_PAGE;
+      renderCategories();
+      const links = document.querySelectorAll("#categories-container .card-link");
+      if (links[first]) links[first].focus({ preventScroll: true });
+      return;
+    }
     const pair = e.target.closest("[data-pair-cat]");
     if (pair) { goToCategory(pair.dataset.pairCat); return; }
     // Enlaces del menú, del pie y la marca: navegación pedida, no un "atrás".

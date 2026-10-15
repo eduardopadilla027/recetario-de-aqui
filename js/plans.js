@@ -808,8 +808,8 @@ function showPlans() {
   $("view-plans").hidden = false;
   document.title = `${pt().title} — ${BRAND}`;
   renderPlansShell();
-  if (fromRecipe) window.scrollTo(0, plansScrollY);
-  else { window.scrollTo(0, 0); $("plans-title").focus({ preventScroll: true }); }
+  if (fromRecipe) jumpTo(plansScrollY);
+  else { jumpTo(0); $("plans-title").focus({ preventScroll: true }); }
 }
 
 function setupPlans() {

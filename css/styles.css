@@ -318,6 +318,12 @@ main:focus { outline: none; }
 @keyframes pop { 50% { transform: scale(1.2); } }
 
 /* Barra de resultados y filtros */
+/* Al buscar, los resultados van justo debajo del buscador (sin la cuadrícula de
+   categorías ni las rápidas en medio). */
+.is-searching #categorias, .is-searching #rapidas { display: none; }
+.is-searching #recetas { padding-top: var(--s-5); }
+.more-results { display: flex; justify-content: center; margin-top: var(--s-6); }
+.more-results .btn { min-height: 48px; padding: 0 var(--s-6); }
 .results-bar { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--s-4); flex-wrap: wrap; margin-bottom: var(--s-5); }
 .results-count { margin-top: var(--s-1); color: var(--ink-2); font-weight: 500; }
 .filter-chips { display: flex; flex-wrap: wrap; gap: var(--s-2); }
@@ -763,7 +769,8 @@ body.auth-locked .site-header, body.auth-locked main, body.auth-locked .site-foo
 .provider-name { font-weight: 700; color: var(--ink); }
 .provider-sub { font-size: .78rem; color: var(--ink-3); }
 .pmark { flex: none; width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; font-weight: 800; font-size: 1.05rem; color: #fff; }
-.pmark-google { background: #fff; color: #4285F4; box-shadow: inset 0 0 0 1.5px var(--line); font-family: Arial, sans-serif; font-size: 1.3rem; }
+.pmark-google { background: #fff; box-shadow: inset 0 0 0 1.5px var(--line); }
+.pmark-google svg { width: 24px; height: 18px; }
 .pmark-ms { grid-template-columns: 1fr 1fr; gap: 2px; padding: 8px; background: #fff; box-shadow: inset 0 0 0 1.5px var(--line); }
 .pmark-ms i { display: block; width: 100%; height: 100%; }
 .pmark-ms i:nth-child(1) { background: #F25022; } .pmark-ms i:nth-child(2) { background: #7FBA00; }

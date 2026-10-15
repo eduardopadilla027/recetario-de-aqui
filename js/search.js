@@ -28,7 +28,22 @@ const sTokens = (s) => sNorm(s).split(/\s+/).filter((w) => w.length > 1).map(sSt
 const S_STOP = new Set(("y e o u de del la el los las lo un una unos unas con para por a al en que algo alguna algun " +
   "receta recetas plato platos comida quiero quisiera busco buscar hacer preparar me mi como tipo estilo bien muy mas " +
   "sin no libre excepto without free except " +
-  "and or of the a an with for to in some any recipe recipes dish dishes food want make how style very").split(" ").map(sStem));
+  // Frases de conversación ("tengo pollo y papas", "¿qué hago con plátano?"): antes contaban como palabras a buscar
+  // y, como ninguna receta las tiene, la búsqueda caía en "las más parecidas" con cientos de resultados.
+  "tengo tienes tiene tenemos hay hago haga hacemos cocino cocinar cocinarle preparo puedo podria puedes necesito " +
+  "dame dime sugiere sugerencia idea rico rica sabroso sabrosa delicioso deliciosa hoy ahora cual cuales este esta " +
+  "estos estas ese esa eso otro otra usar " +
+  "and or of the a an with for to in some any recipe recipes dish dishes food want make how style very " +
+  "have has got what which can could cook cooking something idea need tonight today give").split(" ").map(sStem));
+
+/* Clave fonética: cómo suena la palabra en Puerto Rico (y = ll, v = b, s = z = c(e,i), h muda, k = qu = c(a,o,u),
+ * letras dobles). Así "poyo" se corrige a "pollo" y no a "poco", "vacalao" a "bacalao", "abichuelas" a "habichuelas". */
+function sPhon(w) {
+  return w.replace(/ch/g, "§").replace(/h/g, "").replace(/§/g, "ch")
+    .replace(/ll/g, "y").replace(/v/g, "b").replace(/z/g, "s").replace(/c([ei])/g, "s$1")
+    .replace(/qu([ei])/g, "k$1").replace(/c([aou]|$)/g, "k$1").replace(/g([ei])/g, "j$1")
+    .replace(/(.)\1+/g, "$1");
+}
 
 /* Sinónimos y traducciones (simétricos dentro de cada grupo). */
 const S_GROUPS = [
@@ -165,7 +180,10 @@ function sGetVocab() {
   // Palabras del uso tradicional de los tés (catarro, presión, nervios…): conocidas, no se corrigen.
   if (typeof TEA_INFO !== "undefined") Object.values(TEA_INFO).forEach((t) => sTokens(`${t.es[0]} ${t.en[0]}`).forEach((w) => { if (!freq.has(w)) freq.set(w, 0); }));
   Object.values(S_CATS).forEach((v) => v.split(" ").forEach((w) => { const k = sStem(w); if (!freq.has(k)) freq.set(k, 0); }));
-  sVocab = { n: recipes.length, words: [...freq.keys()], freq };
+  // Clave fonética → la palabra más común que suena así (para corregir "poyo" → "pollo").
+  const phon = new Map();
+  freq.forEach((f, w) => { const k = sPhon(w); const cur = phon.get(k); if (!cur || f > freq.get(cur)) phon.set(k, w); });
+  sVocab = { n: recipes.length, words: [...freq.keys()], freq, phon };
   return sVocab.words;
 }
 
@@ -255,8 +273,10 @@ function smartSearch(query, ctx) {
     // ninguna palabra, se usa la más parecida.
     if (!cats.length && !vocabSet.has(stem) && !(isLast && stem.length >= 3 && vocab.some((v) => v.startsWith(stem)))) {
       const max = stem.length >= 7 ? 2 : stem.length >= 4 ? 1 : 0;
-      let best = null, bestD = max + 1;
-      if (max) for (const v of vocab) {
+      // Primero, una palabra que suene igual; si no hay, la más parecida al escribirla.
+      const sameSound = stem.length >= 3 ? sVocab.phon.get(sPhon(stem)) : null;
+      let best = sameSound || null, bestD = sameSound ? 0 : max + 1;
+      if (max && !sameSound) for (const v of vocab) {
         const d = sDistance(stem, v, max);
         if (d < bestD || (d === bestD && d <= max && sVocab.freq.get(v) > sVocab.freq.get(best))) { bestD = d; best = v; }
       }
@@ -310,7 +330,10 @@ function smartSearch(query, ctx) {
     return [...sVariants(e.stem), ...sWeak(e.stem)].some((v) => x.ing.has(v) || x.name.has(v));
   });
 
-  const phrase = words.join(" ");
+  // La frase para desempatar, con las palabras ya corregidas ("polo" → "pollo"), para que una
+  // búsqueda con error ordene igual que la bien escrita.
+  const fixed = new Map(corrections.map((c) => [c.from, c.to]));
+  const phrase = words.map((w) => fixed.get(w) || w).join(" ");
   const run = (needAll) => {
     const scores = new Map();
     for (const r of recipes) {
@@ -319,7 +342,14 @@ function smartSearch(query, ctx) {
       if (!ideas.every((idea) => idea.test(r, x, ctx))) continue;
       if (scoped && !headCats.includes(r.category)) continue;
       let total = 0, hits = 0, reqHits = 0;
-      for (const t of terms) { const s = scoreTerm(r, x, t); if (s) { hits++; total += s; if (!scoped || !t.use) reqHits++; } }
+      for (const t of terms) {
+        const s = scoreTerm(r, x, t);
+        if (s) {
+          hits++; total += s; if (!scoped || !t.use) reqHits++;
+          // La palabra nombra la categoría de la receta ("arroz" → Arroces): éstas primero, antes que "Arroz con Dulce".
+          if (t.cats.includes(r.category) && s > 2) total += 2;
+        }
+      }
       if (terms.length && (needAll ? reqHits < required : hits === 0)) continue;
       // Desempates: el nombre contiene la frase buscada tal cual, o empieza con ella.
       if (phrase.length > 2) {

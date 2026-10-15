@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-12 · **Versión del documento:** 4.5.1 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-15 · **Versión del documento:** 4.6.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -74,6 +74,8 @@ cocine-a-gusto/
 │   ├── auth-config.js    configuración web de Firebase y proveedores de correo que se muestran (§7.3)
 │   └── auth.js           pantalla de entrada, validación del correo, conteo de usos y panel #/admin (§7.3)
 ├── images/               (vacía: reservada para fotos)
+├── icons/                iconos de la app (bandera sobre crema): apple-touch-icon 180, 192, 512, maskable 512, favicon 32
+├── manifest.webmanifest  nombre e iconos para la pantalla de inicio del celular (Android)
 ├── firestore.rules       reglas de seguridad de Cloud Firestore (se pegan en la consola de Firebase)
 ├── .claude/launch.json   servidor local para la vista previa
 ├── .vercelignore         archivos que no se publican en Vercel
@@ -173,6 +175,10 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 
 - **Rutas por hash:** `#/` inicio · anclas `#categorias`, `#rapidas`, `#recetas` · detalle `#/receta/<id>`
   (URL propia: se comparte y "Atrás" vuelve a la misma posición).
+- **Cambio de vista sin deslizar (`jumpTo(y)`):** el CSS tiene `scroll-behavior: smooth`, así que `scrollTo(0, 0)` se
+  deslizaba: en el celular la receta se veía primero por el final y, si se tocaba la pantalla, se quedaba abajo. Abrir
+  una receta, volver a los resultados, los planes y `#/admin` usan `jumpTo()` (`behavior: "instant"`). El deslizamiento
+  suave queda para los enlaces dentro de la misma página.
 - **Inicio:** hero con buscador y estadísticas (`statsHero(recetas, categorías)`, se calculan solas), cuadrícula de
   categorías (clic = sólo esa categoría; clic de nuevo = todas), carril "Listas en 30 minutos o menos"
   (`QUICK_MAX_MIN = 30`), y resultados agrupados por categoría (acordeón) con filtros *Rápidas* y *Favoritas*.
@@ -303,7 +309,15 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - **Dónde busca:** nombre (vale 6), ingredientes (3) y pasos (1) de cada receta, **en español e inglés a la vez**
   (así "chicken rice" encuentra "Arroz con Pollo" y "loiza" encuentra los platos de Loíza que lo mencionan en los pasos).
 - **Normaliza:** sin acentos ni mayúsculas; singular y plural ("limones" = "limón"); ignora palabras vacías
-  (y, con, de, para, receta, algo, quiero, and, with…). Las palabras pueden ir en cualquier orden.
+  (y, con, de, para, receta, algo, quiero, and, with…) y frases de conversación (tengo, hay, hago, cocino, puedo,
+  necesito, dime, rico, sabroso, hoy, have, what, cook, tonight…): "tengo pollo y papas" busca pollo **y** papas
+  (antes "tengo" contaba, ninguna receta lo tenía y caía en "las más parecidas" con 232 resultados). Las palabras
+  pueden ir en cualquier orden.
+- **En la interfaz (`app.js`):** busca en vivo cuando se deja de escribir (`SEARCH_DELAY` = 180 ms) y desde 2 letras
+  (con Enter, aunque sea una); escribir **quita la categoría elegida** (antes buscaba sólo dentro de ella sin decirlo:
+  "pollo" con Postres elegida daba 0); mientras hay búsqueda se esconden las categorías y las rápidas
+  (`#view-home.is-searching`) para que los resultados queden justo debajo del buscador; y se dibujan **por tandas de
+  30** (`RESULT_PAGE`) con "Ver más resultados (N)". Los grupos por categoría se arman en una sola pasada.
 - **Sinónimos** (`S_GROUPS`): china = naranja = orange, parcha = maracuyá = chinola, habichuela = frijol = bean,
   guineo = banana, juey = cangrejo, alita = ala = wing, pechuga = breast, dona = donut, cupcake = bizcochito, gelatina = jello, negro = negra, etc. **Términos generales** (`S_EXPAND`, cuentan la mitad):
   "mariscos" incluye camarón, pulpo, langosta…; "carne" incluye res, cerdo, pollo…
@@ -323,8 +337,13 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - **"X para Y"**: si lo de antes de "para"/"for" nombra una categoría ("salsa para pollo", "postre para niños"), se
   busca sólo en esa categoría y lo de después ordena los resultados sin ser obligatorio.
 - **Categorías por su nombre** (`S_CATS`): "postres", "tragos", "sopas", "frituras"…
-- **Errores de escritura:** si una palabra no existe en el recetario, se corrige a la más parecida (distancia de edición
-  1–2), prefiriendo las que más aparecen en nombres ("polo" → "pollo").
+- **Errores de escritura:** si una palabra no existe en el recetario, primero se busca una que **suene igual**
+  (`sPhon`: y = ll, v = b, s = z = c(e,i), h muda, k = qu = c(a,o,u), g(e,i) = j, letras dobles): "poyo" → "pollo" (antes
+  "poco"), "vacalao" → "bacalao", "abichuelas" → "habichuelas". Si no hay, la más parecida al escribirla (distancia de
+  edición 1–2), prefiriendo las que más aparecen en nombres ("polo" → "pollo"). Los desempates por frase usan la palabra
+  ya corregida, así que "polo" ordena igual que "pollo".
+- **La palabra nombra una categoría:** si la palabra corresponde a la categoría de la receta ("arroz" → Arroces), suma
+  2: "arroz" muestra primero Arroz con Gandules y no Arroz con Dulce.
 - **Exclusiones:** "sin X", "no X", "without X", "libre de X", "X free". Alérgenos (gluten, leche/lactosa, huevo,
   pescado, mariscos, nueces, maní, ajonjolí, soya, coco) usan `getAdvisories`; "sin alcohol" usa las alertas de alcohol
   ("trago sin alcohol" busca entre todas las bebidas); "sin carne" excluye carnes, aves y pescados; cualquier otra palabra
@@ -344,7 +363,8 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   el correo validado; mientras tanto se ve `#auth-gate` (ES/EN). La persona **escoge su proveedor de correo**: Gmail
   (Google), Outlook/Hotmail/Live (Microsoft), Yahoo Mail, iCloud (Apple) u **"¿Otro correo?"**, que envía un enlace de
   validación al buzón (Firebase *email link*, sin contraseña). Qué botones salen se decide en `AUTH_CONFIG.providers`
-  (Apple viene apagado: exige cuenta de Apple Developer).
+  (Apple viene apagado: exige cuenta de Apple Developer). Cada botón lleva el logo original del proveedor
+  (`PROVIDER_MARKS`): Gmail con su "M" de cuatro colores (antes una "G" de texto), Microsoft con sus cuatro cuadros.
 - **Validación:** con Google y con el enlace el correo llega validado. Si un proveedor lo entrega sin validar (algunas
   cuentas de Microsoft), Firebase envía un mensaje de validación y la vista "Valide su correo" espera ("Ya lo validé" /
   "Reenviar"). Si el enlace se abre en otro navegador, se pide el correo otra vez.
@@ -488,6 +508,11 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - Portadas de categoría con tonos por familia: salados en terracota, dulces en caramelo y rosa, frescos en verde y bebidas
   en turquesa (`categoryTones`).
 - Bandera de Puerto Rico como logotipo y favicon (SVG, proporción 3:2).
+- **Icono en la pantalla de inicio del celular:** la misma bandera sobre el crema de la app, en PNG (`icons/`):
+  `apple-touch-icon.png` (iPhone/iPad), `icon-192/512.png` y `icon-maskable-512.png` (Android, bandera dentro de la zona
+  segura) en `manifest.webmanifest`, y `favicon-32.png` de respaldo. El manifiesto usa `"display": "browser"`: la app se
+  abre igual que en el navegador (en modo *standalone* el acceso con Google puede fallar por las ventanas emergentes).
+  Para regenerarlos: script de PowerShell con System.Drawing que dibuja `#flag-pr` con sus coordenadas.
 - Responsive con un menú plegable en móvil; sin desbordes horizontales a 375 px.
 
 ## 11. Cómo añadir recetas (procedimiento)
@@ -511,6 +536,24 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-15 — v4.6.0 · Buscador más rápido y certero, recetas que abren arriba, logo de Gmail e icono de la app
+- **Buscador:** ignora frases de conversación ("tengo pollo y papas": 37 resultados en vez de 232; "qué hago con plátano
+  y queso": 14 en vez de 215); corrige por cómo suena (poyo → pollo, vacalao → bacalao, abichuelas → habichuelas); la
+  palabra que nombra una categoría pone esa categoría primero ("arroz" → Arroz con Gandules); la frase de desempate usa
+  la palabra corregida. En la interfaz: escribir quita la categoría elegida (con Postres elegida, "pollo" daba 0), espera
+  180 ms a que se deje de escribir y busca desde 2 letras, esconde categorías y rápidas para que los resultados queden
+  debajo del buscador (de >1,000 px a ~230 px en el celular) y dibuja 30 tarjetas con "Ver más resultados". Buscar ya
+  costaba ≤ 8 ms; lo lento era dibujar (1,006 tarjetas ≈ 105 ms en computadora, varias veces más en el celular).
+- **Recetas en el celular:** abrían deslizándose desde la posición anterior (≈ 0.7 s) por `scroll-behavior: smooth`; se
+  veía el final y al tocar se quedaba abajo. `jumpTo()` salta arriba al instante; "Atrás" vuelve al mismo punto.
+- **Entrada:** el botón de Gmail lleva el logo original (la "M" de cuatro colores) en vez de una "G" de texto.
+- **Icono de la app:** `apple-touch-icon`, iconos de Android y `manifest.webmanifest` con la bandera; antes el celular
+  mostraba una letra o una captura de la página.
+- *Verificado:* a 375 px, abrir una receta desde abajo de Postres deja la página en 0 desde el primer cuadro y "Atrás"
+  vuelve a la misma posición ✔; 48 búsquedas de este documento (grosella, sin horno, mocktail, vegano, tés, "X para Y",
+  empanados, bbq, loíza, alérgenos, ideas…) siguen dando lo mismo ✔; "Ver más" añade 30 ✔; pantalla de entrada con el
+  logo de Gmail ✔; manifiesto e iconos servidos (200, tipos correctos) ✔; sin errores de consola ✔.
 
 ### 2026-10-12 — v4.5.1 · El último plan se conserva al volver a entrar
 - *Problema:* al entrar otra vez el mismo día no salía el último plan. Causas: (1) "Salir" cancelaba la subida pendiente
