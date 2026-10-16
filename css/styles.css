@@ -320,7 +320,7 @@ main:focus { outline: none; }
 /* Barra de resultados y filtros */
 /* Al buscar, los resultados van justo debajo del buscador (sin la cuadrícula de
    categorías ni las rápidas en medio). */
-.is-searching #categorias, .is-searching #rapidas { display: none; }
+.is-searching #categorias, .is-searching #rapidas, .is-searching #opiniones { display: none; }
 .is-searching #recetas { padding-top: var(--s-5); }
 .more-results { display: flex; justify-content: center; margin-top: var(--s-6); }
 .more-results .btn { min-height: 48px; padding: 0 var(--s-6); }
@@ -847,3 +847,80 @@ body.auth-locked .site-header, body.auth-locked main, body.auth-locked .site-foo
   .admin-actions { flex-wrap: wrap; white-space: normal; }
 }
 @media print { .account-bar, #nav-admin { display: none !important; } }
+
+/* Reseñas (js/reviews.js): estrellas + comentario, con aprobación previa */
+.stars { display: inline-flex; gap: 1px; vertical-align: middle; }
+.star { display: inline-flex; width: 18px; height: 18px; }
+.stars-lg .star { width: 24px; height: 24px; }
+.star-svg { width: 100%; height: 100%; stroke: var(--gold); stroke-width: 1.4; stroke-linejoin: round; fill: none; }
+.star.on .star-svg { fill: var(--gold); }
+/* Media estrella: la mitad izquierda rellena y, encima, el contorno completo. */
+.star.half { position: relative; }
+.star.half .star-svg { fill: var(--gold); clip-path: inset(0 50% 0 0); }
+.star.half::after { content: ""; position: absolute; inset: 0; background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z' fill='none' stroke='%23C8912E' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+
+.recipe-rating { margin-top: var(--s-3); }
+.rating-link { display: inline-flex; align-items: center; gap: var(--s-2); padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--ivory); color: var(--ink-2); font: inherit; font-size: .9rem; cursor: pointer; min-height: 36px; }
+.rating-link strong { color: var(--ink); }
+.rating-link:hover { border-color: var(--gold); }
+.rating-link:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+.reviews-panel { margin-top: var(--s-5); }
+.reviews-panel .panel-title:focus, .reviews-app .section-title:focus { outline: none; }
+.reviews-app { display: flex; flex-direction: column; gap: var(--s-4); }
+.reviews-head { display: flex; flex-direction: column; gap: var(--s-2); margin-bottom: var(--s-4); }
+.reviews-app .reviews-head { margin-bottom: 0; }
+.reviews-summary { display: flex; align-items: center; flex-wrap: wrap; gap: var(--s-2) var(--s-3); }
+.reviews-avg { font-size: var(--step-3); font-weight: 800; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; }
+.reviews-count { color: var(--ink-3); font-size: var(--step--1); }
+.reviews-empty { color: var(--ink-2); margin-top: var(--s-4); }
+.review-mine { margin-bottom: var(--s-4); }
+.reviews-app .review-mine { margin-bottom: 0; }
+.review-write .icon { width: 18px; height: 18px; }
+
+.review-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-3); }
+.review { background: var(--ivory); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s-4); display: grid; gap: var(--s-2); }
+.reviews-panel .review { background: #fff; }
+.review-own { border-color: var(--gold); box-shadow: inset 4px 0 0 var(--gold); }
+.review-own-label { font-size: var(--step--1); font-weight: 700; color: var(--ink-2); display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2); }
+.review-top { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s-3); }
+.review-name { color: var(--ink); overflow-wrap: anywhere; }
+.review-date { color: var(--ink-3); font-size: var(--step--1); }
+.review-text { color: var(--ink); white-space: pre-line; overflow-wrap: anywhere; max-width: 75ch; }
+.review-hint, .review-email { color: var(--ink-3); font-size: var(--step--1); overflow-wrap: anywhere; }
+.review-tag { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: .75rem; font-weight: 700; }
+.review-tag.is-pending { background: var(--achiote-50); color: var(--achiote-600); }
+.review-tag.is-ok { background: var(--plantain-50); color: var(--plantain); }
+.review-target { font-weight: 700; color: var(--achiote); }
+.review-actions { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+
+.review-form { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s-4); display: grid; gap: var(--s-2); max-width: 640px; }
+.review-label { font-weight: 700; font-size: var(--step--1); color: var(--ink-2); margin-top: var(--s-2); }
+.star-input { border: 0; margin: 0; padding: 0; min-width: 0; }
+.star-input legend { padding: 0; margin: 0 0 var(--s-1); }
+.star-row { display: flex; gap: 2px; }
+.star-pick { position: relative; display: inline-flex; width: 44px; height: 44px; padding: 5px; cursor: pointer; border-radius: var(--radius-sm); }
+.star-pick input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.star-pick .star-svg { stroke-width: 1.2; }
+.star-pick:has(input:focus-visible) { outline: 2px solid var(--focus); outline-offset: 0; }
+.star-row:has(input[value="1"]:checked) .star-pick:nth-child(-n+1) .star-svg,
+.star-row:has(input[value="2"]:checked) .star-pick:nth-child(-n+2) .star-svg,
+.star-row:has(input[value="3"]:checked) .star-pick:nth-child(-n+3) .star-svg,
+.star-row:has(input[value="4"]:checked) .star-pick:nth-child(-n+4) .star-svg,
+.star-row:has(input[value="5"]:checked) .star-pick:nth-child(-n+5) .star-svg { fill: var(--gold); }
+@media (hover: hover) {
+  .star-row:has(.star-pick:hover) .star-pick .star-svg { fill: none; }
+  .star-row .star-pick:has(~ .star-pick:hover) .star-svg, .star-row .star-pick:hover .star-svg { fill: var(--gold); }
+}
+.review-input { border-radius: var(--radius-sm); }
+.review-textarea { width: 100%; min-height: 110px; padding: var(--s-3) var(--s-4); border: 1.5px solid var(--line); border-radius: var(--radius-sm); background: #fff; font: inherit; color: var(--ink); resize: vertical; }
+.review-input:focus-visible, .review-textarea:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; border-color: transparent; }
+.review-chars { justify-self: end; font-size: .75rem; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.review-note { font-size: var(--step--1); color: var(--ink-2); }
+.review-form .review-actions { margin-top: var(--s-2); }
+
+.admin-reviews { display: flex; flex-direction: column; gap: var(--s-3); margin-top: var(--s-5); }
+.admin-reviews:empty { display: none; }
+.admin-h2 { font-size: var(--step-2); display: flex; align-items: center; gap: var(--s-2); }
+.admin-count { display: inline-grid; place-items: center; min-width: 28px; height: 28px; padding: 0 8px; border-radius: 999px; background: var(--achiote); color: #fff; font-size: .85rem; }
+@media print { .recipe-rating, .reviews-panel, #opiniones { display: none !important; } }

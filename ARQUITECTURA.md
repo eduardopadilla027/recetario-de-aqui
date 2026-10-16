@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-15 · **Versión del documento:** 4.6.2 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-15 · **Versión del documento:** 4.7.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -72,7 +72,8 @@ cocine-a-gusto/
 │   ├── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
 │   ├── plans.js          planes de comida (#/planes): objetivos, época, preferencias, plan de 1 o 7 días
 │   ├── auth-config.js    configuración web de Firebase y proveedores de correo que se muestran (§7.3)
-│   └── auth.js           pantalla de entrada, validación del correo, conteo de usos y panel #/admin (§7.3)
+│   ├── auth.js           pantalla de entrada, validación del correo, conteo de usos y panel #/admin (§7.3)
+│   └── reviews.js        reseñas (estrellas + comentario) de la app y de cada receta, con aprobación previa (§7.4)
 ├── images/               (vacía: reservada para fotos)
 ├── icons/                iconos de la app (bandera sobre crema): apple-touch-icon 180, 192, 512, maskable 512, favicon 32
 ├── manifest.webmanifest  nombre e iconos para la pantalla de inicio del celular (Android)
@@ -84,7 +85,7 @@ cocine-a-gusto/
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js`
-→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `auth-config.js` → `auth.js` (usa `app.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
+→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `auth-config.js` → `auth.js` (usa `app.js`) → `reviews.js` (usa `app.js` y `auth.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
 ## 5. Modelo de datos: la receta
 
@@ -408,6 +409,30 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 
 Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 
+### 7.4 Reseñas de la app y de las recetas (`js/reviews.js`)
+- **Qué es:** 1 a 5 estrellas + comentario opcional (hasta 1,000 letras) y un **nombre que escribe la persona** (2 a 40
+  letras; se recuerda en este navegador en `rcb.reviewName.<uid>`). El correo **nunca** se publica. Una reseña por persona
+  y por receta, y una de la app; se puede **Editar** o **Borrar**.
+- **Dónde:** la de la app en la sección `#opiniones` del inicio (enlace "Opiniones" en el pie; se esconde al buscar); la de
+  cada receta en `#recipe-reviews`, al final del detalle, y un resumen (promedio y número) en `#recipe-rating`, bajo los
+  alérgenos, que lleva a las reseñas. Se ven las 5 más recientes y "Ver más reseñas". Todo en ES/EN.
+- **Aprobación previa:** toda reseña nueva o editada queda `pending` y sólo la ve su autor ("Pendiente de aprobación").
+  En `#/admin`, bajo la tabla de usuarios, **Reseñas pendientes** (las más viejas primero) con la receta o "La app", el
+  correo del autor (sólo para administradores), **Aprobar** y **Borrar**. Los administradores también pueden borrar
+  reseñas publicadas desde la receta o desde `#opiniones`.
+- **Datos:** `reviews/{target}__{uid}` con `target` = `app` o `r:<id de la receta>`: `{ target, uid, name, stars, text,
+  status, createdAt, updatedAt }`. Lecturas: `where(target).where(status == approved)` (sin índice compuesto; se ordena en
+  el navegador), la propia por su id y, para administradores, `where(status == pending)`.
+- **Ganchos:** `renderModal()` (app.js) → `renderRecipeReviews()`; `onUser()` (auth.js) → `resetReviews()` y, al entrar,
+  `reviewsOnReady()`; `renderAuthTexts()` → `renderAllReviews()` al cambiar de idioma; `renderAdminShell()` y
+  `loadAdminData()` → `renderPendingReviews()` / `loadPendingReviews()`. Todo texto del usuario pasa por `esc()`.
+- **Seguridad (`firestore.rules`, `match /reviews/{rid}`):** el id debe ser `target__uid` propio; sólo esas 8 claves,
+  tipos y largos válidos; el autor sólo escribe `status: 'pending'` con `updatedAt` del servidor (y `createdAt` igual al
+  anterior al editar); una cuenta suspendida no puede escribir. Leer: las publicadas, cualquiera que entre; las
+  pendientes, su autor y los administradores. Los administradores sólo cambian `status`. Borrar: el autor o un
+  administrador. **Al cambiar las reglas hay que volver a publicarlas** (Firestore Database → Reglas → pegar → Publicar);
+  sin eso la app muestra "Las reseñas todavía no están activadas en el servidor".
+
 ### 7.2 Planes de comida (`js/plans.js`, ruta `#/planes`)
 - **Acceso:** enlace "Planes" / "Meal plans" en el menú y en el pie. Vista `<section id="view-plans">`; `route()` llama a
   `showPlans()`; `showHome()` y `showRecipe()` la ocultan. Desde un plan, una receta se abre con `data-open` y "Atrás"
@@ -545,6 +570,21 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-15 — v4.7.0 · Reseñas de la app y de las recetas
+- Nuevo `js/reviews.js` (§7.4): estrellas (1–5) + comentario opcional + nombre que escribe la persona, para la app
+  (sección `#opiniones` del inicio y enlace "Opiniones" en el pie) y para cada receta (resumen bajo los alérgenos y
+  sección al final). Una por persona y receta; se edita o se borra. Aprobación previa: quedan pendientes hasta que un
+  administrador las aprueba en `#/admin` → "Reseñas pendientes".
+- `firestore.rules`: regla nueva `match /reviews/{rid}` (hay que publicarla en la consola de Firebase). `index.html`:
+  `#recipe-rating`, `#recipe-reviews`, `#opiniones`, icono `i-star` y `<script src="js/reviews.js">`. `app.js`:
+  `renderModal()` llama a `renderRecipeReviews()`; texto `navReviews`. `auth.js`: ganchos en `onUser()`,
+  `renderAuthTexts()`, `renderAdminShell()` y `loadAdminData()`. CSS de estrellas, formulario, lista y panel.
+- *Verificado (Firestore simulado, sin cuentas reales):* la app con 2 publicadas y 1 pendiente → se ven 2 (4.5 ★);
+  sin estrellas o con nombre de 1 letra → mensaje; enviar → "Pendiente de aprobación" con Editar/Borrar; editar
+  conserva `createdAt` y vuelve a `pending`; nombre y comentario con HTML se muestran como texto; en `#/admin` salen las
+  2 pendientes ("editada" en la que se editó), Aprobar → publicada (4.7 ★, 3 reseñas) y Borrar → eliminada; receta con
+  acento en el id (`pollo-fricasé`) en EN a 375 px: resumen 4.0 ★, formulario con estrellas, sin desbordes ni errores ✔.
 
 ### 2026-10-15 — v4.6.2 · Los administradores no cuentan como uso
 - Al entrar, se ve primero si la cuenta es de administrador; si lo es, no se suma su uso ni se crea su registro

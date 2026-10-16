@@ -50,6 +50,7 @@
     <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
     <symbol id="i-logout" viewBox="0 0 24 24"><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/><path d="M10 16l-4-4 4-4M6 12h10"/></symbol>
     <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6L13 3z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></symbol>
     <!-- Plátanos para las portadas (no hay emoji de plátano: 🍌 es guineo maduro) -->
     <symbol id="ic-platano-verde" viewBox="0 0 64 64">
       <g transform="translate(-8.2 -9.2) scale(1.2)">
@@ -881,6 +882,11 @@
           <div id="categories-container"></div>
         </div>
       </section>
+
+      <!-- Opiniones sobre la app (js/reviews.js) -->
+      <section class="section section-tint" id="opiniones" aria-labelledby="app-reviews-title">
+        <div class="container reviews-app" id="app-reviews"></div>
+      </section>
     </div>
 
     <!-- ===================== DETALLE DE RECETA ===================== -->
@@ -902,6 +908,7 @@
               <li><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg><span><span class="fact-label" data-i18n="kcalFact">Calorías / porción</span><strong id="modal-kcal"></strong></span></li>
             </ul>
             <p class="allergen-line" id="allergen-line" hidden></p>
+            <p class="recipe-rating" id="recipe-rating" hidden></p>
             <div class="recipe-actions">
               <button type="button" class="btn btn-outline" id="fav-btn" aria-pressed="false">
                 <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span id="fav-btn-text"></span>
@@ -952,6 +959,9 @@
             <div class="pairings" id="modal-pairings" hidden></div>
           </section>
         </div>
+
+        <!-- Reseñas de la receta (js/reviews.js) -->
+        <section class="panel reviews-panel" id="recipe-reviews" aria-labelledby="recipe-reviews-title"></section>
       </div>
     </article>
     <!-- ===================== PLANES DE COMIDA (js/plans.js) ===================== -->
@@ -974,6 +984,7 @@
         <a href="#categorias" data-i18n="navCategories">Categorías</a>
         <a href="#rapidas" data-i18n="quickShort">Recetas rápidas</a>
         <a href="#/planes" data-i18n="navPlans">Planes</a>
+        <a href="#opiniones" data-i18n="navReviews">Opiniones</a>
       </nav>
     </div>
   </footer>
@@ -995,5 +1006,6 @@
   <script src="js/plans.js"></script>
   <script src="js/auth-config.js"></script>
   <script src="js/auth.js"></script>
+  <script src="js/reviews.js"></script>
 </body>
 </html>

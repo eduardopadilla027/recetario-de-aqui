@@ -470,6 +470,7 @@ async function recordUse(user, isAdmin) {
 async function onUser(user) {
   authUser = user;
   authIsAdmin = false;
+  resetReviews(); // js/reviews.js: lo cargado era de la cuenta anterior
   if (!user) { setAuthState("signin"); renderAccountBar(); return; }
   if (!user.email) { await fbAuth.signOut(); setAuthState("signin", at().errors.generic); return; }
   if (!user.emailVerified) {
@@ -489,6 +490,7 @@ async function onUser(user) {
     authIsAdmin = admin;
     setAuthState("ready");
     loadUserPlan();
+    reviewsOnReady();
     if (location.hash === "#/admin") route();
   } catch (err) {
     setAuthState("signin", authError(err));
@@ -598,9 +600,11 @@ function renderAdminShell() {
       </div>
       <p class="auth-msg" id="admin-msg" role="alert" hidden></p>
       <div class="admin-table-wrap" id="admin-table"><p class="auth-loading">${esc(tr.loading)}</p></div>
+      <section class="admin-reviews" id="admin-reviews" aria-live="polite"></section>
     </div>`;
   $("admin-title").focus({ preventScroll: true });
   if (adminUsers.length) renderAdminTable();
+  renderPendingReviews(); // js/reviews.js
 }
 
 async function loadAdminData() {
@@ -614,6 +618,7 @@ async function loadAdminData() {
     ownerEmails = new Set(admins.docs.filter((d) => d.data().owner).map((d) => d.id));
     renderAdminTable();
   } catch (err) { adminMsg(authError(err)); }
+  loadPendingReviews(); // js/reviews.js (después: usa adminUsers para el correo del autor)
 }
 
 function adminMsg(text) {
@@ -700,6 +705,7 @@ function renderAuthTexts() {
   if (authState !== "ready") renderGate();
   renderAccountBar();
   if (!$("view-admin").hidden) { document.title = `${at().adminTitle} — ${BRAND}`; renderAdminShell(); }
+  renderAllReviews(); // js/reviews.js
 }
 
 function setupAuthEvents() {

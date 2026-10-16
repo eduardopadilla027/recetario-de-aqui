@@ -3,6 +3,7 @@
 //
 // users/{uid}:    { email, count, firstSeen, lastSeen, blocked? }  — sin contraseñas
 // admins/{email}: { addedBy, addedAt, owner? }
+// reviews/{target}__{uid}: { target, uid, name, stars, text, status, createdAt, updatedAt }  — js/reviews.js
 //
 // Dueño (administrador fijo): ownerEmail(). Al entrar, la app le crea admins/{su correo} con owner: true.
 // No se le puede quitar el rol ni suspender.
@@ -69,6 +70,44 @@ service cloud.firestore {
       allow create: if isAdmin()
         && (request.resource.data.get('owner', false) == false || (isOwner() && email == myEmail()));
       allow delete: if isAdmin() && email != ownerEmail() && resource.data.get('owner', false) != true;
+    }
+
+    // Reseñas (js/reviews.js): reviews/{target}__{uid}, target 'app' o 'r:<id de la receta>'.
+    // Una por persona y por receta (y una de la app). Aprobación previa: el autor sólo
+    // escribe 'pending'; un administrador la pasa a 'approved'. El correo no se guarda aquí.
+    match /reviews/{rid} {
+      function validReview() {
+        let d = request.resource.data;
+        return d.keys().hasOnly(['target', 'uid', 'name', 'stars', 'text', 'status', 'createdAt', 'updatedAt'])
+          && d.uid == request.auth.uid
+          && (d.target == 'app' || d.target.matches('r:[^/]{1,100}'))
+          && rid == d.target + '__' + request.auth.uid
+          && d.name is string && d.name.size() >= 2 && d.name.size() <= 40
+          && d.stars is int && d.stars >= 1 && d.stars <= 5
+          && d.text is string && d.text.size() <= 1000
+          && d.status == 'pending'
+          && d.updatedAt == request.time
+          && !(exists(/databases/$(database)/documents/users/$(request.auth.uid))
+               && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('blocked', false) == true);
+      }
+
+      // Publicadas: todos los que entran. Pendientes: su autor y los administradores.
+      allow get: if verified() && (resource == null || resource.data.status == 'approved'
+        || resource.data.uid == request.auth.uid || isAdmin());
+      allow list: if verified() && (resource.data.status == 'approved' || isAdmin());
+
+      // Escribir o editar la propia: siempre vuelve a 'pending'.
+      allow create: if verified() && validReview() && request.resource.data.createdAt == request.time;
+      allow update: if verified() && resource.data.uid == request.auth.uid && validReview()
+        && request.resource.data.createdAt == resource.data.createdAt;
+
+      // Administradores: sólo cambian el estado (aprobar).
+      allow update: if isAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status'])
+        && request.resource.data.status in ['approved', 'pending'];
+
+      // Borrar: su autor o un administrador.
+      allow delete: if verified() && (resource.data.uid == request.auth.uid || isAdmin());
     }
   }
 }

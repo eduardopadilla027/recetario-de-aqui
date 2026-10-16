@@ -41,6 +41,7 @@ const translations = {
     navRecipes: "Recetas",
     navFavorites: "Favoritas",
     navPlans: "Planes",
+    navReviews: "Opiniones",
     navAdmin: "Administrador",
     categoriesTitle: "Explora por categoría",
     categoriesSub: "Elige una categoría para ver sus recetas. Vuelve a pulsarla para cerrarla.",
@@ -157,6 +158,7 @@ const translations = {
     navRecipes: "Recipes",
     navFavorites: "Favorites",
     navPlans: "Meal plans",
+    navReviews: "Reviews",
     navAdmin: "Admin",
     categoriesTitle: "Browse by category",
     categoriesSub: "Pick a category to see its recipes. Tap it again to close it.",
@@ -1358,6 +1360,7 @@ function renderModal(recipe) {
   renderIngredients();
   renderNutrition(recipe);
   renderSafety(recipe);
+  renderRecipeReviews(recipe); // js/reviews.js
 }
 
 /* Salsas y aderezos: con qué platos combinan mejor (js/pairings.js). Cada uno lleva a su categoría. */
