@@ -21,7 +21,7 @@ const AUTH_CONFIG = {
   providers: {
     google: true,      // Gmail
     microsoft: false,  // Outlook, Hotmail, Live, MSN
-    yahoo: false,      // Yahoo Mail
+    yahoo: true,       // Yahoo Mail (activado en Firebase el 2026-10-15)
     apple: false,      // iCloud (requiere cuenta de Apple Developer)
     email: true        // cualquier otro correo: enlace de validación
   }

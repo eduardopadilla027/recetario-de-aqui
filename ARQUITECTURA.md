@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-15 · **Versión del documento:** 4.6.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-15 · **Versión del documento:** 4.6.1 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -363,7 +363,12 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   el correo validado; mientras tanto se ve `#auth-gate` (ES/EN). La persona **escoge su proveedor de correo**: Gmail
   (Google), Outlook/Hotmail/Live (Microsoft), Yahoo Mail, iCloud (Apple) u **"¿Otro correo?"**, que envía un enlace de
   validación al buzón (Firebase *email link*, sin contraseña). Qué botones salen se decide en `AUTH_CONFIG.providers`
-  (Apple viene apagado: exige cuenta de Apple Developer). Cada botón lleva el logo original del proveedor
+  (Apple viene apagado: exige cuenta de Apple Developer). **Estado (2026-10-15):** Gmail, Yahoo y el enlace por correo
+  encendidos; Microsoft apagado hasta que su proveedor esté guardado en Firebase. Para comprobar un proveedor sin entrar:
+  `POST https://identitytoolkit.googleapis.com/v1/accounts:createAuthUri?key=<apiKey>` con
+  `{ providerId: "microsoft.com", continueUri: "https://recetario-de-aqui.firebaseapp.com/__/auth/handler" }` devuelve
+  `authUri` si está configurado u `OPERATION_NOT_ALLOWED … configuration is not found` si no.
+  Cada botón lleva el logo original del proveedor
   (`PROVIDER_MARKS`): Gmail con su "M" de cuatro colores (antes una "G" de texto), Microsoft con sus cuatro cuadros.
 - **Validación:** con Google y con el enlace el correo llega validado. Si un proveedor lo entrega sin validar (algunas
   cuentas de Microsoft), Firebase envía un mensaje de validación y la vista "Valide su correo" espera ("Ya lo validé" /
@@ -536,6 +541,14 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-15 — v4.6.1 · Entrar con Yahoo
+- `AUTH_CONFIG.providers.yahoo = true`: la pantalla de entrada muestra "Yahoo Mail" debajo de Gmail.
+- Microsoft (Outlook/Hotmail) sigue apagado: Firebase responde "configuration is not found", es decir, el proveedor no
+  quedó guardado en *Authentication → Método de acceso*. Se enciende con `microsoft: true` cuando lo esté.
+- *Verificado:* `createAuthUri` da Google ✔, Yahoo ✔ (api.login.yahoo.com con el `redirect_uri` de Firebase) y
+  Microsoft ✘; en localhost el botón de Yahoo lleva a "Sign in | Yahoo" (con la ventana emergente bloqueada, por
+  redirección) ✔; sin errores de consola ✔.
 
 ### 2026-10-15 — v4.6.0 · Buscador más rápido y certero, recetas que abren arriba, logo de Gmail e icono de la app
 - **Buscador:** ignora frases de conversación ("tengo pollo y papas": 37 resultados en vez de 232; "qué hago con plátano
