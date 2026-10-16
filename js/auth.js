@@ -6,8 +6,8 @@
  * Lo hace Firebase Authentication: la app NUNCA ve ni guarda contraseñas.
  *
  * En Cloud Firestore se guarda sólo, por persona (users/{uid}): el correo, cuántas
- * veces ha usado la app (count: +1 por sesión del navegador), la primera y la última
- * vez, y `blocked` si un administrador le quitó el acceso. Los ajustes de Planes van
+ * veces ha usado la app (count: +1 por sesión del navegador; los administradores no
+ * cuentan), la primera y la última vez, y `blocked` si un administrador le quitó el acceso. Los ajustes de Planes van
  * aparte, en users/{uid}/data/plan, y sólo los lee la persona dueña. Los administradores son
  * los correos que tienen un documento en admins/{correo}. El dueño está fijo en
  * firestore.rules: al entrar, la app le crea su documento con owner: true (a los
@@ -442,9 +442,14 @@ async function signOut() {
 /* ------------------------------------------------------------ registro y conteo ---- */
 
 /* Crea el registro la primera vez (count 1) y suma 1 por cada sesión del navegador.
-   Devuelve los datos del usuario (para ver si está suspendido). */
-async function recordUse(user) {
+   Los administradores no cuentan: sólo se lee su registro (si lo tienen) para ver si
+   están suspendidos, sin crearlo ni sumar. Devuelve los datos del usuario. */
+async function recordUse(user, isAdmin) {
   const ref = fbDb.collection("users").doc(user.uid);
+  if (isAdmin) {
+    const snap = await ref.get();
+    return snap.exists ? snap.data() : {};
+  }
   const now = firebase.firestore.FieldValue.serverTimestamp();
   const counted = sessionFlag(AUTH_USE_KEY + user.uid);
   const snap = await ref.get();
@@ -477,9 +482,11 @@ async function onUser(user) {
   }
   setAuthState("loading");
   try {
-    const data = await recordUse(user);
+    // Primero si es administrador: sus usos no se cuentan.
+    const admin = await checkAdmin(user);
+    const data = await recordUse(user, admin);
     if (data.blocked) { setAuthState("blocked"); return; }
-    authIsAdmin = await checkAdmin(user);
+    authIsAdmin = admin;
     setAuthState("ready");
     loadUserPlan();
     if (location.hash === "#/admin") route();
@@ -619,8 +626,10 @@ function renderAdminTable() {
   const box = $("admin-table");
   if (!box) return;
   const week = Date.now() - 7 * 864e5;
-  const total = adminUsers.reduce((s, u) => s + (u.count || 0), 0);
-  const active = adminUsers.filter((u) => u.lastSeen && u.lastSeen.toMillis() >= week).length;
+  // Los administradores no cuentan: ni en "Usos" ni en "Activos" (su contador ya no sube).
+  const counted = adminUsers.filter((u) => !adminEmails.has(u.email));
+  const total = counted.reduce((s, u) => s + (u.count || 0), 0);
+  const active = counted.filter((u) => u.lastSeen && u.lastSeen.toMillis() >= week).length;
   const n = (x) => x.toLocaleString(currentLang === "es" ? "es-PR" : "en-US");
   $("admin-stats").innerHTML = [[tr.statUsers, adminUsers.length], [tr.statUses, total], [tr.statActive, active]]
     .map(([k, val]) => `<div class="admin-stat"><span class="admin-stat-num">${n(val)}</span><span class="admin-stat-label">${esc(k)}</span></div>`).join("");
@@ -638,7 +647,7 @@ function renderAdminTable() {
         const fixed = self || ownerEmails.has(u.email);
         return `<tr>
           <td data-label="${esc(tr.colEmail)}" class="admin-email">${esc(u.email)}${self ? ` <span class="admin-you">(${esc(tr.you)})</span>` : ""}</td>
-          <td data-label="${esc(tr.colCount)}" class="num">${n(u.count || 0)}</td>
+          <td data-label="${esc(tr.colCount)}" class="num">${isAdm ? "—" : n(u.count || 0)}</td>
           <td data-label="${esc(tr.colFirst)}" class="admin-date">${esc(fmtDate(u.firstSeen))}</td>
           <td data-label="${esc(tr.colLast)}" class="admin-date">${esc(fmtDate(u.lastSeen))}</td>
           <td data-label="${esc(tr.colRole)}"><span class="role-tag${isAdm ? " is-admin" : ""}">${esc(ownerEmails.has(u.email) ? tr.roleOwner : isAdm ? tr.roleAdmin : tr.roleUser)}</span>${u.blocked ? ` <span class="role-tag is-blocked">${esc(tr.blockedTag)}</span>` : ""}</td>
@@ -675,7 +684,7 @@ function exportCsv() {
   const iso = (ts) => (ts && ts.toDate ? ts.toDate().toISOString() : "");
   const cell = (s) => `"${String(s).replace(/"/g, '""')}"`;
   const lines = [[tr.colEmail, tr.colCount, tr.colFirst, tr.colLast, tr.colRole, tr.blockedTag].map(cell).join(",")]
-    .concat(adminUsers.map((u) => [u.email, u.count || 0, iso(u.firstSeen), iso(u.lastSeen),
+    .concat(adminUsers.map((u) => [u.email, adminEmails.has(u.email) ? "" : u.count || 0, iso(u.firstSeen), iso(u.lastSeen),
       adminEmails.has(u.email) ? tr.roleAdmin : tr.roleUser, u.blocked ? "1" : "0"].map(cell).join(",")));
   const blob = new Blob(["﻿" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
   const a = document.createElement("a");

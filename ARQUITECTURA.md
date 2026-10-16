@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-15 · **Versión del documento:** 4.6.1 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-15 · **Versión del documento:** 4.6.2 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -375,6 +375,9 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   "Reenviar"). Si el enlace se abre en otro navegador, se pide el correo otra vez.
 - **Qué se guarda (Firestore `users/{uid}`):** `email`, `count` (veces que usa la app: +1 por sesión del navegador,
   marcada en `sessionStorage`), `firstSeen`, `lastSeen` y `blocked` si un administrador suspende la cuenta.
+  **Los administradores no cuentan:** `onUser()` pregunta primero `checkAdmin()` y, si lo es, `recordUse(user, true)`
+  sólo lee su registro (para ver si está suspendido) sin crearlo ni sumar `count` ni `lastSeen`. Los conteos que ya
+  tenían quedan guardados pero no se muestran ni se suman (borrarlos exigiría cambiar `firestore.rules`).
   **Nunca contraseñas**: la app no las ve. (Firebase Authentication guarda la cuenta: correo y proveedor.)
 - **Ajustes de Planes en la cuenta (`users/{uid}/data/plan`):** `{ plan, updatedAt }` con objetivo, datos personales
   (sexo, edad, peso, estatura, actividad), alergias, preferencias, época y días. `savePlan()` (plans.js) los guarda en el
@@ -382,7 +385,8 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   (o sube los del navegador si la cuenta no tiene); al salir, `applyPlan(null)` deja el navegador con los de fábrica.
   `cleanPlan()` sólo acepta las claves de `PLAN_DEFAULTS`. Sólo la persona dueña los lee: **ni los administradores**.
 - **Administradores:** los correos con documento en `admins/{correo}`. Ven "Administrador" en el menú y `#/admin`:
-  totales (usuarios, usos, activos en 7 días), búsqueda, tabla con correo, veces, primera y última vez y rol, acciones
+  totales (usuarios = todas las cuentas; usos y activos en 7 días = sólo las que no son de administrador), búsqueda,
+  tabla con correo, veces ("—" para los administradores, también en el CSV), primera y última vez y rol, acciones
   **Hacer/Quitar admin** y **Suspender/Reactivar** (no sobre sí mismos) y **Exportar CSV**. En el encabezado está el
   correo de la sesión y "Salir".
 - **Seguridad (`firestore.rules`):** cada quien lee sólo su registro; al crearlo sólo puede poner su correo validado y
@@ -541,6 +545,14 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-15 — v4.6.2 · Los administradores no cuentan como uso
+- Al entrar, se ve primero si la cuenta es de administrador; si lo es, no se suma su uso ni se crea su registro
+  (`recordUse(user, isAdmin)`). En `#/admin`, la columna "Veces" muestra "—" para los administradores (también en el
+  CSV) y "Usos en total" y "Activos en 7 días" cuentan sólo a los demás. "Usuarios" sigue siendo el total de cuentas.
+- *Verificado (Firestore simulado):* administrador con registro → 0 escrituras; administrador nuevo → no se crea
+  registro; usuario → `count` sube 1 ✔. Panel con 2 administradores (120 y 40 usos) y 2 usuarios (9 y 3): "—" en los
+  administradores, 12 usos, 1 activo en 7 días, 4 usuarios ✔; sin errores de consola ✔.
 
 ### 2026-10-15 — v4.6.1 · Entrar con Yahoo
 - `AUTH_CONFIG.providers.yahoo = true`: la pantalla de entrada muestra "Yahoo Mail" debajo de Gmail.
