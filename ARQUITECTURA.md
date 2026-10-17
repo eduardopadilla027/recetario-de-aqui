@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.10.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.11.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -29,7 +29,7 @@ Las recetas son **versiones propias redactadas para esta app** (no copias de lib
 |---|---|
 | Carpeta local | `C:\Users\EDUARDOP\Desktop\cocine-a-gusto` |
 | Repositorio | https://github.com/eduardopadilla027/recetario-de-aqui (rama `master`) |
-| Publicación | Vercel, proyecto `recetario-de-aqui` → https://recetario-de-aqui.vercel.app |
+| Publicación | Vercel, proyecto `recetario-de-aqui` → **https://recetariodeaqui.com** (dominio comprado en Vercel el 2026-10-17, renueva a $11.25/año el 17 de octubre; DNS de Vercel). `www.recetariodeaqui.com` y `recetario-de-aqui.vercel.app` redirigen a él (`vercel.json`) |
 | Servidor local | `npx serve -l 3000 <carpeta>` (configuración en `.claude/launch.json`) → http://localhost:3000 |
 | Correo de contacto | recetariodeaqui@gmail.com (`CONTACT_EMAIL` en `js/app.js`; se muestra en el pie y en la pantalla de entrada) |
 
@@ -84,6 +84,7 @@ cocine-a-gusto/
 ├── firestore.rules       reglas de seguridad de Cloud Firestore (se pegan en la consola de Firebase)
 ├── .claude/launch.json   servidor local para la vista previa
 ├── .vercelignore         archivos que no se publican en Vercel
+├── vercel.json           redirecciones de www y de recetario-de-aqui.vercel.app a recetariodeaqui.com (§2)
 ├── ARQUITECTURA.md       este documento (fuente de verdad)
 └── CLAUDE.md             instrucciones para Claude Code: leer y actualizar este documento en cada cambio
 ```
@@ -404,7 +405,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 2. **Authentication → Método de acceso:** activar *Correo electrónico/contraseña* con **Vínculo de correo electrónico
    (acceso sin contraseña)**, y *Google*. Para Outlook: *Microsoft* (requiere registrar una app en Azure / Microsoft
    Entra). Para Yahoo: *Yahoo* (app en developer.yahoo.com). Para iCloud: *Apple* y poner `apple: true`.
-3. **Authentication → Configuración → Dominios autorizados:** añadir `recetario-de-aqui.vercel.app` (localhost ya está).
+3. **Authentication → Configuración → Dominios autorizados:** añadir `recetariodeaqui.com` y `www.recetariodeaqui.com` (y `recetario-de-aqui.vercel.app`, el anterior; localhost ya está). Sin esto, en ese dominio no se puede entrar.
 4. **Firestore Database:** crearla y publicar el contenido de `firestore.rules` en *Reglas*.
 5. **Administrador dueño:** `eduardo.padilla027@gmail.com`, fijo en `firestore.rules` (`ownerEmail()`). Al entrar por
    primera vez la app le crea `admins/eduardo.padilla027@gmail.com` con `owner: true`; sale como "Dueño" y nadie le
@@ -476,15 +477,15 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   entrar con Google; **iPhone/iPad**: Compartir → Añadir a pantalla de inicio → Añadir (y, fuera de Safari, abrirla en
   Safari); **Android**: menú ⋮ → Añadir a pantalla de inicio (o Instalar app) → Añadir; **computadora**: el enlace.
   Siempre: **Copiar el enlace** y, si el equipo puede, **Compartir el enlace** (`navigator.share`). Textos ES/EN.
-- **Enlace de los anuncios:** `https://recetario-de-aqui.vercel.app/?instalar` abre la guía sola al llegar en un
+- **Enlace de los anuncios:** `https://recetariodeaqui.com/?instalar` (`APP_URL` en `install.js`) abre la guía sola al llegar en un
   celular y quita `?instalar` de la barra (también acepta `?install`).
 
 ### 7.7 Anuncios en Facebook e Instagram
 - **Vista previa del enlace:** etiquetas Open Graph y `twitter:*` en el `<head>` de `index.html` (título, descripción,
   `og:locale` es_PR con en_US de alterno, `canonical`) e imagen `icons/og-image.png` de 1200×630: bandera, "Recetarios de
   Aquí · Cocina Boricua", "1,006 recetas de la cocina Puertorriqueña, paso a paso" y "Gratis · Planes de comida ·
-  Español · English", centrado para que sobreviva el recorte cuadrado de WhatsApp. Las URL son absolutas al dominio de
-  Vercel. Se generó con Edge sin ventana (`msedge --headless --screenshot --window-size=1200,630`) desde una página HTML
+  Español · English", centrado para que sobreviva el recorte cuadrado de WhatsApp. Las URL son absolutas a
+  `https://recetariodeaqui.com/`. Se generó con Edge sin ventana (`msedge --headless --screenshot --window-size=1200,630`) desde una página HTML
   con la letra y los colores de la app. **Si cambia el número de recetas o el dominio**, actualizar la imagen y las
   etiquetas, y en https://developers.facebook.com/tools/debug/ pulsar "Volver a extraer". Como las rutas son `#/…`, un
   enlace a una receta muestra la misma tarjeta de la app.
@@ -633,6 +634,17 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-17 — v4.11.0 · Dominio propio: recetariodeaqui.com
+- *Pedido:* poner la app en un dominio económico; se compró `recetariodeaqui.com` en Vercel.
+- Vercel: `recetariodeaqui.com` y `www.recetariodeaqui.com` añadidos al proyecto (`vercel domains add`). Nuevo
+  `vercel.json`: `www` y `recetario-de-aqui.vercel.app` redirigen (301, con la ruta y la consulta) a
+  `https://recetariodeaqui.com/`. `index.html` (`canonical`, `og:*`, `twitter:image`) e `install.js` (`APP_URL`) usan el
+  dominio nuevo. Firebase: dominios autorizados añadidos en la consola (§7.3, paso 3). Sin ellos el enlace por correo no
+  se envía (`UNAUTHORIZED_DOMAIN`, comprobado con `accounts:sendOobCode`); `auth.js` ahora explica ese error
+  (`auth/unauthorized-continue-uri`) y el de límite diario de enlaces (`auth/quota-exceeded`) en vez del mensaje general.
+- Quien ya había entrado en `vercel.app` tendrá que entrar otra vez (la sesión es por dominio); su plan está en su cuenta.
+- *Verificado:* `https://recetariodeaqui.com/` y `www` responden 200 con la app antes del cambio de enlaces.
 
 ### 2026-10-17 — v4.10.0 · Anuncios: vista previa del enlace y entrada desde Facebook/Instagram
 - *Pedido:* revisar la publicidad en Facebook e Instagram y arreglar (1) la entrada desde el navegador interno y (2) la

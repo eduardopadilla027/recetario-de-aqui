@@ -13,7 +13,7 @@
  * Botones con data-install="open" lo abren; el enlace con ?instalar (el de los anuncios) lo
  * abre solo al llegar. ARQUITECTURA.md §7.6. Depende de app.js ($, esc, currentLang, toast). */
 
-const APP_URL = "https://recetario-de-aqui.vercel.app/";
+const APP_URL = "https://recetariodeaqui.com/";
 
 const INSTALL_T = {
   es: {

@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.recetariodeaqui.com" }],
+      "destination": "https://recetariodeaqui.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "recetario-de-aqui.vercel.app" }],
+      "destination": "https://recetariodeaqui.com/:path*",
+      "permanent": true
+    }
+  ]
+}
