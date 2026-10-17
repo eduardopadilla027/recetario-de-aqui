@@ -553,6 +553,25 @@ main:focus { outline: none; }
 .footer-contact a:hover { color: var(--gold); }
 .auth-contact { margin-top: var(--s-4); font-size: .85rem; color: var(--ink-3); overflow-wrap: anywhere; }
 .auth-contact a { color: var(--achiote); font-weight: 700; }
+/* Icono en el celular (js/install.js) */
+.footer-install { display: inline-flex; align-items: center; gap: var(--s-2); min-height: 44px; padding: 0 var(--s-3); border: 1px solid rgba(255,255,255,.35); border-radius: 999px; background: none; color: inherit; font: inherit; font-size: var(--step--1); font-weight: 700; cursor: pointer; }
+.footer-install:hover { background: rgba(255,255,255,.08); color: #fff; }
+.footer-install .icon { width: 18px; height: 18px; }
+.install-btn { width: 100%; justify-content: center; }
+.auth-install { margin-top: var(--s-4); }
+.install-dialog { margin: auto; width: min(92vw, 460px); max-height: 90vh; overflow: auto; padding: var(--s-5); border: 0; border-radius: var(--radius-lg); background: var(--ivory); color: var(--ink); box-shadow: var(--shadow); }
+.install-dialog::backdrop { background: rgba(43, 29, 20, .55); }
+.install-head { display: flex; align-items: center; gap: var(--s-3); margin-bottom: var(--s-3); }
+.install-icon { border-radius: 14px; box-shadow: var(--shadow-sm); flex: none; }
+.install-title { font-size: var(--step-2); line-height: 1.2; }
+.install-text { color: var(--ink-2); margin-bottom: var(--s-3); }
+.install-steps { margin: 0 0 var(--s-3); padding-left: 1.4em; display: grid; gap: var(--s-2); }
+.install-steps li { padding-left: var(--s-1); }
+.install-note { font-size: var(--step--1); color: var(--ink-3); margin-bottom: var(--s-3); }
+.install-url { font-weight: 700; color: var(--achiote); overflow-wrap: anywhere; margin-bottom: var(--s-3); }
+.install-now { width: 100%; justify-content: center; margin-bottom: var(--s-4); }
+.install-actions { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-2); }
+@media print { .install-dialog, .footer-install { display: none !important; } }
 .footer-nav { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-2); }
 .footer-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--s-3); border-radius: 999px; text-decoration: none; font-size: var(--step--1); font-weight: 500; }
 .footer-nav a:hover { background: rgba(255,255,255,.08); color: #fff; }

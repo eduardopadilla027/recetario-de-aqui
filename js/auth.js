@@ -248,6 +248,7 @@ function gateShell(title, body) {
       <h1 class="auth-title" id="auth-title" tabindex="-1">${esc(title)}</h1>
       ${body}
       <p class="auth-msg" id="auth-msg" role="alert"${authMessage ? "" : " hidden"}>${esc(authMessage)}</p>
+      ${installButtonHTML("auth-install")}
       <p class="auth-contact">${esc(at().contact)} <a href="mailto:${esc(CONTACT_EMAIL)}">${esc(CONTACT_EMAIL)}</a></p>
     </div>`;
 }

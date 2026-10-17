@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.8.1 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.9.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -74,6 +74,7 @@ cocine-a-gusto/
 │   ├── plans.js          planes de comida (#/planes): objetivos, época, preferencias, plan de 1 o 7 días
 │   ├── auth-config.js    configuración web de Firebase y proveedores de correo que se muestran (§7.3)
 │   ├── auth.js           pantalla de entrada, validación del correo, conteo de usos y panel #/admin (§7.3)
+│   ├── install.js        "Póngala en su celular": guía para crear el icono en la pantalla de inicio (§7.6)
 │   ├── photo.js          motor de fotos: achica en el navegador la foto tomada o subida antes de guardarla (§7.5)
 │   └── reviews.js        reseñas (estrellas + comentario + foto opcional) de la app y de cada receta, con aprobación previa (§7.4)
 ├── images/               (vacía: reservada para fotos)
@@ -87,7 +88,7 @@ cocine-a-gusto/
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js`
-→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `auth-config.js` → `auth.js` (usa `app.js`) → `photo.js` → `reviews.js` (usa `app.js`, `auth.js` y `photo.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
+→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `install.js` (usa `app.js`; antes de `auth.js`, que llama a `installButtonHTML()`) → `auth-config.js` → `auth.js` (usa `app.js`) → `photo.js` → `reviews.js` (usa `app.js`, `auth.js` y `photo.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
 ## 5. Modelo de datos: la receta
 
@@ -461,6 +462,22 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   `photo` ≤ 250,000 caracteres y sólo `data:image/(webp|jpeg);base64,…`, `updatedAt` del servidor, cuenta no suspendida.
   Borrar: el autor o un administrador. **Hay que publicar las reglas de nuevo** para que las fotos funcionen.
 
+### 7.6 Icono en el celular (`js/install.js`)
+- **Para qué:** que quien llega desde un anuncio cree el icono de la app (la bandera, `icons/`) en la pantalla de inicio de
+  su celular. Como el manifiesto usa `"display": "browser"` (§10), el navegador no ofrece "Instalar" solo: el icono se
+  crea con "Añadir a pantalla de inicio" y abre la app en el navegador. Si el navegador lanza `beforeinstallprompt`,
+  sale además un botón **Crear el icono ahora**.
+- **Dónde:** botón **Crear el icono en su celular** al final de toda pantalla de entrada (`gateShell()` en `auth.js`,
+  sólo en celulares) y botón **Póngala en su celular** en el pie (siempre; en computadora muestra el enlace para abrirlo
+  en el celular). Cualquier elemento con `data-install="open"` abre la guía (`<dialog id="install-dialog">`).
+- **Guía según el equipo** (`installDevice()`, por el *user agent*): **dentro de Facebook, Instagram o Messenger**
+  (`FBAN|FBAV|FB_IAB|Instagram|Messenger`) primero "⋯ → Abrir en el navegador", porque ahí no se puede crear el icono ni
+  entrar con Google; **iPhone/iPad**: Compartir → Añadir a pantalla de inicio → Añadir (y, fuera de Safari, abrirla en
+  Safari); **Android**: menú ⋮ → Añadir a pantalla de inicio (o Instalar app) → Añadir; **computadora**: el enlace.
+  Siempre: **Copiar el enlace** y, si el equipo puede, **Compartir el enlace** (`navigator.share`). Textos ES/EN.
+- **Enlace de los anuncios:** `https://recetario-de-aqui.vercel.app/?instalar` abre la guía sola al llegar en un
+  celular y quita `?instalar` de la barra (también acepta `?install`).
+
 ### 7.2 Planes de comida (`js/plans.js`, ruta `#/planes`)
 - **Acceso:** enlace "Planes" / "Meal plans" en el menú y en el pie. Vista `<section id="view-plans">`; `route()` llama a
   `showPlans()`; `showHome()` y `showRecipe()` la ocultan. Desde un plan, una receta se abre con `data-open` y "Atrás"
@@ -598,6 +615,18 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-17 — v4.9.0 · Crear el icono de la app en el celular
+- *Pedido:* que quien vea la publicidad en el celular tenga un botón para guardar el enlace y crear un icono en su
+  celular.
+- Nuevo `js/install.js` (§7.6): guía paso a paso según el equipo (Facebook/Instagram, iPhone, Android, computadora),
+  Copiar y Compartir el enlace, `beforeinstallprompt` cuando exista y apertura automática con `?instalar`. `index.html`:
+  icono `i-phone`, botón en el pie y `<script src="js/install.js">` antes de `auth-config.js`. `auth.js`: botón en
+  `gateShell()`. `app.js`: texto `navInstall`. CSS `.install-*` y `.footer-install`.
+- *Verificado (vista de celular, Android emulado):* `/?instalar=1` abre la guía con los pasos de Android y deja la barra en
+  `/`; con el *user agent* cambiado: iPhone/Safari → pasos de Compartir sin la nota de Safari; Facebook (FBAN) e Instagram
+  → "Primero ábralo en su navegador"; computadora → enlace y sin botón en la entrada; Copiar el enlace copia
+  `https://recetario-de-aqui.vercel.app/`; sin errores de consola ✔. No probado en un iPhone o Android reales.
 
 ### 2026-10-17 — v4.8.1 · Correo de contacto
 - *Pedido:* poner en la app el correo recetariodeaqui@gmail.com.
