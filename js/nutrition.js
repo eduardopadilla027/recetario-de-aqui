@@ -265,6 +265,10 @@ const NUTRI_FOODS = [
   F("cana de azucar|cana", 50, 0, 13, 13, 0, 0, 0, 5, { u: 350 }),
   F("coco de agua|coco verde", 19, 0.7, 3.7, 2.6, 1.1, 0.2, 0.2, 105, { u: 350 }),
   F("grosella", 44, 0.9, 10, 7, 4, 0.5, 0, 1, { cup: 150 }),
+  // Pajuil (cajuil): la fruta del marañón, no la semilla.
+  F("pajuil|pajuiles|cajuil", 46, 0.8, 11.6, 10, 1.7, 0.1, 0, 10, { u: 80, cup: 150 }),
+  F("frutas abrillantadas|fruta abrillantada|frutas confitadas", 322, 0.3, 82, 81, 1.6, 0.1, 0, 98, { cup: 180 }),
+  F("ciruelas secas|ciruela seca|ciruelas pasas", 240, 2.2, 64, 38, 7, 0.4, 0.1, 2, { cup: 175, u: 9.5 }),
   F("mamey", 51, 0.5, 12.5, 7, 3, 0.5, 0.1, 15, { u: 500, cup: 170 }),
   F("crema agria", 198, 2.4, 4.6, 3.4, 0, 19, 11, 31, { cup: 230 }),
   F("yogur|yogur natural", 61, 3.5, 4.7, 4.7, 0, 3.3, 2.1, 46, { cup: 245 }),

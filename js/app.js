@@ -17,7 +17,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
-const APP_VERSION = "4.14.0";
+const APP_VERSION = "4.15.0";
 const APP_REVISED = "2026-10-17";
 const revisedOn = (locale) => new Date(APP_REVISED + "T12:00:00").toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
 
@@ -422,6 +422,18 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
+  // Postres puertorriqueños (tanda 45).
+  [/^nisperos de batata/, "svg:ic-pos-nisperos-batata"],
+  [/^dulce de mani/, "svg:ic-pos-dulce-mani"],
+  [/^limber de mani/, "svg:ic-pos-limber-mani"],
+  [/^limber de tamarindo/, "svg:ic-pos-limber-tamarindo"],
+  [/^limber de guayaba/, "svg:ic-pos-limber-guayaba"],
+  [/^piragua de coco/, "svg:ic-pos-piragua-coco"],
+  [/^tembleque de chocolate/, "svg:ic-pos-tembleque-chocolate"],
+  [/^pasta de guayaba con queso/, "svg:ic-pos-guayaba-queso"],
+  [/^dulce de pajuil/, "svg:ic-pos-dulce-pajuil"],
+  [/^hojaldre boricua/, "svg:ic-pos-hojaldre"],
+  [/^bizcocho navideno de frutas/, "svg:ic-pos-bizcocho-frutas"],
   // Más veganas (tanda 44), con la hojita verde.
   [/^arroz con gandules vegano/, "svg:ic-vg-arroz-gandules"],
   [/^pasteles veganos/, "svg:ic-vg-pasteles"],

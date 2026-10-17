@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.14.0 · **Versión de la app:** 4.14.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,022 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.15.0 · **Versión de la app:** 4.15.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,038 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -64,7 +64,7 @@ cocine-a-gusto/
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
 │   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, más salsas y aderezos y platos fuertes veganos, y dulces y salsas de grosella, en cuarenta y tres tandas (ver §13)
-│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44, ver §13)
+│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44) y postres puertorriqueños (tanda 45), ver §13
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── substitutes.js    sustitutos para cada alérgeno según el ingrediente (getSubstitutes)
@@ -129,7 +129,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | Clave | Nombre | Recetas |
 |---|---|---|
 | calientes | Bebidas Calientes | 39 |
-| frutas | Frutas | 29 |
+| frutas | Frutas | 30 |
 | cereales | Cereales | 18 |
 | granos | Granos y Legumbres | 22 |
 | ensaladas | Ensaladas | 27 |
@@ -140,12 +140,12 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | huevos | Huevos y Queso | 14 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 57 |
 | pastas | Pastas | 21 |
-| bizcochos | Bizcochos | 40 |
+| bizcochos | Bizcochos | 42 |
 | galletitas | Galletitas | 38 |
 | pasteles_dulces | Pasteles Dulces | 22 |
 | panes | Pan y Panecillos | 41 |
 | emparedados | Emparedados | 25 |
-| postres | Helados, Budines, Flan y Otros Postres | 108 |
+| postres | Helados, Budines, Flan y Otros Postres | 121 |
 | arroces | Arroces y Habichuelas | 56 |
 | vegetales | Vegetales y Viandas | 88 |
 | salsas | Salsas y Aderezos | 62 |
@@ -567,7 +567,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,022). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,038). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -646,6 +646,28 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
 entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, y el texto
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
+
+### 2026-10-17 — v4.15.0 · Más postres puertorriqueños
+- *Pedido:* más recetas de postres puertorriqueños.
+- Cuadragésima quinta tanda en `js/recipes-5.js` (versiones propias), 16 postres tradicionales que no estaban:
+  - **Postres (13):** nísperos de batata, dulce de maní con melao, limber de maní, de tamarindo y de guayaba, piragua
+    de coco, buñuelos de plátano maduro en almíbar, budín de yuca y coco, natilla de coco, pasta de guayaba con queso del
+    país, helado de maní (sin máquina), tembleque de chocolate y arroz con dulce de coquito (sin alcohol).
+  - **Bizcochos (2):** hojaldre boricua (el bizcocho de especias de Navidad y bodas, no la masa de hojaldre) y bizcocho
+    navideño de frutas al ron.
+  - **Frutas (1):** dulce de pajuil (cajuil) en almíbar, con el aviso de no tocar la nuez cruda.
+- **Nutrición:** nuevos pajuil, frutas abrillantadas y ciruelas secas. El helado de maní rinde 10 porciones (~410 kcal).
+- **Alérgenos:** maní en el dulce, el limber y el helado; nueces en el bizcocho de frutas; el pajuil sale con frutos
+  secos (la fruta del marañón) a propósito. Alcohol cocido en el hojaldre (vino) y el bizcocho de frutas (ron).
+- **Iconos:** 11 dibujos nuevos `ic-pos-*` (nísperos, dulce de maní, tres limbers, piragua de coco, tembleque de
+  chocolate, guayaba con queso, frasco de pajuil, hojaldre y bizcocho de frutas). Los demás usan los de su tipo
+  (budín, natilla, arroz con dulce, 🍩, 🍨).
+- **Buscador** (`search.js`): la idea "Navidad" incluye ahora nísperos, el hojaldre boricua, los bizcochos navideños y
+  los pasteles veganos (antes "pastel(es)? de" los dejaba fuera).
+- Total: **1,022 → 1,038 recetas**.
+- *Verificado:* datos en Node ✔ (ids únicos, ES/EN parejos, 0 sin contar); buscador: "navidad"/"christmas" 78 recetas con
+  las 6 nuevas de Navidad, "limber" 8, "mani" incluye los 3 de maní, "playa" incluye la piragua ✔; navegador: los 16 en
+  ES y EN a 375 px con su nombre y su dibujo, sin desbordes ni errores de consola ✔.
 
 ### 2026-10-17 — v4.14.0 · Más recetas veganas y vegetarianas
 - *Pedido:* más recetas veganas y vegetarianas.

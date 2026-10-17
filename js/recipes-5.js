@@ -837,5 +837,738 @@ recipes.push(
         "Fry at 350 °F 3 minutes until golden. Drain and serve with mayo-ketchup."
       ]
     }
+  },
+  // ---------- Tanda 45: más postres puertorriqueños (16) ----------
+  {
+    id: "nisperos-batata",
+    category: "postres",
+    name: { es: "Nísperos de Batata", en: "Sweet Potato Nísperos (Coconut Sweet Potato Balls)" },
+    time: "1 hr",
+    servings: 20,
+    ingredients: {
+      es: [
+        "2 libras de batata blanca",
+        "1 taza de azúcar",
+        "1 taza de coco rallado sin azúcar",
+        "½ cucharadita de canela",
+        "1 pizca de sal",
+        "1 cucharadita de vainilla",
+        "½ taza de azúcar para cubrir",
+        "20 clavos de especia enteros"
+      ],
+      en: [
+        "2 pounds white sweet potato (batata)",
+        "1 cup sugar",
+        "1 cup unsweetened shredded coconut",
+        "½ teaspoon cinnamon",
+        "1 pinch salt",
+        "1 teaspoon vanilla",
+        "½ cup sugar for coating",
+        "20 whole cloves"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele la batata, córtela en trozos y hiérvala 20 minutos hasta que esté bien blanda. Escúrrala y májela hasta que no queden grumos.",
+        "En un caldero, cocine el puré con 1 taza de azúcar, el coco, la canela y la sal a fuego medio-bajo, moviendo sin parar, 15 a 20 minutos, hasta que la masa se despegue del fondo.",
+        "Fuera del fuego, añada la vainilla y deje enfriar hasta que se pueda tocar.",
+        "Con las manos húmedas, forme bolitas del tamaño de un níspero, páselas por el azúcar y clave un clavo de especia arriba, como el rabito de la fruta.",
+        "Déjelas secar 1 hora sobre papel encerado. Son un dulce de Navidad; avise que el clavo no se come."
+      ],
+      en: [
+        "Peel the sweet potato, cut into chunks and boil 20 minutes until very soft. Drain and mash until smooth.",
+        "In a caldero, cook the mash with 1 cup sugar, the coconut, cinnamon and salt over medium-low heat, stirring constantly, 15 to 20 minutes, until the mixture pulls away from the bottom.",
+        "Off the heat, add the vanilla and let cool until you can handle it.",
+        "With wet hands, shape balls the size of a níspero (sapodilla), roll in sugar and stick a clove on top, like the fruit's stem.",
+        "Let them dry 1 hour on wax paper. They are a Christmas sweet; tell guests the clove is not eaten."
+      ]
+    }
+  },
+  {
+    id: "dulce-mani-melao",
+    category: "postres",
+    name: { es: "Dulce de Maní con Melao", en: "Peanut Brittle with Cane Syrup" },
+    time: "30 min",
+    servings: 16,
+    ingredients: {
+      es: [
+        "2 tazas de maní tostado sin sal",
+        "1 taza de azúcar morena",
+        "½ taza de melao de caña",
+        "¼ taza de agua",
+        "1 cucharada de jengibre fresco rallado",
+        "1 cucharadita de bicarbonato",
+        "1 pizca de sal",
+        "1 cucharadita de aceite para engrasar"
+      ],
+      en: [
+        "2 cups unsalted roasted peanuts",
+        "1 cup brown sugar",
+        "½ cup cane syrup (melao)",
+        "¼ cup water",
+        "1 tablespoon grated fresh ginger",
+        "1 teaspoon baking soda",
+        "1 pinch salt",
+        "1 teaspoon oil for greasing"
+      ]
+    },
+    steps: {
+      es: [
+        "Engrase una bandeja o una tabla de mármol.",
+        "En un caldero, hierva el azúcar morena, el melao, el agua y el jengibre a fuego medio, sin mover, hasta que una gota en agua fría se ponga dura y quebradiza (300 °F en el termómetro), unos 12 minutos.",
+        "Añada el maní y la sal, y mezcle rápido 1 minuto.",
+        "Fuera del fuego, añada el bicarbonato (la mezcla sube y se pone clara) y viértala enseguida en la bandeja, extendiéndola con una cuchara engrasada.",
+        "Cuando endurezca, rómpala en pedazos. Es el dulce de maní de los kioscos y las fiestas de pueblo. El azúcar caliente quema: mantenga a los niños lejos."
+      ],
+      en: [
+        "Grease a baking sheet or a marble board.",
+        "In a caldero, boil the brown sugar, cane syrup, water and ginger over medium heat, without stirring, until a drop in cold water turns hard and brittle (300 °F on a thermometer), about 12 minutes.",
+        "Add the peanuts and salt and stir quickly 1 minute.",
+        "Off the heat, add the baking soda (the mixture foams and lightens) and pour it right away onto the sheet, spreading with a greased spoon.",
+        "Once hard, break into pieces. It's the peanut candy sold at kiosks and town fiestas. Hot sugar burns: keep children away."
+      ]
+    }
+  },
+  {
+    id: "limber-mani",
+    category: "postres",
+    name: { es: "Limber de Maní", en: "Peanut Limber (Ice Pop)" },
+    time: "10 min + congelación",
+    servings: 10,
+    ingredients: {
+      es: [
+        "½ taza de mantequilla de maní",
+        "1 lata de 12 onzas de leche evaporada",
+        "1½ tazas de agua",
+        "½ taza de azúcar",
+        "1 cucharadita de vainilla",
+        "½ cucharadita de canela",
+        "1 pizca de sal"
+      ],
+      en: [
+        "½ cup peanut butter",
+        "1 can (12 oz) evaporated milk",
+        "1½ cups water",
+        "½ cup sugar",
+        "1 teaspoon vanilla",
+        "½ teaspoon cinnamon",
+        "1 pinch salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe todos los ingredientes hasta que la mantequilla de maní se disuelva por completo.",
+        "Pruebe y añada azúcar si lo quiere más dulce (al congelarse se siente menos dulce).",
+        "Vierta en vasitos plásticos pequeños.",
+        "Congele al menos 5 horas hasta que estén sólidos.",
+        "Para comerlo, apriete el vasito desde abajo. Es de los limbers más pedidos en las casas que los venden."
+      ],
+      en: [
+        "Blend all the ingredients until the peanut butter dissolves completely.",
+        "Taste and add sugar if you want it sweeter (it tastes less sweet once frozen).",
+        "Pour into small plastic cups.",
+        "Freeze at least 5 hours until solid.",
+        "To eat, squeeze the cup from the bottom. It's one of the most requested flavors at homes that sell limbers."
+      ]
+    }
+  },
+  {
+    id: "limber-tamarindo",
+    category: "postres",
+    name: { es: "Limber de Tamarindo", en: "Tamarind Limber (Ice Pop)" },
+    time: "40 min + congelación",
+    servings: 10,
+    ingredients: {
+      es: [
+        "½ libra de tamarindos en vaina",
+        "4 tazas de agua",
+        "¾ taza de azúcar",
+        "1 pizca de sal"
+      ],
+      en: [
+        "½ pound tamarind pods",
+        "4 cups water",
+        "¾ cup sugar",
+        "1 pinch salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los tamarindos y quíteles las fibras.",
+        "Remójelos en 2 tazas de agua caliente 30 minutos y desbarate la pulpa con las manos.",
+        "Cuele, apretando para sacar toda la pulpa y dejar las semillas. Añada el resto del agua, el azúcar y la sal, y mezcle hasta que el azúcar se disuelva.",
+        "Vierta en vasitos plásticos pequeños y congele al menos 4 horas.",
+        "Queda agridulce y refrescante; si lo prefiere cremoso, cambie 1 taza de agua por leche evaporada."
+      ],
+      en: [
+        "Peel the tamarinds and remove the strings.",
+        "Soak them in 2 cups hot water 30 minutes and break up the pulp with your hands.",
+        "Strain, pressing to get all the pulp and leave the seeds behind. Add the rest of the water, the sugar and salt, and stir until the sugar dissolves.",
+        "Pour into small plastic cups and freeze at least 4 hours.",
+        "It turns out sweet-tart and refreshing; for a creamy version, swap 1 cup of water for evaporated milk."
+      ]
+    }
+  },
+  {
+    id: "limber-guayaba",
+    category: "postres",
+    name: { es: "Limber de Guayaba", en: "Guava Limber (Ice Pop)" },
+    time: "10 min + congelación",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 lata de 12 onzas de néctar de guayaba",
+        "4 onzas de pasta de guayaba en cubitos",
+        "1 lata de 14 onzas de leche condensada",
+        "1½ tazas de agua",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "1 can (12 oz) guava nectar",
+        "4 ounces guava paste, diced",
+        "1 can (14 oz) condensed milk",
+        "1½ cups water",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente la pasta de guayaba con ½ taza del agua a fuego bajo hasta que se derrita. Deje enfriar.",
+        "Licúe la guayaba derretida con el néctar, la leche condensada, el resto del agua y el limón.",
+        "Vierta en vasitos plásticos pequeños.",
+        "Congele al menos 4 horas hasta que estén sólidos.",
+        "Para un limber de guayaba y queso, añada 2 onzas de queso crema al licuar."
+      ],
+      en: [
+        "Heat the guava paste with ½ cup of the water over low heat until melted. Let cool.",
+        "Blend the melted guava with the nectar, condensed milk, the rest of the water and the lime juice.",
+        "Pour into small plastic cups.",
+        "Freeze at least 4 hours until solid.",
+        "For a guava-and-cheese limber, add 2 ounces cream cheese when blending."
+      ]
+    }
+  },
+  {
+    id: "piragua-coco",
+    category: "postres",
+    name: { es: "Piragua de Coco", en: "Coconut Piragua (Shaved Ice)" },
+    time: "20 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lata de 15 onzas de crema de coco",
+        "½ taza de azúcar",
+        "½ taza de agua",
+        "½ cucharadita de vainilla",
+        "1 pizca de sal",
+        "6 tazas de hielo raspado"
+      ],
+      en: [
+        "1 can (15 oz) cream of coconut",
+        "½ cup sugar",
+        "½ cup water",
+        "½ teaspoon vanilla",
+        "1 pinch salt",
+        "6 cups shaved ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con el azúcar 3 minutos hasta que se disuelva. Deje enfriar.",
+        "Mezcle el almíbar con la crema de coco, la vainilla y la sal. Refrigere el sirope.",
+        "Raspe el hielo bien fino (o tritúrelo en la licuadora con la función de hielo).",
+        "Apriete el hielo en un vaso cónico de papel para darle la forma de pirámide de la piragua.",
+        "Báñela con 3 a 4 cucharadas del sirope de coco y sirva con sorbeto. Combina con un chorrito de sirope de frambuesa o de tamarindo."
+      ],
+      en: [
+        "Boil the water with the sugar 3 minutes until dissolved. Let cool.",
+        "Mix the syrup with the cream of coconut, vanilla and salt. Refrigerate.",
+        "Shave the ice very fine (or crush it in the blender on the ice setting).",
+        "Pack the ice into a paper cone cup to give it the piragua's pyramid shape.",
+        "Pour 3 to 4 tablespoons of coconut syrup over it and serve with a straw. Pairs well with a splash of raspberry or tamarind syrup."
+      ]
+    }
+  },
+  {
+    id: "bunuelos-maduro-almibar",
+    category: "postres",
+    name: { es: "Buñuelos de Plátano Maduro en Almíbar", en: "Ripe Plantain Fritters in Syrup" },
+    time: "45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 plátanos bien maduros (negros)",
+        "1 huevo",
+        "½ taza de harina de trigo",
+        "2 cucharadas de azúcar",
+        "½ cucharadita de canela",
+        "½ cucharadita de polvo de hornear",
+        "1 pizca de sal",
+        "Aceite vegetal para freír",
+        "1 taza de azúcar para el almíbar",
+        "1 taza de agua",
+        "1 raja de canela",
+        "4 clavos de especia",
+        "1 cáscara de limón"
+      ],
+      en: [
+        "3 very ripe (black) plantains",
+        "1 egg",
+        "½ cup all-purpose flour",
+        "2 tablespoons sugar",
+        "½ teaspoon cinnamon",
+        "½ teaspoon baking powder",
+        "1 pinch salt",
+        "Vegetable oil for frying",
+        "1 cup sugar for the syrup",
+        "1 cup water",
+        "1 cinnamon stick",
+        "4 whole cloves",
+        "1 lime peel"
+      ]
+    },
+    steps: {
+      es: [
+        "Para el almíbar, hierva el azúcar, el agua, la canela en raja, los clavos y la cáscara de limón 10 minutos hasta que espese un poco.",
+        "Pele los plátanos y májelos bien. Añada el huevo, la harina, el azúcar, la canela en polvo, el polvo de hornear y la sal, y mezcle hasta tener una masa espesa.",
+        "Caliente el aceite a 350 °F y eche la masa por cucharadas, sin llenar el caldero.",
+        "Fría 2 a 3 minutos, volteando, hasta que estén dorados. Escurra en papel toalla.",
+        "Pase los buñuelos al almíbar caliente y déjelos 10 minutos para que lo absorban. Sirva tibios con un poco de almíbar."
+      ],
+      en: [
+        "For the syrup, boil the sugar, water, cinnamon stick, cloves and lime peel 10 minutes until slightly thickened.",
+        "Peel the plantains and mash well. Add the egg, flour, sugar, ground cinnamon, baking powder and salt, and mix into a thick batter.",
+        "Heat the oil to 350 °F and drop the batter by spoonfuls, without crowding the pot.",
+        "Fry 2 to 3 minutes, turning, until golden. Drain on paper towels.",
+        "Move the fritters into the hot syrup and leave them 10 minutes to soak it up. Serve warm with a little syrup."
+      ]
+    }
+  },
+  {
+    id: "budin-yuca-coco",
+    category: "postres",
+    name: { es: "Budín de Yuca y Coco", en: "Cassava Coconut Pudding" },
+    time: "1 hr 20 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 libras de yuca pelada",
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 taza de azúcar",
+        "3 huevos",
+        "4 cucharadas de mantequilla derretida",
+        "½ taza de coco rallado sin azúcar",
+        "1 cucharadita de vainilla",
+        "1 cucharadita de canela",
+        "½ cucharadita de jengibre en polvo",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "2 pounds peeled yuca (cassava)",
+        "1 can (13.5 oz) coconut milk",
+        "1 can (12 oz) evaporated milk",
+        "1 cup sugar",
+        "3 eggs",
+        "4 tablespoons melted butter",
+        "½ cup unsweetened shredded coconut",
+        "1 teaspoon vanilla",
+        "1 teaspoon cinnamon",
+        "½ teaspoon ground ginger",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.",
+        "Ralle la yuca bien fina (o procésela con un poco de la leche de coco). Quítele la vena del centro antes.",
+        "Mezcle la yuca con la leche de coco, la leche evaporada, el azúcar, los huevos, la mantequilla, el coco, la vainilla, las especias y la sal.",
+        "Vierta en el molde y hornee 55 a 60 minutos, hasta que los bordes doren y el centro esté firme.",
+        "Deje enfriar antes de cortar en cuadros: con el frío toma la textura densa del budín de yuca de las abuelas."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 9 × 13-inch pan.",
+        "Grate the yuca very finely (or process it with a little of the coconut milk). Remove the woody center first.",
+        "Mix the yuca with the coconut milk, evaporated milk, sugar, eggs, butter, coconut, vanilla, spices and salt.",
+        "Pour into the pan and bake 55 to 60 minutes, until the edges brown and the center is firm.",
+        "Cool before cutting into squares: as it cools it takes the dense texture of grandma's cassava pudding."
+      ]
+    }
+  },
+  {
+    id: "natilla-coco",
+    category: "postres",
+    name: { es: "Natilla de Coco", en: "Coconut Natilla (Custard)" },
+    time: "25 min + 2 hr de frío",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lata de 13.5 onzas de leche de coco",
+        "1½ tazas de leche",
+        "½ taza de azúcar",
+        "4 yemas de huevo",
+        "3 cucharadas de maicena",
+        "1 pizca de sal",
+        "1 cucharadita de vainilla",
+        "¼ taza de coco rallado tostado",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "1 can (13.5 oz) coconut milk",
+        "1½ cups milk",
+        "½ cup sugar",
+        "4 egg yolks",
+        "3 tablespoons cornstarch",
+        "1 pinch salt",
+        "1 teaspoon vanilla",
+        "¼ cup toasted shredded coconut",
+        "Ground cinnamon to garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata las yemas con el azúcar, la maicena, la sal y ½ taza de la leche hasta que no queden grumos.",
+        "Caliente el resto de la leche y la leche de coco hasta que empiecen a humear.",
+        "Añada la mezcla de yemas poco a poco, batiendo, y cocine a fuego medio-bajo, moviendo sin parar, hasta que hierva y espese, unos 8 minutos.",
+        "Fuera del fuego, añada la vainilla y vierta en copas.",
+        "Refrigere 2 horas. Sirva con el coco tostado y un poco de canela."
+      ],
+      en: [
+        "Whisk the yolks with the sugar, cornstarch, salt and ½ cup of the milk until smooth.",
+        "Heat the rest of the milk and the coconut milk until steaming.",
+        "Add the yolk mixture little by little, whisking, and cook over medium-low heat, stirring constantly, until it boils and thickens, about 8 minutes.",
+        "Off the heat, add the vanilla and pour into dessert cups.",
+        "Refrigerate 2 hours. Serve with the toasted coconut and a little cinnamon."
+      ]
+    }
+  },
+  {
+    id: "pasta-guayaba-queso-pais",
+    category: "postres",
+    name: { es: "Pasta de Guayaba con Queso del País", en: "Guava Paste with Puerto Rican White Cheese" },
+    time: "5 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "8 onzas de pasta de guayaba",
+        "8 onzas de queso blanco del país",
+        "12 galletas de soda (opcional)"
+      ],
+      en: [
+        "8 ounces guava paste",
+        "8 ounces Puerto Rican white cheese (queso del país)",
+        "12 soda crackers (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte la pasta de guayaba en lascas de ¼ pulgada.",
+        "Corte el queso del país en lascas del mismo tamaño.",
+        "Ponga una lasca de guayaba sobre cada lasca de queso.",
+        "Sirva frío, solo o sobre galletas de soda.",
+        "Es el postre más sencillo de la mesa boricua: lo dulce de la guayaba con lo salado del queso."
+      ],
+      en: [
+        "Cut the guava paste into ¼-inch slices.",
+        "Cut the white cheese into slices of the same size.",
+        "Place a slice of guava on each slice of cheese.",
+        "Serve cold, on its own or on soda crackers.",
+        "It's the simplest dessert on the Puerto Rican table: sweet guava with salty cheese."
+      ]
+    }
+  },
+  {
+    id: "helado-mani",
+    category: "postres",
+    name: { es: "Helado de Maní (Sin Máquina)", en: "No-Churn Peanut Ice Cream" },
+    time: "15 min + 6 hr de congelación",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 tazas de crema espesa para batir, fría",
+        "1 lata de 14 onzas de leche condensada",
+        "½ taza de mantequilla de maní",
+        "1 cucharadita de vainilla",
+        "1 pizca de sal",
+        "½ taza de maní tostado picado"
+      ],
+      en: [
+        "2 cups cold heavy whipping cream",
+        "1 can (14 oz) condensed milk",
+        "½ cup peanut butter",
+        "1 teaspoon vanilla",
+        "1 pinch salt",
+        "½ cup chopped roasted peanuts"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata la leche condensada con la mantequilla de maní, la vainilla y la sal hasta que quede lisa.",
+        "En otro envase, bata la crema fría hasta que forme picos firmes.",
+        "Incorpore la crema a la mezcla de maní en tres partes, con movimientos envolventes para no bajarla.",
+        "Pase a un envase con tapa, riegue el maní picado por encima y congele 6 horas.",
+        "Saque 5 minutos antes de servir. Recuerda al helado de maní de las heladerías de pueblo."
+      ],
+      en: [
+        "Beat the condensed milk with the peanut butter, vanilla and salt until smooth.",
+        "In another bowl, whip the cold cream to stiff peaks.",
+        "Fold the cream into the peanut mixture in three parts, gently so it doesn't deflate.",
+        "Transfer to a lidded container, sprinkle the chopped peanuts on top and freeze 6 hours.",
+        "Take it out 5 minutes before serving. It's like the peanut ice cream at town ice-cream shops."
+      ]
+    }
+  },
+  {
+    id: "tembleque-chocolate",
+    category: "postres",
+    name: { es: "Tembleque de Chocolate", en: "Chocolate Tembleque" },
+    time: "20 min + 4 hr de frío",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 latas de 13.5 onzas de leche de coco",
+        "½ taza de maicena",
+        "½ taza de azúcar",
+        "¼ taza de cacao en polvo sin azúcar",
+        "1 pizca de sal",
+        "1 cucharadita de vainilla",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "2 cans (13.5 oz) coconut milk",
+        "½ cup cornstarch",
+        "½ cup sugar",
+        "¼ cup unsweetened cocoa powder",
+        "1 pinch salt",
+        "1 teaspoon vanilla",
+        "Ground cinnamon to garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Moje un molde o copas con agua fría (así el tembleque sale sin pegarse).",
+        "En un caldero frío, mezcle la maicena, el azúcar, el cacao y la sal. Añada la leche de coco poco a poco, batiendo, hasta que no queden grumos.",
+        "Cocine a fuego medio, moviendo sin parar con cuchara de madera, hasta que hierva y espese bien, unos 10 minutos.",
+        "Fuera del fuego, añada la vainilla y vierta en el molde.",
+        "Refrigere 4 horas, voltee y espolvoree con canela. Como el tembleque clásico, no lleva leche de vaca ni huevo."
+      ],
+      en: [
+        "Wet a mold or cups with cold water (so the tembleque comes out without sticking).",
+        "In a cold caldero, mix the cornstarch, sugar, cocoa and salt. Add the coconut milk little by little, whisking, until smooth.",
+        "Cook over medium heat, stirring constantly with a wooden spoon, until it boils and thickens well, about 10 minutes.",
+        "Off the heat, add the vanilla and pour into the mold.",
+        "Refrigerate 4 hours, unmold and sprinkle with cinnamon. Like the classic tembleque, it has no cow's milk or eggs."
+      ]
+    }
+  },
+  {
+    id: "arroz-dulce-coquito",
+    category: "postres",
+    name: { es: "Arroz con Dulce de Coquito (Sin Alcohol)", en: "Coquito Arroz con Dulce (Alcohol-Free)" },
+    time: "1 hr 15 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 taza de arroz grano corto",
+        "4 tazas de agua",
+        "1 pedazo de jengibre fresco de 2 pulgadas, machacado",
+        "3 rajas de canela",
+        "6 clavos de especia",
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 lata de 15 onzas de crema de coco",
+        "1 lata de 14 onzas de leche condensada",
+        "½ taza de pasas",
+        "½ cucharadita de sal",
+        "1 cucharadita de vainilla",
+        "½ cucharadita de nuez moscada",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "1 cup short-grain rice",
+        "4 cups water",
+        "1 2-inch piece fresh ginger, crushed",
+        "3 cinnamon sticks",
+        "6 whole cloves",
+        "1 can (13.5 oz) coconut milk",
+        "1 can (15 oz) cream of coconut",
+        "1 can (14 oz) condensed milk",
+        "½ cup raisins",
+        "½ teaspoon salt",
+        "1 teaspoon vanilla",
+        "½ teaspoon nutmeg",
+        "Ground cinnamon to garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje el arroz en agua 1 hora y escúrralo.",
+        "Hierva las 4 tazas de agua con el jengibre, la canela en raja y los clavos 10 minutos. Cuele y vuelva el agua de especias al caldero.",
+        "Añada el arroz, la leche de coco y la sal, y cocine a fuego medio-bajo, moviendo a menudo, 25 minutos hasta que el arroz esté blando.",
+        "Añada la crema de coco, la leche condensada, las pasas, la vainilla y la nuez moscada, y cocine 10 minutos más, moviendo, hasta que espese.",
+        "Pase a una fuente, espolvoree canela y deje refrescar. Sabe al coquito de Navidad, sin el ron."
+      ],
+      en: [
+        "Soak the rice in water 1 hour and drain.",
+        "Boil the 4 cups of water with the ginger, cinnamon sticks and cloves 10 minutes. Strain and return the spiced water to the caldero.",
+        "Add the rice, coconut milk and salt, and cook over medium-low heat, stirring often, 25 minutes until the rice is soft.",
+        "Add the cream of coconut, condensed milk, raisins, vanilla and nutmeg, and cook 10 more minutes, stirring, until thickened.",
+        "Transfer to a serving dish, sprinkle with cinnamon and let cool. It tastes like Christmas coquito, without the rum."
+      ]
+    }
+  },
+  {
+    id: "hojaldre-boricua",
+    category: "bizcochos",
+    name: { es: "Hojaldre Boricua (Bizcocho de Especias)", en: "Puerto Rican Hojaldre (Spice Cake)" },
+    time: "1 hr 15 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "3 tazas de harina de trigo",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "2 cucharaditas de canela",
+        "1 cucharadita de nuez moscada",
+        "½ cucharadita de clavo en polvo",
+        "1 taza de mantequilla a temperatura ambiente",
+        "2 tazas de azúcar",
+        "5 huevos",
+        "¾ taza de vino dulce",
+        "¼ taza de jugo de china",
+        "1 cucharada de ralladura de china",
+        "1 cucharadita de vainilla",
+        "Azúcar en polvo para decorar"
+      ],
+      en: [
+        "3 cups all-purpose flour",
+        "2 teaspoons baking powder",
+        "½ teaspoon salt",
+        "2 teaspoons cinnamon",
+        "1 teaspoon nutmeg",
+        "½ teaspoon ground cloves",
+        "1 cup butter, at room temperature",
+        "2 cups sugar",
+        "5 eggs",
+        "¾ cup sweet wine",
+        "¼ cup orange juice",
+        "1 tablespoon orange zest",
+        "1 teaspoon vanilla",
+        "Powdered sugar to decorate"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F. Engrase y enharine un molde de tubo (bundt) de 10 pulgadas.",
+        "Cierna la harina con el polvo de hornear, la sal y las especias.",
+        "Bata la mantequilla con el azúcar 5 minutos hasta que esté cremosa. Añada los huevos de uno en uno, batiendo después de cada uno.",
+        "Mezcle el vino, el jugo de china, la ralladura y la vainilla. Añada la harina en tres partes, alternando con el vino, y bata sólo hasta unir.",
+        "Hornee 55 a 60 minutos, hasta que un palillo salga limpio. Deje enfriar 15 minutos, desmolde y espolvoree azúcar en polvo. El hojaldre de las abuelas no es masa de hojaldre sino este bizcocho de especias, de Navidad y de bodas."
+      ],
+      en: [
+        "Heat the oven to 350 °F. Grease and flour a 10-inch bundt pan.",
+        "Sift the flour with the baking powder, salt and spices.",
+        "Beat the butter with the sugar 5 minutes until creamy. Add the eggs one at a time, beating after each.",
+        "Mix the wine, orange juice, zest and vanilla. Add the flour in three parts, alternating with the wine, and beat just until combined.",
+        "Bake 55 to 60 minutes, until a toothpick comes out clean. Cool 15 minutes, unmold and dust with powdered sugar. Grandma's hojaldre isn't puff pastry but this spice cake, for Christmas and weddings."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-frutas-ron",
+    category: "bizcochos",
+    name: { es: "Bizcocho Navideño de Frutas al Ron", en: "Christmas Rum Fruitcake" },
+    time: "2 hr + 1 día de remojo",
+    servings: 16,
+    ingredients: {
+      es: [
+        "2 tazas de frutas abrillantadas picadas",
+        "1 taza de pasas",
+        "½ taza de ciruelas secas picadas",
+        "1 taza de ron oscuro",
+        "2 tazas de harina de trigo",
+        "1 cucharadita de polvo de hornear",
+        "½ cucharadita de sal",
+        "1 cucharadita de canela",
+        "½ cucharadita de nuez moscada",
+        "1 taza de mantequilla a temperatura ambiente",
+        "1 taza de azúcar morena",
+        "4 huevos",
+        "¼ taza de melao de caña",
+        "1 taza de nueces picadas"
+      ],
+      en: [
+        "2 cups chopped candied fruit",
+        "1 cup raisins",
+        "½ cup chopped prunes",
+        "1 cup dark rum",
+        "2 cups all-purpose flour",
+        "1 teaspoon baking powder",
+        "½ teaspoon salt",
+        "1 teaspoon cinnamon",
+        "½ teaspoon nutmeg",
+        "1 cup butter, at room temperature",
+        "1 cup brown sugar",
+        "4 eggs",
+        "¼ cup cane syrup (melao)",
+        "1 cup chopped walnuts"
+      ]
+    },
+    steps: {
+      es: [
+        "Un día antes, remoje las frutas abrillantadas, las pasas y las ciruelas en ¾ taza del ron, tapadas.",
+        "Caliente el horno a 300 °F. Engrase un molde de pan grande (o dos pequeños) y fórrelo con papel de hornear.",
+        "Cierna la harina con el polvo de hornear, la sal y las especias. Pase las frutas escurridas y las nueces por 2 cucharadas de esa harina (así no se van al fondo).",
+        "Bata la mantequilla con el azúcar morena, añada los huevos de uno en uno y el melao. Añada la harina, el ron del remojo, las frutas y las nueces.",
+        "Hornee 1 hora 30 minutos, hasta que un palillo salga limpio. Rocíelo caliente con el resto del ron y envuélvalo; mejora a los 2 o 3 días. Lleva alcohol: no es para niños ni embarazadas."
+      ],
+      en: [
+        "A day ahead, soak the candied fruit, raisins and prunes in ¾ cup of the rum, covered.",
+        "Heat the oven to 300 °F. Grease a large loaf pan (or two small ones) and line with parchment paper.",
+        "Sift the flour with the baking powder, salt and spices. Toss the drained fruit and nuts in 2 tablespoons of that flour (so they don't sink).",
+        "Beat the butter with the brown sugar, add the eggs one at a time and the cane syrup. Add the flour, the soaking rum, the fruit and the nuts.",
+        "Bake 1 hour 30 minutes, until a toothpick comes out clean. Brush it hot with the rest of the rum and wrap it; it improves after 2 or 3 days. It contains alcohol: not for children or pregnant women."
+      ]
+    }
+  },
+  {
+    id: "dulce-pajuil",
+    category: "frutas",
+    name: { es: "Dulce de Pajuil (Cajuil) en Almíbar", en: "Cashew Apple (Pajuil) in Syrup" },
+    time: "1 hr 30 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 libras de pajuiles maduros (la fruta del marañón), sin la semilla",
+        "2 tazas de azúcar",
+        "3 tazas de agua",
+        "2 rajas de canela",
+        "4 clavos de especia",
+        "1 cáscara de limón"
+      ],
+      en: [
+        "2 pounds ripe cashew apples (pajuil), seeds removed",
+        "2 cups sugar",
+        "3 cups water",
+        "2 cinnamon sticks",
+        "4 whole cloves",
+        "1 lime peel"
+      ]
+    },
+    steps: {
+      es: [
+        "Quite la semilla (la nuez) de cada pajuil sin tocarla con las manos desnudas: la cáscara cruda de la nuez irrita la piel. Use guantes.",
+        "Pinche las frutas con un tenedor y hiérvalas en agua 5 minutos para quitarles lo áspero. Bote esa agua.",
+        "Hierva las 3 tazas de agua con el azúcar, la canela, los clavos y la cáscara de limón 5 minutos.",
+        "Añada los pajuiles y cocine a fuego bajo 45 minutos a 1 hora, hasta que estén brillosos y el almíbar espese.",
+        "Deje enfriar y guarde en frascos limpios en la nevera. Sirva con queso del país, como los dulces de las abuelas."
+      ],
+      en: [
+        "Remove the seed (the nut) from each cashew apple without touching it with bare hands: the raw nut's shell irritates the skin. Wear gloves.",
+        "Prick the fruit with a fork and boil in water 5 minutes to remove the astringency. Discard that water.",
+        "Boil the 3 cups water with the sugar, cinnamon, cloves and lime peel 5 minutes.",
+        "Add the cashew apples and cook over low heat 45 minutes to 1 hour, until glossy and the syrup thickens.",
+        "Cool and store in clean jars in the fridge. Serve with queso del país, like grandma's fruit sweets."
+      ]
+    }
   }
 );

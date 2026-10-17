@@ -122,7 +122,7 @@ const sIsAlcohol = (r) => getAdvisories(r).alerts.some((a) => ["alcoholDrink", "
 /* Ideas: palabras que no son ingredientes sino lo que la persona quiere. */
 const S_IDEAS = [
   { words: "navidad navideno christmas parranda", label: { es: "Navidad", en: "Christmas" },
-    test: (r, x) => /coquito|pastel(es)? de|pernil|lechon|gandul|tembleque|arroz con dulce|ponche|majarete|morcilla|pitorro|bili|turron|guineito|cazuela|mazamorra|sorrel|jamaica/.test(x.nameAll) },
+    test: (r, x) => /coquito|pastel(es)? de|pasteles veganos|pernil|lechon|gandul|tembleque|arroz con dulce|ponche|majarete|morcilla|pitorro|bili|turron|guineito|cazuela|mazamorra|sorrel|jamaica|nispero|hojaldre boricua|navideno|christmas/.test(x.nameAll) },
   { words: "playa beach kiosko kiosco chinchorro", label: { es: "Playa y kioscos", en: "Beach and kiosks" },
     test: (r, x) => r.category === "entremeses" || /fritura|calamar|coco loco|coco frio|piragua|alcapurria|bacalaito|empanadilla|pastelillo|arepa|chicharrones de pescado|chillo frito|pescado frito/.test(x.nameAll) || /kiosco|playa|chinchorro|beach|kiosk/.test(x.stepsAll) },
   { words: "desayuno breakfast manana morning", label: { es: "Desayuno", en: "Breakfast" },
