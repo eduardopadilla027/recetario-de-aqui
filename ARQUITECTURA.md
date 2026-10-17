@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.9.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.10.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -78,7 +78,8 @@ cocine-a-gusto/
 │   ├── photo.js          motor de fotos: achica en el navegador la foto tomada o subida antes de guardarla (§7.5)
 │   └── reviews.js        reseñas (estrellas + comentario + foto opcional) de la app y de cada receta, con aprobación previa (§7.4)
 ├── images/               (vacía: reservada para fotos)
-├── icons/                iconos de la app (bandera sobre crema): apple-touch-icon 180, 192, 512, maskable 512, favicon 32
+├── icons/                iconos de la app (bandera sobre crema): apple-touch-icon 180, 192, 512, maskable 512, favicon 32;
+│                         og-image.png 1200×630 (vista previa al compartir el enlace, §7.7)
 ├── manifest.webmanifest  nombre e iconos para la pantalla de inicio del celular (Android)
 ├── firestore.rules       reglas de seguridad de Cloud Firestore (se pegan en la consola de Firebase)
 ├── .claude/launch.json   servidor local para la vista previa
@@ -478,6 +479,23 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - **Enlace de los anuncios:** `https://recetario-de-aqui.vercel.app/?instalar` abre la guía sola al llegar en un
   celular y quita `?instalar` de la barra (también acepta `?install`).
 
+### 7.7 Anuncios en Facebook e Instagram
+- **Vista previa del enlace:** etiquetas Open Graph y `twitter:*` en el `<head>` de `index.html` (título, descripción,
+  `og:locale` es_PR con en_US de alterno, `canonical`) e imagen `icons/og-image.png` de 1200×630: bandera, "Recetarios de
+  Aquí · Cocina Boricua", "1,006 recetas de la cocina Puertorriqueña, paso a paso" y "Gratis · Planes de comida ·
+  Español · English", centrado para que sobreviva el recorte cuadrado de WhatsApp. Las URL son absolutas al dominio de
+  Vercel. Se generó con Edge sin ventana (`msedge --headless --screenshot --window-size=1200,630`) desde una página HTML
+  con la letra y los colores de la app. **Si cambia el número de recetas o el dominio**, actualizar la imagen y las
+  etiquetas, y en https://developers.facebook.com/tools/debug/ pulsar "Volver a extraer". Como las rutas son `#/…`, un
+  enlace a una receta muestra la misma tarjeta de la app.
+- **Navegador interno de Facebook, Instagram o Messenger** (`installDevice().inApp`, de `install.js`): ahí Google
+  bloquea la entrada (`disallowed_useragent`). La pantalla de entrada muestra arriba un aviso (`inAppNoticeHTML()` en
+  `auth.js`) con **Abrir en Chrome** (Android: `intent://…#Intent;scheme=https;package=com.android.chrome;
+  S.browser_fallback_url=…;end`) o **Abrir en Safari** (iPhone: `x-safari-https://…`, iOS 17 o más nuevo), **Copiar el
+  enlace**, los pasos del menú ⋯ por si no abre, y que el enlace por correo ("¿Otro correo?", también para Gmail) sí
+  funciona ahí. El enlace externo quita `fbclid` y el `#…`. Tocar Gmail o Yahoo ahí no abre Google: `signInWith()`
+  muestra el mensaje `inAppBlocked`.
+
 ### 7.2 Planes de comida (`js/plans.js`, ruta `#/planes`)
 - **Acceso:** enlace "Planes" / "Meal plans" en el menú y en el pie. Vista `<section id="view-plans">`; `route()` llama a
   `showPlans()`; `showHome()` y `showRecipe()` la ocultan. Desde un plan, una receta se abre con `data-open` y "Atrás"
@@ -615,6 +633,17 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-17 — v4.10.0 · Anuncios: vista previa del enlace y entrada desde Facebook/Instagram
+- *Pedido:* revisar la publicidad en Facebook e Instagram y arreglar (1) la entrada desde el navegador interno y (2) la
+  vista previa del enlace.
+- `index.html`: etiquetas Open Graph, `twitter:*` y `canonical`. Nuevo `icons/og-image.png` (1200×630).
+- `js/auth.js`: `externalBrowserURL()` e `inAppNoticeHTML()` en la pantalla de entrada; `signInWith()` no abre Google
+  dentro de Facebook/Instagram; textos ES/EN `inApp*`, `openChrome`, `openSafari`. CSS `.inapp-*` (§7.7).
+- *Verificado (vista de celular, user agent cambiado):* Android + Facebook (`FB_IAB/FB4A`) → aviso con "Abrir en Chrome"
+  (`intent://…package=com.android.chrome…`); tocar Gmail → mensaje, sin ir a Google; iPhone + Instagram → "Abrir en Safari"
+  (`x-safari-https://…`, sin `fbclid` ni `#/receta/…`); EN ✔; Chrome normal en Android → sin aviso; sin desbordes a
+  375 px ni errores de consola ✔. No probado dentro de las apps reales de Facebook e Instagram.
 
 ### 2026-10-17 — v4.9.0 · Crear el icono de la app en el celular
 - *Pedido:* que quien vea la publicidad en el celular tenga un botón para guardar el enlace y crear un icono en su

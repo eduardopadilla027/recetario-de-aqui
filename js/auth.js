@@ -27,6 +27,14 @@ const AUTH_T = {
     intro: "Para usar el recetario, regístrese con su cuenta de correo. Su propio proveedor de correo la valida.",
     privacy: "No guardamos contraseñas: sólo su correo y cuántas veces usa la app.",
     contact: "¿Preguntas o problemas para entrar? Escríbanos a",
+    inAppTitle: "Está dentro de Facebook o Instagram",
+    inAppText: "Desde aquí Gmail y Yahoo no dejan entrar. Abra la app en su navegador:",
+    openChrome: "Abrir en Chrome",
+    openSafari: "Abrir en Safari",
+    inAppIfNot: "Si no se abre:",
+    inAppSteps: ["Toque los tres puntitos ⋯ arriba a la derecha.", "Escoja «Abrir en el navegador» (o «Abrir en navegador externo»)."],
+    inAppEmail: "O entre aquí mismo con su correo (también Gmail): escríbalo abajo en «¿Otro correo?» y le enviamos un enlace para entrar.",
+    inAppBlocked: "Dentro de Facebook o Instagram, Gmail y Yahoo no dejan entrar. Abra la app en su navegador (arriba) o use «¿Otro correo?».",
     pick: "Escoja su proveedor de correo",
     providers: {
       google: ["Gmail", "Cuentas de Google"],
@@ -106,6 +114,14 @@ const AUTH_T = {
     intro: "To use the recipe book, sign up with your email account. Your own email provider verifies it.",
     privacy: "We never store passwords: only your email and how many times you use the app.",
     contact: "Questions or trouble signing in? Write to us at",
+    inAppTitle: "You're inside Facebook or Instagram",
+    inAppText: "Gmail and Yahoo don't allow signing in from here. Open the app in your browser:",
+    openChrome: "Open in Chrome",
+    openSafari: "Open in Safari",
+    inAppIfNot: "If it doesn't open:",
+    inAppSteps: ["Tap the three dots ⋯ at the top right.", "Choose “Open in browser” (or “Open in external browser”)."],
+    inAppEmail: "Or sign in right here with your email (Gmail too): type it below under “Another email?” and we'll send you a sign-in link.",
+    inAppBlocked: "Inside Facebook or Instagram, Gmail and Yahoo don't allow signing in. Open the app in your browser (see above) or use “Another email?”.",
     pick: "Choose your email provider",
     providers: {
       google: ["Gmail", "Google accounts"],
@@ -253,6 +269,42 @@ function gateShell(title, body) {
     </div>`;
 }
 
+/* Dentro de Facebook, Instagram o Messenger (los anuncios abren ahí) Google bloquea la
+   entrada ("disallowed_useragent") y Yahoo tampoco funciona bien. Aviso con un botón para
+   saltar al navegador: en Android un enlace intent:// a Chrome; en iPhone x-safari-https://
+   (iOS 17 o más nuevo). Si no abre, los pasos del menú ⋯. El enlace por correo sí funciona
+   aquí: el correo abre el enlace fuera de Facebook. installDevice() está en install.js. */
+function externalBrowserURL(d) {
+  const q = new URLSearchParams(location.search);
+  q.delete("fbclid");
+  const rest = location.host + location.pathname + (q.toString() ? "?" + q : "");
+  if (d.android) return `intent://${rest}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent("https://" + rest)};end`;
+  if (d.ios) return `x-safari-https://${rest}`;
+  return "";
+}
+
+function inAppNoticeHTML() {
+  const d = installDevice();
+  if (!d.inApp) return "";
+  const tr = at();
+  const url = externalBrowserURL(d);
+  const btn = url
+    ? `<a class="btn btn-primary inapp-open" href="${esc(url)}">${esc(d.android ? tr.openChrome : tr.openSafari)}</a>`
+    : "";
+  return `
+    <section class="inapp-notice" aria-labelledby="inapp-title">
+      <h2 class="inapp-title" id="inapp-title"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>${esc(tr.inAppTitle)}</h2>
+      <p>${esc(tr.inAppText)}</p>
+      <div class="inapp-actions">
+        ${btn}
+        <button type="button" class="btn btn-outline btn-sm" data-install="copy">${esc(it().copy)}</button>
+      </div>
+      ${url ? `<p class="inapp-if">${esc(tr.inAppIfNot)}</p>` : ""}
+      <ol class="install-steps">${tr.inAppSteps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>
+      <p class="inapp-email">${esc(tr.inAppEmail)}</p>
+    </section>`;
+}
+
 function signOutBtn() {
   return `<button type="button" class="btn btn-ghost auth-link" data-auth="signout">${esc(at().signOut)}</button>`;
 }
@@ -313,6 +365,7 @@ function renderGate() {
           </div>
         </form>` : "";
       html = gateShell(tr.title, `
+        ${inAppNoticeHTML()}
         <p class="auth-text">${esc(tr.intro)}</p>
         <h2 class="auth-h2">${esc(tr.pick)}</h2>
         <div class="provider-grid">${buttons}</div>
@@ -376,6 +429,13 @@ function providerFor(key) {
 
 async function signInWith(key) {
   showAuthMessage("");
+  // Dentro de Facebook/Instagram Google mostraría su página de error: mejor explicarlo aquí.
+  if (installDevice().inApp) {
+    showAuthMessage(at().inAppBlocked);
+    const n = document.querySelector(".inapp-notice");
+    if (n) n.scrollIntoView({ block: "start" });
+    return;
+  }
   const provider = providerFor(key);
   try {
     await fbAuth.signInWithPopup(provider);
