@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.13.0 · **Versión de la app:** 4.13.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.14.0 · **Versión de la app:** 4.14.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,022 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -64,6 +64,7 @@ cocine-a-gusto/
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
 │   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, más salsas y aderezos y platos fuertes veganos, y dulces y salsas de grosella, en cuarenta y tres tandas (ver §13)
+│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44, ver §13)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── substitutes.js    sustitutos para cada alérgeno según el ingrediente (getSubstitutes)
@@ -89,7 +90,7 @@ cocine-a-gusto/
 └── CLAUDE.md             instrucciones para Claude Code: leer y actualizar este documento en cada cambio
 ```
 
-**Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js`
+**Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js` → `recipes-5.js`
 → `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `install.js` (usa `app.js`; antes de `auth.js`, que llama a `installButtonHTML()`) → `auth-config.js` → `auth.js` (usa `app.js`) → `photo.js` → `reviews.js` (usa `app.js`, `auth.js` y `photo.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
 ## 5. Modelo de datos: la receta
@@ -131,22 +132,22 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | frutas | Frutas | 29 |
 | cereales | Cereales | 18 |
 | granos | Granos y Legumbres | 22 |
-| ensaladas | Ensaladas | 25 |
-| sopas | Sopas | 45 |
+| ensaladas | Ensaladas | 27 |
+| sopas | Sopas | 46 |
 | carnes | Carnes | 63 |
 | aves | Aves | 47 |
 | pescados | Pescado y Mariscos | 57 |
-| huevos | Huevos y Queso | 13 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 54 |
-| pastas | Pastas | 19 |
+| huevos | Huevos y Queso | 14 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 57 |
+| pastas | Pastas | 21 |
 | bizcochos | Bizcochos | 40 |
-| galletitas | Galletitas | 37 |
+| galletitas | Galletitas | 38 |
 | pasteles_dulces | Pasteles Dulces | 22 |
 | panes | Pan y Panecillos | 41 |
-| emparedados | Emparedados | 23 |
-| postres | Helados, Budines, Flan y Otros Postres | 107 |
-| arroces | Arroces y Habichuelas | 55 |
-| vegetales | Vegetales y Viandas | 86 |
+| emparedados | Emparedados | 25 |
+| postres | Helados, Budines, Flan y Otros Postres | 108 |
+| arroces | Arroces y Habichuelas | 56 |
+| vegetales | Vegetales y Viandas | 88 |
 | salsas | Salsas y Aderezos | 62 |
 | bebidas | Bebidas | 36 |
 | jugos | Jugos Naturales | 19 |
@@ -483,7 +484,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 ### 7.7 Anuncios en Facebook e Instagram
 - **Vista previa del enlace:** etiquetas Open Graph y `twitter:*` en el `<head>` de `index.html` (título, descripción,
   `og:locale` es_PR con en_US de alterno, `canonical`) e imagen `icons/og-image.png` de 1200×630: bandera, "Recetarios de
-  Aquí · Cocina Boricua", "1,006 recetas de la cocina Puertorriqueña, paso a paso" y "Gratis · Planes de comida ·
+  Aquí · Cocina Boricua", "Más de 1,000 recetas de la cocina Puertorriqueña, paso a paso" y "Gratis · Planes de comida ·
   Español · English", centrado para que sobreviva el recorte cuadrado de WhatsApp. Las URL son absolutas a
   `https://recetariodeaqui.com/`. Se generó con Edge sin ventana (`msedge --headless --screenshot --window-size=1200,630`) desde una página HTML
   con la letra y los colores de la app. **Si cambia el número de recetas o el dominio**, actualizar la imagen y las
@@ -566,7 +567,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,006). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,022). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -621,7 +622,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 
 ## 11. Cómo añadir recetas (procedimiento)
 
-1. Escribir las recetas en el archivo de ampliación más reciente (`js/recipes-4.js`) o crear `recipes-5.js` con
+1. Escribir las recetas en el archivo de ampliación más reciente (`js/recipes-5.js`) o crear `recipes-6.js` con
    `recipes.push(...)` y añadir su `<script>` en `index.html` antes de `nutrition.js`.
 2. Respetar el modelo (§5): `id` único, categoría existente, ES y EN con el mismo número de líneas.
 3. Comprobar que no haya ingredientes sin contar en la nutrición; si falta un alimento, añadirlo a `NUTRI_FOODS` (§8).
@@ -645,6 +646,30 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
 entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, y el texto
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
+
+### 2026-10-17 — v4.14.0 · Más recetas veganas y vegetarianas
+- *Pedido:* más recetas veganas y vegetarianas.
+- Cuadragésima cuarta tanda, en el archivo nuevo `js/recipes-5.js` (versiones propias; `<script>` después de
+  `recipes-4.js`), 16 recetas de platos que no estaban:
+  - **Veganas (9), sin carne, lácteos, huevo ni miel:** arroz con gandules vegano (achiote, aceitunas y alcaparras en
+    vez de tocino), pasteles veganos de garbanzos y setas, tripleta vegana de setas, tofu y jaca, setas encebolladas con
+    viandas, crema vegana de calabaza, coco y jengibre, ensalada de papa vegana (mayonesa de aquafaba), rellenos de papa
+    veganos con picadillo de lentejas (la maicena pega el pan rallado), budín de pan vegano con coco y pasas, y galletitas
+    veganas de avena, guineo y coco.
+  - **Vegetarianas (7):** canelones de espinaca y ricotta en salsa criolla, piononos de espinaca y queso, huevos rancheros
+    a la boricua con habichuelas y tostones, macarrones con queso y calabaza al horno, sándwich de queso de freír,
+    aguacate y tomate, ensalada de aguacate, mangó y queso del país, y croquetas de calabaza y queso.
+  - Redacción: en las veganas el pan dice "revise que sea vegano" (no "sin leche ni huevo", que `advisories.js` leería
+    como alérgenos); menos sal y caldo donde el sodio pasaba de ~1,000 mg por porción.
+- **Iconos:** 9 dibujos con la hojita verde (`ic-vg-*` de la tanda 44): tres reutilizan con `<use>` el del plato
+  tradicional (arroz con gandules, rellenos de papa, budín) y seis son nuevos (pasteles, tripleta, setas encebolladas,
+  crema de calabaza, ensalada de papa, galletitas). Las vegetarianas usan los de su tipo (🍝, piononos, 🍳, 🥪, 🥗, 🥟).
+- **Vista previa del enlace** (§7.7): `og:title`, `twitter:title`, `og:image:alt` y la imagen dicen ahora "Más de 1,000
+  recetas", para no rehacerlas en cada tanda.
+- Total: **1,006 → 1,022 recetas**.
+- *Verificado:* datos en Node ✔ (ids únicos, ES/EN parejos, 0 sin contar); las 9 veganas sin alérgeno de leche ni huevo
+  y en "vegano"/"vegana", las 7 vegetarianas fuera de "vegano" y las 16 en "vegetariano" ✔; familias de cada categoría
+  ✔; navegador: las 16 en ES y EN a 375 px con su nombre, su dibujo, sin desbordes ni errores de consola ✔.
 
 ### 2026-10-17 — v4.13.0 · Pantalla de entrada con lo que trae la app
 - *Pedido:* punto 3 de la revisión de la publicidad, opción A: que la pantalla de entrada muestre qué hay adentro.

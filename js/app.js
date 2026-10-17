@@ -17,7 +17,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
-const APP_VERSION = "4.13.0";
+const APP_VERSION = "4.14.0";
 const APP_REVISED = "2026-10-17";
 const revisedOn = (locale) => new Date(APP_REVISED + "T12:00:00").toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
 
@@ -422,6 +422,16 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
+  // Más veganas (tanda 44), con la hojita verde.
+  [/^arroz con gandules vegano/, "svg:ic-vg-arroz-gandules"],
+  [/^pasteles veganos/, "svg:ic-vg-pasteles"],
+  [/^tripleta vegana/, "svg:ic-vg-tripleta"],
+  [/^setas encebolladas/, "svg:ic-vg-setas-encebolladas"],
+  [/^crema vegana de calabaza/, "svg:ic-vg-crema-calabaza"],
+  [/^ensalada de papa vegana/, "svg:ic-vg-ensalada-papa"],
+  [/^rellenos de papa veganos/, "svg:ic-vg-rellenos-papa"],
+  [/^budin de pan vegano/, "svg:ic-vg-budin-pan"],
+  [/^galletitas veganas/, "svg:ic-vg-galletitas"],
   // Salsas y aderezos, y platos fuertes veganos (tanda 42).
   [/^salsa agridulce de grosellas/, "svg:ic-sz-grosella"],
   [/^salsa de cereza del pais/, "svg:ic-sz-acerola"],
@@ -1704,7 +1714,7 @@ function closeMenu() {
 function setupEventListeners() {
   // Búsqueda en vivo + botón/Enter que lleva a los resultados.
   // - Espera a que se deje de escribir (SEARCH_DELAY) en vez de buscar y dibujar en cada letra.
-  // - Desde 2 letras (una sola daría las 1,006 recetas); con Enter busca aunque sea una.
+  // - Desde 2 letras (una sola daría todas las recetas); con Enter busca aunque sea una.
   // - Busca en todo el recetario: escribir quita la categoría elegida (antes buscaba sólo
   //   dentro de ella sin decirlo, y "pollo" con Postres elegida daba 0 recetas).
   // - Mientras hay búsqueda, la cuadrícula de categorías y las rápidas se esconden
