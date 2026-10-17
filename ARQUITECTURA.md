@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.12.0 · **Versión de la app:** 4.12.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.13.0 · **Versión de la app:** 4.13.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -496,6 +496,12 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   enlace**, los pasos del menú ⋯ por si no abre, y que el enlace por correo ("¿Otro correo?", también para Gmail) sí
   funciona ahí. El enlace externo quita `fbclid` y el `#…`. Tocar Gmail o Yahoo ahí no abre Google: `signInWith()`
   muestra el mensaje `inAppBlocked`.
+- **Vitrina en la pantalla de entrada** (`showcaseHTML()` en `auth.js`, sólo en el estado "signin", después del aviso de
+  Facebook si lo hay): "Lo que encontrará adentro" con las portadas ilustradas (`coverHTML()`) de cuatro platos típicos
+  (`SHOWCASE_DISHES`: arroz con gandules, mofongo, alcapurrias, flan; sin el paréntesis del nombre en inglés) y cuatro
+  puntos: número de recetas y de categorías (de `recipes` y `t().categories`), buscar por plato/ingrediente/idea,
+  planes de comida y nutrición/alergias; al final "Gratis · En español e inglés". Así quien llega de un anuncio ve qué
+  trae la app antes de registrarse. Si se borra uno de esos platos, se omite sin error.
 
 ### 7.2 Planes de comida (`js/plans.js`, ruta `#/planes`)
 - **Acceso:** enlace "Planes" / "Meal plans" en el menú y en el pie. Vista `<section id="view-plans">`; `route()` llama a
@@ -639,6 +645,13 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
 entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, y el texto
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
+
+### 2026-10-17 — v4.13.0 · Pantalla de entrada con lo que trae la app
+- *Pedido:* punto 3 de la revisión de la publicidad, opción A: que la pantalla de entrada muestre qué hay adentro.
+- `js/auth.js`: `SHOWCASE_DISHES` y `showcaseHTML()` (§7.7), textos ES/EN `show*`. CSS `.gate-show`, `.gate-dishes`,
+  `.gate-points`, `.gate-free`. `APP_VERSION` 4.13.0 en `app.js` e `index.html`.
+- *Verificado (vista de celular):* entrada con 4 platos y 4 puntos ("1,006 recetas boricuas… en 24 categorías"), EN ✔;
+  con user agent de Instagram el aviso sale primero y luego la vitrina; sin desbordes a 375 px ni errores de consola ✔.
 
 ### 2026-10-17 — v4.12.0 · La app muestra la versión de la arquitectura
 - *Pedido:* actualizar la versión de la app según este documento. Decía "Versión 2.0 · Revisada el 10 de octubre de

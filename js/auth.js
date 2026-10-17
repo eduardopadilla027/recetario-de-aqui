@@ -27,6 +27,12 @@ const AUTH_T = {
     intro: "Para usar el recetario, regístrese con su cuenta de correo. Su propio proveedor de correo la valida.",
     privacy: "No guardamos contraseñas: sólo su correo y cuántas veces usa la app.",
     contact: "¿Preguntas o problemas para entrar? Escríbanos a",
+    showTitle: "Lo que encontrará adentro",
+    showRecipes: (n, c) => [`${n} recetas boricuas`, `Paso a paso, en ${c} categorías: arroces, frituras, pasteles, postres y más.`],
+    showSearch: ["Busque como habla", "Por plato, ingrediente o idea: «pollo y arroz», «postre sin huevo»."],
+    showPlans: ["Planes de comida", "Según su meta: rebajar, ganar masa, vegetariano, bajo en sodio…"],
+    showHealth: ["Nutrición y alergias", "Calorías por porción, alérgenos y sustitutos en cada receta."],
+    showFree: "Gratis · En español e inglés",
     inAppTitle: "Está dentro de Facebook o Instagram",
     inAppText: "Desde aquí Gmail y Yahoo no dejan entrar. Abra la app en su navegador:",
     openChrome: "Abrir en Chrome",
@@ -116,6 +122,12 @@ const AUTH_T = {
     intro: "To use the recipe book, sign up with your email account. Your own email provider verifies it.",
     privacy: "We never store passwords: only your email and how many times you use the app.",
     contact: "Questions or trouble signing in? Write to us at",
+    showTitle: "What you'll find inside",
+    showRecipes: (n, c) => [`${n} Puerto Rican recipes`, `Step by step, in ${c} categories: rice, fritters, pasteles, desserts and more.`],
+    showSearch: ["Search the way you talk", "By dish, ingredient or idea: “chicken and rice”, “dessert without eggs”."],
+    showPlans: ["Meal plans", "For your goal: lose weight, build muscle, vegetarian, low sodium…"],
+    showHealth: ["Nutrition and allergies", "Calories per serving, allergens and substitutes in every recipe."],
+    showFree: "Free · In Spanish and English",
     inAppTitle: "You're inside Facebook or Instagram",
     inAppText: "Gmail and Yahoo don't allow signing in from here. Open the app in your browser:",
     openChrome: "Open in Chrome",
@@ -309,6 +321,30 @@ function inAppNoticeHTML() {
     </section>`;
 }
 
+/* Vitrina de la pantalla de entrada: quien llega de un anuncio ve qué trae la app antes de
+   registrarse. Cuatro platos típicos con su portada ilustrada (coverHTML de app.js) y cuatro
+   puntos; el número de recetas y de categorías sale de los datos. */
+const SHOWCASE_DISHES = ["arroz-gandules", "mofongo", "alcapurrias", "flan"];
+
+function showcaseHTML() {
+  const tr = at();
+  const n = recipes.length.toLocaleString(currentLang === "es" ? "es-PR" : "en-US");
+  const c = Object.keys(t().categories).length;
+  const dishes = SHOWCASE_DISHES.map((id) => recipes.find((r) => r.id === id)).filter(Boolean);
+  const points = [["i-list", tr.showRecipes(n, c)], ["i-search", tr.showSearch], ["i-check", tr.showPlans], ["i-shield", tr.showHealth]];
+  return `
+    <section class="gate-show" aria-labelledby="gate-show-title">
+      <h2 class="auth-h2" id="gate-show-title">${esc(tr.showTitle)}</h2>
+      <ul class="gate-dishes" aria-hidden="true">${dishes.map((r) => `
+        <li>${coverHTML(r.category, r)}<span class="gate-dish-name">${esc(r.name[currentLang].replace(/\s*\(.*\)$/, ""))}</span></li>`).join("")}
+      </ul>
+      <ul class="gate-points">${points.map(([icon, [title, text]]) => `
+        <li><svg class="icon" aria-hidden="true"><use href="#${icon}"/></svg><span><strong>${esc(title)}</strong> ${esc(text)}</span></li>`).join("")}
+      </ul>
+      <p class="gate-free">${esc(tr.showFree)}</p>
+    </section>`;
+}
+
 function signOutBtn() {
   return `<button type="button" class="btn btn-ghost auth-link" data-auth="signout">${esc(at().signOut)}</button>`;
 }
@@ -370,6 +406,7 @@ function renderGate() {
         </form>` : "";
       html = gateShell(tr.title, `
         ${inAppNoticeHTML()}
+        ${showcaseHTML()}
         <p class="auth-text">${esc(tr.intro)}</p>
         <h2 class="auth-h2">${esc(tr.pick)}</h2>
         <div class="provider-grid">${buttons}</div>

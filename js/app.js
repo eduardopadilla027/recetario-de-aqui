@@ -17,7 +17,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
-const APP_VERSION = "4.12.0";
+const APP_VERSION = "4.13.0";
 const APP_REVISED = "2026-10-17";
 const revisedOn = (locale) => new Date(APP_REVISED + "T12:00:00").toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
 

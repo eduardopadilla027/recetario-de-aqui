@@ -810,6 +810,19 @@ body.auth-locked .site-header, body.auth-locked main, body.auth-locked .site-foo
 .auth-actions { display: flex; flex-wrap: wrap; gap: var(--s-2); }
 .auth-msg { margin-top: var(--s-4); padding: var(--s-3) var(--s-4); border-radius: var(--radius-sm); background: var(--achiote-50); color: var(--achiote-600); font-size: var(--step--1); }
 .auth-msg[hidden] { display: none; }
+/* Vitrina de la pantalla de entrada (auth.js → showcaseHTML) */
+.gate-show { margin: var(--s-2) 0 var(--s-5); padding: var(--s-4); border-radius: var(--radius); background: var(--sand); }
+.gate-dishes { list-style: none; margin: 0 0 var(--s-4); padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-2); }
+.gate-dishes li { display: flex; flex-direction: column; gap: var(--s-1); min-width: 0; }
+.gate-dishes .cover { aspect-ratio: 1; border-radius: var(--radius-sm); }
+.gate-dishes .cover-emoji { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+.gate-dish-name { font-size: .72rem; font-weight: 700; color: var(--ink-2); text-align: center; line-height: 1.2; overflow-wrap: anywhere; }
+.gate-points { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-3); }
+.gate-points li { display: flex; gap: var(--s-3); align-items: flex-start; font-size: var(--step--1); color: var(--ink-2); line-height: 1.45; }
+.gate-points strong { color: var(--ink); }
+.gate-points .icon { width: 20px; height: 20px; flex: none; margin-top: 1px; color: var(--achiote); }
+.gate-free { margin: var(--s-4) 0 0; text-align: center; font-weight: 700; color: var(--plantain); font-size: var(--step--1); }
+
 /* Aviso dentro de Facebook/Instagram (auth.js → inAppNoticeHTML) */
 .inapp-notice { margin: var(--s-3) 0 var(--s-4); padding: var(--s-4); border: 2px solid var(--gold); border-radius: var(--radius); background: #FFF8E8; font-size: var(--step--1); color: var(--ink); scroll-margin-top: var(--s-4); }
 .inapp-notice p { margin: 0 0 var(--s-3); }
