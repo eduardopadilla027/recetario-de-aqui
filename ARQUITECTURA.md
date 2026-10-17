@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-15 · **Versión del documento:** 4.7.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.8.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -73,7 +73,8 @@ cocine-a-gusto/
 │   ├── plans.js          planes de comida (#/planes): objetivos, época, preferencias, plan de 1 o 7 días
 │   ├── auth-config.js    configuración web de Firebase y proveedores de correo que se muestran (§7.3)
 │   ├── auth.js           pantalla de entrada, validación del correo, conteo de usos y panel #/admin (§7.3)
-│   └── reviews.js        reseñas (estrellas + comentario) de la app y de cada receta, con aprobación previa (§7.4)
+│   ├── photo.js          motor de fotos: achica en el navegador la foto tomada o subida antes de guardarla (§7.5)
+│   └── reviews.js        reseñas (estrellas + comentario + foto opcional) de la app y de cada receta, con aprobación previa (§7.4)
 ├── images/               (vacía: reservada para fotos)
 ├── icons/                iconos de la app (bandera sobre crema): apple-touch-icon 180, 192, 512, maskable 512, favicon 32
 ├── manifest.webmanifest  nombre e iconos para la pantalla de inicio del celular (Android)
@@ -85,7 +86,7 @@ cocine-a-gusto/
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js`
-→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `auth-config.js` → `auth.js` (usa `app.js`) → `reviews.js` (usa `app.js` y `auth.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
+→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `auth-config.js` → `auth.js` (usa `app.js`) → `photo.js` → `reviews.js` (usa `app.js`, `auth.js` y `photo.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
 ## 5. Modelo de datos: la receta
 
@@ -410,8 +411,9 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 
 ### 7.4 Reseñas de la app y de las recetas (`js/reviews.js`)
-- **Qué es:** 1 a 5 estrellas + comentario opcional (hasta 1,000 letras) y un **nombre que escribe la persona** (2 a 40
-  letras; se recuerda en este navegador en `rcb.reviewName.<uid>`). El correo **nunca** se publica. Una reseña por persona
+- **Qué es:** 1 a 5 estrellas + comentario opcional (hasta 1,000 letras) + **foto opcional** del plato (§7.5) y un
+  **nombre que escribe la persona** (2 a 40 letras; se recuerda en este navegador en `rcb.reviewName.<uid>`). El correo
+  **nunca** se publica. Una reseña por persona
   y por receta, y una de la app; se puede **Editar** o **Borrar**.
 - **Dónde:** la de la app en la sección `#opiniones` del inicio (enlace "Opiniones" en el pie; se esconde al buscar); la de
   cada receta en `#recipe-reviews`, al final del detalle, y un resumen (promedio y número) en `#recipe-rating`, bajo los
@@ -421,17 +423,42 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   correo del autor (sólo para administradores), **Aprobar** y **Borrar**. Los administradores también pueden borrar
   reseñas publicadas desde la receta o desde `#opiniones`.
 - **Datos:** `reviews/{target}__{uid}` con `target` = `app` o `r:<id de la receta>`: `{ target, uid, name, stars, text,
-  status, createdAt, updatedAt }`. Lecturas: `where(target).where(status == approved)` (sin índice compuesto; se ordena en
+  hasPhoto, status, createdAt, updatedAt }` (las reseñas viejas no tienen `hasPhoto`: cuenta como `false`). La foto va
+  aparte en `reviewPhotos/{mismo id}` (§7.5). Lecturas: `where(target).where(status == approved)` (sin índice compuesto; se ordena en
   el navegador), la propia por su id y, para administradores, `where(status == pending)`.
 - **Ganchos:** `renderModal()` (app.js) → `renderRecipeReviews()`; `onUser()` (auth.js) → `resetReviews()` y, al entrar,
   `reviewsOnReady()`; `renderAuthTexts()` → `renderAllReviews()` al cambiar de idioma; `renderAdminShell()` y
   `loadAdminData()` → `renderPendingReviews()` / `loadPendingReviews()`. Todo texto del usuario pasa por `esc()`.
-- **Seguridad (`firestore.rules`, `match /reviews/{rid}`):** el id debe ser `target__uid` propio; sólo esas 8 claves,
+- **Seguridad (`firestore.rules`, `match /reviews/{rid}`):** el id debe ser `target__uid` propio; sólo esas 9 claves,
   tipos y largos válidos; el autor sólo escribe `status: 'pending'` con `updatedAt` del servidor (y `createdAt` igual al
   anterior al editar); una cuenta suspendida no puede escribir. Leer: las publicadas, cualquiera que entre; las
   pendientes, su autor y los administradores. Los administradores sólo cambian `status`. Borrar: el autor o un
   administrador. **Al cambiar las reglas hay que volver a publicarlas** (Firestore Database → Reglas → pegar → Publicar);
   sin eso la app muestra "Las reseñas todavía no están activadas en el servidor".
+
+### 7.5 Fotos de las reseñas (`js/photo.js` + `js/reviews.js`)
+- **Qué hace:** en el formulario de la reseña, **Tomar foto** (abre la cámara trasera del celular: `<input type="file"
+  accept="image/*" capture="environment">`; en computadora abre el selector) y **Subir foto** (galería o archivos). Al
+  escogerla, **`shrinkPhoto(file)`** la achica en el propio navegador **antes de subirla**: sin servidor ni librerías.
+- **Motor (`js/photo.js`):** lee la imagen con `createImageBitmap(file, { imageOrientation: "from-image" })` (o `<img>`),
+  respetando la orientación EXIF; la reduce por mitades hasta ≤ **1024 px** por el lado largo (`PHOTO_MAX_SIDE`) con
+  suavizado alto y fondo blanco (PNG transparentes); la codifica en **WebP** (o JPEG si el navegador no sabe WebP) con
+  calidad 0.82 → 0.52 hasta quedar en ≈ **120 KB** (`PHOTO_MAX_BYTES`); si no cabe, baja el tamaño 20 % por vuelta hasta
+  320 px. Al redibujarla se pierden **todos los metadatos** (GPS, modelo del teléfono…). Entrada máxima 30 MB. Errores
+  (`err.code`): `type`, `big`, `decode` (p. ej. HEIC fuera de Safari), `encode`. Ejemplos medidos: foto de 4032 × 3024
+  de 8.4 MB → 1024 × 768 WebP de 98 KB (≈ 0.5 s); 4032 × 3024 de 349 KB → 5 KB.
+- **Formulario:** vista previa (4:3), "Foto lista: 1024 × 768 px · 98 KB", **Cambiar foto** y **Quitar foto**; mientras se
+  prepara dice "Preparando la foto…" y el botón de enviar espera. Editar sin tocar la foto la conserva.
+- **Dónde se guarda:** en Cloud Firestore (no se usa Firebase Storage, que exige el plan de pago), en
+  `reviewPhotos/{target}__{uid}` = `{ target, uid, photo (data URL base64), updatedAt }`, **aparte** de la reseña para que
+  las listas no descarguen fotos; la reseña sólo lleva `hasPhoto`. Reseña y foto se escriben o se borran juntas en un
+  **batch**. Cada foto se descarga una sola vez (`photoCache`) cuando su reseña se pinta.
+- **Vista:** miniatura de 160 px en la reseña (y en "Reseñas pendientes" de `#/admin`); al tocarla se abre en grande
+  en un `<dialog id="photo-dialog">` (cerrar con la X, Esc o tocando fuera). Iconos `i-camera` e `i-image`.
+- **Seguridad (`match /reviewPhotos/{rid}`):** leer con las mismas condiciones que la reseña (publicada, su autor o un
+  administrador; la regla consulta `reviews/{rid}.status`); escribir sólo el autor, id `target__uid` propio, 4 claves,
+  `photo` ≤ 250,000 caracteres y sólo `data:image/(webp|jpeg);base64,…`, `updatedAt` del servidor, cuenta no suspendida.
+  Borrar: el autor o un administrador. **Hay que publicar las reglas de nuevo** para que las fotos funcionen.
 
 ### 7.2 Planes de comida (`js/plans.js`, ruta `#/planes`)
 - **Acceso:** enlace "Planes" / "Meal plans" en el menú y en el pie. Vista `<section id="view-plans">`; `route()` llama a
@@ -570,6 +597,20 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-17 — v4.8.0 · Foto en las reseñas (tomada o subida, achicada antes de subirse)
+- *Pedido:* que en la reseña se pueda subir una foto o tomarla, y convertirla al subirla a una resolución más baja para
+  ocupar menos espacio.
+- Nuevo `js/photo.js` (§7.5): `shrinkPhoto()` achica en el navegador a ≤ 1024 px y ≈ 120 KB en WebP/JPEG, respeta la
+  orientación y quita los metadatos. `js/reviews.js`: botones Tomar foto / Subir foto / Cambiar / Quitar, vista previa,
+  miniatura en la reseña y en `#/admin`, vista grande en `<dialog>`, guardado y borrado en batch con `reviewPhotos/{id}`
+  y campo `hasPhoto`. `index.html`: iconos `i-camera`, `i-image` y `<script src="js/photo.js">`. CSS de la foto.
+- `firestore.rules`: `hasPhoto` en las reseñas y regla nueva `match /reviewPhotos/{rid}` (**hay que publicarlas**).
+- *Verificado (Firestore simulado, sin cuentas reales):* motor: 4032 × 3024 de 8.4 MB → 1024 × 768 WebP de 98 KB;
+  1500 × 2000 PNG de 8.1 MB → 614 × 819 de 101 KB; texto → `type`; JPG dañado → `decode`. Formulario: escoger foto →
+  "Preparando la foto…" → vista previa y "Foto lista"; enviar → batch de 2 (reseña `pending` + foto); editar sin tocarla
+  la conserva (batch de 1); Quitar foto → borra la foto y `hasPhoto: false`; borrar la reseña (autor y administrador)
+  borra las dos; foto ajena publicada → miniatura y vista grande centrada; EN a 375 px sin desbordes ni errores ✔.
 
 ### 2026-10-15 — v4.7.0 · Reseñas de la app y de las recetas
 - Nuevo `js/reviews.js` (§7.4): estrellas (1–5) + comentario opcional + nombre que escribe la persona, para la app

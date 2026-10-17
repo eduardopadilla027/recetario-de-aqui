@@ -4,14 +4,20 @@
  * Cloud Firestore: reviews/{target}__{uid}, con target "app" o "r:<id de la receta>".
  * Una reseña por persona y por receta (y una de la app); se puede editar o borrar.
  * Campos: target, uid, name (el nombre que la persona escribe; el correo nunca se
- * muestra), stars, text, status ("pending" | "approved"), createdAt, updatedAt.
+ * muestra), stars, text, hasPhoto, status ("pending" | "approved"), createdAt, updatedAt.
+ *
+ * Foto opcional (tomada con la cámara o subida): js/photo.js la achica en el navegador
+ * (≤ 1024 px, ≈ 120 KB, sin metadatos) y se guarda aparte en reviewPhotos/{mismo id}
+ * { target, uid, photo (data URL), updatedAt }, para que las listas no la descarguen
+ * hasta que la reseña se ve. Se escriben juntas en un batch. ARQUITECTURA.md §7.5.
  *
  * Aprobación previa: toda reseña nueva o editada queda "pending" y sólo la ve su
  * autor hasta que un administrador la aprueba en #/admin ("Reseñas pendientes").
  * Las reglas de firestore.rules (match /reviews) lo hacen cumplir. ARQUITECTURA.md §7.4.
  *
- * Depende de globales de app.js ($, esc, currentLang, current, recipes, jumpTo, toast)
- * y de auth.js (fbDb, authUser, authState, authIsAdmin, adminUsers, authStore, fmtDate). */
+ * Depende de globales de app.js ($, esc, currentLang, current, recipes, jumpTo, toast),
+ * de auth.js (fbDb, authUser, authState, authIsAdmin, adminUsers, authStore, fmtDate)
+ * y de photo.js (shrinkPhoto, fmtBytes). */
 
 const REVIEW_NAME_KEY = "rcb.reviewName.";   // + uid: último nombre usado (este navegador)
 const REVIEW_PAGE = 5;                       // reseñas visibles antes de "Ver más"
@@ -55,6 +61,24 @@ const REVIEW_T = {
     error: "No se pudieron cargar las reseñas.",
     noPermission: "Las reseñas todavía no están activadas en el servidor (reglas de Firestore).",
     saveError: "No se pudo guardar la reseña. Inténtelo de nuevo.",
+    photoLabel: "Foto del plato (opcional)",
+    photoTake: "Tomar foto",
+    photoPick: "Subir foto",
+    photoChange: "Cambiar foto",
+    photoRemove: "Quitar foto",
+    photoNote: "La foto se achica en su equipo antes de subirse (se le quitan la ubicación y otros datos).",
+    photoWorking: "Preparando la foto…",
+    photoReady: (w, h, size) => `Foto lista: ${w} × ${h} px · ${size}`,
+    photoErr: {
+      type: "Ese archivo no es una imagen.",
+      big: "La imagen es demasiado grande (más de 30 MB).",
+      decode: "No se pudo leer esa imagen. Pruebe con una foto JPG o PNG.",
+      encode: "No se pudo achicar la foto. Pruebe con otra."
+    },
+    photoBusy: "Espere a que la foto esté lista.",
+    photoAlt: (name) => `Foto de la reseña de ${name}`,
+    photoOpen: "Ver la foto en grande",
+    photoClose: "Cerrar",
     // #/admin
     adminTitle: "Reseñas pendientes",
     adminIntro: "Nada se publica hasta que lo apruebe. El correo del autor sólo lo ven los administradores.",
@@ -102,6 +126,24 @@ const REVIEW_T = {
     error: "The reviews couldn't be loaded.",
     noPermission: "Reviews aren't enabled on the server yet (Firestore rules).",
     saveError: "The review couldn't be saved. Please try again.",
+    photoLabel: "Photo of the dish (optional)",
+    photoTake: "Take photo",
+    photoPick: "Upload photo",
+    photoChange: "Change photo",
+    photoRemove: "Remove photo",
+    photoNote: "The photo is shrunk on your device before uploading (location and other data are removed).",
+    photoWorking: "Preparing the photo…",
+    photoReady: (w, h, size) => `Photo ready: ${w} × ${h} px · ${size}`,
+    photoErr: {
+      type: "That file isn't an image.",
+      big: "The image is too large (over 30 MB).",
+      decode: "That image couldn't be read. Try a JPG or PNG photo.",
+      encode: "The photo couldn't be shrunk. Try another one."
+    },
+    photoBusy: "Wait until the photo is ready.",
+    photoAlt: (name) => `Photo from ${name}'s review`,
+    photoOpen: "View the photo larger",
+    photoClose: "Close",
     adminTitle: "Pending reviews",
     adminIntro: "Nothing is published until you approve it. Only administrators see the author's email.",
     adminNone: "No pending reviews.",
@@ -119,9 +161,13 @@ const reviewCache = new Map();   // target → { list (aprobadas), mine, loading
 const reviewEditing = new Set(); // targets con el formulario abierto
 const reviewShown = new Map();   // target → cuántas reseñas se ven
 let pendingReviews = null;       // #/admin: null = sin cargar
+const photoCache = new Map();    // id de la reseña → data URL | null (sin foto) | Promise (cargando)
+const photoDraft = new Map();    // target → { dataUrl, bytes, width, height } | null (quitarla); sin clave = no cambia
+const photoBusy = new Set();     // targets con una foto achicándose
 
 function reviewsOn() { return Boolean(fbDb && authUser && authState === "ready"); }
 function reviewCol() { return fbDb.collection("reviews"); }
+function reviewPhotoCol() { return fbDb.collection("reviewPhotos"); }
 function reviewDocId(target) { return `${target}__${authUser.uid}`; }
 function recipeTarget(recipe) { return "r:" + recipe.id; }
 function reviewTime(r) { const ts = r.updatedAt || r.createdAt; return ts && ts.toMillis ? ts.toMillis() : 0; }
@@ -136,6 +182,129 @@ function resetReviews() {
   reviewEditing.clear();
   reviewShown.clear();
   pendingReviews = null;
+  photoCache.clear();
+  photoDraft.clear();
+  photoBusy.clear();
+}
+
+/* ------------------------------------------------------------ fotos ---- */
+
+/* Descarga (una vez) la foto de una reseña. */
+function loadPhoto(id) {
+  const had = photoCache.get(id);
+  if (had !== undefined) return Promise.resolve(had);
+  const p = reviewPhotoCol().doc(id).get()
+    .then((snap) => (snap.exists && snap.data().photo) || null)
+    .catch((err) => { console.warn("Foto de reseña:", (err && (err.code || err.message)) || err); return null; })
+    .then((url) => { photoCache.set(id, url); return url; });
+  photoCache.set(id, p);
+  return p;
+}
+
+/* Pone las fotos en las <img data-photo-id> recién pintadas; si no hay, esconde su botón. */
+function hydratePhotos(box) {
+  if (!box) return;
+  box.querySelectorAll("img[data-photo-id]").forEach((img) => {
+    Promise.resolve(loadPhoto(img.dataset.photoId)).then((url) => {
+      if (!img.isConnected) return;
+      const holder = img.closest(".review-photo, .review-photo-preview");
+      if (url) { img.src = url; if (holder) holder.classList.remove("is-loading"); }
+      else if (holder) holder.hidden = true;
+    });
+  });
+}
+
+function reviewPhotoHTML(r) {
+  if (!r.hasPhoto) return "";
+  const tr = rt();
+  const cached = photoCache.get(r.id);
+  const src = typeof cached === "string" ? ` src="${esc(cached)}"` : "";
+  return `<button type="button" class="review-photo${src ? "" : " is-loading"}" data-review="photo" title="${esc(tr.photoOpen)}" aria-label="${esc(tr.photoOpen)}">
+      <img data-photo-id="${esc(r.id)}"${src} alt="${esc(tr.photoAlt(r.name || ""))}" loading="lazy" decoding="async" width="160" height="120">
+    </button>`;
+}
+
+/* Lo que muestra el formulario: la foto nueva, ninguna o la que ya tenía la reseña. */
+function formPhotoInner(target, mine) {
+  const tr = rt();
+  const draft = photoDraft.get(target);
+  const busy = photoBusy.has(target);
+  let preview = "";
+  let info = "";
+  if (draft) {
+    preview = `<img src="${esc(draft.dataUrl)}" alt="" width="${draft.width}" height="${draft.height}">`;
+    info = tr.photoReady(draft.width, draft.height, fmtBytes(draft.bytes, currentLang));
+  } else if (draft === undefined && mine && mine.hasPhoto) {
+    const cached = photoCache.get(mine.id);
+    preview = `<img data-photo-id="${esc(mine.id)}"${typeof cached === "string" ? ` src="${esc(cached)}"` : ""} alt="">`;
+  }
+  const has = Boolean(preview);
+  return `
+    <span class="review-label" id="rv-photo-${target.replace(/[^a-z0-9]/gi, "_")}">${esc(tr.photoLabel)}</span>
+    ${has ? `<div class="review-photo-preview">${preview}</div>` : ""}
+    <p class="review-photo-info" aria-live="polite">${esc(busy ? tr.photoWorking : info)}</p>
+    <div class="review-photo-btns">
+      <button type="button" class="btn btn-outline btn-sm" data-review="photo-take" data-target="${esc(target)}"${busy ? " disabled" : ""}>
+        <svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg>${esc(tr.photoTake)}</button>
+      <button type="button" class="btn btn-outline btn-sm" data-review="photo-pick" data-target="${esc(target)}"${busy ? " disabled" : ""}>
+        <svg class="icon" aria-hidden="true"><use href="#i-image"/></svg>${esc(has ? tr.photoChange : tr.photoPick)}</button>
+      ${has ? `<button type="button" class="btn btn-ghost btn-sm" data-review="photo-remove" data-target="${esc(target)}"${busy ? " disabled" : ""}>${esc(tr.photoRemove)}</button>` : ""}
+    </div>
+    <input type="file" accept="image/*" capture="environment" data-photo-input="take" hidden tabindex="-1">
+    <input type="file" accept="image/*" data-photo-input="pick" hidden tabindex="-1">
+    <p class="review-note">${esc(tr.photoNote)}</p>`;
+}
+
+function repaintFormPhoto(target) {
+  const box = reviewBox(target);
+  const field = box && box.querySelector("[data-photo-field]");
+  if (!field) return;
+  const entry = reviewCache.get(target);
+  field.innerHTML = formPhotoInner(target, entry && entry.mine);
+  hydratePhotos(field);
+  const submit = box.querySelector('[data-review-form] [type="submit"]');
+  if (submit) submit.disabled = photoBusy.has(target);
+}
+
+async function takePhotoFile(target, file) {
+  if (!file) return;
+  const tr = rt();
+  photoBusy.add(target);
+  repaintFormPhoto(target);
+  try {
+    const out = await shrinkPhoto(file);
+    if (reviewEditing.has(target)) photoDraft.set(target, out); // si canceló mientras tanto, se descarta
+    photoBusy.delete(target);
+    repaintFormPhoto(target);
+  } catch (err) {
+    photoBusy.delete(target);
+    repaintFormPhoto(target);
+    const box = reviewBox(target);
+    const info = box && box.querySelector("[data-photo-field] .review-photo-info");
+    if (info) info.textContent = tr.photoErr[err && err.code] || tr.photoErr.decode;
+    console.warn("Foto no preparada:", (err && (err.code || err.message)) || err);
+  }
+}
+
+/* Vista grande de una foto (un solo <dialog> para toda la app). */
+function openPhoto(src, alt) {
+  let d = $("photo-dialog");
+  if (!d) {
+    d = document.createElement("dialog");
+    d.id = "photo-dialog";
+    d.className = "photo-dialog";
+    d.innerHTML = `<img alt=""><button type="button" class="photo-close" data-review="photo-close"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>`;
+    d.addEventListener("click", (e) => { if (e.target === d) d.close(); }); // clic fuera de la foto
+    document.body.append(d);
+  }
+  const img = d.querySelector("img");
+  img.src = src;
+  img.alt = alt || "";
+  const close = d.querySelector(".photo-close");
+  close.setAttribute("aria-label", rt().photoClose);
+  close.title = rt().photoClose;
+  if (d.showModal) d.showModal(); else d.setAttribute("open", "");
+  close.focus();
 }
 
 /* ------------------------------------------------------------ carga ---- */
@@ -242,6 +411,7 @@ function renderReviews(target) {
     <div class="reviews-head">${head}${summary}</div>
     <div class="review-mine">${mineHTML}</div>
     ${listHTML}`;
+  hydratePhotos(box);
 }
 
 function reviewItemHTML(r, { own = false, target }) {
@@ -253,7 +423,7 @@ function reviewItemHTML(r, { own = false, target }) {
          <button type="button" class="btn btn-ghost btn-sm" data-review="delete" data-target="${esc(target)}">${esc(tr.del)}</button>
        </div>`
     : authIsAdmin
-      ? `<div class="review-actions"><button type="button" class="btn btn-ghost btn-sm" data-review="admin-delete" data-target="${esc(target)}" data-id="${esc(r.id)}" data-name="${esc(r.name)}">${esc(tr.del)}</button></div>`
+      ? `<div class="review-actions"><button type="button" class="btn btn-ghost btn-sm" data-review="admin-delete" data-target="${esc(target)}" data-id="${esc(r.id)}" data-name="${esc(r.name)}"${r.hasPhoto ? ' data-photo="1"' : ""}>${esc(tr.del)}</button></div>`
       : "";
   const Tag = own ? "div" : "li";
   return `<${Tag} class="review${own ? " review-own" : ""}">
@@ -264,6 +434,7 @@ function reviewItemHTML(r, { own = false, target }) {
         <span class="review-date">${esc(reviewDate(r))}</span>
       </div>
       ${r.text ? `<p class="review-text">${esc(r.text)}</p>` : ""}
+      ${reviewPhotoHTML(r)}
       ${own && r.status !== "approved" ? `<p class="review-hint">${esc(tr.sent)}</p>` : ""}
       ${actions}
     </${Tag}>`;
@@ -291,10 +462,11 @@ function reviewFormHTML(target, mine) {
       <label class="review-label" for="rv-text-${key}">${esc(tr.textLabel)}</label>
       <textarea class="review-textarea" id="rv-text-${key}" name="text" maxlength="1000" rows="4" placeholder="${esc(tr.textPh)}">${esc(text)}</textarea>
       <p class="review-chars" aria-live="polite">${esc(tr.chars(text.length))}</p>
+      <div class="review-photo-field" data-photo-field role="group" aria-labelledby="rv-photo-${key}">${formPhotoInner(target, mine)}</div>
       <p class="review-note">${esc(mine ? `${tr.editNote} ${tr.note}` : tr.note)}</p>
       <p class="auth-msg review-msg" role="alert" hidden></p>
       <div class="review-actions">
-        <button type="submit" class="btn btn-primary">${esc(mine ? tr.update : tr.send)}</button>
+        <button type="submit" class="btn btn-primary"${photoBusy.has(target) ? " disabled" : ""}>${esc(mine ? tr.update : tr.send)}</button>
         <button type="button" class="btn btn-ghost" data-review="cancel" data-target="${esc(target)}">${esc(tr.cancel)}</button>
       </div>
     </form>`;
@@ -345,18 +517,30 @@ async function submitReview(form) {
   const text = form.elements.text.value.trim().slice(0, 1000);
   if (!(stars >= 1 && stars <= 5)) { reviewFormMsg(form, tr.needStars); form.querySelector('input[name="stars"]').focus(); return; }
   if (name.length < 2 || name.length > 40) { reviewFormMsg(form, tr.needName); form.elements.name.focus(); return; }
+  if (photoBusy.has(target)) { reviewFormMsg(form, tr.photoBusy); return; }
   reviewFormMsg(form, "");
   const btn = form.querySelector('[type="submit"]');
   btn.disabled = true;
   const ref = reviewCol().doc(reviewDocId(target));
+  const photoRef = reviewPhotoCol().doc(ref.id);
   const now = firebase.firestore.FieldValue.serverTimestamp();
+  const draft = photoDraft.get(target);          // undefined = la foto no cambia
+  const hadPhoto = Boolean(entry.mine && entry.mine.hasPhoto);
+  const hasPhoto = draft === undefined ? hadPhoto : Boolean(draft);
   try {
+    // Reseña y foto juntas: o se guardan las dos o ninguna.
+    const batch = fbDb.batch();
+    if (draft) batch.set(photoRef, { target, uid: authUser.uid, photo: draft.dataUrl, updatedAt: now });
+    else if (draft === null && hadPhoto) batch.delete(photoRef);
     // Nueva o editada: siempre "pending" (las reglas no aceptan otra cosa del autor).
-    await ref.set({
-      target, uid: authUser.uid, name, stars, text, status: "pending",
+    batch.set(ref, {
+      target, uid: authUser.uid, name, stars, text, hasPhoto, status: "pending",
       createdAt: entry.mine && entry.mine.createdAt ? entry.mine.createdAt : now,
       updatedAt: now
     });
+    await batch.commit();
+    if (draft !== undefined) photoCache.set(ref.id, draft ? draft.dataUrl : null);
+    photoDraft.delete(target);
     authStore(REVIEW_NAME_KEY + authUser.uid, name);
     const snap = await ref.get();
     entry.mine = snap.exists ? { id: snap.id, ...snap.data() } : null;
@@ -372,14 +556,20 @@ async function submitReview(form) {
   }
 }
 
-async function deleteReview(target, id, adminName) {
+async function deleteReview(target, id, adminName, withPhoto) {
   const tr = rt();
   const entry = reviewCache.get(target);
   const own = !id;
   if (!confirm(own ? tr.confirmDelete : tr.confirmAdminDelete(adminName || ""))) return;
   const docId = id || reviewDocId(target);
+  if (own) withPhoto = Boolean(entry && entry.mine && entry.mine.hasPhoto);
   try {
-    await reviewCol().doc(docId).delete();
+    const batch = fbDb.batch();
+    batch.delete(reviewCol().doc(docId));
+    if (withPhoto) batch.delete(reviewPhotoCol().doc(docId));
+    await batch.commit();
+    photoCache.delete(docId);
+    if (own) photoDraft.delete(target);
     if (entry) {
       if (own) entry.mine = null;
       entry.list = entry.list.filter((r) => r.id !== docId);
@@ -435,11 +625,13 @@ function renderPendingReviews() {
         </div>
         ${emailOf(r.uid) ? `<p class="review-email">${esc(emailOf(r.uid))}</p>` : ""}
         ${r.text ? `<p class="review-text">${esc(r.text)}</p>` : ""}
+        ${reviewPhotoHTML(r)}
         <div class="review-actions">
           <button type="button" class="btn btn-primary btn-sm" data-review="approve" data-id="${esc(r.id)}">${esc(tr.approve)}</button>
-          <button type="button" class="btn btn-ghost btn-sm" data-review="admin-delete" data-target="${esc(r.target)}" data-id="${esc(r.id)}" data-name="${esc(r.name)}">${esc(tr.del)}</button>
+          <button type="button" class="btn btn-ghost btn-sm" data-review="admin-delete" data-target="${esc(r.target)}" data-id="${esc(r.id)}" data-name="${esc(r.name)}"${r.hasPhoto ? ' data-photo="1"' : ""}>${esc(tr.del)}</button>
         </div>
       </li>`).join("")}</ul>` : `<p class="admin-intro">${esc(tr.adminNone)}</p>`}`;
+  hydratePhotos(box);
 }
 
 async function approveReview(id) {
@@ -463,19 +655,37 @@ document.addEventListener("click", (e) => {
   const act = btn.dataset.review;
   const target = btn.dataset.target;
   if (act === "write" || act === "edit") {
+    photoDraft.delete(target);
     reviewEditing.add(target);
     renderReviews(target);
     const box = reviewBox(target);
     const first = box && box.querySelector('input[name="stars"]:checked, input[name="stars"]');
     if (first) first.focus();
   } else if (act === "cancel") {
+    photoDraft.delete(target);
     reviewEditing.delete(target);
     renderReviews(target);
     const box = reviewBox(target);
     const again = box && box.querySelector('[data-review="write"], [data-review="edit"]');
     if (again) again.focus();
   } else if (act === "delete") deleteReview(target);
-  else if (act === "admin-delete" && authIsAdmin) deleteReview(target, btn.dataset.id, btn.dataset.name);
+  else if (act === "admin-delete" && authIsAdmin) deleteReview(target, btn.dataset.id, btn.dataset.name, btn.dataset.photo === "1");
+  else if (act === "photo-take" || act === "photo-pick") {
+    const input = btn.closest("[data-photo-field]").querySelector(`[data-photo-input="${act === "photo-take" ? "take" : "pick"}"]`);
+    if (input) { input.value = ""; input.click(); }
+  } else if (act === "photo-remove") {
+    photoDraft.set(target, null);
+    repaintFormPhoto(target);
+    const box = reviewBox(target);
+    const pick = box && box.querySelector('[data-review="photo-pick"]');
+    if (pick) pick.focus();
+  } else if (act === "photo") {
+    const img = btn.querySelector("img");
+    if (img && img.src) openPhoto(img.src, img.alt);
+  } else if (act === "photo-close") {
+    const d = btn.closest("dialog");
+    if (d) d.close();
+  }
   else if (act === "approve" && authIsAdmin) approveReview(btn.dataset.id);
   else if (act === "more") { reviewShown.set(target, (reviewShown.get(target) || REVIEW_PAGE) + 20); renderReviews(target); }
   else if (act === "goto") {
@@ -489,6 +699,13 @@ document.addEventListener("submit", (e) => {
   if (!form) return;
   e.preventDefault();
   submitReview(form);
+});
+
+document.addEventListener("change", (e) => {
+  const input = e.target.closest && e.target.closest("[data-photo-input]");
+  if (!input) return;
+  const form = input.closest("[data-review-form]");
+  if (form && input.files && input.files[0]) takePhotoFile(form.dataset.reviewForm, input.files[0]);
 });
 
 document.addEventListener("input", (e) => {
