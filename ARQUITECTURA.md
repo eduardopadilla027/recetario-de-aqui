@@ -638,13 +638,16 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
 ### 2026-10-17 — v4.11.0 · Dominio propio: recetariodeaqui.com
 - *Pedido:* poner la app en un dominio económico; se compró `recetariodeaqui.com` en Vercel.
 - Vercel: `recetariodeaqui.com` y `www.recetariodeaqui.com` añadidos al proyecto (`vercel domains add`). Nuevo
-  `vercel.json`: `www` y `recetario-de-aqui.vercel.app` redirigen (301, con la ruta y la consulta) a
-  `https://recetariodeaqui.com/`. `index.html` (`canonical`, `og:*`, `twitter:image`) e `install.js` (`APP_URL`) usan el
+  `vercel.json`: `www` y `recetario-de-aqui.vercel.app` redirigen (308, con la ruta y la consulta) a
+  `https://recetariodeaqui.com/`. El patrón es `"/(.*)"` → `/$1`: con `"/:path*"` la página principal `/` no se
+  redirigía (Vercel servía `index.html` directamente). `index.html` (`canonical`, `og:*`, `twitter:image`) e `install.js` (`APP_URL`) usan el
   dominio nuevo. Firebase: dominios autorizados añadidos en la consola (§7.3, paso 3). Sin ellos el enlace por correo no
   se envía (`UNAUTHORIZED_DOMAIN`, comprobado con `accounts:sendOobCode`); `auth.js` ahora explica ese error
   (`auth/unauthorized-continue-uri`) y el de límite diario de enlaces (`auth/quota-exceeded`) en vez del mensaje general.
 - Quien ya había entrado en `vercel.app` tendrá que entrar otra vez (la sesión es por dominio); su plan está en su cuenta.
-- *Verificado:* `https://recetariodeaqui.com/` y `www` responden 200 con la app antes del cambio de enlaces.
+- *Verificado:* Firebase lista los 6 dominios autorizados (`recetariodeaqui.com` y `www` incluidos);
+  `recetario-de-aqui.vercel.app/` y `/?instalar` → 308 a `https://recetariodeaqui.com/` (con `?instalar`); `www` → 308;
+  `https://recetariodeaqui.com/` 200 con `og:url` nuevo; `icons/og-image.png` 200 ✔.
 
 ### 2026-10-17 — v4.10.0 · Anuncios: vista previa del enlace y entrada desde Facebook/Instagram
 - *Pedido:* revisar la publicidad en Facebook e Instagram y arreglar (1) la entrada desde el navegador interno y (2) la
