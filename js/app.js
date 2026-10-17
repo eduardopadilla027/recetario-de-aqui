@@ -15,11 +15,17 @@
 const BRAND = "Recetarios de Aquí";
 const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla de entrada (auth.js)
 
+// Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
+// Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
+const APP_VERSION = "4.12.0";
+const APP_REVISED = "2026-10-17";
+const revisedOn = (locale) => new Date(APP_REVISED + "T12:00:00").toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
+
 const translations = {
   es: {
     siteTitle: BRAND,
     subtitle: "Recetario de Cocina Puertorriqueña",
-    author: "Versión 2.0 · Revisada el 10 de octubre de 2026",
+    author: `Versión ${APP_VERSION} · Revisada el ${revisedOn("es-PR")}`,
     heroTitle: ["El Sabor de la Cocina", "Puertorriqueña"], // [texto, palabra destacada]
     searchPlaceholder: "Plato, ingrediente o idea: pollo y arroz, postre sin huevo, navidad…",
     searchLabel: "Buscar recetas por nombre, ingredientes o una idea (por ejemplo: postre sin huevo)",
@@ -32,7 +38,7 @@ const translations = {
     servingOne: "porción",
     recipeCount: "recetas",
     recipeOne: "receta",
-    footer: "Recetas de la cocina tradicional puertorriqueña · Versión 2.0 · Revisión: 10 de octubre de 2026",
+    footer: `Recetas de la cocina tradicional puertorriqueña · Versión ${APP_VERSION} · Revisión: ${revisedOn("es-PR")}`,
     skip: "Saltar al contenido",
     menu: "Abrir menú",
     mainNav: "Navegación principal",
@@ -138,7 +144,7 @@ const translations = {
   en: {
     siteTitle: BRAND,
     subtitle: "Puerto Rican Cookbook",
-    author: "Version 2.0 · Revised October 10, 2026",
+    author: `Version ${APP_VERSION} · Revised ${revisedOn("en-US")}`,
     heroTitle: ["The Flavor of", "Puerto Rican Cooking"],
     searchPlaceholder: "Dish, ingredient or idea: chicken and rice, dessert without eggs, christmas…",
     searchLabel: "Search recipes by name, ingredients or an idea (for example: dessert without eggs)",
@@ -151,7 +157,7 @@ const translations = {
     servingOne: "serving",
     recipeCount: "recipes",
     recipeOne: "recipe",
-    footer: "Traditional Puerto Rican recipes · Version 2.0 · Revised October 10, 2026",
+    footer: `Traditional Puerto Rican recipes · Version ${APP_VERSION} · Revised ${revisedOn("en-US")}`,
     skip: "Skip to content",
     menu: "Open menu",
     mainNav: "Main navigation",

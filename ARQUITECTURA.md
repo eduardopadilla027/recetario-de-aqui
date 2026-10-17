@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.11.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.12.0 · **Versión de la app:** 4.12.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -634,6 +634,20 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+**Versión:** la app muestra la misma versión que este documento. En cada cambio se sube la versión aquí (arriba y en la
+entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, y el texto
+inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
+Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
+
+### 2026-10-17 — v4.12.0 · La app muestra la versión de la arquitectura
+- *Pedido:* actualizar la versión de la app según este documento. Decía "Versión 2.0 · Revisada el 10 de octubre de
+  2026" desde la v2.0.0; ahora "Versión 4.12.0 · Revisada el 17 de octubre de 2026" (EN "Version 4.12.0 · Revised
+  October 17, 2026") en la portada y el pie.
+- `js/app.js`: constantes `APP_VERSION`, `APP_REVISED` y `revisedOn()`; `author` y `footer` (ES/EN) las usan.
+  `index.html`: texto inicial de `#site-author` y `#footer-text`. Regla de versión arriba de este registro.
+- *Verificado:* portada y pie en ES ("Versión 4.12.0 · Revisada el 17 de octubre de 2026") y EN ("Version 4.12.0 ·
+  Revised October 17, 2026") al cambiar de idioma; sin errores de consola ✔.
 
 ### 2026-10-17 — v4.11.0 · Dominio propio: recetariodeaqui.com
 - *Pedido:* poner la app en un dominio económico; se compró `recetariodeaqui.com` en Vercel.
