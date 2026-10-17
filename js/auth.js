@@ -26,6 +26,7 @@ const AUTH_T = {
     title: "Entre a Recetarios de Aquí",
     intro: "Para usar el recetario, regístrese con su cuenta de correo. Su propio proveedor de correo la valida.",
     privacy: "No guardamos contraseñas: sólo su correo y cuántas veces usa la app.",
+    contact: "¿Preguntas o problemas para entrar? Escríbanos a",
     pick: "Escoja su proveedor de correo",
     providers: {
       google: ["Gmail", "Cuentas de Google"],
@@ -104,6 +105,7 @@ const AUTH_T = {
     title: "Sign in to Recetarios de Aquí",
     intro: "To use the recipe book, sign up with your email account. Your own email provider verifies it.",
     privacy: "We never store passwords: only your email and how many times you use the app.",
+    contact: "Questions or trouble signing in? Write to us at",
     pick: "Choose your email provider",
     providers: {
       google: ["Gmail", "Google accounts"],
@@ -246,6 +248,7 @@ function gateShell(title, body) {
       <h1 class="auth-title" id="auth-title" tabindex="-1">${esc(title)}</h1>
       ${body}
       <p class="auth-msg" id="auth-msg" role="alert"${authMessage ? "" : " hidden"}>${esc(authMessage)}</p>
+      <p class="auth-contact">${esc(at().contact)} <a href="mailto:${esc(CONTACT_EMAIL)}">${esc(CONTACT_EMAIL)}</a></p>
     </div>`;
 }
 

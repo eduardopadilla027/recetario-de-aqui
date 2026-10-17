@@ -549,6 +549,10 @@ main:focus { outline: none; }
 .footer-brand .brand-mark { margin-top: 4px; box-shadow: 0 0 0 1px rgba(255, 255, 255, .25); }
 .footer-name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: #fff; }
 .footer-text { margin-top: var(--s-1); color: #CDBDA6; font-size: var(--step--1); }
+.footer-contact a { color: #fff; font-weight: 700; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.footer-contact a:hover { color: var(--gold); }
+.auth-contact { margin-top: var(--s-4); font-size: .85rem; color: var(--ink-3); overflow-wrap: anywhere; }
+.auth-contact a { color: var(--achiote); font-weight: 700; }
 .footer-nav { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-2); }
 .footer-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--s-3); border-radius: 999px; text-decoration: none; font-size: var(--step--1); font-weight: 500; }
 .footer-nav a:hover { background: rgba(255,255,255,.08); color: #fff; }

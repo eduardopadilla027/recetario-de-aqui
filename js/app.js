@@ -13,6 +13,7 @@
  * del navegador vuelve a los resultados en la misma posición. */
 
 const BRAND = "Recetarios de Aquí";
+const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla de entrada (auth.js)
 
 const translations = {
   es: {
@@ -42,6 +43,7 @@ const translations = {
     navFavorites: "Favoritas",
     navPlans: "Planes",
     navReviews: "Opiniones",
+    contactLabel: "Contacto:",
     navAdmin: "Administrador",
     categoriesTitle: "Explora por categoría",
     categoriesSub: "Elige una categoría para ver sus recetas. Vuelve a pulsarla para cerrarla.",
@@ -159,6 +161,7 @@ const translations = {
     navFavorites: "Favorites",
     navPlans: "Meal plans",
     navReviews: "Reviews",
+    contactLabel: "Contact:",
     navAdmin: "Admin",
     categoriesTitle: "Browse by category",
     categoriesSub: "Pick a category to see its recipes. Tap it again to close it.",

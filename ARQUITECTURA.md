@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.8.0 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.8.1 · **Versión de la app:** 2.0 (revisada el 10 de octubre de 2026) · **Recetas:** 1,006 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -31,6 +31,7 @@ Las recetas son **versiones propias redactadas para esta app** (no copias de lib
 | Repositorio | https://github.com/eduardopadilla027/recetario-de-aqui (rama `master`) |
 | Publicación | Vercel, proyecto `recetario-de-aqui` → https://recetario-de-aqui.vercel.app |
 | Servidor local | `npx serve -l 3000 <carpeta>` (configuración en `.claude/launch.json`) → http://localhost:3000 |
+| Correo de contacto | recetariodeaqui@gmail.com (`CONTACT_EMAIL` en `js/app.js`; se muestra en el pie y en la pantalla de entrada) |
 
 `.vercel/` está en `.gitignore` (es la vinculación local con Vercel).
 
@@ -597,6 +598,15 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   horizontales y con el nombre correcto en la página.
 
 ## 13. Registro de cambios
+
+### 2026-10-17 — v4.8.1 · Correo de contacto
+- *Pedido:* poner en la app el correo recetariodeaqui@gmail.com.
+- `js/app.js`: constante `CONTACT_EMAIL` y texto `contactLabel` (ES "Contacto:", EN "Contact:"). `index.html`: línea
+  `.footer-contact` en el pie con enlace `mailto:`. `js/auth.js`: `gateShell()` añade al final de toda pantalla de entrada
+  "¿Preguntas o problemas para entrar? Escríbanos a …" (EN "Questions or trouble signing in? Write to us at …"), así lo ve
+  también quien todavía no ha entrado. CSS `.footer-contact` y `.auth-contact`.
+- *Verificado:* pantalla de entrada en ES y EN a 375 px con el enlace `mailto:recetariodeaqui@gmail.com`, sin desbordes ni
+  errores de consola; pie con "Contacto: recetariodeaqui@gmail.com" en blanco sobre el fondo oscuro ✔.
 
 ### 2026-10-17 — v4.8.0 · Foto en las reseñas (tomada o subida, achicada antes de subirse)
 - *Pedido:* que en la reseña se pueda subir una foto o tomarla, y convertirla al subirla a una resolución más baja para
