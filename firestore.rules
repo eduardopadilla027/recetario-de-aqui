@@ -54,7 +54,7 @@ service cloud.firestore {
       allow delete: if isAdmin() && resource.data.email != ownerEmail();
     }
 
-    // Datos propios (ajustes de Planes): sólo la persona dueña; ni los administradores.
+    // Datos propios (ajustes de Planes y Mi recetario): sólo la persona dueña; ni los administradores.
     match /users/{uid}/data/{docId} {
       allow read, delete: if verified() && request.auth.uid == uid;
       allow write: if verified() && request.auth.uid == uid
@@ -62,6 +62,13 @@ service cloud.firestore {
         && request.resource.data.keys().hasOnly(['plan', 'updatedAt'])
         && request.resource.data.plan is map
         && request.resource.data.plan.size() <= 20
+        && request.resource.data.updatedAt == request.time;
+      // Mi recetario (js/kitchen.js): colecciones, notas, "la hice" y la lista de compras.
+      allow write: if verified() && request.auth.uid == uid
+        && docId == 'kitchen'
+        && request.resource.data.keys().hasOnly(['kitchen', 'updatedAt'])
+        && request.resource.data.kitchen is map
+        && request.resource.data.kitchen.keys().hasOnly(['ts', 'cols', 'notes', 'cooked', 'shop'])
         && request.resource.data.updatedAt == request.time;
     }
 

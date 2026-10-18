@@ -872,6 +872,17 @@
     </symbol>
     <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 4.2 2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 4.2a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17.2v.1"/></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.3 2.9 8 7 9.5 4.1-1.5 7-5.2 7-9.5V6l-7-3z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 9.5v4l2.5 1.5M9.5 2.5h5M12 2.5v3.5M18.5 6.5l1.5-1.5"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2.5l2.2 10.5h10.6L20.5 7H6.4"/><circle cx="9.5" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><path d="M12 11v5M9.5 13.5h5"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11 12 4l8 7"/><path d="M6 9.5V20h4.5v-5.5h3V20H18V9.5"/></symbol>
+    <symbol id="i-pot" viewBox="0 0 24 24"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M2.5 10h19M9 7.5c0-1 .8-1.5.8-2.5S9 3.5 9 3.5M13 7.5c0-1 .8-1.5.8-2.5S13 3.5 13 3.5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"/><path d="M5 19c3-4 6-7 10-9"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5h10.5a3 3 0 0 1 3 3V20H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h10.5M9 8.5h6"/></symbol>
     <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21a6 6 0 0 0 6-6c0-4-3-6.5-4.5-10.5C11 7 8.5 8.5 8.5 11.5c-1-.5-1.8-1.6-2-2.8C5.5 10.2 6 12.5 6 15a6 6 0 0 0 6 6z"/><path d="M12 21a2.5 2.5 0 0 1-2.5-2.5c0-1.8 1.4-2.6 2.5-4.5 1.1 1.9 2.5 2.7 2.5 4.5A2.5 2.5 0 0 1 12 21z"/></symbol>
   </svg>
 
@@ -896,6 +907,8 @@
       <nav class="primary-nav" id="primary-nav" data-i18n-label="mainNav">
         <a href="#categorias" class="nav-link" data-i18n="navCategories">Categorías</a>
         <a href="#/planes" class="nav-link" data-i18n="navPlans">Planes</a>
+        <a href="#/mi-recetario" class="nav-link" data-i18n="navMine">Mi recetario</a>
+        <a href="#/compras" class="nav-link nav-fav"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg><span data-i18n="navShop">Compras</span><span class="nav-badge" id="shop-count" hidden></span></a>
         <a href="#/admin" class="nav-link" id="nav-admin" data-i18n="navAdmin" hidden>Administrador</a>
         <button type="button" class="nav-link nav-fav" id="nav-favorites">
           <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span data-i18n="navFavorites">Favoritas</span>
@@ -920,7 +933,7 @@
           <div class="hero-copy">
             <p class="eyebrow" id="site-subtitle">Recetario de Cocina Puertorriqueña</p>
             <h1 class="hero-title" id="hero-title">El Sabor de la Cocina <span class="hero-accent">Puertorriqueña</span></h1>
-            <p class="hero-lead" id="site-author">Versión 4.23.0 · Revisada el 17 de octubre de 2026</p>
+            <p class="hero-lead" id="site-author">Versión 4.24.0 · Revisada el 18 de octubre de 2026</p>
 
             <form class="search" id="search-form" role="search">
               <label class="sr-only" for="search-input" data-i18n="searchLabel">Buscar recetas por nombre o ingrediente</label>
@@ -932,12 +945,18 @@
               <button type="submit" class="btn btn-primary search-submit" data-i18n="searchBtn">Buscar</button>
             </form>
 
+            <div class="hero-tools">
+              <button type="button" class="btn btn-outline btn-sm" id="adv-toggle" aria-expanded="false" aria-controls="adv-filters"></button>
+            </div>
             <p class="hero-stats" id="hero-stats"></p>
           </div>
 
           <div class="hero-art" aria-hidden="true" id="hero-art"></div>
         </div>
       </section>
+
+      <!-- Filtros combinables y "¿Qué tengo en la nevera?" (js/filters.js) -->
+      <section class="adv-filters" id="adv-filters" hidden aria-label="Filtros"></section>
 
       <section class="section" id="categorias" aria-labelledby="cat-heading">
         <div class="container">
@@ -948,6 +967,8 @@
           <div class="category-grid" id="nav-pills"></div>
         </div>
       </section>
+
+      <section class="section" id="temporada" aria-labelledby="season-heading" hidden></section>
 
       <section class="section section-tint" id="rapidas" aria-labelledby="quick-heading">
         <div class="container">
@@ -1011,10 +1032,14 @@
               <li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span><span class="fact-label" data-i18n="servings">Porciones</span><strong id="modal-servings"></strong></span></li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><span><span class="fact-label" data-i18n="ingredients">Ingredientes</span><strong id="modal-ing-count"></strong></span></li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg><span><span class="fact-label" data-i18n="kcalFact">Calorías / porción</span><strong id="modal-kcal"></strong></span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-pot"/></svg><span><span class="fact-label" data-i18n="levelFact">Dificultad</span><strong id="modal-level"></strong></span></li>
             </ul>
             <p class="allergen-line" id="allergen-line" hidden></p>
             <p class="recipe-rating" id="recipe-rating" hidden></p>
             <div class="recipe-actions">
+              <button type="button" class="btn btn-primary" id="cook-btn">
+                <svg class="icon" aria-hidden="true"><use href="#i-pot"/></svg><span data-i18n="cookMode">Modo cocina</span>
+              </button>
               <button type="button" class="btn btn-outline" id="fav-btn" aria-pressed="false">
                 <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span id="fav-btn-text"></span>
               </button>
@@ -1025,6 +1050,8 @@
                 <svg class="icon" aria-hidden="true"><use href="#i-share"/></svg><span data-i18n="share">Compartir</span>
               </button>
             </div>
+            <!-- Colección, lista de compras y "la hice" (js/kitchen.js) -->
+            <div id="recipe-kitchen"></div>
           </div>
         </header>
 
@@ -1055,6 +1082,8 @@
               </div>
             </div>
             <p class="scale-note" id="scale-note" hidden></p>
+            <div class="units-toggle" id="units-toggle" role="group"></div>
+            <p class="units-note" id="units-note" hidden></p>
             <ul class="ingredient-list" id="modal-ingredients-list"></ul>
           </section>
 
@@ -1066,6 +1095,9 @@
         </div>
 
         <!-- Reseñas de la receta (js/reviews.js) -->
+        <!-- Mis notas de esta receta (js/kitchen.js) -->
+        <section class="panel notes-panel" id="recipe-notes" aria-labelledby="notes-title"></section>
+
         <section class="panel reviews-panel" id="recipe-reviews" aria-labelledby="recipe-reviews-title"></section>
       </div>
     </article>
@@ -1073,6 +1105,9 @@
     <section id="view-plans" class="plans-view" hidden aria-labelledby="plans-title"></section>
     <!-- ===================== ADMINISTRACIÓN (js/auth.js) ===================== -->
     <section id="view-admin" class="admin-view" hidden aria-labelledby="admin-title"></section>
+    <!-- ===================== MI RECETARIO Y COMPRAS (js/kitchen.js) ===================== -->
+    <section id="view-mine" class="plans-view" hidden aria-labelledby="mine-title"></section>
+    <section id="view-shop" class="plans-view" hidden aria-labelledby="shop-title"></section>
 
   </main>
 
@@ -1082,7 +1117,7 @@
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 900 600"><use href="#flag-pr"/></svg></span>
         <div>
           <p class="footer-name">Recetarios de Aquí · Cocina Boricua</p>
-          <p class="footer-text" id="footer-text">Recetas de la cocina tradicional puertorriqueña · Versión 4.23.0 · Revisión: 17 de octubre de 2026</p>
+          <p class="footer-text" id="footer-text">Recetas de la cocina tradicional puertorriqueña · Versión 4.24.0 · Revisión: 18 de octubre de 2026</p>
           <p class="footer-text footer-contact"><span data-i18n="contactLabel">Contacto:</span> <a href="mailto:recetariodeaqui@gmail.com">recetariodeaqui@gmail.com</a></p>
         </div>
       </div>
@@ -1098,12 +1133,26 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
+  <!-- Modo cocina (js/cook.js) -->
+  <div class="cook-mode" id="cook-mode" role="dialog" aria-modal="true" aria-labelledby="cook-title" hidden></div>
+  <button type="button" class="timer-fab" id="timer-fab" hidden></button>
+
+  <!-- Barra de abajo en el celular (js/pwa.js) -->
+  <nav class="bottom-nav" id="bottom-nav" data-i18n-label="mainNav">
+    <a href="#/" data-bn="home"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span data-i18n="bnHome">Inicio</span></a>
+    <a href="#/" data-bn="search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span data-i18n="searchBtn">Buscar</span></a>
+    <a href="#/planes" data-bn="plans"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span data-i18n="navPlans">Planes</span></a>
+    <a href="#/mi-recetario" data-bn="mine"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><span data-i18n="bnMine">Mi recetario</span></a>
+    <a href="#/compras" data-bn="shop"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg><span data-i18n="navShop">Compras</span></a>
+  </nav>
+
   <script src="js/recipes.js"></script>
   <script src="js/recipes-extra.js"></script>
   <script src="js/recipes-2.js"></script>
   <script src="js/recipes-3.js"></script>
   <script src="js/recipes-4.js"></script>
   <script src="js/recipes-5.js"></script>
+  <script src="js/nutrition-usda.js"></script>
   <script src="js/nutrition.js"></script>
   <script src="js/advisories.js"></script>
   <script src="js/substitutes.js"></script>
@@ -1112,11 +1161,16 @@
   <script src="js/pairings.js"></script>
   <script src="js/app.js"></script>
   <script src="js/plans.js"></script>
+  <script src="js/seasonal.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/cook.js"></script>
   <script src="js/install.js"></script>
   <script src="js/auth-config.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/photo.js"></script>
   <script src="js/reviews.js"></script>
   <script src="js/recipe-admin.js"></script>
+  <script src="js/kitchen.js"></script>
+  <script src="js/pwa.js"></script>
 </body>
 </html>

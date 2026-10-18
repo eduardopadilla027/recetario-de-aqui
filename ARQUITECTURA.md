@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.23.0 · **Versión de la app:** 4.23.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,118 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.24.0 · **Versión de la app:** 4.24.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,118 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -18,6 +18,12 @@ Recetario digital de **cocina tradicional puertorriqueña**, bilingüe (español
 - Ver una **estimación nutricional** por porción calculada de los ingredientes.
 - Ver **alérgenos, alertas y manejo seguro** deducidos de los ingredientes.
 - Guardar favoritos, imprimir y compartir la receta (enlace propio por receta).
+- **Herramientas de cocina (v4.24):** modo cocina paso a paso con temporizadores y voz (§7.9), lista de compras que suma
+  ingredientes y Mi recetario con colecciones, notas y "la hice" (§7.10), "¿Qué tengo en la nevera?" y filtros
+  combinables (§7.11), frutas y viandas de temporada en la isla (§7.12), medidas en gramos y °C, y uso sin internet con
+  barra de abajo en el celular (§7.13).
+- **Nutrición con datos oficiales del USDA** (FoodData Central, con el número de cada alimento), etiqueta completa como
+  la de la FDA y planes revisados contra las Guías Alimentarias 2025–2030, con objetivos de Diabetes y Presión alta (§8, §7.2).
 - **Acceso con cuenta de correo validada** (Gmail, Outlook/Hotmail, Yahoo, iCloud u otro correo con enlace) y un
   **panel de administración** con los usuarios y cuántas veces usa cada uno la app (§7.3). No se guardan contraseñas.
 
@@ -47,6 +53,8 @@ Las recetas son **versiones propias redactadas para esta app** (no copias de lib
 - **Acceso:** Firebase Authentication (Google, Microsoft, Yahoo, Apple y enlace por correo, sin contraseñas) y Cloud
   Firestore (correo + conteo de usos). El SDK *compat* 10.14.1 se carga desde `www.gstatic.com` sólo si
   `js/auth-config.js` tiene la configuración (§7.3).
+- **Uso sin internet:** `sw.js` (trabajador de servicio) guarda la página, los scripts y los iconos en el navegador
+  (red primero, copia guardada si no hay señal); `js/pwa.js` lo registra (§7.13). La app sigue publicada en la web.
 - Tipografía: Tahoma/Verdana del sistema; sólo la cursiva de "Puertorriqueña" viene de Google Fonts (Playfair Display).
 - Iconos de la interfaz: sprite SVG en `index.html` (sin emojis en la interfaz). Las "portadas" de los platos usan emojis
   o dibujos SVG propios mientras no haya fotos.
@@ -65,6 +73,7 @@ cocine-a-gusto/
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
 │   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, más salsas y aderezos y platos fuertes veganos, y dulces y salsas de grosella, en cuarenta y tres tandas (ver §13)
 │   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46), pescados y mariscos (tanda 47), jugos y bebidas tropicales (tanda 48), sopas, asopaos, pastas y panes dulces (tanda 49) y carnes y aves (tanda 50), ver §13
+│   ├── nutrition-usda.js GENERADO (tools/usda/): número FDC y valores oficiales del USDA de cada alimento (§8)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── substitutes.js    sustitutos para cada alérgeno según el ingrediente (getSubstitutes)
@@ -72,14 +81,21 @@ cocine-a-gusto/
 │   ├── families.js       familias de recetas por categoría (flanes, tembleques…; res, cerdo…) y su orden
 │   ├── pairings.js       "Combina mejor con" de las salsas y aderezos (getPairings)
 │   ├── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
-│   ├── plans.js          planes de comida (#/planes): objetivos, época, preferencias, plan de 1 o 7 días
+│   ├── plans.js          planes de comida (#/planes): objetivos, época, preferencias, plan de 1 o 7 días, Guías 2025–2030
+│   ├── seasonal.js       frutas, viandas y vegetales de temporada en Puerto Rico (§7.12)
+│   ├── filters.js        "¿Qué tengo en la nevera?" y filtros combinables (§7.11)
+│   ├── cook.js           modo cocina, temporizadores y voz (§7.9)
 │   ├── auth-config.js    configuración web de Firebase y proveedores de correo que se muestran (§7.3)
 │   ├── auth.js           pantalla de entrada, validación del correo, conteo de usos y panel #/admin (§7.3)
 │   ├── install.js        "Póngala en su celular": guía para crear el icono en la pantalla de inicio (§7.6)
 │   ├── photo.js          motor de fotos: achica en el navegador la foto tomada o subida antes de guardarla (§7.5)
 │   ├── reviews.js        reseñas (estrellas + comentario + foto opcional) de la app y de cada receta, con aprobación previa (§7.4)
 │   ├── recipe-admin.js   #/admin → Recetas: temporada recomendada (editable) y fecha de ingreso de cada receta (§7.8)
-│   └── recipe-dates.js   GENERADO: fecha de ingreso de cada receta (RECIPE_ADDED); sólo lo carga el panel (§7.8)
+│   ├── recipe-dates.js   GENERADO: fecha de ingreso de cada receta (RECIPE_ADDED); sólo lo carga el panel (§7.8)
+│   ├── kitchen.js        Mi recetario (#/mi-recetario) y Lista de compras (#/compras) (§7.10)
+│   └── pwa.js            registra sw.js, aviso sin conexión y barra de abajo del celular (§7.13)
+├── sw.js                 trabajador de servicio: la app sin internet (§7.13)
+├── tools/usda/           map.js (alimento → registro del USDA), resolve.js y gen.js: generan js/nutrition-usda.js (§8)
 ├── tools/recipe-dates.js genera js/recipe-dates.js del historial de git (no se publica: .vercelignore) (§7.8, §11)
 ├── images/               (vacía: reservada para fotos)
 ├── icons/                iconos de la app (bandera sobre crema): apple-touch-icon 180, 192, 512, maskable 512, favicon 32;
@@ -94,7 +110,9 @@ cocine-a-gusto/
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js` → `recipes-5.js`
-→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `install.js` (usa `app.js`; antes de `auth.js`, que llama a `installButtonHTML()`) → `auth-config.js` → `auth.js` (usa `app.js`) → `photo.js` → `reviews.js` (usa `app.js`, `auth.js` y `photo.js`) → `recipe-admin.js` (usa `app.js`, `plans.js` y `auth.js`; carga `recipe-dates.js` al abrir el panel). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
+→ `nutrition-usda.js` → `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `seasonal.js` → `filters.js` → `cook.js` → `install.js` (usa `app.js`; antes de `auth.js`, que llama a `installButtonHTML()`) → `auth-config.js` → `auth.js` (usa `app.js`) → `photo.js` → `reviews.js` (usa `app.js`, `auth.js` y `photo.js`) → `recipe-admin.js` (usa `app.js`, `plans.js` y `auth.js`; carga `recipe-dates.js` al abrir el panel) → `kitchen.js` (usa `app.js`, `nutrition.js` y `auth.js`) → `pwa.js`.
+`app.js` llama a las funciones de los archivos de después (`advOk`, `stepTimersHTML`, `renderRecipeKitchen`, `showMine`…) sólo
+cuando la página ya cargó, con `typeof … === "function"`. Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
 ## 5. Modelo de datos: la receta
 
@@ -394,6 +412,12 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   navegador y llama a `cloudSavePlan()` (auth.js, con 0.8 s de espera). Al entrar, `loadUserPlan()` trae los de la cuenta
   (o sube los del navegador si la cuenta no tiene); al salir, `applyPlan(null)` deja el navegador con los de fábrica.
   `cleanPlan()` sólo acepta las claves de `PLAN_DEFAULTS`. Sólo la persona dueña los lee: **ni los administradores**.
+- **Mi recetario en la cuenta (`users/{uid}/data/kitchen`, v4.24):** `{ kitchen, updatedAt }` con colecciones, notas,
+  "la hice" y la lista de compras (§7.10); mismas reglas de dueño que el plan. **Hay que publicar las reglas nuevas** de
+  `firestore.rules` (bloque `docId == 'kitchen'`) en la consola de Firebase; sin ellas todo queda en el navegador.
+- **Sin internet (v4.24):** cuando una cuenta entra bien, ese navegador queda marcado (`rcb.trusted.<uid>`). Si después se
+  abre la app sin señal (o Firestore no responde con `unavailable`), `enterOffline()` la deja entrar con lo guardado; al
+  volver la conexión, `onUser()` revisa de nuevo (suspendida, administrador, conteo). Salir o ser suspendida quita la marca.
 - **Administradores:** los correos con documento en `admins/{correo}`. Ven "Administrador" en el menú y `#/admin`:
   totales (usuarios = todas las cuentas; usos y activos en 7 días = sólo las que no son de administrador; **recetas en la app** = el total exacto, `recipes.length`), búsqueda,
   tabla con correo, veces ("—" para los administradores, también en el CSV), primera y última vez y rol, acciones
@@ -530,12 +554,80 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   (1 a 6), `updatedBy` = su correo y `updatedAt` del servidor. **Hay que publicar las reglas de nuevo**; mientras tanto
   se usan las temporadas automáticas y al guardar sale "publique las reglas nuevas".
 
+### 7.9 Modo cocina, temporizadores y voz (`js/cook.js`)
+
+- **Botón "Modo cocina"** (primero de las acciones de la receta): pantalla completa, un paso a la vez con letra grande,
+  barra de avance, "Anterior/Siguiente" (también flechas del teclado y deslizar el dedo), "Ingredientes" (a las porciones
+  elegidas) y una pantalla final "¡Buen provecho!" con "Marcar que la hice" (§7.10). Escape o la X lo cierran.
+- **Pantalla encendida:** Wake Lock (`navigator.wakeLock`) mientras está abierto; se vuelve a pedir al regresar a la pestaña.
+- **Temporizadores:** `stepTimes()` encuentra los tiempos de cada paso ("20 minutos", "15 a 20 min" → el menor, "1½ horas",
+  "45 minutes"; de 30 s a 12 h, hasta 3 por paso) y `stepTimersHTML()` pone un botón por tiempo, en el modo cocina **y en
+  los pasos de la receta**. Varios a la vez; pausar, +1 min y parar. Al terminar: tres pitidos (Web Audio), vibración,
+  aviso en pantalla, voz y notificación del sistema si la pestaña no está a la vista (se pide permiso al primer
+  temporizador). Con el modo cocina cerrado siguen corriendo en una pastilla flotante (`#timer-fab`) que vuelve a la receta.
+- **Leer en voz alta:** `speechSynthesis` (voz del celular, es-PR / en-US), cada paso al pasar. **Manos libres:**
+  `SpeechRecognition` (Chrome, Edge, Safari, Android; si no hay, no sale el botón) entiende "siguiente", "atrás",
+  "repite", "ingredientes" y "temporizador" (en inglés "next", "back", "repeat", "ingredients", "timer").
+
+### 7.10 Mi recetario y Lista de compras (`js/kitchen.js`, rutas `#/mi-recetario` y `#/compras`)
+
+- **Datos:** `kitchen = { ts, cols: [{ id, name, ids }], notes: { id: texto }, cooked: { id: [AAAA-MM-DD…] }, shop: { recipes:
+  [{ id, f }], extra: [texto], done: [clave] } }` en `localStorage` (`rcb.kitchen.<uid>`, como el plan) y en la cuenta
+  (§7.3). `cleanKitchen()` limita tamaños y tipos. Gana la copia más reciente (`ts`).
+- **En la receta** (`#recipe-kitchen`, `renderRecipeKitchen()`): **Colección** (panel con casillas de cada colección y
+  "Nueva colección"), **Lista de compras** (añade la receta a las porciones que se ven; si ya está, suma) y **La hice**
+  (anota la fecha; debajo "La hizo N veces · la última: …"). Debajo de la preparación, **Mis notas** (se guardan solas).
+- **Mi recetario:** favoritas, colecciones (cambiar nombre, borrar; las recetas no se borran), las que he hecho y las que
+  tienen notas.
+- **Lista de compras:** `shoppingItems()` recorre las líneas de cada receta × su factor y **suma** las que son el mismo
+  alimento (`findFood`, §8) con la misma medida (`UNIT_CANON`: "taza" y "tazas" son la misma), con la cantidad "de cocina"
+  (`formatQty`) y la medida en singular o plural (`unitSingular`, `pluralWord`). Lo que no tiene cantidad ("sal al
+  gusto") sale una vez; el agua no se compra. Por sección (`AISLE_RX`: frutas y viandas, carnes, lácteos, panadería,
+  despensa, especias, bebidas, otros), con de qué receta viene. Marcar, "Quitar lo marcado" (saca también las recetas que
+  ya no tienen nada pendiente), añadir otra cosa, **Compartir** (menú del celular o WhatsApp), Copiar e Imprimir.
+- En el menú: "Mi recetario" y "Compras" (con el número de recetas y cosas en la lista).
+
+### 7.11 "¿Qué tengo en la nevera?" y filtros (`js/filters.js`)
+
+- Botón **Filtros** bajo el buscador (con el número de filtros activos) que abre `#adv-filters`.
+- **Lo que tengo:** se escriben ingredientes (varios con comas o "y"); salen las recetas que los llevan **todos** (o "al
+  menos uno"), buscando en los ingredientes en español e inglés, con plural. Sin búsqueda de texto se ordenan por cuántos
+  usan y luego por menos ingredientes (`advSort`).
+- **Filtros:** tiempo (15, 30, 45 min, 1 hora), **dificultad** (`recipeLevel()`: fácil = ≤ 8 ingredientes, ≤ 5 pasos y
+  ≤ 45 min; elaborada = ≥ 14 ingredientes, ≥ 9 pasos, más de 2 horas o espera con ≥ 7 pasos; si no, intermedia; también
+  sale en los datos de la receta), calorías por porción (300, 500, 700), **sin** alérgenos (gluten, leche, huevo, pescado,
+  crustáceos, moluscos, maní, nueces, soya, ajonjolí), dieta (vegetariana/vegana, las de los planes), época y "para niños"
+  (la misma idea del buscador). Se combinan con el buscador, la categoría, las rápidas y las favoritas: `hasFilters()`,
+  `matches()` y la clave de la vista de `app.js` llaman a `advActive()`, `advOk()` y `advKey()`.
+
+### 7.12 De temporada en la isla (`js/seasonal.js`)
+
+- `PR_PRODUCE`: frutas, viandas y vegetales con sus meses de más abundancia en Puerto Rico (`m`, 1–12, o "all") y la
+  expresión que los busca en las recetas. **Es un calendario aproximado** (lo dice la página): cambia con el año, la lluvia
+  y la zona; para ajustarlo se cambian los meses.
+- En el inicio, `#temporada` (después de las categorías): "De temporada en la isla · <mes>" con un botón por cada uno
+  (y cuántas recetas lo usan) que lo busca; "Todo el año" en un desplegable. Los planes dan +3 a las recetas que usan algo
+  de temporada (`seasonalBonus`).
+
+### 7.13 Uso sin internet y barra de abajo (`sw.js`, `js/pwa.js`)
+
+- **Cómo funciona:** la app sigue en la web. En la primera visita `sw.js` guarda en el navegador `index.html` y todo
+  `<script src>`/`<link href>` local (los saca de la propia página), el manifiesto y los iconos. Después, con internet
+  pide siempre lo nuevo (**red primero**, para no mezclar versiones) y actualiza la copia; sin señal, o si la red tarda
+  más de 4 s, usa la copia. También guarda los archivos fijos de Google (SDK de Firebase y la letra), nunca datos de la
+  cuenta. Sin señal se ve un aviso; lo que se guarde sube a la cuenta al volver la conexión (§7.3).
+- **Al publicar una versión nueva:** subir `SW_VERSION` en `sw.js` (igual que `APP_VERSION`) para que se borre la copia
+  vieja. `vercel.json` sirve `sw.js` con `Cache-Control: no-cache`.
+- **Barra de abajo** (pantallas de 760 px o menos): Inicio, Buscar (va al inicio y abre el teclado en el buscador),
+  Planes, Recetario y Compras; `setBottomNav()` (llamada desde `route()`) marca la página actual. No sale con la
+  pantalla de entrada ni en el modo cocina.
+
 ### 7.2 Planes de comida (`js/plans.js`, ruta `#/planes`)
 - **Acceso:** enlace "Planes" / "Meal plans" en el menú y en el pie. Vista `<section id="view-plans">`; `route()` llama a
   `showPlans()`; `showHome()` y `showRecipe()` la ocultan. Desde un plan, una receta se abre con `data-open` y "Atrás"
   vuelve al plan en la misma posición.
 - **Objetivos (`PLAN_GOALS`):** rebajar, ganar masa muscular, mantener, bajo en sodio, bajo en carbohidratos, bajo en
-  azúcar, más nutritivo, **vegetariano** y **vegano**. Estos dos llevan `diet` ("veg" o "vegan"): `dietOk()` deja en el
+  azúcar, más nutritivo, **vegetariano**, **vegano**, **diabetes** y **presión alta (DASH)** (v4.24, ver abajo). Estos dos llevan `diet` ("veg" o "vegan"): `dietOk()` deja en el
   plan (comidas, acompañantes, época y "Recetas que encajan") sólo las recetas de esa familia (`isVegetarian`; `isVegan`
   = vegetariana y sin alérgeno de leche ni huevo ni alerta de miel), con criterios de proteína vegetal (plato principal
   ≥ 10 g en vegetariano, ≥ 8 g en vegano) y acompañantes de arroz o vianda y granos. Cada uno trae: meta típica de calorías, ajuste sobre el gasto (rebajar −20 %, masa +12 %…),
@@ -591,14 +683,69 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - **Si las exclusiones dejan una comida con pocas opciones** (menos de 6 platos principales o 3 desayunos/meriendas), se
   completa con las que más se acercan al objetivo y se avisa.
 - **"Recetas que encajan":** las mejores 12 de cada comida para el objetivo, para consultar o cambiar.
+- **Salud de Puerto Rico (v4.24):** **Diabetes** cuenta carbohidratos: 45–60 g por comida y 15–20 g en la merienda
+  (`carbMeal`/`carbSnack`); `capCarbs()` baja la porción de ½ en ½ hasta que la comida quepa, y cada comida dice
+  "X g ≈ N porciones de carbohidrato (15 g)". Criterios con poca azúcar añadida (`n.add`) y fibra. **Presión alta
+  (DASH)**: poco sodio y grasa saturada, más potasio, calcio y fibra (`score` con `n.k` y `n.ca`), y el día revisa el
+  potasio contra la ingesta adecuada (3,400 mg hombres, 2,600 mg mujeres).
+- **Guías Alimentarias 2025–2030 (`dgaHTML()`):** cada día trae un desplegable con las porciones de los grupos que pide
+  la guía para 2,000 calorías, ajustadas a la meta (vegetales 3, frutas 2, granos integrales 2–4; lácteos 3) con lo que
+  suman las recetas (`estimateNutrition().groups`, §8), y los límites del día: grasa saturada bajo 10 % de las
+  calorías, azúcar añadida 10 g o menos por comida, sodio bajo 2,300 mg (valor diario de la FDA) y proteína de 1.2 a
+  1.6 g por kilo. Por eso la proteína mínima de todos los objetivos es ahora 1.2 g/kg (bajo en sodio, vegetariano y
+  vegano tenían 1.0–1.1).
+- **Calendario (v4.24, plan de 7 días):** cada comida tiene **"Pasar a"** (otro día; se intercambia con la misma comida de
+  ese día, `moveMeal()`) y el almuerzo o la cena **"Sobras para mañana"** (`leftoverMeal()`: el almuerzo del día
+  siguiente es esa misma comida, marcado `lo: 1` en `plan.saved` y con la etiqueta "Sobras de ayer"). **Personas en
+  casa** (`plan.people`, 1–12) y **"Lista de compras del plan"** (`addPlanToShop()`: cada receta por porción × personas;
+  las sobras no se compran dos veces). **"Imprimir plan"** imprime sólo los días (`body.print-plan`).
+- **Temporada en la isla:** las recetas con fruta o vianda de temporada suman +3 a su puntuación (`seasonalBonus`, §7.12).
 - **Avisos:** orientación general, no consejo médico (embarazo, menores, diabetes, riñón, corazón); nota propia de cada
   objetivo (ritmo seguro al rebajar, entrenamiento de fuerza para masa, límite de sodio, azúcar añadida, plato saludable).
 - **Ajustes:** en `localStorage` (`rcb.plan`), sólo en ese navegador. Números con coma de miles (3,100) en los dos idiomas.
 
-## 8. Estimación nutricional (`js/nutrition.js`)
+## 8. Estimación nutricional (`js/nutrition.js`, `js/nutrition-usda.js`)
+
+- **Datos oficiales del USDA (v4.24):** `js/nutrition-usda.js` (GENERADO por `tools/usda/`) une cada alimento de
+  `NUTRI_FOODS` (por su primera palabra clave) con su registro de **USDA FoodData Central, base SR Legacy** (abril 2018,
+  CSV de https://fdc.nal.usda.gov/download-datasets): número FDC, descripción oficial y por 100 g comestibles kcal,
+  proteína, carbohidratos, azúcares, fibra, grasa, grasa saturada, sodio, **colesterol, grasa trans, calcio, hierro,
+  potasio y vitamina D**. Al cargar, `nutrition.js` reemplaza los valores de cada alimento con los del USDA × su **parte
+  comestible** (`ef`: pollo entero 0.7, alitas 0.55, pavo y guinea 0.75, chuleta y pernil 0.8, patita 0.5…, porque las
+  recetas dan el peso como se compra) y guarda `food.src = { fdc, ef, desc }`. **255 de 290 alimentos** están en el USDA
+  y el 93 % de las líneas de ingredientes se cuentan sólo con ellos.
+- **Los que no están en el USDA** (35: productos de aquí o de marca como sofrito, adobo, sazón, pasta de guayaba, gandules
+  de lata, quenepa, pajuil, jobos, caimito, malta, coquito, chorizo español, Nutella; y guineo verde y jaca verde, que
+  en el USDA sólo están maduros) conservan el estimado propio y sus minerales de `NUTRI_LOCAL_X`; la pestaña dice
+  "Estimado de la app".
+- **Preparación (`NUTRI_PREP`):** el bacalao del USDA es el seco y salado (7,027 mg de sodio por 100 g); en las recetas
+  siempre se desala, así que se cuenta con 79 % menos sodio (≈ 1,500 mg, como antes).
+- **Azúcar añadida (`NUTRI_ADDED`):** la parte de los azúcares de cada alimento que es añadida (azúcar, melao, almíbar,
+  refrescos = 1; leche condensada 0.78; pasta de guayaba 0.85; ketchup 0.85…); la de la fruta y la leche no cuenta.
+- **Grupos de alimentos (`NUTRI_GROUPS`):** gramos del alimento que dan 1 porción de su grupo según el USDA (vegetales,
+  frutas y lácteos en tazas equivalentes; granos y proteína en onzas equivalentes; carnes 1 oz cocida ≈ 37.8 g crudos
+  comestibles; las viandas cuentan como vegetales). `estimateNutrition().groups` da las porciones de una porción de la
+  receta (los planes las suman, §7.2).
+- **Hervido y escurrido (`isDrained`, `NUTRI_RETAIN_DRAINED`):** si los pasos hierven y escurren (y no es sopa), a las
+  viandas, vegetales y granos se les descuenta lo que se pierde en el agua: potasio −25 %, calcio y hierro −5 %
+  (aproximado a la Tabla de factores de retención del USDA, Release 6).
+- **Pestaña:** etiqueta en el orden de la FDA (grasa total, saturada, **trans**, **colesterol**, sodio, carbohidratos,
+  fibra, azúcares, **"Incluye X g de azúcares añadidos"**, proteína, y **vitamina D, calcio, hierro y potasio**) con su % de
+  valor diario (`NUTRI_DV`, los de la FDA: colesterol 300 mg, azúcar añadida 50 g, vitamina D 20 mcg, calcio 1,300 mg,
+  hierro 18 mg, potasio 4,700 mg); grupos de alimentos de la porción; y el desplegable **"Fuentes de cada ingrediente ·
+  USDA FoodData Central"** con el número FDC (enlace a la ficha del USDA), la descripción, la parte comestible y la
+  preparación de cada ingrediente contado. Menos de 0.5 g de grasa trans se declara 0 g, como en la etiqueta.
+- **Medidas métricas:** `lineGrams(línea)` da los gramos (o ml si es líquido) de una línea; la receta los muestra con
+  el botón "Medidas: Gramos y °C", que también añade °C a los °F de los pasos (`withCelsius`, `metricHTML` en `app.js`).
+- **Para volver a generar** (cuando se añade un alimento a `NUTRI_FOODS`): añadir su primera palabra clave a
+  `tools/usda/map.js` (expresión sobre la descripción del USDA y parte comestible, o `null` si no está), y correr
+  `node tools/usda/resolve.js . <carpeta SR Legacy> fdc.json` (avisa "DIF" si las calorías cambian más de 25 %) y
+  `node tools/usda/gen.js fdc.json js/nutrition-usda.js`. El CSV del USDA (~6 MB) no va en el repositorio.
+- **Importante:** el USDA no avala ni certifica apps; la app dice "datos de USDA FoodData Central" y "según las Guías
+  Alimentarias", sin logos del USDA.
 
 - `NUTRI_FOODS`: alimentos con palabras clave (sin acentos) y valores por 100 g (kcal, proteína, carbohidratos, azúcares,
-  fibra, grasa, grasa saturada, sodio), aproximados a las tablas del USDA, y pesos por medida (`cup`, `u`, `can`, `sl`).
+  fibra, grasa, grasa saturada, sodio) —el estimado propio, que el USDA reemplaza cuando el alimento está allí— y pesos por medida (`cup`, `u`, `can`, `sl`).
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
@@ -653,14 +800,19 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   segura) en `manifest.webmanifest`, y `favicon-32.png` de respaldo. El manifiesto usa `"display": "browser"`: la app se
   abre igual que en el navegador (en modo *standalone* el acceso con Google puede fallar por las ventanas emergentes).
   Para regenerarlos: script de PowerShell con System.Drawing que dibuja `#flag-pr` con sus coordenadas.
-- Responsive con un menú plegable en móvil; sin desbordes horizontales a 375 px.
+- Responsive con un menú plegable en móvil y la barra de abajo (§7.13); sin desbordes horizontales a 375 px.
+- **Iconos nuevos del sprite (v4.24):** `i-timer`, `i-volume`, `i-mic`, `i-cart`, `i-folder`, `i-filter`, `i-home`, `i-pot`,
+  `i-calendar`, `i-leaf`, `i-book` (mismo trazo de 24×24). Lo nuevo usa los mismos tokens: verde plátano para tiempo,
+  temporada y lo que cumple; achiote para lo que falta. Impresión: la lista de compras y el plan (`body.print-plan`) se
+  imprimen limpios.
 
 ## 11. Cómo añadir recetas (procedimiento)
 
 1. Escribir las recetas en el archivo de ampliación más reciente (`js/recipes-5.js`) o crear `recipes-6.js` con
    `recipes.push(...)` y añadir su `<script>` en `index.html` antes de `nutrition.js`.
 2. Respetar el modelo (§5): `id` único, categoría existente, ES y EN con el mismo número de líneas.
-3. Comprobar que no haya ingredientes sin contar en la nutrición; si falta un alimento, añadirlo a `NUTRI_FOODS` (§8).
+3. Comprobar que no haya ingredientes sin contar en la nutrición; si falta un alimento, añadirlo a `NUTRI_FOODS` (§8) y
+   a `tools/usda/map.js`, y volver a generar `js/nutrition-usda.js` (§8).
 4. Revisar alérgenos y alertas: si aparece un ingrediente nuevo con alérgeno, ampliar `ALLERGENS` (§9).
 5. Revisar el icono del plato; si no encaja, añadir la palabra a `dishIcons` (§7).
 6. Probar en el navegador (español e inglés, móvil): la receta abre, porciones, pestañas, sin desbordes.
@@ -675,6 +827,9 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
   categorías válidas, ES/EN con el mismo número de líneas y `estimateNutrition(r).missing` vacío en todas las recetas.
 - **Navegador:** abrir todas las recetas por `#/receta/<id>` en ES y EN a 375 px: sin errores de consola, sin desbordes
   horizontales y con el nombre correcto en la página.
+- **Planes (v4.24):** cargar los scripts en Node y armar un plan de 7 días con cada objetivo: ninguna comida vacía, calorías
+  cerca de la meta y, en Diabetes, ninguna comida sobre 60 g de carbohidratos. Para ver la interfaz sin entrar a la cuenta
+  en `localhost` se puede quitar `auth-locked` desde la consola (sólo para inspeccionar).
 
 ## 13. Registro de cambios
 
@@ -682,6 +837,29 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
 entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, y el texto
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
+
+### 2026-10-18 — v4.24.0 · Herramientas de cocina, nutrición del USDA y salud de Puerto Rico
+- *Pedido:* las recomendaciones 1–3 y 5–10 de la evaluación (interfaz y herramientas), los puntos 1–5 de la nutrición
+  respaldada por el USDA, el enfoque de salud de Puerto Rico y las frutas y viandas de temporada; aclarar el uso sin internet.
+- **Modo cocina** con temporizadores (también en los pasos), voz y manos libres (§7.9).
+- **Lista de compras** que suma ingredientes por sección, y **Mi recetario** con colecciones, notas y "la hice", en la
+  cuenta (§7.10). **Hay que publicar `firestore.rules`** (nuevo bloque `kitchen`) en la consola de Firebase.
+- **"¿Qué tengo en la nevera?" y filtros** combinables (tiempo, dificultad, calorías, sin alérgenos, dieta, época, niños) (§7.11).
+- **Medidas** en gramos/ml y °C (§8). **Dificultad** en los datos de cada receta.
+- **Planes:** calendario de 7 días (pasar comidas de día, sobras), personas en casa, lista de compras del plan e imprimir;
+  objetivos **Diabetes** (carbohidratos contados) y **Presión alta (DASH)**; revisión diaria contra las **Guías
+  Alimentarias 2025–2030**; proteína mínima 1.2 g/kg (§7.2).
+- **Nutrición del USDA:** 255 de 290 alimentos con su número de FoodData Central, parte comestible, colesterol, grasa
+  trans, azúcar añadida, vitamina D, calcio, hierro y potasio; grupos de alimentos; descuento por hervir y escurrir;
+  etiqueta como la de la FDA y fuentes por ingrediente (§8). Las calorías por porción cambian menos de 10 % en 1,024 de
+  1,118 recetas; las que más bajan son las de carnes con hueso (codorniz, osobuco, pavo, chuletas), porque ahora se
+  descuenta el hueso como hace el USDA. El bacalao se cuenta desalado.
+- **De temporada en la isla** en el inicio y en los planes (§7.12).
+- **Uso sin internet** (`sw.js`) y **barra de abajo** en el celular (§7.13); la cuenta entra sin señal en un navegador
+  donde ya entró (§7.3).
+- Verificado: 1,118 recetas sin ingredientes sin contar; las 1,118 abren en ES y EN a 375 px sin errores ni desbordes;
+  planes de 7 días con los 11 objetivos sin comidas vacías; lista de compras, colecciones, notas, temporizadores y copia
+  sin internet probados en el navegador.
 
 ### 2026-10-17 — v4.23.0 · Más carnes y aves
 - *Pedido:* más recetas de carnes y aves.

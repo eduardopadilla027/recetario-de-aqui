@@ -538,11 +538,14 @@ async function resendVerification() {
 async function signOut() {
   if (authUser) { try { sessionStorage.removeItem(AUTH_USE_KEY + authUser.uid); } catch { /* sin almacenamiento */ } }
   await flushPlanSave(); // el último plan sube a la cuenta antes de cerrar la sesión
+  if (typeof flushKitchen === "function") await flushKitchen(); // y Mi recetario (js/kitchen.js)
+  if (authUser) trustDevice(authUser.uid, false);
   await fbAuth.signOut();
   // Sin sesión se ve la copia anónima, que se deja de fábrica: el plan de la persona
   // queda en su cuenta y en su propia copia de este navegador (rcb.plan.<uid>).
   usePlanOwner("");
   applyPlan(null);
+  if (typeof useKitchenOwner === "function") useKitchenOwner("");
   if (location.hash === "#/admin") location.hash = "#/";
 }
 
@@ -574,6 +577,21 @@ async function recordUse(user, isAdmin) {
   return data;
 }
 
+/* Uso sin internet (js/pwa.js, sw.js): una cuenta que ya entró en este navegador puede abrir
+   la app sin señal; al volver la conexión se revisa de nuevo (suspendida, administrador, conteo). */
+const AUTH_TRUST_KEY = "rcb.trusted.";
+function trustDevice(uid, on) { try { if (on) localStorage.setItem(AUTH_TRUST_KEY + uid, "1"); else localStorage.removeItem(AUTH_TRUST_KEY + uid); } catch { /* sin almacenamiento */ } }
+const isTrusted = (uid) => { try { return localStorage.getItem(AUTH_TRUST_KEY + uid) === "1"; } catch { return false; } };
+let authOffline = false;
+function enterOffline(user) {
+  authOffline = true;
+  authIsAdmin = false;
+  setAuthState("ready");
+  usePlanOwner(user.uid);
+  if (typeof useKitchenOwner === "function") useKitchenOwner(user.uid);
+}
+window.addEventListener("online", () => { if (authOffline && fbAuth && fbAuth.currentUser) { authOffline = false; onUser(fbAuth.currentUser); } });
+
 async function onUser(user) {
   authUser = user;
   authIsAdmin = false;
@@ -588,19 +606,25 @@ async function onUser(user) {
     setAuthState("verify");
     return;
   }
+  if (!navigator.onLine && isTrusted(user.uid)) { enterOffline(user); return; }
   setAuthState("loading");
   try {
     // Primero si es administrador: sus usos no se cuentan.
     const admin = await checkAdmin(user);
     const data = await recordUse(user, admin);
-    if (data.blocked) { setAuthState("blocked"); return; }
+    if (data.blocked) { trustDevice(user.uid, false); setAuthState("blocked"); return; }
     authIsAdmin = admin;
+    authOffline = false;
+    trustDevice(user.uid, true);
     setAuthState("ready");
     loadUserPlan();
+    if (typeof loadUserKitchen === "function") loadUserKitchen(); // js/kitchen.js
     reviewsOnReady();
     loadRecipeSeasons(); // js/recipe-admin.js: temporadas fijadas por un administrador (las usan los planes)
     if (location.hash === "#/admin") route();
   } catch (err) {
+    // Sin conexión (o Firestore no responde) en un navegador donde ya entró: sigue con lo guardado.
+    if ((err && (err.code === "unavailable" || err.code === "auth/network-request-failed")) && isTrusted(user.uid)) { enterOffline(user); return; }
     setAuthState("signin", authError(err));
   }
 }

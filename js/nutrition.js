@@ -342,6 +342,87 @@ const NUTRI_FOODS = [
   F("canela|clavo|clavos de olor|oregano|comino|pimienta|nuez moscada|laurel|anis|jengibre|achiote|pimenton|cilantro en polvo|coriandro|hojuelas de aji|ajo en polvo|cremor tartaro|chile en polvo|colorante|especia", 300, 8, 60, 3, 30, 6, 1, 30, { cup: 110, u: 0.2 })
 ];
 
+/* ── Valores oficiales del USDA (js/nutrition-usda.js) ──
+ * Si el alimento está en FoodData Central, sus valores salen de allí (por 100 g comestibles ×
+ * la parte comestible de como se compra) y lleva su número FDC en `src`. Si no está (productos de
+ * aquí o de marca), se queda con el estimado de arriba y los minerales de NUTRI_LOCAL_X. */
+const NUTRI_KEYS = ["kcal", "p", "c", "s", "fib", "fat", "sat", "na", "chol", "trans", "ca", "fe", "k", "vd"];
+/* Productos locales: [colesterol mg, grasa trans g, calcio mg, hierro mg, potasio mg, vitamina D mcg] por 100 g
+ * (estimados de etiquetas típicas y de alimentos parecidos; las cantidades en las recetas son pequeñas). */
+const NUTRI_LOCAL_X = {
+  picadillo: [60, 1, 20, 2, 270, 0.1], cuero: [80, 0, 10, 0.5, 60, 0], sangre: [10, 0, 6, 25, 80, 0],
+  rabo: [60, 0.5, 10, 1.5, 180, 0.1], chorizo: [80, 0, 10, 1.5, 400, 0.5], "harina de platano": [0, 0, 10, 1, 1300, 0],
+  "coquito sin alcohol": [10, 0, 110, 0.3, 200, 0.5], "leche condensada de coco": [0, 0, 10, 1, 150, 0],
+  "levadura nutricional": [0, 0, 30, 4, 1800, 0], aquafaba: [0, 0, 20, 0.5, 40, 0], "pasta de guayaba": [0, 0, 15, 0.4, 100, 0],
+  gandul: [0, 0, 40, 1.5, 250, 0], sofrito: [0, 0, 25, 0.5, 220, 0], "apio del pais": [0, 0, 25, 0.9, 400, 0],
+  quenepa: [0, 0, 15, 0.7, 250, 0], "cana de azucar": [0, 0, 10, 0.4, 40, 0], pajuil: [0, 0, 10, 0.3, 120, 0],
+  jobo: [0, 0, 20, 0.9, 250, 0], pitahaya: [0, 0, 18, 0.7, 120, 0], caimito: [0, 0, 17, 0.3, 250, 0], cidra: [0, 0, 40, 0.3, 150, 0],
+  malta: [0, 0, 10, 0.1, 40, 0], mabi: [0, 0, 5, 0.2, 30, 0], adobo: [0, 0, 200, 3, 300, 0], sazon: [0, 0, 200, 3, 300, 0],
+  "guineo verde": [0, 0, 5, 0.4, 360, 0], jaca: [0, 0, 24, 0.3, 300, 0], nutella: [0, 0, 100, 3.5, 400, 0]
+};
+/* Cómo se prepara antes de cocinar y qué le quita al valor del USDA. El bacalao del USDA es el seco y
+   salado (7,027 mg de sodio por 100 g); en la cocina de aquí siempre se desala (se remoja y se hierve
+   botando el agua), lo que le quita cerca del 80 % de la sal. */
+const NUTRI_PREP = { bacalao: { na: 0.21, es: "desalado: se cuenta un 79 % menos de sodio", en: "desalted: 79% less sodium counted" } };
+/* Parte de los azúcares que es azúcar AÑADIDA (la de la fruta y la leche no cuenta), para la línea
+ * "Incluye azúcares añadidos" de la etiqueta y el límite de las Guías Alimentarias 2025–2030. */
+const NUTRI_ADDED = {
+  azucar: 1, "azucar morena": 1, "azucar en polvo": 1, miel: 1, melao: 1, almibar: 1, granadina: 1, refresco: 1, malta: 1,
+  gelatina: 1, pudin: 1, "mezcla para bizcocho": 1, bizcocho: 1, "galleta molida": 1, galleta: 1, pan: 1, "pan de hamburguesa": 1,
+  "masa para pie": 1, disco: 1, hojaldre: 1, "tortilla de harina": 1, mayonesa: 1, licor: 1, amaretto: 1, "salsa de ostras": 1,
+  mermelada: 0.9, "pasta de guayaba": 0.85, "leche condensada": 0.78, "leche condensada de coco": 0.9, "crema de coco": 0.9,
+  "dulce de leche": 0.75, chocolate: 0.9, nutella: 0.95, "frutas abrillantadas": 0.8, cereza: 0.8, "coctel de frutas": 0.4,
+  mantecado: 0.75, ketchup: 0.85, "salsa bbq": 0.9, "salsa marinara": 0.3, "leche de coco de carton": 0.9, "coquito sin alcohol": 0.7,
+  granola: 0.8, "jugo de guayaba": 0.6, "leche de avena": 0.7, mabi: 0.8, "salsa inglesa": 0.8
+};
+/* Grupos de alimentos de las Guías Alimentarias 2025–2030: [grupo, gramos del alimento como se compra
+ * que dan 1 porción, ¿grano integral?]. veg/fruit/dairy en tazas equivalentes, grain y prot en onzas
+ * equivalentes (como las mide el USDA). Carnes: 1 oz cocida ≈ 37.8 g crudos comestibles. */
+const NUTRI_GROUPS = (() => {
+  const g = {};
+  const put = (group, grams, list, whole = false) => { for (const k of list.split("|")) g[k] = [group, grams, whole]; };
+  put("prot", 0, "pollo|pechuga|muslo|alita|pavo|guinea|molleja|cerdo|pernil|lechon|chuleta|costilla|patita|cuajo|gandinga|carne|rinon|bistec|carne molida|picadillo|rabo|higado|lengua|mondongo|cabro|conejo|ternera|ribeye|osobuco|pecho de res|solomillo|cordero|pato|codorniz|gallinita|higaditos|pescado|camaron|langosta|pulpo|calamar|juey|carrucho|salmon|ceti|almeja|ostion");
+  put("prot", 28, "jamon|salchicha|jamonilla|longaniza|chorizo|salami|pepperoni|chuleta ahumada|carne bif|atun|sardina");
+  put("prot", 12, "bacalao");
+  put("prot", 50, "huevo"); put("prot", 66, "clara");
+  put("prot", 65, "habichuela|garbanzo|gandul|habas"); put("prot", 20, "lenteja"); put("prot", 63, "tofu");
+  put("prot", 14, "mani|nueces|almendra|ajonjoli|pistacho|avellana|chia"); put("prot", 16, "mantequilla de mani");
+  put("grain", 28, "arroz|harina|harina de arroz|harina de maiz|farina|pan rallado|panko|galleta|espagueti|pan|pan de hamburguesa");
+  put("grain", 93, "arroz cocido"); put("grain", 30, "tortilla de harina|tortilla de maiz");
+  put("grain", 28, "avena|quinoa|granola", true);
+  put("veg", 125, "habichuelas tiernas|calabaza|maiz|cebolla|cebollin|pimiento|aji|ajo|tomate|sofrito|zanahoria|pepino|apio|brocoli|coliflor|chayote|berenjena|calabacin|alcachofa|remolacha|guingambo|jaca|petit pois");
+  put("veg", 150, "platano|platano maduro|guineo verde|yuca|yautia|name|batata|papa|pana|apio del pais|aguacate|harina de platano");
+  put("veg", 60, "lechuga|espinaca|berro"); put("veg", 89, "repollo"); put("veg", 70, "champinon");
+  put("veg", 245, "salsa de tomate|salsa marinara"); put("veg", 65, "pasta de tomate");
+  put("fruit", 150, "guineo|pina|mango|papaya|guayaba|parcha|tamarindo|guanabana|quenepa|china|toronja|acerola|sandia|grosella|pajuil|jobo|pomarrosa|pitahaya|caimito|nispero|anon|melon|mamey|manzana|fresa|frambuesa|carambola|uva");
+  put("fruit", 240, "jugo de limon|jugo de naranja|naranja agria|jugo de pina|coco de agua|agua de coco"); put("fruit", 80, "pasa|ciruelas secas");
+  put("fruit", 250, "coctel de frutas");
+  put("dairy", 244, "leche"); put("dairy", 126, "leche evaporada"); put("dairy", 102, "leche condensada");
+  put("dairy", 42, "queso|queso cheddar|queso suizo|queso mozzarella|queso de bola|queso blanco|queso de freir"); put("dairy", 30, "queso parmesano");
+  put("dairy", 124, "ricotta"); put("dairy", 245, "yogur"); put("dairy", 200, "yogur griego");
+  return g;
+})();
+for (const food of NUTRI_FOODS) {
+  const k0 = food.kw[0];
+  const u = typeof NUTRI_USDA !== "undefined" && NUTRI_USDA[k0];
+  if (u) {
+    const [fdc, ef, desc, ...v] = u;
+    food.n = {};
+    NUTRI_KEYS.forEach((k, i) => { food.n[k] = (v[i] || 0) * ef; });
+    food.src = { fdc, ef, desc };
+    const prep = NUTRI_PREP[k0];
+    if (prep) { for (const k of NUTRI_KEYS) if (prep[k]) food.n[k] *= prep[k]; food.src.prep = { es: prep.es, en: prep.en }; }
+  } else {
+    const x = NUTRI_LOCAL_X[k0] || [0, 0, 0, 0, 0, 0];
+    ["chol", "trans", "ca", "fe", "k", "vd"].forEach((k, i) => { food.n[k] = x[i]; });
+    food.src = null;
+  }
+  food.n.add = food.n.s * (NUTRI_ADDED[k0] || 0);
+  const grp = NUTRI_GROUPS[k0];
+  // Carnes y mariscos: la porción depende de lo comestible (1 oz cocida ≈ 37.8 g crudos sin hueso).
+  food.g = grp ? [grp[0], grp[1] || 37.8 / ((food.src && food.src.ef) || 1), grp[2]] : null;
+}
+
 /* Unidades → cómo se pasan a gramos. `g` fijo, o una medida del alimento. */
 const NUTRI_UNITS = [
   [/^(lbs?|libras?)\b/, { g: 453.6 }],
@@ -371,7 +452,8 @@ const NUTRI_UNITS = [
   [/^(gotas?|granos?)\b/, { g: 0.05 }]
 ];
 
-const NUTRI_DV = { kcal: 2000, fat: 78, sat: 20, na: 2300, c: 275, fib: 28, p: 50 };
+/* Valores diarios de la etiqueta de la FDA (dieta de 2,000 calorías). */
+const NUTRI_DV = { kcal: 2000, fat: 78, sat: 20, na: 2300, c: 275, fib: 28, p: 50, chol: 300, add: 50, vd: 20, ca: 1300, fe: 18, k: 4700 };
 
 const nutriNorm = (s) => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 
@@ -490,7 +572,28 @@ function splitIngredient(line) {
   return t.split(/,\s*(?=[\d½¼¾⅓⅔⅛])|\s+y\s+(?=[\d½¼¾⅓⅔⅛])/);
 }
 
-const EMPTY_TOTALS = () => ({ kcal: 0, p: 0, c: 0, s: 0, fib: 0, fat: 0, sat: 0, na: 0 });
+const EMPTY_TOTALS = () => ({ kcal: 0, p: 0, c: 0, s: 0, fib: 0, fat: 0, sat: 0, na: 0, chol: 0, trans: 0, ca: 0, fe: 0, k: 0, vd: 0, add: 0 });
+const EMPTY_GROUPS = () => ({ veg: 0, fruit: 0, grain: 0, wgrain: 0, prot: 0, dairy: 0 });
+
+/* Viandas, vegetales, granos y pastas que se hierven y se escurren pierden en el agua parte de sus
+ * minerales. Factores aproximados a la Tabla de factores de retención del USDA (Release 6, 2007)
+ * para "hervido y escurrido"; en sopas y guisos el caldo se come y no se aplica. */
+const NUTRI_RETAIN_DRAINED = { k: 0.75, ca: 0.95, fe: 0.95 };
+const isDrained = (recipe) => {
+  const st = nutriNorm(recipe.steps.es.join(" "));
+  return /(hierv|herv|sancoch|cocine en agua)/.test(st) && /(escurr|cuele|bote el agua|saque del agua)/.test(st) && !["sopas"].includes(recipe.category);
+};
+
+/** Gramos de una línea de ingredientes (para ver las medidas en gramos o ml). */
+function lineGrams(line) {
+  let grams = 0, ok = false, liquid = false;
+  for (const r of splitIngredient(line).map(measurePart)) {
+    if (r.kind !== "ok") continue;
+    grams += r.grams; ok = true;
+    if (/^(leche|agua|caldo|jugo|aceite|vinagre|ron|vino|cerveza|licor|refresco|crema|coco de agua|agua de coco|melao|miel|almibar|cafe|te negro|salsa)/.test(r.food.kw[0])) liquid = true;
+  }
+  return ok ? { grams, liquid } : null;
+}
 const nutriCache = new Map();
 
 /** Estimación de una receta: totales, por porción y qué no se pudo contar
@@ -504,12 +607,21 @@ function estimateNutrition(recipe) {
   if (nutriCache.has(recipe.id)) return nutriCache.get(recipe.id);
   const total = EMPTY_TOTALS();
   const missing = [];
+  const groups = EMPTY_GROUPS();
+  const sources = []; // por línea: los alimentos con que se contó (y su número FDC del USDA)
   let counted = 0, measurable = 0, frying = false, alcohol = 0;
+  const drained = isDrained(recipe);
 
-  const add = (food, grams) => {
-    for (const k in total) total[k] += (food.n[k] * grams) / 100;
+  const add = (food, grams, line = -1) => {
+    const retain = drained && food.g && (food.g[0] === "veg" || food.g[0] === "grain") ? NUTRI_RETAIN_DRAINED : null;
+    for (const k in total) total[k] += ((food.n[k] || 0) * grams * (retain && retain[k] ? retain[k] : 1)) / 100;
     const alc = NUTRI_ALCOHOL[food.kw[0]];
     if (alc) alcohol += (alc * grams) / 100;
+    if (food.g) {
+      groups[food.g[0]] += grams / food.g[1];
+      if (food.g[2]) groups.wgrain += grams / food.g[1];
+    }
+    if (line > -1) (sources[line] = sources[line] || []).push(food);
   };
 
   recipe.ingredients.es.forEach((line, i) => {
@@ -529,7 +641,7 @@ function estimateNutrition(recipe) {
     measurable++;
     let ok = false;
     for (const r of withQty) {
-      if (r.kind === "ok") { add(r.food, r.grams); ok = true; }
+      if (r.kind === "ok") { add(r.food, r.grams, i); ok = true; }
       else if (r.kind === "trace") ok = true;
     }
     if (ok) counted++; else missing.push(i);
@@ -537,8 +649,11 @@ function estimateNutrition(recipe) {
 
   const per = {};
   for (const k in total) per[k] = total[k] / recipe.servings;
+  // Porciones de cada grupo de alimentos (Guías Alimentarias) en una porción de la receta.
+  const groupsPer = {};
+  for (const k in groups) groupsPer[k] = groups[k] / recipe.servings;
   // alcohol: gramos de etanol por porción (0 si no lleva).
-  const result = { total, per, counted, measurable, missing, frying, alcohol: alcohol / recipe.servings };
+  const result = { total, per, counted, measurable, missing, frying, alcohol: alcohol / recipe.servings, groups: groupsPer, sources, drained };
   nutriCache.set(recipe.id, result);
   return result;
 }

@@ -1040,3 +1040,191 @@ body.auth-locked .site-header, body.auth-locked main, body.auth-locked .site-foo
   .ra-table td.ra-season { display: block; text-align: left; }
   .ra-table td.ra-season::before { display: block; margin-bottom: 4px; }
 }
+
+/* ===================== Versión 4.24: herramientas de cocina ===================== */
+
+/* Temporizadores en los pasos (js/cook.js) */
+.step-timers { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-2); }
+.timer-chip {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 var(--s-3);
+  border: 1.5px solid var(--plantain); border-radius: 999px; background: var(--plantain-50);
+  color: var(--plantain); font-weight: 700; font-size: var(--step--1);
+}
+.timer-chip .icon { width: 16px; height: 16px; }
+.timer-chip:hover { background: var(--plantain); color: #fff; }
+.metric { color: var(--plantain); font-weight: 600; white-space: nowrap; }
+
+/* Modo cocina: pantalla completa, letra grande */
+body.cook-on { overflow: hidden; }
+.cook-mode {
+  position: fixed; inset: 0; z-index: 60; background: var(--cream); color: var(--ink);
+  display: flex; flex-direction: column; gap: var(--s-3);
+  padding: max(16px, env(safe-area-inset-top)) clamp(16px, 5vw, 48px) max(16px, env(safe-area-inset-bottom));
+  overflow-y: auto;
+}
+.cook-top { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s-3); }
+.cook-recipe { color: var(--ink-3); font-size: var(--step--1); font-weight: 600; }
+.cook-title { font-size: var(--step-2); }
+.cook-title:focus { outline: none; }
+.cook-progress { height: 6px; border-radius: 999px; background: var(--sand); overflow: hidden; flex: none; }
+.cook-progress span { display: block; height: 100%; background: var(--achiote); transition: width var(--dur) var(--ease); }
+.cook-tools { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.cook-help, .cook-awake { font-size: var(--step--1); color: var(--ink-3); }
+.cook-body { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: var(--s-4); max-width: 900px; width: 100%; margin-inline: auto; }
+.cook-step { font-size: clamp(1.35rem, 1rem + 2.2vw, 2.2rem); line-height: 1.45; font-weight: 600; }
+.cook-step + .step-timers .timer-chip { min-height: 48px; font-size: var(--step-0); padding: 0 var(--s-4); }
+.cook-ing { list-style: none; padding: 0; display: grid; gap: var(--s-2); font-size: var(--step-1); }
+.cook-ing li { padding: var(--s-2) 0; border-bottom: 1px solid var(--line); }
+.cook-done { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-3); font-size: var(--step-1); }
+.cook-nav { display: grid; grid-template-columns: 1fr 2fr; gap: var(--s-3); max-width: 900px; width: 100%; margin-inline: auto; }
+.cook-nav .btn { min-height: 56px; font-size: var(--step-0); }
+.cook-nav .btn:disabled { opacity: .45; cursor: default; }
+.timer-list { list-style: none; padding: 0; display: grid; gap: var(--s-2); max-width: 900px; margin-inline: auto; width: 100%; }
+.timer-item { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-3); padding: var(--s-2) var(--s-3); border-radius: var(--radius); background: var(--ivory); border: 1px solid var(--line); }
+.timer-item.is-done { background: var(--achiote-50); border-color: var(--achiote); animation: timer-ring 1s ease-in-out infinite alternate; }
+.timer-clock { font-size: var(--step-2); font-weight: 800; font-variant-numeric: tabular-nums; min-width: 4.5ch; }
+.timer-label { flex: 1; min-width: 10ch; font-size: var(--step--1); color: var(--ink-2); }
+.timer-btns { display: flex; flex-wrap: wrap; gap: 2px; }
+@keyframes timer-ring { from { box-shadow: 0 0 0 0 rgba(166, 58, 18, 0); } to { box-shadow: 0 0 0 6px rgba(166, 58, 18, .25); } }
+.timer-fab {
+  position: fixed; right: 16px; bottom: calc(80px + env(safe-area-inset-bottom)); z-index: 45;
+  display: inline-flex; align-items: center; gap: var(--s-2); min-height: 48px; padding: 0 var(--s-4);
+  border-radius: 999px; background: var(--plantain); color: #fff; font-weight: 800; font-variant-numeric: tabular-nums;
+  box-shadow: var(--shadow);
+}
+.timer-fab.is-done { background: var(--achiote); animation: timer-ring 1s ease-in-out infinite alternate; }
+@media (min-width: 761px) { .timer-fab { bottom: 24px; } }
+
+/* Mi recetario en la receta (js/kitchen.js) */
+.recipe-actions-2 { margin-top: var(--s-2); }
+.cooked-info { display: flex; align-items: center; gap: var(--s-2); margin-top: var(--s-3); color: var(--plantain); font-weight: 600; font-size: var(--step--1); }
+.cooked-info .icon { width: 16px; height: 16px; }
+.col-panel { margin-top: var(--s-3); padding: var(--s-4); border: 1px solid var(--line); border-radius: var(--radius); background: var(--ivory); display: grid; gap: var(--s-3); }
+.col-panel-title { font-weight: 700; }
+.col-checks { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.col-new { display: flex; gap: var(--s-2); flex-wrap: wrap; }
+.col-new input { flex: 1; min-width: 12ch; min-height: 40px; padding: 0 var(--s-3); border: 1.5px solid var(--line); border-radius: 10px; background: #fff; }
+.notes-panel { margin-top: var(--s-5); }
+.notes-text { width: 100%; margin-top: var(--s-3); padding: var(--s-3); border: 1.5px solid var(--line); border-radius: 12px; font: inherit; background: #fff; resize: vertical; }
+.notes-status { font-size: var(--step--1); color: var(--plantain); min-height: 1.5em; }
+.units-toggle { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2); margin-bottom: var(--s-2); font-size: var(--step--1); }
+.units-label { color: var(--ink-3); font-weight: 600; }
+.units-btn { min-height: 32px; padding: 0 var(--s-3); border: 1.5px solid var(--line); border-radius: 999px; background: var(--ivory); font-weight: 600; }
+.units-btn[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--ivory); }
+.units-note { font-size: .8rem; color: var(--ink-3); margin-bottom: var(--s-2); }
+
+/* Mi recetario y Compras (vistas) */
+.mine-wrap, .shop-wrap { display: flex; flex-direction: column; gap: var(--s-5); }
+#mine-title:focus, #shop-title:focus { outline: none; }
+.mine-section { display: grid; gap: var(--s-3); }
+.mine-col { border: 1px solid var(--line); border-radius: var(--radius); background: var(--ivory); padding: var(--s-3) var(--s-4); }
+.mine-col summary { cursor: pointer; font-weight: 700; display: flex; align-items: center; gap: var(--s-2); }
+.mine-col-actions { display: flex; gap: var(--s-2); margin: var(--s-2) 0; }
+.mine-note { display: block; color: var(--ink-2); font-size: var(--step--1); white-space: pre-line; }
+.shop-chips { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-2); }
+.shop-chip { display: inline-flex; align-items: center; gap: var(--s-2); padding: 4px 4px 4px 12px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--ivory); font-size: var(--step--1); }
+.shop-chip span { color: var(--ink-3); }
+.shop-chip-x { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; }
+.shop-chip-x:hover { background: var(--sand); }
+.shop-chip-x .icon { width: 14px; height: 14px; }
+.shop-actions { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.shop-body { display: grid; gap: var(--s-4); }
+.shop-aisle { background: var(--ivory); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--s-3) var(--s-4); }
+.shop-aisle-title { font-size: var(--step-0); color: var(--achiote-600); text-transform: uppercase; letter-spacing: .06em; }
+.shop-list { list-style: none; padding: 0; }
+.shop-list li + li { border-top: 1px solid var(--line); }
+.shop-from { color: var(--ink-3); font-size: .8rem; }
+.ing-item.is-done .ing-text { color: var(--ink-3); text-decoration: line-through; }
+
+/* Filtros y "qué tengo" (js/filters.js) */
+.hero-tools { display: flex; gap: var(--s-2); margin-top: var(--s-3); }
+.hero-tools .nav-badge { position: static; margin-left: 2px; }
+.adv-filters { background: var(--ivory); border-block: 1px solid var(--line); padding: var(--s-5) 0; scroll-margin-top: calc(var(--header-h) + 8px); }
+.adv-inner { display: grid; gap: var(--s-4); }
+.adv-head { display: flex; justify-content: space-between; align-items: center; }
+.adv-title { font-size: var(--step-1); }
+.adv-row { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-2); }
+.adv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--s-4); }
+.adv-set { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); align-content: flex-start; min-width: 0; }
+.adv-set legend { font-weight: 700; margin-bottom: var(--s-2); padding: 0; }
+.adv-wide { grid-column: 1 / -1; }
+
+/* De temporada en la isla (js/seasonal.js) */
+#season-heading { display: flex; align-items: center; gap: var(--s-2); }
+#season-heading .icon { color: var(--plantain); width: 26px; height: 26px; }
+.season-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
+.season-chip { display: inline-flex; align-items: center; gap: var(--s-2); min-height: 44px; padding: 0 var(--s-4); border-radius: 999px; border: 1.5px solid var(--plantain); background: var(--plantain-50); color: var(--plantain); font-weight: 700; }
+.season-chip:hover { background: var(--plantain); color: #fff; }
+.season-n { font-size: .75rem; font-weight: 700; background: #fff; color: var(--plantain); border-radius: 999px; padding: 0 8px; }
+.season-all { margin-top: var(--s-3); }
+.season-all summary { cursor: pointer; font-weight: 600; color: var(--ink-2); }
+
+/* Planes: calendario, guías y límites (js/plans.js) */
+.plans-people { display: inline-flex; align-items: center; gap: var(--s-2); font-size: var(--step--1); font-weight: 600; }
+.plans-people input { width: 4.5em; min-height: 40px; padding: 0 var(--s-2); border: 1.5px solid var(--line); border-radius: 10px; }
+.plan-cal { grid-column: 2; display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2); margin-top: var(--s-2); font-size: .8rem; }
+.plan-move { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-3); }
+.plan-move select { min-height: 32px; border: 1.5px solid var(--line); border-radius: 8px; background: #fff; font-size: .8rem; }
+.plan-badge-lo { background: var(--sand); color: var(--ink-2); justify-self: start; }
+.plan-carbs { font-size: .8rem; color: var(--achiote-600); font-weight: 600; }
+.plan-dga { margin-top: var(--s-3); border-top: 1px dashed var(--line); padding-top: var(--s-3); }
+.plan-dga summary { cursor: pointer; font-weight: 700; font-size: var(--step--1); color: var(--plantain); }
+.dga-list, .dga-limits { list-style: none; padding: 0; display: grid; gap: var(--s-2); margin-top: var(--s-2); font-size: .82rem; }
+.dga-row { display: grid; grid-template-columns: minmax(8em, 1fr) 2fr auto; align-items: center; gap: var(--s-2); }
+.dga-row .plan-bar-fill { background: var(--gold); }
+.dga-row.is-ok .plan-bar-fill { background: var(--plantain); }
+.dga-val { font-variant-numeric: tabular-nums; color: var(--ink-2); }
+.dga-sub { margin-top: var(--s-3); font-weight: 700; font-size: .82rem; }
+.dga-limits li { display: flex; gap: var(--s-2); }
+.dga-limits li span { flex: none; display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 999px; font-size: .7rem; font-weight: 800; color: #fff; }
+.dga-limits .is-ok span { background: var(--plantain); }
+.dga-limits .is-warn span { background: var(--achiote); }
+
+/* Nutrición: etiqueta completa, grupos y fuentes del USDA */
+.nutri-table tr.sub2 th { font-weight: 400; padding-left: calc(var(--s-5) * 2); color: var(--ink-2); }
+.nutri-table tr.micro th, .nutri-table tr.micro td { font-weight: 400; font-size: .9rem; }
+.nutri-table tr:not(.micro) + tr.micro th, .nutri-table tr:not(.micro) + tr.micro td { border-top: 6px solid var(--ink); }
+.nutri-groups { margin-top: var(--s-5); }
+.ng-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-2); }
+.ng-list li { display: grid; padding: var(--s-2) var(--s-3); border-radius: var(--radius); background: var(--plantain-50); }
+.ng-name { font-size: .75rem; font-weight: 700; color: var(--plantain); text-transform: uppercase; letter-spacing: .04em; }
+.ng-val { font-weight: 700; }
+.nutri-sources { margin-top: var(--s-5); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s-3) var(--s-4); background: var(--ivory); }
+.nutri-sources summary { cursor: pointer; font-weight: 700; }
+.nutri-sources-note { font-size: .82rem; color: var(--ink-3); margin-top: var(--s-2); }
+.src-list { list-style: none; padding: 0; margin-top: var(--s-3); display: grid; gap: var(--s-2); font-size: .82rem; }
+.src-list li { padding-bottom: var(--s-2); border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.src-ing { display: block; font-weight: 600; color: var(--ink); }
+.src-fdc { color: var(--plantain); font-weight: 700; }
+.src-desc, .src-local { color: var(--ink-3); }
+
+/* Barra de abajo en el celular y aviso sin conexión (js/pwa.js) */
+.bottom-nav { display: none; }
+@media (max-width: 760px) {
+  .bottom-nav {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: repeat(5, 1fr);
+    background: var(--ivory); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom);
+    box-shadow: 0 -4px 16px -8px rgba(43, 29, 20, .18);
+  }
+  .bottom-nav a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 58px; text-decoration: none; color: var(--ink-3); font-size: .68rem; font-weight: 600; text-align: center; line-height: 1.1; }
+  .bottom-nav a[aria-current="page"] { color: var(--achiote); }
+  .bottom-nav .icon { width: 22px; height: 22px; }
+  body { padding-bottom: calc(60px + env(safe-area-inset-bottom)); }
+  .cook-on .bottom-nav, .auth-locked .bottom-nav { display: none; }
+  .toast { bottom: calc(76px + env(safe-area-inset-bottom)); }
+  .dga-row { grid-template-columns: 1fr auto; }
+  .dga-row .plan-bar { grid-column: 1 / -1; grid-row: 2; }
+}
+.offline-banner { position: fixed; left: 16px; right: 16px; top: calc(var(--header-h) + 8px); z-index: 44; padding: var(--s-2) var(--s-3); border-radius: var(--radius); background: var(--ink); color: var(--ivory); font-size: var(--step--1); box-shadow: var(--shadow); }
+
+@media print {
+  .bottom-nav, .timer-fab, .cook-mode, .offline-banner, .step-timers, .units-toggle, .notes-panel, .reviews-panel, .nutri-sources { display: none !important; }
+  body { padding-bottom: 0; }
+  /* Lista de compras */
+  .shop-actions, .shop-extra, .shop-chip-x, #view-shop .plans-help { display: none !important; }
+  .shop-aisle { border: 0; padding: 0; break-inside: avoid; }
+  /* Plan de comidas impreso: sólo el plan */
+  body.print-plan .goal-grid, body.print-plan .plans-controls, body.print-plan .plans-actions, body.print-plan .plans-more,
+  body.print-plan #plans-season, body.print-plan .plan-swap-btn, body.print-plan .plan-cal, body.print-plan .plans-target .plans-note { display: none !important; }
+  body.print-plan .plan-day { break-inside: avoid; }
+}

@@ -33,7 +33,9 @@ const PLAN_T = {
       azucar: ["Bajo en azúcar", "Poca azúcar por plato y más fibra; para quien cuida el azúcar."],
       nutritivo: ["Más nutritivo", "Más fibra, proteína y vegetales; menos grasa saturada y sodio."],
       vegetariano: ["Vegetariano", "Sin carne, pollo ni pescado; con huevo, queso y mucho grano."],
-      vegano: ["Vegano", "Sólo plantas: sin carne, lácteos, huevo ni miel; proteína de granos y tofu."]
+      vegano: ["Vegano", "Sólo plantas: sin carne, lácteos, huevo ni miel; proteína de granos y tofu."],
+      diabetes: ["Diabetes", "Carbohidratos contados por comida, más fibra y poca azúcar añadida."],
+      dash: ["Presión alta (DASH)", "Poco sodio, más potasio y calcio: viandas, frutas, granos y lácteos."]
     },
     seasonLabel: "Época",
     seasons: { auto: "Según la fecha de hoy", todo: "Todo el año", navidad: "Navidad", cuaresma: "Cuaresma y Semana Santa", verano: "Verano y playa", gracias: "Acción de Gracias", lluvia: "Días de lluvia" },
@@ -96,8 +98,24 @@ const PLAN_T = {
       azucar: "Se busca menos de 25–50 g de azúcar añadida al día. Si tiene diabetes, su médico o educador en diabetes le dirá cuántos carbohidratos le tocan en cada comida.",
       nutritivo: "Un plato nutritivo tiene la mitad de vegetales, un cuarto de proteína y un cuarto de vianda, arroz o grano.",
       vegetariano: "Combine granos (habichuelas, garbanzos, gandules, lentejas) con arroz o maíz para una proteína completa; el huevo y el queso también suman.",
-      vegano: "Incluya habichuelas, garbanzos, lentejas, tofu o quinoa en cada comida principal. La vitamina B12 sólo viene de alimentos fortificados o suplementos: hable con su médico. Coma el hierro de los granos y la espinaca con vitamina C (limón, china) para aprovecharlo mejor."
-    }
+      vegano: "Incluya habichuelas, garbanzos, lentejas, tofu o quinoa en cada comida principal. La vitamina B12 sólo viene de alimentos fortificados o suplementos: hable con su médico. Coma el hierro de los granos y la espinaca con vitamina C (limón, china) para aprovecharlo mejor.",
+      diabetes: "Se busca de 45 a 60 g de carbohidratos por comida y de 15 a 20 g en la merienda (una «porción de carbohidrato» son 15 g). Su médico o educador en diabetes le dirá su cantidad exacta, sobre todo si usa insulina. Viandas, arroz, pan y frutas son carbohidratos: cuéntelos.",
+      dash: "El plan DASH baja la presión con poco sodio (menos de 2,300 mg al día, o 1,500 mg si su médico lo indica) y mucho potasio, calcio y fibra. Si tiene enfermedad del riñón o toma medicinas que suben el potasio, consulte antes a su médico."
+    },
+    people: "Personas en casa", printPlan: "Imprimir plan", shopPlan: "Lista de compras del plan",
+    shopPlanDone: (n) => `Listo: ${n} recetas del plan en la lista de compras.`, shopPlanSee: "Ver la lista",
+    moveTo: "Pasar a", moveHelp: (name) => `Pasar ${name} a otro día`, moved: "Cambiado de día.",
+    leftover: "Sobras para mañana", leftoverLabel: "Sobras de ayer", leftoverDone: "Mañana almuerza las sobras.",
+    dgaTitle: "Guías Alimentarias 2025–2030 (USDA)", dgaSub: (k) => `Porciones de cada grupo para una dieta de ${k.toLocaleString("en-US")} calorías.`,
+    dga: { veg: "Vegetales y viandas", fruit: "Frutas", wgrain: "Granos integrales", grain: "Granos (todos)", dairy: "Lácteos", prot: "Proteína" },
+    dgaUnits: { veg: "tazas", fruit: "tazas", wgrain: "onzas", grain: "onzas", dairy: "tazas", prot: "g" },
+    limits: "Límites del día", limSat: (p) => `Grasa saturada: ${p}% de las calorías (meta: menos de 10%)`,
+    limAdd: (n) => (n ? `Azúcar añadida: ${n} comida(s) con más de 10 g (meta: 10 g o menos por comida)` : "Azúcar añadida: 10 g o menos en cada comida"),
+    limNa: (mg) => `Sodio: ${mg.toLocaleString("en-US")} mg (meta: menos de 2,300 mg)`,
+    limProt: (g, a, b) => `Proteína: ${g} g (las Guías: de ${a} a ${b} g para su peso)`,
+    limK: (mg, ai) => `Potasio: ${mg.toLocaleString("en-US")} mg (meta DASH: ${ai.toLocaleString("en-US")} mg o más)`,
+    carbChoices: (g) => `${g} g de carbohidratos ≈ ${Math.round((g / 15) * 2) / 2} porciones de carbohidrato`,
+    dgaNote: "Cálculo aproximado con los alimentos de cada receta (FoodData Central del USDA). La proteína y los lácteos se cuentan según su receta."
   },
   en: {
     title: "Meal plans",
@@ -112,7 +130,9 @@ const PLAN_T = {
       azucar: ["Low sugar", "Little sugar per dish and more fiber; for those watching sugar."],
       nutritivo: ["Most nutritious", "More fiber, protein and vegetables; less saturated fat and sodium."],
       vegetariano: ["Vegetarian", "No meat, chicken or fish; with eggs, cheese and plenty of beans."],
-      vegano: ["Vegan", "Plants only: no meat, dairy, eggs or honey; protein from beans and tofu."]
+      vegano: ["Vegan", "Plants only: no meat, dairy, eggs or honey; protein from beans and tofu."],
+      diabetes: ["Diabetes", "Carbs counted per meal, more fiber and little added sugar."],
+      dash: ["High blood pressure (DASH)", "Low sodium, more potassium and calcium: root vegetables, fruit, beans and dairy."]
     },
     seasonLabel: "Season",
     seasons: { auto: "Based on today's date", todo: "All year", navidad: "Christmas", cuaresma: "Lent and Holy Week", verano: "Summer and beach", gracias: "Thanksgiving", lluvia: "Rainy days" },
@@ -175,8 +195,24 @@ const PLAN_T = {
       azucar: "Aim for under 25–50 g of added sugar a day. If you have diabetes, your doctor or diabetes educator will tell you how many carbs fit each meal.",
       nutritivo: "A nutritious plate is half vegetables, a quarter protein and a quarter root vegetable, rice or grain.",
       vegetariano: "Pair beans, chickpeas, pigeon peas or lentils with rice or corn for complete protein; eggs and cheese help too.",
-      vegano: "Include beans, chickpeas, lentils, tofu or quinoa at every main meal. Vitamin B12 only comes from fortified foods or supplements: talk to your doctor. Eat iron from beans and spinach with vitamin C (lime, orange) to absorb it better."
-    }
+      vegano: "Include beans, chickpeas, lentils, tofu or quinoa at every main meal. Vitamin B12 only comes from fortified foods or supplements: talk to your doctor. Eat iron from beans and spinach with vitamin C (lime, orange) to absorb it better.",
+      diabetes: "The usual aim is 45 to 60 g of carbs per meal and 15 to 20 g for a snack (one “carb choice” is 15 g). Your doctor or diabetes educator will give you your exact amount, especially if you use insulin. Root vegetables, rice, bread and fruit are carbs: count them.",
+      dash: "The DASH plan lowers blood pressure with little sodium (under 2,300 mg a day, or 1,500 mg if your doctor says so) and plenty of potassium, calcium and fiber. If you have kidney disease or take medicine that raises potassium, ask your doctor first."
+    },
+    people: "People at home", printPlan: "Print plan", shopPlan: "Plan shopping list",
+    shopPlanDone: (n) => `Done: ${n} plan recipes on the shopping list.`, shopPlanSee: "See the list",
+    moveTo: "Move to", moveHelp: (name) => `Move ${name} to another day`, moved: "Moved to another day.",
+    leftover: "Leftovers tomorrow", leftoverLabel: "Yesterday's leftovers", leftoverDone: "Tomorrow's lunch is the leftovers.",
+    dgaTitle: "Dietary Guidelines 2025–2030 (USDA)", dgaSub: (k) => `Servings of each food group for a ${k.toLocaleString("en-US")}-calorie diet.`,
+    dga: { veg: "Vegetables", fruit: "Fruit", wgrain: "Whole grains", grain: "Grains (all)", dairy: "Dairy", prot: "Protein" },
+    dgaUnits: { veg: "cups", fruit: "cups", wgrain: "oz", grain: "oz", dairy: "cups", prot: "g" },
+    limits: "Daily limits", limSat: (p) => `Saturated fat: ${p}% of calories (goal: under 10%)`,
+    limAdd: (n) => (n ? `Added sugar: ${n} meal(s) over 10 g (goal: 10 g or less per meal)` : "Added sugar: 10 g or less at every meal"),
+    limNa: (mg) => `Sodium: ${mg.toLocaleString("en-US")} mg (goal: under 2,300 mg)`,
+    limProt: (g, a, b) => `Protein: ${g} g (Guidelines: ${a} to ${b} g for your weight)`,
+    limK: (mg, ai) => `Potassium: ${mg.toLocaleString("en-US")} mg (DASH goal: ${ai.toLocaleString("en-US")} mg or more)`,
+    carbChoices: (g) => `${g} g carbs ≈ ${Math.round((g / 15) * 2) / 2} carb choices`,
+    dgaNote: "Approximate, from each recipe's ingredients (USDA FoodData Central). Protein and dairy are counted from the recipe."
   }
 };
 const pt = () => PLAN_T[currentLang];
@@ -212,7 +248,7 @@ const PLAN_GOALS = {
     score: (n) => (n.p / Math.max(n.kcal, 50)) * 60 + n.fib - Math.abs(n.kcal - 550) / 100 - n.sat * 0.3
   },
   sodio: {
-    typical: 2000, adjust: 0, protPerKg: 1.0, maxPortion: 1.5,
+    typical: 2000, adjust: 0, protPerKg: 1.2, maxPortion: 1.5,
     ok: { desayuno: (n) => n.na <= 400, main: (n) => n.na <= 600 && n.p >= 12 && n.kcal >= 200, merienda: (n) => n.na <= 200 },
     score: (n) => -n.na / 80 + n.p / 4 + n.fib
   },
@@ -232,16 +268,27 @@ const PLAN_GOALS = {
     score: (n) => n.fib * 3 + n.p / 3 - n.sat - n.na / 500 - n.s / 4
   },
   vegetariano: {
-    typical: 2000, adjust: 0, protPerKg: 1.1, maxPortion: 2, diet: "veg",
+    typical: 2000, adjust: 0, protPerKg: 1.2, maxPortion: 2, diet: "veg",
     ok: { desayuno: (n) => n.kcal >= 150, main: (n) => n.kcal >= 250 && n.p >= 10, merienda: (n) => n.kcal <= 400 },
     score: (n) => (n.p / Math.max(n.kcal, 50)) * 60 + n.fib * 1.5 - n.sat * 0.3
   },
   vegano: {
-    typical: 2000, adjust: 0, protPerKg: 1.1, maxPortion: 2, diet: "vegan",
+    typical: 2000, adjust: 0, protPerKg: 1.2, maxPortion: 2, diet: "vegan",
     ok: { desayuno: (n) => n.kcal >= 120, main: (n) => n.kcal >= 220 && n.p >= 8, merienda: (n) => n.kcal <= 400 },
     score: (n) => (n.p / Math.max(n.kcal, 50)) * 70 + n.fib * 2 - n.sat * 0.3
+  },
+  // Diabetes: carbohidratos contados (45–60 g por comida, 15–20 g en la merienda), fibra y poca azúcar añadida.
+  diabetes: {
+    typical: 1800, adjust: -0.05, protPerKg: 1.2, maxPortion: 1.5, carbMeal: 60, carbSnack: 20,
+    ok: { desayuno: (n) => n.c <= 45 && n.add <= 10, main: (n) => n.c <= 45 && n.p >= 15 && n.add <= 10, merienda: (n) => n.c <= 20 && n.add <= 5 },
+    score: (n) => n.fib * 2 + n.p / 3 - n.add * 1.5 - Math.max(0, n.c - 30) / 3
+  },
+  // DASH (presión alta): poco sodio y grasa saturada; más potasio, calcio y fibra.
+  dash: {
+    typical: 2000, adjust: 0, protPerKg: 1.2, maxPortion: 1.5, dash: true,
+    ok: { desayuno: (n) => n.na <= 400 && n.sat <= 5, main: (n) => n.na <= 600 && n.sat <= 6 && n.p >= 15 && n.kcal >= 200, merienda: (n) => n.na <= 200 },
+    score: (n) => n.k / 150 + n.fib * 2 + n.ca / 100 - n.na / 100 - n.sat
   }
-
 };
 
 /* ── Épocas: platos típicos por nombre (y categoría) ── */
@@ -343,7 +390,7 @@ const planNorm = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
 
 /* ── Ajustes guardados ── */
 // `saved` = el plan sugerido del período (hoy, o 7 días desde `start`), para verlo igual al volver.
-const PLAN_DEFAULTS = { goal: "rebajar", diet: "normal", sex: "", age: "", weight: "", ft: "", inch: "", activity: "1", avoid: [], prefs: [], protein: [], season: "auto", days: 1, seed: 1, ts: 0, saved: null };
+const PLAN_DEFAULTS = { goal: "rebajar", diet: "normal", sex: "", age: "", weight: "", ft: "", inch: "", activity: "1", avoid: [], prefs: [], protein: [], season: "auto", days: 1, seed: 1, people: 1, ts: 0, saved: null };
 const PLAN_DIETS = ["normal", "veg", "vegan"];
 // Cada usuario tiene su copia en este navegador (rcb.plan.<uid>); sin sesión, rcb.plan.
 let planOwner = "";
@@ -384,6 +431,8 @@ function cleanPlan(src) {
   out.prefs = out.prefs.filter((p) => p === "quick");
   if (!PLAN_DIETS.includes(out.diet)) out.diet = "normal";
   if (![1, 7].includes(out.days)) out.days = 1;
+  out.people = Math.min(12, Math.max(1, Math.round(out.people) || 1));
+  if (!PLAN_GOALS[out.goal]) out.goal = "rebajar";
   return out;
 }
 /* Plan guardado: { start: "AAAA-MM-DD", days, seed, sig, meals: [{ items: [{ slot, id, m, sides: [{ id, m }] }] }] }
@@ -395,7 +444,7 @@ function cleanSaved(v) {
   return {
     start: v.start.slice(0, 10), days: num(v.days), seed: num(v.seed), sig: String(v.sig || "").slice(0, 1500),
     meals: v.meals.slice(0, 7).map((day) => ({ items: (day && Array.isArray(day.items) ? day.items.slice(0, 4) : []).map((x) => ({
-      slot: str(x && x.slot), id: x && x.id ? str(x.id) : null, m: num(x && x.m),
+      slot: str(x && x.slot), id: x && x.id ? str(x.id) : null, m: num(x && x.m), lo: x && x.lo ? 1 : 0,
       sides: Array.isArray(x && x.sides) ? x.sides.slice(0, 4).map((s) => ({ id: str(s && s.id), m: num(s && s.m) })) : []
     })) }))
   };
@@ -426,7 +475,7 @@ function planTargets() {
   }
   kcal = Math.round(kcal / 50) * 50;
   const protein = Math.round(kg * g.protPerKg / 5) * 5;
-  return { kcal, protein, custom };
+  return { kcal, protein, custom, kg };
 }
 
 /* ── Qué recetas sirven para cada comida ── */
@@ -472,12 +521,14 @@ const SIDE_RULES = {
   azucar: { kinds: [["granos", "ensalada", "vegetal"]], ok: (n) => n.s <= 6, score: (n) => n.fib * 2 - n.s },
   vegetariano: { kinds: [["arroz", "vianda"], ["granos", "ensalada", "vegetal"]], ok: (n) => n.kcal <= 400, score: (n) => n.p / 2 + n.fib - n.sat / 2 },
   vegano: { kinds: [["arroz", "vianda"], ["granos"]], ok: (n) => n.kcal <= 400, score: (n) => n.p / 2 + n.fib * 1.5 },
-  nutritivo: { kinds: [["granos"], ["ensalada", "vegetal"]], ok: (n) => n.fib >= 2 || n.p >= 5, score: (n) => n.fib * 3 + n.p / 3 - n.na / 500 }
+  nutritivo: { kinds: [["granos"], ["ensalada", "vegetal"]], ok: (n) => n.fib >= 2 || n.p >= 5, score: (n) => n.fib * 3 + n.p / 3 - n.na / 500 },
+  diabetes: { kinds: [["ensalada", "vegetal", "granos"]], ok: (n) => n.c <= 20 && n.add <= 3, score: (n) => n.fib * 2 + n.p / 3 - n.c / 4 },
+  dash: { kinds: [["arroz", "vianda", "granos"], ["ensalada", "vegetal"]], ok: (n) => n.na <= 300, score: (n) => n.k / 100 + n.fib - n.na / 80 }
 };
 function planInfo(r) {
   const e = estimateNutrition(r);
   const a = getAdvisories(r);
-  return { n: e.per, frying: e.frying, allergens: a.allergens.map((x) => x.key), alcohol: a.alerts.some((x) => x.key === "alcoholDrink") };
+  return { n: e.per, g: e.groups, frying: e.frying, allergens: a.allergens.map((x) => x.key), alcohol: a.alerts.some((x) => x.key === "alcoholDrink") };
 }
 function candidates() {
   const g = PLAN_GOALS[plan.goal];
@@ -498,18 +549,20 @@ function candidates() {
     // Acompañantes (arroz, granos, viandas, vegetales y ensaladas ligeras): no son plato principal.
     const kind = slot === "main" ? sideKind(r, info.n) : null;
     if (kind) {
-      const entry = { r, n: info.n, kind, score: sr.score(info.n) };
+      const entry = { r, n: info.n, g: info.g, kind, score: sr.score(info.n) };
       (sr.ok(info.n) ? pools.side : loose.side).push(entry);
       continue;
     }
     let s = slot;
     if (s === "main" && info.n.kcal < 180 && ["ensaladas", "vegetales"].includes(r.category)) s = "merienda";
-    if (s === "main" && !protOk(r)) { offProt.push({ r, n: info.n, loose: true, score: g.score(info.n) - 500 }); continue; }
+    // Frutas y viandas de temporada en la isla (js/seasonal.js): un empujón pequeño.
+    const fresh = typeof seasonalBonus === "function" ? seasonalBonus(r) : 0;
+    if (s === "main" && !protOk(r)) { offProt.push({ r, n: info.n, g: info.g, loose: true, score: g.score(info.n) - 500 + fresh }); continue; }
     const inSeason0 = inSeasonOf(r, season);
-    if (!g.ok[s](info.n)) { loose[s].push({ r, n: info.n, inSeason: inSeason0, loose: true, score: g.score(info.n) + (inSeason0 ? 1000 : 0) }); continue; }
+    if (!g.ok[s](info.n)) { loose[s].push({ r, n: info.n, g: info.g, inSeason: inSeason0, loose: true, score: g.score(info.n) + fresh + (inSeason0 ? 1000 : 0) }); continue; }
     const inSeason = inSeasonOf(r, season);
     // Las de la época van primero (sin dejar de cumplir el objetivo).
-    pools[s].push({ r, n: info.n, inSeason, score: g.score(info.n) + (inSeason ? 1000 : 0) });
+    pools[s].push({ r, n: info.n, g: info.g, inSeason, score: g.score(info.n) + fresh + (inSeason ? 1000 : 0) });
   }
   // Si las exclusiones dejan una comida sin opciones, se usan las que más se acercan al objetivo.
   let relaxed = false;
@@ -562,7 +615,7 @@ function hashStr(s) { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0
 const planSig = (target) => JSON.stringify([plan.goal, plan.diet, plan.prefs, plan.protein, plan.avoid, activeSeason(), target.kcal, target.protein]);
 function hydrateSaved(sv) {
   const byId = (id) => recipes.find((r) => r.id === id);
-  const item = (id) => { const r = byId(id); return r ? { r, n: planInfo(r).n } : undefined; };
+  const item = (id) => { const r = byId(id); if (!r) return undefined; const i = planInfo(r); return { r, n: i.n, g: i.g }; };
   if (sv.meals.length !== sv.days || sv.meals.some((d) => !d.items.length)) return null; // incompleto o de otro formato
   const days = [];
   for (const day of sv.meals) {
@@ -572,7 +625,7 @@ function hydrateSaved(sv) {
       if (it === undefined) return null; // una receta ya no existe: se arma otro
       const sides = [];
       for (const s of x.sides) { const si = item(s.id); if (!si) return null; sides.push({ item: si, m: s.m }); }
-      meals.push({ slot: x.slot, item: it, m: x.m, sides });
+      meals.push({ slot: x.slot, item: it, m: x.m, sides, lo: x.lo ? 1 : 0 });
     }
     days.push(meals);
   }
@@ -603,6 +656,18 @@ function dayName(iso, opts) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
+/* Objetivo con tope de carbohidratos (diabetes): se baja la porción, de ½ en ½, hasta que quepa. */
+function mealCarbs(meal) { return (meal.item ? meal.item.n.c * meal.m : 0) + (meal.sides || []).reduce((a, sd) => a + sd.item.n.c * sd.m, 0); }
+function capCarbs(meal, g) {
+  const cap = meal.slot === "merienda" ? g.carbSnack : g.carbMeal;
+  if (!cap || !meal.item) return;
+  for (let i = 0; i < 8 && mealCarbs(meal) > cap; i++) {
+    const big = [meal, ...(meal.sides || [])].filter((x) => x.m > 0.5).sort((a, b) => b.item.n.c * b.m - a.item.n.c * a.m)[0];
+    if (!big) break;
+    big.m -= 0.5;
+  }
+}
+
 function buildPlan(pools, target, seed) {
   const g = PLAN_GOALS[plan.goal];
   const rand = rng(seed);
@@ -619,7 +684,7 @@ function buildPlan(pools, target, seed) {
       usedDay.add(item.r.id);
       if (["almuerzo", "cena"].includes(slot.key)) { usedWeek.add(item.r.id); lastMainCat = item.r.category; }
       const slotKcal = target.kcal * slot.share;
-      if (slot.key === "merienda") { meals.push({ slot: slot.key, item, m: Math.min(1.5, portionFor(item, slotKcal, 1.5)) }); continue; }
+      if (slot.key === "merienda") { const meal = { slot: slot.key, item, m: Math.min(1.5, portionFor(item, slotKcal, 1.5)) }; capCarbs(meal, g); meals.push(meal); continue; }
       // Almuerzo y cena: principal + acompañantes (menos los platos completos y el desayuno).
       const sides = [];
       if (["almuerzo", "cena"].includes(slot.key) && !isComplete(item.r)) {
@@ -632,7 +697,9 @@ function buildPlan(pools, target, seed) {
       const mainShare = sides.length ? 0.55 : 1;
       const m = portionFor(item, slotKcal * mainShare, g.maxPortion);
       for (const sd of sides) sd.m = Math.min(1.5, portionFor(sd.item, (slotKcal * (1 - mainShare)) / sides.length, 1.5));
-      meals.push({ slot: slot.key, item, m, sides });
+      const meal = { slot: slot.key, item, m, sides };
+      capCarbs(meal, g);
+      meals.push(meal);
     }
     days.push(meals);
   }
@@ -704,7 +771,9 @@ function applySwap(ref, id) {
     meal.m = portionFor(meal.item, slotKcal * share, g.maxPortion);
     for (const sd of sides) sd.m = Math.min(1.5, portionFor(sd.item, (slotKcal * (1 - share)) / sides.length, 1.5));
   }
-  sv.meals[ref.d].items[ref.j] = { slot: meal.slot, id: meal.item.r.id, m: meal.m, sides: sides.map((sd) => ({ id: sd.item.r.id, m: sd.m })) };
+  capCarbs(meal, g);
+  meal.lo = 0;
+  sv.meals[ref.d].items[ref.j] = { slot: meal.slot, id: meal.item.r.id, m: meal.m, lo: 0, sides: sides.map((sd) => ({ id: sd.item.r.id, m: sd.m })) };
   savePlan(); // es un cambio de la persona: cuenta como el más reciente y sube a la cuenta
   return opt.r;
 }
@@ -743,7 +812,7 @@ function swapPanelHTML(key) {
 /* ── Vista ── */
 function goalButtonsHTML() {
   const tr = pt();
-  const icons = { rebajar: "🥗", masa: "💪", mantener: "⚖️", sodio: "🧂", lowcarb: "🥩", azucar: "🍬", nutritivo: "🥦", vegetariano: "🥕", vegano: "🌱" };
+  const icons = { rebajar: "🥗", masa: "💪", mantener: "⚖️", sodio: "🧂", lowcarb: "🥩", azucar: "🍬", nutritivo: "🥦", vegetariano: "🥕", vegano: "🌱", diabetes: "🩺", dash: "❤️" };
   return Object.keys(PLAN_GOALS).map((k) => `
     <button type="button" class="goal-card" role="radio" aria-checked="${plan.goal === k}" data-goal="${k}">
       <span class="goal-icon" aria-hidden="true">${icons[k]}</span>
@@ -803,6 +872,10 @@ function renderPlansShell() {
         <button type="button" class="btn btn-outline" data-days="7" aria-pressed="${plan.days === 7}">${esc(tr.sevenDays)}</button>
       </div>
       <button type="button" class="btn btn-primary" id="plans-another">${esc(tr.another)}</button>
+      <label class="plans-people">${esc(tr.people)}
+        <input type="number" inputmode="numeric" min="1" max="12" data-people value="${plan.people}"></label>
+      <button type="button" class="btn btn-outline" id="plans-shop"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg><span>${esc(tr.shopPlan)}</span></button>
+      <button type="button" class="btn btn-outline" id="plans-print"><svg class="icon" aria-hidden="true"><use href="#i-print"/></svg><span>${esc(tr.printPlan)}</span></button>
     </div>
     <div id="plans-output"></div>
     <div id="plans-season"></div>
@@ -834,8 +907,10 @@ function mealHTML(meal, d, j) {
         <a class="plan-meal-name" href="#/receta/${encodeURIComponent(r.id)}" data-open="${esc(r.id)}">${esc(r.name[currentLang])}</a>
         ${swapButtonHTML(key, r.name[currentLang])}
       </span>
+      ${meal.lo ? `<span class="plan-badge plan-badge-lo">${esc(tr.leftoverLabel)}</span>` : ""}
       <span class="plan-portion">${esc(tr.portions(meal.m))}</span>
       <span class="plan-nutri">${nutriLine(meal.item.n, meal.m)}</span>
+      ${PLAN_GOALS[plan.goal].carbMeal ? `<span class="plan-carbs">${esc(tr.carbChoices(Math.round(mealCarbs(meal))))}</span>` : ""}
       ${badgesHTML(meal.item.n, meal.m)}
       ${(meal.sides || []).length ? `<ul class="plan-sides">${meal.sides.map((sd, s) => `
         <li><span class="plan-side-plus" aria-hidden="true">+</span>
@@ -845,16 +920,60 @@ function mealHTML(meal, d, j) {
           </span>
           ${swapButtonHTML(`${key}-${s}`, sd.item.r.name[currentLang])}</li>`).join("")}</ul>` : ""}
     </span>
+    ${calendarToolsHTML(meal, d, j)}
     ${openKey === key || (openKey || "").startsWith(`${key}-`) ? swapPanelHTML(openKey) : ""}
   </li>`;
 }
+/* Plan de 7 días: pasar una comida a otro día (se intercambia con la de ese día) y dejar sobras. */
+function calendarToolsHTML(meal, d, j) {
+  if (plan.days < 2 || !planStart) return "";
+  const tr = pt();
+  const name = meal.item.r.name[currentLang];
+  const canLeft = ["almuerzo", "cena"].includes(meal.slot) && d < plan.days - 1 && !meal.lo;
+  return `<span class="plan-cal">
+    <label class="plan-move"><span>${esc(tr.moveTo)}</span>
+      <select data-move="${d}-${j}" aria-label="${esc(tr.moveHelp(name))}">
+        <option value="">—</option>
+        ${Array.from({ length: plan.days }, (_, i) => i).filter((i) => i !== d).map((i) => `<option value="${i}">${esc(dayName(addDays(planStart, i), { weekday: "short", day: "numeric" }))}</option>`).join("")}
+      </select></label>
+    ${canLeft ? `<button type="button" class="btn btn-ghost btn-sm" data-leftover="${d}-${j}">${esc(tr.leftover)}</button>` : ""}
+  </span>`;
+}
+let planStart = null;
+function moveMeal(d, j, d2) {
+  const sv = plan.saved;
+  if (!sv || !sv.meals[d] || !sv.meals[d2]) return;
+  const a = sv.meals[d].items[j], b = sv.meals[d2].items[j];
+  if (!a || !b) return;
+  sv.meals[d].items[j] = b; sv.meals[d2].items[j] = a;
+  const pa = planDays[d][j]; planDays[d][j] = planDays[d2][j]; planDays[d2][j] = pa;
+  savePlan();
+}
+function leftoverMeal(d, j) {
+  const sv = plan.saved;
+  const src = sv && sv.meals[d] && sv.meals[d].items[j];
+  const lunch = SLOTS.findIndex((s) => s.key === "almuerzo");
+  if (!src || !sv.meals[d + 1]) return;
+  sv.meals[d + 1].items[lunch] = { slot: "almuerzo", id: src.id, m: src.m, lo: 1, sides: src.sides.map((s) => ({ ...s })) };
+  const m = planDays[d][j];
+  planDays[d + 1][lunch] = { slot: "almuerzo", item: m.item, m: m.m, sides: (m.sides || []).map((s) => ({ ...s })), lo: 1 };
+  savePlan();
+}
 function dayHTML(meals, i, target, iso) {
   const tr = pt();
-  const tot = { kcal: 0, p: 0, c: 0, na: 0, fib: 0, s: 0 };
+  const tot = { kcal: 0, p: 0, c: 0, na: 0, fib: 0, s: 0, sat: 0, k: 0 };
+  const grp = { veg: 0, fruit: 0, grain: 0, wgrain: 0, dairy: 0 };
+  let addOver = 0;
   for (const x of meals) {
     if (!x.item) continue;
-    for (const k in tot) tot[k] += x.item.n[k] * x.m;
-    for (const sd of x.sides || []) for (const k in tot) tot[k] += sd.item.n[k] * sd.m;
+    const parts = [{ it: x.item, m: x.m }, ...(x.sides || []).map((sd) => ({ it: sd.item, m: sd.m }))];
+    let add = 0;
+    for (const { it, m } of parts) {
+      for (const k in tot) tot[k] += (it.n[k] || 0) * m;
+      add += (it.n.add || 0) * m;
+      if (it.g) for (const k in grp) grp[k] += (it.g[k] || 0) * m;
+    }
+    if (add > 10) addOver++;
   }
   const pctK = Math.min(130, Math.round((tot.kcal / target.kcal) * 100));
   const pctP = Math.min(130, Math.round((tot.p / target.protein) * 100));
@@ -869,8 +988,50 @@ function dayHTML(meals, i, target, iso) {
       <span class="plan-total-val">${Math.round(tot.p)} / ${target.protein} g ${tr.prot}</span>
       <span class="plan-total-extra">${Math.round(tot.c)} g ${tr.carbs} · ${Math.round(tot.fib)} g ${tr.fiber} · ${Math.round(tot.s)} g ${tr.sugarW} · ${Math.round(tot.na).toLocaleString("en-US")} mg ${tr.sodium}</span>
     </div>
+    ${dgaHTML(tot, grp, addOver, target)}
   </article>`;
 }
+/* Guías Alimentarias para Estadounidenses 2025–2030 (USDA/HHS): para 2,000 calorías, 3 porciones de
+   vegetales, 2 de frutas, 2–4 de granos integrales y 3 de lácteos; proteína de 1.2 a 1.6 g por kilo;
+   grasa saturada bajo 10% de las calorías y 10 g o menos de azúcar añadida por comida. Sodio: el
+   valor diario de la etiqueta de la FDA (2,300 mg). Vegetales, frutas y granos se ajustan a la meta. */
+function dgaTargets(kcal) {
+  const f = kcal / 2000;
+  const half = (v) => Math.max(0.5, Math.round(v * 2) / 2);
+  return { veg: half(3 * f), fruit: half(2 * f), wgrain: [half(2 * f), half(4 * f)], dairy: 3 };
+}
+function dgaHTML(tot, grp, addOver, target) {
+  const tr = pt();
+  const tg = dgaTargets(target.kcal);
+  const kg = target.kg;
+  const row = (k, val, goal) => {
+    const lo = Array.isArray(goal) ? goal[0] : goal;
+    const pct = Math.min(100, Math.round((val / lo) * 100));
+    const goalTxt = Array.isArray(goal) ? `${goal[0]}–${goal[1]}` : goal;
+    return `<li class="dga-row${val >= lo * 0.9 ? " is-ok" : ""}"><span class="dga-name">${esc(tr.dga[k])}</span>
+      <span class="plan-bar"><span class="plan-bar-fill" style="width:${pct}%"></span></span>
+      <span class="dga-val">${fmtHalf(val)} / ${goalTxt} ${esc(tr.dgaUnits[k])}</span></li>`;
+  };
+  const satPct = tot.kcal ? Math.round(((tot.sat * 9) / tot.kcal) * 100) : 0;
+  const pA = Math.round(kg * 1.2), pB = Math.round(kg * 1.6);
+  const lim = (ok, txt) => `<li class="${ok ? "is-ok" : "is-warn"}"><span aria-hidden="true">${ok ? "✓" : "!"}</span> ${esc(txt)}</li>`;
+  const kAI = plan.sex === "female" ? 2600 : 3400; // ingesta adecuada de potasio (Academias Nacionales, 2019)
+  return `<details class="plan-dga">
+    <summary>${esc(tr.dgaTitle)}</summary>
+    <p class="plans-help">${esc(tr.dgaSub(target.kcal))}</p>
+    <ul class="dga-list">${row("veg", grp.veg, tg.veg)}${row("fruit", grp.fruit, tg.fruit)}${row("wgrain", grp.wgrain, tg.wgrain)}${row("dairy", grp.dairy, tg.dairy)}</ul>
+    <p class="dga-sub">${esc(tr.limits)}</p>
+    <ul class="dga-limits">
+      ${lim(satPct < 10, tr.limSat(satPct))}
+      ${lim(!addOver, tr.limAdd(addOver))}
+      ${lim(tot.na < 2300, tr.limNa(Math.round(tot.na / 10) * 10))}
+      ${lim(tot.p >= pA * 0.9, tr.limProt(Math.round(tot.p), pA, pB))}
+      ${PLAN_GOALS[plan.goal].dash ? lim(tot.k >= kAI, tr.limK(Math.round(tot.k / 10) * 10, kAI)) : ""}
+    </ul>
+    <p class="plans-help">${esc(tr.dgaNote)}</p>
+  </details>`;
+}
+const fmtHalf = (v) => { const r = Math.round(v * 2) / 2; return r % 1 ? `${Math.floor(r) || ""}½` : String(r); };
 function seasonList() {
   const season = activeSeason();
   if (season === "todo") return [];
@@ -922,6 +1083,7 @@ function planPeriodHTML(pools, target) {
   const tr = pt();
   const { start, days } = periodPlan(pools, target);
   planDays = days;
+  planStart = start;
   const long ={ weekday: "long", day: "numeric", month: "long" };
   const period = plan.days === 1
     ? tr.periodDay(dayName(start, long).toLowerCase())
@@ -946,6 +1108,21 @@ function renderPlanOutput(keepSwap = false) {
     : `<p class="plans-warn">${esc(tr.noMatch)}</p>`;
   $("plans-more").innerHTML = moreHTML(pools);
   $("plans-season").innerHTML = seasonHTML();
+}
+
+/* El plan entero a la lista de compras (js/kitchen.js): cada receta por las porciones del plan ×
+   las personas en casa; las sobras no se compran otra vez. */
+function addPlanToShop() {
+  if (!planDays || typeof addToShop !== "function") return;
+  const need = new Map();
+  const put = (it, m) => { const r = it.r; need.set(r.id, (need.get(r.id) || 0) + (m * plan.people) / r.servings); };
+  for (const day of planDays) for (const x of day) {
+    if (!x.item || x.lo) continue;
+    put(x.item, x.m);
+    for (const sd of x.sides || []) put(sd.item, sd.m);
+  }
+  for (const [id, f] of need) addToShop(id, f);
+  toast(pt().shopPlanDone(need.size), true);
 }
 
 function showPlans() {
@@ -977,6 +1154,20 @@ function setupPlans() {
       renderPlanOutput(); return;
     }
     if (e.target.closest("#plans-another")) { plan.seed = (plan.seed % 9973) + 1; savePlan(); renderPlanOutput(); return; }
+    if (e.target.closest("#plans-print")) {
+      document.body.classList.add("print-plan");
+      v.querySelectorAll(".plan-dga").forEach((d) => { d.open = true; });
+      window.print();
+      setTimeout(() => document.body.classList.remove("print-plan"), 500);
+      return;
+    }
+    if (e.target.closest("#plans-shop")) { addPlanToShop(); return; }
+    const lo = e.target.closest("[data-leftover]");
+    if (lo) {
+      const [d, j] = lo.dataset.leftover.split("-").map(Number);
+      leftoverMeal(d, j); renderPlanOutput(true); toast(pt().leftoverDone, true);
+      return;
+    }
     // Cambiar una comida: abrir o cerrar su lista, ver más, o escoger una.
     const swapBtn = e.target.closest("[data-swap]");
     if (swapBtn) {
@@ -1018,6 +1209,12 @@ function setupPlans() {
   });
   v.addEventListener("change", (e) => {
     if (e.target.matches("[data-season]")) { plan.season = e.target.value; savePlan(); renderPlanOutput(); return; }
+    if (e.target.matches("[data-people]")) { plan.people = Math.min(12, Math.max(1, +e.target.value || 1)); e.target.value = plan.people; savePlan(); return; }
+    if (e.target.matches("[data-move]") && e.target.value !== "") {
+      const [d, j] = e.target.dataset.move.split("-").map(Number);
+      moveMeal(d, j, +e.target.value); renderPlanOutput(true); toast(pt().moved, true);
+      return;
+    }
     const k = e.target.dataset.avoid, p = e.target.dataset.pref, pr = e.target.dataset.prot, dt = e.target.dataset.diet;
     if (dt) plan.diet = dt;
     else if (k) plan.avoid = e.target.checked ? [...new Set([...plan.avoid, k])] : plan.avoid.filter((x) => x !== k);

@@ -17,8 +17,8 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
-const APP_VERSION = "4.23.0";
-const APP_REVISED = "2026-10-17";
+const APP_VERSION = "4.24.0";
+const APP_REVISED = "2026-10-18";
 /* Lo que se muestra al público: "Más de 1,000 recetas", no el total exacto (que cambia con cada
    tanda). El total exacto sólo sale en #/admin (auth.js). Baja al millar: 1,054 → "1,000". */
 function publicRecipeCount() {
@@ -55,6 +55,8 @@ const translations = {
     navRecipes: "Recetas",
     navFavorites: "Favoritas",
     navPlans: "Planes",
+    navMine: "Mi recetario", navShop: "Compras", bnHome: "Inicio", bnMine: "Recetario",
+    cookMode: "Modo cocina", levelFact: "Dificultad",
     navReviews: "Opiniones",
     contactLabel: "Contacto:",
     navInstall: "Póngala en su celular",
@@ -174,6 +176,8 @@ const translations = {
     navRecipes: "Recipes",
     navFavorites: "Favorites",
     navPlans: "Meal plans",
+    navMine: "My cookbook", navShop: "Shopping", bnHome: "Home", bnMine: "Cookbook",
+    cookMode: "Cook mode", levelFact: "Difficulty",
     navReviews: "Reviews",
     contactLabel: "Contact:",
     navInstall: "Put it on your phone",
@@ -1053,7 +1057,26 @@ const categoryOrder = [
 ];
 
 const QUICK_MAX_MIN = 30;
-const STORE = { lang: "rcb.lang", favs: "rcb.favorites" };
+const STORE = { lang: "rcb.lang", favs: "rcb.favorites", units: "rcb.units" };
+/* Medidas: "home" (tazas, cucharadas, °F, como están escritas) o "metric" (además ≈ g / ml y °C). */
+let unitsMode = readStore("rcb.units") === "metric" ? "metric" : "home";
+const UNITS_T = {
+  es: { label: "Medidas", home: "Caseras", metric: "Gramos y °C", note: "Gramos y mililitros aproximados, calculados con los pesos de cada ingrediente." },
+  en: { label: "Measures", home: "Cups & °F", metric: "Grams & °C", note: "Approximate grams and milliliters, from each ingredient's weights." }
+};
+/* "350°F" → "350°F (175°C)" en modo métrico. */
+function withCelsius(text) {
+  if (unitsMode !== "metric") return esc(text);
+  return esc(text).replace(/(\d{2,3})\s*°\s*F\b(?!\s*\()/g, (m, f) => `${m} <span class="metric">(${Math.round(((+f - 32) * 5) / 9 / 5) * 5}°C)</span>`);
+}
+function metricHTML(line, factor) {
+  if (unitsMode !== "metric" || typeof lineGrams !== "function") return "";
+  const g = lineGrams(line);
+  if (!g || g.grams < 1) return "";
+  const v = g.grams * factor;
+  const n = v >= 1000 ? `${(v / 1000).toLocaleString(currentLang === "es" ? "es-PR" : "en-US", { maximumFractionDigits: 2 })} ${g.liquid ? "L" : "kg"}` : `${v < 10 ? Math.round(v * 2) / 2 : Math.round(v / 5) * 5} ${g.liquid ? "ml" : "g"}`;
+  return ` <span class="metric">≈ ${n}</span>`;
+}
 
 /* ------------------------------------------------------------ estado ---- */
 
@@ -1208,7 +1231,7 @@ function emptyHTML() {
 /* ------------------------------------------------------------ filtros ---- */
 
 function hasFilters() {
-  return Boolean(searchQuery || selectedNavCategory || onlyFavorites || onlyQuick);
+  return Boolean(searchQuery || selectedNavCategory || onlyFavorites || onlyQuick || (typeof advActive === "function" && advActive()));
 }
 
 /* Búsqueda inteligente (js/search.js): se calcula una vez por texto e idioma. */
@@ -1232,13 +1255,17 @@ function matches(r) {
   if (onlyQuick && !isQuick(r)) return false;
   const s = currentSearch();
   if (s && !s.scores.has(r.id)) return false;
+  if (typeof advOk === "function" && !advOk(r)) return false; // js/filters.js
   return true;
 }
+
+/* Con "lo que tengo" (js/filters.js) y sin búsqueda: por cuánto de lo que tiene usa cada receta. */
+const haveSorting = () => !currentSearch() && typeof adv !== "undefined" && adv.have.length > 0;
 
 function getFilteredRecipes(category) {
   const list = recipes.filter((r) => r.category === category && matches(r));
   // Al buscar, por parecido; si no, por familia (js/families.js) y nombre.
-  return currentSearch() ? list.sort(byScore) : sortByFamily(list, currentLang);
+  return currentSearch() ? list.sort(byScore) : haveSorting() ? advSort(list) : sortByFamily(list, currentLang);
 }
 
 /* Lo que entendió el buscador: términos, exclusiones, ideas y correcciones. */
@@ -1304,6 +1331,7 @@ function renderCategories() {
 
   const filtered = recipes.filter(matches);
   if (currentSearch()) filtered.sort(byScore);
+  else if (haveSorting()) advSort(filtered);
   renderUnderstood();
   let heading = tr.results;
   if (searchQuery) heading = tr.resultsFor(searchQuery);
@@ -1318,9 +1346,9 @@ function renderCategories() {
 
   // Al buscar se dibujan las tarjetas por tandas (RESULT_PAGE): dibujar cientos
   // en cada letra era lo lento en el celular. "Ver más" añade la siguiente tanda.
-  const viewKey = `${searchQuery}|${selectedNavCategory}|${onlyFavorites}|${onlyQuick}|${currentLang}`;
+  const viewKey = `${searchQuery}|${selectedNavCategory}|${onlyFavorites}|${onlyQuick}|${currentLang}|${typeof advKey === "function" ? advKey() : ""}`;
   if (viewKey !== resultView.key) resultView = { key: viewKey, limit: RESULT_PAGE };
-  const paged = Boolean(currentSearch());
+  const paged = Boolean(currentSearch()) || haveSorting();
   const limit = paged ? resultView.limit : Infinity;
   const hidden = Math.max(0, filtered.length - limit);
   const moreBtn = hidden
@@ -1330,7 +1358,7 @@ function renderCategories() {
   // Una categoría elegida: sin búsqueda, agrupada por familia con un subtítulo
   // para cada una (flanes, tembleques…; res, cerdo…); al buscar, por parecido.
   if (selectedNavCategory) {
-    if (currentSearch()) {
+    if (paged) {
       container.innerHTML = `<div class="recipe-grid">${filtered.slice(0, limit).map((r, i) => cardHTML(r, i)).join("")}</div>${moreBtn}`;
       return;
     }
@@ -1423,6 +1451,10 @@ function switchLang(lang) {
   renderHome();
   if (current) renderModal(current);
   if (!$("view-plans").hidden) renderPlansShell();
+  if (typeof refreshKitchenViews === "function") refreshKitchenViews();
+  if (typeof renderAdvPanel === "function") renderAdvPanel();
+  if (typeof renderCook === "function") renderCook();
+  if (typeof renderSeasonal === "function") renderSeasonal();
   renderAuthTexts();
 }
 
@@ -1441,13 +1473,15 @@ function renderModal(recipe) {
   $("modal-ing-count").textContent = String(recipe.ingredients[currentLang].length);
   $("modal-ingredients-title").textContent = tr.ingredients;
   $("modal-steps-title").textContent = tr.steps;
-  $("modal-steps-list").innerHTML = recipe.steps[currentLang].map((s) => `<li>${esc(s)}</li>`).join("");
+  $("modal-steps-list").innerHTML = recipe.steps[currentLang].map((s, i) => `<li>${withCelsius(s)}${typeof stepTimersHTML === "function" ? stepTimersHTML(s, i + 1) : ""}</li>`).join("");
+  if (typeof recipeLevel === "function") $("modal-level").textContent = FT[currentLang].levelTag[recipeLevel(recipe)];
   renderPairings(recipe);
   renderFavButton();
   renderIngredients();
   renderNutrition(recipe);
   renderSafety(recipe);
   renderRecipeReviews(recipe); // js/reviews.js
+  if (typeof renderRecipeKitchen === "function") renderRecipeKitchen(recipe); // js/kitchen.js
 }
 
 /* Salsas y aderezos: con qué platos combinan mejor (js/pairings.js). Cada uno lleva a su categoría. */
@@ -1461,6 +1495,30 @@ function renderPairings(recipe) {
         <li><button type="button" class="pairing-chip" data-pair-cat="${p.category}" aria-label="${esc(pt.go(p.label[currentLang].toLowerCase()))}">${esc(p.label[currentLang])}</button></li>`).join("")}</ul>`
     : "";
 }
+
+/* Textos nuevos de la pestaña de nutrición (etiqueta completa, grupos y fuentes del USDA). */
+const NUTRI_UI_T = {
+  es: {
+    chol: "Colesterol", trans: "Grasa trans", add: (g) => `Incluye ${g} de azúcares añadidos`, vd: "Vitamina D", ca: "Calcio", fe: "Hierro", k: "Potasio",
+    groupsTitle: "Grupos de alimentos en una porción", groupsNote: "Según las Guías Alimentarias para Estadounidenses 2025–2030 (USDA/HHS).",
+    groups: { veg: "Vegetales y viandas", fruit: "Frutas", grain: "Granos", wgrain: "de ellos integrales", prot: "Proteína", dairy: "Lácteos" },
+    gUnits: { veg: "taza", fruit: "taza", grain: "oz", wgrain: "oz", prot: "oz", dairy: "taza" },
+    srcTitle: "Fuentes de cada ingrediente", srcUsda: "USDA FoodData Central", srcLocal: "Estimado de la app (producto de Puerto Rico o de marca que no está en el USDA)",
+    srcEdible: (p) => `se cuenta la parte comestible: ${p}%`, srcIntro: (a, b) => `${a} de ${b} ingredientes contados tienen su número oficial del USDA. Toque uno para ver la ficha del USDA.`,
+    drained: "Las viandas, vegetales o pastas se hierven y se escurren: se descuenta lo que se pierde en el agua (potasio −25 %, calcio y hierro −5 %), como en la Tabla de factores de retención del USDA.",
+    method: "Cómo se calcula: cada ingrediente crudo, como se compra, por su peso y los valores por 100 g de USDA FoodData Central (base SR Legacy). Las carnes con hueso cuentan sólo lo que se come."
+  },
+  en: {
+    chol: "Cholesterol", trans: "Trans fat", add: (g) => `Includes ${g} added sugars`, vd: "Vitamin D", ca: "Calcium", fe: "Iron", k: "Potassium",
+    groupsTitle: "Food groups in one serving", groupsNote: "Per the Dietary Guidelines for Americans 2025–2030 (USDA/HHS).",
+    groups: { veg: "Vegetables", fruit: "Fruit", grain: "Grains", wgrain: "of which whole", prot: "Protein", dairy: "Dairy" },
+    gUnits: { veg: "cup", fruit: "cup", grain: "oz", wgrain: "oz", prot: "oz", dairy: "cup" },
+    srcTitle: "Source of each ingredient", srcUsda: "USDA FoodData Central", srcLocal: "App estimate (Puerto Rican or brand-name product not in the USDA database)",
+    srcEdible: (p) => `edible part counted: ${p}%`, srcIntro: (a, b) => `${a} of ${b} counted ingredients have their official USDA number. Tap one to see the USDA record.`,
+    drained: "Root vegetables, vegetables or pasta are boiled and drained: what's lost in the water is subtracted (potassium −25%, calcium and iron −5%), as in the USDA Table of Nutrient Retention Factors.",
+    method: "How it's calculated: each raw ingredient, as purchased, by weight, with the per-100 g values from USDA FoodData Central (SR Legacy). Bone-in meats count only the edible part."
+  }
+};
 
 /* Pestaña de información nutricional: estimación de js/nutrition.js. */
 function renderNutrition(recipe) {
@@ -1491,15 +1549,43 @@ function renderNutrition(recipe) {
   ];
   const grams = (v) => (v < 1 && v > 0 ? "< 1" : fmt(v, v < 10 ? 1 : 0));
   const dv = (v, key) => `${fmt(Math.round((v / NUTRI_DV[key]) * 100))}%`;
+  const ut = NUTRI_UI_T[currentLang];
+  const mg = (v) => `${fmt(v < 10 ? Math.round(v * 10) / 10 : Math.round(v), 1)} mg`;
+  // Como en la etiqueta de la FDA: menos de 0.5 g de grasa trans se declara 0 g.
+  const transG = (v) => (v < 0.5 ? "0" : grams(v));
+  // Mismo orden que la etiqueta "Nutrition Facts" de la FDA.
   const rows = [
     [tr.nFat, `${grams(per.fat)} g`, dv(per.fat, "fat"), ""],
     [tr.nSat, `${grams(per.sat)} g`, dv(per.sat, "sat"), "sub"],
+    [ut.trans, `${transG(per.trans)} g`, "", "sub"],
+    [ut.chol, `${fmt(Math.round(per.chol / 5) * 5)} mg`, dv(per.chol, "chol"), ""],
     [tr.nSodium, `${fmt(Math.round(per.na / 5) * 5)} mg`, dv(per.na, "na"), ""],
     [tr.nCarbs, `${grams(per.c)} g`, dv(per.c, "c"), ""],
     [tr.nFiber, `${grams(per.fib)} g`, dv(per.fib, "fib"), "sub"],
     [tr.nSugars, `${grams(per.s)} g`, "", "sub"],
-    [tr.nProtein, `${grams(per.p)} g`, dv(per.p, "p"), ""]
+    [ut.add(`${grams(per.add)} g`), "", dv(per.add, "add"), "sub2"],
+    [tr.nProtein, `${grams(per.p)} g`, dv(per.p, "p"), ""],
+    [ut.vd, `${fmt(Math.round(per.vd * 10) / 10)} mcg`, dv(per.vd, "vd"), "micro"],
+    [ut.ca, mg(per.ca), dv(per.ca, "ca"), "micro"],
+    [ut.fe, mg(per.fe), dv(per.fe, "fe"), "micro"],
+    [ut.k, mg(per.k), dv(per.k, "k"), "micro"]
   ];
+  // Grupos de alimentos de una porción (Guías Alimentarias 2025–2030).
+  const gr = est.groups || {};
+  const half = (v) => { const r = Math.round(v * 4) / 4; return r ? fmt(r, 2) : "0"; };
+  const groupsHTML = ["veg", "fruit", "grain", "prot", "dairy"].map((k) => gr[k] >= 0.125
+    ? `<li><span class="ng-name">${esc(ut.groups[k])}</span><span class="ng-val">${half(gr[k])} ${esc(ut.gUnits[k])}${k === "grain" && gr.wgrain >= 0.125 ? ` · ${esc(ut.groups.wgrain)} ${half(gr.wgrain)}` : ""}</span></li>` : "").join("");
+  // Fuente de cada ingrediente contado: número FDC del USDA o estimado propio.
+  let usdaN = 0, srcN = 0;
+  const srcRows = (est.sources || []).map((foods, i) => {
+    if (!foods) return "";
+    srcN++;
+    const uniq = foods.filter((f, k) => foods.indexOf(f) === k);
+    if (uniq.every((f) => f.src)) usdaN++;
+    return `<li><span class="src-ing">${esc(recipe.ingredients[currentLang][i])}</span>${uniq.map((f) => f.src
+      ? `<a class="src-fdc" href="https://fdc.nal.usda.gov/food-details/${f.src.fdc}/nutrients" target="_blank" rel="noopener">FDC #${f.src.fdc}</a> <span class="src-desc">${esc(f.src.desc)}${f.src.ef < 1 ? ` · ${esc(ut.srcEdible(Math.round(f.src.ef * 100)))}` : ""}${f.src.prep ? ` · ${esc(f.src.prep[currentLang])}` : ""}</span>`
+      : `<span class="src-local">${esc(ut.srcLocal)}</span>`).join("<br>")}</li>`;
+  }).join("");
   const missing = est.missing.map((i) => `<li>${esc(recipe.ingredients[currentLang][i])}</li>`).join("");
 
   panel.innerHTML = `
@@ -1524,7 +1610,7 @@ function renderNutrition(recipe) {
         <thead><tr><th scope="col">${tr.nutrient}</th><th scope="col">${tr.perServing}</th><th scope="col">${tr.dv}</th></tr></thead>
         <tbody>
           <tr class="row-kcal"><th scope="row">${tr.nCalories}</th><td>${fmt(kcal)}</td><td>${dv(per.kcal, "kcal")}</td></tr>
-          ${rows.map(([l, v, d, cls]) => `<tr class="${cls}"><th scope="row">${l}</th><td>${v}</td><td>${d}</td></tr>`).join("")}
+          ${rows.map(([l, v, d, cls]) => `<tr class="${cls}"><th scope="row">${esc(l)}</th><td>${v}</td><td>${d}</td></tr>`).join("")}
         </tbody>
       </table>
     </div>
@@ -1533,7 +1619,15 @@ function renderNutrition(recipe) {
       ${missing ? `<p>${tr.nutriMissing}</p><ul class="nutri-missing">${missing}</ul>` : ""}
       <p>${tr.nutriNote}</p>
       <p>${tr.nutriDv}</p>
-    </div>`;
+      ${est.drained ? `<p>${esc(ut.drained)}</p>` : ""}
+    </div>
+    ${groupsHTML ? `<section class="nutri-groups"><h3 class="nutri-subtitle">${esc(ut.groupsTitle)}</h3><ul class="ng-list">${groupsHTML}</ul><p class="nutri-sources-note">${esc(ut.groupsNote)}</p></section>` : ""}
+    <details class="nutri-sources">
+      <summary>${esc(ut.srcTitle)} · ${esc(ut.srcUsda)}</summary>
+      <p class="nutri-sources-note">${esc(ut.method)}</p>
+      <p class="nutri-sources-note">${esc(ut.srcIntro(usdaN, srcN))}</p>
+      <ul class="src-list">${srcRows}</ul>
+    </details>`;
 }
 
 /* Pestaña de alergias, alertas y manejo seguro: reglas de js/advisories.js. */
@@ -1604,11 +1698,16 @@ function renderIngredients() {
   const tr = t();
   const factor = currentServings / r.servings;
   const checked = new Set([...document.querySelectorAll("#modal-ingredients-list input:checked")].map((i) => i.value));
+  const ut = UNITS_T[currentLang];
+  $("units-toggle").innerHTML = `<span class="units-label">${ut.label}:</span>${["home", "metric"].map((k) => `<button type="button" class="units-btn" data-units="${k}" aria-pressed="${unitsMode === k}">${ut[k]}</button>`).join("")}`;
+  $("units-note").hidden = unitsMode !== "metric";
+  $("units-note").textContent = ut.note;
+  const esLines = r.ingredients.es;
   $("modal-ingredients-list").innerHTML = r.ingredients[currentLang].map((ing, i) => `
     <li><label class="ing-item">
       <input type="checkbox" value="${i}" ${checked.has(String(i)) ? "checked" : ""}>
       <span class="ing-box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
-      <span class="ing-text">${scaleIngredient(ing, factor)}</span>
+      <span class="ing-text">${scaleIngredient(ing, factor)}${metricHTML(esLines[i], factor)}</span>
     </label></li>`).join("");
   $("serv-value").textContent = String(currentServings);
   $("serv-minus").disabled = currentServings <= 1;
@@ -1702,10 +1801,15 @@ function goBack() {
 
 function route() {
   const hash = decodeURIComponent(location.hash || "");
+  // Las vistas de js/kitchen.js se esconden aquí; las demás las esconde cada show*().
+  for (const id of ["view-mine", "view-shop"]) { const el = $(id); if (el) el.hidden = true; }
+  if (typeof setBottomNav === "function") setBottomNav(hash);
   const m = hash.match(/^#\/receta\/(.+)$/);
   if (m) { showRecipe(m[1]); return; }
   if (hash === "#/planes") { showPlans(); return; }
   if (hash === "#/admin") { showAdmin(); return; }
+  if (hash === "#/mi-recetario") { showMine(); return; }  // js/kitchen.js
+  if (hash === "#/compras") { showShop(); return; }       // js/kitchen.js
   const anchor = hash.startsWith("#") && !hash.startsWith("#/") ? hash.slice(1) : null;
   showHome(anchor);
 }
@@ -1766,6 +1870,7 @@ function clearFilters() {
   selectedNavCategory = null;
   onlyFavorites = false;
   onlyQuick = false;
+  if (typeof clearAdvFilters === "function") clearAdvFilters();
   $("search-input").value = "";
   $("search-clear").hidden = true;
   renderNavPills();
@@ -1900,6 +2005,15 @@ function setupEventListeners() {
   });
   $("serv-minus").addEventListener("click", () => { if (currentServings > 1) { currentServings--; renderIngredients(); } });
   $("serv-plus").addEventListener("click", () => { currentServings++; renderIngredients(); });
+  $("units-toggle").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-units]");
+    if (!b || b.dataset.units === unitsMode) return;
+    unitsMode = b.dataset.units;
+    writeStore(STORE.units, unitsMode);
+    renderIngredients();
+    $("modal-steps-list").innerHTML = current.steps[currentLang].map((s, i) => `<li>${withCelsius(s)}${typeof stepTimersHTML === "function" ? stepTimersHTML(s, i + 1) : ""}</li>`).join("");
+    const again = document.querySelector(`[data-units="${unitsMode}"]`); if (again) again.focus();
+  });
 
   // Menú móvil
   $("menu-toggle").addEventListener("click", () => {
