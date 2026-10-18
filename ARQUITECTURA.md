@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.30.0 · **Versión de la app:** 4.30.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,134 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.31.0 · **Versión de la app:** 4.31.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,150 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -198,12 +198,12 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | huevos | Huevos y Queso | 22 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 57 |
 | pastas | Pastas | 26 |
-| bizcochos | Bizcochos | 42 |
+| bizcochos | Bizcochos | 49 |
 | galletitas | Galletitas | 38 |
 | pasteles_dulces | Pasteles Dulces | 22 |
 | panes | Pan y Panecillos | 46 |
 | emparedados | Emparedados | 25 |
-| postres | Helados, Budines, Flan y Otros Postres | 123 |
+| postres | Helados, Budines, Flan y Otros Postres | 132 |
 | arroces | Arroces y Habichuelas | 56 |
 | vegetales | Vegetales y Viandas | 84 |
 | salsas | Salsas y Aderezos | 72 |
@@ -254,7 +254,7 @@ Naturales tiene 30 recetas: no se junta con Bebidas.
   una receta, volver a los resultados, los planes y `#/admin` usan `jumpTo()` (`behavior: "instant"`). El deslizamiento
   suave queda para los enlaces dentro de la misma página.
 - **Inicio:** hero con buscador, la frase "Recetas boricuas paso a paso… Gratis y sin registrarse" (`#site-author`; desde
-  v4.30 la versión sólo sale en el pie) y estadísticas (`statsHero(publicRecipeCount(), categorías)`: "1,134 recetas
+  v4.30 la versión sólo sale en el pie) y estadísticas (`statsHero(publicRecipeCount(), categorías)`: "1,150 recetas
   tradicionales · 24 categorías", **el total exacto** sacado de los datos desde v4.30), cuadrícula de
   categorías (clic = sólo esa categoría; clic de nuevo = todas), carril "Listas en 30 minutos o menos"
   (`QUICK_MAX_MIN = 30`, contando el tiempo **total**), y resultados agrupados por categoría (acordeón) con filtros *Rápidas* y *Favoritas*.
@@ -638,7 +638,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   primero y la lista de la época) siguen la corrección del administrador.
 - **Fecha de ingreso:** `RECIPE_ADDED` en `js/recipe-dates.js`, GENERADO por `node tools/recipe-dates.js` desde el
   historial de git (fecha del commit que escribió la línea `id: "…"`; las que aún no están en un commit, la de hoy).
-  Hoy: 165 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11 y 112 del 17.
+  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17 y 36 del 18 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
   Se carga con `loadScript()` sólo al abrir el panel. **Después de añadir recetas, hay que volver a generarlo** (§11).
 - **Seguridad (`firestore.rules`, `match /recipeMeta/{id}`):** leer, cualquiera que entre; escribir y borrar, sólo
   administradores, con sólo esas 3 claves, `seasons` entre `todo`, `navidad`, `cuaresma`, `verano`, `gracias` y `lluvia`
@@ -786,7 +786,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - **Por qué:** la app usa `#/receta/<id>`, y para Google todo lo que va después de `#` es la portada: ninguna receta salía
   en las búsquedas ("receta de pernil") y todos los enlaces compartidos se veían iguales (título, texto y bandera).
 - **`node tools/prerender.js`** (sin dependencias; carga los scripts en `vm` como el navegador) genera:
-  `receta/<id>.html` (1,134 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
+  `receta/<id>.html` (1,150 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
   `vercel.json`. Cada una es ligera y se lee sin JavaScript: título y descripción propios ("Coquito: receta puertorriqueña
   paso a paso para 12 porciones. Lleva leche de coco… Lista en 4 h 15 min."), `canonical`, Open Graph y Twitter con el
   nombre del plato, tiempo de cocina y total, porciones, calorías estimadas, alérgenos, ingredientes y pasos en español y
@@ -990,7 +990,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,134). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,150). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -1096,6 +1096,29 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-18 — v4.31.0 · Más postres y bizcochos
+- *Pedido:* más recetas de postres y bizcochos.
+- Quincuagésima segunda tanda en `js/recipes-5.js` (versiones propias, ya con `active`/`total`/`wait` de la v4.30), 16 que
+  no estaban (había 123 postres y 42 bizcochos):
+  - **Postres (9):** flan de guineo, tembleque de guayaba, mousse de guayaba, tiramisú de café boricua (sin huevo crudo),
+    crema catalana de coco (las yemas hierven 1 minuto), helado de piña colada (sin máquina, sin alcohol), majarete de
+    chocolate (con chocolate de taza), tarta de guineo y dulce de leche (sin horno, 12 porciones) y trufas de chocolate y
+    coco.
+  - **Bizcochos (7):** de batata con canela, de plátano maduro, de guanábana con crema, de maíz con coco, cupcakes de
+    tembleque, ponqué de queso crema y bizcocho de jengibre y melao.
+- **Alérgenos** (`advisories.js`): las soletillas (ladyfingers) cuentan como huevo; antes el tiramisú no salía con él.
+- **Iconos:** 3 dibujos recoloreados de los que había (`ic-pos-tembleque-guayaba`, `ic-pos-mousse-guayaba`,
+  `ic-pos-majarete-chocolate`); el flan de guineo usa el de flan de fruta, el tiramisú el del bizcocho mojado de café, la
+  crema catalana el de flan, el ponqué de queso crema el del ponqué de mantequilla (salía 🧀) y la tarta 🥧. Los demás
+  bizcochos usan 🍰 como la mayoría de los que había.
+- **Familias** (`families.js`): la crema catalana va con tembleques y natillas; el tiramisú y la tarta de guineo con
+  bizcochos y tartas; los bizcochos de guanábana y de plátano con los de frutas. Ninguna receta anterior cambió de familia.
+- Fechas de ingreso regeneradas; `node tools/prerender.js`: 1,150 páginas en `receta/` y `sitemap.xml` con 1,152
+  direcciones. Total: **1,134 → 1,150 recetas**.
+- Nota: esta tanda se escribió primero sobre la 4.29.1 y se publicó en Vercel un momento sin la revisión del sitio
+  (4.30.0, que estaba en GitHub y no en esta copia); se volvió a publicar la 4.30.0 enseguida y la tanda se rehízo encima.
+- *Verificado:* `node tools/check-recipes.js` 0 errores y 0 avisos; nutrición 0 sin contar; navegador: las 16 en ES y EN
+  a 375 px con su nombre y su dibujo, sin desbordes ni errores de consola.
 ### 2026-10-18 — v4.30.0 · Revisión del sitio: recetas sin cuenta, Google, tiempos reales, privacidad y accesibilidad
 - *Pedido:* aplicar la revisión del sitio (versión 4.29.0) menos la sugerencia 6 (fotos de los platos).
 - **Acceso (1):** la app se usa sin cuenta; la entrada sólo se abre para guardar en la nube, escribir o reportar reseñas,

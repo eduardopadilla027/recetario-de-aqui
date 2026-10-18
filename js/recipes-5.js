@@ -6032,5 +6032,768 @@ recipes.push(
         "Bake 12 to 15 minutes, until the whites are set. Garnish with parsley and serve with bread for dipping."
       ]
     }
+  },
+  // ---------- Tanda 52: más postres (9) y bizcochos (7) ----------
+  {
+    id: "flan-guineo",
+    category: "postres",
+    name: { es: "Flan de Guineo", en: "Banana Flan" },
+    active: 75, total: 315, wait: "frio",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 taza de azúcar para el caramelo",
+        "3 guineos bien maduros",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "5 huevos",
+        "1 cucharadita de vainilla",
+        "½ cucharadita de canela",
+        "1 pizca de sal"
+      ],
+      en: [
+        "1 cup sugar for the caramel",
+        "3 very ripe bananas",
+        "1 can (14 oz) condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "5 eggs",
+        "1 teaspoon vanilla",
+        "½ teaspoon cinnamon",
+        "1 pinch salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F. Derrita el azúcar en el molde de flan a fuego medio, moviendo, hasta que tome color ámbar, y cubra el fondo y los lados.",
+        "Licúe los guineos con la leche condensada, la leche evaporada, los huevos, la vainilla, la canela y la sal hasta que quede liso.",
+        "Cuele sobre el caramelo para que el flan quede fino.",
+        "Hornee a baño de María 1 hora, hasta que al mover el molde el centro tiemble apenas y un cuchillo salga limpio.",
+        "Deje enfriar y refrigere 4 horas antes de voltearlo. Los guineos con manchas negras dan más sabor."
+      ],
+      en: [
+        "Heat the oven to 350 °F. Melt the sugar in the flan mold over medium heat, stirring, until amber, and coat the bottom and sides.",
+        "Blend the bananas with the condensed milk, evaporated milk, eggs, vanilla, cinnamon and salt until smooth.",
+        "Strain over the caramel so the flan is silky.",
+        "Bake in a water bath 1 hour, until the center barely jiggles and a knife comes out clean.",
+        "Cool and refrigerate 4 hours before unmolding. Bananas with black spots give more flavor."
+      ]
+    }
+  },
+  {
+    id: "tembleque-guayaba",
+    category: "postres",
+    name: { es: "Tembleque de Guayaba", en: "Guava Tembleque" },
+    active: 20, total: 260, wait: "frio",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 latas de 13.5 onzas de leche de coco",
+        "4 onzas de pasta de guayaba en cubitos",
+        "½ taza de maicena",
+        "⅓ taza de azúcar",
+        "1 pizca de sal",
+        "1 cucharadita de vainilla",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "2 cans (13.5 oz) coconut milk",
+        "4 ounces guava paste, diced",
+        "½ cup cornstarch",
+        "⅓ cup sugar",
+        "1 pinch salt",
+        "1 teaspoon vanilla",
+        "Ground cinnamon to garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Moje un molde o copas con agua fría.",
+        "Caliente 1 taza de la leche de coco con la guayaba a fuego bajo hasta que se derrita.",
+        "En otro envase, disuelva la maicena, el azúcar y la sal en el resto de la leche de coco fría. Únalo con la guayaba.",
+        "Cocine a fuego medio, moviendo sin parar con cuchara de madera, hasta que hierva y espese bien, unos 10 minutos. Añada la vainilla.",
+        "Vierta en el molde, refrigere 4 horas, voltee y espolvoree canela. Sale rosado, con el dulce de la guayaba y la suavidad del tembleque."
+      ],
+      en: [
+        "Wet a mold or cups with cold water.",
+        "Heat 1 cup of the coconut milk with the guava over low heat until melted.",
+        "In another bowl, dissolve the cornstarch, sugar and salt in the rest of the cold coconut milk. Combine with the guava.",
+        "Cook over medium heat, stirring constantly with a wooden spoon, until it boils and thickens well, about 10 minutes. Add the vanilla.",
+        "Pour into the mold, refrigerate 4 hours, unmold and sprinkle with cinnamon. It turns pink, with guava sweetness and tembleque's softness."
+      ]
+    }
+  },
+  {
+    id: "mousse-guayaba",
+    category: "postres",
+    name: { es: "Mousse de Guayaba", en: "Guava Mousse" },
+    active: 20, total: 200, wait: "frio",
+    servings: 6,
+    ingredients: {
+      es: [
+        "8 onzas de pasta de guayaba en cubitos",
+        "¼ taza de agua",
+        "1 cucharada de jugo de limón",
+        "4 onzas de queso crema a temperatura ambiente",
+        "1 taza de crema espesa para batir, fría",
+        "2 cucharadas de azúcar",
+        "6 galletas María trituradas"
+      ],
+      en: [
+        "8 ounces guava paste, diced",
+        "¼ cup water",
+        "1 tablespoon lime juice",
+        "4 ounces cream cheese, at room temperature",
+        "1 cup cold heavy whipping cream",
+        "2 tablespoons sugar",
+        "6 Maria cookies, crushed"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la guayaba con el agua y el limón a fuego bajo hasta tener un puré. Deje enfriar por completo.",
+        "Bata el queso crema hasta que esté suave y añada el puré de guayaba poco a poco.",
+        "Bata la crema con el azúcar hasta que forme picos firmes.",
+        "Incorpore la crema a la guayaba en tres partes, con movimientos envolventes.",
+        "Sirva en copas con las galletas María trituradas por encima y refrigere 3 horas. Sabe a pastelillo de guayaba y queso."
+      ],
+      en: [
+        "Melt the guava with the water and lime juice over low heat into a purée. Cool completely.",
+        "Beat the cream cheese until smooth and add the guava purée little by little.",
+        "Whip the cream with the sugar to stiff peaks.",
+        "Fold the cream into the guava in three parts.",
+        "Spoon into cups, top with the crushed Maria cookies and refrigerate 3 hours. It tastes like a guava-and-cheese pastry."
+      ]
+    }
+  },
+  {
+    id: "tiramisu-cafe-boricua",
+    category: "postres",
+    name: { es: "Tiramisú de Café Boricua", en: "Puerto Rican Coffee Tiramisu" },
+    active: 30, total: 390, wait: "frio",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1½ tazas de café puertorriqueño colado fuerte, frío",
+        "2 cucharadas de azúcar para el café",
+        "8 onzas de queso crema a temperatura ambiente",
+        "½ taza de leche condensada",
+        "1½ tazas de crema espesa para batir, fría",
+        "1 cucharadita de vainilla",
+        "2 paquetes de 7 onzas de galletas soletillas (ladyfingers)",
+        "2 cucharadas de cacao en polvo sin azúcar"
+      ],
+      en: [
+        "1½ cups strong brewed Puerto Rican coffee, cold",
+        "2 tablespoons sugar for the coffee",
+        "8 ounces cream cheese, at room temperature",
+        "½ cup condensed milk",
+        "1½ cups cold heavy whipping cream",
+        "1 teaspoon vanilla",
+        "2 packages (7 oz) ladyfingers",
+        "2 tablespoons unsweetened cocoa powder"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva el azúcar en el café frío.",
+        "Bata el queso crema con la leche condensada y la vainilla hasta que quede liso. Aparte, bata la crema hasta que forme picos y únala al queso con movimientos envolventes.",
+        "Pase las soletillas rápido por el café (1 segundo por lado, para que no se desbaraten) y haga una capa en un molde de 8 × 8 pulgadas.",
+        "Cubra con la mitad de la crema y repita con otra capa de soletillas y el resto de la crema.",
+        "Refrigere al menos 6 horas y espolvoree el cacao al servir. No lleva huevo crudo (las soletillas sí llevan huevo, ya horneado); la cafeína del café queda en el postre."
+      ],
+      en: [
+        "Dissolve the sugar in the cold coffee.",
+        "Beat the cream cheese with the condensed milk and vanilla until smooth. Separately, whip the cream to peaks and fold it into the cheese.",
+        "Dip the ladyfingers quickly in the coffee (1 second per side, so they don't fall apart) and make a layer in an 8 × 8-inch dish.",
+        "Cover with half the cream and repeat with another layer of ladyfingers and the rest of the cream.",
+        "Refrigerate at least 6 hours and dust with cocoa to serve. It has no raw egg (the ladyfingers do contain baked egg); the coffee's caffeine stays in the dessert."
+      ]
+    }
+  },
+  {
+    id: "crema-catalana-coco",
+    category: "postres",
+    name: { es: "Crema Catalana de Coco", en: "Coconut Crème Brûlée (Crema Catalana)" },
+    active: 30, total: 270, wait: "frio",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 taza de leche",
+        "5 yemas de huevo",
+        "½ taza de azúcar",
+        "2 cucharadas de maicena",
+        "1 cáscara de limón",
+        "1 raja de canela",
+        "6 cucharadas de azúcar para quemar"
+      ],
+      en: [
+        "1 can (13.5 oz) coconut milk",
+        "1 cup milk",
+        "5 egg yolks",
+        "½ cup sugar",
+        "2 tablespoons cornstarch",
+        "1 lime peel",
+        "1 cinnamon stick",
+        "6 tablespoons sugar for torching"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente la leche de coco y la leche con la cáscara de limón y la canela hasta que empiece a humear. Apague y deje reposar 10 minutos; saque la cáscara y la canela.",
+        "Bata las yemas con el azúcar y la maicena hasta que blanqueen.",
+        "Añada la leche caliente poco a poco, batiendo, y vuelva al fuego medio-bajo moviendo sin parar hasta que espese y hierva 1 minuto (así la yema queda cocida).",
+        "Reparta en 6 cazuelitas y refrigere 4 horas.",
+        "Antes de servir, cubra cada una con 1 cucharada de azúcar y quémela con un soplete (o bajo el asador del horno 1 a 2 minutos, vigilando) hasta tener una costra dorada."
+      ],
+      en: [
+        "Heat the coconut milk and milk with the lime peel and cinnamon until steaming. Turn off and let steep 10 minutes; remove the peel and cinnamon.",
+        "Beat the yolks with the sugar and cornstarch until pale.",
+        "Add the hot milk gradually, whisking, and return to medium-low heat stirring constantly until it thickens and boils 1 minute (so the yolks are cooked).",
+        "Divide among 6 ramekins and refrigerate 4 hours.",
+        "Before serving, top each with 1 tablespoon sugar and torch it (or broil 1 to 2 minutes, watching) until a golden crust forms."
+      ]
+    }
+  },
+  {
+    id: "helado-pina-colada",
+    category: "postres",
+    name: { es: "Helado de Piña Colada (Sin Máquina, Sin Alcohol)", en: "No-Churn Piña Colada Ice Cream (Alcohol-Free)" },
+    active: 15, total: 375, wait: "congelador",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 tazas de crema espesa para batir, fría",
+        "1 lata de 14 onzas de leche condensada",
+        "½ taza de crema de coco",
+        "1½ tazas de piña triturada, bien escurrida",
+        "½ taza de coco rallado tostado",
+        "1 cucharadita de vainilla",
+        "1 pizca de sal"
+      ],
+      en: [
+        "2 cups cold heavy whipping cream",
+        "1 can (14 oz) condensed milk",
+        "½ cup cream of coconut",
+        "1½ cups crushed pineapple, well drained",
+        "½ cup toasted shredded coconut",
+        "1 teaspoon vanilla",
+        "1 pinch salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la leche condensada, la crema de coco, la vainilla y la sal.",
+        "Exprima bien la piña en un colador (el agua de la piña hace cristales de hielo).",
+        "Bata la crema fría hasta que forme picos firmes e incorpórela a la mezcla de coco con movimientos envolventes.",
+        "Añada la piña y la mitad del coco tostado, pase a un envase con tapa y espolvoree el resto del coco.",
+        "Congele 6 horas y saque 5 minutos antes de servir. Sabe a piña colada, sin ron, para toda la familia."
+      ],
+      en: [
+        "Mix the condensed milk, cream of coconut, vanilla and salt.",
+        "Squeeze the pineapple well in a strainer (pineapple juice makes ice crystals).",
+        "Whip the cold cream to stiff peaks and fold into the coconut mixture.",
+        "Add the pineapple and half the toasted coconut, transfer to a lidded container and sprinkle with the rest of the coconut.",
+        "Freeze 6 hours and take out 5 minutes before serving. It tastes like a piña colada, without rum, for the whole family."
+      ]
+    }
+  },
+  {
+    id: "majarete-chocolate",
+    category: "postres",
+    name: { es: "Majarete de Chocolate", en: "Chocolate Majarete" },
+    active: 25, total: 205, wait: "frio",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 lata de 13.5 onzas de leche de coco",
+        "2 tazas de leche",
+        "½ taza de harina de arroz",
+        "½ taza de azúcar",
+        "3 onzas de chocolate de taza (de hacer chocolate caliente), rallado",
+        "1 raja de canela",
+        "1 pizca de sal",
+        "1 cucharadita de vainilla",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "1 can (13.5 oz) coconut milk",
+        "2 cups milk",
+        "½ cup rice flour",
+        "½ cup sugar",
+        "3 ounces drinking chocolate (for hot chocolate), grated",
+        "1 cinnamon stick",
+        "1 pinch salt",
+        "1 teaspoon vanilla",
+        "Ground cinnamon to garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero frío, disuelva la harina de arroz, el azúcar y la sal en la leche y la leche de coco hasta que no queden grumos.",
+        "Añada el chocolate rallado y la canela en raja.",
+        "Cocine a fuego medio, moviendo sin parar, hasta que el chocolate se derrita y la mezcla hierva y espese, unos 12 minutos.",
+        "Saque la canela, añada la vainilla y vierta en un platón o en copas.",
+        "Refrigere 3 horas y espolvoree canela. Es el majarete de siempre con el sabor del chocolate caliente de la abuela."
+      ],
+      en: [
+        "In a cold caldero, dissolve the rice flour, sugar and salt in the milk and coconut milk until smooth.",
+        "Add the grated chocolate and cinnamon stick.",
+        "Cook over medium heat, stirring constantly, until the chocolate melts and the mixture boils and thickens, about 12 minutes.",
+        "Remove the cinnamon, add the vanilla and pour into a dish or cups.",
+        "Refrigerate 3 hours and sprinkle with cinnamon. It's the classic majarete with grandma's hot chocolate flavor."
+      ]
+    }
+  },
+  {
+    id: "tarta-guineo-dulce-leche",
+    category: "postres",
+    name: { es: "Tarta de Guineo y Dulce de Leche (Sin Horno)", en: "No-Bake Banana Dulce de Leche Tart" },
+    active: 30, total: 210, wait: "frio",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 tazas de galletas María trituradas",
+        "6 cucharadas de mantequilla derretida",
+        "1 lata de 13.4 onzas de dulce de leche",
+        "3 guineos maduros en ruedas",
+        "1½ tazas de crema espesa para batir, fría",
+        "2 cucharadas de azúcar",
+        "1 cucharadita de canela",
+        "1 onza de chocolate oscuro rallado"
+      ],
+      en: [
+        "2 cups crushed Maria cookies",
+        "6 tablespoons melted butter",
+        "1 can (13.4 oz) dulce de leche",
+        "3 ripe bananas, sliced",
+        "1½ cups cold heavy whipping cream",
+        "2 tablespoons sugar",
+        "1 teaspoon cinnamon",
+        "1 ounce dark chocolate, grated"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle las galletas trituradas con la mantequilla y apriételas en el fondo y los lados de un molde de pie de 9 pulgadas. Refrigere 20 minutos.",
+        "Unte el dulce de leche sobre la base.",
+        "Cubra con las ruedas de guineo.",
+        "Bata la crema con el azúcar y la canela hasta que forme picos y extiéndala encima.",
+        "Decore con el chocolate rallado y refrigere 3 horas. Sírvala el mismo día: el guineo se oscurece."
+      ],
+      en: [
+        "Mix the crushed cookies with the butter and press into the bottom and sides of a 9-inch pie pan. Refrigerate 20 minutes.",
+        "Spread the dulce de leche over the crust.",
+        "Top with the banana slices.",
+        "Whip the cream with the sugar and cinnamon to peaks and spread on top.",
+        "Garnish with the grated chocolate and refrigerate 3 hours. Serve the same day: the banana darkens."
+      ]
+    }
+  },
+  {
+    id: "trufas-chocolate-coco",
+    category: "postres",
+    name: { es: "Trufas de Chocolate y Coco", en: "Chocolate Coconut Truffles" },
+    active: 30, total: 150, wait: "frio",
+    servings: 24,
+    ingredients: {
+      es: [
+        "8 onzas de chocolate semidulce picado",
+        "½ taza de crema de coco",
+        "1 cucharada de mantequilla",
+        "1 cucharadita de vainilla",
+        "1 pizca de sal",
+        "1 taza de coco rallado tostado"
+      ],
+      en: [
+        "8 ounces semisweet chocolate, chopped",
+        "½ cup cream of coconut",
+        "1 tablespoon butter",
+        "1 teaspoon vanilla",
+        "1 pinch salt",
+        "1 cup toasted shredded coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente la crema de coco hasta que empiece a hervir y viértala sobre el chocolate picado. Deje reposar 2 minutos.",
+        "Mezcle hasta que quede liso y brillante, y añada la mantequilla, la vainilla y la sal.",
+        "Refrigere 2 horas, hasta que esté firme para formar bolitas.",
+        "Con una cucharita, forme 24 bolitas y páselas por el coco tostado.",
+        "Guárdelas en la nevera en un envase tapado hasta 1 semana. Son un regalo de Navidad fácil."
+      ],
+      en: [
+        "Heat the cream of coconut until it starts to boil and pour over the chopped chocolate. Let sit 2 minutes.",
+        "Stir until smooth and glossy, then add the butter, vanilla and salt.",
+        "Refrigerate 2 hours, until firm enough to roll.",
+        "With a teaspoon, shape 24 balls and roll them in the toasted coconut.",
+        "Keep refrigerated in a covered container up to 1 week. They're an easy Christmas gift."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-batata-canela",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Batata con Canela", en: "Sweet Potato Cinnamon Cake" },
+    active: 75, total: 75,
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de batata cocida y majada",
+        "2 tazas de harina de trigo",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de bicarbonato",
+        "½ cucharadita de sal",
+        "2 cucharaditas de canela",
+        "½ cucharadita de nuez moscada",
+        "1 taza de azúcar morena",
+        "½ taza de aceite vegetal",
+        "3 huevos",
+        "½ taza de leche",
+        "1 cucharadita de vainilla",
+        "1 taza de azúcar en polvo",
+        "2 cucharadas de leche para el glaseado"
+      ],
+      en: [
+        "1½ cups cooked, mashed sweet potato (batata)",
+        "2 cups all-purpose flour",
+        "2 teaspoons baking powder",
+        "½ teaspoon baking soda",
+        "½ teaspoon salt",
+        "2 teaspoons cinnamon",
+        "½ teaspoon nutmeg",
+        "1 cup brown sugar",
+        "½ cup vegetable oil",
+        "3 eggs",
+        "½ cup milk",
+        "1 teaspoon vanilla",
+        "1 cup powdered sugar",
+        "2 tablespoons milk for the glaze"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de tubo (bundt) de 10 pulgadas.",
+        "Cierna la harina con el polvo de hornear, el bicarbonato, la sal, la canela y la nuez moscada.",
+        "Bata la batata con el azúcar morena, el aceite, los huevos, la leche y la vainilla.",
+        "Incorpore la harina sin batir de más y hornee 45 a 50 minutos, hasta que un palillo salga limpio.",
+        "Deje enfriar 15 minutos, desmolde y bañe con el azúcar en polvo mezclada con la leche y una pizca de canela."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 10-inch bundt pan.",
+        "Sift the flour with the baking powder, baking soda, salt, cinnamon and nutmeg.",
+        "Beat the sweet potato with the brown sugar, oil, eggs, milk and vanilla.",
+        "Fold in the flour without overmixing and bake 45 to 50 minutes, until a toothpick comes out clean.",
+        "Cool 15 minutes, unmold and drizzle with the powdered sugar mixed with the milk and a pinch of cinnamon."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-platano-maduro",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Plátano Maduro", en: "Ripe Plantain Cake" },
+    active: 70, total: 70,
+    servings: 12,
+    ingredients: {
+      es: [
+        "3 plátanos bien maduros (negros)",
+        "2 tazas de harina de trigo",
+        "1 cucharadita de polvo de hornear",
+        "1 cucharadita de bicarbonato",
+        "½ cucharadita de sal",
+        "1 cucharadita de canela",
+        "½ taza de mantequilla derretida",
+        "¾ taza de azúcar morena",
+        "2 huevos",
+        "½ taza de yogur natural",
+        "1 cucharadita de vainilla",
+        "½ taza de nueces picadas (opcional)"
+      ],
+      en: [
+        "3 very ripe (black) plantains",
+        "2 cups all-purpose flour",
+        "1 teaspoon baking powder",
+        "1 teaspoon baking soda",
+        "½ teaspoon salt",
+        "1 teaspoon cinnamon",
+        "½ cup melted butter",
+        "¾ cup brown sugar",
+        "2 eggs",
+        "½ cup plain yogurt",
+        "1 teaspoon vanilla",
+        "½ cup chopped walnuts (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 9 pulgadas.",
+        "Pele los plátanos y májelos bien (bien negros se majan fácil, como un guineo).",
+        "Bata el plátano con la mantequilla, el azúcar morena, los huevos, el yogur y la vainilla.",
+        "Cierna la harina con el polvo de hornear, el bicarbonato, la sal y la canela, e incorpórela; añada las nueces si las usa.",
+        "Hornee 40 a 45 minutos, hasta que un palillo salga limpio. Es más denso y menos dulce que el de guineo, con sabor a amarillo."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 9 × 9-inch pan.",
+        "Peel the plantains and mash well (very black ones mash easily, like a banana).",
+        "Beat the plantain with the butter, brown sugar, eggs, yogurt and vanilla.",
+        "Sift the flour with the baking powder, baking soda, salt and cinnamon and fold in; add the walnuts if using.",
+        "Bake 40 to 45 minutes, until a toothpick comes out clean. It's denser and less sweet than banana cake, with a ripe-plantain flavor."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-guanabana-crema",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Guanábana con Crema", en: "Soursop Cream Cake" },
+    active: 90, total: 210, wait: "frio",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2¼ tazas de harina de trigo",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "½ taza de mantequilla a temperatura ambiente",
+        "1¼ tazas de azúcar",
+        "3 huevos",
+        "1 taza de pulpa de guanábana colada",
+        "¼ taza de leche",
+        "1 cucharadita de vainilla",
+        "1½ tazas de crema espesa para batir, fría",
+        "¼ taza de azúcar en polvo",
+        "½ taza de pulpa de guanábana para la crema"
+      ],
+      en: [
+        "2¼ cups all-purpose flour",
+        "2 teaspoons baking powder",
+        "½ teaspoon salt",
+        "½ cup butter, at room temperature",
+        "1¼ cups sugar",
+        "3 eggs",
+        "1 cup strained soursop pulp",
+        "¼ cup milk",
+        "1 teaspoon vanilla",
+        "1½ cups cold heavy whipping cream",
+        "¼ cup powdered sugar",
+        "½ cup soursop pulp for the cream"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase dos moldes redondos de 8 pulgadas.",
+        "Bata la mantequilla con el azúcar hasta que esté cremosa y añada los huevos de uno en uno.",
+        "Mezcle la guanábana, la leche y la vainilla. Añada la harina cernida con el polvo de hornear y la sal, alternando con la guanábana.",
+        "Hornee 28 a 32 minutos, hasta que un palillo salga limpio. Deje enfriar por completo.",
+        "Bata la crema con el azúcar en polvo hasta que forme picos e incorpore la guanábana. Rellene y cubra el bizcocho, y refrigere 2 horas."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease two 8-inch round pans.",
+        "Beat the butter with the sugar until creamy and add the eggs one at a time.",
+        "Mix the soursop, milk and vanilla. Add the flour sifted with the baking powder and salt, alternating with the soursop.",
+        "Bake 28 to 32 minutes, until a toothpick comes out clean. Cool completely.",
+        "Whip the cream with the powdered sugar to peaks and fold in the soursop. Fill and frost the cake and refrigerate 2 hours."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-maiz-coco",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Maíz con Coco", en: "Corn Coconut Cake" },
+    active: 60, total: 60,
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 taza de harina de maíz fina",
+        "1 taza de harina de trigo",
+        "2 cucharaditas de polvo de hornear",
+        "½ cucharadita de sal",
+        "1 lata de 13.5 onzas de leche de coco",
+        "¾ taza de azúcar",
+        "3 huevos",
+        "¼ taza de mantequilla derretida",
+        "1 lata de 15 onzas de maíz en grano, escurrido",
+        "½ taza de coco rallado",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "1 cup fine cornmeal",
+        "1 cup all-purpose flour",
+        "2 teaspoons baking powder",
+        "½ teaspoon salt",
+        "1 can (13.5 oz) coconut milk",
+        "¾ cup sugar",
+        "3 eggs",
+        "¼ cup melted butter",
+        "1 can (15 oz) corn kernels, drained",
+        "½ cup shredded coconut",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.",
+        "Licúe el maíz en grano con la leche de coco hasta que quede casi liso.",
+        "Bata los huevos con el azúcar, la mantequilla y la vainilla, y añada lo licuado.",
+        "Incorpore la harina de maíz, la harina de trigo, el polvo de hornear, la sal y el coco.",
+        "Hornee 35 a 40 minutos, hasta que dore y un palillo salga limpio. Queda húmedo, entre bizcocho y majarete."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 9 × 13-inch pan.",
+        "Blend the corn kernels with the coconut milk until almost smooth.",
+        "Beat the eggs with the sugar, butter and vanilla, and add the blended corn.",
+        "Fold in the cornmeal, flour, baking powder, salt and coconut.",
+        "Bake 35 to 40 minutes, until golden and a toothpick comes out clean. It's moist, between a cake and a majarete."
+      ]
+    }
+  },
+  {
+    id: "cupcakes-tembleque",
+    category: "bizcochos",
+    name: { es: "Cupcakes de Tembleque", en: "Tembleque Cupcakes" },
+    active: 60, total: 120, wait: "frio",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de harina de trigo",
+        "1½ cucharaditas de polvo de hornear",
+        "¼ cucharadita de sal",
+        "½ taza de mantequilla a temperatura ambiente",
+        "¾ taza de azúcar",
+        "2 huevos",
+        "½ taza de leche de coco",
+        "1 cucharadita de vainilla",
+        "1 taza de leche de coco para el tembleque",
+        "3 cucharadas de maicena",
+        "3 cucharadas de azúcar para el tembleque",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "1½ cups all-purpose flour",
+        "1½ teaspoons baking powder",
+        "¼ teaspoon salt",
+        "½ cup butter, at room temperature",
+        "¾ cup sugar",
+        "2 eggs",
+        "½ cup coconut milk",
+        "1 teaspoon vanilla",
+        "1 cup coconut milk for the tembleque",
+        "3 tablespoons cornstarch",
+        "3 tablespoons sugar for the tembleque",
+        "Ground cinnamon to garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y ponga 12 capacillos en un molde de cupcakes.",
+        "Bata la mantequilla con el azúcar, añada los huevos, y luego la harina, el polvo de hornear y la sal alternando con la leche de coco y la vainilla. Llene los capacillos ⅔ y hornee 18 a 20 minutos. Deje enfriar.",
+        "Para el tembleque, disuelva la maicena y el azúcar en la leche de coco fría y cocine moviendo sin parar hasta que hierva y espese. Deje entibiar.",
+        "Abra un hueco en el centro de cada cupcake con un cuchillo pequeño y rellénelo y cúbralo con el tembleque.",
+        "Espolvoree canela y refrigere 1 hora para que el tembleque cuaje."
+      ],
+      en: [
+        "Heat the oven to 350 °F and line a cupcake pan with 12 liners.",
+        "Beat the butter with the sugar, add the eggs, then the flour, baking powder and salt alternating with the coconut milk and vanilla. Fill the liners ⅔ full and bake 18 to 20 minutes. Cool.",
+        "For the tembleque, dissolve the cornstarch and sugar in the cold coconut milk and cook stirring constantly until it boils and thickens. Let cool slightly.",
+        "Cut a hollow in the center of each cupcake with a small knife and fill and top with the tembleque.",
+        "Sprinkle with cinnamon and refrigerate 1 hour so the tembleque sets."
+      ]
+    }
+  },
+  {
+    id: "ponque-queso-crema",
+    category: "bizcochos",
+    name: { es: "Ponqué de Queso Crema", en: "Cream Cheese Pound Cake" },
+    active: 90, total: 90,
+    servings: 14,
+    ingredients: {
+      es: [
+        "1 taza de mantequilla a temperatura ambiente",
+        "8 onzas de queso crema a temperatura ambiente",
+        "2½ tazas de azúcar",
+        "6 huevos a temperatura ambiente",
+        "3 tazas de harina de trigo",
+        "¼ cucharadita de sal",
+        "2 cucharaditas de vainilla",
+        "1 cucharadita de ralladura de limón"
+      ],
+      en: [
+        "1 cup butter, at room temperature",
+        "8 ounces cream cheese, at room temperature",
+        "2½ cups sugar",
+        "6 eggs, at room temperature",
+        "3 cups all-purpose flour",
+        "¼ teaspoon salt",
+        "2 teaspoons vanilla",
+        "1 teaspoon lime zest"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 325 °F. Engrase y enharine un molde de tubo (bundt) de 10 pulgadas.",
+        "Bata la mantequilla con el queso crema 2 minutos y añada el azúcar; bata 5 minutos más hasta que esté bien cremosa.",
+        "Añada los huevos de uno en uno, batiendo después de cada uno.",
+        "Incorpore la harina con la sal a velocidad baja, sólo hasta unir, y añada la vainilla y la ralladura.",
+        "Hornee 1 hora 10 minutos a 1 hora 20 minutos, hasta que un palillo salga limpio. Deje enfriar 20 minutos antes de desmoldar. Es húmedo y aguanta varios días tapado."
+      ],
+      en: [
+        "Heat the oven to 325 °F. Grease and flour a 10-inch bundt pan.",
+        "Beat the butter with the cream cheese 2 minutes and add the sugar; beat 5 more minutes until very creamy.",
+        "Add the eggs one at a time, beating after each.",
+        "Fold in the flour with the salt on low speed, just until combined, and add the vanilla and zest.",
+        "Bake 1 hour 10 minutes to 1 hour 20 minutes, until a toothpick comes out clean. Cool 20 minutes before unmolding. It's moist and keeps several days covered."
+      ]
+    }
+  },
+  {
+    id: "bizcocho-jengibre-melao",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Jengibre y Melao", en: "Ginger Cane Syrup Cake" },
+    active: 60, total: 60,
+    servings: 12,
+    ingredients: {
+      es: [
+        "2½ tazas de harina de trigo",
+        "1½ cucharaditas de bicarbonato",
+        "½ cucharadita de sal",
+        "1 cucharada de jengibre en polvo",
+        "1 cucharadita de canela",
+        "¼ cucharadita de clavo en polvo",
+        "1 cucharada de jengibre fresco rallado",
+        "¾ taza de melao de caña",
+        "½ taza de azúcar morena",
+        "½ taza de aceite vegetal",
+        "2 huevos",
+        "1 taza de agua caliente"
+      ],
+      en: [
+        "2½ cups all-purpose flour",
+        "1½ teaspoons baking soda",
+        "½ teaspoon salt",
+        "1 tablespoon ground ginger",
+        "1 teaspoon cinnamon",
+        "¼ teaspoon ground cloves",
+        "1 tablespoon grated fresh ginger",
+        "¾ cup cane syrup (melao)",
+        "½ cup brown sugar",
+        "½ cup vegetable oil",
+        "2 eggs",
+        "1 cup hot water"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.",
+        "Cierna la harina con el bicarbonato, la sal y las especias.",
+        "Bata el melao con el azúcar morena, el aceite, los huevos y el jengibre fresco.",
+        "Añada la harina y, al final, el agua caliente (la masa queda líquida: así sale húmedo).",
+        "Hornee 30 a 35 minutos, hasta que un palillo salga limpio. Sirva tibio con crema batida; huele a la Navidad de las cucas."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 9 × 13-inch pan.",
+        "Sift the flour with the baking soda, salt and spices.",
+        "Beat the cane syrup with the brown sugar, oil, eggs and fresh ginger.",
+        "Add the flour and, last, the hot water (the batter is thin: that keeps it moist).",
+        "Bake 30 to 35 minutes, until a toothpick comes out clean. Serve warm with whipped cream; it smells like Christmas cucas."
+      ]
+    }
   }
 );

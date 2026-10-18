@@ -95,7 +95,7 @@ const RECIPE_FAMILIES = {
   bizcochos: [
     ["clasicos", { es: "Clásicos", en: "Classics" }, null],
     ["mojados", { es: "Mojados y con licor", en: "Soaked and liquor cakes" }, /mojado|brandy|amaretto/],
-    ["frutas", { es: "De frutas y coco", en: "Fruit and coconut cakes" }, /^(?!.*cumpleanos).*(pina|guayaba|china|parcha|coco|guineo|mango|zanahoria|limon|grosella)/],
+    ["frutas", { es: "De frutas y coco", en: "Fruit and coconut cakes" }, /^(?!.*cumpleanos).*(pina|guayaba|china|parcha|coco|guineo|mango|zanahoria|limon|grosella|guanabana|platano)/],
     ["calabaza", { es: "De calabaza", en: "Pumpkin cakes" }, /calabaza/],
     ["cupcakes", { es: "Cupcakes", en: "Cupcakes" }, /cupcakes/],
     ["otros", { es: "Brazos gitanos y brownies", en: "Rolled cakes and brownies" }, /brazo gitano|brownies/]
@@ -128,13 +128,13 @@ const RECIPE_FAMILIES = {
   ],
   postres: [
     ["flanes", { es: "Flanes", en: "Flans" }, /^flan|tocino del cielo/],
-    ["tembleques", { es: "Tembleques, majaretes y natillas", en: "Tembleques, majaretes and custards" }, /tembleque|majarete|natilla|mazamorra|panna cotta|mousse|crema fria/],
+    ["tembleques", { es: "Tembleques, majaretes y natillas", en: "Tembleques, majaretes and custards" }, /tembleque|majarete|natilla|mazamorra|panna cotta|mousse|crema fria|crema catalana/],
     ["arroces", { es: "Arroces dulces", en: "Sweet rice" }, /^arroz con/],
     ["budines", { es: "Budines, pudines y torrejas", en: "Bread puddings and puddings" }, /budin|pudin|cazuela|torrejas|sopa borracha/],
     ["cheesecakes", { es: "Cheesecakes", en: "Cheesecakes" }, /cheesecake|tarta de queso/],
     ["gelatinas", { es: "Gelatinas", en: "Gelatins" }, /gelatina/],
     ["helados", { es: "Helados, limbers y piraguas", en: "Ice creams, limbers and piraguas" }, /helado|limber|piragua|mantecado|paletas|sorbete/],
-    ["bizcochos", { es: "Bizcochos, tres leches y tartas", en: "Cakes, tres leches and tarts" }, /bizcocho|tres leches|brazo gitano|pavlova|copa|crumble|crepas|churros/],
+    ["bizcochos", { es: "Bizcochos, tres leches y tartas", en: "Cakes, tres leches and tarts" }, /bizcocho|tres leches|brazo gitano|pavlova|copa|crumble|crepas|churros|tiramisu|tarta de guineo/],
     ["dulces", { es: "Dulces de coco y frutas", en: "Coconut and fruit sweets" }, null]
   ],
   arroces: [

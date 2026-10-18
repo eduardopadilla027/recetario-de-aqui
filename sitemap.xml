@@ -278,7 +278,7 @@
   <url><loc>https://recetariodeaqui.com/receta/res-guisada-coco-recao</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/albondigas-guayaba</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/chuletas-ajillo-limon</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
-  <url><loc>https://recetariodeaqui.com/receta/pollo-fricase</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/pollo-fricase</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/pollo-asado</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/pollo-guisado</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/pavo-relleno</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
@@ -549,6 +549,13 @@
   <url><loc>https://recetariodeaqui.com/receta/bizcocho-volteado-grosellas</loc><lastmod>2026-10-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/hojaldre-boricua</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/bizcocho-frutas-ron</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/bizcocho-batata-canela</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/bizcocho-platano-maduro</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/bizcocho-guanabana-crema</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/bizcocho-maiz-coco</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/cupcakes-tembleque</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/ponque-queso-crema</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/bizcocho-jengibre-melao</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/polvorones</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/mantecaditos</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/cucas</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
@@ -803,6 +810,15 @@
   <url><loc>https://recetariodeaqui.com/receta/arroz-dulce-coquito</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/helado-mamey</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/crema-caimito</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/flan-guineo</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/tembleque-guayaba</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/mousse-guayaba</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/tiramisu-cafe-boricua</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/crema-catalana-coco</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/helado-pina-colada</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/majarete-chocolate</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/tarta-guineo-dulce-leche</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/trufas-chocolate-coco</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/arroz-habichuelas</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/arroz-gandules</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/asopao-pollo</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
@@ -944,7 +960,7 @@
   <url><loc>https://recetariodeaqui.com/receta/pasteles-veganos-garbanzos</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/setas-encebolladas-viandas</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/sofrito</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
-  <url><loc>https://recetariodeaqui.com/receta/mojo-isleno</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/mojo-isleno</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/pique</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/adobo-pr</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/salsa-criolla</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
@@ -1093,9 +1109,9 @@
   <url><loc>https://recetariodeaqui.com/receta/mojito-pr</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/chichaito</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/ron-ponche</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
-  <url><loc>https://recetariodeaqui.com/receta/coquito-chocolate</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/coquito-chocolate</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/sangria-tropical</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
-  <url><loc>https://recetariodeaqui.com/receta/bili</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/bili</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/ponche-crema</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/limoncello-pr</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/coquito-pistacho</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>

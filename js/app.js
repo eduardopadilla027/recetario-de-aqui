@@ -18,7 +18,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.30.0";
+const APP_VERSION = "4.31.0";
 const APP_REVISED = "2026-10-18";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
@@ -452,6 +452,15 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
+  // Postres y bizcochos (tanda 52): los bizcochos usan 🍰 como la mayoría de los que había.
+  [/^flan de guineo/, "svg:ic-flan-fruta"],
+  [/^tembleque de guayaba/, "svg:ic-pos-tembleque-guayaba"],
+  [/^mousse de guayaba/, "svg:ic-pos-mousse-guayaba"],
+  [/^tiramisu/, "svg:ic-biz-mojado-cafe"],
+  [/^crema catalana/, "svg:ic-flan"],
+  [/^majarete de chocolate/, "svg:ic-pos-majarete-chocolate"],
+  [/^tarta de guineo/, "🥧"],
+  [/^ponque de queso crema/, "svg:ic-biz-mantequilla"],
   // Sopas, pastas y panes dulces (tanda 49): los panes usan 🍞 como los demás panes.
   [/^asopao de res/, "svg:ic-sop-asopao-res"],
   [/^asopao de chuletas/, "svg:ic-sop-asopao-chuletas"],
