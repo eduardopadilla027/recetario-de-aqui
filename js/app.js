@@ -18,12 +18,16 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.31.0";
+const APP_VERSION = "4.31.1";
 const APP_REVISED = "2026-10-18";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
+/* Lo que se muestra en la portada: "Más de 1,000 recetas", no el total exacto (que cambia con cada
+   tanda). El total exacto sale en #/admin (auth.js) y en /recetas. Baja al millar: 1,150 → "1,000". */
 function publicRecipeCount() {
-  return recipes.length.toLocaleString(currentLang === "es" ? "es-PR" : "en-US");
+  const n = recipes.length;
+  const step = n > 1000 ? 1000 : 100;
+  return (Math.floor((n - 1) / step) * step).toLocaleString(currentLang === "es" ? "es-PR" : "en-US");
 }
 const revisedOn = (locale) => new Date(APP_REVISED + "T12:00:00").toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
 
@@ -75,7 +79,7 @@ const translations = {
     countFound: (n) => (n === 1 ? "1 receta encontrada" : `${n} recetas encontradas`),
     moreResults: (n) => `Ver más resultados (${n})`,
     understood: { looking: "Busco", without: "Sin", ideas: "Ideas", corrected: "Corregí", partial: "Ninguna receta tiene todo: estas son las más parecidas.", order: "Ordenadas por relevancia." },
-    statsHero: (n, c) => `<strong>${n}</strong> recetas tradicionales · <strong>${c}</strong> categorías`,
+    statsHero: (n, c) => `<strong>Más de ${n}</strong> recetas tradicionales · <strong>${c}</strong> categorías`,
     emptyTitle: "No encontramos recetas",
     emptyText: "Prueba con otra palabra o ingrediente, o quita algún filtro.",
     emptyFavTitle: "Aún no tienes favoritas",
@@ -199,7 +203,7 @@ const translations = {
     countFound: (n) => (n === 1 ? "1 recipe found" : `${n} recipes found`),
     moreResults: (n) => `Show more results (${n})`,
     understood: { looking: "Looking for", without: "Without", ideas: "Ideas", corrected: "Corrected", partial: "No recipe has everything: these are the closest.", order: "Sorted by relevance." },
-    statsHero: (n, c) => `<strong>${n}</strong> traditional recipes · <strong>${c}</strong> categories`,
+    statsHero: (n, c) => `<strong>Over ${n}</strong> traditional recipes · <strong>${c}</strong> categories`,
     emptyTitle: "No recipes found",
     emptyText: "Try another word or ingredient, or remove a filter.",
     emptyFavTitle: "No favorites yet",

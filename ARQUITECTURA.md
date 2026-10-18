@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.31.0 · **Versión de la app:** 4.31.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,150 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.31.1 · **Versión de la app:** 4.31.1 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,150 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -254,8 +254,9 @@ Naturales tiene 30 recetas: no se junta con Bebidas.
   una receta, volver a los resultados, los planes y `#/admin` usan `jumpTo()` (`behavior: "instant"`). El deslizamiento
   suave queda para los enlaces dentro de la misma página.
 - **Inicio:** hero con buscador, la frase "Recetas boricuas paso a paso… Gratis y sin registrarse" (`#site-author`; desde
-  v4.30 la versión sólo sale en el pie) y estadísticas (`statsHero(publicRecipeCount(), categorías)`: "1,150 recetas
-  tradicionales · 24 categorías", **el total exacto** sacado de los datos desde v4.30), cuadrícula de
+  v4.30 la versión sólo sale en el pie) y estadísticas (`statsHero(publicRecipeCount(), categorías)`: "**Más de 1,000** recetas
+  tradicionales · 24 categorías"; `publicRecipeCount()` baja el total al millar. En la v4.30 se puso el total exacto y en la
+  v4.31.1 se volvió a "Más de 1,000" a pedido; el total exacto sale en `#/admin` y en `/recetas`), cuadrícula de
   categorías (clic = sólo esa categoría; clic de nuevo = todas), carril "Listas en 30 minutos o menos"
   (`QUICK_MAX_MIN = 30`, contando el tiempo **total**), y resultados agrupados por categoría (acordeón) con filtros *Rápidas* y *Favoritas*.
 - **Recetas incompletas:** al cargar, `recipeComplete()` quita (y avisa en la consola) cualquier receta sin nombre,
@@ -1096,6 +1097,12 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-18 — v4.31.1 · La portada vuelve a decir "Más de 1,000 recetas"
+- *Pedido:* volver a poner "más de 1,000 recetas" en la portada (la revisión del sitio, v4.30, había puesto el total exacto).
+- `js/app.js`: `publicRecipeCount()` vuelve a bajar el total al millar (1,150 → "1,000") y `statsHero` dice "Más de 1,000
+  recetas tradicionales · 24 categorías" (EN "Over 1,000 traditional recipes"). El total exacto sigue en `#/admin`
+  ("Recetas en la app") y en la página pública `/recetas`; la vista previa del enlace ya decía "Más de 1,000".
+- *Verificado:* portada en ES y EN con "Más de 1,000" / "Over 1,000"; sin errores de consola.
 ### 2026-10-18 — v4.31.0 · Más postres y bizcochos
 - *Pedido:* más recetas de postres y bizcochos.
 - Quincuagésima segunda tanda en `js/recipes-5.js` (versiones propias, ya con `active`/`total`/`wait` de la v4.30), 16 que
