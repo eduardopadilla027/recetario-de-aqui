@@ -31,7 +31,7 @@ const NUTRI_FOODS = [
   F("molleja|mollejas de pollo", 94, 17.7, 0, 0, 0, 2.1, 0.5, 69, { u: 30, cup: 145 }),
   // Cerdo
   F("cerdo|carne de cerdo|masitas|paleta|pierna de cerdo", 240, 17, 0, 0, 0, 19, 7, 60, { u: 3000 }),
-  F("pernil", 210, 16, 0, 0, 0, 16, 6, 60, { u: 3600 }),
+  F("pernil", 210, 16, 0, 0, 0, 16, 6, 60, { u: 3600, cup: 140 }), // taza de pernil desmenuzado ≈ 140 g
   F("lechon", 170, 14, 0, 0, 0, 12, 4.5, 55, { u: 7000 }),
   F("chuleta|chuletas de cerdo", 200, 19, 0, 0, 0, 13, 4.7, 55, { u: 200 }),
   F("chuleta ahumada", 150, 19, 1, 1, 0, 8, 2.8, 1100, { u: 150 }),
@@ -125,7 +125,7 @@ const NUTRI_FOODS = [
   F("avena", 379, 13, 68, 1, 10, 6.5, 1.1, 6, { cup: 81 }),
   F("pan rallado", 395, 13, 72, 6, 4.5, 5.3, 1.2, 732, { cup: 108 }),
   F("galleta molida", 420, 9, 72, 5, 2.5, 10, 2.5, 700, { cup: 100 }),
-  F("galleta|galletas de soda", 430, 9, 72, 10, 2.5, 11, 3, 700, { u: 6 }),
+  F("galleta|galletas de soda", 430, 9, 72, 10, 2.5, 11, 3, 700, { u: 6, cup: 90 }), // taza de galletas trituradas ≈ 90 g
   F("espagueti|codito|macarron|fideo|pasta|lasana|canelon|manicotti", 371, 13, 75, 2.7, 3.2, 1.5, 0.3, 6, { cup: 105, sl: 20, u: 12 }),
   F("pan|pan de agua|pan sobao", 270, 9, 50, 5, 2.5, 3.5, 0.8, 490, { u: 250, sl: 30, cup: 45 }),
   F("hojaldre|masa de hojaldre", 558, 7.4, 46, 1, 1.5, 38, 10, 253, { can: 490, sl: 245, u: 245 }),
@@ -209,7 +209,7 @@ const NUTRI_FOODS = [
   F("espinaca", 23, 2.9, 3.6, 0.4, 2.2, 0.4, 0.1, 79, { cup: 30 }),
   F("champinon|champinones|setas|hongos", 22, 3.1, 3.3, 2, 1, 0.3, 0, 5, { cup: 70 }),
   F("azafran|hebras de azafran", 310, 11, 65, 0, 4, 6, 1.6, 148, { cup: 30 }),
-  F("romero|ramita de romero", 131, 3.3, 21, 0, 14, 5.9, 2.8, 26, { u: 1 }),
+  F("romero|ramita de romero", 131, 3.3, 21, 0, 14, 5.9, 2.8, 26, { u: 1, cup: 30 }), // hojas frescas: una taza ≈ 30 g
   F("habas|judias blancas|judias", 110, 7.6, 20, 1.8, 5.4, 0.4, 0.1, 5, { cup: 170 }),
   F("calabacin|zucchini", 17, 1.2, 3.1, 2.5, 1, 0.3, 0.1, 8, { u: 200, cup: 120 }),
   F("alcachofa|corazones de alcachofa", 47, 3.3, 10.5, 1, 5.4, 0.2, 0, 300, { can: 240, u: 30 }),
@@ -220,7 +220,7 @@ const NUTRI_FOODS = [
   F("nutella|crema de avellanas", 539, 6.3, 57.5, 56.3, 3.4, 30.9, 10.6, 41, { cup: 296 }),
   F("panko", 395, 12, 79, 4, 4, 3.5, 0.8, 300, { cup: 60 }),
   F("queso mozzarella|mozzarella", 280, 28, 3, 1, 0, 17, 10, 630, { cup: 113, sl: 28 }),
-  F("queso suizo", 380, 27, 1.5, 0, 0, 28, 18, 190, { sl: 28 }),
+  F("queso suizo", 380, 27, 1.5, 0, 0, 28, 18, 190, { sl: 28, cup: 108 }), // rallado: una taza ≈ 108 g
   F("avellana|avellanas", 628, 15, 17, 4.3, 9.7, 61, 4.5, 0, { cup: 115 }),
   F("cachaca|aguardiente", 231, 0, 0, 0, 0, 0, 0, 1, { cup: 237 }),
   F("tortilla de harina|tortillas de harina", 306, 8, 50, 3, 3.5, 8, 3, 600, { u: 70 }),
@@ -607,6 +607,8 @@ function estimateNutrition(recipe) {
   if (nutriCache.has(recipe.id)) return nutriCache.get(recipe.id);
   const total = EMPTY_TOTALS();
   const missing = [];
+  const partial = []; // líneas contadas sólo en parte
+  const noQty = [];   // líneas sin cantidad (no se suman)
   const groups = EMPTY_GROUPS();
   const sources = []; // por línea: los alimentos con que se contó (y su número FDC del USDA)
   let counted = 0, measurable = 0, frying = false, alcohol = 0;
@@ -626,7 +628,7 @@ function estimateNutrition(recipe) {
 
   recipe.ingredients.es.forEach((line, i) => {
     const n = nutriNorm(line);
-    if (/\bopcional\b/.test(n)) return; // lo opcional no se suma
+    if (/\bopcional\b/.test(n)) { noQty.push(i); return; } // lo opcional no se suma (pero se lista)
     if (/para el agua/.test(n)) return; // sal o aceite del agua de hervir: se bota
     if (/^carbon vegetal|astillas de/.test(n)) return; // combustible de la parrilla: no se come
     if (/para freir/.test(n) && !/^\s*[\d½¼¾⅓⅔⅛]/.test(n)) {
@@ -637,14 +639,17 @@ function estimateNutrition(recipe) {
     }
     const parts = splitIngredient(line).map(measurePart);
     const withQty = parts.filter((r) => r.kind !== "free");
-    if (!withQty.length) return; // "sal al gusto", "hojas de plátano"…
+    if (!withQty.length) { noQty.push(i); return; } // "sal al gusto", "hojas de plátano"…: se listan, no se suman
     measurable++;
-    let ok = false;
+    let ok = false, lost = false;
     for (const r of withQty) {
       if (r.kind === "ok") { add(r.food, r.grams, i); ok = true; }
       else if (r.kind === "trace") ok = true;
+      else lost = true;
     }
-    if (ok) counted++; else missing.push(i);
+    // Una línea con varias cosas ("Salsa: ½ taza de ketchup, 2 cda de…") donde una parte no se reconoció:
+    // antes se contaba como completa; ahora se dice que se contó sólo en parte.
+    if (ok) { counted++; if (lost) partial.push(i); } else missing.push(i);
   });
 
   const per = {};
@@ -653,7 +658,7 @@ function estimateNutrition(recipe) {
   const groupsPer = {};
   for (const k in groups) groupsPer[k] = groups[k] / recipe.servings;
   // alcohol: gramos de etanol por porción (0 si no lleva).
-  const result = { total, per, counted, measurable, missing, frying, alcohol: alcohol / recipe.servings, groups: groupsPer, sources, drained };
+  const result = { total, per, counted, measurable, missing, partial, noQty, frying, alcohol: alcohol / recipe.servings, groups: groupsPer, sources, drained };
   nutriCache.set(recipe.id, result);
   return result;
 }

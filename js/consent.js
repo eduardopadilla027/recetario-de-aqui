@@ -6,7 +6,7 @@
  * - Si se cambia el texto de forma importante, se sube CONSENT_VERSION: todos deberán aceptar otra vez al entrar.
  * Texto redactado para la app; conviene que lo revise un abogado con licencia en Puerto Rico antes de depender de él. */
 
-const CONSENT_VERSION = "2026-10-18";
+const CONSENT_VERSION = "2026-10-18.2";
 const CONSENT_SITE = "https://recetariodeaqui.com";
 const CONSENT_CONTACT = "recetariodeaqui@gmail.com";
 
@@ -29,19 +29,19 @@ const TERMS = {
   es: {
     title: "Términos y Condiciones de Uso y Consentimiento",
     meta: (v) => `Versión ${v} · Vigentes desde el 18 de octubre de 2026`,
-    intro: "Lea con calma. Para usar Recetarios de Aquí debe aceptar estos términos marcando las tres casillas. Le enviaremos a su correo una confirmación de lo que aceptó.",
+    intro: "Lea con calma. Las recetas se pueden ver sin cuenta. Para crear una cuenta debe aceptar estos términos marcando las tres casillas; le enviaremos a su correo una confirmación de lo que aceptó.",
     summaryTitle: "En resumen",
     summary: [
       "Las recetas, los planes de comida y la nutrición son orientación general, no consejo médico.",
       "Si tiene una condición de salud, está embarazada o cocina para un menor, consulte a un profesional antes de cambiar su alimentación.",
       "La información nutricional y los alérgenos son estimados: lea siempre las etiquetas.",
-      "Guardamos su correo, su uso de la app, este consentimiento y lo que usted ponga en sus planes; no lo vendemos.",
+      "Con cuenta guardamos su correo, su uso de la app, este consentimiento y lo que usted ponga en sus planes; no lo vendemos y usted lo puede borrar todo desde «Privacidad y mis datos».",
       "Usted cocina y come bajo su propia responsabilidad."
     ],
     sections: [
       ["1. Quiénes somos y aceptación", [
         "Recetarios de Aquí (recetariodeaqui.com, «la app», «nosotros») es un recetario digital gratuito de cocina puertorriqueña. Estos Términos y Condiciones («los términos») son un acuerdo entre usted y nosotros sobre el uso de la app.",
-        "Al marcar las casillas de consentimiento y entrar a la app, usted declara que leyó, entendió y acepta estos términos. Si no está de acuerdo con alguna parte, no use la app."
+        "Al usar la app, y al marcar las casillas de consentimiento para crear una cuenta, usted declara que leyó, entendió y acepta estos términos. Si no está de acuerdo con alguna parte, no use la app."
       ]],
       ["2. Edad y menores", [
         "Debe tener 18 años o más para crear una cuenta. Si es menor de 18 años, sólo puede usar la app con el permiso y la supervisión de su padre, madre o tutor legal, quien acepta estos términos en su nombre y es responsable de su uso.",
@@ -69,14 +69,16 @@ const TERMS = {
         "Usted decide qué cocina, qué come y en qué cantidad. Es responsable de revisar los ingredientes, las porciones, las temperaturas y el uso seguro de cuchillos, fuego, aceite caliente y equipos de cocina, y de supervisar a los niños en la cocina."
       ]],
       ["8. Su cuenta y el uso aceptable", [
-        "Para entrar se necesita un correo validado; no guardamos contraseñas. Usted es responsable de su cuenta. No use la app para fines ilegales, para dañarla, para enviar contenido ofensivo o engañoso, ni para obtener datos de otras personas. Podemos suspender o cerrar una cuenta que no cumpla estos términos."
+        "La cuenta es opcional: las recetas, el buscador, los planes y Mi recetario se usan sin ella (lo suyo queda sólo en su navegador). Para crear una cuenta se necesita un correo validado; no guardamos contraseñas. Usted es responsable de su cuenta. No use la app para fines ilegales, para dañarla, para enviar contenido ofensivo o engañoso, ni para obtener datos de otras personas. Podemos suspender o cerrar una cuenta que no cumpla estos términos."
       ]],
       ["9. Privacidad: qué guardamos y para qué", [
         "Guardamos:",
         ["su correo electrónico, la primera y la última vez que entró y cuántas veces usa la app;", "este consentimiento: la versión aceptada, la fecha y la hora, el idioma, las casillas marcadas y el tipo de navegador;", "los ajustes de sus planes, incluidos datos que usted da de forma voluntaria (sexo, edad, peso, estatura, actividad y objetivo de salud);", "Mi recetario: colecciones, notas, recetas que hizo y su lista de compras;", "las reseñas y fotos que usted publique."],
+        "Sin cuenta no guardamos nada en el servidor: sus favoritas, planes y Mi recetario quedan sólo en su navegador.",
         "Para qué: para darle acceso, calcular sus planes, guardar lo suyo en su cuenta, enviarle la confirmación de este consentimiento y cuidar la app. Dónde: en los servicios de Google Firebase (en Estados Unidos) y en su navegador; el correo de confirmación se envía por medio de un proveedor de envío de correos.",
         "Quién lo ve: usted. Los administradores de la app ven su correo, sus fechas y visitas, su consentimiento y el estado de su cuenta, pero no ven sus planes, sus datos de salud ni sus notas. No vendemos sus datos ni los compartimos para publicidad.",
-        `Puede pedir que borremos su cuenta y sus datos escribiendo a ${CONSENT_CONTACT}.`
+        "Cuánto tiempo: mientras tenga la cuenta, hasta que usted la borre o nos pida borrarla. Las reseñas se guardan mientras estén publicadas o hasta que usted las borre. Al borrar la cuenta no nos quedamos con copia de sus datos en la app.",
+        `Sus derechos: en «Privacidad y mis datos» (en el menú, con la sesión abierta) puede ver qué guardamos, retirar su consentimiento y borrar su cuenta con todos sus datos (registro, consentimiento, planes, Mi recetario, reseñas y fotos) en un solo paso. También puede pedirlo escribiendo a ${CONSENT_CONTACT}.`
       ]],
       ["10. Reseñas y fotos", [
         "Usted es responsable de lo que publica. Al publicar una reseña o una foto nos da permiso, gratis y sin límite de tiempo, para mostrarla en la app. Las revisamos antes de publicarlas y podemos no publicarlas o quitarlas. No publique fotos de otras personas sin su permiso ni contenido que no sea suyo."
@@ -107,19 +109,19 @@ const TERMS = {
   en: {
     title: "Terms and Conditions of Use and Consent",
     meta: (v) => `Version ${v} · Effective October 18, 2026`,
-    intro: "Please read carefully. To use Recetarios de Aquí you must accept these terms by checking the three boxes. We'll email you a confirmation of what you accepted.",
+    intro: "Please read carefully. Recipes can be viewed without an account. To create an account you must accept these terms by checking the three boxes; we'll email you a confirmation of what you accepted.",
     summaryTitle: "In short",
     summary: [
       "Recipes, meal plans and nutrition are general guidance, not medical advice.",
       "If you have a health condition, are pregnant or cook for a minor, talk to a professional before changing how you eat.",
       "Nutrition information and allergens are estimates: always read the labels.",
-      "We store your email, your use of the app, this consent and what you enter in your plans; we don't sell it.",
+      "With an account we store your email, your use of the app, this consent and what you enter in your plans; we don't sell it and you can delete all of it from “Privacy and my data”.",
       "You cook and eat at your own responsibility."
     ],
     sections: [
       ["1. Who we are and acceptance", [
         "Recetarios de Aquí (recetariodeaqui.com, “the app”, “we”) is a free digital cookbook of Puerto Rican cooking. These Terms and Conditions (“the terms”) are an agreement between you and us about using the app.",
-        "By checking the consent boxes and entering the app, you state that you have read, understood and accept these terms. If you don't agree with any part, do not use the app."
+        "By using the app, and by checking the consent boxes to create an account, you state that you have read, understood and accept these terms. If you don't agree with any part, do not use the app."
       ]],
       ["2. Age and minors", [
         "You must be 18 or older to create an account. If you are under 18, you may only use the app with the permission and supervision of your parent or legal guardian, who accepts these terms on your behalf and is responsible for your use.",
@@ -147,14 +149,16 @@ const TERMS = {
         "You decide what you cook, what you eat and how much. You are responsible for checking ingredients, portions, temperatures and the safe use of knives, fire, hot oil and kitchen equipment, and for supervising children in the kitchen."
       ]],
       ["8. Your account and acceptable use", [
-        "Entering requires a verified email; we don't store passwords. You are responsible for your account. Don't use the app for illegal purposes, to harm it, to post offensive or misleading content, or to collect other people's data. We may suspend or close an account that doesn't follow these terms."
+        "An account is optional: recipes, search, plans and My cookbook work without one (your things stay only in your browser). Creating an account requires a verified email; we don't store passwords. You are responsible for your account. Don't use the app for illegal purposes, to harm it, to post offensive or misleading content, or to collect other people's data. We may suspend or close an account that doesn't follow these terms."
       ]],
       ["9. Privacy: what we store and why", [
         "We store:",
         ["your email address, the first and last time you entered and how many times you use the app;", "this consent: the accepted version, date and time, language, the boxes checked and the type of browser;", "your plan settings, including information you choose to give (sex, age, weight, height, activity and health goal);", "My cookbook: collections, notes, recipes you made and your shopping list;", "the reviews and photos you post."],
+        "Without an account we store nothing on the server: your favorites, plans and My cookbook stay only in your browser.",
         "Why: to give you access, calculate your plans, keep your things in your account, send you the confirmation of this consent and look after the app. Where: in Google Firebase services (in the United States) and in your browser; the confirmation email is sent through an email delivery provider.",
         "Who sees it: you. The app's administrators see your email, dates and visits, your consent and your account status, but not your plans, health data or notes. We don't sell your data or share it for advertising.",
-        `You can ask us to delete your account and data by writing to ${CONSENT_CONTACT}.`
+        "How long: while you have the account, until you delete it or ask us to. Reviews are kept while they are published or until you delete them. When you delete the account we keep no copy of your data in the app.",
+        `Your rights: in “Privacy and my data” (in the menu, when signed in) you can see what we store, withdraw your consent and delete your account with all its data (record, consent, plans, My cookbook, reviews and photos) in one step. You can also ask by writing to ${CONSENT_CONTACT}.`
       ]],
       ["10. Reviews and photos", [
         "You are responsible for what you post. By posting a review or photo you give us free, unlimited-time permission to show it in the app. We review them before publishing and may decline or remove them. Don't post photos of other people without their permission or content that isn't yours."

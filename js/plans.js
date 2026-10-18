@@ -117,6 +117,12 @@ const PLAN_T = {
     shopPlanDone: (n) => `Listo: ${n} recetas del plan en la lista de compras.`, shopPlanSee: "Ver la lista",
     moveTo: "Pasar a", moveHelp: (name) => `Pasar ${name} a otro día`, moved: "Cambiado de día.",
     leftover: "Sobras para mañana", leftoverLabel: "Sobras de ayer", leftoverDone: "Mañana almuerza las sobras.",
+    leftoverConfirm: (a, b) => `El almuerzo de mañana es «${b}». ¿Cambiarlo por las sobras de «${a}»?`,
+    keepWhich: "Su cuenta ya tiene un plan de comidas distinto al de este navegador.\n\nAceptar: conservar el plan de este navegador (reemplaza el de la cuenta).\nCancelar: usar el plan guardado en la cuenta.",
+    ageKids: "Para menores de 14 años la meta se calcula sólo en el objetivo «Autismo» (de 2 a 13 años). En los demás se usa una meta típica de adulto, que no sirve para niños: consulte al pediatra.",
+    ageTooLow: "La app no calcula metas para menores de 2 años. Consulte al pediatra.",
+    healthTitle: "Orientación general, no consejo médico",
+    healthText: "Este objetivo es para una condición de salud. Las metas y las recetas son estimados generales: no sustituyen a su médico ni a un nutricionista-dietista licenciado. Consúltelos antes de seguir el plan, sobre todo si usa insulina u otros medicamentos.",
     dgaTitle: "Guías Alimentarias 2025–2030 (USDA)", dgaSub: (k) => `Porciones de cada grupo para una dieta de ${k.toLocaleString("en-US")} calorías.`,
     dga: { veg: "Vegetales y viandas", fruit: "Frutas", wgrain: "Granos integrales", grain: "Granos (todos)", dairy: "Lácteos", prot: "Proteína" },
     dgaUnits: { veg: "tazas", fruit: "tazas", wgrain: "onzas", grain: "onzas", dairy: "tazas", prot: "g" },
@@ -235,6 +241,12 @@ const PLAN_T = {
     shopPlanDone: (n) => `Done: ${n} plan recipes on the shopping list.`, shopPlanSee: "See the list",
     moveTo: "Move to", moveHelp: (name) => `Move ${name} to another day`, moved: "Moved to another day.",
     leftover: "Leftovers tomorrow", leftoverLabel: "Yesterday's leftovers", leftoverDone: "Tomorrow's lunch is the leftovers.",
+    leftoverConfirm: (a, b) => `Tomorrow's lunch is “${b}”. Replace it with the leftovers of “${a}”?`,
+    keepWhich: "Your account already has a meal plan that's different from the one in this browser.\n\nOK: keep this browser's plan (replaces the one in your account).\nCancel: use the plan saved in your account.",
+    ageKids: "For children under 14, the target is only calculated in the “Autism” goal (ages 2 to 13). The other goals use a typical adult target, which isn't right for children: ask the pediatrician.",
+    ageTooLow: "The app doesn't calculate targets for children under 2. Ask the pediatrician.",
+    healthTitle: "General guidance, not medical advice",
+    healthText: "This goal is for a health condition. The targets and recipes are general estimates: they don't replace your doctor or a licensed dietitian. Check with them before following the plan, especially if you use insulin or other medication.",
     dgaTitle: "Dietary Guidelines 2025–2030 (USDA)", dgaSub: (k) => `Servings of each food group for a ${k.toLocaleString("en-US")}-calorie diet.`,
     dga: { veg: "Vegetables", fruit: "Fruit", wgrain: "Whole grains", grain: "Grains (all)", dairy: "Dairy", prot: "Protein" },
     dgaUnits: { veg: "cups", fruit: "cups", wgrain: "oz", grain: "oz", dairy: "cups", prot: "g" },
@@ -457,8 +469,14 @@ const PLAN_DIETS = ["normal", "veg", "vegan"];
 // Cada usuario tiene su copia en este navegador (rcb.plan.<uid>); sin sesión, rcb.plan.
 let planOwner = "";
 const planKey = () => (planOwner ? `${PLAN_STORE}.${planOwner}` : PLAN_STORE);
-function readLocalPlan() {
-  try { return cleanPlan(JSON.parse(readStore(planKey()) || "{}")); } catch { return cleanPlan(null); } // dañados: de fábrica
+function parsePlanStore(key) {
+  try { return cleanPlan(JSON.parse(readStore(key) || "{}")); } catch { return cleanPlan(null); } // dañados: de fábrica
+}
+function readLocalPlan() { return parsePlanStore(planKey()); }
+/* ¿Dos copias del plan dicen lo mismo? (sin contar la hora de guardado) */
+function samePlan(a, b) {
+  const strip = (p) => JSON.stringify({ ...cleanPlan(p), ts: 0 });
+  return strip(a) === strip(b);
 }
 let plan = readLocalPlan();
 // `auto`: el plan del período se armó solo (no es un cambio de la persona) y no cuenta como más reciente.
@@ -469,9 +487,12 @@ const savePlan = (auto = false) => {
 };
 /* Al entrar o salir: usa la copia de ese usuario en este navegador. */
 function usePlanOwner(uid) {
-  // Primera vez con copias por usuario: hereda la copia anónima de antes (y la deja de fábrica).
-  if (uid && !readStore(`${PLAN_STORE}.${uid}`) && readStore(PLAN_STORE)) {
-    writeStore(`${PLAN_STORE}.${uid}`, readStore(PLAN_STORE));
+  // Al entrar: el plan que armó sin cuenta en este navegador pasa a su copia si es más reciente
+  // que la que ya tenía aquí (antes se perdía si la cuenta ya había entrado en este equipo).
+  if (uid && readStore(PLAN_STORE)) {
+    const anon = parsePlanStore(PLAN_STORE), mine = parsePlanStore(`${PLAN_STORE}.${uid}`);
+    if (anon.ts && anon.ts > (mine.ts || 0)) writeStore(`${PLAN_STORE}.${uid}`, JSON.stringify(anon));
+    else if (!readStore(`${PLAN_STORE}.${uid}`)) writeStore(`${PLAN_STORE}.${uid}`, readStore(PLAN_STORE));
     writeStore(PLAN_STORE, JSON.stringify(cleanPlan(null)));
   }
   planOwner = uid || "";
@@ -686,7 +707,7 @@ function hashStr(s) { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0
 // Ajustes que cambian las recetas o las porciones: si cambian, se arma otro plan.
 const planSig = (target) => JSON.stringify([plan.goal, plan.diet, plan.prefs, plan.protein, plan.avoid, activeSeason(), target.kcal, target.protein]);
 function hydrateSaved(sv) {
-  const byId = (id) => recipes.find((r) => r.id === id);
+  const byId = (id) => recipes.find((r) => r.id === canonicalId(id));
   const item = (id) => { const r = byId(id); if (!r) return undefined; const i = planInfo(r); return { r, n: i.n, g: i.g }; };
   if (sv.meals.length !== sv.days || sv.meals.some((d) => !d.items.length)) return null; // incompleto o de otro formato
   const days = [];
@@ -943,6 +964,7 @@ function renderPlansShell() {
         </fieldset>
       </div>
     </div>
+    <div id="plans-health"></div>
     <div class="plans-target" id="plans-target" aria-live="polite"></div>
     <div class="plans-actions">
       <div class="seg" role="group">
@@ -1031,11 +1053,15 @@ function leftoverMeal(d, j) {
   const sv = plan.saved;
   const src = sv && sv.meals[d] && sv.meals[d].items[j];
   const lunch = SLOTS.findIndex((s) => s.key === "almuerzo");
-  if (!src || !sv.meals[d + 1]) return;
+  if (!src || !sv.meals[d + 1]) return false;
+  // Antes se reemplazaba el almuerzo de mañana sin avisar.
+  const had = planDays[d + 1][lunch], now = planDays[d][j];
+  if (had && had.item && now && now.item && had.item.r.id !== now.item.r.id && !confirm(pt().leftoverConfirm(now.item.r.name[currentLang], had.item.r.name[currentLang]))) return false;
   sv.meals[d + 1].items[lunch] = { slot: "almuerzo", id: src.id, m: src.m, lo: 1, sides: src.sides.map((s) => ({ ...s })) };
   const m = planDays[d][j];
   planDays[d + 1][lunch] = { slot: "almuerzo", item: m.item, m: m.m, sides: (m.sides || []).map((s) => ({ ...s })), lo: 1 };
   savePlan();
+  return true;
 }
 function dayHTML(meals, i, target, iso) {
   const tr = pt();
@@ -1194,7 +1220,10 @@ function renderPlanOutput(keepSwap = false) {
   $("plans-target").innerHTML = `<p>${target.child ? tr.targetsChild(target.kcal, target.protein) : tr.targets(target.kcal, target.protein, target.custom)}</p>` +
     (PLAN_GOALS[plan.goal].routine ? `<p class="plans-note">${esc(tr.routine)}</p>` : "") +
     (floorHit ? `<p class="plans-warn">${esc(tr.minWarn)}</p>` : "") +
+    ageNoteHTML() +
     goalNoteHTML(tr.goalNotes[plan.goal]);
+  $("plans-health").innerHTML = HEALTH_GOALS.has(plan.goal)
+    ? `<div class="plans-callout plans-health" role="note"><p><strong>${esc(tr.healthTitle)}</strong></p><p>${esc(tr.healthText)}</p></div>` : "";
   const pools = candidates();
   planPools = pools;
   const enough = pools.desayuno.length && pools.main.length >= 2 && pools.merienda.length;
@@ -1218,6 +1247,17 @@ function addPlanToShop() {
   }
   for (const [id, f] of need) addToShop(id, f);
   toast(pt().shopPlanDone(need.size), true);
+}
+
+/* Objetivos para una condición de salud: llevan el aviso médico arriba, junto a las metas. */
+const HEALTH_GOALS = new Set(["sodio", "diabetes", "dash", "colesterol", "autismo"]);
+/* La edad que la app no sabe calcular se dice (antes, menores de 14 recibían la meta típica de adulto sin aviso). */
+function ageNoteHTML() {
+  const age = parseFloat(plan.age);
+  if (!(age > 0)) return "";
+  if (age < 2) return `<p class="plans-warn">${esc(pt().ageTooLow)}</p>`;
+  if (age < 14 && !PLAN_GOALS[plan.goal].kids) return `<p class="plans-warn">${esc(pt().ageKids)}</p>`;
+  return "";
 }
 
 /* La nota del objetivo: un párrafo, o (autismo) un recuadro con el aviso en negrita y las recomendaciones. */
@@ -1267,7 +1307,7 @@ function setupPlans() {
     const lo = e.target.closest("[data-leftover]");
     if (lo) {
       const [d, j] = lo.dataset.leftover.split("-").map(Number);
-      leftoverMeal(d, j); renderPlanOutput(true); toast(pt().leftoverDone, true);
+      if (leftoverMeal(d, j)) { renderPlanOutput(true); toast(pt().leftoverDone, true); }
       return;
     }
     // Cambiar una comida: abrir o cerrar su lista, ver más, o escoger una.

@@ -88,7 +88,7 @@ let raDatesReady = typeof RECIPE_ADDED !== "undefined";
 
 /* Al entrar cualquier persona: los planes usan las temporadas que fijó un administrador. */
 async function loadRecipeSeasons() {
-  if (!fbDb || !authUser) return;
+  if (!fbDb) return; // pública: los planes la usan con o sin cuenta (firestore.rules, recipeMeta)
   try {
     const snap = await fbDb.collection("recipeMeta").get();
     const map = new Map();

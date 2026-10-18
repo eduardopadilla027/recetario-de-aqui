@@ -1,9 +1,9 @@
 /* Recetarios de Aquí · "Póngala en su celular": crea el icono de la app en la pantalla de inicio.
  *
- * El manifiesto usa "display": "browser" (§10: en modo standalone el acceso con Google puede
- * fallar), así que el navegador no ofrece "Instalar" por su cuenta: el icono se crea con
- * "Añadir a pantalla de inicio" y abre la app en el navegador. Esto lo explica paso a paso
- * según el equipo:
+ * Desde v4.30 el manifiesto usa "display": "standalone": el icono abre la app sin la barra del
+ * navegador, como una app (antes "browser", porque entrar con Google podía fallar en ese modo; ahora
+ * la cuenta es opcional y, si la ventanita no abre, auth.js pasa a la redirección). Chrome puede
+ * ofrecer "Instalar" solo (beforeinstallprompt). Esto lo explica paso a paso según el equipo:
  *  - dentro de Facebook o Instagram (los anuncios abren ahí): primero abrirla en el navegador,
  *    porque en ese navegador interno no hay "Añadir a pantalla de inicio" ni deja entrar con Google;
  *  - iPhone/iPad (Safari): Compartir → Añadir a pantalla de inicio;

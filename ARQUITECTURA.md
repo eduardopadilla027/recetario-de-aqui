@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.29.1 · **Versión de la app:** 4.29.1 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,134 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.30.0 · **Versión de la app:** 4.30.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,134 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -24,8 +24,11 @@ Recetario digital de **cocina tradicional puertorriqueña**, bilingüe (español
   barra de abajo en el celular (§7.13).
 - **Nutrición con datos oficiales del USDA** (FoodData Central, con el número de cada alimento), etiqueta completa como
   la de la FDA y planes revisados contra las Guías Alimentarias 2025–2030, con objetivos de Diabetes y Presión alta (§8, §7.2).
-- **Acceso con cuenta de correo validada** (Gmail, Outlook/Hotmail, Yahoo, iCloud u otro correo con enlace) y un
-  **panel de administración** con los usuarios y cuántas veces usa cada uno la app (§7.3). No se guardan contraseñas.
+- **Se usa sin cuenta (v4.30):** recetas, buscador, planes y Mi recetario abren para cualquiera. La **cuenta de correo
+  validada** (Gmail, Outlook/Hotmail, Yahoo, iCloud u otro correo con enlace) es opcional: guarda favoritas, planes y Mi
+  recetario en la nube y permite escribir y reportar reseñas (§7.3). **Panel de administración** con los usuarios y
+  cuántas veces usa cada uno la app. No se guardan contraseñas. "Privacidad y mis datos" deja borrar la cuenta (§7.17).
+- **Cada receta con su página propia** para Google y para compartir (`/receta/<id>`, datos estructurados, sitemap; §7.15).
 
 Las recetas son **versiones propias redactadas para esta app** (no copias de libros ni webs).
 
@@ -80,15 +83,16 @@ cocine-a-gusto/
 │   ├── search.js         buscador inteligente (smartSearch), sin servidor
 │   ├── families.js       familias de recetas por categoría (flanes, tembleques…; res, cerdo…) y su orden
 │   ├── pairings.js       "Combina mejor con" de las salsas y aderezos (getPairings)
-│   ├── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones
+│   ├── app.js            interfaz: textos ES/EN, categorías, iconos, rutas, render, filtros, porciones, tiempos
+│   ├── glossary.js       glosario de la cocina boricua: recuadro en cada receta y página #/glosario (§7.16)
 │   ├── plans.js          planes de comida (#/planes): objetivos, época, preferencias, plan de 1 o 7 días, Guías 2025–2030
 │   ├── seasonal.js       frutas, viandas y vegetales de temporada en Puerto Rico (§7.12)
 │   ├── filters.js        "¿Qué tengo en la nevera?" y filtros combinables (§7.11)
 │   ├── cook.js           modo cocina, temporizadores y voz (§7.9)
 │   ├── auth-config.js    configuración web de Firebase y proveedores de correo que se muestran (§7.3)
 │   ├── consent.js        Términos y Condiciones (ES/EN), las 3 casillas y el correo de confirmación; también lo usa api/ (§7.14)
-│   ├── consent-ui.js     consentimiento en la entrada, en la cuenta (consents/{uid}), en #/admin y la página #/terminos (§7.14)
-│   ├── auth.js           pantalla de entrada, validación del correo, conteo de usos y panel #/admin (§7.3)
+│   ├── consent-ui.js     consentimiento en la entrada, en la cuenta (consents/{uid}), en #/admin, #/terminos y #/privacidad (§7.14, §7.17)
+│   ├── auth.js           cuenta opcional (entrada que se abre cuando hace falta), validación del correo, conteo de usos y panel #/admin (§7.3)
 │   ├── install.js        "Póngala en su celular": guía para crear el icono en la pantalla de inicio (§7.6)
 │   ├── photo.js          motor de fotos: achica en el navegador la foto tomada o subida antes de guardarla (§7.5)
 │   ├── reviews.js        reseñas (estrellas + comentario + foto opcional) de la app y de cada receta, con aprobación previa (§7.4)
@@ -97,12 +101,19 @@ cocine-a-gusto/
 │   ├── kitchen.js        Mi recetario (#/mi-recetario) y Lista de compras (#/compras) (§7.10)
 │   └── pwa.js            registra sw.js, aviso sin conexión y barra de abajo del celular (§7.13)
 ├── sw.js                 trabajador de servicio: la app sin internet (§7.13)
+├── receta/<id>.html      GENERADO (tools/prerender.js): página propia de cada receta → /receta/<id> (§7.15)
+├── recetas.html          GENERADO: índice de todas las recetas por categoría → /recetas (§7.15)
+├── sitemap.xml, robots.txt  GENERADOS: para Google (§7.15)
+├── 404.html              página "No encontramos esa página" con buscador (Vercel la sirve sola) (§7.15)
+├── css/receta.css        estilos de las páginas propias, de recetas.html y de la 404 (con tema oscuro)
 ├── api/consent-email.js  función de Vercel: envía el correo que confirma el consentimiento (§7.14)
 ├── marketing/            anuncios de Facebook e Instagram: build-ads.js (genera los PNG con Edge sin ventana),
 │                         ads/ (5 conceptos × feed 4:5 e historias 9:16) y GUIA-ANUNCIOS.md (textos, público,
 │                         presupuesto, calendario y reglas de Meta). No se publica (.vercelignore).
 ├── tools/usda/           map.js (alimento → registro del USDA), resolve.js y gen.js: generan js/nutrition-usda.js (§8)
 ├── tools/recipe-dates.js genera js/recipe-dates.js del historial de git (no se publica: .vercelignore) (§7.8, §11)
+├── tools/prerender.js    genera receta/, recetas.html, sitemap.xml y robots.txt (§7.15, §11)
+├── tools/check-recipes.js revisa las recetas antes de publicar: falla si alguna está incompleta (§11, §12)
 ├── images/               (vacía: reservada para fotos)
 ├── icons/                iconos de la app (bandera sobre crema): apple-touch-icon 180, 192, 512, maskable 512, favicon 32;
 │                         og-image.png 1200×630 (vista previa al compartir el enlace, §7.7)
@@ -110,13 +121,13 @@ cocine-a-gusto/
 ├── firestore.rules       reglas de seguridad de Cloud Firestore (se pegan en la consola de Firebase)
 ├── .claude/launch.json   servidor local para la vista previa
 ├── .vercelignore         archivos que no se publican en Vercel
-├── vercel.json           redirecciones de www y de recetario-de-aqui.vercel.app a recetariodeaqui.com (§2)
+├── vercel.json           redirecciones de www y de recetario-de-aqui.vercel.app a recetariodeaqui.com (§2); cleanUrls (/receta/<id>)
 ├── ARQUITECTURA.md       este documento (fuente de verdad)
 └── CLAUDE.md             instrucciones para Claude Code: leer y actualizar este documento en cada cambio
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js` → `recipes-5.js`
-→ `nutrition-usda.js` → `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `seasonal.js` → `filters.js` → `cook.js` → `install.js` (usa `app.js`; antes de `auth.js`, que llama a `installButtonHTML()`) → `consent.js` → `auth-config.js` → `auth.js` (usa `app.js`) → `photo.js` → `reviews.js` (usa `app.js`, `auth.js` y `photo.js`) → `recipe-admin.js` (usa `app.js`, `plans.js` y `auth.js`; carga `recipe-dates.js` al abrir el panel) → `kitchen.js` (usa `app.js`, `nutrition.js` y `auth.js`) → `pwa.js`.
+→ `nutrition-usda.js` → `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `glossary.js` → `plans.js` (usa funciones de `app.js`) → `seasonal.js` → `filters.js` → `cook.js` → `install.js` (usa `app.js`; antes de `auth.js`, que llama a `installButtonHTML()`) → `consent.js` → `auth-config.js` → `auth.js` (usa `app.js`) → `photo.js` → `reviews.js` (usa `app.js`, `auth.js` y `photo.js`) → `recipe-admin.js` (usa `app.js`, `plans.js` y `auth.js`; carga `recipe-dates.js` al abrir el panel) → `kitchen.js` (usa `app.js`, `nutrition.js` y `auth.js`) → `pwa.js`.
 `app.js` llama a las funciones de los archivos de después (`advOk`, `stepTimersHTML`, `renderRecipeKitchen`, `showMine`…) sólo
 cuando la página ya cargó, con `typeof … === "function"`. Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
@@ -127,17 +138,35 @@ cuando la página ya cargó, con `typeof … === "function"`. Un archivo de rece
   id: "arroz-con-gandules",          // único, kebab-case, sin acentos; se usa en la URL #/receta/<id>
   category: "arroces",               // una de las 24 claves de categoryOrder (§6)
   name: { es: "…", en: "…" },
-  time: "1 hr 30 min",               // en español: "45 min", "1 hr", "15 min + 4 hr de frío"
+  active: 90, total: 90,             // minutos: preparar y cocinar / en total con las esperas (v4.30)
+  wait: "frio",                      // sólo si total > active: la espera mayor (frio, congelador, enfriar,
+                                     // reposo, adobo, remojo, desalar, levado, secado)
   servings: 8,                       // porciones base (el usuario las ajusta)
   ingredients: { es: [ … ], en: [ … ] },   // mismas líneas y en el mismo orden en ambos idiomas
   steps:       { es: [ … ], en: [ … ] }    // ídem
 }
 ```
 
+**Tiempos (v4.30):** antes `time` era un texto ("15 min", "1 hr + reposo", "5-6 hrs") y las esperas no contaban: el
+coquito (4 horas de nevera) y el flan salían en "Listas en 30 minutos". Ahora cada receta guarda dos números en minutos:
+`active` (preparar y cocinar) y `total` (con nevera, adobo, reposo, remojo, desalar…), y `wait` dice cuál espera es la
+mayor. "Rápidas" y el filtro de tiempo usan **el total**; la dificultad, el activo. Las tarjetas muestran el total y la
+receta "15 min de cocina · 4 h 15 min en total (nevera)". La migración leyó el texto viejo y las esperas escritas en los
+pasos ("refrigere por al menos 4 horas", "marine toda la noche", "desale el bacalao de 8 a 12 horas"); no cuenta lo que
+es de guardar ("se guarda en la nevera 5 días") ni las esperas de menos de 15 minutos. Una receta nueva pone los dos
+números a mano.
+
+**Ids que cambiaron (v4.30):** `RECIPE_ALIASES` en `app.js` (`mojito-isleno` → `mojo-isleno`, `coquito-nutella` →
+`coquito-chocolate`, `pollo-fricasé` → `pollo-fricase`, `bilí` → `bili`): los enlaces, favoritas, colecciones y planes
+viejos siguen funcionando y las reseñas se quedan con el id viejo (`reviewTargetId`).
+
 **Reglas de redacción** (para que funcionen porciones, nutrición y alertas):
 
 - La **cantidad va al inicio** de la línea: `"2 tazas de …"`, `"½ libra de …"`, `"1 lata de 15 onzas de …"`. Lo que no tiene
-  cantidad ("Sal al gusto") no se escala ni se suma.
+  cantidad ("Sal al gusto") no se escala ni se suma. Lo que sí se mide lleva una cantidad de partida aunque sea a gusto:
+  `"3 cucharadas de sofrito, o al gusto"` (v4.30: sofrito, chicharrón, adobos, aceitunas, miel de los tés…).
+- Una sola cosa por línea, o varias con su número cada una; nada de "1 pimiento verde y 1 rojo" (el "1 rojo" no se
+  reconoce): mejor "2 pimientos, uno verde y uno rojo".
 - Unidades en español: taza, cucharada, cucharadita, libra, onza, lata, sobre, diente, ramita… (ver `NUTRI_UNITS`).
 - Ojo con palabras que la tabla usa para otra cosa: "papitas" son las papitas de bolsa (chips); para papas pequeñas
   escriba "papas pequeñas". Revise siempre el resultado de la nutrición de una receta nueva.
@@ -145,7 +174,9 @@ cuando la página ya cargó, con `typeof … === "function"`. Un archivo de rece
 - Lo opcional lleva la palabra "opcional" (no se suma). Sal o aceite "para el agua" tampoco.
 - **Platos de un pueblo:** el pueblo va entre paréntesis en el nombre ("Pasteles de Pollo (Orocovis)") y el último paso explica
   el vínculo con el lugar. Sólo se atribuye un plato a un pueblo cuando la tradición es conocida; no se inventan orígenes.
-- Pasos en **usted** ("Hierva…", "Añada…"), temperaturas en °F, nombres boricuas (china, guineo, habichuelas, gandules…).
+- Pasos en **usted** ("Hierva…", "Añada…"), temperaturas **sólo en °F** (la app pone los °C con "Gramos y °C", también en
+  rangos: "450–500°F (230–260°C)"), nombres boricuas (china, guineo, habichuelas, gandules…). "Mojo isleño", nunca
+  "mojito isleño" (es un trago). `tools/check-recipes.js` revisa ambas cosas.
 - `ingredients.es` es la fuente de la nutrición y de los alérgenos: el inglés es sólo traducción.
 
 ## 6. Categorías
@@ -159,11 +190,11 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | frutas | Frutas | 36 |
 | cereales | Cereales | 18 |
 | granos | Granos y Legumbres | 22 |
-| ensaladas | Ensaladas | 30 |
+| ensaladas | Ensaladas | 34 |
 | sopas | Sopas | 53 |
-| carnes | Carnes | 71 |
-| aves | Aves | 55 |
-| pescados | Pescado y Mariscos | 72 |
+| carnes | Carnes | 74 |
+| aves | Aves | 56 |
+| pescados | Pescado y Mariscos | 68 |
 | huevos | Huevos y Queso | 22 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 57 |
 | pastas | Pastas | 26 |
@@ -174,11 +205,17 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | emparedados | Emparedados | 25 |
 | postres | Helados, Budines, Flan y Otros Postres | 123 |
 | arroces | Arroces y Habichuelas | 56 |
-| vegetales | Vegetales y Viandas | 88 |
+| vegetales | Vegetales y Viandas | 84 |
 | salsas | Salsas y Aderezos | 72 |
-| bebidas | Bebidas | 44 |
+| bebidas | Bebidas | 43 |
 | jugos | Jugos Naturales | 30 |
-| cocteles | Cócteles y Tragos | 47 |
+| cocteles | Cócteles y Tragos | 48 |
+
+**Recetas que cambiaron de categoría (v4.30):** ensaladas de pulpo, de mariscos y de carrucho y la ensalada fría de pulpo
+y mangó pasan de Pescados a Ensaladas (familia "De pescado y mariscos"); los pasteles de masa, de yuca y de arroz pasan
+de Vegetales a Carnes y los de pollo a Aves (como los mofongos rellenos, por su relleno; los veganos siguen en Vegetales);
+el coquito pasa de Bebidas a Cócteles, con los demás coquitos con ron (los sin alcohol siguen en Bebidas). Jugos
+Naturales tiene 30 recetas: no se junta con Bebidas.
 
 **Añadir una categoría:** clave en `categoryOrder`, nombre en `translations.es.categories` y `translations.en.categories`,
 `categoryIcons`, `categoryTones` y sus familias en `RECIPE_FAMILIES` (`js/families.js`). En `advisories.js`, revisar si es bebida (`isDrink`).
@@ -208,14 +245,21 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   fritos; paellas; arroz blanco, de hierbas y de sabores.
 
 - **Rutas por hash:** `#/` inicio · anclas `#categorias`, `#rapidas`, `#recetas` · detalle `#/receta/<id>`
-  (URL propia: se comparte y "Atrás" vuelve a la misma posición).
+  ("Atrás" vuelve a la misma posición) · `#/planes`, `#/mi-recetario`, `#/compras`, `#/terminos`, `#/privacidad`,
+  `#/glosario`, `#/admin`. **Compartir** da la página propia `https://recetariodeaqui.com/receta/<id>` (§7.15), y la app
+  cambia el `<link rel="canonical">` y la descripción según la vista (`setPageMeta`). **Enlaces de afuera:** `?q=<texto>`
+  busca y `?cat=<categoría>` abre una categoría (`applyUrlParams`; los usan la 404, las páginas propias y Google).
 - **Cambio de vista sin deslizar (`jumpTo(y)`):** el CSS tiene `scroll-behavior: smooth`, así que `scrollTo(0, 0)` se
   deslizaba: en el celular la receta se veía primero por el final y, si se tocaba la pantalla, se quedaba abajo. Abrir
   una receta, volver a los resultados, los planes y `#/admin` usan `jumpTo()` (`behavior: "instant"`). El deslizamiento
   suave queda para los enlaces dentro de la misma página.
-- **Inicio:** hero con buscador y estadísticas (`statsHero(publicRecipeCount(), categorías)`: "Más de 1,000 recetas tradicionales · 24 categorías"; al público no se le da el total exacto, que sólo sale en `#/admin`), cuadrícula de
+- **Inicio:** hero con buscador, la frase "Recetas boricuas paso a paso… Gratis y sin registrarse" (`#site-author`; desde
+  v4.30 la versión sólo sale en el pie) y estadísticas (`statsHero(publicRecipeCount(), categorías)`: "1,134 recetas
+  tradicionales · 24 categorías", **el total exacto** sacado de los datos desde v4.30), cuadrícula de
   categorías (clic = sólo esa categoría; clic de nuevo = todas), carril "Listas en 30 minutos o menos"
-  (`QUICK_MAX_MIN = 30`), y resultados agrupados por categoría (acordeón) con filtros *Rápidas* y *Favoritas*.
+  (`QUICK_MAX_MIN = 30`, contando el tiempo **total**), y resultados agrupados por categoría (acordeón) con filtros *Rápidas* y *Favoritas*.
+- **Recetas incompletas:** al cargar, `recipeComplete()` quita (y avisa en la consola) cualquier receta sin nombre,
+  tiempos, ingredientes o pasos en los dos idiomas o con líneas que no casan; `tools/check-recipes.js` lo revisa antes.
 - **Detalle:** portada (icono del plato), datos (tiempo, porciones, ingredientes, kcal/porción), línea de alérgenos,
   botones Favorito / Imprimir / Compartir, y tres pestañas: **Receta** (ingredientes con selector de porciones + pasos),
   **Información nutricional** y **Alergias y seguridad**.
@@ -390,11 +434,26 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   la mayor parte del nombre: "Arroz con Pollo" antes que "Sopón de Pollo con Arroz").
 - **Si nada tiene todas las palabras**, muestra las recetas que tienen alguna y lo dice ("Ninguna receta tiene todo…").
 - Rendimiento: índice por receta en caché; cada búsqueda tarda unos milisegundos (la primera con alérgenos, ~0.25 s).
+- **Arreglos de v4.30:** "mañana" ya no es la idea Desayuno (es una palabra vacía: "¿qué cocino mañana?"; la idea usa
+  desayuno/desayunar/breakfast); comidas de dos palabras se juntan antes de buscar (`S_PHRASES`: "sweet potato" →
+  batata, "ice cream" → helado, "pigeon peas" → gandul, "salt cod" → bacalao, "passion fruit" → parcha…; antes "sweet"
+  traía postres); plurales en -ces (`S_Z_PLURAL`: nueces → nuez, arroces → arroz, sin tocar "dulces"); y `S_CATS` tiene
+  sólo palabras que nombran la categoría: "habichuela" ya no trae todos los Arroces ni "queso" todos los Huevos y Queso,
+  sino las recetas que los llevan. Una búsqueda que sólo tiene palabras vacías no muestra el recetario entero.
 
 ### 7.3 Acceso y administración (`js/auth.js`, `js/auth-config.js`, ruta `#/admin`)
 
-- **Pantalla de entrada:** `<body class="auth-locked">` oculta encabezado, contenido y pie hasta que haya una sesión con
-  el correo validado; mientras tanto se ve `#auth-gate` (ES/EN). La persona **escoge su proveedor de correo**: Gmail
+- **Cuenta opcional (v4.30):** la app abre sin cuenta (estado `guest`): recetas, buscador, filtros, planes y Mi recetario
+  funcionan y guardan en el navegador. Antes `<body class="auth-locked">` tapaba todo hasta entrar (con una vitrina de 4
+  platos) y los enlaces compartidos caían en la entrada. Ahora `#auth-gate` sólo se abre con **Entrar** (barra de la
+  cuenta, en el menú) o cuando algo necesita la cuenta: `requireAccount(motivo, después)` / `openSignIn()` (escribir o
+  reportar una reseña, `#/admin`), con el motivo arriba ("Para escribir una reseña, entre con su cuenta.") y, al entrar,
+  sigue lo que se iba a hacer (p. ej. abre el formulario). **Seguir sin cuenta** (`closeSignIn`) la cierra y vuelve al
+  mismo punto de la página; si había una sesión a medias (sin validar, sin aceptar los términos o suspendida) se sale de
+  ella. Mientras Firebase carga la app ya se usa; si no carga (sin señal), "Entrar" lo reintenta (estado `offline`).
+  "Para qué sirve la cuenta" reemplaza la vitrina: favoritas, planes y Mi recetario en todos sus equipos, y reseñas.
+  Las tres casillas de los términos siguen siendo obligatorias, pero sólo para crear la cuenta.
+- **Pantalla de entrada:** la persona **escoge su proveedor de correo**: Gmail
   (Google), Outlook/Hotmail/Live (Microsoft), Yahoo Mail, iCloud (Apple) u **"¿Otro correo?"**, que envía un enlace de
   validación al buzón (Firebase *email link*, sin contraseña). Qué botones salen se decide en `AUTH_CONFIG.providers`
   (Apple viene apagado: exige cuenta de Apple Developer). **Estado (2026-10-15):** Gmail, Yahoo y el enlace por correo
@@ -421,9 +480,19 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 - **Mi recetario en la cuenta (`users/{uid}/data/kitchen`, v4.24):** `{ kitchen, updatedAt }` con colecciones, notas,
   "la hice" y la lista de compras (§7.10); mismas reglas de dueño que el plan. **Hay que publicar las reglas nuevas** de
   `firestore.rules` (bloque `docId == 'kitchen'`) en la consola de Firebase; sin ellas todo queda en el navegador.
-- **Sin internet (v4.24):** cuando una cuenta entra bien, ese navegador queda marcado (`rcb.trusted.<uid>`). Si después se
-  abre la app sin señal (o Firestore no responde con `unavailable`), `enterOffline()` la deja entrar con lo guardado; al
-  volver la conexión, `onUser()` revisa de nuevo (suspendida, administrador, conteo). Salir o ser suspendida quita la marca.
+- **Sin internet:** la marca de "equipo de confianza" (`rcb.trusted.<uid>`, que la persona podía editar) se quitó en v4.30
+  (y se borra del navegador). Sin señal, `enterOffline()` deja a la persona como invitada con su propia copia de este
+  navegador (planes y Mi recetario), sin acceso al servidor; al volver la conexión, `onUser()` revisa de nuevo
+  (suspendida, administrador, conteo) y lo hecho sin señal sube a la cuenta.
+- **Suspensión al momento (v4.30):** con la sesión abierta, `watchUser()` escucha `users/{uid}`; si un administrador la
+  suspende, la app pasa enseguida al estado `blocked` ("Puede seguir viendo las recetas sin cuenta") en vez de esperar a
+  que recargue. Y las reglas de Firestore se lo impiden en el servidor (`notBlocked()`): una cuenta suspendida no
+  guarda planes, Mi recetario, consentimientos, reseñas, fotos ni reportes, aunque tenga una pestaña abierta.
+- **Al entrar no se pierde nada (v4.30):** el plan y Mi recetario que se hicieron sin cuenta pasan a la copia de la
+  persona (`usePlanOwner`, `useKitchenOwner`). Si la cuenta ya tenía **otro** plan, se pregunta cuál conservar (antes
+  ganaba el más reciente y el otro se perdía sin aviso). Mi recetario se **junta** (`mergeKitchen`: colecciones, notas,
+  "la hice", lista de compras y favoritas). **Favoritas en la cuenta:** `kitchen.favs` (las del navegador y las de la
+  cuenta se juntan al entrar).
 - **Administradores:** los correos con documento en `admins/{correo}`. Ven "Administrador" en el menú y `#/admin`:
   totales (usuarios = todas las cuentas; usos y activos en 7 días = sólo las que no son de administrador; **recetas en la app** = el total exacto, `recipes.length`), búsqueda,
   tabla con correo, veces ("—" para los administradores, también en el CSV), primera y última vez y rol, acciones
@@ -431,7 +500,13 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   correo de la sesión y "Salir".
 - **Seguridad (`firestore.rules`):** cada quien lee sólo su registro; al crearlo sólo puede poner su correo validado y
   `count = 1`; después sólo puede subir `count` exactamente 1 y `lastSeen`. Sólo los administradores leen a todos,
-  cambian `blocked` y crean o borran `admins`. Las recetas siguen siendo archivos públicos: el bloqueo es de la app.
+  cambian `blocked` y crean o borran `admins`. Público (sin cuenta): reseñas aprobadas, sus fotos y `recipeMeta`.
+  La persona puede borrar su registro, sus datos, su consentimiento, sus reseñas, fotos y reportes (§7.17), aun suspendida.
+- **Pruebas de las reglas (v4.30):** con el emulador de Firestore (`firebase emulators:exec` + `@firebase/rules-unit-testing`)
+  se comprobó que un usuario no lee a otros, no se hace administrador ni dueño, no aprueba su reseña ni se quita
+  `blocked`; que una cuenta suspendida no escribe pero sí borra su cuenta; que el anónimo lee sólo lo publicado; y el
+  borrador, los reportes, borrar la cuenta y el consentimiento con la hora del servidor (30 de 30). **Hay que publicar
+  `firestore.rules` en la consola de Firebase** para que todo esto valga en el sitio.
 
 **Puesta en marcha (una vez, en https://console.firebase.google.com):**
 
@@ -446,7 +521,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
    puede quitar el rol ni suspenderlo. Los demás administradores se nombran desde `#/admin`. Para cambiar de dueño se
    edita `ownerEmail()` y se vuelven a publicar las reglas. El correo no va en el código del sitio.
 
-Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
+Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin configurar".
 
 ### 7.4 Reseñas de la app y de las recetas (`js/reviews.js`)
 - **Qué es:** 1 a 5 estrellas + comentario opcional (hasta 1,000 letras) + **foto opcional** del plato (§7.5) y un
@@ -467,6 +542,17 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - **Ganchos:** `renderModal()` (app.js) → `renderRecipeReviews()`; `onUser()` (auth.js) → `resetReviews()` y, al entrar,
   `reviewsOnReady()`; `renderAuthTexts()` → `renderAllReviews()` al cambiar de idioma; `renderAdminShell()` y
   `loadAdminData()` → `renderPendingReviews()` / `loadPendingReviews()`. Todo texto del usuario pasa por `esc()`.
+- **Sin cuenta (v4.30):** las publicadas (y su promedio) las ve todo el mundo; antes, sin cuenta, se quedaba en
+  "Cargando reseñas…" para siempre. Sin Firebase (sin señal o sin configurar) dice "Las reseñas no se pueden ver ahora".
+  "Entrar para escribir una reseña" abre la entrada y, al entrar, el formulario.
+- **Editar una publicada (v4.30):** ya no la esconde ni baja el promedio. Los cambios se guardan en `draft`
+  (`{ name, stars, text, hasPhoto, newPhoto }`) con `pendingEdit: true`, la foto nueva en `reviewPhotos/{id}__draft`, y se
+  sigue viendo la versión aprobada. La persona ve sus cambios con "Cambios pendientes de aprobación". En `#/admin`
+  salen con "Cambios propuestos a una reseña publicada" y **Aprobar cambios** (pasan a la reseña, y la foto nueva a la de
+  la reseña) o **Descartar cambios**. Una pendiente que nunca se aprobó se edita como antes.
+- **Reportar (v4.30):** cada reseña publicada de otra persona tiene **Reportar** (con cuenta; sin cuenta pide entrar):
+  pregunta el motivo y guarda `reports/{id de la reseña}__{uid}` = `{ review, target, uid, reason, at }`. En `#/admin`,
+  **Reseñas reportadas** con los motivos, **Descartar reporte** y **Borrar** la reseña.
 - **Seguridad (`firestore.rules`, `match /reviews/{rid}`):** el id debe ser `target__uid` propio; sólo esas 9 claves,
   tipos y largos válidos; el autor sólo escribe `status: 'pending'` con `updatedAt` del servidor (y `createdAt` igual al
   anterior al editar); una cuenta suspendida no puede escribir. Leer: las publicadas, cualquiera que entre; las
@@ -500,9 +586,8 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 
 ### 7.6 Icono en el celular (`js/install.js`)
 - **Para qué:** que quien llega desde un anuncio cree el icono de la app (la bandera, `icons/`) en la pantalla de inicio de
-  su celular. Como el manifiesto usa `"display": "browser"` (§10), el navegador no ofrece "Instalar" solo: el icono se
-  crea con "Añadir a pantalla de inicio" y abre la app en el navegador. Si el navegador lanza `beforeinstallprompt`,
-  sale además un botón **Crear el icono ahora**.
+  su celular. Desde v4.30 el manifiesto usa `"display": "standalone"` (§10): el icono abre la app sin la barra del
+  navegador, como una app. Si el navegador lanza `beforeinstallprompt`, sale además un botón **Crear el icono ahora**.
 - **Dónde:** botón **Crear el icono en su celular** al final de toda pantalla de entrada (`gateShell()` en `auth.js`,
   sólo en celulares) y botón **Póngala en su celular** en el pie (siempre; en computadora muestra el enlace para abrirlo
   en el celular). Cualquier elemento con `data-install="open"` abre la guía (`<dialog id="install-dialog">`).
@@ -619,6 +704,11 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   crustáceos, moluscos, maní, nueces, soya, ajonjolí), dieta (vegetariana/vegana, las de los planes), época y "para niños"
   (la misma idea del buscador). Se combinan con el buscador, la categoría, las rápidas y las favoritas: `hasFilters()`,
   `matches()` y la clave de la vista de `app.js` llaman a `advActive()`, `advOk()` y `advKey()`.
+- **Más claro (v4.30):** cada tarjeta dice **"Le falta: cilantro, ajíes dulces y 2 más"** o "Tiene lo principal"
+  (`haveMissing`/`haveCardHTML`: sin sal, pimienta, aceite, agua, lo opcional ni lo de adornar); el panel dice cuántas
+  recetas usan lo que tiene y cuántos ingredientes más puede añadir; al pasar de 8 (`HAVE_MAX`) lo avisa y deja escrito
+  lo que no cupo (antes se perdía); con el filtro de calorías dice cuántas recetas sin estimado quedan fuera; y lo que se
+  está escribiendo no se borra cuando el panel se vuelve a pintar.
 
 ### 7.12 De temporada en la isla (`js/seasonal.js`)
 
@@ -638,6 +728,10 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   cuenta. Sin señal se ve un aviso; lo que se guarde sube a la cuenta al volver la conexión (§7.3).
 - **Al publicar una versión nueva:** subir `SW_VERSION` en `sw.js` (igual que `APP_VERSION`) para que se borre la copia
   vieja. `vercel.json` sirve `sw.js` con `Cache-Control: no-cache`.
+- **Páginas propias (v4.30):** sólo la portada se guarda como `index.html` (antes cualquier página que se abriera la
+  pisaba); `/receta/<id>` se guarda con su dirección y, sin señal y sin copia, redirige a `/#/receta/<id>` en la app
+  guardada. La portada se pide como `./` (con `cleanUrls`, `/index.html` redirige y una respuesta redirigida no sirve
+  para abrir la página). También guarda `css/receta.css`.
 - **Barra de abajo** (pantallas de 760 px o menos): Inicio, Buscar (va al inicio y abre el teclado en el buscador),
   Planes, Recetario y Compras; `setBottomNav()` (llamada desde `route()`) marca la página actual. No sale con la
   pantalla de entrada ni en el modo cocina.
@@ -660,8 +754,13 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   aceptación en el navegador, guarda `consents/{uid} = { uid, email, version, lang, items, acceptedAt (hora local al
   marcar), ua (navegador), history (versiones anteriores), at (hora del servidor) }` y pide el correo. Si no hay
   aceptación (cuentas que ya existían, otro navegador, versión nueva), estado **"consent"** ("Antes de continuar"): las
-  casillas y "Acepto y continúo". Si Firestore aún no tiene las reglas de `consents`, se entra con lo aceptado en el
-  navegador (aviso en la consola) para no dejar a nadie fuera.
+  casillas y "Acepto y continúo". **Desde v4.30 vale sólo el registro del servidor:** si no se puede leer, o si después
+  de guardarlo no está (con su `at` del servidor), la cuenta no se abre ("No pudimos guardar ni confirmar su
+  consentimiento…"; la app se sigue usando sin cuenta). Antes, si no se podía leer, se entraba con la copia del navegador.
+  `acceptedAt` (hora del navegador) queda sólo como dato; la constancia es `at`.
+- **`CONSENT_VERSION` "2026-10-18.2" (v4.30):** los términos dicen que la cuenta es opcional, que sin cuenta no se guarda
+  nada en el servidor, cuánto tiempo se guardan los datos (mientras exista la cuenta) y que se puede borrar todo desde
+  "Privacidad y mis datos". Todos aceptan otra vez al entrar.
 - **Administración:** `#/admin` lee `consents` (`loadAdminConsents`) y muestra la columna **Consentimiento**: versión
   (verde si es la vigente), fecha y hora, y "correo enviado / sin enviar"; "Pendiente" si no aceptó. El CSV añade
   "Versión aceptada", "Fecha de aceptación" y "Correo de confirmación". Nadie puede borrar un consentimiento desde la app.
@@ -682,10 +781,62 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - **`#/terminos`:** los términos completos para leer o imprimir (enlace en el pie) y, con la sesión abierta, "Usted aceptó
   la versión X el …".
 
+### 7.15 Páginas propias de las recetas, Google y vista previa al compartir (`tools/prerender.js`, v4.30)
+
+- **Por qué:** la app usa `#/receta/<id>`, y para Google todo lo que va después de `#` es la portada: ninguna receta salía
+  en las búsquedas ("receta de pernil") y todos los enlaces compartidos se veían iguales (título, texto y bandera).
+- **`node tools/prerender.js`** (sin dependencias; carga los scripts en `vm` como el navegador) genera:
+  `receta/<id>.html` (1,134 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
+  `vercel.json`. Cada una es ligera y se lee sin JavaScript: título y descripción propios ("Coquito: receta puertorriqueña
+  paso a paso para 12 porciones. Lleva leche de coco… Lista en 4 h 15 min."), `canonical`, Open Graph y Twitter con el
+  nombre del plato, tiempo de cocina y total, porciones, calorías estimadas, alérgenos, ingredientes y pasos en español y
+  en inglés, seis recetas de la misma categoría y el botón **"Abrir en la app"** (`/#/receta/<id>`: porciones, modo
+  cocina…). Datos estructurados **schema.org/Recipe** (JSON-LD: `cookTime` = activo, `totalTime`, `recipeYield`,
+  `recipeIngredient`, `recipeInstructions` con cada paso, `recipeCategory`, `recipeCuisine`, `nutrition.calories`,
+  `datePublished` de `RECIPE_ADDED`) y `BreadcrumbList`. Estilos en `css/receta.css` (también en oscuro).
+  También `recetas.html` (**/recetas**: todas las recetas por categoría, enlazado en el pie), `sitemap.xml` (portada,
+  /recetas y cada receta con su fecha) y `robots.txt` (todo menos `/api/`, con el sitemap).
+- **La portada** lleva el JSON-LD `WebSite` con `SearchAction` (`/?q=`). La imagen de la vista previa sigue siendo
+  `og-image.png` (las fotos de los platos no son parte de esta versión).
+- **Direcciones que no existen** (`recetariodeaqui.com/L`, enlaces viejos): `404.html` con buscador (`/?q=`) y "Ver todas
+  las recetas"; si parece una receta (`/receta/<algo>`) pone ese nombre en el buscador. `noindex`.
+- **Después de publicar:** en Google Search Console, añadir la propiedad `recetariodeaqui.com` y enviar
+  `https://recetariodeaqui.com/sitemap.xml`. Se vuelve a correr `prerender.js` cada vez que se añaden o cambian recetas.
+
+### 7.16 Glosario de la cocina boricua (`js/glossary.js`, ruta `#/glosario`, v4.30)
+
+- `GLOSSARY`: 25 palabras que las recetas usan tal cual, también en inglés (sofrito, recao/culantro, ají dulce, caldero,
+  pilón, queso de papa, queso de freír, achiote, sazón, adobo, mojo y mojo isleño, viandas, yautía, ñame, pana, guineo,
+  amarillos, tostones, mofongo, china, habichuelas y gandules, pique, pan sobao, bacalao, hoja de plátano), con lo que
+  son y con qué sustituirlas fuera de la isla, en ES y EN. En cada receta, bajo la preparación, el recuadro plegable
+  **"Palabras de la cocina boricua (N)"** con las que aparecen en ella (en el idioma que se ve; `renderGlossary`, desde
+  `renderModal`) y el enlace al glosario completo, que también está en el pie.
+
+### 7.17 Privacidad y mis datos (`js/consent-ui.js`, ruta `#/privacidad`, v4.30)
+
+- Enlace en el pie y, con la sesión abierta, el escudo de la barra de la cuenta. Muestra la sección de privacidad de los
+  términos y, con la sesión abierta, **lo que hay guardado** (correo, primera vez, usos, consentimiento con su fecha,
+  si hay plan y Mi recetario, cuántas reseñas). Sin cuenta explica que no hay nada en el servidor.
+- **Descargar mis datos:** un JSON con el registro, el consentimiento, el plan, Mi recetario y las reseñas.
+- **Retirar mi consentimiento y borrar mi cuenta** (`deleteMyAccount`): confirma; Firebase exige haber entrado hace
+  poco, así que si no, con Gmail/Yahoo/Microsoft se vuelve a entrar en una ventanita y con el enlace por correo se cierra
+  la sesión y se pide entrar otra vez. Luego borra en un batch sus reseñas y fotos (también las de borrador), sus
+  reportes, `users/{uid}/data/plan` y `kitchen`, `consents/{uid}` y `users/{uid}`; quita su rol de administrador si lo
+  tenía (el dueño no), borra sus copias de este navegador y, al final, la cuenta de Firebase Authentication.
+  Probado con los emuladores de Authentication y Firestore: no queda nada de la cuenta.
+
 ### 7.2 Planes de comida (`js/plans.js`, ruta `#/planes`)
 - **Acceso:** enlace "Planes" / "Meal plans" en el menú y en el pie. Vista `<section id="view-plans">`; `route()` llama a
   `showPlans()`; `showHome()` y `showRecipe()` la ocultan. Desde un plan, una receta se abre con `data-open` y "Atrás"
   vuelve al plan en la misma posición.
+- **Aviso médico arriba (v4.30):** en los objetivos para una condición de salud (`HEALTH_GOALS`: bajo en sodio, diabetes,
+  presión alta, colesterol y autismo), sobre las metas del día, el recuadro **"Orientación general, no consejo médico"**:
+  las metas son estimados y hay que consultar al médico o a un nutricionista-dietista licenciado antes de seguir el plan,
+  sobre todo con insulina u otros medicamentos (además del aviso de siempre al final). Conviene que un dietista
+  licenciado revise estos objetivos.
+- **No se pierde trabajo (v4.30):** "Sobras para mañana" pregunta antes de reemplazar un almuerzo distinto; con edad
+  menor de 14 fuera del objetivo de autismo (o menor de 2) se avisa que la meta es de adulto o que no se calcula
+  (`ageNoteHTML`); y al entrar a la cuenta se pregunta qué plan conservar (§7.3).
 - **Objetivos (`PLAN_GOALS`):** rebajar, ganar masa muscular, mantener, bajo en sodio, bajo en carbohidratos, bajo en
   azúcar, más nutritivo, **vegetariano**, **vegano**, **diabetes**, **presión alta (DASH)** (v4.24), **colesterol alto** (v4.25) y **autismo** (v4.26, ver abajo). Estos dos llevan `diet` ("veg" o "vegan"): `dietOk()` deja en el
   plan (comidas, acompañantes, época y "Recetas que encajan") sólo las recetas de esa familia (`isVegetarian`; `isVegan`
@@ -788,6 +939,14 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 
 ## 8. Estimación nutricional (`js/nutrition.js`, `js/nutrition-usda.js`)
 
+- **Nada se cuenta en silencio (v4.30):** `estimateNutrition` devuelve además `partial` (líneas con varias cosas donde una
+  parte no se reconoció: antes contaban como completas) y `noQty` (sin cantidad u opcionales). La pestaña de nutrición
+  lista "No se pudieron incluir", "Contados sólo en parte" y "Sin cantidad u opcionales, no se suman", y las calorías
+  dicen "(aproximado)". Se arreglaron las 6 líneas que quedaban en parte ("1 pimiento verde y 1 rojo" → "2 pimientos,
+  uno verde y uno rojo"…) y se añadió el peso de una taza a pernil (140 g), galleta triturada (90 g), queso suizo rallado
+  (108 g) y romero (30 g): ya ningún alimento medido en tazas usa los 240 g de reserva. Casi todos los demás ya tenían
+  su taza (`m.cup`).
+
 - **Datos oficiales del USDA (v4.24):** `js/nutrition-usda.js` (GENERADO por `tools/usda/`) une cada alimento de
   `NUTRI_FOODS` (por su primera palabra clave) con su registro de **USDA FoodData Central, base SR Legacy** (abril 2018,
   CSV de https://fdc.nal.usda.gov/download-datasets): número FDC, descripción oficial y por 100 g comestibles kcal,
@@ -879,10 +1038,21 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - Bandera de Puerto Rico como logotipo y favicon (SVG, proporción 3:2).
 - **Icono en la pantalla de inicio del celular:** la misma bandera sobre el crema de la app, en PNG (`icons/`):
   `apple-touch-icon.png` (iPhone/iPad), `icon-192/512.png` y `icon-maskable-512.png` (Android, bandera dentro de la zona
-  segura) en `manifest.webmanifest`, y `favicon-32.png` de respaldo. El manifiesto usa `"display": "browser"`: la app se
-  abre igual que en el navegador (en modo *standalone* el acceso con Google puede fallar por las ventanas emergentes).
+  segura) en `manifest.webmanifest`, y `favicon-32.png` de respaldo. El manifiesto usa `"display": "standalone"` desde
+  v4.30: la app abre sin la barra del navegador. Antes era `"browser"` porque entrar con Google podía fallar por las
+  ventanas emergentes en ese modo; ahora la cuenta es opcional y, si la ventanita no abre, `auth.js` pasa a la
+  redirección. Si en un iPhone no se puede entrar desde el icono, se entra desde Safari.
   Para regenerarlos: script de PowerShell con System.Drawing que dibuja `#flag-pr` con sus coordenadas.
-- Responsive con un menú plegable en móvil y la barra de abajo (§7.13); sin desbordes horizontales a 375 px.
+- Responsive con un menú plegable en móvil y la barra de abajo (§7.13); sin desbordes horizontales a 360 px.
+- **Celular y accesibilidad (v4.30):** ningún texto baja de 14 px (`.875rem`: categorías, insignias, conteos, pestañas,
+  barra de abajo) y el cuerpo es de 16 px; todo lo que se toca mide al menos 44 px (cambiar comida del plan, chips de
+  temporizador, enlaces de reseñas, botones pequeños, medidas, mover comida, quitar de la lista). Bajo 380 px el botón de
+  buscar queda como lupa (antes se escondía). El temporizador terminado late 3 veces y se queda quieto con "¡Listo!"
+  (se repintaba cada medio segundo y no paraba). Enlaces dentro del texto subrayados; foco visible en las tarjetas en
+  navegadores sin `:has()`; las insignias se imprimen con su color (`print-color-adjust: exact`).
+- **Tema oscuro (v4.30):** sigue el ajuste del equipo (`prefers-color-scheme: dark`): los mismos tokens con valores
+  oscuros, `--on-accent` (texto sobre el achiote, oscuro en este tema) y `--field` (campos y tarjetas blancas). El pie
+  sigue oscuro y las portadas no cambian.
 - **Iconos nuevos del sprite (v4.24):** `i-timer`, `i-volume`, `i-mic`, `i-cart`, `i-folder`, `i-filter`, `i-home`, `i-pot`,
   `i-calendar`, `i-leaf`, `i-book` (mismo trazo de 24×24). Lo nuevo usa los mismos tokens: verde plátano para tiempo,
   temporada y lo que cumple; achiote para lo que falta. Impresión: la lista de compras y el plan (`body.print-plan`) se
@@ -892,33 +1062,67 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 
 1. Escribir las recetas en el archivo de ampliación más reciente (`js/recipes-5.js`) o crear `recipes-6.js` con
    `recipes.push(...)` y añadir su `<script>` en `index.html` antes de `nutrition.js`.
-2. Respetar el modelo (§5): `id` único, categoría existente, ES y EN con el mismo número de líneas.
+2. Respetar el modelo (§5): `id` único en kebab-case sin acentos, categoría existente, `active` y `total` en minutos (con
+   `wait` si hay espera), ES y EN con el mismo número de líneas, cantidades de partida en lo que se mide.
 3. Comprobar que no haya ingredientes sin contar en la nutrición; si falta un alimento, añadirlo a `NUTRI_FOODS` (§8) y
    a `tools/usda/map.js`, y volver a generar `js/nutrition-usda.js` (§8).
 4. Revisar alérgenos y alertas: si aparece un ingrediente nuevo con alérgeno, ampliar `ALLERGENS` (§9).
 5. Revisar el icono del plato; si no encaja, añadir la palabra a `dishIcons` (§7).
 6. Probar en el navegador (español e inglés, móvil): la receta abre, porciones, pestañas, sin desbordes.
 7. Generar las fechas de ingreso: `node tools/recipe-dates.js` (actualiza `js/recipe-dates.js`, §7.8).
-8. Actualizar **este documento** (conteos de §6, encabezado y §13) en el mismo commit.
+8. Revisar: `node tools/check-recipes.js` (0 errores: ids en kebab-case sin acentos, `active`/`total`/`wait`, ES y EN
+   completos, sólo °F…) y generar las páginas: `node tools/prerender.js` (§7.15). Las dos cosas van en el mismo commit.
+9. Actualizar **este documento** (conteos de §6, encabezado y §13) en el mismo commit.
 
 ## 12. Verificación
 
-No hay pruebas automáticas en el repositorio. La verificación de cada cambio se hace:
+`node tools/check-recipes.js` revisa los datos (falla con código 1). Además, la verificación de cada cambio se hace:
 
 - **Datos:** cargando los scripts en Node (`vm`) en el mismo orden que `index.html` y comprobando ids únicos,
   categorías válidas, ES/EN con el mismo número de líneas y `estimateNutrition(r).missing` vacío en todas las recetas.
 - **Navegador:** abrir todas las recetas por `#/receta/<id>` en ES y EN a 375 px: sin errores de consola, sin desbordes
   horizontales y con el nombre correcto en la página.
 - **Planes (v4.24):** cargar los scripts en Node y armar un plan de 7 días con cada objetivo: ninguna comida vacía, calorías
-  cerca de la meta y, en Diabetes, ninguna comida sobre 60 g de carbohidratos. Para ver la interfaz sin entrar a la cuenta
-  en `localhost` se puede quitar `auth-locked` desde la consola (sólo para inspeccionar).
+  cerca de la meta y, en Diabetes, ninguna comida sobre 60 g de carbohidratos. Desde v4.30 la interfaz se ve sin entrar.
+- **Cuenta, reseñas y reglas (v4.30):** con los emuladores de Firebase (`firebase emulators:exec --only auth,firestore`),
+  `@firebase/rules-unit-testing` para las reglas y Playwright sirviendo el SDK de Firebase local y llamando a
+  `useEmulator`: invitada → entrar desde "Escribir una reseña" → términos → reseña → aprobar → editar (borrador) →
+  suspender al momento → reactivar → borrar la cuenta.
 
 ## 13. Registro de cambios
 
 **Versión:** la app muestra la misma versión que este documento. En cada cambio se sube la versión aquí (arriba y en la
-entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, y el texto
-inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
+entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, `SW_VERSION` en
+`sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
+
+### 2026-10-18 — v4.30.0 · Revisión del sitio: recetas sin cuenta, Google, tiempos reales, privacidad y accesibilidad
+- *Pedido:* aplicar la revisión del sitio (versión 4.29.0) menos la sugerencia 6 (fotos de los platos).
+- **Acceso (1):** la app se usa sin cuenta; la entrada sólo se abre para guardar en la nube, escribir o reportar reseñas,
+  o `#/admin`, y se cierra con "Seguir sin cuenta" (§7.3).
+- **Google y compartir (2, 3, 5):** página propia por receta en `/receta/<id>` con schema.org/Recipe, sitemap, robots,
+  `/recetas`, búsqueda `?q=` y 404 con buscador; compartir da esa página, con título y descripción del plato (§7.15).
+- **Instalar (4):** el manifiesto pasa a `"display": "standalone"` (§7.6, §10).
+- **Tiempos (7):** `time` (texto) pasa a `active`/`total` en minutos y `wait`; rápidas por el total (§5).
+- **Palabras (8):** "mojito isleño" → mojo isleño (también el id de la salsa); glosario de 25 palabras (§7.16).
+- **Recetas incompletas (9):** la Sangría Tropical estaba completa (la revisión leyó el archivo en parte), pero ahora
+  `tools/check-recipes.js` y `recipeComplete()` evitan que salga una receta a medias. Encontró y se arreglaron dos ids
+  con acento (`pollo-fricasé`, `bilí`) y dos recetas sin tipo de espera.
+- **Categorías (10):** ensaladas de mariscos a Ensaladas, pasteles a Carnes/Aves, coquito a Cócteles; `coquito-nutella`
+  → `coquito-chocolate` (no lleva Nutella). Jugos tiene 30 recetas, no una: se queda (§6). Ids viejos con alias (§5).
+- **Cantidades (11):** 88 líneas con cantidad de partida ("3 cucharadas de sofrito, o al gusto"), los adobos de pollo
+  guisado, fricasé de cabro, pollo BBQ y carne de cerdo guisada desglosados, el chicharrón del mofongo, la miel de los tés.
+- **Temperaturas (12):** sólo °F en las recetas (se quitó el único "(175°C)"); la app convierte también rangos y en el modo
+  cocina.
+- **Conteo (13):** el inicio dice el total exacto (1,134), sacado de los datos.
+- **Buscador (14), "lo que tengo" (15), planes (16, 17), nutrición (18), reseñas (19):** §7.1, §7.11, §7.2, §8, §7.4.
+- **Celular y accesibilidad (20–24):** 14 px mínimo, 44 px para tocar, lupa en pantallas pequeñas, temporizador que no
+  late para siempre, enlaces subrayados, foco en tarjetas, tema oscuro, insignias al imprimir, versión sólo en el pie (§10).
+- **Seguridad y privacidad (25–28):** reglas con `notBlocked()` y lecturas públicas sólo de lo publicado, probadas con el
+  emulador (30 de 30); suspensión al momento; sin marca de "equipo de confianza"; `#/privacidad` con descargar y borrar
+  la cuenta; consentimiento sólo con el registro del servidor; términos v2026-10-18.2 (§7.3, §7.14, §7.17).
+  **Hay que publicar `firestore.rules`** en la consola de Firebase. Conviene que un abogado revise los términos y un
+  dietista licenciado los objetivos de salud.
 
 ### 2026-10-18 — v4.29.1 · Anuncios para Facebook e Instagram
 - *Pedido:* la publicidad recomendada para Facebook e Instagram, que llame la atención del público en general.

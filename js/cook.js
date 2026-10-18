@@ -36,7 +36,7 @@ const COOK_T = {
     awake: "La pantalla se mantiene encendida.",
     timer: (txt) => `Temporizador ${txt}`, timerStart: (txt) => `Temporizador de ${txt} empezado.`,
     timerDone: (lbl) => `¡Tiempo! Terminó el temporizador: ${lbl}.`, timerStep: (i) => `paso ${i}`,
-    timers: "Temporizadores", stop: "Parar", pause: "Pausar", resume: "Seguir", add1: "+1 min",
+    timers: "Temporizadores", stop: "Parar", pause: "Pausar", resume: "Seguir", add1: "+1 min", doneTag: "¡Listo!",
     doneTitle: "¡Buen provecho!", doneText: "Terminó todos los pasos.", cookedBtn: "Marcar que la hice", backToRecipe: "Volver a la receta",
     of: "de"
   },
@@ -59,7 +59,7 @@ const COOK_T = {
     awake: "The screen stays on.",
     timer: (txt) => `Timer ${txt}`, timerStart: (txt) => `${txt} timer started.`,
     timerDone: (lbl) => `Time's up! Timer finished: ${lbl}.`, timerStep: (i) => `step ${i}`,
-    timers: "Timers", stop: "Stop", pause: "Pause", resume: "Resume", add1: "+1 min",
+    timers: "Timers", stop: "Stop", pause: "Pause", resume: "Resume", add1: "+1 min", doneTag: "Done!",
     doneTitle: "Enjoy your meal!", doneText: "You finished every step.", cookedBtn: "Mark as cooked", backToRecipe: "Back to the recipe",
     of: "of"
   }
@@ -157,7 +157,8 @@ function ensureTick() {
       }
     }
     renderTimers();
-    if (!active && !cookTimers.some((x) => x.done)) { clearInterval(timerTick); timerTick = 0; }
+    // Sin temporizadores corriendo no hace falta seguir: los terminados se quedan quietos en "¡Listo!".
+    if (!active) { clearInterval(timerTick); timerTick = 0; }
   }, 500);
 }
 function timersHTML() {
@@ -168,6 +169,7 @@ function timersHTML() {
     const paused = x.left != null;
     return `<li class="timer-item${x.done ? " is-done" : ""}">
       <span class="timer-clock" aria-hidden="true">${x.done ? "0:00" : fmtClock(left)}</span>
+      ${x.done ? `<span class="timer-done-tag">${esc(tr.doneTag)}</span>` : ""}
       <span class="timer-label">${esc(x.label)}${x.recipe ? ` · ${esc(x.recipe)}` : ""}</span>
       <span class="timer-btns">
         ${x.done ? "" : `<button type="button" class="btn btn-ghost btn-sm" data-timer-act="add" data-id="${x.id}">${esc(tr.add1)}</button>
@@ -176,9 +178,13 @@ function timersHTML() {
       </span></li>`;
   }).join("")}</ul>`;
 }
+/* Sólo se vuelve a pintar lo que cambió: así el aviso de "terminado" late unas veces y se queda quieto
+   (antes se repintaba cada medio segundo y el latido no paraba nunca). */
+let timersLast = "", fabLast = "";
 function renderTimers() {
   const box = $("cook-timers");
-  if (box) box.innerHTML = timersHTML();
+  const html = timersHTML();
+  if (box && (html !== timersLast || !box.innerHTML)) { box.innerHTML = html; timersLast = html; }
   // Pastilla flotante cuando el modo cocina está cerrado.
   const fab = $("timer-fab");
   if (!fab) return;
@@ -188,7 +194,8 @@ function renderTimers() {
   if (fab.hidden) return;
   const next = live.sort((a, b) => timerLeft(a) - timerLeft(b))[0];
   fab.classList.toggle("is-done", ringing);
-  fab.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#i-timer"/></svg><span>${ringing ? "0:00" : fmtClock(timerLeft(next))}</span><span class="sr-only">${esc(ct().timers)}</span>`;
+  const fh = `<svg class="icon" aria-hidden="true"><use href="#i-timer"/></svg><span>${ringing ? ct().doneTag : fmtClock(timerLeft(next))}</span><span class="sr-only">${esc(ct().timers)}</span>`;
+  if (fh !== fabLast) { fab.innerHTML = fh; fabLast = fh; }
 }
 function timerAction(act, id) {
   const x = cookTimers.find((y) => String(y.id) === String(id));
@@ -427,7 +434,7 @@ function renderCook() {
           ? `<div class="cook-done"><p>${esc(tr.doneText)}</p>
               ${typeof cookedButtonHTML === "function" ? cookedButtonHTML(current.id) : ""}
               <button type="button" class="btn btn-outline" data-cook="close">${esc(tr.backToRecipe)}</button></div>`
-          : `<p class="cook-step">${esc(steps[cookStep])}</p>${stepTimersHTML(steps[cookStep], cookStep + 1)}`}
+          : `<p class="cook-step">${withCelsius(steps[cookStep])}</p>${stepTimersHTML(steps[cookStep], cookStep + 1)}`}
     </div>
     <div class="cook-timers" id="cook-timers">${timersHTML()}</div>
     <div class="cook-nav">

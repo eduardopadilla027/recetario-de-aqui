@@ -4,9 +4,16 @@
 // users/{uid}:    { email, count, firstSeen, lastSeen, blocked? }  — sin contraseñas
 // admins/{email}: { addedBy, addedAt, owner? }
 // recipeMeta/{id}: { seasons, updatedBy, updatedAt }  — temporada fijada por un administrador (js/recipe-admin.js)
-// reviews/{target}__{uid}: { target, uid, name, stars, text, hasPhoto?, status, createdAt, updatedAt }  — js/reviews.js
+// reviews/{target}__{uid}: { target, uid, name, stars, text, hasPhoto?, status, createdAt, updatedAt,
+//                            draft?: { name, stars, text, hasPhoto, newPhoto }, pendingEdit? }  — js/reviews.js
+// reports/{reviewId}__{uid}: { review, target, uid, reason, at }  — reportes de reseñas (js/reviews.js)
 // consents/{uid}: { uid, email, version, lang, items, acceptedAt, ua, history, at, emailSentAt? }  — js/consent-ui.js
 // reviewPhotos/{mismo id}: { target, uid, photo (data URL WebP/JPEG ya achicado por js/photo.js), updatedAt }
+//   y reviewPhotos/{mismo id}__draft: la foto nueva de una reseña publicada que se editó (espera aprobación).
+//
+// Lo público (sin cuenta): reseñas aprobadas, sus fotos y las temporadas de recipeMeta. Todo lo demás pide
+// un correo validado. Una cuenta suspendida (users/{uid}.blocked) no puede escribir nada propio, pero sí
+// borrar su cuenta y sus datos.
 //
 // Dueño (administrador fijo): ownerEmail(). Al entrar, la app le crea admins/{su correo} con owner: true.
 // No se le puede quitar el rol ni suspender.
@@ -28,6 +35,15 @@ service cloud.firestore {
     }
     function isAdmin() {
       return isOwner() || (verified() && exists(/databases/$(database)/documents/admins/$(myEmail())));
+    }
+    // Suspendida: el administrador puso blocked = true en su registro. Se revisa en el servidor en cada
+    // escritura (antes sólo lo revisaba la app al entrar, y una pestaña abierta seguía funcionando).
+    function notBlocked() {
+      return !(exists(/databases/$(database)/documents/users/$(request.auth.uid))
+               && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('blocked', false) == true);
+    }
+    function activeUser() {
+      return verified() && notBlocked();
     }
 
     match /users/{uid} {
@@ -53,32 +69,35 @@ service cloud.firestore {
         && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['blocked'])
         && request.resource.data.blocked is bool;
       allow delete: if isAdmin() && resource.data.email != ownerEmail();
+      // La persona borra su propio registro ("Borrar mi cuenta", js/consent-ui.js), aun suspendida.
+      allow delete: if verified() && request.auth.uid == uid;
     }
 
     // Datos propios (ajustes de Planes y Mi recetario): sólo la persona dueña; ni los administradores.
     match /users/{uid}/data/{docId} {
       allow read, delete: if verified() && request.auth.uid == uid;
-      allow write: if verified() && request.auth.uid == uid
+      allow write: if activeUser() && request.auth.uid == uid
         && docId == 'plan'
         && request.resource.data.keys().hasOnly(['plan', 'updatedAt'])
         && request.resource.data.plan is map
         && request.resource.data.plan.size() <= 20
         && request.resource.data.updatedAt == request.time;
       // Mi recetario (js/kitchen.js): colecciones, notas, "la hice" y la lista de compras.
-      allow write: if verified() && request.auth.uid == uid
+      allow write: if activeUser() && request.auth.uid == uid
         && docId == 'kitchen'
         && request.resource.data.keys().hasOnly(['kitchen', 'updatedAt'])
         && request.resource.data.kitchen is map
-        && request.resource.data.kitchen.keys().hasOnly(['ts', 'cols', 'notes', 'cooked', 'shop'])
+        && request.resource.data.kitchen.keys().hasOnly(['ts', 'cols', 'notes', 'cooked', 'shop', 'favs'])
         && request.resource.data.updatedAt == request.time;
     }
 
     // Consentimiento de los Términos (js/consent-ui.js): la persona guarda el suyo; los administradores lo leen.
-    // Nadie lo borra desde la app (es la constancia de lo aceptado).
+    // Sólo la persona lo borra, al retirar su consentimiento y borrar su cuenta; nadie más lo cambia.
     match /consents/{uid} {
       allow read: if verified() && (request.auth.uid == uid || isAdmin());
+      allow delete: if verified() && request.auth.uid == uid;
       // Aceptar (primera vez o una versión nueva): el registro completo, con la hora del servidor.
-      allow create, update: if verified() && request.auth.uid == uid
+      allow create, update: if activeUser() && request.auth.uid == uid
         && request.resource.data.keys().hasOnly(['uid', 'email', 'version', 'lang', 'items', 'acceptedAt', 'ua', 'history', 'at'])
         && request.resource.data.uid == uid
         && request.resource.data.email == myEmail()
@@ -90,7 +109,7 @@ service cloud.firestore {
         && request.resource.data.history is list && request.resource.data.history.size() <= 20
         && request.resource.data.at == request.time;
       // Anotar que se envió el correo de confirmación.
-      allow update: if verified() && request.auth.uid == uid
+      allow update: if activeUser() && request.auth.uid == uid
         && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['emailSentAt'])
         && request.resource.data.emailSentAt == request.time;
     }
@@ -98,6 +117,8 @@ service cloud.firestore {
     match /admins/{email} {
       // Cada persona puede saber si ella misma es administradora.
       allow read: if verified() && (email == myEmail() || isAdmin());
+      // Un administrador que borra su cuenta quita su propio rol (el dueño no).
+      allow delete: if verified() && email == myEmail() && email != ownerEmail() && resource.data.get('owner', false) != true;
       // Sólo el dueño puede marcarse owner: true (en su propio documento).
       allow create: if isAdmin()
         && (request.resource.data.get('owner', false) == false || (isOwner() && email == myEmail()));
@@ -105,9 +126,9 @@ service cloud.firestore {
     }
 
     // Temporada recomendada de una receta, corregida por un administrador (#/admin → Recetas).
-    // La leen todos los que entran (los planes de comida la usan); sólo los administradores la escriben.
+    // Pública (los planes de comida la usan, con o sin cuenta); sólo los administradores la escriben.
     match /recipeMeta/{id} {
-      allow read: if verified();
+      allow read: if true;
       allow write: if isAdmin() && id.size() <= 100
         && request.resource.data.keys().hasOnly(['seasons', 'updatedBy', 'updatedAt'])
         && request.resource.data.seasons is list
@@ -121,65 +142,111 @@ service cloud.firestore {
     // Reseñas (js/reviews.js): reviews/{target}__{uid}, target 'app' o 'r:<id de la receta>'.
     // Una por persona y por receta (y una de la app). Aprobación previa: el autor sólo
     // escribe 'pending'; un administrador la pasa a 'approved'. El correo no se guarda aquí.
+    // Editar una reseña ya publicada no la esconde: los cambios van en `draft` (con pendingEdit)
+    // y la versión aprobada se sigue viendo hasta que un administrador los aprueba o descarta.
     match /reviews/{rid} {
+      function validContent(d) {
+        return d.name is string && d.name.size() >= 2 && d.name.size() <= 40
+          && d.stars is int && d.stars >= 1 && d.stars <= 5
+          && d.text is string && d.text.size() <= 1000
+          && d.get('hasPhoto', false) is bool;
+      }
       function validReview() {
         let d = request.resource.data;
         return d.keys().hasOnly(['target', 'uid', 'name', 'stars', 'text', 'hasPhoto', 'status', 'createdAt', 'updatedAt'])
-          && d.get('hasPhoto', false) is bool
           && d.uid == request.auth.uid
           && (d.target == 'app' || d.target.matches('r:[^/]{1,100}'))
           && rid == d.target + '__' + request.auth.uid
-          && d.name is string && d.name.size() >= 2 && d.name.size() <= 40
-          && d.stars is int && d.stars >= 1 && d.stars <= 5
-          && d.text is string && d.text.size() <= 1000
+          && validContent(d)
           && d.status == 'pending'
           && d.updatedAt == request.time
-          && !(exists(/databases/$(database)/documents/users/$(request.auth.uid))
-               && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('blocked', false) == true);
+          && notBlocked();
+      }
+      function validDraft() {
+        let dr = request.resource.data.draft;
+        return dr is map && dr.keys().hasOnly(['name', 'stars', 'text', 'hasPhoto', 'newPhoto'])
+          && validContent(dr) && dr.get('newPhoto', false) is bool;
       }
 
-      // Publicadas: todos los que entran. Pendientes: su autor y los administradores.
-      allow get: if verified() && (resource == null || resource.data.status == 'approved'
-        || resource.data.uid == request.auth.uid || isAdmin());
-      allow list: if verified() && (resource.data.status == 'approved' || isAdmin());
+      // Publicadas: todo el mundo, con o sin cuenta. Pendientes: su autor y los administradores.
+      allow get: if resource == null || resource.data.status == 'approved'
+        || (verified() && (resource.data.uid == request.auth.uid || isAdmin()));
+      allow list: if resource.data.status == 'approved'
+        || (verified() && (resource.data.uid == request.auth.uid || isAdmin()));
 
-      // Escribir o editar la propia: siempre vuelve a 'pending'.
+      // Escribir la propia, o editarla mientras está pendiente: siempre vuelve a 'pending'.
       allow create: if verified() && validReview() && request.resource.data.createdAt == request.time;
-      allow update: if verified() && resource.data.uid == request.auth.uid && validReview()
-        && request.resource.data.createdAt == resource.data.createdAt;
+      allow update: if verified() && resource.data.uid == request.auth.uid && resource.data.status == 'pending'
+        && validReview() && request.resource.data.createdAt == resource.data.createdAt;
+      // Editar la propia ya publicada: sólo el borrador (draft + pendingEdit) y updatedAt.
+      allow update: if activeUser() && resource.data.uid == request.auth.uid && resource.data.status == 'approved'
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['draft', 'pendingEdit', 'updatedAt'])
+        && validDraft() && request.resource.data.pendingEdit == true
+        && request.resource.data.updatedAt == request.time;
 
-      // Administradores: sólo cambian el estado (aprobar).
+      // Administradores: aprobar (status), y aprobar o descartar el borrador de una reseña publicada
+      // (el contenido nuevo tiene que ser el del borrador).
       allow update: if isAdmin()
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status'])
-        && request.resource.data.status in ['approved', 'pending'];
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'name', 'stars', 'text', 'hasPhoto', 'draft', 'pendingEdit'])
+        && request.resource.data.status in ['approved', 'pending']
+        && !('draft' in request.resource.data) && !('pendingEdit' in request.resource.data)
+        && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['name', 'stars', 'text', 'hasPhoto'])
+            || (resource.data.draft is map
+                && request.resource.data.name == resource.data.draft.name
+                && request.resource.data.stars == resource.data.draft.stars
+                && request.resource.data.text == resource.data.draft.text
+                && request.resource.data.get('hasPhoto', false) == resource.data.draft.get('hasPhoto', false)));
 
-      // Borrar: su autor o un administrador.
+      // Borrar: su autor (aun suspendido) o un administrador.
       allow delete: if verified() && (resource.data.uid == request.auth.uid || isAdmin());
     }
 
     // Foto de una reseña (js/photo.js + js/reviews.js), aparte para que las listas no la descarguen.
-    // Se ve con las mismas condiciones que su reseña: publicada, o su autor, o un administrador.
-    match /reviewPhotos/{rid} {
-      allow get: if verified() && (resource == null || resource.data.uid == request.auth.uid || isAdmin()
-        || (exists(/databases/$(database)/documents/reviews/$(rid))
-            && get(/databases/$(database)/documents/reviews/$(rid)).data.status == 'approved'));
+    // La de la reseña ({rid}) se ve con las mismas condiciones que su reseña: publicada (para todos), o su autor,
+    // o un administrador. La foto nueva de un borrador ({rid}__draft) sólo la ven su autor y los administradores.
+    match /reviewPhotos/{pid} {
+      function validPhoto(uid) {
+        let d = request.resource.data;
+        return d.keys().hasOnly(['target', 'uid', 'photo', 'updatedAt'])
+          && d.uid == uid
+          && (d.target == 'app' || d.target.matches('r:[^/]{1,100}'))
+          && (pid == d.target + '__' + uid || pid == d.target + '__' + uid + '__draft')
+          && d.photo is string
+          && d.photo.size() <= 250000
+          && d.photo.matches('data:image/(webp|jpeg);base64,[A-Za-z0-9+/=]+')
+          && d.updatedAt == request.time;
+      }
+      allow get: if resource == null
+        || (verified() && (resource.data.uid == request.auth.uid || isAdmin()))
+        || (!pid.matches('.*__draft') && exists(/databases/$(database)/documents/reviews/$(pid))
+            && get(/databases/$(database)/documents/reviews/$(pid)).data.status == 'approved');
 
       // Sólo el autor; ≤ 250,000 caracteres (la app la deja en ≈ 160,000) y sólo imagen WebP o JPEG en base64.
-      allow create, update: if verified()
+      allow create, update: if activeUser()
         && (resource == null || resource.data.uid == request.auth.uid)
-        && request.resource.data.keys().hasOnly(['target', 'uid', 'photo', 'updatedAt'])
-        && request.resource.data.uid == request.auth.uid
-        && (request.resource.data.target == 'app' || request.resource.data.target.matches('r:[^/]{1,100}'))
-        && rid == request.resource.data.target + '__' + request.auth.uid
-        && request.resource.data.photo is string
-        && request.resource.data.photo.size() <= 250000
-        && request.resource.data.photo.matches('data:image/(webp|jpeg);base64,[A-Za-z0-9+/=]+')
-        && request.resource.data.updatedAt == request.time
-        && !(exists(/databases/$(database)/documents/users/$(request.auth.uid))
-             && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('blocked', false) == true);
+        && validPhoto(request.auth.uid);
+      // Un administrador, al aprobar el borrador, pasa la foto nueva a la de la reseña (mismo autor).
+      allow create, update: if isAdmin() && !pid.matches('.*__draft')
+        && (resource == null || resource.data.uid == request.resource.data.uid)
+        && validPhoto(request.resource.data.uid);
 
       // Borrar: su autor o un administrador (junto con la reseña). Si ya no existe, no estorba al batch.
       allow delete: if verified() && (resource == null || resource.data.uid == request.auth.uid || isAdmin());
+    }
+
+    // Reportes de reseñas (botón "Reportar"): uno por persona y por reseña. Sólo los administradores los
+    // leen y los borran; quien reporta puede borrar los suyos (al borrar su cuenta).
+    match /reports/{id} {
+      allow create: if activeUser()
+        && request.resource.data.keys().hasOnly(['review', 'target', 'uid', 'reason', 'at'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.review is string && request.resource.data.review.size() <= 200
+        && id == request.resource.data.review + '__' + request.auth.uid
+        && (request.resource.data.target == 'app' || request.resource.data.target.matches('r:[^/]{1,100}'))
+        && request.resource.data.reason is string && request.resource.data.reason.size() <= 300
+        && request.resource.data.at == request.time;
+      allow read: if isAdmin() || (verified() && resource.data.uid == request.auth.uid);
+      allow delete: if isAdmin() || (verified() && resource.data.uid == request.auth.uid);
     }
   }
 }

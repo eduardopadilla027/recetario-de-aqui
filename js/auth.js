@@ -1,8 +1,12 @@
-/* Recetarios de Aquí · Acceso con cuenta de correo (#/admin para administradores).
+/* Recetarios de Aquí · Cuenta de correo opcional (#/admin para administradores).
  *
- * Para usar la app hay que entrar con una cuenta de correo validada por su
- * propio proveedor: Gmail (Google), Outlook/Hotmail (Microsoft), Yahoo, iCloud
- * (Apple) o cualquier otro correo con un enlace de validación que llega al buzón.
+ * Las recetas, el buscador, los planes y Mi recetario se usan SIN cuenta (estado "guest":
+ * todo queda en este navegador). La cuenta sólo hace falta para guardar en la nube
+ * (favoritas, planes y Mi recetario en el celular y la computadora) y para escribir o
+ * reportar reseñas: entonces se abre la pantalla de entrada (openSignIn), que se puede
+ * cerrar con "Seguir sin cuenta". Se entra con un correo validado por su propio
+ * proveedor: Gmail (Google), Outlook/Hotmail (Microsoft), Yahoo, iCloud (Apple) o
+ * cualquier otro correo con un enlace de validación que llega al buzón.
  * Lo hace Firebase Authentication: la app NUNCA ve ni guarda contraseñas.
  *
  * En Cloud Firestore se guarda sólo, por persona (users/{uid}): el correo, cuántas
@@ -23,16 +27,26 @@ const AUTH_USE_KEY = "rcb.useCounted.";      // + uid: el uso de esta sesión ya
 
 const AUTH_T = {
   es: {
-    title: "Entre a Recetarios de Aquí",
-    intro: "Para usar el recetario, regístrese con su cuenta de correo. Su propio proveedor de correo la valida.",
+    title: "Entre con su cuenta",
+    intro: "La cuenta es opcional y gratis. Su propio proveedor de correo la valida.",
     privacy: "No guardamos contraseñas: sólo su correo y cuántas veces usa la app.",
     contact: "¿Preguntas o problemas para entrar? Escríbanos a",
-    showTitle: "Lo que encontrará adentro",
-    showRecipes: (n, c) => [`Más de ${n} recetas boricuas`, `Paso a paso, en ${c} categorías: arroces, frituras, pasteles, postres y más.`],
-    showSearch: ["Busque como habla", "Por plato, ingrediente o idea: «pollo y arroz», «postre sin huevo»."],
-    showPlans: ["Planes de comida", "Según su meta: rebajar, ganar masa, vegetariano, bajo en sodio…"],
-    showHealth: ["Nutrición y alergias", "Calorías por porción, alérgenos y sustitutos en cada receta."],
+    showTitle: "Para qué sirve la cuenta",
+    showSync: ["Lo suyo en todos sus equipos", "Favoritas, planes de comida, colecciones, notas y lista de compras en el celular y la computadora."],
+    showReviews: ["Reseñas", "Califique las recetas y cuéntele a otros cómo le quedaron."],
+    showNoNeed: ["Sin cuenta también puede", "Ver y buscar todas las recetas, armar planes y usar Mi recetario en este navegador."],
     showFree: "Gratis · En español e inglés",
+    close: "Seguir sin cuenta",
+    signIn: "Entrar",
+    signInHint: "Entrar o crear una cuenta (opcional)",
+    why: {
+      review: "Para escribir una reseña, entre con su cuenta.",
+      report: "Para reportar una reseña, entre con su cuenta.",
+      sync: "Entre para guardar sus favoritas, planes y Mi recetario en todos sus equipos.",
+      admin: "Entre con su cuenta de administrador."
+    },
+    blockedNow: "Un administrador suspendió esta cuenta. Puede seguir viendo las recetas sin cuenta.",
+    myData: "Privacidad y mis datos",
     inAppTitle: "Está dentro de Facebook o Instagram",
     inAppText: "Desde aquí Gmail y Yahoo no dejan entrar. Abra la app en su navegador:",
     openChrome: "Abrir en Chrome",
@@ -119,16 +133,26 @@ const AUTH_T = {
     noAccess: "Esta página es sólo para administradores."
   },
   en: {
-    title: "Sign in to Recetarios de Aquí",
-    intro: "To use the recipe book, sign up with your email account. Your own email provider verifies it.",
+    title: "Sign in to your account",
+    intro: "An account is optional and free. Your own email provider verifies it.",
     privacy: "We never store passwords: only your email and how many times you use the app.",
     contact: "Questions or trouble signing in? Write to us at",
-    showTitle: "What you'll find inside",
-    showRecipes: (n, c) => [`Over ${n} Puerto Rican recipes`, `Step by step, in ${c} categories: rice, fritters, pasteles, desserts and more.`],
-    showSearch: ["Search the way you talk", "By dish, ingredient or idea: “chicken and rice”, “dessert without eggs”."],
-    showPlans: ["Meal plans", "For your goal: lose weight, build muscle, vegetarian, low sodium…"],
-    showHealth: ["Nutrition and allergies", "Calories per serving, allergens and substitutes in every recipe."],
+    showTitle: "What an account is for",
+    showSync: ["Your things on every device", "Favorites, meal plans, collections, notes and shopping list on your phone and computer."],
+    showReviews: ["Reviews", "Rate recipes and tell others how they turned out."],
+    showNoNeed: ["Without an account you can still", "See and search every recipe, build plans and use My cookbook in this browser."],
     showFree: "Free · In Spanish and English",
+    close: "Continue without an account",
+    signIn: "Sign in",
+    signInHint: "Sign in or create an account (optional)",
+    why: {
+      review: "To write a review, sign in to your account.",
+      report: "To report a review, sign in to your account.",
+      sync: "Sign in to keep your favorites, plans and My cookbook on all your devices.",
+      admin: "Sign in with your administrator account."
+    },
+    blockedNow: "An administrator suspended this account. You can keep browsing recipes without an account.",
+    myData: "Privacy and my data",
     inAppTitle: "You're inside Facebook or Instagram",
     inAppText: "Gmail and Yahoo don't allow signing in from here. Open the app in your browser:",
     openChrome: "Open in Chrome",
@@ -223,8 +247,12 @@ let fbAuth = null;
 let fbDb = null;
 let authUser = null;          // usuario de Firebase con el correo validado
 let authIsAdmin = false;
-let authState = "loading";    // loading | signin | sent | confirm | verify | blocked | consent | unconfigured | ready
+let authState = "loading";    // loading | guest | offline | signin | sent | confirm | verify | blocked | consent | unconfigured | ready
 let authMessage = "";         // error o aviso bajo el formulario
+let authReason = "";          // por qué se abrió la entrada ("Para escribir una reseña…")
+let authAfter = null;         // qué hacer al entrar (p. ej. abrir el formulario de reseña)
+let authReturnY = 0;          // dónde estaba la página al abrir la entrada
+let authUnwatch = null;       // escucha de users/{uid}: una suspensión se aplica al momento
 let authSentTo = "";
 let adminUsers = [];          // filas cargadas en #/admin
 let adminEmails = new Set();
@@ -267,10 +295,17 @@ const PROVIDER_MARKS = {
   apple: '<span class="pmark pmark-apple" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.7zM14.2 5.8c.6-.8 1.1-1.8 1-2.8-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.7 1 .1 2-.5 2.7-1.3z"/></svg></span>'
 };
 
+/* Estados de la entrada que se cierran con "Seguir sin cuenta" (los demás se resuelven solos). */
+const GATE_CLOSABLE = new Set(["signin", "sent", "confirm", "verify", "consent", "blocked", "unconfigured", "offline"]);
+
 function gateShell(title, body) {
   const es = currentLang === "es";
+  const close = GATE_CLOSABLE.has(authState)
+    ? `<button type="button" class="btn btn-ghost auth-close" data-auth="close"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>${esc(at().close)}</span></button>`
+    : "";
   return `
     <div class="auth-card">
+      ${close}
       <div class="auth-top">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 900 600"><use href="#flag-pr"/></svg></span>
         <span class="brand-text"><span class="brand-name">${esc(BRAND)}</span><span class="brand-sub">Cocina Boricua</span></span>
@@ -323,23 +358,13 @@ function inAppNoticeHTML() {
     </section>`;
 }
 
-/* Vitrina de la pantalla de entrada: quien llega de un anuncio ve qué trae la app antes de
-   registrarse. Cuatro platos típicos con su portada ilustrada (coverHTML de app.js) y cuatro
-   puntos; el número de recetas y de categorías sale de los datos. */
-const SHOWCASE_DISHES = ["arroz-gandules", "mofongo", "alcapurrias", "flan"];
-
+/* Para qué sirve la cuenta (ya no es una vitrina: las recetas se ven sin entrar). */
 function showcaseHTML() {
   const tr = at();
-  const n = publicRecipeCount(); // "1,000", no el total exacto (que sólo ve el administrador)
-  const c = Object.keys(t().categories).length;
-  const dishes = SHOWCASE_DISHES.map((id) => recipes.find((r) => r.id === id)).filter(Boolean);
-  const points = [["i-list", tr.showRecipes(n, c)], ["i-search", tr.showSearch], ["i-check", tr.showPlans], ["i-shield", tr.showHealth]];
+  const points = [["i-heart", tr.showSync], ["i-star", tr.showReviews], ["i-check", tr.showNoNeed]];
   return `
     <section class="gate-show" aria-labelledby="gate-show-title">
       <h2 class="auth-h2" id="gate-show-title">${esc(tr.showTitle)}</h2>
-      <ul class="gate-dishes" aria-hidden="true">${dishes.map((r) => `
-        <li>${coverHTML(r.category, r)}<span class="gate-dish-name">${esc(r.name[currentLang].replace(/\s*\(.*\)$/, ""))}</span></li>`).join("")}
-      </ul>
       <ul class="gate-points">${points.map(([icon, [title, text]]) => `
         <li><svg class="icon" aria-hidden="true"><use href="#${icon}"/></svg><span><strong>${esc(title)}</strong> ${esc(text)}</span></li>`).join("")}
       </ul>
@@ -359,6 +384,9 @@ function renderGate() {
   switch (authState) {
     case "unconfigured":
       html = gateShell(tr.unconfiguredTitle, `<p class="auth-text">${esc(tr.unconfigured)}</p>`);
+      break;
+    case "offline":
+      html = gateShell(tr.title, `<p class="auth-text">${esc(tr.errors["auth/network-request-failed"])}</p>`);
       break;
     case "loading":
       html = gateShell(tr.title, `<p class="auth-text auth-loading">${esc(tr.loading)}</p>`);
@@ -392,7 +420,7 @@ function renderGate() {
       html = gateShell(TERMS[currentLang].consentTitle, consentBlockHTML("update"));
       break;
     case "blocked":
-      html = gateShell(tr.blockedTitle, `<p class="auth-text">${esc(tr.blocked)}</p><div class="auth-actions">${signOutBtn()}</div>`);
+      html = gateShell(tr.blockedTitle, `<p class="auth-text">${esc(tr.blockedNow)}</p>`);
       break;
     default: { // signin
       const buttons = ["google", "microsoft", "yahoo", "apple"].filter((k) => p[k]).map((k) => `
@@ -410,6 +438,7 @@ function renderGate() {
           </div>
         </form>` : "";
       html = gateShell(tr.title, `
+        ${authReason ? `<p class="auth-reason" role="status">${esc(authReason)}</p>` : ""}
         ${inAppNoticeHTML()}
         ${showcaseHTML()}
         ${consentBlockHTML("pre")}
@@ -427,21 +456,66 @@ function renderGate() {
   gate.innerHTML = html;
 }
 
+/* La entrada tapa la página sólo mientras se usa (body.auth-locked); al cerrarla o al entrar,
+   se vuelve al mismo punto. "loading" sin la entrada abierta no tapa nada: la app ya se usa. */
+const gateIsOpen = () => document.body.classList.contains("auth-locked");
+function closeGate() {
+  if (!gateIsOpen()) return;
+  document.body.classList.remove("auth-locked");
+  $("auth-gate").hidden = true;
+  $("auth-gate").innerHTML = "";
+  jumpTo(authReturnY);
+}
 function setAuthState(state, message = "") {
   const changed = state !== authState;
   authState = state;
   authMessage = message;
-  if (state === "ready") {
-    document.body.classList.remove("auth-locked");
-    $("auth-gate").hidden = true;
-    $("auth-gate").innerHTML = "";
+  if (state === "ready" || state === "guest") {
+    closeGate();
     renderAccountBar();
+    if (state === "ready" && authAfter) { const fn = authAfter; authAfter = null; setTimeout(fn, 0); }
+    if (state === "guest") authAfter = null;
     return;
   }
-  document.body.classList.add("auth-locked");
-  $("auth-gate").hidden = false;
+  renderAccountBar();
+  if (state === "loading" && !gateIsOpen()) return;
+  if (!gateIsOpen()) {
+    authReturnY = window.scrollY;
+    document.body.classList.add("auth-locked");
+    $("auth-gate").hidden = false;
+    jumpTo(0);
+  }
   renderGate();
   if (changed && state !== "loading") { const h = $("auth-title"); if (h) h.focus({ preventScroll: true }); }
+}
+
+/* Abre la entrada (desde "Entrar" o cuando algo necesita la cuenta). `reason` explica por qué y
+   `after` se ejecuta al entrar (p. ej. abrir el formulario de la reseña). */
+function openSignIn(reason = "", after = null) {
+  authReason = reason;
+  authAfter = after;
+  if (authState === "ready") { authAfter = null; if (after) after(); return; }
+  if (!authConfigured()) { setAuthState("unconfigured"); return; }
+  if (fbAuth) { setAuthState("signin"); return; }
+  // Firebase todavía carga (o falló sin señal): se espera aquí mismo.
+  setAuthState("loading");
+  openGateNow();
+  loadFirebase().then(afterFirebase).then(() => { if (authState === "loading" && !fbAuth.currentUser) setAuthState("signin"); })
+    .catch(() => setAuthState("offline"));
+}
+/* "Seguir sin cuenta": con una sesión a medias (sin validar, sin aceptar los términos o suspendida) se sale de ella. */
+async function closeSignIn() {
+  authReason = "";
+  authAfter = null;
+  const half = fbAuth && fbAuth.currentUser && authState !== "ready";
+  if (half) { try { await fbAuth.signOut(); } catch { /* se queda como está */ } }
+  setAuthState("guest");
+}
+/* Para las funciones que sí necesitan la cuenta (reseñas, reportes): true si ya entró. */
+function requireAccount(reason, after) {
+  if (authState === "ready" && authUser) return true;
+  openSignIn(reason, after);
+  return false;
 }
 
 function showAuthMessage(message) {
@@ -455,16 +529,25 @@ function showAuthMessage(message) {
 function renderAccountBar() {
   const box = $("account-bar");
   if (!box) return;
-  if (!authUser || authState !== "ready") { box.hidden = true; box.innerHTML = ""; $("nav-admin").hidden = true; return; }
   const tr = at();
+  box.setAttribute("aria-label", tr.account);
+  if (!authUser || authState !== "ready") {
+    $("nav-admin").hidden = true;
+    // Sin cuenta: un botón "Entrar" (opcional). Mientras Firebase carga, igual se puede pulsar.
+    box.hidden = false;
+    box.innerHTML = `<button type="button" class="nav-link account-in" data-auth="open" title="${esc(tr.signInHint)}">
+      <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg><span>${esc(tr.signIn)}</span></button>`;
+    return;
+  }
   $("nav-admin").hidden = !authIsAdmin;
   box.hidden = false;
   box.innerHTML = `
     <span class="account-email" title="${esc(authUser.email)}">${esc(authUser.email)}</span>
+    <a class="nav-link account-data" href="#/privacidad" title="${esc(tr.myData)}">
+      <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span class="sr-only">${esc(tr.myData)}</span></a>
     <button type="button" class="nav-link account-out" data-auth="signout" title="${esc(authUser.email)}">
       <svg class="icon" aria-hidden="true"><use href="#i-logout"/></svg><span>${esc(tr.signOut)}</span>
     </button>`;
-  box.setAttribute("aria-label", tr.account);
 }
 
 /* ------------------------------------------------------------ acciones de entrada ---- */
@@ -547,7 +630,7 @@ async function signOut() {
   if (authUser) { try { sessionStorage.removeItem(AUTH_USE_KEY + authUser.uid); } catch { /* sin almacenamiento */ } }
   await flushPlanSave(); // el último plan sube a la cuenta antes de cerrar la sesión
   if (typeof flushKitchen === "function") await flushKitchen(); // y Mi recetario (js/kitchen.js)
-  if (authUser) trustDevice(authUser.uid, false);
+  stopWatchingUser();
   await fbAuth.signOut();
   // Sin sesión se ve la copia anónima, que se deja de fábrica: el plan de la persona
   // queda en su cuenta y en su propia copia de este navegador (rcb.plan.<uid>).
@@ -585,26 +668,49 @@ async function recordUse(user, isAdmin) {
   return data;
 }
 
-/* Uso sin internet (js/pwa.js, sw.js): una cuenta que ya entró en este navegador puede abrir
-   la app sin señal; al volver la conexión se revisa de nuevo (suspendida, administrador, conteo). */
-const AUTH_TRUST_KEY = "rcb.trusted.";
-function trustDevice(uid, on) { try { if (on) localStorage.setItem(AUTH_TRUST_KEY + uid, "1"); else localStorage.removeItem(AUTH_TRUST_KEY + uid); } catch { /* sin almacenamiento */ } }
-const isTrusted = (uid) => { try { return localStorage.getItem(AUTH_TRUST_KEY + uid) === "1"; } catch { return false; } };
+/* Uso sin internet (js/pwa.js, sw.js): las recetas se ven sin cuenta, así que sin señal la persona
+   sigue como invitada con lo guardado en este navegador (sin marcas de "equipo de confianza" que se
+   puedan editar). Al volver la conexión se revisa la cuenta de nuevo (suspendida, administrador, conteo). */
 let authOffline = false;
+try { for (const k of Object.keys(localStorage)) if (k.startsWith("rcb.trusted.")) localStorage.removeItem(k); } catch { /* sin almacenamiento */ }
 function enterOffline(user) {
   authOffline = true;
   authIsAdmin = false;
-  setAuthState("ready");
+  setAuthState("guest");
+  // Su propia copia de este navegador (planes, Mi recetario); sube a la cuenta al volver la señal.
   usePlanOwner(user.uid);
   if (typeof useKitchenOwner === "function") useKitchenOwner(user.uid);
 }
 window.addEventListener("online", () => { if (authOffline && fbAuth && fbAuth.currentUser) { authOffline = false; onUser(fbAuth.currentUser); } });
 
+/* Una suspensión (o un registro borrado) se aplica al momento, sin esperar a que recargue. */
+function watchUser(uid) {
+  stopWatchingUser();
+  authUnwatch = fbDb.collection("users").doc(uid).onSnapshot((snap) => {
+    if (authUser && authUser.uid === uid && snap.exists && snap.data().blocked) applyBlock();
+  }, () => { /* sin permiso o sin conexión: se revisa al volver a entrar */ });
+}
+function stopWatchingUser() { if (authUnwatch) { authUnwatch(); authUnwatch = null; } }
+async function applyBlock() {
+  stopWatchingUser();
+  await flushPlanSave().catch(() => {});
+  authIsAdmin = false;
+  if (location.hash === "#/admin") location.hash = "#/";
+  setAuthState("blocked");
+}
+
 async function onUser(user) {
   authUser = user;
   authIsAdmin = false;
   resetReviews(); // js/reviews.js: lo cargado era de la cuenta anterior
-  if (!user) { setAuthState("signin"); renderAccountBar(); return; }
+  if (!user) {
+    stopWatchingUser();
+    // Sin cuenta se sigue usando la app; la entrada sólo se queda abierta si la persona la abrió.
+    const keep = authState === "signin" ? authMessage : ""; // p. ej. el aviso de consentimiento no guardado
+    setAuthState(gateIsOpen() && authState !== "blocked" ? "signin" : "guest", keep);
+    reviewsOnReady();
+    return;
+  }
   if (!user.email) { await fbAuth.signOut(); setAuthState("signin", at().errors.generic); return; }
   if (!user.emailVerified) {
     // Gmail y el enlace por correo ya vienen validados; otros (p. ej. algunas cuentas
@@ -614,27 +720,26 @@ async function onUser(user) {
     setAuthState("verify");
     return;
   }
-  if (!navigator.onLine && isTrusted(user.uid)) { enterOffline(user); return; }
+  if (!navigator.onLine) { enterOffline(user); return; }
   setAuthState("loading");
   try {
     // Primero si es administrador: sus usos no se cuentan.
     const admin = await checkAdmin(user);
     const data = await recordUse(user, admin);
-    if (data.blocked) { trustDevice(user.uid, false); setAuthState("blocked"); return; }
-    // Términos y consentimiento (js/consent-ui.js): sin la versión vigente aceptada no se entra.
+    if (data.blocked) { setAuthState("blocked"); return; }
+    // Términos y consentimiento (js/consent-ui.js): sin la versión vigente aceptada (guardada en el servidor) no se entra.
     if (typeof consentOnUser === "function" && !(await consentOnUser(user))) return;
     authIsAdmin = admin;
     authOffline = false;
-    trustDevice(user.uid, true);
     setAuthState("ready");
+    watchUser(user.uid);
     loadUserPlan();
     if (typeof loadUserKitchen === "function") loadUserKitchen(); // js/kitchen.js
     reviewsOnReady();
-    loadRecipeSeasons(); // js/recipe-admin.js: temporadas fijadas por un administrador (las usan los planes)
-    if (location.hash === "#/admin") route();
+    if (location.hash === "#/admin" || location.hash === "#/privacidad") route();
   } catch (err) {
-    // Sin conexión (o Firestore no responde) en un navegador donde ya entró: sigue con lo guardado.
-    if ((err && (err.code === "unavailable" || err.code === "auth/network-request-failed")) && isTrusted(user.uid)) { enterOffline(user); return; }
+    // Sin conexión (o Firestore no responde): sigue como invitada con lo de este navegador.
+    if (err && (err.code === "unavailable" || err.code === "auth/network-request-failed")) { enterOffline(user); return; }
     setAuthState("signin", authError(err));
   }
 }
@@ -696,8 +801,11 @@ async function loadUserPlan() {
     const snap = await planRef().get();
     planLoading = false;
     const cloud = snap.exists && snap.data().plan;
-    if (cloud && (+cloud.ts || 0) >= (plan.ts || 0)) applyPlan(cloud);
-    else { cloudSavePlan(plan); flushPlanSave(); }
+    let useCloud = Boolean(cloud) && (+cloud.ts || 0) >= (plan.ts || 0);
+    // Las dos copias tienen trabajo y no son iguales: se pregunta cuál conservar (antes se perdía una sin aviso).
+    if (cloud && +cloud.ts && plan.ts && !samePlan(cloud, plan)) useCloud = !confirm(pt().keepWhich);
+    if (useCloud) applyPlan(cloud);
+    else if (plan.ts || !cloud) { cloudSavePlan(plan); flushPlanSave(); }
   } catch (err) { planLoading = false; console.warn("No se leyó el plan de la cuenta:", err.code || err); }
 }
 window.addEventListener("pagehide", () => { flushPlanSave(); });
@@ -726,7 +834,8 @@ function renderAdminShell() {
   const v = $("view-admin");
   const tr = at();
   if (!authIsAdmin) {
-    v.innerHTML = `<div class="container admin-wrap"><h1 class="section-title" id="admin-title" tabindex="-1">${esc(tr.adminTitle)}</h1><p class="admin-intro">${esc(tr.noAccess)}</p></div>`;
+    v.innerHTML = `<div class="container admin-wrap"><h1 class="section-title" id="admin-title" tabindex="-1">${esc(tr.adminTitle)}</h1><p class="admin-intro">${esc(tr.noAccess)}</p>
+      ${authState !== "ready" ? `<button type="button" class="btn btn-primary" data-auth="open-admin">${esc(tr.signIn)}</button>` : ""}</div>`;
     return;
   }
   v.innerHTML = `
@@ -848,7 +957,7 @@ function exportCsv() {
 /* ------------------------------------------------------------ idioma y eventos ---- */
 
 function renderAuthTexts() {
-  if (authState !== "ready") renderGate();
+  if (gateIsOpen()) renderGate();
   renderAccountBar();
   if (!$("view-admin").hidden) { document.title = `${at().adminTitle} — ${BRAND}`; renderAdminShell(); }
   renderAllReviews(); // js/reviews.js
@@ -864,6 +973,9 @@ function setupAuthEvents() {
     if (act) {
       const a = act.dataset.auth;
       if (a === "signout") signOut();
+      else if (a === "open") openSignIn(at().why.sync);
+      else if (a === "open-admin") openSignIn(at().why.admin);
+      else if (a === "close") closeSignIn();
       else if (a === "restart") setAuthState("signin");
       else if (a === "checkverified") checkVerified();
       else if (a === "resend") resendVerification();
@@ -885,31 +997,64 @@ function setupAuthEvents() {
   });
 }
 
-async function setupAuth() {
-  setupAuthEvents();
-  if (!authConfigured()) { setAuthState("unconfigured"); return; }
-  setAuthState("loading");
-  try {
+/* Firebase se carga detrás: la app ya se usa como invitada mientras tanto. */
+let authSdk = null; // promesa de la carga del SDK (se reintenta si falló)
+function loadFirebase() {
+  if (authSdk) return authSdk;
+  authSdk = (async () => {
     await loadScript(FIREBASE_SDK + "firebase-app-compat.js");
     await Promise.all([loadScript(FIREBASE_SDK + "firebase-auth-compat.js"), loadScript(FIREBASE_SDK + "firebase-firestore-compat.js")]);
-  } catch { setAuthState("signin", at().errors["auth/network-request-failed"]); return; }
-  firebase.initializeApp(AUTH_CONFIG.firebase);
-  fbAuth = firebase.auth();
-  fbDb = firebase.firestore();
-  fbAuth.languageCode = currentLang;
+    firebase.initializeApp(AUTH_CONFIG.firebase);
+    fbAuth = firebase.auth();
+    fbDb = firebase.firestore();
+    fbAuth.languageCode = currentLang;
+  })();
+  authSdk.catch(() => { authSdk = null; });
+  return authSdk;
+}
+
+async function setupAuth() {
+  setupAuthEvents();
+  if (!authConfigured()) { authState = "unconfigured"; renderAccountBar(); reviewsOnReady(); return; }
+  authState = "loading";
+  renderAccountBar();
+  try { await loadFirebase(); }
+  catch { authState = "guest"; renderAccountBar(); reviewsOnReady(); return; } // sin señal: invitada; "Entrar" lo reintenta
+  await afterFirebase();
+}
+/* Una vez cargado Firebase (al abrir la app, o más tarde desde "Entrar" si no había señal). */
+let authStarted = false;
+async function afterFirebase() {
+  if (authStarted) return;
+  authStarted = true;
+  // Lo público (reseñas aprobadas y temporadas fijadas por un administrador) se lee sin cuenta.
+  reviewsOnReady();
+  loadRecipeSeasons(); // js/recipe-admin.js (las usan los planes)
 
   // ¿Se abrió la app desde el enlace del correo?
   if (fbAuth.isSignInWithEmailLink(location.href)) {
     const saved = authStore(AUTH_EMAIL_KEY);
-    if (saved) await completeLink(saved);
+    if (saved) { setAuthState("loading"); openGateNow(); await completeLink(saved); }
     else setAuthState("confirm");
   }
   try { await fbAuth.getRedirectResult(); } catch (err) { authMessage = authError(err); }
   fbAuth.onAuthStateChanged((user) => {
     if (!user && authState === "confirm") return; // esperando el correo del enlace
     const msg = authMessage;
-    onUser(user).then(() => { if (msg && authState === "signin") showAuthMessage(msg); });
+    onUser(user).then(() => {
+      if (!msg) return;
+      if (authState === "guest") openSignIn();
+      if (authState === "signin") showAuthMessage(msg);
+    });
   });
+}
+/* Abre la entrada en el estado que tenga ahora (p. ej. "loading" al volver del enlace del correo). */
+function openGateNow() {
+  if (gateIsOpen()) return;
+  authReturnY = window.scrollY;
+  document.body.classList.add("auth-locked");
+  $("auth-gate").hidden = false;
+  renderGate();
 }
 
 document.addEventListener("DOMContentLoaded", setupAuth);
