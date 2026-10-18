@@ -9875,5 +9875,788 @@ recipes.push(
         "Turn off the heat and add the lime juice and cilantro. Serve with tostones or white rice, like at the Fajardo fish markets."
       ]
     }
+  },
+  // ---------- Tanda 56: más asopaos (6) y sopas, cremas y caldos (10) ----------
+  {
+    id: "asopao-gandules-pollo",
+    category: "sopas",
+    name: { es: "Asopao de Gandules con Pollo", en: "Pigeon Pea and Chicken Asopao" },
+    active: 60, total: 60,
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 libras de muslos de pollo sin piel",
+        "1 cucharadita de adobo",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "1 lata de 15 onzas de gandules, escurridos",
+        "8 tazas de agua",
+        "1 cubito de caldo de pollo",
+        "1 taza de arroz grano mediano, lavado",
+        "¼ taza de aceitunas rellenas",
+        "4 hojas de recao picadas"
+      ],
+      en: [
+        "2 pounds skinless chicken thighs",
+        "1 teaspoon adobo",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "1 can (15 oz) pigeon peas (gandules), drained",
+        "8 cups water",
+        "1 chicken bouillon cube",
+        "1 cup medium-grain rice, rinsed",
+        "¼ cup stuffed olives",
+        "4 culantro (recao) leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone el pollo con el adobo y dórelo en el aceite de achiote en una olla grande.",
+        "Añada el sofrito y la salsa de tomate y sofría 3 minutos.",
+        "Agregue el agua y el cubito, tape y cocine 25 minutos. Saque el pollo, desmenúcelo y devuélvalo sin los huesos.",
+        "Añada los gandules, el arroz y las aceitunas, y cocine destapado 20 minutos a fuego medio, moviendo de vez en cuando, hasta que el arroz esté blando y el caldo espese.",
+        "Añada el recao y sirva enseguida con tostones. Si se espesa al reposar, añada agua caliente."
+      ],
+      en: [
+        "Season the chicken with the adobo and brown it in the annatto oil in a large pot.",
+        "Add the sofrito and tomato sauce and sauté 3 minutes.",
+        "Add the water and bouillon cube, cover and cook 25 minutes. Remove the chicken, shred it and return it without the bones.",
+        "Add the pigeon peas, rice and olives and cook uncovered 20 minutes over medium heat, stirring now and then, until the rice is tender and the broth thickens.",
+        "Add the culantro and serve right away with tostones. If it thickens as it sits, add hot water."
+      ]
+    }
+  },
+  {
+    id: "asopao-pescado-recao",
+    category: "sopas",
+    name: { es: "Asopao de Pescado con Recao", en: "Fish Asopao with Culantro" },
+    active: 45, total: 45,
+    servings: 6,
+    ingredients: {
+      es: [
+        "1½ libras de filete de pescado blanco firme (mero o chillo) en cubos",
+        "1 cucharada de jugo de limón",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "6 tazas de caldo de pescado bajo en sodio (o de vegetales)",
+        "1 taza de arroz grano mediano, lavado",
+        "1 taza de calabaza en cubitos",
+        "¼ taza de aceitunas rellenas",
+        "6 hojas de recao picadas",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1½ pounds firm white fish fillet (grouper or red snapper), cubed",
+        "1 tablespoon lime juice",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "6 cups low-sodium fish or vegetable broth",
+        "1 cup medium-grain rice, rinsed",
+        "1 cup diced calabaza (West Indian pumpkin)",
+        "¼ cup stuffed olives",
+        "6 culantro (recao) leaves, chopped",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el pescado con el limón y la sal, y guárdelo en la nevera mientras prepara el caldo.",
+        "En una olla, sofría el sofrito en el aceite de achiote 3 minutos y añada la salsa de tomate.",
+        "Agregue el caldo, la calabaza, el arroz y las aceitunas, y cocine destapado 18 minutos, moviendo de vez en cuando.",
+        "Añada el pescado y cocine 5 a 6 minutos más, moviendo con cuidado para que no se desbarate.",
+        "Apague, añada el recao y sirva enseguida, antes de que el arroz chupe todo el caldo."
+      ],
+      en: [
+        "Toss the fish with the lime juice and salt and refrigerate while you start the broth.",
+        "In a pot, sauté the sofrito in the annatto oil 3 minutes and add the tomato sauce.",
+        "Add the broth, calabaza, rice and olives and cook uncovered 18 minutes, stirring now and then.",
+        "Add the fish and cook 5 to 6 more minutes, stirring gently so it doesn't fall apart.",
+        "Turn off the heat, add the culantro and serve right away, before the rice soaks up all the broth."
+      ]
+    }
+  },
+  {
+    id: "asopao-calamares",
+    category: "sopas",
+    name: { es: "Asopao de Calamares", en: "Squid Asopao" },
+    active: 45, total: 45,
+    servings: 6,
+    ingredients: {
+      es: [
+        "1½ libras de calamares limpios, en anillos",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "3 dientes de ajo picados",
+        "½ taza de salsa de tomate",
+        "¼ taza de vino blanco seco",
+        "6 tazas de caldo de pescado bajo en sodio (o de vegetales)",
+        "1 taza de arroz grano mediano, lavado",
+        "½ taza de guisantes (petit pois)",
+        "¼ taza de perejil picado"
+      ],
+      en: [
+        "1½ pounds cleaned squid, cut into rings",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "3 garlic cloves, chopped",
+        "½ cup tomato sauce",
+        "¼ cup dry white wine",
+        "6 cups low-sodium fish or vegetable broth",
+        "1 cup medium-grain rice, rinsed",
+        "½ cup green peas",
+        "¼ cup chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, sofría el sofrito y el ajo en el aceite 3 minutos.",
+        "Añada el vino y deje hervir 1 minuto. Agregue la salsa de tomate y el caldo.",
+        "Cuando hierva, añada el arroz y cocine destapado 15 minutos, moviendo de vez en cuando.",
+        "Añada los calamares y los guisantes y cocine 3 minutos, sólo hasta que los calamares se pongan blancos. Más tiempo los pone gomosos.",
+        "Añada el perejil y sirva enseguida. Pruebe la sal antes de añadir: el caldo suele traer suficiente."
+      ],
+      en: [
+        "In a pot, sauté the sofrito and garlic in the oil 3 minutes.",
+        "Add the wine and boil 1 minute. Add the tomato sauce and broth.",
+        "When it boils, add the rice and cook uncovered 15 minutes, stirring now and then.",
+        "Add the squid and peas and cook 3 minutes, just until the squid turns white. Longer makes it rubbery.",
+        "Add the parsley and serve right away. Taste before adding salt: the broth usually brings enough."
+      ]
+    }
+  },
+  {
+    id: "asopao-longaniza",
+    category: "sopas",
+    name: { es: "Asopao de Longaniza", en: "Longaniza Sausage Asopao" },
+    active: 45, total: 45,
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 libra de longaniza en ruedas",
+        "1 cucharada de aceite",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "8 tazas de agua",
+        "1½ tazas de arroz grano mediano, lavado",
+        "2 papas en cubitos",
+        "1 taza de calabaza en cubitos",
+        "¼ taza de aceitunas rellenas",
+        "4 hojas de recao picadas"
+      ],
+      en: [
+        "1 pound longaniza sausage, sliced",
+        "1 tablespoon oil",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "8 cups water",
+        "1½ cups medium-grain rice, rinsed",
+        "2 potatoes, diced",
+        "1 cup diced calabaza (West Indian pumpkin)",
+        "¼ cup stuffed olives",
+        "4 culantro (recao) leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, dore la longaniza en el aceite 6 minutos. Saque un poco de la grasa si suelta mucha.",
+        "Añada el sofrito y la salsa de tomate y sofría 3 minutos.",
+        "Agregue el agua, las papas y la calabaza, y cocine 10 minutos.",
+        "Añada el arroz y las aceitunas, y cocine destapado 18 a 20 minutos, moviendo de vez en cuando, hasta que el arroz esté blando. No le ponga sal: la longaniza y las aceitunas la traen.",
+        "Añada el recao y sirva caliente. Es el asopao de las noches de lluvia en el campo."
+      ],
+      en: [
+        "In a pot, brown the longaniza in the oil 6 minutes. Spoon off some fat if it releases a lot.",
+        "Add the sofrito and tomato sauce and sauté 3 minutes.",
+        "Add the water, potatoes and calabaza and cook 10 minutes.",
+        "Add the rice and olives and cook uncovered 18 to 20 minutes, stirring now and then, until the rice is tender. Don't add salt: the longaniza and olives bring it.",
+        "Add the culantro and serve hot. It's the asopao for rainy nights in the countryside."
+      ]
+    }
+  },
+  {
+    id: "asopao-pavo",
+    category: "sopas",
+    name: { es: "Asopao de Pavo (con el Pavo que Sobra)", en: "Leftover Turkey Asopao" },
+    active: 40, total: 40,
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 tazas de pavo asado desmenuzado",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "8 tazas de caldo de pollo bajo en sodio",
+        "1 taza de arroz grano mediano, lavado",
+        "1 taza de gandules, escurridos",
+        "¼ taza de aceitunas rellenas",
+        "¼ taza de cilantro picado"
+      ],
+      en: [
+        "3 cups shredded roast turkey",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "8 cups low-sodium chicken broth",
+        "1 cup medium-grain rice, rinsed",
+        "1 cup pigeon peas (gandules), drained",
+        "¼ cup stuffed olives",
+        "¼ cup chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, sofría el sofrito en el aceite de achiote 3 minutos y añada la salsa de tomate.",
+        "Agregue el caldo y deje hervir.",
+        "Añada el arroz, los gandules y las aceitunas, y cocine destapado 18 minutos, moviendo de vez en cuando.",
+        "Añada el pavo y cocine 5 minutos más, hasta que esté caliente y el caldo espese.",
+        "Añada el cilantro y sirva. Es lo que se hace con el pavo de Acción de Gracias o de Navidad."
+      ],
+      en: [
+        "In a pot, sauté the sofrito in the annatto oil 3 minutes and add the tomato sauce.",
+        "Add the broth and bring to a boil.",
+        "Add the rice, pigeon peas and olives and cook uncovered 18 minutes, stirring now and then.",
+        "Add the turkey and cook 5 more minutes, until hot and the broth thickens.",
+        "Add the cilantro and serve. It's what's made with the Thanksgiving or Christmas turkey."
+      ]
+    }
+  },
+  {
+    id: "asopao-salchichas",
+    category: "sopas",
+    name: { es: "Asopao de Salchichas (Económico)", en: "Vienna Sausage Asopao (Budget-Friendly)" },
+    active: 35, total: 35,
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 latas de 4.6 onzas de salchichas, en ruedas",
+        "1 cucharada de aceite de achiote",
+        "¼ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "6 tazas de agua",
+        "1 taza de arroz grano mediano, lavado",
+        "1 papa en cubitos",
+        "½ taza de guisantes (petit pois)",
+        "2 hojas de recao picadas"
+      ],
+      en: [
+        "2 cans (4.6 oz) Vienna sausages, sliced",
+        "1 tablespoon annatto oil",
+        "¼ cup sofrito",
+        "¼ cup tomato sauce",
+        "6 cups water",
+        "1 cup medium-grain rice, rinsed",
+        "1 potato, diced",
+        "½ cup green peas",
+        "2 culantro (recao) leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, sofría las salchichas en el aceite de achiote 3 minutos.",
+        "Añada el sofrito y la salsa de tomate y sofría 2 minutos.",
+        "Agregue el agua y la papa y deje hervir.",
+        "Añada el arroz y cocine destapado 18 minutos, moviendo de vez en cuando. Los últimos 3 minutos añada los guisantes.",
+        "Añada el recao y sirva. Es el asopao de fin de mes: se hace con lo que hay en la alacena."
+      ],
+      en: [
+        "In a pot, sauté the sausages in the annatto oil 3 minutes.",
+        "Add the sofrito and tomato sauce and sauté 2 minutes.",
+        "Add the water and potato and bring to a boil.",
+        "Add the rice and cook uncovered 18 minutes, stirring now and then. Add the peas for the last 3 minutes.",
+        "Add the culantro and serve. It's the end-of-the-month asopao, made with what's in the pantry."
+      ]
+    }
+  },
+  {
+    id: "sopa-cebolla-criolla",
+    category: "sopas",
+    name: { es: "Sopa de Cebolla Gratinada con Queso de Papa", en: "French Onion Soup with Gouda (Puerto Rican Style)" },
+    active: 75, total: 75,
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 cucharadas de mantequilla",
+        "4 cebollas grandes en ruedas finas",
+        "1 cucharadita de azúcar",
+        "2 dientes de ajo picados",
+        "½ taza de vino blanco seco",
+        "6 tazas de caldo de res bajo en sodio",
+        "1 ramita de tomillo",
+        "6 rebanadas de pan de agua tostado",
+        "1½ tazas de queso de papa (gouda) rallado"
+      ],
+      en: [
+        "3 tablespoons butter",
+        "4 large onions, thinly sliced",
+        "1 teaspoon sugar",
+        "2 garlic cloves, chopped",
+        "½ cup dry white wine",
+        "6 cups low-sodium beef broth",
+        "1 sprig thyme",
+        "6 slices toasted Puerto Rican water bread",
+        "1½ cups shredded gouda (queso de papa)"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla gruesa, cocine las cebollas en la mantequilla con el azúcar a fuego medio-bajo 40 minutos, moviendo cada 5 minutos, hasta que estén color caramelo.",
+        "Añada el ajo y cocine 1 minuto. Agregue el vino y raspe el fondo.",
+        "Añada el caldo y el tomillo y cocine 15 minutos.",
+        "Caliente el horno en asar (broil). Sirva la sopa en tazones que vayan al horno, ponga una rebanada de pan encima y cúbrala con el queso.",
+        "Gratine 2 a 3 minutos, hasta que el queso burbujee y dore. Cuidado: los tazones salen muy calientes."
+      ],
+      en: [
+        "In a heavy pot, cook the onions in the butter with the sugar over medium-low heat 40 minutes, stirring every 5 minutes, until caramel-colored.",
+        "Add the garlic and cook 1 minute. Add the wine and scrape the bottom.",
+        "Add the broth and thyme and cook 15 minutes.",
+        "Heat the broiler. Ladle the soup into ovenproof bowls, top with a slice of bread and cover with the cheese.",
+        "Broil 2 to 3 minutes, until the cheese bubbles and browns. Careful: the bowls come out very hot."
+      ]
+    }
+  },
+  {
+    id: "sopa-tomate-recao",
+    category: "sopas",
+    name: { es: "Sopa de Tomate Asado con Recao", en: "Roasted Tomato Soup with Culantro" },
+    active: 50, total: 50,
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 libras de tomates maduros partidos a la mitad",
+        "1 cebolla en cuartos",
+        "6 dientes de ajo",
+        "3 cucharadas de aceite de oliva",
+        "½ cucharadita de sal",
+        "3 tazas de caldo de vegetales bajo en sodio",
+        "6 hojas de recao",
+        "¼ taza de crema de coco o de leche"
+      ],
+      en: [
+        "3 pounds ripe tomatoes, halved",
+        "1 onion, quartered",
+        "6 garlic cloves",
+        "3 tablespoons olive oil",
+        "½ teaspoon salt",
+        "3 cups low-sodium vegetable broth",
+        "6 culantro (recao) leaves",
+        "¼ cup coconut cream or heavy cream"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 425 °F. Ponga los tomates, la cebolla y el ajo en una bandeja, rocíe el aceite y la sal.",
+        "Hornee 35 minutos, hasta que los tomates estén arrugados y con orillas tostadas.",
+        "Pase todo a una olla con el caldo y el recao y deje hervir 5 minutos.",
+        "Licúe hasta que esté suave (con cuidado, en tandas, tapando la licuadora con un paño).",
+        "Añada la crema y sirva. Con crema de coco es vegana. Va bien con un sándwich de queso de papa a la plancha."
+      ],
+      en: [
+        "Heat the oven to 425 °F. Place the tomatoes, onion and garlic on a tray and drizzle with the oil and salt.",
+        "Roast 35 minutes, until the tomatoes are wrinkled with charred edges.",
+        "Transfer everything to a pot with the broth and culantro and boil 5 minutes.",
+        "Blend until smooth (carefully, in batches, covering the blender with a towel).",
+        "Stir in the cream and serve. With coconut cream it's vegan. It goes great with a grilled gouda sandwich."
+      ]
+    }
+  },
+  {
+    id: "crema-malanga",
+    category: "sopas",
+    name: { es: "Crema de Malanga con Ajo y Recao", en: "Cream of Malanga Soup with Garlic and Culantro" },
+    active: 40, total: 40,
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de malanga pelada en cubos",
+        "2 cucharadas de mantequilla",
+        "1 cebolla picada",
+        "4 dientes de ajo",
+        "5 tazas de caldo de pollo bajo en sodio",
+        "½ taza de leche evaporada",
+        "4 hojas de recao",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "2 pounds malanga, peeled and cubed",
+        "2 tablespoons butter",
+        "1 onion, chopped",
+        "4 garlic cloves",
+        "5 cups low-sodium chicken broth",
+        "½ cup evaporated milk",
+        "4 culantro (recao) leaves",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, sofría la cebolla y el ajo en la mantequilla 4 minutos, sin que doren.",
+        "Añada la malanga, el caldo y la sal. Tape y cocine 25 minutos, hasta que la malanga se deshaga al pincharla.",
+        "Añada el recao y licúe hasta que esté suave.",
+        "Devuelva a la olla, añada la leche evaporada y caliente sin que hierva.",
+        "Si queda muy espesa, añada caldo. La malanga es suave para el estómago: es la crema que se le da a los convalecientes."
+      ],
+      en: [
+        "In a pot, sauté the onion and garlic in the butter 4 minutes, without browning.",
+        "Add the malanga, broth and salt. Cover and cook 25 minutes, until the malanga falls apart when pierced.",
+        "Add the culantro and blend until smooth.",
+        "Return to the pot, add the evaporated milk and heat without boiling.",
+        "If it's too thick, add broth. Malanga is easy on the stomach: it's the soup given to people recovering from illness."
+      ]
+    }
+  },
+  {
+    id: "crema-chayote",
+    category: "sopas",
+    name: { es: "Crema de Chayote", en: "Cream of Chayote Soup" },
+    active: 35, total: 35,
+    servings: 6,
+    ingredients: {
+      es: [
+        "4 chayotes pelados, sin semilla, en cubos",
+        "1 papa en cubos",
+        "2 cucharadas de aceite de oliva",
+        "1 cebolla picada",
+        "2 dientes de ajo",
+        "5 tazas de caldo de vegetales bajo en sodio",
+        "½ cucharadita de sal",
+        "¼ cucharadita de nuez moscada",
+        "¼ taza de queso parmesano rallado"
+      ],
+      en: [
+        "4 chayotes, peeled, seeded and cubed",
+        "1 potato, cubed",
+        "2 tablespoons olive oil",
+        "1 onion, chopped",
+        "2 garlic cloves",
+        "5 cups low-sodium vegetable broth",
+        "½ teaspoon salt",
+        "¼ teaspoon nutmeg",
+        "¼ cup grated Parmesan cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los chayotes bajo el chorro de agua o con guantes: sueltan una savia que pega en las manos.",
+        "En una olla, sofría la cebolla y el ajo en el aceite 4 minutos.",
+        "Añada los chayotes, la papa, el caldo y la sal. Tape y cocine 20 minutos, hasta que estén blandos.",
+        "Licúe con la nuez moscada hasta que esté suave.",
+        "Sirva con el parmesano por encima. Es liviana: el chayote es casi todo agua y fibra."
+      ],
+      en: [
+        "Peel the chayotes under running water or with gloves: they release a sap that sticks to your hands.",
+        "In a pot, sauté the onion and garlic in the oil 4 minutes.",
+        "Add the chayotes, potato, broth and salt. Cover and cook 20 minutes, until tender.",
+        "Blend with the nutmeg until smooth.",
+        "Serve topped with the Parmesan. It's light: chayote is almost all water and fiber."
+      ]
+    }
+  },
+  {
+    id: "crema-zanahoria-china",
+    category: "sopas",
+    name: { es: "Crema de Zanahoria y China (Vegana)", en: "Carrot and Orange Soup (Vegan)" },
+    active: 40, total: 40,
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de zanahorias en ruedas",
+        "2 cucharadas de aceite de oliva",
+        "1 cebolla picada",
+        "1 cucharada de jengibre fresco rallado",
+        "4 tazas de caldo de vegetales bajo en sodio",
+        "1 taza de jugo de china",
+        "1 cucharadita de ralladura de china",
+        "½ cucharadita de sal",
+        "½ taza de leche de coco"
+      ],
+      en: [
+        "2 pounds carrots, sliced",
+        "2 tablespoons olive oil",
+        "1 onion, chopped",
+        "1 tablespoon grated fresh ginger",
+        "4 cups low-sodium vegetable broth",
+        "1 cup orange juice",
+        "1 teaspoon orange zest",
+        "½ teaspoon salt",
+        "½ cup coconut milk"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, sofría la cebolla en el aceite 5 minutos. Añada el jengibre y cocine 1 minuto.",
+        "Añada las zanahorias, el caldo y la sal. Tape y cocine 25 minutos, hasta que estén muy blandas.",
+        "Añada el jugo y la ralladura de china y licúe hasta que esté suave.",
+        "Devuelva a la olla con la leche de coco y caliente sin que hierva.",
+        "Sirva con un hilito de leche de coco por encima. Es vegana y de color naranja brillante; a los niños les gusta."
+      ],
+      en: [
+        "In a pot, sauté the onion in the oil 5 minutes. Add the ginger and cook 1 minute.",
+        "Add the carrots, broth and salt. Cover and cook 25 minutes, until very tender.",
+        "Add the orange juice and zest and blend until smooth.",
+        "Return to the pot with the coconut milk and heat without boiling.",
+        "Serve with a swirl of coconut milk on top. It's vegan and bright orange; kids like it."
+      ]
+    }
+  },
+  {
+    id: "sopa-pollo-viandas",
+    category: "sopas",
+    name: { es: "Sopa de Pollo con Viandas (Sopa de Domingo)", en: "Chicken Soup with Root Vegetables (Sunday Soup)" },
+    active: 75, total: 75,
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 libras de presas de pollo con hueso",
+        "12 tazas de agua",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 cubito de caldo de pollo",
+        "1 libra de yautía en trozos",
+        "1 libra de calabaza en trozos",
+        "1 plátano verde en ruedas",
+        "2 mazorcas de maíz en pedazos",
+        "2 zanahorias en ruedas",
+        "1 cucharadita de sal",
+        "6 hojas de recao picadas"
+      ],
+      en: [
+        "3 pounds bone-in chicken pieces",
+        "12 cups water",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 chicken bouillon cube",
+        "1 pound yautía (taro root), in chunks",
+        "1 pound calabaza (West Indian pumpkin), in chunks",
+        "1 green plantain, sliced",
+        "2 ears of corn, cut in pieces",
+        "2 carrots, sliced",
+        "1 teaspoon salt",
+        "6 culantro (recao) leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla grande, hierva el pollo en el agua con el sofrito, la salsa de tomate y el cubito, tapado, 30 minutos. Quite la espuma al principio.",
+        "Añada la yautía, el plátano y las zanahorias, y cocine 15 minutos.",
+        "Añada la calabaza, el maíz y la sal, y cocine 15 minutos más, hasta que todo esté blando y la calabaza espese el caldo.",
+        "Saque el pollo, quítele la piel y los huesos, y devuélvalo en pedazos.",
+        "Añada el recao y sirva con arroz blanco aparte. Es la sopa grande de los domingos en casa de abuela."
+      ],
+      en: [
+        "In a large pot, simmer the chicken in the water with the sofrito, tomato sauce and bouillon, covered, 30 minutes. Skim the foam at the start.",
+        "Add the yautía, plantain and carrots and cook 15 minutes.",
+        "Add the calabaza, corn and salt and cook 15 more minutes, until everything is tender and the calabaza thickens the broth.",
+        "Remove the chicken, take off the skin and bones and return it in pieces.",
+        "Add the culantro and serve with white rice on the side. It's the big Sunday soup at grandma's house."
+      ]
+    }
+  },
+  {
+    id: "sopa-mariscos-criolla",
+    category: "sopas",
+    name: { es: "Sopa de Mariscos Criolla", en: "Creole Seafood Soup" },
+    active: 45, total: 45,
+    servings: 6,
+    ingredients: {
+      es: [
+        "½ libra de camarones pelados",
+        "½ libra de calamares en anillos",
+        "½ libra de filete de pescado blanco en cubos",
+        "1 libra de mejillones limpios",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "3 dientes de ajo picados",
+        "1 lata de 8 onzas de salsa de tomate",
+        "½ taza de vino blanco seco",
+        "6 tazas de caldo de pescado bajo en sodio",
+        "2 papas en cubitos",
+        "4 hojas de recao picadas"
+      ],
+      en: [
+        "½ pound shrimp, peeled",
+        "½ pound squid rings",
+        "½ pound white fish fillet, cubed",
+        "1 pound mussels, cleaned",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "3 garlic cloves, chopped",
+        "1 can (8 oz) tomato sauce",
+        "½ cup dry white wine",
+        "6 cups low-sodium fish broth",
+        "2 potatoes, diced",
+        "4 culantro (recao) leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla grande, sofría el sofrito y el ajo en el aceite 3 minutos.",
+        "Añada el vino y deje hervir 1 minuto. Agregue la salsa de tomate, el caldo y las papas, y cocine 15 minutos.",
+        "Añada el pescado y los mejillones, tape y cocine 4 minutos, hasta que los mejillones abran. Bote los que no abran.",
+        "Añada los camarones y los calamares y cocine 3 minutos más, sólo hasta que estén rosados y blancos.",
+        "Añada el recao y sirva con pan de agua. Pruebe antes de añadir sal: los mariscos sueltan la suya."
+      ],
+      en: [
+        "In a large pot, sauté the sofrito and garlic in the oil 3 minutes.",
+        "Add the wine and boil 1 minute. Add the tomato sauce, broth and potatoes and cook 15 minutes.",
+        "Add the fish and mussels, cover and cook 4 minutes, until the mussels open. Discard any that don't open.",
+        "Add the shrimp and squid and cook 3 more minutes, just until pink and white.",
+        "Add the culantro and serve with water bread. Taste before adding salt: the seafood releases its own."
+      ]
+    }
+  },
+  {
+    id: "sopa-cabro",
+    category: "sopas",
+    name: { es: "Sopa de Cabro con Viandas", en: "Goat Soup with Root Vegetables" },
+    active: 150, total: 150,
+    servings: 8,
+    ingredients: {
+      es: [
+        "2½ libras de carne de cabro con hueso, en pedazos",
+        "2 cucharadas de jugo de limón",
+        "12 tazas de agua",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "2 hojas de laurel",
+        "1 cucharadita de comino",
+        "1 libra de yautía en trozos",
+        "1 libra de ñame en trozos",
+        "1 libra de calabaza en trozos",
+        "1½ cucharaditas de sal",
+        "6 hojas de recao picadas"
+      ],
+      en: [
+        "2½ pounds bone-in goat meat, in pieces",
+        "2 tablespoons lime juice",
+        "12 cups water",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "2 bay leaves",
+        "1 teaspoon cumin",
+        "1 pound yautía (taro root), in chunks",
+        "1 pound ñame (yam), in chunks",
+        "1 pound calabaza (West Indian pumpkin), in chunks",
+        "1½ teaspoons salt",
+        "6 culantro (recao) leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave el cabro con agua y el limón, y escúrralo.",
+        "Hiérvalo en el agua con el sofrito, la salsa de tomate, el laurel y el comino, tapado, 1 hora 30 minutos (40 minutos en olla de presión), hasta que esté tierno. Quite la espuma al principio.",
+        "Añada la yautía, el ñame, la calabaza y la sal, y cocine 30 minutos, hasta que las viandas estén blandas y el caldo espese.",
+        "Saque los huesos sueltos y pruebe la sal.",
+        "Añada el recao y sirva bien caliente. Es la sopa de los velorios y las fiestas patronales del campo."
+      ],
+      en: [
+        "Rinse the goat with water and the lime juice and drain.",
+        "Simmer it in the water with the sofrito, tomato sauce, bay leaves and cumin, covered, 1 hour 30 minutes (40 minutes in a pressure cooker), until tender. Skim the foam at the start.",
+        "Add the yautía, ñame, calabaza and salt and cook 30 minutes, until the root vegetables are tender and the broth thickens.",
+        "Remove any loose bones and taste for salt.",
+        "Add the culantro and serve piping hot. It's the soup of country wakes and patron saint festivals."
+      ]
+    }
+  },
+  {
+    id: "sopa-hueso-res",
+    category: "sopas",
+    name: { es: "Sopa de Hueso de Res con Fideos y Viandas", en: "Beef Bone Soup with Noodles and Root Vegetables" },
+    active: 180, total: 180,
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 libras de huesos de res con carne (de pecho o de rabo)",
+        "14 tazas de agua",
+        "1 cebolla partida",
+        "½ taza de sofrito",
+        "¼ taza de salsa de tomate",
+        "1 libra de yautía en trozos",
+        "2 zanahorias en ruedas",
+        "1 mazorca de maíz en pedazos",
+        "2 onzas de fideos finos",
+        "1½ cucharaditas de sal",
+        "¼ taza de cilantro picado"
+      ],
+      en: [
+        "3 pounds meaty beef bones (brisket or oxtail)",
+        "14 cups water",
+        "1 onion, halved",
+        "½ cup sofrito",
+        "¼ cup tomato sauce",
+        "1 pound yautía (taro root), in chunks",
+        "2 carrots, sliced",
+        "1 ear of corn, cut in pieces",
+        "2 ounces fine noodles (fideos)",
+        "1½ teaspoons salt",
+        "¼ cup chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los huesos en el agua con la cebolla, tapado, a fuego bajo 2 horas, quitando la espuma, hasta que la carne se despegue.",
+        "Saque los huesos, despegue la carne y devuélvala al caldo. Bote los huesos y la cebolla.",
+        "Añada el sofrito, la salsa de tomate, la yautía, las zanahorias, el maíz y la sal, y cocine 25 minutos.",
+        "Añada los fideos y cocine 5 minutos más.",
+        "Añada el cilantro y sirva. El caldo de hueso cocinado despacio es la base de todas las sopas de abuela."
+      ],
+      en: [
+        "Simmer the bones in the water with the onion, covered, over low heat 2 hours, skimming the foam, until the meat comes away.",
+        "Remove the bones, pull off the meat and return it to the broth. Discard the bones and onion.",
+        "Add the sofrito, tomato sauce, yautía, carrots, corn and salt and cook 25 minutes.",
+        "Add the noodles and cook 5 more minutes.",
+        "Add the cilantro and serve. Slow-cooked bone broth is the base of all of grandma's soups."
+      ]
+    }
+  },
+  {
+    id: "gazpacho-sandia",
+    category: "sopas",
+    name: { es: "Gazpacho de Sandía y Pepino (Sopa Fría)", en: "Watermelon and Cucumber Gazpacho (Cold Soup)" },
+    active: 15, total: 135, wait: "frio",
+    servings: 6,
+    ingredients: {
+      es: [
+        "6 tazas de sandía sin semillas en cubos",
+        "1 pepino pelado en cubos",
+        "1 tomate maduro",
+        "¼ de cebolla roja",
+        "1 ají dulce",
+        "2 cucharadas de jugo de limón",
+        "2 cucharadas de aceite de oliva",
+        "½ cucharadita de sal",
+        "2 cucharadas de menta (yerbabuena) picada"
+      ],
+      en: [
+        "6 cups seedless watermelon, cubed",
+        "1 cucumber, peeled and cubed",
+        "1 ripe tomato",
+        "¼ red onion",
+        "1 ají dulce (sweet chili pepper)",
+        "2 tablespoons lime juice",
+        "2 tablespoons olive oil",
+        "½ teaspoon salt",
+        "2 tablespoons chopped mint (yerbabuena)"
+      ]
+    },
+    steps: {
+      es: [
+        "Guarde ½ taza de sandía y ¼ del pepino en cubitos para decorar.",
+        "Licúe el resto de la sandía y del pepino con el tomate, la cebolla, el ají dulce, el limón, el aceite y la sal hasta que esté suave.",
+        "Refrigere al menos 2 horas: tiene que estar bien frío.",
+        "Pruebe y ajuste el limón y la sal.",
+        "Sirva en vasos o tazones con los cubitos de sandía y pepino y la menta. Es vegano y perfecto para el calor de agosto."
+      ],
+      en: [
+        "Set aside ½ cup of watermelon and ¼ of the cucumber, diced small, for garnish.",
+        "Blend the rest of the watermelon and cucumber with the tomato, onion, ají dulce, lime juice, oil and salt until smooth.",
+        "Refrigerate at least 2 hours: it must be very cold.",
+        "Taste and adjust the lime juice and salt.",
+        "Serve in glasses or bowls with the diced watermelon and cucumber and the mint. It's vegan and perfect for the August heat."
+      ]
+    }
   }
 );

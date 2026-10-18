@@ -18,7 +18,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.34.0";
+const APP_VERSION = "4.35.0";
 const APP_REVISED = "2026-10-18";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
@@ -456,6 +456,19 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
+  // Sopas y asopaos (tanda 56): los dibujos de asopaos, cremas y sopas que ya había.
+  [/^asopao de pescado/, "svg:ic-sopa-pescado"],
+  [/^asopao de calamares/, "svg:ic-asopao-pulpo"],
+  [/^asopao de (longaniza|salchichas)/, "svg:ic-sop-asopao-chuletas"],
+  [/^sopa de cebolla/, "svg:ic-sopa-vegetales"],
+  [/^sopa de tomate/, "🍅"],
+  [/^crema de malanga/, "svg:ic-crema-yautia"],
+  [/^crema de chayote/, "svg:ic-crema-brocoli"],
+  [/^crema de zanahoria/, "svg:ic-crema-calabaza"],
+  [/^sopa de (pollo con viandas|cabro)/, "svg:ic-sopa-sancocho"],
+  [/^sopa de mariscos/, "svg:ic-sopa-pescado"],
+  [/^sopa de hueso/, "svg:ic-sopa-fideos"],
+  [/^gazpacho de sandia/, "🍉"],
   // Pescados y mariscos (tanda 55): los dibujos de pescado que ya había, o el emoji del marisco.
   [/^sierra guisada/, "svg:ic-pez-mero-criolla"],
   [/^jueyes al ajillo/, "🦀"],

@@ -42,8 +42,8 @@ const RECIPE_FAMILIES = {
     ["sancochos", { es: "Sancochos, caldos y sopones", en: "Sancochos, broths and sopones" }, /sancocho|caldo|sopon|mondongo/],
     ["cremas", { es: "Cremas", en: "Cream soups" }, /^crema/],
     ["granos", { es: "De granos", en: "Bean soups" }, /habichuelas|frijoles|lentejas|gandules|garbanzos/],
-    ["carnes", { es: "De pollo y carnes", en: "Chicken and meat soups" }, /pollo|gallina|res|carne|albondigas|salchichas|chorizo/],
-    ["pescado", { es: "De pescado", en: "Fish soups" }, /pescado/],
+    ["carnes", { es: "De pollo y carnes", en: "Chicken and meat soups" }, /pollo|gallina|res|carne|albondigas|salchichas|chorizo|cabro/],
+    ["pescado", { es: "De pescado y mariscos", en: "Fish and seafood soups" }, /pescado|mariscos/],
     ["frias", { es: "Gazpachos (frías)", en: "Gazpachos (cold)" }, /gazpacho/],
     ["vegetales", { es: "De vegetales, viandas y fideos", en: "Vegetable, root and noodle soups" }, null]
   ],

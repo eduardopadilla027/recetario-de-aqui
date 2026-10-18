@@ -329,6 +329,9 @@ const NUTRI_FOODS = [
   F("cafe|cafe negro", 1, 0.1, 0, 0, 0, 0, 0, 2, { cup: 240 }),
   F("agua|hielo", 0, 0, 0, 0, 0, 0, 0, 0, { cup: 240 }),
   F("caldo|caldo de pollo|consome", 6, 0.6, 0.4, 0.2, 0, 0.2, 0.1, 343, { cup: 240 }),
+  // v4.35: el caldo "bajo en sodio" de lata o caja (≈140 mg por taza) y el cubito (≈1,000 mg cada uno).
+  F("caldo bajo en sodio|caldo de pollo bajo en sodio|caldo de res bajo en sodio|caldo de vegetales bajo en sodio|caldo de pescado bajo en sodio", 6, 0.6, 0.4, 0.2, 0, 0.2, 0.1, 58, { cup: 240 }),
+  F("cubito de caldo", 267, 16.7, 18, 13.9, 0, 13.9, 3.5, 24000, { u: 4 }),
   // Grasas, condimentos y sazones
   F("aceite|aceite de oliva|aceite vegetal|aceite con achiote", 884, 0, 0, 0, 0, 100, 14, 0, { cup: 218 }),
   F("manteca|manteca vegetal", 900, 0, 0, 0, 0, 100, 40, 0, { cup: 205 }),
