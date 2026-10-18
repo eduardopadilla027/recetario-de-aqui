@@ -123,7 +123,7 @@ const S_ALLERGEN = {
   ajonjoli: ["sesame"], sesame: ["sesame"], soya: ["soy"], soy: ["soy"], coco: ["coconut"], coconut: ["coconut"]
 };
 
-const S_MEAT_RX = /\b(pollo|chicken|cerdo|pork|res|beef|carne|meat|jamon|ham(?!burg)|tocin|bacon|salchich|sausage|longaniza|chorizo|pavo|turkey|pernil|lechon|chuleta|chicharron|mollej|higado|gandinga|morcilla|cabro|conejo|cordero|lamb|pato|duck|codorni|quail|panceta|guinea|gallina|pescado|fish|bacalao|cod|atun|tuna|sardina|salmon|camaron|shrimp|langost|lobster|pulpo|octopus|calamar|squid|carrucho|conch|juey|crab|ostion|oyster|ceti|mero|chillo|dorado|sierra|rinon|lengua|rabo|patita|cuero|mondongo|jamonilla|corned|carne bif)/;
+const S_MEAT_RX = /\b(pollo|chicken|cerdo|pork|res|beef|carne|meat|jamon|ham(?!burg)|tocin|bacon|salchich|sausage|longaniza|chorizo|pavo|turkey|pernil|lechon|chuleta|chicharron|mollej|higado|gandinga|morcilla|cabro|conejo|cordero|lamb|pato|duck|codorni|quail|panceta|guinea|gallina|pescado|fish|bacalao|cod|atun|tuna|sardina|salmon|camaron|shrimp|langost|lobster|pulpo|octopus|calamar|squid|carrucho|conch|juey|crab|ostion|oyster|ceti|mero|chillo|(?<!ron )dorado|sierra|rinon|lengua|rabo|patita|cuero|mondongo|jamonilla|corned|carne bif)/;
 const sIsAlcohol = (r) => getAdvisories(r).alerts.some((a) => ["alcoholDrink", "alcoholCooked", "alcoholRaw"].includes(a.key));
 
 /* Ideas: palabras que no son ingredientes sino lo que la persona quiere. */

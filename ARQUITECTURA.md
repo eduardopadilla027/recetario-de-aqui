@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.32.0 · **Versión de la app:** 4.32.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,166 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.33.0 · **Versión de la app:** 4.33.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,198 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -191,25 +191,25 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | cereales | Cereales | 18 |
 | granos | Granos y Legumbres | 29 |
 | ensaladas | Ensaladas | 34 |
-| sopas | Sopas | 53 |
-| carnes | Carnes | 74 |
-| aves | Aves | 56 |
+| sopas | Sopas | 54 |
+| carnes | Carnes | 80 |
+| aves | Aves | 60 |
 | pescados | Pescado y Mariscos | 68 |
-| huevos | Huevos y Queso | 22 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 57 |
+| huevos | Huevos y Queso | 23 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 64 |
 | pastas | Pastas | 26 |
 | bizcochos | Bizcochos | 49 |
-| galletitas | Galletitas | 38 |
+| galletitas | Galletitas | 42 |
 | pasteles_dulces | Pasteles Dulces | 22 |
 | panes | Pan y Panecillos | 46 |
 | emparedados | Emparedados | 25 |
 | postres | Helados, Budines, Flan y Otros Postres | 132 |
-| arroces | Arroces y Habichuelas | 65 |
-| vegetales | Vegetales y Viandas | 84 |
+| arroces | Arroces y Habichuelas | 64 |
+| vegetales | Vegetales y Viandas | 88 |
 | salsas | Salsas y Aderezos | 72 |
 | bebidas | Bebidas | 43 |
 | jugos | Jugos Naturales | 30 |
-| cocteles | Cócteles y Tragos | 48 |
+| cocteles | Cócteles y Tragos | 54 |
 
 **Recetas que cambiaron de categoría (v4.30):** ensaladas de pulpo, de mariscos y de carrucho y la ensalada fría de pulpo
 y mangó pasan de Pescados a Ensaladas (familia "De pescado y mariscos"); los pasteles de masa, de yuca y de arroz pasan
@@ -639,7 +639,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   primero y la lista de la época) siguen la corrección del administrador.
 - **Fecha de ingreso:** `RECIPE_ADDED` en `js/recipe-dates.js`, GENERADO por `node tools/recipe-dates.js` desde el
   historial de git (fecha del commit que escribió la línea `id: "…"`; las que aún no están en un commit, la de hoy).
-  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17 y 52 del 18 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
+  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17 y 84 del 18 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
   Se carga con `loadScript()` sólo al abrir el panel. **Después de añadir recetas, hay que volver a generarlo** (§11).
 - **Seguridad (`firestore.rules`, `match /recipeMeta/{id}`):** leer, cualquiera que entre; escribir y borrar, sólo
   administradores, con sólo esas 3 claves, `seasons` entre `todo`, `navidad`, `cuaresma`, `verano`, `gracias` y `lluvia`
@@ -787,7 +787,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - **Por qué:** la app usa `#/receta/<id>`, y para Google todo lo que va después de `#` es la portada: ninguna receta salía
   en las búsquedas ("receta de pernil") y todos los enlaces compartidos se veían iguales (título, texto y bandera).
 - **`node tools/prerender.js`** (sin dependencias; carga los scripts en `vm` como el navegador) genera:
-  `receta/<id>.html` (1,166 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
+  `receta/<id>.html` (1,198 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
   `vercel.json`. Cada una es ligera y se lee sin JavaScript: título y descripción propios ("Coquito: receta puertorriqueña
   paso a paso para 12 porciones. Lleva leche de coco… Lista en 4 h 15 min."), `canonical`, Open Graph y Twitter con el
   nombre del plato, tiempo de cocina y total, porciones, calorías estimadas, alérgenos, ingredientes y pasos en español y
@@ -991,7 +991,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,166). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,198). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -1097,6 +1097,40 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-18 — v4.33.0 · Frituras, veganas, galletitas, carnes con conejo, aves y tragos
+- *Pedido:* más frituras y aperitivos, veganas, vegetarianas, galletitas, carnes (con conejo), aves, cócteles y tragos.
+- Quincuagésima cuarta tanda en `js/recipes-5.js` (versiones propias), 32 que no estaban:
+  - **Frituras y aperitivos (7):** alcapurrias de camarones, pastelillos de guayaba y queso, empanadillas de pollo BBQ,
+    arañitas de yuca (veganas), sorullitos rellenos de queso, tostones con camarones al ajillo y croquetas veganas de
+    garbanzos y recao.
+  - **Veganas y vegetarianas (5):** fricasé vegano de jaca, mofongo relleno de garbanzos (vegano), filetes de coliflor con
+    mojo (vegano), piñón vegetariano de amarillos y espinaca, y quiche de calabaza y queso blanco (en Huevos). Con las
+    arañitas y las croquetas son 5 veganas y 2 vegetarianas nuevas.
+  - **Galletitas (4):** rellenas de dulce de piña, de pistacho, de chocolate blanco y macadamia, y saladitas de cheddar.
+  - **Carnes (6):** conejo al ajillo, fricasé de conejo y conejo al horno con mojo de naranja agria (antes sólo había el
+    conejo guisado), carne guisada en malta, cordero guisado y lengua guisada.
+  - **Aves (4):** muslos glaseados con tamarindo, pechugas rellenas de espinaca y queso blanco, pato asado con naranja
+    agria y ron, y pollo al horno con limón, ajo y recao.
+  - **Cócteles (6):** coquito de calabaza, margarita de tamarindo, mojito de piña, mimosa tropical, old fashioned de ron
+    con melao y ron sour de acerola.
+  - Ajustes: el fricasé de jaca rinde 6, sin sal añadida y con agua en vez de caldo (bajó de ~1,360 a 570 mg de sodio);
+    menos sal en la coliflor y en el borde de la margarita; el pato rinde 6.
+- **Nutrición** (`nutrition.js`): "sirope simple" cuenta como almíbar y "amargo de angostura" se reconoce (unas gotas: no
+  suma).
+- **Corrección en el filtro de dieta** (`search.js`, `S_MEAT_RX`): "dorado" (el pez) ya no atrapa "ron dorado"; 6
+  cócteles que ya había (ponche de ron, ponche de crema, zombi, ponche de guayaba, tamarindo con ron y coquito de café)
+  salían como no vegetarianos y ahora sí lo son.
+- **Iconos:** las nuevas usan dibujos que había (alcapurria, pastelillos, tostones rellenos, croqueta, jaca, coliflor,
+  tarta salada, galletas, tragos); el conejo sale con 🐇.
+- **Familias** (`families.js`): "tostones con" va con alcapurrias y frituras de plátano (se movió también "Tostones con
+  Guacamole de Recao", que estaba en "otras frituras"); "piñón" con pasteles y pastelones; "quiche" con tortillas; "piña"
+  en galletas de frutas; Papas ya no atrapa el fricasé de jaca. Ninguna otra receta cambió.
+- **Asopao de Pollo** (`asopao-pollo`, en `js/recipes.js`) estaba en Arroces; pasa a **Sopas** (familia Asopaos), como
+  los demás asopaos. Sopas 53 → 54 y Arroces 65 → 64.
+- Fechas regeneradas y `node tools/prerender.js`: 1,198 páginas y `sitemap.xml` con 1,200 direcciones. Total: **1,166 →
+  1,198 recetas**.
+- *Verificado:* `node tools/check-recipes.js` 0 errores y 0 avisos; nutrición 0 sin contar; navegador: las 32 en ES y EN
+  a 375 px.
 ### 2026-10-18 — v4.32.0 · Más arroces y habichuelas
 - *Pedido:* más recetas de arroces y habichuelas.
 - Quincuagésima tercera tanda en `js/recipes-5.js` (versiones propias), 16 que no estaban (había 56 arroces y 22 granos):

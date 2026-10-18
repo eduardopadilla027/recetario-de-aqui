@@ -143,7 +143,7 @@ const NUTRI_FOODS = [
   F("gelatina sin sabor|grenetina", 335, 85, 0, 0, 0, 0.1, 0, 196, { sobre: 7 }),
   F("miel", 304, 0.3, 82, 82, 0.2, 0, 0, 4, { cup: 339 }),
   F("melao|melaza", 290, 0, 75, 74, 0, 0.1, 0, 37, { cup: 328 }),
-  F("almibar|almibar simple", 260, 0, 67, 67, 0, 0, 0, 1, { cup: 320 }),
+  F("almibar|almibar simple|sirope simple", 260, 0, 67, 67, 0, 0, 0, 1, { cup: 320 }),
   F("chocolate|chocolate de mesa", 480, 4, 72, 66, 5, 18, 10, 10, { can: 90, cup: 170 }),
   F("cacao|cocoa", 228, 19.6, 58, 1.8, 37, 13.7, 8, 21, { cup: 86 }),
   F("bolitas de cacao|cacao del pais|cacao puro", 501, 12, 29, 0, 17, 52, 32, 20, { u: 30 }),
@@ -310,6 +310,7 @@ const NUTRI_FOODS = [
   F("amaretto|licor de almendra", 310, 0, 33, 33, 0, 0, 0, 5, { cup: 240, can: 750 }),
   F("vino", 83, 0.1, 2.6, 0.6, 0, 0, 0, 5, { cup: 240, can: 750 }),
   F("vino dulce", 160, 0.2, 14, 8, 0, 0, 0, 9, { cup: 240, can: 750 }),
+  F("amargo de angostura|angostura", 0, 0, 0, 0, 0, 0, 0, 0), // unas gotas: no suma
   F("licor|licor de anis", 330, 0, 35, 35, 0, 0, 0, 5, { cup: 240, can: 750 }),
   F("refresco|refresco de cola", 42, 0, 10.6, 10.6, 0, 0, 0, 4, { cup: 248, can: 355 }),
   F("malta", 62, 0.5, 15, 13, 0, 0, 0, 10, { can: 355 }),

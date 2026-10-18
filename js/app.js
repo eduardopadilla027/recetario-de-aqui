@@ -18,7 +18,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.32.0";
+const APP_VERSION = "4.33.0";
 const APP_REVISED = "2026-10-18";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
@@ -456,6 +456,23 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
+  // Frituras, veganas, galletitas, aves y tragos (tanda 54): los dibujos que ya había.
+  [/^alcapurrias de camarones/, "svg:ic-ent-alcapurria"],
+  [/^pastelillos de guayaba/, "svg:ic-ent-pastelillo-queso"],
+  [/^empanadillas de pollo bbq/, "svg:ic-ent-pastelillo-pollo"],
+  [/^tostones con camarones/, "svg:ic-ent-tostones-rellenos"],
+  [/^croquetas veganas de garbanzos/, "svg:ic-ent-croqueta-papa"],
+  [/^fricase vegano de jaca/, "svg:ic-veg-jaca"],
+  [/^filetes de coliflor/, "svg:ic-veg-coliflor"],
+  [/^quiche/, "svg:ic-tarta-salada"],
+  [/^galletas rellenas de dulce de pina/, "svg:ic-galleta-mermelada"],
+  [/^galletas de pistacho/, "svg:ic-galleta-almendra"],
+  [/^galletitas saladas de queso/, "svg:ic-galleta-soda"],
+  [/^muslos de pollo glaseados con tamarindo/, "svg:ic-parrilla-muslos"],
+  [/^mojito de pina/, "svg:ic-trago-mojito-coco"],
+  [/^mimosa/, "svg:ic-trago-sunrise"],
+  [/^old fashioned/, "svg:ic-trago-dark-stormy"],
+  [/^ron sour/, "svg:ic-trago-daiquiri-guayaba"],
   // Arroces y habichuelas (tanda 53): los dibujos de arroz y de granos que ya había.
   [/^arroz junto/, "svg:ic-arroz-habichuelas"],
   [/^arroz imperial/, "svg:ic-arroz-cremoso"],

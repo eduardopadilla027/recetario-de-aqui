@@ -74,12 +74,12 @@ const RECIPE_FAMILIES = {
   ],
   huevos: [
     ["huevos", { es: "Huevos", en: "Eggs" }, /^huevos|jamonilla|huevo frito|ensalada de huevo/],
-    ["tortillas", { es: "Tortillas y revoltillos", en: "Omelets and scrambles" }, /tortilla|revoltillo|omelet/],
+    ["tortillas", { es: "Tortillas y revoltillos", en: "Omelets and scrambles" }, /tortilla|revoltillo|omelet|quiche/],
     ["quesos", { es: "Quesos", en: "Cheeses" }, /queso/]
   ],
   entremeses: [
     ["empanadillas", { es: "Empanadillas y pastelillos", en: "Turnovers" }, /empanadillas|pastelillos|tarta de hojaldre/],
-    ["alcapurrias", { es: "Alcapurrias y frituras de plátano y yuca", en: "Alcapurrias and plantain and cassava fritters" }, /alcapurrias|piononos|tostones rellenos|aranitas|empanadas de yuca/],
+    ["alcapurrias", { es: "Alcapurrias y frituras de plátano y yuca", en: "Alcapurrias and plantain and cassava fritters" }, /alcapurrias|piononos|tostones rellenos|tostones con|aranitas|empanadas de yuca/],
     ["bolitas", { es: "Bolitas, buñuelos y rellenos", en: "Fritter balls, buñuelos and stuffed fritters" }, /bolitas|bunuelos|barriguitas|rellenos de|almojabanas/],
     ["mar", { es: "Bacalaítos y frituras de mar", en: "Codfish fritters and seafood fritters" }, /bacalaitos|calamares|pescado|pulpo/],
     ["croquetas", { es: "Croquetas", en: "Croquettes" }, /croquetas/],
@@ -103,7 +103,7 @@ const RECIPE_FAMILIES = {
   galletitas: [
     ["jengibre", { es: "Cucas y galletas de jengibre", en: "Cucas and ginger cookies" }, /cucas|jengibre|melao|munequitos/],
     ["mantequilla", { es: "De mantequilla y maicena", en: "Butter and cornstarch cookies" }, /mantequilla(?! de mani)|maicena|mantecaditos|polvorones|danesas|royales|alfajores|maria|soda/],
-    ["frutas", { es: "De frutas y coco", en: "Fruit and coconut cookies" }, /^(?!.*chocolate).*(coco|guayaba|parcha|limon|guineo|batata|calabaza|pasas|espirales)/],
+    ["frutas", { es: "De frutas y coco", en: "Fruit and coconut cookies" }, /^(?!.*chocolate).*(coco|guayaba|parcha|limon|guineo|batata|calabaza|pasas|espirales|pina)/],
     ["otras", { es: "De chocolate, café, avena y otras", en: "Chocolate, coffee, oat and other cookies" }, null]
   ],
   pasteles_dulces: [
@@ -148,9 +148,9 @@ const RECIPE_FAMILIES = {
   vegetales: [
     ["platanos", { es: "Tostones, amarillos y guineítos", en: "Tostones, sweet plantains and green bananas" }, /tostones|amarillo|platanutres|maduros|guineitos|guineos/],
     ["mofongos", { es: "Mofongos, majados y trifongo", en: "Mofongos, mashes and trifongo" }, /mofongo|majado|trifongo/],
-    ["pasteles", { es: "Pasteles y pastelones", en: "Pasteles and pastelones" }, /^pasteles|pastelon/],
+    ["pasteles", { es: "Pasteles y pastelones", en: "Pasteles and pastelones" }, /^pasteles|pastelon|^pinon/],
     ["viandas", { es: "Yuca, pana y otras viandas", en: "Cassava, breadfruit and other roots" }, /yuca|pana|batata|viandas|malanga|name|yautia/],
-    ["papas", { es: "Papas", en: "Potatoes" }, /papas|papitas/],
+    ["papas", { es: "Papas", en: "Potatoes" }, /^(?!fricase).*(papas|papitas)/],
     ["berenjenas", { es: "Berenjenas", en: "Eggplant" }, /berenjena/],
     ["rellenos", { es: "Rellenos y gratinados", en: "Stuffed and gratin vegetables" }, /rellen|gratinad|pimientos/],
     ["otros", { es: "Vegetales guisados, salteados y asados", en: "Stewed, sautéed and roasted vegetables" }, null]

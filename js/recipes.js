@@ -349,7 +349,7 @@ const recipes = [
   },
   {
     id: "asopao-pollo",
-    category: "arroces",
+    category: "sopas",
     name: { es: "Asopao de Pollo", en: "Chicken Asopao (Rice Stew)" },
     active: 60, total: 75, wait: "adobo",
     servings: 6,

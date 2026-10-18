@@ -7552,5 +7552,1493 @@ recipes.push(
         "Add the culantro and serve with white rice. The collagen from the pig's feet makes the broth thick and glossy."
       ]
     }
+  },
+  // ---------- Tanda 54: frituras y aperitivos (7), vegetales veganos y vegetarianos (4), huevos (1),
+  // galletitas (4), carnes con conejo (6), aves (4) y cócteles (6) ----------
+  {
+    id: "alcapurrias-camarones",
+    category: "entremeses",
+    name: { es: "Alcapurrias de Camarones", en: "Shrimp Alcapurrias" },
+    active: 75, total: 105, wait: "frio",
+    servings: 12,
+    ingredients: {
+      es: [
+        "6 guineos verdes",
+        "1 libra de yautía blanca",
+        "2 cucharadas de aceite de achiote",
+        "1 cucharadita de sal",
+        "1 libra de camarones pelados y picados",
+        "2 cucharadas de sofrito",
+        "2 cucharadas de salsa de tomate",
+        "2 dientes de ajo picados",
+        "1 cucharada de aceite de oliva",
+        "Aceite para freír"
+      ],
+      en: [
+        "6 green bananas",
+        "1 pound white yautía (taro root)",
+        "2 tablespoons annatto oil",
+        "1 teaspoon salt",
+        "1 pound shrimp, peeled and chopped",
+        "2 tablespoons sofrito",
+        "2 tablespoons tomato sauce",
+        "2 garlic cloves, chopped",
+        "1 tablespoon olive oil",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los guineos y la yautía, rállelos por el lado fino y mézclelos con el aceite de achiote y la sal. Refrigere la masa 30 minutos para que agarre cuerpo.",
+        "Sofría el ajo y el sofrito en el aceite de oliva 2 minutos, añada los camarones y la salsa de tomate y cocine 3 minutos. Deje enfriar.",
+        "Sobre una hoja de plátano o papel encerado engrasado con achiote, extienda 2 cucharadas de masa, ponga 1 cucharada de camarones y cubra con más masa, dándole forma alargada.",
+        "Fría en aceite a 350 °F, de 3 en 3, unos 4 minutos por lado, hasta que estén doradas.",
+        "Escurra sobre papel toalla. Es la alcapurria de los kioscos de la costa."
+      ],
+      en: [
+        "Peel the bananas and yautía, grate them on the fine side and mix with the annatto oil and salt. Refrigerate the dough 30 minutes so it firms up.",
+        "Sauté the garlic and sofrito in the olive oil 2 minutes, add the shrimp and tomato sauce and cook 3 minutes. Let cool.",
+        "On a banana leaf or wax paper greased with annatto oil, spread 2 tablespoons of dough, add 1 tablespoon of shrimp and cover with more dough, shaping it long.",
+        "Fry in oil at 350 °F, 3 at a time, about 4 minutes per side, until golden.",
+        "Drain on paper towels. It's the alcapurria of the beachside kiosks."
+      ]
+    }
+  },
+  {
+    id: "pastelillos-guayaba-queso",
+    category: "entremeses",
+    name: { es: "Pastelillos de Guayaba y Queso", en: "Guava and Cheese Turnovers (Pastelillos)" },
+    active: 35, total: 35,
+    servings: 12,
+    ingredients: {
+      es: [
+        "12 discos de masa para empanadillas",
+        "6 onzas de pasta de guayaba en 12 lascas",
+        "6 onzas de queso blanco del país en 12 lascas",
+        "1 huevo batido",
+        "Aceite para freír",
+        "2 cucharadas de azúcar en polvo"
+      ],
+      en: [
+        "12 turnover dough discs (empanadilla wrappers)",
+        "6 ounces guava paste, in 12 slices",
+        "6 ounces Puerto Rican white cheese (queso blanco), in 12 slices",
+        "1 egg, beaten",
+        "Oil for frying",
+        "2 tablespoons powdered sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga una lasca de guayaba y una de queso en el centro de cada disco.",
+        "Pase huevo batido por el borde, doble en media luna y selle con un tenedor.",
+        "Fría en aceite a 350 °F, de 3 en 3, unos 2 minutos por lado, hasta que inflen y doren.",
+        "Escurra sobre papel toalla y espolvoree el azúcar en polvo.",
+        "Sírvalos tibios: el queso queda suave y la guayaba derretida. No los deje sin vigilar; la guayaba quema si se sale."
+      ],
+      en: [
+        "Place a slice of guava and one of cheese in the center of each disc.",
+        "Brush the edge with beaten egg, fold into a half-moon and seal with a fork.",
+        "Fry in oil at 350 °F, 3 at a time, about 2 minutes per side, until puffed and golden.",
+        "Drain on paper towels and dust with the powdered sugar.",
+        "Serve warm: the cheese stays soft and the guava melted. Don't leave them unattended; guava burns if it leaks."
+      ]
+    }
+  },
+  {
+    id: "empanadillas-pollo-bbq",
+    category: "entremeses",
+    name: { es: "Empanadillas de Pollo BBQ con Queso", en: "BBQ Chicken and Cheese Turnovers" },
+    active: 40, total: 40,
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 tazas de pollo cocido desmenuzado",
+        "½ taza de salsa BBQ",
+        "1 taza de queso mozzarella rallado",
+        "¼ taza de cebolla picadita",
+        "12 discos de masa para empanadillas",
+        "1 huevo batido",
+        "Aceite para freír"
+      ],
+      en: [
+        "2 cups shredded cooked chicken",
+        "½ cup BBQ sauce",
+        "1 cup shredded mozzarella cheese",
+        "¼ cup finely chopped onion",
+        "12 turnover dough discs (empanadilla wrappers)",
+        "1 egg, beaten",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el pollo con la salsa BBQ y la cebolla.",
+        "Ponga 2 cucharadas de pollo y 1 cucharada de queso en cada disco.",
+        "Pase huevo por el borde, doble y selle con un tenedor.",
+        "Fría en aceite a 350 °F unos 2 a 3 minutos por lado, hasta que doren. También puede hornearlas a 400 °F 18 minutos, untadas de huevo.",
+        "Escurra y sirva. Es la empanadilla de las fiestas de pueblo que más rápido se acaba."
+      ],
+      en: [
+        "Mix the chicken with the BBQ sauce and onion.",
+        "Place 2 tablespoons of chicken and 1 tablespoon of cheese on each disc.",
+        "Brush the edge with egg, fold and seal with a fork.",
+        "Fry in oil at 350 °F about 2 to 3 minutes per side, until golden. You can also bake them at 400 °F for 18 minutes, brushed with egg.",
+        "Drain and serve. It's the festival turnover that sells out first."
+      ]
+    }
+  },
+  {
+    id: "aranitas-yuca",
+    category: "entremeses",
+    name: { es: "Arañitas de Yuca con Mojo", en: "Crispy Shredded Cassava Fritters (Arañitas de Yuca)" },
+    active: 30, total: 30,
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de yuca pelada",
+        "2 dientes de ajo majados",
+        "½ cucharadita de sal",
+        "Aceite para freír",
+        "¼ taza de mojo de ajo para servir"
+      ],
+      en: [
+        "2 pounds cassava (yuca), peeled",
+        "2 garlic cloves, mashed",
+        "½ teaspoon salt",
+        "Oil for frying",
+        "¼ cup garlic mojo for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Ralle la yuca por el lado grueso del guayo y sáquele el exceso de agua apretándola en un paño.",
+        "Mézclela con el ajo y la sal.",
+        "Caliente el aceite a 350 °F. Con dos cucharas, forme montoncitos sueltos (no los apriete) y aplánelos un poco al echarlos.",
+        "Fría unos 3 minutos por lado, hasta que estén dorados y crujientes.",
+        "Escurra y sirva con el mojo. Son veganas: las hebras de yuca quedan como patitas de araña."
+      ],
+      en: [
+        "Grate the cassava on the coarse side of the grater and squeeze out the excess water in a towel.",
+        "Mix it with the garlic and salt.",
+        "Heat the oil to 350 °F. With two spoons, form loose mounds (don't pack them) and flatten them slightly as you drop them in.",
+        "Fry about 3 minutes per side, until golden and crisp.",
+        "Drain and serve with the mojo. They're vegan: the cassava strands look like little spider legs."
+      ]
+    }
+  },
+  {
+    id: "sorullitos-rellenos-queso",
+    category: "entremeses",
+    name: { es: "Sorullitos de Maíz Rellenos de Queso", en: "Cheese-Stuffed Cornmeal Fritters (Sorullitos)" },
+    active: 40, total: 55, wait: "enfriar",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de agua",
+        "½ cucharadita de sal",
+        "1 cucharada de mantequilla",
+        "1½ tazas de harina de maíz fina",
+        "4 onzas de queso de papa (gouda) en bastoncitos",
+        "Aceite para freír",
+        "¼ taza de mayo-ketchup para servir"
+      ],
+      en: [
+        "2 cups water",
+        "½ teaspoon salt",
+        "1 tablespoon butter",
+        "1½ cups fine cornmeal",
+        "4 ounces gouda (queso de papa), in small sticks",
+        "Oil for frying",
+        "¼ cup mayo-ketchup for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con la sal y la mantequilla. Retire del fuego y añada la harina de maíz de golpe, moviendo hasta formar una masa que se despegue del caldero.",
+        "Deje enfriar 15 minutos, hasta que pueda tocarla.",
+        "Tome 2 cucharadas de masa, aplánela en la mano, ponga un bastoncito de queso en el centro y enróllela como un cigarro, sellando bien las puntas.",
+        "Fría en aceite a 350 °F unos 4 minutos, dándoles vuelta, hasta que doren.",
+        "Escurra y sirva con mayo-ketchup. El queso por dentro queda derretido."
+      ],
+      en: [
+        "Boil the water with the salt and butter. Remove from the heat and add the cornmeal all at once, stirring until it forms a dough that pulls away from the pot.",
+        "Let cool 15 minutes, until you can handle it.",
+        "Take 2 tablespoons of dough, flatten it in your hand, place a stick of cheese in the center and roll it like a cigar, sealing the ends well.",
+        "Fry in oil at 350 °F about 4 minutes, turning, until golden.",
+        "Drain and serve with mayo-ketchup. The cheese inside stays melted."
+      ]
+    }
+  },
+  {
+    id: "tostones-camarones-ajillo",
+    category: "entremeses",
+    name: { es: "Tostones con Camarones al Ajillo", en: "Tostones Topped with Garlic Shrimp" },
+    active: 35, total: 35,
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 plátanos verdes",
+        "Aceite para freír",
+        "1 libra de camarones pelados",
+        "6 dientes de ajo picados",
+        "3 cucharadas de aceite de oliva",
+        "1 cucharada de mantequilla",
+        "1 cucharada de jugo de limón",
+        "¼ taza de cilantro picado",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "3 green plantains",
+        "Oil for frying",
+        "1 pound shrimp, peeled",
+        "6 garlic cloves, chopped",
+        "3 tablespoons olive oil",
+        "1 tablespoon butter",
+        "1 tablespoon lime juice",
+        "¼ cup chopped cilantro",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los plátanos y córtelos en ruedas de 1 pulgada. Fríalos a 325 °F 4 minutos, aplástelos y fríalos otra vez a 375 °F hasta que estén crujientes. Escurra.",
+        "En un sartén, caliente el aceite de oliva y la mantequilla y dore el ajo 1 minuto sin que se queme.",
+        "Añada los camarones y la sal y cocine 2 minutos por lado, hasta que estén rosados.",
+        "Apague, añada el limón y el cilantro.",
+        "Ponga 1 o 2 camarones con su ajillo sobre cada tostón. Sirva enseguida, antes de que el tostón se ablande."
+      ],
+      en: [
+        "Peel the plantains and cut into 1-inch rounds. Fry at 325 °F for 4 minutes, flatten and fry again at 375 °F until crisp. Drain.",
+        "In a skillet, heat the olive oil and butter and brown the garlic 1 minute without burning it.",
+        "Add the shrimp and salt and cook 2 minutes per side, until pink.",
+        "Turn off the heat and add the lime juice and cilantro.",
+        "Top each tostón with 1 or 2 shrimp and their garlic sauce. Serve right away, before the tostones soften."
+      ]
+    }
+  },
+  {
+    id: "croquetas-garbanzos-recao",
+    category: "entremeses",
+    name: { es: "Croquetas Veganas de Garbanzos y Recao", en: "Vegan Chickpea and Culantro Croquettes" },
+    active: 35, total: 65, wait: "frio",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 latas de 15 onzas de garbanzos, escurridos",
+        "¼ taza de sofrito",
+        "6 hojas de recao picadas",
+        "2 dientes de ajo",
+        "1 cucharadita de comino",
+        "½ cucharadita de sal",
+        "½ taza de pan rallado",
+        "Aceite para freír",
+        "½ taza de mayo-ajo vegana para servir"
+      ],
+      en: [
+        "2 cans (15 oz) chickpeas, drained",
+        "¼ cup sofrito",
+        "6 culantro (recao) leaves, chopped",
+        "2 garlic cloves",
+        "1 teaspoon cumin",
+        "½ teaspoon salt",
+        "½ cup breadcrumbs",
+        "Oil for frying",
+        "½ cup vegan garlic mayo for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "En el procesador, muela los garbanzos, el sofrito, el recao, el ajo, el comino y la sal hasta que quede una pasta gruesa, no un puré.",
+        "Añada la mitad del pan rallado y refrigere 30 minutos.",
+        "Forme 18 croquetas y páselas por el resto del pan rallado.",
+        "Fríalas en aceite a 350 °F unos 3 minutos, hasta que estén doradas. También puede hornearlas a 400 °F 20 minutos, rociadas con aceite.",
+        "Sirva con la mayo-ajo vegana. Son el falafel con sabor a sofrito."
+      ],
+      en: [
+        "In a food processor, grind the chickpeas, sofrito, culantro, garlic, cumin and salt to a coarse paste, not a purée.",
+        "Add half the breadcrumbs and refrigerate 30 minutes.",
+        "Form 18 croquettes and coat them in the rest of the breadcrumbs.",
+        "Fry in oil at 350 °F about 3 minutes, until golden. You can also bake them at 400 °F for 20 minutes, sprayed with oil.",
+        "Serve with the vegan garlic mayo. It's falafel with a sofrito flavor."
+      ]
+    }
+  },
+  {
+    id: "fricase-jaca",
+    category: "vegetales",
+    name: { es: "Fricasé Vegano de Jaca y Papas", en: "Vegan Jackfruit and Potato Fricassée" },
+    active: 50, total: 50,
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 latas de 20 onzas de jaca verde en agua, escurrida",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "¼ taza de vino blanco seco",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "3 papas en cubos",
+        "1½ tazas de agua",
+        "1 hoja de laurel",
+        "½ cucharadita de orégano"
+      ],
+      en: [
+        "2 cans (20 oz) young green jackfruit in water, drained",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "¼ cup dry white wine",
+        "¼ cup stuffed olives",
+        "1 tablespoon capers",
+        "3 potatoes, cubed",
+        "1½ cups water",
+        "1 bay leaf",
+        "½ teaspoon oregano"
+      ]
+    },
+    steps: {
+      es: [
+        "Enjuague la jaca, córtela en pedazos grandes, quitándole la parte dura del centro, y séquela con papel toalla.",
+        "Dórela en el aceite 5 minutos para que agarre color.",
+        "Añada el sofrito y sofría 3 minutos. Agregue el vino y deje que se evapore.",
+        "Añada la salsa de tomate, las aceitunas, las alcaparras, las papas, el agua, el laurel y el orégano. Tape y cocine a fuego bajo 25 minutos, hasta que las papas estén blandas.",
+        "Destape y cocine 5 minutos más para espesar la salsa. Pruebe la sal: las aceitunas y las alcaparras ya la traen. Sirva con arroz blanco. La jaca se deshilacha como el pollo de un fricasé."
+      ],
+      en: [
+        "Rinse the jackfruit, cut it into large pieces, removing the hard core, and pat dry with paper towels.",
+        "Brown it in the oil for 5 minutes so it takes on color.",
+        "Add the sofrito and sauté 3 minutes. Add the wine and let it evaporate.",
+        "Add the tomato sauce, olives, capers, potatoes, water, bay leaf and oregano. Cover and cook over low heat 25 minutes, until the potatoes are tender.",
+        "Uncover and cook 5 more minutes to thicken the sauce. Taste for salt: the olives and capers already bring some. Serve with white rice. The jackfruit shreds like the chicken in a fricassée."
+      ]
+    }
+  },
+  {
+    id: "mofongo-garbanzos",
+    category: "vegetales",
+    name: { es: "Mofongo Relleno de Garbanzos Guisados (Vegano)", en: "Mofongo Stuffed with Stewed Chickpeas (Vegan)" },
+    active: 45, total: 45,
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 plátanos verdes",
+        "Aceite para freír",
+        "6 dientes de ajo",
+        "3 cucharadas de aceite de oliva",
+        "½ cucharadita de sal",
+        "1 lata de 15 onzas de garbanzos, escurridos",
+        "¼ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "½ taza de caldo de vegetales",
+        "¼ taza de cilantro picado"
+      ],
+      en: [
+        "4 green plantains",
+        "Oil for frying",
+        "6 garlic cloves",
+        "3 tablespoons olive oil",
+        "½ teaspoon salt",
+        "1 can (15 oz) chickpeas, drained",
+        "¼ cup sofrito",
+        "½ cup tomato sauce",
+        "½ cup vegetable broth",
+        "¼ cup chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en 1 cucharada del aceite de oliva 3 minutos. Añada los garbanzos, la salsa de tomate y el caldo, y cocine 10 minutos hasta que espese. Añada el cilantro.",
+        "Pele los plátanos, córtelos en ruedas y fríalos a 325 °F unos 8 minutos, hasta que estén blandos pero sin dorar mucho.",
+        "En el pilón, maje el ajo con la sal y el resto del aceite de oliva.",
+        "Maje los plátanos calientes con el ajo, poco a poco. Forme 4 copas con la ayuda de un tazón.",
+        "Rellene cada copa con los garbanzos guisados y sirva enseguida."
+      ],
+      en: [
+        "Sauté the sofrito in 1 tablespoon of the olive oil 3 minutes. Add the chickpeas, tomato sauce and broth and cook 10 minutes until thickened. Add the cilantro.",
+        "Peel the plantains, cut into rounds and fry at 325 °F about 8 minutes, until tender but not very browned.",
+        "In the pilón (mortar), mash the garlic with the salt and the rest of the olive oil.",
+        "Mash the hot plantains with the garlic, a little at a time. Shape 4 cups using a bowl.",
+        "Fill each cup with the stewed chickpeas and serve right away."
+      ]
+    }
+  },
+  {
+    id: "filetes-coliflor-mojo",
+    category: "vegetales",
+    name: { es: "Filetes de Coliflor al Horno con Mojo de Ajo (Vegano)", en: "Roasted Cauliflower Steaks with Garlic Mojo (Vegan)" },
+    active: 45, total: 45,
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 coliflores medianas",
+        "3 cucharadas de aceite de oliva",
+        "1 cucharadita de adobo sin sal",
+        "½ cucharadita de pimentón",
+        "¼ cucharadita de sal",
+        "¼ taza de mojo de ajo",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "2 medium heads cauliflower",
+        "3 tablespoons olive oil",
+        "1 teaspoon salt-free adobo",
+        "½ teaspoon paprika",
+        "¼ teaspoon salt",
+        "¼ cup garlic mojo",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 425 °F y cubra una bandeja con papel de hornear.",
+        "Quite las hojas de la coliflor y, sin quitarle el tronco, córtela de arriba hacia abajo en filetes de 1 pulgada. Saldrán 2 de cada coliflor; guarde los ramitos que se caigan para otro plato.",
+        "Unte los filetes con el aceite, el adobo, el pimentón y la sal.",
+        "Hornee 30 minutos, volteándolos a la mitad, hasta que estén dorados por fuera y blandos en el centro.",
+        "Rocíe el mojo de ajo y el cilantro. Sirva con arroz con gandules o con tostones."
+      ],
+      en: [
+        "Heat the oven to 425 °F and line a baking sheet with parchment paper.",
+        "Remove the leaves from the cauliflower and, keeping the stem, cut it top to bottom into 1-inch steaks. You'll get 2 from each head; save the florets that fall off for another dish.",
+        "Rub the steaks with the oil, adobo, paprika and salt.",
+        "Bake 30 minutes, turning halfway, until golden outside and tender in the center.",
+        "Drizzle with the garlic mojo and cilantro. Serve with arroz con gandules or tostones."
+      ]
+    }
+  },
+  {
+    id: "pinon-vegetariano-espinaca",
+    category: "vegetales",
+    name: { es: "Piñón Vegetariano de Amarillos, Espinaca y Queso", en: "Vegetarian Sweet Plantain Lasagna with Spinach and Cheese (Piñón)" },
+    active: 80, total: 90, wait: "reposo",
+    servings: 8,
+    ingredients: {
+      es: [
+        "5 plátanos maduros",
+        "Aceite para freír",
+        "1 cucharada de aceite de oliva",
+        "¼ taza de sofrito",
+        "1 libra de espinaca fresca picada",
+        "1 taza de maíz en grano",
+        "½ taza de salsa de tomate",
+        "6 huevos",
+        "2 tazas de queso mozzarella rallado",
+        "½ taza de queso parmesano rallado",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "5 ripe plantains",
+        "Oil for frying",
+        "1 tablespoon olive oil",
+        "¼ cup sofrito",
+        "1 pound fresh spinach, chopped",
+        "1 cup corn kernels",
+        "½ cup tomato sauce",
+        "6 eggs",
+        "2 cups shredded mozzarella cheese",
+        "½ cup grated Parmesan cheese",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los plátanos, córtelos a lo largo en 4 tajadas y fríalos hasta que doren. Escurra.",
+        "Sofría el sofrito en el aceite de oliva, añada la espinaca hasta que se marchite, el maíz y la salsa de tomate. Cocine 5 minutos hasta que se seque un poco.",
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas. Bata los huevos con la sal y vierta la mitad en el molde.",
+        "Haga capas: amarillos, la mitad de la espinaca y un tercio de la mozzarella; repita y termine con amarillos. Vierta el resto del huevo y cubra con el resto de los quesos.",
+        "Hornee 35 minutos, hasta que el huevo cuaje y el queso dore. Deje reposar 10 minutos antes de cortar."
+      ],
+      en: [
+        "Peel the plantains, cut lengthwise into 4 slices and fry until golden. Drain.",
+        "Sauté the sofrito in the olive oil, add the spinach until wilted, the corn and the tomato sauce. Cook 5 minutes until a little dry.",
+        "Heat the oven to 350 °F and grease a 9 × 13-inch dish. Beat the eggs with the salt and pour half into the dish.",
+        "Layer: plantains, half the spinach and a third of the mozzarella; repeat and finish with plantains. Pour in the rest of the egg and top with the rest of the cheese.",
+        "Bake 35 minutes, until the egg sets and the cheese browns. Let rest 10 minutes before cutting."
+      ]
+    }
+  },
+  {
+    id: "quiche-calabaza-queso",
+    category: "huevos",
+    name: { es: "Quiche de Calabaza y Queso Blanco", en: "Calabaza and White Cheese Quiche" },
+    active: 70, total: 85, wait: "reposo",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 masa para pie de 9 pulgadas, sin hornear",
+        "2 tazas de calabaza en cubitos",
+        "1 cucharada de aceite de oliva",
+        "½ cebolla picada",
+        "4 huevos",
+        "1 taza de leche evaporada",
+        "1 taza de queso blanco del país desmoronado",
+        "½ taza de queso suizo rallado",
+        "¼ cucharadita de nuez moscada",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "1 unbaked 9-inch pie crust",
+        "2 cups diced calabaza (West Indian pumpkin)",
+        "1 tablespoon olive oil",
+        "½ onion, chopped",
+        "4 eggs",
+        "1 cup evaporated milk",
+        "1 cup crumbled Puerto Rican white cheese (queso blanco)",
+        "½ cup shredded Swiss cheese",
+        "¼ teaspoon nutmeg",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 375 °F. Pinche la masa con un tenedor y hornéela 10 minutos.",
+        "Sofría la cebolla y la calabaza en el aceite, tapado, 10 minutos, hasta que la calabaza esté blanda pero entera.",
+        "Bata los huevos con la leche, la nuez moscada y la sal.",
+        "Reparta la calabaza y los quesos en la masa y vierta el huevo encima.",
+        "Hornee 35 a 40 minutos, hasta que el centro apenas tiemble. Deje reposar 15 minutos antes de cortar. Es vegetariano y sirve igual para el desayuno que para un compartir."
+      ],
+      en: [
+        "Heat the oven to 375 °F. Prick the crust with a fork and bake it 10 minutes.",
+        "Sauté the onion and calabaza in the oil, covered, 10 minutes, until the calabaza is tender but whole.",
+        "Beat the eggs with the milk, nutmeg and salt.",
+        "Spread the calabaza and cheeses in the crust and pour the egg over the top.",
+        "Bake 35 to 40 minutes, until the center barely jiggles. Let rest 15 minutes before cutting. It's vegetarian and works for breakfast or a potluck."
+      ]
+    }
+  },
+  {
+    id: "galletas-pina-rellenas",
+    category: "galletitas",
+    name: { es: "Galletas Rellenas de Dulce de Piña", en: "Pineapple Jam-Filled Cookies" },
+    active: 55, total: 100, wait: "frio",
+    servings: 24,
+    ingredients: {
+      es: [
+        "2 tazas de harina de trigo",
+        "½ taza de azúcar",
+        "1 taza de mantequilla fría en cubos",
+        "1 huevo",
+        "1 cucharadita de vainilla",
+        "¼ cucharadita de sal",
+        "¾ taza de mermelada de piña",
+        "1 huevo batido para barnizar"
+      ],
+      en: [
+        "2 cups all-purpose flour",
+        "½ cup sugar",
+        "1 cup cold butter, cubed",
+        "1 egg",
+        "1 teaspoon vanilla",
+        "¼ teaspoon salt",
+        "¾ cup pineapple jam",
+        "1 beaten egg for brushing"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la harina, el azúcar y la sal. Añada la mantequilla y desmorónela con los dedos hasta que parezca arena gruesa.",
+        "Añada el huevo y la vainilla y una la masa sin amasar de más. Envuélvala y refrigere 45 minutos.",
+        "Caliente el horno a 350 °F. Estire la masa a ⅛ de pulgada y corte 48 círculos de 2½ pulgadas.",
+        "Ponga 1 cucharadita de mermelada de piña en 24 círculos, cubra con los otros, selle el borde con un tenedor y haga un corte en el centro. Barnice con huevo.",
+        "Hornee 15 a 18 minutos, hasta que doren por el borde. Deje enfriar en la bandeja. Son las de las panaderías, como pastelillos de piña chiquitos."
+      ],
+      en: [
+        "Mix the flour, sugar and salt. Add the butter and crumble it with your fingers until it looks like coarse sand.",
+        "Add the egg and vanilla and bring the dough together without overworking it. Wrap and refrigerate 45 minutes.",
+        "Heat the oven to 350 °F. Roll the dough to ⅛ inch and cut 48 circles of 2½ inches.",
+        "Place 1 teaspoon of pineapple jam on 24 circles, top with the others, seal the edge with a fork and cut a slit in the center. Brush with egg.",
+        "Bake 15 to 18 minutes, until the edges brown. Let cool on the tray. They're the bakery ones, like little pineapple turnovers."
+      ]
+    }
+  },
+  {
+    id: "galletas-pistacho",
+    category: "galletitas",
+    name: { es: "Galletas de Pistacho", en: "Pistachio Cookies" },
+    active: 30, total: 50, wait: "frio",
+    servings: 24,
+    ingredients: {
+      es: [
+        "1 taza de pistachos pelados sin sal",
+        "1¾ tazas de harina de trigo",
+        "¾ taza de mantequilla blanda",
+        "½ taza de azúcar",
+        "1 huevo",
+        "½ cucharadita de extracto de almendra",
+        "¼ cucharadita de polvo de hornear",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "1 cup shelled unsalted pistachios",
+        "1¾ cups all-purpose flour",
+        "¾ cup softened butter",
+        "½ cup sugar",
+        "1 egg",
+        "½ teaspoon almond extract",
+        "¼ teaspoon baking powder",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Muela ¾ taza de los pistachos con 2 cucharadas del azúcar hasta que quede un polvo fino. Pique el resto.",
+        "Bata la mantequilla con el resto del azúcar hasta que esté cremosa. Añada el huevo y el extracto.",
+        "Añada la harina, el pistacho molido, el polvo de hornear y la sal, y mezcle. Refrigere 20 minutos.",
+        "Caliente el horno a 350 °F. Forme 24 bolitas, páselas por el pistacho picado y aplástelas un poco en la bandeja.",
+        "Hornee 12 a 14 minutos, hasta que estén firmes y apenas doradas abajo. Salen verdecitas por dentro."
+      ],
+      en: [
+        "Grind ¾ cup of the pistachios with 2 tablespoons of the sugar to a fine powder. Chop the rest.",
+        "Beat the butter with the rest of the sugar until creamy. Add the egg and extract.",
+        "Add the flour, ground pistachio, baking powder and salt and mix. Refrigerate 20 minutes.",
+        "Heat the oven to 350 °F. Form 24 balls, roll them in the chopped pistachios and flatten slightly on the tray.",
+        "Bake 12 to 14 minutes, until firm and barely golden underneath. They come out a little green inside."
+      ]
+    }
+  },
+  {
+    id: "galletas-chocolate-blanco-macadamia",
+    category: "galletitas",
+    name: { es: "Galletas de Chocolate Blanco y Macadamia", en: "White Chocolate Macadamia Cookies" },
+    active: 35, total: 35,
+    servings: 24,
+    ingredients: {
+      es: [
+        "2¼ tazas de harina de trigo",
+        "1 cucharadita de bicarbonato de sodio",
+        "½ cucharadita de sal",
+        "1 taza de mantequilla blanda",
+        "¾ taza de azúcar morena",
+        "½ taza de azúcar",
+        "2 huevos",
+        "2 cucharaditas de vainilla",
+        "1 taza de chispas de chocolate blanco",
+        "1 taza de nueces de macadamia picadas"
+      ],
+      en: [
+        "2¼ cups all-purpose flour",
+        "1 teaspoon baking soda",
+        "½ teaspoon salt",
+        "1 cup softened butter",
+        "¾ cup brown sugar",
+        "½ cup sugar",
+        "2 eggs",
+        "2 teaspoons vanilla",
+        "1 cup white chocolate chips",
+        "1 cup chopped macadamia nuts"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F.",
+        "Bata la mantequilla con las dos azúcares hasta que esté cremosa. Añada los huevos y la vainilla.",
+        "Añada la harina, el bicarbonato y la sal, y mezcle. Incorpore el chocolate blanco y las macadamias.",
+        "Ponga bolas de 2 cucharadas en la bandeja, separadas 2 pulgadas.",
+        "Hornee 10 a 12 minutos, hasta que el borde dore y el centro se vea un poco crudo. Deje enfriar 5 minutos en la bandeja para que queden blanditas."
+      ],
+      en: [
+        "Heat the oven to 350 °F.",
+        "Beat the butter with both sugars until creamy. Add the eggs and vanilla.",
+        "Add the flour, baking soda and salt and mix. Fold in the white chocolate and macadamias.",
+        "Drop 2-tablespoon balls on the tray, 2 inches apart.",
+        "Bake 10 to 12 minutes, until the edges brown and the center looks slightly underdone. Let cool 5 minutes on the tray so they stay soft."
+      ]
+    }
+  },
+  {
+    id: "galletas-queso-cheddar",
+    category: "galletitas",
+    name: { es: "Galletitas Saladas de Queso Cheddar", en: "Savory Cheddar Cheese Crackers" },
+    active: 35, total: 80, wait: "frio",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 tazas de queso cheddar fuerte rallado",
+        "½ taza de mantequilla fría en cubos",
+        "1¼ tazas de harina de trigo",
+        "¼ cucharadita de sal",
+        "¼ cucharadita de pimentón",
+        "1 pizca de pimienta de cayena",
+        "2 cucharadas de agua fría"
+      ],
+      en: [
+        "2 cups shredded sharp cheddar cheese",
+        "½ cup cold butter, cubed",
+        "1¼ cups all-purpose flour",
+        "¼ teaspoon salt",
+        "¼ teaspoon paprika",
+        "1 pinch cayenne pepper",
+        "2 tablespoons cold water"
+      ]
+    },
+    steps: {
+      es: [
+        "En el procesador, mezcle el queso, la mantequilla, la harina, la sal, el pimentón y la cayena hasta que parezca arena.",
+        "Añada el agua y pulse hasta que se forme una bola.",
+        "Haga un rollo de 1½ pulgadas de grueso, envuélvalo y refrigere 45 minutos.",
+        "Caliente el horno a 350 °F. Corte el rollo en ruedas de ¼ de pulgada y póngalas en la bandeja.",
+        "Hornee 12 a 15 minutos, hasta que el borde dore. Deje enfriar: se ponen crujientes. Son para picar con el coctel."
+      ],
+      en: [
+        "In a food processor, mix the cheese, butter, flour, salt, paprika and cayenne until it looks like sand.",
+        "Add the water and pulse until a ball forms.",
+        "Shape into a 1½-inch-thick log, wrap and refrigerate 45 minutes.",
+        "Heat the oven to 350 °F. Slice the log into ¼-inch rounds and place on the tray.",
+        "Bake 12 to 15 minutes, until the edges brown. Let cool: they crisp up. They're for nibbling with cocktails."
+      ]
+    }
+  },
+  {
+    id: "conejo-ajillo",
+    category: "carnes",
+    name: { es: "Conejo al Ajillo", en: "Garlic Rabbit (Conejo al Ajillo)" },
+    active: 50, total: 170, wait: "adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 conejo de 3 libras en presas",
+        "10 dientes de ajo en lascas",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "1 cucharadita de orégano",
+        "2 cucharadas de jugo de limón",
+        "¼ taza de aceite de oliva",
+        "½ taza de vino blanco seco",
+        "½ taza de caldo de pollo",
+        "¼ taza de perejil picado"
+      ],
+      en: [
+        "1 rabbit (3 pounds), cut in pieces",
+        "10 garlic cloves, sliced",
+        "1 teaspoon salt",
+        "½ teaspoon pepper",
+        "1 teaspoon oregano",
+        "2 tablespoons lime juice",
+        "¼ cup olive oil",
+        "½ cup dry white wine",
+        "½ cup chicken broth",
+        "¼ cup chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el conejo con la sal, la pimienta, el orégano y el limón, y déjelo 2 horas en la nevera.",
+        "En un caldero, dore las lascas de ajo en el aceite a fuego bajo hasta que estén doraditas. Sáquelas y guárdelas.",
+        "Suba el fuego y dore las presas de conejo en ese aceite, unos 5 minutos por lado.",
+        "Añada el vino y deje hervir 2 minutos. Agregue el caldo, tape y cocine a fuego bajo 35 a 40 minutos, hasta que la carne esté tierna.",
+        "Destape, devuelva el ajo y cocine 5 minutos para que la salsa reduzca. Añada el perejil y sirva con papas fritas o arroz blanco. El conejo es magro; no lo cocine de más o se seca."
+      ],
+      en: [
+        "Season the rabbit with the salt, pepper, oregano and lime juice and refrigerate 2 hours.",
+        "In a caldero, brown the garlic slices in the oil over low heat until golden. Remove and set aside.",
+        "Raise the heat and brown the rabbit pieces in that oil, about 5 minutes per side.",
+        "Add the wine and boil 2 minutes. Add the broth, cover and cook over low heat 35 to 40 minutes, until the meat is tender.",
+        "Uncover, return the garlic and cook 5 minutes so the sauce reduces. Add the parsley and serve with fries or white rice. Rabbit is lean; don't overcook it or it dries out."
+      ]
+    }
+  },
+  {
+    id: "conejo-fricase",
+    category: "carnes",
+    name: { es: "Fricasé de Conejo", en: "Rabbit Fricassée" },
+    active: 90, total: 570, wait: "adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 conejo de 3 libras en presas",
+        "4 dientes de ajo majados",
+        "1 cucharadita de orégano",
+        "1 cucharadita de sal",
+        "1 taza de vino tinto",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "2 cucharadas de pasas",
+        "3 papas en cubos",
+        "2 zanahorias en ruedas",
+        "1 taza de agua",
+        "1 hoja de laurel"
+      ],
+      en: [
+        "1 rabbit (3 pounds), cut in pieces",
+        "4 garlic cloves, mashed",
+        "1 teaspoon oregano",
+        "1 teaspoon salt",
+        "1 cup red wine",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "¼ cup stuffed olives",
+        "1 tablespoon capers",
+        "2 tablespoons raisins",
+        "3 potatoes, cubed",
+        "2 carrots, sliced",
+        "1 cup water",
+        "1 bay leaf"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el conejo con el ajo, el orégano, la sal y el vino, y déjelo toda la noche (o al menos 8 horas) en la nevera.",
+        "Escurra las presas (guarde el vino del adobo) y dórelas en el aceite en un caldero.",
+        "Añada el sofrito y sofría 3 minutos. Agregue el vino del adobo y deje hervir 3 minutos.",
+        "Añada la salsa de tomate, las aceitunas, las alcaparras, las pasas, el agua y el laurel. Tape y cocine a fuego bajo 45 minutos.",
+        "Añada las papas y las zanahorias y cocine 25 minutos más, hasta que estén blandas y la salsa espese. Es el fricasé de las fincas del centro de la isla, donde se crían conejos."
+      ],
+      en: [
+        "Season the rabbit with the garlic, oregano, salt and wine and refrigerate overnight (or at least 8 hours).",
+        "Drain the pieces (save the wine from the marinade) and brown them in the oil in a caldero.",
+        "Add the sofrito and sauté 3 minutes. Add the marinade wine and boil 3 minutes.",
+        "Add the tomato sauce, olives, capers, raisins, water and bay leaf. Cover and cook over low heat 45 minutes.",
+        "Add the potatoes and carrots and cook 25 more minutes, until tender and the sauce thickens. It's the fricassée of the farms in the island's interior, where rabbits are raised."
+      ]
+    }
+  },
+  {
+    id: "conejo-horno-mojo",
+    category: "carnes",
+    name: { es: "Conejo al Horno con Mojo de Naranja Agria", en: "Oven-Roasted Rabbit with Sour Orange Mojo" },
+    active: 100, total: 280, wait: "adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 conejo de 3 libras en presas",
+        "½ taza de jugo de naranja agria",
+        "8 dientes de ajo majados",
+        "1 cucharadita de orégano",
+        "½ cucharadita de comino",
+        "1 cucharadita de sal",
+        "¼ taza de aceite de oliva",
+        "1 cebolla en ruedas",
+        "1 libra de papas rojas pequeñas, partidas a la mitad"
+      ],
+      en: [
+        "1 rabbit (3 pounds), cut in pieces",
+        "½ cup sour orange juice",
+        "8 garlic cloves, mashed",
+        "1 teaspoon oregano",
+        "½ teaspoon cumin",
+        "1 teaspoon salt",
+        "¼ cup olive oil",
+        "1 onion, sliced into rings",
+        "1 pound small red potatoes, halved"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la naranja agria, el ajo, el orégano, el comino, la sal y el aceite. Adobe el conejo con ese mojo y déjelo 3 horas en la nevera.",
+        "Caliente el horno a 375 °F. Ponga la cebolla y las papas en un molde y el conejo encima, con todo el mojo.",
+        "Tape con papel de aluminio y hornee 45 minutos.",
+        "Destape, bañe el conejo con el jugo del molde y hornee 25 a 30 minutos más, hasta que dore.",
+        "Sirva con el juguito del molde por encima. Si no consigue naranja agria, use mitad jugo de china y mitad jugo de limón."
+      ],
+      en: [
+        "Mix the sour orange juice, garlic, oregano, cumin, salt and oil. Marinate the rabbit in that mojo in the refrigerator for 3 hours.",
+        "Heat the oven to 375 °F. Place the onion and potatoes in a baking dish with the rabbit on top, with all the mojo.",
+        "Cover with aluminum foil and bake 45 minutes.",
+        "Uncover, baste the rabbit with the pan juices and bake 25 to 30 more minutes, until browned.",
+        "Serve with the pan juices on top. If you can't find sour orange, use half orange juice and half lime juice."
+      ]
+    }
+  },
+  {
+    id: "carne-guisada-malta",
+    category: "carnes",
+    name: { es: "Carne Guisada en Malta", en: "Beef Stewed in Malta" },
+    active: 150, total: 150,
+    servings: 6,
+    ingredients: {
+      es: [
+        "2½ libras de carne de res para guisar en cubos",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "2 cucharadas de aceite",
+        "½ taza de sofrito",
+        "1 lata de 12 onzas de malta",
+        "½ taza de salsa de tomate",
+        "1 taza de agua",
+        "2 hojas de laurel",
+        "3 papas en cubos",
+        "2 zanahorias en ruedas"
+      ],
+      en: [
+        "2½ pounds beef stew meat, cubed",
+        "1 teaspoon salt",
+        "½ teaspoon pepper",
+        "2 tablespoons oil",
+        "½ cup sofrito",
+        "1 can (12 oz) malta (malt soda)",
+        "½ cup tomato sauce",
+        "1 cup water",
+        "2 bay leaves",
+        "3 potatoes, cubed",
+        "2 carrots, sliced"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone la carne con la sal y la pimienta y dórela en el aceite, en tandas, en un caldero.",
+        "Añada el sofrito y sofría 3 minutos.",
+        "Agregue la malta, la salsa de tomate, el agua y el laurel. Tape y cocine a fuego bajo 1 hora 30 minutos, hasta que la carne esté casi tierna.",
+        "Añada las papas y las zanahorias y cocine 30 minutos más.",
+        "Destape los últimos minutos si la salsa está muy líquida. La malta le da un dulzor oscuro, como de melao, que va muy bien con arroz blanco."
+      ],
+      en: [
+        "Season the beef with the salt and pepper and brown it in the oil, in batches, in a caldero.",
+        "Add the sofrito and sauté 3 minutes.",
+        "Add the malta, tomato sauce, water and bay leaves. Cover and cook over low heat 1 hour 30 minutes, until the beef is almost tender.",
+        "Add the potatoes and carrots and cook 30 more minutes.",
+        "Uncover for the last few minutes if the sauce is too thin. The malta gives it a dark, molasses-like sweetness that goes great with white rice."
+      ]
+    }
+  },
+  {
+    id: "cordero-guisado",
+    category: "carnes",
+    name: { es: "Cordero Guisado a la Criolla", en: "Creole-Style Lamb Stew" },
+    active: 135, total: 135,
+    servings: 6,
+    ingredients: {
+      es: [
+        "2½ libras de paleta de cordero en cubos, sin grasa",
+        "1 cucharadita de sal",
+        "1 cucharadita de orégano",
+        "4 dientes de ajo majados",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "½ taza de vino tinto",
+        "½ taza de salsa de tomate",
+        "1½ tazas de agua",
+        "¼ taza de aceitunas rellenas",
+        "1 libra de calabaza en cubos",
+        "2 papas en cubos"
+      ],
+      en: [
+        "2½ pounds lamb shoulder, cubed, trimmed of fat",
+        "1 teaspoon salt",
+        "1 teaspoon oregano",
+        "4 garlic cloves, mashed",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "½ cup red wine",
+        "½ cup tomato sauce",
+        "1½ cups water",
+        "¼ cup stuffed olives",
+        "1 pound calabaza (West Indian pumpkin), cubed",
+        "2 potatoes, cubed"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone el cordero con la sal, el orégano y el ajo.",
+        "Dórelo en el aceite en un caldero, en tandas.",
+        "Añada el sofrito y sofría 3 minutos. Agregue el vino y deje hervir 2 minutos.",
+        "Añada la salsa de tomate, el agua y las aceitunas. Tape y cocine a fuego bajo 1 hora 15 minutos.",
+        "Añada la calabaza y las papas y cocine 30 minutos más. La calabaza se deshace y espesa la salsa. Sirva con arroz blanco."
+      ],
+      en: [
+        "Season the lamb with the salt, oregano and garlic.",
+        "Brown it in the oil in a caldero, in batches.",
+        "Add the sofrito and sauté 3 minutes. Add the wine and boil 2 minutes.",
+        "Add the tomato sauce, water and olives. Cover and cook over low heat 1 hour 15 minutes.",
+        "Add the calabaza and potatoes and cook 30 more minutes. The calabaza falls apart and thickens the sauce. Serve with white rice."
+      ]
+    }
+  },
+  {
+    id: "lengua-guisada",
+    category: "carnes",
+    name: { es: "Lengua Guisada en Salsa Criolla", en: "Beef Tongue Stewed in Creole Sauce" },
+    active: 200, total: 200,
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 lengua de res (3 libras)",
+        "10 tazas de agua",
+        "1 cebolla partida",
+        "2 hojas de laurel",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "½ taza de vino blanco seco",
+        "¼ taza de aceitunas rellenas",
+        "1 pimiento morrón en tiras",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1 beef tongue (3 pounds)",
+        "10 cups water",
+        "1 onion, halved",
+        "2 bay leaves",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 can (8 oz) tomato sauce",
+        "½ cup dry white wine",
+        "¼ cup stuffed olives",
+        "1 roasted red pepper, in strips",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la lengua con el agua, la cebolla y el laurel, tapada, 2 horas 30 minutos (1 hora en olla de presión), hasta que esté blanda. Guarde 1 taza del caldo.",
+        "Sáquela y, todavía caliente, pélele la piel gruesa. Córtela en lascas de ½ pulgada.",
+        "En un caldero, sofría el sofrito en el aceite 3 minutos. Añada el vino, la salsa de tomate, el caldo guardado, las aceitunas, el pimiento y la sal.",
+        "Añada las lascas de lengua y cocine tapado a fuego bajo 20 minutos para que agarren el sabor.",
+        "Sirva con arroz blanco y tostones. Queda suave como la carne mechada."
+      ],
+      en: [
+        "Simmer the tongue with the water, onion and bay leaves, covered, 2 hours 30 minutes (1 hour in a pressure cooker), until tender. Save 1 cup of the broth.",
+        "Remove it and, while still hot, peel off the thick skin. Cut into ½-inch slices.",
+        "In a caldero, sauté the sofrito in the oil 3 minutes. Add the wine, tomato sauce, saved broth, olives, pepper and salt.",
+        "Add the tongue slices and cook covered over low heat 20 minutes so they soak up the flavor.",
+        "Serve with white rice and tostones. It turns out as tender as carne mechada."
+      ]
+    }
+  },
+  {
+    id: "muslos-tamarindo",
+    category: "aves",
+    name: { es: "Muslos de Pollo Glaseados con Tamarindo", en: "Tamarind-Glazed Chicken Thighs" },
+    active: 55, total: 70, wait: "adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "8 muslos de pollo con hueso",
+        "1 cucharadita de adobo",
+        "½ taza de pulpa de tamarindo sin semillas",
+        "¼ taza de azúcar morena",
+        "2 cucharadas de salsa de soya baja en sodio",
+        "2 dientes de ajo majados",
+        "½ taza de agua",
+        "2 cebollines picados"
+      ],
+      en: [
+        "8 bone-in chicken thighs",
+        "1 teaspoon adobo",
+        "½ cup seedless tamarind pulp",
+        "¼ cup brown sugar",
+        "2 tablespoons low-sodium soy sauce",
+        "2 garlic cloves, mashed",
+        "½ cup water",
+        "2 scallions, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone los muslos con el adobo y déjelos 15 minutos.",
+        "En una olla, cocine la pulpa de tamarindo, el azúcar, la soya, el ajo y el agua 8 minutos, hasta que espese como un sirope.",
+        "Caliente el horno a 400 °F. Ponga los muslos en una bandeja, con la piel hacia arriba, y hornee 25 minutos.",
+        "Unte los muslos con la mitad del glaseado y hornee 10 minutos. Repita con el resto y hornee 5 minutos más, hasta que brillen.",
+        "Espolvoree el cebollín. Es agridulce, como los dulces de tamarindo de la plaza."
+      ],
+      en: [
+        "Season the thighs with the adobo and let sit 15 minutes.",
+        "In a pot, cook the tamarind pulp, sugar, soy sauce, garlic and water 8 minutes, until thick like a syrup.",
+        "Heat the oven to 400 °F. Place the thighs on a tray skin side up and bake 25 minutes.",
+        "Brush the thighs with half the glaze and bake 10 minutes. Repeat with the rest and bake 5 more minutes, until glossy.",
+        "Sprinkle with the scallions. It's sweet and sour, like the tamarind candies at the market."
+      ]
+    }
+  },
+  {
+    id: "pechugas-rellenas-espinaca",
+    category: "aves",
+    name: { es: "Pechugas Rellenas de Espinaca y Queso Blanco", en: "Chicken Breasts Stuffed with Spinach and White Cheese" },
+    active: 55, total: 55,
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 pechugas de pollo deshuesadas",
+        "1 cucharadita de adobo",
+        "2 tazas de espinaca fresca",
+        "2 dientes de ajo picados",
+        "2 cucharadas de aceite de oliva",
+        "4 onzas de queso blanco del país desmoronado",
+        "2 onzas de queso crema",
+        "½ cucharadita de pimentón"
+      ],
+      en: [
+        "4 boneless chicken breasts",
+        "1 teaspoon adobo",
+        "2 cups fresh spinach",
+        "2 garlic cloves, chopped",
+        "2 tablespoons olive oil",
+        "4 ounces crumbled Puerto Rican white cheese (queso blanco)",
+        "2 ounces cream cheese",
+        "½ teaspoon paprika"
+      ]
+    },
+    steps: {
+      es: [
+        "Saltee el ajo y la espinaca en 1 cucharada del aceite hasta que se marchite. Escurra y pique. Mézclela con los dos quesos.",
+        "Caliente el horno a 375 °F. Abra un bolsillo a lo largo de cada pechuga con un cuchillo, sin atravesarla.",
+        "Rellene las pechugas y ciérrelas con palillos. Sazone con el adobo y el pimentón.",
+        "Dórelas en el resto del aceite 3 minutos por lado en un sartén que vaya al horno.",
+        "Hornee 18 a 20 minutos, hasta que el centro llegue a 165 °F. Deje reposar 5 minutos, saque los palillos y corte en ruedas."
+      ],
+      en: [
+        "Sauté the garlic and spinach in 1 tablespoon of the oil until wilted. Drain and chop. Mix with both cheeses.",
+        "Heat the oven to 375 °F. Cut a lengthwise pocket into each breast with a knife, without cutting through.",
+        "Stuff the breasts and close with toothpicks. Season with the adobo and paprika.",
+        "Brown them in the rest of the oil 3 minutes per side in an ovenproof skillet.",
+        "Bake 18 to 20 minutes, until the center reaches 165 °F. Let rest 5 minutes, remove the toothpicks and slice."
+      ]
+    }
+  },
+  {
+    id: "pato-asado-naranja",
+    category: "aves",
+    name: { es: "Pato Asado con Naranja Agria y Ron", en: "Roast Duck with Sour Orange and Rum" },
+    active: 210, total: 690, wait: "adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 pato de 5 libras",
+        "1 cucharadita de sal",
+        "6 dientes de ajo majados",
+        "1 cucharadita de orégano",
+        "½ taza de jugo de naranja agria",
+        "1 china en cuartos",
+        "¼ taza de ron oscuro",
+        "2 cucharadas de melao de caña"
+      ],
+      en: [
+        "1 duck (5 pounds)",
+        "1 teaspoon salt",
+        "6 garlic cloves, mashed",
+        "1 teaspoon oregano",
+        "½ cup sour orange juice",
+        "1 orange, quartered",
+        "¼ cup dark rum",
+        "2 tablespoons cane molasses"
+      ]
+    },
+    steps: {
+      es: [
+        "Pinche la piel del pato por todas partes con un tenedor, sin llegar a la carne. Adóbelo por dentro y por fuera con la sal, el ajo, el orégano y la naranja agria, y déjelo toda la noche en la nevera.",
+        "Caliente el horno a 325 °F. Ponga la china dentro del pato y colóquelo sobre una rejilla en un molde, con la pechuga hacia arriba.",
+        "Hornee 2 horas 30 minutos, sacando la grasa del molde cada 45 minutos (guárdela para freír papas).",
+        "Mezcle el ron y el melao, unte el pato y suba el horno a 400 °F. Hornee 15 minutos más, hasta que la piel brille y esté crujiente.",
+        "Deje reposar 15 minutos antes de trinchar. Es para las fiestas: se sirve con arroz con gandules."
+      ],
+      en: [
+        "Prick the duck skin all over with a fork, without reaching the meat. Season it inside and out with the salt, garlic, oregano and sour orange juice and refrigerate overnight.",
+        "Heat the oven to 325 °F. Put the orange inside the duck and set it on a rack in a roasting pan, breast side up.",
+        "Roast 2 hours 30 minutes, removing the fat from the pan every 45 minutes (save it for frying potatoes).",
+        "Mix the rum and molasses, brush the duck and raise the oven to 400 °F. Roast 15 more minutes, until the skin is glossy and crisp.",
+        "Let rest 15 minutes before carving. It's for the holidays: serve it with arroz con gandules."
+      ]
+    }
+  },
+  {
+    id: "pollo-limon-ajo-horno",
+    category: "aves",
+    name: { es: "Pollo al Horno con Limón, Ajo y Recao", en: "Oven-Roasted Chicken with Lime, Garlic and Culantro" },
+    active: 70, total: 130, wait: "adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 pollo de 4 libras en presas",
+        "¼ taza de jugo de limón",
+        "1 cucharadita de ralladura de limón",
+        "8 dientes de ajo majados",
+        "6 hojas de recao picadas",
+        "1 cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "3 cucharadas de aceite de oliva",
+        "1 limón en ruedas"
+      ],
+      en: [
+        "1 chicken (4 pounds), cut in pieces",
+        "¼ cup lime juice",
+        "1 teaspoon lime zest",
+        "8 garlic cloves, mashed",
+        "6 culantro (recao) leaves, chopped",
+        "1 teaspoon salt",
+        "½ teaspoon pepper",
+        "3 tablespoons olive oil",
+        "1 lime, sliced"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el jugo y la ralladura de limón, el ajo, el recao, la sal, la pimienta y el aceite.",
+        "Adobe el pollo con esa mezcla, metiéndola debajo de la piel, y déjelo 1 hora en la nevera.",
+        "Caliente el horno a 400 °F. Ponga el pollo en un molde con la piel hacia arriba y las ruedas de limón alrededor.",
+        "Hornee 45 a 50 minutos, bañándolo con su jugo a la mitad, hasta que la piel dore y el muslo llegue a 175 °F.",
+        "Sirva con el jugo del molde. El recao le da el olor de la cocina de abuela."
+      ],
+      en: [
+        "Mix the lime juice and zest, garlic, culantro, salt, pepper and oil.",
+        "Rub the chicken with the mixture, getting it under the skin, and refrigerate 1 hour.",
+        "Heat the oven to 400 °F. Place the chicken in a baking dish skin side up with the lime slices around it.",
+        "Roast 45 to 50 minutes, basting halfway, until the skin is golden and the thigh reaches 175 °F.",
+        "Serve with the pan juices. The culantro gives it the smell of grandma's kitchen."
+      ]
+    }
+  },
+  {
+    id: "coquito-calabaza",
+    category: "cocteles",
+    name: { es: "Coquito de Calabaza", en: "Pumpkin Coquito" },
+    active: 15, total: 255, wait: "frio",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 lata de 15 onzas de puré de calabaza",
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 lata de 15 onzas de crema de coco",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 taza de ron blanco",
+        "1 cucharadita de canela en polvo",
+        "½ cucharadita de nuez moscada",
+        "¼ cucharadita de clavos molidos",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "1 can (15 oz) pumpkin purée",
+        "1 can (13.5 oz) coconut milk",
+        "1 can (15 oz) cream of coconut",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "1 cup white rum",
+        "1 teaspoon ground cinnamon",
+        "½ teaspoon nutmeg",
+        "¼ teaspoon ground cloves",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga todo en la licuadora, menos el ron, y licúe 1 minuto.",
+        "Añada el ron y licúe unos segundos más.",
+        "Pase por un colador fino a botellas de vidrio.",
+        "Refrigere al menos 4 horas. Agite antes de servir porque la calabaza se asienta.",
+        "Sirva frío en vasitos con canela por encima. Dura 2 semanas en la nevera. Para niños, haga una tanda sin el ron."
+      ],
+      en: [
+        "Put everything except the rum in the blender and blend 1 minute.",
+        "Add the rum and blend a few more seconds.",
+        "Strain through a fine sieve into glass bottles.",
+        "Refrigerate at least 4 hours. Shake before serving because the pumpkin settles.",
+        "Serve cold in small glasses with cinnamon on top. It keeps 2 weeks in the refrigerator. For kids, make a batch without the rum."
+      ]
+    }
+  },
+  {
+    id: "margarita-tamarindo",
+    category: "cocteles",
+    name: { es: "Margarita de Tamarindo", en: "Tamarind Margarita" },
+    active: 15, total: 15,
+    servings: 2,
+    ingredients: {
+      es: [
+        "3 onzas de tequila blanco",
+        "¼ taza de pulpa de tamarindo sin semillas",
+        "1 onza de licor de naranja",
+        "2 cucharadas de jugo de limón",
+        "2 cucharadas de sirope simple",
+        "¼ taza de agua",
+        "¼ cucharadita de sal",
+        "1 cucharada de azúcar",
+        "1 pizca de chile en polvo",
+        "Hielo"
+      ],
+      en: [
+        "3 ounces blanco tequila",
+        "¼ cup seedless tamarind pulp",
+        "1 ounce orange liqueur",
+        "2 tablespoons lime juice",
+        "2 tablespoons simple syrup",
+        "¼ cup water",
+        "¼ teaspoon salt",
+        "1 tablespoon sugar",
+        "1 pinch chili powder",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la pulpa de tamarindo en el agua, aplastándola con un tenedor, y cuele.",
+        "Mezcle la sal, el azúcar y el chile en un plato. Moje el borde de dos vasos con limón y páselos por la mezcla.",
+        "En una coctelera con hielo, agite el tequila, el tamarindo, el licor de naranja, el limón y el sirope 15 segundos.",
+        "Cuele en los vasos con hielo nuevo.",
+        "Sirva enseguida. Es agria, dulce y con un toque picante."
+      ],
+      en: [
+        "Dissolve the tamarind pulp in the water, mashing with a fork, and strain.",
+        "Mix the salt, sugar and chili in a plate. Wet the rim of two glasses with lime and dip them in the mixture.",
+        "In a shaker with ice, shake the tequila, tamarind, orange liqueur, lime juice and syrup 15 seconds.",
+        "Strain into the glasses over fresh ice.",
+        "Serve right away. It's sour, sweet and slightly spicy."
+      ]
+    }
+  },
+  {
+    id: "mojito-pina",
+    category: "cocteles",
+    name: { es: "Mojito de Piña", en: "Pineapple Mojito" },
+    active: 10, total: 10,
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de piña fresca en cubitos",
+        "16 hojas de menta (yerbabuena)",
+        "2 cucharadas de azúcar",
+        "2 cucharadas de jugo de limón",
+        "3 onzas de ron blanco",
+        "1 taza de agua con gas",
+        "Hielo"
+      ],
+      en: [
+        "1 cup fresh pineapple, diced",
+        "16 mint leaves (yerbabuena)",
+        "2 tablespoons sugar",
+        "2 tablespoons lime juice",
+        "3 ounces white rum",
+        "1 cup sparkling water",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "En dos vasos altos, maje la piña, la menta, el azúcar y el limón con un majador, hasta que la piña suelte su jugo.",
+        "Añada el ron y mezcle.",
+        "Llene los vasos de hielo.",
+        "Complete con el agua con gas y mezcle de abajo hacia arriba.",
+        "Adorne con una ramita de menta y un triángulo de piña."
+      ],
+      en: [
+        "In two tall glasses, muddle the pineapple, mint, sugar and lime juice until the pineapple releases its juice.",
+        "Add the rum and stir.",
+        "Fill the glasses with ice.",
+        "Top with the sparkling water and stir from the bottom up.",
+        "Garnish with a mint sprig and a pineapple wedge."
+      ]
+    }
+  },
+  {
+    id: "mimosa-tropical",
+    category: "cocteles",
+    name: { es: "Mimosa Tropical de China y Parcha", en: "Tropical Orange and Passion Fruit Mimosa" },
+    active: 5, total: 5,
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 botella de 750 ml de vino espumoso frío",
+        "1 taza de jugo de china frío",
+        "½ taza de jugo de parcha frío",
+        "2 cucharadas de sirope simple"
+      ],
+      en: [
+        "1 bottle (750 ml) chilled sparkling wine",
+        "1 cup chilled orange juice",
+        "½ cup chilled passion fruit juice",
+        "2 tablespoons simple syrup"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el jugo de china, el de parcha y el sirope en una jarrita.",
+        "Ponga ¼ taza de la mezcla en cada copa.",
+        "Complete despacio con el vino espumoso, inclinando la copa para que no se derrame la espuma.",
+        "No la mezcle con cuchara: las burbujas la mezclan solas.",
+        "Sirva enseguida. Es para el brunch del domingo."
+      ],
+      en: [
+        "Mix the orange juice, passion fruit juice and syrup in a small pitcher.",
+        "Pour ¼ cup of the mix into each glass.",
+        "Slowly top with the sparkling wine, tilting the glass so the foam doesn't spill.",
+        "Don't stir with a spoon: the bubbles mix it on their own.",
+        "Serve right away. It's for Sunday brunch."
+      ]
+    }
+  },
+  {
+    id: "old-fashioned-ron-melao",
+    category: "cocteles",
+    name: { es: "Old Fashioned de Ron Añejo con Melao", en: "Aged Rum Old Fashioned with Cane Molasses" },
+    active: 5, total: 5,
+    servings: 1,
+    ingredients: {
+      es: [
+        "2 onzas de ron añejo",
+        "1 cucharadita de melao de caña",
+        "1 cucharadita de agua tibia",
+        "3 gotas de amargo de angostura",
+        "1 tira de cáscara de china",
+        "Hielo (1 cubo grande)"
+      ],
+      en: [
+        "2 ounces aged rum",
+        "1 teaspoon cane molasses",
+        "1 teaspoon warm water",
+        "3 dashes Angostura bitters",
+        "1 strip orange peel",
+        "Ice (1 large cube)"
+      ]
+    },
+    steps: {
+      es: [
+        "En un vaso corto, disuelva el melao en el agua tibia.",
+        "Añada el amargo y el ron, y mezcle.",
+        "Ponga el cubo de hielo y mezcle 20 segundos para enfriar y aguar un poco.",
+        "Exprima la cáscara de china sobre el vaso para que suelte su aceite y pásela por el borde.",
+        "Échela dentro y sirva. El melao le da el sabor de la caña de las haciendas."
+      ],
+      en: [
+        "In a short glass, dissolve the molasses in the warm water.",
+        "Add the bitters and rum and stir.",
+        "Add the ice cube and stir 20 seconds to chill and dilute slightly.",
+        "Squeeze the orange peel over the glass to release its oil and rub it around the rim.",
+        "Drop it in and serve. The molasses gives it the flavor of the old sugar-cane estates."
+      ]
+    }
+  },
+  {
+    id: "ron-sour-acerola",
+    category: "cocteles",
+    name: { es: "Ron Sour de Acerola", en: "Acerola Rum Sour" },
+    active: 10, total: 10,
+    servings: 2,
+    ingredients: {
+      es: [
+        "3 onzas de ron dorado",
+        "½ taza de jugo de acerola colado",
+        "2 cucharadas de jugo de limón",
+        "3 cucharadas de sirope simple",
+        "1 clara de huevo pasteurizada",
+        "Hielo"
+      ],
+      en: [
+        "3 ounces gold rum",
+        "½ cup strained acerola juice",
+        "2 tablespoons lime juice",
+        "3 tablespoons simple syrup",
+        "1 pasteurized egg white",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "En una coctelera sin hielo, agite el ron, la acerola, el limón, el sirope y la clara 15 segundos para que haga espuma.",
+        "Añada hielo y agite 15 segundos más.",
+        "Cuele en dos copas.",
+        "Deje reposar unos segundos para que la espuma suba.",
+        "Sirva enseguida. La acerola le da un color rosado y mucha vitamina C. Puede omitir la clara; queda sin espuma."
+      ],
+      en: [
+        "In a shaker without ice, shake the rum, acerola, lime juice, syrup and egg white 15 seconds to foam.",
+        "Add ice and shake 15 more seconds.",
+        "Strain into two glasses.",
+        "Let sit a few seconds so the foam rises.",
+        "Serve right away. The acerola gives it a pink color and lots of vitamin C. You can skip the egg white; it'll have no foam."
+      ]
+    }
   }
 );
