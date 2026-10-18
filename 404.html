@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada — Recetarios de Aquí</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#FBF6EE">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+  <link rel="stylesheet" href="/css/receta.css">
+  <style>
+    .search { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 24px; }
+    .search input { flex: 1 1 220px; min-height: 48px; padding: 0 14px; font: inherit; color: var(--ink); background: var(--ivory); border: 1.5px solid var(--line); border-radius: 999px; }
+    .search button { min-height: 48px; padding: 0 22px; font: inherit; font-weight: 700; color: #fff; background: var(--achiote); border: 0; border-radius: 999px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <!-- Vercel la sirve para cualquier dirección que no existe (recetariodeaqui.com/L, enlaces viejos o con errores). -->
+  <header class="top"><a class="brand" href="/">Recetarios de Aquí <span>Cocina Boricua</span></a></header>
+  <main class="wrap">
+    <h1>No encontramos esa página</h1>
+    <p>Puede que el enlace tenga un error o que la receta haya cambiado de nombre. Búsquela aquí:</p>
+    <form class="search" action="/" method="get" role="search">
+      <label class="sr-only" for="q" style="position:absolute;left:-9999px">Buscar recetas</label>
+      <input id="q" name="q" type="search" placeholder="Plato o ingrediente: pernil, flan, arroz con gandules…" autocomplete="off" enterkeyhint="search">
+      <button type="submit">Buscar</button>
+    </form>
+    <p><a class="open" href="/">Ver todas las recetas</a></p>
+    <p lang="en" class="note">Page not found. Search above or <a href="/">see all recipes</a>.</p>
+  </main>
+  <script>
+    // Si la dirección parece una receta vieja (/receta/<id> o /#/receta/<id>), se sugiere la búsqueda con su nombre.
+    (function () {
+      var m = location.pathname.match(/\/receta\/([^/]+)/);
+      if (m) document.getElementById("q").value = decodeURIComponent(m[1]).replace(/-/g, " ");
+    })();
+  </script>
+</body>
+</html>

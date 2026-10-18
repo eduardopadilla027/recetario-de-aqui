@@ -16,15 +16,14 @@ const BRAND = "Recetarios de Aquí";
 const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla de entrada (auth.js)
 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
-// Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
-const APP_VERSION = "4.29.1";
+// Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
+// versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
+const APP_VERSION = "4.30.0";
 const APP_REVISED = "2026-10-18";
-/* Lo que se muestra al público: "Más de 1,000 recetas", no el total exacto (que cambia con cada
-   tanda). El total exacto sólo sale en #/admin (auth.js). Baja al millar: 1,054 → "1,000". */
+/* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
+   Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
 function publicRecipeCount() {
-  const n = recipes.length;
-  const step = n > 1000 ? 1000 : 100;
-  return (Math.floor((n - 1) / step) * step).toLocaleString(currentLang === "es" ? "es-PR" : "en-US");
+  return recipes.length.toLocaleString(currentLang === "es" ? "es-PR" : "en-US");
 }
 const revisedOn = (locale) => new Date(APP_REVISED + "T12:00:00").toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
 
@@ -32,7 +31,7 @@ const translations = {
   es: {
     siteTitle: BRAND,
     subtitle: "Recetario de Cocina Puertorriqueña",
-    author: `Versión ${APP_VERSION} · Revisada el ${revisedOn("es-PR")}`,
+    author: "Recetas boricuas paso a paso, en español e inglés. Gratis y sin registrarse.",
     heroTitle: ["El Sabor de la Cocina", "Puertorriqueña"], // [texto, palabra destacada]
     searchPlaceholder: "Plato, ingrediente o idea: pollo y arroz, postre sin huevo, navidad…",
     searchLabel: "Buscar recetas por nombre, ingredientes o una idea (por ejemplo: postre sin huevo)",
@@ -55,7 +54,7 @@ const translations = {
     navRecipes: "Recetas",
     navFavorites: "Favoritas",
     navPlans: "Planes",
-    navMine: "Mi recetario", navShop: "Compras", navTerms: "Términos y condiciones", bnHome: "Inicio", bnMine: "Recetario",
+    navMine: "Mi recetario", navShop: "Compras", navTerms: "Términos y condiciones", navPrivacy: "Privacidad y mis datos", navGlossary: "Glosario", navAllRecipes: "Todas las recetas", bnHome: "Inicio", bnMine: "Recetario",
     cookMode: "Modo cocina", levelFact: "Dificultad", listenRecipe: "Escuchar receta",
     navReviews: "Opiniones",
     contactLabel: "Contacto:",
@@ -65,7 +64,7 @@ const translations = {
     categoriesSub: "Elige una categoría para ver sus recetas. Vuelve a pulsarla para cerrarla.",
     showing: "Mostrando",
     quickTitle: "Listas en 30 minutos o menos",
-    quickSub: "Según el tiempo indicado en cada receta.",
+    quickSub: "Contando las esperas: nevera, adobo, reposo…",
     quickAll: "Ver todas",
     quickShort: "Recetas rápidas",
     results: "Resultados",
@@ -76,7 +75,7 @@ const translations = {
     countFound: (n) => (n === 1 ? "1 receta encontrada" : `${n} recetas encontradas`),
     moreResults: (n) => `Ver más resultados (${n})`,
     understood: { looking: "Busco", without: "Sin", ideas: "Ideas", corrected: "Corregí", partial: "Ninguna receta tiene todo: estas son las más parecidas.", order: "Ordenadas por relevancia." },
-    statsHero: (n, c) => `<strong>Más de ${n}</strong> recetas tradicionales · <strong>${c}</strong> categorías`,
+    statsHero: (n, c) => `<strong>${n}</strong> recetas tradicionales · <strong>${c}</strong> categorías`,
     emptyTitle: "No encontramos recetas",
     emptyText: "Prueba con otra palabra o ingrediente, o quita algún filtro.",
     emptyFavTitle: "Aún no tienes favoritas",
@@ -101,8 +100,8 @@ const translations = {
     kcalFact: "Calorías / porción",
     nutriTitle: "Información nutricional",
     nutriPer: (n) => `Estimado por porción · receta para ${n} ${n === 1 ? "porción" : "porciones"}`,
-    nutriKcal: "calorías por porción",
-    nutriTotal: (k) => `Receta completa: ≈ ${k} kcal`,
+    nutriKcal: "calorías por porción (aproximado)",
+    nutriTotal: (k) => `Receta completa: ≈ ${k} kcal (aproximado)`,
     nutriMacros: "De dónde vienen las calorías",
     nutrient: "Nutriente",
     perServing: "Por porción",
@@ -117,6 +116,9 @@ const translations = {
     nProtein: "Proteína",
     nutriCoverage: (a, b) => `Calculado con ${a} de ${b} ingredientes con cantidad.`,
     nutriMissing: "No se pudieron incluir:",
+    nutriPartial: "Contados sólo en parte:",
+    nutriNoQty: "Sin cantidad u opcionales, no se suman:",
+    nutriApprox: "aproximado",
     nutriFrying: "Incluye unos 7 g de aceite absorbido al freír por porción.",
     nutriNote: "Valores aproximados, calculados a partir de los ingredientes con datos de referencia por 100 g (USDA). Varían según las marcas, el tamaño de los ingredientes y la preparación. No se suman los ingredientes sin cantidad (\"sal al gusto\") ni los opcionales.",
     nutriDv: "* % del valor diario según una dieta de 2,000 calorías.",
@@ -153,7 +155,7 @@ const translations = {
   en: {
     siteTitle: BRAND,
     subtitle: "Puerto Rican Cookbook",
-    author: `Version ${APP_VERSION} · Revised ${revisedOn("en-US")}`,
+    author: "Puerto Rican recipes step by step, in Spanish and English. Free, no sign-up needed.",
     heroTitle: ["The Flavor of", "Puerto Rican Cooking"],
     searchPlaceholder: "Dish, ingredient or idea: chicken and rice, dessert without eggs, christmas…",
     searchLabel: "Search recipes by name, ingredients or an idea (for example: dessert without eggs)",
@@ -176,7 +178,7 @@ const translations = {
     navRecipes: "Recipes",
     navFavorites: "Favorites",
     navPlans: "Meal plans",
-    navMine: "My cookbook", navShop: "Shopping", navTerms: "Terms and conditions", bnHome: "Home", bnMine: "Cookbook",
+    navMine: "My cookbook", navShop: "Shopping", navTerms: "Terms and conditions", navPrivacy: "Privacy and my data", navGlossary: "Glossary", navAllRecipes: "All recipes", bnHome: "Home", bnMine: "Cookbook",
     cookMode: "Cook mode", levelFact: "Difficulty", listenRecipe: "Listen to recipe",
     navReviews: "Reviews",
     contactLabel: "Contact:",
@@ -186,7 +188,7 @@ const translations = {
     categoriesSub: "Pick a category to see its recipes. Tap it again to close it.",
     showing: "Showing",
     quickTitle: "Ready in 30 minutes or less",
-    quickSub: "Based on the time listed in each recipe.",
+    quickSub: "Counting the waits: chilling, marinating, resting…",
     quickAll: "See all",
     quickShort: "Quick recipes",
     results: "Results",
@@ -197,7 +199,7 @@ const translations = {
     countFound: (n) => (n === 1 ? "1 recipe found" : `${n} recipes found`),
     moreResults: (n) => `Show more results (${n})`,
     understood: { looking: "Looking for", without: "Without", ideas: "Ideas", corrected: "Corrected", partial: "No recipe has everything: these are the closest.", order: "Sorted by relevance." },
-    statsHero: (n, c) => `<strong>Over ${n}</strong> traditional recipes · <strong>${c}</strong> categories`,
+    statsHero: (n, c) => `<strong>${n}</strong> traditional recipes · <strong>${c}</strong> categories`,
     emptyTitle: "No recipes found",
     emptyText: "Try another word or ingredient, or remove a filter.",
     emptyFavTitle: "No favorites yet",
@@ -222,8 +224,8 @@ const translations = {
     kcalFact: "Calories / serving",
     nutriTitle: "Nutrition facts",
     nutriPer: (n) => `Estimated per serving · recipe makes ${n} ${n === 1 ? "serving" : "servings"}`,
-    nutriKcal: "calories per serving",
-    nutriTotal: (k) => `Whole recipe: ≈ ${k} kcal`,
+    nutriKcal: "calories per serving (approximate)",
+    nutriTotal: (k) => `Whole recipe: ≈ ${k} kcal (approximate)`,
     nutriMacros: "Where the calories come from",
     nutrient: "Nutrient",
     perServing: "Per serving",
@@ -238,6 +240,9 @@ const translations = {
     nProtein: "Protein",
     nutriCoverage: (a, b) => `Calculated from ${a} of ${b} measured ingredients.`,
     nutriMissing: "Could not be included:",
+    nutriPartial: "Only partly counted:",
+    nutriNoQty: "No amount given or optional, not counted:",
+    nutriApprox: "approximate",
     nutriFrying: "Includes about 7 g of oil absorbed during frying per serving.",
     nutriNote: "Approximate values, calculated from the ingredients using reference data per 100 g (USDA). They vary with brands, ingredient sizes, and preparation. Ingredients without a quantity (\"salt to taste\") and optional ones are not counted.",
     nutriDv: "* Percent Daily Value based on a 2,000-calorie diet.",
@@ -310,7 +315,7 @@ const CHURRASCO = "svg:ic-churrasco";
 const dishIcons = [
   ["sopa", "🍲"], ["asopao", "🍲"], ["sancocho", "🍲"], ["caldo", "🍲"], ["sopon", "🍲"], ["mondongo", "🍲"], ["crema de calabaza", "🍲"], ["crema de pana", "🍲"], ["crema de yautia", "🍲"],
   ["ensalada", "🥗"], ["serenata", "🥗"], ["ensalada de frutas", "🍇"],
-  ["salsa", "🍅"], ["mojito isleno", "🍅"], ["gazpacho", "🍅"], ["gazpacho de bacalao", "🐟"], ["gazpacho de mango", "🥭"], ["salsa de mango", "🥭"],
+  ["salsa", "🍅"], ["mojo isleno", "🍅"], ["gazpacho", "🍅"], ["gazpacho de bacalao", "🐟"], ["gazpacho de mango", "🥭"], ["salsa de mango", "🥭"],
   ["ternera", "🥩"], ["chicharrones de pollo", "🍗"], ["rellenos de papa", "🥔"], ["surullito", "🌽"],
   ["guineito", VERDE], ["guineitos ninos", "🍌"], ["guingambo", "🥒"], ["grosella", "🍒"], ["pasta de guayaba", "🫙"], ["cascos de guayaba", "🫙"],
   ["maicena", "🥣"], ["cremita", "🥣"], ["guarapo", "🍵"], ["avena fria", "🥤"],
@@ -376,7 +381,7 @@ const meatIcons = {
     [/^pierna de cordero/, "svg:ic-corte-pierna-cordero"],
     [/^chuletitas de cordero/, "svg:ic-corte-chuletas-cordero"],
     [/^lomo de cerdo al horno/, "svg:ic-pernil"], // tanda 50
-    [/chuleta|churrasco|albondiga|longaniza|salchicha|morcilla|conejo|pincho|mofongo/, null],
+    [/chuleta|churrasco|albondiga|longaniza|salchicha|morcilla|conejo|pincho|mofongo|^pasteles/, null],
     [/jamonilla/, "svg:ic-jamonilla"],
     [/napolitana/, "svg:ic-parmesana"],
     [/milanesa/, "svg:ic-empanado"],
@@ -404,7 +409,7 @@ const meatIcons = {
     [/^pechuga de pavo/, "svg:ic-corte-pechuga-pavo"],
     [/^muslos de pavo/, "svg:ic-corte-muslos-pavo"],
     [/^higaditos/, "svg:ic-corte-higaditos"],
-    [/pincho|pastelon|albondiga/, null],
+    [/pincho|pastelon|albondiga|^pasteles/, null],
     [/^muslos de pollo al carbon/, "svg:ic-parrilla-muslos"],
     [/parmesana/, "svg:ic-parmesana"],
     [/cordon bleu/, "svg:ic-cordon-bleu"],
@@ -1069,6 +1074,22 @@ const categoryOrder = [
   "salsas", "bebidas", "jugos", "cocteles"
 ];
 
+/* Recetas que cambiaron de id (v4.30): los enlaces, favoritas, colecciones y planes viejos siguen
+ * funcionando. Las reseñas se quedan con el id viejo (reviewTargetId) para no perderlas. */
+const RECIPE_ALIASES = { "mojito-isleno": "mojo-isleno", "coquito-nutella": "coquito-chocolate", "pollo-fricasé": "pollo-fricase", "bilí": "bili" };
+const canonicalId = (id) => RECIPE_ALIASES[id] || id;
+const reviewTargetId = (id) => Object.keys(RECIPE_ALIASES).find((k) => RECIPE_ALIASES[k] === id) || id;
+
+/* Una receta incompleta (sin ingredientes o pasos en algún idioma, o con líneas que no casan) no se
+ * publica: se quita al cargar y se avisa en la consola. tools/check-recipes.js lo revisa antes de publicar. */
+function recipeComplete(r) {
+  const two = (o) => o && Array.isArray(o.es) && Array.isArray(o.en) && o.es.length > 0 && o.es.length === o.en.length && o.es.every(Boolean) && o.en.every(Boolean);
+  return Boolean(r && r.id && r.name && r.name.es && r.name.en && Number.isFinite(r.active) && Number.isFinite(r.total) && two(r.ingredients) && two(r.steps));
+}
+for (let i = recipes.length - 1; i >= 0; i--) {
+  if (!recipeComplete(recipes[i])) { console.warn("Receta incompleta, escondida:", recipes[i] && recipes[i].id); recipes.splice(i, 1); }
+}
+
 const QUICK_MAX_MIN = 30;
 const STORE = { lang: "rcb.lang", favs: "rcb.favorites", units: "rcb.units" };
 /* Medidas: "home" (tazas, cucharadas, °F, como están escritas) o "metric" (además ≈ g / ml y °C). */
@@ -1077,10 +1098,13 @@ const UNITS_T = {
   es: { label: "Medidas", home: "Caseras", metric: "Gramos y °C", note: "Gramos y mililitros aproximados, calculados con los pesos de cada ingrediente." },
   en: { label: "Measures", home: "Cups & °F", metric: "Grams & °C", note: "Approximate grams and milliliters, from each ingredient's weights." }
 };
-/* "350°F" → "350°F (175°C)" en modo métrico. */
+/* Las temperaturas se escriben en las recetas SÓLO en °F (v4.30: se quitó el único "(175°C)" que había); la
+   app las convierte: "350°F" → "350°F (175°C)" y "450–500°F" → "450–500°F (230–260°C)" en modo métrico. */
+const toC = (f) => Math.round(((+f - 32) * 5) / 9 / 5) * 5;
 function withCelsius(text) {
   if (unitsMode !== "metric") return esc(text);
-  return esc(text).replace(/(\d{2,3})\s*°\s*F\b(?!\s*\()/g, (m, f) => `${m} <span class="metric">(${Math.round(((+f - 32) * 5) / 9 / 5) * 5}°C)</span>`);
+  return esc(text).replace(/(\d{2,3})(?:\s*([-–])\s*(\d{2,3}))?\s*°\s*F\b(?!\s*\()/g,
+    (m, a, dash, b) => `${m} <span class="metric">(${b ? `${toC(a)}${dash}${toC(b)}` : toC(a)}°C)</span>`);
 }
 function metricHTML(line, factor) {
   if (unitsMode !== "metric" || typeof lineGrams !== "function") return "";
@@ -1098,7 +1122,7 @@ let searchQuery = "";
 let selectedNavCategory = null; // una categoría elegida: sólo se ve ésa (clic de nuevo = todas)
 let onlyFavorites = false;
 let onlyQuick = false;
-let favorites = new Set(parseJSON(readStore(STORE.favs), []));
+let favorites = new Set(parseJSON(readStore(STORE.favs), []).map(canonicalId));
 let current = null;        // receta en detalle
 let currentServings = 0;
 let homeScrollY = 0;
@@ -1121,26 +1145,37 @@ const reduceMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)")
 
 /* ------------------------------------------------------------ tiempo ---- */
 
-/** Minutos del tiempo indicado, o null si incluye esperas ("+ reposo",
- *  "+ 2 semanas") y no puede contarse como receta rápida. */
-function parseMinutes(time) {
-  if (!time || time.includes("+")) return null;
-  let total = 0;
-  const h = time.match(/(\d+)(?:\s*-\s*(\d+))?\s*hrs?/i);
-  const m = time.match(/(\d+)\s*min/i);
-  if (h) total += Number(h[2] || h[1]) * 60;
-  if (m) total += Number(m[1]);
-  return h || m ? total : null;
-}
-const isQuick = (r) => { const m = parseMinutes(r.time); return m != null && m <= QUICK_MAX_MIN; };
+/* Cada receta guarda dos números en minutos (v4.30): `active` (preparar y cocinar) y `total` (con las
+ * esperas: nevera, adobo, reposo, remojo…), y `wait` dice qué espera es la mayor. "Rápidas" y los
+ * filtros de tiempo usan el TOTAL: un coquito con 4 horas de nevera ya no sale como "listo en 15 min". */
+const WAIT_T = {
+  es: { frio: "nevera", congelador: "congelador", enfriar: "enfriar", reposo: "reposo", adobo: "adobo", remojo: "remojo", desalar: "desalar", levado: "levado", secado: "secado" },
+  en: { frio: "chilling", congelador: "freezing", enfriar: "cooling", reposo: "resting", adobo: "marinating", remojo: "soaking", desalar: "desalting", levado: "rising", secado: "drying" }
+};
+const totalMinutes = (r) => r.total ?? r.active ?? null;
+const parseMinutes = (r) => totalMinutes(r); // nombre de antes: filtros, planes y dificultad lo usan con la receta
+const isQuick = (r) => { const m = totalMinutes(r); return m != null && m <= QUICK_MAX_MIN; };
 
-/** El tiempo se guarda en español; en inglés se traducen las pocas palabras. */
-function formatTime(time) {
-  if (currentLang !== "en") return time;
-  return time
-    .replace(/congelación/g, "freezing").replace(/reposo/g, "resting").replace(/remojo/g, "soaking")
-    .replace(/semanas/g, "weeks").replace(/semana/g, "week")
-    .replace(/días/g, "days").replace(/día/g, "day");
+/** Minutos → "45 min", "1 h 15 min", "2 días". */
+function fmtMinutes(min) {
+  const es = currentLang === "es";
+  if (min >= 2 * 1440) {
+    const d = Math.round(min / 1440);
+    if (d >= 14) { const w = Math.round(d / 7); return es ? `${w} semanas` : `${w} weeks`; }
+    return es ? `${d} días` : `${d} days`;
+  }
+  const h = Math.floor(min / 60), m = Math.round(min % 60);
+  return h ? `${h} h${m ? ` ${m} min` : ""}` : `${m} min`;
+}
+/** Tarjetas: el total, que es lo que hay que esperar para comer. */
+function formatTime(r) { return fmtMinutes(totalMinutes(r) || 0); }
+/** Detalle: "15 min de cocina · 4 h 15 min en total (nevera)". */
+function formatTimeLong(r) {
+  const es = currentLang === "es";
+  if (!r.total || r.total === r.active) return fmtMinutes(r.active);
+  const w = r.wait ? ` (${WAIT_T[currentLang][r.wait] || r.wait})` : "";
+  return es ? `${fmtMinutes(r.active)} de cocina · ${fmtMinutes(r.total)} en total${w}`
+            : `${fmtMinutes(r.active)} cooking · ${fmtMinutes(r.total)} total${w}`;
 }
 
 /* ------------------------------------------------------ porciones ---- */
@@ -1223,9 +1258,10 @@ function cardHTML(r, i = 0) {
       <span class="card-cat">${esc(tr.categories[r.category])}</span>
       <h3 class="card-title"><a class="card-link" href="#/receta/${encodeURIComponent(r.id)}" data-open="${esc(r.id)}">${esc(name)}</a></h3>
       <div class="card-meta">
-        <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span class="sr-only">${tr.time}:</span>${esc(formatTime(r.time))}</span>
+        <span><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span class="sr-only">${tr.time}:</span>${esc(formatTime(r))}</span>
         <span><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>${r.servings} ${r.servings === 1 ? tr.servingOne : tr.servings.toLowerCase()}</span>
       </div>
+      ${typeof haveCardHTML === "function" ? haveCardHTML(r) : ""}
     </div>
   </article>`;
 }
@@ -1268,6 +1304,7 @@ function matches(r) {
   if (onlyQuick && !isQuick(r)) return false;
   const s = currentSearch();
   if (s && !s.scores.has(r.id)) return false;
+  if (searchQuery && !s) return false; // sólo palabras vacías ("receta", "mañana"): nada, no todo el recetario
   if (typeof advOk === "function" && !advOk(r)) return false; // js/filters.js
   return true;
 }
@@ -1316,7 +1353,7 @@ function renderNavPills() {
 }
 
 function renderQuick() {
-  const quick = recipes.filter(isQuick).sort((a, b) => parseMinutes(a.time) - parseMinutes(b.time));
+  const quick = recipes.filter(isQuick).sort((a, b) => totalMinutes(a) - totalMinutes(b));
   $("quick-rail").innerHTML = quick.slice(0, 12).map((r, i) => cardHTML(r, i)).join("");
   $("rapidas").hidden = quick.length === 0;
 }
@@ -1469,20 +1506,33 @@ function switchLang(lang) {
   if (typeof renderCook === "function") renderCook();
   if (typeof renderSeasonal === "function") renderSeasonal();
   if (typeof renderTermsView === "function") renderTermsView();
+  if (typeof renderPrivacyView === "function") renderPrivacyView();
+  if (typeof renderGlossaryView === "function") renderGlossaryView();
   renderAuthTexts();
 }
 
 /* ------------------------------------------------------------ detalle ---- */
 
+/* Dirección y descripción de la vista (para quien comparte la pestaña y para buscadores que leen JavaScript):
+   en una receta, su página propia; en lo demás, la portada. */
+const HOME_DESC = document.querySelector('meta[name="description"]') ? document.querySelector('meta[name="description"]').content : "";
+function setPageMeta(path, desc) {
+  const can = document.querySelector('link[rel="canonical"]');
+  if (can) can.href = `https://recetariodeaqui.com${path}`;
+  const d = document.querySelector('meta[name="description"]');
+  if (d) d.content = desc || HOME_DESC;
+}
+
 function renderModal(recipe) {
   const tr = t();
   const name = recipe.name[currentLang];
   document.title = `${name} — ${BRAND}`;
+  setPageMeta(`/receta/${recipe.id}`, `${name} · ${tr.categories[recipe.category]} · ${formatTimeLong(recipe)} · ${recipe.servings} ${tr.servings.toLowerCase()}`);
   $("recipe-art").innerHTML = coverHTML(recipe.category, recipe);
   $("modal-badge").textContent = tr.categories[recipe.category];
   $("modal-badge").dataset.category = recipe.category;
   $("modal-title").textContent = name;
-  $("modal-time").textContent = formatTime(recipe.time);
+  $("modal-time").textContent = formatTimeLong(recipe);
   $("modal-servings").textContent = String(recipe.servings);
   $("modal-ing-count").textContent = String(recipe.ingredients[currentLang].length);
   $("modal-ingredients-title").textContent = tr.ingredients;
@@ -1490,6 +1540,7 @@ function renderModal(recipe) {
   $("modal-steps-list").innerHTML = recipe.steps[currentLang].map((s, i) => `<li>${withCelsius(s)}${typeof stepTimersHTML === "function" ? stepTimersHTML(s, i + 1) : ""}</li>`).join("");
   if (typeof recipeLevel === "function") $("modal-level").textContent = FT[currentLang].levelTag[recipeLevel(recipe)];
   renderPairings(recipe);
+  if (typeof renderGlossary === "function") renderGlossary(recipe); // js/glossary.js
   renderFavButton();
   renderIngredients();
   renderNutrition(recipe);
@@ -1600,7 +1651,10 @@ function renderNutrition(recipe) {
       ? `<a class="src-fdc" href="https://fdc.nal.usda.gov/food-details/${f.src.fdc}/nutrients" target="_blank" rel="noopener">FDC #${f.src.fdc}</a> <span class="src-desc">${esc(f.src.desc)}${f.src.ef < 1 ? ` · ${esc(ut.srcEdible(Math.round(f.src.ef * 100)))}` : ""}${f.src.prep ? ` · ${esc(f.src.prep[currentLang])}` : ""}</span>`
       : `<span class="src-local">${esc(ut.srcLocal)}</span>`).join("<br>")}</li>`;
   }).join("");
-  const missing = est.missing.map((i) => `<li>${esc(recipe.ingredients[currentLang][i])}</li>`).join("");
+  const lineLi = (i) => `<li>${esc(recipe.ingredients[currentLang][i])}</li>`;
+  const missing = est.missing.map(lineLi).join("");
+  const partial = (est.partial || []).map(lineLi).join("");
+  const noQty = (est.noQty || []).map(lineLi).join("");
 
   panel.innerHTML = `
     <div class="nutri-head">
@@ -1631,6 +1685,8 @@ function renderNutrition(recipe) {
     <div class="nutri-notes">
       <p>${tr.nutriCoverage(est.counted, est.measurable)}${est.frying ? ` ${tr.nutriFrying}` : ""}</p>
       ${missing ? `<p>${tr.nutriMissing}</p><ul class="nutri-missing">${missing}</ul>` : ""}
+      ${partial ? `<p>${tr.nutriPartial}</p><ul class="nutri-missing">${partial}</ul>` : ""}
+      ${noQty ? `<p>${tr.nutriNoQty}</p><ul class="nutri-missing">${noQty}</ul>` : ""}
       <p>${tr.nutriNote}</p>
       <p>${tr.nutriDv}</p>
       ${est.drained ? `<p>${esc(ut.drained)}</p>` : ""}
@@ -1749,6 +1805,7 @@ function jumpTo(y) {
 }
 
 function showRecipe(id) {
+  if (RECIPE_ALIASES[id]) { history.replaceState(null, "", `#/receta/${RECIPE_ALIASES[id]}`); id = RECIPE_ALIASES[id]; }
   const recipe = recipes.find((r) => r.id === id);
   if (!recipe) {
     toast(t().notFound);
@@ -1779,6 +1836,7 @@ function showHome(anchor) {
   cameFromHome = false;
   current = null;
   document.title = `${BRAND} — ${t().subtitle}`;
+  setPageMeta("/", "");
   $("view-recipe").hidden = true;
   $("view-plans").hidden = true;
   $("view-admin").hidden = true;
@@ -1816,7 +1874,7 @@ function goBack() {
 function route() {
   const hash = decodeURIComponent(location.hash || "");
   // Las vistas de js/kitchen.js se esconden aquí; las demás las esconde cada show*().
-  for (const id of ["view-mine", "view-shop", "view-terms"]) { const el = $(id); if (el) el.hidden = true; }
+  for (const id of ["view-mine", "view-shop", "view-terms", "view-privacy", "view-glossary"]) { const el = $(id); if (el) el.hidden = true; }
   if (typeof setBottomNav === "function") setBottomNav(hash);
   const m = hash.match(/^#\/receta\/(.+)$/);
   if (m) { showRecipe(m[1]); return; }
@@ -1825,6 +1883,8 @@ function route() {
   if (hash === "#/mi-recetario") { showMine(); return; }  // js/kitchen.js
   if (hash === "#/compras") { showShop(); return; }       // js/kitchen.js
   if (hash === "#/terminos") { showTerms(); return; }     // js/consent-ui.js
+  if (hash === "#/privacidad") { showPrivacy(); return; } // js/consent-ui.js
+  if (hash === "#/glosario") { showGlossary(); return; }  // js/glossary.js
   const anchor = hash.startsWith("#") && !hash.startsWith("#/") ? hash.slice(1) : null;
   showHome(anchor);
 }
@@ -1835,6 +1895,7 @@ function toggleFavorite(id, sourceBtn) {
   const added = !favorites.has(id);
   if (added) favorites.add(id); else favorites.delete(id);
   writeStore(STORE.favs, JSON.stringify([...favorites]));
+  if (typeof kitchenFavoritesChanged === "function") kitchenFavoritesChanged(); // con la sesión abierta, también en la cuenta (js/kitchen.js)
   // Actualizar sólo los botones afectados (sin re-render que mueva el scroll).
   document.querySelectorAll(`[data-fav="${CSS.escape(id)}"]`).forEach((b) => {
     const r = recipes.find((x) => x.id === id);
@@ -1862,7 +1923,9 @@ function toast(message, ok = false) {
 
 async function shareRecipe() {
   if (!current) return;
-  const url = location.href;
+  // La página propia de la receta (receta/<id>.html, tools/prerender.js): la vista previa en WhatsApp o
+  // Facebook sale con el nombre del plato, y desde ella se abre la app.
+  const url = `${location.origin}/receta/${encodeURIComponent(current.id)}`;
   const title = `${current.name[currentLang]} — ${BRAND}`;
   try {
     if (navigator.share) { await navigator.share({ title, url }); return; }
@@ -2048,6 +2111,19 @@ function setupEventListeners() {
   window.addEventListener("hashchange", route);
 }
 
+/* Enlaces de afuera (página 404, páginas de recetas, buscadores): ?q=<búsqueda> y ?cat=<categoría>.
+   /receta/<id> sin su página (p. ej. sin internet, desde sw.js) abre la receta en la app. */
+function applyUrlParams() {
+  const qs = new URLSearchParams(location.search);
+  const q = (qs.get("q") || "").trim().slice(0, 80);
+  const cat = qs.get("cat");
+  if (cat && categoryOrder.includes(cat)) selectedNavCategory = cat;
+  if (q) { searchQuery = q; $("search-input").value = q; $("search-clear").hidden = false; selectedNavCategory = null; }
+  const m = location.pathname.match(/^\/receta\/([^/]+?)(?:\.html)?$/);
+  if (m && !location.hash) history.replaceState(null, "", `/#/receta/${m[1]}`);
+  if (q || cat) { renderNavPills(); renderCategories(); if (!location.hash) history.replaceState(null, "", `${location.pathname}${location.search}#recetas`); }
+}
+
 function init() {
   // El scroll lo gestiona la app (volver a los resultados, abrir el detalle arriba).
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
@@ -2055,6 +2131,7 @@ function init() {
   renderHome();
   setupEventListeners();
   setupPlans();
+  applyUrlParams();
   route();
 }
 

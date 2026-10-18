@@ -6,7 +6,7 @@ const recipes = [
     id: "sopa-pollo",
     category: "sopas",
     name: { es: "Sopa de Pollo con Fideos", en: "Chicken Noodle Soup" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 6,
     ingredients: {
       es: [
@@ -53,7 +53,7 @@ const recipes = [
     id: "sancocho",
     category: "sopas",
     name: { es: "Sancocho Puertorriqueño", en: "Puerto Rican Sancocho" },
-    time: "1 hr 30 min",
+    active: 90, total: 90,
     servings: 8,
     ingredients: {
       es: [
@@ -65,7 +65,7 @@ const recipes = [
         "2 papas grandes, peladas y cortadas",
         "1 calabaza pequeña, pelada y cortada",
         "1 sobre de sazón",
-        "Sofrito al gusto",
+        "3 cucharadas de sofrito, o al gusto",
         "Sal y pimienta al gusto"
       ],
       en: [
@@ -77,7 +77,7 @@ const recipes = [
         "2 large potatoes, peeled and cut",
         "1 small calabaza (pumpkin), peeled and cut",
         "1 packet sazón",
-        "Sofrito to taste",
+        "3 tablespoons sofrito, or to taste",
         "Salt and pepper to taste"
       ]
     },
@@ -102,7 +102,7 @@ const recipes = [
     id: "sopa-platano",
     category: "sopas",
     name: { es: "Sopa de Plátano", en: "Plantain Soup" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 6,
     ingredients: {
       es: [
@@ -147,7 +147,7 @@ const recipes = [
     id: "caldo-santo",
     category: "sopas",
     name: { es: "Caldo Santo", en: "Holy Broth (Lenten Fish Soup)" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 6,
     ingredients: {
       es: [
@@ -196,7 +196,7 @@ const recipes = [
     id: "sopa-habichuelas-negras",
     category: "sopas",
     name: { es: "Sopa de Habichuelas Negras", en: "Black Bean Soup" },
-    time: "1 hr",
+    active: 60, total: 540, wait: "remojo",
     servings: 6,
     ingredients: {
       es: [
@@ -253,7 +253,7 @@ const recipes = [
     id: "arroz-habichuelas",
     category: "arroces",
     name: { es: "Arroz Blanco con Habichuelas Rosadas", en: "White Rice with Pink Beans" },
-    time: "50 min",
+    active: 50, total: 50,
     servings: 6,
     ingredients: {
       es: [
@@ -266,7 +266,7 @@ const recipes = [
         "1 sobre de sazón",
         "2 cucharadas de salsa de tomate",
         "1 papa pequeña, cortada en cubos",
-        "Aceitunas rellenas al gusto"
+        "¼ taza de aceitunas rellenas, o al gusto"
       ],
       en: [
         "3 cups medium grain rice",
@@ -278,7 +278,7 @@ const recipes = [
         "1 packet sazón",
         "2 tablespoons tomato sauce",
         "1 small potato, cubed",
-        "Stuffed olives to taste"
+        "¼ cup stuffed olives, or to taste"
       ]
     },
     steps: {
@@ -302,7 +302,7 @@ const recipes = [
     id: "arroz-gandules",
     category: "arroces",
     name: { es: "Arroz con Gandules", en: "Rice with Pigeon Peas" },
-    time: "55 min",
+    active: 55, total: 55,
     servings: 8,
     ingredients: {
       es: [
@@ -351,7 +351,7 @@ const recipes = [
     id: "asopao-pollo",
     category: "arroces",
     name: { es: "Asopao de Pollo", en: "Chicken Asopao (Rice Stew)" },
-    time: "1 hr",
+    active: 60, total: 75, wait: "adobo",
     servings: 6,
     ingredients: {
       es: [
@@ -404,7 +404,7 @@ const recipes = [
     id: "arroz-pollo",
     category: "arroces",
     name: { es: "Arroz con Pollo", en: "Chicken and Rice" },
-    time: "1 hr",
+    active: 60, total: 90, wait: "adobo",
     servings: 6,
     ingredients: {
       es: [
@@ -457,7 +457,7 @@ const recipes = [
     id: "arroz-salchichas",
     category: "arroces",
     name: { es: "Arroz con Salchichas", en: "Rice with Vienna Sausages" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 4,
     ingredients: {
       es: [
@@ -504,7 +504,7 @@ const recipes = [
     id: "arroz-mamposteao",
     category: "arroces",
     name: { es: "Arroz Mamposteao", en: "Mashed Rice and Beans" },
-    time: "25 min",
+    active: 25, total: 25,
     servings: 4,
     ingredients: {
       es: [
@@ -551,7 +551,7 @@ const recipes = [
     id: "carne-guisada",
     category: "carnes",
     name: { es: "Carne Guisada Criolla", en: "Creole Beef Stew" },
-    time: "1 hr 15 min",
+    active: 75, total: 75,
     servings: 6,
     ingredients: {
       es: [
@@ -600,7 +600,7 @@ const recipes = [
     id: "bistec-encebollado",
     category: "carnes",
     name: { es: "Bistec Encebollado", en: "Steak with Onions" },
-    time: "30 min",
+    active: 30, total: 45, wait: "adobo",
     servings: 4,
     ingredients: {
       es: [
@@ -641,7 +641,7 @@ const recipes = [
     id: "pernil",
     category: "carnes",
     name: { es: "Pernil Asado", en: "Roast Pork Shoulder" },
-    time: "5-6 hrs",
+    active: 360, total: 1100, wait: "frio",
     servings: 15,
     ingredients: {
       es: [
@@ -692,7 +692,7 @@ const recipes = [
     id: "chuletas-kan-kan",
     category: "carnes",
     name: { es: "Chuletas Kan Kan", en: "Kan Kan Pork Chops" },
-    time: "45 min",
+    active: 45, total: 105, wait: "adobo",
     servings: 4,
     ingredients: {
       es: [
@@ -735,7 +735,7 @@ const recipes = [
     id: "carne-frita",
     category: "carnes",
     name: { es: "Carne Frita con Cebolla", en: "Fried Pork with Onions" },
-    time: "1 hr",
+    active: 60, total: 120, wait: "adobo",
     servings: 6,
     ingredients: {
       es: [
@@ -781,10 +781,10 @@ const recipes = [
   // ── AVES ──
   // ══════════════════════════════════════
   {
-    id: "pollo-fricasé",
+    id: "pollo-fricase",
     category: "aves",
     name: { es: "Pollo en Fricasé", en: "Chicken Fricassee" },
-    time: "1 hr",
+    active: 60, total: 80, wait: "adobo",
     servings: 6,
     ingredients: {
       es: [
@@ -835,7 +835,7 @@ const recipes = [
     id: "pollo-asado",
     category: "aves",
     name: { es: "Pollo Asado al Horno", en: "Oven Roasted Chicken" },
-    time: "1 hr 30 min",
+    active: 90, total: 210, wait: "frio",
     servings: 6,
     ingredients: {
       es: [
@@ -863,7 +863,7 @@ const recipes = [
       es: [
         "Mezcle el ajo, aceite, vinagre, orégano, sazón, limón, sal y pimienta para hacer el adobo.",
         "Unte el pollo por dentro y por fuera con el adobo. Marine en la nevera por al menos 2 horas.",
-        "Precaliente el horno a 350°F (175°C).",
+        "Precaliente el horno a 350°F.",
         "Coloque el pollo en una bandeja de hornear. Cubra con papel de aluminio.",
         "Hornee por 1 hora tapado. Destape y hornee 30 minutos más hasta dorar.",
         "Deje reposar 10 minutos antes de cortar y servir."
@@ -871,7 +871,7 @@ const recipes = [
       en: [
         "Mix garlic, oil, vinegar, oregano, sazón, lime juice, salt, and pepper to make the adobo.",
         "Rub the chicken inside and out with the adobo. Marinate in the fridge for at least 2 hours.",
-        "Preheat oven to 350°F (175°C).",
+        "Preheat oven to 350°F.",
         "Place chicken in a baking pan. Cover with aluminum foil.",
         "Bake covered for 1 hour. Uncover and bake 30 more minutes until golden.",
         "Let rest 10 minutes before cutting and serving."
@@ -882,7 +882,7 @@ const recipes = [
     id: "pollo-guisado",
     category: "aves",
     name: { es: "Pollo Guisado", en: "Puerto Rican Stewed Chicken" },
-    time: "50 min",
+    active: 50, total: 80, wait: "adobo",
     servings: 6,
     ingredients: {
       es: [
@@ -894,7 +894,11 @@ const recipes = [
         "½ taza de aceitunas rellenas",
         "1 cucharada de alcaparras",
         "1 taza de agua o caldo",
-        "Adobo: ajo, vinagre, orégano, sal, pimienta"
+        "4 dientes de ajo, machacados (para el adobo)",
+        "1 cucharada de vinagre (para el adobo)",
+        "1 cucharadita de orégano seco (para el adobo)",
+        "1 cucharadita de sal (para el adobo)",
+        "½ cucharadita de pimienta (para el adobo)"
       ],
       en: [
         "3 lbs chicken, cut into pieces",
@@ -905,7 +909,11 @@ const recipes = [
         "½ cup stuffed olives",
         "1 tablespoon capers",
         "1 cup water or broth",
-        "Adobo: garlic, vinegar, oregano, salt, pepper"
+        "4 garlic cloves, crushed (for the adobo)",
+        "1 tablespoon vinegar (for the adobo)",
+        "1 teaspoon dried oregano (for the adobo)",
+        "1 teaspoon salt (for the adobo)",
+        "½ teaspoon pepper (for the adobo)"
       ]
     },
     steps: {
@@ -933,7 +941,7 @@ const recipes = [
     id: "bacalao-guisado",
     category: "pescados",
     name: { es: "Bacalao Guisado", en: "Stewed Codfish" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 6,
     ingredients: {
       es: [
@@ -982,7 +990,7 @@ const recipes = [
     id: "camarones-ajillo",
     category: "pescados",
     name: { es: "Camarones al Ajillo", en: "Garlic Shrimp" },
-    time: "20 min",
+    active: 20, total: 20,
     servings: 4,
     ingredients: {
       es: [
@@ -991,7 +999,7 @@ const recipes = [
         "¼ taza de aceite de oliva",
         "¼ taza de vino blanco",
         "1 cucharadita de pimentón",
-        "Perejil fresco picado",
+        "2 cucharadas de perejil fresco picado",
         "Jugo de 1 limón",
         "Sal y pimienta al gusto",
         "Hojuelas de chile rojo (opcional)"
@@ -1002,7 +1010,7 @@ const recipes = [
         "¼ cup olive oil",
         "¼ cup white wine",
         "1 teaspoon paprika",
-        "Fresh parsley, chopped",
+        "2 tablespoons fresh parsley, chopped",
         "Juice of 1 lime",
         "Salt and pepper to taste",
         "Red pepper flakes (optional)"
@@ -1029,7 +1037,7 @@ const recipes = [
     id: "chillo-frito",
     category: "pescados",
     name: { es: "Chillo Frito Entero", en: "Whole Fried Red Snapper" },
-    time: "30 min",
+    active: 30, total: 60, wait: "adobo",
     servings: 4,
     ingredients: {
       es: [
@@ -1039,7 +1047,7 @@ const recipes = [
         "1 cucharadita de sal",
         "½ cucharadita de pimienta",
         "Aceite vegetal para freír",
-        "Mojito isleño para servir"
+        "Mojo isleño para servir (receta en Salsas y Aderezos)"
       ],
       en: [
         "1 whole red snapper (2-3 lbs), cleaned and scaled",
@@ -1048,7 +1056,7 @@ const recipes = [
         "1 teaspoon salt",
         "½ teaspoon pepper",
         "Vegetable oil for frying",
-        "Mojito isleño sauce for serving"
+        "Mojo isleño for serving (recipe in Sauces & Dressings)"
       ]
     },
     steps: {
@@ -1058,7 +1066,7 @@ const recipes = [
         "Seque bien el pescado con papel toalla antes de freír.",
         "Caliente abundante aceite a 375°F en un sartén grande y hondo.",
         "Fría el chillo por 6-8 minutos por cada lado hasta que esté dorado y crujiente.",
-        "Escurra y sirva con mojito isleño, tostones y ensalada."
+        "Escurra y sirva con mojo isleño, tostones y ensalada."
       ],
       en: [
         "Make 3-4 diagonal cuts on each side of the fish.",
@@ -1066,15 +1074,15 @@ const recipes = [
         "Pat fish very dry with paper towels before frying.",
         "Heat plenty of oil to 375°F in a large deep skillet.",
         "Fry snapper 6-8 minutes per side until golden and crispy.",
-        "Drain and serve with mojito isleño sauce, tostones, and salad."
+        "Drain and serve with mojo isleño, tostones, and salad."
       ]
     }
   },
   {
     id: "ensalada-pulpo",
-    category: "pescados",
+    category: "ensaladas",
     name: { es: "Ensalada de Pulpo", en: "Octopus Salad" },
-    time: "1 hr 30 min",
+    active: 90, total: 150, wait: "frio",
     servings: 6,
     ingredients: {
       es: [
@@ -1085,8 +1093,8 @@ const recipes = [
         "¼ taza de aceite de oliva",
         "3 cucharadas de vinagre",
         "2 dientes de ajo, machacados",
-        "Aceitunas rellenas al gusto",
-        "Cilantro fresco picado",
+        "¼ taza de aceitunas rellenas, o al gusto",
+        "2 cucharadas de cilantro fresco picado",
         "Sal y pimienta al gusto"
       ],
       en: [
@@ -1097,8 +1105,8 @@ const recipes = [
         "¼ cup olive oil",
         "3 tablespoons vinegar",
         "2 garlic cloves, crushed",
-        "Stuffed olives to taste",
-        "Fresh cilantro, chopped",
+        "¼ cup stuffed olives, or to taste",
+        "2 tablespoons fresh cilantro, chopped",
         "Salt and pepper to taste"
       ]
     },
@@ -1129,7 +1137,7 @@ const recipes = [
     id: "ensalada-papa",
     category: "ensaladas",
     name: { es: "Ensalada de Papa", en: "Puerto Rican Potato Salad" },
-    time: "40 min",
+    active: 40, total: 100, wait: "frio",
     servings: 8,
     ingredients: {
       es: [
@@ -1176,7 +1184,7 @@ const recipes = [
     id: "ensalada-bacalao",
     category: "ensaladas",
     name: { es: "Serenata de Bacalao", en: "Codfish Salad (Serenata)" },
-    time: "45 min",
+    active: 45, total: 525, wait: "remojo",
     servings: 4,
     ingredients: {
       es: [
@@ -1186,7 +1194,7 @@ const recipes = [
         "1 cebolla grande, cortada en aros",
         "2 huevos duros, cortados en ruedas",
         "Aceite de oliva al gusto",
-        "Vinagre al gusto",
+        "2 cucharadas de vinagre, o al gusto",
         "Lechuga para decorar"
       ],
       en: [
@@ -1196,7 +1204,7 @@ const recipes = [
         "1 large onion, sliced into rings",
         "2 hard-boiled eggs, sliced",
         "Olive oil to taste",
-        "Vinegar to taste",
+        "2 tablespoons vinegar, or to taste",
         "Lettuce for garnish"
       ]
     },
@@ -1219,7 +1227,7 @@ const recipes = [
     id: "ensalada-coditos",
     category: "ensaladas",
     name: { es: "Ensalada de Coditos", en: "Macaroni Salad" },
-    time: "30 min",
+    active: 30, total: 150, wait: "frio",
     servings: 8,
     ingredients: {
       es: [
@@ -1270,7 +1278,7 @@ const recipes = [
     id: "tostones",
     category: "vegetales",
     name: { es: "Tostones de Plátano Verde", en: "Fried Green Plantain Tostones" },
-    time: "25 min",
+    active: 25, total: 25,
     servings: 4,
     ingredients: {
       es: [
@@ -1309,14 +1317,14 @@ const recipes = [
     id: "mofongo",
     category: "vegetales",
     name: { es: "Mofongo", en: "Mofongo (Mashed Plantain)" },
-    time: "30 min",
+    active: 30, total: 30,
     servings: 4,
     ingredients: {
       es: [
         "3 plátanos verdes",
         "6 dientes de ajo, machacados",
         "4 cucharadas de aceite de oliva",
-        "Chicharrones de cerdo, triturados",
+        "1 taza de chicharrones de cerdo, triturados",
         "Caldo de pollo para servir",
         "Aceite vegetal para freír",
         "Sal al gusto"
@@ -1325,7 +1333,7 @@ const recipes = [
         "3 green plantains",
         "6 garlic cloves, crushed",
         "4 tablespoons olive oil",
-        "Pork cracklings, crushed",
+        "1 cup pork cracklings (chicharrones), crushed",
         "Chicken broth for serving",
         "Vegetable oil for frying",
         "Salt to taste"
@@ -1352,7 +1360,7 @@ const recipes = [
     id: "amarillos",
     category: "vegetales",
     name: { es: "Amarillos Fritos (Maduros)", en: "Fried Sweet Plantains" },
-    time: "15 min",
+    active: 15, total: 15,
     servings: 4,
     ingredients: {
       es: [
@@ -1385,7 +1393,7 @@ const recipes = [
     id: "guineos-escabeche",
     category: "vegetales",
     name: { es: "Guineos en Escabeche", en: "Pickled Green Bananas" },
-    time: "1 hr + reposo",
+    active: 60, total: 300, wait: "reposo",
     servings: 8,
     ingredients: {
       es: [
@@ -1440,7 +1448,7 @@ const recipes = [
     id: "yuca-mojo",
     category: "vegetales",
     name: { es: "Yuca al Mojo", en: "Yuca with Garlic Sauce" },
-    time: "35 min",
+    active: 35, total: 35,
     servings: 6,
     ingredients: {
       es: [
@@ -1450,7 +1458,7 @@ const recipes = [
         "Jugo de 2 limones",
         "1 cebolla mediana, cortada en aros",
         "Sal al gusto",
-        "Perejil fresco picado"
+        "2 cucharadas de perejil fresco picado"
       ],
       en: [
         "2 lbs yuca (cassava), peeled and cut into chunks",
@@ -1459,7 +1467,7 @@ const recipes = [
         "Juice of 2 limes",
         "1 medium onion, sliced into rings",
         "Salt to taste",
-        "Fresh parsley, chopped"
+        "2 tablespoons fresh parsley, chopped"
       ]
     },
     steps: {
@@ -1483,9 +1491,9 @@ const recipes = [
   },
   {
     id: "pasteles",
-    category: "vegetales",
+    category: "carnes",
     name: { es: "Pasteles de Masa", en: "Pasteles (Plantain & Meat Bundles)" },
-    time: "4 hrs",
+    active: 240, total: 240,
     servings: 24,
     ingredients: {
       es: [
@@ -1574,7 +1582,7 @@ const recipes = [
     id: "flan",
     category: "postres",
     name: { es: "Flan de Queso", en: "Cream Cheese Flan" },
-    time: "1 hr 15 min",
+    active: 75, total: 315, wait: "frio",
     servings: 8,
     ingredients: {
       es: [
@@ -1617,7 +1625,7 @@ const recipes = [
     id: "tembleque",
     category: "postres",
     name: { es: "Tembleque", en: "Coconut Pudding (Tembleque)" },
-    time: "30 min",
+    active: 30, total: 270, wait: "frio",
     servings: 8,
     ingredients: {
       es: [
@@ -1660,7 +1668,7 @@ const recipes = [
     id: "arroz-dulce",
     category: "postres",
     name: { es: "Arroz con Dulce", en: "Sweet Rice Pudding" },
-    time: "1 hr 30 min",
+    active: 90, total: 120, wait: "remojo",
     servings: 10,
     ingredients: {
       es: [
@@ -1709,7 +1717,7 @@ const recipes = [
     id: "budin-pan",
     category: "postres",
     name: { es: "Budín de Pan", en: "Puerto Rican Bread Pudding" },
-    time: "1 hr 15 min",
+    active: 75, total: 105, wait: "remojo",
     servings: 10,
     ingredients: {
       es: [
@@ -1762,7 +1770,7 @@ const recipes = [
     id: "majarete",
     category: "postres",
     name: { es: "Majarete", en: "Corn Pudding (Majarete)" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 8,
     ingredients: {
       es: [
@@ -1807,7 +1815,7 @@ const recipes = [
     id: "cazuela",
     category: "postres",
     name: { es: "Cazuela", en: "Sweet Pumpkin & Coconut Casserole" },
-    time: "1 hr 30 min",
+    active: 90, total: 90,
     servings: 12,
     ingredients: {
       es: [
@@ -1860,7 +1868,7 @@ const recipes = [
     id: "bizcocho-ron",
     category: "postres",
     name: { es: "Bizcocho de Ron", en: "Puerto Rican Rum Cake" },
-    time: "1 hr 30 min",
+    active: 90, total: 90,
     servings: 12,
     ingredients: {
       es: [
@@ -1911,9 +1919,9 @@ const recipes = [
   // ══════════════════════════════════════
   {
     id: "coquito",
-    category: "bebidas",
+    category: "cocteles",
     name: { es: "Coquito", en: "Coconut Eggnog (Coquito)" },
-    time: "15 min",
+    active: 15, total: 255, wait: "frio",
     servings: 12,
     ingredients: {
       es: [
@@ -1958,7 +1966,7 @@ const recipes = [
     id: "limber-coco",
     category: "bebidas",
     name: { es: "Limber de Coco", en: "Coconut Ice Pop (Limber)" },
-    time: "10 min + congelación",
+    active: 10, total: 250, wait: "congelador",
     servings: 10,
     ingredients: {
       es: [
@@ -1995,7 +2003,7 @@ const recipes = [
     id: "champola",
     category: "bebidas",
     name: { es: "Champola de Guanábana", en: "Soursop Smoothie" },
-    time: "10 min",
+    active: 10, total: 10,
     servings: 4,
     ingredients: {
       es: [
@@ -2034,7 +2042,7 @@ const recipes = [
     id: "jugo-parcha",
     category: "jugos",
     name: { es: "Jugo de Parcha", en: "Passion Fruit Juice" },
-    time: "10 min",
+    active: 10, total: 10,
     servings: 6,
     ingredients: {
       es: [
@@ -2073,7 +2081,7 @@ const recipes = [
     id: "pina-colada",
     category: "cocteles",
     name: { es: "Piña Colada", en: "Piña Colada" },
-    time: "5 min",
+    active: 5, total: 5,
     servings: 2,
     ingredients: {
       es: [
@@ -2110,7 +2118,7 @@ const recipes = [
     id: "mojito-pr",
     category: "cocteles",
     name: { es: "Mojito Puertorriqueño", en: "Puerto Rican Mojito" },
-    time: "5 min",
+    active: 5, total: 5,
     servings: 1,
     ingredients: {
       es: [
@@ -2153,7 +2161,7 @@ const recipes = [
     id: "chichaito",
     category: "cocteles",
     name: { es: "Chichaíto", en: "Chichaíto (Anise Shot)" },
-    time: "2 min",
+    active: 2, total: 2,
     servings: 1,
     ingredients: {
       es: [
@@ -2184,7 +2192,7 @@ const recipes = [
     id: "ron-ponche",
     category: "cocteles",
     name: { es: "Ponche de Ron", en: "Rum Punch" },
-    time: "10 min",
+    active: 10, total: 10,
     servings: 8,
     ingredients: {
       es: [
@@ -2228,10 +2236,10 @@ const recipes = [
     }
   },
   {
-    id: "coquito-nutella",
+    id: "coquito-chocolate",
     category: "cocteles",
     name: { es: "Coquito de Chocolate", en: "Chocolate Coquito" },
-    time: "15 min",
+    active: 15, total: 255, wait: "frio",
     servings: 10,
     ingredients: {
       es: [
@@ -2242,7 +2250,7 @@ const recipes = [
         "½ taza de chocolate derretido",
         "1 cucharadita de vainilla",
         "½ cucharadita de canela",
-        "Ron blanco al gusto"
+        "1 taza de ron blanco, o al gusto"
       ],
       en: [
         "2 cans coconut milk (13.5 oz)",
@@ -2252,7 +2260,7 @@ const recipes = [
         "½ cup melted chocolate",
         "1 teaspoon vanilla",
         "½ teaspoon cinnamon",
-        "White rum to taste"
+        "1 cup white rum, or to taste"
       ]
     },
     steps: {
@@ -2276,7 +2284,7 @@ const recipes = [
     id: "sangria-tropical",
     category: "cocteles",
     name: { es: "Sangría Tropical", en: "Tropical Sangria" },
-    time: "15 min + reposo",
+    active: 15, total: 255, wait: "frio",
     servings: 8,
     ingredients: {
       es: [
@@ -2327,7 +2335,7 @@ const recipes = [
     id: "mallorca",
     category: "panes",
     name: { es: "Pan de Mallorca", en: "Mallorca Bread" },
-    time: "3 hrs",
+    active: 180, total: 180,
     servings: 12,
     ingredients: {
       es: [
@@ -2376,7 +2384,7 @@ const recipes = [
     id: "quesito",
     category: "panes",
     name: { es: "Quesitos", en: "Cream Cheese Pastries" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 10,
     ingredients: {
       es: [
@@ -2419,7 +2427,7 @@ const recipes = [
     id: "pan-sobao",
     category: "panes",
     name: { es: "Pan Sobao", en: "Puerto Rican Soft Bread" },
-    time: "3 hrs",
+    active: 180, total: 180,
     servings: 16,
     ingredients: {
       es: [
@@ -2472,7 +2480,7 @@ const recipes = [
     id: "sofrito",
     category: "salsas",
     name: { es: "Sofrito Puertorriqueño", en: "Puerto Rican Sofrito" },
-    time: "15 min",
+    active: 15, total: 15,
     servings: 20,
     ingredients: {
       es: [
@@ -2512,10 +2520,10 @@ const recipes = [
     }
   },
   {
-    id: "mojito-isleno",
+    id: "mojo-isleno",
     category: "salsas",
-    name: { es: "Mojito Isleño (Salsa Criolla)", en: "Island Mojito Sauce (Creole Sauce)" },
-    time: "15 min",
+    name: { es: "Mojo Isleño (Salsa Criolla)", en: "Mojo Isleño (Island-Style Creole Sauce)" },
+    active: 15, total: 15,
     servings: 6,
     ingredients: {
       es: [
@@ -2526,7 +2534,7 @@ const recipes = [
         "¼ taza de aceite de oliva",
         "2 cucharadas de vinagre",
         "1 cucharada de alcaparras",
-        "Aceitunas picadas al gusto",
+        "¼ taza de aceitunas picadas, o al gusto",
         "Sal y pimienta al gusto"
       ],
       en: [
@@ -2537,7 +2545,7 @@ const recipes = [
         "¼ cup olive oil",
         "2 tablespoons vinegar",
         "1 tablespoon capers",
-        "Chopped olives to taste",
+        "¼ cup chopped olives, or to taste",
         "Salt and pepper to taste"
       ]
     },
@@ -2562,7 +2570,7 @@ const recipes = [
     id: "pique",
     category: "salsas",
     name: { es: "Pique Puertorriqueño", en: "Puerto Rican Hot Sauce (Pique)" },
-    time: "15 min + reposo",
+    active: 15, total: 45, wait: "reposo",
     servings: 1,
     ingredients: {
       es: [
@@ -2573,7 +2581,7 @@ const recipes = [
         "½ cebolla, cortada en trozos",
         "10 granos de pimienta",
         "1 cucharadita de sal",
-        "Hojas de recao (culantro)"
+        "6 hojas de recao (culantro)"
       ],
       en: [
         "10-15 hot peppers (or small habaneros)",
@@ -2583,7 +2591,7 @@ const recipes = [
         "½ onion, cut into chunks",
         "10 peppercorns",
         "1 teaspoon salt",
-        "Recao (culantro) leaves"
+        "6 recao (culantro) leaves"
       ]
     },
     steps: {
@@ -2609,7 +2617,7 @@ const recipes = [
     id: "adobo-pr",
     category: "salsas",
     name: { es: "Adobo Puertorriqueño", en: "Puerto Rican Adobo Seasoning" },
-    time: "10 min",
+    active: 10, total: 10,
     servings: 20,
     ingredients: {
       es: [
@@ -2656,7 +2664,7 @@ const recipes = [
     id: "alcapurrias",
     category: "entremeses",
     name: { es: "Alcapurrias", en: "Alcapurrias (Stuffed Fritters)" },
-    time: "1 hr 30 min",
+    active: 90, total: 90,
     servings: 15,
     ingredients: {
       es: [
@@ -2665,7 +2673,9 @@ const recipes = [
         "1 sobre de sazón con achiote",
         "Aceite con achiote al gusto",
         "Relleno: 1 lb de carne molida",
-        "Sofrito, salsa de tomate, aceitunas",
+        "2 cucharadas de sofrito (para el relleno)",
+        "¼ taza de salsa de tomate (para el relleno)",
+        "2 cucharadas de aceitunas picadas (para el relleno)",
         "Aceite vegetal para freír",
         "Sal al gusto"
       ],
@@ -2675,7 +2685,9 @@ const recipes = [
         "1 packet sazón with annatto",
         "Annatto oil to taste",
         "Filling: 1 lb ground beef",
-        "Sofrito, tomato sauce, olives",
+        "2 tablespoons sofrito (for the filling)",
+        "¼ cup tomato sauce (for the filling)",
+        "2 tablespoons chopped olives (for the filling)",
         "Vegetable oil for frying",
         "Salt to taste"
       ]
@@ -2703,7 +2715,7 @@ const recipes = [
     id: "pastelillos",
     category: "entremeses",
     name: { es: "Pastelillos de Carne", en: "Meat Turnovers (Pastelillos)" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 15,
     ingredients: {
       es: [
@@ -2748,7 +2760,7 @@ const recipes = [
     id: "bacalaitos",
     category: "entremeses",
     name: { es: "Bacalaítos Fritos", en: "Codfish Fritters" },
-    time: "30 min",
+    active: 30, total: 30,
     servings: 12,
     ingredients: {
       es: [
@@ -2795,7 +2807,7 @@ const recipes = [
     id: "sorullitos",
     category: "entremeses",
     name: { es: "Sorullitos de Maíz", en: "Corn Sticks (Sorullitos)" },
-    time: "30 min",
+    active: 30, total: 30,
     servings: 15,
     ingredients: {
       es: [
@@ -2838,7 +2850,7 @@ const recipes = [
     id: "rellenos-papa",
     category: "entremeses",
     name: { es: "Rellenos de Papa", en: "Stuffed Potato Balls" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 12,
     ingredients: {
       es: [
@@ -2889,7 +2901,7 @@ const recipes = [
     id: "pionono",
     category: "entremeses",
     name: { es: "Piononos", en: "Sweet Plantain Meat Cups" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 8,
     ingredients: {
       es: [
@@ -2942,7 +2954,7 @@ const recipes = [
     id: "sopa-frijoles-blancos",
     category: "sopas",
     name: { es: "Sopa de Frijoles Blancos con Calabaza", en: "White Bean & Pumpkin Soup" },
-    time: "1 hr 15 min",
+    active: 75, total: 555, wait: "remojo",
     servings: 8,
     ingredients: {
       es: [
@@ -2991,7 +3003,7 @@ const recipes = [
     id: "sopa-pescado",
     category: "sopas",
     name: { es: "Sopa de Pescado", en: "Fish Soup" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 6,
     ingredients: {
       es: [
@@ -3002,7 +3014,7 @@ const recipes = [
         "2 plátanos verdes, cortados en ruedas",
         "2 cucharadas de aceite de oliva",
         "Jugo de 2 limones",
-        "Cilantro fresco",
+        "2 cucharadas de cilantro fresco",
         "Sal y pimienta al gusto"
       ],
       en: [
@@ -3013,7 +3025,7 @@ const recipes = [
         "2 green plantains, cut into rounds",
         "2 tablespoons olive oil",
         "Juice of 2 limes",
-        "Fresh cilantro",
+        "2 tablespoons fresh cilantro",
         "Salt and pepper to taste"
       ]
     },
@@ -3040,7 +3052,7 @@ const recipes = [
     id: "arroz-jueyes",
     category: "arroces",
     name: { es: "Arroz con Jueyes", en: "Rice with Land Crabs" },
-    time: "1 hr 15 min",
+    active: 75, total: 75,
     servings: 6,
     ingredients: {
       es: [
@@ -3091,7 +3103,7 @@ const recipes = [
     id: "arroz-habichuelas-coloradas",
     category: "arroces",
     name: { es: "Habichuelas Coloradas Guisadas", en: "Stewed Red Kidney Beans" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 6,
     ingredients: {
       es: [
@@ -3140,7 +3152,7 @@ const recipes = [
     id: "ternera-empanada",
     category: "carnes",
     name: { es: "Ternera Empanada", en: "Breaded Veal Cutlets" },
-    time: "30 min",
+    active: 30, total: 45, wait: "adobo",
     servings: 4,
     ingredients: {
       es: [
@@ -3185,7 +3197,7 @@ const recipes = [
     id: "lengua-rellena",
     category: "carnes",
     name: { es: "Lengua Rellena", en: "Stuffed Beef Tongue" },
-    time: "3 hrs",
+    active: 180, total: 180,
     servings: 8,
     ingredients: {
       es: [
@@ -3240,7 +3252,7 @@ const recipes = [
     id: "pavo-relleno",
     category: "aves",
     name: { es: "Pavo Relleno a la Puertorriqueña", en: "Puerto Rican Stuffed Turkey" },
-    time: "4-5 hrs",
+    active: 300, total: 1760, wait: "adobo",
     servings: 15,
     ingredients: {
       es: [
@@ -3301,7 +3313,7 @@ const recipes = [
     id: "pescado-escabeche",
     category: "pescados",
     name: { es: "Pescado en Escabeche", en: "Pickled Fish (Escabeche)" },
-    time: "1 hr + reposo",
+    active: 60, total: 420, wait: "frio",
     servings: 6,
     ingredients: {
       es: [
@@ -3352,7 +3364,7 @@ const recipes = [
     id: "salmorejo-jueyes",
     category: "pescados",
     name: { es: "Salmorejo de Jueyes", en: "Land Crab Stew (Salmorejo)" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 4,
     ingredients: {
       es: [
@@ -3401,7 +3413,7 @@ const recipes = [
     id: "ensalada-aguacate",
     category: "ensaladas",
     name: { es: "Ensalada de Aguacate", en: "Avocado Salad" },
-    time: "15 min",
+    active: 15, total: 15,
     servings: 4,
     ingredients: {
       es: [
@@ -3446,7 +3458,7 @@ const recipes = [
     id: "guineitos-tierno",
     category: "vegetales",
     name: { es: "Guineítos Niños Envueltos", en: "Finger Bananas in Sauce" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 4,
     ingredients: {
       es: [
@@ -3489,7 +3501,7 @@ const recipes = [
     id: "viandas-hervidas",
     category: "vegetales",
     name: { es: "Viandas Hervidas con Bacalao", en: "Boiled Root Vegetables with Codfish" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 6,
     ingredients: {
       es: [
@@ -3501,7 +3513,7 @@ const recipes = [
         "½ lb de bacalao seco, desalado",
         "Aceite de oliva al gusto",
         "1 cebolla, cortada en aros",
-        "Vinagre al gusto"
+        "2 cucharadas de vinagre, o al gusto"
       ],
       en: [
         "2 green plantains",
@@ -3512,7 +3524,7 @@ const recipes = [
         "½ lb dried codfish, desalted",
         "Olive oil to taste",
         "1 onion, sliced into rings",
-        "Vinegar to taste"
+        "2 tablespoons vinegar, or to taste"
       ]
     },
     steps: {
@@ -3540,7 +3552,7 @@ const recipes = [
     id: "brazo-gitano",
     category: "postres",
     name: { es: "Brazo Gitano", en: "Jelly Roll Cake" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 10,
     ingredients: {
       es: [
@@ -3591,7 +3603,7 @@ const recipes = [
     id: "dulce-papaya",
     category: "postres",
     name: { es: "Dulce de Lechosa (Papaya)", en: "Candied Papaya" },
-    time: "2 hrs",
+    active: 120, total: 240, wait: "remojo",
     servings: 10,
     ingredients: {
       es: [
@@ -3636,7 +3648,7 @@ const recipes = [
     id: "besitos-coco",
     category: "postres",
     name: { es: "Besitos de Coco", en: "Coconut Kisses (Macaroons)" },
-    time: "35 min",
+    active: 35, total: 35,
     servings: 20,
     ingredients: {
       es: [
@@ -3681,7 +3693,7 @@ const recipes = [
     id: "panapen-horno",
     category: "panes",
     name: { es: "Panapén (Pana) al Horno", en: "Baked Breadfruit" },
-    time: "1 hr 15 min",
+    active: 75, total: 75,
     servings: 6,
     ingredients: {
       es: [
@@ -3720,7 +3732,7 @@ const recipes = [
     id: "rosquillas",
     category: "panes",
     name: { es: "Rosquillas de Viento", en: "Puerto Rican Doughnuts (Rosquillas)" },
-    time: "1 hr",
+    active: 60, total: 75, wait: "reposo",
     servings: 15,
     ingredients: {
       es: [
@@ -3773,7 +3785,7 @@ const recipes = [
     id: "salsa-criolla",
     category: "salsas",
     name: { es: "Salsa Criolla para Carnes", en: "Creole Sauce for Meats" },
-    time: "20 min",
+    active: 20, total: 20,
     servings: 6,
     ingredients: {
       es: [
@@ -3820,7 +3832,7 @@ const recipes = [
     id: "surullitos-dulces",
     category: "entremeses",
     name: { es: "Surullitos Dulces", en: "Sweet Corn Sticks" },
-    time: "25 min",
+    active: 25, total: 25,
     servings: 12,
     ingredients: {
       es: [
@@ -3863,7 +3875,7 @@ const recipes = [
     id: "empanadillas-chaparro",
     category: "entremeses",
     name: { es: "Empanadillas de Chaparro", en: "Guava & Cheese Turnovers" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 12,
     ingredients: {
       es: [
@@ -3899,10 +3911,10 @@ const recipes = [
 
   // ── CÓCTELES (1983) ──
   {
-    id: "bilí",
+    id: "bili",
     category: "cocteles",
     name: { es: "Bilí (Ron con Quenepa)", en: "Bilí (Rum & Quenepa Liqueur)" },
-    time: "10 min + 2 semanas",
+    active: 10, total: 20170, wait: "reposo",
     servings: 15,
     ingredients: {
       es: [
@@ -3941,7 +3953,7 @@ const recipes = [
     id: "ponche-crema",
     category: "cocteles",
     name: { es: "Ponche de Crema Navideño", en: "Christmas Cream Punch" },
-    time: "20 min",
+    active: 20, total: 260, wait: "frio",
     servings: 12,
     ingredients: {
       es: [
@@ -3994,7 +4006,7 @@ const recipes = [
     id: "dulce-coco",
     category: "frutas",
     name: { es: "Dulce de Coco Rallado", en: "Grated Coconut Candy" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 12,
     ingredients: {
       es: [
@@ -4035,7 +4047,7 @@ const recipes = [
     id: "dulce-guayaba",
     category: "frutas",
     name: { es: "Pasta de Guayaba Casera", en: "Homemade Guava Paste" },
-    time: "1 hr 30 min",
+    active: 90, total: 90,
     servings: 15,
     ingredients: {
       es: [
@@ -4074,7 +4086,7 @@ const recipes = [
     id: "mermelada-naranja",
     category: "frutas",
     name: { es: "Mermelada de China (Naranja)", en: "Orange Marmalade" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 10,
     ingredients: {
       es: [
@@ -4113,7 +4125,7 @@ const recipes = [
     id: "dulce-papaya-verde",
     category: "frutas",
     name: { es: "Dulce de Papaya Verde en Almíbar", en: "Green Papaya in Syrup" },
-    time: "2 hrs",
+    active: 120, total: 240, wait: "remojo",
     servings: 10,
     ingredients: {
       es: [
@@ -4156,7 +4168,7 @@ const recipes = [
     id: "funche",
     category: "cereales",
     name: { es: "Funche (Gofio de Maíz)", en: "Funche (Cornmeal Porridge)" },
-    time: "30 min",
+    active: 30, total: 30,
     servings: 4,
     ingredients: {
       es: [
@@ -4201,7 +4213,7 @@ const recipes = [
     id: "avena-criolla",
     category: "cereales",
     name: { es: "Avena Criolla", en: "Puerto Rican Oatmeal" },
-    time: "20 min",
+    active: 20, total: 20,
     servings: 4,
     ingredients: {
       es: [
@@ -4242,7 +4254,7 @@ const recipes = [
     id: "harina-maiz-leche",
     category: "cereales",
     name: { es: "Harina de Maíz con Leche", en: "Cornmeal with Milk" },
-    time: "25 min",
+    active: 25, total: 25,
     servings: 4,
     ingredients: {
       es: [
@@ -4252,7 +4264,7 @@ const recipes = [
         "¼ taza de azúcar",
         "½ cucharadita de sal",
         "1 cucharada de mantequilla",
-        "Canela al gusto"
+        "½ cucharadita de canela en polvo, o al gusto"
       ],
       en: [
         "1 cup fine cornmeal",
@@ -4261,7 +4273,7 @@ const recipes = [
         "¼ cup sugar",
         "½ teaspoon salt",
         "1 tablespoon butter",
-        "Cinnamon to taste"
+        "½ teaspoon ground cinnamon, or to taste"
       ]
     },
     steps: {
@@ -4287,7 +4299,7 @@ const recipes = [
     id: "garbanzos-guisados",
     category: "granos",
     name: { es: "Garbanzos Guisados", en: "Stewed Chickpeas" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 6,
     ingredients: {
       es: [
@@ -4334,7 +4346,7 @@ const recipes = [
     id: "habichuelas-blancas",
     category: "granos",
     name: { es: "Habichuelas Blancas Guisadas", en: "Stewed White Beans" },
-    time: "50 min",
+    active: 50, total: 50,
     servings: 6,
     ingredients: {
       es: [
@@ -4377,7 +4389,7 @@ const recipes = [
     id: "gandules-guisados",
     category: "granos",
     name: { es: "Gandules Guisados", en: "Stewed Pigeon Peas" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 6,
     ingredients: {
       es: [
@@ -4420,7 +4432,7 @@ const recipes = [
     id: "tortilla-espanola",
     category: "huevos",
     name: { es: "Tortilla Española", en: "Spanish Omelette" },
-    time: "35 min",
+    active: 35, total: 35,
     servings: 4,
     ingredients: {
       es: [
@@ -4461,7 +4473,7 @@ const recipes = [
     id: "revoltillo-bacalao",
     category: "huevos",
     name: { es: "Revoltillo de Bacalao", en: "Scrambled Eggs with Codfish" },
-    time: "25 min",
+    active: 25, total: 25,
     servings: 4,
     ingredients: {
       es: [
@@ -4502,7 +4514,7 @@ const recipes = [
     id: "huevos-rellenos",
     category: "huevos",
     name: { es: "Huevos Rellenos", en: "Deviled Eggs" },
-    time: "25 min",
+    active: 25, total: 25,
     servings: 6,
     ingredients: {
       es: [
@@ -4543,7 +4555,7 @@ const recipes = [
     id: "queso-frito",
     category: "huevos",
     name: { es: "Queso del País Frito", en: "Fried Local White Cheese" },
-    time: "10 min",
+    active: 10, total: 10,
     servings: 4,
     ingredients: {
       es: [
@@ -4576,7 +4588,7 @@ const recipes = [
     id: "bizcocho-vainilla",
     category: "bizcochos",
     name: { es: "Bizcocho de Vainilla", en: "Vanilla Cake" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 12,
     ingredients: {
       es: [
@@ -4623,7 +4635,7 @@ const recipes = [
     id: "bizcocho-chocolate",
     category: "bizcochos",
     name: { es: "Bizcocho de Chocolate", en: "Chocolate Cake" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 12,
     ingredients: {
       es: [
@@ -4674,7 +4686,7 @@ const recipes = [
     id: "bizcocho-naranja",
     category: "bizcochos",
     name: { es: "Bizcocho de China (Naranja)", en: "Orange Cake" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 10,
     ingredients: {
       es: [
@@ -4725,7 +4737,7 @@ const recipes = [
     id: "polvorones",
     category: "galletitas",
     name: { es: "Polvorones", en: "Puerto Rican Shortbread Cookies" },
-    time: "30 min",
+    active: 30, total: 30,
     servings: 24,
     ingredients: {
       es: [
@@ -4768,7 +4780,7 @@ const recipes = [
     id: "mantecaditos",
     category: "galletitas",
     name: { es: "Mantecaditos", en: "Lard Cookies (Mantecaditos)" },
-    time: "30 min",
+    active: 30, total: 30,
     servings: 30,
     ingredients: {
       es: [
@@ -4813,7 +4825,7 @@ const recipes = [
     id: "cucas",
     category: "galletitas",
     name: { es: "Cucas (Galletas de Jengibre)", en: "Cucas (Ginger Cookies)" },
-    time: "30 min",
+    active: 30, total: 30,
     servings: 20,
     ingredients: {
       es: [
@@ -4866,7 +4878,7 @@ const recipes = [
     id: "pastel-guayaba",
     category: "pasteles_dulces",
     name: { es: "Pastel de Guayaba y Queso", en: "Guava & Cheese Pie" },
-    time: "50 min",
+    active: 50, total: 50,
     servings: 8,
     ingredients: {
       es: [
@@ -4907,7 +4919,7 @@ const recipes = [
     id: "flan-calabaza",
     category: "pasteles_dulces",
     name: { es: "Flan de Calabaza", en: "Pumpkin Flan" },
-    time: "1 hr 15 min",
+    active: 75, total: 315, wait: "frio",
     servings: 8,
     ingredients: {
       es: [
@@ -4954,7 +4966,7 @@ const recipes = [
     id: "bienmesabe",
     category: "pasteles_dulces",
     name: { es: "Bienmesabe de Coco", en: "Coconut Bienmesabe" },
-    time: "45 min",
+    active: 45, total: 285, wait: "frio",
     servings: 8,
     ingredients: {
       es: [
@@ -4965,7 +4977,7 @@ const recipes = [
         "½ taza de azúcar",
         "1 cucharadita de vainilla",
         "1 taza de coco rallado",
-        "Canela en polvo"
+        "Canela en polvo para espolvorear"
       ],
       en: [
         "1 sponge cake, cut into layers",
@@ -4975,7 +4987,7 @@ const recipes = [
         "½ cup sugar",
         "1 teaspoon vanilla",
         "1 cup grated coconut",
-        "Ground cinnamon"
+        "Ground cinnamon for dusting"
       ]
     },
     steps: {
@@ -5003,7 +5015,7 @@ const recipes = [
     id: "sandwich-mezcla",
     category: "emparedados",
     name: { es: "Sándwich de Mezcla", en: "Puerto Rican Party Sandwich Spread" },
-    time: "20 min",
+    active: 20, total: 20,
     servings: 12,
     ingredients: {
       es: [
@@ -5044,7 +5056,7 @@ const recipes = [
     id: "medianoche",
     category: "emparedados",
     name: { es: "Sándwich de Medianoche", en: "Midnight Sandwich (Medianoche)" },
-    time: "15 min",
+    active: 15, total: 15,
     servings: 4,
     ingredients: {
       es: [
@@ -5052,7 +5064,7 @@ const recipes = [
         "½ lb de pernil asado, cortado fino",
         "½ lb de jamón cocido, cortado fino",
         "4 lonjas de queso suizo",
-        "Mostaza amarilla",
+        "1 cucharada de mostaza amarilla",
         "Pepinillos en vinagre, cortados en lonjas",
         "Mantequilla para la plancha"
       ],
@@ -5061,7 +5073,7 @@ const recipes = [
         "½ lb roast pork, thinly sliced",
         "½ lb cooked ham, thinly sliced",
         "4 slices Swiss cheese",
-        "Yellow mustard",
+        "1 tablespoon yellow mustard",
         "Dill pickles, sliced",
         "Butter for the press"
       ]
@@ -5087,7 +5099,7 @@ const recipes = [
     id: "cubano",
     category: "emparedados",
     name: { es: "Sándwich Cubano", en: "Cuban Sandwich" },
-    time: "15 min",
+    active: 15, total: 15,
     servings: 4,
     ingredients: {
       es: [
@@ -5095,7 +5107,7 @@ const recipes = [
         "½ lb de pernil asado, cortado fino",
         "½ lb de jamón cocido",
         "4 lonjas de queso suizo",
-        "Mostaza amarilla",
+        "1 cucharada de mostaza amarilla",
         "Pepinillos en vinagre",
         "Mantequilla para la plancha"
       ],
@@ -5104,7 +5116,7 @@ const recipes = [
         "½ lb roast pork, thinly sliced",
         "½ lb cooked ham",
         "4 slices Swiss cheese",
-        "Yellow mustard",
+        "1 tablespoon yellow mustard",
         "Dill pickles",
         "Butter for the press"
       ]
@@ -5136,7 +5148,7 @@ const recipes = [
     id: "asopao-camarones",
     category: "sopas",
     name: { es: "Asopao de Camarones", en: "Shrimp Asopao" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 6,
     ingredients: {
       es: [
@@ -5187,7 +5199,7 @@ const recipes = [
     id: "sopa-gandules-bolitas",
     category: "sopas",
     name: { es: "Sopa de Gandules con Bolitas de Plátano", en: "Pigeon Pea Soup with Plantain Dumplings" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 8,
     ingredients: {
       es: [
@@ -5234,7 +5246,7 @@ const recipes = [
     id: "mondongo",
     category: "sopas",
     name: { es: "Mondongo Criollo", en: "Tripe Stew (Mondongo)" },
-    time: "2 hrs 30 min",
+    active: 150, total: 150,
     servings: 8,
     ingredients: {
       es: [
@@ -5291,7 +5303,7 @@ const recipes = [
     id: "arroz-camarones",
     category: "arroces",
     name: { es: "Arroz con Camarones", en: "Shrimp Rice" },
-    time: "50 min",
+    active: 50, total: 50,
     servings: 6,
     ingredients: {
       es: [
@@ -5340,7 +5352,7 @@ const recipes = [
     id: "arroz-bacalao",
     category: "arroces",
     name: { es: "Arroz con Bacalao", en: "Rice with Codfish" },
-    time: "50 min",
+    active: 50, total: 50,
     servings: 6,
     ingredients: {
       es: [
@@ -5387,7 +5399,7 @@ const recipes = [
     id: "arroz-pernil",
     category: "arroces",
     name: { es: "Arroz con Pernil", en: "Rice with Roast Pork" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 6,
     ingredients: {
       es: [
@@ -5432,7 +5444,7 @@ const recipes = [
     id: "locrio-salami",
     category: "arroces",
     name: { es: "Locrio de Salami", en: "Salami Rice (Locrio)" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 4,
     ingredients: {
       es: [
@@ -5477,7 +5489,7 @@ const recipes = [
     id: "carne-mechada",
     category: "carnes",
     name: { es: "Carne Mechada", en: "Stuffed Pot Roast (Carne Mechada)" },
-    time: "2 hrs 30 min",
+    active: 150, total: 270, wait: "adobo",
     servings: 8,
     ingredients: {
       es: [
@@ -5532,7 +5544,7 @@ const recipes = [
     id: "chicharron-cerdo",
     category: "carnes",
     name: { es: "Chicharrón de Cerdo", en: "Fried Pork Cracklings" },
-    time: "1 hr",
+    active: 60, total: 120, wait: "adobo",
     servings: 8,
     ingredients: {
       es: [
@@ -5577,7 +5589,7 @@ const recipes = [
     id: "fricase-cabro",
     category: "carnes",
     name: { es: "Fricasé de Cabro (Chivo)", en: "Goat Fricassee" },
-    time: "1 hr 30 min",
+    active: 90, total: 570, wait: "adobo",
     servings: 6,
     ingredients: {
       es: [
@@ -5590,7 +5602,11 @@ const recipes = [
         "1 cucharada de alcaparras",
         "½ taza de vino blanco",
         "2 hojas de laurel",
-        "Adobo: ajo, vinagre, orégano, sal, pimienta"
+        "4 dientes de ajo, machacados (para el adobo)",
+        "1 cucharada de vinagre (para el adobo)",
+        "1 cucharadita de orégano seco (para el adobo)",
+        "1 cucharadita de sal (para el adobo)",
+        "½ cucharadita de pimienta (para el adobo)"
       ],
       en: [
         "3 lbs goat meat, cut into pieces",
@@ -5602,7 +5618,11 @@ const recipes = [
         "1 tablespoon capers",
         "½ cup white wine",
         "2 bay leaves",
-        "Adobo: garlic, vinegar, oregano, salt, pepper"
+        "4 garlic cloves, crushed (for the adobo)",
+        "1 tablespoon vinegar (for the adobo)",
+        "1 teaspoon dried oregano (for the adobo)",
+        "1 teaspoon salt (for the adobo)",
+        "½ teaspoon pepper (for the adobo)"
       ]
     },
     steps: {
@@ -5628,7 +5648,7 @@ const recipes = [
     id: "ropa-vieja",
     category: "carnes",
     name: { es: "Ropa Vieja", en: "Shredded Beef Stew (Ropa Vieja)" },
-    time: "2 hrs",
+    active: 120, total: 120,
     servings: 6,
     ingredients: {
       es: [
@@ -5683,7 +5703,7 @@ const recipes = [
     id: "carne-molida-criolla",
     category: "carnes",
     name: { es: "Picadillo Criollo", en: "Puerto Rican Ground Beef Hash" },
-    time: "35 min",
+    active: 35, total: 35,
     servings: 6,
     ingredients: {
       es: [
@@ -5732,17 +5752,25 @@ const recipes = [
     id: "pollo-bbq-criollo",
     category: "aves",
     name: { es: "Pollo a la BBQ Criolla", en: "Creole BBQ Chicken" },
-    time: "1 hr",
+    active: 60, total: 120, wait: "adobo",
     servings: 6,
     ingredients: {
       es: [
         "3 lbs de pollo, cortado en piezas",
-        "Adobo: ajo, orégano, sal, pimienta, vinagre",
+        "4 dientes de ajo, machacados (para el adobo)",
+        "1 cucharadita de orégano seco (para el adobo)",
+        "1 cucharadita de sal (para el adobo)",
+        "½ cucharadita de pimienta (para el adobo)",
+        "1 cucharada de vinagre (para el adobo)",
         "Salsa BBQ criolla: ½ taza de ketchup, 2 cda de salsa inglesa, 1 cda mostaza, 2 cda azúcar morena, 1 cda vinagre, 1 sobre de sazón"
       ],
       en: [
         "3 lbs chicken, cut into pieces",
-        "Adobo: garlic, oregano, salt, pepper, vinegar",
+        "4 garlic cloves, crushed (for the adobo)",
+        "1 teaspoon dried oregano (for the adobo)",
+        "1 teaspoon salt (for the adobo)",
+        "½ teaspoon pepper (for the adobo)",
+        "1 tablespoon vinegar (for the adobo)",
         "Creole BBQ sauce: ½ cup ketchup, 2 tbsp Worcestershire, 1 tbsp mustard, 2 tbsp brown sugar, 1 tbsp vinegar, 1 packet sazón"
       ]
     },
@@ -5769,7 +5797,7 @@ const recipes = [
     id: "pollo-agridulce",
     category: "aves",
     name: { es: "Pollo Agridulce Boricua", en: "Puerto Rican Sweet & Sour Chicken" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 4,
     ingredients: {
       es: [
@@ -5820,7 +5848,7 @@ const recipes = [
     id: "guineo-pollo",
     category: "aves",
     name: { es: "Pastelón de Pollo", en: "Chicken Casserole (Pastelón)" },
-    time: "1 hr 15 min",
+    active: 75, total: 75,
     servings: 8,
     ingredients: {
       es: [
@@ -5871,7 +5899,7 @@ const recipes = [
     id: "mofongo-camarones",
     category: "pescados",
     name: { es: "Mofongo Relleno de Camarones", en: "Mofongo Stuffed with Shrimp" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 4,
     ingredients: {
       es: [
@@ -5882,8 +5910,8 @@ const recipes = [
         "1 sobre de sazón",
         "¼ taza de salsa de tomate",
         "4 cucharadas de aceite de oliva",
-        "Chicharrones triturados",
-        "Caldo de pollo",
+        "1 taza de chicharrones triturados",
+        "½ taza de caldo de pollo",
         "Aceite para freír"
       ],
       en: [
@@ -5894,8 +5922,8 @@ const recipes = [
         "1 packet sazón",
         "¼ cup tomato sauce",
         "4 tablespoons olive oil",
-        "Crushed pork cracklings",
-        "Chicken broth",
+        "1 cup crushed pork cracklings (chicharrones)",
+        "½ cup chicken broth",
         "Oil for frying"
       ]
     },
@@ -5920,7 +5948,7 @@ const recipes = [
     id: "camarones-empanizados",
     category: "pescados",
     name: { es: "Camarones Empanizados", en: "Breaded Shrimp" },
-    time: "25 min",
+    active: 25, total: 25,
     servings: 4,
     ingredients: {
       es: [
@@ -5931,7 +5959,7 @@ const recipes = [
         "½ cucharadita de ajo en polvo",
         "½ cucharadita de pimentón",
         "Aceite vegetal para freír",
-        "Jugo de limón",
+        "2 cucharadas de jugo de limón",
         "Sal y pimienta al gusto"
       ],
       en: [
@@ -5942,7 +5970,7 @@ const recipes = [
         "½ teaspoon garlic powder",
         "½ teaspoon paprika",
         "Vegetable oil for frying",
-        "Lime juice",
+        "2 tablespoons lime juice",
         "Salt and pepper to taste"
       ]
     },
@@ -5967,7 +5995,7 @@ const recipes = [
     id: "ceviche-pr",
     category: "pescados",
     name: { es: "Ceviche Puertorriqueño", en: "Puerto Rican Ceviche" },
-    time: "20 min + reposo",
+    active: 20, total: 140, wait: "frio",
     servings: 6,
     ingredients: {
       es: [
@@ -5978,7 +6006,7 @@ const recipes = [
         "1 pimiento verde, picado",
         "1 tomate, picado",
         "1 aguacate, cortado en cubos",
-        "Cilantro fresco picado",
+        "2 cucharadas de cilantro fresco picado",
         "Sal y pimienta al gusto",
         "Galletas de soda para servir"
       ],
@@ -5990,7 +6018,7 @@ const recipes = [
         "1 green bell pepper, diced",
         "1 tomato, diced",
         "1 avocado, cubed",
-        "Fresh cilantro, chopped",
+        "2 tablespoons fresh cilantro, chopped",
         "Salt and pepper to taste",
         "Soda crackers for serving"
       ]
@@ -6018,7 +6046,7 @@ const recipes = [
     id: "ensalada-chayote",
     category: "ensaladas",
     name: { es: "Ensalada de Chayote", en: "Chayote Salad" },
-    time: "30 min",
+    active: 30, total: 30,
     servings: 4,
     ingredients: {
       es: [
@@ -6029,7 +6057,7 @@ const recipes = [
         "¼ taza de aceite de oliva",
         "2 cucharadas de vinagre",
         "Sal y pimienta al gusto",
-        "Cilantro fresco"
+        "2 cucharadas de cilantro fresco"
       ],
       en: [
         "3 chayotes, peeled and cubed",
@@ -6039,7 +6067,7 @@ const recipes = [
         "¼ cup olive oil",
         "2 tablespoons vinegar",
         "Salt and pepper to taste",
-        "Fresh cilantro"
+        "2 tablespoons fresh cilantro"
       ]
     },
     steps: {
@@ -6061,7 +6089,7 @@ const recipes = [
     id: "ensalada-garbanzos",
     category: "ensaladas",
     name: { es: "Ensalada de Garbanzos", en: "Chickpea Salad" },
-    time: "15 min",
+    active: 15, total: 45, wait: "frio",
     servings: 6,
     ingredients: {
       es: [
@@ -6073,7 +6101,7 @@ const recipes = [
         "¼ taza de aceite de oliva",
         "3 cucharadas de vinagre de vino",
         "1 diente de ajo, machacado",
-        "Perejil o cilantro fresco",
+        "2 cucharadas de perejil o cilantro fresco",
         "Sal y pimienta al gusto"
       ],
       en: [
@@ -6085,7 +6113,7 @@ const recipes = [
         "¼ cup olive oil",
         "3 tablespoons wine vinegar",
         "1 garlic clove, crushed",
-        "Fresh parsley or cilantro",
+        "2 tablespoons fresh parsley or cilantro",
         "Salt and pepper to taste"
       ]
     },
@@ -6110,7 +6138,7 @@ const recipes = [
     id: "chayotes-rellenos",
     category: "vegetales",
     name: { es: "Chayotes Rellenos", en: "Stuffed Chayotes" },
-    time: "50 min",
+    active: 50, total: 50,
     servings: 4,
     ingredients: {
       es: [
@@ -6121,7 +6149,7 @@ const recipes = [
         "2 cucharadas de salsa de tomate",
         "½ taza de queso rallado",
         "1 huevo batido",
-        "Pan rallado",
+        "½ taza de pan rallado",
         "Sal y pimienta al gusto"
       ],
       en: [
@@ -6132,7 +6160,7 @@ const recipes = [
         "2 tablespoons tomato sauce",
         "½ cup shredded cheese",
         "1 beaten egg",
-        "Breadcrumbs",
+        "½ cup breadcrumbs",
         "Salt and pepper to taste"
       ]
     },
@@ -6157,7 +6185,7 @@ const recipes = [
     id: "berenjenas-rellenas",
     category: "vegetales",
     name: { es: "Berenjenas Rellenas", en: "Stuffed Eggplant" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 4,
     ingredients: {
       es: [
@@ -6168,7 +6196,7 @@ const recipes = [
         "¼ taza de salsa de tomate",
         "¼ taza de aceitunas rellenas, picadas",
         "½ taza de queso mozzarella rallado",
-        "Pan rallado",
+        "½ taza de pan rallado",
         "Sal y pimienta al gusto"
       ],
       en: [
@@ -6179,7 +6207,7 @@ const recipes = [
         "¼ cup tomato sauce",
         "¼ cup stuffed olives, chopped",
         "½ cup mozzarella cheese, shredded",
-        "Breadcrumbs",
+        "½ cup breadcrumbs",
         "Salt and pepper to taste"
       ]
     },
@@ -6204,7 +6232,7 @@ const recipes = [
     id: "platanutres",
     category: "vegetales",
     name: { es: "Platanutres (Mariquitas)", en: "Plantain Chips" },
-    time: "20 min",
+    active: 20, total: 20,
     servings: 6,
     ingredients: {
       es: [
@@ -6241,7 +6269,7 @@ const recipes = [
     id: "pastelon-platano",
     category: "vegetales",
     name: { es: "Pastelón de Plátano Maduro", en: "Sweet Plantain Casserole (Pastelón)" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 8,
     ingredients: {
       es: [
@@ -6292,7 +6320,7 @@ const recipes = [
     id: "natilla",
     category: "postres",
     name: { es: "Natilla de Vainilla", en: "Vanilla Custard (Natilla)" },
-    time: "25 min",
+    active: 25, total: 25,
     servings: 6,
     ingredients: {
       es: [
@@ -6339,7 +6367,7 @@ const recipes = [
     id: "tres-leches",
     category: "postres",
     name: { es: "Bizcocho de Tres Leches", en: "Three Milks Cake" },
-    time: "1 hr 30 min",
+    active: 90, total: 330, wait: "frio",
     servings: 12,
     ingredients: {
       es: [
@@ -6380,7 +6408,7 @@ const recipes = [
     id: "mantecado-casero",
     category: "postres",
     name: { es: "Mantecado Casero de Vainilla", en: "Homemade Vanilla Ice Cream" },
-    time: "30 min + congelación",
+    active: 30, total: 510, wait: "congelador",
     servings: 8,
     ingredients: {
       es: [
@@ -6421,7 +6449,7 @@ const recipes = [
     id: "dulce-leche-cortada",
     category: "postres",
     name: { es: "Dulce de Leche Cortada", en: "Curdled Milk Candy" },
-    time: "1 hr 30 min",
+    active: 90, total: 90,
     servings: 12,
     ingredients: {
       es: [
@@ -6464,7 +6492,7 @@ const recipes = [
     id: "limber-parcha",
     category: "postres",
     name: { es: "Limber de Parcha", en: "Passion Fruit Ice Pop" },
-    time: "10 min + congelación",
+    active: 10, total: 250, wait: "congelador",
     servings: 10,
     ingredients: {
       es: [
@@ -6503,7 +6531,7 @@ const recipes = [
     id: "malta-huevo",
     category: "bebidas",
     name: { es: "Malta con Huevo", en: "Malt Beverage with Egg" },
-    time: "5 min",
+    active: 5, total: 5,
     servings: 1,
     ingredients: {
       es: [
@@ -6540,7 +6568,7 @@ const recipes = [
     id: "avena-fria",
     category: "bebidas",
     name: { es: "Avena Fría", en: "Cold Oat Drink" },
-    time: "15 min + enfriamiento",
+    active: 15, total: 135, wait: "frio",
     servings: 6,
     ingredients: {
       es: [
@@ -6583,7 +6611,7 @@ const recipes = [
     id: "morir-sonando",
     category: "bebidas",
     name: { es: "Morir Soñando", en: "Orange Creamsicle Drink" },
-    time: "5 min",
+    active: 5, total: 5,
     servings: 2,
     ingredients: {
       es: [
@@ -6624,7 +6652,7 @@ const recipes = [
     id: "aranitas",
     category: "entremeses",
     name: { es: "Arañitas de Plátano", en: "Plantain Spider Fritters" },
-    time: "25 min",
+    active: 25, total: 25,
     servings: 8,
     ingredients: {
       es: [
@@ -6665,7 +6693,7 @@ const recipes = [
     id: "empanadillas-pizza",
     category: "entremeses",
     name: { es: "Empanadillas de Pizza", en: "Pizza Turnovers" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 15,
     ingredients: {
       es: [
@@ -6706,7 +6734,7 @@ const recipes = [
     id: "tostones-rellenos",
     category: "entremeses",
     name: { es: "Tostones Rellenos", en: "Stuffed Tostones Cups" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 8,
     ingredients: {
       es: [
@@ -6749,7 +6777,7 @@ const recipes = [
     id: "tripleta",
     category: "emparedados",
     name: { es: "Tripleta", en: "Tripleta (Triple Meat Sandwich)" },
-    time: "20 min",
+    active: 20, total: 20,
     servings: 4,
     ingredients: {
       es: [
@@ -6794,7 +6822,7 @@ const recipes = [
     id: "jibarito",
     category: "emparedados",
     name: { es: "Jibarito", en: "Plantain Sandwich (Jibarito)" },
-    time: "30 min",
+    active: 30, total: 30,
     servings: 4,
     ingredients: {
       es: [
@@ -6841,7 +6869,7 @@ const recipes = [
     id: "mayo-ketchup",
     category: "salsas",
     name: { es: "Mayo-Ketchup", en: "Mayo-Ketchup Dipping Sauce" },
-    time: "5 min",
+    active: 5, total: 5,
     servings: 8,
     ingredients: {
       es: [
@@ -6878,7 +6906,7 @@ const recipes = [
     id: "salsa-mango",
     category: "salsas",
     name: { es: "Salsa de Mango", en: "Mango Sauce" },
-    time: "15 min",
+    active: 15, total: 15,
     servings: 6,
     ingredients: {
       es: [
@@ -6921,7 +6949,7 @@ const recipes = [
     id: "lentejas-guisadas",
     category: "granos",
     name: { es: "Lentejas Guisadas", en: "Stewed Lentils" },
-    time: "50 min",
+    active: 50, total: 50,
     servings: 6,
     ingredients: {
       es: [
@@ -6970,7 +6998,7 @@ const recipes = [
     id: "habichuelas-pintas",
     category: "granos",
     name: { es: "Habichuelas Pintas Guisadas", en: "Stewed Pinto Beans" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 6,
     ingredients: {
       es: [
@@ -7017,7 +7045,7 @@ const recipes = [
     id: "tortilla-amarillos",
     category: "huevos",
     name: { es: "Tortilla de Amarillos", en: "Sweet Plantain Omelette" },
-    time: "25 min",
+    active: 25, total: 25,
     servings: 4,
     ingredients: {
       es: [
@@ -7058,7 +7086,7 @@ const recipes = [
     id: "huevos-habaneros",
     category: "huevos",
     name: { es: "Huevos Habaneros", en: "Eggs in Tomato Sauce (Huevos Habaneros)" },
-    time: "20 min",
+    active: 20, total: 20,
     servings: 4,
     ingredients: {
       es: [
@@ -7107,7 +7135,7 @@ const recipes = [
     id: "bizcocho-pina",
     category: "bizcochos",
     name: { es: "Bizcocho de Piña Volteado", en: "Pineapple Upside-Down Cake" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 10,
     ingredients: {
       es: [
@@ -7150,7 +7178,7 @@ const recipes = [
     id: "bizcocho-guayaba",
     category: "bizcochos",
     name: { es: "Bizcocho de Guayaba", en: "Guava Cake" },
-    time: "1 hr 15 min",
+    active: 75, total: 75,
     servings: 12,
     ingredients: {
       es: [
@@ -7203,7 +7231,7 @@ const recipes = [
     id: "suspiros",
     category: "galletitas",
     name: { es: "Suspiros (Merengues)", en: "Meringue Cookies (Suspiros)" },
-    time: "1 hr 30 min",
+    active: 90, total: 90,
     servings: 24,
     ingredients: {
       es: [
@@ -7246,7 +7274,7 @@ const recipes = [
     id: "royales",
     category: "galletitas",
     name: { es: "Royales (Galletas Reales)", en: "Royal Cookies" },
-    time: "35 min",
+    active: 35, total: 65, wait: "frio",
     servings: 20,
     ingredients: {
       es: [
@@ -7297,7 +7325,7 @@ const recipes = [
     id: "dulce-batata",
     category: "frutas",
     name: { es: "Dulce de Batata con Coco", en: "Sweet Potato & Coconut Candy" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 12,
     ingredients: {
       es: [
@@ -7342,7 +7370,7 @@ const recipes = [
     id: "conserva-guayaba",
     category: "frutas",
     name: { es: "Cascos de Guayaba en Almíbar", en: "Guava Shells in Syrup" },
-    time: "1 hr 30 min",
+    active: 90, total: 90,
     servings: 8,
     ingredients: {
       es: [
@@ -7387,7 +7415,7 @@ const recipes = [
     id: "maicena-leche",
     category: "cereales",
     name: { es: "Maicena con Leche", en: "Cornstarch Pudding with Milk" },
-    time: "20 min",
+    active: 20, total: 20,
     servings: 4,
     ingredients: {
       es: [
@@ -7432,7 +7460,7 @@ const recipes = [
     id: "quesillo",
     category: "pasteles_dulces",
     name: { es: "Quesillo", en: "Cheese Custard (Quesillo)" },
-    time: "1 hr 15 min",
+    active: 75, total: 435, wait: "frio",
     servings: 8,
     ingredients: {
       es: [
@@ -7475,7 +7503,7 @@ const recipes = [
     id: "flancocho",
     category: "pasteles_dulces",
     name: { es: "Flancocho (Chocoflan)", en: "Flancocho (Chocolate Cake + Flan)" },
-    time: "1 hr 30 min",
+    active: 90, total: 330, wait: "frio",
     servings: 12,
     ingredients: {
       es: [
@@ -7514,7 +7542,7 @@ const recipes = [
     id: "pan-agua",
     category: "panes",
     name: { es: "Pan de Agua", en: "Puerto Rican Water Bread" },
-    time: "3 hrs",
+    active: 180, total: 180,
     servings: 16,
     ingredients: {
       es: [
@@ -7561,7 +7589,7 @@ const recipes = [
     id: "limoncello-pr",
     category: "cocteles",
     name: { es: "Limoncello Boricua", en: "Puerto Rican Limoncello" },
-    time: "15 min + 2 semanas",
+    active: 15, total: 20175, wait: "reposo",
     servings: 15,
     ingredients: {
       es: [
@@ -7600,7 +7628,7 @@ const recipes = [
     id: "coquito-pistacho",
     category: "cocteles",
     name: { es: "Coquito de Pistacho", en: "Pistachio Coquito" },
-    time: "15 min",
+    active: 15, total: 255, wait: "frio",
     servings: 10,
     ingredients: {
       es: [
@@ -7610,7 +7638,7 @@ const recipes = [
         "1 paquete de pudín de pistacho instantáneo",
         "1 cucharadita de vainilla",
         "½ cucharadita de canela",
-        "Ron blanco al gusto"
+        "1 taza de ron blanco, o al gusto"
       ],
       en: [
         "2 cans coconut milk (13.5 oz)",
@@ -7619,7 +7647,7 @@ const recipes = [
         "1 package instant pistachio pudding",
         "1 teaspoon vanilla",
         "½ teaspoon cinnamon",
-        "White rum to taste"
+        "1 cup white rum, or to taste"
       ]
     },
     steps: {

@@ -21,7 +21,12 @@ const FT = {
     season: "Época", seasonAny: "Cualquiera", kids: "Para niños (sin alcohol ni cafeína)",
     count: (n) => (n === 1 ? "1 filtro" : `${n} filtros`),
     levelTag: { easy: "Fácil", medium: "Intermedia", hard: "Elaborada" },
-    missing: (n) => (n ? `le faltan ${n} de sus ingredientes` : "tiene todo")
+    missing: (n) => (n ? `le faltan ${n} de sus ingredientes` : "tiene todo"),
+    lacks: "Le falta:", hasAll: "Tiene lo principal", more: (n) => `y ${n} más`,
+    haveMax: (n) => `Máximo ${n} ingredientes: quite uno para añadir otro.`,
+    haveLeft: (n) => `Puede añadir ${n} más.`,
+    found: (n) => (n === 1 ? "1 receta usa lo que tiene." : `${n} recetas usan lo que tiene.`),
+    kcalOut: (n) => (n === 1 ? "1 receta sin estimado de calorías queda fuera de este filtro." : `${n} recetas sin estimado de calorías quedan fuera de este filtro.`)
   },
   en: {
     btn: "Filters", title: "Filters", close: "Close filters", clear: "Clear these filters",
@@ -35,7 +40,12 @@ const FT = {
     season: "Season", seasonAny: "Any", kids: "Kid-friendly (no alcohol or caffeine)",
     count: (n) => (n === 1 ? "1 filter" : `${n} filters`),
     levelTag: { easy: "Easy", medium: "Intermediate", hard: "Elaborate" },
-    missing: (n) => (n ? `${n} of your ingredients missing` : "you have it all")
+    missing: (n) => (n ? `${n} of your ingredients missing` : "you have it all"),
+    lacks: "Missing:", hasAll: "You have the main things", more: (n) => `and ${n} more`,
+    haveMax: (n) => `Up to ${n} ingredients: remove one to add another.`,
+    haveLeft: (n) => `You can add ${n} more.`,
+    found: (n) => (n === 1 ? "1 recipe uses what you have." : `${n} recipes use what you have.`),
+    kcalOut: (n) => (n === 1 ? "1 recipe without a calorie estimate is left out by this filter." : `${n} recipes without a calorie estimate are left out by this filter.`)
   }
 };
 const ft = () => FT[currentLang];
@@ -49,8 +59,8 @@ const levelCache = new Map();
 function recipeLevel(r) {
   if (levelCache.has(r.id)) return levelCache.get(r.id);
   const ing = r.ingredients.es.length, steps = r.steps.es.length;
-  const min = parseMinutes(r.time);
-  const waits = r.time.includes("+");
+  const min = r.active; // la dificultad depende del trabajo, no de la nevera
+  const waits = r.total > r.active;
   let lv = "medium";
   if (ing <= 8 && steps <= 5 && min != null && min <= 45) lv = "easy";
   else if (ing >= 14 || steps >= 9 || (min != null && min > 120) || (waits && steps >= 7)) lv = "hard";
@@ -59,6 +69,8 @@ function recipeLevel(r) {
 }
 
 /* ── Lo que tengo ── */
+const HAVE_MAX = 8;
+let haveNote = "";
 const haveRx = (term) => new RegExp(`\\b${nutriNorm(term).trim().split(/\s+/).map((w) => `${w.replace(/(es|s)$/, "")}(?:s|es)?`).join("\\s+")}\\b`);
 function haveCount(r) {
   if (!adv.have.length) return { hit: 0, miss: 0 };
@@ -66,6 +78,34 @@ function haveCount(r) {
   let hit = 0;
   for (const h of adv.have) if (haveRx(h).test(txt)) hit++;
   return { hit, miss: adv.have.length - hit };
+}
+
+/* Lo que le falta para una receta (sin contar sal, pimienta, aceite, agua, lo opcional ni lo de adornar),
+   para mostrarlo en cada tarjeta: "Le falta: cilantro, ajíes dulces". */
+const HAVE_SKIP = /^(sal|pimienta|aceite|agua|hielo)\b|\bopcional\b|al gusto|para (servir|decorar|adornar|espolvorear|engrasar|untar|freir|acompanar|rebozar|cubrir)|^(hilo|palillos?|palitos?|papel|carbon)/;
+function haveMissing(r) {
+  const out = [];
+  r.ingredients.es.forEach((es, i) => {
+    const n = nutriNorm(es);
+    if (HAVE_SKIP.test(n)) return;
+    const both = `${n} | ${nutriNorm(r.ingredients.en[i])}`;
+    if (adv.have.some((h) => haveRx(h).test(both))) return;
+    // "2 tazas de arroz de grano mediano, lavado" → "arroz de grano mediano"
+    // Quita cantidad y medida (también la segunda: "1 lata de 15 onzas de garbanzos" → "garbanzos").
+    const UNIT = /^\s*[\d½¼¾⅓⅔⅛.\/-]*\s*(tazas?|cucharadas?|cucharaditas?|libras?|lbs?|onzas?|oz|latas?|sobres?|dientes?|paquetes?|ramitas?|pizcas?|cups?|tablespoons?|teaspoons?|pounds?|ounces?|cans?|packets?|cloves?|sprigs?|pinch)\b\.?\s*(de\s+|of\s+)?/i;
+    const shown = r.ingredients[currentLang][i].replace(LEAD_RE, "").replace(UNIT, "").replace(UNIT, "").replace(/\s*[,(].*$/, "").trim();
+    if (shown && !out.includes(shown.toLowerCase())) out.push(shown.toLowerCase());
+  });
+  return out;
+}
+/* La línea de la tarjeta (app.js, cardHTML) cuando hay algo en "lo que tengo". */
+function haveCardHTML(r) {
+  if (!adv.have.length) return "";
+  const tr = ft();
+  const miss = haveMissing(r);
+  if (!miss.length) return `<p class="card-have is-all">${esc(tr.hasAll)}</p>`;
+  const shown = miss.slice(0, 3).join(", ");
+  return `<p class="card-have"><strong>${esc(tr.lacks)}</strong> ${esc(shown)}${miss.length > 3 ? ` ${esc(tr.more(miss.length - 3))}` : ""}</p>`;
 }
 
 function advActive() {
@@ -81,7 +121,7 @@ function advOk(r) {
     const c = haveCount(r);
     if (adv.haveAny ? c.hit === 0 : c.miss > 0) return false;
   }
-  if (adv.time) { const m = parseMinutes(r.time); if (m == null || m > adv.time) return false; }
+  if (adv.time) { const m = totalMinutes(r); if (m == null || m > adv.time) return false; }
   if (adv.level && recipeLevel(r) !== adv.level) return false;
   if (adv.kcal) { const e = estimateNutrition(r); if (!e.counted || e.per.kcal > adv.kcal) return false; }
   if (adv.free.length) { const keys = getAdvisories(r).allergens.map((a) => a.key); if (adv.free.some((k) => keys.includes(k))) return false; }
@@ -108,6 +148,9 @@ function renderAdvButton() {
 function renderAdvPanel() {
   const box = $("adv-filters");
   if (!box) return;
+  // Lo que se está escribiendo no se pierde cuando el panel se vuelve a pintar (antes se borraba).
+  const typing = $("adv-have-text");
+  const draft = typing ? { value: typing.value, focus: document.activeElement === typing, a: typing.selectionStart, b: typing.selectionEnd } : null;
   box.hidden = !advOpen;
   renderAdvButton();
   if (!advOpen) return;
@@ -124,9 +167,10 @@ function renderAdvPanel() {
         <p class="plans-help">${esc(tr.haveHelp)}</p>
         <form class="col-new" data-adv-have>
           <label class="sr-only" for="adv-have-text">${esc(tr.haveTitle)}</label>
-          <input id="adv-have-text" type="text" maxlength="40" placeholder="${esc(tr.havePh)}" autocomplete="off" enterkeyhint="done">
+          <input id="adv-have-text" type="text" maxlength="200" placeholder="${esc(tr.havePh)}" autocomplete="off" enterkeyhint="done">
           <button type="submit" class="btn btn-outline btn-sm">${esc(tr.haveAdd)}</button>
         </form>
+        <p class="adv-note" role="status">${esc(haveNote || (adv.have.length ? `${tr.found(recipes.filter(advOk).length)} ${adv.have.length < HAVE_MAX ? tr.haveLeft(HAVE_MAX - adv.have.length) : tr.haveMax(HAVE_MAX)}` : ""))}</p>
         ${adv.have.length ? `<ul class="shop-chips">${adv.have.map((h, i) => `<li class="shop-chip"><span>${esc(h)}</span>
           <button type="button" class="shop-chip-x" data-adv-have-x="${i}" aria-label="${esc(tr.haveRemove(h))}"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></li>`).join("")}</ul>
           <div class="adv-row">${radio("haveAny", "0", tr.haveAll, !adv.haveAny)}${radio("haveAny", "1", tr.haveAny, adv.haveAny)}</div>` : ""}
@@ -137,7 +181,8 @@ function renderAdvPanel() {
         <fieldset class="adv-set"><legend>${esc(tr.level)}</legend>
           ${Object.entries(tr.levels).map(([k, l]) => radio("level", k, l, adv.level === k)).join("")}</fieldset>
         <fieldset class="adv-set"><legend>${esc(tr.kcal)}</legend>
-          ${radio("kcal", 0, tr.kcalAny, !adv.kcal)}${[300, 500, 700].map((k) => radio("kcal", k, tr.kcalOpt(k), adv.kcal === k)).join("")}</fieldset>
+          ${radio("kcal", 0, tr.kcalAny, !adv.kcal)}${[300, 500, 700].map((k) => radio("kcal", k, tr.kcalOpt(k), adv.kcal === k)).join("")}
+          ${adv.kcal ? `<p class="adv-note">${esc(tr.kcalOut(recipes.filter((r) => !estimateNutrition(r).counted).length))}</p>` : ""}</fieldset>
         <fieldset class="adv-set"><legend>${esc(tr.diet)}</legend>
           ${Object.entries(tr.diets).map(([k, l]) => radio("diet", k, l, adv.diet === k)).join("")}</fieldset>
         <fieldset class="adv-set adv-wide"><legend>${esc(tr.free)}</legend>
@@ -149,6 +194,11 @@ function renderAdvPanel() {
       </div>
       ${advActive() ? `<button type="button" class="btn btn-ghost btn-sm" data-adv-clear>${esc(tr.clear)}</button>` : ""}
     </div>`;
+  const again = $("adv-have-text");
+  if (draft && again) {
+    again.value = draft.value;
+    if (draft.focus) { again.focus({ preventScroll: true }); try { again.setSelectionRange(draft.a, draft.b); } catch { /* sin selección */ } }
+  }
 }
 function advChanged(focusSel) {
   renderAdvPanel();
@@ -164,9 +214,9 @@ function setupFilters() {
   });
   box.addEventListener("click", (e) => {
     if (e.target.closest("[data-adv-close]")) { advOpen = false; renderAdvPanel(); $("adv-toggle").focus(); return; }
-    if (e.target.closest("[data-adv-clear]")) { adv = ADV_DEFAULT(); advChanged(); return; }
+    if (e.target.closest("[data-adv-clear]")) { adv = ADV_DEFAULT(); haveNote = ""; advChanged(); return; }
     const x = e.target.closest("[data-adv-have-x]");
-    if (x) { adv.have.splice(+x.dataset.advHaveX, 1); advChanged("#adv-have-text"); }
+    if (x) { adv.have.splice(+x.dataset.advHaveX, 1); haveNote = ""; advChanged("#adv-have-text"); }
   });
   box.addEventListener("submit", (e) => {
     if (!e.target.closest("[data-adv-have]")) return;
@@ -174,8 +224,14 @@ function setupFilters() {
     const input = $("adv-have-text");
     // Varias a la vez: "pollo, papa y cilantro".
     const terms = input.value.split(/,|\s+y\s+|\s+and\s+/).map((s) => s.trim().toLowerCase()).filter((s) => s.length >= 2);
-    for (const term of terms) if (!adv.have.includes(term) && adv.have.length < 8) adv.have.push(term);
-    input.value = "";
+    const left = [];
+    for (const term of terms) {
+      if (adv.have.includes(term)) continue;
+      if (adv.have.length < HAVE_MAX) adv.have.push(term); else left.push(term);
+    }
+    // Antes lo que pasaba de 8 se perdía sin aviso: ahora se dice y se queda escrito.
+    haveNote = left.length ? ft().haveMax(HAVE_MAX) : "";
+    input.value = left.join(", ");
     advChanged("#adv-have-text");
     scrollToResultsSoon();
   });

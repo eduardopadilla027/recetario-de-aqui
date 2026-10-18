@@ -64,7 +64,7 @@ const KT = {
 const kt = () => KT[currentLang];
 
 /* ── Datos ── */
-const KITCHEN_DEFAULTS = () => ({ ts: 0, cols: [], notes: {}, cooked: {}, shop: { recipes: [], extra: [], done: [] } });
+const KITCHEN_DEFAULTS = () => ({ ts: 0, cols: [], notes: {}, cooked: {}, shop: { recipes: [], extra: [], done: [] }, favs: [] });
 let kitchenOwner = "";
 const kitchenKey = () => (kitchenOwner ? `${KITCHEN_STORE}.${kitchenOwner}` : KITCHEN_STORE);
 function cleanKitchen(src) {
@@ -79,8 +79,28 @@ function cleanKitchen(src) {
   k.shop.recipes = Array.isArray(sh.recipes) ? sh.recipes.filter((x) => x && x.id).slice(0, 80).map((x) => ({ id: str(x.id, 100), f: Number.isFinite(+x.f) && +x.f > 0 ? Math.min(+x.f, 50) : 1 })) : [];
   k.shop.extra = Array.isArray(sh.extra) ? sh.extra.map((x) => str(x, 80)).filter(Boolean).slice(0, 100) : [];
   k.shop.done = Array.isArray(sh.done) ? sh.done.map((x) => str(x, 160)).slice(0, 400) : [];
+  k.favs = Array.isArray(src.favs) ? [...new Set(src.favs.map((x) => str(x, 100)).filter(Boolean))].slice(0, 1000) : [];
   return k;
 }
+/* Dos copias de Mi recetario (la de este navegador y la de la cuenta) se juntan: nada se pierde al entrar.
+   Colecciones por id (sus recetas se suman), notas (gana la de `a` si hay dos), "la hice" y la lista de compras sumados. */
+function mergeKitchen(a, b) {
+  const out = cleanKitchen(a), o = cleanKitchen(b);
+  for (const c of o.cols) {
+    const mine = out.cols.find((x) => x.id === c.id);
+    if (mine) mine.ids = [...new Set([...mine.ids, ...c.ids])];
+    else out.cols.push(c);
+  }
+  for (const [id, v] of Object.entries(o.notes)) if (!out.notes[id]) out.notes[id] = v;
+  for (const [id, v] of Object.entries(o.cooked)) out.cooked[id] = [...new Set([...(out.cooked[id] || []), ...v])].sort().slice(-30);
+  for (const r of o.shop.recipes) if (!out.shop.recipes.some((x) => x.id === r.id)) out.shop.recipes.push(r);
+  out.shop.extra = [...new Set([...out.shop.extra, ...o.shop.extra])];
+  out.shop.done = [...new Set([...out.shop.done, ...o.shop.done])];
+  out.favs = [...new Set([...out.favs, ...o.favs])];
+  out.ts = Math.max(out.ts, o.ts);
+  return cleanKitchen(out);
+}
+const kitchenEmpty = (k) => !k.cols.length && !Object.keys(k.notes).length && !Object.keys(k.cooked).length && !k.shop.recipes.length && !k.shop.extra.length && !k.favs.length;
 function readKitchen() { try { return cleanKitchen(JSON.parse(readStore(kitchenKey()) || "null")); } catch { return KITCHEN_DEFAULTS(); } }
 let kitchen = readKitchen();
 let kitchenSaveTimer = 0, kitchenPending = false, kitchenLoading = false;
@@ -104,8 +124,14 @@ function flushKitchen() {
 }
 /* Al entrar o salir de la cuenta: la copia de esa persona en este navegador. */
 function useKitchenOwner(uid) {
-  if (uid && !readStore(`${KITCHEN_STORE}.${uid}`) && readStore(KITCHEN_STORE)) {
-    writeStore(`${KITCHEN_STORE}.${uid}`, readStore(KITCHEN_STORE));
+  // Lo que se hizo sin cuenta en este navegador se junta con la copia de la persona (antes se quedaba atrás).
+  if (uid && readStore(KITCHEN_STORE)) {
+    const anon = (() => { try { return cleanKitchen(JSON.parse(readStore(KITCHEN_STORE))); } catch { return KITCHEN_DEFAULTS(); } })();
+    if (!kitchenEmpty(anon)) {
+      let mine = KITCHEN_DEFAULTS();
+      try { mine = cleanKitchen(JSON.parse(readStore(`${KITCHEN_STORE}.${uid}`) || "null")); } catch { /* de fábrica */ }
+      writeStore(`${KITCHEN_STORE}.${uid}`, JSON.stringify(mergeKitchen(mine, anon)));
+    }
     writeStore(KITCHEN_STORE, JSON.stringify(KITCHEN_DEFAULTS()));
   }
   kitchenOwner = uid || "";
@@ -121,14 +147,31 @@ async function loadUserKitchen() {
     const snap = await kitchenRef().get();
     kitchenLoading = false;
     const cloud = snap.exists && snap.data().kitchen;
-    if (cloud && (+cloud.ts || 0) >= (kitchen.ts || 0)) { kitchen = cleanKitchen(cloud); writeStore(kitchenKey(), JSON.stringify(kitchen)); refreshKitchenViews(); }
-    else if (kitchen.ts) { kitchenPending = true; flushKitchen(); }
+    // Se juntan la copia de la cuenta y la de este navegador (antes ganaba una y la otra se perdía).
+    const local = cleanKitchen({ ...kitchen, favs: [...new Set([...(kitchen.favs || []), ...favorites])] });
+    const merged = !cloud ? local : (+cloud.ts || 0) >= local.ts ? mergeKitchen(cloud, local) : mergeKitchen(local, cloud);
+    kitchen = merged;
+    writeStore(kitchenKey(), JSON.stringify(kitchen));
+    syncFavoritesFromKitchen();
+    refreshKitchenViews();
+    if (!cloud || JSON.stringify(cleanKitchen(cloud)) !== JSON.stringify(merged)) { kitchen.ts = Date.now(); kitchenPending = true; flushKitchen(); }
   } catch (err) { kitchenLoading = false; console.warn("No se leyó Mi recetario de la cuenta:", (err && err.code) || err); }
+}
+/* Favoritas en la cuenta (v4.30): app.js las guarda en este navegador (rcb.favorites) y avisa aquí. */
+function syncFavoritesFromKitchen() {
+  if (!kitchen.favs.length) return;
+  for (const id of kitchen.favs) favorites.add(id);
+  writeStore(STORE.favs, JSON.stringify([...favorites]));
+  if (typeof renderFavCount === "function") { renderFavCount(); renderFavButton(); }
+}
+function kitchenFavoritesChanged() {
+  kitchen.favs = [...favorites];
+  saveKitchen();
 }
 window.addEventListener("pagehide", () => { flushKitchen(); });
 document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") flushKitchen(); });
 
-const recipeById = (id) => recipes.find((r) => r.id === id);
+const recipeById = (id) => recipes.find((r) => r.id === canonicalId(id));
 const todayISO = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
 const fmtDay = (iso) => { const [y, m, d] = iso.split("-").map(Number); return new Date(y, m - 1, d).toLocaleDateString(currentLang === "es" ? "es-PR" : "en-US", { day: "numeric", month: "short", year: "numeric" }); };
 

@@ -16,19 +16,19 @@ recipes.push(
     id: "cafe-colao",
     category: "calientes",
     name: { es: "Café Colao", en: "Cloth-Strained Coffee (Café Colao)" },
-    time: "10 min",
+    active: 10, total: 10,
     servings: 4,
     ingredients: {
       es: [
         "4 tazas de agua",
         "½ taza de café puertorriqueño molido",
-        "Azúcar al gusto",
+        "4 cucharaditas de azúcar, o al gusto",
         "1 colador de tela limpio"
       ],
       en: [
         "4 cups water",
         "½ cup ground Puerto Rican coffee",
-        "Sugar to taste",
+        "4 teaspoons sugar, or to taste",
         "1 clean cloth coffee strainer"
       ]
     },
@@ -51,7 +51,7 @@ recipes.push(
     id: "cafe-con-leche",
     category: "calientes",
     name: { es: "Café con Leche", en: "Café con Leche" },
-    time: "10 min",
+    active: 10, total: 10,
     servings: 2,
     ingredients: {
       es: [
@@ -86,7 +86,7 @@ recipes.push(
     id: "chocolate-caliente",
     category: "calientes",
     name: { es: "Chocolate Caliente con Queso", en: "Hot Chocolate with Cheese" },
-    time: "15 min",
+    active: 15, total: 15,
     servings: 4,
     ingredients: {
       es: [
@@ -125,7 +125,7 @@ recipes.push(
     id: "guarapo-jengibre",
     category: "calientes",
     name: { es: "Guarapo de Jengibre", en: "Ginger Tea (Guarapo de Jengibre)" },
-    time: "20 min",
+    active: 20, total: 20,
     servings: 4,
     ingredients: {
       es: [
@@ -164,18 +164,18 @@ recipes.push(
     id: "te-limoncillo",
     category: "calientes",
     name: { es: "Té de Limoncillo", en: "Lemongrass Tea" },
-    time: "15 min",
+    active: 15, total: 15,
     servings: 4,
     ingredients: {
       es: [
         "6 hojas largas de limoncillo, lavadas",
         "4 tazas de agua",
-        "Azúcar o miel al gusto"
+        "4 cucharaditas de azúcar o miel, o al gusto"
       ],
       en: [
         "6 long lemongrass leaves, washed",
         "4 cups water",
-        "Sugar or honey to taste"
+        "4 teaspoons sugar or honey, or to taste"
       ]
     },
     steps: {
@@ -201,7 +201,7 @@ recipes.push(
     id: "espaguetis-pollo",
     category: "pastas",
     name: { es: "Espaguetis con Pollo a la Criolla", en: "Creole Chicken Spaghetti" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 6,
     ingredients: {
       es: [
@@ -250,7 +250,7 @@ recipes.push(
     id: "coditos-carne",
     category: "pastas",
     name: { es: "Coditos con Carne Molida", en: "Elbow Macaroni with Ground Beef" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 6,
     ingredients: {
       es: [
@@ -295,7 +295,7 @@ recipes.push(
     id: "macarrones-queso",
     category: "pastas",
     name: { es: "Macarrones con Queso al Horno", en: "Baked Macaroni and Cheese" },
-    time: "50 min",
+    active: 50, total: 50,
     servings: 8,
     ingredients: {
       es: [
@@ -340,7 +340,7 @@ recipes.push(
     id: "lasana-criolla",
     category: "pastas",
     name: { es: "Lasaña Criolla", en: "Puerto Rican-Style Lasagna" },
-    time: "1 hr 30 min",
+    active: 90, total: 105, wait: "reposo",
     servings: 10,
     ingredients: {
       es: [
@@ -395,7 +395,7 @@ recipes.push(
     id: "patitas-cerdo",
     category: "carnes",
     name: { es: "Patitas de Cerdo con Garbanzos", en: "Pig's Feet Stew with Chickpeas" },
-    time: "3 hrs",
+    active: 180, total: 180,
     servings: 6,
     ingredients: {
       es: [
@@ -442,7 +442,7 @@ recipes.push(
     id: "albondigas-guisadas",
     category: "carnes",
     name: { es: "Albóndigas Guisadas", en: "Stewed Meatballs" },
-    time: "50 min",
+    active: 50, total: 50,
     servings: 6,
     ingredients: {
       es: [
@@ -491,7 +491,7 @@ recipes.push(
     id: "pinchos-cerdo",
     category: "carnes",
     name: { es: "Pinchos de Cerdo", en: "Pork Skewers (Pinchos)" },
-    time: "30 min + reposo",
+    active: 30, total: 180, wait: "frio",
     servings: 6,
     ingredients: {
       es: [
@@ -536,7 +536,7 @@ recipes.push(
     id: "higado-encebollado",
     category: "carnes",
     name: { es: "Hígado Encebollado", en: "Liver and Onions" },
-    time: "25 min",
+    active: 25, total: 25,
     servings: 4,
     ingredients: {
       es: [
@@ -581,7 +581,7 @@ recipes.push(
     id: "chicharrones-pollo",
     category: "aves",
     name: { es: "Chicharrones de Pollo", en: "Puerto Rican Fried Chicken Bites" },
-    time: "40 min + reposo",
+    active: 40, total: 100, wait: "frio",
     servings: 6,
     ingredients: {
       es: [
@@ -624,7 +624,7 @@ recipes.push(
     id: "pollo-escabeche",
     category: "aves",
     name: { es: "Pollo en Escabeche", en: "Pickled Chicken (Escabeche)" },
-    time: "1 hr + reposo",
+    active: 60, total: 780, wait: "frio",
     servings: 6,
     ingredients: {
       es: [
@@ -673,7 +673,7 @@ recipes.push(
     id: "pollo-ajillo",
     category: "aves",
     name: { es: "Pollo al Ajillo", en: "Garlic Chicken" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 4,
     ingredients: {
       es: [
@@ -718,9 +718,9 @@ recipes.push(
   // ══════════════════════════════════════
   {
     id: "ensalada-carrucho",
-    category: "pescados",
+    category: "ensaladas",
     name: { es: "Ensalada de Carrucho", en: "Conch Salad" },
-    time: "1 hr 15 min + reposo",
+    active: 75, total: 195, wait: "frio",
     servings: 6,
     ingredients: {
       es: [
@@ -771,7 +771,7 @@ recipes.push(
     id: "camarones-criolla",
     category: "pescados",
     name: { es: "Camarones a la Criolla", en: "Creole Shrimp" },
-    time: "30 min",
+    active: 30, total: 30,
     servings: 4,
     ingredients: {
       es: [
@@ -818,7 +818,7 @@ recipes.push(
     id: "bacalao-vizcaina",
     category: "pescados",
     name: { es: "Bacalao a la Vizcaína", en: "Salt Cod Vizcaína" },
-    time: "1 hr + remojo",
+    active: 60, total: 540, wait: "remojo",
     servings: 6,
     ingredients: {
       es: [
@@ -871,7 +871,7 @@ recipes.push(
     id: "sopon-garbanzos",
     category: "sopas",
     name: { es: "Sopón de Garbanzos", en: "Hearty Chickpea Soup" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 6,
     ingredients: {
       es: [
@@ -916,7 +916,7 @@ recipes.push(
     id: "sopa-vegetales",
     category: "sopas",
     name: { es: "Sopa de Vegetales", en: "Vegetable Soup" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 6,
     ingredients: {
       es: [
@@ -963,7 +963,7 @@ recipes.push(
     id: "crema-calabaza",
     category: "sopas",
     name: { es: "Crema de Calabaza", en: "Cream of Pumpkin Soup" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 6,
     ingredients: {
       es: [
@@ -1010,7 +1010,7 @@ recipes.push(
     id: "arroz-blanco",
     category: "arroces",
     name: { es: "Arroz Blanco Boricua", en: "Puerto Rican White Rice" },
-    time: "35 min",
+    active: 35, total: 35,
     servings: 6,
     ingredients: {
       es: [
@@ -1045,7 +1045,7 @@ recipes.push(
     id: "arroz-longaniza",
     category: "arroces",
     name: { es: "Arroz con Longaniza", en: "Rice with Longaniza Sausage" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 6,
     ingredients: {
       es: [
@@ -1094,7 +1094,7 @@ recipes.push(
     id: "frijoles-negros",
     category: "granos",
     name: { es: "Habichuelas Negras Guisadas", en: "Stewed Black Beans" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 6,
     ingredients: {
       es: [
@@ -1139,7 +1139,7 @@ recipes.push(
     id: "garbanzos-chorizo",
     category: "granos",
     name: { es: "Garbanzos con Chorizo", en: "Chickpeas with Chorizo" },
-    time: "35 min",
+    active: 35, total: 35,
     servings: 4,
     ingredients: {
       es: [
@@ -1184,7 +1184,7 @@ recipes.push(
     id: "guingambo-guisado",
     category: "vegetales",
     name: { es: "Guingambó Guisado", en: "Stewed Okra" },
-    time: "35 min",
+    active: 35, total: 50, wait: "remojo",
     servings: 4,
     ingredients: {
       es: [
@@ -1227,7 +1227,7 @@ recipes.push(
     id: "trifongo",
     category: "vegetales",
     name: { es: "Trifongo", en: "Trifongo (Three-Root Mash)" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 4,
     ingredients: {
       es: [
@@ -1274,7 +1274,7 @@ recipes.push(
     id: "canoas-amarillo",
     category: "vegetales",
     name: { es: "Canoas de Amarillo", en: "Stuffed Ripe Plantain Boats (Canoas)" },
-    time: "50 min",
+    active: 50, total: 50,
     servings: 4,
     ingredients: {
       es: [
@@ -1315,7 +1315,7 @@ recipes.push(
     id: "guanimes",
     category: "cereales",
     name: { es: "Guanimes de Maíz", en: "Cornmeal Guanimes" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 8,
     ingredients: {
       es: [
@@ -1358,7 +1358,7 @@ recipes.push(
     id: "crema-arroz",
     category: "cereales",
     name: { es: "Cremita de Arroz", en: "Cream of Rice Porridge" },
-    time: "15 min",
+    active: 15, total: 15,
     servings: 2,
     ingredients: {
       es: [
@@ -1401,7 +1401,7 @@ recipes.push(
     id: "almojabanas",
     category: "entremeses",
     name: { es: "Almojábanas", en: "Rice Flour Cheese Fritters (Almojábanas)" },
-    time: "30 min",
+    active: 30, total: 30,
     servings: 6,
     ingredients: {
       es: [
@@ -1448,7 +1448,7 @@ recipes.push(
     id: "croquetas-jamon",
     category: "entremeses",
     name: { es: "Croquetas de Jamón", en: "Ham Croquettes" },
-    time: "1 hr + reposo",
+    active: 60, total: 180, wait: "frio",
     servings: 8,
     ingredients: {
       es: [
@@ -1497,7 +1497,7 @@ recipes.push(
     id: "empanadillas-jueyes",
     category: "entremeses",
     name: { es: "Empanadillas de Jueyes", en: "Land Crab Turnovers" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 10,
     ingredients: {
       es: [
@@ -1542,7 +1542,7 @@ recipes.push(
     id: "ensalada-repollo",
     category: "ensaladas",
     name: { es: "Ensalada de Repollo", en: "Cabbage Salad (Coleslaw)" },
-    time: "15 min + reposo",
+    active: 15, total: 45, wait: "frio",
     servings: 6,
     ingredients: {
       es: [
@@ -1579,7 +1579,7 @@ recipes.push(
     id: "ensalada-remolacha",
     category: "ensaladas",
     name: { es: "Ensalada de Remolacha", en: "Beet Salad" },
-    time: "50 min",
+    active: 50, total: 50,
     servings: 4,
     ingredients: {
       es: [
@@ -1622,7 +1622,7 @@ recipes.push(
     id: "piragua",
     category: "postres",
     name: { es: "Piragua de Tamarindo", en: "Tamarind Piragua (Shaved Ice)" },
-    time: "30 min",
+    active: 30, total: 30,
     servings: 6,
     ingredients: {
       es: [
@@ -1659,7 +1659,7 @@ recipes.push(
     id: "helado-coco",
     category: "postres",
     name: { es: "Helado de Coco", en: "Coconut Ice Cream" },
-    time: "20 min + congelación",
+    active: 20, total: 260, wait: "congelador",
     servings: 8,
     ingredients: {
       es: [
@@ -1698,7 +1698,7 @@ recipes.push(
     id: "bunuelos-viento",
     category: "postres",
     name: { es: "Buñuelos de Viento", en: "Puffed Fritters in Syrup (Buñuelos de Viento)" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 6,
     ingredients: {
       es: [
@@ -1747,7 +1747,7 @@ recipes.push(
     id: "mabi",
     category: "bebidas",
     name: { es: "Mabí", en: "Mabí (Fermented Bark Drink)" },
-    time: "30 min + 3 días",
+    active: 30, total: 4350, wait: "reposo",
     servings: 12,
     ingredients: {
       es: [
@@ -1790,7 +1790,7 @@ recipes.push(
     id: "horchata-ajonjoli",
     category: "bebidas",
     name: { es: "Horchata de Ajonjolí", en: "Sesame Seed Horchata" },
-    time: "20 min + remojo",
+    active: 20, total: 260, wait: "remojo",
     servings: 6,
     ingredients: {
       es: [
@@ -1833,7 +1833,7 @@ recipes.push(
     id: "pastelillos-guayaba",
     category: "pasteles_dulces",
     name: { es: "Pastelillos de Guayaba", en: "Guava Turnovers" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 12,
     ingredients: {
       es: [
@@ -1874,7 +1874,7 @@ recipes.push(
     id: "ajilimojili",
     category: "salsas",
     name: { es: "Ajilimójili", en: "Ajilimójili (Sweet Pepper Garlic Sauce)" },
-    time: "10 min",
+    active: 10, total: 40, wait: "reposo",
     servings: 8,
     ingredients: {
       es: [
@@ -1915,7 +1915,7 @@ recipes.push(
     id: "recaito",
     category: "salsas",
     name: { es: "Recaíto", en: "Recaíto (Culantro Base)" },
-    time: "15 min",
+    active: 15, total: 15,
     servings: 16,
     ingredients: {
       es: [
@@ -1958,7 +1958,7 @@ recipes.push(
     id: "cascos-toronja",
     category: "frutas",
     name: { es: "Cascos de Toronja en Almíbar", en: "Candied Grapefruit Shells" },
-    time: "2 hrs + reposo",
+    active: 120, total: 840, wait: "remojo",
     servings: 8,
     ingredients: {
       es: [
@@ -1999,7 +1999,7 @@ recipes.push(
     id: "dulce-grosellas",
     category: "frutas",
     name: { es: "Dulce de Grosellas", en: "Candied Star Gooseberries" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 6,
     ingredients: {
       es: [
@@ -2038,7 +2038,7 @@ recipes.push(
     id: "bizcocho-coco",
     category: "bizcochos",
     name: { es: "Bizcocho de Coco", en: "Coconut Cake" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 12,
     ingredients: {
       es: [
@@ -2085,7 +2085,7 @@ recipes.push(
     id: "pan-maiz",
     category: "panes",
     name: { es: "Pan de Maíz", en: "Cornbread" },
-    time: "35 min",
+    active: 35, total: 35,
     servings: 9,
     ingredients: {
       es: [
@@ -2128,7 +2128,7 @@ recipes.push(
     id: "sandwich-pernil",
     category: "emparedados",
     name: { es: "Sándwich de Pernil", en: "Roast Pork Sandwich" },
-    time: "10 min",
+    active: 10, total: 10,
     servings: 1,
     ingredients: {
       es: [

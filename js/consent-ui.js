@@ -9,14 +9,44 @@
  *    Si la cuenta ya había entrado antes sin aceptar (o cambió la versión), sale el estado "consent" con las
  *    casillas y "Acepto y continúo".
  * 3. Los administradores ven en #/admin la columna "Consentimiento" (versión, fecha y si se envió el correo).
- * 4. #/terminos muestra los términos completos para leerlos o imprimirlos. */
+ * 4. #/terminos muestra los términos completos para leerlos o imprimirlos.
+ * 5. #/privacidad: qué se guarda y para qué (sección 9 de los términos) y, con la sesión abierta, lo que hay
+ *    guardado de la persona, "Descargar mis datos" (JSON) y "Retirar mi consentimiento y borrar mi cuenta",
+ *    que borra en un paso su registro, su consentimiento, sus planes, Mi recetario, sus reseñas y fotos, sus
+ *    reportes y la cuenta de Firebase Authentication. */
 
 const CONSENT_STORE = "rcb.consent";
 const CUI_T = {
-  es: { colConsent: "Consentimiento", pending: "Pendiente", emailed: "correo enviado", notEmailed: "correo sin enviar", csvConsent: "Versión aceptada", csvConsentAt: "Fecha de aceptación", csvEmail: "Correo de confirmación",
-    emailFail: "Su aceptación quedó guardada, pero no se pudo enviar el correo de confirmación ahora. Lo intentaremos la próxima vez que entre.", footer: "Términos y condiciones" },
-  en: { colConsent: "Consent", pending: "Pending", emailed: "email sent", notEmailed: "email not sent", csvConsent: "Accepted version", csvConsentAt: "Acceptance date", csvEmail: "Confirmation email",
-    emailFail: "Your acceptance was saved, but the confirmation email couldn't be sent right now. We'll try again next time you sign in.", footer: "Terms and conditions" }
+  es: {
+    colConsent: "Consentimiento",
+    pvTitle: "Privacidad y mis datos", pvIntro: "Sin cuenta no guardamos nada en el servidor: lo suyo queda sólo en este navegador. Con cuenta, esto es lo que guardamos:",
+    pvMine: "Lo que hay guardado de su cuenta", pvEmail: "Correo", pvSince: "Primera vez", pvUses: "Veces que usó la app", pvConsent: "Consentimiento",
+    pvPlan: "Ajustes de planes", pvKitchen: "Mi recetario", pvReviews: "Reseñas", pvYes: "Sí", pvNo: "No",
+    pvGuest: "No ha entrado con una cuenta, así que no hay nada suyo en el servidor. Para borrar lo de este navegador, borre los datos del sitio en su navegador.",
+    pvDownload: "Descargar mis datos", pvDelete: "Retirar mi consentimiento y borrar mi cuenta",
+    pvDeleteHelp: "Borra para siempre su registro, su consentimiento, sus planes, Mi recetario, sus reseñas y fotos y su cuenta. No se puede deshacer. Las recetas las puede seguir viendo sin cuenta.",
+    pvConfirm: "¿Borrar su cuenta y todos sus datos? No se puede deshacer.", pvWorking: "Borrando sus datos…",
+    pvDone: "Su cuenta y sus datos se borraron. Puede seguir usando la app sin cuenta.",
+    pvReauth: "Por seguridad, entre otra vez con su cuenta y vuelva a pulsar «Borrar mi cuenta».",
+    pvFail: "No se pudo borrar todo. Inténtelo de nuevo o escríbanos.", pvLoading: "Cargando…",
+    footerPrivacy: "Privacidad", pending: "Pendiente", emailed: "correo enviado", notEmailed: "correo sin enviar", csvConsent: "Versión aceptada", csvConsentAt: "Fecha de aceptación", csvEmail: "Correo de confirmación",
+    emailFail: "Su aceptación quedó guardada, pero no se pudo enviar el correo de confirmación ahora. Lo intentaremos la próxima vez que entre.", footer: "Términos y condiciones",
+    consentFail: "No pudimos guardar ni confirmar su consentimiento en el servidor, así que la cuenta no se abrió. Revise su conexión e intente de nuevo; mientras tanto puede usar la app sin cuenta." },
+  en: {
+    pvTitle: "Privacy and my data", pvIntro: "Without an account we store nothing on the server: your things stay only in this browser. With an account, this is what we store:",
+    pvMine: "What's stored for your account", pvEmail: "Email", pvSince: "First time", pvUses: "Times you used the app", pvConsent: "Consent",
+    pvPlan: "Plan settings", pvKitchen: "My cookbook", pvReviews: "Reviews", pvYes: "Yes", pvNo: "No",
+    pvGuest: "You're not signed in to an account, so nothing of yours is on the server. To remove what's in this browser, clear this site's data in your browser.",
+    pvDownload: "Download my data", pvDelete: "Withdraw my consent and delete my account",
+    pvDeleteHelp: "Permanently deletes your record, consent, plans, My cookbook, reviews and photos, and your account. This can't be undone. You can keep viewing recipes without an account.",
+    pvConfirm: "Delete your account and all your data? This can't be undone.", pvWorking: "Deleting your data…",
+    pvDone: "Your account and data were deleted. You can keep using the app without an account.",
+    pvReauth: "For security, sign in to your account again and tap “Delete my account” once more.",
+    pvFail: "Not everything could be deleted. Try again or write to us.", pvLoading: "Loading…",
+    footerPrivacy: "Privacy",
+    colConsent: "Consent", pending: "Pending", emailed: "email sent", notEmailed: "email not sent", csvConsent: "Accepted version", csvConsentAt: "Acceptance date", csvEmail: "Confirmation email",
+    emailFail: "Your acceptance was saved, but the confirmation email couldn't be sent right now. We'll try again next time you sign in.", footer: "Terms and conditions",
+    consentFail: "We couldn't save or confirm your consent on the server, so the account wasn't opened. Check your connection and try again; meanwhile you can use the app without an account." }
 };
 const cui = () => CUI_T[currentLang];
 const ctT = () => TERMS[currentLang];
@@ -72,20 +102,25 @@ function onConsentCheck(input) {
 
 /* ── En la cuenta ── */
 const consentRef = (uid) => fbDb.collection("consents").doc(uid);
-/* Devuelve true si se puede entrar (ya aceptó la versión vigente, o la aceptó en esta pantalla y se guardó).
-   Si no, deja el estado "consent". Si Firestore todavía no tiene las reglas de consents, se entra con lo aceptado
-   en este navegador (y se avisa en la consola). */
+/* Devuelve true si se puede entrar: el registro del SERVIDOR (consents/{uid}) tiene la versión vigente, o la persona
+   la aceptó en esta pantalla y se guardó allí con la hora del servidor. La copia del navegador (rcb.consent) sólo
+   recuerda las casillas marcadas antes de entrar: nunca basta por sí sola (antes, si el registro no se podía leer,
+   se entraba con ella). Sin registro en el servidor no se abre la cuenta; la app se sigue usando sin cuenta. */
 async function consentOnUser(user) {
-  let saved = null, rulesOk = true;
+  let saved = null;
   try { const snap = await consentRef(user.uid).get(); saved = snap.exists ? snap.data() : null; }
-  catch (err) { rulesOk = false; console.warn("No se leyó el consentimiento (¿faltan las reglas de consents?):", (err && err.code) || err); }
+  catch (err) {
+    console.warn("No se leyó el consentimiento:", (err && err.code) || err);
+    setAuthState("signin", cui().consentFail);
+    await fbAuth.signOut().catch(() => {});
+    return false;
+  }
   if (saved && saved.version === CONSENT_VERSION) {
     if (!saved.emailSentAt) sendConsentEmail(user, false); // no se pudo enviar antes: se intenta otra vez
     return true;
   }
   const local = consentPending();
   if (!local) { consentChecks = new Set(); setAuthState("consent"); return false; }
-  if (!rulesOk) return true;
   try {
     const history = saved ? [...(saved.history || []), `${saved.version}`].slice(-20) : [];
     await consentRef(user.uid).set({
@@ -94,8 +129,15 @@ async function consentOnUser(user) {
       ua: String(navigator.userAgent || "").slice(0, 200), history,
       at: firebase.firestore.FieldValue.serverTimestamp()
     });
+    // Se vuelve a leer: lo que vale es lo que quedó en el servidor (con su hora), no lo que se mandó.
+    const check = await consentRef(user.uid).get();
+    if (!check.exists || check.data().version !== CONSENT_VERSION || !check.data().at) throw new Error("sin registro");
     sendConsentEmail(user, true);
-  } catch (err) { console.warn("No se guardó el consentimiento en la cuenta:", (err && err.code) || err); }
+  } catch (err) {
+    console.warn("No se guardó el consentimiento en la cuenta:", (err && (err.code || err.message)) || err);
+    setAuthState("consent", cui().consentFail);
+    return false;
+  }
   return true;
 }
 /* Pide al servidor el correo de confirmación (api/consent-email.js). El servidor lee el registro de la cuenta con la
@@ -168,4 +210,154 @@ document.addEventListener("click", (e) => {
   if (!b) return;
   if (b.getAttribute("aria-disabled") === "true") { const st = $("consent-status"); if (st) st.textContent = ctT().needAll; return; }
   if (fbAuth && fbAuth.currentUser) { setAuthState("loading"); onUser(fbAuth.currentUser); }
+});
+
+/* ── #/privacidad: qué guardamos, descargar mis datos y borrar mi cuenta ── */
+function privacySection(lang = currentLang) {
+  return TERMS[lang].sections.find(([h]) => /^9\./.test(h));
+}
+async function myDataSnapshot() {
+  const uid = authUser.uid;
+  const [user, consent, planDoc, kitchenDoc, reviews] = await Promise.all([
+    fbDb.collection("users").doc(uid).get(),
+    consentRef(uid).get(),
+    fbDb.collection("users").doc(uid).collection("data").doc("plan").get(),
+    fbDb.collection("users").doc(uid).collection("data").doc("kitchen").get(),
+    fbDb.collection("reviews").where("uid", "==", uid).get()
+  ]);
+  return { user, consent, planDoc, kitchenDoc, reviews };
+}
+function showPrivacy() {
+  current = null;
+  for (const v of ["view-home", "view-recipe", "view-plans", "view-admin", "view-mine", "view-shop", "view-terms"]) { const el = $(v); if (el) el.hidden = true; }
+  const v = $("view-privacy");
+  v.hidden = false;
+  document.title = `${cui().pvTitle} — ${BRAND}`;
+  renderPrivacyView();
+  jumpTo(0);
+  $("privacy-title").focus({ preventScroll: true });
+}
+function renderPrivacyView() {
+  const v = $("view-privacy");
+  if (!v || v.hidden) return;
+  const tr = cui();
+  const sec = privacySection();
+  const para = (p) => (Array.isArray(p) ? `<ul>${p.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : `<p>${esc(p)}</p>`);
+  const signed = typeof authUser !== "undefined" && authUser && authState === "ready" && fbDb;
+  v.innerHTML = `<div class="container terms-wrap">
+    <header class="plans-head"><h1 class="section-title" id="privacy-title" tabindex="-1">${esc(tr.pvTitle)}</h1>
+      <p class="section-sub">${esc(tr.pvIntro)}</p></header>
+    <div class="terms-page"><section class="terms-sec"><h3>${esc(sec[0])}</h3>${sec[1].map(para).join("")}</section>
+      <p><a href="#/terminos">${esc(ctT().viewTitle)}</a></p></div>
+    <section class="privacy-mine" aria-labelledby="privacy-mine-title">
+      <h2 class="plans-more-title" id="privacy-mine-title">${esc(tr.pvMine)}</h2>
+      <div id="privacy-data">${signed ? `<p class="auth-loading">${esc(tr.pvLoading)}</p>` : `<p>${esc(tr.pvGuest)}</p>`}</div>
+      ${signed ? `<div class="privacy-actions">
+        <button type="button" class="btn btn-outline" data-privacy="download"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><span>${esc(tr.pvDownload)}</span></button>
+        <button type="button" class="btn btn-danger" data-privacy="delete"><svg class="icon" aria-hidden="true"><use href="#i-trash"/></svg><span>${esc(tr.pvDelete)}</span></button>
+      </div>
+      <p class="plans-help">${esc(tr.pvDeleteHelp)}</p>
+      <p class="auth-msg" id="privacy-msg" role="alert" hidden></p>` : ""}
+    </section>
+  </div>`;
+  if (signed) myDataSnapshot().then((d) => {
+    const box = $("privacy-data");
+    if (!box) return;
+    const u = d.user.exists ? d.user.data() : {};
+    const c = d.consent.exists ? d.consent.data() : null;
+    const yes = (b) => esc(b ? tr.pvYes : tr.pvNo);
+    box.innerHTML = `<dl class="privacy-list">
+      <dt>${esc(tr.pvEmail)}</dt><dd>${esc(authUser.email)}</dd>
+      <dt>${esc(tr.pvSince)}</dt><dd>${esc(fmtDate(u.firstSeen))}</dd>
+      <dt>${esc(tr.pvUses)}</dt><dd>${esc(String(u.count || 0))}</dd>
+      <dt>${esc(tr.pvConsent)}</dt><dd>${c ? esc(ctT().myConsent(c.version, c.at ? consentDate(c.at.toDate(), currentLang) : "")) : "—"}</dd>
+      <dt>${esc(tr.pvPlan)}</dt><dd>${yes(d.planDoc.exists)}</dd>
+      <dt>${esc(tr.pvKitchen)}</dt><dd>${yes(d.kitchenDoc.exists)}</dd>
+      <dt>${esc(tr.pvReviews)}</dt><dd>${esc(String(d.reviews.size))}</dd>
+    </dl>`;
+  }).catch((err) => { const box = $("privacy-data"); if (box) box.textContent = cui().pvFail; console.warn("Mis datos:", (err && err.code) || err); });
+}
+function privacyMsg(text) { const el = $("privacy-msg"); if (el) { el.textContent = text; el.hidden = !text; } }
+
+/* Todo lo de la cuenta en un archivo JSON (fechas como texto). */
+async function downloadMyData() {
+  const d = await myDataSnapshot();
+  const plain = (x) => JSON.parse(JSON.stringify(x, (k, v) => (v && typeof v.toDate === "function" ? v.toDate().toISOString() : v)));
+  const out = {
+    exportedAt: new Date().toISOString(), email: authUser.email,
+    user: d.user.exists ? plain(d.user.data()) : null, consent: d.consent.exists ? plain(d.consent.data()) : null,
+    plan: d.planDoc.exists ? plain(d.planDoc.data()) : null, kitchen: d.kitchenDoc.exists ? plain(d.kitchenDoc.data()) : null,
+    reviews: d.reviews.docs.map((r) => ({ id: r.id, ...plain(r.data()) }))
+  };
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(out, null, 2)], { type: "application/json" }));
+  a.download = `mis-datos-recetarios-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+/* Borrar la cuenta: Firebase exige haber entrado hace poco. Con Gmail/Yahoo/Microsoft se vuelve a entrar
+   en una ventanita; con el enlace por correo se cierra la sesión y se pide entrar otra vez. Primero se borran
+   los datos de Firestore (con la sesión todavía abierta) y al final la cuenta de Authentication. */
+async function deleteMyAccount() {
+  const tr = cui();
+  if (!confirm(tr.pvConfirm)) return;
+  const user = fbAuth.currentUser;
+  if (!user) return;
+  const recent = Date.now() - new Date(user.metadata.lastSignInTime).getTime() < 4 * 60 * 1000;
+  if (!recent) {
+    const pid = (user.providerData[0] || {}).providerId;
+    const key = { "google.com": "google", "yahoo.com": "yahoo", "microsoft.com": "microsoft", "apple.com": "apple" }[pid];
+    try {
+      if (!key) throw Object.assign(new Error("enlace"), { code: "auth/requires-recent-login" });
+      await user.reauthenticateWithPopup(providerFor(key));
+    } catch (err) {
+      if (err && err.code === "auth/popup-closed-by-user") return;
+      privacyMsg(tr.pvReauth);
+      await signOut();
+      location.hash = "#/privacidad";
+      openSignIn(tr.pvReauth);
+      return;
+    }
+  }
+  privacyMsg(tr.pvWorking);
+  const uid = user.uid;
+  try {
+    await flushPlanSave().catch(() => {});
+    stopWatchingUser();
+    const [reviews, reports] = await Promise.all([
+      fbDb.collection("reviews").where("uid", "==", uid).get(),
+      fbDb.collection("reports").where("uid", "==", uid).get()
+    ]);
+    const batch = fbDb.batch();
+    for (const r of reviews.docs) {
+      batch.delete(r.ref);
+      batch.delete(fbDb.collection("reviewPhotos").doc(r.id));
+      batch.delete(fbDb.collection("reviewPhotos").doc(`${r.id}__draft`));
+    }
+    for (const r of reports.docs) batch.delete(r.ref);
+    const data = fbDb.collection("users").doc(uid).collection("data");
+    batch.delete(data.doc("plan"));
+    batch.delete(data.doc("kitchen"));
+    batch.delete(consentRef(uid));
+    batch.delete(fbDb.collection("users").doc(uid));
+    await batch.commit();
+    if (authIsAdmin) await fbDb.collection("admins").doc(lower(user.email)).delete().catch(() => {}); // el dueño no se puede quitar
+    // Lo de esta cuenta en este navegador también.
+    for (const k of [`rcb.plan.${uid}`, `rcb.kitchen.${uid}`, `rcb.reviewName.${uid}`, CONSENT_STORE]) authStore(k, null);
+    await user.delete();
+    usePlanOwner(""); applyPlan(null);
+    if (typeof useKitchenOwner === "function") useKitchenOwner("");
+    location.hash = "#/";
+    toast(tr.pvDone, true);
+  } catch (err) {
+    console.warn("Borrar cuenta:", (err && (err.code || err.message)) || err);
+    privacyMsg(tr.pvFail);
+  }
+}
+document.addEventListener("click", (e) => {
+  const b = e.target.closest && e.target.closest("[data-privacy]");
+  if (!b) return;
+  if (b.dataset.privacy === "download") downloadMyData().catch(() => privacyMsg(cui().pvFail));
+  if (b.dataset.privacy === "delete") deleteMyAccount();
 });

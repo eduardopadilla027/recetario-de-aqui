@@ -11,9 +11,14 @@
  * { target, uid, photo (data URL), updatedAt }, para que las listas no la descarguen
  * hasta que la reseña se ve. Se escriben juntas en un batch. ARQUITECTURA.md §7.5.
  *
- * Aprobación previa: toda reseña nueva o editada queda "pending" y sólo la ve su
- * autor hasta que un administrador la aprueba en #/admin ("Reseñas pendientes").
- * Las reglas de firestore.rules (match /reviews) lo hacen cumplir. ARQUITECTURA.md §7.4.
+ * Aprobación previa: toda reseña nueva queda "pending" y sólo la ve su autor hasta que
+ * un administrador la aprueba en #/admin ("Reseñas pendientes"). Editar una reseña YA
+ * publicada no la esconde: los cambios van en `draft` (+ pendingEdit, y la foto nueva en
+ * reviewPhotos/{id}__draft) y se sigue viendo la versión aprobada (y su promedio) hasta que
+ * un administrador aprueba o descarta los cambios. Las publicadas se leen SIN cuenta; para
+ * escribir o reportar una se pide entrar (requireAccount, auth.js). "Reportar" guarda
+ * reports/{id de la reseña}__{uid} y los administradores lo ven en #/admin.
+ * Las reglas de firestore.rules (match /reviews, /reports) lo hacen cumplir. ARQUITECTURA.md §7.4.
  *
  * Depende de globales de app.js ($, esc, currentLang, current, recipes, jumpTo, toast),
  * de auth.js (fbDb, authUser, authState, authIsAdmin, adminUsers, authStore, fmtDate)
@@ -59,6 +64,22 @@ const REVIEW_T = {
     more: (n) => `Ver más reseñas (${n})`,
     loading: "Cargando reseñas…",
     error: "No se pudieron cargar las reseñas.",
+    offline: "Las reseñas no se pueden ver ahora (sin conexión).",
+    signInToWrite: "Entrar para escribir una reseña",
+    draftTag: "Cambios pendientes de aprobación",
+    draftNote: "Mientras un administrador revisa sus cambios, se sigue viendo la versión publicada.",
+    editNoteApproved: "Su reseña publicada se sigue viendo mientras se aprueban los cambios.",
+    report: "Reportar",
+    reportAsk: "¿Por qué reporta esta reseña? (ofensiva, engañosa, no es de la receta…)",
+    reportSent: "Gracias. Un administrador revisará la reseña.",
+    reportsTitle: "Reseñas reportadas",
+    reportsNone: "No hay reseñas reportadas.",
+    reportReason: "Motivo:",
+    reportDismiss: "Descartar reporte",
+    approveDraft: "Aprobar cambios",
+    discardDraft: "Descartar cambios",
+    draftOf: "Cambios propuestos a una reseña publicada",
+    discardedToast: "Cambios descartados; queda la versión publicada.",
     noPermission: "Las reseñas todavía no están activadas en el servidor (reglas de Firestore).",
     saveError: "No se pudo guardar la reseña. Inténtelo de nuevo.",
     photoLabel: "Foto del plato (opcional)",
@@ -124,6 +145,22 @@ const REVIEW_T = {
     more: (n) => `Show more reviews (${n})`,
     loading: "Loading reviews…",
     error: "The reviews couldn't be loaded.",
+    offline: "Reviews can't be shown right now (no connection).",
+    signInToWrite: "Sign in to write a review",
+    draftTag: "Changes awaiting approval",
+    draftNote: "While an administrator reviews your changes, the published version is still shown.",
+    editNoteApproved: "Your published review stays visible while the changes are approved.",
+    report: "Report",
+    reportAsk: "Why are you reporting this review? (offensive, misleading, not about the recipe…)",
+    reportSent: "Thank you. An administrator will review it.",
+    reportsTitle: "Reported reviews",
+    reportsNone: "No reported reviews.",
+    reportReason: "Reason:",
+    reportDismiss: "Dismiss report",
+    approveDraft: "Approve changes",
+    discardDraft: "Discard changes",
+    draftOf: "Proposed changes to a published review",
+    discardedToast: "Changes discarded; the published version stays.",
     noPermission: "Reviews aren't enabled on the server yet (Firestore rules).",
     saveError: "The review couldn't be saved. Please try again.",
     photoLabel: "Photo of the dish (optional)",
@@ -161,15 +198,18 @@ const reviewCache = new Map();   // target → { list (aprobadas), mine, loading
 const reviewEditing = new Set(); // targets con el formulario abierto
 const reviewShown = new Map();   // target → cuántas reseñas se ven
 let pendingReviews = null;       // #/admin: null = sin cargar
+let reportedReviews = null;      // #/admin: [{ report, review }] o null
 const photoCache = new Map();    // id de la reseña → data URL | null (sin foto) | Promise (cargando)
 const photoDraft = new Map();    // target → { dataUrl, bytes, width, height } | null (quitarla); sin clave = no cambia
 const photoBusy = new Set();     // targets con una foto achicándose
 
-function reviewsOn() { return Boolean(fbDb && authUser && authState === "ready"); }
+// Leer: basta con Firebase cargado (las publicadas son públicas). Escribir: con la sesión abierta.
+function reviewsOn() { return Boolean(fbDb); }
+function reviewsCanWrite() { return Boolean(fbDb && authUser && authState === "ready"); }
 function reviewCol() { return fbDb.collection("reviews"); }
 function reviewPhotoCol() { return fbDb.collection("reviewPhotos"); }
 function reviewDocId(target) { return `${target}__${authUser.uid}`; }
-function recipeTarget(recipe) { return "r:" + recipe.id; }
+function recipeTarget(recipe) { return "r:" + reviewTargetId(recipe.id); } // id viejo si la receta cambió de id
 function reviewTime(r) { const ts = r.updatedAt || r.createdAt; return ts && ts.toMillis ? ts.toMillis() : 0; }
 function reviewError(err) {
   console.warn("Reseñas:", (err && (err.code || err.message)) || err);
@@ -182,6 +222,7 @@ function resetReviews() {
   reviewEditing.clear();
   reviewShown.clear();
   pendingReviews = null;
+  reportedReviews = null;
   photoCache.clear();
   photoDraft.clear();
   photoBusy.clear();
@@ -227,6 +268,7 @@ function reviewPhotoHTML(r) {
 /* Lo que muestra el formulario: la foto nueva, ninguna o la que ya tenía la reseña. */
 function formPhotoInner(target, mine) {
   const tr = rt();
+  if (mine && mine.pendingEdit && mine.draft) mine = { ...mine, ...mine.draft, id: mine.draft.newPhoto ? `${mine.id}__draft` : mine.id };
   const draft = photoDraft.get(target);
   const busy = photoBusy.has(target);
   let preview = "";
@@ -310,9 +352,16 @@ function openPhoto(src, alt) {
 /* ------------------------------------------------------------ carga ---- */
 
 async function loadReviews(target, force = false) {
-  if (!reviewsOn()) { renderReviews(target); return; }
+  if (!reviewsOn()) {
+    // Sin Firebase: todavía cargando ("Cargando…") o no hay (sin conexión o sin configurar): se dice, no se queda cargando.
+    reviewCache.set(target, typeof authState !== "undefined" && authState === "loading"
+      ? { list: [], mine: null, loading: true, loaded: false, error: "", stub: true }
+      : { list: [], mine: null, loading: false, loaded: false, error: rt().offline, stub: true });
+    renderReviews(target);
+    return;
+  }
   const old = reviewCache.get(target);
-  if (old && (old.loading || (old.loaded && !force))) { renderReviews(target); return; }
+  if (old && !old.stub && (old.loading || (old.loaded && !force))) { renderReviews(target); return; }
   const entry = { list: [], mine: null, loading: true, loaded: false, error: "" };
   reviewCache.set(target, entry);
   renderReviews(target);
@@ -320,10 +369,10 @@ async function loadReviews(target, force = false) {
     // Dos igualdades: Firestore las resuelve sin índice compuesto. Se ordena aquí.
     const [list, mine] = await Promise.all([
       reviewCol().where("target", "==", target).where("status", "==", "approved").get(),
-      reviewCol().doc(reviewDocId(target)).get()
+      reviewsCanWrite() ? reviewCol().doc(reviewDocId(target)).get() : Promise.resolve(null)
     ]);
     entry.list = list.docs.map((d) => ({ id: d.id, ...d.data() })).sort((a, b) => reviewTime(b) - reviewTime(a));
-    entry.mine = mine.exists ? { id: mine.id, ...mine.data() } : null;
+    entry.mine = mine && mine.exists ? { id: mine.id, ...mine.data() } : null;
     entry.loaded = true;
   } catch (err) {
     entry.error = reviewError(err);
@@ -395,10 +444,10 @@ function renderReviews(target) {
 
   const mine = entry.mine;
   let mineHTML;
-  if (reviewEditing.has(target)) mineHTML = reviewFormHTML(target, mine);
+  if (reviewEditing.has(target) && reviewsCanWrite()) mineHTML = reviewFormHTML(target, mine);
   else if (mine) mineHTML = reviewItemHTML(mine, { own: true, target });
   else mineHTML = `<button type="button" class="btn btn-primary review-write" data-review="write" data-target="${esc(target)}">
-      <svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>${esc(tr.write)}</button>`;
+      <svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>${esc(reviewsCanWrite() ? tr.write : tr.signInToWrite)}</button>`;
 
   const others = entry.list.filter((r) => !mine || r.id !== mine.id);
   const shown = reviewShown.get(target) || REVIEW_PAGE;
@@ -416,7 +465,11 @@ function renderReviews(target) {
 
 function reviewItemHTML(r, { own = false, target }) {
   const tr = rt();
-  const tag = own ? `<span class="review-tag ${r.status === "approved" ? "is-ok" : "is-pending"}">${esc(r.status === "approved" ? tr.approved : tr.pending)}</span>` : "";
+  // La propia con cambios pendientes: se muestra lo que la persona escribió (el público sigue viendo la aprobada).
+  const shown = own && r.pendingEdit && r.draft ? { ...r, ...r.draft } : r;
+  const tag = own
+    ? `<span class="review-tag ${r.status === "approved" ? "is-ok" : "is-pending"}">${esc(r.status === "approved" ? tr.approved : tr.pending)}</span>${r.pendingEdit ? ` <span class="review-tag is-pending">${esc(tr.draftTag)}</span>` : ""}`
+    : "";
   const actions = own
     ? `<div class="review-actions">
          <button type="button" class="btn btn-ghost btn-sm" data-review="edit" data-target="${esc(target)}">${esc(tr.edit)}</button>
@@ -424,18 +477,20 @@ function reviewItemHTML(r, { own = false, target }) {
        </div>`
     : authIsAdmin
       ? `<div class="review-actions"><button type="button" class="btn btn-ghost btn-sm" data-review="admin-delete" data-target="${esc(target)}" data-id="${esc(r.id)}" data-name="${esc(r.name)}"${r.hasPhoto ? ' data-photo="1"' : ""}>${esc(tr.del)}</button></div>`
-      : "";
+      : `<div class="review-actions"><button type="button" class="btn btn-ghost btn-sm review-report" data-review="report" data-target="${esc(target)}" data-id="${esc(r.id)}">
+          <svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg>${esc(tr.report)}</button></div>`;
   const Tag = own ? "div" : "li";
   return `<${Tag} class="review${own ? " review-own" : ""}">
       ${own ? `<p class="review-own-label">${esc(tr.mine)} ${tag}</p>` : ""}
       <div class="review-top">
-        ${starsHTML(r.stars || 0)}
-        <strong class="review-name">${esc(r.name)}</strong>
+        ${starsHTML(shown.stars || 0)}
+        <strong class="review-name">${esc(shown.name)}</strong>
         <span class="review-date">${esc(reviewDate(r))}</span>
       </div>
-      ${r.text ? `<p class="review-text">${esc(r.text)}</p>` : ""}
-      ${reviewPhotoHTML(r)}
+      ${shown.text ? `<p class="review-text">${esc(shown.text)}</p>` : ""}
+      ${reviewPhotoHTML(own && r.pendingEdit && r.draft && r.draft.newPhoto ? { ...shown, id: `${r.id}__draft` } : shown)}
       ${own && r.status !== "approved" ? `<p class="review-hint">${esc(tr.sent)}</p>` : ""}
+      ${own && r.pendingEdit ? `<p class="review-hint">${esc(tr.draftNote)}</p>` : ""}
       ${actions}
     </${Tag}>`;
 }
@@ -443,9 +498,10 @@ function reviewItemHTML(r, { own = false, target }) {
 function reviewFormHTML(target, mine) {
   const tr = rt();
   const key = target.replace(/[^a-z0-9]/gi, "_");
-  const stars = mine ? mine.stars : 0;
-  const name = (mine && mine.name) || authStore(REVIEW_NAME_KEY + authUser.uid) || "";
-  const text = (mine && mine.text) || "";
+  const src = mine && mine.pendingEdit && mine.draft ? { ...mine, ...mine.draft } : mine; // se edita sobre los cambios pendientes
+  const stars = src ? src.stars : 0;
+  const name = (src && src.name) || authStore(REVIEW_NAME_KEY + authUser.uid) || "";
+  const text = (src && src.text) || "";
   const starInputs = [1, 2, 3, 4, 5].map((n) => `
       <label class="star-pick" title="${esc(tr.starN(n))}">
         <input type="radio" name="stars" value="${n}"${n === stars ? " checked" : ""}>
@@ -463,7 +519,7 @@ function reviewFormHTML(target, mine) {
       <textarea class="review-textarea" id="rv-text-${key}" name="text" maxlength="1000" rows="4" placeholder="${esc(tr.textPh)}">${esc(text)}</textarea>
       <p class="review-chars" aria-live="polite">${esc(tr.chars(text.length))}</p>
       <div class="review-photo-field" data-photo-field role="group" aria-labelledby="rv-photo-${key}">${formPhotoInner(target, mine)}</div>
-      <p class="review-note">${esc(mine ? `${tr.editNote} ${tr.note}` : tr.note)}</p>
+      <p class="review-note">${esc(mine ? (mine.status === "approved" ? tr.editNoteApproved : `${tr.editNote} ${tr.note}`) : tr.note)}</p>
       <p class="auth-msg review-msg" role="alert" hidden></p>
       <div class="review-actions">
         <button type="submit" class="btn btn-primary"${photoBusy.has(target) ? " disabled" : ""}>${esc(mine ? tr.update : tr.send)}</button>
@@ -488,7 +544,7 @@ function renderRecipeRating(entry) {
 /* Lo llama renderModal (app.js) al abrir o repintar una receta. */
 function renderRecipeReviews(recipe) {
   const target = recipeTarget(recipe);
-  if (reviewCache.has(target)) renderReviews(target);
+  if (reviewCache.has(target) && !reviewCache.get(target).stub) renderReviews(target);
   else loadReviews(target);
 }
 
@@ -510,7 +566,7 @@ async function submitReview(form) {
   const tr = rt();
   const target = form.dataset.reviewForm;
   const entry = reviewCache.get(target);
-  if (!reviewsOn() || !entry) return;
+  if (!reviewsCanWrite() || !entry) return;
   const picked = form.querySelector('input[name="stars"]:checked');
   const stars = picked ? Number(picked.value) : 0;
   const name = form.elements.name.value.trim().replace(/\s+/g, " ");
@@ -525,9 +581,32 @@ async function submitReview(form) {
   const photoRef = reviewPhotoCol().doc(ref.id);
   const now = firebase.firestore.FieldValue.serverTimestamp();
   const draft = photoDraft.get(target);          // undefined = la foto no cambia
-  const hadPhoto = Boolean(entry.mine && entry.mine.hasPhoto);
+  const mine = entry.mine;
+  const hadPhoto = Boolean(mine && mine.hasPhoto);
   const hasPhoto = draft === undefined ? hadPhoto : Boolean(draft);
   try {
+    if (mine && mine.status === "approved") {
+      // Publicada: los cambios esperan en `draft` y la versión aprobada se sigue viendo.
+      const draftRef = reviewPhotoCol().doc(`${ref.id}__draft`);
+      const before = mine.pendingEdit && mine.draft ? mine.draft : null;
+      const newPhoto = draft ? true : draft === null ? false : Boolean(before && before.newPhoto);
+      const dHas = draft === undefined ? (before ? before.hasPhoto : hadPhoto) : Boolean(draft);
+      const batch = fbDb.batch();
+      if (draft) batch.set(draftRef, { target, uid: authUser.uid, photo: draft.dataUrl, updatedAt: now });
+      else if (draft === null && before && before.newPhoto) batch.delete(draftRef);
+      batch.update(ref, { draft: { name, stars, text, hasPhoto: dHas, newPhoto }, pendingEdit: true, updatedAt: now });
+      await batch.commit();
+      if (draft !== undefined) photoCache.set(`${ref.id}__draft`, draft ? draft.dataUrl : null);
+      photoDraft.delete(target);
+      authStore(REVIEW_NAME_KEY + authUser.uid, name);
+      const snap = await ref.get();
+      entry.mine = snap.exists ? { id: snap.id, ...snap.data() } : null;
+      reviewEditing.delete(target);
+      renderReviews(target);
+      toast(tr.sent, true);
+      if (pendingReviews) loadPendingReviews();
+      return;
+    }
     // Reseña y foto juntas: o se guardan las dos o ninguna.
     const batch = fbDb.batch();
     if (draft) batch.set(photoRef, { target, uid: authUser.uid, photo: draft.dataUrl, updatedAt: now });
@@ -567,6 +646,7 @@ async function deleteReview(target, id, adminName, withPhoto) {
     const batch = fbDb.batch();
     batch.delete(reviewCol().doc(docId));
     if (withPhoto) batch.delete(reviewPhotoCol().doc(docId));
+    batch.delete(reviewPhotoCol().doc(`${docId}__draft`)); // la foto de unos cambios pendientes, si la hay
     await batch.commit();
     photoCache.delete(docId);
     if (own) photoDraft.delete(target);
@@ -575,6 +655,7 @@ async function deleteReview(target, id, adminName, withPhoto) {
       entry.list = entry.list.filter((r) => r.id !== docId);
     }
     if (pendingReviews) pendingReviews = pendingReviews.filter((r) => r.id !== docId);
+    if (reportedReviews) reportedReviews = reportedReviews.filter((x) => x.review.id !== docId);
     renderReviews(target);
     if ($("admin-reviews")) renderPendingReviews();
     toast(tr.deleted, true);
@@ -585,11 +666,16 @@ async function deleteReview(target, id, adminName, withPhoto) {
 
 /* Lo llama loadAdminData (auth.js). */
 async function loadPendingReviews() {
-  if (!authIsAdmin || !reviewsOn()) return;
+  if (!authIsAdmin || !reviewsCanWrite()) return;
   try {
-    const snap = await reviewCol().where("status", "==", "pending").get();
-    pendingReviews = snap.docs.map((d) => ({ id: d.id, ...d.data() })).sort((a, b) => reviewTime(a) - reviewTime(b));
+    // Nuevas (pending) y cambios a publicadas (pendingEdit), en dos consultas sin índice compuesto.
+    const [snap, edits] = await Promise.all([
+      reviewCol().where("status", "==", "pending").get(),
+      reviewCol().where("pendingEdit", "==", true).get()
+    ]);
+    pendingReviews = [...snap.docs, ...edits.docs].map((d) => ({ id: d.id, ...d.data() })).sort((a, b) => reviewTime(a) - reviewTime(b));
     renderPendingReviews();
+    loadReportedReviews();
   } catch (err) {
     pendingReviews = null;
     const box = $("admin-reviews");
@@ -599,7 +685,7 @@ async function loadPendingReviews() {
 
 function reviewTargetLabel(target) {
   if (target === "app") return `<span class="review-target">${esc(rt().targetApp)}</span>`;
-  const id = target.slice(2);
+  const id = canonicalId(target.slice(2));
   const r = recipes.find((x) => x.id === id);
   return r
     ? `<a class="review-target" href="#/receta/${encodeURIComponent(id)}">${esc(r.name[currentLang])}</a>`
@@ -618,20 +704,122 @@ function renderPendingReviews() {
     ${pendingReviews.length ? `<ul class="review-list admin-review-list">${pendingReviews.map((r) => `
       <li class="review">
         <p class="review-own-label">${reviewTargetLabel(r.target)}${r.createdAt && r.updatedAt && reviewTime({ updatedAt: r.updatedAt }) - reviewTime({ updatedAt: r.createdAt }) > 1000 ? ` <span class="review-tag is-pending">${esc(tr.edited)}</span>` : ""}</p>
-        <div class="review-top">
+        ${r.pendingEdit && r.draft ? `<p class="review-hint">${esc(tr.draftOf)}</p>` : ""}
+        ${pendingBodyHTML(r.pendingEdit && r.draft ? { ...r, ...r.draft, id: r.draft.newPhoto ? `${r.id}__draft` : r.id } : r, emailOf(r.uid))}
+        <div class="review-actions">
+          ${r.pendingEdit && r.draft
+            ? `<button type="button" class="btn btn-primary btn-sm" data-review="approve-draft" data-id="${esc(r.id)}">${esc(tr.approveDraft)}</button>
+               <button type="button" class="btn btn-outline btn-sm" data-review="discard-draft" data-id="${esc(r.id)}">${esc(tr.discardDraft)}</button>`
+            : `<button type="button" class="btn btn-primary btn-sm" data-review="approve" data-id="${esc(r.id)}">${esc(tr.approve)}</button>`}
+          <button type="button" class="btn btn-ghost btn-sm" data-review="admin-delete" data-target="${esc(r.target)}" data-id="${esc(r.id)}" data-name="${esc(r.name)}"${r.hasPhoto ? ' data-photo="1"' : ""}>${esc(tr.del)}</button>
+        </div>
+      </li>`).join("")}</ul>` : `<p class="admin-intro">${esc(tr.adminNone)}</p>`}
+    ${reportedHTML()}`;
+  hydratePhotos(box);
+}
+function pendingBodyHTML(r, email) {
+  return `<div class="review-top">
           ${starsHTML(r.stars || 0)}
           <strong class="review-name">${esc(r.name)}</strong>
           <span class="review-date">${esc(reviewDate(r))}</span>
         </div>
-        ${emailOf(r.uid) ? `<p class="review-email">${esc(emailOf(r.uid))}</p>` : ""}
+        ${email ? `<p class="review-email">${esc(email)}</p>` : ""}
         ${r.text ? `<p class="review-text">${esc(r.text)}</p>` : ""}
-        ${reviewPhotoHTML(r)}
+        ${reviewPhotoHTML(r)}`;
+}
+
+/* ── Reportes (botón "Reportar" de cada reseña publicada) ── */
+async function loadReportedReviews() {
+  try {
+    const snap = await fbDb.collection("reports").get();
+    const byReview = new Map();
+    for (const d of snap.docs) { const x = { id: d.id, ...d.data() }; if (!byReview.has(x.review)) byReview.set(x.review, []); byReview.get(x.review).push(x); }
+    const rows = await Promise.all([...byReview].map(async ([rid, reports]) => {
+      const rv = await reviewCol().doc(rid).get();
+      return { reports, review: rv.exists ? { id: rv.id, ...rv.data() } : { id: rid, target: reports[0].target, name: "—", stars: 0, text: "" } };
+    }));
+    reportedReviews = rows;
+  } catch (err) { reportedReviews = []; console.warn("Reportes:", (err && err.code) || err); }
+  renderPendingReviews();
+}
+function reportedHTML() {
+  if (!reportedReviews) return "";
+  const tr = rt();
+  return `<h2 class="section-title admin-h2">${esc(tr.reportsTitle)} <span class="admin-count">${reportedReviews.length}</span></h2>
+    ${reportedReviews.length ? `<ul class="review-list admin-review-list">${reportedReviews.map(({ reports, review: r }) => `
+      <li class="review">
+        <p class="review-own-label">${reviewTargetLabel(r.target)}</p>
+        ${pendingBodyHTML(r, "")}
+        <ul class="report-reasons">${reports.map((x) => `<li><strong>${esc(tr.reportReason)}</strong> ${esc(x.reason || "—")}</li>`).join("")}</ul>
         <div class="review-actions">
-          <button type="button" class="btn btn-primary btn-sm" data-review="approve" data-id="${esc(r.id)}">${esc(tr.approve)}</button>
+          <button type="button" class="btn btn-outline btn-sm" data-review="dismiss-report" data-id="${esc(r.id)}">${esc(tr.reportDismiss)}</button>
           <button type="button" class="btn btn-ghost btn-sm" data-review="admin-delete" data-target="${esc(r.target)}" data-id="${esc(r.id)}" data-name="${esc(r.name)}"${r.hasPhoto ? ' data-photo="1"' : ""}>${esc(tr.del)}</button>
         </div>
-      </li>`).join("")}</ul>` : `<p class="admin-intro">${esc(tr.adminNone)}</p>`}`;
-  hydratePhotos(box);
+      </li>`).join("")}</ul>` : `<p class="admin-intro">${esc(tr.reportsNone)}</p>`}`;
+}
+async function dismissReports(rid) {
+  const row = reportedReviews && reportedReviews.find((x) => x.review.id === rid);
+  if (!row) return;
+  try {
+    const batch = fbDb.batch();
+    for (const x of row.reports) batch.delete(fbDb.collection("reports").doc(x.id));
+    await batch.commit();
+    reportedReviews = reportedReviews.filter((x) => x !== row);
+    renderPendingReviews();
+  } catch (err) { toast(reviewError(err)); }
+}
+async function reportReview(target, rid) {
+  const tr = rt();
+  if (!requireAccount(at().why.report, () => reportReview(target, rid))) return;
+  const reason = prompt(tr.reportAsk);
+  if (reason === null) return;
+  try {
+    await fbDb.collection("reports").doc(`${rid}__${authUser.uid}`).set({
+      review: rid, target, uid: authUser.uid, reason: reason.trim().slice(0, 300), at: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    toast(tr.reportSent, true);
+  } catch (err) {
+    // Ya la había reportado (crear sobre un reporte existente se niega): para la persona es lo mismo.
+    if (err && err.code === "permission-denied") toast(tr.reportSent, true); else toast(reviewError(err));
+  }
+}
+
+/* Cambios a una reseña publicada: aprobarlos (pasan a la reseña y, si hay, la foto nueva) o descartarlos. */
+async function approveDraft(id) {
+  const r = pendingReviews && pendingReviews.find((x) => x.id === id);
+  if (!r || !r.draft) return;
+  const del = firebase.firestore.FieldValue.delete();
+  try {
+    const batch = fbDb.batch();
+    const d = r.draft;
+    if (d.newPhoto) {
+      const snap = await reviewPhotoCol().doc(`${id}__draft`).get();
+      if (snap.exists) batch.set(reviewPhotoCol().doc(id), { target: r.target, uid: r.uid, photo: snap.data().photo, updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
+      batch.delete(reviewPhotoCol().doc(`${id}__draft`));
+    } else if (!d.hasPhoto && r.hasPhoto) batch.delete(reviewPhotoCol().doc(id));
+    batch.update(reviewCol().doc(id), { name: d.name, stars: d.stars, text: d.text, hasPhoto: Boolean(d.hasPhoto), status: "approved", draft: del, pendingEdit: del });
+    await batch.commit();
+    photoCache.delete(id);
+    pendingReviews = pendingReviews.filter((x) => x.id !== id);
+    reviewCache.delete(r.target);
+    if (r.target === "app" || (current && recipeTarget(current) === r.target)) loadReviews(r.target);
+    renderPendingReviews();
+    toast(rt().approvedToast, true);
+  } catch (err) { toast(reviewError(err)); }
+}
+async function discardDraft(id) {
+  const r = pendingReviews && pendingReviews.find((x) => x.id === id);
+  if (!r) return;
+  const del = firebase.firestore.FieldValue.delete();
+  try {
+    const batch = fbDb.batch();
+    batch.update(reviewCol().doc(id), { draft: del, pendingEdit: del });
+    batch.delete(reviewPhotoCol().doc(`${id}__draft`));
+    await batch.commit();
+    pendingReviews = pendingReviews.filter((x) => x.id !== id);
+    renderPendingReviews();
+    toast(rt().discardedToast, true);
+  } catch (err) { toast(reviewError(err)); }
 }
 
 async function approveReview(id) {
@@ -655,6 +843,8 @@ document.addEventListener("click", (e) => {
   const act = btn.dataset.review;
   const target = btn.dataset.target;
   if (act === "write" || act === "edit") {
+    // Sin cuenta: se pide entrar y, al entrar, se abre el formulario.
+    if (!requireAccount(at().why.review, () => { reviewCache.delete(target); loadReviews(target).then(() => { reviewEditing.add(target); renderReviews(target); }); })) return;
     photoDraft.delete(target);
     reviewEditing.add(target);
     renderReviews(target);
@@ -687,6 +877,10 @@ document.addEventListener("click", (e) => {
     if (d) d.close();
   }
   else if (act === "approve" && authIsAdmin) approveReview(btn.dataset.id);
+  else if (act === "approve-draft" && authIsAdmin) approveDraft(btn.dataset.id);
+  else if (act === "discard-draft" && authIsAdmin) discardDraft(btn.dataset.id);
+  else if (act === "dismiss-report" && authIsAdmin) dismissReports(btn.dataset.id);
+  else if (act === "report") reportReview(target, btn.dataset.id);
   else if (act === "more") { reviewShown.set(target, (reviewShown.get(target) || REVIEW_PAGE) + 20); renderReviews(target); }
   else if (act === "goto") {
     const sec = $("recipe-reviews");

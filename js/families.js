@@ -35,7 +35,7 @@ const RECIPE_FAMILIES = {
     ["verdes", { es: "Verdes y de vegetales", en: "Green and vegetable salads" }, null],
     ["granos", { es: "De granos", en: "Bean and grain salads" }, /frijoles|gandules|garbanzos|habichuelas|lentejas/],
     ["papa", { es: "De papa, pasta y viandas", en: "Potato, pasta and root salads" }, /papa|coditos|pana/],
-    ["mariscos", { es: "De pescado y mariscos", en: "Fish and seafood salads" }, /camarones|bacalao|atun|serenata/]
+    ["mariscos", { es: "De pescado y mariscos", en: "Fish and seafood salads" }, /camarones|bacalao|atun|serenata|pulpo|mariscos|carrucho|ceviche/]
   ],
   sopas: [
     ["asopaos", { es: "Asopaos", en: "Asopaos" }, /^asopao/],

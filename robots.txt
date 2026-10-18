@@ -1,0 +1,6 @@
+# Recetarios de Aquí · generado por tools/prerender.js
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://recetariodeaqui.com/sitemap.xml

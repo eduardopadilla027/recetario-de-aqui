@@ -7,7 +7,7 @@
  * No se tocan las llamadas a Firebase (cuenta, planes, reseñas): ésas las maneja su propio SDK.
  * Al publicar una versión nueva, subir SW_VERSION (igual que APP_VERSION en js/app.js) para que se
  * borren las copias viejas. */
-const SW_VERSION = "4.29.1";
+const SW_VERSION = "4.30.0";
 const CACHE = `rda-${SW_VERSION}`;
 const NET_TIMEOUT = 4000;
 
@@ -15,10 +15,12 @@ self.addEventListener("install", (event) => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE);
     // La lista sale de la propia página: todo <script src> y <link href> locales.
-    const res = await fetch("index.html", { cache: "reload" });
+    // "/" y no "index.html": con cleanUrls (vercel.json) /index.html redirige a /, y una respuesta
+    // redirigida no se puede usar para abrir la página.
+    const res = await fetch("./", { cache: "reload" });
     const html = await res.clone().text();
     await cache.put("index.html", res);
-    const urls = new Set(["./", "manifest.webmanifest", "icons/icon-192.png", "icons/apple-touch-icon.png", "icons/favicon-32.png"]);
+    const urls = new Set(["manifest.webmanifest", "css/receta.css", "icons/icon-192.png", "icons/apple-touch-icon.png", "icons/favicon-32.png"]);
     for (const m of html.matchAll(/<(?:script|link)[^>]+(?:src|href)="([^"#:]+)"/g)) urls.add(m[1]);
     await Promise.all([...urls].map((u) => cache.add(new Request(u, { cache: "reload" })).catch(() => {})));
     await self.skipWaiting();
@@ -49,18 +51,24 @@ self.addEventListener("fetch", (event) => {
 
 async function networkFirst(req) {
   const cache = await caches.open(CACHE);
-  const isPage = req.mode === "navigate";
-  const key = isPage ? "index.html" : req;
+  const url = new URL(req.url);
+  // Sólo la portada se guarda como "index.html". Las páginas propias de las recetas (/receta/<id>,
+  // tools/prerender.js) y la 404 se guardan con su dirección: antes cualquier página pisaba la app.
+  const isApp = req.mode === "navigate" && (url.pathname === "/" || url.pathname === "/index.html");
+  const key = isApp ? "index.html" : req;
   try {
     const res = await Promise.race([
       fetch(req),
       new Promise((_, reject) => setTimeout(() => reject(new Error("lenta")), NET_TIMEOUT))
     ]);
-    if (res && (res.ok || res.type === "opaque")) cache.put(key, res.clone()).catch(() => {});
+    if (res && (res.ok || res.type === "opaque") && !res.redirected) cache.put(key, res.clone()).catch(() => {});
     return res;
   } catch {
-    const hit = await cache.match(key, { ignoreSearch: isPage });
+    const hit = await cache.match(key, { ignoreSearch: isApp });
     if (hit) return hit;
+    // Sin señal y sin copia de esa receta: se abre en la app guardada (#/receta/<id>).
+    const m = req.mode === "navigate" && url.pathname.match(/^\/receta\/([^/.]+)/);
+    if (m && (await cache.match("index.html"))) return Response.redirect(`/#/receta/${m[1]}`, 302);
     // Una red lenta (no caída) sin copia guardada: esperar a la red.
     return fetch(req);
   }

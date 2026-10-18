@@ -10,7 +10,7 @@ recipes.push(
     id: "caldo-gallego",
     category: "sopas",
     name: { es: "Caldo Gallego", en: "Galician Bean and Greens Soup (Caldo Gallego)" },
-    time: "1 hr",
+    active: 60, total: 60,
     servings: 6,
     ingredients: {
       es: [
@@ -61,7 +61,7 @@ recipes.push(
     id: "gandinga",
     category: "carnes",
     name: { es: "Gandinga", en: "Gandinga (Pork Offal Stew)" },
-    time: "1 hr 30 min",
+    active: 90, total: 90,
     servings: 6,
     ingredients: {
       es: [
@@ -114,7 +114,7 @@ recipes.push(
     id: "masitas-cerdo",
     category: "carnes",
     name: { es: "Masitas de Cerdo Fritas", en: "Fried Pork Chunks (Masitas)" },
-    time: "1 hr 15 min + reposo",
+    active: 75, total: 195, wait: "frio",
     servings: 6,
     ingredients: {
       es: [
@@ -157,7 +157,7 @@ recipes.push(
     id: "churrasco",
     category: "carnes",
     name: { es: "Churrasco con Chimichurri", en: "Skirt Steak with Chimichurri" },
-    time: "30 min + reposo",
+    active: 30, total: 60, wait: "reposo",
     servings: 4,
     ingredients: {
       es: [
@@ -206,7 +206,7 @@ recipes.push(
     id: "pavochon",
     category: "aves",
     name: { es: "Pavochón", en: "Pavochón (Turkey Seasoned Like Pernil)" },
-    time: "4 hrs + reposo",
+    active: 240, total: 1710, wait: "frio",
     servings: 12,
     ingredients: {
       es: [
@@ -255,7 +255,7 @@ recipes.push(
     id: "pescado-mojo-isleno",
     category: "pescados",
     name: { es: "Pescado al Mojo Isleño", en: "Fried Fish with Mojo Isleño" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 4,
     ingredients: {
       es: [
@@ -310,7 +310,7 @@ recipes.push(
     id: "empanadas-yuca",
     category: "entremeses",
     name: { es: "Empanadas de Yuca", en: "Yuca Turnovers" },
-    time: "1 hr 15 min",
+    active: 75, total: 75,
     servings: 8,
     ingredients: {
       es: [
@@ -351,7 +351,7 @@ recipes.push(
     id: "croquetas-bacalao",
     category: "entremeses",
     name: { es: "Croquetas de Bacalao", en: "Salt Cod Croquettes" },
-    time: "1 hr + remojo",
+    active: 60, total: 540, wait: "desalar",
     servings: 8,
     ingredients: {
       es: [
@@ -398,7 +398,7 @@ recipes.push(
     id: "majado-yautia",
     category: "vegetales",
     name: { es: "Majado de Yautía", en: "Mashed Yautía (Taro Root)" },
-    time: "35 min",
+    active: 35, total: 35,
     servings: 4,
     ingredients: {
       es: [
@@ -435,7 +435,7 @@ recipes.push(
     id: "tostones-pana",
     category: "vegetales",
     name: { es: "Tostones de Pana", en: "Breadfruit Tostones" },
-    time: "35 min",
+    active: 35, total: 35,
     servings: 4,
     ingredients: {
       es: [
@@ -470,9 +470,9 @@ recipes.push(
   },
   {
     id: "pasteles-arroz",
-    category: "vegetales",
+    category: "carnes",
     name: { es: "Pasteles de Arroz", en: "Rice Pasteles" },
-    time: "3 hrs",
+    active: 180, total: 180,
     servings: 12,
     ingredients: {
       es: [
@@ -525,7 +525,7 @@ recipes.push(
     id: "arroz-calamares",
     category: "arroces",
     name: { es: "Arroz con Calamares", en: "Rice with Squid" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 6,
     ingredients: {
       es: [
@@ -570,7 +570,7 @@ recipes.push(
     id: "arroz-maiz",
     category: "arroces",
     name: { es: "Arroz con Maíz", en: "Rice with Corn" },
-    time: "40 min",
+    active: 40, total: 40,
     servings: 6,
     ingredients: {
       es: [
@@ -617,7 +617,7 @@ recipes.push(
     id: "flan-coco",
     category: "postres",
     name: { es: "Flan de Coco", en: "Coconut Flan" },
-    time: "1 hr 15 min + reposo",
+    active: 75, total: 315, wait: "frio",
     servings: 10,
     ingredients: {
       es: [
@@ -658,7 +658,7 @@ recipes.push(
     id: "flan-pana",
     category: "postres",
     name: { es: "Flan de Pana", en: "Breadfruit Flan" },
-    time: "1 hr 30 min + reposo",
+    active: 90, total: 330, wait: "frio",
     servings: 10,
     ingredients: {
       es: [
@@ -699,7 +699,7 @@ recipes.push(
     id: "mampostial",
     category: "postres",
     name: { es: "Mampostial", en: "Mampostial (Coconut Molasses Candy)" },
-    time: "45 min",
+    active: 45, total: 45,
     servings: 16,
     ingredients: {
       es: [
@@ -740,7 +740,7 @@ recipes.push(
     id: "batida-lechosa",
     category: "bebidas",
     name: { es: "Batida de Lechosa", en: "Papaya Shake" },
-    time: "5 min",
+    active: 5, total: 5,
     servings: 2,
     ingredients: {
       es: [
@@ -777,7 +777,7 @@ recipes.push(
     id: "aceite-achiote",
     category: "salsas",
     name: { es: "Aceite de Achiote", en: "Annatto Oil" },
-    time: "10 min",
+    active: 10, total: 10,
     servings: 16,
     ingredients: {
       es: [
@@ -808,7 +808,7 @@ recipes.push(
     id: "mojo-ajo",
     category: "salsas",
     name: { es: "Mojo de Ajo", en: "Garlic Mojo" },
-    time: "10 min",
+    active: 10, total: 10,
     servings: 6,
     ingredients: {
       es: [

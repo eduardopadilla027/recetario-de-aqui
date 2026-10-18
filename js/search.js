@@ -16,8 +16,11 @@
 const sNorm = (s) => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
   .replace(/[^a-z0-9ñ\s-]/g, " ").replace(/ñ/g, "n").replace(/-/g, " ");
 
-/* Plural → singular aproximado ("limones" → "limon", "tomates" → "tomate"). */
+/* Plural → singular aproximado ("limones" → "limon", "tomates" → "tomate", "nueces" → "nuez"). */
+// Las que terminan en -z hacen el plural en -ces ("arroces", "nueces", "maíces"); "dulces" no (dulce).
+const S_Z_PLURAL = new Set("nuez arroz maiz raiz pez codorniz perdiz luz vez cruz lapiz nariz matiz".split(" "));
 function sStem(w) {
+  if (w.length > 4 && w.endsWith("ces") && S_Z_PLURAL.has(w.slice(0, -3) + "z")) return w.slice(0, -3) + "z";
   if (w.length > 4 && /[nrldz]es$/.test(w)) return w.slice(0, -2);
   if (w.length > 3 && w.endsWith("s") && !w.endsWith("ss")) return w.slice(0, -1);
   return w;
@@ -31,6 +34,8 @@ const S_STOP = new Set(("y e o u de del la el los las lo un una unos unas con pa
   // Frases de conversación ("tengo pollo y papas", "¿qué hago con plátano?"): antes contaban como palabras a buscar
   // y, como ninguna receta las tiene, la búsqueda caía en "las más parecidas" con cientos de resultados.
   "tengo tienes tiene tenemos hay hago haga hacemos cocino cocinar cocinarle preparo puedo podria puedes necesito " +
+  // "Mañana" es mañana (el día) casi siempre: ya no pide desayunos ("¿qué cocino mañana?").
+  "manana tomorrow " +
   "dame dime sugiere sugerencia idea rico rica sabroso sabrosa delicioso deliciosa hoy ahora cual cuales este esta " +
   "estos estas ese esa eso otro otra usar " +
   "and or of the a an with for to in some any recipe recipes dish dishes food want make how style very " +
@@ -96,13 +101,15 @@ const S_EXPAND = {
 
 /* Categorías por su nombre o por palabras afines. */
 const S_CATS = {
-  sopas: "sopa soup caldo asopao sopon sancocho", arroces: "arroz rice habichuela", carnes: "carne meat",
+  // Sólo palabras que nombran la categoría: un ingrediente ("habichuela", "queso") ya no trae TODA la categoría,
+  // sino las recetas que lo llevan.
+  sopas: "sopa soup caldo asopao sopon sancocho", arroces: "arroz rice", carnes: "carne meat",
   aves: "ave poultry", pescados: "pescado fish marisco seafood", ensaladas: "ensalada salad",
   vegetales: "vegetal vegetable verdura vianda", postres: "postre dessert dulce sweet", bebidas: "bebida drink refresco",
   jugos: "jugo juice", cocteles: "coctel cocktail trago bebida alcoholica", panes: "pan bread",
   salsas: "salsa sauce aderezo dip adobo marinada marinade sazon seasoning rub", entremeses: "entremes entremeses aperitivo appetizer picadera picaderas picar picoteo botana bocadito snack fritura fritter frituras",
-  frutas: "fruta fruit almibar", cereales: "cereal avena oatmeal", granos: "grano legumbre legume",
-  huevos: "huevo egg queso cheese", bizcochos: "bizcocho cake postre dessert", galletitas: "galleta cookie postre dessert",
+  frutas: "fruta fruit", cereales: "cereal", granos: "grano legumbre legume",
+  huevos: "huevo egg", bizcochos: "bizcocho cake postre dessert", galletitas: "galleta cookie postre dessert",
   pasteles_dulces: "pie postre dessert hojaldre", emparedados: "sandwich emparedado", calientes: "te tea infusion caliente", pastas: "pasta"
 };
 
@@ -125,7 +132,7 @@ const S_IDEAS = [
     test: (r, x) => /coquito|pastel(es)? de|pasteles veganos|pernil|lechon|gandul|tembleque|arroz con dulce|ponche|majarete|morcilla|pitorro|bili|turron|guineito|cazuela|mazamorra|sorrel|jamaica|nispero|hojaldre boricua|navideno|christmas/.test(x.nameAll) },
   { words: "playa beach kiosko kiosco chinchorro", label: { es: "Playa y kioscos", en: "Beach and kiosks" },
     test: (r, x) => r.category === "entremeses" || /fritura|calamar|coco loco|coco frio|piragua|alcapurria|bacalaito|empanadilla|pastelillo|arepa|chicharrones de pescado|chillo frito|pescado frito/.test(x.nameAll) || /kiosco|playa|chinchorro|beach|kiosk/.test(x.stepsAll) },
-  { words: "desayuno breakfast manana morning", label: { es: "Desayuno", en: "Breakfast" },
+  { words: "desayuno desayunar breakfast", label: { es: "Desayuno", en: "Breakfast" },
     test: (r) => ["huevos", "cereales", "calientes", "panes"].includes(r.category) },
   { words: "rapido rapida facil sencillo quick fast easy simple", label: { es: "Rápidas (30 min o menos)", en: "Quick (30 min or less)" },
     test: (r, x, ctx) => ctx.isQuick(r) },
@@ -230,8 +237,20 @@ const S_NOBAKE = { words: [], label: { es: "Sin horno", en: "No-bake" },
  * { scores: Map<id, número>, terms, excludes, ideas, corrections, partial }.
  * ctx: { isQuick(r), lang } que aporta la interfaz.
  */
+/* Comidas de dos palabras que son UNA ("sweet potato" no es "dulce" + "papa"): se juntan antes de buscar. */
+const S_PHRASES = [
+  [/\bsweet potato(es)?\b/g, "batata"], [/\bice creams?\b/g, "helado"], [/\bpassion ?fruits?\b/g, "parcha"],
+  [/\bstar ?fruits?\b/g, "carambola"], [/\bpigeon peas?\b/g, "gandul"], [/\bsalt(ed)? cod(fish)?\b/g, "bacalao"],
+  [/\bpork chops?\b/g, "chuleta"], [/\bbread ?fruits?\b/g, "pana"], [/\bsour oranges?\b/g, "naranja agria"],
+  [/\bgreen bananas?\b/g, "guineo verde"], [/\b(sweet|ripe) plantains?\b/g, "amarillo"], [/\bhot dogs?\b/g, "salchicha"],
+  [/\bblack beans?\b/g, "habichuela negra"], [/\bred beans?\b/g, "habichuela roja"], [/\bcorned beef\b/g, "carne bif"],
+  [/\bpapas? dulces?\b/g, "batata"]
+];
+
 function smartSearch(query, ctx) {
-  const words = sNorm(query).split(/\s+/).filter(Boolean);
+  let qText = sNorm(query);
+  for (const [rx, to] of S_PHRASES) qText = qText.replace(rx, to);
+  const words = qText.split(/\s+/).filter(Boolean);
   // "Adobo sin Sal", "Piña Colada (Sin Alcohol)": si lo escrito es parte del nombre de una receta, "sin" no excluye.
   const qn = words.join(" ");
   // Sólo cuando hay una palabra de exclusión; los nombres se comparan sin paréntesis ni signos.
