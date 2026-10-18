@@ -17,8 +17,15 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
-const APP_VERSION = "4.15.0";
+const APP_VERSION = "4.17.0";
 const APP_REVISED = "2026-10-17";
+/* Lo que se muestra al público: "Más de 1,000 recetas", no el total exacto (que cambia con cada
+   tanda). El total exacto sólo sale en #/admin (auth.js). Baja al millar: 1,054 → "1,000". */
+function publicRecipeCount() {
+  const n = recipes.length;
+  const step = n > 1000 ? 1000 : 100;
+  return (Math.floor((n - 1) / step) * step).toLocaleString(currentLang === "es" ? "es-PR" : "en-US");
+}
 const revisedOn = (locale) => new Date(APP_REVISED + "T12:00:00").toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
 
 const translations = {
@@ -67,7 +74,7 @@ const translations = {
     countFound: (n) => (n === 1 ? "1 receta encontrada" : `${n} recetas encontradas`),
     moreResults: (n) => `Ver más resultados (${n})`,
     understood: { looking: "Busco", without: "Sin", ideas: "Ideas", corrected: "Corregí", partial: "Ninguna receta tiene todo: estas son las más parecidas.", order: "Ordenadas por relevancia." },
-    statsHero: (n, c) => `<strong>${n}</strong> recetas tradicionales · <strong>${c}</strong> categorías`,
+    statsHero: (n, c) => `<strong>Más de ${n}</strong> recetas tradicionales · <strong>${c}</strong> categorías`,
     emptyTitle: "No encontramos recetas",
     emptyText: "Prueba con otra palabra o ingrediente, o quita algún filtro.",
     emptyFavTitle: "Aún no tienes favoritas",
@@ -186,7 +193,7 @@ const translations = {
     countFound: (n) => (n === 1 ? "1 recipe found" : `${n} recipes found`),
     moreResults: (n) => `Show more results (${n})`,
     understood: { looking: "Looking for", without: "Without", ideas: "Ideas", corrected: "Corrected", partial: "No recipe has everything: these are the closest.", order: "Sorted by relevance." },
-    statsHero: (n, c) => `<strong>${n}</strong> traditional recipes · <strong>${c}</strong> categories`,
+    statsHero: (n, c) => `<strong>Over ${n}</strong> traditional recipes · <strong>${c}</strong> categories`,
     emptyTitle: "No recipes found",
     emptyText: "Try another word or ingredient, or remove a filter.",
     emptyFavTitle: "No favorites yet",
@@ -422,6 +429,19 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
+  // Frutas tropicales de la isla (tanda 46).
+  [/^quenepas en almibar/, "svg:ic-fr-quenepas"],
+  [/^dulce de jobos/, "svg:ic-fr-jobos"],
+  [/^jalea de pomarrosa/, "svg:ic-fr-pomarrosa"],
+  [/^bowl de pitahaya/, "svg:ic-fr-pitahaya"],
+  [/^pinchos de frutas/, "svg:ic-fr-pinchos-frutas"],
+  [/^ensalada de carambola/, "svg:ic-fr-ensalada-carambola"],
+  [/^ensalada de lechosa verde/, "svg:ic-fr-ensalada-lechosa"],
+  [/^ensalada de sandia/, "svg:ic-fr-ensalada-sandia"],
+  [/^helado de mamey/, "svg:ic-fr-helado-mamey"],
+  [/^crema fria de caimito/, "svg:ic-fr-crema-caimito"],
+  [/^pico de gallo de frutas/, "svg:ic-fr-pico-gallo"],
+  [/^jugo de melon/, "🍈"],
   // Postres puertorriqueños (tanda 45).
   [/^nisperos de batata/, "svg:ic-pos-nisperos-batata"],
   [/^dulce de mani/, "svg:ic-pos-dulce-mani"],
@@ -1229,7 +1249,7 @@ function renderQuick() {
 
 function renderHero() {
   const tr = t();
-  $("hero-stats").innerHTML = tr.statsHero(recipes.length, categoryOrder.length);
+  $("hero-stats").innerHTML = tr.statsHero(publicRecipeCount(), categoryOrder.length);
   $("hero-art").innerHTML = ["arroces", "postres", "pescados", "cocteles"].map((c) => coverHTML(c)).join("");
 }
 

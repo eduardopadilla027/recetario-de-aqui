@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.15.0 · **Versión de la app:** 4.15.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,038 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.17.0 · **Versión de la app:** 4.17.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,054 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -64,7 +64,7 @@ cocine-a-gusto/
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
 │   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, más salsas y aderezos y platos fuertes veganos, y dulces y salsas de grosella, en cuarenta y tres tandas (ver §13)
-│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44) y postres puertorriqueños (tanda 45), ver §13
+│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44) postres puertorriqueños (tanda 45) y frutas tropicales de la isla (tanda 46), ver §13
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── substitutes.js    sustitutos para cada alérgeno según el ingrediente (getSubstitutes)
@@ -129,10 +129,10 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | Clave | Nombre | Recetas |
 |---|---|---|
 | calientes | Bebidas Calientes | 39 |
-| frutas | Frutas | 30 |
+| frutas | Frutas | 36 |
 | cereales | Cereales | 18 |
 | granos | Granos y Legumbres | 22 |
-| ensaladas | Ensaladas | 27 |
+| ensaladas | Ensaladas | 30 |
 | sopas | Sopas | 46 |
 | carnes | Carnes | 63 |
 | aves | Aves | 47 |
@@ -145,12 +145,12 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | pasteles_dulces | Pasteles Dulces | 22 |
 | panes | Pan y Panecillos | 41 |
 | emparedados | Emparedados | 25 |
-| postres | Helados, Budines, Flan y Otros Postres | 121 |
+| postres | Helados, Budines, Flan y Otros Postres | 123 |
 | arroces | Arroces y Habichuelas | 56 |
 | vegetales | Vegetales y Viandas | 88 |
-| salsas | Salsas y Aderezos | 62 |
-| bebidas | Bebidas | 36 |
-| jugos | Jugos Naturales | 19 |
+| salsas | Salsas y Aderezos | 64 |
+| bebidas | Bebidas | 38 |
+| jugos | Jugos Naturales | 20 |
 | cocteles | Cócteles y Tragos | 47 |
 
 **Añadir una categoría:** clave en `categoryOrder`, nombre en `translations.es.categories` y `translations.en.categories`,
@@ -186,7 +186,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
   deslizaba: en el celular la receta se veía primero por el final y, si se tocaba la pantalla, se quedaba abajo. Abrir
   una receta, volver a los resultados, los planes y `#/admin` usan `jumpTo()` (`behavior: "instant"`). El deslizamiento
   suave queda para los enlaces dentro de la misma página.
-- **Inicio:** hero con buscador y estadísticas (`statsHero(recetas, categorías)`, se calculan solas), cuadrícula de
+- **Inicio:** hero con buscador y estadísticas (`statsHero(publicRecipeCount(), categorías)`: "Más de 1,000 recetas tradicionales · 24 categorías"; al público no se le da el total exacto, que sólo sale en `#/admin`), cuadrícula de
   categorías (clic = sólo esa categoría; clic de nuevo = todas), carril "Listas en 30 minutos o menos"
   (`QUICK_MAX_MIN = 30`), y resultados agrupados por categoría (acordeón) con filtros *Rápidas* y *Favoritas*.
 - **Detalle:** portada (icono del plato), datos (tiempo, porciones, ingredientes, kcal/porción), línea de alérgenos,
@@ -392,7 +392,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   (o sube los del navegador si la cuenta no tiene); al salir, `applyPlan(null)` deja el navegador con los de fábrica.
   `cleanPlan()` sólo acepta las claves de `PLAN_DEFAULTS`. Sólo la persona dueña los lee: **ni los administradores**.
 - **Administradores:** los correos con documento en `admins/{correo}`. Ven "Administrador" en el menú y `#/admin`:
-  totales (usuarios = todas las cuentas; usos y activos en 7 días = sólo las que no son de administrador), búsqueda,
+  totales (usuarios = todas las cuentas; usos y activos en 7 días = sólo las que no son de administrador; **recetas en la app** = el total exacto, `recipes.length`), búsqueda,
   tabla con correo, veces ("—" para los administradores, también en el CSV), primera y última vez y rol, acciones
   **Hacer/Quitar admin** y **Suspender/Reactivar** (no sobre sí mismos) y **Exportar CSV**. En el encabezado está el
   correo de la sesión y "Salir".
@@ -500,7 +500,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - **Vitrina en la pantalla de entrada** (`showcaseHTML()` en `auth.js`, sólo en el estado "signin", después del aviso de
   Facebook si lo hay): "Lo que encontrará adentro" con las portadas ilustradas (`coverHTML()`) de cuatro platos típicos
   (`SHOWCASE_DISHES`: arroz con gandules, mofongo, alcapurrias, flan; sin el paréntesis del nombre en inglés) y cuatro
-  puntos: número de recetas y de categorías (de `recipes` y `t().categories`), buscar por plato/ingrediente/idea,
+  puntos: "Más de 1,000 recetas boricuas" (`publicRecipeCount()`) y el número de categorías (`t().categories`), buscar por plato/ingrediente/idea,
   planes de comida y nutrición/alergias; al final "Gratis · En español e inglés". Así quien llega de un anuncio ve qué
   trae la app antes de registrarse. Si se borra uno de esos platos, se omite sin error.
 
@@ -567,7 +567,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,038). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,054). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -646,6 +646,38 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
 entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, y el texto
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
+
+### 2026-10-17 — v4.17.0 · "Más de 1,000 recetas" al público; el total exacto, sólo para administradores
+- *Pedido:* poner "más de 1,000 recetas tradicionales" en vez del total, y guardar el total en la cuenta de administrador.
+- `js/app.js`: `publicRecipeCount()` baja el total al millar (1,054 → "1,000"; con menos de 1,000, a la centena). La
+  portada dice "Más de 1,000 recetas tradicionales · 24 categorías" (EN "Over 1,000 traditional recipes"). `js/auth.js`:
+  la vitrina de la entrada dice "Más de 1,000 recetas boricuas"; en `#/admin` hay un cuarto total, **Recetas en la app**,
+  con el número exacto. CSS: los totales del panel en 4 columnas (2 en el celular). La vista previa del enlace ya decía
+  "Más de 1,000 recetas" (v4.14.0).
+- *Verificado:* portada ES y EN, vitrina de la entrada y panel de administración con datos simulados ("1,054 Recetas
+  en la app"; 2 × 2 a 375 px) ✔.
+### 2026-10-17 — v4.16.0 · Más recetas de frutas tropicales
+- *Pedido:* más recetas de frutas tropicales.
+- Cuadragésima sexta tanda en `js/recipes-5.js` (versiones propias), 16 recetas con las frutas de la isla que menos
+  aparecían (ya había muchas de mangó, piña, parcha y coco):
+  - **Frutas (6):** quenepas en almíbar con canela, dulce de jobos, jalea de pomarrosa, bowl de pitahaya con mangó, coco
+    y granola, piña rellena de frutas tropicales y pinchos de frutas tropicales con salsa de parcha.
+  - **Ensaladas (3):** carambola, pepino y menta; lechosa verde con recao y maní; sandía, queso del país y menta.
+  - **Postres (2):** helado de mamey (sin máquina) y crema fría de caimito. **Bebidas (2):** batida de níspero y batida
+    de anón. **Jugos (1):** melón con limón y menta. **Salsas (2):** pico de gallo de frutas tropicales y chutney de mangó
+    y piña.
+  - Avisos en los pasos: semilla de la quenepa y niños pequeños, carambola y enfermedad de los riñones, semillas del
+    anón (no licuarlas), látex de la lechosa verde y del caimito, lavar la cáscara del melón, miel y bebés. Las alertas
+    de `advisories.js` de quenepa, carambola y miel salen solas.
+- **Nutrición:** nuevos jobo, pomarrosa, pitahaya, caimito, níspero, anón y melón (por 100 g de pulpa). Ninguna receta
+  anterior cambia (se revisó que "marañón" no tome el anón).
+- **Iconos:** 11 dibujos nuevos `ic-fr-*` (frascos de quenepas, jobos y pomarrosa, bowl de pitahaya, pinchos de frutas,
+  tres ensaladas, helado de mamey, crema de caimito y pico de gallo); el jugo de melón usa 🍈. Antes de los dibujos, los
+  pinchos de frutas salían con el de pinchos de cerdo y tres dulces con la piña de la categoría.
+- Total: **1,038 → 1,054 recetas**.
+- *Verificado:* datos en Node ✔ (ids únicos, ES/EN parejos, 0 sin contar); buscador: "quenepa", "pitahaya"/"dragon
+  fruit", "carambola", "nispero" y "frutas tropicales" las encuentran ✔; "Combina mejor con" en las dos salsas nuevas ✔;
+  navegador: las 16 en ES y EN a 375 px con su nombre y su dibujo, sin desbordes ni errores de consola ✔.
 
 ### 2026-10-17 — v4.15.0 · Más postres puertorriqueños
 - *Pedido:* más recetas de postres puertorriqueños.

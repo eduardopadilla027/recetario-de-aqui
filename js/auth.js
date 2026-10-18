@@ -28,7 +28,7 @@ const AUTH_T = {
     privacy: "No guardamos contraseñas: sólo su correo y cuántas veces usa la app.",
     contact: "¿Preguntas o problemas para entrar? Escríbanos a",
     showTitle: "Lo que encontrará adentro",
-    showRecipes: (n, c) => [`${n} recetas boricuas`, `Paso a paso, en ${c} categorías: arroces, frituras, pasteles, postres y más.`],
+    showRecipes: (n, c) => [`Más de ${n} recetas boricuas`, `Paso a paso, en ${c} categorías: arroces, frituras, pasteles, postres y más.`],
     showSearch: ["Busque como habla", "Por plato, ingrediente o idea: «pollo y arroz», «postre sin huevo»."],
     showPlans: ["Planes de comida", "Según su meta: rebajar, ganar masa, vegetariano, bajo en sodio…"],
     showHealth: ["Nutrición y alergias", "Calorías por porción, alérgenos y sustitutos en cada receta."],
@@ -94,6 +94,7 @@ const AUTH_T = {
     statUsers: "Usuarios",
     statUses: "Usos en total",
     statActive: "Activos en 7 días",
+    statRecipes: "Recetas en la app",
     search: "Buscar correo",
     refresh: "Actualizar",
     exportCsv: "Exportar CSV",
@@ -123,7 +124,7 @@ const AUTH_T = {
     privacy: "We never store passwords: only your email and how many times you use the app.",
     contact: "Questions or trouble signing in? Write to us at",
     showTitle: "What you'll find inside",
-    showRecipes: (n, c) => [`${n} Puerto Rican recipes`, `Step by step, in ${c} categories: rice, fritters, pasteles, desserts and more.`],
+    showRecipes: (n, c) => [`Over ${n} Puerto Rican recipes`, `Step by step, in ${c} categories: rice, fritters, pasteles, desserts and more.`],
     showSearch: ["Search the way you talk", "By dish, ingredient or idea: “chicken and rice”, “dessert without eggs”."],
     showPlans: ["Meal plans", "For your goal: lose weight, build muscle, vegetarian, low sodium…"],
     showHealth: ["Nutrition and allergies", "Calories per serving, allergens and substitutes in every recipe."],
@@ -188,6 +189,7 @@ const AUTH_T = {
     statUsers: "Users",
     statUses: "Total uses",
     statActive: "Active in 7 days",
+    statRecipes: "Recipes in the app",
     search: "Search email",
     refresh: "Refresh",
     exportCsv: "Export CSV",
@@ -328,7 +330,7 @@ const SHOWCASE_DISHES = ["arroz-gandules", "mofongo", "alcapurrias", "flan"];
 
 function showcaseHTML() {
   const tr = at();
-  const n = recipes.length.toLocaleString(currentLang === "es" ? "es-PR" : "en-US");
+  const n = publicRecipeCount(); // "1,000", no el total exacto (que sólo ve el administrador)
   const c = Object.keys(t().categories).length;
   const dishes = SHOWCASE_DISHES.map((id) => recipes.find((r) => r.id === id)).filter(Boolean);
   const points = [["i-list", tr.showRecipes(n, c)], ["i-search", tr.showSearch], ["i-check", tr.showPlans], ["i-shield", tr.showHealth]];
@@ -741,7 +743,7 @@ function renderAdminTable() {
   const total = counted.reduce((s, u) => s + (u.count || 0), 0);
   const active = counted.filter((u) => u.lastSeen && u.lastSeen.toMillis() >= week).length;
   const n = (x) => x.toLocaleString(currentLang === "es" ? "es-PR" : "en-US");
-  $("admin-stats").innerHTML = [[tr.statUsers, adminUsers.length], [tr.statUses, total], [tr.statActive, active]]
+  $("admin-stats").innerHTML = [[tr.statUsers, adminUsers.length], [tr.statUses, total], [tr.statActive, active], [tr.statRecipes, recipes.length]]
     .map(([k, val]) => `<div class="admin-stat"><span class="admin-stat-num">${n(val)}</span><span class="admin-stat-label">${esc(k)}</span></div>`).join("");
 
   const q = lower(adminFilter);

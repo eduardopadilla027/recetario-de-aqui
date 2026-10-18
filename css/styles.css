@@ -856,7 +856,7 @@ body.auth-locked .site-header, body.auth-locked main, body.auth-locked .site-foo
 .admin-wrap { display: flex; flex-direction: column; gap: var(--s-4); }
 .admin-wrap .section-title:focus { outline: none; }
 .admin-intro { color: var(--ink-2); max-width: 70ch; }
-.admin-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-3); }
+.admin-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-3); }
 .admin-stat { background: var(--ivory); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--s-4); display: flex; flex-direction: column; }
 .admin-stat-num { font-size: var(--step-3); font-weight: 800; color: var(--achiote); font-variant-numeric: tabular-nums; }
 .admin-stat-label { font-size: var(--step--1); color: var(--ink-3); }
@@ -877,7 +877,7 @@ body.auth-locked .site-header, body.auth-locked main, body.auth-locked .site-foo
 .role-tag.is-admin { background: var(--plantain-50); color: var(--plantain); }
 .role-tag.is-blocked { background: var(--achiote-50); color: var(--achiote-600); }
 @media (max-width: 760px) {
-  .admin-stats { gap: var(--s-2); }
+  .admin-stats { gap: var(--s-2); grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .admin-stat { padding: var(--s-3); }
   .admin-stat-num { font-size: var(--step-2); }
   /* Tabla en fichas: una por usuario. */

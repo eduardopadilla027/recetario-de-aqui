@@ -1570,5 +1570,714 @@ recipes.push(
         "Cool and store in clean jars in the fridge. Serve with queso del país, like grandma's fruit sweets."
       ]
     }
+  },
+  // ---------- Tanda 46: frutas tropicales de la isla (16) ----------
+  {
+    id: "quenepas-almibar",
+    category: "frutas",
+    name: { es: "Quenepas en Almíbar con Canela", en: "Quenepas (Spanish Limes) in Cinnamon Syrup" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de quenepas",
+        "1½ tazas de azúcar",
+        "2 tazas de agua",
+        "2 rajas de canela",
+        "3 clavos de especia",
+        "1 cáscara de limón"
+      ],
+      en: [
+        "2 pounds quenepas (Spanish limes)",
+        "1½ cups sugar",
+        "2 cups water",
+        "2 cinnamon sticks",
+        "3 whole cloves",
+        "1 lime peel"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele las quenepas apretándolas entre los dientes de un cuchillo o con las uñas; deje la pulpa pegada a la semilla.",
+        "Hierva el agua con el azúcar, la canela, los clavos y la cáscara de limón 5 minutos.",
+        "Añada las quenepas peladas y cocine a fuego bajo 25 minutos, hasta que la pulpa esté brillosa y el almíbar tome color.",
+        "Deje enfriar en el almíbar y guarde en frascos limpios en la nevera.",
+        "Se comen chupando la pulpa de la semilla, como frescas. No se las dé a niños pequeños: la semilla es grande y resbalosa, y puede atragantarlos."
+      ],
+      en: [
+        "Peel the quenepas by cracking the skin with your nails or a knife; leave the pulp on the seed.",
+        "Boil the water with the sugar, cinnamon, cloves and lime peel 5 minutes.",
+        "Add the peeled quenepas and simmer 25 minutes, until the pulp is glossy and the syrup takes on color.",
+        "Let cool in the syrup and store in clean jars in the fridge.",
+        "Eat them by sucking the pulp off the seed, like fresh ones. Don't give them to small children: the seed is big and slippery and can choke them."
+      ]
+    }
+  },
+  {
+    id: "dulce-jobos",
+    category: "frutas",
+    name: { es: "Dulce de Jobos", en: "Hog Plum (Jobo) Sweet" },
+    time: "1 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 libras de jobos maduros",
+        "1½ tazas de azúcar",
+        "2 tazas de agua",
+        "1 raja de canela",
+        "1 pedazo de jengibre de 1 pulgada",
+        "1 pizca de sal"
+      ],
+      en: [
+        "2 pounds ripe jobos (hog plums)",
+        "1½ cups sugar",
+        "2 cups water",
+        "1 cinnamon stick",
+        "1 1-inch piece ginger",
+        "1 pinch salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave los jobos y pínchelos con un tenedor.",
+        "Hiérvalos en agua 5 minutos y bote esa agua (les quita lo agrio y la resina de la cáscara).",
+        "Hierva las 2 tazas de agua con el azúcar, la canela, el jengibre y la sal 5 minutos. Añada los jobos.",
+        "Cocine a fuego bajo 40 minutos, hasta que estén blandos y el almíbar espese.",
+        "Sirva frío, solo o con queso del país. Es un dulce del campo, de cuando los jobos caen maduros de los árboles en los caminos."
+      ],
+      en: [
+        "Wash the jobos and prick them with a fork.",
+        "Boil them in water 5 minutes and discard that water (it removes sourness and resin from the skin).",
+        "Boil the 2 cups water with the sugar, cinnamon, ginger and salt 5 minutes. Add the jobos.",
+        "Simmer 40 minutes, until soft and the syrup thickens.",
+        "Serve cold, on its own or with queso del país. It's a country sweet, from when ripe jobos fall from roadside trees."
+      ]
+    }
+  },
+  {
+    id: "jalea-pomarrosa",
+    category: "frutas",
+    name: { es: "Jalea de Pomarrosa", en: "Rose Apple (Pomarrosa) Jelly" },
+    time: "1 hr",
+    servings: 16,
+    ingredients: {
+      es: [
+        "2 libras de pomarrosas, sin semillas y en pedazos",
+        "3 tazas de agua",
+        "2 tazas de azúcar",
+        "¼ taza de jugo de limón",
+        "1 sobre de 1.75 onzas de pectina"
+      ],
+      en: [
+        "2 pounds rose apples (pomarrosas), seeded and chopped",
+        "3 cups water",
+        "2 cups sugar",
+        "¼ cup lime juice",
+        "1 envelope (1.75 oz) pectin"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las pomarrosas en el agua 20 minutos hasta que se ablanden.",
+        "Cuele por una tela o un colador fino sin apretar mucho, para que la jalea quede clara. Deben salir unas 3 tazas de líquido.",
+        "Vuelva el líquido al caldero con el limón y la pectina, y deje hervir fuerte.",
+        "Añada el azúcar de una vez y hierva 1 minuto exacto, moviendo. Quite la espuma.",
+        "Vierta en frascos limpios y calientes, y tape. Tiene el olor a rosas de la fruta; va bien con galletas de soda y queso."
+      ],
+      en: [
+        "Boil the rose apples in the water 20 minutes until soft.",
+        "Strain through cheesecloth or a fine strainer without pressing too much, so the jelly stays clear. You should get about 3 cups liquid.",
+        "Return the liquid to the pot with the lime juice and pectin and bring to a hard boil.",
+        "Add the sugar all at once and boil exactly 1 minute, stirring. Skim the foam.",
+        "Pour into clean, hot jars and cover. It has the fruit's rose scent; good with soda crackers and cheese."
+      ]
+    }
+  },
+  {
+    id: "bowl-pitahaya-mango",
+    category: "frutas",
+    name: { es: "Bowl de Pitahaya con Mangó, Coco y Granola", en: "Dragon Fruit Bowl with Mango, Coconut and Granola" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 pitahaya roja (fruta del dragón)",
+        "1 guineo maduro congelado",
+        "½ taza de yogur griego natural",
+        "1 mangó maduro en cubos",
+        "¼ taza de granola",
+        "2 cucharadas de coco rallado sin azúcar",
+        "1 cucharada de semillas de chía",
+        "1 cucharadita de miel (opcional)"
+      ],
+      en: [
+        "1 red dragon fruit (pitahaya)",
+        "1 frozen ripe banana",
+        "½ cup plain Greek yogurt",
+        "1 ripe mango, cubed",
+        "¼ cup granola",
+        "2 tablespoons unsweetened shredded coconut",
+        "1 tablespoon chia seeds",
+        "1 teaspoon honey (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele la pitahaya y separe unos cubos para decorar.",
+        "Licúe el resto de la pitahaya con el guineo congelado y el yogur hasta tener una crema espesa (añada un chorrito de agua si no se mueve).",
+        "Sirva en dos bols.",
+        "Cubra con el mangó, los cubos de pitahaya, la granola, el coco y la chía, en filas.",
+        "Termine con la miel si la usa. La pitahaya se da cada vez más en Puerto Rico y pinta el bol de un rosado intenso."
+      ],
+      en: [
+        "Peel the dragon fruit and set aside a few cubes for topping.",
+        "Blend the rest of the dragon fruit with the frozen banana and yogurt into a thick cream (add a splash of water if it won't move).",
+        "Divide between two bowls.",
+        "Top with the mango, dragon fruit cubes, granola, coconut and chia, in rows.",
+        "Finish with the honey if using. Dragon fruit is grown more and more in Puerto Rico and turns the bowl a bright pink."
+      ]
+    }
+  },
+  {
+    id: "pina-rellena-frutas",
+    category: "frutas",
+    name: { es: "Piña Rellena de Frutas Tropicales", en: "Pineapple Boat with Tropical Fruit" },
+    time: "25 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 piña grande con su corona",
+        "1 mangó maduro en cubos",
+        "1 taza de lechosa (papaya) en cubos",
+        "2 carambolas en estrellas",
+        "1 taza de uvas o de quenepas peladas",
+        "2 parchas (la pulpa)",
+        "2 cucharadas de jugo de limón",
+        "1 cucharada de azúcar",
+        "6 hojas de menta"
+      ],
+      en: [
+        "1 large pineapple with its crown",
+        "1 ripe mango, cubed",
+        "1 cup papaya (lechosa), cubed",
+        "2 star fruits, sliced into stars",
+        "1 cup grapes or peeled quenepas",
+        "2 passion fruits (the pulp)",
+        "2 tablespoons lime juice",
+        "1 tablespoon sugar",
+        "6 mint leaves"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte la piña a lo largo por la mitad, con la corona, para tener dos barquitos.",
+        "Saque la pulpa con un cuchillo pequeño dejando ½ pulgada de borde; quite el corazón y corte la pulpa en cubos.",
+        "Mezcle la piña con el mangó, la lechosa, la carambola y las uvas o quenepas.",
+        "Bata la pulpa de parcha con el limón y el azúcar, y báñe las frutas.",
+        "Rellene los barquitos, decore con la menta y sirva frío. Es el centro de mesa de los cumpleaños y las fiestas de playa."
+      ],
+      en: [
+        "Cut the pineapple in half lengthwise, through the crown, to make two boats.",
+        "Scoop out the flesh with a small knife leaving a ½-inch rim; remove the core and cube the flesh.",
+        "Mix the pineapple with the mango, papaya, star fruit and grapes or quenepas.",
+        "Whisk the passion fruit pulp with the lime juice and sugar and pour over the fruit.",
+        "Fill the boats, garnish with the mint and serve cold. It's the centerpiece at birthdays and beach parties."
+      ]
+    }
+  },
+  {
+    id: "brochetas-frutas-parcha",
+    category: "frutas",
+    name: { es: "Pinchos de Frutas Tropicales con Salsa de Parcha", en: "Tropical Fruit Skewers with Passion Fruit Sauce" },
+    time: "20 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de piña en cubos",
+        "1 mangó en cubos",
+        "2 guineos en ruedas gruesas",
+        "1 taza de sandía en cubos",
+        "1 carambola en estrellas",
+        "½ taza de pulpa de parcha",
+        "¼ taza de miel",
+        "1 cucharada de jugo de limón",
+        "8 palitos de madera"
+      ],
+      en: [
+        "2 cups pineapple, cubed",
+        "1 mango, cubed",
+        "2 bananas, in thick slices",
+        "1 cup watermelon, cubed",
+        "1 star fruit, sliced into stars",
+        "½ cup passion fruit pulp",
+        "¼ cup honey",
+        "1 tablespoon lime juice",
+        "8 wooden skewers"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata la pulpa de parcha con la miel y el limón. Refrigere la salsa.",
+        "Pase el guineo por un poco de jugo de limón para que no se oscurezca.",
+        "Ensarte las frutas alternando colores, con una estrella de carambola al final de cada palito.",
+        "Si quiere, áselas en la plancha caliente 1 minuto por lado para caramelizar la piña y el mangó (la sandía, póngala después).",
+        "Sirva con la salsa de parcha para mojar. Para niños menores de 1 año, cambie la miel por azúcar."
+      ],
+      en: [
+        "Whisk the passion fruit pulp with the honey and lime juice. Refrigerate the sauce.",
+        "Toss the banana in a little lime juice so it doesn't darken.",
+        "Thread the fruit alternating colors, with a star fruit slice at the end of each skewer.",
+        "If you like, grill on a hot griddle 1 minute per side to caramelize the pineapple and mango (add the watermelon afterwards).",
+        "Serve with the passion fruit sauce for dipping. For babies under 1 year, use sugar instead of honey."
+      ]
+    }
+  },
+  {
+    id: "ensalada-carambola-pepino",
+    category: "ensaladas",
+    name: { es: "Ensalada de Carambola, Pepino y Menta", en: "Star Fruit, Cucumber and Mint Salad" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 carambolas en estrellas",
+        "1 pepino en medias lunas finas",
+        "½ cebolla roja en tiras finas",
+        "2 cucharadas de menta picada",
+        "2 cucharadas de cilantro picado",
+        "2 cucharadas de jugo de limón",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharadita de azúcar",
+        "½ cucharadita de sal",
+        "1 pizca de ají picante en polvo (opcional)"
+      ],
+      en: [
+        "3 star fruits, sliced into stars",
+        "1 cucumber, in thin half-moons",
+        "½ red onion, thinly sliced",
+        "2 tablespoons chopped mint",
+        "2 tablespoons chopped cilantro",
+        "2 tablespoons lime juice",
+        "2 tablespoons olive oil",
+        "1 teaspoon sugar",
+        "½ teaspoon salt",
+        "1 pinch hot chili powder (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Quite con un pelador el borde oscuro de las puntas de la carambola antes de cortarla.",
+        "Bata el limón, el aceite, el azúcar, la sal y el ají.",
+        "Mezcle la carambola, el pepino y la cebolla con la vinagreta.",
+        "Añada la menta y el cilantro justo antes de servir.",
+        "Sirva frío al lado de pescado frito o pollo asado. Si tiene enfermedad de los riñones, no coma carambola: tiene una toxina que los riñones enfermos no eliminan."
+      ],
+      en: [
+        "Use a peeler to remove the dark edge along the star fruit's ridges before slicing.",
+        "Whisk the lime juice, oil, sugar, salt and chili.",
+        "Toss the star fruit, cucumber and onion with the vinaigrette.",
+        "Add the mint and cilantro just before serving.",
+        "Serve cold next to fried fish or roast chicken. If you have kidney disease, don't eat star fruit: it has a toxin that diseased kidneys can't clear."
+      ]
+    }
+  },
+  {
+    id: "ensalada-lechosa-verde",
+    category: "ensaladas",
+    name: { es: "Ensalada de Lechosa Verde con Recao y Maní", en: "Green Papaya Salad with Culantro and Peanuts" },
+    time: "20 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 lechosa verde (papaya verde) de 2 libras, pelada y rallada en tiras",
+        "1 zanahoria rallada en tiras",
+        "1 taza de tomates cereza en mitades",
+        "4 hojas de recao picadas fino",
+        "1 diente de ajo machacado",
+        "1 ají picante pequeño picado (opcional)",
+        "3 cucharadas de jugo de limón",
+        "1 cucharada de azúcar morena",
+        "1 cucharada de salsa de soya",
+        "¼ taza de maní tostado picado"
+      ],
+      en: [
+        "1 green papaya (2 lb), peeled and shredded",
+        "1 carrot, shredded",
+        "1 cup cherry tomatoes, halved",
+        "4 culantro (recao) leaves, finely chopped",
+        "1 garlic clove, crushed",
+        "1 small hot pepper, chopped (optional)",
+        "3 tablespoons lime juice",
+        "1 tablespoon brown sugar",
+        "1 tablespoon soy sauce",
+        "¼ cup chopped roasted peanuts"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele la lechosa verde, sáquele las semillas blancas y rállela en tiras largas (con el lado grueso del rallo o un pelador de juliana). Use guantes: la leche de la cáscara irrita la piel.",
+        "Remoje las tiras en agua con hielo 10 minutos para que queden crujientes, y escúrralas bien.",
+        "Maje el ajo y el ají con el azúcar, y bata con el limón y la soya.",
+        "Mezcle la lechosa, la zanahoria y los tomates con el aliño, apretando un poco con las manos.",
+        "Añada el recao y el maní justo antes de servir. Es como la ensalada tailandesa, con el recao de aquí."
+      ],
+      en: [
+        "Peel the green papaya, remove the white seeds and shred into long strips (on the coarse side of a grater or with a julienne peeler). Wear gloves: the latex in the skin irritates.",
+        "Soak the strips in ice water 10 minutes so they turn crisp, and drain well.",
+        "Mash the garlic and hot pepper with the sugar, then whisk with the lime juice and soy sauce.",
+        "Toss the papaya, carrot and tomatoes with the dressing, squeezing a little with your hands.",
+        "Add the culantro and peanuts just before serving. It's like the Thai salad, with our own recao."
+      ]
+    }
+  },
+  {
+    id: "ensalada-sandia-queso",
+    category: "ensaladas",
+    name: { es: "Ensalada de Sandía, Queso del País y Menta", en: "Watermelon, Puerto Rican Cheese and Mint Salad" },
+    time: "10 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "4 tazas de sandía en cubos, sin semillas",
+        "1 taza de queso blanco del país en cubitos",
+        "1 pepino en cubos",
+        "¼ cebolla roja en tiras finas",
+        "¼ taza de hojas de menta",
+        "2 cucharadas de jugo de limón",
+        "2 cucharadas de aceite de oliva",
+        "1 pizca de sal"
+      ],
+      en: [
+        "4 cups seedless watermelon, cubed",
+        "1 cup Puerto Rican white cheese (queso del país), diced",
+        "1 cucumber, cubed",
+        "¼ red onion, thinly sliced",
+        "¼ cup mint leaves",
+        "2 tablespoons lime juice",
+        "2 tablespoons olive oil",
+        "1 pinch salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga la sandía, el pepino y la cebolla en una fuente.",
+        "Reparta el queso por encima.",
+        "Bata el limón, el aceite y la sal, y rocíe la ensalada.",
+        "Rompa la menta con las manos sobre la ensalada.",
+        "Sirva bien fría. El queso del país, salado, hace resaltar lo dulce de la sandía; es ideal para un día de playa."
+      ],
+      en: [
+        "Place the watermelon, cucumber and onion on a platter.",
+        "Scatter the cheese on top.",
+        "Whisk the lime juice, oil and salt and drizzle over the salad.",
+        "Tear the mint over the salad with your hands.",
+        "Serve very cold. The salty white cheese brings out the watermelon's sweetness; perfect for a beach day."
+      ]
+    }
+  },
+  {
+    id: "helado-mamey",
+    category: "postres",
+    name: { es: "Helado de Mamey (Sin Máquina)", en: "No-Churn Mamey Ice Cream" },
+    time: "15 min + 6 hr de congelación",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 tazas de pulpa de mamey maduro",
+        "1 lata de 14 onzas de leche condensada",
+        "2 tazas de crema espesa para batir, fría",
+        "1 cucharada de jugo de limón",
+        "1 cucharadita de vainilla",
+        "1 pizca de sal"
+      ],
+      en: [
+        "2 cups ripe mamey pulp",
+        "1 can (14 oz) condensed milk",
+        "2 cups cold heavy whipping cream",
+        "1 tablespoon lime juice",
+        "1 teaspoon vanilla",
+        "1 pinch salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la pulpa de mamey con la leche condensada, el limón, la vainilla y la sal hasta que quede lisa.",
+        "Bata la crema fría hasta que forme picos firmes.",
+        "Incorpore la crema al mamey en tres partes, con movimientos envolventes.",
+        "Pase a un envase con tapa y congele 6 horas.",
+        "Saque 5 minutos antes de servir. El mamey da un color salmón y un sabor entre batata, almendra y melocotón."
+      ],
+      en: [
+        "Blend the mamey pulp with the condensed milk, lime juice, vanilla and salt until smooth.",
+        "Whip the cold cream to stiff peaks.",
+        "Fold the cream into the mamey in three parts.",
+        "Transfer to a lidded container and freeze 6 hours.",
+        "Take out 5 minutes before serving. Mamey gives a salmon color and a flavor between sweet potato, almond and peach."
+      ]
+    }
+  },
+  {
+    id: "crema-caimito",
+    category: "postres",
+    name: { es: "Crema Fría de Caimito", en: "Chilled Star Apple (Caimito) Cream" },
+    time: "15 min + 2 hr de frío",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 caimitos maduros",
+        "½ taza de leche evaporada",
+        "2 cucharadas de leche condensada",
+        "1 cucharada de jugo de china",
+        "1 pizca de canela",
+        "1 taza de hielo"
+      ],
+      en: [
+        "4 ripe star apples (caimitos)",
+        "½ cup evaporated milk",
+        "2 tablespoons condensed milk",
+        "1 tablespoon orange juice",
+        "1 pinch cinnamon",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Parta los caimitos por la mitad y saque la pulpa con una cuchara, sin raspar la cáscara (la leche blanca de la cáscara es pegajosa y amarga). Quite las semillas.",
+        "Licúe la pulpa con la leche evaporada, la leche condensada, el jugo de china y el hielo hasta que quede cremosa.",
+        "Sirva en copas.",
+        "Refrigere 2 horas para que espese un poco.",
+        "Espolvoree la canela al servir. El caimito morado da un color lila y un sabor suave como de uva y leche."
+      ],
+      en: [
+        "Halve the star apples and scoop out the pulp with a spoon, without scraping the skin (its white latex is sticky and bitter). Remove the seeds.",
+        "Blend the pulp with the evaporated milk, condensed milk, orange juice and ice until creamy.",
+        "Pour into dessert cups.",
+        "Refrigerate 2 hours to thicken slightly.",
+        "Sprinkle with cinnamon to serve. Purple star apple gives a lilac color and a mild flavor like grape and milk."
+      ]
+    }
+  },
+  {
+    id: "batida-nispero",
+    category: "bebidas",
+    name: { es: "Batida de Níspero", en: "Sapodilla (Níspero) Shake" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "4 nísperos maduros, pelados y sin semillas",
+        "1½ tazas de leche fría",
+        "2 cucharadas de azúcar",
+        "½ cucharadita de vainilla",
+        "1 pizca de canela",
+        "1 taza de hielo"
+      ],
+      en: [
+        "4 ripe sapodillas (nísperos), peeled and seeded",
+        "1½ cups cold milk",
+        "2 tablespoons sugar",
+        "½ teaspoon vanilla",
+        "1 pinch cinnamon",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Use nísperos bien maduros, que estén blandos al apretarlos: verdes amarran la boca.",
+        "Pélelos y quíteles las semillas negras (son duras y no se comen).",
+        "Licúe la pulpa con la leche, el azúcar, la vainilla y la canela.",
+        "Añada el hielo y licúe otra vez hasta que quede espumosa.",
+        "Sirva enseguida. Sabe a azúcar morena y pera, como un batido de caramelo natural."
+      ],
+      en: [
+        "Use very ripe sapodillas, soft when pressed: unripe ones make your mouth pucker.",
+        "Peel them and remove the black seeds (they're hard and not eaten).",
+        "Blend the pulp with the milk, sugar, vanilla and cinnamon.",
+        "Add the ice and blend again until frothy.",
+        "Serve right away. It tastes of brown sugar and pear, like a natural caramel shake."
+      ]
+    }
+  },
+  {
+    id: "batida-anon",
+    category: "bebidas",
+    name: { es: "Batida de Anón", en: "Sugar Apple (Anón) Shake" },
+    time: "15 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 anones maduros",
+        "1 taza de leche fría",
+        "½ taza de agua fría",
+        "1 cucharada de azúcar",
+        "1 cucharada de jugo de limón",
+        "1 taza de hielo"
+      ],
+      en: [
+        "2 ripe sugar apples (anones)",
+        "1 cup cold milk",
+        "½ cup cold water",
+        "1 tablespoon sugar",
+        "1 tablespoon lime juice",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Abra los anones con las manos (maduros se desarman solos) y saque la pulpa blanca con una cuchara.",
+        "Quite todas las semillas negras con paciencia, apretando la pulpa entre los dedos: no las licúe, porque son tóxicas si se trituran.",
+        "Licúe la pulpa con la leche, el agua, el azúcar y el limón.",
+        "Añada el hielo y licúe hasta que quede cremosa.",
+        "Sirva enseguida. El anón es muy dulce, con sabor a natilla; el limón lo equilibra. Lo mismo sirve para el corazón y la guanábana."
+      ],
+      en: [
+        "Open the sugar apples with your hands (ripe ones fall apart) and scoop out the white pulp with a spoon.",
+        "Patiently remove all the black seeds, squeezing the pulp between your fingers: don't blend them, they're toxic when crushed.",
+        "Blend the pulp with the milk, water, sugar and lime juice.",
+        "Add the ice and blend until creamy.",
+        "Serve right away. Sugar apple is very sweet, with a custard flavor; the lime balances it. The same works for custard apple (corazón) and soursop."
+      ]
+    }
+  },
+  {
+    id: "jugo-melon-menta",
+    category: "jugos",
+    name: { es: "Jugo de Melón con Limón y Menta", en: "Cantaloupe Juice with Lime and Mint" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 melón (cantalupo) maduro, pelado y sin semillas",
+        "2 tazas de agua fría",
+        "3 cucharadas de jugo de limón",
+        "2 cucharadas de azúcar",
+        "6 hojas de menta",
+        "Hielo"
+      ],
+      en: [
+        "1 ripe cantaloupe, peeled and seeded",
+        "2 cups cold water",
+        "3 tablespoons lime juice",
+        "2 tablespoons sugar",
+        "6 mint leaves",
+        "Ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave bien el melón por fuera antes de cortarlo: la cáscara rugosa puede tener bacterias que el cuchillo pasa a la pulpa.",
+        "Corte la pulpa en pedazos.",
+        "Licúe el melón con el agua, el limón, el azúcar y la menta.",
+        "Cuele si lo quiere más fino.",
+        "Sirva sobre hielo enseguida, o guárdelo en la nevera y úselo el mismo día."
+      ],
+      en: [
+        "Scrub the outside of the cantaloupe well before cutting: the rough rind can carry bacteria the knife drags into the flesh.",
+        "Cut the flesh into chunks.",
+        "Blend the melon with the water, lime juice, sugar and mint.",
+        "Strain if you want it smoother.",
+        "Serve over ice right away, or refrigerate and drink it the same day."
+      ]
+    }
+  },
+  {
+    id: "pico-gallo-frutas",
+    category: "salsas",
+    name: { es: "Pico de Gallo de Frutas Tropicales", en: "Tropical Fruit Pico de Gallo" },
+    time: "15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 mangó maduro en cubitos",
+        "1 taza de piña en cubitos",
+        "1 taza de lechosa (papaya) en cubitos",
+        "½ cebolla roja picada fina",
+        "½ pimiento rojo picado fino",
+        "1 ají caballero o jalapeño sin semillas, picado fino (opcional)",
+        "¼ taza de cilantro picado",
+        "3 cucharadas de jugo de limón",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1 ripe mango, finely diced",
+        "1 cup pineapple, finely diced",
+        "1 cup papaya (lechosa), finely diced",
+        "½ red onion, finely chopped",
+        "½ red bell pepper, finely chopped",
+        "1 hot pepper or jalapeño, seeded and finely chopped (optional)",
+        "¼ cup chopped cilantro",
+        "3 tablespoons lime juice",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte todas las frutas y vegetales del mismo tamaño, en cubitos de ¼ pulgada.",
+        "Mezcle el mangó, la piña, la lechosa, la cebolla, el pimiento y el ají.",
+        "Añada el cilantro, el limón y la sal, y mezcle con cuidado.",
+        "Deje reposar 10 minutos en la nevera para que suelte sus jugos.",
+        "Sirva con pescado a la plancha, pinchos de pollo, tostones o mariquitas. Se come el mismo día."
+      ],
+      en: [
+        "Cut all the fruit and vegetables the same size, in ¼-inch dice.",
+        "Mix the mango, pineapple, papaya, onion, bell pepper and hot pepper.",
+        "Add the cilantro, lime juice and salt and toss gently.",
+        "Let rest 10 minutes in the fridge so it releases its juices.",
+        "Serve with grilled fish, chicken skewers, tostones or plantain chips. Eat it the same day."
+      ]
+    }
+  },
+  {
+    id: "chutney-mango-pina",
+    category: "salsas",
+    name: { es: "Chutney de Mangó y Piña", en: "Mango Pineapple Chutney" },
+    time: "45 min",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 mangós verdes o pintones, en cubos",
+        "2 tazas de piña en cubitos",
+        "1 cebolla picada",
+        "1 cucharada de jengibre fresco rallado",
+        "2 dientes de ajo picados",
+        "¾ taza de azúcar morena",
+        "½ taza de vinagre de manzana",
+        "¼ taza de pasas",
+        "½ cucharadita de canela",
+        "¼ cucharadita de clavo en polvo",
+        "½ cucharadita de sal",
+        "1 pizca de ají picante en polvo"
+      ],
+      en: [
+        "2 green or half-ripe mangoes, cubed",
+        "2 cups pineapple, finely diced",
+        "1 onion, chopped",
+        "1 tablespoon grated fresh ginger",
+        "2 garlic cloves, minced",
+        "¾ cup brown sugar",
+        "½ cup apple cider vinegar",
+        "¼ cup raisins",
+        "½ teaspoon cinnamon",
+        "¼ teaspoon ground cloves",
+        "½ teaspoon salt",
+        "1 pinch hot chili powder"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga todos los ingredientes en una olla de fondo grueso.",
+        "Deje hervir, baje el fuego y cocine destapado 35 minutos, moviendo a menudo, hasta que espese y el mangó esté transparente.",
+        "Aplaste un poco con la cuchara si lo quiere menos en trozos.",
+        "Vierta caliente en frascos limpios y tape.",
+        "Guárdelo en la nevera hasta 3 semanas. Va con pernil, chuletas, pollo asado o con queso y galletas."
+      ],
+      en: [
+        "Put all the ingredients in a heavy-bottomed pot.",
+        "Bring to a boil, lower the heat and cook uncovered 35 minutes, stirring often, until thick and the mango turns translucent.",
+        "Mash a little with the spoon if you want it less chunky.",
+        "Pour hot into clean jars and cover.",
+        "Keep refrigerated up to 3 weeks. Goes with pernil, pork chops, roast chicken, or with cheese and crackers."
+      ]
+    }
   }
 );

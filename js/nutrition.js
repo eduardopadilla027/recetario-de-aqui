@@ -267,6 +267,14 @@ const NUTRI_FOODS = [
   F("grosella", 44, 0.9, 10, 7, 4, 0.5, 0, 1, { cup: 150 }),
   // Pajuil (cajuil): la fruta del marañón, no la semilla.
   F("pajuil|pajuiles|cajuil", 46, 0.8, 11.6, 10, 1.7, 0.1, 0, 10, { u: 80, cup: 150 }),
+  // Frutas de la isla (tanda 46). Por 100 g de pulpa; `u` = lo que se come de una fruta.
+  F("jobo|jobos", 46, 0.8, 12, 8, 1.5, 0.2, 0, 2, { u: 15, cup: 150 }),
+  F("pomarrosa|pomarrosas", 25, 0.6, 5.7, 5, 1, 0.3, 0, 0, { u: 30, cup: 120 }),
+  F("pitahaya|fruta del dragon", 57, 0.4, 15.2, 9.8, 3.1, 0.1, 0, 0, { u: 350, cup: 230 }),
+  F("caimito|caimitos", 67, 1.5, 14.7, 10, 3.3, 0.6, 0.1, 5, { u: 150, cup: 230 }),
+  F("nispero|nisperos", 83, 0.4, 20, 15, 5.3, 1.1, 0.2, 12, { u: 120, cup: 240 }),
+  F("anon|anones|corazon (fruta)", 94, 2.1, 23.6, 18, 4.4, 0.3, 0, 9, { u: 150, cup: 250 }),
+  F("melon|cantalupo", 34, 0.8, 8.2, 7.9, 0.9, 0.2, 0, 16, { u: 700, cup: 160 }),
   F("frutas abrillantadas|fruta abrillantada|frutas confitadas", 322, 0.3, 82, 81, 1.6, 0.1, 0, 98, { cup: 180 }),
   F("ciruelas secas|ciruela seca|ciruelas pasas", 240, 2.2, 64, 38, 7, 0.4, 0.1, 2, { cup: 175, u: 9.5 }),
   F("mamey", 51, 0.5, 12.5, 7, 3, 0.5, 0.1, 15, { u: 500, cup: 170 }),
