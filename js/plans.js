@@ -36,7 +36,8 @@ const PLAN_T = {
       vegano: ["Vegano", "Sólo plantas: sin carne, lácteos, huevo ni miel; proteína de granos y tofu."],
       diabetes: ["Diabetes", "Carbohidratos contados por comida, más fibra y poca azúcar añadida."],
       dash: ["Presión alta (DASH)", "Poco sodio, más potasio y calcio: viandas, frutas, granos y lácteos."],
-      colesterol: ["Colesterol alto", "Poca grasa saturada y colesterol, sin frituras; más fibra de granos, avena y vegetales."]
+      colesterol: ["Colesterol alto", "Poca grasa saturada y colesterol, sin frituras; más fibra de granos, avena y vegetales."],
+      autismo: ["Autismo", "No existe una dieta que trate el autismo. Este plan ayuda con la rutina, recetas sencillas de sabor suave, y cuida fibra, calcio y vitamina D."],
     },
     seasonLabel: "Época",
     seasons: { auto: "Según la fecha de hoy", todo: "Todo el año", navidad: "Navidad", cuaresma: "Cuaresma y Semana Santa", verano: "Verano y playa", gracias: "Acción de Gracias", lluvia: "Días de lluvia" },
@@ -101,6 +102,14 @@ const PLAN_T = {
       vegetariano: "Combine granos (habichuelas, garbanzos, gandules, lentejas) con arroz o maíz para una proteína completa; el huevo y el queso también suman.",
       vegano: "Incluya habichuelas, garbanzos, lentejas, tofu o quinoa en cada comida principal. La vitamina B12 sólo viene de alimentos fortificados o suplementos: hable con su médico. Coma el hierro de los granos y la espinaca con vitamina C (limón, china) para aprovecharlo mejor.",
       diabetes: "Se busca de 45 a 60 g de carbohidratos por comida y de 15 a 20 g en la merienda (una «porción de carbohidrato» son 15 g). Su médico o educador en diabetes le dirá su cantidad exacta, sobre todo si usa insulina. Viandas, arroz, pan y frutas son carbohidratos: cuéntelos.",
+      autismo: ["Realmente no existe una dieta que cure ni trate el autismo. Lo que sí ayuda en el día a día:",
+        "Rutina: el desayuno y la merienda se repiten toda la semana; el almuerzo y la cena cambian poco a poco.",
+        "Recetas sencillas y de sabor suave: sin picante, alcohol ni cafeína, y sin frituras.",
+        "Ofrezca lo nuevo poco a poco: una porción pequeña al lado de algo que ya le gusta, sin obligar. Puede tomar 10 a 15 veces aceptar un alimento.",
+        "Fibra y agua para evitar el estreñimiento, que es común: habichuelas, avena, frutas y viandas.",
+        "Calcio y vitamina D: suelen quedarse cortos cuando se come poca variedad o sin leche. Un vaso de leche fortificada o un yogur ayuda.",
+        "Las dietas sin gluten ni caseína no han mostrado beneficio en los estudios; si su familia la usa (en «Evitar»), hágalo con un profesional para no quedarse corto de calcio y vitamina D.",
+        "Si come muy pocos alimentos, se atraganta, vomita o pierde peso, consulte al pediatra y a un terapeuta de alimentación (terapia ocupacional o del habla)."],
       colesterol: "Para bajar el colesterol LDL se busca menos de 6 % de las calorías de grasa saturada, nada de grasa trans y poco colesterol de la comida (yemas, vísceras, embutidos); la fibra soluble (habichuelas, garbanzos, avena, berenjena, guineo) ayuda. Si toma medicinas para el colesterol, siga las indicaciones de su médico.",
       dash: "El plan DASH baja la presión con poco sodio (menos de 2,300 mg al día, o 1,500 mg si su médico lo indica) y mucho potasio, calcio y fibra. Si tiene enfermedad del riñón o toma medicinas que suben el potasio, consulte antes a su médico."
     },
@@ -119,6 +128,13 @@ const PLAN_T = {
     limChol: (mg, max) => `Colesterol: ${mg.toLocaleString("en-US")} mg (meta: menos de ${max} mg)`,
     limSatChol: (p) => `Grasa saturada: ${p}% de las calorías (meta para el colesterol: menos de 6%)`,
     chol: "colesterol",
+    limFib: (g, goal) => `Fibra: ${g} g (meta: ${goal} g o más)`,
+    limCa: (mg, goal) => `Calcio: ${mg.toLocaleString("en-US")} mg (meta para su edad: ${goal.toLocaleString("en-US")} mg; un vaso de leche o un yogur suma unos 300 mg)`,
+    limVd: (mcg) => `Vitamina D: ${mcg} mcg (meta: 15 mcg; casi siempre hace falta leche fortificada, huevo, pescado o sol)`,
+    routine: "Rutina: el mismo desayuno y la misma merienda todos los días. Para cambiarlos, use «Cambiar» en el primer día.",
+    targetsChild: (kcal, p) => `Meta del día: <strong>${kcal.toLocaleString("en-US")} calorías</strong> y <strong>${p} g de proteína</strong> (para su edad, según las Guías Alimentarias y la ración diaria recomendada para niños).`,
+    limNaChild: (mg, max) => `Sodio: ${mg.toLocaleString("en-US")} mg (meta para su edad: menos de ${max.toLocaleString("en-US")} mg)`,
+    limProtChild: (g, p) => `Proteína: ${g} g (ración recomendada para su edad: ${p} g)`,
     carbChoices: (g) => `${g} g de carbohidratos ≈ ${Math.round((g / 15) * 2) / 2} porciones de carbohidrato`,
     dgaNote: "Cálculo aproximado con los alimentos de cada receta (FoodData Central del USDA). La proteína y los lácteos se cuentan según su receta."
   },
@@ -138,7 +154,8 @@ const PLAN_T = {
       vegano: ["Vegan", "Plants only: no meat, dairy, eggs or honey; protein from beans and tofu."],
       diabetes: ["Diabetes", "Carbs counted per meal, more fiber and little added sugar."],
       dash: ["High blood pressure (DASH)", "Low sodium, more potassium and calcium: root vegetables, fruit, beans and dairy."],
-      colesterol: ["High cholesterol", "Little saturated fat and cholesterol, no fried foods; more fiber from beans, oats and vegetables."]
+      colesterol: ["High cholesterol", "Little saturated fat and cholesterol, no fried foods; more fiber from beans, oats and vegetables."],
+      autismo: ["Autism", "No diet treats autism. This plan helps with routine and simple mild-flavored recipes, and watches fiber, calcium and vitamin D."],
     },
     seasonLabel: "Season",
     seasons: { auto: "Based on today's date", todo: "All year", navidad: "Christmas", cuaresma: "Lent and Holy Week", verano: "Summer and beach", gracias: "Thanksgiving", lluvia: "Rainy days" },
@@ -203,6 +220,14 @@ const PLAN_T = {
       vegetariano: "Pair beans, chickpeas, pigeon peas or lentils with rice or corn for complete protein; eggs and cheese help too.",
       vegano: "Include beans, chickpeas, lentils, tofu or quinoa at every main meal. Vitamin B12 only comes from fortified foods or supplements: talk to your doctor. Eat iron from beans and spinach with vitamin C (lime, orange) to absorb it better.",
       diabetes: "The usual aim is 45 to 60 g of carbs per meal and 15 to 20 g for a snack (one “carb choice” is 15 g). Your doctor or diabetes educator will give you your exact amount, especially if you use insulin. Root vegetables, rice, bread and fruit are carbs: count them.",
+      autismo: ["There really is no diet that cures or treats autism. What does help day to day:",
+        "Routine: breakfast and snack repeat all week; lunch and dinner change little by little.",
+        "Simple, mild-flavored recipes: no spicy food, alcohol or caffeine, and no fried foods.",
+        "Offer new foods slowly: a small portion next to something already liked, without forcing. It can take 10 to 15 tries to accept a food.",
+        "Fiber and water to prevent constipation, which is common: beans, oats, fruit and root vegetables.",
+        "Calcium and vitamin D often run low with little variety or no dairy. A glass of fortified milk or a yogurt helps.",
+        "Gluten-free, casein-free diets haven't shown benefit in studies; if your family uses one (under “Avoid”), do it with a professional so calcium and vitamin D don't run short.",
+        "If very few foods are eaten, or there's choking, vomiting or weight loss, see the pediatrician and a feeding therapist (occupational or speech therapy)."],
       colesterol: "To lower LDL cholesterol, aim for under 6% of calories from saturated fat, no trans fat and little dietary cholesterol (egg yolks, organ meats, cured meats); soluble fiber (beans, chickpeas, oats, eggplant, bananas) helps. If you take cholesterol medicine, follow your doctor's instructions.",
       dash: "The DASH plan lowers blood pressure with little sodium (under 2,300 mg a day, or 1,500 mg if your doctor says so) and plenty of potassium, calcium and fiber. If you have kidney disease or take medicine that raises potassium, ask your doctor first."
     },
@@ -221,6 +246,13 @@ const PLAN_T = {
     limChol: (mg, max) => `Cholesterol: ${mg.toLocaleString("en-US")} mg (goal: under ${max} mg)`,
     limSatChol: (p) => `Saturated fat: ${p}% of calories (cholesterol goal: under 6%)`,
     chol: "cholesterol",
+    limFib: (g, goal) => `Fiber: ${g} g (goal: ${goal} g or more)`,
+    limCa: (mg, goal) => `Calcium: ${mg.toLocaleString("en-US")} mg (goal for the age: ${goal.toLocaleString("en-US")} mg; a glass of milk or a yogurt adds about 300 mg)`,
+    limVd: (mcg) => `Vitamin D: ${mcg} mcg (goal: 15 mcg; fortified milk, eggs, fish or sun are usually needed)`,
+    routine: "Routine: the same breakfast and snack every day. To change them, use “Change” on the first day.",
+    targetsChild: (kcal, p) => `Daily target: <strong>${kcal.toLocaleString("en-US")} calories</strong> and <strong>${p} g protein</strong> (for the age, from the Dietary Guidelines and the children's recommended allowance).`,
+    limNaChild: (mg, max) => `Sodium: ${mg.toLocaleString("en-US")} mg (goal for the age: under ${max.toLocaleString("en-US")} mg)`,
+    limProtChild: (g, p) => `Protein: ${g} g (recommended for the age: ${p} g)`,
     carbChoices: (g) => `${g} g carbs ≈ ${Math.round((g / 15) * 2) / 2} carb choices`,
     dgaNote: "Approximate, from each recipe's ingredients (USDA FoodData Central). Protein and dairy are counted from the recipe."
   }
@@ -306,8 +338,20 @@ const PLAN_GOALS = {
     typical: 2000, adjust: 0, protPerKg: 1.2, maxPortion: 2, noFried: true, chol: true,
     ok: { desayuno: (n) => n.sat <= 3 && n.chol <= 60 && n.trans < 0.5 && n.na <= 500, main: (n) => n.sat <= 3.5 && n.chol <= 80 && n.trans < 0.5 && n.na <= 800 && n.p >= 15 && n.kcal >= 200, merienda: (n) => n.sat <= 2 && n.chol <= 30 && n.na <= 300 },
     score: (n) => n.fib * 2.5 + n.p / 4 - n.sat * 2.5 - n.chol / 25 - n.trans * 5
+  },
+  // Autismo: no hay dieta que lo trate. Rutina (desayuno y merienda iguales toda la semana), recetas sencillas
+  // (no "elaboradas", hasta 12 ingredientes), sabor suave (sin picante) y aptas para niños (sin alcohol, cafeína,
+  // huevo o pescado crudo ni tés de riesgo); la puntuación premia fibra, calcio y vitamina D y castiga el azúcar
+  // añadida y los muchos ingredientes. Acepta edades de 2 a 13 años (planTargets).
+  autismo: {
+    typical: 1800, adjust: 0, protPerKg: 1.2, maxPortion: 2, routine: true, kids: true, noFried: true,
+    only: (r) => r.ingredients.es.length <= 12 && (typeof recipeLevel !== "function" || recipeLevel(r) !== "hard") && !SPICY_RX.test(planNorm(r.ingredients.es.join(" ") + " " + r.name.es)) && kidsOk(r),
+    ok: { desayuno: (n) => n.kcal >= 150 && n.add <= 10 && n.na <= 450, main: (n) => n.kcal >= 200 && n.p >= 12 && n.add <= 10 && n.na <= 600, merienda: (n) => n.add <= 10 && n.na <= 250 && (n.ca >= 100 || n.fib >= 3) },
+    score: (n) => n.fib * 1.5 + n.ca / 30 + n.vd * 3 + n.p / 4 - n.add
   }
 };
+const SPICY_RX = /\b(pique|picante|aji picante|ajies picantes|jalapen|chiles?\b|hojuelas de aji|cayena|habanero|chipotle|sriracha|wasabi|curry)/;
+const kidsOk = (r) => { const idea = typeof S_IDEAS !== "undefined" && S_IDEAS.find((i) => i.label.es.startsWith("Para niños")); return !idea || idea.test(r, { nameAll: planNorm(r.name.es + " " + r.name.en) }); };
 
 /* ── Épocas: platos típicos por nombre (y categoría) ── */
 const SEASONS = {
@@ -480,6 +524,13 @@ function planTargets() {
   const g = PLAN_GOALS[plan.goal];
   const lb = parseFloat(plan.weight), age = parseFloat(plan.age);
   const inches = (parseFloat(plan.ft) || 0) * 12 + (parseFloat(plan.inch) || 0);
+  // Niños de 2 a 13 años (objetivo de autismo): calorías de las Guías Alimentarias (moderadamente activos) y
+  // proteína de la RDA infantil (0.95 g/kg).
+  if (g.kids && plan.sex && lb >= 20 && age >= 2 && age < 14) {
+    const kgC = lb * 0.4536;
+    const kcalC = age < 4 ? 1200 : age < 9 ? 1500 : plan.sex === "male" ? 2000 : 1800;
+    return { kcal: kcalC, protein: Math.round(kgC * 0.95), custom: true, kg: kgC, child: true, age };
+  }
   const custom = plan.sex && lb > 60 && age >= 14 && inches > 48;
   const kg = custom ? lb * 0.4536 : 77;
   let kcal = g.typical;
@@ -493,7 +544,7 @@ function planTargets() {
   }
   kcal = Math.round(kcal / 50) * 50;
   const protein = Math.round(kg * g.protPerKg / 5) * 5;
-  return { kcal, protein, custom, kg };
+  return { kcal, protein, custom, kg, age };
 }
 
 /* ── Qué recetas sirven para cada comida ── */
@@ -542,6 +593,7 @@ const SIDE_RULES = {
   nutritivo: { kinds: [["granos"], ["ensalada", "vegetal"]], ok: (n) => n.fib >= 2 || n.p >= 5, score: (n) => n.fib * 3 + n.p / 3 - n.na / 500 },
   diabetes: { kinds: [["ensalada", "vegetal", "granos"]], ok: (n) => n.c <= 20 && n.add <= 3, score: (n) => n.fib * 2 + n.p / 3 - n.c / 4 },
   dash: { kinds: [["arroz", "vianda", "granos"], ["ensalada", "vegetal"]], ok: (n) => n.na <= 300, score: (n) => n.k / 100 + n.fib - n.na / 80 },
+  autismo: { kinds: [["arroz", "vianda", "granos", "vegetal"]], ok: (n) => n.add <= 3 && n.na <= 300, score: (n) => n.fib * 2 + n.ca / 40 + n.p / 4 },
   colesterol: { kinds: [["granos"], ["ensalada", "vegetal"]], ok: (n) => n.sat <= 1.5 && n.chol <= 15 && n.na <= 400, score: (n) => n.fib * 3 + n.p / 4 - n.sat * 3 }
 };
 function planInfo(r) {
@@ -564,6 +616,7 @@ function candidates() {
     if (g.noFried && info.frying) continue;
     if (plan.avoid.some((k) => AVOID[k] && AVOID[k](info.allergens, r))) continue;
     if (!dietOk(r)) continue;
+    if (g.only && !g.only(r)) continue;
     if (plan.prefs.includes("quick") && !isQuick(r)) continue;
     // Acompañantes (arroz, granos, viandas, vegetales y ensaladas ligeras): no son plato principal.
     const kind = slot === "main" ? sideKind(r, info.n) : null;
@@ -697,6 +750,12 @@ function buildPlan(pools, target, seed) {
     const meals = [];
     let lastMainCat = null;
     for (const slot of SLOTS) {
+      if (g.routine && d > 0 && ["desayuno", "merienda"].includes(slot.key)) {
+        const first = days[0].find((x) => x.slot === slot.key);
+        meals.push({ ...first, sides: (first.sides || []).map((s) => ({ ...s })) });
+        if (first.item) usedDay.add(first.item.r.id);
+        continue;
+      }
       const pool = slot.key === "desayuno" ? pools.desayuno : slot.key === "merienda" ? pools.merienda : pools.main;
       const item = pickFrom(pool, usedDay, rand, slot.key === "cena" ? lastMainCat : null);
       if (!item) { meals.push({ slot: slot.key, item: null }); continue; }
@@ -831,7 +890,7 @@ function swapPanelHTML(key) {
 /* ── Vista ── */
 function goalButtonsHTML() {
   const tr = pt();
-  const icons = { rebajar: "🥗", masa: "💪", mantener: "⚖️", sodio: "🧂", lowcarb: "🥩", azucar: "🍬", nutritivo: "🥦", vegetariano: "🥕", vegano: "🌱", diabetes: "🩺", dash: "❤️", colesterol: "🫀" };
+  const icons = { rebajar: "🥗", masa: "💪", mantener: "⚖️", sodio: "🧂", lowcarb: "🥩", azucar: "🍬", nutritivo: "🥦", vegetariano: "🥕", vegano: "🌱", diabetes: "🩺", dash: "❤️", colesterol: "🫀", autismo: "♾️" };
   return Object.keys(PLAN_GOALS).map((k) => `
     <button type="button" class="goal-card" role="radio" aria-checked="${plan.goal === k}" data-goal="${k}">
       <span class="goal-icon" aria-hidden="true">${icons[k]}</span>
@@ -856,7 +915,7 @@ function renderPlansShell() {
         <div class="plans-form">
           <label>${esc(tr.sex)}
             <select data-field="sex"><option value="">—</option><option value="female">${esc(tr.female)}</option><option value="male">${esc(tr.male)}</option></select></label>
-          <label>${esc(tr.age)}<input type="number" inputmode="numeric" min="14" max="100" data-field="age"></label>
+          <label>${esc(tr.age)}<input type="number" inputmode="numeric" min="2" max="100" data-field="age"></label>
           <label>${esc(tr.weight)}<input type="number" inputmode="decimal" min="70" max="600" data-field="weight"></label>
           <fieldset class="plans-height"><legend>${esc(tr.height)}</legend>
             <label><input type="number" inputmode="numeric" min="3" max="8" data-field="ft"> ${esc(tr.feet)}</label>
@@ -980,7 +1039,7 @@ function leftoverMeal(d, j) {
 }
 function dayHTML(meals, i, target, iso) {
   const tr = pt();
-  const tot = { kcal: 0, p: 0, c: 0, na: 0, fib: 0, s: 0, sat: 0, k: 0, chol: 0 };
+  const tot = { kcal: 0, p: 0, c: 0, na: 0, fib: 0, s: 0, sat: 0, k: 0, chol: 0, ca: 0, vd: 0 };
   const grp = { veg: 0, fruit: 0, grain: 0, wgrain: 0, dairy: 0 };
   let addOver = 0;
   for (const x of meals) {
@@ -1037,6 +1096,8 @@ function dgaHTML(tot, grp, addOver, target) {
   const kAI = plan.sex === "female" ? 2600 : 3400; // ingesta adecuada de potasio (Academias Nacionales, 2019)
   // Colesterol de la comida: 300 mg es el valor diario de la etiqueta de la FDA; con el objetivo de colesterol, 200 mg.
   const cholMax = PLAN_GOALS[plan.goal].chol ? 200 : 300;
+  // Sodio para niños: límite de las Academias Nacionales (2019) por edad.
+  const naChild = !target.child ? 2300 : target.age < 4 ? 1200 : target.age < 9 ? 1500 : 1800;
   return `<details class="plan-dga">
     <summary>${esc(tr.dgaTitle)}</summary>
     <p class="plans-help">${esc(tr.dgaSub(target.kcal))}</p>
@@ -1046,12 +1107,23 @@ function dgaHTML(tot, grp, addOver, target) {
       ${PLAN_GOALS[plan.goal].chol ? lim(satPct < 6, tr.limSatChol(satPct)) : lim(satPct < 10, tr.limSat(satPct))}
       ${lim(tot.chol < cholMax, tr.limChol(Math.round(tot.chol / 5) * 5, cholMax))}
       ${lim(!addOver, tr.limAdd(addOver))}
-      ${lim(tot.na < 2300, tr.limNa(Math.round(tot.na / 10) * 10))}
-      ${lim(tot.p >= pA * 0.9, tr.limProt(Math.round(tot.p), pA, pB))}
+      ${target.child ? lim(tot.na < naChild, tr.limNaChild(Math.round(tot.na / 10) * 10, naChild)) : lim(tot.na < 2300, tr.limNa(Math.round(tot.na / 10) * 10))}
+      ${target.child ? lim(tot.p >= target.protein * 0.9, tr.limProtChild(Math.round(tot.p), target.protein)) : lim(tot.p >= pA * 0.9, tr.limProt(Math.round(tot.p), pA, pB))}
       ${PLAN_GOALS[plan.goal].dash ? lim(tot.k >= kAI, tr.limK(Math.round(tot.k / 10) * 10, kAI)) : ""}
+      ${PLAN_GOALS[plan.goal].kids ? autismLimits(tot, target, lim, tr) : ""}
     </ul>
     <p class="plans-help">${esc(tr.dgaNote)}</p>
   </details>`;
+}
+/* Fibra: 14 g por cada 1,000 calorías (Guías Alimentarias). Calcio: RDA por edad (1,300 mg de 9 a 18 años; 1,000 mg de
+   4 a 8 y adultos hasta 50; 700 mg de 1 a 3; 1,200 mg mujeres de 51+ y todos de 71+). Vitamina D: 15 mcg (RDA). */
+function autismLimits(tot, target, lim, tr) {
+  const fibGoal = Math.round((target.kcal / 1000) * 14);
+  const a = target.age || 30;
+  const caGoal = a < 4 ? 700 : a < 9 ? 1000 : a < 19 ? 1300 : a > 70 || (a > 50 && plan.sex === "female") ? 1200 : 1000;
+  return lim(tot.fib >= fibGoal * 0.9, tr.limFib(Math.round(tot.fib), fibGoal)) +
+    lim(tot.ca >= caGoal * 0.9, tr.limCa(Math.round(tot.ca / 10) * 10, caGoal)) +
+    lim(tot.vd >= 15 * 0.9, tr.limVd(Math.round(tot.vd * 10) / 10));
 }
 const fmtHalf = (v) => { const r = Math.round(v * 2) / 2; return r % 1 ? `${Math.floor(r) || ""}½` : String(r); };
 function seasonList() {
@@ -1118,10 +1190,11 @@ function renderPlanOutput(keepSwap = false) {
   const tr = pt();
   if (!keepSwap) planSwap = null; // otro objetivo, otros ajustes u otro plan: se cierra la lista
   const target = planTargets();
-  const floorHit = target.custom && target.kcal <= (plan.sex === "male" ? 1500 : 1200);
-  $("plans-target").innerHTML = `<p>${tr.targets(target.kcal, target.protein, target.custom)}</p>` +
+  const floorHit = target.custom && !target.child && target.kcal <= (plan.sex === "male" ? 1500 : 1200);
+  $("plans-target").innerHTML = `<p>${target.child ? tr.targetsChild(target.kcal, target.protein) : tr.targets(target.kcal, target.protein, target.custom)}</p>` +
+    (PLAN_GOALS[plan.goal].routine ? `<p class="plans-note">${esc(tr.routine)}</p>` : "") +
     (floorHit ? `<p class="plans-warn">${esc(tr.minWarn)}</p>` : "") +
-    `<p class="plans-note">${esc(tr.goalNotes[plan.goal])}</p>`;
+    goalNoteHTML(tr.goalNotes[plan.goal]);
   const pools = candidates();
   planPools = pools;
   const enough = pools.desayuno.length && pools.main.length >= 2 && pools.merienda.length;
@@ -1145,6 +1218,13 @@ function addPlanToShop() {
   }
   for (const [id, f] of need) addToShop(id, f);
   toast(pt().shopPlanDone(need.size), true);
+}
+
+/* La nota del objetivo: un párrafo, o (autismo) un recuadro con el aviso en negrita y las recomendaciones. */
+function goalNoteHTML(note) {
+  if (!Array.isArray(note)) return `<p class="plans-note">${esc(note)}</p>`;
+  const [head, ...tips] = note;
+  return `<div class="plans-callout" role="note"><p><strong>${esc(head)}</strong></p><ul>${tips.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>`;
 }
 
 function showPlans() {

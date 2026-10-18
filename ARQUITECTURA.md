@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.25.0 · **Versión de la app:** 4.25.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,118 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.26.0 · **Versión de la app:** 4.26.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,118 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -627,7 +627,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   `showPlans()`; `showHome()` y `showRecipe()` la ocultan. Desde un plan, una receta se abre con `data-open` y "Atrás"
   vuelve al plan en la misma posición.
 - **Objetivos (`PLAN_GOALS`):** rebajar, ganar masa muscular, mantener, bajo en sodio, bajo en carbohidratos, bajo en
-  azúcar, más nutritivo, **vegetariano**, **vegano**, **diabetes**, **presión alta (DASH)** (v4.24) y **colesterol alto** (v4.25, ver abajo). Estos dos llevan `diet` ("veg" o "vegan"): `dietOk()` deja en el
+  azúcar, más nutritivo, **vegetariano**, **vegano**, **diabetes**, **presión alta (DASH)** (v4.24), **colesterol alto** (v4.25) y **autismo** (v4.26, ver abajo). Estos dos llevan `diet` ("veg" o "vegan"): `dietOk()` deja en el
   plan (comidas, acompañantes, época y "Recetas que encajan") sólo las recetas de esa familia (`isVegetarian`; `isVegan`
   = vegetariana y sin alérgeno de leche ni huevo ni alerta de miel), con criterios de proteína vegetal (plato principal
   ≥ 10 g en vegetariano, ≥ 8 g en vegano) y acompañantes de arroz o vianda y granos. Cada uno trae: meta típica de calorías, ajuste sobre el gasto (rebajar −20 %, masa +12 %…),
@@ -695,6 +695,21 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   ≤ 30 mg y ≤ 300 mg; acompañantes de granos y de ensalada o vegetales (≤ 1.5 g, ≤ 15 mg, ≤ 400 mg); puntuación que premia
   la fibra (la soluble de habichuelas y avena baja el LDL) y castiga la saturada y el colesterol; porción hasta 2. Cada
   comida muestra su colesterol. Prueba de 7 días: ~1,865 de 1,850 calorías, colesterol 48–124 mg por día y saturada 2–7 %.
+- **Autismo (v4.26):** la tarjeta del objetivo y la nota al escogerlo dicen primero que **no existe una dieta que cure ni
+  trate el autismo**; la nota es un recuadro (`goalNoteHTML()`, `.plans-callout`; `goalNotes.autismo` es una lista: aviso y
+  7 recomendaciones: rutina, sabor suave, lo nuevo poco a poco, fibra y agua, calcio y vitamina D, dietas sin gluten ni
+  caseína sin beneficio probado, y cuándo ir al pediatra o a un terapeuta de alimentación). El plan (`autismo`): **rutina**
+  (`routine: true`: `buildPlan()` repite el desayuno y la merienda del primer día toda la semana); sólo recetas sencillas
+  (`only`: hasta 12 ingredientes y no "elaboradas", §7.11), de sabor suave (`SPICY_RX`: sin pique, ají picante, chile…),
+  aptas para niños (`kidsOk`: la idea "para niños" del buscador) y sin frituras; topes de azúcar añadida y de sodio por
+  comida (desayuno 450, principal 600, merienda 250, acompañante 300 mg); un acompañante; la puntuación premia fibra,
+  calcio y vitamina D. Acepta **niños de 2 a 13 años** (`kids: true` en `planTargets()`): calorías de las Guías
+  Alimentarias por edad (2–3 años 1,200; 4–8 1,500; 9–13 1,800 niñas y 2,000 niños) y proteína de la ración recomendada
+  infantil (0.95 g/kg); la edad del formulario baja a 2. La revisión del día añade fibra (14 g por 1,000 calorías), calcio
+  por edad (700–1,300 mg; "un vaso de leche o un yogur suma unos 300 mg") y vitamina D (15 mcg); para niños, el sodio se
+  compara con su límite por edad (1,200, 1,500 o 1,800 mg, Academias Nacionales 2019) y la proteína con la ración infantil.
+  Prueba con un niño de 7 años: ~1,400–1,600 de 1,500 calorías, mismo desayuno y merienda los 7 días, nada picante, sodio
+  570–1,440 mg; el calcio suele quedar corto (lo dice la revisión del día).
 - **Guías Alimentarias 2025–2030 (`dgaHTML()`):** cada día trae un desplegable con las porciones de los grupos que pide
   la guía para 2,000 calorías, ajustadas a la meta (vegetales 3, frutas 2, granos integrales 2–4; lácteos 3) con lo que
   suman las recetas (`estimateNutrition().groups`, §8), y los límites del día: grasa saturada bajo 10 % de las
@@ -844,6 +859,14 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
 entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, y el texto
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
+
+### 2026-10-18 — v4.26.0 · Planes para autismo
+- *Pedido:* crear planes para autismo, con el aviso de que realmente no existe una dieta que trate el autismo y las
+  recomendaciones al escogerlo.
+- Objetivo **Autismo** (13 objetivos): aviso en la tarjeta y recuadro con 7 recomendaciones; rutina (mismo desayuno y
+  merienda), recetas sencillas, de sabor suave y aptas para niños, sin frituras, con topes de sodio y azúcar añadida; metas
+  para niños de 2 a 13 años; revisión del día con fibra, calcio, vitamina D y el sodio para su edad (§7.2).
+- Verificado: planes de 7 días con los 13 objetivos sin comidas vacías; en el navegador, sin errores ni desbordes.
 
 ### 2026-10-18 — v4.25.0 · Colesterol en los planes
 - *Pedido:* incluir el colesterol en los planes.
