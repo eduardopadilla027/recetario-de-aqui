@@ -73,8 +73,8 @@ const RECIPE_FAMILIES = {
     ["frios", { es: "Ceviches, cócteles y ensaladas", en: "Ceviches, cocktails and salads" }, /ceviche|coctel|ensalada/]
   ],
   huevos: [
-    ["huevos", { es: "Huevos", en: "Eggs" }, /^huevos|jamonilla/],
-    ["tortillas", { es: "Tortillas y revoltillos", en: "Omelets and scrambles" }, /tortilla|revoltillo/],
+    ["huevos", { es: "Huevos", en: "Eggs" }, /^huevos|jamonilla|huevo frito|ensalada de huevo/],
+    ["tortillas", { es: "Tortillas y revoltillos", en: "Omelets and scrambles" }, /tortilla|revoltillo|omelet/],
     ["quesos", { es: "Quesos", en: "Cheeses" }, /queso/]
   ],
   entremeses: [

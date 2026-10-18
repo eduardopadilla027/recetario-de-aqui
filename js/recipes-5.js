@@ -5313,5 +5313,724 @@ recipes.push(
         "Serve with the rest of the green mojo on top, with arroz con gandules or root vegetables."
       ]
     }
+  },
+  // ---------- Tanda 51: más salsas y aderezos (8) y huevos (8) ----------
+  {
+    id: "salsa-roja-tomate-casera",
+    category: "salsas",
+    name: { es: "Salsa Roja de Tomate Casera", en: "Homemade Red Tomato Sauce" },
+    time: "35 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 cucharadas de aceite de oliva",
+        "1 cebolla mediana, picada fina",
+        "4 dientes de ajo, picados",
+        "2 cucharadas de sofrito",
+        "1 lata de 28 onzas de tomates triturados",
+        "2 cucharadas de pasta de tomate",
+        "1 cucharadita de orégano seco",
+        "1 cucharadita de azúcar",
+        "½ cucharadita de sal",
+        "2 hojas de laurel",
+        "6 hojas de albahaca fresca"
+      ],
+      en: [
+        "2 tablespoons olive oil",
+        "1 medium onion, finely chopped",
+        "4 garlic cloves, minced",
+        "2 tablespoons sofrito",
+        "1 28-ounce can crushed tomatoes",
+        "2 tablespoons tomato paste",
+        "1 teaspoon dried oregano",
+        "1 teaspoon sugar",
+        "½ teaspoon salt",
+        "2 bay leaves",
+        "6 fresh basil leaves"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el aceite a fuego medio y sofría la cebolla 5 minutos, hasta que esté blanda.",
+        "Añada el ajo y el sofrito y cocine 2 minutos sin que se queme el ajo.",
+        "Agregue los tomates, la pasta de tomate, el orégano, el azúcar, la sal y el laurel.",
+        "Cocine destapado a fuego bajo 25 minutos, moviendo de vez en cuando, hasta que espese.",
+        "Saque el laurel, añada la albahaca picada y pruebe la sal. Sirve para pastas, pastelón, lasaña o albóndigas; se congela hasta 3 meses."
+      ],
+      en: [
+        "Heat the oil over medium heat and sauté the onion 5 minutes, until soft.",
+        "Add the garlic and sofrito and cook 2 minutes without burning the garlic.",
+        "Add the tomatoes, tomato paste, oregano, sugar, salt and bay leaves.",
+        "Simmer uncovered over low heat 25 minutes, stirring now and then, until thick.",
+        "Remove the bay leaves, add the chopped basil and taste for salt. Use it for pasta, pastelón, lasagna or meatballs; it freezes up to 3 months."
+      ]
+    }
+  },
+  {
+    id: "salsa-blanca-bechamel",
+    category: "salsas",
+    name: { es: "Salsa Blanca (Bechamel)", en: "White Sauce (Béchamel)" },
+    time: "15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 cucharadas de mantequilla",
+        "3 cucharadas de harina de trigo",
+        "2 tazas de leche",
+        "¼ cucharadita de sal",
+        "⅛ cucharadita de nuez moscada",
+        "⅛ cucharadita de pimienta blanca"
+      ],
+      en: [
+        "3 tablespoons butter",
+        "3 tablespoons all-purpose flour",
+        "2 cups milk",
+        "¼ teaspoon salt",
+        "⅛ teaspoon nutmeg",
+        "⅛ teaspoon white pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente la leche sin que hierva y apártela.",
+        "Derrita la mantequilla a fuego medio-bajo, añada la harina y mueva 2 minutos sin que dore.",
+        "Vierta la leche caliente poco a poco, batiendo con un batidor para que no se hagan grumos.",
+        "Cocine 5 a 6 minutos moviendo, hasta que cubra la parte de atrás de una cuchara.",
+        "Sazone con la sal, la nuez moscada y la pimienta. Úsela en lasañas, canelones, croquetas o pastelón de vegetales."
+      ],
+      en: [
+        "Heat the milk without boiling and set aside.",
+        "Melt the butter over medium-low heat, add the flour and stir 2 minutes without browning.",
+        "Pour in the hot milk little by little, whisking so no lumps form.",
+        "Cook 5 to 6 minutes, stirring, until it coats the back of a spoon.",
+        "Season with the salt, nutmeg and pepper. Use it in lasagna, cannelloni, croquettes or vegetable pastelón."
+      ]
+    }
+  },
+  {
+    id: "salsa-holandesa-facil",
+    category: "salsas",
+    name: { es: "Salsa Holandesa Fácil con Limón", en: "Easy Hollandaise Sauce with Lime" },
+    time: "15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 yemas de huevo",
+        "2 cucharadas de jugo de limón",
+        "1 cucharada de agua",
+        "½ taza de mantequilla sin sal, derretida",
+        "¼ cucharadita de sal",
+        "1 pizca de pimentón"
+      ],
+      en: [
+        "3 egg yolks",
+        "2 tablespoons lime juice",
+        "1 tablespoon water",
+        "½ cup unsalted butter, melted",
+        "¼ teaspoon salt",
+        "1 pinch paprika"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga un tazón de metal o vidrio sobre una olla con agua que apenas hierva, sin que el tazón toque el agua.",
+        "Bata las yemas con el limón y el agua sin parar 3 a 4 minutos, hasta que espesen y lleguen a 160 °F (así el huevo queda seguro).",
+        "Saque el tazón del calor y añada la mantequilla derretida en hilo, batiendo, hasta que la salsa esté cremosa.",
+        "Sazone con la sal y el pimentón. Si se corta, bata 1 cucharada de agua tibia y vuelva a incorporar la salsa poco a poco.",
+        "Sírvala enseguida sobre huevos benedictinos, espárragos, pescado o vegetales al vapor."
+      ],
+      en: [
+        "Set a metal or glass bowl over a pot of barely simmering water, without the bowl touching the water.",
+        "Whisk the yolks with the lime juice and water nonstop 3 to 4 minutes, until thick and at 160 °F (so the egg is safe).",
+        "Take the bowl off the heat and drizzle in the melted butter, whisking, until the sauce is creamy.",
+        "Season with the salt and paprika. If it breaks, whisk 1 tablespoon of warm water and slowly whisk the sauce back in.",
+        "Serve right away over eggs Benedict, asparagus, fish or steamed vegetables."
+      ]
+    }
+  },
+  {
+    id: "mojo-verde-cilantro-recao",
+    category: "salsas",
+    name: { es: "Mojo Verde de Cilantro y Recao", en: "Green Mojo with Cilantro and Culantro" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de cilantro",
+        "10 hojas de recao",
+        "6 dientes de ajo",
+        "1 ají dulce, sin semillas",
+        "½ taza de aceite de oliva",
+        "¼ taza de jugo de limón",
+        "1 cucharadita de comino",
+        "½ cucharadita de sal",
+        "2 cucharadas de agua"
+      ],
+      en: [
+        "1 cup cilantro",
+        "10 culantro (recao) leaves",
+        "6 garlic cloves",
+        "1 sweet pepper (ají dulce), seeded",
+        "½ cup olive oil",
+        "¼ cup lime juice",
+        "1 teaspoon cumin",
+        "½ teaspoon salt",
+        "2 tablespoons water"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave y seque bien el cilantro y el recao.",
+        "Licúe todos los ingredientes en pulsaciones cortas hasta tener una salsa con pedacitos, no un puré.",
+        "Pruebe y ajuste el limón y la sal.",
+        "Déjelo reposar 15 minutos para que el ajo suelte su sabor.",
+        "Sírvalo con tostones, yuca hervida, pescado o carnes a la parrilla. Dura 4 días en la nevera, en frasco tapado."
+      ],
+      en: [
+        "Wash and dry the cilantro and culantro well.",
+        "Blend everything in short pulses into a chunky sauce, not a purée.",
+        "Taste and adjust the lime juice and salt.",
+        "Let it rest 15 minutes so the garlic releases its flavor.",
+        "Serve with tostones, boiled cassava, fish or grilled meats. It keeps 4 days in the fridge in a covered jar."
+      ]
+    }
+  },
+  {
+    id: "salsa-pimiento-asado-almendras",
+    category: "salsas",
+    name: { es: "Salsa de Pimiento Asado y Almendras", en: "Roasted Pepper and Almond Sauce" },
+    time: "15 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 frasco de 12 onzas de pimientos morrones asados, escurridos",
+        "½ taza de almendras tostadas",
+        "2 dientes de ajo",
+        "1 rebanada de pan sobao tostado",
+        "¼ taza de aceite de oliva",
+        "1 cucharada de vinagre",
+        "1 cucharadita de pimentón",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "1 12-ounce jar roasted red peppers, drained",
+        "½ cup toasted almonds",
+        "2 garlic cloves",
+        "1 slice toasted pan sobao",
+        "¼ cup olive oil",
+        "1 tablespoon vinegar",
+        "1 teaspoon paprika",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga en el procesador las almendras, el ajo y el pan en pedazos, y muela hasta que queden finos.",
+        "Añada los pimientos, el vinagre, el pimentón y la sal.",
+        "Con el procesador encendido, vierta el aceite en hilo hasta tener una salsa espesa.",
+        "Si la quiere más suelta, añada 1 o 2 cucharadas de agua.",
+        "Sírvala con pollo o pescado a la plancha, vegetales asados, papas o como dip con tostones."
+      ],
+      en: [
+        "Put the almonds, garlic and torn bread in the food processor and grind fine.",
+        "Add the peppers, vinegar, paprika and salt.",
+        "With the processor running, drizzle in the oil until you have a thick sauce.",
+        "If you want it looser, add 1 or 2 tablespoons of water.",
+        "Serve with grilled chicken or fish, roasted vegetables, potatoes or as a dip with tostones."
+      ]
+    }
+  },
+  {
+    id: "aderezo-cesar-queso-pais",
+    category: "salsas",
+    name: { es: "Aderezo César con Queso del País", en: "Caesar Dressing with Puerto Rican White Cheese" },
+    time: "10 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "½ taza de mayonesa",
+        "¼ taza de queso parmesano rallado",
+        "¼ taza de queso blanco del país, desmoronado",
+        "2 dientes de ajo, majados",
+        "2 cucharadas de jugo de limón",
+        "1 cucharadita de mostaza",
+        "1 cucharadita de salsa inglesa",
+        "3 cucharadas de leche",
+        "¼ cucharadita de pimienta"
+      ],
+      en: [
+        "½ cup mayonnaise",
+        "¼ cup grated Parmesan cheese",
+        "¼ cup crumbled Puerto Rican white cheese (queso del país)",
+        "2 garlic cloves, mashed",
+        "2 tablespoons lime juice",
+        "1 teaspoon mustard",
+        "1 teaspoon Worcestershire sauce",
+        "3 tablespoons milk",
+        "¼ teaspoon pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata la mayonesa con el ajo, el limón, la mostaza y la salsa inglesa.",
+        "Añada los dos quesos y mezcle.",
+        "Afloje con la leche, una cucharada a la vez, hasta que tenga la consistencia que le guste.",
+        "Sazone con la pimienta (no necesita sal: los quesos y la salsa inglesa ya traen).",
+        "Úsela con lechuga romana y croutones, o con pollo a la plancha. Se hace con mayonesa, sin huevo crudo; dura 4 días en la nevera."
+      ],
+      en: [
+        "Whisk the mayonnaise with the garlic, lime juice, mustard and Worcestershire sauce.",
+        "Add both cheeses and mix.",
+        "Thin with the milk, one tablespoon at a time, to the consistency you like.",
+        "Season with the pepper (it needs no salt: the cheeses and Worcestershire already have it).",
+        "Use it with romaine lettuce and croutons, or with grilled chicken. It's made with mayonnaise, no raw egg; it keeps 4 days in the fridge."
+      ]
+    }
+  },
+  {
+    id: "dip-guayaba-picante",
+    category: "salsas",
+    name: { es: "Dip de Guayaba Picante para Frituras", en: "Spicy Guava Dip for Fritters" },
+    time: "15 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "8 onzas de pasta de guayaba, en cubitos",
+        "½ taza de agua",
+        "2 cucharadas de vinagre",
+        "1 cucharada de jugo de limón",
+        "2 cucharaditas de pique",
+        "1 diente de ajo, majado",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "8 ounces guava paste, diced",
+        "½ cup water",
+        "2 tablespoons vinegar",
+        "1 tablespoon lime juice",
+        "2 teaspoons Puerto Rican hot sauce (pique)",
+        "1 garlic clove, mashed",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga la guayaba con el agua en una olla pequeña a fuego bajo.",
+        "Mueva 6 a 8 minutos, aplastando, hasta que la guayaba se derrita del todo.",
+        "Retire del fuego y añada el vinagre, el limón, el pique, el ajo y la sal.",
+        "Deje enfriar: espesa al refrescar. Si queda muy espesa, añada una cucharada de agua.",
+        "Sírvalo con alcapurrias, bacalaítos, sorullitos, alitas o pinchos. Ajuste el pique a su gusto (para niños, sin pique)."
+      ],
+      en: [
+        "Put the guava paste and water in a small pot over low heat.",
+        "Stir 6 to 8 minutes, mashing, until the guava melts completely.",
+        "Remove from the heat and add the vinegar, lime juice, hot sauce, garlic and salt.",
+        "Let it cool: it thickens as it cools. If it gets too thick, add a tablespoon of water.",
+        "Serve with alcapurrias, bacalaítos, sorullitos, wings or skewers. Adjust the hot sauce to taste (for kids, leave it out)."
+      ]
+    }
+  },
+  {
+    id: "vinagreta-cremosa-ajo-asado",
+    category: "salsas",
+    name: { es: "Vinagreta Cremosa de Ajo Asado y Limón", en: "Creamy Roasted Garlic and Lime Vinaigrette" },
+    time: "45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 cabeza de ajo",
+        "½ taza de aceite de oliva",
+        "¼ taza de jugo de limón",
+        "¼ taza de yogur natural",
+        "1 cucharadita de mostaza",
+        "1 cucharadita de miel",
+        "½ cucharadita de sal",
+        "¼ cucharadita de pimienta"
+      ],
+      en: [
+        "1 head of garlic",
+        "½ cup olive oil",
+        "¼ cup lime juice",
+        "¼ cup plain yogurt",
+        "1 teaspoon mustard",
+        "1 teaspoon honey",
+        "½ teaspoon salt",
+        "¼ teaspoon pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte la punta de la cabeza de ajo, póngale una cucharadita del aceite y envuélvala en papel de aluminio.",
+        "Hornee a 400 °F unos 35 minutos, hasta que los dientes estén blandos y dorados. Deje enfriar.",
+        "Exprima los dientes de ajo asado en la licuadora.",
+        "Añada el resto del aceite, el limón, el yogur, la mostaza, la miel, la sal y la pimienta, y licúe hasta que quede cremosa.",
+        "Úsela en ensaladas verdes, de papa o de pasta, o sobre pollo y vegetales asados. Dura 5 días en la nevera."
+      ],
+      en: [
+        "Cut the top off the garlic head, drizzle with a teaspoon of the oil and wrap in foil.",
+        "Bake at 400 °F about 35 minutes, until the cloves are soft and golden. Let cool.",
+        "Squeeze the roasted garlic cloves into the blender.",
+        "Add the rest of the oil, the lime juice, yogurt, mustard, honey, salt and pepper, and blend until creamy.",
+        "Use it on green, potato or pasta salads, or over chicken and roasted vegetables. It keeps 5 days in the fridge."
+      ]
+    }
+  },
+  {
+    id: "huevos-benedictinos-boricuas",
+    category: "huevos",
+    name: { es: "Huevos Benedictinos Boricuas en Pan Sobao", en: "Puerto Rican Eggs Benedict on Pan Sobao" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 rebanadas gruesas de pan sobao",
+        "4 lonjas de jamón",
+        "4 huevos",
+        "1 cucharada de vinagre",
+        "Salsa holandesa: 3 yemas de huevo, 2 cucharadas de jugo de limón y ½ taza de mantequilla derretida (vea «Salsa Holandesa Fácil con Limón»)",
+        "1 cucharada de cilantro picado",
+        "1 pizca de pimentón"
+      ],
+      en: [
+        "4 thick slices pan sobao",
+        "4 slices ham",
+        "4 eggs",
+        "1 tablespoon vinegar",
+        "Hollandaise: 3 egg yolks, 2 tablespoons lime juice and ½ cup melted butter (see “Easy Hollandaise Sauce with Lime”)",
+        "1 tablespoon chopped cilantro",
+        "1 pinch paprika"
+      ]
+    },
+    steps: {
+      es: [
+        "Prepare la salsa holandesa y manténgala tibia sobre el agua caliente, sin fuego.",
+        "Tueste el pan sobao y dore el jamón en un sartén 1 minuto por lado.",
+        "Hierva agua con el vinagre en una olla honda y baje el fuego para que apenas burbujee.",
+        "Rompa cada huevo en una taza, deslícelo al agua y cocine 4 minutos, hasta que la clara esté firme. Sáquelo con una espumadera.",
+        "Monte el pan, el jamón y el huevo, cubra con la holandesa y adorne con cilantro y pimentón. Si cocina para embarazadas o niños pequeños, deje la yema firme."
+      ],
+      en: [
+        "Make the hollandaise and keep it warm over the hot water, heat off.",
+        "Toast the pan sobao and brown the ham in a skillet 1 minute per side.",
+        "Bring water with the vinegar to a boil in a deep pot and lower the heat to a bare simmer.",
+        "Crack each egg into a cup, slide it into the water and cook 4 minutes, until the white is set. Lift it out with a slotted spoon.",
+        "Stack the bread, ham and egg, top with hollandaise and garnish with cilantro and paprika. If cooking for pregnant women or small children, cook the yolk firm."
+      ]
+    }
+  },
+  {
+    id: "arroz-huevo-frito-maduros",
+    category: "huevos",
+    name: { es: "Arroz Blanco con Huevo Frito y Maduros", en: "White Rice with Fried Egg and Sweet Plantains" },
+    time: "25 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 tazas de arroz cocido",
+        "1 plátano maduro",
+        "2 cucharadas de aceite vegetal",
+        "2 huevos",
+        "1 pizca de sal",
+        "1 pizca de pimienta",
+        "½ aguacate, en lascas"
+      ],
+      en: [
+        "2 cups cooked white rice",
+        "1 ripe plantain",
+        "2 tablespoons vegetable oil",
+        "2 eggs",
+        "1 pinch salt",
+        "1 pinch pepper",
+        "½ avocado, sliced"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele el maduro y córtelo en lascas diagonales.",
+        "Fría las lascas en 1½ cucharadas de aceite a fuego medio, 3 minutos por lado, hasta que estén doradas. Escúrralas.",
+        "En el mismo sartén, con el resto del aceite, fría los huevos hasta que la clara esté firme y la yema como le guste.",
+        "Caliente el arroz y sírvalo con el huevo encima, sazonado con sal y pimienta.",
+        "Acompañe con los maduros y el aguacate. Es el almuerzo rápido de toda la vida en Puerto Rico."
+      ],
+      en: [
+        "Peel the ripe plantain and cut it into diagonal slices.",
+        "Fry the slices in 1½ tablespoons of oil over medium heat, 3 minutes per side, until golden. Drain.",
+        "In the same skillet, with the rest of the oil, fry the eggs until the white is set and the yolk is how you like it.",
+        "Heat the rice and serve it with the egg on top, seasoned with salt and pepper.",
+        "Serve with the plantains and avocado. It's the classic quick lunch in Puerto Rico."
+      ]
+    }
+  },
+  {
+    id: "revoltillo-criollo-sofrito",
+    category: "huevos",
+    name: { es: "Revoltillo Criollo con Sofrito y Tomate", en: "Creole Scrambled Eggs with Sofrito and Tomato" },
+    time: "15 min",
+    servings: 3,
+    ingredients: {
+      es: [
+        "6 huevos",
+        "1 cucharada de aceite de oliva",
+        "2 cucharadas de sofrito",
+        "1 tomate, picado",
+        "¼ taza de pimiento verde picado",
+        "2 cucharadas de leche",
+        "¼ cucharadita de sal",
+        "1 cucharada de cilantro picado"
+      ],
+      en: [
+        "6 eggs",
+        "1 tablespoon olive oil",
+        "2 tablespoons sofrito",
+        "1 tomato, chopped",
+        "¼ cup chopped green pepper",
+        "2 tablespoons milk",
+        "¼ teaspoon salt",
+        "1 tablespoon chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata los huevos con la leche y la sal.",
+        "Caliente el aceite a fuego medio y sofría el sofrito y el pimiento 2 minutos.",
+        "Añada el tomate y cocine 2 minutos más, hasta que suelte su jugo.",
+        "Baje el fuego, vierta los huevos y mueva despacio con una espátula hasta que cuajen, cremosos pero sin partes líquidas.",
+        "Termine con el cilantro. Sírvalo con pan de agua tostado o con tostones."
+      ],
+      en: [
+        "Beat the eggs with the milk and salt.",
+        "Heat the oil over medium heat and sauté the sofrito and pepper 2 minutes.",
+        "Add the tomato and cook 2 more minutes, until it releases its juice.",
+        "Lower the heat, pour in the eggs and stir slowly with a spatula until set, creamy but with no runny parts.",
+        "Finish with the cilantro. Serve with toasted pan de agua or tostones."
+      ]
+    }
+  },
+  {
+    id: "huevos-hervidos-duros-tiernos",
+    category: "huevos",
+    name: { es: "Huevos Hervidos Duros y Tiernos", en: "Hard- and Soft-Boiled Eggs" },
+    time: "20 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "6 huevos",
+        "6 tazas de agua",
+        "4 tazas de hielo",
+        "1 pizca de sal"
+      ],
+      en: [
+        "6 eggs",
+        "6 cups water",
+        "4 cups ice",
+        "1 pinch salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua en una olla y baje el fuego a medio para que hierva suave.",
+        "Baje los huevos con una cuchara, uno a uno, para que no se rompan.",
+        "Tiernos (yema cremosa): 7 minutos. Duros (yema firme): 11 minutos.",
+        "Páselos enseguida a un tazón con agua y el hielo por 5 minutos: así se pelan fácil y la yema no se pone verdosa.",
+        "Pélelos bajo el agua del grifo y sazone con la sal. Los duros, sin pelar, duran 7 días en la nevera; para embarazadas y niños pequeños, use los duros."
+      ],
+      en: [
+        "Bring the water to a boil in a pot and lower the heat to medium for a gentle boil.",
+        "Lower the eggs in with a spoon, one at a time, so they don't crack.",
+        "Soft (creamy yolk): 7 minutes. Hard (firm yolk): 11 minutes.",
+        "Move them right away to a bowl of water and the ice for 5 minutes: they peel easily and the yolk doesn't turn green.",
+        "Peel them under running water and season with the salt. Unpeeled hard-boiled eggs keep 7 days in the fridge; for pregnant women and small children, use hard-boiled."
+      ]
+    }
+  },
+  {
+    id: "ensalada-huevo-emparedados",
+    category: "huevos",
+    name: { es: "Ensalada de Huevo para Emparedados", en: "Egg Salad for Sandwiches" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "6 huevos duros, pelados",
+        "¼ taza de mayonesa",
+        "1 cucharadita de mostaza",
+        "2 cucharadas de cebolla picada fina",
+        "2 cucharadas de pimiento morrón picado",
+        "1 cucharada de cilantro picado",
+        "¼ cucharadita de sal",
+        "¼ cucharadita de pimienta",
+        "8 rebanadas de pan de molde"
+      ],
+      en: [
+        "6 hard-boiled eggs, peeled",
+        "¼ cup mayonnaise",
+        "1 teaspoon mustard",
+        "2 tablespoons finely chopped onion",
+        "2 tablespoons chopped pimiento",
+        "1 tablespoon chopped cilantro",
+        "¼ teaspoon salt",
+        "¼ teaspoon pepper",
+        "8 slices sandwich bread"
+      ]
+    },
+    steps: {
+      es: [
+        "Pique los huevos duros en pedacitos o aplástelos con un tenedor.",
+        "Mezcle la mayonesa con la mostaza, la sal y la pimienta.",
+        "Añada los huevos, la cebolla, el pimiento morrón y el cilantro, y mezcle con cuidado.",
+        "Enfríe al menos 20 minutos antes de servir.",
+        "Unte sobre el pan para 4 emparedados. Manténgala en la nevera y no la deje fuera más de 2 horas (1 hora si hace mucho calor)."
+      ],
+      en: [
+        "Chop the hard-boiled eggs into small pieces or mash them with a fork.",
+        "Mix the mayonnaise with the mustard, salt and pepper.",
+        "Add the eggs, onion, pimiento and cilantro, and mix gently.",
+        "Chill at least 20 minutes before serving.",
+        "Spread on the bread for 4 sandwiches. Keep it refrigerated and don't leave it out more than 2 hours (1 hour if it's very hot)."
+      ]
+    }
+  },
+  {
+    id: "tortilla-vegetales-horno-queso-pais",
+    category: "huevos",
+    name: { es: "Tortilla de Vegetales al Horno con Queso del País", en: "Baked Vegetable Omelet with Puerto Rican White Cheese" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "8 huevos",
+        "½ taza de leche",
+        "1 cucharada de aceite de oliva",
+        "1 calabacín, en cubitos",
+        "1 pimiento rojo, en cubitos",
+        "½ cebolla, picada",
+        "2 tazas de espinaca",
+        "½ taza de queso blanco del país, desmoronado",
+        "½ cucharadita de sal",
+        "¼ cucharadita de pimienta"
+      ],
+      en: [
+        "8 eggs",
+        "½ cup milk",
+        "1 tablespoon olive oil",
+        "1 zucchini, diced",
+        "1 red bell pepper, diced",
+        "½ onion, chopped",
+        "2 cups spinach",
+        "½ cup crumbled Puerto Rican white cheese (queso del país)",
+        "½ teaspoon salt",
+        "¼ teaspoon pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 375 °F y engrase un molde de 9 pulgadas.",
+        "Sofría la cebolla, el pimiento y el calabacín en el aceite 5 minutos; añada la espinaca y cocine 1 minuto hasta que se marchite.",
+        "Bata los huevos con la leche, la sal y la pimienta.",
+        "Ponga los vegetales en el molde, vierta los huevos y reparta el queso por encima.",
+        "Hornee 20 a 25 minutos, hasta que el centro esté firme (160 °F). Deje reposar 5 minutos y corte en 6 pedazos; se come caliente o fría."
+      ],
+      en: [
+        "Heat the oven to 375 °F and grease a 9-inch pan.",
+        "Sauté the onion, pepper and zucchini in the oil 5 minutes; add the spinach and cook 1 minute until wilted.",
+        "Beat the eggs with the milk, salt and pepper.",
+        "Put the vegetables in the pan, pour in the eggs and scatter the cheese on top.",
+        "Bake 20 to 25 minutes, until the center is set (160 °F). Rest 5 minutes and cut into 6 pieces; eat it hot or cold."
+      ]
+    }
+  },
+  {
+    id: "omelet-espinaca-champinones",
+    category: "huevos",
+    name: { es: "Omelet de Espinaca y Champiñones", en: "Spinach and Mushroom Omelet" },
+    time: "15 min",
+    servings: 1,
+    ingredients: {
+      es: [
+        "2 huevos",
+        "1 cucharada de leche",
+        "1 cucharadita de mantequilla",
+        "½ taza de champiñones en lascas",
+        "½ taza de espinaca",
+        "2 cucharadas de queso mozzarella rallado",
+        "1 pizca de sal",
+        "1 pizca de pimienta"
+      ],
+      en: [
+        "2 eggs",
+        "1 tablespoon milk",
+        "1 teaspoon butter",
+        "½ cup sliced mushrooms",
+        "½ cup spinach",
+        "2 tablespoons shredded mozzarella cheese",
+        "1 pinch salt",
+        "1 pinch pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata los huevos con la leche, la sal y la pimienta.",
+        "Derrita la mantequilla en un sartén antiadherente y dore los champiñones 3 minutos; añada la espinaca hasta que se marchite y sáquelos.",
+        "Vierta los huevos en el mismo sartén a fuego medio-bajo y mueva el sartén para cubrir el fondo.",
+        "Cuando los bordes cuajen y el centro esté casi firme (unos 3 minutos), ponga los vegetales y el queso en una mitad.",
+        "Doble el omelet, cocine 1 minuto más hasta que el queso se derrita y sírvalo."
+      ],
+      en: [
+        "Beat the eggs with the milk, salt and pepper.",
+        "Melt the butter in a nonstick skillet and brown the mushrooms 3 minutes; add the spinach until wilted and remove them.",
+        "Pour the eggs into the same skillet over medium-low heat and tilt to cover the bottom.",
+        "When the edges set and the center is almost firm (about 3 minutes), put the vegetables and cheese on one half.",
+        "Fold the omelet, cook 1 more minute until the cheese melts, and serve."
+      ]
+    }
+  },
+  {
+    id: "huevos-flamenca-jamon-guisantes",
+    category: "huevos",
+    name: { es: "Huevos a la Flamenca con Jamón y Guisantes", en: "Flamenco-Style Eggs with Ham and Peas" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 cucharadas de aceite de oliva",
+        "1 cebolla, picada",
+        "2 dientes de ajo, picados",
+        "1 taza de jamón en cubitos",
+        "1 lata de 15 onzas de salsa de tomate",
+        "1 taza de guisantes",
+        "½ cucharadita de pimentón",
+        "¼ cucharadita de sal",
+        "8 huevos",
+        "1 cucharada de perejil picado"
+      ],
+      en: [
+        "2 tablespoons olive oil",
+        "1 onion, chopped",
+        "2 garlic cloves, minced",
+        "1 cup diced ham",
+        "1 15-ounce can tomato sauce",
+        "1 cup peas",
+        "½ teaspoon paprika",
+        "¼ teaspoon salt",
+        "8 eggs",
+        "1 tablespoon chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 375 °F.",
+        "Sofría la cebolla y el ajo en el aceite 4 minutos; añada el jamón y dore 2 minutos.",
+        "Agregue la salsa de tomate, los guisantes, el pimentón y la sal, y cocine 5 minutos.",
+        "Pase la salsa a un molde o a cazuelitas, haga 8 huecos y rompa un huevo en cada uno.",
+        "Hornee 12 a 15 minutos, hasta que las claras estén firmes. Adorne con perejil y sirva con pan para mojar."
+      ],
+      en: [
+        "Heat the oven to 375 °F.",
+        "Sauté the onion and garlic in the oil 4 minutes; add the ham and brown 2 minutes.",
+        "Add the tomato sauce, peas, paprika and salt, and cook 5 minutes.",
+        "Move the sauce to a baking dish or small casseroles, make 8 wells and crack an egg into each.",
+        "Bake 12 to 15 minutes, until the whites are set. Garnish with parsley and serve with bread for dipping."
+      ]
+    }
   }
 );

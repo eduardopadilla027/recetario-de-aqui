@@ -17,7 +17,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
-const APP_VERSION = "4.28.0";
+const APP_VERSION = "4.29.0";
 const APP_REVISED = "2026-10-18";
 /* Lo que se muestra al público: "Más de 1,000 recetas", no el total exacto (que cambia con cada
    tanda). El total exacto sólo sale en #/admin (auth.js). Baja al millar: 1,054 → "1,000". */
@@ -423,6 +423,19 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Tanda 51: salsas y huevos nuevos con el dibujo de la salsa o el plato que más se parece.
+  [/^salsa roja de tomate/, "svg:ic-salsa-coctel"],
+  [/^salsa blanca/, "svg:ic-salsa-queso"],
+  [/^salsa holandesa/, "svg:ic-salsa-mostaza-miel"],
+  [/^mojo verde/, "svg:ic-salsa-cilantro"],
+  [/^salsa de pimiento asado/, "svg:ic-salsa-agridulce"],
+  [/^aderezo cesar/, "svg:ic-salsa-ranch"],
+  [/^dip de guayaba/, "svg:ic-salsa-bbq"],
+  [/^huevos hervidos/, "🥚"],
+  [/^ensalada de huevo/, "🥪"],
+  [/^omelet/, "svg:ic-tortilla-jamon-queso"],
+  [/^tortilla de vegetales/, "svg:ic-tortilla-espanola"],
+  [/^huevos a la flamenca/, "svg:ic-huevos-habaneros"],
   // Grosellas (tanda 43).
   [/^mermelada de grosellas/, "svg:ic-gr-mermelada"],
   [/^grosellas curadas/, "svg:ic-gr-sal-limon"],

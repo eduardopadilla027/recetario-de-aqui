@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.28.0 · **Versión de la app:** 4.28.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,118 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.29.0 · **Versión de la app:** 4.29.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,134 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -72,7 +72,7 @@ cocine-a-gusto/
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
 │   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, más salsas y aderezos y platos fuertes veganos, y dulces y salsas de grosella, en cuarenta y tres tandas (ver §13)
-│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46), pescados y mariscos (tanda 47), jugos y bebidas tropicales (tanda 48), sopas, asopaos, pastas y panes dulces (tanda 49) y carnes y aves (tanda 50), ver §13
+│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46), pescados y mariscos (tanda 47), jugos y bebidas tropicales (tanda 48), sopas, asopaos, pastas y panes dulces (tanda 49) carnes y aves (tanda 50) y salsas, aderezos y huevos (tanda 51), ver §13
 │   ├── nutrition-usda.js GENERADO (tools/usda/): número FDC y valores oficiales del USDA de cada alimento (§8)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
@@ -161,7 +161,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | carnes | Carnes | 71 |
 | aves | Aves | 55 |
 | pescados | Pescado y Mariscos | 72 |
-| huevos | Huevos y Queso | 14 |
+| huevos | Huevos y Queso | 22 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 57 |
 | pastas | Pastas | 26 |
 | bizcochos | Bizcochos | 42 |
@@ -172,7 +172,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | postres | Helados, Budines, Flan y Otros Postres | 123 |
 | arroces | Arroces y Habichuelas | 56 |
 | vegetales | Vegetales y Viandas | 88 |
-| salsas | Salsas y Aderezos | 64 |
+| salsas | Salsas y Aderezos | 72 |
 | bebidas | Bebidas | 44 |
 | jugos | Jugos Naturales | 30 |
 | cocteles | Cócteles y Tragos | 47 |
@@ -828,7 +828,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,118). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,134). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -916,6 +916,31 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
 entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, y el texto
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
+
+### 2026-10-18 — v4.29.0 · Más salsas, aderezos y huevos
+- *Pedido:* más recetas de salsas y aderezos y de huevos.
+- Quincuagésima primera tanda en `js/recipes-5.js` (versiones propias), 16 que no estaban (había 64 salsas y aderezos y
+  14 de huevos y queso):
+  - **Salsas y aderezos (8):** salsa roja de tomate casera, salsa blanca (bechamel), salsa holandesa fácil con limón
+    (las yemas se cocinan a 160 °F al baño de María), mojo verde de cilantro y recao, salsa de pimiento asado y
+    almendras, aderezo César con queso del país (con mayonesa, sin huevo crudo), dip de guayaba picante para frituras y
+    vinagreta cremosa de ajo asado y limón.
+  - **Huevos (8):** huevos benedictinos boricuas en pan sobao (con la holandesa), arroz blanco con huevo frito y maduros,
+    revoltillo criollo con sofrito y tomate, huevos hervidos duros y tiernos (7 y 11 minutos, baño de hielo), ensalada de
+    huevo para emparedados, tortilla de vegetales al horno con queso del país, omelet de espinaca y champiñones, y
+    huevos a la flamenca con jamón y guisantes.
+  - Seguridad en los pasos: huevos hasta que la clara cuaje (160 °F en lo horneado), yema firme para embarazadas y niños
+    pequeños, y la ensalada de huevo no más de 2 horas fuera de la nevera.
+- **Nutrición:** 0 ingredientes sin contar (la holandesa de los benedictinos va como línea con sus ingredientes, para que
+  cuente la mantequilla y salga el alérgeno de la leche). El aderezo César sale con pescado por la salsa inglesa.
+- **Iconos** (`dessertIcons`, primero): las salsas usan el tazón de la salsa más parecida (cóctel para la roja, queso para
+  la bechamel, mostaza y miel para la holandesa, cilantro para el mojo verde, agridulce para la de pimiento, ranch para
+  el César, BBQ de guayaba para el dip); 🥚 huevos hervidos, 🥪 ensalada de huevo, tortilla doblada para el omelet,
+  tortilla española para la de vegetales y la cazuela de los huevos habaneros para los de flamenca.
+- **Familias:** "Huevos" ahora incluye "huevo frito" y "ensalada de huevo", y "Tortillas y revoltillos" el omelet (antes
+  caían en "Quesos").
+- Verificado: las 16 abren en ES y EN sin errores ni desbordes; 1,134 recetas sin ingredientes sin contar. Fechas de
+  ingreso regeneradas. Total: **1,118 → 1,134 recetas**.
 
 ### 2026-10-18 — v4.28.0 · Términos y Condiciones, consentimiento y correo de confirmación
 - *Pedido:* términos y consentimiento sobre el uso de la app (sobre todo los planes de comida) que el usuario acepte
