@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.29.0 · **Versión de la app:** 4.29.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,134 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.29.1 · **Versión de la app:** 4.29.1 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,134 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -42,7 +42,7 @@ Las recetas son **versiones propias redactadas para esta app** (no copias de lib
 `.vercel/` está en `.gitignore` (es la vinculación local con Vercel).
 
 **Publicar:** Vercel **no** está conectado al repositorio de GitHub: cada versión se publica a mano desde la carpeta con
-`vercel --prod` después de hacer commit y push a `master`. `.vercelignore` deja fuera de la web `ARQUITECTURA.md`,
+`vercel --prod` después de hacer commit y push a `master`. `.vercelignore` deja fuera de la web `marketing/`, `ARQUITECTURA.md`,
 `CLAUDE.md`, `.claude/` y `firestore.rules`.
 
 ## 3. Stack
@@ -98,6 +98,9 @@ cocine-a-gusto/
 │   └── pwa.js            registra sw.js, aviso sin conexión y barra de abajo del celular (§7.13)
 ├── sw.js                 trabajador de servicio: la app sin internet (§7.13)
 ├── api/consent-email.js  función de Vercel: envía el correo que confirma el consentimiento (§7.14)
+├── marketing/            anuncios de Facebook e Instagram: build-ads.js (genera los PNG con Edge sin ventana),
+│                         ads/ (5 conceptos × feed 4:5 e historias 9:16) y GUIA-ANUNCIOS.md (textos, público,
+│                         presupuesto, calendario y reglas de Meta). No se publica (.vercelignore).
 ├── tools/usda/           map.js (alimento → registro del USDA), resolve.js y gen.js: generan js/nutrition-usda.js (§8)
 ├── tools/recipe-dates.js genera js/recipe-dates.js del historial de git (no se publica: .vercelignore) (§7.8, §11)
 ├── images/               (vacía: reservada para fotos)
@@ -916,6 +919,17 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
 entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, y el texto
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
+
+### 2026-10-18 — v4.29.1 · Anuncios para Facebook e Instagram
+- *Pedido:* la publicidad recomendada para Facebook e Instagram, que llame la atención del público en general.
+- `marketing/build-ads.js` arma cada anuncio en HTML con la identidad de la app (crema, achiote, verde plátano, bandera y
+  los dibujos de los platos del sprite) y lo convierte en PNG exacto con Microsoft Edge sin ventana. Cinco conceptos:
+  **Abuela** (nostalgia), **¿Qué cocino hoy?** (la nevera, la voz y la lista de compras), **Navidad boricua** (1 nov–6 ene),
+  **Diáspora** (bilingüe) y **Comer balanceado** (planes, sin aludir a condiciones de salud), cada uno en feed 4:5
+  (1080×1350) y en historias/reels 9:16 (1080×1920) con zona segura de 230 px arriba y 290 px abajo.
+- `marketing/GUIA-ANUNCIOS.md`: textos (principal, título, descripción, botón y variante B), enlaces con UTM, públicos de
+  Puerto Rico y de la diáspora, presupuesto de prueba, calendario, reglas de Meta (sin atributos de salud, sin promesas,
+  sin alcohol, sin logo del USDA) y publicaciones orgánicas. La app no cambia.
 
 ### 2026-10-18 — v4.29.0 · Más salsas, aderezos y huevos
 - *Pedido:* más recetas de salsas y aderezos y de huevos.
