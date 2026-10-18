@@ -3,6 +3,7 @@
 //
 // users/{uid}:    { email, count, firstSeen, lastSeen, blocked? }  — sin contraseñas
 // admins/{email}: { addedBy, addedAt, owner? }
+// recipeMeta/{id}: { seasons, updatedBy, updatedAt }  — temporada fijada por un administrador (js/recipe-admin.js)
 // reviews/{target}__{uid}: { target, uid, name, stars, text, hasPhoto?, status, createdAt, updatedAt }  — js/reviews.js
 // reviewPhotos/{mismo id}: { target, uid, photo (data URL WebP/JPEG ya achicado por js/photo.js), updatedAt }
 //
@@ -71,6 +72,20 @@ service cloud.firestore {
       allow create: if isAdmin()
         && (request.resource.data.get('owner', false) == false || (isOwner() && email == myEmail()));
       allow delete: if isAdmin() && email != ownerEmail() && resource.data.get('owner', false) != true;
+    }
+
+    // Temporada recomendada de una receta, corregida por un administrador (#/admin → Recetas).
+    // La leen todos los que entran (los planes de comida la usan); sólo los administradores la escriben.
+    match /recipeMeta/{id} {
+      allow read: if verified();
+      allow write: if isAdmin() && id.size() <= 100
+        && request.resource.data.keys().hasOnly(['seasons', 'updatedBy', 'updatedAt'])
+        && request.resource.data.seasons is list
+        && request.resource.data.seasons.size() >= 1 && request.resource.data.seasons.size() <= 6
+        && request.resource.data.seasons.hasOnly(['todo', 'navidad', 'cuaresma', 'verano', 'gracias', 'lluvia'])
+        && request.resource.data.updatedBy == myEmail()
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if isAdmin();
     }
 
     // Reseñas (js/reviews.js): reviews/{target}__{uid}, target 'app' o 'r:<id de la receta>'.

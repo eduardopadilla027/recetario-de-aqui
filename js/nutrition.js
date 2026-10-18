@@ -100,6 +100,8 @@ const NUTRI_FOODS = [
   F("leche evaporada", 134, 6.8, 10, 10, 0, 7.6, 4.6, 106, { cup: 252, can: 354 }),
   F("leche condensada", 321, 7.9, 54, 54, 0, 8.7, 5.5, 127, { cup: 306, can: 397 }),
   F("leche de coco", 197, 2, 2.8, 1, 0, 21, 18.9, 13, { cup: 240, can: 400 }),
+  // La de cartón (para beber) es mucho más ligera que la de lata.
+  F("leche de coco de carton|bebida de coco", 19, 0.2, 2.9, 2.5, 0, 2, 1.8, 19, { cup: 240 }),
   F("crema de coco", 324, 1.6, 44, 42, 0, 16, 14, 20, { cup: 300, can: 425 }),
   F("crema|crema de leche|heavy cream", 340, 2.8, 2.7, 2.9, 0, 36, 23, 38, { cup: 238 }),
   F("mantequilla|margarina", 717, 0.9, 0.1, 0.1, 0, 81, 51, 643, { cup: 227, can: 113 }),

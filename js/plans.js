@@ -66,6 +66,16 @@ const PLAN_T = {
     minWarn: "Por seguridad, la meta no baja de 1,200 calorías (mujeres) o 1,500 (hombres) sin supervisión profesional.",
     oneDay: "1 día", sevenDays: "7 días",
     another: "Otro plan",
+    swap: "Cambiar",
+    swapLabel: (name) => `Cambiar ${name} por otro sugerido`,
+    swapTitle: (slot) => `Otros sugeridos para ${slot.toLowerCase()}`,
+    swapSideTitle: "Otros acompañantes sugeridos",
+    swapHelp: "Cumplen su objetivo y sus ajustes, y no se repiten en este día. Toque uno para ponerlo en el plan.",
+    swapMore: "Ver más sugeridos",
+    swapNone: "No hay más sugeridos con estos ajustes. Pruebe a quitar algo de «Evitar» o de la proteína.",
+    swapClose: "Cerrar",
+    swapView: "Ver receta",
+    swapDone: (name) => `Listo: ${name} está en su plan.`,
     day: (n) => `Día ${n}`,
     slots: { desayuno: "Desayuno", almuerzo: "Almuerzo", merienda: "Merienda", cena: "Cena" },
     portions: (m) => (m === 1 ? "1 porción" : `${fmtPortion(m)} porciones`),
@@ -135,6 +145,16 @@ const PLAN_T = {
     minWarn: "For safety, the target doesn't go below 1,200 calories (women) or 1,500 (men) without professional supervision.",
     oneDay: "1 day", sevenDays: "7 days",
     another: "Another plan",
+    swap: "Change",
+    swapLabel: (name) => `Change ${name} for another suggestion`,
+    swapTitle: (slot) => `Other suggestions for ${slot.toLowerCase()}`,
+    swapSideTitle: "Other suggested sides",
+    swapHelp: "They fit your goal and settings and aren't repeated that day. Tap one to put it in your plan.",
+    swapMore: "Show more suggestions",
+    swapNone: "No more suggestions with these settings. Try removing something from “Avoid” or the protein.",
+    swapClose: "Close",
+    swapView: "See recipe",
+    swapDone: (name) => `Done: ${name} is in your plan.`,
     day: (n) => `Day ${n}`,
     slots: { desayuno: "Breakfast", almuerzo: "Lunch", merienda: "Snack", cena: "Dinner" },
     portions: (m) => (m === 1 ? "1 serving" : `${fmtPortion(m)} servings`),
@@ -232,6 +252,22 @@ const SEASONS = {
   gracias: (r, nm) => /pavo|pavochon|calabaza|batata|mofongo relleno|relleno|arroz con gandules|pie de|flan de calabaza|cranberry|arandano/.test(nm),
   lluvia: (r, nm) => r.category === "sopas" || (r.category === "calientes" && !(typeof TEA_HIGH !== "undefined" && TEA_HIGH.has(r.id))) || /asopao|sancocho|caldo|sopon|guisad|fricase|chocolate caliente|avena|cafe con leche|majarete|mazamorra|crema de/.test(nm)
 };
+/* Temporada recomendada de cada receta: la que dan las reglas de arriba (puede ser más de una) o
+   la que fijó un administrador en #/admin → Recetas (Firestore recipeMeta, js/recipe-admin.js).
+   ["todo"] = todo el año (no se adelanta en ninguna época). */
+const SEASON_KEYS = ["navidad", "cuaresma", "verano", "gracias", "lluvia"];
+const autoSeasonCache = new Map();
+function autoSeasonsOf(r) {
+  if (!autoSeasonCache.has(r.id)) {
+    const nm = planNorm(r.name.es);
+    const list = SEASON_KEYS.filter((k) => SEASONS[k](r, nm));
+    autoSeasonCache.set(r.id, list.length ? list : ["todo"]);
+  }
+  return autoSeasonCache.get(r.id);
+}
+let RECIPE_SEASONS = new Map(); // id → temporadas fijadas por un administrador
+const seasonsOf = (r) => RECIPE_SEASONS.get(r.id) || autoSeasonsOf(r);
+const inSeasonOf = (r, season) => season !== "todo" && seasonsOf(r).includes(season);
 function autoSeason(d = new Date()) {
   const m = d.getMonth() + 1, day = d.getDate();
   if (m === 12 || (m === 1 && day <= 15) || (m === 11 && day >= 25)) return "navidad";
@@ -469,9 +505,9 @@ function candidates() {
     let s = slot;
     if (s === "main" && info.n.kcal < 180 && ["ensaladas", "vegetales"].includes(r.category)) s = "merienda";
     if (s === "main" && !protOk(r)) { offProt.push({ r, n: info.n, loose: true, score: g.score(info.n) - 500 }); continue; }
-    const inSeason0 = season !== "todo" && SEASONS[season](r, planNorm(r.name.es));
+    const inSeason0 = inSeasonOf(r, season);
     if (!g.ok[s](info.n)) { loose[s].push({ r, n: info.n, inSeason: inSeason0, loose: true, score: g.score(info.n) + (inSeason0 ? 1000 : 0) }); continue; }
-    const inSeason = season !== "todo" && SEASONS[season](r, planNorm(r.name.es));
+    const inSeason = inSeasonOf(r, season);
     // Las de la época van primero (sin dejar de cumplir el objetivo).
     pools[s].push({ r, n: info.n, inSeason, score: g.score(info.n) + (inSeason ? 1000 : 0) });
   }
@@ -603,6 +639,107 @@ function buildPlan(pools, target, seed) {
   return days;
 }
 
+/* ── Cambiar una comida o un acompañante por otro sugerido ──
+   "Cambiar" abre, debajo de esa comida, la lista de las otras recetas que el plan habría podido
+   escoger (mismos candidatos: objetivo, dieta, proteína, época y lo que se evita), sin las que ya
+   están ese día. Al escoger una se recalcula la porción y se guarda en `plan.saved`, así que el
+   cambio se queda (y sube a la cuenta) hasta que toque otro plan o se cambien los ajustes. */
+let planPools = null;   // candidatos del último render
+let planDays = null;    // días del plan que se ve
+let planSwap = null;    // { key: "día-comida" o "día-comida-acompañante", limit }
+const SWAP_PAGE = 8;
+
+function swapRef(key) {
+  const [d, j, s] = key.split("-").map(Number);
+  const meal = planDays && planDays[d] && planDays[d][j];
+  if (!meal || !meal.item) return null;
+  if (!Number.isNaN(s) && s !== undefined && !(meal.sides && meal.sides[s])) return null;
+  return { d, j, s: Number.isNaN(s) || s === undefined ? null : s, meal };
+}
+function dayIds(meals) {
+  const ids = new Set();
+  for (const x of meals) { if (x.item) ids.add(x.item.r.id); for (const sd of x.sides || []) ids.add(sd.item.r.id); }
+  return ids;
+}
+function swapOptions(ref) {
+  const used = dayIds(planDays[ref.d]);
+  if (ref.s !== null) {
+    const cur = ref.meal.sides[ref.s].item;
+    const kinds = SIDE_RULES[plan.goal].kinds;
+    const kind = cur.kind || sideKind(cur.r, cur.n);
+    const group = kinds.find((g) => g.includes(kind)) || kinds.flat();
+    return planPools.side.filter((x) => group.includes(x.kind) && !used.has(x.r.id));
+  }
+  const pool = ref.meal.slot === "desayuno" ? planPools.desayuno : ref.meal.slot === "merienda" ? planPools.merienda : planPools.main;
+  return pool.filter((x) => !used.has(x.r.id));
+}
+function applySwap(ref, id) {
+  const sv = plan.saved;
+  const opt = swapOptions(ref).find((x) => x.r.id === id);
+  if (!sv || !sv.meals[ref.d] || !opt) return null;
+  const meal = ref.meal;
+  const g = PLAN_GOALS[plan.goal];
+  const slotKcal = planTargets().kcal * SLOTS.find((x) => x.key === meal.slot).share;
+  if (ref.s !== null) meal.sides[ref.s] = { item: opt, m: 1 };
+  else {
+    meal.item = opt;
+    if (["almuerzo", "cena"].includes(meal.slot)) {
+      // Un plato completo va sin acompañantes; uno que no lo es y no tenía, los recibe como en el plan.
+      if (isComplete(opt.r)) meal.sides = [];
+      else if (!(meal.sides || []).length) {
+        const used = dayIds(planDays[ref.d]);
+        meal.sides = [];
+        for (const group of SIDE_RULES[plan.goal].kinds) {
+          const side = planPools.side.find((x) => group.includes(x.kind) && !used.has(x.r.id));
+          if (side) { used.add(side.r.id); meal.sides.push({ item: side, m: 1 }); }
+        }
+      }
+    }
+  }
+  // Porciones como en buildPlan().
+  const sides = meal.sides || [];
+  if (meal.slot === "merienda") meal.m = Math.min(1.5, portionFor(meal.item, slotKcal, 1.5));
+  else {
+    const share = sides.length ? 0.55 : 1;
+    meal.m = portionFor(meal.item, slotKcal * share, g.maxPortion);
+    for (const sd of sides) sd.m = Math.min(1.5, portionFor(sd.item, (slotKcal * (1 - share)) / sides.length, 1.5));
+  }
+  sv.meals[ref.d].items[ref.j] = { slot: meal.slot, id: meal.item.r.id, m: meal.m, sides: sides.map((sd) => ({ id: sd.item.r.id, m: sd.m })) };
+  savePlan(); // es un cambio de la persona: cuenta como el más reciente y sube a la cuenta
+  return opt.r;
+}
+function swapButtonHTML(key, name) {
+  const tr = pt();
+  const open = planSwap && planSwap.key === key;
+  return `<button type="button" class="plan-swap-btn" data-swap="${key}" aria-expanded="${open}" aria-controls="swap-${key}" aria-label="${esc(tr.swapLabel(name))}">
+    <svg class="icon" aria-hidden="true"><use href="#i-swap"/></svg><span>${esc(tr.swap)}</span></button>`;
+}
+function swapPanelHTML(key) {
+  const tr = pt();
+  const ref = swapRef(key);
+  if (!ref) return "";
+  const opts = swapOptions(ref);
+  const title = ref.s !== null ? tr.swapSideTitle : tr.swapTitle(tr.slots[ref.meal.slot]);
+  return `<div class="plan-swap-panel" id="swap-${key}" role="region" aria-label="${esc(title)}">
+    <div class="plan-swap-head"><strong>${esc(title)}</strong>
+      <button type="button" class="btn btn-ghost btn-sm" data-swap-close>${esc(tr.swapClose)}</button></div>
+    <p class="plans-help">${esc(tr.swapHelp)}</p>
+    ${opts.length ? `<ul class="plan-swap-list">${opts.slice(0, planSwap.limit).map((x) => `
+      <li>
+        <button type="button" class="plan-swap-opt" data-swap-pick="${esc(x.r.id)}">
+          <span class="plan-swap-thumb" aria-hidden="true">${coverHTML(x.r.category, x.r)}</span>
+          <span class="plan-swap-body">
+            <span class="plan-swap-name">${esc(x.r.name[currentLang])}</span>
+            <span class="plans-more-n">${Math.round(x.n.kcal)} ${tr.kcal} · ${Math.round(x.n.p)} g ${tr.prot} · ${esc(tr.perPortion)}</span>
+            ${badgesHTML(x.n)}
+          </span>
+        </button>
+        <a class="plan-swap-view" href="#/receta/${encodeURIComponent(x.r.id)}" data-open="${esc(x.r.id)}">${esc(tr.swapView)}</a>
+      </li>`).join("")}</ul>` : `<p class="plans-warn">${esc(tr.swapNone)}</p>`}
+    ${opts.length > planSwap.limit ? `<button type="button" class="btn btn-outline btn-sm plan-swap-more" data-swap-more>${esc(tr.swapMore)} (${opts.length - planSwap.limit})</button>` : ""}
+  </div>`;
+}
+
 /* ── Vista ── */
 function goalButtonsHTML() {
   const tr = pt();
@@ -683,23 +820,32 @@ function nutriLine(n, m = 1) {
   const tr = pt();
   return `<span>${Math.round(n.kcal * m)} ${tr.kcal}</span><span>${Math.round(n.p * m)} g ${tr.prot}</span><span>${Math.round(n.c * m)} g ${tr.carbs}</span><span>${Math.round(n.na * m)} mg ${tr.sodium}</span>`;
 }
-function mealHTML(meal) {
+function mealHTML(meal, d, j) {
   const tr = pt();
   if (!meal.item) return `<li class="plan-meal plan-meal-empty"><span class="plan-slot">${esc(tr.slots[meal.slot])}</span><span>—</span></li>`;
   const r = meal.item.r;
+  const key = `${d}-${j}`;
+  const openKey = planSwap && planSwap.key;
   return `<li class="plan-meal">
     <span class="plan-slot">${esc(tr.slots[meal.slot])}</span>
     <a class="plan-thumb" href="#/receta/${encodeURIComponent(r.id)}" data-open="${esc(r.id)}" tabindex="-1" aria-hidden="true">${coverHTML(r.category, r)}</a>
     <span class="plan-meal-body">
-      <a class="plan-meal-name" href="#/receta/${encodeURIComponent(r.id)}" data-open="${esc(r.id)}">${esc(r.name[currentLang])}</a>
+      <span class="plan-meal-top">
+        <a class="plan-meal-name" href="#/receta/${encodeURIComponent(r.id)}" data-open="${esc(r.id)}">${esc(r.name[currentLang])}</a>
+        ${swapButtonHTML(key, r.name[currentLang])}
+      </span>
       <span class="plan-portion">${esc(tr.portions(meal.m))}</span>
       <span class="plan-nutri">${nutriLine(meal.item.n, meal.m)}</span>
       ${badgesHTML(meal.item.n, meal.m)}
-      ${(meal.sides || []).length ? `<ul class="plan-sides">${meal.sides.map((sd) => `
+      ${(meal.sides || []).length ? `<ul class="plan-sides">${meal.sides.map((sd, s) => `
         <li><span class="plan-side-plus" aria-hidden="true">+</span>
-          <a href="#/receta/${encodeURIComponent(sd.item.r.id)}" data-open="${esc(sd.item.r.id)}">${esc(sd.item.r.name[currentLang])}</a>
-          <span class="plan-side-n">${esc(tr.portions(sd.m))} · ${Math.round(sd.item.n.kcal * sd.m)} ${tr.kcal} · ${Math.round(sd.item.n.p * sd.m)} g ${tr.prot}</span></li>`).join("")}</ul>` : ""}
+          <span class="plan-side-main">
+            <a href="#/receta/${encodeURIComponent(sd.item.r.id)}" data-open="${esc(sd.item.r.id)}">${esc(sd.item.r.name[currentLang])}</a>
+            <span class="plan-side-n">${esc(tr.portions(sd.m))} · ${Math.round(sd.item.n.kcal * sd.m)} ${tr.kcal} · ${Math.round(sd.item.n.p * sd.m)} g ${tr.prot}</span>
+          </span>
+          ${swapButtonHTML(`${key}-${s}`, sd.item.r.name[currentLang])}</li>`).join("")}</ul>` : ""}
     </span>
+    ${openKey === key || (openKey || "").startsWith(`${key}-`) ? swapPanelHTML(openKey) : ""}
   </li>`;
 }
 function dayHTML(meals, i, target, iso) {
@@ -714,7 +860,7 @@ function dayHTML(meals, i, target, iso) {
   const pctP = Math.min(130, Math.round((tot.p / target.protein) * 100));
   return `<article class="plan-day">
     ${plan.days > 1 ? `<h3 class="plan-day-title">${esc(iso ? dayName(iso, { weekday: "long", day: "numeric", month: "short" }) : tr.day(i + 1))}</h3>` : ""}
-    <ol class="plan-meals">${meals.map(mealHTML).join("")}</ol>
+    <ol class="plan-meals">${meals.map((m, j) => mealHTML(m, i, j)).join("")}</ol>
     <div class="plan-total">
       <span class="plan-total-label">${esc(tr.total)}</span>
       <span class="plan-bar"><span class="plan-bar-fill" style="width:${Math.min(100, pctK)}%"></span></span>
@@ -731,7 +877,7 @@ function seasonList() {
   const g = PLAN_GOALS[plan.goal];
   const out = [];
   for (const r of recipes) {
-    if (!SEASONS[season](r, planNorm(r.name.es))) continue;
+    if (!inSeasonOf(r, season)) continue;
     if (["salsas"].includes(r.category)) continue;
     const info = planInfo(r);
     if (plan.avoid.some((k) => AVOID[k] && AVOID[k](info.allergens, r))) continue;
@@ -775,7 +921,8 @@ function seasonHTML() {
 function planPeriodHTML(pools, target) {
   const tr = pt();
   const { start, days } = periodPlan(pools, target);
-  const long = { weekday: "long", day: "numeric", month: "long" };
+  planDays = days;
+  const long ={ weekday: "long", day: "numeric", month: "long" };
   const period = plan.days === 1
     ? tr.periodDay(dayName(start, long).toLowerCase())
     : tr.periodWeek(dayName(start, { day: "numeric", month: "long" }), dayName(addDays(start, 6), { day: "numeric", month: "long" }), dayName(addDays(start, 7), long).toLowerCase());
@@ -783,14 +930,16 @@ function planPeriodHTML(pools, target) {
     `<p class="plans-period">${esc(period)} <span class="plans-saved">${esc(tr.savedNote)}</span></p>` +
     `<div class="plan-days${plan.days > 1 ? " week" : ""}">${days.map((d, i) => dayHTML(d, i, target, addDays(start, i))).join("")}</div>`;
 }
-function renderPlanOutput() {
+function renderPlanOutput(keepSwap = false) {
   const tr = pt();
+  if (!keepSwap) planSwap = null; // otro objetivo, otros ajustes u otro plan: se cierra la lista
   const target = planTargets();
   const floorHit = target.custom && target.kcal <= (plan.sex === "male" ? 1500 : 1200);
   $("plans-target").innerHTML = `<p>${tr.targets(target.kcal, target.protein, target.custom)}</p>` +
     (floorHit ? `<p class="plans-warn">${esc(tr.minWarn)}</p>` : "") +
     `<p class="plans-note">${esc(tr.goalNotes[plan.goal])}</p>`;
   const pools = candidates();
+  planPools = pools;
   const enough = pools.desayuno.length && pools.main.length >= 2 && pools.merienda.length;
   $("plans-output").innerHTML = enough
     ? planPeriodHTML(pools, target)
@@ -828,6 +977,39 @@ function setupPlans() {
       renderPlanOutput(); return;
     }
     if (e.target.closest("#plans-another")) { plan.seed = (plan.seed % 9973) + 1; savePlan(); renderPlanOutput(); return; }
+    // Cambiar una comida: abrir o cerrar su lista, ver más, o escoger una.
+    const swapBtn = e.target.closest("[data-swap]");
+    if (swapBtn) {
+      const key = swapBtn.dataset.swap;
+      planSwap = planSwap && planSwap.key === key ? null : { key, limit: SWAP_PAGE };
+      renderPlanOutput(true);
+      const first = planSwap && v.querySelector(`#swap-${key} [data-swap-pick]`);
+      (first || v.querySelector(`[data-swap="${key}"]`)).focus({ preventScroll: true });
+      return;
+    }
+    if (e.target.closest("[data-swap-close]") && planSwap) {
+      const key = planSwap.key;
+      planSwap = null; renderPlanOutput(true);
+      const b = v.querySelector(`[data-swap="${key}"]`); if (b) b.focus({ preventScroll: true });
+      return;
+    }
+    if (e.target.closest("[data-swap-more]") && planSwap) {
+      const shown = planSwap.limit;
+      planSwap.limit += SWAP_PAGE; renderPlanOutput(true);
+      const next = v.querySelectorAll(`#swap-${planSwap.key} [data-swap-pick]`)[shown];
+      if (next) next.focus({ preventScroll: true });
+      return;
+    }
+    const pick = e.target.closest("[data-swap-pick]");
+    if (pick && planSwap) {
+      const key = planSwap.key;
+      const ref = swapRef(key);
+      const r = ref && applySwap(ref, pick.dataset.swapPick);
+      planSwap = null; renderPlanOutput(true);
+      const b = v.querySelector(`[data-swap="${key}"]`); if (b) b.focus({ preventScroll: true });
+      if (r) toast(pt().swapDone(r.name[currentLang]), true);
+      return;
+    }
     if (e.target.closest("[data-open]")) plansScrollY = window.scrollY;
   });
   v.addEventListener("input", (e) => {

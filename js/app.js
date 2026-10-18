@@ -17,7 +17,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
-const APP_VERSION = "4.18.0";
+const APP_VERSION = "4.20.0";
 const APP_REVISED = "2026-10-17";
 /* Lo que se muestra al público: "Más de 1,000 recetas", no el total exacto (que cambia con cada
    tanda). El total exacto sólo sale en #/admin (auth.js). Baja al millar: 1,054 → "1,000". */
@@ -429,6 +429,9 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
+  // Jugos y bebidas tropicales (tanda 48): los demás usan 🧃 y 🥤 como los otros jugos y batidas.
+  [/^horchata de arroz/, "🥛"],
+  [/^jugo de zanahoria/, "🥕"],
   // Pescados y mariscos (tanda 47); tres reutilizan el dibujo de un plato parecido.
   [/^pastelon de bacalao/, "svg:ic-mar-pastelon-bacalao"],
   [/^bacalao en escabeche/, "svg:ic-pez-escabeche"],

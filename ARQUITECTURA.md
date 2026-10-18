@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.18.0 · **Versión de la app:** 4.18.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,070 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.20.0 · **Versión de la app:** 4.20.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,086 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -64,7 +64,7 @@ cocine-a-gusto/
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
 │   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, más salsas y aderezos y platos fuertes veganos, y dulces y salsas de grosella, en cuarenta y tres tandas (ver §13)
-│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46) y pescados y mariscos (tanda 47), ver §13
+│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46), pescados y mariscos (tanda 47) y jugos y bebidas tropicales (tanda 48), ver §13
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── substitutes.js    sustitutos para cada alérgeno según el ingrediente (getSubstitutes)
@@ -77,7 +77,10 @@ cocine-a-gusto/
 │   ├── auth.js           pantalla de entrada, validación del correo, conteo de usos y panel #/admin (§7.3)
 │   ├── install.js        "Póngala en su celular": guía para crear el icono en la pantalla de inicio (§7.6)
 │   ├── photo.js          motor de fotos: achica en el navegador la foto tomada o subida antes de guardarla (§7.5)
-│   └── reviews.js        reseñas (estrellas + comentario + foto opcional) de la app y de cada receta, con aprobación previa (§7.4)
+│   ├── reviews.js        reseñas (estrellas + comentario + foto opcional) de la app y de cada receta, con aprobación previa (§7.4)
+│   ├── recipe-admin.js   #/admin → Recetas: temporada recomendada (editable) y fecha de ingreso de cada receta (§7.8)
+│   └── recipe-dates.js   GENERADO: fecha de ingreso de cada receta (RECIPE_ADDED); sólo lo carga el panel (§7.8)
+├── tools/recipe-dates.js genera js/recipe-dates.js del historial de git (no se publica: .vercelignore) (§7.8, §11)
 ├── images/               (vacía: reservada para fotos)
 ├── icons/                iconos de la app (bandera sobre crema): apple-touch-icon 180, 192, 512, maskable 512, favicon 32;
 │                         og-image.png 1200×630 (vista previa al compartir el enlace, §7.7)
@@ -91,7 +94,7 @@ cocine-a-gusto/
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js` → `recipes-5.js`
-→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `install.js` (usa `app.js`; antes de `auth.js`, que llama a `installButtonHTML()`) → `auth-config.js` → `auth.js` (usa `app.js`) → `photo.js` → `reviews.js` (usa `app.js`, `auth.js` y `photo.js`). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
+→ `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `install.js` (usa `app.js`; antes de `auth.js`, que llama a `installButtonHTML()`) → `auth-config.js` → `auth.js` (usa `app.js`) → `photo.js` → `reviews.js` (usa `app.js`, `auth.js` y `photo.js`) → `recipe-admin.js` (usa `app.js`, `plans.js` y `auth.js`; carga `recipe-dates.js` al abrir el panel). Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
 ## 5. Modelo de datos: la receta
 
@@ -149,8 +152,8 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | arroces | Arroces y Habichuelas | 56 |
 | vegetales | Vegetales y Viandas | 88 |
 | salsas | Salsas y Aderezos | 64 |
-| bebidas | Bebidas | 38 |
-| jugos | Jugos Naturales | 20 |
+| bebidas | Bebidas | 44 |
+| jugos | Jugos Naturales | 30 |
 | cocteles | Cócteles y Tragos | 47 |
 
 **Añadir una categoría:** clave en `categoryOrder`, nombre en `translations.es.categories` y `translations.en.categories`,
@@ -504,6 +507,29 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   planes de comida y nutrición/alergias; al final "Gratis · En español e inglés". Así quien llega de un anuncio ve qué
   trae la app antes de registrarse. Si se borra uno de esos platos, se omite sin error.
 
+### 7.8 Ficha interna de las recetas (`js/recipe-admin.js`, `#/admin` → Recetas)
+- **Qué es:** sección **Recetas** al final del panel de administración (sólo administradores; el público no ve nada de
+  esto). Tabla de las 1,086 recetas, de 50 en 50 ("Ver más recetas"), con nombre (enlace a la receta) y categoría,
+  **temporada recomendada** (etiquetas de color y si es "automática" o "corregida"), **fecha de ingreso** y el botón
+  **Cambiar temporada**. Buscador (nombre ES/EN o id, sin acentos), filtros por categoría y por temporada (o "Corregidas
+  a mano"), orden (más recientes, más antiguas, A–Z), resumen "Ingresos por día" y **Exportar CSV** de lo filtrado.
+  En el celular, la tabla se ve en fichas como la de usuarios.
+- **Temporada recomendada:** `autoSeasonsOf()` en `plans.js` aplica las reglas de `SEASONS` (Navidad, Cuaresma y Semana
+  Santa, verano y playa, Acción de Gracias, días de lluvia); una receta puede tener varias, o `["todo"]` (todo el año).
+  El administrador la corrige con casillas ("Todo el año" quita las demás): se guarda en Firestore `recipeMeta/{id}` =
+  `{ seasons, updatedBy, updatedAt }`; "Volver a la automática" borra el documento. Si queda igual a la automática no se
+  guarda nada. `loadRecipeSeasons()` lee `recipeMeta` al entrar cualquier persona y llena `RECIPE_SEASONS`;
+  `seasonsOf()`/`inSeasonOf()` la usan en vez de la automática, así que **los planes de comida** (recetas de la época
+  primero y la lista de la época) siguen la corrección del administrador.
+- **Fecha de ingreso:** `RECIPE_ADDED` en `js/recipe-dates.js`, GENERADO por `node tools/recipe-dates.js` desde el
+  historial de git (fecha del commit que escribió la línea `id: "…"`; las que aún no están en un commit, la de hoy).
+  Hoy: 165 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11 y 80 del 17.
+  Se carga con `loadScript()` sólo al abrir el panel. **Después de añadir recetas, hay que volver a generarlo** (§11).
+- **Seguridad (`firestore.rules`, `match /recipeMeta/{id}`):** leer, cualquiera que entre; escribir y borrar, sólo
+  administradores, con sólo esas 3 claves, `seasons` entre `todo`, `navidad`, `cuaresma`, `verano`, `gracias` y `lluvia`
+  (1 a 6), `updatedBy` = su correo y `updatedAt` del servidor. **Hay que publicar las reglas de nuevo**; mientras tanto
+  se usan las temporadas automáticas y al guardar sale "publique las reglas nuevas".
+
 ### 7.2 Planes de comida (`js/plans.js`, ruta `#/planes`)
 - **Acceso:** enlace "Planes" / "Meal plans" en el menú y en el pie. Vista `<section id="view-plans">`; `route()` llama a
   `showPlans()`; `showHome()` y `showRecipe()` la ocultan. Desde un plan, una receta se abre con `data-open` y "Atrás"
@@ -524,6 +550,15 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   por día, `{ items: [...] }` porque Firestore no admite listas dentro de listas) en el navegador y en la cuenta, y al
   volver se muestra el mismo mientras sigan iguales el período, `seed` y `planSig()` (objetivo, dieta, preferencias,
   proteína, evitar, época y metas); si algo cambia o una receta ya no existe, se arma y guarda otro.
+- **Cambiar una comida (`swapPanelHTML()`, `swapOptions()`, `applySwap()`):** cada comida y cada acompañante tiene un
+  botón **Cambiar** (icono `i-swap`) que abre, a todo el ancho de esa comida, la lista de los otros sugeridos: los mismos
+  candidatos de `candidates()` para esa comida (desayuno, merienda o plato principal; para un acompañante, los del mismo
+  grupo de `SIDE_RULES` del objetivo), en orden de puntuación y sin las recetas que ya están ese día. Se ven 8 y "Ver
+  más sugeridos" añade 8; cada uno tiene "Ver receta". Al tocar uno se pone en el plan con la porción recalculada como en
+  `buildPlan()`; si el nuevo principal es un plato completo pierde los acompañantes, y si no lo es y no tenía, recibe los
+  del objetivo. El cambio se escribe en `plan.saved` y se guarda como cambio de la persona (`savePlan()`, sube a la
+  cuenta), así que se mantiene al volver hasta que toque otro período, se pulse "Otro plan" o se cambien los ajustes.
+  `planSwap` guarda qué lista está abierta; `renderPlanOutput(true)` la conserva y cualquier otro cambio la cierra.
 - **Proteína del almuerzo y la cena (`plan.protein`, `PROTEINS`, `proteinsOf()`):** aves, pescado, mariscos, res, cerdo,
   cabro/cordero/conejo y granos y vegetales; una o varias. Se reconoce por el nombre y, si no, por la categoría y los
   ingredientes ("granos" = vegetariana sin otra proteína). Sólo filtra el plato principal (no desayuno, merienda ni
@@ -532,7 +567,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - **Mis datos (opcional):** sexo, edad, peso (libras), estatura (pies y pulgadas) y actividad. Calorías con Mifflin-St Jeor
   × factor de actividad (1.2–1.725) × ajuste del objetivo; mínimo 1,200 (mujer) o 1,500 (hombre), con aviso.
 - **Época (`SEASONS`):** Navidad, Cuaresma y Semana Santa, verano y playa, Acción de Gracias y días de lluvia, por nombre y
-  categoría; "Según la fecha de hoy" la elige con `autoSeason()`. Las recetas de la época van primero en el plan (sin dejar
+  categoría (o la que fijó un administrador, `seasonsOf()`, §7.8); "Según la fecha de hoy" la elige con `autoSeason()`. Las recetas de la época van primero en el plan (sin dejar
   de cumplir el objetivo) y una lista aparte muestra todas las de la época, también postres y bebidas.
 - **Preferencias y exclusiones:** vegetariano (también por el objetivo; categoría + `S_MEAT_RX` + `PLAN_MEAT_EXTRA`: bistec, pechuga, gelatina…; "hamburguesa" no cuenta si es
   vegetariana o es el pan, ni "picadillo" si es de lentejas),
@@ -567,7 +602,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,070). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,086). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -629,7 +664,8 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 4. Revisar alérgenos y alertas: si aparece un ingrediente nuevo con alérgeno, ampliar `ALLERGENS` (§9).
 5. Revisar el icono del plato; si no encaja, añadir la palabra a `dishIcons` (§7).
 6. Probar en el navegador (español e inglés, móvil): la receta abre, porciones, pestañas, sin desbordes.
-7. Actualizar **este documento** (conteos de §6, encabezado y §13) en el mismo commit.
+7. Generar las fechas de ingreso: `node tools/recipe-dates.js` (actualiza `js/recipe-dates.js`, §7.8).
+8. Actualizar **este documento** (conteos de §6, encabezado y §13) en el mismo commit.
 
 ## 12. Verificación
 
@@ -647,6 +683,41 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-17 — v4.20.0 · Ficha interna de las recetas (temporada y fecha de ingreso) y más jugos y bebidas tropicales
+- *Pedido:* evaluar internamente en cada receta la temporada recomendada y la fecha de ingreso a la app, y poder
+  trabajarlo como administrador; y más recetas de jugos y bebidas tropicales.
+- Nuevo `js/recipe-admin.js` (§7.8): sección **Recetas** en `#/admin` con temporada recomendada (automática o corregida),
+  fecha de ingreso, buscador, filtros, orden, resumen por día y CSV; "Cambiar temporada" guarda en `recipeMeta/{id}`.
+  `plans.js`: `SEASON_KEYS`, `autoSeasonsOf()`, `RECIPE_SEASONS`, `seasonsOf()` e `inSeasonOf()` (los planes usan la
+  temporada corregida). `auth.js`: `loadRecipeSeasons()` al entrar y la sección en `renderAdminShell()`.
+  `firestore.rules`: `match /recipeMeta/{id}` (hay que publicarla). Nuevo `tools/recipe-dates.js` → `js/recipe-dates.js`
+  (fechas del historial de git); `tools` en `.vercelignore`; §11 paso 7. CSS `.admin-recipes`, `.ra-*`.
+- Cuadragésima octava tanda en `js/recipes-5.js` (versiones propias), 16 bebidas sin alcohol:
+  - **Jugos (10):** lechosa con china, pitahaya y limón, jobos, pomarrosa con limón, mangó y parcha, zanahoria con china
+    y jengibre, limonada de melao y jengibre, agua de coco con piña y menta, refresco de parcha con agua de coco y agua
+    de cáscara de piña con canela y jengibre (aprovecha la cáscara; se guarda en la nevera porque fermenta).
+  - **Bebidas (6):** batida de acerola y guineo, batida verde tropical (espinaca, piña y mangó, vegana), batida de
+    guineo, avena y maní, batida de tamarindo, batida de mangó y coco (sin leche) y horchata de arroz y coco.
+- **Nutrición:** nueva "leche de coco de cartón" (la de beber, mucho más ligera que la de lata: la batida de mangó y coco
+  bajó de 358 a 144 kcal). **Iconos:** 🥛 para la horchata (salía 🍚) y 🥕 para el jugo de zanahoria; los demás, 🧃 y 🥤
+  como los otros jugos y batidas.
+- Total: **1,070 → 1,086 recetas** (la portada sigue con "Más de 1,000").
+- *Verificado:* panel con Firestore simulado: 1,086 recetas con su temporada y fecha, resumen por día, buscar y filtrar;
+  corregir la piragua de coco a Navidad + verano → se guarda en `recipeMeta`, sale "corregida", el filtro "Corregidas a
+  mano" la encuentra y el plan la pone en Navidad; "Todo el año" quita las demás; "Volver a la automática" la borra;
+  `loadRecipeSeasons()` aplica las guardadas; a 375 px en fichas sin desbordes ✔. Bebidas: datos en Node ✔ (0 sin
+  contar), buscador ("jugos", "batida", "agua de coco") ✔, las 16 en ES y EN a 375 px sin errores ✔.
+### 2026-10-17 — v4.19.0 · Planes: cambiar una comida por otra sugerida
+- *Pedido:* que en los planes se pueda cambiar lo sugerido y escoger de una lista de sugeridos.
+- `js/plans.js` (§7.2): botón **Cambiar** en cada comida y acompañante, con la lista de los otros sugeridos que cumplen
+  el objetivo y los ajustes, sin repetir lo que ya hay ese día; "Ver más sugeridos" y "Ver receta"; al escoger, la
+  porción se recalcula, el cambio se guarda en el plan y en la cuenta y sale el aviso "Listo: … está en su plan". Textos
+  ES/EN `swap*`. `index.html`: icono `i-swap`. CSS `.plan-swap-*`, `.plan-meal-top`, `.plan-side-main`.
+- *Verificado (navegador, 375 px):* cambiar el almuerzo → la lista trae 8 (16 con "Ver más"), se guarda en
+  `plan.saved` y en el navegador, y sigue igual al recargar; cambiar un acompañante → sólo ofrece los del grupo del
+  objetivo (rebajar: ensalada, vegetal o granos); un plato completo quita los acompañantes y uno que no lo es los recibe;
+  en 7 días y en inglés funciona y no repite recetas en el día; la lista va a todo el ancho y sin desbordes; sin errores
+  de consola ✔.
 ### 2026-10-17 — v4.18.0 · Más pescados y mariscos
 - *Pedido:* más recetas de pescados y mariscos.
 - Cuadragésima séptima tanda en `js/recipes-5.js` (versiones propias), 16 platos que no estaban (ya había 115 recetas con

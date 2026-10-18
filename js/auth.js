@@ -598,6 +598,7 @@ async function onUser(user) {
     setAuthState("ready");
     loadUserPlan();
     reviewsOnReady();
+    loadRecipeSeasons(); // js/recipe-admin.js: temporadas fijadas por un administrador (las usan los planes)
     if (location.hash === "#/admin") route();
   } catch (err) {
     setAuthState("signin", authError(err));
@@ -708,10 +709,12 @@ function renderAdminShell() {
       <p class="auth-msg" id="admin-msg" role="alert" hidden></p>
       <div class="admin-table-wrap" id="admin-table"><p class="auth-loading">${esc(tr.loading)}</p></div>
       <section class="admin-reviews" id="admin-reviews" aria-live="polite"></section>
+      <section class="admin-recipes" id="admin-recipes" aria-labelledby="admin-recipes-title"></section>
     </div>`;
   $("admin-title").focus({ preventScroll: true });
   if (adminUsers.length) renderAdminTable();
   renderPendingReviews(); // js/reviews.js
+  renderRecipeAdmin(); // js/recipe-admin.js
 }
 
 async function loadAdminData() {

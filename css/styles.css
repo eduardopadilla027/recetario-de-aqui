@@ -749,11 +749,33 @@ main:focus { outline: none; }
 .plans-season-list a { color: var(--ink); font-weight: 600; text-decoration: none; }
 .plans-season-list a:hover { color: var(--achiote); text-decoration: underline; }
 .plan-sides { list-style: none; margin: 4px 0 0; padding: 6px 0 0; border-top: 1px dashed var(--line); display: flex; flex-direction: column; gap: 4px; }
-.plan-sides li { display: grid; grid-template-columns: 14px 1fr; column-gap: 4px; font-size: .88rem; }
+.plan-sides li { display: grid; grid-template-columns: 14px 1fr auto; column-gap: 4px; align-items: start; font-size: .88rem; }
+.plan-side-main { display: flex; flex-direction: column; min-width: 0; }
 .plan-side-plus { color: var(--plantain); font-weight: 700; }
 .plan-sides a { color: var(--ink); font-weight: 600; text-decoration: none; }
 .plan-sides a:hover { color: var(--achiote); text-decoration: underline; }
-.plan-side-n { grid-column: 2; font-size: .78rem; color: var(--ink-3); }
+.plan-side-n { font-size: .78rem; color: var(--ink-3); }
+/* Cambiar una comida por otro sugerido (plans.js → swapPanelHTML) */
+.plan-meal-top { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s-2); }
+.plan-swap-btn { flex: none; display: inline-flex; align-items: center; gap: 4px; min-height: 32px; padding: 0 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--ivory); color: var(--achiote-600); font: inherit; font-size: .78rem; font-weight: 700; cursor: pointer; }
+.plan-swap-btn .icon { width: 14px; height: 14px; }
+.plan-swap-btn:hover, .plan-swap-btn[aria-expanded="true"] { border-color: var(--achiote); background: var(--achiote-50); }
+.plan-swap-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.plan-sides .plan-swap-btn { min-height: 28px; padding: 0 8px; }
+.plan-swap-panel { grid-column: 1 / -1; margin-top: var(--s-2); padding: var(--s-3); border: 1.5px solid var(--gold); border-radius: var(--radius); background: #FFFBF2; }
+.plan-swap-head { display: flex; align-items: center; justify-content: space-between; gap: var(--s-2); margin-bottom: var(--s-1); font-size: .92rem; }
+.plan-swap-list { list-style: none; margin: var(--s-2) 0 0; padding: 0; display: grid; gap: var(--s-2); }
+.plan-swap-list li { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--s-2); }
+.plan-swap-opt { flex: 1; min-width: 0; display: flex; align-items: center; gap: var(--s-2); padding: 6px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: #fff; font: inherit; text-align: left; color: var(--ink); cursor: pointer; }
+.plan-swap-opt:hover { border-color: var(--achiote); background: var(--achiote-50); }
+.plan-swap-opt:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+.plan-swap-thumb { flex: none; width: 44px; height: 44px; border-radius: 10px; overflow: hidden; }
+.plan-swap-thumb .cover { width: 100%; height: 100%; aspect-ratio: auto; }
+.plan-swap-thumb .cover-emoji { font-size: 1.2rem; }
+.plan-swap-body { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.plan-swap-name { font-weight: 700; font-size: .9rem; line-height: 1.25; overflow-wrap: anywhere; }
+.plan-swap-view { flex: none; font-size: .78rem; font-weight: 700; color: var(--plantain); }
+.plan-swap-more { margin-top: var(--s-2); }
 @media print { .plans-controls, .plans-actions, .goal-grid, .plans-more { display: none; } }
 
 /* Familias dentro de una categoría (js/families.js) */
@@ -987,3 +1009,33 @@ body.auth-locked .site-header, body.auth-locked main, body.auth-locked .site-foo
 .admin-h2 { font-size: var(--step-2); display: flex; align-items: center; gap: var(--s-2); }
 .admin-count { display: inline-grid; place-items: center; min-width: 28px; height: 28px; padding: 0 8px; border-radius: 999px; background: var(--achiote); color: #fff; font-size: .85rem; }
 @media print { .recipe-rating, .reviews-panel, #opiniones, .photo-dialog { display: none !important; } }
+
+/* #/admin → Recetas: temporada recomendada y fecha de ingreso (js/recipe-admin.js) */
+.admin-recipes { display: flex; flex-direction: column; gap: var(--s-3); margin-top: var(--s-6); }
+.admin-recipes:empty { display: none; }
+.ra-tools { align-items: center; }
+.ra-select { min-height: 44px; padding: 0 var(--s-3); border: 1.5px solid var(--line); border-radius: 999px; background: #fff; font: inherit; font-size: .9rem; color: var(--ink); max-width: 100%; }
+.ra-summary { display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-3); font-size: var(--step--1); color: var(--ink-2); }
+.ra-summary-label { font-weight: 700; }
+.ra-day strong { color: var(--achiote); }
+.ra-name a { font-weight: 700; color: var(--ink); text-decoration: none; }
+.ra-name a:hover { color: var(--achiote); text-decoration: underline; }
+.ra-cat { display: block; font-size: .75rem; color: var(--ink-3); }
+.ra-chips { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.ra-chip { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: .74rem; font-weight: 700; background: var(--sand); color: var(--ink-2); }
+.ra-chip.ra-navidad { background: #F8DADA; color: #8E1F1F; }
+.ra-chip.ra-cuaresma { background: #E6E0F2; color: #4B3A7A; }
+.ra-chip.ra-verano { background: #FFF0C2; color: #7A5A00; }
+.ra-chip.ra-gracias { background: #F6DFC8; color: #7A3E12; }
+.ra-chip.ra-lluvia { background: #D8E8F2; color: #1F4E6E; }
+.ra-src { font-size: .7rem; color: var(--ink-3); }
+.ra-src.is-manual { color: var(--plantain); font-weight: 700; }
+.ra-edit { margin-top: var(--s-2); padding: var(--s-3); border: 1.5px solid var(--gold); border-radius: var(--radius-sm); background: #FFFBF2; display: grid; gap: var(--s-2); }
+.ra-picks { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+@media (max-width: 760px) {
+  .ra-select { flex: 1 1 45%; }
+  .ra-table .ra-name { display: block; text-align: left; font-size: var(--step-0); }
+  .ra-table .ra-name::before { display: none; }
+  .ra-table td.ra-season { display: block; text-align: left; }
+  .ra-table td.ra-season::before { display: block; margin-bottom: 4px; }
+}

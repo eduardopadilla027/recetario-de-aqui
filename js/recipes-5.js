@@ -3070,5 +3070,656 @@ recipes.push(
         "Serve hot with white rice and avocado. Warn about bones if the fish isn't filleted."
       ]
     }
+  },
+  // ---------- Tanda 48: jugos y bebidas tropicales (16) ----------
+  {
+    id: "jugo-lechosa-china",
+    category: "jugos",
+    name: { es: "Jugo de Lechosa con China", en: "Papaya Orange Juice" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 tazas de lechosa (papaya) madura en cubos",
+        "2 tazas de jugo de china",
+        "1 taza de agua fría",
+        "1 cucharada de jugo de limón",
+        "1 cucharada de azúcar (opcional)",
+        "1 taza de hielo"
+      ],
+      en: [
+        "2 cups ripe papaya (lechosa), cubed",
+        "2 cups orange juice",
+        "1 cup cold water",
+        "1 tablespoon lime juice",
+        "1 tablespoon sugar (optional)",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Quite las semillas negras de la lechosa.",
+        "Licúe la lechosa con el jugo de china, el agua y el limón hasta que quede liso.",
+        "Pruebe: si la lechosa está bien madura no necesita azúcar.",
+        "Añada el hielo y licúe unos segundos.",
+        "Sirva enseguida. El limón quita el olor fuerte que a algunos no les gusta de la lechosa."
+      ],
+      en: [
+        "Remove the black seeds from the papaya.",
+        "Blend the papaya with the orange juice, water and lime juice until smooth.",
+        "Taste: very ripe papaya doesn't need sugar.",
+        "Add the ice and blend a few seconds.",
+        "Serve right away. The lime takes away the strong papaya smell some people dislike."
+      ]
+    }
+  },
+  {
+    id: "jugo-pitahaya-limon",
+    category: "jugos",
+    name: { es: "Jugo de Pitahaya y Limón", en: "Dragon Fruit Limeade" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 pitahaya roja (fruta del dragón), pelada",
+        "4 tazas de agua fría",
+        "¼ taza de jugo de limón",
+        "3 cucharadas de azúcar",
+        "6 hojas de menta",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 red dragon fruit (pitahaya), peeled",
+        "4 cups cold water",
+        "¼ cup lime juice",
+        "3 tablespoons sugar",
+        "6 mint leaves",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte la pitahaya en pedazos (las semillitas negras se comen).",
+        "Licúe la pitahaya con 2 tazas del agua, el limón y el azúcar.",
+        "Añada el resto del agua y la menta, y licúe 5 segundos.",
+        "Sirva sobre hielo.",
+        "Sale de un fucsia intenso. Con pitahaya blanca queda clara y más suave."
+      ],
+      en: [
+        "Cut the dragon fruit into pieces (the tiny black seeds are edible).",
+        "Blend the dragon fruit with 2 cups of the water, the lime juice and sugar.",
+        "Add the rest of the water and the mint and blend 5 seconds.",
+        "Serve over ice.",
+        "It comes out bright fuchsia. White dragon fruit makes it pale and milder."
+      ]
+    }
+  },
+  {
+    id: "jugo-jobos",
+    category: "jugos",
+    name: { es: "Jugo de Jobos", en: "Hog Plum (Jobo) Juice" },
+    time: "30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de jobos maduros",
+        "6 tazas de agua",
+        "½ taza de azúcar",
+        "1 pizca de sal",
+        "1 taza de hielo"
+      ],
+      en: [
+        "2 pounds ripe jobos (hog plums)",
+        "6 cups water",
+        "½ cup sugar",
+        "1 pinch salt",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave los jobos y hiérvalos en 3 tazas del agua 10 minutos para ablandarlos.",
+        "Deje enfriar y desbarate la pulpa con las manos o un tenedor, sin romper las semillas.",
+        "Cuele apretando, para dejar las semillas y la cáscara.",
+        "Añada el resto del agua, el azúcar y la sal, y mezcle hasta disolver.",
+        "Sirva bien frío sobre hielo. Es agridulce, como una limonada de fruta del campo."
+      ],
+      en: [
+        "Wash the jobos and boil them in 3 cups of the water 10 minutes to soften.",
+        "Let cool and break up the pulp with your hands or a fork, without crushing the seeds.",
+        "Strain, pressing, to leave the seeds and skins behind.",
+        "Add the rest of the water, the sugar and salt, and stir to dissolve.",
+        "Serve very cold over ice. It's sweet-tart, like a country fruit lemonade."
+      ]
+    }
+  },
+  {
+    id: "jugo-pomarrosa-limon",
+    category: "jugos",
+    name: { es: "Jugo de Pomarrosa con Limón", en: "Rose Apple Juice with Lime" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de pomarrosas, sin semillas",
+        "3 tazas de agua fría",
+        "2 cucharadas de jugo de limón",
+        "2 cucharadas de azúcar",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 pound rose apples (pomarrosas), seeded",
+        "3 cups cold water",
+        "2 tablespoons lime juice",
+        "2 tablespoons sugar",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave las pomarrosas, pártalas y saque la semilla del centro.",
+        "Licúe la pulpa con el agua, el limón y el azúcar.",
+        "Cuele si lo quiere sin pedacitos.",
+        "Sirva sobre hielo.",
+        "Tiene el olor a rosas de la fruta; tómelo el mismo día."
+      ],
+      en: [
+        "Wash the rose apples, halve them and remove the seed in the center.",
+        "Blend the flesh with the water, lime juice and sugar.",
+        "Strain if you want it smooth.",
+        "Serve over ice.",
+        "It has the fruit's rose scent; drink it the same day."
+      ]
+    }
+  },
+  {
+    id: "jugo-mango-parcha",
+    category: "jugos",
+    name: { es: "Jugo de Mangó y Parcha", en: "Mango Passion Fruit Juice" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 mangós maduros en pedazos",
+        "½ taza de pulpa de parcha",
+        "3 tazas de agua fría",
+        "2 cucharadas de azúcar",
+        "1 taza de hielo"
+      ],
+      en: [
+        "2 ripe mangoes, in pieces",
+        "½ cup passion fruit pulp",
+        "3 cups cold water",
+        "2 tablespoons sugar",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la pulpa de parcha con 1 taza del agua unos segundos y cuele las semillas.",
+        "Vuelva el jugo de parcha a la licuadora con el mangó, el resto del agua y el azúcar.",
+        "Licúe hasta que quede liso.",
+        "Añada el hielo y licúe otra vez.",
+        "Sirva enseguida: lo dulce del mangó con lo ácido de la parcha."
+      ],
+      en: [
+        "Blend the passion fruit pulp with 1 cup of the water a few seconds and strain out the seeds.",
+        "Return the passion fruit juice to the blender with the mango, the rest of the water and the sugar.",
+        "Blend until smooth.",
+        "Add the ice and blend again.",
+        "Serve right away: sweet mango with tart passion fruit."
+      ]
+    }
+  },
+  {
+    id: "jugo-zanahoria-china-jengibre",
+    category: "jugos",
+    name: { es: "Jugo de Zanahoria, China y Jengibre", en: "Carrot, Orange and Ginger Juice" },
+    time: "15 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de zanahorias peladas en ruedas",
+        "2 tazas de jugo de china",
+        "1 taza de agua fría",
+        "1 pedazo de jengibre fresco de 1 pulgada, pelado",
+        "1 cucharada de jugo de limón",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 pound peeled carrots, sliced",
+        "2 cups orange juice",
+        "1 cup cold water",
+        "1 1-inch piece fresh ginger, peeled",
+        "1 tablespoon lime juice",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la zanahoria con el agua y el jengibre 1 minuto, hasta que quede bien fina.",
+        "Cuele apretando con una cuchara (o use un extractor de jugos y sáltese este paso).",
+        "Mezcle con el jugo de china y el limón.",
+        "Sirva sobre hielo.",
+        "No lleva azúcar: la zanahoria y la china ya son dulces."
+      ],
+      en: [
+        "Blend the carrots with the water and ginger 1 minute, until very fine.",
+        "Strain, pressing with a spoon (or use a juicer and skip this step).",
+        "Mix with the orange juice and lime juice.",
+        "Serve over ice.",
+        "No added sugar: carrot and orange are already sweet."
+      ]
+    }
+  },
+  {
+    id: "limonada-melao-jengibre",
+    category: "jugos",
+    name: { es: "Limonada de Melao y Jengibre", en: "Cane Syrup Ginger Lemonade" },
+    time: "15 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "¾ taza de jugo de limón",
+        "⅓ taza de melao de caña",
+        "1 pedazo de jengibre fresco de 2 pulgadas, rallado",
+        "6 tazas de agua fría",
+        "1 pizca de sal",
+        "1 taza de hielo",
+        "1 limón en ruedas"
+      ],
+      en: [
+        "¾ cup lime juice",
+        "⅓ cup cane syrup (melao)",
+        "1 2-inch piece fresh ginger, grated",
+        "6 cups cold water",
+        "1 pinch salt",
+        "1 cup ice",
+        "1 lime, sliced"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente 1 taza del agua con el jengibre rallado 5 minutos sin que hierva fuerte. Cuele.",
+        "Disuelva el melao en el agua de jengibre todavía tibia.",
+        "Mezcle con el jugo de limón, el resto del agua y la sal.",
+        "Refrigere o sirva sobre hielo con ruedas de limón.",
+        "El melao le da un color ámbar y un sabor a caña distinto al del azúcar blanca."
+      ],
+      en: [
+        "Heat 1 cup of the water with the grated ginger 5 minutes without a hard boil. Strain.",
+        "Dissolve the cane syrup in the warm ginger water.",
+        "Mix with the lime juice, the rest of the water and the salt.",
+        "Refrigerate or serve over ice with lime slices.",
+        "Cane syrup gives an amber color and a cane flavor different from white sugar."
+      ]
+    }
+  },
+  {
+    id: "agua-coco-pina-menta",
+    category: "jugos",
+    name: { es: "Agua de Coco con Piña y Menta", en: "Coconut Water with Pineapple and Mint" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "3 tazas de agua de coco",
+        "2 tazas de piña en pedazos",
+        "8 hojas de menta",
+        "1 cucharada de jugo de limón",
+        "1 taza de hielo"
+      ],
+      en: [
+        "3 cups coconut water",
+        "2 cups pineapple, in pieces",
+        "8 mint leaves",
+        "1 tablespoon lime juice",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la piña con 1 taza del agua de coco y la menta.",
+        "Cuele si lo quiere sin fibra.",
+        "Mezcle con el resto del agua de coco y el limón.",
+        "Sirva sobre hielo.",
+        "No lleva azúcar. Es buena para refrescarse después de la playa o de hacer ejercicio."
+      ],
+      en: [
+        "Blend the pineapple with 1 cup of the coconut water and the mint.",
+        "Strain if you want it without fiber.",
+        "Mix with the rest of the coconut water and the lime juice.",
+        "Serve over ice.",
+        "No added sugar. Good for cooling off after the beach or exercise."
+      ]
+    }
+  },
+  {
+    id: "refresco-parcha-agua-coco",
+    category: "jugos",
+    name: { es: "Refresco de Parcha con Agua de Coco", en: "Passion Fruit Coconut Water Cooler" },
+    time: "10 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "½ taza de pulpa de parcha",
+        "3 tazas de agua de coco",
+        "1 taza de agua fría",
+        "2 cucharadas de azúcar",
+        "1 taza de hielo"
+      ],
+      en: [
+        "½ cup passion fruit pulp",
+        "3 cups coconut water",
+        "1 cup cold water",
+        "2 tablespoons sugar",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la pulpa de parcha con el agua unos segundos (sin triturar las semillas) y cuele.",
+        "Mezcle con el agua de coco y el azúcar hasta disolverla.",
+        "Pruebe y ajuste el azúcar.",
+        "Sirva sobre hielo.",
+        "Si le quedan semillas enteras, puede dejar unas pocas en el vaso por el color."
+      ],
+      en: [
+        "Blend the passion fruit pulp with the water a few seconds (without crushing the seeds) and strain.",
+        "Mix with the coconut water and sugar until dissolved.",
+        "Taste and adjust the sugar.",
+        "Serve over ice.",
+        "If you have whole seeds left, you can add a few to the glass for color."
+      ]
+    }
+  },
+  {
+    id: "agua-cascara-pina",
+    category: "jugos",
+    name: { es: "Agua de Cáscara de Piña con Canela y Jengibre", en: "Pineapple Peel Water with Cinnamon and Ginger" },
+    time: "40 min + frío",
+    servings: 8,
+    ingredients: {
+      es: [
+        "Las cáscaras y el corazón de 1 piña, bien lavados",
+        "8 tazas de agua",
+        "2 rajas de canela",
+        "1 pedazo de jengibre de 1 pulgada",
+        "4 clavos de especia",
+        "⅓ taza de azúcar morena",
+        "1 taza de hielo"
+      ],
+      en: [
+        "The peels and core of 1 pineapple, well washed",
+        "8 cups water",
+        "2 cinnamon sticks",
+        "1 1-inch piece ginger",
+        "4 whole cloves",
+        "⅓ cup brown sugar",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Restriegue bien la piña por fuera con un cepillo antes de pelarla.",
+        "Hierva las cáscaras y el corazón con el agua, la canela, el jengibre y los clavos 25 minutos.",
+        "Apague, añada el azúcar morena y deje reposar tapado hasta que enfríe.",
+        "Cuele y refrigere.",
+        "Sirva sobre hielo. Aprovecha lo que se bota de la piña; guárdelo en la nevera y tómelo en 2 días (no lo deje fuera, porque se fermenta)."
+      ],
+      en: [
+        "Scrub the outside of the pineapple well with a brush before peeling.",
+        "Boil the peels and core with the water, cinnamon, ginger and cloves 25 minutes.",
+        "Turn off the heat, add the brown sugar and let it rest covered until cool.",
+        "Strain and refrigerate.",
+        "Serve over ice. It uses what's usually thrown away; keep it refrigerated and drink within 2 days (don't leave it out, it ferments)."
+      ]
+    }
+  },
+  {
+    id: "batida-acerola-guineo",
+    category: "bebidas",
+    name: { es: "Batida de Acerola y Guineo", en: "Acerola Cherry Banana Smoothie" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de acerolas (cerezas del país), sin semillas",
+        "1 guineo maduro",
+        "1 taza de leche fría",
+        "1 cucharada de miel (opcional)",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 cup acerola cherries, pitted",
+        "1 ripe banana",
+        "1 cup cold milk",
+        "1 tablespoon honey (optional)",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Parta las acerolas y saque las semillitas (son duras).",
+        "Licúe las acerolas con el guineo, la leche y la miel.",
+        "Añada el hielo y licúe hasta que quede espumosa.",
+        "Sirva enseguida: la vitamina C de la acerola se pierde si espera mucho.",
+        "Para niños menores de 1 año, no use miel."
+      ],
+      en: [
+        "Halve the acerolas and remove the little seeds (they're hard).",
+        "Blend the acerolas with the banana, milk and honey.",
+        "Add the ice and blend until frothy.",
+        "Serve right away: acerola's vitamin C fades if it sits.",
+        "For babies under 1 year, skip the honey."
+      ]
+    }
+  },
+  {
+    id: "batida-verde-tropical",
+    category: "bebidas",
+    name: { es: "Batida Verde Tropical (Espinaca, Piña y Mangó)", en: "Tropical Green Smoothie (Spinach, Pineapple and Mango)" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de espinaca fresca",
+        "1 taza de piña en pedazos",
+        "1 taza de mangó en pedazos, congelado",
+        "1 guineo maduro",
+        "1 taza de agua de coco",
+        "1 cucharada de jugo de limón",
+        "½ cucharadita de jengibre rallado"
+      ],
+      en: [
+        "1 cup fresh spinach",
+        "1 cup pineapple, in pieces",
+        "1 cup frozen mango pieces",
+        "1 ripe banana",
+        "1 cup coconut water",
+        "1 tablespoon lime juice",
+        "½ teaspoon grated ginger"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la espinaca con el agua de coco primero, hasta que no queden pedacitos.",
+        "Añada la piña, el mangó, el guineo, el limón y el jengibre.",
+        "Licúe hasta que quede cremosa (el mangó congelado la enfría sin hielo).",
+        "Sirva enseguida.",
+        "Es vegana y sin azúcar añadida; la fruta la endulza y no se siente la espinaca."
+      ],
+      en: [
+        "Blend the spinach with the coconut water first, until no bits remain.",
+        "Add the pineapple, mango, banana, lime juice and ginger.",
+        "Blend until creamy (the frozen mango chills it without ice).",
+        "Serve right away.",
+        "It's vegan with no added sugar; the fruit sweetens it and you can't taste the spinach."
+      ]
+    }
+  },
+  {
+    id: "batida-guineo-avena-mani",
+    category: "bebidas",
+    name: { es: "Batida de Guineo, Avena y Maní", en: "Banana, Oat and Peanut Smoothie" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 guineos maduros congelados en ruedas",
+        "¼ taza de avena en hojuelas",
+        "2 cucharadas de mantequilla de maní",
+        "1½ tazas de leche fría",
+        "½ cucharadita de canela",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "2 ripe bananas, sliced and frozen",
+        "¼ cup rolled oats",
+        "2 tablespoons peanut butter",
+        "1½ cups cold milk",
+        "½ teaspoon cinnamon",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la avena con la leche 30 segundos para que se ablande.",
+        "Añada el guineo congelado, la mantequilla de maní, la canela y la vainilla.",
+        "Licúe hasta que quede espesa y cremosa.",
+        "Sirva enseguida.",
+        "Es un desayuno rápido con proteína y fibra. Con leche de avena o de soya queda vegana."
+      ],
+      en: [
+        "Blend the oats with the milk 30 seconds to soften them.",
+        "Add the frozen banana, peanut butter, cinnamon and vanilla.",
+        "Blend until thick and creamy.",
+        "Serve right away.",
+        "It's a quick breakfast with protein and fiber. With oat or soy milk it's vegan."
+      ]
+    }
+  },
+  {
+    id: "batida-tamarindo",
+    category: "bebidas",
+    name: { es: "Batida de Tamarindo", en: "Tamarind Shake" },
+    time: "40 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "¼ libra de tamarindos en vaina",
+        "2 tazas de agua caliente",
+        "1 taza de leche evaporada",
+        "¼ taza de leche condensada",
+        "1 pizca de canela",
+        "2 tazas de hielo"
+      ],
+      en: [
+        "¼ pound tamarind pods",
+        "2 cups hot water",
+        "1 cup evaporated milk",
+        "¼ cup condensed milk",
+        "1 pinch cinnamon",
+        "2 cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele los tamarindos y remójelos en el agua caliente 30 minutos.",
+        "Desbarate la pulpa con las manos y cuele, apretando, para dejar las semillas.",
+        "Licúe el agua de tamarindo con la leche evaporada, la leche condensada y la canela.",
+        "Añada el hielo y licúe hasta que quede espumosa.",
+        "Sirva enseguida. Es agridulce y cremosa, como la de los kioscos."
+      ],
+      en: [
+        "Peel the tamarinds and soak them in the hot water 30 minutes.",
+        "Break up the pulp with your hands and strain, pressing, to leave the seeds behind.",
+        "Blend the tamarind water with the evaporated milk, condensed milk and cinnamon.",
+        "Add the ice and blend until frothy.",
+        "Serve right away. Sweet-tart and creamy, like the kiosk version."
+      ]
+    }
+  },
+  {
+    id: "batida-mango-coco",
+    category: "bebidas",
+    name: { es: "Batida de Mangó y Coco (Sin Leche)", en: "Dairy-Free Mango Coconut Smoothie" },
+    time: "10 min",
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 tazas de mangó en pedazos, congelado",
+        "1 taza de leche de coco de cartón",
+        "½ taza de agua de coco",
+        "1 cucharada de jugo de limón",
+        "1 cucharada de coco rallado tostado"
+      ],
+      en: [
+        "2 cups frozen mango pieces",
+        "1 cup carton coconut milk",
+        "½ cup coconut water",
+        "1 tablespoon lime juice",
+        "1 tablespoon toasted shredded coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe el mangó congelado con la leche de coco, el agua de coco y el limón.",
+        "Si no se mueve, añada un chorrito más de agua de coco.",
+        "Licúe hasta que quede cremosa.",
+        "Sirva con el coco tostado por encima.",
+        "Es vegana, sin leche de vaca ni azúcar añadida."
+      ],
+      en: [
+        "Blend the frozen mango with the coconut milk, coconut water and lime juice.",
+        "If it won't move, add a splash more coconut water.",
+        "Blend until creamy.",
+        "Serve topped with the toasted coconut.",
+        "It's vegan, with no cow's milk or added sugar."
+      ]
+    }
+  },
+  {
+    id: "horchata-arroz-coco",
+    category: "bebidas",
+    name: { es: "Horchata de Arroz y Coco", en: "Rice and Coconut Horchata" },
+    time: "15 min + 4 hr de remojo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 taza de arroz blanco crudo",
+        "4 tazas de agua",
+        "1 lata de 13.5 onzas de leche de coco",
+        "½ taza de azúcar",
+        "2 rajas de canela",
+        "1 cucharadita de vainilla",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 cup uncooked white rice",
+        "4 cups water",
+        "1 can (13.5 oz) coconut milk",
+        "½ cup sugar",
+        "2 cinnamon sticks",
+        "1 teaspoon vanilla",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje el arroz y la canela en el agua 4 horas (o toda la noche en la nevera).",
+        "Licúe el arroz con su agua y la canela 2 minutos, hasta que quede bien fino.",
+        "Cuele por una tela o un colador fino, apretando.",
+        "Mezcle con la leche de coco, el azúcar y la vainilla hasta disolver.",
+        "Sirva bien fría sobre hielo, con canela en polvo. Mueva antes de servir: el arroz se asienta."
+      ],
+      en: [
+        "Soak the rice and cinnamon in the water 4 hours (or overnight in the fridge).",
+        "Blend the rice with its water and the cinnamon 2 minutes, until very fine.",
+        "Strain through cloth or a fine strainer, pressing.",
+        "Mix with the coconut milk, sugar and vanilla until dissolved.",
+        "Serve very cold over ice, with ground cinnamon. Stir before serving: the rice settles."
+      ]
+    }
   }
 );
