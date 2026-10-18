@@ -4522,5 +4522,796 @@ recipes.push(
         "It's the soft sweet bread for the medianoche sandwich (pernil, ham, Swiss cheese, pickle and mustard, pressed on the griddle)."
       ]
     }
+  },
+  // ---------- Tanda 50: más carnes (8) y aves (8) ----------
+  {
+    id: "lomo-cerdo-naranja-agria",
+    category: "carnes",
+    name: { es: "Lomo de Cerdo al Horno con Mojo de Naranja Agria", en: "Roast Pork Loin with Sour Orange Mojo" },
+    time: "1 hr 30 min + adobo",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 libras de lomo de cerdo sin hueso",
+        "8 dientes de ajo machacados",
+        "½ taza de jugo de naranja agria",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharada de orégano",
+        "2 cucharaditas de sal",
+        "1 cucharadita de pimienta",
+        "1 cebolla en ruedas",
+        "½ taza de caldo de pollo"
+      ],
+      en: [
+        "3 pounds boneless pork loin",
+        "8 garlic cloves, crushed",
+        "½ cup sour orange juice",
+        "2 tablespoons olive oil",
+        "1 tablespoon oregano",
+        "2 teaspoons salt",
+        "1 teaspoon pepper",
+        "1 onion, sliced",
+        "½ cup chicken broth"
+      ]
+    },
+    steps: {
+      es: [
+        "Maje el ajo con la sal, la pimienta y el orégano. Mezcle con la naranja agria y el aceite para hacer el mojo.",
+        "Haga cortes de ½ pulgada en el lomo, frótelo con la mitad del mojo y déjelo en la nevera al menos 4 horas (mejor de un día para otro).",
+        "Caliente el horno a 375 °F. Ponga la cebolla y el caldo en un molde y el lomo encima.",
+        "Hornee 1 hora a 1 hora 15 minutos, bañándolo con su jugo, hasta 145 °F en el centro. Déjelo reposar 10 minutos tapado.",
+        "Corte en lascas y báñelas con el resto del mojo calentado y la cebolla del molde. Sin naranja agria: mitad jugo de china y mitad de limón."
+      ],
+      en: [
+        "Mash the garlic with the salt, pepper and oregano. Mix with the sour orange juice and oil to make the mojo.",
+        "Make ½-inch slits in the loin, rub with half the mojo and refrigerate at least 4 hours (best overnight).",
+        "Heat the oven to 375 °F. Put the onion and broth in a pan and the loin on top.",
+        "Roast 1 hour to 1 hour 15 minutes, basting with its juices, to 145 °F in the center. Rest 10 minutes covered.",
+        "Slice and top with the rest of the mojo, warmed, and the onions from the pan. No sour orange: use half orange juice and half lime."
+      ]
+    }
+  },
+  {
+    id: "pernil-caldero",
+    category: "carnes",
+    name: { es: "Pernil al Caldero", en: "Stovetop Caldero Pernil" },
+    time: "3 hr + adobo",
+    servings: 8,
+    ingredients: {
+      es: [
+        "4 libras de pernil de cerdo sin hueso, en 2 o 3 trozos",
+        "10 dientes de ajo",
+        "1 cucharada de orégano",
+        "2½ cucharaditas de sal",
+        "1 cucharadita de pimienta",
+        "3 cucharadas de vinagre",
+        "3 cucharadas de aceite de oliva",
+        "1 cebolla en ruedas",
+        "1 taza de agua"
+      ],
+      en: [
+        "4 pounds boneless pork shoulder (pernil), in 2 or 3 pieces",
+        "10 garlic cloves",
+        "1 tablespoon oregano",
+        "2½ teaspoons salt",
+        "1 teaspoon pepper",
+        "3 tablespoons vinegar",
+        "3 tablespoons olive oil",
+        "1 onion, sliced",
+        "1 cup water"
+      ]
+    },
+    steps: {
+      es: [
+        "Maje el ajo con el orégano, la sal y la pimienta; añada el vinagre y 1 cucharada del aceite. Adobe el pernil por todos lados y déjelo en la nevera de un día para otro.",
+        "En un caldero grueso, dore los trozos en el resto del aceite a fuego medio-alto, 4 minutos por lado.",
+        "Añada la cebolla y el agua, tape bien y cocine a fuego bajo 2½ horas, volteando cada 30 minutos y añadiendo agua si se seca.",
+        "Destape los últimos 20 minutos para que el líquido se reduzca y la carne dore en su grasa. Debe desmenuzarse con un tenedor.",
+        "Desmenuce o corte en trozos y sirva con su salsa. Es el pernil de cuando no hay horno, o para hacer menos cantidad."
+      ],
+      en: [
+        "Mash the garlic with the oregano, salt and pepper; add the vinegar and 1 tablespoon of the oil. Season the pork all over and refrigerate overnight.",
+        "In a heavy caldero, brown the pieces in the rest of the oil over medium-high heat, 4 minutes per side.",
+        "Add the onion and water, cover tightly and cook over low heat 2½ hours, turning every 30 minutes and adding water if it dries out.",
+        "Uncover the last 20 minutes so the liquid reduces and the meat browns in its own fat. It should shred with a fork.",
+        "Shred or cut into pieces and serve with its sauce. It's the pernil for when there's no oven, or for a smaller batch."
+      ]
+    }
+  },
+  {
+    id: "pinchos-res-chimichurri",
+    category: "carnes",
+    name: { es: "Pinchos de Res con Chimichurri de Recao", en: "Beef Skewers with Culantro Chimichurri" },
+    time: "40 min + adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de lomo de res (sirloin) en cubos de 1½ pulgada",
+        "1 cucharadita de adobo",
+        "2 cucharadas de aceite de oliva",
+        "1 pimiento rojo en cuadros",
+        "1 cebolla roja en cuadros",
+        "12 palitos de pincho",
+        "8 hojas de recao",
+        "½ taza de perejil",
+        "3 dientes de ajo",
+        "⅓ taza de aceite de oliva para el chimichurri",
+        "3 cucharadas de vinagre",
+        "½ cucharadita de sal",
+        "¼ cucharadita de ají picante en polvo"
+      ],
+      en: [
+        "2 pounds beef sirloin, in 1½-inch cubes",
+        "1 teaspoon adobo",
+        "2 tablespoons olive oil",
+        "1 red bell pepper, in squares",
+        "1 red onion, in squares",
+        "12 skewers",
+        "8 culantro (recao) leaves",
+        "½ cup parsley",
+        "3 garlic cloves",
+        "⅓ cup olive oil for the chimichurri",
+        "3 tablespoons vinegar",
+        "½ teaspoon salt",
+        "¼ teaspoon hot chili powder"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe la carne con el adobo y las 2 cucharadas de aceite, y déjela 30 minutos. Si los palitos son de madera, remójelos en agua.",
+        "Pique fino (o pulse en el procesador) el recao, el perejil y el ajo, y mézclelos con el aceite, el vinagre, la sal y el ají.",
+        "Ensarte la carne alternando con el pimiento y la cebolla.",
+        "Ase en la parrilla o plancha bien caliente 8 a 10 minutos, volteando, hasta el término que guste (145 °F término medio).",
+        "Sirva con el chimichurri de recao por encima, con tostones o arroz."
+      ],
+      en: [
+        "Season the beef with the adobo and 2 tablespoons oil and let it sit 30 minutes. If the skewers are wooden, soak them in water.",
+        "Finely chop (or pulse in a processor) the culantro, parsley and garlic and mix with the oil, vinegar, salt and chili.",
+        "Thread the beef alternating with the bell pepper and onion.",
+        "Grill on a very hot grill or griddle 8 to 10 minutes, turning, to your liking (145 °F medium).",
+        "Serve with the culantro chimichurri on top, with tostones or rice."
+      ]
+    }
+  },
+  {
+    id: "costillas-cerdo-mojo-ajo",
+    category: "carnes",
+    name: { es: "Costillas de Cerdo al Horno con Mojo de Ajo", en: "Oven-Baked Pork Ribs with Garlic Mojo" },
+    time: "2 hr 45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "4 libras de costillas de cerdo",
+        "2 cucharaditas de adobo",
+        "1 cucharadita de orégano",
+        "1 cucharadita de comino",
+        "½ taza de agua",
+        "10 dientes de ajo picados",
+        "3 cucharadas de aceite de oliva",
+        "¼ taza de jugo de naranja agria o de limón",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "4 pounds pork ribs",
+        "2 teaspoons adobo",
+        "1 teaspoon oregano",
+        "1 teaspoon cumin",
+        "½ cup water",
+        "10 garlic cloves, minced",
+        "3 tablespoons olive oil",
+        "¼ cup sour orange or lime juice",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 300 °F. Frote las costillas con el adobo, el orégano y el comino.",
+        "Póngalas en un molde con el agua, tápelas bien con papel de aluminio y hornee 2 horas, hasta que la carne se separe del hueso.",
+        "Para el mojo, caliente el aceite con el ajo a fuego bajo 3 minutos sin dorar. Apague y añada la naranja agria y el cilantro.",
+        "Destape las costillas, suba el horno a 425 °F, unte la mitad del mojo y hornee 20 a 25 minutos hasta que doren.",
+        "Corte entre los huesos y sirva con el resto del mojo, con yuca o tostones."
+      ],
+      en: [
+        "Heat the oven to 300 °F. Rub the ribs with the adobo, oregano and cumin.",
+        "Place in a pan with the water, cover tightly with foil and bake 2 hours, until the meat pulls from the bone.",
+        "For the mojo, heat the oil with the garlic over low heat 3 minutes without browning. Turn off and add the sour orange juice and cilantro.",
+        "Uncover the ribs, raise the oven to 425 °F, brush with half the mojo and bake 20 to 25 minutes until browned.",
+        "Cut between the bones and serve with the rest of the mojo, with yuca or tostones."
+      ]
+    }
+  },
+  {
+    id: "cerdo-agridulce-pina",
+    category: "carnes",
+    name: { es: "Cerdo Agridulce con Piña", en: "Sweet and Sour Pork with Pineapple" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de lomo de cerdo en cubos",
+        "1 cucharadita de adobo",
+        "3 cucharadas de maicena",
+        "3 cucharadas de aceite vegetal",
+        "1 pimiento rojo en cuadros",
+        "1 pimiento verde en cuadros",
+        "1 cebolla en cuadros",
+        "2 tazas de piña en cubos",
+        "½ taza de jugo de piña",
+        "¼ taza de ketchup",
+        "3 cucharadas de vinagre",
+        "2 cucharadas de azúcar morena",
+        "2 cucharadas de salsa de soya"
+      ],
+      en: [
+        "2 pounds pork loin, cubed",
+        "1 teaspoon adobo",
+        "3 tablespoons cornstarch",
+        "3 tablespoons vegetable oil",
+        "1 red bell pepper, in squares",
+        "1 green bell pepper, in squares",
+        "1 onion, in squares",
+        "2 cups pineapple, cubed",
+        "½ cup pineapple juice",
+        "¼ cup ketchup",
+        "3 tablespoons vinegar",
+        "2 tablespoons brown sugar",
+        "2 tablespoons soy sauce"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el cerdo y páselo por 2 cucharadas de la maicena.",
+        "Dórelo en el aceite a fuego alto 6 a 8 minutos, en dos tandas, hasta que esté cocido (145 °F). Sáquelo.",
+        "En el mismo sartén, saltee los pimientos y la cebolla 3 minutos, que queden crujientes.",
+        "Mezcle el jugo de piña, el ketchup, el vinagre, el azúcar, la soya y la otra cucharada de maicena; añádalo con la piña y deje hervir hasta que espese.",
+        "Vuelva el cerdo a la salsa, mezcle 1 minuto y sirva con arroz blanco."
+      ],
+      en: [
+        "Season the pork with adobo and toss in 2 tablespoons of the cornstarch.",
+        "Brown in the oil over high heat 6 to 8 minutes, in two batches, until cooked (145 °F). Remove.",
+        "In the same skillet, stir-fry the peppers and onion 3 minutes, keeping them crisp.",
+        "Mix the pineapple juice, ketchup, vinegar, sugar, soy sauce and the other tablespoon of cornstarch; add with the pineapple and boil until thickened.",
+        "Return the pork to the sauce, toss 1 minute and serve with white rice."
+      ]
+    }
+  },
+  {
+    id: "res-guisada-coco-recao",
+    category: "carnes",
+    name: { es: "Res Guisada en Leche de Coco y Recao", en: "Beef Stewed in Coconut Milk and Culantro" },
+    time: "2 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de carne de res para guisar en cubos",
+        "1 cucharadita de adobo",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 taza de agua",
+        "1 libra de yautía en cubos",
+        "2 zanahorias en ruedas",
+        "½ cucharadita de sal",
+        "6 hojas de recao picadas"
+      ],
+      en: [
+        "2 pounds stewing beef, cubed",
+        "1 teaspoon adobo",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "1 can (8 oz) tomato sauce",
+        "1 can (13.5 oz) coconut milk",
+        "1 cup water",
+        "1 pound yautía (taro), cubed",
+        "2 carrots, sliced",
+        "½ teaspoon salt",
+        "6 culantro (recao) leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe la carne y dórela en el aceite de achiote en un caldero, en dos tandas.",
+        "Añada el sofrito y la salsa de tomate, y cocine 3 minutos.",
+        "Añada la leche de coco y el agua, tape y cocine a fuego bajo 1 hora 15 minutos, hasta que la carne esté casi blanda.",
+        "Añada la yautía, la zanahoria y la sal, y cocine 25 minutos más hasta que todo esté blando y la salsa espese.",
+        "Añada el recao al final y sirva con arroz blanco. El coco suaviza la salsa y la yautía la espesa."
+      ],
+      en: [
+        "Season the beef with adobo and brown in the annatto oil in a caldero, in two batches.",
+        "Add the sofrito and tomato sauce and cook 3 minutes.",
+        "Add the coconut milk and water, cover and simmer 1 hour 15 minutes, until the beef is almost tender.",
+        "Add the yautía, carrots and salt and cook 25 more minutes until everything is tender and the sauce thickens.",
+        "Add the culantro at the end and serve with white rice. The coconut softens the sauce and the yautía thickens it."
+      ]
+    }
+  },
+  {
+    id: "albondigas-guayaba",
+    category: "carnes",
+    name: { es: "Albóndigas Glaseadas con Guayaba", en: "Guava-Glazed Meatballs" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1½ libras de carne molida de res",
+        "½ taza de pan rallado",
+        "1 huevo",
+        "2 cucharadas de sofrito",
+        "1 cucharadita de adobo",
+        "6 onzas de pasta de guayaba en cubitos",
+        "½ taza de agua",
+        "¼ taza de ketchup",
+        "2 cucharadas de vinagre",
+        "1 cucharada de salsa de soya",
+        "1 diente de ajo machacado"
+      ],
+      en: [
+        "1½ pounds ground beef",
+        "½ cup breadcrumbs",
+        "1 egg",
+        "2 tablespoons sofrito",
+        "1 teaspoon adobo",
+        "6 ounces guava paste, diced",
+        "½ cup water",
+        "¼ cup ketchup",
+        "2 tablespoons vinegar",
+        "1 tablespoon soy sauce",
+        "1 garlic clove, crushed"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400 °F. Mezcle la carne, el pan rallado, el huevo, el sofrito y el adobo sin amasar de más.",
+        "Forme 24 albóndigas y hornéelas en una bandeja 15 minutos, hasta 160 °F por dentro.",
+        "Derrita la guayaba con el agua a fuego bajo. Añada el ketchup, el vinagre, la soya y el ajo, y cocine 3 minutos hasta tener un glaseado.",
+        "Pase las albóndigas al glaseado y muévalas 2 minutos para que brillen.",
+        "Sirva con palillos como entremés o con arroz blanco como plato principal."
+      ],
+      en: [
+        "Heat the oven to 400 °F. Mix the beef, breadcrumbs, egg, sofrito and adobo without overworking.",
+        "Shape 24 meatballs and bake on a sheet 15 minutes, to 160 °F inside.",
+        "Melt the guava with the water over low heat. Add the ketchup, vinegar, soy sauce and garlic and cook 3 minutes into a glaze.",
+        "Add the meatballs to the glaze and toss 2 minutes until glossy.",
+        "Serve with toothpicks as an appetizer or with white rice as a main."
+      ]
+    }
+  },
+  {
+    id: "chuletas-ajillo-limon",
+    category: "carnes",
+    name: { es: "Chuletas al Ajillo con Limón", en: "Garlic Lime Pork Chops" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 chuletas de cerdo de 1 pulgada",
+        "1 cucharadita de adobo",
+        "2 cucharadas de aceite de oliva",
+        "8 dientes de ajo en lascas",
+        "¼ taza de caldo de pollo",
+        "3 cucharadas de jugo de limón",
+        "1 cucharada de mantequilla",
+        "2 cucharadas de perejil picado"
+      ],
+      en: [
+        "4 pork chops, 1 inch thick",
+        "1 teaspoon adobo",
+        "2 tablespoons olive oil",
+        "8 garlic cloves, sliced",
+        "¼ cup chicken broth",
+        "3 tablespoons lime juice",
+        "1 tablespoon butter",
+        "2 tablespoons chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Seque las chuletas y adóbelas por los dos lados.",
+        "Dórelas en el aceite a fuego medio-alto 4 a 5 minutos por lado, hasta 145 °F. Sáquelas y déjelas reposar.",
+        "Baje el fuego y sofría el ajo en el mismo sartén 1 minuto, sin que se queme.",
+        "Añada el caldo y el limón, raspe el fondo y deje reducir 2 minutos. Apague y añada la mantequilla.",
+        "Bañe las chuletas con la salsa de ajo y espolvoree el perejil. Sirva con arroz y habichuelas o con tostones."
+      ],
+      en: [
+        "Pat the chops dry and season both sides with adobo.",
+        "Brown in the oil over medium-high heat 4 to 5 minutes per side, to 145 °F. Remove and let rest.",
+        "Lower the heat and sauté the garlic in the same skillet 1 minute, without burning.",
+        "Add the broth and lime juice, scrape the bottom and reduce 2 minutes. Turn off and add the butter.",
+        "Spoon the garlic sauce over the chops and sprinkle with parsley. Serve with rice and beans or tostones."
+      ]
+    }
+  },
+  {
+    id: "pollo-horno-naranja-agria",
+    category: "aves",
+    name: { es: "Pollo al Horno con Naranja Agria y Orégano Brujo", en: "Roast Chicken with Sour Orange and Cuban Oregano" },
+    time: "1 hr 30 min + adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 pollo entero de 4 libras",
+        "8 dientes de ajo",
+        "6 hojas de orégano brujo picadas (o 1 cucharadita de orégano seco)",
+        "2 cucharaditas de sal",
+        "½ cucharadita de pimienta",
+        "½ taza de jugo de naranja agria",
+        "2 cucharadas de aceite de oliva",
+        "1 cebolla en ruedas"
+      ],
+      en: [
+        "1 whole chicken (4 lb)",
+        "8 garlic cloves",
+        "6 Cuban oregano (orégano brujo) leaves, chopped (or 1 teaspoon dried oregano)",
+        "2 teaspoons salt",
+        "½ teaspoon pepper",
+        "½ cup sour orange juice",
+        "2 tablespoons olive oil",
+        "1 onion, sliced"
+      ]
+    },
+    steps: {
+      es: [
+        "Maje el ajo con el orégano brujo, la sal y la pimienta; añada la naranja agria y el aceite.",
+        "Despegue la piel del pollo con los dedos y unte el adobo por debajo, por fuera y por dentro. Déjelo en la nevera al menos 4 horas.",
+        "Caliente el horno a 400 °F. Ponga el pollo sobre la cebolla en un molde, con la pechuga hacia arriba.",
+        "Hornee 1 hora a 1 hora 15 minutos, bañándolo con su jugo, hasta 165 °F en la parte gruesa del muslo.",
+        "Deje reposar 10 minutos antes de cortar. El orégano brujo (de hoja gruesa) da el sabor de los patios de la isla."
+      ],
+      en: [
+        "Mash the garlic with the Cuban oregano, salt and pepper; add the sour orange juice and oil.",
+        "Loosen the chicken skin with your fingers and rub the marinade under it, outside and inside. Refrigerate at least 4 hours.",
+        "Heat the oven to 400 °F. Set the chicken on the onion in a pan, breast up.",
+        "Roast 1 hour to 1 hour 15 minutes, basting with its juices, to 165 °F in the thick part of the thigh.",
+        "Rest 10 minutes before carving. Cuban oregano (the thick-leaf kind) gives the flavor of island backyards."
+      ]
+    }
+  },
+  {
+    id: "pechugas-salsa-champinones",
+    category: "aves",
+    name: { es: "Pechugas en Salsa de Champiñones", en: "Chicken Breasts in Mushroom Sauce" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 pechugas de pollo deshuesadas, aplanadas a ½ pulgada",
+        "1 cucharadita de adobo",
+        "¼ taza de harina de trigo",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharada de mantequilla",
+        "½ libra de champiñones en lascas",
+        "2 dientes de ajo picados",
+        "½ taza de caldo de pollo",
+        "½ taza de leche evaporada",
+        "2 cucharadas de perejil picado"
+      ],
+      en: [
+        "4 boneless chicken breasts, pounded to ½ inch",
+        "1 teaspoon adobo",
+        "¼ cup all-purpose flour",
+        "2 tablespoons olive oil",
+        "1 tablespoon butter",
+        "½ pound mushrooms, sliced",
+        "2 garlic cloves, minced",
+        "½ cup chicken broth",
+        "½ cup evaporated milk",
+        "2 tablespoons chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe las pechugas y páselas por la harina.",
+        "Dórelas en el aceite 4 minutos por lado, hasta 165 °F. Sáquelas.",
+        "Derrita la mantequilla en el mismo sartén y dore los champiñones 5 minutos. Añada el ajo 1 minuto.",
+        "Añada el caldo y la leche evaporada, y hierva suave 4 minutos hasta que espese.",
+        "Vuelva las pechugas a la salsa 2 minutos, espolvoree el perejil y sirva con arroz o puré de papas."
+      ],
+      en: [
+        "Season the chicken with adobo and dredge in flour.",
+        "Brown in the oil 4 minutes per side, to 165 °F. Remove.",
+        "Melt the butter in the same skillet and brown the mushrooms 5 minutes. Add the garlic for 1 minute.",
+        "Add the broth and evaporated milk and simmer 4 minutes until thickened.",
+        "Return the chicken to the sauce for 2 minutes, sprinkle with parsley and serve with rice or mashed potatoes."
+      ]
+    }
+  },
+  {
+    id: "pollo-vizcaina",
+    category: "aves",
+    name: { es: "Pollo a la Vizcaína", en: "Chicken Vizcaína" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 libras de presas de pollo",
+        "1 cucharadita de adobo",
+        "3 cucharadas de aceite de oliva",
+        "2 cebollas en ruedas",
+        "1 pimiento rojo en tiras",
+        "4 dientes de ajo en lascas",
+        "1 lata de 15 onzas de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "2 cucharadas de alcaparras",
+        "2 hojas de laurel",
+        "1 libra de papas en ruedas gruesas",
+        "1 taza de agua"
+      ],
+      en: [
+        "3 pounds chicken pieces",
+        "1 teaspoon adobo",
+        "3 tablespoons olive oil",
+        "2 onions, sliced",
+        "1 red bell pepper, in strips",
+        "4 garlic cloves, sliced",
+        "1 can (15 oz) tomato sauce",
+        "¼ cup stuffed olives",
+        "2 tablespoons capers",
+        "2 bay leaves",
+        "1 pound potatoes, in thick slices",
+        "1 cup water"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el pollo y dórelo en el aceite en un caldero, 5 minutos por lado. Sáquelo.",
+        "Sofría la cebolla, el pimiento y el ajo 5 minutos en la misma grasa.",
+        "Añada la salsa de tomate, las aceitunas, las alcaparras, el laurel y el agua, y deje hervir.",
+        "Vuelva el pollo, ponga las papas alrededor, tape y cocine a fuego bajo 35 minutos, hasta que las papas estén blandas y el pollo llegue a 165 °F.",
+        "Sirva con arroz blanco. Es la misma salsa del bacalao a la vizcaína, con pollo."
+      ],
+      en: [
+        "Season the chicken with adobo and brown in the oil in a caldero, 5 minutes per side. Remove.",
+        "Sauté the onion, bell pepper and garlic 5 minutes in the same fat.",
+        "Add the tomato sauce, olives, capers, bay leaves and water and bring to a boil.",
+        "Return the chicken, arrange the potatoes around it, cover and simmer 35 minutes, until the potatoes are tender and the chicken reaches 165 °F.",
+        "Serve with white rice. It's the same sauce as salt cod vizcaína, with chicken."
+      ]
+    }
+  },
+  {
+    id: "pollo-mechado-criolla",
+    category: "aves",
+    name: { es: "Pollo Mechado a la Criolla", en: "Criollo Shredded Chicken" },
+    time: "50 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de pechugas o muslos de pollo deshuesados",
+        "4 tazas de agua",
+        "1 hoja de laurel",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "¼ taza de aceitunas rellenas picadas",
+        "1 cucharadita de comino",
+        "½ cucharadita de orégano",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "2 pounds boneless chicken breasts or thighs",
+        "4 cups water",
+        "1 bay leaf",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "1 can (8 oz) tomato sauce",
+        "¼ cup chopped stuffed olives",
+        "1 teaspoon cumin",
+        "½ teaspoon oregano",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el pollo en el agua con el laurel 20 a 25 minutos, hasta 165 °F. Guarde 1 taza del caldo.",
+        "Deje enfriar un poco y desmenúcelo con dos tenedores.",
+        "Sofría el sofrito en el aceite de achiote 3 minutos. Añada la salsa de tomate, las aceitunas, el comino, el orégano y la sal.",
+        "Añada el pollo y el caldo guardado, y cocine 10 minutos hasta que la salsa se reduzca y lo cubra.",
+        "Sirva con arroz, en sándwich, o úselo de relleno para pastelillos, alcapurrias, canoas o tacos."
+      ],
+      en: [
+        "Boil the chicken in the water with the bay leaf 20 to 25 minutes, to 165 °F. Save 1 cup of the broth.",
+        "Let cool slightly and shred with two forks.",
+        "Sauté the sofrito in the annatto oil 3 minutes. Add the tomato sauce, olives, cumin, oregano and salt.",
+        "Add the chicken and the saved broth and cook 10 minutes until the sauce reduces and coats it.",
+        "Serve with rice, in a sandwich, or use as a filling for pastelillos, alcapurrias, canoas or tacos."
+      ]
+    }
+  },
+  {
+    id: "pollo-frito-horno",
+    category: "aves",
+    name: { es: "Pollo \"Frito\" al Horno o en Freidora de Aire", en: "Oven or Air-Fryer \"Fried\" Chicken" },
+    time: "1 hr + adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 libras de muslos y patas de pollo con piel",
+        "1 cucharada de adobo",
+        "1 cucharadita de ajo en polvo",
+        "1 cucharadita de pimentón",
+        "1 cucharadita de orégano",
+        "½ taza de harina de trigo",
+        "2 cucharadas de maicena",
+        "1 cucharadita de polvo de hornear",
+        "2 cucharadas de aceite de oliva en aerosol o con brocha"
+      ],
+      en: [
+        "3 pounds chicken thighs and drumsticks, skin on",
+        "1 tablespoon adobo",
+        "1 teaspoon garlic powder",
+        "1 teaspoon paprika",
+        "1 teaspoon oregano",
+        "½ cup all-purpose flour",
+        "2 tablespoons cornstarch",
+        "1 teaspoon baking powder",
+        "2 tablespoons olive oil, sprayed or brushed"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el pollo con el adobo, el ajo en polvo, el pimentón y el orégano, y déjelo en la nevera al menos 1 hora.",
+        "Mezcle la harina, la maicena y el polvo de hornear (el polvo de hornear hace la piel crujiente), y pase el pollo por la mezcla, sacudiendo el exceso.",
+        "Rocíe o unte el aceite por todos lados.",
+        "Horno: en una rejilla sobre una bandeja a 425 °F, 40 a 45 minutos volteando a la mitad. Freidora de aire: a 380 °F, 22 a 25 minutos en una sola capa, volteando a la mitad.",
+        "Está listo cuando la piel está dorada y el muslo marca 175 °F. Queda crujiente como frito, con mucho menos aceite."
+      ],
+      en: [
+        "Season the chicken with the adobo, garlic powder, paprika and oregano and refrigerate at least 1 hour.",
+        "Mix the flour, cornstarch and baking powder (the baking powder makes the skin crisp) and dredge the chicken, shaking off the excess.",
+        "Spray or brush the oil on all sides.",
+        "Oven: on a rack over a sheet at 425 °F, 40 to 45 minutes, turning halfway. Air fryer: at 380 °F, 22 to 25 minutes in a single layer, turning halfway.",
+        "It's done when the skin is golden and the thigh reads 175 °F. Crisp like fried, with much less oil."
+      ]
+    }
+  },
+  {
+    id: "albondigas-pavo-criolla",
+    category: "aves",
+    name: { es: "Albóndigas de Pavo en Salsa Criolla", en: "Turkey Meatballs in Criollo Sauce" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1½ libras de pavo molido",
+        "½ taza de avena en hojuelas",
+        "1 huevo",
+        "3 cucharadas de sofrito",
+        "1 cucharadita de adobo",
+        "2 cucharadas de aceite de oliva",
+        "1 lata de 15 onzas de salsa de tomate",
+        "½ taza de agua",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharadita de orégano",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "1½ pounds ground turkey",
+        "½ cup rolled oats",
+        "1 egg",
+        "3 tablespoons sofrito",
+        "1 teaspoon adobo",
+        "2 tablespoons olive oil",
+        "1 can (15 oz) tomato sauce",
+        "½ cup water",
+        "¼ cup stuffed olives",
+        "1 teaspoon oregano",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle el pavo, la avena, el huevo, 1 cucharada del sofrito y el adobo. Forme 24 albóndigas con las manos húmedas.",
+        "Dórelas en el aceite 5 minutos, moviéndolas para que doren parejo. Sáquelas.",
+        "Sofría el resto del sofrito 2 minutos. Añada la salsa de tomate, el agua, las aceitunas y el orégano, y deje hervir.",
+        "Vuelva las albóndigas, tape y cocine a fuego bajo 15 minutos, hasta 165 °F por dentro.",
+        "Termine con el cilantro y sirva con arroz, espaguetis o en pan. La avena las mantiene jugosas sin pan rallado."
+      ],
+      en: [
+        "Mix the turkey, oats, egg, 1 tablespoon of the sofrito and the adobo. Shape 24 meatballs with wet hands.",
+        "Brown in the oil 5 minutes, rolling them to brown evenly. Remove.",
+        "Sauté the rest of the sofrito 2 minutes. Add the tomato sauce, water, olives and oregano and bring to a boil.",
+        "Return the meatballs, cover and simmer 15 minutes, to 165 °F inside.",
+        "Finish with the cilantro and serve with rice, spaghetti or in bread. The oats keep them juicy without breadcrumbs."
+      ]
+    }
+  },
+  {
+    id: "pollo-guisado-garbanzos",
+    category: "aves",
+    name: { es: "Pollo Guisado con Garbanzos", en: "Chicken Stewed with Chickpeas" },
+    time: "1 hr",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 libras de presas de pollo sin piel",
+        "1 cucharadita de adobo",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "1 lata de 15 onzas de garbanzos, escurridos",
+        "1 libra de papas en cubos",
+        "1½ tazas de agua",
+        "¼ taza de aceitunas rellenas",
+        "½ cucharadita de comino",
+        "1 pizca de sal"
+      ],
+      en: [
+        "3 pounds skinless chicken pieces",
+        "1 teaspoon adobo",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "1 can (8 oz) tomato sauce",
+        "1 can (15 oz) chickpeas, drained",
+        "1 pound potatoes, cubed",
+        "1½ cups water",
+        "¼ cup stuffed olives",
+        "½ teaspoon cumin",
+        "1 pinch salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el pollo y dórelo en el aceite de achiote 6 minutos.",
+        "Añada el sofrito, la salsa de tomate y el comino, y cocine 3 minutos.",
+        "Añada los garbanzos, las papas, el agua, las aceitunas y la sal.",
+        "Tape y cocine a fuego bajo 35 minutos, hasta que las papas estén blandas y el pollo llegue a 165 °F.",
+        "Destape 5 minutos si quiere la salsa más espesa. Sirva con arroz blanco; los garbanzos suman proteína y fibra."
+      ],
+      en: [
+        "Season the chicken with adobo and brown in the annatto oil 6 minutes.",
+        "Add the sofrito, tomato sauce and cumin and cook 3 minutes.",
+        "Add the chickpeas, potatoes, water, olives and salt.",
+        "Cover and simmer 35 minutes, until the potatoes are tender and the chicken reaches 165 °F.",
+        "Uncover 5 minutes if you want a thicker sauce. Serve with white rice; the chickpeas add protein and fiber."
+      ]
+    }
+  },
+  {
+    id: "muslos-mojo-recao-horno",
+    category: "aves",
+    name: { es: "Muslos de Pollo al Horno con Mojo de Recao", en: "Baked Chicken Thighs with Culantro Mojo" },
+    time: "50 min + adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 libras de muslos de pollo con hueso",
+        "1 cucharadita de adobo",
+        "10 hojas de recao",
+        "½ taza de cilantro",
+        "6 dientes de ajo",
+        "⅓ taza de aceite de oliva",
+        "3 cucharadas de jugo de limón",
+        "½ cucharadita de sal",
+        "1 cucharadita de comino"
+      ],
+      en: [
+        "3 pounds bone-in chicken thighs",
+        "1 teaspoon adobo",
+        "10 culantro (recao) leaves",
+        "½ cup cilantro",
+        "6 garlic cloves",
+        "⅓ cup olive oil",
+        "3 tablespoons lime juice",
+        "½ teaspoon salt",
+        "1 teaspoon cumin"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe el recao, el cilantro, el ajo, el aceite, el limón, la sal y el comino hasta tener un mojo verde.",
+        "Adobe los muslos y úntelos con la mitad del mojo. Déjelos en la nevera al menos 1 hora.",
+        "Caliente el horno a 425 °F y ponga los muslos con la piel hacia arriba en un molde.",
+        "Hornee 35 a 40 minutos, hasta que la piel dore y marquen 175 °F.",
+        "Sirva con el resto del mojo verde por encima, con arroz con gandules o viandas."
+      ],
+      en: [
+        "Blend the culantro, cilantro, garlic, oil, lime juice, salt and cumin into a green mojo.",
+        "Season the thighs with adobo and coat with half the mojo. Refrigerate at least 1 hour.",
+        "Heat the oven to 425 °F and place the thighs skin side up in a pan.",
+        "Bake 35 to 40 minutes, until the skin is golden and they read 175 °F.",
+        "Serve with the rest of the green mojo on top, with arroz con gandules or root vegetables."
+      ]
+    }
   }
 );

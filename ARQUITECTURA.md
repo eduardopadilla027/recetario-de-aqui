@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.22.0 · **Versión de la app:** 4.22.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,102 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.23.0 · **Versión de la app:** 4.23.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,118 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -64,7 +64,7 @@ cocine-a-gusto/
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
 │   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, más salsas y aderezos y platos fuertes veganos, y dulces y salsas de grosella, en cuarenta y tres tandas (ver §13)
-│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46), pescados y mariscos (tanda 47), jugos y bebidas tropicales (tanda 48) y sopas, asopaos, pastas y panes dulces (tanda 49), ver §13
+│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46), pescados y mariscos (tanda 47), jugos y bebidas tropicales (tanda 48), sopas, asopaos, pastas y panes dulces (tanda 49) y carnes y aves (tanda 50), ver §13
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── substitutes.js    sustitutos para cada alérgeno según el ingrediente (getSubstitutes)
@@ -137,8 +137,8 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | granos | Granos y Legumbres | 22 |
 | ensaladas | Ensaladas | 30 |
 | sopas | Sopas | 53 |
-| carnes | Carnes | 63 |
-| aves | Aves | 47 |
+| carnes | Carnes | 71 |
+| aves | Aves | 55 |
 | pescados | Pescado y Mariscos | 72 |
 | huevos | Huevos y Queso | 14 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 57 |
@@ -523,7 +523,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   primero y la lista de la época) siguen la corrección del administrador.
 - **Fecha de ingreso:** `RECIPE_ADDED` en `js/recipe-dates.js`, GENERADO por `node tools/recipe-dates.js` desde el
   historial de git (fecha del commit que escribió la línea `id: "…"`; las que aún no están en un commit, la de hoy).
-  Hoy: 165 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11 y 96 del 17.
+  Hoy: 165 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11 y 112 del 17.
   Se carga con `loadScript()` sólo al abrir el panel. **Después de añadir recetas, hay que volver a generarlo** (§11).
 - **Seguridad (`firestore.rules`, `match /recipeMeta/{id}`):** leer, cualquiera que entre; escribir y borrar, sólo
   administradores, con sólo esas 3 claves, `seasons` entre `todo`, `navidad`, `cuaresma`, `verano`, `gracias` y `lluvia`
@@ -602,7 +602,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,102). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,118). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -683,6 +683,25 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-17 — v4.23.0 · Más carnes y aves
+- *Pedido:* más recetas de carnes y aves.
+- Quincuagésima tanda en `js/recipes-5.js` (versiones propias), 16 platos que no estaban (ya había 63 de carnes y 47 de
+  aves):
+  - **Carnes (8):** lomo de cerdo al horno con mojo de naranja agria, pernil al caldero (sin horno), pinchos de res con
+    chimichurri de recao, costillas de cerdo al horno con mojo de ajo, cerdo agridulce con piña, res guisada en leche de
+    coco y recao, albóndigas glaseadas con guayaba y chuletas al ajillo con limón.
+  - **Aves (8):** pollo al horno con naranja agria y orégano brujo, pechugas en salsa de champiñones, pollo a la
+    vizcaína, pollo mechado a la criolla (también de relleno), pollo "frito" al horno o en freidora de aire, albóndigas
+    de pavo en salsa criolla (con avena), pollo guisado con garbanzos y muslos al horno con mojo de recao.
+  - Temperaturas seguras en los pasos: cerdo y res 145 °F con reposo, carne molida 160 °F, pollo 165 °F (muslos 175 °F).
+  - Las costillas rinden 8 porciones con menos aceite (509 kcal) y el pollo con garbanzos lleva sólo una pizca de sal
+    (el adobo, la salsa y los garbanzos ya traen).
+- **Iconos:** usan los dibujos de su tipo (`meatIcons`: asado, costillas, chuleta, albóndigas, pechuga, pollo asado,
+  frito, fricasé). Se corrigieron dos: el lomo al horno salía con el de guiso (ahora el de asado) y las albóndigas de
+  pavo con el de fricasé (ahora el de albóndigas: `aves` deja pasar `albondiga` a `dishIcons`).
+- Fechas de ingreso regeneradas. Total: **1,102 → 1,118 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador ("pollo" 7/7, "cerdo" 5/5, "res" 3/3, "freidora de aire" y
+  "air fryer") ✔; navegador: los 16 en ES y EN a 375 px con su nombre y su dibujo, sin desbordes ni errores ✔.
 ### 2026-10-17 — v4.22.0 · Jugos naturales con su vaso y su fruta (no 🧃)
 - *Pedido:* cambiar el icono de Jugos Naturales, que era 🧃 (jugo procesado de cajita), y que cada jugo tenga el icono
   más parecido a su receta.

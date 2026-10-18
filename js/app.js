@@ -17,7 +17,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
-const APP_VERSION = "4.22.0";
+const APP_VERSION = "4.23.0";
 const APP_REVISED = "2026-10-17";
 /* Lo que se muestra al público: "Más de 1,000 recetas", no el total exacto (que cambia con cada
    tanda). El total exacto sólo sale en #/admin (auth.js). Baja al millar: 1,054 → "1,000". */
@@ -371,6 +371,7 @@ const meatIcons = {
     [/^panceta/, "svg:ic-corte-panceta"],
     [/^pierna de cordero/, "svg:ic-corte-pierna-cordero"],
     [/^chuletitas de cordero/, "svg:ic-corte-chuletas-cordero"],
+    [/^lomo de cerdo al horno/, "svg:ic-pernil"], // tanda 50
     [/chuleta|churrasco|albondiga|longaniza|salchicha|morcilla|conejo|pincho|mofongo/, null],
     [/jamonilla/, "svg:ic-jamonilla"],
     [/napolitana/, "svg:ic-parmesana"],
@@ -399,7 +400,7 @@ const meatIcons = {
     [/^pechuga de pavo/, "svg:ic-corte-pechuga-pavo"],
     [/^muslos de pavo/, "svg:ic-corte-muslos-pavo"],
     [/^higaditos/, "svg:ic-corte-higaditos"],
-    [/pincho|pastelon/, null],
+    [/pincho|pastelon|albondiga/, null],
     [/^muslos de pollo al carbon/, "svg:ic-parrilla-muslos"],
     [/parmesana/, "svg:ic-parmesana"],
     [/cordon bleu/, "svg:ic-cordon-bleu"],
