@@ -933,7 +933,7 @@
           <div class="hero-copy">
             <p class="eyebrow" id="site-subtitle">Recetario de Cocina Puertorriqueña</p>
             <h1 class="hero-title" id="hero-title">El Sabor de la Cocina <span class="hero-accent">Puertorriqueña</span></h1>
-            <p class="hero-lead" id="site-author">Versión 4.27.0 · Revisada el 18 de octubre de 2026</p>
+            <p class="hero-lead" id="site-author">Versión 4.28.0 · Revisada el 18 de octubre de 2026</p>
 
             <form class="search" id="search-form" role="search">
               <label class="sr-only" for="search-input" data-i18n="searchLabel">Buscar recetas por nombre o ingrediente</label>
@@ -1111,6 +1111,8 @@
     <!-- ===================== MI RECETARIO Y COMPRAS (js/kitchen.js) ===================== -->
     <section id="view-mine" class="plans-view" hidden aria-labelledby="mine-title"></section>
     <section id="view-shop" class="plans-view" hidden aria-labelledby="shop-title"></section>
+    <!-- ===================== TÉRMINOS Y CONDICIONES (js/consent.js, js/consent-ui.js) ===================== -->
+    <section id="view-terms" class="plans-view" hidden aria-labelledby="terms-title"></section>
 
   </main>
 
@@ -1120,7 +1122,7 @@
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 900 600"><use href="#flag-pr"/></svg></span>
         <div>
           <p class="footer-name">Recetarios de Aquí · Cocina Boricua</p>
-          <p class="footer-text" id="footer-text">Recetas de la cocina tradicional puertorriqueña · Versión 4.27.0 · Revisión: 18 de octubre de 2026</p>
+          <p class="footer-text" id="footer-text">Recetas de la cocina tradicional puertorriqueña · Versión 4.28.0 · Revisión: 18 de octubre de 2026</p>
           <p class="footer-text footer-contact"><span data-i18n="contactLabel">Contacto:</span> <a href="mailto:recetariodeaqui@gmail.com">recetariodeaqui@gmail.com</a></p>
         </div>
       </div>
@@ -1129,6 +1131,7 @@
         <a href="#rapidas" data-i18n="quickShort">Recetas rápidas</a>
         <a href="#/planes" data-i18n="navPlans">Planes</a>
         <a href="#opiniones" data-i18n="navReviews">Opiniones</a>
+        <a href="#/terminos" data-i18n="navTerms">Términos y condiciones</a>
         <button type="button" class="footer-install" data-install="open"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="navInstall">Póngala en su celular</span></button>
       </nav>
     </div>
@@ -1168,8 +1171,10 @@
   <script src="js/filters.js"></script>
   <script src="js/cook.js"></script>
   <script src="js/install.js"></script>
+  <script src="js/consent.js"></script>
   <script src="js/auth-config.js"></script>
   <script src="js/auth.js"></script>
+  <script src="js/consent-ui.js"></script>
   <script src="js/photo.js"></script>
   <script src="js/reviews.js"></script>
   <script src="js/recipe-admin.js"></script>

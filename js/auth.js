@@ -223,7 +223,7 @@ let fbAuth = null;
 let fbDb = null;
 let authUser = null;          // usuario de Firebase con el correo validado
 let authIsAdmin = false;
-let authState = "loading";    // loading | signin | sent | confirm | verify | blocked | unconfigured | ready
+let authState = "loading";    // loading | signin | sent | confirm | verify | blocked | consent | unconfigured | ready
 let authMessage = "";         // error o aviso bajo el formulario
 let authSentTo = "";
 let adminUsers = [];          // filas cargadas en #/admin
@@ -388,6 +388,9 @@ function renderGate() {
           ${signOutBtn()}
         </div>`);
       break;
+    case "consent":
+      html = gateShell(TERMS[currentLang].consentTitle, consentBlockHTML("update"));
+      break;
     case "blocked":
       html = gateShell(tr.blockedTitle, `<p class="auth-text">${esc(tr.blocked)}</p><div class="auth-actions">${signOutBtn()}</div>`);
       break;
@@ -409,10 +412,15 @@ function renderGate() {
       html = gateShell(tr.title, `
         ${inAppNoticeHTML()}
         ${showcaseHTML()}
-        <p class="auth-text">${esc(tr.intro)}</p>
-        <h2 class="auth-h2">${esc(tr.pick)}</h2>
-        <div class="provider-grid">${buttons}</div>
-        ${emailForm}
+        ${consentBlockHTML("pre")}
+        <fieldset class="auth-entry" id="auth-entry" ${consentPending() ? "" : "disabled"}>
+          <legend class="sr-only">${esc(tr.pick)}</legend>
+          <p class="auth-text">${esc(tr.intro)}</p>
+          <h2 class="auth-h2">${esc(tr.pick)}</h2>
+          <p class="auth-entry-lock">${esc(TERMS[currentLang].needAll)}</p>
+          <div class="provider-grid">${buttons}</div>
+          ${emailForm}
+        </fieldset>
         <p class="auth-privacy"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>${esc(tr.privacy)}</p>`);
     }
   }
@@ -613,6 +621,8 @@ async function onUser(user) {
     const admin = await checkAdmin(user);
     const data = await recordUse(user, admin);
     if (data.blocked) { trustDevice(user.uid, false); setAuthState("blocked"); return; }
+    // Términos y consentimiento (js/consent-ui.js): sin la versión vigente aceptada no se entra.
+    if (typeof consentOnUser === "function" && !(await consentOnUser(user))) return;
     authIsAdmin = admin;
     authOffline = false;
     trustDevice(user.uid, true);
@@ -748,6 +758,7 @@ async function loadAdminData() {
       fbDb.collection("admins").get()
     ]);
     adminUsers = users.docs.map((d) => ({ id: d.id, ...d.data() }));
+    if (typeof loadAdminConsents === "function") await loadAdminConsents(); // js/consent-ui.js
     adminEmails = new Set(admins.docs.map((d) => d.id));
     ownerEmails = new Set(admins.docs.filter((d) => d.data().owner).map((d) => d.id));
     renderAdminTable();
@@ -779,7 +790,7 @@ function renderAdminTable() {
   const me = lower(authUser.email);
   box.innerHTML = `
     <table class="admin-table">
-      <thead><tr><th scope="col">${esc(tr.colEmail)}</th><th scope="col" class="num">${esc(tr.colCount)}</th><th scope="col">${esc(tr.colFirst)}</th><th scope="col">${esc(tr.colLast)}</th><th scope="col">${esc(tr.colRole)}</th><th scope="col">${esc(tr.colActions)}</th></tr></thead>
+      <thead><tr><th scope="col">${esc(tr.colEmail)}</th><th scope="col" class="num">${esc(tr.colCount)}</th><th scope="col">${esc(tr.colFirst)}</th><th scope="col">${esc(tr.colLast)}</th><th scope="col">${esc(tr.colRole)}</th><th scope="col">${esc(cui().colConsent)}</th><th scope="col">${esc(tr.colActions)}</th></tr></thead>
       <tbody>${rows.map((u) => {
         const isAdm = adminEmails.has(u.email);
         const self = u.email === me;
@@ -790,6 +801,7 @@ function renderAdminTable() {
           <td data-label="${esc(tr.colFirst)}" class="admin-date">${esc(fmtDate(u.firstSeen))}</td>
           <td data-label="${esc(tr.colLast)}" class="admin-date">${esc(fmtDate(u.lastSeen))}</td>
           <td data-label="${esc(tr.colRole)}"><span class="role-tag${isAdm ? " is-admin" : ""}">${esc(ownerEmails.has(u.email) ? tr.roleOwner : isAdm ? tr.roleAdmin : tr.roleUser)}</span>${u.blocked ? ` <span class="role-tag is-blocked">${esc(tr.blockedTag)}</span>` : ""}</td>
+          <td data-label="${esc(cui().colConsent)}" class="admin-consent">${consentCellHTML(u.id)}</td>
           <td data-label="${esc(tr.colActions)}" class="admin-actions">${fixed ? "—" : `
             <button type="button" class="btn btn-ghost btn-sm" data-admin="${isAdm ? "unadmin" : "admin"}" data-email="${esc(u.email)}">${esc(isAdm ? tr.removeAdmin : tr.makeAdmin)}</button>
             <button type="button" class="btn btn-ghost btn-sm" data-admin="${u.blocked ? "unblock" : "block"}" data-uid="${esc(u.id)}" data-email="${esc(u.email)}">${esc(u.blocked ? tr.unblock : tr.block)}</button>`}</td>
@@ -822,9 +834,9 @@ function exportCsv() {
   const tr = at();
   const iso = (ts) => (ts && ts.toDate ? ts.toDate().toISOString() : "");
   const cell = (s) => `"${String(s).replace(/"/g, '""')}"`;
-  const lines = [[tr.colEmail, tr.colCount, tr.colFirst, tr.colLast, tr.colRole, tr.blockedTag].map(cell).join(",")]
+  const lines = [[tr.colEmail, tr.colCount, tr.colFirst, tr.colLast, tr.colRole, tr.blockedTag, cui().csvConsent, cui().csvConsentAt, cui().csvEmail].map(cell).join(",")]
     .concat(adminUsers.map((u) => [u.email, adminEmails.has(u.email) ? "" : u.count || 0, iso(u.firstSeen), iso(u.lastSeen),
-      adminEmails.has(u.email) ? tr.roleAdmin : tr.roleUser, u.blocked ? "1" : "0"].map(cell).join(",")));
+      adminEmails.has(u.email) ? tr.roleAdmin : tr.roleUser, u.blocked ? "1" : "0", ...consentCSV(u.id)].map(cell).join(",")));
   const blob = new Blob(["﻿" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);

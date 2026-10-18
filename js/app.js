@@ -17,7 +17,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
-const APP_VERSION = "4.27.0";
+const APP_VERSION = "4.28.0";
 const APP_REVISED = "2026-10-18";
 /* Lo que se muestra al público: "Más de 1,000 recetas", no el total exacto (que cambia con cada
    tanda). El total exacto sólo sale en #/admin (auth.js). Baja al millar: 1,054 → "1,000". */
@@ -55,7 +55,7 @@ const translations = {
     navRecipes: "Recetas",
     navFavorites: "Favoritas",
     navPlans: "Planes",
-    navMine: "Mi recetario", navShop: "Compras", bnHome: "Inicio", bnMine: "Recetario",
+    navMine: "Mi recetario", navShop: "Compras", navTerms: "Términos y condiciones", bnHome: "Inicio", bnMine: "Recetario",
     cookMode: "Modo cocina", levelFact: "Dificultad", listenRecipe: "Escuchar receta",
     navReviews: "Opiniones",
     contactLabel: "Contacto:",
@@ -176,7 +176,7 @@ const translations = {
     navRecipes: "Recipes",
     navFavorites: "Favorites",
     navPlans: "Meal plans",
-    navMine: "My cookbook", navShop: "Shopping", bnHome: "Home", bnMine: "Cookbook",
+    navMine: "My cookbook", navShop: "Shopping", navTerms: "Terms and conditions", bnHome: "Home", bnMine: "Cookbook",
     cookMode: "Cook mode", levelFact: "Difficulty", listenRecipe: "Listen to recipe",
     navReviews: "Reviews",
     contactLabel: "Contact:",
@@ -1455,6 +1455,7 @@ function switchLang(lang) {
   if (typeof renderAdvPanel === "function") renderAdvPanel();
   if (typeof renderCook === "function") renderCook();
   if (typeof renderSeasonal === "function") renderSeasonal();
+  if (typeof renderTermsView === "function") renderTermsView();
   renderAuthTexts();
 }
 
@@ -1802,7 +1803,7 @@ function goBack() {
 function route() {
   const hash = decodeURIComponent(location.hash || "");
   // Las vistas de js/kitchen.js se esconden aquí; las demás las esconde cada show*().
-  for (const id of ["view-mine", "view-shop"]) { const el = $(id); if (el) el.hidden = true; }
+  for (const id of ["view-mine", "view-shop", "view-terms"]) { const el = $(id); if (el) el.hidden = true; }
   if (typeof setBottomNav === "function") setBottomNav(hash);
   const m = hash.match(/^#\/receta\/(.+)$/);
   if (m) { showRecipe(m[1]); return; }
@@ -1810,6 +1811,7 @@ function route() {
   if (hash === "#/admin") { showAdmin(); return; }
   if (hash === "#/mi-recetario") { showMine(); return; }  // js/kitchen.js
   if (hash === "#/compras") { showShop(); return; }       // js/kitchen.js
+  if (hash === "#/terminos") { showTerms(); return; }     // js/consent-ui.js
   const anchor = hash.startsWith("#") && !hash.startsWith("#/") ? hash.slice(1) : null;
   showHome(anchor);
 }

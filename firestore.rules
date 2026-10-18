@@ -5,6 +5,7 @@
 // admins/{email}: { addedBy, addedAt, owner? }
 // recipeMeta/{id}: { seasons, updatedBy, updatedAt }  — temporada fijada por un administrador (js/recipe-admin.js)
 // reviews/{target}__{uid}: { target, uid, name, stars, text, hasPhoto?, status, createdAt, updatedAt }  — js/reviews.js
+// consents/{uid}: { uid, email, version, lang, items, acceptedAt, ua, history, at, emailSentAt? }  — js/consent-ui.js
 // reviewPhotos/{mismo id}: { target, uid, photo (data URL WebP/JPEG ya achicado por js/photo.js), updatedAt }
 //
 // Dueño (administrador fijo): ownerEmail(). Al entrar, la app le crea admins/{su correo} con owner: true.
@@ -70,6 +71,28 @@ service cloud.firestore {
         && request.resource.data.kitchen is map
         && request.resource.data.kitchen.keys().hasOnly(['ts', 'cols', 'notes', 'cooked', 'shop'])
         && request.resource.data.updatedAt == request.time;
+    }
+
+    // Consentimiento de los Términos (js/consent-ui.js): la persona guarda el suyo; los administradores lo leen.
+    // Nadie lo borra desde la app (es la constancia de lo aceptado).
+    match /consents/{uid} {
+      allow read: if verified() && (request.auth.uid == uid || isAdmin());
+      // Aceptar (primera vez o una versión nueva): el registro completo, con la hora del servidor.
+      allow create, update: if verified() && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['uid', 'email', 'version', 'lang', 'items', 'acceptedAt', 'ua', 'history', 'at'])
+        && request.resource.data.uid == uid
+        && request.resource.data.email == myEmail()
+        && request.resource.data.version is string && request.resource.data.version.size() <= 20
+        && request.resource.data.lang in ['es', 'en']
+        && request.resource.data.items is list && request.resource.data.items.size() <= 5
+        && request.resource.data.acceptedAt is string && request.resource.data.acceptedAt.size() <= 40
+        && request.resource.data.ua is string && request.resource.data.ua.size() <= 200
+        && request.resource.data.history is list && request.resource.data.history.size() <= 20
+        && request.resource.data.at == request.time;
+      // Anotar que se envió el correo de confirmación.
+      allow update: if verified() && request.auth.uid == uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['emailSentAt'])
+        && request.resource.data.emailSentAt == request.time;
     }
 
     match /admins/{email} {

@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.27.0 · **Versión de la app:** 4.27.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,118 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.28.0 · **Versión de la app:** 4.28.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,118 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -86,6 +86,8 @@ cocine-a-gusto/
 │   ├── filters.js        "¿Qué tengo en la nevera?" y filtros combinables (§7.11)
 │   ├── cook.js           modo cocina, temporizadores y voz (§7.9)
 │   ├── auth-config.js    configuración web de Firebase y proveedores de correo que se muestran (§7.3)
+│   ├── consent.js        Términos y Condiciones (ES/EN), las 3 casillas y el correo de confirmación; también lo usa api/ (§7.14)
+│   ├── consent-ui.js     consentimiento en la entrada, en la cuenta (consents/{uid}), en #/admin y la página #/terminos (§7.14)
 │   ├── auth.js           pantalla de entrada, validación del correo, conteo de usos y panel #/admin (§7.3)
 │   ├── install.js        "Póngala en su celular": guía para crear el icono en la pantalla de inicio (§7.6)
 │   ├── photo.js          motor de fotos: achica en el navegador la foto tomada o subida antes de guardarla (§7.5)
@@ -95,6 +97,7 @@ cocine-a-gusto/
 │   ├── kitchen.js        Mi recetario (#/mi-recetario) y Lista de compras (#/compras) (§7.10)
 │   └── pwa.js            registra sw.js, aviso sin conexión y barra de abajo del celular (§7.13)
 ├── sw.js                 trabajador de servicio: la app sin internet (§7.13)
+├── api/consent-email.js  función de Vercel: envía el correo que confirma el consentimiento (§7.14)
 ├── tools/usda/           map.js (alimento → registro del USDA), resolve.js y gen.js: generan js/nutrition-usda.js (§8)
 ├── tools/recipe-dates.js genera js/recipe-dates.js del historial de git (no se publica: .vercelignore) (§7.8, §11)
 ├── images/               (vacía: reservada para fotos)
@@ -110,7 +113,7 @@ cocine-a-gusto/
 ```
 
 **Orden de carga (`index.html`):** `recipes.js` → `recipes-extra.js` → `recipes-2.js` → `recipes-3.js` → `recipes-4.js` → `recipes-5.js`
-→ `nutrition-usda.js` → `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `seasonal.js` → `filters.js` → `cook.js` → `install.js` (usa `app.js`; antes de `auth.js`, que llama a `installButtonHTML()`) → `auth-config.js` → `auth.js` (usa `app.js`) → `photo.js` → `reviews.js` (usa `app.js`, `auth.js` y `photo.js`) → `recipe-admin.js` (usa `app.js`, `plans.js` y `auth.js`; carga `recipe-dates.js` al abrir el panel) → `kitchen.js` (usa `app.js`, `nutrition.js` y `auth.js`) → `pwa.js`.
+→ `nutrition-usda.js` → `nutrition.js` → `advisories.js` → `substitutes.js` → `search.js` → `families.js` → `pairings.js` → `app.js` → `plans.js` (usa funciones de `app.js`) → `seasonal.js` → `filters.js` → `cook.js` → `install.js` (usa `app.js`; antes de `auth.js`, que llama a `installButtonHTML()`) → `consent.js` → `auth-config.js` → `auth.js` (usa `app.js`) → `photo.js` → `reviews.js` (usa `app.js`, `auth.js` y `photo.js`) → `recipe-admin.js` (usa `app.js`, `plans.js` y `auth.js`; carga `recipe-dates.js` al abrir el panel) → `kitchen.js` (usa `app.js`, `nutrition.js` y `auth.js`) → `pwa.js`.
 `app.js` llama a las funciones de los archivos de después (`advOk`, `stepTimersHTML`, `renderRecipeKitchen`, `showMine`…) sólo
 cuando la página ya cargó, con `typeof … === "function"`. Un archivo de recetas nuevo **debe** añadirse aquí, después de los anteriores.
 
@@ -636,6 +639,46 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   Planes, Recetario y Compras; `setBottomNav()` (llamada desde `route()`) marca la página actual. No sale con la
   pantalla de entrada ni en el modo cocina.
 
+### 7.14 Términos, consentimiento y correo de confirmación (`js/consent.js`, `js/consent-ui.js`, `api/consent-email.js`)
+
+- **Texto:** `TERMS` (ES/EN): resumen de 5 puntos y 15 secciones (quiénes somos y aceptación; edad y menores; qué
+  ofrece; **no es consejo médico ni nutricional** con la lista de cuándo consultar y el aviso del autismo; la nutrición es
+  estimada y el USDA no avala la app; alergias y seguridad; responsabilidad de la persona; cuenta y uso aceptable;
+  **privacidad**: qué se guarda, para qué, dónde y quién lo ve; reseñas y fotos; propiedad intelectual; limitación de
+  responsabilidad; cambios; ley de Puerto Rico; contacto). `CONSENT_ITEMS`: tres casillas obligatorias — `terms` (acepto
+  los términos), `health` (los planes y la nutrición son orientación, no consejo médico) y `data` (18 años o permiso del
+  tutor, y autorizo guardar mis datos, incluidos los de salud). **Conviene que lo revise un abogado en Puerto Rico.**
+- **`CONSENT_VERSION`** ("2026-10-18"): si el texto cambia de forma importante, se sube y todos aceptan otra vez al entrar.
+- **Antes de entrar:** la pantalla de entrada muestra el resumen, "Leer los términos completos" (caja con todo el texto)
+  y las casillas; los botones de Gmail, Yahoo… y el enlace por correo están en `<fieldset id="auth-entry" disabled>`
+  hasta marcar las tres. Lo aceptado se guarda en el navegador (`rcb.consent`: versión, casillas, hora e idioma).
+- **Al entrar (`consentOnUser`, desde `onUser` en auth.js, después de revisar si está suspendida):** si
+  `consents/{uid}` ya tiene la versión vigente, entra (y si el correo no se había enviado, lo reintenta). Si no, y hay
+  aceptación en el navegador, guarda `consents/{uid} = { uid, email, version, lang, items, acceptedAt (hora local al
+  marcar), ua (navegador), history (versiones anteriores), at (hora del servidor) }` y pide el correo. Si no hay
+  aceptación (cuentas que ya existían, otro navegador, versión nueva), estado **"consent"** ("Antes de continuar"): las
+  casillas y "Acepto y continúo". Si Firestore aún no tiene las reglas de `consents`, se entra con lo aceptado en el
+  navegador (aviso en la consola) para no dejar a nadie fuera.
+- **Administración:** `#/admin` lee `consents` (`loadAdminConsents`) y muestra la columna **Consentimiento**: versión
+  (verde si es la vigente), fecha y hora, y "correo enviado / sin enviar"; "Pendiente" si no aceptó. El CSV añade
+  "Versión aceptada", "Fecha de aceptación" y "Correo de confirmación". Nadie puede borrar un consentimiento desde la app.
+- **Motor de correo (`api/consent-email.js`, función de Vercel, `POST /api/consent-email`):** comprueba el token de
+  Firebase de la persona con las llaves públicas de Google (WebCrypto, sin cuentas de servicio: firma, proyecto,
+  emisor, vencimiento y correo validado), lee su `consents/{uid}` por la API REST de Firestore con esa misma sesión,
+  arma el correo con `consentEmail()` (mismo texto de `js/consent.js`: saludo, fecha y hora de Puerto Rico, versión, las
+  casillas aceptadas, el resumen, el enlace a `#/terminos` y el contacto; HTML y texto) y lo envía por **Resend** sólo al
+  correo de la sesión, con respuesta a recetariodeaqui@gmail.com. Máximo un correo cada 10 minutos por persona. Al
+  enviarse, la app anota `emailSentAt`. Sin `RESEND_API_KEY` responde 503 y la app reintenta al volver a entrar, sin aviso.
+- **Puesta en marcha del correo (una vez):** (1) cuenta en https://resend.com; (2) Domains → añadir
+  `recetariodeaqui.com` y poner sus registros DNS en Vercel (Domains → recetariodeaqui.com → DNS); (3) API Keys → crear
+  una con permiso de envío; (4) en Vercel → proyecto → Settings → Environment Variables: `RESEND_API_KEY` (y, si se
+  quiere otro remitente, `CONSENT_FROM`, por defecto "Recetarios de Aquí <confirmaciones@recetariodeaqui.com>"); (5)
+  volver a publicar.
+- **Reglas:** publicar el bloque `match /consents/{uid}` de `firestore.rules` (la persona crea o cambia el suyo con la
+  hora del servidor; sólo puede añadir después `emailSentAt`; lo leen ella y los administradores).
+- **`#/terminos`:** los términos completos para leer o imprimir (enlace en el pie) y, con la sesión abierta, "Usted aceptó
+  la versión X el …".
+
 ### 7.2 Planes de comida (`js/plans.js`, ruta `#/planes`)
 - **Acceso:** enlace "Planes" / "Meal plans" en el menú y en el pie. Vista `<section id="view-plans">`; `route()` llama a
   `showPlans()`; `showHome()` y `showRecipe()` la ocultan. Desde un plan, una receta se abre con `data-open` y "Atrás"
@@ -873,6 +916,19 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
 entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, y el texto
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
+
+### 2026-10-18 — v4.28.0 · Términos y Condiciones, consentimiento y correo de confirmación
+- *Pedido:* términos y consentimiento sobre el uso de la app (sobre todo los planes de comida) que el usuario acepte
+  antes de entrar con su correo; guardar la aceptación como parte de la información de administrador del usuario; y un
+  motor que le envíe por correo la confirmación de lo que aceptó, con su texto.
+- `js/consent.js` (texto ES/EN, 3 casillas, correo), `js/consent-ui.js` (entrada, estado "consent", `consents/{uid}`,
+  columna en `#/admin` y CSV, `#/terminos`), `api/consent-email.js` (función de Vercel con Resend) y reglas
+  `consents` en `firestore.rules` (§7.14).
+- **Pendiente del dueño:** publicar las reglas en Firebase y configurar Resend + `RESEND_API_KEY` en Vercel (§7.14);
+  hasta entonces se guarda la aceptación en el navegador y el correo se reintenta al entrar.
+- Verificado: los botones de entrar se encienden sólo con las tres casillas; estado "consent" con "Acepto y continúo";
+  ES/EN; `#/terminos` con las 15 secciones; sin desbordes a 375 px; la función rechaza pedidos sin sesión, con otro
+  método o con un token falso; el correo de muestra se genera bien.
 
 ### 2026-10-18 — v4.27.0 · Escuchar la receta, voz de hombre o mujer y comandos cortos
 - *Pedido:* poder dictar (oír) las recetas por voz, escoger voz de hombre o de mujer, y hablarle con comandos cortos:
