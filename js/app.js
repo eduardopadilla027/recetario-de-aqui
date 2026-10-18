@@ -18,7 +18,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.31.1";
+const APP_VERSION = "4.32.0";
 const APP_REVISED = "2026-10-18";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
@@ -456,6 +456,17 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
+  // Arroces y habichuelas (tanda 53): los dibujos de arroz y de granos que ya había.
+  [/^arroz junto/, "svg:ic-arroz-habichuelas"],
+  [/^arroz imperial/, "svg:ic-arroz-cremoso"],
+  [/^arroz con pescado/, "svg:ic-arroz-pescado"],
+  [/^arroz con carne molida/, "svg:ic-arroz-carne"],
+  [/^arroz con chuletas/, "svg:ic-arroz-cerdo"],
+  [/^pegao/, "svg:ic-arroz-ajo"],
+  [/^arroz con lentejas/, "svg:ic-granos-lentejas"],
+  [/^arroz con pavo/, "svg:ic-arroz-pollo"],
+  [/^potaje de habichuelas blancas/, "svg:ic-granos-blancas"],
+  [/^habichuelas con bolitas/, "svg:ic-granos-rosadas"],
   // Postres y bizcochos (tanda 52): los bizcochos usan 🍰 como la mayoría de los que había.
   [/^flan de guineo/, "svg:ic-flan-fruta"],
   [/^tembleque de guayaba/, "svg:ic-pos-tembleque-guayaba"],

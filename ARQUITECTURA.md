@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.31.1 · **Versión de la app:** 4.31.1 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,150 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.32.0 · **Versión de la app:** 4.32.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,166 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -189,7 +189,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | calientes | Bebidas Calientes | 39 |
 | frutas | Frutas | 36 |
 | cereales | Cereales | 18 |
-| granos | Granos y Legumbres | 22 |
+| granos | Granos y Legumbres | 29 |
 | ensaladas | Ensaladas | 34 |
 | sopas | Sopas | 53 |
 | carnes | Carnes | 74 |
@@ -204,7 +204,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | panes | Pan y Panecillos | 46 |
 | emparedados | Emparedados | 25 |
 | postres | Helados, Budines, Flan y Otros Postres | 132 |
-| arroces | Arroces y Habichuelas | 56 |
+| arroces | Arroces y Habichuelas | 65 |
 | vegetales | Vegetales y Viandas | 84 |
 | salsas | Salsas y Aderezos | 72 |
 | bebidas | Bebidas | 43 |
@@ -639,7 +639,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   primero y la lista de la época) siguen la corrección del administrador.
 - **Fecha de ingreso:** `RECIPE_ADDED` en `js/recipe-dates.js`, GENERADO por `node tools/recipe-dates.js` desde el
   historial de git (fecha del commit que escribió la línea `id: "…"`; las que aún no están en un commit, la de hoy).
-  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17 y 36 del 18 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
+  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17 y 52 del 18 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
   Se carga con `loadScript()` sólo al abrir el panel. **Después de añadir recetas, hay que volver a generarlo** (§11).
 - **Seguridad (`firestore.rules`, `match /recipeMeta/{id}`):** leer, cualquiera que entre; escribir y borrar, sólo
   administradores, con sólo esas 3 claves, `seasons` entre `todo`, `navidad`, `cuaresma`, `verano`, `gracias` y `lluvia`
@@ -787,7 +787,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - **Por qué:** la app usa `#/receta/<id>`, y para Google todo lo que va después de `#` es la portada: ninguna receta salía
   en las búsquedas ("receta de pernil") y todos los enlaces compartidos se veían iguales (título, texto y bandera).
 - **`node tools/prerender.js`** (sin dependencias; carga los scripts en `vm` como el navegador) genera:
-  `receta/<id>.html` (1,150 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
+  `receta/<id>.html` (1,166 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
   `vercel.json`. Cada una es ligera y se lee sin JavaScript: título y descripción propios ("Coquito: receta puertorriqueña
   paso a paso para 12 porciones. Lleva leche de coco… Lista en 4 h 15 min."), `canonical`, Open Graph y Twitter con el
   nombre del plato, tiempo de cocina y total, porciones, calorías estimadas, alérgenos, ingredientes y pasos en español y
@@ -991,7 +991,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,150). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,166). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -1097,6 +1097,32 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-18 — v4.32.0 · Más arroces y habichuelas
+- *Pedido:* más recetas de arroces y habichuelas.
+- Quincuagésima tercera tanda en `js/recipes-5.js` (versiones propias), 16 que no estaban (había 56 arroces y 22 granos):
+  - **Arroces (9):** arroz junto con habichuelas rosadas, arroz imperial boricua (con el arroz y el pollo del día
+    anterior), arroz blanco con leche de coco (salado), arroz con pescado y recao, arroz con carne molida, arroz con
+    chuletas ahumadas, pegao crujiente de arroz, arroz con lentejas y cebolla caramelizada (vegano) y arroz con pavo (con
+    el pavo que sobra).
+  - **Habichuelas y granos (7):** habichuelas rosadas desde cero (secas, en olla de presión, con remojo), potaje de
+    habichuelas blancas con repollo y chorizo, habichuelas con bolitas de plátano, habichuelas rosadas con salchichas,
+    habichuelas negras con calabaza y cilantro (veganas), gandules secos desde cero y habichuelas coloradas con patitas.
+  - Menos sal o caldo donde el sodio pasaba de ~900 mg (arroz con pescado, arroz con chuletas, habichuelas con bolitas).
+- **Nutrición** (`nutrition.js`, §8): nuevos granos secos crudos, "habichuelas rosadas/coloradas secas" (343 kcal) y
+  "gandules secos" (343 kcal), con valores de USDA SR Legacy añadidos a mano; antes la tabla sólo tenía los de lata (92
+  kcal) y los contaba igual. También están en `tools/usda/map.js` para la próxima vez que se regenere
+  `js/nutrition-usda.js` (no se regeneró: hace falta descargar la base SR Legacy). La sopa de habichuelas coloradas, que
+  lleva 1 libra de secas, pasa de 174 a 370 kcal por porción.
+- **Iconos:** usan los dibujos de arroz y de granos que había (arroz con habichuelas, cremoso, con pescado, con carne,
+  con cerdo, con ajo para el pegao, lentejas, arroz con pollo para el de pavo, habichuelas blancas y rosadas); antes 8
+  arroces salían con 🍚.
+- **Familias** (`families.js`, arroces): "Con pollo y carnes" incluye carne molida, chuletas, pavo y el imperial; "Con
+  pescado y mariscos", pescado; "Con gandules, habichuelas y garbanzos", lentejas. Ninguna receta anterior cambió.
+- Fechas regeneradas y `node tools/prerender.js`: 1,166 páginas y `sitemap.xml` con 1,168 direcciones. Total: **1,150 →
+  1,166 recetas**.
+- *Verificado:* `node tools/check-recipes.js` 0 errores y 0 avisos; nutrición 0 sin contar; navegador: las 16 en ES y EN
+  a 375 px con su nombre y su dibujo, sin desbordes ni errores de consola; las habichuelas desde cero muestran "1 h 15 min
+  de cocina · 9 h 15 min en total (remojo)".
 ### 2026-10-18 — v4.31.1 · La portada vuelve a decir "Más de 1,000 recetas"
 - *Pedido:* volver a poner "más de 1,000 recetas" en la portada (la revisión del sitio, v4.30, había puesto el total exacto).
 - `js/app.js`: `publicRecipeCount()` vuelve a bajar el total al millar (1,150 → "1,000") y `statsHero` dice "Más de 1,000

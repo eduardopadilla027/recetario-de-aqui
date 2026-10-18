@@ -138,9 +138,9 @@ const RECIPE_FAMILIES = {
     ["dulces", { es: "Dulces de coco y frutas", en: "Coconut and fruit sweets" }, null]
   ],
   arroces: [
-    ["granos", { es: "Con gandules, habichuelas y garbanzos", en: "With pigeon peas, beans and chickpeas" }, /gandules|habichuelas|moros|mamposteao|garbanzos/],
-    ["carnes", { es: "Con pollo y carnes", en: "With chicken and meats" }, /pollo|alitas|guinea|mollejas|pernil|costillitas|longaniza|salchichas|carne bif|salami|locrio|chorizo|tocineta/],
-    ["mar", { es: "Con pescado y mariscos", en: "With fish and seafood" }, /camarones|langosta|jueyes|pulpo|calamares|bacalao|atun|sardinas/],
+    ["granos", { es: "Con gandules, habichuelas y garbanzos", en: "With pigeon peas, beans and chickpeas" }, /gandules|habichuelas|moros|mamposteao|garbanzos|lentejas/],
+    ["carnes", { es: "Con pollo y carnes", en: "With chicken and meats" }, /pollo|alitas|guinea|mollejas|pernil|costillitas|longaniza|salchichas|carne bif|salami|locrio|chorizo|tocineta|carne molida|chuletas|pavo|imperial/],
+    ["mar", { es: "Con pescado y mariscos", en: "With fish and seafood" }, /camarones|langosta|jueyes|pulpo|calamares|bacalao|atun|sardinas|pescado/],
     ["fritos", { es: "Arroces fritos", en: "Fried rice" }, /chino|frito/],
     ["paellas", { es: "Paellas", en: "Paellas" }, /paella/],
     ["otros", { es: "Arroz blanco, de hierbas y de sabores", en: "White, herb and flavored rice" }, null]

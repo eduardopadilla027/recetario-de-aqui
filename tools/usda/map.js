@@ -138,6 +138,8 @@ module.exports = {
   "garbanzo": ["^Chickpeas \\(garbanzo beans, bengal gram\\), mature seeds, canned, solids and liquids$", 1],
   "gandul": null,
   "lenteja": ["^Lentils, raw$", 1],
+  "habichuelas rosadas secas": ["^Beans, pink, mature seeds, raw$", 1],
+  "gandules secos": ["^Pigeon peas \\(red gram\\), mature seeds, raw$", 1],
   "habichuelas tiernas": ["^Beans, snap, green, raw$", 1],
   "petit pois": ["^Peas, green, canned, regular pack, drained solids$|^Peas, green, frozen, unprepared", 1],
   "platano": ["^Plantains, green, raw$",1],

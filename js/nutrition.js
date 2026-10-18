@@ -172,6 +172,10 @@ const NUTRI_FOODS = [
   F("garbanzo", 120, 6.2, 19, 3.5, 5.2, 2.2, 0.2, 250, { can: 425, cup: 240 }),
   F("gandul", 95, 5, 17, 1, 5, 0.5, 0.1, 250, { can: 425, cup: 240 }),
   F("lenteja", 352, 24.6, 63, 2, 10.7, 1, 0.2, 6, { cup: 192 }),
+  // Secas, crudas (para cocinar desde cero; v4.32): valores de USDA SR Legacy, añadidos a mano
+  // porque js/nutrition-usda.js no se regeneró (tools/usda/map.js ya las tiene para la próxima vez).
+  F("habichuelas rosadas secas|habichuelas coloradas secas|habichuelas secas", 343, 21, 64.2, 2.2, 12.7, 1.1, 0.3, 8, { cup: 210 }),
+  F("gandules secos", 343, 21.7, 62.8, 0, 15, 1.5, 0.3, 17, { cup: 205 }),
   F("habichuelas tiernas", 31, 1.8, 7, 3.3, 2.7, 0.2, 0, 6, { cup: 110 }),
   F("petit pois|guisante", 81, 5.4, 14.5, 5.7, 5.1, 0.4, 0.1, 5, { cup: 145, can: 250 }),
   // Viandas y vegetales
