@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.17.0 · **Versión de la app:** 4.17.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,054 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.18.0 · **Versión de la app:** 4.18.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,070 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -64,7 +64,7 @@ cocine-a-gusto/
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
 │   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, más salsas y aderezos y platos fuertes veganos, y dulces y salsas de grosella, en cuarenta y tres tandas (ver §13)
-│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44) postres puertorriqueños (tanda 45) y frutas tropicales de la isla (tanda 46), ver §13
+│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46) y pescados y mariscos (tanda 47), ver §13
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── substitutes.js    sustitutos para cada alérgeno según el ingrediente (getSubstitutes)
@@ -133,10 +133,10 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | cereales | Cereales | 18 |
 | granos | Granos y Legumbres | 22 |
 | ensaladas | Ensaladas | 30 |
-| sopas | Sopas | 46 |
+| sopas | Sopas | 47 |
 | carnes | Carnes | 63 |
 | aves | Aves | 47 |
-| pescados | Pescado y Mariscos | 57 |
+| pescados | Pescado y Mariscos | 72 |
 | huevos | Huevos y Queso | 14 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 57 |
 | pastas | Pastas | 21 |
@@ -567,7 +567,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,054). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,070). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -647,6 +647,27 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-17 — v4.18.0 · Más pescados y mariscos
+- *Pedido:* más recetas de pescados y mariscos.
+- Cuadragésima séptima tanda en `js/recipes-5.js` (versiones propias), 16 platos que no estaban (ya había 115 recetas con
+  pescado o mariscos):
+  - **Bacalao (3):** pastelón de bacalao con amarillos (el de Cuaresma), bacalao en escabeche y bacalao rebozado.
+  - **Pescado (7):** filete encebollado, pescado sudado a la criolla, filete con costra de platanutres, dorado con costra
+    de coco y salsa de piña, atún a la plancha con mojo de recao, tortitas de atún con maíz y tilapia en salsa de
+    alcaparras y limón.
+  - **Mariscos (5):** camarones glaseados con guayaba, pulpo guisado a la criolla con papas, ensalada fría de pulpo y
+    mangó, carrucho en salsa de coco y colas de langosta rellenas al horno. **Sopas (1):** sancocho de pescado con viandas.
+  - Avisos en los pasos: cómo desalar el bacalao, temperatura del pescado (145 °F) y de la langosta (140 °F), atún poco
+    hecho y embarazo o defensas bajas, temporada legal del carrucho, espinas en el sancocho. Las alertas de
+    `advisories.js` (ciguatera en mero y dorado, mercurio en el atún, veda del carrucho y la langosta) salen solas.
+- **Iconos:** 11 dibujos nuevos `ic-mar-*` en el estilo de los `ic-pez-*`; el bacalao en escabeche, las tortitas de atún
+  y la tilapia reutilizan `ic-pez-escabeche`, `ic-pes-tortitas` e `ic-pes-tilapia` (la tilapia salía con 🍅). La langosta
+  usa 🦞 y el sancocho el dibujo de sancocho.
+- La portada sigue diciendo "Más de 1,000 recetas"; el total exacto (1,070) está en `#/admin`.
+- Total: **1,054 → 1,070 recetas**.
+- *Verificado:* datos en Node ✔ (ids únicos, ES/EN parejos, 0 sin contar); buscador: "bacalao" trae los 3 nuevos,
+  "pescado" los 16, "pulpo" los 2 ✔; navegador: los 16 en ES y EN a 375 px con su nombre y su dibujo, sin desbordes ni
+  errores de consola ✔.
 ### 2026-10-17 — v4.17.0 · "Más de 1,000 recetas" al público; el total exacto, sólo para administradores
 - *Pedido:* poner "más de 1,000 recetas tradicionales" en vez del total, y guardar el total en la cuenta de administrador.
 - `js/app.js`: `publicRecipeCount()` baja el total al millar (1,054 → "1,000"; con menos de 1,000, a la centena). La

@@ -2279,5 +2279,796 @@ recipes.push(
         "Keep refrigerated up to 3 weeks. Goes with pernil, pork chops, roast chicken, or with cheese and crackers."
       ]
     }
+  },
+  // ---------- Tanda 47: más pescados y mariscos (16) ----------
+  {
+    id: "pastelon-bacalao",
+    category: "pescados",
+    name: { es: "Pastelón de Bacalao con Amarillos", en: "Salt Cod and Ripe Plantain Pastelón" },
+    time: "1 hr 30 min + remojo",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 libra de bacalao salado sin espinas",
+        "5 plátanos maduros (amarillos)",
+        "Aceite vegetal para freír",
+        "3 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 cebolla en ruedas finas",
+        "½ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas picadas",
+        "1 cucharada de alcaparras",
+        "4 huevos batidos",
+        "1 taza de queso mozzarella rallado"
+      ],
+      en: [
+        "1 pound boneless salt cod",
+        "5 ripe plantains (amarillos)",
+        "Vegetable oil for frying",
+        "3 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 onion, thinly sliced",
+        "½ cup tomato sauce",
+        "¼ cup chopped stuffed olives",
+        "1 tablespoon capers",
+        "4 eggs, beaten",
+        "1 cup shredded mozzarella cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Desale el bacalao: remójelo en agua fría 12 horas en la nevera, cambiando el agua 3 veces. Hiérvalo 10 minutos, escúrralo y desmenúcelo.",
+        "Pele los amarillos, córtelos a lo largo en lascas finas y fríalas en aceite a 350 °F hasta que doren. Escurra.",
+        "Sofría el sofrito y la cebolla en el aceite de oliva 4 minutos. Añada el bacalao, la salsa de tomate, las aceitunas y las alcaparras, y cocine 8 minutos.",
+        "Caliente el horno a 350 °F. En un molde engrasado, ponga la mitad del huevo, una capa de amarillos, todo el bacalao, la mitad del queso y otra capa de amarillos. Cubra con el resto del huevo y del queso.",
+        "Hornee 30 minutos hasta que el huevo cuaje y el queso dore. Deje reposar 10 minutos antes de cortar. Es el pastelón de Cuaresma, cuando no se come carne."
+      ],
+      en: [
+        "Desalt the cod: soak in cold water 12 hours in the fridge, changing the water 3 times. Boil 10 minutes, drain and flake.",
+        "Peel the ripe plantains, slice lengthwise thinly and fry at 350 °F until golden. Drain.",
+        "Sauté the sofrito and onion in the olive oil 4 minutes. Add the cod, tomato sauce, olives and capers, and cook 8 minutes.",
+        "Heat the oven to 350 °F. In a greased dish, layer half the egg, a layer of plantains, all the cod, half the cheese and another layer of plantains. Top with the rest of the egg and cheese.",
+        "Bake 30 minutes until the egg sets and the cheese browns. Let rest 10 minutes before cutting. It's the Lenten pastelón, for when meat isn't eaten."
+      ]
+    }
+  },
+  {
+    id: "bacalao-escabeche",
+    category: "pescados",
+    name: { es: "Bacalao en Escabeche", en: "Pickled Salt Cod (Escabeche)" },
+    time: "40 min + remojo + 1 día de reposo",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1½ libras de bacalao salado sin espinas",
+        "¾ taza de aceite de oliva",
+        "½ taza de vinagre",
+        "2 cebollas grandes en ruedas",
+        "6 dientes de ajo en lascas",
+        "1 pimiento rojo en tiras",
+        "10 granos de pimienta",
+        "3 hojas de laurel",
+        "¼ taza de aceitunas rellenas"
+      ],
+      en: [
+        "1½ pounds boneless salt cod",
+        "¾ cup olive oil",
+        "½ cup vinegar",
+        "2 large onions, sliced",
+        "6 garlic cloves, sliced",
+        "1 red bell pepper, in strips",
+        "10 black peppercorns",
+        "3 bay leaves",
+        "¼ cup stuffed olives"
+      ]
+    },
+    steps: {
+      es: [
+        "Desale el bacalao 12 horas en agua fría en la nevera, cambiando el agua 3 veces. Hiérvalo 10 minutos y sepárelo en lascas grandes.",
+        "Cocine la cebolla, el ajo y el pimiento en el aceite a fuego bajo 10 minutos, sin dorar.",
+        "Añada el vinagre, la pimienta en grano y el laurel, y deje hervir 2 minutos.",
+        "En un envase de cristal, ponga el bacalao y cúbralo con el escabeche caliente y las aceitunas.",
+        "Tape y refrigere al menos 1 día. Se sirve frío o a temperatura ambiente con guineítos verdes hervidos; dura una semana en la nevera."
+      ],
+      en: [
+        "Desalt the cod 12 hours in cold water in the fridge, changing the water 3 times. Boil 10 minutes and separate into large flakes.",
+        "Cook the onion, garlic and bell pepper in the oil over low heat 10 minutes, without browning.",
+        "Add the vinegar, peppercorns and bay leaves and boil 2 minutes.",
+        "In a glass container, place the cod and cover with the hot escabeche and the olives.",
+        "Cover and refrigerate at least 1 day. Serve cold or at room temperature with boiled green bananas; it keeps a week in the fridge."
+      ]
+    }
+  },
+  {
+    id: "bacalao-rebozado",
+    category: "pescados",
+    name: { es: "Bacalao Rebozado (Frito)", en: "Battered Fried Salt Cod" },
+    time: "30 min + remojo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de bacalao salado en lomos",
+        "1 taza de harina de trigo",
+        "1 cucharadita de polvo de hornear",
+        "1 huevo",
+        "¾ taza de agua fría con gas",
+        "1 cucharadita de ajo en polvo",
+        "Aceite vegetal para freír",
+        "2 limones en cuartos"
+      ],
+      en: [
+        "1 pound salt cod loins",
+        "1 cup all-purpose flour",
+        "1 teaspoon baking powder",
+        "1 egg",
+        "¾ cup cold sparkling water",
+        "1 teaspoon garlic powder",
+        "Vegetable oil for frying",
+        "2 limes, quartered"
+      ]
+    },
+    steps: {
+      es: [
+        "Desale el bacalao 24 horas en agua fría en la nevera, cambiando el agua 4 veces. Séquelo bien y córtelo en trozos de 2 pulgadas.",
+        "Bata la harina, el polvo de hornear, el huevo, el agua con gas y el ajo en polvo hasta tener un batido espeso. No le ponga sal.",
+        "Caliente el aceite a 350 °F.",
+        "Pase cada trozo de bacalao por el batido y fríalo 3 a 4 minutos hasta que esté dorado e inflado.",
+        "Escurra en papel toalla y sirva caliente con limón, con viandas o con ensalada de aguacate."
+      ],
+      en: [
+        "Desalt the cod 24 hours in cold water in the fridge, changing the water 4 times. Pat dry and cut into 2-inch pieces.",
+        "Whisk the flour, baking powder, egg, sparkling water and garlic powder into a thick batter. Don't add salt.",
+        "Heat the oil to 350 °F.",
+        "Dip each piece of cod in the batter and fry 3 to 4 minutes until golden and puffed.",
+        "Drain on paper towels and serve hot with lime, with root vegetables or with avocado salad."
+      ]
+    }
+  },
+  {
+    id: "pescado-encebollado",
+    category: "pescados",
+    name: { es: "Filete de Pescado Encebollado", en: "Fish Fillets Smothered in Onions" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de pescado blanco (mero, chillo o tilapia) de 6 onzas",
+        "3 dientes de ajo machacados",
+        "2 cucharadas de jugo de limón",
+        "1 cucharadita de orégano",
+        "½ cucharadita de sal",
+        "¼ taza de harina de trigo",
+        "3 cucharadas de aceite de oliva",
+        "2 cebollas grandes en ruedas",
+        "2 cucharadas de vinagre",
+        "½ taza de caldo de pescado o de vegetales",
+        "1 pimiento verde en tiras"
+      ],
+      en: [
+        "4 white fish fillets (grouper, snapper or tilapia), 6 oz each",
+        "3 garlic cloves, crushed",
+        "2 tablespoons lime juice",
+        "1 teaspoon oregano",
+        "½ teaspoon salt",
+        "¼ cup all-purpose flour",
+        "3 tablespoons olive oil",
+        "2 large onions, sliced",
+        "2 tablespoons vinegar",
+        "½ cup fish or vegetable broth",
+        "1 green bell pepper, in strips"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el pescado con el ajo, el limón, el orégano y la sal 15 minutos.",
+        "Séquelo, páselo por la harina y dórelo en 2 cucharadas de aceite 3 minutos por lado. Sáquelo.",
+        "En el mismo sartén, cocine la cebolla y el pimiento en el resto del aceite 8 minutos hasta que se ablanden.",
+        "Añada el vinagre y el caldo, y deje hervir 2 minutos.",
+        "Vuelva el pescado al sartén, cúbralo con la cebolla y cocine tapado 4 minutos, hasta que se desmenuce con un tenedor (145 °F). Sirva con arroz blanco y tostones."
+      ],
+      en: [
+        "Season the fish with the garlic, lime juice, oregano and salt for 15 minutes.",
+        "Pat dry, dredge in the flour and brown in 2 tablespoons oil 3 minutes per side. Remove.",
+        "In the same skillet, cook the onion and bell pepper in the remaining oil 8 minutes until soft.",
+        "Add the vinegar and broth and boil 2 minutes.",
+        "Return the fish to the skillet, cover with the onions and cook covered 4 minutes, until it flakes with a fork (145 °F). Serve with white rice and tostones."
+      ]
+    }
+  },
+  {
+    id: "pescado-sudado",
+    category: "pescados",
+    name: { es: "Pescado Sudado a la Criolla", en: "Criollo Steamed Fish (Pescado Sudado)" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de pescado blanco de 6 onzas",
+        "1 cucharadita de adobo",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 cebolla en ruedas",
+        "2 tomates en ruedas",
+        "1 pimiento rojo en tiras",
+        "½ taza de caldo de pescado o de vegetales",
+        "2 cucharadas de jugo de limón",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "4 white fish fillets, 6 oz each",
+        "1 teaspoon adobo",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 onion, sliced",
+        "2 tomatoes, sliced",
+        "1 red bell pepper, in strips",
+        "½ cup fish or vegetable broth",
+        "2 tablespoons lime juice",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe el pescado y déjelo reposar mientras prepara la base.",
+        "En un sartén ancho con tapa, sofría el sofrito en el aceite 3 minutos.",
+        "Haga una cama con la cebolla, el tomate y el pimiento, y añada el caldo y el limón.",
+        "Ponga el pescado encima, tape bien y cocine a fuego medio-bajo 10 a 12 minutos: el pescado se cocina en el vapor de los vegetales, sin voltearlo.",
+        "Termine con el cilantro y sirva con arroz blanco o viandas, con su salsa por encima. Es un plato liviano, sin freír."
+      ],
+      en: [
+        "Season the fish with the adobo and let it rest while you make the base.",
+        "In a wide skillet with a lid, sauté the sofrito in the oil 3 minutes.",
+        "Make a bed of onion, tomato and bell pepper, and add the broth and lime juice.",
+        "Lay the fish on top, cover tightly and cook over medium-low heat 10 to 12 minutes: the fish cooks in the steam from the vegetables, without turning.",
+        "Finish with the cilantro and serve with white rice or root vegetables, with the sauce on top. It's a light dish, no frying."
+      ]
+    }
+  },
+  {
+    id: "pescado-costra-platanutre",
+    category: "pescados",
+    name: { es: "Filete de Pescado con Costra de Platanutres", en: "Plantain Chip–Crusted Fish Fillets" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de pescado blanco de 6 onzas",
+        "1 cucharadita de adobo",
+        "1 bolsa de 5 onzas de platanutres",
+        "2 cucharadas de cilantro picado",
+        "¼ taza de harina de trigo",
+        "2 huevos batidos",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de mayonesa",
+        "1 diente de ajo machacado",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "4 white fish fillets, 6 oz each",
+        "1 teaspoon adobo",
+        "1 bag (5 oz) plantain chips (platanutres)",
+        "2 tablespoons chopped cilantro",
+        "¼ cup all-purpose flour",
+        "2 eggs, beaten",
+        "2 tablespoons olive oil",
+        "½ cup mayonnaise",
+        "1 garlic clove, crushed",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400 °F y engrase una bandeja con el aceite.",
+        "Triture los platanutres en una bolsa con el rodillo (que queden en pedacitos, no en polvo) y mézclelos con el cilantro.",
+        "Adobe el pescado, páselo por la harina, el huevo y los platanutres, apretando para que pegue la costra.",
+        "Hornee 12 a 15 minutos, hasta que la costra dore y el pescado se desmenuce (145 °F).",
+        "Mezcle la mayonesa, el ajo y el limón para hacer mayo-ajo y sirva al lado. Los platanutres ya traen sal: no le añada más."
+      ],
+      en: [
+        "Heat the oven to 400 °F and grease a baking sheet with the oil.",
+        "Crush the plantain chips in a bag with a rolling pin (into small bits, not powder) and mix with the cilantro.",
+        "Season the fish with adobo, dredge in flour, egg and the plantain chips, pressing so the crust sticks.",
+        "Bake 12 to 15 minutes, until the crust browns and the fish flakes (145 °F).",
+        "Mix the mayonnaise, garlic and lime juice into mayo-ajo and serve on the side. The chips are already salty: don't add more."
+      ]
+    }
+  },
+  {
+    id: "dorado-costra-coco",
+    category: "pescados",
+    name: { es: "Dorado con Costra de Coco y Salsa de Piña", en: "Coconut-Crusted Mahi-Mahi with Pineapple Sauce" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de dorado (mahi-mahi) de 6 onzas",
+        "½ cucharadita de sal",
+        "¼ taza de harina de trigo",
+        "2 huevos batidos",
+        "1 taza de coco rallado sin azúcar",
+        "½ taza de panko",
+        "Aceite vegetal para freír",
+        "1 taza de piña en cubitos",
+        "¼ taza de jugo de piña",
+        "1 cucharada de jugo de limón",
+        "1 cucharadita de jengibre rallado",
+        "1 pizca de ají picante en polvo"
+      ],
+      en: [
+        "4 mahi-mahi (dorado) fillets, 6 oz each",
+        "½ teaspoon salt",
+        "¼ cup all-purpose flour",
+        "2 eggs, beaten",
+        "1 cup unsweetened shredded coconut",
+        "½ cup panko",
+        "Vegetable oil for frying",
+        "1 cup pineapple, finely diced",
+        "¼ cup pineapple juice",
+        "1 tablespoon lime juice",
+        "1 teaspoon grated ginger",
+        "1 pinch hot chili powder"
+      ]
+    },
+    steps: {
+      es: [
+        "Para la salsa, hierva la piña, el jugo de piña, el limón, el jengibre y el ají 8 minutos hasta que espese un poco. Deje enfriar.",
+        "Sale el pescado. Mezcle el coco con el panko.",
+        "Pase cada filete por la harina, el huevo y la mezcla de coco, apretando.",
+        "Fría en ½ pulgada de aceite a 350 °F 3 minutos por lado, hasta que la costra esté dorada (el coco se quema rápido: no suba el fuego).",
+        "Escurra y sirva con la salsa de piña por encima, con arroz con coco o tostones."
+      ],
+      en: [
+        "For the sauce, boil the pineapple, pineapple juice, lime juice, ginger and chili 8 minutes until slightly thickened. Let cool.",
+        "Salt the fish. Mix the coconut with the panko.",
+        "Dredge each fillet in flour, egg and the coconut mixture, pressing.",
+        "Fry in ½ inch of oil at 350 °F 3 minutes per side, until the crust is golden (coconut burns fast: don't raise the heat).",
+        "Drain and serve with the pineapple sauce on top, with coconut rice or tostones."
+      ]
+    }
+  },
+  {
+    id: "atun-plancha-mojo-recao",
+    category: "pescados",
+    name: { es: "Atún a la Plancha con Mojo de Recao", en: "Seared Tuna with Culantro Mojo" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de atún fresco de 6 onzas y 1 pulgada de grueso",
+        "1 cucharada de aceite de oliva para la plancha",
+        "½ cucharadita de sal",
+        "½ cucharadita de pimienta",
+        "8 hojas de recao",
+        "¼ taza de cilantro",
+        "3 dientes de ajo",
+        "¼ taza de aceite de oliva",
+        "3 cucharadas de jugo de limón",
+        "1 pizca de sal para el mojo"
+      ],
+      en: [
+        "4 fresh tuna steaks, 6 oz each and 1 inch thick",
+        "1 tablespoon olive oil for the griddle",
+        "½ teaspoon salt",
+        "½ teaspoon pepper",
+        "8 culantro (recao) leaves",
+        "¼ cup cilantro",
+        "3 garlic cloves",
+        "¼ cup olive oil",
+        "3 tablespoons lime juice",
+        "1 pinch salt for the mojo"
+      ]
+    },
+    steps: {
+      es: [
+        "Para el mojo, licúe o maje el recao, el cilantro, el ajo, el aceite, el limón y la pizca de sal.",
+        "Seque el atún y sazónelo con la sal y la pimienta.",
+        "Caliente bien una plancha o sartén de hierro con el aceite.",
+        "Selle el atún 2 minutos por lado para que quede rosado por dentro, o 4 minutos por lado para que quede cocido (145 °F). En el embarazo, para niños pequeños y personas con las defensas bajas, cocínelo por completo.",
+        "Corte en lascas y sirva con el mojo de recao por encima, con arroz y aguacate."
+      ],
+      en: [
+        "For the mojo, blend or mash the culantro, cilantro, garlic, oil, lime juice and the pinch of salt.",
+        "Pat the tuna dry and season with the salt and pepper.",
+        "Heat a griddle or cast-iron skillet very hot with the oil.",
+        "Sear the tuna 2 minutes per side for pink inside, or 4 minutes per side for fully cooked (145 °F). During pregnancy, for small children and people with weak immune systems, cook it through.",
+        "Slice and serve with the culantro mojo on top, with rice and avocado."
+      ]
+    }
+  },
+  {
+    id: "tortitas-atun-maiz",
+    category: "pescados",
+    name: { es: "Tortitas de Atún con Maíz", en: "Tuna and Corn Patties" },
+    time: "30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 latas de 5 onzas de atún en agua, escurrido",
+        "1 taza de maíz en grano escurrido",
+        "2 huevos",
+        "½ taza de pan rallado",
+        "2 cucharadas de sofrito",
+        "2 cucharadas de cebolla picada fina",
+        "1 cucharada de mostaza",
+        "¼ cucharadita de pimienta",
+        "3 cucharadas de aceite vegetal"
+      ],
+      en: [
+        "2 cans (5 oz) tuna in water, drained",
+        "1 cup drained corn kernels",
+        "2 eggs",
+        "½ cup breadcrumbs",
+        "2 tablespoons sofrito",
+        "2 tablespoons finely chopped onion",
+        "1 tablespoon mustard",
+        "¼ teaspoon pepper",
+        "3 tablespoons vegetable oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Desmenuce el atún en un envase.",
+        "Añada el maíz, los huevos, el pan rallado, el sofrito, la cebolla, la mostaza y la pimienta, y mezcle bien.",
+        "Forme 8 tortitas de ½ pulgada de grueso; si se desarman, refrigere la mezcla 15 minutos.",
+        "Dórelas en el aceite a fuego medio 3 a 4 minutos por lado.",
+        "Sirva con arroz con habichuelas o en pan con lechuga. Son una forma barata de comer pescado entre semana."
+      ],
+      en: [
+        "Flake the tuna in a bowl.",
+        "Add the corn, eggs, breadcrumbs, sofrito, onion, mustard and pepper and mix well.",
+        "Shape 8 patties ½ inch thick; if they fall apart, refrigerate the mixture 15 minutes.",
+        "Brown them in the oil over medium heat 3 to 4 minutes per side.",
+        "Serve with rice and beans or in bread with lettuce. They're an inexpensive way to eat fish on weeknights."
+      ]
+    }
+  },
+  {
+    id: "tilapia-alcaparras",
+    category: "pescados",
+    name: { es: "Tilapia en Salsa de Alcaparras y Limón", en: "Tilapia in Caper Lemon Sauce" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de tilapia de 5 onzas",
+        "½ cucharadita de sal",
+        "¼ taza de harina de trigo",
+        "2 cucharadas de aceite de oliva",
+        "2 cucharadas de mantequilla",
+        "3 dientes de ajo picados",
+        "2 cucharadas de alcaparras",
+        "½ taza de caldo de pescado o de vegetales",
+        "3 cucharadas de jugo de limón",
+        "2 cucharadas de perejil picado"
+      ],
+      en: [
+        "4 tilapia fillets, 5 oz each",
+        "½ teaspoon salt",
+        "¼ cup all-purpose flour",
+        "2 tablespoons olive oil",
+        "2 tablespoons butter",
+        "3 garlic cloves, minced",
+        "2 tablespoons capers",
+        "½ cup fish or vegetable broth",
+        "3 tablespoons lemon juice",
+        "2 tablespoons chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Sale la tilapia y pásela por la harina, sacudiendo el exceso.",
+        "Dórela en el aceite 2 a 3 minutos por lado. Sáquela a un plato.",
+        "En el mismo sartén, derrita la mantequilla y sofría el ajo 1 minuto.",
+        "Añada las alcaparras, el caldo y el limón, y deje hervir 2 minutos raspando el fondo.",
+        "Vuelva la tilapia a la salsa 1 minuto, espolvoree el perejil y sirva con arroz blanco o papas."
+      ],
+      en: [
+        "Salt the tilapia and dredge in flour, shaking off the excess.",
+        "Brown in the oil 2 to 3 minutes per side. Move to a plate.",
+        "In the same skillet, melt the butter and sauté the garlic 1 minute.",
+        "Add the capers, broth and lemon juice and boil 2 minutes, scraping the bottom.",
+        "Return the tilapia to the sauce for 1 minute, sprinkle with parsley and serve with white rice or potatoes."
+      ]
+    }
+  },
+  {
+    id: "camarones-guayaba",
+    category: "pescados",
+    name: { es: "Camarones Glaseados con Guayaba", en: "Guava-Glazed Shrimp" },
+    time: "25 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de camarones grandes, pelados y limpios",
+        "1 cucharadita de adobo",
+        "4 onzas de pasta de guayaba en cubitos",
+        "¼ taza de agua",
+        "2 cucharadas de salsa de soya",
+        "2 cucharadas de vinagre",
+        "1 cucharada de jengibre rallado",
+        "2 dientes de ajo machacados",
+        "1 cucharada de aceite vegetal",
+        "2 cebollines picados"
+      ],
+      en: [
+        "1½ pounds large shrimp, peeled and deveined",
+        "1 teaspoon adobo",
+        "4 ounces guava paste, diced",
+        "¼ cup water",
+        "2 tablespoons soy sauce",
+        "2 tablespoons vinegar",
+        "1 tablespoon grated ginger",
+        "2 garlic cloves, crushed",
+        "1 tablespoon vegetable oil",
+        "2 scallions, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la pasta de guayaba con el agua a fuego bajo. Añada la soya, el vinagre, el jengibre y el ajo, y cocine 3 minutos hasta tener un glaseado.",
+        "Adobe los camarones.",
+        "Saltéelos en el aceite a fuego alto 1 a 2 minutos por lado, hasta que estén rosados.",
+        "Añada el glaseado y mueva 1 minuto para que los cubra (no los cocine de más o se ponen duros).",
+        "Termine con el cebollín y sirva con arroz blanco o tostones."
+      ],
+      en: [
+        "Melt the guava paste with the water over low heat. Add the soy sauce, vinegar, ginger and garlic, and cook 3 minutes into a glaze.",
+        "Season the shrimp with adobo.",
+        "Sauté in the oil over high heat 1 to 2 minutes per side, until pink.",
+        "Add the glaze and stir 1 minute to coat (don't overcook or they turn rubbery).",
+        "Finish with the scallions and serve with white rice or tostones."
+      ]
+    }
+  },
+  {
+    id: "pulpo-guisado-papas",
+    category: "pescados",
+    name: { es: "Pulpo Guisado a la Criolla con Papas", en: "Criollo Octopus Stew with Potatoes" },
+    time: "1 hr 45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de pulpo limpio",
+        "3 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 cebolla picada",
+        "1 lata de 8 onzas de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "1 hoja de laurel",
+        "1 libra de papas en cubos",
+        "2 tazas del agua de hervir el pulpo",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "2 pounds cleaned octopus",
+        "3 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 onion, chopped",
+        "1 can (8 oz) tomato sauce",
+        "¼ cup stuffed olives",
+        "1 tablespoon capers",
+        "1 bay leaf",
+        "1 pound potatoes, cubed",
+        "2 cups octopus cooking water",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el pulpo en agua sin sal 50 minutos a 1 hora, hasta que un tenedor entre fácil en la parte gruesa. Guarde 2 tazas del agua y corte el pulpo en trozos.",
+        "Sofría el sofrito y la cebolla en el aceite 4 minutos.",
+        "Añada la salsa de tomate, las aceitunas, las alcaparras y el laurel, y cocine 3 minutos.",
+        "Añada las papas, el agua del pulpo y la sal, y cocine tapado 15 minutos hasta que las papas estén blandas.",
+        "Añada el pulpo y cocine 10 minutos más para que tome sabor. Sirva con arroz blanco o pan."
+      ],
+      en: [
+        "Boil the octopus in unsalted water 50 minutes to 1 hour, until a fork slides easily into the thick part. Save 2 cups of the water and cut the octopus into pieces.",
+        "Sauté the sofrito and onion in the oil 4 minutes.",
+        "Add the tomato sauce, olives, capers and bay leaf and cook 3 minutes.",
+        "Add the potatoes, octopus water and salt and cook covered 15 minutes until the potatoes are tender.",
+        "Add the octopus and cook 10 more minutes to take on flavor. Serve with white rice or bread."
+      ]
+    }
+  },
+  {
+    id: "ceviche-pulpo-mango",
+    category: "pescados",
+    name: { es: "Ensalada Fría de Pulpo y Mangó", en: "Chilled Octopus and Mango Salad" },
+    time: "1 hr 15 min + 1 hr de frío",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de pulpo limpio",
+        "1 mangó pintón en cubos",
+        "½ cebolla roja picada fina",
+        "1 pimiento rojo picado fino",
+        "1 ají dulce picado",
+        "¼ taza de cilantro picado",
+        "½ taza de jugo de limón",
+        "3 cucharadas de aceite de oliva",
+        "½ cucharadita de sal",
+        "1 aguacate en cubos"
+      ],
+      en: [
+        "2 pounds cleaned octopus",
+        "1 half-ripe mango, cubed",
+        "½ red onion, finely chopped",
+        "1 red bell pepper, finely chopped",
+        "1 ají dulce (sweet pepper), chopped",
+        "¼ cup chopped cilantro",
+        "½ cup lime juice",
+        "3 tablespoons olive oil",
+        "½ teaspoon salt",
+        "1 avocado, cubed"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el pulpo en agua sin sal 50 minutos a 1 hora, hasta que esté blando. Escúrralo, déjelo enfriar y córtelo en rueditas.",
+        "Mezcle el pulpo con el mangó, la cebolla, el pimiento, el ají y el cilantro.",
+        "Bata el limón, el aceite y la sal, y añádalo.",
+        "Refrigere 1 hora para que se mezclen los sabores.",
+        "Añada el aguacate al servir. Como el pulpo va cocido, es apta para quien no come pescado crudo; sirva con tostones o galletas de soda."
+      ],
+      en: [
+        "Boil the octopus in unsalted water 50 minutes to 1 hour, until tender. Drain, cool and slice into rounds.",
+        "Mix the octopus with the mango, onion, bell pepper, ají dulce and cilantro.",
+        "Whisk the lime juice, oil and salt and add.",
+        "Refrigerate 1 hour so the flavors blend.",
+        "Add the avocado to serve. Because the octopus is cooked, it's fine for people who don't eat raw fish; serve with tostones or soda crackers."
+      ]
+    }
+  },
+  {
+    id: "carrucho-salsa-coco",
+    category: "pescados",
+    name: { es: "Carrucho en Salsa de Coco", en: "Conch in Coconut Sauce" },
+    time: "1 hr 30 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de carrucho limpio",
+        "1 limón",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "1 lata de 13.5 onzas de leche de coco",
+        "2 tomates picados",
+        "1 pimiento rojo picado",
+        "4 hojas de recao picadas",
+        "½ cucharadita de sal",
+        "1 pizca de ají picante en polvo"
+      ],
+      en: [
+        "1½ pounds cleaned conch",
+        "1 lime",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "1 can (13.5 oz) coconut milk",
+        "2 tomatoes, chopped",
+        "1 red bell pepper, chopped",
+        "4 culantro (recao) leaves, chopped",
+        "½ teaspoon salt",
+        "1 pinch hot chili powder"
+      ]
+    },
+    steps: {
+      es: [
+        "Frote el carrucho con el limón, enjuáguelo y macháquelo con un mazo para ablandarlo.",
+        "Hiérvalo en agua 45 minutos a 1 hora hasta que esté blando (o 20 minutos en olla de presión). Córtelo en trozos.",
+        "Sofría el sofrito en el aceite de achiote 3 minutos. Añada los tomates y el pimiento, y cocine 3 minutos.",
+        "Añada la leche de coco, el recao, la sal y el ají, y deje hervir. Añada el carrucho y cocine a fuego bajo 15 minutos.",
+        "Sirva con arroz blanco o tostones. Use carrucho de temporada legal y de pesca autorizada: es una especie protegida."
+      ],
+      en: [
+        "Rub the conch with the lime, rinse and pound with a mallet to tenderize.",
+        "Boil in water 45 minutes to 1 hour until tender (or 20 minutes in a pressure cooker). Cut into pieces.",
+        "Sauté the sofrito in the annatto oil 3 minutes. Add the tomatoes and bell pepper and cook 3 minutes.",
+        "Add the coconut milk, culantro, salt and chili and bring to a boil. Add the conch and simmer 15 minutes.",
+        "Serve with white rice or tostones. Use conch from the legal season and licensed fishing: it's a protected species."
+      ]
+    }
+  },
+  {
+    id: "colas-langosta-rellenas",
+    category: "pescados",
+    name: { es: "Colas de Langosta Rellenas al Horno", en: "Baked Stuffed Lobster Tails" },
+    time: "35 min",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 colas de langosta de 6 onzas",
+        "4 cucharadas de mantequilla derretida",
+        "3 dientes de ajo machacados",
+        "½ taza de pan rallado",
+        "2 cucharadas de queso parmesano rallado",
+        "2 cucharadas de perejil picado",
+        "1 cucharada de jugo de limón",
+        "½ cucharadita de pimentón",
+        "1 pizca de sal",
+        "1 limón en cuartos"
+      ],
+      en: [
+        "4 lobster tails, 6 oz each",
+        "4 tablespoons melted butter",
+        "3 garlic cloves, crushed",
+        "½ cup breadcrumbs",
+        "2 tablespoons grated parmesan cheese",
+        "2 tablespoons chopped parsley",
+        "1 tablespoon lemon juice",
+        "½ teaspoon paprika",
+        "1 pinch salt",
+        "1 lemon, quartered"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 425 °F.",
+        "Con unas tijeras, corte la concha de cada cola por arriba hasta la aleta, levante la carne y apóyela sobre la concha.",
+        "Mezcle la mantequilla con el ajo, el limón y la sal. Unte la mitad sobre la carne.",
+        "Mezcle el resto con el pan rallado, el queso, el perejil y el pimentón, y cubra la langosta con ese relleno.",
+        "Hornee 12 a 15 minutos, hasta que la carne esté blanca y opaca (140 °F) y el relleno dorado. Sirva con limón, arroz o tostones."
+      ],
+      en: [
+        "Heat the oven to 425 °F.",
+        "With kitchen shears, cut the top of each tail's shell down to the fin, lift the meat and rest it on top of the shell.",
+        "Mix the butter with the garlic, lemon juice and salt. Brush half over the meat.",
+        "Mix the rest with the breadcrumbs, cheese, parsley and paprika, and cover the lobster with that stuffing.",
+        "Bake 12 to 15 minutes, until the meat is white and opaque (140 °F) and the stuffing golden. Serve with lemon, rice or tostones."
+      ]
+    }
+  },
+  {
+    id: "sancocho-pescado",
+    category: "sopas",
+    name: { es: "Sancocho de Pescado con Viandas", en: "Fish Sancocho with Root Vegetables" },
+    time: "1 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 libras de pescado firme (mero o dorado) en trozos grandes",
+        "1 limón",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "8 tazas de agua",
+        "1 libra de yautía en trozos",
+        "1 libra de yuca en trozos",
+        "2 plátanos verdes en ruedas",
+        "1 mazorca de maíz en ruedas",
+        "½ libra de calabaza en trozos",
+        "1½ cucharaditas de sal",
+        "4 hojas de recao picadas"
+      ],
+      en: [
+        "2 pounds firm fish (grouper or mahi-mahi), in large chunks",
+        "1 lime",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "8 cups water",
+        "1 pound yautía (taro), in chunks",
+        "1 pound yuca (cassava), in chunks",
+        "2 green plantains, sliced",
+        "1 ear of corn, in rounds",
+        "½ pound calabaza (West Indian pumpkin), in chunks",
+        "1½ teaspoons salt",
+        "4 culantro (recao) leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Frote el pescado con el limón, enjuáguelo y refrigérelo mientras cocina las viandas.",
+        "En una olla grande, sofría el sofrito en el aceite de achiote 3 minutos. Añada el agua, la yautía, la yuca, los plátanos, el maíz, la calabaza y la sal.",
+        "Hierva tapado 30 minutos, hasta que las viandas estén blandas y la calabaza se deshaga y espese el caldo.",
+        "Añada el pescado y el recao, y cocine a fuego bajo 8 a 10 minutos, sin mover mucho para que no se desbarate.",
+        "Sirva caliente con arroz blanco y aguacate. Avise de las espinas si el pescado no es en filetes."
+      ],
+      en: [
+        "Rub the fish with the lime, rinse and refrigerate while the vegetables cook.",
+        "In a large pot, sauté the sofrito in the annatto oil 3 minutes. Add the water, yautía, yuca, plantains, corn, calabaza and salt.",
+        "Boil covered 30 minutes, until the vegetables are tender and the calabaza falls apart and thickens the broth.",
+        "Add the fish and culantro and simmer 8 to 10 minutes, without stirring much so it doesn't break apart.",
+        "Serve hot with white rice and avocado. Warn about bones if the fish isn't filleted."
+      ]
+    }
   }
 );

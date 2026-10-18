@@ -17,7 +17,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
-const APP_VERSION = "4.17.0";
+const APP_VERSION = "4.18.0";
 const APP_REVISED = "2026-10-17";
 /* Lo que se muestra al público: "Más de 1,000 recetas", no el total exacto (que cambia con cada
    tanda). El total exacto sólo sale en #/admin (auth.js). Baja al millar: 1,054 → "1,000". */
@@ -429,6 +429,21 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
+  // Pescados y mariscos (tanda 47); tres reutilizan el dibujo de un plato parecido.
+  [/^pastelon de bacalao/, "svg:ic-mar-pastelon-bacalao"],
+  [/^bacalao en escabeche/, "svg:ic-pez-escabeche"],
+  [/^bacalao rebozado/, "svg:ic-mar-bacalao-rebozado"],
+  [/^filete de pescado encebollado/, "svg:ic-mar-encebollado"],
+  [/^pescado sudado/, "svg:ic-mar-sudado"],
+  [/^filete de pescado con costra/, "svg:ic-mar-costra-platanutre"],
+  [/^dorado con costra de coco/, "svg:ic-mar-costra-coco"],
+  [/^atun a la plancha/, "svg:ic-mar-atun-plancha"],
+  [/^tortitas de atun/, "svg:ic-pes-tortitas"],
+  [/^tilapia en salsa/, "svg:ic-pes-tilapia"],
+  [/^camarones glaseados/, "svg:ic-mar-camarones-guayaba"],
+  [/^pulpo guisado/, "svg:ic-mar-pulpo-guisado"],
+  [/^ensalada fria de pulpo/, "svg:ic-mar-pulpo-mango"],
+  [/^carrucho en salsa de coco/, "svg:ic-mar-carrucho-coco"],
   // Frutas tropicales de la isla (tanda 46).
   [/^quenepas en almibar/, "svg:ic-fr-quenepas"],
   [/^dulce de jobos/, "svg:ic-fr-jobos"],
