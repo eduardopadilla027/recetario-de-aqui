@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.26.0 · **Versión de la app:** 4.26.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,118 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.27.0 · **Versión de la app:** 4.27.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,118 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -565,9 +565,23 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   los pasos de la receta**. Varios a la vez; pausar, +1 min y parar. Al terminar: tres pitidos (Web Audio), vibración,
   aviso en pantalla, voz y notificación del sistema si la pestaña no está a la vista (se pide permiso al primer
   temporizador). Con el modo cocina cerrado siguen corriendo en una pastilla flotante (`#timer-fab`) que vuelve a la receta.
-- **Leer en voz alta:** `speechSynthesis` (voz del celular, es-PR / en-US), cada paso al pasar. **Manos libres:**
-  `SpeechRecognition` (Chrome, Edge, Safari, Android; si no hay, no sale el botón) entiende "siguiente", "atrás",
-  "repite", "ingredientes" y "temporizador" (en inglés "next", "back", "repeat", "ingredients", "timer").
+- **Escuchar receta (v4.27):** botón en la receta, junto a "Modo cocina" (`#listen-btn` → `openCook(true)`): abre el modo
+  cocina con la lectura y los comandos encendidos, dice el nombre, lee los **ingredientes** (a las porciones elegidas) y
+  explica los comandos; "siguiente" empieza el paso 1. Cada pantalla se lee con `cookSay()` ("Paso 2 de 8. …") y
+  `sayText()` pasa a palabras lo que la voz lee mal (1½ → "1 y media", 350°F → "350 grados", lbs, oz, min).
+- **Voz de mujer o de hombre (v4.27):** `speechSynthesis` usa las voces del aparato, que no dicen si son de hombre o de
+  mujer: se reconocen por el nombre (`VOICE_FEMALE`/`VOICE_MALE`: Paulina, Mónica, Marisol, Sabina, Helena, "Google
+  español"… / Jorge, Juan, Diego, Pablo, Raúl…). En el modo cocina, **"Voz: Mujer/Hombre"** abre el panel: Mujer u Hombre,
+  la voz exacta (todas las del idioma, primero es-PR, es-US y es-MX), la velocidad (lenta, normal, rápida) y "Probar"; se
+  guarda en `rcb.voice`. Si el aparato no tiene voz de ese tipo, lo dice y explica dónde bajar más voces (iPhone: Ajustes
+  → Accesibilidad → Contenido leído; Android: Texto a voz).
+- **Manos libres (comandos cortos, v4.27):** `SpeechRecognition` (Chrome, Edge, Safari, Android). `VOICE_CMDS` entiende
+  **siguiente / continúa / sigue / próximo / pasa / listo**, **atrás / anterior / regresa / vuelve**, **comienzo / inicio /
+  desde el principio**, **"paso 3"** (también "paso tres"), **repite / otra vez / lee**, **ingredientes**, **temporizador**,
+  **para / pausa / silencio** y **salir / cerrar** (y en inglés next, continue, back, start, "step 3", repeat, ingredients,
+  timer, stop, exit). Muestra "Escuché: «…»" o "No entendí". **No escucha mientras habla** (`pauseListening` al empezar a
+  leer y `resumeListening` al terminar), para no oírse a sí misma. Si el navegador no tiene reconocimiento, el botón sale
+  apagado con la explicación; si se niega el micrófono, lo avisa.
 
 ### 7.10 Mi recetario y Lista de compras (`js/kitchen.js`, rutas `#/mi-recetario` y `#/compras`)
 
@@ -859,6 +873,15 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
 entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, y el texto
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
+
+### 2026-10-18 — v4.27.0 · Escuchar la receta, voz de hombre o mujer y comandos cortos
+- *Pedido:* poder dictar (oír) las recetas por voz, escoger voz de hombre o de mujer, y hablarle con comandos cortos:
+  continuar con el próximo paso, atrás o al comienzo.
+- Botón **"Escuchar receta"** en cada receta; panel de **voz** (mujer/hombre, voz exacta, velocidad, probar); **comandos**
+  siguiente/continúa, atrás, comienzo, "paso N", repite, ingredientes, temporizador, para y salir; lee fracciones y °F en
+  palabras; no escucha mientras habla (§7.9). Las opciones escogidas de una sola elección se marcan con ✓ (antes ✕).
+- Verificado en el navegador: los comandos llevan al paso correcto y el panel cambia a voz de hombre; la voz y el
+  micrófono reales se prueban en el celular (el navegador de prueba no tiene voces ni micrófono).
 
 ### 2026-10-18 — v4.26.0 · Planes para autismo
 - *Pedido:* crear planes para autismo, con el aviso de que realmente no existe una dieta que trate el autismo y las

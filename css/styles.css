@@ -1233,3 +1233,13 @@ body.cook-on { overflow: hidden; }
 .plans-callout { margin-top: var(--s-3); padding: var(--s-3) var(--s-4); border-left: 4px solid var(--plantain); border-radius: var(--radius); background: var(--plantain-50); font-size: .9rem; }
 .plans-callout p strong { color: var(--plantain); }
 .plans-callout ul { margin: var(--s-2) 0 0; padding-left: 1.2em; display: grid; gap: 4px; }
+
+/* Voz del modo cocina: escoger voz y lo que escuchó (js/cook.js) */
+.cook-voice-panel { display: grid; gap: var(--s-2); padding: var(--s-3); border: 1px solid var(--line); border-radius: var(--radius); background: var(--ivory); max-width: 900px; width: 100%; margin-inline: auto; }
+.cook-voice-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2); }
+.cook-voice-label { font-weight: 700; font-size: var(--step--1); min-width: 7em; }
+.cook-voice-panel select { min-height: 40px; max-width: 100%; border: 1.5px solid var(--line); border-radius: 10px; background: #fff; padding: 0 var(--s-2); }
+.cook-heard { font-size: var(--step--1); color: var(--plantain); font-weight: 700; min-height: 1.4em; }
+.cook-tools .chip:disabled { opacity: .5; cursor: not-allowed; }
+/* Opciones de "escoja una" (dieta, voz, velocidad, filtros): marca ✓ en vez de la ✕ de "evitar". */
+.chip-radio input:checked + span::before { content: "✓ "; }

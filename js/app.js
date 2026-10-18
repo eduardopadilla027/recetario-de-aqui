@@ -17,7 +17,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
-const APP_VERSION = "4.26.0";
+const APP_VERSION = "4.27.0";
 const APP_REVISED = "2026-10-18";
 /* Lo que se muestra al público: "Más de 1,000 recetas", no el total exacto (que cambia con cada
    tanda). El total exacto sólo sale en #/admin (auth.js). Baja al millar: 1,054 → "1,000". */
@@ -56,7 +56,7 @@ const translations = {
     navFavorites: "Favoritas",
     navPlans: "Planes",
     navMine: "Mi recetario", navShop: "Compras", bnHome: "Inicio", bnMine: "Recetario",
-    cookMode: "Modo cocina", levelFact: "Dificultad",
+    cookMode: "Modo cocina", levelFact: "Dificultad", listenRecipe: "Escuchar receta",
     navReviews: "Opiniones",
     contactLabel: "Contacto:",
     navInstall: "Póngala en su celular",
@@ -177,7 +177,7 @@ const translations = {
     navFavorites: "Favorites",
     navPlans: "Meal plans",
     navMine: "My cookbook", navShop: "Shopping", bnHome: "Home", bnMine: "Cookbook",
-    cookMode: "Cook mode", levelFact: "Difficulty",
+    cookMode: "Cook mode", levelFact: "Difficulty", listenRecipe: "Listen to recipe",
     navReviews: "Reviews",
     contactLabel: "Contact:",
     navInstall: "Put it on your phone",
