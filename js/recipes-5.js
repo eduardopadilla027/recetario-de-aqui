@@ -3721,5 +3721,806 @@ recipes.push(
         "Serve very cold over ice, with ground cinnamon. Stir before serving: the rice settles."
       ]
     }
+  },
+  // ---------- Tanda 49: sopas y asopaos (6), pastas (5) y panes dulces (5) ----------
+  {
+    id: "asopao-res",
+    category: "sopas",
+    name: { es: "Asopao de Res", en: "Beef Asopao" },
+    time: "1 hr 45 min",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1½ libras de carne de res para guisar en cubos pequeños",
+        "1 cucharadita de adobo",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "10 tazas de agua",
+        "1½ tazas de arroz grano mediano",
+        "1 libra de papas en cubos",
+        "1 taza de guisantes (petit pois)",
+        "1 cucharadita de sal",
+        "4 hojas de recao picadas"
+      ],
+      en: [
+        "1½ pounds stewing beef, in small cubes",
+        "1 teaspoon adobo",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "¼ cup stuffed olives",
+        "1 tablespoon capers",
+        "10 cups water",
+        "1½ cups medium-grain rice",
+        "1 pound potatoes, cubed",
+        "1 cup green peas",
+        "1 teaspoon salt",
+        "4 culantro (recao) leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe la carne y dórela en el aceite de achiote en una olla grande 5 minutos.",
+        "Añada el sofrito, la salsa de tomate, las aceitunas y las alcaparras, y cocine 3 minutos.",
+        "Añada el agua, tape y cocine a fuego bajo 1 hora, hasta que la carne esté blanda.",
+        "Añada el arroz, las papas y la sal, y cocine destapado 20 minutos, moviendo de vez en cuando, hasta que el arroz esté blando y el caldo espese.",
+        "Añada los guisantes y el recao, cocine 3 minutos y sirva enseguida con tostones (el arroz sigue chupando caldo: si espesa mucho, añada agua caliente)."
+      ],
+      en: [
+        "Season the beef with adobo and brown it in the annatto oil in a large pot 5 minutes.",
+        "Add the sofrito, tomato sauce, olives and capers and cook 3 minutes.",
+        "Add the water, cover and simmer 1 hour, until the beef is tender.",
+        "Add the rice, potatoes and salt and cook uncovered 20 minutes, stirring now and then, until the rice is soft and the broth thickens.",
+        "Add the peas and culantro, cook 3 minutes and serve right away with tostones (the rice keeps soaking up broth: if it gets too thick, add hot water)."
+      ]
+    }
+  },
+  {
+    id: "asopao-chuletas-ahumadas",
+    category: "sopas",
+    name: { es: "Asopao de Chuletas Ahumadas", en: "Smoked Pork Chop Asopao" },
+    time: "50 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de chuletas ahumadas, sin hueso y en cubos",
+        "1 cucharada de aceite de achiote",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "8 tazas de agua",
+        "1½ tazas de arroz grano mediano",
+        "1 lata de 15 onzas de gandules verdes, escurridos",
+        "¼ taza de aceitunas rellenas",
+        "4 hojas de recao picadas"
+      ],
+      en: [
+        "1 pound boneless smoked pork chops, cubed",
+        "1 tablespoon annatto oil",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "8 cups water",
+        "1½ cups medium-grain rice",
+        "1 can (15 oz) green pigeon peas, drained",
+        "¼ cup stuffed olives",
+        "4 culantro (recao) leaves, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Dore las chuletas en el aceite de achiote 4 minutos.",
+        "Añada el sofrito y la salsa de tomate, y cocine 3 minutos.",
+        "Añada el agua y deje hervir. Añada el arroz, los gandules y las aceitunas.",
+        "Cocine destapado a fuego medio-bajo 20 a 25 minutos, moviendo a veces, hasta que el arroz esté blando y el caldo espese.",
+        "Añada el recao y sirva caliente. No le ponga sal sin probar: la chuleta ahumada ya es salada."
+      ],
+      en: [
+        "Brown the pork chops in the annatto oil 4 minutes.",
+        "Add the sofrito and tomato sauce and cook 3 minutes.",
+        "Add the water and bring to a boil. Add the rice, pigeon peas and olives.",
+        "Cook uncovered over medium-low heat 20 to 25 minutes, stirring at times, until the rice is soft and the broth thickens.",
+        "Add the culantro and serve hot. Don't add salt without tasting: smoked pork chops are already salty."
+      ]
+    }
+  },
+  {
+    id: "asopao-habichuelas-calabaza",
+    category: "sopas",
+    name: { es: "Asopao de Habichuelas Rosadas con Calabaza", en: "Pink Bean and Calabaza Asopao" },
+    time: "45 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "1 lata de 15 onzas de habichuelas rosadas, con su líquido",
+        "1 libra de calabaza en cubos",
+        "4 tazas de caldo de vegetales y 4 tazas de agua",
+        "1 taza de arroz grano mediano",
+        "Sal al gusto (pruebe primero)",
+        "½ cucharadita de comino",
+        "¼ taza de cilantro picado"
+      ],
+      en: [
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 can (8 oz) tomato sauce",
+        "1 can (15 oz) pink beans, with their liquid",
+        "1 pound calabaza (West Indian pumpkin), cubed",
+        "4 cups vegetable broth and 4 cups water",
+        "1 cup medium-grain rice",
+        "Salt to taste (taste first)",
+        "½ teaspoon cumin",
+        "¼ cup chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito en el aceite 3 minutos. Añada la salsa de tomate y el comino.",
+        "Añada las habichuelas, la calabaza, el caldo y el agua, y deje hervir 10 minutos.",
+        "Añada el arroz y cocine destapado 20 minutos, moviendo a veces.",
+        "Aplaste algunos pedazos de calabaza contra la olla para espesar el caldo.",
+        "Pruebe y añada sal si hace falta (las habichuelas de lata y el caldo ya traen). Termine con el cilantro y sirva con aguacate. Es vegetariano y vegano, y llena como un asopao de pollo."
+      ],
+      en: [
+        "Sauté the sofrito in the oil 3 minutes. Add the tomato sauce and cumin.",
+        "Add the beans, calabaza, broth and water and boil 10 minutes.",
+        "Add the rice and cook uncovered 20 minutes, stirring at times.",
+        "Mash some calabaza pieces against the pot to thicken the broth.",
+        "Taste and add salt if needed (canned beans and broth already have some). Finish with the cilantro and serve with avocado. It's vegetarian and vegan, and as filling as a chicken asopao."
+      ]
+    }
+  },
+  {
+    id: "sopa-pavo-arroz",
+    category: "sopas",
+    name: { es: "Sopa de Pavo con Arroz y Vegetales", en: "Turkey Rice and Vegetable Soup" },
+    time: "1 hr",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 tazas de pavo asado desmenuzado (lo que sobró)",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "2 zanahorias en ruedas",
+        "2 tallos de apio picados",
+        "6 tazas de caldo de pollo y 4 tazas de agua",
+        "½ taza de arroz grano largo",
+        "1 libra de papas en cubos",
+        "1 taza de calabaza en cubos",
+        "1 cucharadita de orégano",
+        "½ cucharadita de sal",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "3 cups shredded roast turkey (leftovers)",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "2 carrots, sliced",
+        "2 celery stalks, chopped",
+        "6 cups chicken broth and 4 cups water",
+        "½ cup long-grain rice",
+        "1 pound potatoes, cubed",
+        "1 cup calabaza (West Indian pumpkin), cubed",
+        "1 teaspoon oregano",
+        "½ teaspoon salt",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito, la zanahoria y el apio en el aceite 5 minutos.",
+        "Añada el caldo, el agua, el orégano y la sal, y deje hervir.",
+        "Añada el arroz, las papas y la calabaza, y cocine tapado 20 minutos.",
+        "Añada el pavo y cocine 10 minutos más.",
+        "Termine con el cilantro. Es la sopa de los días después de Acción de Gracias; use el pavo en 3 o 4 días de guardado en la nevera."
+      ],
+      en: [
+        "Sauté the sofrito, carrots and celery in the oil 5 minutes.",
+        "Add the broth, water, oregano and salt and bring to a boil.",
+        "Add the rice, potatoes and calabaza and cook covered 20 minutes.",
+        "Add the turkey and cook 10 more minutes.",
+        "Finish with the cilantro. It's the soup for the days after Thanksgiving; use the turkey within 3 or 4 days in the fridge."
+      ]
+    }
+  },
+  {
+    id: "crema-batata-jengibre",
+    category: "sopas",
+    name: { es: "Crema de Batata y Jengibre", en: "Sweet Potato Ginger Soup" },
+    time: "40 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de batata blanca pelada en cubos",
+        "1 cebolla picada",
+        "2 dientes de ajo",
+        "1 cucharada de jengibre fresco rallado",
+        "2 cucharadas de aceite de oliva",
+        "3 tazas de caldo de vegetales y 2 tazas de agua",
+        "½ taza de leche evaporada",
+        "½ cucharadita de sal",
+        "¼ cucharadita de nuez moscada",
+        "2 cucharadas de cebollín picado"
+      ],
+      en: [
+        "2 pounds white sweet potato (batata), peeled and cubed",
+        "1 onion, chopped",
+        "2 garlic cloves",
+        "1 tablespoon grated fresh ginger",
+        "2 tablespoons olive oil",
+        "3 cups vegetable broth and 2 cups water",
+        "½ cup evaporated milk",
+        "½ teaspoon salt",
+        "¼ teaspoon nutmeg",
+        "2 tablespoons chopped scallions"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría la cebolla, el ajo y el jengibre en el aceite 5 minutos.",
+        "Añada la batata, el caldo y el agua, y hierva tapado 20 minutos hasta que esté blanda.",
+        "Licúe con cuidado hasta que quede cremosa.",
+        "Vuelva a la olla, añada la leche evaporada, la sal y la nuez moscada, y caliente sin que hierva.",
+        "Sirva con cebollín por encima. Con leche de coco en vez de evaporada queda vegana."
+      ],
+      en: [
+        "Sauté the onion, garlic and ginger in the oil 5 minutes.",
+        "Add the sweet potato, broth and water and boil covered 20 minutes until soft.",
+        "Blend carefully until creamy.",
+        "Return to the pot, add the evaporated milk, salt and nutmeg and heat without boiling.",
+        "Serve topped with scallions. With coconut milk instead of evaporated it's vegan."
+      ]
+    }
+  },
+  {
+    id: "sopa-camarones-coco",
+    category: "sopas",
+    name: { es: "Sopa de Camarones con Coco y Recao", en: "Coconut Shrimp Soup with Culantro" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de camarones medianos, pelados",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "1 lata de 13.5 onzas de leche de coco",
+        "4 tazas de caldo de pescado o de vegetales",
+        "1 libra de yautía en cubos",
+        "1 mazorca de maíz en ruedas",
+        "1 pimiento rojo picado",
+        "½ cucharadita de sal",
+        "6 hojas de recao picadas",
+        "2 cucharadas de jugo de limón"
+      ],
+      en: [
+        "1 pound medium shrimp, peeled",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "1 can (13.5 oz) coconut milk",
+        "4 cups fish or vegetable broth",
+        "1 pound yautía (taro), cubed",
+        "1 ear of corn, in rounds",
+        "1 red bell pepper, chopped",
+        "½ teaspoon salt",
+        "6 culantro (recao) leaves, chopped",
+        "2 tablespoons lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Sofría el sofrito y el pimiento en el aceite de achiote 3 minutos.",
+        "Añada el caldo, la yautía, el maíz y la sal, y hierva tapado 15 minutos hasta que la yautía esté blanda.",
+        "Añada la leche de coco y deje que vuelva a hervir suave.",
+        "Añada los camarones y el recao, y cocine 3 minutos, sólo hasta que estén rosados.",
+        "Fuera del fuego, añada el limón y sirva con arroz blanco aparte."
+      ],
+      en: [
+        "Sauté the sofrito and bell pepper in the annatto oil 3 minutes.",
+        "Add the broth, yautía, corn and salt and boil covered 15 minutes until the yautía is tender.",
+        "Add the coconut milk and let it return to a gentle boil.",
+        "Add the shrimp and culantro and cook 3 minutes, just until pink.",
+        "Off the heat, add the lime juice and serve with white rice on the side."
+      ]
+    }
+  },
+  {
+    id: "espaguetis-pernil-criolla",
+    category: "pastas",
+    name: { es: "Espaguetis con Pernil a la Criolla", en: "Spaghetti with Pernil Criollo Sauce" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de espaguetis",
+        "2 tazas de pernil asado desmenuzado (lo que sobró)",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 lata de 15 onzas de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharadita de orégano",
+        "½ cucharadita de sal",
+        "½ taza de queso parmesano rallado"
+      ],
+      en: [
+        "1 pound spaghetti",
+        "2 cups shredded roast pernil (leftovers)",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 can (15 oz) tomato sauce",
+        "¼ cup stuffed olives",
+        "1 teaspoon oregano",
+        "½ teaspoon salt",
+        "½ cup grated parmesan cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los espaguetis en agua con sal según el paquete. Guarde ½ taza del agua y escurra.",
+        "Sofría el sofrito en el aceite 3 minutos. Añada el pernil y dórelo un poco.",
+        "Añada la salsa de tomate, las aceitunas, el orégano y la sal, y cocine 10 minutos.",
+        "Mezcle los espaguetis con la salsa, añadiendo agua de la pasta si hace falta.",
+        "Sirva con el queso. Es la mejor forma de aprovechar el pernil de la Navidad."
+      ],
+      en: [
+        "Boil the spaghetti in salted water per the package. Save ½ cup of the water and drain.",
+        "Sauté the sofrito in the oil 3 minutes. Add the pernil and brown it a little.",
+        "Add the tomato sauce, olives, oregano and salt and cook 10 minutes.",
+        "Toss the spaghetti with the sauce, adding pasta water if needed.",
+        "Serve with the cheese. It's the best way to use up Christmas pernil."
+      ]
+    }
+  },
+  {
+    id: "fettuccine-camarones-recao",
+    category: "pastas",
+    name: { es: "Fettuccine con Camarones en Salsa de Ajo y Recao", en: "Shrimp Fettuccine in Garlic Culantro Sauce" },
+    time: "30 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "¾ libra de pasta tipo fettuccine",
+        "1 libra de camarones medianos, pelados",
+        "1 cucharadita de adobo",
+        "2 cucharadas de mantequilla",
+        "1 cucharada de aceite de oliva",
+        "5 dientes de ajo picados",
+        "1 taza de crema espesa (heavy cream)",
+        "½ taza de queso parmesano rallado",
+        "6 hojas de recao picadas fino",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "¾ pound fettuccine pasta",
+        "1 pound medium shrimp, peeled",
+        "1 teaspoon adobo",
+        "2 tablespoons butter",
+        "1 tablespoon olive oil",
+        "5 garlic cloves, minced",
+        "1 cup heavy cream",
+        "½ cup grated parmesan cheese",
+        "6 culantro (recao) leaves, finely chopped",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el fettuccine en agua con sal según el paquete. Guarde ½ taza del agua y escurra.",
+        "Adobe los camarones y saltéelos en el aceite 1 a 2 minutos por lado. Sáquelos.",
+        "Derrita la mantequilla y sofría el ajo 1 minuto sin dorar. Añada la crema y deje hervir suave 3 minutos.",
+        "Añada el queso, el recao y el limón, y mezcle hasta que la salsa espese.",
+        "Mezcle con la pasta y los camarones, aflojando con agua de la pasta. Sirva enseguida."
+      ],
+      en: [
+        "Boil the fettuccine in salted water per the package. Save ½ cup of the water and drain.",
+        "Season the shrimp with adobo and sauté in the oil 1 to 2 minutes per side. Remove.",
+        "Melt the butter and sauté the garlic 1 minute without browning. Add the cream and simmer 3 minutes.",
+        "Add the cheese, culantro and lime juice and stir until the sauce thickens.",
+        "Toss with the pasta and shrimp, loosening with pasta water. Serve right away."
+      ]
+    }
+  },
+  {
+    id: "pasta-pesto-recao",
+    category: "pastas",
+    name: { es: "Pasta con Pesto de Recao y Queso del País", en: "Pasta with Culantro Pesto and Puerto Rican Cheese" },
+    time: "25 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "¾ libra de pasta corta (penne o coditos)",
+        "12 hojas de recao",
+        "1 taza de cilantro",
+        "2 dientes de ajo",
+        "⅓ taza de nueces o almendras",
+        "⅓ taza de aceite de oliva",
+        "2 cucharadas de jugo de limón",
+        "½ cucharadita de sal",
+        "1 taza de queso blanco del país desmoronado",
+        "1 taza de tomates cereza en mitades"
+      ],
+      en: [
+        "¾ pound short pasta (penne or elbows)",
+        "12 culantro (recao) leaves",
+        "1 cup cilantro",
+        "2 garlic cloves",
+        "⅓ cup walnuts or almonds",
+        "⅓ cup olive oil",
+        "2 tablespoons lime juice",
+        "½ teaspoon salt",
+        "1 cup crumbled Puerto Rican white cheese (queso del país)",
+        "1 cup cherry tomatoes, halved"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la pasta en agua con sal según el paquete. Guarde ½ taza del agua y escurra.",
+        "Licúe el recao, el cilantro, el ajo, las nueces, el aceite, el limón y la sal hasta tener un pesto.",
+        "Mezcle la pasta caliente con el pesto, aflojando con agua de la pasta.",
+        "Añada los tomates y el queso del país por encima.",
+        "Sirva tibia o fría como ensalada. El recao le da el sabor del sofrito al pesto."
+      ],
+      en: [
+        "Boil the pasta in salted water per the package. Save ½ cup of the water and drain.",
+        "Blend the culantro, cilantro, garlic, nuts, oil, lime juice and salt into a pesto.",
+        "Toss the hot pasta with the pesto, loosening with pasta water.",
+        "Top with the tomatoes and the white cheese.",
+        "Serve warm or cold as a salad. The culantro gives the pesto a sofrito flavor."
+      ]
+    }
+  },
+  {
+    id: "espaguetis-horno-queso",
+    category: "pastas",
+    name: { es: "Espaguetis al Horno con Queso", en: "Baked Spaghetti with Cheese" },
+    time: "1 hr",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 libra de espaguetis",
+        "1 libra de carne molida de res",
+        "½ taza de sofrito",
+        "1 lata de 28 onzas de salsa de tomate",
+        "1 cucharadita de orégano",
+        "½ cucharadita de sal",
+        "2 huevos",
+        "½ taza de leche",
+        "2 tazas de queso mozzarella rallado",
+        "1 taza de queso cheddar rallado",
+        "¼ taza de queso parmesano rallado"
+      ],
+      en: [
+        "1 pound spaghetti",
+        "1 pound ground beef",
+        "½ cup sofrito",
+        "1 can (28 oz) tomato sauce",
+        "1 teaspoon oregano",
+        "½ teaspoon salt",
+        "2 eggs",
+        "½ cup milk",
+        "2 cups shredded mozzarella cheese",
+        "1 cup shredded cheddar cheese",
+        "¼ cup grated parmesan cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los espaguetis 2 minutos menos de lo que dice el paquete y escurra. Caliente el horno a 350 °F.",
+        "Dore la carne con el sofrito 8 minutos. Añada la salsa de tomate, el orégano y la sal, y cocine 10 minutos.",
+        "Bata los huevos con la leche y mézclelos con los espaguetis (así el pastelón corta firme).",
+        "En un molde de 9 × 13, ponga la mitad de los espaguetis, la mitad de la salsa y la mitad del mozzarella; repita y cubra con el cheddar y el parmesano.",
+        "Hornee 30 minutos hasta que el queso dore y burbujee. Deje reposar 10 minutos antes de cortar. Es el plato de los cumpleaños y los compartires."
+      ],
+      en: [
+        "Boil the spaghetti 2 minutes less than the package says and drain. Heat the oven to 350 °F.",
+        "Brown the beef with the sofrito 8 minutes. Add the tomato sauce, oregano and salt and cook 10 minutes.",
+        "Beat the eggs with the milk and mix into the spaghetti (so it slices firm).",
+        "In a 9 × 13 dish, layer half the spaghetti, half the sauce and half the mozzarella; repeat and top with the cheddar and parmesan.",
+        "Bake 30 minutes until the cheese browns and bubbles. Let rest 10 minutes before cutting. It's the birthday and potluck dish."
+      ]
+    }
+  },
+  {
+    id: "pasta-pollo-coco-achiote",
+    category: "pastas",
+    name: { es: "Pasta con Pollo en Salsa de Coco y Achiote", en: "Pasta with Chicken in Coconut Annatto Sauce" },
+    time: "35 min",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de pasta corta (penne o rigatoni)",
+        "1½ libras de pechugas de pollo en tiras",
+        "1 cucharadita de adobo",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "1 lata de 13.5 onzas de leche de coco",
+        "½ taza de caldo de pollo",
+        "1 pimiento rojo en tiras",
+        "1 taza de espinaca fresca",
+        "½ cucharadita de sal",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "1 pound short pasta (penne or rigatoni)",
+        "1½ pounds chicken breasts, in strips",
+        "1 teaspoon adobo",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "1 can (13.5 oz) coconut milk",
+        "½ cup chicken broth",
+        "1 red bell pepper, in strips",
+        "1 cup fresh spinach",
+        "½ teaspoon salt",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la pasta en agua con sal según el paquete y escurra.",
+        "Adobe el pollo y dórelo en el aceite de achiote 5 minutos, hasta que esté cocido (165 °F). Sáquelo.",
+        "Sofría el sofrito y el pimiento 3 minutos. Añada la leche de coco, el caldo y la sal, y hierva suave 5 minutos.",
+        "Añada la espinaca y el pollo, y cocine 2 minutos hasta que la espinaca se marchite.",
+        "Mezcle con la pasta y termine con el cilantro. La salsa sale anaranjada y suave, sin crema de leche."
+      ],
+      en: [
+        "Boil the pasta in salted water per the package and drain.",
+        "Season the chicken with adobo and brown in the annatto oil 5 minutes, until cooked (165 °F). Remove.",
+        "Sauté the sofrito and bell pepper 3 minutes. Add the coconut milk, broth and salt and simmer 5 minutes.",
+        "Add the spinach and chicken and cook 2 minutes until the spinach wilts.",
+        "Toss with the pasta and finish with cilantro. The sauce turns orange and silky, without dairy cream."
+      ]
+    }
+  },
+  {
+    id: "trenza-guayaba-queso",
+    category: "panes",
+    name: { es: "Trenza de Pan Dulce con Guayaba y Queso", en: "Guava and Cheese Sweet Bread Braid" },
+    time: "3 hr (con levado)",
+    servings: 12,
+    ingredients: {
+      es: [
+        "3½ tazas de harina de trigo",
+        "1 sobre de 0.25 onzas de levadura seca",
+        "⅓ taza de azúcar",
+        "1 taza de leche tibia",
+        "1 huevo",
+        "4 cucharadas de mantequilla derretida",
+        "½ cucharadita de sal",
+        "8 onzas de pasta de guayaba en lascas finas",
+        "8 onzas de queso crema",
+        "1 huevo batido para barnizar",
+        "2 cucharadas de azúcar para espolvorear"
+      ],
+      en: [
+        "3½ cups all-purpose flour",
+        "1 envelope (0.25 oz) active dry yeast",
+        "⅓ cup sugar",
+        "1 cup warm milk",
+        "1 egg",
+        "4 tablespoons melted butter",
+        "½ teaspoon salt",
+        "8 ounces guava paste, thinly sliced",
+        "8 ounces cream cheese",
+        "1 beaten egg for brushing",
+        "2 tablespoons sugar for sprinkling"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura en la leche tibia con 1 cucharada del azúcar y deje espumar 10 minutos. Mezcle con la harina, el resto del azúcar, el huevo, la mantequilla y la sal, y amase 8 minutos hasta tener una masa suave.",
+        "Tape y deje levar 1 hora en un lugar tibio, hasta que doble su tamaño.",
+        "Estire la masa en un rectángulo de 10 × 14 pulgadas sobre papel de hornear. Unte el queso crema en una franja por el centro y ponga la guayaba encima.",
+        "Corte tiras diagonales de 1 pulgada a los dos lados y crúcelas sobre el relleno como una trenza. Deje levar 30 minutos.",
+        "Barnice con el huevo, espolvoree el azúcar y hornee a 350 °F 25 a 30 minutos, hasta que dore. Deje enfriar 15 minutos antes de cortar."
+      ],
+      en: [
+        "Dissolve the yeast in the warm milk with 1 tablespoon of the sugar and let foam 10 minutes. Mix with the flour, the rest of the sugar, the egg, butter and salt, and knead 8 minutes into a soft dough.",
+        "Cover and let rise 1 hour in a warm place, until doubled.",
+        "Roll the dough into a 10 × 14-inch rectangle on parchment. Spread the cream cheese in a strip down the center and lay the guava on top.",
+        "Cut 1-inch diagonal strips on both sides and cross them over the filling like a braid. Let rise 30 minutes.",
+        "Brush with the egg, sprinkle with sugar and bake at 350 °F 25 to 30 minutes, until golden. Cool 15 minutes before slicing."
+      ]
+    }
+  },
+  {
+    id: "pan-anis",
+    category: "panes",
+    name: { es: "Pan de Anís (Bollos Dulces)", en: "Anise Sweet Rolls" },
+    time: "2 hr 45 min (con levado)",
+    servings: 12,
+    ingredients: {
+      es: [
+        "4 tazas de harina de trigo",
+        "1 sobre de 0.25 onzas de levadura seca",
+        "½ taza de azúcar",
+        "1 taza de leche tibia",
+        "2 huevos",
+        "6 cucharadas de mantequilla derretida",
+        "1 cucharada de semillas de anís",
+        "1 cucharadita de ralladura de china",
+        "½ cucharadita de sal",
+        "1 huevo batido para barnizar"
+      ],
+      en: [
+        "4 cups all-purpose flour",
+        "1 envelope (0.25 oz) active dry yeast",
+        "½ cup sugar",
+        "1 cup warm milk",
+        "2 eggs",
+        "6 tablespoons melted butter",
+        "1 tablespoon anise seeds",
+        "1 teaspoon orange zest",
+        "½ teaspoon salt",
+        "1 beaten egg for brushing"
+      ]
+    },
+    steps: {
+      es: [
+        "Tueste las semillas de anís en un sartén seco 1 minuto, hasta que huelan.",
+        "Disuelva la levadura en la leche tibia con 1 cucharada del azúcar y deje espumar 10 minutos. Mezcle con la harina, el resto del azúcar, los huevos, la mantequilla, el anís, la ralladura y la sal, y amase 10 minutos.",
+        "Tape y deje levar 1 hora, hasta que doble.",
+        "Divida en 12 bolas, póngalas en una bandeja engrasada y deje levar 45 minutos más.",
+        "Barnice con el huevo y hornee a 350 °F 18 a 20 minutos, hasta que doren. Van con café con leche."
+      ],
+      en: [
+        "Toast the anise seeds in a dry skillet 1 minute, until fragrant.",
+        "Dissolve the yeast in the warm milk with 1 tablespoon of the sugar and let foam 10 minutes. Mix with the flour, the rest of the sugar, the eggs, butter, anise, zest and salt, and knead 10 minutes.",
+        "Cover and let rise 1 hour, until doubled.",
+        "Divide into 12 balls, place on a greased sheet and let rise 45 more minutes.",
+        "Brush with the egg and bake at 350 °F 18 to 20 minutes, until golden. Serve with café con leche."
+      ]
+    }
+  },
+  {
+    id: "pan-dulce-ron-pasas",
+    category: "panes",
+    name: { es: "Pan Dulce de Ron con Pasas", en: "Rum Raisin Sweet Bread" },
+    time: "3 hr (con levado)",
+    servings: 12,
+    ingredients: {
+      es: [
+        "¾ taza de pasas",
+        "¼ taza de ron oscuro",
+        "3½ tazas de harina de trigo",
+        "1 sobre de 0.25 onzas de levadura seca",
+        "⅓ taza de azúcar morena",
+        "1 taza de leche tibia",
+        "1 huevo",
+        "4 cucharadas de mantequilla derretida",
+        "1 cucharadita de canela",
+        "½ cucharadita de sal",
+        "1 taza de azúcar en polvo",
+        "2 cucharadas de leche para el glaseado"
+      ],
+      en: [
+        "¾ cup raisins",
+        "¼ cup dark rum",
+        "3½ cups all-purpose flour",
+        "1 envelope (0.25 oz) active dry yeast",
+        "⅓ cup brown sugar",
+        "1 cup warm milk",
+        "1 egg",
+        "4 tablespoons melted butter",
+        "1 teaspoon cinnamon",
+        "½ teaspoon salt",
+        "1 cup powdered sugar",
+        "2 tablespoons milk for the glaze"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje las pasas en el ron 30 minutos (o en jugo de china si no quiere alcohol).",
+        "Disuelva la levadura en la leche tibia con 1 cucharada del azúcar y deje espumar. Mezcle con la harina, el resto del azúcar, el huevo, la mantequilla, la canela y la sal, y amase 8 minutos. Incorpore las pasas escurridas.",
+        "Deje levar tapado 1 hora. Forme un pan, póngalo en un molde de 9 × 5 engrasado y deje levar 45 minutos.",
+        "Hornee a 350 °F 35 a 40 minutos, hasta que suene hueco al tocarlo por debajo. Deje enfriar.",
+        "Mezcle el azúcar en polvo con la leche y el ron del remojo (unas gotas), y bañe el pan. El alcohol del glaseado no se cocina: para niños, use sólo leche."
+      ],
+      en: [
+        "Soak the raisins in the rum 30 minutes (or in orange juice for no alcohol).",
+        "Dissolve the yeast in the warm milk with 1 tablespoon of the sugar and let foam. Mix with the flour, the rest of the sugar, the egg, butter, cinnamon and salt, and knead 8 minutes. Work in the drained raisins.",
+        "Let rise covered 1 hour. Shape a loaf, place in a greased 9 × 5 pan and let rise 45 minutes.",
+        "Bake at 350 °F 35 to 40 minutes, until it sounds hollow when tapped underneath. Cool.",
+        "Mix the powdered sugar with the milk and a few drops of the soaking rum, and drizzle over the bread. The alcohol in the glaze isn't cooked: for children, use milk only."
+      ]
+    }
+  },
+  {
+    id: "pan-parcha-glaseado",
+    category: "panes",
+    name: { es: "Pan de Parcha con Glaseado de Parcha", en: "Passion Fruit Loaf with Passion Fruit Glaze" },
+    time: "1 hr 15 min",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 tazas de harina de trigo",
+        "1½ cucharaditas de polvo de hornear",
+        "¼ cucharadita de sal",
+        "½ taza de mantequilla a temperatura ambiente",
+        "1 taza de azúcar",
+        "2 huevos",
+        "½ taza de pulpa de parcha colada",
+        "½ taza de yogur natural",
+        "1 cucharadita de vainilla",
+        "1 taza de azúcar en polvo",
+        "2 cucharadas de pulpa de parcha para el glaseado"
+      ],
+      en: [
+        "2 cups all-purpose flour",
+        "1½ teaspoons baking powder",
+        "¼ teaspoon salt",
+        "½ cup butter, at room temperature",
+        "1 cup sugar",
+        "2 eggs",
+        "½ cup strained passion fruit pulp",
+        "½ cup plain yogurt",
+        "1 teaspoon vanilla",
+        "1 cup powdered sugar",
+        "2 tablespoons passion fruit pulp for the glaze"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de pan de 9 × 5.",
+        "Bata la mantequilla con el azúcar hasta que esté cremosa. Añada los huevos de uno en uno.",
+        "Añada la parcha, el yogur y la vainilla. Incorpore la harina con el polvo de hornear y la sal, sin batir de más.",
+        "Hornee 50 a 55 minutos, hasta que un palillo salga limpio. Deje enfriar 15 minutos y desmolde.",
+        "Mezcle el azúcar en polvo con las 2 cucharadas de parcha (con algunas semillas, por el color) y bañe el pan frío."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 9 × 5 loaf pan.",
+        "Beat the butter with the sugar until creamy. Add the eggs one at a time.",
+        "Add the passion fruit, yogurt and vanilla. Fold in the flour with the baking powder and salt, without overmixing.",
+        "Bake 50 to 55 minutes, until a toothpick comes out clean. Cool 15 minutes and unmold.",
+        "Mix the powdered sugar with the 2 tablespoons of passion fruit (with a few seeds, for color) and glaze the cooled loaf."
+      ]
+    }
+  },
+  {
+    id: "pan-medianoche",
+    category: "panes",
+    name: { es: "Pan de Medianoche", en: "Medianoche Sweet Egg Bread" },
+    time: "3 hr (con levado)",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3½ tazas de harina de trigo",
+        "1 sobre de 0.25 onzas de levadura seca",
+        "¼ taza de azúcar",
+        "¾ taza de leche tibia",
+        "2 huevos",
+        "4 cucharadas de mantequilla derretida",
+        "1 cucharadita de sal",
+        "1 huevo batido para barnizar"
+      ],
+      en: [
+        "3½ cups all-purpose flour",
+        "1 envelope (0.25 oz) active dry yeast",
+        "¼ cup sugar",
+        "¾ cup warm milk",
+        "2 eggs",
+        "4 tablespoons melted butter",
+        "1 teaspoon salt",
+        "1 beaten egg for brushing"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura en la leche tibia con 1 cucharada del azúcar y deje espumar 10 minutos.",
+        "Mezcle con la harina, el resto del azúcar, los huevos, la mantequilla y la sal, y amase 10 minutos hasta que la masa esté lisa y elástica. Deje levar tapado 1 hora.",
+        "Divida en 8 pedazos y forme panecillos alargados de 6 pulgadas. Póngalos en una bandeja engrasada y deje levar 1 hora.",
+        "Barnice con el huevo y hornee a 350 °F 15 a 18 minutos, hasta que estén dorados y brillosos.",
+        "Es el pan dulce y suave del sándwich de medianoche (pernil, jamón, queso suizo, pepinillo y mostaza, a la plancha)."
+      ],
+      en: [
+        "Dissolve the yeast in the warm milk with 1 tablespoon of the sugar and let foam 10 minutes.",
+        "Mix with the flour, the rest of the sugar, the eggs, butter and salt, and knead 10 minutes until smooth and elastic. Let rise covered 1 hour.",
+        "Divide into 8 pieces and shape 6-inch long rolls. Place on a greased sheet and let rise 1 hour.",
+        "Brush with the egg and bake at 350 °F 15 to 18 minutes, until golden and shiny.",
+        "It's the soft sweet bread for the medianoche sandwich (pernil, ham, Swiss cheese, pickle and mustard, pressed on the griddle)."
+      ]
+    }
   }
 );

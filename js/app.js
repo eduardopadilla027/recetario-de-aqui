@@ -17,7 +17,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #site-author y #footer-text en index.html.
-const APP_VERSION = "4.20.0";
+const APP_VERSION = "4.22.0";
 const APP_REVISED = "2026-10-17";
 /* Lo que se muestra al público: "Más de 1,000 recetas", no el total exacto (que cambia con cada
    tanda). El total exacto sólo sale en #/admin (auth.js). Baja al millar: 1,054 → "1,000". */
@@ -276,7 +276,7 @@ const categoryIcons = {
   carnes: "🥩", aves: "🍗", pescados: "🐟", huevos: "🥚", entremeses: "🥟",
   bizcochos: "🎂", galletitas: "🍪", pasteles_dulces: "🥧", panes: "🍞",
   emparedados: "🥪", postres: "🍮", arroces: "🍚", vegetales: "🥑",
-  salsas: "🫙", bebidas: "🥤", jugos: "🧃", cocteles: "🍹",
+  salsas: "🫙", bebidas: "🥤", jugos: "svg:ic-jugo-natural", cocteles: "🍹", // 🧃 es jugo de cajita: los jugos son naturales
   calientes: "☕", pastas: "🍝"
 };
 
@@ -348,8 +348,8 @@ const dishIcons = [
   ["pan", "🍞"], ["mallorca", "🥐"], ["rosquilla", "🍩"], ["bunuelo", "🍩"], ["barriguita", "🍩"], ["almojabana", "🧆"],
   ["sangria", "🍷"], ["ponche", "🍹"], ["mojito", "🍹"], ["daiquiri", "🍹"], ["cuba libre", "🥃"], ["pitorro", "🥃"], ["chichaito", "🥃"], ["bili", "🥃"], ["limoncello", "🥃"],
   ["jugo de china", "🍊"], ["jugo de toronja", "🍊"], ["jugo de mango", "🥭"], ["jugo de pina", "🍍"], ["jugo de acerola", "🍒"],
-  ["jugo de sandia", "🍉"], ["guarapo de cana", "🧃"], ["agua de coco", "🥥"],
-  ["jugo", "🧃"], ["batida", "🥤"], ["champola", "🥤"], ["malta", "🥤"], ["avena", "🥣"], ["crema", "🥣"], ["farina", "🥣"],
+  ["jugo de sandia", "🍉"], ["guarapo", "svg:ic-jugo-guarapo-cana"], ["agua de coco", "🥥"],
+  ["jugo", "svg:ic-jugo-natural"], ["batida", "🥤"], ["champola", "🥤"], ["malta", "🥤"], ["avena", "🥣"], ["crema", "🥣"], ["farina", "🥣"],
   ["pique", "🌶️"], ["sofrito", "🌿"], ["recaito", "🌿"], ["ajilimojili", "🌶️"], ["mojo", "🧄"], ["adobo", "🧂"], ["sazon", "🧂"], ["achiote", "🫙"], ["mayo", "🫙"]
 ];
 
@@ -429,7 +429,13 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
-  // Jugos y bebidas tropicales (tanda 48): los demás usan 🧃 y 🥤 como los otros jugos y batidas.
+  // Sopas, pastas y panes dulces (tanda 49): los panes usan 🍞 como los demás panes.
+  [/^asopao de res/, "svg:ic-sop-asopao-res"],
+  [/^asopao de chuletas/, "svg:ic-sop-asopao-chuletas"],
+  [/^asopao de habichuelas/, "svg:ic-sop-asopao-habichuelas"],
+  [/^crema de batata/, "🍠"],
+  [/^pasta con (pesto|pollo)/, "🍝"],
+  // Jugos y bebidas tropicales (tanda 48): los jugos tienen su vaso en dishIcon() (ic-jugo-*); las batidas, 🥤.
   [/^horchata de arroz/, "🥛"],
   [/^jugo de zanahoria/, "🥕"],
   // Pescados y mariscos (tanda 47); tres reutilizan el dibujo de un plato parecido.
@@ -1001,6 +1007,12 @@ const dessertIcons = [
 ];
 
 function dishIcon(recipe) {
+  // Jugos naturales: un vaso con el color del jugo y su fruta (ic-jugo-<id> en el sprite de index.html);
+  // si un jugo nuevo todavía no tiene dibujo, el vaso de la categoría. El de grosella conserva el suyo.
+  if (recipe.category === "jugos" && recipe.id !== "refresco-grosella") {
+    const own = `ic-jugo-${recipe.id}`;
+    return `svg:${typeof document !== "undefined" && document.getElementById(own) ? own : "ic-jugo-natural"}`;
+  }
   const name = norm(recipe.name.es);
   for (const [re, icon] of meatIcons[recipe.category] || []) {
     if (re.test(name)) { if (icon) return icon; break; }
@@ -1135,6 +1147,11 @@ function scaleIngredient(text, factor) {
 
 /* ------------------------------------------------------------ piezas ---- */
 
+/* Un icono es un emoji o "svg:<id>" (dibujo del sprite de index.html). */
+function iconArt(icon, cls = "cover-svg") {
+  return icon && icon.startsWith("svg:") ? `<svg class="${cls}" viewBox="0 0 64 64"><use href="#${icon.slice(4)}"/></svg>` : icon || "";
+}
+
 function coverHTML(cat, recipe) {
   const [tone, tone2] = categoryTones[cat] || ["#EAD7BD", "#D2AF84"];
   const img = recipe && recipe.image
@@ -1148,9 +1165,7 @@ function coverHTML(cat, recipe) {
   const [cx, cy, cr] = spots[v % spots.length];
   // <span> y no <div>: la portada también va dentro de botones (categorías).
   const icon = recipe ? dishIcon(recipe) : categoryIcons[cat] || "";
-  const art = icon.startsWith("svg:")
-    ? `<svg class="cover-svg" viewBox="0 0 64 64"><use href="#${icon.slice(4)}"/></svg>`
-    : icon;
+  const art = iconArt(icon);
   return `<span class="cover" style="--tone:${tone};--tone-2:${tone2};--cx:${cx};--cy:${cy};--cr:${cr}"><span class="cover-emoji" aria-hidden="true">${art}</span>${img}</span>`;
 }
 
@@ -1350,7 +1365,7 @@ function renderCategories() {
     return `
       <section class="category-section" id="cat-${cat}" aria-labelledby="cathead-${cat}">
         <h3 class="category-header" id="cathead-${cat}">
-          <span class="cat-dot" style="background:${tone}" aria-hidden="true">${categoryIcons[cat]}</span>
+          <span class="cat-dot" style="background:${tone}" aria-hidden="true">${iconArt(categoryIcons[cat], "cat-dot-svg")}</span>
           <span class="cat-title">${esc(tr.categories[cat])}</span>
           <span class="cat-count">${countText}</span>
         </h3>

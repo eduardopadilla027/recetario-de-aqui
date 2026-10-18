@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.20.0 · **Versión de la app:** 4.20.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,086 en 24 categorías
+> **Última actualización:** 2026-10-17 · **Versión del documento:** 4.22.0 · **Versión de la app:** 4.22.0 (revisada el 17 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,102 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -64,7 +64,7 @@ cocine-a-gusto/
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
 │   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, más salsas y aderezos y platos fuertes veganos, y dulces y salsas de grosella, en cuarenta y tres tandas (ver §13)
-│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46), pescados y mariscos (tanda 47) y jugos y bebidas tropicales (tanda 48), ver §13
+│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46), pescados y mariscos (tanda 47), jugos y bebidas tropicales (tanda 48) y sopas, asopaos, pastas y panes dulces (tanda 49), ver §13
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
 │   ├── substitutes.js    sustitutos para cada alérgeno según el ingrediente (getSubstitutes)
@@ -126,7 +126,7 @@ cocine-a-gusto/
 
 ## 6. Categorías
 
-Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`categoryIcons`), tono de portada
+Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`categoryIcons`: un emoji o `"svg:<id>"` del sprite, que `iconArt()` pinta en la portada y en el encabezado de la categoría; Jugos Naturales usa `svg:ic-jugo-natural`), tono de portada
 (`categoryTones`) y orden (`categoryOrder`). Las 24 categorías y su número de recetas:
 
 | Clave | Nombre | Recetas |
@@ -136,17 +136,17 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | cereales | Cereales | 18 |
 | granos | Granos y Legumbres | 22 |
 | ensaladas | Ensaladas | 30 |
-| sopas | Sopas | 47 |
+| sopas | Sopas | 53 |
 | carnes | Carnes | 63 |
 | aves | Aves | 47 |
 | pescados | Pescado y Mariscos | 72 |
 | huevos | Huevos y Queso | 14 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 57 |
-| pastas | Pastas | 21 |
+| pastas | Pastas | 26 |
 | bizcochos | Bizcochos | 42 |
 | galletitas | Galletitas | 38 |
 | pasteles_dulces | Pasteles Dulces | 22 |
-| panes | Pan y Panecillos | 41 |
+| panes | Pan y Panecillos | 46 |
 | emparedados | Emparedados | 25 |
 | postres | Helados, Budines, Flan y Otros Postres | 123 |
 | arroces | Arroces y Habichuelas | 56 |
@@ -509,7 +509,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 
 ### 7.8 Ficha interna de las recetas (`js/recipe-admin.js`, `#/admin` → Recetas)
 - **Qué es:** sección **Recetas** al final del panel de administración (sólo administradores; el público no ve nada de
-  esto). Tabla de las 1,086 recetas, de 50 en 50 ("Ver más recetas"), con nombre (enlace a la receta) y categoría,
+  esto). Tabla de todas las recetas, de 50 en 50 ("Ver más recetas"), con nombre (enlace a la receta) y categoría,
   **temporada recomendada** (etiquetas de color y si es "automática" o "corregida"), **fecha de ingreso** y el botón
   **Cambiar temporada**. Buscador (nombre ES/EN o id, sin acentos), filtros por categoría y por temporada (o "Corregidas
   a mano"), orden (más recientes, más antiguas, A–Z), resumen "Ingresos por día" y **Exportar CSV** de lo filtrado.
@@ -523,7 +523,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   primero y la lista de la época) siguen la corrección del administrador.
 - **Fecha de ingreso:** `RECIPE_ADDED` en `js/recipe-dates.js`, GENERADO por `node tools/recipe-dates.js` desde el
   historial de git (fecha del commit que escribió la línea `id: "…"`; las que aún no están en un commit, la de hoy).
-  Hoy: 165 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11 y 80 del 17.
+  Hoy: 165 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11 y 96 del 17.
   Se carga con `loadScript()` sólo al abrir el panel. **Después de añadir recetas, hay que volver a generarlo** (§11).
 - **Seguridad (`firestore.rules`, `match /recipeMeta/{id}`):** leer, cualquiera que entre; escribir y borrar, sólo
   administradores, con sólo esas 3 claves, `seasons` entre `todo`, `navidad`, `cuaresma`, `verano`, `gracias` y `lluvia`
@@ -602,7 +602,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,086). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,102). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -683,6 +683,41 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-17 — v4.22.0 · Jugos naturales con su vaso y su fruta (no 🧃)
+- *Pedido:* cambiar el icono de Jugos Naturales, que era 🧃 (jugo procesado de cajita), y que cada jugo tenga el icono
+  más parecido a su receta.
+- 30 dibujos nuevos en el sprite de `index.html` (`ic-jugo-*`), en el estilo del vaso del refresco de grosella: vaso de
+  cristal con el color del jugo, hielo, sorbeto y la fruta de la receta en el borde (china, toronja, limón, piña, mangó,
+  parcha, guayaba, guanábana, acerola, quenepa, coco, sandía, carambola, melón, lechosa, pitahaya, jobos, pomarrosa,
+  zanahoria, tamarindo, jengibre, canela, menta; los jugos de dos frutas llevan las dos). El guarapo usa la caña de
+  sorbeto y el agua de coco va en el coco verde con su sorbeto. `ic-jugo-natural` (jugo de china con su rueda) es el
+  icono de la categoría y el de cualquier jugo nuevo que todavía no tenga dibujo. El refresco de grosella conserva el suyo.
+- `js/app.js`: `categoryIcons.jugos = "svg:ic-jugo-natural"`; `dishIcon()` da a cada receta de jugos su
+  `ic-jugo-<id>` (o el de la categoría); nueva `iconArt()` para pintar emoji o dibujo, que usan `coverHTML()` y el
+  encabezado de la categoría (`.cat-dot-svg`). El guarapo con ron (cócteles) y cualquier nombre con "jugo" fuera de la
+  categoría ya no usan 🧃. Antes 13 jugos y la categoría salían con 🧃 y otros con un emoji suelto (🍋, 🥥, 🍍…).
+- *Verificado:* los 30 jugos con su dibujo y ninguno sin él; la tarjeta de la categoría y el encabezado en los
+  resultados con el vaso; ninguna receta con 🧃; a 375 px y sin errores de consola ✔.
+### 2026-10-17 — v4.21.0 · Más sopas y asopaos, pastas y panes dulces
+- *Pedido:* más recetas de sopas y asopaos, pastas y panes dulces.
+- Cuadragésima novena tanda en `js/recipes-5.js` (versiones propias), 16 recetas que no estaban:
+  - **Sopas y asopaos (6):** asopao de res, asopao de chuletas ahumadas, asopao de habichuelas rosadas con calabaza
+    (vegano), sopa de pavo con arroz y vegetales (la de después de Acción de Gracias), crema de batata y jengibre y
+    sopa de camarones con coco y recao.
+  - **Pastas (5):** espaguetis con pernil a la criolla, fettuccine con camarones en salsa de ajo y recao, pasta con pesto
+    de recao y queso del país, espaguetis al horno con queso y pasta con pollo en salsa de coco y achiote.
+  - **Panes dulces (5):** trenza de pan dulce con guayaba y queso, pan de anís, pan dulce de ron con pasas (glaseado
+    sin cocinar: sólo leche para niños), pan de parcha con glaseado de parcha y pan de medianoche.
+  - Menos caldo y sal donde el sodio pasaba de ~1,000 mg (asopao de habichuelas, sopa de pavo, crema de batata);
+    "pasta tipo fettuccine" para que cuente en la nutrición y salga con gluten; el pesto y el fettuccine rinden 6
+    porciones (436 y 505 kcal).
+- **Iconos:** 3 dibujos de asopao `ic-sop-*` (res, chuletas, habichuelas con la hojita vegana); antes los tres salían
+  con el del asopao de pollo. 🍠 para la crema de batata y 🍝 para las pastas de pesto y de pollo (salían 🧀 y 🍗).
+  Los panes usan 🍞 como los demás.
+- **Familias** (`families.js`): "Con queso y jamón" ya no toma la trenza de guayaba, que va con los panes dulces.
+- Fechas de ingreso regeneradas (`tools/recipe-dates.js`). Total: **1,086 → 1,102 recetas**.
+- *Verificado:* datos en Node ✔ (0 sin contar); buscador ("asopao" 3/3, "pasta" 5/5) ✔; familias ✔; navegador: las 16
+  en ES y EN a 375 px con su nombre y su dibujo, sin desbordes ni errores de consola ✔.
 ### 2026-10-17 — v4.20.0 · Ficha interna de las recetas (temporada y fecha de ingreso) y más jugos y bebidas tropicales
 - *Pedido:* evaluar internamente en cada receta la temporada recomendada y la fecha de ingreso a la app, y poder
   trabajarlo como administrador; y más recetas de jugos y bebidas tropicales.

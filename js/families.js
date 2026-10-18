@@ -117,7 +117,7 @@ const RECIPE_FAMILIES = {
     ["agua", { es: "Pan de agua, sobao y de molde", en: "Water bread, sobao and sandwich bread" }, /pan de agua|sobao|manteca|pan de mantequilla|molde|tostado|pan con ajo/],
     ["dulces", { es: "Panes dulces y donas", en: "Sweet breads and doughnuts" }, null],
     ["viandas", { es: "De viandas y maíz", en: "Root vegetable and corn breads" }, /yautia|maiz|casabe|arepas|panapen/],
-    ["salados", { es: "Con queso y jamón", en: "Cheese and ham breads" }, /^(?!mallorca).*(queso|jamon|quesitos|cachitos)/]
+    ["salados", { es: "Con queso y jamón", en: "Cheese and ham breads" }, /^(?!mallorca|trenza).*(queso|jamon|quesitos|cachitos)/]
   ],
   emparedados: [
     ["clasicos", { es: "Clásicos boricuas", en: "Puerto Rican classics" }, /cubano|medianoche|tripleta|jibarito(?! de pollo)|mezcla|club|desayuno/],
