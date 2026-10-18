@@ -35,7 +35,8 @@ const PLAN_T = {
       vegetariano: ["Vegetariano", "Sin carne, pollo ni pescado; con huevo, queso y mucho grano."],
       vegano: ["Vegano", "Sólo plantas: sin carne, lácteos, huevo ni miel; proteína de granos y tofu."],
       diabetes: ["Diabetes", "Carbohidratos contados por comida, más fibra y poca azúcar añadida."],
-      dash: ["Presión alta (DASH)", "Poco sodio, más potasio y calcio: viandas, frutas, granos y lácteos."]
+      dash: ["Presión alta (DASH)", "Poco sodio, más potasio y calcio: viandas, frutas, granos y lácteos."],
+      colesterol: ["Colesterol alto", "Poca grasa saturada y colesterol, sin frituras; más fibra de granos, avena y vegetales."]
     },
     seasonLabel: "Época",
     seasons: { auto: "Según la fecha de hoy", todo: "Todo el año", navidad: "Navidad", cuaresma: "Cuaresma y Semana Santa", verano: "Verano y playa", gracias: "Acción de Gracias", lluvia: "Días de lluvia" },
@@ -100,6 +101,7 @@ const PLAN_T = {
       vegetariano: "Combine granos (habichuelas, garbanzos, gandules, lentejas) con arroz o maíz para una proteína completa; el huevo y el queso también suman.",
       vegano: "Incluya habichuelas, garbanzos, lentejas, tofu o quinoa en cada comida principal. La vitamina B12 sólo viene de alimentos fortificados o suplementos: hable con su médico. Coma el hierro de los granos y la espinaca con vitamina C (limón, china) para aprovecharlo mejor.",
       diabetes: "Se busca de 45 a 60 g de carbohidratos por comida y de 15 a 20 g en la merienda (una «porción de carbohidrato» son 15 g). Su médico o educador en diabetes le dirá su cantidad exacta, sobre todo si usa insulina. Viandas, arroz, pan y frutas son carbohidratos: cuéntelos.",
+      colesterol: "Para bajar el colesterol LDL se busca menos de 6 % de las calorías de grasa saturada, nada de grasa trans y poco colesterol de la comida (yemas, vísceras, embutidos); la fibra soluble (habichuelas, garbanzos, avena, berenjena, guineo) ayuda. Si toma medicinas para el colesterol, siga las indicaciones de su médico.",
       dash: "El plan DASH baja la presión con poco sodio (menos de 2,300 mg al día, o 1,500 mg si su médico lo indica) y mucho potasio, calcio y fibra. Si tiene enfermedad del riñón o toma medicinas que suben el potasio, consulte antes a su médico."
     },
     people: "Personas en casa", printPlan: "Imprimir plan", shopPlan: "Lista de compras del plan",
@@ -114,6 +116,9 @@ const PLAN_T = {
     limNa: (mg) => `Sodio: ${mg.toLocaleString("en-US")} mg (meta: menos de 2,300 mg)`,
     limProt: (g, a, b) => `Proteína: ${g} g (las Guías: de ${a} a ${b} g para su peso)`,
     limK: (mg, ai) => `Potasio: ${mg.toLocaleString("en-US")} mg (meta DASH: ${ai.toLocaleString("en-US")} mg o más)`,
+    limChol: (mg, max) => `Colesterol: ${mg.toLocaleString("en-US")} mg (meta: menos de ${max} mg)`,
+    limSatChol: (p) => `Grasa saturada: ${p}% de las calorías (meta para el colesterol: menos de 6%)`,
+    chol: "colesterol",
     carbChoices: (g) => `${g} g de carbohidratos ≈ ${Math.round((g / 15) * 2) / 2} porciones de carbohidrato`,
     dgaNote: "Cálculo aproximado con los alimentos de cada receta (FoodData Central del USDA). La proteína y los lácteos se cuentan según su receta."
   },
@@ -132,7 +137,8 @@ const PLAN_T = {
       vegetariano: ["Vegetarian", "No meat, chicken or fish; with eggs, cheese and plenty of beans."],
       vegano: ["Vegan", "Plants only: no meat, dairy, eggs or honey; protein from beans and tofu."],
       diabetes: ["Diabetes", "Carbs counted per meal, more fiber and little added sugar."],
-      dash: ["High blood pressure (DASH)", "Low sodium, more potassium and calcium: root vegetables, fruit, beans and dairy."]
+      dash: ["High blood pressure (DASH)", "Low sodium, more potassium and calcium: root vegetables, fruit, beans and dairy."],
+      colesterol: ["High cholesterol", "Little saturated fat and cholesterol, no fried foods; more fiber from beans, oats and vegetables."]
     },
     seasonLabel: "Season",
     seasons: { auto: "Based on today's date", todo: "All year", navidad: "Christmas", cuaresma: "Lent and Holy Week", verano: "Summer and beach", gracias: "Thanksgiving", lluvia: "Rainy days" },
@@ -197,6 +203,7 @@ const PLAN_T = {
       vegetariano: "Pair beans, chickpeas, pigeon peas or lentils with rice or corn for complete protein; eggs and cheese help too.",
       vegano: "Include beans, chickpeas, lentils, tofu or quinoa at every main meal. Vitamin B12 only comes from fortified foods or supplements: talk to your doctor. Eat iron from beans and spinach with vitamin C (lime, orange) to absorb it better.",
       diabetes: "The usual aim is 45 to 60 g of carbs per meal and 15 to 20 g for a snack (one “carb choice” is 15 g). Your doctor or diabetes educator will give you your exact amount, especially if you use insulin. Root vegetables, rice, bread and fruit are carbs: count them.",
+      colesterol: "To lower LDL cholesterol, aim for under 6% of calories from saturated fat, no trans fat and little dietary cholesterol (egg yolks, organ meats, cured meats); soluble fiber (beans, chickpeas, oats, eggplant, bananas) helps. If you take cholesterol medicine, follow your doctor's instructions.",
       dash: "The DASH plan lowers blood pressure with little sodium (under 2,300 mg a day, or 1,500 mg if your doctor says so) and plenty of potassium, calcium and fiber. If you have kidney disease or take medicine that raises potassium, ask your doctor first."
     },
     people: "People at home", printPlan: "Print plan", shopPlan: "Plan shopping list",
@@ -211,6 +218,9 @@ const PLAN_T = {
     limNa: (mg) => `Sodium: ${mg.toLocaleString("en-US")} mg (goal: under 2,300 mg)`,
     limProt: (g, a, b) => `Protein: ${g} g (Guidelines: ${a} to ${b} g for your weight)`,
     limK: (mg, ai) => `Potassium: ${mg.toLocaleString("en-US")} mg (DASH goal: ${ai.toLocaleString("en-US")} mg or more)`,
+    limChol: (mg, max) => `Cholesterol: ${mg.toLocaleString("en-US")} mg (goal: under ${max} mg)`,
+    limSatChol: (p) => `Saturated fat: ${p}% of calories (cholesterol goal: under 6%)`,
+    chol: "cholesterol",
     carbChoices: (g) => `${g} g carbs ≈ ${Math.round((g / 15) * 2) / 2} carb choices`,
     dgaNote: "Approximate, from each recipe's ingredients (USDA FoodData Central). Protein and dairy are counted from the recipe."
   }
@@ -288,6 +298,14 @@ const PLAN_GOALS = {
     typical: 2000, adjust: 0, protPerKg: 1.2, maxPortion: 1.5, dash: true,
     ok: { desayuno: (n) => n.na <= 400 && n.sat <= 5, main: (n) => n.na <= 600 && n.sat <= 6 && n.p >= 15 && n.kcal >= 200, merienda: (n) => n.na <= 200 },
     score: (n) => n.k / 150 + n.fib * 2 + n.ca / 100 - n.na / 100 - n.sat
+  },
+  // Colesterol alto: grasa saturada bajo 6 % de las calorías (Asociación Americana del Corazón), poco colesterol de la
+  // comida y sin grasa trans ni frituras; más fibra (la soluble de granos y avena baja el LDL). Con tope de sodio
+  // por comida, porque el corazón también lo pide.
+  colesterol: {
+    typical: 2000, adjust: 0, protPerKg: 1.2, maxPortion: 2, noFried: true, chol: true,
+    ok: { desayuno: (n) => n.sat <= 3 && n.chol <= 60 && n.trans < 0.5 && n.na <= 500, main: (n) => n.sat <= 3.5 && n.chol <= 80 && n.trans < 0.5 && n.na <= 800 && n.p >= 15 && n.kcal >= 200, merienda: (n) => n.sat <= 2 && n.chol <= 30 && n.na <= 300 },
+    score: (n) => n.fib * 2.5 + n.p / 4 - n.sat * 2.5 - n.chol / 25 - n.trans * 5
   }
 };
 
@@ -523,7 +541,8 @@ const SIDE_RULES = {
   vegano: { kinds: [["arroz", "vianda"], ["granos"]], ok: (n) => n.kcal <= 400, score: (n) => n.p / 2 + n.fib * 1.5 },
   nutritivo: { kinds: [["granos"], ["ensalada", "vegetal"]], ok: (n) => n.fib >= 2 || n.p >= 5, score: (n) => n.fib * 3 + n.p / 3 - n.na / 500 },
   diabetes: { kinds: [["ensalada", "vegetal", "granos"]], ok: (n) => n.c <= 20 && n.add <= 3, score: (n) => n.fib * 2 + n.p / 3 - n.c / 4 },
-  dash: { kinds: [["arroz", "vianda", "granos"], ["ensalada", "vegetal"]], ok: (n) => n.na <= 300, score: (n) => n.k / 100 + n.fib - n.na / 80 }
+  dash: { kinds: [["arroz", "vianda", "granos"], ["ensalada", "vegetal"]], ok: (n) => n.na <= 300, score: (n) => n.k / 100 + n.fib - n.na / 80 },
+  colesterol: { kinds: [["granos"], ["ensalada", "vegetal"]], ok: (n) => n.sat <= 1.5 && n.chol <= 15 && n.na <= 400, score: (n) => n.fib * 3 + n.p / 4 - n.sat * 3 }
 };
 function planInfo(r) {
   const e = estimateNutrition(r);
@@ -812,7 +831,7 @@ function swapPanelHTML(key) {
 /* ── Vista ── */
 function goalButtonsHTML() {
   const tr = pt();
-  const icons = { rebajar: "🥗", masa: "💪", mantener: "⚖️", sodio: "🧂", lowcarb: "🥩", azucar: "🍬", nutritivo: "🥦", vegetariano: "🥕", vegano: "🌱", diabetes: "🩺", dash: "❤️" };
+  const icons = { rebajar: "🥗", masa: "💪", mantener: "⚖️", sodio: "🧂", lowcarb: "🥩", azucar: "🍬", nutritivo: "🥦", vegetariano: "🥕", vegano: "🌱", diabetes: "🩺", dash: "❤️", colesterol: "🫀" };
   return Object.keys(PLAN_GOALS).map((k) => `
     <button type="button" class="goal-card" role="radio" aria-checked="${plan.goal === k}" data-goal="${k}">
       <span class="goal-icon" aria-hidden="true">${icons[k]}</span>
@@ -891,7 +910,7 @@ function renderPlansShell() {
 }
 function nutriLine(n, m = 1) {
   const tr = pt();
-  return `<span>${Math.round(n.kcal * m)} ${tr.kcal}</span><span>${Math.round(n.p * m)} g ${tr.prot}</span><span>${Math.round(n.c * m)} g ${tr.carbs}</span><span>${Math.round(n.na * m)} mg ${tr.sodium}</span>`;
+  return `<span>${Math.round(n.kcal * m)} ${tr.kcal}</span><span>${Math.round(n.p * m)} g ${tr.prot}</span><span>${Math.round(n.c * m)} g ${tr.carbs}</span><span>${Math.round(n.na * m)} mg ${tr.sodium}</span>${PLAN_GOALS[plan.goal].chol ? `<span>${Math.round(n.chol * m)} mg ${tr.chol}</span>` : ""}`;
 }
 function mealHTML(meal, d, j) {
   const tr = pt();
@@ -961,7 +980,7 @@ function leftoverMeal(d, j) {
 }
 function dayHTML(meals, i, target, iso) {
   const tr = pt();
-  const tot = { kcal: 0, p: 0, c: 0, na: 0, fib: 0, s: 0, sat: 0, k: 0 };
+  const tot = { kcal: 0, p: 0, c: 0, na: 0, fib: 0, s: 0, sat: 0, k: 0, chol: 0 };
   const grp = { veg: 0, fruit: 0, grain: 0, wgrain: 0, dairy: 0 };
   let addOver = 0;
   for (const x of meals) {
@@ -986,7 +1005,7 @@ function dayHTML(meals, i, target, iso) {
       <span class="plan-total-val">${Math.round(tot.kcal).toLocaleString("en-US")} / ${target.kcal.toLocaleString("en-US")} ${tr.kcal}</span>
       <span class="plan-bar plan-bar-p"><span class="plan-bar-fill" style="width:${Math.min(100, pctP)}%"></span></span>
       <span class="plan-total-val">${Math.round(tot.p)} / ${target.protein} g ${tr.prot}</span>
-      <span class="plan-total-extra">${Math.round(tot.c)} g ${tr.carbs} · ${Math.round(tot.fib)} g ${tr.fiber} · ${Math.round(tot.s)} g ${tr.sugarW} · ${Math.round(tot.na).toLocaleString("en-US")} mg ${tr.sodium}</span>
+      <span class="plan-total-extra">${Math.round(tot.c)} g ${tr.carbs} · ${Math.round(tot.fib)} g ${tr.fiber} · ${Math.round(tot.s)} g ${tr.sugarW} · ${Math.round(tot.na).toLocaleString("en-US")} mg ${tr.sodium} · ${Math.round(tot.chol).toLocaleString("en-US")} mg ${tr.chol}</span>
     </div>
     ${dgaHTML(tot, grp, addOver, target)}
   </article>`;
@@ -1016,13 +1035,16 @@ function dgaHTML(tot, grp, addOver, target) {
   const pA = Math.round(kg * 1.2), pB = Math.round(kg * 1.6);
   const lim = (ok, txt) => `<li class="${ok ? "is-ok" : "is-warn"}"><span aria-hidden="true">${ok ? "✓" : "!"}</span> ${esc(txt)}</li>`;
   const kAI = plan.sex === "female" ? 2600 : 3400; // ingesta adecuada de potasio (Academias Nacionales, 2019)
+  // Colesterol de la comida: 300 mg es el valor diario de la etiqueta de la FDA; con el objetivo de colesterol, 200 mg.
+  const cholMax = PLAN_GOALS[plan.goal].chol ? 200 : 300;
   return `<details class="plan-dga">
     <summary>${esc(tr.dgaTitle)}</summary>
     <p class="plans-help">${esc(tr.dgaSub(target.kcal))}</p>
     <ul class="dga-list">${row("veg", grp.veg, tg.veg)}${row("fruit", grp.fruit, tg.fruit)}${row("wgrain", grp.wgrain, tg.wgrain)}${row("dairy", grp.dairy, tg.dairy)}</ul>
     <p class="dga-sub">${esc(tr.limits)}</p>
     <ul class="dga-limits">
-      ${lim(satPct < 10, tr.limSat(satPct))}
+      ${PLAN_GOALS[plan.goal].chol ? lim(satPct < 6, tr.limSatChol(satPct)) : lim(satPct < 10, tr.limSat(satPct))}
+      ${lim(tot.chol < cholMax, tr.limChol(Math.round(tot.chol / 5) * 5, cholMax))}
       ${lim(!addOver, tr.limAdd(addOver))}
       ${lim(tot.na < 2300, tr.limNa(Math.round(tot.na / 10) * 10))}
       ${lim(tot.p >= pA * 0.9, tr.limProt(Math.round(tot.p), pA, pB))}

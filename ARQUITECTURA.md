@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.24.0 · **Versión de la app:** 4.24.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,118 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.25.0 · **Versión de la app:** 4.25.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,118 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -627,7 +627,7 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   `showPlans()`; `showHome()` y `showRecipe()` la ocultan. Desde un plan, una receta se abre con `data-open` y "Atrás"
   vuelve al plan en la misma posición.
 - **Objetivos (`PLAN_GOALS`):** rebajar, ganar masa muscular, mantener, bajo en sodio, bajo en carbohidratos, bajo en
-  azúcar, más nutritivo, **vegetariano**, **vegano**, **diabetes** y **presión alta (DASH)** (v4.24, ver abajo). Estos dos llevan `diet` ("veg" o "vegan"): `dietOk()` deja en el
+  azúcar, más nutritivo, **vegetariano**, **vegano**, **diabetes**, **presión alta (DASH)** (v4.24) y **colesterol alto** (v4.25, ver abajo). Estos dos llevan `diet` ("veg" o "vegan"): `dietOk()` deja en el
   plan (comidas, acompañantes, época y "Recetas que encajan") sólo las recetas de esa familia (`isVegetarian`; `isVegan`
   = vegetariana y sin alérgeno de leche ni huevo ni alerta de miel), con criterios de proteína vegetal (plato principal
   ≥ 10 g en vegetariano, ≥ 8 g en vegano) y acompañantes de arroz o vianda y granos. Cada uno trae: meta típica de calorías, ajuste sobre el gasto (rebajar −20 %, masa +12 %…),
@@ -688,6 +688,13 @@ Sin `apiKey` la app muestra "Acceso sin configurar" y no deja entrar.
   "X g ≈ N porciones de carbohidrato (15 g)". Criterios con poca azúcar añadida (`n.add`) y fibra. **Presión alta
   (DASH)**: poco sodio y grasa saturada, más potasio, calcio y fibra (`score` con `n.k` y `n.ca`), y el día revisa el
   potasio contra la ingesta adecuada (3,400 mg hombres, 2,600 mg mujeres).
+- **Colesterol (v4.25):** todos los planes suman el **colesterol** del día (en los totales) y lo revisan contra 300 mg, el
+  valor diario de la etiqueta de la FDA. El objetivo **Colesterol alto** (`chol: true`) busca grasa saturada bajo 6 % de las
+  calorías (Asociación Americana del Corazón) y menos de 200 mg de colesterol al día: sin frituras ni grasa trans; desayuno
+  ≤ 3 g de saturada, ≤ 60 mg de colesterol y ≤ 500 mg de sodio; plato principal ≤ 3.5 g, ≤ 80 mg y ≤ 800 mg; merienda ≤ 2 g,
+  ≤ 30 mg y ≤ 300 mg; acompañantes de granos y de ensalada o vegetales (≤ 1.5 g, ≤ 15 mg, ≤ 400 mg); puntuación que premia
+  la fibra (la soluble de habichuelas y avena baja el LDL) y castiga la saturada y el colesterol; porción hasta 2. Cada
+  comida muestra su colesterol. Prueba de 7 días: ~1,865 de 1,850 calorías, colesterol 48–124 mg por día y saturada 2–7 %.
 - **Guías Alimentarias 2025–2030 (`dgaHTML()`):** cada día trae un desplegable con las porciones de los grupos que pide
   la guía para 2,000 calorías, ajustadas a la meta (vegetales 3, frutas 2, granos integrales 2–4; lácteos 3) con lo que
   suman las recetas (`estimateNutrition().groups`, §8), y los límites del día: grasa saturada bajo 10 % de las
@@ -837,6 +844,13 @@ No hay pruebas automáticas en el repositorio. La verificación de cada cambio s
 entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-MM-DD) en `js/app.js`, y el texto
 inicial de `#site-author` y `#footer-text` en `index.html`. Portada: "Versión X · Revisada el …"; pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
+
+### 2026-10-18 — v4.25.0 · Colesterol en los planes
+- *Pedido:* incluir el colesterol en los planes.
+- Los totales de cada día dicen los mg de colesterol y la revisión del día lo compara con 300 mg (valor diario de la FDA).
+- Objetivo nuevo **Colesterol alto** (12 objetivos): poca grasa saturada (bajo 6 %), colesterol bajo 200 mg al día, sin
+  frituras ni grasa trans, con tope de sodio por comida y más fibra; cada comida muestra su colesterol (§7.2).
+- Verificado: planes de 7 días con los 12 objetivos sin comidas vacías; en el navegador, sin errores ni desbordes.
 
 ### 2026-10-18 — v4.24.0 · Herramientas de cocina, nutrición del USDA y salud de Puerto Rico
 - *Pedido:* las recomendaciones 1–3 y 5–10 de la evaluación (interfaz y herramientas), los puntos 1–5 de la nutrición
