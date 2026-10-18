@@ -92,6 +92,10 @@ const NUTRI_FOODS = [
   F("salmon", 140, 20, 0, 0, 0, 6, 1.4, 400, { can: 418, cup: 140 }),
   F("ceti", 90, 18, 0, 0, 0, 2, 0.5, 80, { cup: 150 }),
   F("ostion|ostiones", 68, 7, 3.9, 0, 0, 2.5, 0.8, 211, { u: 15, cup: 248 }),
+  // v4.34: USDA SR Legacy, a mano (también en tools/usda/map.js). "atun" de arriba es el de lata; el fresco
+  // tiene mucha menos grasa y sodio.
+  F("atun fresco", 109, 24.4, 0, 0, 0, 0.5, 0.2, 45, { u: 170 }),
+  F("vieira|vieiras|scallops", 69, 12.1, 3.2, 0, 0, 0.5, 0.1, 392, { u: 30 }),
   // Huevos y lácteos
   F("huevo", 143, 12.6, 0.7, 0.4, 0, 9.5, 3.1, 142, { u: 50, cup: 243 }),
   F("yema", 322, 16, 3.6, 0.6, 0, 27, 9.6, 48, { u: 17 }),

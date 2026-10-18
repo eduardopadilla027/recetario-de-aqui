@@ -18,7 +18,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.33.0";
+const APP_VERSION = "4.34.0";
 const APP_REVISED = "2026-10-18";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
@@ -456,6 +456,17 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
+  // Pescados y mariscos (tanda 55): los dibujos de pescado que ya había, o el emoji del marisco.
+  [/^sierra guisada/, "svg:ic-pez-mero-criolla"],
+  [/^jueyes al ajillo/, "🦀"],
+  [/^atun fresco en escabeche/, "svg:ic-pez-escabeche"],
+  [/^salmon al horno/, "svg:ic-parrilla-salmon"],
+  [/^filetes de tilapia a la vizcaina/, "svg:ic-pez-vizcaina"],
+  [/^deditos de pescado/, "svg:ic-pez-empanado"],
+  [/^filetes de chillo al ajillo/, "svg:ic-pez-filete-mojo"],
+  [/^mero a la parrilla/, "svg:ic-parrilla-pescado"],
+  [/^vieiras/, "🐚"],
+  [/^sardinas guisadas/, "🐟"],
   // Frituras, veganas, galletitas, aves y tragos (tanda 54): los dibujos que ya había.
   [/^alcapurrias de camarones/, "svg:ic-ent-alcapurria"],
   [/^pastelillos de guayaba/, "svg:ic-ent-pastelillo-queso"],

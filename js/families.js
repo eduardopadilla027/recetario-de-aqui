@@ -68,7 +68,7 @@ const RECIPE_FAMILIES = {
     ["camarones", { es: "Camarones", en: "Shrimp" }, /camarones/],
     ["langosta", { es: "Langosta y jueyes", en: "Lobster and land crab" }, /langosta|jueyes/],
     ["moluscos", { es: "Pulpo, calamar y carrucho", en: "Octopus, squid and conch" }, /pulpo|calamar|carrucho/],
-    ["conchas", { es: "Almejas, mejillones y ostiones", en: "Clams, mussels and oysters" }, /almejas|mejillones|ostiones/],
+    ["conchas", { es: "Almejas, mejillones, ostiones y vieiras", en: "Clams, mussels, oysters and scallops" }, /almejas|mejillones|ostiones|vieiras/],
     ["mariscadas", { es: "Mariscadas y mofongos", en: "Seafood medleys and mofongos" }, /mariscada|mofongo/],
     ["frios", { es: "Ceviches, cócteles y ensaladas", en: "Ceviches, cocktails and salads" }, /ceviche|coctel|ensalada/]
   ],

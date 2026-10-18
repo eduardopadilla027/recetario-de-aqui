@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.33.0 · **Versión de la app:** 4.33.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,198 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.34.0 · **Versión de la app:** 4.34.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,216 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -194,7 +194,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | sopas | Sopas | 54 |
 | carnes | Carnes | 80 |
 | aves | Aves | 60 |
-| pescados | Pescado y Mariscos | 68 |
+| pescados | Pescado y Mariscos | 86 |
 | huevos | Huevos y Queso | 23 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 64 |
 | pastas | Pastas | 26 |
@@ -639,7 +639,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   primero y la lista de la época) siguen la corrección del administrador.
 - **Fecha de ingreso:** `RECIPE_ADDED` en `js/recipe-dates.js`, GENERADO por `node tools/recipe-dates.js` desde el
   historial de git (fecha del commit que escribió la línea `id: "…"`; las que aún no están en un commit, la de hoy).
-  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17 y 84 del 18 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
+  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17 y 102 del 18 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
   Se carga con `loadScript()` sólo al abrir el panel. **Después de añadir recetas, hay que volver a generarlo** (§11).
 - **Seguridad (`firestore.rules`, `match /recipeMeta/{id}`):** leer, cualquiera que entre; escribir y borrar, sólo
   administradores, con sólo esas 3 claves, `seasons` entre `todo`, `navidad`, `cuaresma`, `verano`, `gracias` y `lluvia`
@@ -787,7 +787,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - **Por qué:** la app usa `#/receta/<id>`, y para Google todo lo que va después de `#` es la portada: ninguna receta salía
   en las búsquedas ("receta de pernil") y todos los enlaces compartidos se veían iguales (título, texto y bandera).
 - **`node tools/prerender.js`** (sin dependencias; carga los scripts en `vm` como el navegador) genera:
-  `receta/<id>.html` (1,198 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
+  `receta/<id>.html` (1,216 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
   `vercel.json`. Cada una es ligera y se lee sin JavaScript: título y descripción propios ("Coquito: receta puertorriqueña
   paso a paso para 12 porciones. Lleva leche de coco… Lista en 4 h 15 min."), `canonical`, Open Graph y Twitter con el
   nombre del plato, tiempo de cocina y total, porciones, calorías estimadas, alérgenos, ingredientes y pasos en español y
@@ -991,7 +991,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,198). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,216). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -1097,6 +1097,29 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-18 — v4.34.0 · Más pescados y mariscos
+- *Pedido:* más recetas de pescados y mariscos.
+- Quincuagésima quinta tanda en `js/recipes-5.js` (versiones propias), 18 que no estaban (había 68 en Pescado y Mariscos):
+  - **Pescados (9):** sierra guisada con papas, atún fresco en escabeche, salmón al horno con mojo de naranja agria,
+    filetes de tilapia a la vizcaína, deditos de pescado al horno (para niños), filetes de chillo al ajillo, mero a la
+    parrilla con chimichurri de recao, sardinas guisadas con cebolla y viandas, y bacalao guisado en leche de coco.
+  - **Mariscos (9):** camarones al ron con piña, langosta en salsa de coco y recao, jueyes al ajillo, calamares a la
+    plancha, pulpo a la gallega con papas, vieiras con mantequilla de parcha, almejas en salsa criolla, ostiones a la
+    parrilla con mantequilla de ajo y carrucho al ajillo.
+  - Menos sal o menos cantidad donde el sodio pasaba de ~900 mg (pulpo, bacalao, atún, tilapia, almejas, vieiras sin sal
+    añadida); las sardinas rinden 6.
+- **Nutrición** (`nutrition.js`): nuevos "atún fresco" (USDA yellowfin crudo: 109 kcal y 45 mg de sodio; antes contaba
+  como atún de lata) y "vieiras" (USDA scallop crudo). También en `tools/usda/map.js`. El "Atún a la Plancha con Mojo de
+  Recao", que ya estaba, ahora cuenta su atún como fresco.
+- **Alérgenos** (`advisories.js`): las vieiras cuentan como moluscos.
+- **Iconos:** los dibujos de pescado que había (guiso criollo, escabeche, salmón, vizcaína, empanado, filete con mojo,
+  parrilla) y emojis para jueyes 🦀 y vieiras 🐚.
+- **Familias** (`families.js`): "Almejas, mejillones y ostiones" pasa a "Almejas, mejillones, ostiones y vieiras".
+  Ninguna receta anterior cambió.
+- Fechas regeneradas y `node tools/prerender.js`: 1,216 páginas y `sitemap.xml` con 1,218 direcciones. Total: **1,198 →
+  1,216 recetas**.
+- *Verificado:* `node tools/check-recipes.js` 0 errores y 0 avisos; nutrición 0 sin contar; navegador: las 18 en ES y EN
+  a 375 px.
 ### 2026-10-18 — v4.33.0 · Frituras, veganas, galletitas, carnes con conejo, aves y tragos
 - *Pedido:* más frituras y aperitivos, veganas, vegetarianas, galletitas, carnes (con conejo), aves, cócteles y tragos.
 - Quincuagésima cuarta tanda en `js/recipes-5.js` (versiones propias), 32 que no estaban:

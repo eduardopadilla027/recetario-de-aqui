@@ -9040,5 +9040,840 @@ recipes.push(
         "Serve right away. The acerola gives it a pink color and lots of vitamin C. You can skip the egg white; it'll have no foam."
       ]
     }
+  },
+  // ---------- Tanda 55: más pescados y mariscos (18) ----------
+  {
+    id: "sierra-guisada-papas",
+    category: "pescados",
+    name: { es: "Sierra Guisada con Papas", en: "Kingfish Stewed with Potatoes" },
+    active: 40, total: 55, wait: "adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de sierra en ruedas de 1 pulgada",
+        "2 cucharadas de jugo de limón",
+        "1 cucharadita de sal",
+        "3 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "1 hoja de laurel",
+        "1 taza de agua",
+        "3 papas en ruedas finas",
+        "1 cebolla en ruedas"
+      ],
+      en: [
+        "2 pounds kingfish (sierra), in 1-inch steaks",
+        "2 tablespoons lime juice",
+        "1 teaspoon salt",
+        "3 tablespoons olive oil",
+        "½ cup sofrito",
+        "1 can (8 oz) tomato sauce",
+        "¼ cup stuffed olives",
+        "1 bay leaf",
+        "1 cup water",
+        "3 potatoes, thinly sliced",
+        "1 onion, sliced into rings"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone las ruedas de sierra con el limón y la mitad de la sal, y déjelas 15 minutos.",
+        "En un caldero ancho, sofría la cebolla y el sofrito en el aceite 4 minutos.",
+        "Añada la salsa de tomate, las aceitunas, el laurel, el agua, las papas y el resto de la sal. Tape y cocine 15 minutos, hasta que las papas estén casi blandas.",
+        "Acomode las ruedas de sierra encima, en una sola capa, y bañelas con la salsa.",
+        "Tape y cocine a fuego bajo 10 a 12 minutos, sin moverlas, hasta que el pescado se separe con un tenedor. Sirva con arroz blanco."
+      ],
+      en: [
+        "Season the kingfish steaks with the lime juice and half the salt and let sit 15 minutes.",
+        "In a wide caldero, sauté the onion and sofrito in the oil 4 minutes.",
+        "Add the tomato sauce, olives, bay leaf, water, potatoes and the rest of the salt. Cover and cook 15 minutes, until the potatoes are almost tender.",
+        "Arrange the kingfish on top in a single layer and spoon the sauce over it.",
+        "Cover and cook over low heat 10 to 12 minutes, without stirring, until the fish flakes with a fork. Serve with white rice."
+      ]
+    }
+  },
+  {
+    id: "camarones-ron-pina",
+    category: "pescados",
+    name: { es: "Camarones al Ron con Piña", en: "Rum Shrimp with Pineapple" },
+    active: 25, total: 25,
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de camarones grandes pelados",
+        "½ cucharadita de sal",
+        "2 cucharadas de mantequilla",
+        "3 dientes de ajo picados",
+        "1 taza de piña fresca en cubitos",
+        "¼ taza de ron oscuro",
+        "2 cucharadas de azúcar morena",
+        "1 cucharada de jugo de limón",
+        "1 pizca de hojuelas de pimiento rojo",
+        "2 cebollines picados"
+      ],
+      en: [
+        "1½ pounds large shrimp, peeled",
+        "½ teaspoon salt",
+        "2 tablespoons butter",
+        "3 garlic cloves, chopped",
+        "1 cup fresh pineapple, diced",
+        "¼ cup dark rum",
+        "2 tablespoons brown sugar",
+        "1 tablespoon lime juice",
+        "1 pinch red pepper flakes",
+        "2 scallions, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone los camarones con la sal.",
+        "En un sartén grande, derrita la mantequilla y dore la piña 4 minutos, hasta que se acaramele un poco.",
+        "Añada el ajo y los camarones y cocine 2 minutos por lado.",
+        "Retire el sartén del fuego, añada el ron (con cuidado, que puede encenderse) y vuelva al fuego. Agregue el azúcar, el limón y el pimiento, y cocine 2 minutos hasta que la salsa brille.",
+        "Espolvoree el cebollín y sirva con arroz blanco o tostones."
+      ],
+      en: [
+        "Season the shrimp with the salt.",
+        "In a large skillet, melt the butter and brown the pineapple 4 minutes, until lightly caramelized.",
+        "Add the garlic and shrimp and cook 2 minutes per side.",
+        "Take the skillet off the heat, add the rum (carefully, it may flame) and return to the heat. Add the sugar, lime juice and pepper flakes and cook 2 minutes until the sauce is glossy.",
+        "Sprinkle with the scallions and serve with white rice or tostones."
+      ]
+    }
+  },
+  {
+    id: "langosta-salsa-coco",
+    category: "pescados",
+    name: { es: "Langosta en Salsa de Coco y Recao", en: "Lobster in Coconut and Culantro Sauce" },
+    active: 35, total: 35,
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 colas de langosta (6 onzas cada una)",
+        "2 cucharadas de aceite de oliva",
+        "¼ taza de sofrito",
+        "1 lata de 13.5 onzas de leche de coco",
+        "2 cucharadas de salsa de tomate",
+        "4 hojas de recao picadas",
+        "1 cucharada de jugo de limón",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "4 lobster tails (6 ounces each)",
+        "2 tablespoons olive oil",
+        "¼ cup sofrito",
+        "1 can (13.5 oz) coconut milk",
+        "2 tablespoons tomato sauce",
+        "4 culantro (recao) leaves, chopped",
+        "1 tablespoon lime juice",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Con unas tijeras, corte la concha de las colas por debajo, saque la carne entera y córtela en medallones de 1 pulgada.",
+        "Sofría el sofrito en el aceite 3 minutos.",
+        "Añada la leche de coco, la salsa de tomate y la sal, y deje hervir suave 8 minutos, hasta que espese un poco.",
+        "Añada la langosta y cocine 4 a 5 minutos, moviendo poco, hasta que esté blanca y firme. No la cocine de más o se pone dura.",
+        "Apague, añada el recao y el limón. Sirva con arroz blanco o con mofongo."
+      ],
+      en: [
+        "With kitchen shears, cut the shell of the tails underneath, remove the meat whole and cut it into 1-inch medallions.",
+        "Sauté the sofrito in the oil 3 minutes.",
+        "Add the coconut milk, tomato sauce and salt and simmer gently 8 minutes, until slightly thickened.",
+        "Add the lobster and cook 4 to 5 minutes, stirring little, until white and firm. Don't overcook it or it turns tough.",
+        "Turn off the heat and add the culantro and lime juice. Serve with white rice or mofongo."
+      ]
+    }
+  },
+  {
+    id: "jueyes-ajillo",
+    category: "pescados",
+    name: { es: "Jueyes al Ajillo", en: "Garlic Land Crab (Jueyes al Ajillo)" },
+    active: 20, total: 20,
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de carne de juey limpia",
+        "¼ taza de aceite de oliva",
+        "8 dientes de ajo en lascas",
+        "1 ají dulce picado",
+        "2 cucharadas de mantequilla",
+        "1 cucharada de jugo de limón",
+        "¼ taza de perejil picado",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "1 pound cleaned land crab meat (or lump crab meat)",
+        "¼ cup olive oil",
+        "8 garlic cloves, sliced",
+        "1 ají dulce (sweet chili pepper), chopped",
+        "2 tablespoons butter",
+        "1 tablespoon lime juice",
+        "¼ cup chopped parsley",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Revise la carne de juey con los dedos y saque cualquier pedacito de carapacho.",
+        "En un sartén, dore el ajo en el aceite a fuego bajo hasta que esté doradito.",
+        "Añada el ají dulce y la mantequilla y cocine 1 minuto.",
+        "Añada el juey y la sal, y mezcle con cuidado 3 a 4 minutos, sólo hasta que esté caliente.",
+        "Apague, añada el limón y el perejil. Sirva con tostones o arepas de coco, como en los kioscos de Piñones."
+      ],
+      en: [
+        "Check the crab meat with your fingers and remove any bits of shell.",
+        "In a skillet, brown the garlic in the oil over low heat until golden.",
+        "Add the ají dulce and butter and cook 1 minute.",
+        "Add the crab and salt and fold gently 3 to 4 minutes, just until hot.",
+        "Turn off the heat and add the lime juice and parsley. Serve with tostones or coconut arepas, like at the Piñones kiosks."
+      ]
+    }
+  },
+  {
+    id: "calamares-plancha",
+    category: "pescados",
+    name: { es: "Calamares a la Plancha con Ajo y Perejil", en: "Griddled Squid with Garlic and Parsley" },
+    active: 20, total: 20,
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de calamares limpios (cuerpos y tentáculos)",
+        "3 cucharadas de aceite de oliva",
+        "½ cucharadita de sal",
+        "4 dientes de ajo picaditos",
+        "¼ taza de perejil picado",
+        "2 cucharadas de jugo de limón",
+        "1 limón en cuñas"
+      ],
+      en: [
+        "2 pounds cleaned squid (bodies and tentacles)",
+        "3 tablespoons olive oil",
+        "½ teaspoon salt",
+        "4 garlic cloves, finely chopped",
+        "¼ cup chopped parsley",
+        "2 tablespoons lime juice",
+        "1 lime, in wedges"
+      ]
+    },
+    steps: {
+      es: [
+        "Abra los cuerpos de calamar a lo largo y márquelos por dentro con cortes en cruz, sin atravesarlos. Séquelos muy bien.",
+        "Mezcle el ajo, el perejil, el limón y 2 cucharadas del aceite. Guarde este aliño.",
+        "Caliente una plancha o sartén de hierro a fuego alto. Unte los calamares con el resto del aceite y la sal.",
+        "Cocínelos 1 a 2 minutos por lado, en tandas, hasta que se enrosquen y doren. Más tiempo los pone gomosos.",
+        "Rocíe el aliño de ajo y perejil y sirva enseguida con las cuñas de limón."
+      ],
+      en: [
+        "Open the squid bodies lengthwise and score them inside in a crosshatch, without cutting through. Dry them very well.",
+        "Mix the garlic, parsley, lime juice and 2 tablespoons of the oil. Set this dressing aside.",
+        "Heat a griddle or cast-iron skillet over high heat. Rub the squid with the rest of the oil and the salt.",
+        "Cook 1 to 2 minutes per side, in batches, until they curl and brown. Longer makes them rubbery.",
+        "Drizzle with the garlic-parsley dressing and serve right away with the lime wedges."
+      ]
+    }
+  },
+  {
+    id: "pulpo-gallega",
+    category: "pescados",
+    name: { es: "Pulpo a la Gallega con Papas", en: "Galician-Style Octopus with Potatoes" },
+    active: 75, total: 75,
+    servings: 4,
+    ingredients: {
+      es: [
+        "2½ libras de pulpo limpio (congelado y descongelado)",
+        "1 cebolla partida",
+        "1 hoja de laurel",
+        "4 papas medianas con cáscara",
+        "¼ taza de aceite de oliva",
+        "1 cucharadita de pimentón dulce",
+        "½ cucharadita de pimentón picante",
+        "¼ cucharadita de sal gruesa"
+      ],
+      en: [
+        "2½ pounds cleaned octopus (frozen and thawed)",
+        "1 onion, halved",
+        "1 bay leaf",
+        "4 medium potatoes, unpeeled",
+        "¼ cup olive oil",
+        "1 teaspoon sweet paprika",
+        "½ teaspoon hot paprika",
+        "¼ teaspoon coarse salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva agua suficiente con la cebolla y el laurel. Sumerja el pulpo 3 veces por 5 segundos (así se rizan las patas) y luego déjelo dentro.",
+        "Cocine a fuego medio 45 a 50 minutos, hasta que un palillo entre fácil en la parte gruesa. Apague y deje reposar 10 minutos en el agua.",
+        "Mientras, hierva las papas en otra olla 20 minutos, pélelas y córtelas en ruedas gruesas.",
+        "Corte el pulpo en ruedas de ½ pulgada con unas tijeras.",
+        "Ponga las papas en un plato de madera o fuente, el pulpo encima, y termine con el aceite, los dos pimentones y la sal gruesa. Sirva tibio."
+      ],
+      en: [
+        "Bring plenty of water to a boil with the onion and bay leaf. Dip the octopus 3 times for 5 seconds (this curls the tentacles) and then leave it in.",
+        "Cook over medium heat 45 to 50 minutes, until a toothpick slides easily into the thick part. Turn off and let rest 10 minutes in the water.",
+        "Meanwhile, boil the potatoes in another pot 20 minutes, peel them and cut into thick rounds.",
+        "Cut the octopus into ½-inch rounds with kitchen shears.",
+        "Place the potatoes on a wooden board or platter, the octopus on top, and finish with the oil, both paprikas and the coarse salt. Serve warm."
+      ]
+    }
+  },
+  {
+    id: "bacalao-coco",
+    category: "pescados",
+    name: { es: "Bacalao Guisado en Leche de Coco", en: "Salt Cod Stewed in Coconut Milk" },
+    active: 40, total: 760, wait: "desalar",
+    servings: 6,
+    ingredients: {
+      es: [
+        "¾ libra de bacalao salado sin espinas",
+        "2 cucharadas de aceite de oliva",
+        "1 cebolla en tiras",
+        "1 pimiento verde en tiras",
+        "¼ taza de sofrito",
+        "2 tomates picados",
+        "1 lata de 13.5 onzas de leche de coco",
+        "¼ taza de cilantro picado",
+        "1 pizca de pimienta"
+      ],
+      en: [
+        "¾ pound boneless salt cod",
+        "2 tablespoons olive oil",
+        "1 onion, sliced",
+        "1 green bell pepper, sliced",
+        "¼ cup sofrito",
+        "2 tomatoes, chopped",
+        "1 can (13.5 oz) coconut milk",
+        "¼ cup chopped cilantro",
+        "1 pinch pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Desale el bacalao en agua fría 12 horas, cambiando el agua 3 o 4 veces. Escúrralo y desmenúcelo en lascas.",
+        "Sofría la cebolla, el pimiento y el sofrito en el aceite 5 minutos.",
+        "Añada los tomates y cocine 5 minutos hasta que se deshagan.",
+        "Añada la leche de coco, el bacalao y la pimienta. Cocine destapado a fuego bajo 15 minutos, hasta que la salsa espese. Pruebe antes de añadir sal: el bacalao suele traer suficiente.",
+        "Añada el cilantro y sirva con viandas hervidas o arroz blanco. Así se cocina en la costa de Loíza."
+      ],
+      en: [
+        "Desalt the cod in cold water for 12 hours, changing the water 3 or 4 times. Drain and flake it.",
+        "Sauté the onion, bell pepper and sofrito in the oil 5 minutes.",
+        "Add the tomatoes and cook 5 minutes until they break down.",
+        "Add the coconut milk, cod and pepper. Cook uncovered over low heat 15 minutes, until the sauce thickens. Taste before adding salt: the cod usually brings enough.",
+        "Add the cilantro and serve with boiled root vegetables or white rice. This is how it's cooked on the Loíza coast."
+      ]
+    }
+  },
+  {
+    id: "atun-escabeche",
+    category: "pescados",
+    name: { es: "Atún Fresco en Escabeche", en: "Fresh Tuna Escabeche" },
+    active: 30, total: 270, wait: "frio",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 libras de atún fresco en filetes de 1 pulgada",
+        "½ cucharadita de sal",
+        "½ taza de aceite de oliva",
+        "2 cebollas en ruedas",
+        "1 pimiento rojo en tiras",
+        "6 dientes de ajo en lascas",
+        "½ taza de vinagre",
+        "10 granos de pimienta",
+        "2 hojas de laurel",
+        "¼ taza de aceitunas rellenas"
+      ],
+      en: [
+        "2 pounds fresh tuna, in 1-inch steaks",
+        "½ teaspoon salt",
+        "½ cup olive oil",
+        "2 onions, sliced into rings",
+        "1 red bell pepper, sliced",
+        "6 garlic cloves, sliced",
+        "½ cup vinegar",
+        "10 black peppercorns",
+        "2 bay leaves",
+        "¼ cup stuffed olives"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone el atún con la mitad de la sal y dórelo en 2 cucharadas del aceite, 2 minutos por lado. Córtelo en cubos grandes y póngalo en un envase de cristal.",
+        "En el mismo sartén, cocine a fuego bajo el resto del aceite con las cebollas, el pimiento, el ajo, la pimienta y el laurel, 8 minutos, sin que doren.",
+        "Añada el vinagre, el resto de la sal y las aceitunas, y deje hervir 2 minutos.",
+        "Vierta el escabeche caliente sobre el atún, cubriéndolo bien.",
+        "Deje enfriar y refrigere al menos 4 horas. Sirva frío con guineítos o galletas de soda. Dura 5 días en la nevera."
+      ],
+      en: [
+        "Season the tuna with half the salt and sear it in 2 tablespoons of the oil, 2 minutes per side. Cut into large cubes and put in a glass container.",
+        "In the same skillet, cook the rest of the oil over low heat with the onions, bell pepper, garlic, peppercorns and bay leaves, 8 minutes, without browning.",
+        "Add the vinegar, the rest of the salt and the olives and boil 2 minutes.",
+        "Pour the hot escabeche over the tuna, covering it well.",
+        "Let cool and refrigerate at least 4 hours. Serve cold with green bananas or soda crackers. It keeps 5 days in the refrigerator."
+      ]
+    }
+  },
+  {
+    id: "salmon-naranja-agria",
+    category: "pescados",
+    name: { es: "Salmón al Horno con Mojo de Naranja Agria", en: "Baked Salmon with Sour Orange Mojo" },
+    active: 30, total: 30,
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de salmón (6 onzas cada uno)",
+        "¼ taza de jugo de naranja agria",
+        "4 dientes de ajo majados",
+        "½ cucharadita de orégano",
+        "½ cucharadita de comino",
+        "½ cucharadita de sal",
+        "2 cucharadas de aceite de oliva",
+        "1 cebolla roja en ruedas finas"
+      ],
+      en: [
+        "4 salmon fillets (6 ounces each)",
+        "¼ cup sour orange juice",
+        "4 garlic cloves, mashed",
+        "½ teaspoon oregano",
+        "½ teaspoon cumin",
+        "½ teaspoon salt",
+        "2 tablespoons olive oil",
+        "1 red onion, thinly sliced"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400 °F.",
+        "Mezcle la naranja agria, el ajo, el orégano, el comino, la sal y el aceite.",
+        "Ponga la cebolla en un molde, los filetes encima con la piel hacia abajo, y vierta el mojo por encima.",
+        "Hornee 12 a 15 minutos, hasta que el salmón se separe en lascas pero siga jugoso en el centro.",
+        "Sirva con la cebolla y el jugo del molde por encima. Si no consigue naranja agria, use mitad jugo de china y mitad de limón."
+      ],
+      en: [
+        "Heat the oven to 400 °F.",
+        "Mix the sour orange juice, garlic, oregano, cumin, salt and oil.",
+        "Put the onion in a baking dish, the fillets on top skin side down, and pour the mojo over them.",
+        "Bake 12 to 15 minutes, until the salmon flakes but is still juicy in the center.",
+        "Serve with the onion and pan juices on top. If you can't find sour orange, use half orange juice and half lime juice."
+      ]
+    }
+  },
+  {
+    id: "tilapia-vizcaina",
+    category: "pescados",
+    name: { es: "Filetes de Tilapia a la Vizcaína", en: "Tilapia Fillets Vizcaína-Style" },
+    active: 35, total: 35,
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de tilapia (6 onzas cada uno)",
+        "¼ cucharadita de sal",
+        "3 cucharadas de aceite de oliva",
+        "1 cebolla en ruedas",
+        "1 pimiento verde en tiras",
+        "3 dientes de ajo picados",
+        "1 lata de 8 onzas de salsa de tomate",
+        "¼ taza de vino blanco seco",
+        "¼ taza de aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "2 papas hervidas en ruedas"
+      ],
+      en: [
+        "4 tilapia fillets (6 ounces each)",
+        "¼ teaspoon salt",
+        "3 tablespoons olive oil",
+        "1 onion, sliced into rings",
+        "1 green bell pepper, sliced",
+        "3 garlic cloves, chopped",
+        "1 can (8 oz) tomato sauce",
+        "¼ cup dry white wine",
+        "¼ cup stuffed olives",
+        "1 tablespoon capers",
+        "2 boiled potatoes, sliced"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone los filetes con la sal.",
+        "En un sartén ancho, sofría la cebolla, el pimiento y el ajo en el aceite 5 minutos.",
+        "Añada el vino y deje hervir 1 minuto. Agregue la salsa de tomate, las aceitunas y las alcaparras, y cocine 5 minutos.",
+        "Acomode las papas y los filetes en la salsa, bañándolos por encima.",
+        "Tape y cocine a fuego bajo 8 a 10 minutos, hasta que el pescado esté blanco y se separe. Sirva con arroz blanco."
+      ],
+      en: [
+        "Season the fillets with the salt.",
+        "In a wide skillet, sauté the onion, bell pepper and garlic in the oil 5 minutes.",
+        "Add the wine and boil 1 minute. Add the tomato sauce, olives and capers and cook 5 minutes.",
+        "Nestle the potatoes and fillets in the sauce, spooning it over them.",
+        "Cover and cook over low heat 8 to 10 minutes, until the fish is white and flakes. Serve with white rice."
+      ]
+    }
+  },
+  {
+    id: "deditos-pescado-horno",
+    category: "pescados",
+    name: { es: "Deditos de Pescado al Horno (para Niños)", en: "Baked Fish Sticks (Kid-Friendly)" },
+    active: 30, total: 30,
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de filete de pescado blanco firme (mero o dorado)",
+        "½ cucharadita de sal",
+        "½ cucharadita de ajo en polvo",
+        "½ taza de harina de trigo",
+        "2 huevos batidos",
+        "1½ tazas de panko",
+        "¼ taza de queso parmesano rallado",
+        "2 cucharadas de aceite de oliva"
+      ],
+      en: [
+        "1½ pounds firm white fish fillet (grouper or mahi mahi)",
+        "½ teaspoon salt",
+        "½ teaspoon garlic powder",
+        "½ cup all-purpose flour",
+        "2 eggs, beaten",
+        "1½ cups panko",
+        "¼ cup grated Parmesan cheese",
+        "2 tablespoons olive oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 425 °F y ponga una rejilla sobre una bandeja.",
+        "Corte el pescado en bastones de ¾ de pulgada y sazone con la sal y el ajo en polvo.",
+        "Mezcle el panko con el parmesano y el aceite.",
+        "Pase cada bastón por la harina, el huevo y el panko, apretando para que se pegue. Acomódelos en la rejilla.",
+        "Hornee 12 a 14 minutos, hasta que estén dorados. Sirva con salsa tártara o mayo-ketchup. Revise que no tengan espinas antes de dárselos a los niños."
+      ],
+      en: [
+        "Heat the oven to 425 °F and set a rack on a baking sheet.",
+        "Cut the fish into ¾-inch sticks and season with the salt and garlic powder.",
+        "Mix the panko with the Parmesan and oil.",
+        "Coat each stick in the flour, egg and panko, pressing so it sticks. Arrange them on the rack.",
+        "Bake 12 to 14 minutes, until golden. Serve with tartar sauce or mayo-ketchup. Check for bones before giving them to kids."
+      ]
+    }
+  },
+  {
+    id: "chillo-ajillo",
+    category: "pescados",
+    name: { es: "Filetes de Chillo al Ajillo", en: "Red Snapper Fillets in Garlic Sauce" },
+    active: 20, total: 20,
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes de chillo con piel (6 onzas cada uno)",
+        "½ cucharadita de sal",
+        "¼ cucharadita de pimienta",
+        "¼ taza de aceite de oliva",
+        "8 dientes de ajo en lascas",
+        "2 cucharadas de mantequilla",
+        "2 cucharadas de jugo de limón",
+        "¼ taza de perejil picado"
+      ],
+      en: [
+        "4 skin-on red snapper fillets (6 ounces each)",
+        "½ teaspoon salt",
+        "¼ teaspoon pepper",
+        "¼ cup olive oil",
+        "8 garlic cloves, sliced",
+        "2 tablespoons butter",
+        "2 tablespoons lime juice",
+        "¼ cup chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Seque bien los filetes y sazónelos con la sal y la pimienta.",
+        "En un sartén, caliente 2 cucharadas del aceite a fuego medio-alto y cocine los filetes con la piel hacia abajo 4 minutos, apretándolos al principio para que no se enrosquen. Voltee y cocine 2 minutos. Sáquelos.",
+        "Baje el fuego, añada el resto del aceite y el ajo, y dórelo hasta que esté doradito.",
+        "Añada la mantequilla, el limón y el perejil, y mueva el sartén para que se una la salsa.",
+        "Bañe los filetes con el ajillo y sirva con tostones o arroz blanco."
+      ],
+      en: [
+        "Dry the fillets well and season with the salt and pepper.",
+        "In a skillet, heat 2 tablespoons of the oil over medium-high and cook the fillets skin side down 4 minutes, pressing them at first so they don't curl. Flip and cook 2 minutes. Remove.",
+        "Lower the heat, add the rest of the oil and the garlic and cook until golden.",
+        "Add the butter, lime juice and parsley and swirl the skillet to bring the sauce together.",
+        "Spoon the garlic sauce over the fillets and serve with tostones or white rice."
+      ]
+    }
+  },
+  {
+    id: "mero-parrilla-chimichurri",
+    category: "pescados",
+    name: { es: "Mero a la Parrilla con Chimichurri de Recao", en: "Grilled Grouper with Culantro Chimichurri" },
+    active: 25, total: 55, wait: "adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 filetes gruesos de mero (6 onzas cada uno)",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharada de jugo de limón",
+        "½ cucharadita de sal",
+        "8 hojas de recao",
+        "½ taza de perejil",
+        "3 dientes de ajo",
+        "⅓ taza de aceite de oliva para el chimichurri",
+        "2 cucharadas de vinagre",
+        "1 pizca de hojuelas de pimiento rojo"
+      ],
+      en: [
+        "4 thick grouper fillets (6 ounces each)",
+        "2 tablespoons olive oil",
+        "1 tablespoon lime juice",
+        "½ teaspoon salt",
+        "8 culantro (recao) leaves",
+        "½ cup parsley",
+        "3 garlic cloves",
+        "⅓ cup olive oil for the chimichurri",
+        "2 tablespoons vinegar",
+        "1 pinch red pepper flakes"
+      ]
+    },
+    steps: {
+      es: [
+        "Unte el mero con las 2 cucharadas de aceite, el limón y la mitad de la sal, y déjelo 30 minutos en la nevera.",
+        "Pique muy fino el recao, el perejil y el ajo, y mézclelos con el aceite del chimichurri, el vinagre, el pimiento y el resto de la sal.",
+        "Caliente la parrilla a fuego medio-alto, límpiela y úntela con aceite.",
+        "Ase el mero 4 minutos sin moverlo, voltéelo con una espátula ancha y ase 3 a 4 minutos más, hasta que se separe en lascas.",
+        "Sirva con el chimichurri de recao por encima."
+      ],
+      en: [
+        "Rub the grouper with the 2 tablespoons of oil, the lime juice and half the salt and refrigerate 30 minutes.",
+        "Finely chop the culantro, parsley and garlic and mix with the chimichurri oil, vinegar, pepper flakes and the rest of the salt.",
+        "Heat the grill to medium-high, clean it and oil the grates.",
+        "Grill the grouper 4 minutes without moving it, flip with a wide spatula and grill 3 to 4 more minutes, until it flakes.",
+        "Serve with the culantro chimichurri on top."
+      ]
+    }
+  },
+  {
+    id: "vieiras-parcha",
+    category: "pescados",
+    name: { es: "Vieiras Doradas con Mantequilla de Parcha", en: "Seared Scallops with Passion Fruit Butter" },
+    active: 15, total: 15,
+    servings: 4,
+    ingredients: {
+      es: [
+        "1½ libras de vieiras grandes (scallops)",
+        "1 cucharada de aceite",
+        "3 cucharadas de mantequilla",
+        "¼ taza de pulpa de parcha",
+        "1 cucharadita de miel",
+        "1 cucharada de cebollín picado"
+      ],
+      en: [
+        "1½ pounds large sea scallops",
+        "1 tablespoon oil",
+        "3 tablespoons butter",
+        "¼ cup passion fruit pulp",
+        "1 teaspoon honey",
+        "1 tablespoon chopped chives"
+      ]
+    },
+    steps: {
+      es: [
+        "Quite el músculo pequeño del lado de las vieiras y séquelas muy bien con papel toalla. No les ponga sal: ya son saladitas.",
+        "Caliente el aceite en un sartén de hierro a fuego alto hasta que humee un poco.",
+        "Ponga las vieiras separadas y no las mueva 2 minutos, hasta que tengan una costra dorada. Voltee y cocine 1 minuto más. Sáquelas.",
+        "Baje el fuego, añada la mantequilla, la parcha y la miel, y mueva 1 minuto hasta que espese.",
+        "Bañe las vieiras con la mantequilla de parcha y espolvoree el cebollín. Sirva enseguida."
+      ],
+      en: [
+        "Remove the small side muscle from the scallops and dry them very well with paper towels. Don't salt them: they're naturally briny.",
+        "Heat the oil in a cast-iron skillet over high heat until it smokes slightly.",
+        "Add the scallops spaced apart and don't move them for 2 minutes, until they have a golden crust. Flip and cook 1 more minute. Remove.",
+        "Lower the heat, add the butter, passion fruit and honey and stir 1 minute until thickened.",
+        "Spoon the passion fruit butter over the scallops and sprinkle with the chives. Serve right away."
+      ]
+    }
+  },
+  {
+    id: "almejas-criolla",
+    category: "pescados",
+    name: { es: "Almejas en Salsa Criolla", en: "Clams in Creole Sauce" },
+    active: 30, total: 50, wait: "remojo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "30 almejas pequeñas (unas 2½ libras)",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito",
+        "3 dientes de ajo picados",
+        "½ taza de salsa de tomate",
+        "½ taza de vino blanco seco",
+        "½ taza de agua",
+        "4 hojas de recao picadas",
+        "4 rebanadas gruesas de pan de agua para mojar"
+      ],
+      en: [
+        "30 small clams (about 2½ pounds)",
+        "2 tablespoons olive oil",
+        "½ cup sofrito",
+        "3 garlic cloves, chopped",
+        "½ cup tomato sauce",
+        "½ cup dry white wine",
+        "½ cup water",
+        "4 culantro (recao) leaves, chopped",
+        "4 thick slices Puerto Rican water bread for dipping"
+      ]
+    },
+    steps: {
+      es: [
+        "Remoje las almejas 20 minutos en agua fría con un poco de sal para que suelten la arena. Bote las que estén abiertas o rotas.",
+        "En una olla ancha, sofría el sofrito y el ajo en el aceite 3 minutos.",
+        "Añada el vino, la salsa de tomate y el agua, y deje hervir 3 minutos.",
+        "Añada las almejas, tape y cocine 6 a 8 minutos, moviendo la olla, hasta que se abran. Bote las que no abran.",
+        "Añada el recao y sirva en platos hondos con el pan para mojar la salsa. No necesita sal: las almejas sueltan su agua salada."
+      ],
+      en: [
+        "Soak the clams 20 minutes in cold water with a little salt so they release their sand. Discard any that are open or broken.",
+        "In a wide pot, sauté the sofrito and garlic in the oil 3 minutes.",
+        "Add the wine, tomato sauce and water and boil 3 minutes.",
+        "Add the clams, cover and cook 6 to 8 minutes, shaking the pot, until they open. Discard any that don't open.",
+        "Add the culantro and serve in bowls with the bread to dip in the sauce. It needs no salt: the clams release their briny water."
+      ]
+    }
+  },
+  {
+    id: "sardinas-guisadas",
+    category: "pescados",
+    name: { es: "Sardinas Guisadas con Cebolla y Viandas", en: "Stewed Sardines with Onion and Root Vegetables" },
+    active: 30, total: 30,
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 latas de 15 onzas de sardinas en salsa de tomate",
+        "2 cucharadas de aceite de oliva",
+        "1 cebolla grande en ruedas",
+        "½ pimiento verde picado",
+        "2 dientes de ajo picados",
+        "2 cucharadas de sofrito",
+        "1 cucharada de vinagre",
+        "1 libra de yautía en trozos",
+        "2 guineos verdes"
+      ],
+      en: [
+        "2 cans (15 oz) sardines in tomato sauce",
+        "2 tablespoons olive oil",
+        "1 large onion, sliced into rings",
+        "½ green bell pepper, chopped",
+        "2 garlic cloves, chopped",
+        "2 tablespoons sofrito",
+        "1 tablespoon vinegar",
+        "1 pound yautía (taro root), in chunks",
+        "2 green bananas"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la yautía y los guineos pelados en agua sin sal 20 minutos, hasta que estén blandos. Escurra.",
+        "Mientras, sofría la cebolla, el pimiento y el ajo en el aceite 5 minutos, hasta que la cebolla esté blandita.",
+        "Añada el sofrito y el vinagre y cocine 1 minuto.",
+        "Añada las sardinas con su salsa, en pedazos grandes, y cocine 5 minutos sin mover mucho.",
+        "Sirva las sardinas sobre las viandas. Es el almuerzo rápido de siempre, hecho con lo que hay en la alacena."
+      ],
+      en: [
+        "Boil the yautía and peeled green bananas in unsalted water 20 minutes, until tender. Drain.",
+        "Meanwhile, sauté the onion, bell pepper and garlic in the oil 5 minutes, until the onion is soft.",
+        "Add the sofrito and vinegar and cook 1 minute.",
+        "Add the sardines with their sauce, in large pieces, and cook 5 minutes without stirring much.",
+        "Serve the sardines over the root vegetables. It's the classic quick lunch made from what's in the pantry."
+      ]
+    }
+  },
+  {
+    id: "ostiones-parrilla-ajo",
+    category: "pescados",
+    name: { es: "Ostiones a la Parrilla con Mantequilla de Ajo", en: "Grilled Oysters with Garlic Butter" },
+    active: 30, total: 30,
+    servings: 4,
+    ingredients: {
+      es: [
+        "24 ostiones frescos en su concha",
+        "½ taza de mantequilla blanda",
+        "4 dientes de ajo majados",
+        "2 cucharadas de perejil picado",
+        "1 cucharada de jugo de limón",
+        "¼ taza de queso parmesano rallado",
+        "1 limón en cuñas"
+      ],
+      en: [
+        "24 fresh oysters in the shell",
+        "½ cup softened butter",
+        "4 garlic cloves, mashed",
+        "2 tablespoons chopped parsley",
+        "1 tablespoon lime juice",
+        "¼ cup grated Parmesan cheese",
+        "1 lime, in wedges"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la mantequilla, el ajo, el perejil y el limón.",
+        "Restriegue bien las conchas de los ostiones con un cepillo bajo agua fría.",
+        "Ábralos con un cuchillo de ostiones, protegiéndose la mano con un paño, y suelte el ostión de la concha de abajo sin botar su jugo.",
+        "Ponga 1 cucharadita de mantequilla de ajo y un poco de parmesano sobre cada uno.",
+        "Áselos en la parrilla caliente, tapada, 4 a 5 minutos, hasta que la mantequilla burbujee y los bordes se enrosquen. Sirva con limón."
+      ],
+      en: [
+        "Mix the butter, garlic, parsley and lime juice.",
+        "Scrub the oyster shells well with a brush under cold water.",
+        "Open them with an oyster knife, protecting your hand with a towel, and loosen each oyster from the bottom shell without losing its liquor.",
+        "Put 1 teaspoon of garlic butter and a little Parmesan on each one.",
+        "Grill them on a hot covered grill 4 to 5 minutes, until the butter bubbles and the edges curl. Serve with lime."
+      ]
+    }
+  },
+  {
+    id: "carrucho-ajillo",
+    category: "pescados",
+    name: { es: "Carrucho al Ajillo", en: "Garlic Conch (Carrucho al Ajillo)" },
+    active: 100, total: 100,
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de carrucho limpio",
+        "8 tazas de agua",
+        "1 hoja de laurel",
+        "¼ taza de aceite de oliva",
+        "10 dientes de ajo picados",
+        "1 ají dulce picado",
+        "2 cucharadas de jugo de limón",
+        "¼ taza de cilantro picado",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "2 pounds cleaned conch",
+        "8 cups water",
+        "1 bay leaf",
+        "¼ cup olive oil",
+        "10 garlic cloves, chopped",
+        "1 ají dulce (sweet chili pepper), chopped",
+        "2 tablespoons lime juice",
+        "¼ cup chopped cilantro",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Golpee el carrucho con un mazo de carne para ablandarlo.",
+        "Hiérvalo en el agua con el laurel, tapado, 1 hora a 1 hora 15 minutos (20 minutos en olla de presión), hasta que esté blando. Escurra y córtelo en tiritas finas.",
+        "En un sartén, cocine el ajo en el aceite a fuego bajo 3 minutos, sin que se queme.",
+        "Añada el ají dulce, el carrucho y la sal, y saltee 4 minutos.",
+        "Apague, añada el limón y el cilantro. Sirva con tostones o arroz blanco, como en las pescaderías de Fajardo."
+      ],
+      en: [
+        "Pound the conch with a meat mallet to tenderize it.",
+        "Simmer it in the water with the bay leaf, covered, 1 hour to 1 hour 15 minutes (20 minutes in a pressure cooker), until tender. Drain and cut into thin strips.",
+        "In a skillet, cook the garlic in the oil over low heat 3 minutes, without burning it.",
+        "Add the ají dulce, conch and salt and sauté 4 minutes.",
+        "Turn off the heat and add the lime juice and cilantro. Serve with tostones or white rice, like at the Fajardo fish markets."
+      ]
+    }
   }
 );

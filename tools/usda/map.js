@@ -65,6 +65,8 @@ module.exports = {
   "salmon": ["^Fish, salmon, Atlantic, wild, raw$",1],
   "ceti": ["^Fish, smelt, rainbow, raw$", 1],
   "ostion": ["^Mollusks, oyster, eastern, wild, raw$", 1],
+  "vieira": ["^Mollusks, scallop, mixed species, raw$", 1],
+  "atun fresco": ["^Fish, tuna, fresh, yellowfin, raw$", 1],
   "huevo": ["^Egg, whole, raw, fresh$", 1],
   "yema": ["^Egg, yolk, raw, fresh$", 1],
   "clara": ["^Egg, white, raw, fresh$", 1],
