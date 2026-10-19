@@ -12,7 +12,10 @@ const path = require("path");
 
 const root = path.join(__dirname, "..");
 const files = fs.readdirSync(path.join(root, "js")).filter((f) => /^recipes(-[\w]+)?\.js$/.test(f)).sort();
-const today = new Date().toISOString().slice(0, 10);
+// Fecha de hoy en la hora local (como git blame --date=short), no en UTC: de noche en Puerto Rico ya es
+// "mañana" en UTC y las recetas nuevas salían con un día de más.
+const now = new Date();
+const today = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
 const dates = {};
 
 for (const f of files) {

@@ -18,8 +18,8 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.37.0";
-const APP_REVISED = "2026-10-19";
+const APP_VERSION = "4.38.0";
+const APP_REVISED = "2026-10-18";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
 /* Lo que se muestra en la portada: "Más de 1,000 recetas", no el total exacto (que cambia con cada
@@ -458,6 +458,13 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
+  // Bebidas y apio del país (tanda 59): los dibujos que ya había.
+  [/^te frio de limoncillo/, "svg:ic-te-limoncillo"],
+  [/^batida de aguacate/, "🥑"],
+  [/^majado de apio/, "svg:ic-viandas"],
+  [/^apio en escabeche/, "svg:ic-veg-yuca-escabeche"],
+  [/^pure de apio/, "svg:ic-crema-apio"],
+  [/^bunuelos de apio/, "svg:ic-ent-bunuelos-yautia"],
   // Panes, viandas, ajonjolí, salsas de jobos, cereales y pastas (tanda 58).
   [/^rosca de reyes/, "👑"],
   [/^pastelon de batata/, "svg:ic-vg-pastelon"],

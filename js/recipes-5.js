@@ -12802,5 +12802,813 @@ recipes.push(
         "Turn off the heat and add the lime juice and nutritional yeast. It's vegan and ready in 25 minutes."
       ]
     }
+  },
+  // ---------- Tanda 59: jugos naturales (6), bebidas tropicales (6) y recetas con apio del país (7) ----------
+  {
+    id: "jugo-uva-playa",
+    category: "jugos",
+    name: { es: "Jugo de Uvas de Playa", en: "Sea Grape Juice (Uvas de Playa)" },
+    active: 25, total: 25,
+    servings: 6,
+    ingredients: {
+      es: [
+        "4 tazas de uvas de playa bien maduras (moradas)",
+        "5 tazas de agua",
+        "½ taza de azúcar",
+        "2 cucharadas de jugo de limón",
+        "1 taza de hielo"
+      ],
+      en: [
+        "4 cups very ripe sea grapes (purple)",
+        "5 cups water",
+        "½ cup sugar",
+        "2 tablespoons lime juice",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Desgrane las uvas de playa, lávelas y use sólo las moradas y blanditas.",
+        "Hiérvalas en 2 tazas del agua 8 minutos, aplastándolas con una cuchara para que suelten la pulpa.",
+        "Cuele apretando para dejar las semillas grandes y las cáscaras.",
+        "Añada el resto del agua, el azúcar y el limón, y mezcle hasta disolver.",
+        "Sirva bien frío sobre hielo. Las uvas de playa se dan en el verano en los árboles de la costa; tienen un sabor como de uva y ciruela."
+      ],
+      en: [
+        "Pull the sea grapes off the clusters, wash them and use only the purple, soft ones.",
+        "Boil them in 2 cups of the water 8 minutes, mashing with a spoon so they release the pulp.",
+        "Strain, pressing, to leave behind the large seeds and skins.",
+        "Add the rest of the water, the sugar and lime juice and stir to dissolve.",
+        "Serve very cold over ice. Sea grapes ripen in summer on coastal trees; they taste like a cross between grape and plum."
+      ]
+    }
+  },
+  {
+    id: "jugo-pina-jengibre-curcuma",
+    category: "jugos",
+    name: { es: "Jugo de Piña, Jengibre y Cúrcuma", en: "Pineapple, Ginger and Turmeric Juice" },
+    active: 15, total: 15,
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 tazas de piña fresca en cubos",
+        "1 pedazo de jengibre fresco de 1 pulgada, pelado",
+        "1 pedazo de cúrcuma fresca de 1 pulgada, pelada, o ½ cucharadita en polvo",
+        "2 tazas de agua fría",
+        "1 cucharada de jugo de limón",
+        "1 pizca de pimienta negra",
+        "1 taza de hielo"
+      ],
+      en: [
+        "4 cups fresh pineapple, cubed",
+        "1-inch piece fresh ginger, peeled",
+        "1-inch piece fresh turmeric, peeled, or ½ teaspoon ground",
+        "2 cups cold water",
+        "1 tablespoon lime juice",
+        "1 pinch black pepper",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la piña con el jengibre, la cúrcuma y el agua hasta que esté muy suave.",
+        "Cuele por un colador fino, apretando con una cuchara.",
+        "Añada el limón y la pimienta, y mezcle. La pimienta ayuda a aprovechar la cúrcuma.",
+        "Pruebe: la piña madura no necesita azúcar.",
+        "Sirva sobre hielo enseguida. Ojo: la cúrcuma mancha la ropa y las tablas de cortar."
+      ],
+      en: [
+        "Blend the pineapple with the ginger, turmeric and water until very smooth.",
+        "Strain through a fine sieve, pressing with a spoon.",
+        "Add the lime juice and pepper and stir. Pepper helps the body use the turmeric.",
+        "Taste: ripe pineapple needs no sugar.",
+        "Serve over ice right away. Careful: turmeric stains clothes and cutting boards."
+      ]
+    }
+  },
+  {
+    id: "limonada-fresa",
+    category: "jugos",
+    name: { es: "Limonada de Fresa", en: "Strawberry Lemonade" },
+    active: 10, total: 10,
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 tazas de fresas sin hojas",
+        "¾ taza de jugo de limón",
+        "½ taza de azúcar",
+        "5 tazas de agua fría",
+        "1 taza de hielo",
+        "Ruedas de limón para decorar"
+      ],
+      en: [
+        "2 cups hulled strawberries",
+        "¾ cup lime juice",
+        "½ cup sugar",
+        "5 cups cold water",
+        "1 cup ice",
+        "Lime slices for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe las fresas con el azúcar y 1 taza del agua hasta que estén suaves.",
+        "Cuele para sacar las semillitas, si quiere.",
+        "En una jarra, mezcle el puré de fresa con el limón y el resto del agua.",
+        "Pruebe y ajuste el azúcar o el limón.",
+        "Sirva sobre hielo con ruedas de limón. Las fresas de Jayuya y Adjuntas se dan de diciembre a abril."
+      ],
+      en: [
+        "Blend the strawberries with the sugar and 1 cup of the water until smooth.",
+        "Strain out the seeds, if you like.",
+        "In a pitcher, mix the strawberry purée with the lime juice and the rest of the water.",
+        "Taste and adjust the sugar or lime.",
+        "Serve over ice with lime slices. Strawberries from Jayuya and Adjuntas are in season December through April."
+      ]
+    }
+  },
+  {
+    id: "jugo-remolacha-zanahoria-china",
+    category: "jugos",
+    name: { es: "Jugo de Remolacha, Zanahoria y China", en: "Beet, Carrot and Orange Juice" },
+    active: 15, total: 15,
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 remolacha mediana pelada en cubos",
+        "3 zanahorias en ruedas",
+        "2 tazas de jugo de china fresco",
+        "1 taza de agua fría",
+        "1 cucharadita de jengibre fresco rallado",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 medium beet, peeled and cubed",
+        "3 carrots, sliced",
+        "2 cups fresh orange juice",
+        "1 cup cold water",
+        "1 teaspoon grated fresh ginger",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la remolacha y las zanahorias con el agua hasta que estén muy finas.",
+        "Cuele por un colador fino o un paño, apretando bien.",
+        "Mezcle con el jugo de china y el jengibre.",
+        "Pruebe: es dulce por sí solo y no necesita azúcar.",
+        "Sirva sobre hielo. Póngase un delantal: la remolacha mancha."
+      ],
+      en: [
+        "Blend the beet and carrots with the water until very fine.",
+        "Strain through a fine sieve or cloth, pressing well.",
+        "Mix with the orange juice and ginger.",
+        "Taste: it's naturally sweet and needs no sugar.",
+        "Serve over ice. Wear an apron: beets stain."
+      ]
+    }
+  },
+  {
+    id: "limonada-hierbabuena",
+    category: "jugos",
+    name: { es: "Limonada Frappé de Hierbabuena", en: "Frozen Mint Lemonade" },
+    active: 10, total: 10,
+    servings: 4,
+    ingredients: {
+      es: [
+        "½ taza de jugo de limón",
+        "½ taza de azúcar",
+        "1 taza de hojas de hierbabuena (yerbabuena)",
+        "2 tazas de agua fría",
+        "3 tazas de hielo"
+      ],
+      en: [
+        "½ cup lime juice",
+        "½ cup sugar",
+        "1 cup mint leaves (yerbabuena)",
+        "2 cups cold water",
+        "3 cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga en la licuadora el limón, el azúcar, la hierbabuena y el agua.",
+        "Licúe 30 segundos, hasta que la hierbabuena esté bien picadita.",
+        "Añada el hielo y licúe hasta que quede como un granizado.",
+        "Pruebe y ajuste el azúcar.",
+        "Sirva enseguida en vasos fríos con una ramita de hierbabuena. Es la limonada de los días de calor."
+      ],
+      en: [
+        "Put the lime juice, sugar, mint and water in the blender.",
+        "Blend 30 seconds, until the mint is finely chopped.",
+        "Add the ice and blend until slushy.",
+        "Taste and adjust the sugar.",
+        "Serve right away in chilled glasses with a sprig of mint. It's the lemonade for hot days."
+      ]
+    }
+  },
+  {
+    id: "jugo-guayaba-parcha",
+    category: "jugos",
+    name: { es: "Jugo de Guayaba y Parcha", en: "Guava and Passion Fruit Juice" },
+    active: 20, total: 20,
+    servings: 6,
+    ingredients: {
+      es: [
+        "4 guayabas maduras",
+        "½ taza de pulpa de parcha",
+        "5 tazas de agua fría",
+        "½ taza de azúcar",
+        "1 taza de hielo"
+      ],
+      en: [
+        "4 ripe guavas",
+        "½ cup passion fruit pulp",
+        "5 cups cold water",
+        "½ cup sugar",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave las guayabas, quíteles las puntas y córtelas en cuartos.",
+        "Licúelas con 2 tazas del agua y cuele apretando para sacar las semillas.",
+        "Licúe la pulpa de parcha con 1 taza del agua unos segundos (sin romper las semillas) y cuele.",
+        "Mezcle los dos jugos con el resto del agua y el azúcar.",
+        "Sirva bien frío sobre hielo. Es rosado y agridulce."
+      ],
+      en: [
+        "Wash the guavas, trim the ends and cut into quarters.",
+        "Blend them with 2 cups of the water and strain, pressing, to remove the seeds.",
+        "Pulse the passion fruit pulp with 1 cup of the water a few seconds (without crushing the seeds) and strain.",
+        "Mix both juices with the rest of the water and the sugar.",
+        "Serve very cold over ice. It's pink and sweet-tart."
+      ]
+    }
+  },
+  {
+    id: "batida-pitahaya",
+    category: "bebidas",
+    name: { es: "Batida de Pitahaya", en: "Dragon Fruit (Pitahaya) Shake" },
+    active: 10, total: 10,
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 pitahaya roja pelada en cubos (o 1 paquete de pulpa congelada)",
+        "1 guineo maduro",
+        "1 taza de leche",
+        "½ taza de yogur natural",
+        "1 cucharada de miel",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 red dragon fruit (pitahaya), peeled and cubed (or 1 pack frozen pulp)",
+        "1 ripe banana",
+        "1 cup milk",
+        "½ cup plain yogurt",
+        "1 tablespoon honey",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga en la licuadora la pitahaya, el guineo, la leche, el yogur y la miel.",
+        "Licúe hasta que esté suave.",
+        "Añada el hielo y licúe otra vez.",
+        "Pruebe y ajuste la miel.",
+        "Sirva enseguida: tiene un color fucsia brillante que encanta a los niños."
+      ],
+      en: [
+        "Put the dragon fruit, banana, milk, yogurt and honey in the blender.",
+        "Blend until smooth.",
+        "Add the ice and blend again.",
+        "Taste and adjust the honey.",
+        "Serve right away: it's a bright fuchsia that kids love."
+      ]
+    }
+  },
+  {
+    id: "batida-aguacate",
+    category: "bebidas",
+    name: { es: "Batida de Aguacate", en: "Avocado Shake" },
+    active: 10, total: 10,
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 aguacate del país maduro, sin semilla",
+        "1½ tazas de leche fría",
+        "3 cucharadas de leche condensada",
+        "½ cucharadita de vainilla",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1 ripe Caribbean avocado, pitted",
+        "1½ cups cold milk",
+        "3 tablespoons sweetened condensed milk",
+        "½ teaspoon vanilla",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Saque la pulpa del aguacate con una cuchara.",
+        "Licúela con la leche, la leche condensada y la vainilla hasta que esté muy cremosa.",
+        "Añada el hielo y licúe otra vez.",
+        "Si queda muy espesa, añada un poco más de leche.",
+        "Sirva enseguida. El aguacate dulce es raro para algunos, pero queda como un mantecado de vainilla verde."
+      ],
+      en: [
+        "Scoop out the avocado flesh with a spoon.",
+        "Blend it with the milk, condensed milk and vanilla until very creamy.",
+        "Add the ice and blend again.",
+        "If it's too thick, add a little more milk.",
+        "Serve right away. Sweet avocado surprises some people, but it tastes like a green vanilla ice cream."
+      ]
+    }
+  },
+  {
+    id: "champola-parcha",
+    category: "bebidas",
+    name: { es: "Champola de Parcha", en: "Passion Fruit Champola (Milk Shake)" },
+    active: 10, total: 10,
+    servings: 4,
+    ingredients: {
+      es: [
+        "¾ taza de pulpa de parcha colada",
+        "1 lata de 12 onzas de leche evaporada fría",
+        "1 taza de agua fría",
+        "½ taza de azúcar",
+        "½ cucharadita de vainilla",
+        "2 tazas de hielo"
+      ],
+      en: [
+        "¾ cup strained passion fruit pulp",
+        "1 can (12 oz) cold evaporated milk",
+        "1 cup cold water",
+        "½ cup sugar",
+        "½ teaspoon vanilla",
+        "2 cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la parcha con el agua, el azúcar y la vainilla.",
+        "Con la licuadora encendida, añada la leche evaporada poco a poco.",
+        "Añada el hielo y licúe hasta que esté espumosa.",
+        "Pruebe y ajuste el azúcar: la parcha es muy ácida.",
+        "Sirva enseguida, bien fría. Si la deja reposar mucho, la leche se puede cortar con el ácido."
+      ],
+      en: [
+        "Blend the passion fruit with the water, sugar and vanilla.",
+        "With the blender running, add the evaporated milk little by little.",
+        "Add the ice and blend until frothy.",
+        "Taste and adjust the sugar: passion fruit is very tart.",
+        "Serve right away, very cold. If it sits too long, the acid can curdle the milk."
+      ]
+    }
+  },
+  {
+    id: "te-frio-limoncillo-jengibre",
+    category: "bebidas",
+    name: { es: "Té Frío de Limoncillo y Jengibre", en: "Iced Lemongrass and Ginger Tea" },
+    active: 15, total: 135, wait: "frio",
+    servings: 6,
+    ingredients: {
+      es: [
+        "6 tallos de limoncillo machacados",
+        "1 pedazo de jengibre fresco de 2 pulgadas, en lascas",
+        "6 tazas de agua",
+        "⅓ taza de miel",
+        "2 cucharadas de jugo de limón",
+        "2 tazas de hielo"
+      ],
+      en: [
+        "6 lemongrass stalks, bruised",
+        "2-inch piece fresh ginger, sliced",
+        "6 cups water",
+        "⅓ cup honey",
+        "2 tablespoons lime juice",
+        "2 cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el agua con el limoncillo y el jengibre 10 minutos.",
+        "Apague, tape y deje reposar 10 minutos más.",
+        "Cuele y añada la miel mientras está caliente, moviendo hasta disolver.",
+        "Deje enfriar y refrigere al menos 2 horas.",
+        "Añada el limón y sirva sobre hielo. El limoncillo se da en casi todos los patios de la isla."
+      ],
+      en: [
+        "Boil the water with the lemongrass and ginger 10 minutes.",
+        "Turn off, cover and let steep 10 more minutes.",
+        "Strain and stir in the honey while hot until dissolved.",
+        "Let cool and refrigerate at least 2 hours.",
+        "Add the lime juice and serve over ice. Lemongrass grows in almost every backyard on the island."
+      ]
+    }
+  },
+  {
+    id: "batida-fresa-guineo",
+    category: "bebidas",
+    name: { es: "Batida de Fresa y Guineo", en: "Strawberry Banana Shake" },
+    active: 10, total: 10,
+    servings: 2,
+    ingredients: {
+      es: [
+        "1½ tazas de fresas sin hojas",
+        "1 guineo maduro",
+        "1 taza de leche",
+        "½ taza de yogur de vainilla",
+        "1 cucharada de miel",
+        "1 taza de hielo"
+      ],
+      en: [
+        "1½ cups hulled strawberries",
+        "1 ripe banana",
+        "1 cup milk",
+        "½ cup vanilla yogurt",
+        "1 tablespoon honey",
+        "1 cup ice"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga las fresas, el guineo, la leche, el yogur y la miel en la licuadora.",
+        "Licúe hasta que esté suave.",
+        "Añada el hielo y licúe otra vez.",
+        "Pruebe y ajuste la miel.",
+        "Sirva enseguida. Con fresas y guineo congelados no necesita hielo y queda más espesa."
+      ],
+      en: [
+        "Put the strawberries, banana, milk, yogurt and honey in the blender.",
+        "Blend until smooth.",
+        "Add the ice and blend again.",
+        "Taste and adjust the honey.",
+        "Serve right away. With frozen strawberries and banana it needs no ice and comes out thicker."
+      ]
+    }
+  },
+  {
+    id: "ponche-parcha-sin-alcohol",
+    category: "bebidas",
+    name: { es: "Ponche de Parcha y Piña sin Alcohol (para Fiestas)", en: "Passion Fruit and Pineapple Party Punch (Alcohol-Free)" },
+    active: 15, total: 15,
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 taza de pulpa de parcha colada",
+        "4 tazas de jugo de piña",
+        "2 tazas de jugo de china",
+        "½ taza de azúcar",
+        "1 litro de refresco de limón (soda) frío",
+        "2 tazas de piña en cubitos",
+        "1 china en ruedas",
+        "4 tazas de hielo"
+      ],
+      en: [
+        "1 cup strained passion fruit pulp",
+        "4 cups pineapple juice",
+        "2 cups orange juice",
+        "½ cup sugar",
+        "1 liter cold lemon-lime soda",
+        "2 cups diced pineapple",
+        "1 orange, sliced",
+        "4 cups ice"
+      ]
+    },
+    steps: {
+      es: [
+        "En una ponchera, disuelva el azúcar en la parcha.",
+        "Añada el jugo de piña y el de china, y mezcle.",
+        "Añada la piña en cubitos y las ruedas de china. Refrigere hasta la hora de servir.",
+        "Justo antes de servir, añada el hielo y el refresco, despacio para que no pierda las burbujas.",
+        "Sirva con cucharón. Es el ponche de los cumpleaños y las graduaciones."
+      ],
+      en: [
+        "In a punch bowl, dissolve the sugar in the passion fruit.",
+        "Add the pineapple and orange juices and stir.",
+        "Add the diced pineapple and orange slices. Refrigerate until serving time.",
+        "Right before serving, add the ice and soda, slowly so it keeps its bubbles.",
+        "Serve with a ladle. It's the punch for birthdays and graduations."
+      ]
+    }
+  },
+  {
+    id: "majado-apio",
+    category: "vegetales",
+    name: { es: "Majado de Apio con Mantequilla y Ajo", en: "Mashed Arracacha (Apio) with Butter and Garlic" },
+    active: 30, total: 30,
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 libras de apio del país pelado en trozos",
+        "4 cucharadas de mantequilla",
+        "3 dientes de ajo majados",
+        "½ taza de leche caliente",
+        "1 cucharadita de sal",
+        "¼ cucharadita de pimienta"
+      ],
+      en: [
+        "3 pounds Puerto Rican apio (arracacha), peeled and cut in chunks",
+        "4 tablespoons butter",
+        "3 garlic cloves, mashed",
+        "½ cup hot milk",
+        "1 teaspoon salt",
+        "¼ teaspoon pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele el apio con un cuchillo (la cáscara es fina y amarillenta) y póngalo en agua para que no se oscurezca.",
+        "Hiérvalo en agua con la mitad de la sal 15 a 20 minutos, hasta que se deshaga al pincharlo. No lo cocine de más o se pone aguado.",
+        "Escurra muy bien.",
+        "Derrita la mantequilla con el ajo 1 minuto, y májela con el apio, la leche, el resto de la sal y la pimienta.",
+        "Sirva caliente con carne guisada o bistec encebollado. El apio tiene un sabor entre papa, zanahoria y apio de ensalada."
+      ],
+      en: [
+        "Peel the apio with a knife (the skin is thin and yellowish) and keep it in water so it doesn't darken.",
+        "Boil it in water with half the salt 15 to 20 minutes, until it falls apart when pierced. Don't overcook it or it gets watery.",
+        "Drain very well.",
+        "Melt the butter with the garlic 1 minute and mash it with the apio, milk, the rest of the salt and the pepper.",
+        "Serve hot with carne guisada or bistec encebollado. Apio tastes like a cross of potato, carrot and celery."
+      ]
+    }
+  },
+  {
+    id: "apio-escabeche",
+    category: "vegetales",
+    name: { es: "Apio en Escabeche", en: "Pickled Arracacha (Apio en Escabeche)" },
+    active: 35, total: 515, wait: "frio",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 libras de apio del país pelado en ruedas de ½ pulgada",
+        "1 cucharadita de sal",
+        "¾ taza de aceite de oliva",
+        "2 cebollas en ruedas",
+        "6 dientes de ajo en lascas",
+        "½ taza de vinagre",
+        "10 granos de pimienta",
+        "2 hojas de laurel",
+        "¼ taza de aceitunas rellenas"
+      ],
+      en: [
+        "3 pounds Puerto Rican apio (arracacha), peeled and cut into ½-inch rounds",
+        "1 teaspoon salt",
+        "¾ cup olive oil",
+        "2 onions, sliced into rings",
+        "6 garlic cloves, sliced",
+        "½ cup vinegar",
+        "10 black peppercorns",
+        "2 bay leaves",
+        "¼ cup stuffed olives"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el apio en agua con la mitad de la sal 10 a 12 minutos, hasta que esté blando pero firme. Escúrralo con cuidado.",
+        "En un sartén, cocine a fuego bajo el aceite con las cebollas, el ajo, la pimienta y el laurel 10 minutos, sin que doren.",
+        "Añada el vinagre, el resto de la sal y las aceitunas, y deje hervir 2 minutos.",
+        "Ponga el apio en un envase de cristal y vierta el escabeche caliente por encima.",
+        "Deje enfriar y refrigere toda la noche. Sírvalo frío o a temperatura ambiente, como los guineítos en escabeche."
+      ],
+      en: [
+        "Boil the apio in water with half the salt 10 to 12 minutes, until tender but firm. Drain gently.",
+        "In a skillet, cook the oil over low heat with the onions, garlic, peppercorns and bay leaves 10 minutes, without browning.",
+        "Add the vinegar, the rest of the salt and the olives and boil 2 minutes.",
+        "Put the apio in a glass container and pour the hot escabeche over it.",
+        "Let cool and refrigerate overnight. Serve cold or at room temperature, like guineítos en escabeche."
+      ]
+    }
+  },
+  {
+    id: "pastelon-apio",
+    category: "vegetales",
+    name: { es: "Pastelón de Apio con Picadillo de Pollo", en: "Arracacha (Apio) Pastelón with Chicken Picadillo" },
+    active: 70, total: 85, wait: "reposo",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 libras de apio del país pelado en trozos",
+        "3 cucharadas de mantequilla",
+        "¼ taza de leche",
+        "¾ cucharadita de sal",
+        "1 cucharada de aceite de oliva",
+        "1 libra de pechuga de pollo molida",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas picadas",
+        "2 huevos batidos",
+        "1½ tazas de queso mozzarella rallado"
+      ],
+      en: [
+        "3 pounds Puerto Rican apio (arracacha), peeled and cut in chunks",
+        "3 tablespoons butter",
+        "¼ cup milk",
+        "¾ teaspoon salt",
+        "1 tablespoon olive oil",
+        "1 pound ground chicken breast",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "¼ cup chopped stuffed olives",
+        "2 eggs, beaten",
+        "1½ cups shredded mozzarella cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el apio en agua 15 a 20 minutos hasta que esté blando. Escúrralo y májelo con la mantequilla, la leche y la mitad de la sal. Deje entibiar y mézclelo con los huevos.",
+        "Sofría el sofrito en el aceite, añada el pollo y cocine 6 minutos. Agregue la salsa de tomate, las aceitunas y el resto de la sal, y cocine 8 minutos hasta que se seque un poco.",
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.",
+        "Extienda la mitad del majado, cubra con el picadillo y la mitad del queso, y termine con el resto del majado y el queso.",
+        "Hornee 30 minutos, hasta que dore. Deje reposar 15 minutos antes de cortar. Queda suave y un poco dulce, como un pastelón de papa más sabroso."
+      ],
+      en: [
+        "Boil the apio in water 15 to 20 minutes until tender. Drain and mash with the butter, milk and half the salt. Let cool slightly and mix in the eggs.",
+        "Sauté the sofrito in the oil, add the chicken and cook 6 minutes. Add the tomato sauce, olives and the rest of the salt and cook 8 minutes until a little dry.",
+        "Heat the oven to 350 °F and grease a 9 × 13-inch dish.",
+        "Spread half the mash, top with the picadillo and half the cheese, and finish with the rest of the mash and cheese.",
+        "Bake 30 minutes, until golden. Let rest 15 minutes before cutting. It's soft and slightly sweet, like a tastier potato pastelón."
+      ]
+    }
+  },
+  {
+    id: "bunuelos-apio-queso",
+    category: "entremeses",
+    name: { es: "Buñuelos de Apio con Queso", en: "Arracacha (Apio) and Cheese Fritters" },
+    active: 30, total: 30,
+    servings: 6,
+    ingredients: {
+      es: [
+        "1½ libras de apio del país pelado",
+        "1 huevo",
+        "½ taza de queso blanco del país rallado",
+        "2 cucharadas de harina de trigo",
+        "1 diente de ajo majado",
+        "½ cucharadita de sal",
+        "Aceite para freír"
+      ],
+      en: [
+        "1½ pounds Puerto Rican apio (arracacha), peeled",
+        "1 egg",
+        "½ cup grated Puerto Rican white cheese (queso blanco)",
+        "2 tablespoons all-purpose flour",
+        "1 garlic clove, mashed",
+        "½ teaspoon salt",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Ralle el apio por el lado fino del guayo.",
+        "Mézclelo con el huevo, el queso, la harina, el ajo y la sal hasta formar una masa suave.",
+        "Caliente el aceite a 350 °F.",
+        "Eche cucharadas de masa al aceite y fría 2 a 3 minutos por lado, hasta que estén doradas.",
+        "Escurra sobre papel toalla y sirva calientes con mayo-ketchup. Son como los buñuelos de yautía, pero más suaves y un poco dulces."
+      ],
+      en: [
+        "Grate the apio on the fine side of the grater.",
+        "Mix it with the egg, cheese, flour, garlic and salt into a soft batter.",
+        "Heat the oil to 350 °F.",
+        "Drop spoonfuls of batter into the oil and fry 2 to 3 minutes per side, until golden.",
+        "Drain on paper towels and serve hot with mayo-ketchup. They're like yautía fritters, but softer and slightly sweet."
+      ]
+    }
+  },
+  {
+    id: "pan-apio",
+    category: "panes",
+    name: { es: "Pan de Apio", en: "Arracacha (Apio) Bread" },
+    active: 65, total: 200, wait: "levado",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 taza de apio del país hervido y majado",
+        "¾ taza de leche tibia",
+        "1 sobre de levadura seca (2¼ cucharaditas)",
+        "3 cucharadas de azúcar",
+        "3½ tazas de harina de trigo",
+        "1 cucharadita de sal",
+        "3 cucharadas de mantequilla blanda",
+        "1 huevo",
+        "1 huevo batido para barnizar"
+      ],
+      en: [
+        "1 cup boiled and mashed Puerto Rican apio (arracacha)",
+        "¾ cup lukewarm milk",
+        "1 packet active dry yeast (2¼ teaspoons)",
+        "3 tablespoons sugar",
+        "3½ cups all-purpose flour",
+        "1 teaspoon salt",
+        "3 tablespoons softened butter",
+        "1 egg",
+        "1 beaten egg for brushing"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura y el azúcar en la leche tibia y deje 10 minutos.",
+        "Mezcle la harina y la sal. Añada el apio majado, la levadura, la mantequilla y el huevo, y amase 10 minutos.",
+        "Tape y deje levar 1 hora 15 minutos, hasta que doble.",
+        "Forme 12 panecillos, póngalos en una bandeja engrasada, tape y deje levar 45 minutos.",
+        "Barnice con huevo y hornee a 375 °F 20 a 22 minutos. El apio les da un color amarillito y una miga muy suave."
+      ],
+      en: [
+        "Dissolve the yeast and sugar in the warm milk and let sit 10 minutes.",
+        "Mix the flour and salt. Add the mashed apio, yeast, butter and egg and knead 10 minutes.",
+        "Cover and let rise 1 hour 15 minutes, until doubled.",
+        "Shape 12 rolls, place them on a greased tray, cover and let rise 45 minutes.",
+        "Brush with egg and bake at 375 °F 20 to 22 minutes. Apio gives them a pale yellow color and a very soft crumb."
+      ]
+    }
+  },
+  {
+    id: "budin-apio-coco",
+    category: "postres",
+    name: { es: "Budín de Apio y Coco", en: "Arracacha (Apio) and Coconut Pudding" },
+    active: 85, total: 145, wait: "enfriar",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 libras de apio del país pelado en trozos",
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 taza de azúcar",
+        "3 huevos",
+        "4 cucharadas de mantequilla derretida",
+        "½ taza de harina de trigo",
+        "1 cucharadita de canela en polvo",
+        "½ cucharadita de jengibre en polvo",
+        "1 pizca de sal",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "2 pounds Puerto Rican apio (arracacha), peeled and cut in chunks",
+        "1 can (13.5 oz) coconut milk",
+        "1 can (12 oz) evaporated milk",
+        "1 cup sugar",
+        "3 eggs",
+        "4 tablespoons melted butter",
+        "½ cup all-purpose flour",
+        "1 teaspoon ground cinnamon",
+        "½ teaspoon ground ginger",
+        "1 pinch salt",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el apio en agua 15 a 20 minutos, hasta que esté blando. Escúrralo muy bien.",
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.",
+        "Licúe el apio con las dos leches, el azúcar, los huevos, la mantequilla, la harina, las especias, la sal y la vainilla.",
+        "Vierta en el molde.",
+        "Hornee 55 a 60 minutos, hasta que un palillo salga limpio. Deje enfriar antes de cortar. Es como el budín de batata, de las abuelas del centro de la isla."
+      ],
+      en: [
+        "Boil the apio in water 15 to 20 minutes, until tender. Drain very well.",
+        "Heat the oven to 350 °F and grease a 9 × 13-inch pan.",
+        "Blend the apio with both milks, the sugar, eggs, butter, flour, spices, salt and vanilla.",
+        "Pour into the pan.",
+        "Bake 55 to 60 minutes, until a toothpick comes out clean. Let cool before cutting. It's like sweet potato pudding, from the grandmothers of the island's interior."
+      ]
+    }
+  },
+  {
+    id: "pure-apio-bebes",
+    category: "vegetales",
+    name: { es: "Puré de Apio para Bebés", en: "Arracacha (Apio) Purée for Babies" },
+    active: 25, total: 25,
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de apio del país pelado en trozos",
+        "1 zanahoria en ruedas",
+        "2 tazas de agua",
+        "1 cucharadita de aceite de oliva"
+      ],
+      en: [
+        "1 pound Puerto Rican apio (arracacha), peeled and cut in chunks",
+        "1 carrot, sliced",
+        "2 cups water",
+        "1 teaspoon olive oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva el apio y la zanahoria en el agua, sin sal, 15 a 20 minutos, hasta que estén muy blandos. Guarde el agua.",
+        "Licúe o maje con un poco del agua de hervir hasta que quede bien suave.",
+        "Añada el aceite de oliva.",
+        "Sirva tibio. Pruebe la temperatura antes de dárselo al bebé.",
+        "Para bebés de 6 meses en adelante, cuando el pediatra lo autorice. No le ponga sal ni azúcar. Se puede congelar en porciones en una bandeja de cubitos de hielo."
+      ],
+      en: [
+        "Boil the apio and carrot in the water, without salt, 15 to 20 minutes, until very soft. Save the water.",
+        "Blend or mash with a little of the cooking water until very smooth.",
+        "Add the olive oil.",
+        "Serve warm. Test the temperature before feeding the baby.",
+        "For babies 6 months and older, when the pediatrician approves. Don't add salt or sugar. It can be frozen in portions in an ice cube tray."
+      ]
+    }
   }
 );

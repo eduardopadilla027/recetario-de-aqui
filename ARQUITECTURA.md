@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-19 · **Versión del documento:** 4.37.0 · **Versión de la app:** 4.37.0 (revisada el 19 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,279 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.38.0 · **Versión de la app:** 4.38.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,298 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -196,19 +196,19 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | aves | Aves | 65 |
 | pescados | Pescado y Mariscos | 86 |
 | huevos | Huevos y Queso | 23 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 64 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 65 |
 | pastas | Pastas | 31 |
 | bizcochos | Bizcochos | 49 |
 | galletitas | Galletitas | 42 |
 | pasteles_dulces | Pasteles Dulces | 22 |
-| panes | Pan y Panecillos | 54 |
+| panes | Pan y Panecillos | 55 |
 | emparedados | Emparedados | 25 |
-| postres | Helados, Budines, Flan y Otros Postres | 146 |
+| postres | Helados, Budines, Flan y Otros Postres | 147 |
 | arroces | Arroces y Habichuelas | 64 |
-| vegetales | Vegetales y Viandas | 93 |
+| vegetales | Vegetales y Viandas | 97 |
 | salsas | Salsas y Aderezos | 78 |
-| bebidas | Bebidas | 43 |
-| jugos | Jugos Naturales | 30 |
+| bebidas | Bebidas | 49 |
+| jugos | Jugos Naturales | 36 |
 | cocteles | Cócteles y Tragos | 54 |
 
 **Recetas que cambiaron de categoría (v4.30):** ensaladas de pulpo, de mariscos y de carrucho y la ensalada fría de pulpo
@@ -640,7 +640,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   primero y la lista de la época) siguen la corrección del administrador.
 - **Fecha de ingreso:** `RECIPE_ADDED` en `js/recipe-dates.js`, GENERADO por `node tools/recipe-dates.js` desde el
   historial de git (fecha del commit que escribió la línea `id: "…"`; las que aún no están en un commit, la de hoy).
-  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17, 130 del 18 y 35 del 19 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
+  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17 y 184 del 18 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
   Se carga con `loadScript()` sólo al abrir el panel. **Después de añadir recetas, hay que volver a generarlo** (§11).
 - **Seguridad (`firestore.rules`, `match /recipeMeta/{id}`):** leer, cualquiera que entre; escribir y borrar, sólo
   administradores, con sólo esas 3 claves, `seasons` entre `todo`, `navidad`, `cuaresma`, `verano`, `gracias` y `lluvia`
@@ -788,7 +788,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - **Por qué:** la app usa `#/receta/<id>`, y para Google todo lo que va después de `#` es la portada: ninguna receta salía
   en las búsquedas ("receta de pernil") y todos los enlaces compartidos se veían iguales (título, texto y bandera).
 - **`node tools/prerender.js`** (sin dependencias; carga los scripts en `vm` como el navegador) genera:
-  `receta/<id>.html` (1,279 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
+  `receta/<id>.html` (1,298 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
   `vercel.json`. Cada una es ligera y se lee sin JavaScript: título y descripción propios ("Coquito: receta puertorriqueña
   paso a paso para 12 porciones. Lleva leche de coco… Lista en 4 h 15 min."), `canonical`, Open Graph y Twitter con el
   nombre del plato, tiempo de cocina y total, porciones, calorías estimadas, alérgenos, ingredientes y pasos en español y
@@ -992,7 +992,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,279). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,298). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -1098,7 +1098,29 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
-### 2026-10-19 — v4.37.0 · Panes, viandas, ajonjolí, salsas de jobos, caderas de pollo, cereales y pastas; "¡Gratis!", carrito azul y corazón rojo
+### 2026-10-18 — v4.38.0 · Jugos y bebidas tropicales y recetas con apio del país
+- *Pedido:* más recetas de jugos y bebidas tropicales, y recetas con el apio.
+- Quincuagésima novena tanda en `js/recipes-5.js` (versiones propias), 19 que no estaban:
+  - **Jugos naturales (6):** uvas de playa, piña con jengibre y cúrcuma, limonada de fresa, remolacha con zanahoria y
+    china, limonada frappé de hierbabuena, y guayaba con parcha. Cada uno tiene su vaso con el color del jugo y su fruta
+    (`ic-jugo-<id>` en el sprite de `index.html`; tres adornos nuevos: uva de playa, remolacha y cúrcuma, y fresa).
+  - **Bebidas tropicales (6):** batida de pitahaya, batida de aguacate, champola de parcha, té frío de limoncillo y
+    jengibre, batida de fresa y guineo, y ponche de parcha y piña sin alcohol para fiestas.
+  - **Con apio del país (7):** majado de apio, apio en escabeche, pastelón de apio con picadillo de pollo y puré de apio
+    para bebés (en Vegetales); buñuelos de apio con queso (Entremeses); pan de apio (Panes); y budín de apio y coco
+    (Postres). Antes sólo estaba la crema de apio. Los ingredientes dicen "apio del país" para que la nutrición lo cuente
+    como arracacha y no como el apio de ensalada (celery).
+- **Iconos:** limoncillo para el té frío, 🥑 para la batida de aguacate, viandas, escabeche, crema de apio y buñuelos para
+  las de apio.
+- **Familias** (`families.js`): "té frío" va con café y té fríos; "apio" va con las viandas en Vegetales y en Panes.
+  Ninguna receta anterior cambió.
+- **Fechas** (`tools/recipe-dates.js`): la fecha de hoy de las recetas sin commit salía en UTC (de noche ya era "mañana");
+  ahora usa la hora local, como git. Por eso la v4.37.0 decía que sus 35 recetas eran del 19: son del 18, y el pie y
+  `APP_REVISED` vuelven al 18.
+- `node tools/prerender.js`: 1,298 páginas y `sitemap.xml` con 1,300 direcciones. Total: **1,279 → 1,298 recetas**.
+- *Verificado:* `node tools/check-recipes.js` 0 errores y 0 avisos; nutrición 0 sin contar; navegador: las 19 en ES y EN
+  a 375 px, con su dibujo.
+### 2026-10-18 — v4.37.0 · Panes, viandas, ajonjolí, salsas de jobos, caderas de pollo, cereales y pastas; "¡Gratis!", carrito azul y corazón rojo
 - *Pedido:* más panes y panes dulces, vegetales y viandas, dulce de ajonjolí, salsas y aderezos (por ejemplo con jobos),
   aves (por ejemplo caderas de pollo), cereales y pastas. Y en la portada: quitar "sin registrarse" y que "Gratis" llame
   la atención; el ícono del carrito en azul y el corazón en rojo.
@@ -1134,7 +1156,7 @@ Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLoca
 - **Familias** (`families.js`): "Pan de agua, sobao y de molde" incluye pan de papa, integral y panecillos de
   hamburguesa; en Vegetales, "pana" sólo cuenta como palabra suelta (el guingambó "empanado" ya no cae en viandas).
   Ninguna receta anterior cambió.
-- Fechas regeneradas (las 35 nuevas quedaron del 19) y `node tools/prerender.js`: 1,279 páginas y `sitemap.xml` con 1,281
+- Fechas regeneradas y `node tools/prerender.js`: 1,279 páginas y `sitemap.xml` con 1,281
   direcciones. Total: **1,244 → 1,279 recetas**.
 - *Verificado:* `node tools/check-recipes.js` 0 errores y 0 avisos; nutrición 0 sin contar; navegador: las 35 en ES y EN
   a 375 px y la portada con "¡Gratis!" en claro y oscuro.
