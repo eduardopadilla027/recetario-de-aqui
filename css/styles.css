@@ -25,6 +25,8 @@
   --focus: #1D4ED8;
   --on-accent: #fff;         /* texto sobre achiote, verde plátano o tinta */
   --field: #fff;             /* fondo de campos y tarjetas blancas */
+  --cart-blue: #1D5FB4;      /* ícono del carrito (v4.37) */
+  --heart-red: #C8102E;      /* ícono del corazón (v4.37) */
 
   /* Tipografía */
   /* Una sola letra en toda la app: Tahoma (Windows y Mac). En iPhone y
@@ -117,6 +119,9 @@ main:focus { outline: none; }
 .btn-outline:hover { border-color: var(--achiote); color: var(--achiote); }
 .btn-outline[aria-pressed="true"] { background: var(--achiote-50); border-color: var(--achiote); color: var(--achiote-600); }
 .btn-outline[aria-pressed="true"] .icon { fill: currentColor; }
+/* v4.37: el carrito siempre azul y el corazón siempre rojo, estén donde estén (menú, botones, tarjetas). */
+svg.icon:has(> use[href="#i-cart"]) { color: var(--cart-blue); }
+svg.icon:has(> use[href="#i-heart"]) { color: var(--heart-red); }
 .btn-ghost { color: var(--achiote); padding-inline: var(--s-3); }
 .btn-ghost:hover { background: var(--achiote-50); }
 .icon-btn {
@@ -196,6 +201,13 @@ main:focus { outline: none; }
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 16' preserveAspectRatio='none'%3E%3Cpath d='M3 11 C 60 4, 120 3, 170 6 S 260 12, 297 5' fill='none' stroke='%23C8912E' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E") left bottom / 100% .28em no-repeat;
 }
 .hero-lead { color: var(--ink-2); font-size: var(--step-1); max-width: 48ch; }
+/* "¡Gratis!" en la portada: una etiqueta de color achiote que llame la atención. */
+.hero-free {
+  display: inline-block; margin-left: var(--s-1); padding: 0.1em 0.65em;
+  background: var(--achiote); color: var(--on-accent); border-radius: 999px;
+  font-weight: 700; letter-spacing: .02em; transform: rotate(-2deg);
+  box-shadow: var(--shadow-sm); white-space: nowrap;
+}
 .hero-stats { margin-top: var(--s-4); color: var(--ink-3); font-size: var(--step--1); font-weight: 500; }
 .hero-stats strong { color: var(--ink); }
 
@@ -1327,6 +1339,7 @@ body.cook-on { overflow: hidden; }
     --achiote: #F0895C; --achiote-600: #F6A781; --achiote-50: #3A2216;
     --plantain: #8FCB98; --plantain-50: #1E2C20; --gold: #D9A84A; --focus: #8AB4FF;
     --on-accent: #1B120C; --field: #1C150F;
+    --cart-blue: #7FB0FF; --heart-red: #FF6B7A;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4); --shadow: 0 6px 20px -8px rgba(0, 0, 0, .6);
   }
   .site-header { background: rgba(23, 17, 13, .92); }

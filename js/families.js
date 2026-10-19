@@ -114,7 +114,7 @@ const RECIPE_FAMILIES = {
   ],
   panes: [
     ["panqueques", { es: "Panqueques", en: "Pancakes" }, /^panqueques/],
-    ["agua", { es: "Pan de agua, sobao y de molde", en: "Water bread, sobao and sandwich bread" }, /pan de agua|sobao|manteca|pan de mantequilla|molde|tostado|pan con ajo/],
+    ["agua", { es: "Pan de agua, sobao y de molde", en: "Water bread, sobao and sandwich bread" }, /pan de agua|sobao|manteca|pan de mantequilla|molde|tostado|pan con ajo|pan de papa|integral|panecillos de hamburguesa/],
     ["dulces", { es: "Panes dulces y donas", en: "Sweet breads and doughnuts" }, null],
     ["viandas", { es: "De viandas y maíz", en: "Root vegetable and corn breads" }, /yautia|maiz|casabe|arepas|panapen/],
     ["salados", { es: "Con queso y jamón", en: "Cheese and ham breads" }, /^(?!mallorca|trenza).*(queso|jamon|quesitos|cachitos)/]
@@ -149,7 +149,7 @@ const RECIPE_FAMILIES = {
     ["platanos", { es: "Tostones, amarillos y guineítos", en: "Tostones, sweet plantains and green bananas" }, /tostones|amarillo|platanutres|maduros|guineitos|guineos/],
     ["mofongos", { es: "Mofongos, majados y trifongo", en: "Mofongos, mashes and trifongo" }, /mofongo|majado|trifongo/],
     ["pasteles", { es: "Pasteles y pastelones", en: "Pasteles and pastelones" }, /^pasteles|pastelon|^pinon/],
-    ["viandas", { es: "Yuca, pana y otras viandas", en: "Cassava, breadfruit and other roots" }, /yuca|pana|batata|viandas|malanga|name|yautia/],
+    ["viandas", { es: "Yuca, pana y otras viandas", en: "Cassava, breadfruit and other roots" }, /yuca|\bpana\b|batata|viandas|malanga|name|yautia/],
     ["papas", { es: "Papas", en: "Potatoes" }, /^(?!fricase).*(papas|papitas)/],
     ["berenjenas", { es: "Berenjenas", en: "Eggplant" }, /berenjena/],
     ["rellenos", { es: "Rellenos y gratinados", en: "Stuffed and gratin vegetables" }, /rellen|gratinad|pimientos/],

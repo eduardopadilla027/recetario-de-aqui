@@ -11179,5 +11179,1628 @@ recipes.push(
         "Let cool and refrigerate at least 2 hours. Dust with cinnamon before serving."
       ]
     }
+  },
+  // ---------- Tanda 58: panes (4) y panes dulces (4), vegetales y viandas (5), dulces de ajonjolí (2),
+  // salsas y aderezos con jobos (6), caderas de pollo (5), cereales (4) y pastas (5) ----------
+  {
+    id: "pan-papa",
+    category: "panes",
+    name: { es: "Pan de Papa", en: "Potato Bread" },
+    active: 65, total: 200, wait: "levado",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 papa grande hervida y majada (1 taza)",
+        "1 taza del agua de hervir la papa, tibia",
+        "1 sobre de levadura seca (2¼ cucharaditas)",
+        "2 cucharadas de azúcar",
+        "4 tazas de harina de trigo",
+        "1½ cucharaditas de sal",
+        "3 cucharadas de mantequilla blanda",
+        "1 huevo batido para barnizar"
+      ],
+      en: [
+        "1 large potato, boiled and mashed (1 cup)",
+        "1 cup of the potato cooking water, lukewarm",
+        "1 packet active dry yeast (2¼ teaspoons)",
+        "2 tablespoons sugar",
+        "4 cups all-purpose flour",
+        "1½ teaspoons salt",
+        "3 tablespoons softened butter",
+        "1 beaten egg for brushing"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura y el azúcar en el agua tibia de la papa y deje 10 minutos, hasta que haga espuma.",
+        "Mezcle la harina y la sal. Añada la papa majada, la levadura y la mantequilla, y amase 10 minutos hasta que la masa esté suave y un poco pegajosa.",
+        "Tape y deje levar 1 hora 15 minutos, hasta que doble su tamaño.",
+        "Forme 12 bolitas, acomódelas juntas en un molde engrasado de 9 × 13 pulgadas, tape y deje levar 45 minutos más.",
+        "Caliente el horno a 375 °F, barnice con huevo y hornee 25 minutos, hasta que doren. La papa los deja suavecitos por días."
+      ],
+      en: [
+        "Dissolve the yeast and sugar in the warm potato water and let sit 10 minutes, until foamy.",
+        "Mix the flour and salt. Add the mashed potato, yeast and butter and knead 10 minutes until the dough is smooth and slightly sticky.",
+        "Cover and let rise 1 hour 15 minutes, until doubled.",
+        "Shape 12 balls, place them close together in a greased 9 × 13-inch pan, cover and let rise 45 more minutes.",
+        "Heat the oven to 375 °F, brush with egg and bake 25 minutes, until golden. The potato keeps them soft for days."
+      ]
+    }
+  },
+  {
+    id: "pan-integral-avena",
+    category: "panes",
+    name: { es: "Pan Integral de Avena y Miel", en: "Whole Wheat Oat and Honey Bread" },
+    active: 70, total: 200, wait: "levado",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1½ tazas de agua tibia",
+        "1 sobre de levadura seca (2¼ cucharaditas)",
+        "3 cucharadas de miel",
+        "2 tazas de harina de trigo integral",
+        "1½ tazas de harina de trigo",
+        "¾ taza de avena en hojuelas, y un poco más para decorar",
+        "1½ cucharaditas de sal",
+        "2 cucharadas de aceite de oliva"
+      ],
+      en: [
+        "1½ cups lukewarm water",
+        "1 packet active dry yeast (2¼ teaspoons)",
+        "3 tablespoons honey",
+        "2 cups whole wheat flour",
+        "1½ cups all-purpose flour",
+        "¾ cup rolled oats, plus a little more for topping",
+        "1½ teaspoons salt",
+        "2 tablespoons olive oil"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura y la miel en el agua tibia y deje 10 minutos.",
+        "Mezcle las harinas, la avena y la sal. Añada la levadura y el aceite, y amase 10 minutos.",
+        "Tape y deje levar 1 hora 15 minutos, hasta que doble.",
+        "Forme un pan, póngalo en un molde de 9 × 5 pulgadas engrasado, moje la superficie y espolvoree avena. Deje levar 45 minutos.",
+        "Hornee a 375 °F 35 minutos, hasta que suene hueco al tocarlo por debajo. Deje enfriar antes de rebanar."
+      ],
+      en: [
+        "Dissolve the yeast and honey in the warm water and let sit 10 minutes.",
+        "Mix the flours, oats and salt. Add the yeast and oil and knead 10 minutes.",
+        "Cover and let rise 1 hour 15 minutes, until doubled.",
+        "Shape a loaf, place it in a greased 9 × 5-inch pan, wet the top and sprinkle with oats. Let rise 45 minutes.",
+        "Bake at 375 °F 35 minutes, until it sounds hollow when tapped underneath. Let cool before slicing."
+      ]
+    }
+  },
+  {
+    id: "pan-chorizo-queso",
+    category: "panes",
+    name: { es: "Pan Relleno de Chorizo y Queso", en: "Chorizo and Cheese Stuffed Bread" },
+    active: 75, total: 190, wait: "levado",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 taza de leche tibia",
+        "1 sobre de levadura seca (2¼ cucharaditas)",
+        "2 cucharadas de azúcar",
+        "3½ tazas de harina de trigo",
+        "1 cucharadita de sal",
+        "4 cucharadas de mantequilla blanda",
+        "1 huevo",
+        "6 onzas de chorizo en lascas finas",
+        "1½ tazas de queso de papa (gouda) rallado",
+        "1 huevo batido para barnizar"
+      ],
+      en: [
+        "1 cup lukewarm milk",
+        "1 packet active dry yeast (2¼ teaspoons)",
+        "2 tablespoons sugar",
+        "3½ cups all-purpose flour",
+        "1 teaspoon salt",
+        "4 tablespoons softened butter",
+        "1 egg",
+        "6 ounces chorizo, thinly sliced",
+        "1½ cups shredded gouda (queso de papa)",
+        "1 beaten egg for brushing"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura y el azúcar en la leche tibia y deje 10 minutos.",
+        "Añada la harina, la sal, la mantequilla y el huevo, y amase 10 minutos. Tape y deje levar 1 hora.",
+        "Estire la masa en un rectángulo de 12 × 16 pulgadas, cubra con el chorizo y el queso, y enróllela por el lado largo, sellando bien.",
+        "Póngala en una bandeja con la unión hacia abajo, tape y deje levar 40 minutos. Caliente el horno a 350 °F.",
+        "Barnice con huevo y hornee 30 a 35 minutos, hasta que dore. Deje reposar 10 minutos antes de rebanar. Es como el pan de jamón, pero con chorizo."
+      ],
+      en: [
+        "Dissolve the yeast and sugar in the warm milk and let sit 10 minutes.",
+        "Add the flour, salt, butter and egg and knead 10 minutes. Cover and let rise 1 hour.",
+        "Roll the dough into a 12 × 16-inch rectangle, cover with the chorizo and cheese and roll it up from the long side, sealing well.",
+        "Place on a tray seam side down, cover and let rise 40 minutes. Heat the oven to 350 °F.",
+        "Brush with egg and bake 30 to 35 minutes, until golden. Let rest 10 minutes before slicing. It's like pan de jamón, but with chorizo."
+      ]
+    }
+  },
+  {
+    id: "panecillos-hamburguesa",
+    category: "panes",
+    name: { es: "Panecillos de Hamburguesa Caseros", en: "Homemade Hamburger Buns" },
+    active: 50, total: 165, wait: "levado",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de leche tibia",
+        "1 sobre de levadura seca (2¼ cucharaditas)",
+        "2 cucharadas de azúcar",
+        "3½ tazas de harina de trigo",
+        "1 cucharadita de sal",
+        "3 cucharadas de mantequilla blanda",
+        "1 huevo",
+        "1 huevo batido para barnizar",
+        "1 cucharada de semillas de ajonjolí"
+      ],
+      en: [
+        "1 cup lukewarm milk",
+        "1 packet active dry yeast (2¼ teaspoons)",
+        "2 tablespoons sugar",
+        "3½ cups all-purpose flour",
+        "1 teaspoon salt",
+        "3 tablespoons softened butter",
+        "1 egg",
+        "1 beaten egg for brushing",
+        "1 tablespoon sesame seeds"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura y el azúcar en la leche tibia y deje 10 minutos.",
+        "Añada la harina, la sal, la mantequilla y el huevo, y amase 8 minutos. Tape y deje levar 1 hora.",
+        "Divida en 8 bolas, aplánelas a 3½ pulgadas y póngalas separadas en una bandeja. Tape y deje levar 40 minutos.",
+        "Caliente el horno a 400 °F. Barnice con huevo y espolvoree el ajonjolí.",
+        "Hornee 15 minutos, hasta que doren. Deje enfriar sobre una rejilla antes de abrirlos."
+      ],
+      en: [
+        "Dissolve the yeast and sugar in the warm milk and let sit 10 minutes.",
+        "Add the flour, salt, butter and egg and knead 8 minutes. Cover and let rise 1 hour.",
+        "Divide into 8 balls, flatten them to 3½ inches and place them apart on a tray. Cover and let rise 40 minutes.",
+        "Heat the oven to 400 °F. Brush with egg and sprinkle with the sesame seeds.",
+        "Bake 15 minutes, until golden. Let cool on a rack before splitting."
+      ]
+    }
+  },
+  {
+    id: "rosca-reyes",
+    category: "panes",
+    name: { es: "Rosca de Reyes Boricua", en: "Puerto Rican Three Kings Bread (Rosca de Reyes)" },
+    active: 80, total: 230, wait: "levado",
+    servings: 14,
+    ingredients: {
+      es: [
+        "¾ taza de leche tibia",
+        "1 sobre de levadura seca (2¼ cucharaditas)",
+        "½ taza de azúcar",
+        "4 tazas de harina de trigo",
+        "½ cucharadita de sal",
+        "3 huevos",
+        "½ taza de mantequilla blanda",
+        "1 cucharada de ralladura de china",
+        "1 cucharadita de agua de azahar o vainilla",
+        "1 huevo batido para barnizar",
+        "½ taza de frutas abrillantadas",
+        "4 onzas de pasta de guayaba en tiras",
+        "2 cucharadas de azúcar para decorar"
+      ],
+      en: [
+        "¾ cup lukewarm milk",
+        "1 packet active dry yeast (2¼ teaspoons)",
+        "½ cup sugar",
+        "4 cups all-purpose flour",
+        "½ teaspoon salt",
+        "3 eggs",
+        "½ cup softened butter",
+        "1 tablespoon orange zest",
+        "1 teaspoon orange blossom water or vanilla",
+        "1 beaten egg for brushing",
+        "½ cup candied fruit",
+        "4 ounces guava paste, in strips",
+        "2 tablespoons sugar for decorating"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura y 1 cucharada del azúcar en la leche tibia y deje 10 minutos.",
+        "Añada la harina, el resto del azúcar, la sal, los huevos, la mantequilla, la ralladura y el azahar. Amase 10 minutos hasta que la masa esté elástica. Tape y deje levar 1 hora 30 minutos.",
+        "Forme un cilindro largo, únalo en forma de rosca sobre una bandeja con papel de hornear y, si quiere, esconda un muñequito de cerámica por debajo. Deje levar 45 minutos.",
+        "Caliente el horno a 350 °F. Barnice con huevo, decore con las tiras de guayaba y las frutas abrillantadas, y espolvoree el azúcar.",
+        "Hornee 25 a 30 minutos, hasta que dore. Se comparte el 6 de enero, Día de Reyes: a quien le toque el muñequito le toca la próxima fiesta. Avise que lo tiene antes de servir a los niños."
+      ],
+      en: [
+        "Dissolve the yeast and 1 tablespoon of the sugar in the warm milk and let sit 10 minutes.",
+        "Add the flour, the rest of the sugar, the salt, eggs, butter, zest and orange blossom water. Knead 10 minutes until elastic. Cover and let rise 1 hour 30 minutes.",
+        "Shape a long log and join it into a ring on a parchment-lined tray; if you like, tuck a small ceramic figurine underneath. Let rise 45 minutes.",
+        "Heat the oven to 350 °F. Brush with egg, decorate with the guava strips and candied fruit and sprinkle with the sugar.",
+        "Bake 25 to 30 minutes, until golden. It's shared on January 6, Three Kings Day: whoever finds the figurine hosts the next party. Warn everyone it's inside before serving to kids."
+      ]
+    }
+  },
+  {
+    id: "pan-chocolate-dulce",
+    category: "panes",
+    name: { es: "Pan Dulce de Chocolate", en: "Sweet Chocolate Bread" },
+    active: 70, total: 195, wait: "levado",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 taza de leche tibia",
+        "1 sobre de levadura seca (2¼ cucharaditas)",
+        "½ taza de azúcar",
+        "3 tazas de harina de trigo",
+        "⅓ taza de cacao en polvo sin azúcar",
+        "½ cucharadita de sal",
+        "1 huevo",
+        "4 cucharadas de mantequilla blanda",
+        "¾ taza de chispas de chocolate semidulce"
+      ],
+      en: [
+        "1 cup lukewarm milk",
+        "1 packet active dry yeast (2¼ teaspoons)",
+        "½ cup sugar",
+        "3 cups all-purpose flour",
+        "⅓ cup unsweetened cocoa powder",
+        "½ teaspoon salt",
+        "1 egg",
+        "4 tablespoons softened butter",
+        "¾ cup semisweet chocolate chips"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura y 1 cucharada del azúcar en la leche tibia y deje 10 minutos.",
+        "Mezcle la harina, el cacao, el resto del azúcar y la sal. Añada la levadura, el huevo y la mantequilla, y amase 10 minutos.",
+        "Incorpore las chispas de chocolate. Tape y deje levar 1 hora 15 minutos.",
+        "Forme un pan en un molde de 9 × 5 pulgadas engrasado y deje levar 45 minutos.",
+        "Hornee a 350 °F 35 minutos. Deje enfriar antes de rebanar. Tostado con mantequilla es el desayuno de los domingos."
+      ],
+      en: [
+        "Dissolve the yeast and 1 tablespoon of the sugar in the warm milk and let sit 10 minutes.",
+        "Mix the flour, cocoa, the rest of the sugar and the salt. Add the yeast, egg and butter and knead 10 minutes.",
+        "Knead in the chocolate chips. Cover and let rise 1 hour 15 minutes.",
+        "Shape a loaf in a greased 9 × 5-inch pan and let rise 45 minutes.",
+        "Bake at 350 °F 35 minutes. Let cool before slicing. Toasted with butter, it's Sunday breakfast."
+      ]
+    }
+  },
+  {
+    id: "pan-pasas-canela",
+    category: "panes",
+    name: { es: "Pan de Pasas y Canela en Espiral", en: "Cinnamon Raisin Swirl Bread" },
+    active: 70, total: 195, wait: "levado",
+    servings: 12,
+    ingredients: {
+      es: [
+        "1 taza de leche tibia",
+        "1 sobre de levadura seca (2¼ cucharaditas)",
+        "¼ taza de azúcar",
+        "3½ tazas de harina de trigo",
+        "1 cucharadita de sal",
+        "1 huevo",
+        "4 cucharadas de mantequilla blanda",
+        "¾ taza de pasas",
+        "⅓ taza de azúcar morena",
+        "1 cucharada de canela en polvo",
+        "1 cucharada de mantequilla derretida"
+      ],
+      en: [
+        "1 cup lukewarm milk",
+        "1 packet active dry yeast (2¼ teaspoons)",
+        "¼ cup sugar",
+        "3½ cups all-purpose flour",
+        "1 teaspoon salt",
+        "1 egg",
+        "4 tablespoons softened butter",
+        "¾ cup raisins",
+        "⅓ cup brown sugar",
+        "1 tablespoon ground cinnamon",
+        "1 tablespoon melted butter"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la levadura y 1 cucharada del azúcar en la leche tibia y deje 10 minutos.",
+        "Añada la harina, el resto del azúcar, la sal, el huevo y la mantequilla blanda; amase 10 minutos e incorpore las pasas. Tape y deje levar 1 hora 15 minutos.",
+        "Estire la masa en un rectángulo de 9 × 16 pulgadas, unte la mantequilla derretida y espolvoree la azúcar morena mezclada con la canela.",
+        "Enróllela por el lado corto, póngala en un molde de 9 × 5 pulgadas engrasado y deje levar 45 minutos.",
+        "Hornee a 350 °F 35 minutos. Al rebanarlo se ve la espiral de canela."
+      ],
+      en: [
+        "Dissolve the yeast and 1 tablespoon of the sugar in the warm milk and let sit 10 minutes.",
+        "Add the flour, the rest of the sugar, the salt, egg and softened butter; knead 10 minutes and work in the raisins. Cover and let rise 1 hour 15 minutes.",
+        "Roll the dough into a 9 × 16-inch rectangle, brush with the melted butter and sprinkle with the brown sugar mixed with the cinnamon.",
+        "Roll it up from the short side, place it in a greased 9 × 5-inch pan and let rise 45 minutes.",
+        "Bake at 350 °F 35 minutes. When sliced, the cinnamon swirl shows."
+      ]
+    }
+  },
+  {
+    id: "pan-mango",
+    category: "panes",
+    name: { es: "Pan de Mangó", en: "Mango Bread" },
+    active: 75, total: 90, wait: "enfriar",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 tazas de harina de trigo",
+        "1 cucharadita de bicarbonato de sodio",
+        "1 cucharadita de canela en polvo",
+        "¼ cucharadita de sal",
+        "2 huevos",
+        "¾ taza de azúcar",
+        "½ taza de aceite",
+        "1½ tazas de mangó maduro majado",
+        "1 cucharadita de ralladura de limón",
+        "½ taza de coco rallado"
+      ],
+      en: [
+        "2 cups all-purpose flour",
+        "1 teaspoon baking soda",
+        "1 teaspoon ground cinnamon",
+        "¼ teaspoon salt",
+        "2 eggs",
+        "¾ cup sugar",
+        "½ cup oil",
+        "1½ cups mashed ripe mango",
+        "1 teaspoon lime zest",
+        "½ cup shredded coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 5 pulgadas.",
+        "Mezcle la harina, el bicarbonato, la canela y la sal.",
+        "En otro tazón, bata los huevos con el azúcar y el aceite. Añada el mangó y la ralladura.",
+        "Una ambas mezclas sin batir de más e incorpore el coco. Vierta en el molde.",
+        "Hornee 55 a 60 minutos, hasta que un palillo salga limpio. Deje enfriar 15 minutos antes de desmoldar. Use los mangós bien maduros de la temporada."
+      ],
+      en: [
+        "Heat the oven to 350 °F and grease a 9 × 5-inch loaf pan.",
+        "Mix the flour, baking soda, cinnamon and salt.",
+        "In another bowl, beat the eggs with the sugar and oil. Add the mango and zest.",
+        "Combine both mixtures without overmixing and fold in the coconut. Pour into the pan.",
+        "Bake 55 to 60 minutes, until a toothpick comes out clean. Let cool 15 minutes before unmolding. Use the very ripe mangoes of the season."
+      ]
+    }
+  },
+  {
+    id: "pastelon-batata",
+    category: "vegetales",
+    name: { es: "Pastelón de Batata con Picadillo", en: "Sweet Potato Pastelón with Picadillo" },
+    active: 60, total: 105, wait: "reposo",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 libras de batata mameya pelada en ruedas de ¼ de pulgada",
+        "2 cucharadas de aceite de oliva",
+        "1 libra de carne molida de res",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas picadas",
+        "½ cucharadita de sal",
+        "4 huevos batidos",
+        "1½ tazas de queso mozzarella rallado"
+      ],
+      en: [
+        "3 pounds orange-fleshed sweet potato (batata mameya), peeled and cut into ¼-inch rounds",
+        "2 tablespoons olive oil",
+        "1 pound ground beef",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "¼ cup chopped stuffed olives",
+        "½ teaspoon salt",
+        "4 eggs, beaten",
+        "1½ cups shredded mozzarella cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400 °F. Unte las ruedas de batata con el aceite y hornéelas en bandejas 15 minutos, hasta que estén blandas.",
+        "Dore la carne con el sofrito, añada la salsa de tomate, las aceitunas y la sal, y cocine 10 minutos hasta que se seque un poco.",
+        "Baje el horno a 350 °F. Engrase un molde de 9 × 13 pulgadas y vierta la mitad del huevo.",
+        "Haga capas: batata, picadillo, un tercio del queso; repita y termine con batata. Vierta el resto del huevo y cubra con el queso.",
+        "Hornee 30 minutos, hasta que dore. Deje reposar 15 minutos antes de cortar. Es como el pastelón de amarillos, pero con batata."
+      ],
+      en: [
+        "Heat the oven to 400 °F. Brush the sweet potato rounds with the oil and bake on trays 15 minutes, until tender.",
+        "Brown the beef with the sofrito, add the tomato sauce, olives and salt and cook 10 minutes until a little dry.",
+        "Lower the oven to 350 °F. Grease a 9 × 13-inch dish and pour in half the egg.",
+        "Layer: sweet potato, picadillo, a third of the cheese; repeat and finish with sweet potato. Pour in the rest of the egg and top with the cheese.",
+        "Bake 30 minutes, until golden. Let rest 15 minutes before cutting. It's like plantain pastelón, but with sweet potato."
+      ]
+    }
+  },
+  {
+    id: "calabaza-asada-miel",
+    category: "vegetales",
+    name: { es: "Calabaza Asada con Ajo y Miel", en: "Roasted Calabaza with Garlic and Honey" },
+    active: 50, total: 50,
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 libras de calabaza con cáscara, en lascas de 1 pulgada",
+        "3 cucharadas de aceite de oliva",
+        "4 dientes de ajo majados",
+        "2 cucharadas de miel",
+        "½ cucharadita de sal",
+        "¼ cucharadita de pimienta",
+        "½ cucharadita de canela en polvo",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "3 pounds calabaza (West Indian pumpkin) with skin, cut into 1-inch wedges",
+        "3 tablespoons olive oil",
+        "4 garlic cloves, mashed",
+        "2 tablespoons honey",
+        "½ teaspoon salt",
+        "¼ teaspoon pepper",
+        "½ teaspoon ground cinnamon",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 425 °F y cubra una bandeja con papel de hornear.",
+        "Mezcle el aceite, el ajo, la miel, la sal, la pimienta y la canela.",
+        "Unte las lascas de calabaza con la mezcla y acomódelas sin amontonar.",
+        "Hornee 30 a 35 minutos, volteándolas a la mitad, hasta que estén blandas y con orillas caramelizadas.",
+        "Espolvoree el cilantro. Acompaña bien el pernil o el pollo. La cáscara se ablanda y se puede comer."
+      ],
+      en: [
+        "Heat the oven to 425 °F and line a baking sheet with parchment paper.",
+        "Mix the oil, garlic, honey, salt, pepper and cinnamon.",
+        "Toss the calabaza wedges in the mixture and spread them out without crowding.",
+        "Roast 30 to 35 minutes, turning halfway, until tender with caramelized edges.",
+        "Sprinkle with the cilantro. It goes well with pernil or chicken. The skin softens and can be eaten."
+      ]
+    }
+  },
+  {
+    id: "guingambo-frito",
+    category: "vegetales",
+    name: { es: "Guingambó (Quimbombó) Frito Empanado", en: "Fried Breaded Okra (Guingambó)" },
+    active: 25, total: 25,
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de guingambó fresco, en ruedas de ½ pulgada",
+        "1 huevo batido con 2 cucharadas de leche",
+        "½ taza de harina de maíz fina",
+        "¼ taza de harina de trigo",
+        "½ cucharadita de sal",
+        "½ cucharadita de pimentón",
+        "Aceite para freír",
+        "¼ taza de mayo-ketchup para servir"
+      ],
+      en: [
+        "1 pound fresh okra (guingambó), cut into ½-inch rounds",
+        "1 egg beaten with 2 tablespoons milk",
+        "½ cup fine cornmeal",
+        "¼ cup all-purpose flour",
+        "½ teaspoon salt",
+        "½ teaspoon paprika",
+        "Oil for frying",
+        "¼ cup mayo-ketchup for serving"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la harina de maíz, la harina de trigo, la sal y el pimentón.",
+        "Pase las ruedas de guingambó por el huevo y luego por la mezcla de harinas.",
+        "Caliente el aceite a 350 °F.",
+        "Fría en tandas 3 a 4 minutos, hasta que estén doradas y crujientes. Así fritas no quedan babosas.",
+        "Escurra y sirva enseguida con mayo-ketchup."
+      ],
+      en: [
+        "Mix the cornmeal, flour, salt and paprika.",
+        "Dip the okra rounds in the egg and then in the flour mixture.",
+        "Heat the oil to 350 °F.",
+        "Fry in batches 3 to 4 minutes, until golden and crisp. Fried this way they aren't slimy.",
+        "Drain and serve right away with mayo-ketchup."
+      ]
+    }
+  },
+  {
+    id: "tostones-yautia",
+    category: "vegetales",
+    name: { es: "Tostones de Yautía con Mojo", en: "Yautía (Taro Root) Tostones with Mojo" },
+    active: 30, total: 30,
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de yautía blanca pelada",
+        "Aceite para freír",
+        "½ cucharadita de sal",
+        "¼ taza de mojo de ajo"
+      ],
+      en: [
+        "2 pounds white yautía (taro root), peeled",
+        "Oil for frying",
+        "½ teaspoon salt",
+        "¼ cup garlic mojo"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte la yautía en ruedas de ¾ de pulgada y séquelas bien.",
+        "Fríalas a 325 °F 6 a 8 minutos, hasta que estén blandas por dentro pero sin dorar mucho.",
+        "Sáquelas y aplástelas con una tostonera o el fondo de un vaso.",
+        "Fríalas otra vez a 375 °F 2 a 3 minutos, hasta que estén doradas y crujientes.",
+        "Escurra, espolvoree la sal y sirva con el mojo. Quedan más cremosas por dentro que los de plátano."
+      ],
+      en: [
+        "Cut the yautía into ¾-inch rounds and dry them well.",
+        "Fry at 325 °F for 6 to 8 minutes, until tender inside but not very browned.",
+        "Remove and flatten them with a tostonera or the bottom of a glass.",
+        "Fry again at 375 °F for 2 to 3 minutes, until golden and crisp.",
+        "Drain, sprinkle with the salt and serve with the mojo. They're creamier inside than plantain tostones."
+      ]
+    }
+  },
+  {
+    id: "mofongo-batata",
+    category: "vegetales",
+    name: { es: "Mofongo de Batata con Chicharrón", en: "Sweet Potato Mofongo with Pork Cracklings" },
+    active: 35, total: 35,
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 libras de batata blanca (boniato) pelada en trozos",
+        "Aceite para freír",
+        "5 dientes de ajo",
+        "2 cucharadas de aceite de oliva",
+        "½ cucharadita de sal",
+        "1 taza de chicharrón de cerdo desmoronado"
+      ],
+      en: [
+        "2 pounds white sweet potato (boniato), peeled and cut into chunks",
+        "Oil for frying",
+        "5 garlic cloves",
+        "2 tablespoons olive oil",
+        "½ teaspoon salt",
+        "1 cup crumbled pork cracklings (chicharrón)"
+      ]
+    },
+    steps: {
+      es: [
+        "Fría los trozos de batata a 325 °F unos 10 minutos, hasta que estén blandos por dentro y dorados por fuera. Escurra.",
+        "En el pilón, maje el ajo con la sal y el aceite de oliva.",
+        "Añada la batata caliente por partes y májela con el ajo.",
+        "Incorpore el chicharrón y maje un poco más.",
+        "Forme 4 bolas o copas y sirva enseguida con caldo de pollo o carne guisada. Es dulce y salado a la vez."
+      ],
+      en: [
+        "Fry the sweet potato chunks at 325 °F about 10 minutes, until tender inside and golden outside. Drain.",
+        "In the pilón (mortar), mash the garlic with the salt and olive oil.",
+        "Add the hot sweet potato in batches and mash it with the garlic.",
+        "Work in the cracklings and mash a little more.",
+        "Shape 4 balls or cups and serve right away with chicken broth or carne guisada. It's sweet and salty at once."
+      ]
+    }
+  },
+  {
+    id: "turron-ajonjoli-melao",
+    category: "postres",
+    name: { es: "Turrón de Ajonjolí con Melao", en: "Sesame Brittle with Cane Molasses" },
+    active: 25, total: 70, wait: "enfriar",
+    servings: 16,
+    ingredients: {
+      es: [
+        "2 tazas de ajonjolí crudo",
+        "¾ taza de azúcar",
+        "¼ taza de melao de caña",
+        "2 cucharadas de agua",
+        "1 cucharada de mantequilla",
+        "1 cucharadita de jengibre fresco rallado",
+        "1 pizca de sal"
+      ],
+      en: [
+        "2 cups raw sesame seeds",
+        "¾ cup sugar",
+        "¼ cup cane molasses",
+        "2 tablespoons water",
+        "1 tablespoon butter",
+        "1 teaspoon grated fresh ginger",
+        "1 pinch salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Tueste el ajonjolí en un sartén seco a fuego medio-bajo 5 minutos, moviendo, hasta que esté doradito y huela. Engrase una bandeja.",
+        "En una olla, cocine el azúcar, el melao, el agua, el jengibre y la sal sin mover, hasta que hierva con burbujas grandes y tome color oscuro, unos 8 minutos (300 °F en un termómetro de caramelo).",
+        "Apague, añada la mantequilla y el ajonjolí, y mezcle rápido.",
+        "Vierta en la bandeja y extienda a ¼ de pulgada con una espátula engrasada. Cuidado: quema mucho.",
+        "Marque los cuadritos mientras esté tibio y deje enfriar 45 minutos. Pártalo y guárdelo en un frasco tapado. Es el primo crujiente del dulce de ajonjolí."
+      ],
+      en: [
+        "Toast the sesame seeds in a dry skillet over medium-low heat 5 minutes, stirring, until golden and fragrant. Grease a baking sheet.",
+        "In a pot, cook the sugar, molasses, water, ginger and salt without stirring, until it boils with large bubbles and turns dark, about 8 minutes (300 °F on a candy thermometer).",
+        "Turn off the heat, add the butter and sesame seeds and mix quickly.",
+        "Pour onto the sheet and spread to ¼ inch with a greased spatula. Careful: it's extremely hot.",
+        "Score into squares while warm and let cool 45 minutes. Break it up and store it in a closed jar. It's the crunchy cousin of dulce de ajonjolí."
+      ]
+    }
+  },
+  {
+    id: "dulce-ajonjoli-coco",
+    category: "postres",
+    name: { es: "Dulce de Ajonjolí y Coco", en: "Sesame and Coconut Candy" },
+    active: 35, total: 95, wait: "enfriar",
+    servings: 16,
+    ingredients: {
+      es: [
+        "1 taza de ajonjolí crudo",
+        "1½ tazas de coco rallado",
+        "1 taza de azúcar morena",
+        "½ taza de leche de coco",
+        "1 rajita de canela",
+        "1 cucharadita de vainilla",
+        "1 pizca de sal"
+      ],
+      en: [
+        "1 cup raw sesame seeds",
+        "1½ cups shredded coconut",
+        "1 cup brown sugar",
+        "½ cup coconut milk",
+        "1 cinnamon stick",
+        "1 teaspoon vanilla",
+        "1 pinch salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Tueste el ajonjolí en un sartén seco a fuego medio-bajo 5 minutos, hasta que esté doradito. Engrase un molde de 8 × 8 pulgadas.",
+        "En una olla, hierva el azúcar, la leche de coco, la canela y la sal 5 minutos.",
+        "Añada el coco y el ajonjolí y cocine a fuego medio-bajo 15 a 20 minutos, moviendo sin parar, hasta que la mezcla se despegue del fondo.",
+        "Saque la canela, añada la vainilla y extienda en el molde apretando con una cuchara mojada.",
+        "Deje enfriar 1 hora y corte en 16 cuadritos. Queda masticable, entre el dulce de ajonjolí y el coquimol."
+      ],
+      en: [
+        "Toast the sesame seeds in a dry skillet over medium-low heat 5 minutes, until golden. Grease an 8 × 8-inch pan.",
+        "In a pot, boil the sugar, coconut milk, cinnamon and salt 5 minutes.",
+        "Add the coconut and sesame seeds and cook over medium-low heat 15 to 20 minutes, stirring constantly, until the mixture pulls away from the bottom.",
+        "Remove the cinnamon, add the vanilla and spread in the pan, pressing with a wet spoon.",
+        "Let cool 1 hour and cut into 16 squares. It's chewy, somewhere between dulce de ajonjolí and coquimol."
+      ]
+    }
+  },
+  {
+    id: "salsa-jobos-cerdo",
+    category: "salsas",
+    name: { es: "Salsa Agridulce de Jobos para Cerdo", en: "Sweet and Sour Hog Plum (Jobo) Sauce for Pork" },
+    active: 35, total: 35,
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 tazas de jobos maduros",
+        "1 taza de agua",
+        "⅓ taza de azúcar morena",
+        "2 cucharadas de vinagre",
+        "1 cucharada de aceite de oliva",
+        "¼ taza de cebolla picadita",
+        "2 dientes de ajo picados",
+        "½ ají caballero picado, sin semillas (opcional)",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "2 cups ripe hog plums (jobos)",
+        "1 cup water",
+        "⅓ cup brown sugar",
+        "2 tablespoons vinegar",
+        "1 tablespoon olive oil",
+        "¼ cup finely chopped onion",
+        "2 garlic cloves, chopped",
+        "½ ají caballero (hot chili), chopped and seeded (optional)",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los jobos en el agua 10 minutos, hasta que la pulpa se despegue de la semilla. Páselos por un colador apretando con una cuchara para sacar la pulpa; bote las semillas y las cáscaras.",
+        "En una olla pequeña, sofría la cebolla y el ajo en el aceite 3 minutos.",
+        "Añada la pulpa de jobo, el azúcar, el vinagre, el ají y la sal.",
+        "Cocine a fuego bajo 10 a 12 minutos, moviendo, hasta que espese como una salsa BBQ.",
+        "Sirva con chuletas, pernil o costillas. Los jobos se dan en el verano y son agrios como la ciruela."
+      ],
+      en: [
+        "Boil the hog plums in the water 10 minutes, until the pulp comes away from the seed. Press them through a strainer with a spoon to extract the pulp; discard seeds and skins.",
+        "In a small pot, sauté the onion and garlic in the oil 3 minutes.",
+        "Add the jobo pulp, sugar, vinegar, chili and salt.",
+        "Cook over low heat 10 to 12 minutes, stirring, until thick like a BBQ sauce.",
+        "Serve with pork chops, pernil or ribs. Jobos ripen in summer and are tart like plums."
+      ]
+    }
+  },
+  {
+    id: "pique-jobos",
+    category: "salsas",
+    name: { es: "Pique de Jobos y Ají Caballero", en: "Hog Plum (Jobo) Hot Sauce" },
+    active: 30, total: 30,
+    servings: 16,
+    ingredients: {
+      es: [
+        "1½ tazas de jobos maduros",
+        "½ taza de agua",
+        "6 ajíes caballero",
+        "4 ajíes dulces",
+        "2 dientes de ajo",
+        "¾ taza de vinagre",
+        "1 cucharadita de sal",
+        "1 cucharada de azúcar"
+      ],
+      en: [
+        "1½ cups ripe hog plums (jobos)",
+        "½ cup water",
+        "6 ají caballero (hot chilies)",
+        "4 ají dulce (sweet chili peppers)",
+        "2 garlic cloves",
+        "¾ cup vinegar",
+        "1 teaspoon salt",
+        "1 tablespoon sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los jobos en el agua 10 minutos y saque la pulpa con un colador, botando semillas y cáscaras.",
+        "Póngase guantes y quite el tallo a los ajíes caballero.",
+        "Licúe la pulpa con los ajíes caballero, los ajíes dulces, el ajo, el vinagre, la sal y el azúcar.",
+        "Hierva el pique 5 minutos y deje enfriar.",
+        "Envase en frascos o botellas limpias. Dura 2 meses en la nevera. Unas gotas bastan: es muy picante."
+      ],
+      en: [
+        "Boil the hog plums in the water 10 minutes and extract the pulp with a strainer, discarding seeds and skins.",
+        "Put on gloves and remove the stems from the hot chilies.",
+        "Blend the pulp with the hot chilies, sweet peppers, garlic, vinegar, salt and sugar.",
+        "Boil the sauce 5 minutes and let cool.",
+        "Store in clean jars or bottles. It keeps 2 months in the refrigerator. A few drops are enough: it's very hot."
+      ]
+    }
+  },
+  {
+    id: "vinagreta-jobos",
+    category: "salsas",
+    name: { es: "Vinagreta de Jobos y Miel", en: "Hog Plum (Jobo) and Honey Vinaigrette" },
+    active: 25, total: 25,
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de jobos maduros",
+        "½ taza de agua",
+        "2 cucharadas de vinagre de manzana",
+        "1 cucharada de miel",
+        "1 cucharadita de mostaza Dijon",
+        "⅓ taza de aceite de oliva",
+        "¼ cucharadita de sal",
+        "1 pizca de pimienta"
+      ],
+      en: [
+        "1 cup ripe hog plums (jobos)",
+        "½ cup water",
+        "2 tablespoons apple cider vinegar",
+        "1 tablespoon honey",
+        "1 teaspoon Dijon mustard",
+        "⅓ cup olive oil",
+        "¼ teaspoon salt",
+        "1 pinch pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los jobos en el agua 10 minutos y saque la pulpa con un colador, botando semillas y cáscaras. Deje enfriar.",
+        "Bata ¼ taza de la pulpa con el vinagre, la miel, la mostaza, la sal y la pimienta.",
+        "Añada el aceite en hilo, batiendo, hasta que se una.",
+        "Pruebe: si está muy agria, añada un poco más de miel.",
+        "Sirva sobre ensaladas verdes con aguacate o queso blanco. Dura 5 días en la nevera; agítela antes de usar."
+      ],
+      en: [
+        "Boil the hog plums in the water 10 minutes and extract the pulp with a strainer, discarding seeds and skins. Let cool.",
+        "Whisk ¼ cup of the pulp with the vinegar, honey, mustard, salt and pepper.",
+        "Drizzle in the oil while whisking until emulsified.",
+        "Taste: if it's too tart, add a little more honey.",
+        "Serve over green salads with avocado or white cheese. It keeps 5 days in the refrigerator; shake before using."
+      ]
+    }
+  },
+  {
+    id: "chutney-jobos",
+    category: "salsas",
+    name: { es: "Chutney de Jobos y Jengibre", en: "Hog Plum (Jobo) and Ginger Chutney" },
+    active: 45, total: 45,
+    servings: 12,
+    ingredients: {
+      es: [
+        "3 tazas de jobos maduros",
+        "1 taza de agua",
+        "½ taza de azúcar morena",
+        "⅓ taza de vinagre de manzana",
+        "½ cebolla roja picadita",
+        "1 cucharada de jengibre fresco rallado",
+        "¼ taza de pasas",
+        "½ cucharadita de canela en polvo",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "3 cups ripe hog plums (jobos)",
+        "1 cup water",
+        "½ cup brown sugar",
+        "⅓ cup apple cider vinegar",
+        "½ red onion, finely chopped",
+        "1 tablespoon grated fresh ginger",
+        "¼ cup raisins",
+        "½ teaspoon ground cinnamon",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva los jobos en el agua 10 minutos y saque la pulpa con un colador, botando semillas y cáscaras.",
+        "En una olla, ponga la pulpa con el azúcar, el vinagre, la cebolla, el jengibre, las pasas, la canela y la sal.",
+        "Cocine a fuego bajo 25 minutos, moviendo de vez en cuando, hasta que espese como una mermelada.",
+        "Deje enfriar y envase en un frasco limpio.",
+        "Sirva con quesos, jamón de Navidad o pollo asado. Dura 3 semanas en la nevera."
+      ],
+      en: [
+        "Boil the hog plums in the water 10 minutes and extract the pulp with a strainer, discarding seeds and skins.",
+        "In a pot, combine the pulp with the sugar, vinegar, onion, ginger, raisins, cinnamon and salt.",
+        "Cook over low heat 25 minutes, stirring now and then, until thick like jam.",
+        "Let cool and store in a clean jar.",
+        "Serve with cheeses, Christmas ham or roast chicken. It keeps 3 weeks in the refrigerator."
+      ]
+    }
+  },
+  {
+    id: "pique-carambola",
+    category: "salsas",
+    name: { es: "Salsa Picante de Carambola", en: "Star Fruit (Carambola) Hot Salsa" },
+    active: 15, total: 45, wait: "reposo",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 carambolas maduras en cubitos",
+        "¼ de cebolla roja picadita",
+        "1 ají caballero picadito, sin semillas",
+        "2 ajíes dulces picaditos",
+        "2 cucharadas de cilantro picado",
+        "2 cucharadas de jugo de limón",
+        "1 cucharadita de miel",
+        "¼ cucharadita de sal"
+      ],
+      en: [
+        "3 ripe star fruits (carambola), diced",
+        "¼ red onion, finely chopped",
+        "1 ají caballero (hot chili), finely chopped and seeded",
+        "2 ají dulce (sweet chili peppers), finely chopped",
+        "2 tablespoons chopped cilantro",
+        "2 tablespoons lime juice",
+        "1 teaspoon honey",
+        "¼ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Quítele el borde oscuro a las puntas de la carambola antes de cortarla.",
+        "Mezcle la carambola, la cebolla, los ajíes y el cilantro.",
+        "Bata el limón con la miel y la sal, y viértalo encima.",
+        "Deje reposar 30 minutos en la nevera para que suelte su jugo.",
+        "Sirva con pescado a la parrilla, tacos de pescado o chicharrones. Las personas con problemas de los riñones no deben comer carambola."
+      ],
+      en: [
+        "Trim the dark edge off the star fruit ridges before cutting.",
+        "Mix the star fruit, onion, peppers and cilantro.",
+        "Whisk the lime juice with the honey and salt and pour over the top.",
+        "Let rest 30 minutes in the refrigerator so it releases its juice.",
+        "Serve with grilled fish, fish tacos or chicharrones. People with kidney problems shouldn't eat star fruit."
+      ]
+    }
+  },
+  {
+    id: "aderezo-guayaba-mostaza",
+    category: "salsas",
+    name: { es: "Aderezo de Guayaba y Mostaza", en: "Guava Mustard Dressing" },
+    active: 10, total: 10,
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 onzas de pasta de guayaba",
+        "3 cucharadas de agua caliente",
+        "2 cucharadas de mostaza Dijon",
+        "2 cucharadas de vinagre de manzana",
+        "⅓ taza de aceite de oliva",
+        "¼ cucharadita de sal",
+        "1 pizca de pimienta"
+      ],
+      en: [
+        "3 ounces guava paste",
+        "3 tablespoons hot water",
+        "2 tablespoons Dijon mustard",
+        "2 tablespoons apple cider vinegar",
+        "⅓ cup olive oil",
+        "¼ teaspoon salt",
+        "1 pinch pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita la guayaba con el agua caliente en el microondas 30 segundos y bata hasta que esté lisa.",
+        "Añada la mostaza, el vinagre, la sal y la pimienta.",
+        "Añada el aceite en hilo, batiendo, hasta que espese.",
+        "Pruebe y ajuste el vinagre.",
+        "Úselo en ensaladas con queso, para untar sándwiches de pavo o para glasear pollo al final del horno."
+      ],
+      en: [
+        "Melt the guava with the hot water in the microwave 30 seconds and whisk until smooth.",
+        "Add the mustard, vinegar, salt and pepper.",
+        "Drizzle in the oil while whisking until thickened.",
+        "Taste and adjust the vinegar.",
+        "Use it on salads with cheese, to spread on turkey sandwiches or to glaze chicken at the end of baking."
+      ]
+    }
+  },
+  {
+    id: "caderas-pollo-horno",
+    category: "aves",
+    name: { es: "Caderas de Pollo al Horno con Adobo y Papas", en: "Baked Chicken Leg Quarters with Adobo and Potatoes" },
+    active: 80, total: 140, wait: "adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "6 caderas de pollo (cuartos de pierna)",
+        "1 cucharada de adobo",
+        "4 dientes de ajo majados",
+        "1 cucharadita de orégano",
+        "2 cucharadas de jugo de limón",
+        "2 cucharadas de aceite de oliva",
+        "1½ libras de papas en cuartos",
+        "1 cebolla en ruedas"
+      ],
+      en: [
+        "6 chicken leg quarters (caderas)",
+        "1 tablespoon adobo",
+        "4 garlic cloves, mashed",
+        "1 teaspoon oregano",
+        "2 tablespoons lime juice",
+        "2 tablespoons olive oil",
+        "1½ pounds potatoes, quartered",
+        "1 onion, sliced into rings"
+      ]
+    },
+    steps: {
+      es: [
+        "Haga 2 cortes en cada cadera. Adóbelas con el adobo, el ajo, el orégano, el limón y el aceite, metiéndolo debajo de la piel. Déjelas 1 hora en la nevera.",
+        "Caliente el horno a 400 °F. Ponga las papas y la cebolla en un molde grande y las caderas encima, con la piel hacia arriba.",
+        "Hornee 45 minutos.",
+        "Bañe las caderas con el juguito del molde y hornee 10 a 15 minutos más, hasta que la piel esté crujiente y el muslo llegue a 175 °F.",
+        "Sirva con arroz y habichuelas. Las caderas son la presa más económica y la más jugosa."
+      ],
+      en: [
+        "Make 2 cuts in each leg quarter. Season with the adobo, garlic, oregano, lime juice and oil, getting it under the skin. Refrigerate 1 hour.",
+        "Heat the oven to 400 °F. Place the potatoes and onion in a large dish with the leg quarters on top, skin side up.",
+        "Bake 45 minutes.",
+        "Baste the leg quarters with the pan juices and bake 10 to 15 more minutes, until the skin is crisp and the thigh reaches 175 °F.",
+        "Serve with rice and beans. Leg quarters are the cheapest and juiciest cut."
+      ]
+    }
+  },
+  {
+    id: "caderas-pollo-guisadas",
+    category: "aves",
+    name: { es: "Caderas de Pollo Guisadas", en: "Stewed Chicken Leg Quarters" },
+    active: 70, total: 70,
+    servings: 6,
+    ingredients: {
+      es: [
+        "6 caderas de pollo (cuartos de pierna), sin piel y partidas en dos",
+        "1 cucharadita de adobo",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "½ taza de salsa de tomate",
+        "¼ taza de aceitunas rellenas",
+        "1 hoja de laurel",
+        "1½ tazas de agua",
+        "3 papas en cubos",
+        "2 zanahorias en ruedas",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "6 chicken leg quarters (caderas), skinless and cut in two",
+        "1 teaspoon adobo",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "½ cup tomato sauce",
+        "¼ cup stuffed olives",
+        "1 bay leaf",
+        "1½ cups water",
+        "3 potatoes, cubed",
+        "2 carrots, sliced",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Sazone las presas con el adobo y dórelas en el aceite de achiote en un caldero.",
+        "Añada el sofrito y sofría 3 minutos. Agregue la salsa de tomate, las aceitunas y el laurel.",
+        "Añada el agua, tape y cocine a fuego bajo 25 minutos.",
+        "Añada las papas, las zanahorias y la sal, y cocine 20 minutos más, hasta que estén blandas y la salsa espese.",
+        "Sirva con arroz blanco. Pida en la carnicería que le parta las caderas en muslo y encuentro."
+      ],
+      en: [
+        "Season the pieces with the adobo and brown them in the annatto oil in a caldero.",
+        "Add the sofrito and sauté 3 minutes. Add the tomato sauce, olives and bay leaf.",
+        "Add the water, cover and cook over low heat 25 minutes.",
+        "Add the potatoes, carrots and salt and cook 20 more minutes, until tender and the sauce thickens.",
+        "Serve with white rice. Ask the butcher to split the leg quarters into thigh and drumstick."
+      ]
+    }
+  },
+  {
+    id: "caderas-pollo-fritas",
+    category: "aves",
+    name: { es: "Caderas de Pollo Fritas Estilo Kiosco", en: "Kiosk-Style Fried Chicken Leg Quarters" },
+    active: 50, total: 290, wait: "adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "6 caderas de pollo (cuartos de pierna), partidas en dos",
+        "1 cucharada de adobo",
+        "6 dientes de ajo majados",
+        "¼ taza de jugo de limón",
+        "1½ tazas de harina de trigo",
+        "1 cucharadita de pimentón",
+        "½ cucharadita de pimienta",
+        "Aceite para freír"
+      ],
+      en: [
+        "6 chicken leg quarters (caderas), cut in two",
+        "1 tablespoon adobo",
+        "6 garlic cloves, mashed",
+        "¼ cup lime juice",
+        "1½ cups all-purpose flour",
+        "1 teaspoon paprika",
+        "½ teaspoon pepper",
+        "Oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe las presas con el adobo, el ajo y el limón, y déjelas al menos 4 horas en la nevera.",
+        "Mezcle la harina con el pimentón y la pimienta. Pase cada presa por la harina, apretando.",
+        "Caliente el aceite a 325 °F en un caldero hondo, a la mitad de su altura.",
+        "Fría de 3 en 3, unos 15 minutos, dándoles vuelta, hasta que estén doradas y el muslo llegue a 175 °F. Mantenga el aceite entre 300 y 325 °F para que se cocinen por dentro sin quemarse.",
+        "Escurra sobre una rejilla. Es el pollo frito de los kioscos de carretera: se come con tostones o arañitas."
+      ],
+      en: [
+        "Season the pieces with the adobo, garlic and lime juice and refrigerate at least 4 hours.",
+        "Mix the flour with the paprika and pepper. Dredge each piece in the flour, pressing.",
+        "Heat the oil to 325 °F in a deep caldero, halfway up the sides.",
+        "Fry 3 at a time, about 15 minutes, turning, until golden and the thigh reaches 175 °F. Keep the oil between 300 and 325 °F so they cook through without burning.",
+        "Drain on a rack. It's roadside-kiosk fried chicken: eat it with tostones or arañitas."
+      ]
+    }
+  },
+  {
+    id: "caderas-pollo-bbq-guayaba",
+    category: "aves",
+    name: { es: "Caderas de Pollo al Carbón con BBQ de Guayaba", en: "Charcoal-Grilled Chicken Leg Quarters with Guava BBQ" },
+    active: 60, total: 180, wait: "adobo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "6 caderas de pollo (cuartos de pierna)",
+        "1 cucharadita de adobo",
+        "4 dientes de ajo majados",
+        "2 cucharadas de jugo de naranja agria",
+        "1 cucharada de aceite",
+        "½ taza de salsa BBQ de guayaba"
+      ],
+      en: [
+        "6 chicken leg quarters (caderas)",
+        "1 teaspoon adobo",
+        "4 garlic cloves, mashed",
+        "2 tablespoons sour orange juice",
+        "1 tablespoon oil",
+        "½ cup guava BBQ sauce"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe las caderas con el adobo, el ajo, la naranja agria y el aceite, y déjelas 2 horas en la nevera.",
+        "Prepare el carbón para fuego indirecto: todo el carbón encendido a un lado de la parrilla.",
+        "Ase las caderas en el lado sin fuego, tapado, 40 minutos, volteándolas a la mitad.",
+        "Páselas al lado del fuego, úntelas con la BBQ de guayaba y ase 10 a 15 minutos, volteando y untando, hasta que se caramelicen y el muslo llegue a 175 °F.",
+        "Es el pollo de los cumpleaños en el patio."
+      ],
+      en: [
+        "Season the leg quarters with the adobo, garlic, sour orange juice and oil and refrigerate 2 hours.",
+        "Set up the charcoal for indirect heat: all the lit coals on one side of the grill.",
+        "Grill the leg quarters on the side without coals, covered, 40 minutes, turning halfway.",
+        "Move them over the coals, brush with the guava BBQ and grill 10 to 15 minutes, turning and brushing, until caramelized and the thigh reaches 175 °F.",
+        "It's backyard birthday-party chicken."
+      ]
+    }
+  },
+  {
+    id: "caderas-pollo-arroz-horno",
+    category: "aves",
+    name: { es: "Caderas de Pollo con Arroz al Horno (Todo en un Molde)", en: "One-Pan Baked Chicken Leg Quarters and Rice" },
+    active: 85, total: 95, wait: "reposo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "6 caderas de pollo (cuartos de pierna)",
+        "1 cucharadita de adobo",
+        "2 cucharadas de aceite de achiote",
+        "½ taza de sofrito",
+        "2 tazas de arroz grano largo",
+        "1 taza de gandules, escurridos",
+        "3½ tazas de caldo de pollo bajo en sodio",
+                "¼ taza de aceitunas rellenas"
+      ],
+      en: [
+        "6 chicken leg quarters (caderas)",
+        "1 teaspoon adobo",
+        "2 tablespoons annatto oil",
+        "½ cup sofrito",
+        "2 cups long-grain rice",
+        "1 cup pigeon peas (gandules), drained",
+        "3½ cups low-sodium chicken broth",
+                "¼ cup stuffed olives"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 375 °F. Sazone las caderas con el adobo.",
+        "En un molde hondo de 9 × 13 pulgadas, mezcle el arroz crudo, el sofrito, el aceite de achiote, los gandules, y las aceitunas (no le ponga sal: el adobo y las aceitunas la traen).",
+        "Vierta el caldo caliente y acomode las caderas encima, con la piel hacia arriba.",
+        "Tape bien con papel de aluminio y hornee 50 minutos. Destape y hornee 15 minutos más para que la piel dore.",
+        "Deje reposar 10 minutos tapado antes de servir. El arroz se cocina con el jugo del pollo."
+      ],
+      en: [
+        "Heat the oven to 375 °F. Season the leg quarters with the adobo.",
+        "In a deep 9 × 13-inch dish, mix the raw rice, sofrito, annatto oil, pigeon peas, and olives (no salt needed: the adobo and olives bring it).",
+        "Pour in the hot broth and arrange the leg quarters on top, skin side up.",
+        "Cover tightly with aluminum foil and bake 50 minutes. Uncover and bake 15 more minutes so the skin browns.",
+        "Let rest 10 minutes covered before serving. The rice cooks in the chicken juices."
+      ]
+    }
+  },
+  {
+    id: "avena-coquito",
+    category: "cereales",
+    name: { es: "Avena de Coquito (Sin Alcohol)", en: "Coquito Oatmeal (Alcohol-Free)" },
+    active: 15, total: 15,
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 tazas de avena en hojuelas",
+        "1 lata de 13.5 onzas de leche de coco",
+        "2 tazas de leche",
+        "¼ taza de leche condensada",
+        "1 rajita de canela",
+        "¼ cucharadita de nuez moscada",
+        "1 cucharadita de vainilla",
+        "1 pizca de sal",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "2 cups rolled oats",
+        "1 can (13.5 oz) coconut milk",
+        "2 cups milk",
+        "¼ cup sweetened condensed milk",
+        "1 cinnamon stick",
+        "¼ teaspoon nutmeg",
+        "1 teaspoon vanilla",
+        "1 pinch salt",
+        "Ground cinnamon for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, caliente la leche de coco, la leche, la canela y la sal.",
+        "Cuando empiece a hervir, añada la avena y baje el fuego.",
+        "Cocine 6 a 8 minutos, moviendo, hasta que espese.",
+        "Saque la canela y añada la leche condensada, la nuez moscada y la vainilla.",
+        "Sirva caliente con canela por encima. Sabe al coquito de Navidad, pero es para el desayuno."
+      ],
+      en: [
+        "In a pot, heat the coconut milk, milk, cinnamon stick and salt.",
+        "When it starts to boil, add the oats and lower the heat.",
+        "Cook 6 to 8 minutes, stirring, until thickened.",
+        "Remove the cinnamon stick and add the condensed milk, nutmeg and vanilla.",
+        "Serve hot with cinnamon on top. It tastes like Christmas coquito, but for breakfast."
+      ]
+    }
+  },
+  {
+    id: "granola-ajonjoli-melao",
+    category: "cereales",
+    name: { es: "Granola de Avena, Ajonjolí y Melao", en: "Oat, Sesame and Molasses Granola" },
+    active: 45, total: 60, wait: "enfriar",
+    servings: 10,
+    ingredients: {
+      es: [
+        "3 tazas de avena en hojuelas",
+        "½ taza de ajonjolí crudo",
+        "½ taza de coco rallado sin azúcar",
+        "½ taza de almendras picadas",
+        "¼ taza de melao de caña",
+        "¼ taza de miel",
+        "¼ taza de aceite de coco derretido",
+        "1 cucharadita de canela en polvo",
+        "¼ cucharadita de sal",
+        "½ taza de pasas"
+      ],
+      en: [
+        "3 cups rolled oats",
+        "½ cup raw sesame seeds",
+        "½ cup unsweetened shredded coconut",
+        "½ cup chopped almonds",
+        "¼ cup cane molasses",
+        "¼ cup honey",
+        "¼ cup melted coconut oil",
+        "1 teaspoon ground cinnamon",
+        "¼ teaspoon salt",
+        "½ cup raisins"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 325 °F y cubra una bandeja grande con papel de hornear.",
+        "Mezcle la avena, el ajonjolí, el coco, las almendras, la canela y la sal.",
+        "Caliente el melao, la miel y el aceite de coco hasta que estén líquidos y viértalos sobre la avena, mezclando bien.",
+        "Extienda en la bandeja y hornee 25 a 30 minutos, moviendo a la mitad, hasta que esté dorada.",
+        "Añada las pasas y deje enfriar en la bandeja sin mover: así se forman los grumos. Guárdela en un frasco tapado hasta 2 semanas."
+      ],
+      en: [
+        "Heat the oven to 325 °F and line a large baking sheet with parchment paper.",
+        "Mix the oats, sesame seeds, coconut, almonds, cinnamon and salt.",
+        "Warm the molasses, honey and coconut oil until liquid and pour over the oats, mixing well.",
+        "Spread on the sheet and bake 25 to 30 minutes, stirring halfway, until golden.",
+        "Add the raisins and let cool on the sheet without stirring: that's how the clusters form. Store in a closed jar up to 2 weeks."
+      ]
+    }
+  },
+  {
+    id: "maicena-chocolate",
+    category: "cereales",
+    name: { es: "Maicena de Chocolate", en: "Chocolate Cornstarch Porridge (Maicena)" },
+    active: 12, total: 12,
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 tazas de leche",
+        "¼ taza de maicena",
+        "¼ taza de azúcar",
+        "2 cucharadas de cacao en polvo sin azúcar",
+        "1 rajita de canela",
+        "1 pizca de sal",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "4 cups milk",
+        "¼ cup cornstarch",
+        "¼ cup sugar",
+        "2 tablespoons unsweetened cocoa powder",
+        "1 cinnamon stick",
+        "1 pinch salt",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla fría, disuelva la maicena, el azúcar, el cacao y la sal en 1 taza de la leche, sin grumos.",
+        "Añada el resto de la leche y la canela.",
+        "Cocine a fuego medio, moviendo sin parar, hasta que hierva y espese, unos 8 minutos.",
+        "Saque la canela y añada la vainilla.",
+        "Sirva caliente en tazones. Es la maicena de siempre, pero de chocolate: a los niños les encanta en las mañanas frescas."
+      ],
+      en: [
+        "In a cold pot, dissolve the cornstarch, sugar, cocoa and salt in 1 cup of the milk, with no lumps.",
+        "Add the rest of the milk and the cinnamon stick.",
+        "Cook over medium heat, stirring constantly, until it boils and thickens, about 8 minutes.",
+        "Remove the cinnamon and add the vanilla.",
+        "Serve hot in bowls. It's classic maicena, but chocolate: kids love it on cool mornings."
+      ]
+    }
+  },
+  {
+    id: "harina-maiz-coco",
+    category: "cereales",
+    name: { es: "Harina de Maíz con Leche de Coco (Vegana)", en: "Cornmeal Porridge with Coconut Milk (Vegan)" },
+    active: 15, total: 15,
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 lata de 13.5 onzas de leche de coco",
+        "2½ tazas de agua",
+        "½ taza de harina de maíz fina",
+        "¼ taza de azúcar morena",
+        "1 rajita de canela",
+        "3 clavos de especia",
+        "1 pizca de sal",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "1 can (13.5 oz) coconut milk",
+        "2½ cups water",
+        "½ cup fine cornmeal",
+        "¼ cup brown sugar",
+        "1 cinnamon stick",
+        "3 whole cloves",
+        "1 pinch salt",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Disuelva la harina de maíz en 1 taza del agua fría.",
+        "En una olla, hierva el resto del agua y la leche de coco con la canela, los clavos y la sal.",
+        "Añada la harina disuelta poco a poco, moviendo sin parar para que no se hagan grumos.",
+        "Cocine a fuego bajo 8 a 10 minutos, moviendo, hasta que espese. Añada el azúcar y la vainilla, y saque la canela y los clavos.",
+        "Sirva caliente. Es vegana y más cremosa que la de leche de vaca."
+      ],
+      en: [
+        "Dissolve the cornmeal in 1 cup of the cold water.",
+        "In a pot, boil the rest of the water and the coconut milk with the cinnamon, cloves and salt.",
+        "Add the dissolved cornmeal little by little, stirring constantly so no lumps form.",
+        "Cook over low heat 8 to 10 minutes, stirring, until thickened. Add the sugar and vanilla and remove the cinnamon and cloves.",
+        "Serve hot. It's vegan and creamier than the cow's milk version."
+      ]
+    }
+  },
+  {
+    id: "espaguetis-albondigas",
+    category: "pastas",
+    name: { es: "Espaguetis con Albóndigas en Salsa Criolla", en: "Spaghetti and Meatballs in Creole Sauce" },
+    active: 60, total: 60,
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de carne molida de res",
+        "½ taza de pan rallado",
+        "1 huevo",
+        "2 cucharadas de sofrito para las albóndigas",
+        "½ cucharadita de sal",
+        "2 cucharadas de aceite de oliva",
+        "½ taza de sofrito para la salsa",
+        "1 lata de 28 onzas de tomates triturados",
+        "1 hoja de laurel",
+        "1 libra de espaguetis",
+        "½ taza de queso parmesano rallado"
+      ],
+      en: [
+        "1 pound ground beef",
+        "½ cup breadcrumbs",
+        "1 egg",
+        "2 tablespoons sofrito for the meatballs",
+        "½ teaspoon salt",
+        "2 tablespoons olive oil",
+        "½ cup sofrito for the sauce",
+        "1 can (28 oz) crushed tomatoes",
+        "1 bay leaf",
+        "1 pound spaghetti",
+        "½ cup grated Parmesan cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la carne, el pan rallado, el huevo, las 2 cucharadas de sofrito y la sal, sin apretar de más. Forme 24 albóndigas.",
+        "Dórelas en el aceite en un caldero, en tandas, y sáquelas.",
+        "En el mismo caldero, sofría la ½ taza de sofrito 3 minutos, añada los tomates y el laurel, y devuelva las albóndigas. Tape y cocine a fuego bajo 25 minutos.",
+        "Mientras, hierva los espaguetis en agua con sal hasta que estén al dente y escúrralos.",
+        "Sirva los espaguetis con la salsa, las albóndigas y el parmesano por encima."
+      ],
+      en: [
+        "Mix the beef, breadcrumbs, egg, the 2 tablespoons of sofrito and the salt without overworking. Shape 24 meatballs.",
+        "Brown them in the oil in a caldero, in batches, and remove.",
+        "In the same caldero, sauté the ½ cup of sofrito 3 minutes, add the tomatoes and bay leaf and return the meatballs. Cover and cook over low heat 25 minutes.",
+        "Meanwhile, boil the spaghetti in salted water until al dente and drain.",
+        "Serve the spaghetti with the sauce, the meatballs and Parmesan on top."
+      ]
+    }
+  },
+  {
+    id: "lasana-pollo",
+    category: "pastas",
+    name: { es: "Lasaña de Pollo en Salsa Blanca", en: "Chicken Lasagna in White Sauce" },
+    active: 95, total: 115, wait: "reposo",
+    servings: 10,
+    ingredients: {
+      es: [
+        "12 láminas de lasaña",
+        "3 tazas de pollo cocido desmenuzado",
+        "2 cucharadas de mantequilla",
+        "¼ taza de sofrito",
+        "1 taza de maíz en grano",
+        "1 taza de espinaca picada",
+        "4 cucharadas de mantequilla para la salsa blanca",
+        "⅓ taza de harina de trigo",
+        "4 tazas de leche",
+        "¼ cucharadita de nuez moscada",
+        "1 taza de queso ricotta",
+        "2 tazas de queso mozzarella rallado",
+        "½ taza de queso parmesano rallado"
+      ],
+      en: [
+        "12 lasagna noodles",
+        "3 cups shredded cooked chicken",
+        "2 tablespoons butter",
+        "¼ cup sofrito",
+        "1 cup corn kernels",
+        "1 cup chopped spinach",
+        "4 tablespoons butter for the white sauce",
+        "⅓ cup all-purpose flour",
+        "4 cups milk",
+        "¼ teaspoon nutmeg",
+        "1 cup ricotta cheese",
+        "2 cups shredded mozzarella cheese",
+        "½ cup grated Parmesan cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las láminas de lasaña al dente y extiéndalas sobre un paño engrasado. Para la salsa blanca, derrita las 4 cucharadas de mantequilla, añada la harina y cocine 1 minuto; añada la leche poco a poco, batiendo, y cocine hasta que espese. Añada la nuez moscada.",
+        "Sofría el sofrito en la mantequilla, añada el pollo, el maíz y la espinaca, y cocine 5 minutos. Mezcle con 1 taza de la salsa blanca.",
+        "Caliente el horno a 375 °F. En un molde de 9 × 13 pulgadas, ponga 1 taza de salsa blanca, 4 láminas, la mitad del pollo, la mitad de la ricotta y un tercio de la mozzarella. Repita.",
+        "Termine con 4 láminas, el resto de la salsa blanca, la mozzarella y el parmesano.",
+        "Tape con papel de aluminio y hornee 30 minutos; destape y hornee 15 más, hasta que dore. Deje reposar 20 minutos antes de cortar."
+      ],
+      en: [
+        "Boil the lasagna noodles al dente and lay them on a greased towel. For the white sauce, melt the 4 tablespoons of butter, add the flour and cook 1 minute; whisk in the milk little by little and cook until thick. Add the nutmeg.",
+        "Sauté the sofrito in the butter, add the chicken, corn and spinach and cook 5 minutes. Mix with 1 cup of the white sauce.",
+        "Heat the oven to 375 °F. In a 9 × 13-inch dish, spread 1 cup of white sauce, 4 noodles, half the chicken, half the ricotta and a third of the mozzarella. Repeat.",
+        "Finish with 4 noodles, the rest of the white sauce, the mozzarella and the Parmesan.",
+        "Cover with aluminum foil and bake 30 minutes; uncover and bake 15 more, until golden. Let rest 20 minutes before cutting."
+      ]
+    }
+  },
+  {
+    id: "fideua-mariscos",
+    category: "pastas",
+    name: { es: "Fideos con Mariscos (Fideuá Boricua)", en: "Seafood Noodle Paella (Puerto Rican Fideuá)" },
+    active: 45, total: 45,
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de fideos finos cortos",
+        "3 cucharadas de aceite de oliva",
+        "½ libra de camarones pelados",
+        "½ libra de calamares en anillos",
+        "½ taza de sofrito",
+        "3 dientes de ajo picados",
+        "½ taza de salsa de tomate",
+        "1 sobre de sazón con azafrán",
+        "4 tazas de caldo de pescado bajo en sodio",
+        "1 libra de mejillones limpios",
+        "1 limón en cuñas"
+      ],
+      en: [
+        "1 pound short thin noodles (fideos)",
+        "3 tablespoons olive oil",
+        "½ pound shrimp, peeled",
+        "½ pound squid rings",
+        "½ cup sofrito",
+        "3 garlic cloves, chopped",
+        "½ cup tomato sauce",
+        "1 packet sazón with saffron",
+        "4 cups low-sodium fish broth",
+        "1 pound mussels, cleaned",
+        "1 lime, in wedges"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero ancho o paellera, dore los fideos en el aceite 4 minutos, moviendo, hasta que estén doraditos. Sáquelos.",
+        "En el mismo aceite, saltee los camarones y los calamares 2 minutos y sáquelos.",
+        "Sofría el sofrito y el ajo 3 minutos, añada la salsa de tomate, el sazón y el caldo, y deje hervir.",
+        "Añada los fideos y cocine a fuego medio 8 minutos sin mover. Hunda los mejillones, los camarones y los calamares, y cocine 4 minutos más, hasta que los mejillones abran y el caldo se absorba.",
+        "Deje reposar 3 minutos y sirva con limón. Bote los mejillones que no abran."
+      ],
+      en: [
+        "In a wide caldero or paella pan, toast the noodles in the oil 4 minutes, stirring, until golden. Remove.",
+        "In the same oil, sauté the shrimp and squid 2 minutes and remove.",
+        "Sauté the sofrito and garlic 3 minutes, add the tomato sauce, sazón and broth and bring to a boil.",
+        "Add the noodles and cook over medium heat 8 minutes without stirring. Press in the mussels, shrimp and squid and cook 4 more minutes, until the mussels open and the broth is absorbed.",
+        "Let rest 3 minutes and serve with lime. Discard any mussels that don't open."
+      ]
+    }
+  },
+  {
+    id: "espaguetis-chuletas-ahumadas",
+    category: "pastas",
+    name: { es: "Espaguetis con Chuletas Ahumadas", en: "Spaghetti with Smoked Pork Chops" },
+    active: 35, total: 35,
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 libra de espaguetis",
+        "2 chuletas ahumadas deshuesadas, en cubitos",
+        "1 cucharada de aceite de oliva",
+        "½ taza de sofrito",
+        "1 lata de 15 onzas de tomates triturados",
+        "½ taza de agua",
+        "¼ taza de aceitunas rellenas",
+        "½ taza de queso parmesano rallado"
+      ],
+      en: [
+        "1 pound spaghetti",
+        "2 boneless smoked pork chops, diced",
+        "1 tablespoon olive oil",
+        "½ cup sofrito",
+        "1 can (15 oz) crushed tomatoes",
+        "½ cup water",
+        "¼ cup stuffed olives",
+        "½ cup grated Parmesan cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Dore los cubitos de chuleta en el aceite 5 minutos.",
+        "Añada el sofrito y sofría 3 minutos.",
+        "Agregue los tomates, el agua y las aceitunas, y cocine 15 minutos a fuego bajo. No le ponga sal: la chuleta ahumada ya la trae.",
+        "Mientras, hierva los espaguetis en agua con sal hasta que estén al dente y escúrralos.",
+        "Mezcle los espaguetis con la salsa y sirva con el parmesano."
+      ],
+      en: [
+        "Brown the diced chops in the oil 5 minutes.",
+        "Add the sofrito and sauté 3 minutes.",
+        "Add the tomatoes, water and olives and cook 15 minutes over low heat. Don't add salt: smoked pork chops already bring it.",
+        "Meanwhile, boil the spaghetti in salted water until al dente and drain.",
+        "Toss the spaghetti with the sauce and serve with the Parmesan."
+      ]
+    }
+  },
+  {
+    id: "pasta-garbanzos-espinaca",
+    category: "pastas",
+    name: { es: "Pasta con Garbanzos, Espinaca y Ajo (Vegana)", en: "Pasta with Chickpeas, Spinach and Garlic (Vegan)" },
+    active: 25, total: 25,
+    servings: 4,
+    ingredients: {
+      es: [
+        "12 onzas de pasta corta (penne o coditos)",
+        "¼ taza de aceite de oliva",
+        "6 dientes de ajo en lascas",
+        "1 pizca de hojuelas de pimiento rojo",
+        "1 lata de 15 onzas de garbanzos, escurridos",
+        "5 tazas de espinaca fresca",
+        "1 cucharada de jugo de limón",
+        "½ cucharadita de sal",
+        "2 cucharadas de levadura nutricional (opcional)"
+      ],
+      en: [
+        "12 ounces short pasta (penne or elbows)",
+        "¼ cup olive oil",
+        "6 garlic cloves, sliced",
+        "1 pinch red pepper flakes",
+        "1 can (15 oz) chickpeas, drained",
+        "5 cups fresh spinach",
+        "1 tablespoon lime juice",
+        "½ teaspoon salt",
+        "2 tablespoons nutritional yeast (optional)"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la pasta en agua con sal hasta que esté al dente. Guarde ½ taza del agua y escurra.",
+        "En un sartén grande, dore el ajo en el aceite a fuego bajo con el pimiento.",
+        "Añada los garbanzos y la sal y cocine 5 minutos, hasta que estén un poco crujientes.",
+        "Añada la espinaca y mueva hasta que se marchite. Agregue la pasta y el agua guardada, y mezcle.",
+        "Apague, añada el limón y la levadura nutricional. Es vegana y está lista en 25 minutos."
+      ],
+      en: [
+        "Boil the pasta in salted water until al dente. Save ½ cup of the water and drain.",
+        "In a large skillet, brown the garlic in the oil over low heat with the pepper flakes.",
+        "Add the chickpeas and salt and cook 5 minutes, until slightly crisp.",
+        "Add the spinach and stir until wilted. Add the pasta and the saved water and toss.",
+        "Turn off the heat and add the lime juice and nutritional yeast. It's vegan and ready in 25 minutes."
+      ]
+    }
   }
 );

@@ -24,6 +24,8 @@ const NUTRI_FOODS = [
   F("pollo|presas de pollo|gallina", 150, 12.6, 0, 0, 0, 10.5, 3, 60, { u: 1500, cup: 140 }),
   F("pechuga|pechuga de pollo", 120, 22.5, 0, 0, 0, 2.6, 0.6, 45, { u: 170, cup: 140 }),
   F("muslo|muslos de pollo", 177, 17.5, 0, 0, 0, 11, 3, 80, { u: 115 }),
+  // v4.37: la cadera (cuarto de pierna: muslo y encuentro) de USDA "leg, meat and skin, raw"; ~255 g sin el hueso.
+  F("cadera de pollo|caderas de pollo|cuartos de pierna", 187, 18.2, 0, 0, 0, 12.1, 3.4, 84, { u: 255 }),
   // Alitas: tal como se compran, con hueso (sólo ~55% se come).
   F("alita|alitas de pollo", 110, 9.5, 0, 0, 0, 7.7, 2.2, 45, { u: 90 }),
   F("pavo", 150, 20, 0, 0, 0, 7, 2, 65, { u: 6000, cup: 140 }),

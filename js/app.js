@@ -18,8 +18,8 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.36.0";
-const APP_REVISED = "2026-10-18";
+const APP_VERSION = "4.37.0";
+const APP_REVISED = "2026-10-19";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
 /* Lo que se muestra en la portada: "Más de 1,000 recetas", no el total exacto (que cambia con cada
@@ -35,7 +35,8 @@ const translations = {
   es: {
     siteTitle: BRAND,
     subtitle: "Recetario de Cocina Puertorriqueña",
-    author: "Recetas boricuas paso a paso, en español e inglés. Gratis y sin registrarse.",
+    author: "Recetas boricuas paso a paso, en español e inglés.",
+    free: "¡Gratis!",
     heroTitle: ["El Sabor de la Cocina", "Puertorriqueña"], // [texto, palabra destacada]
     searchPlaceholder: "Plato, ingrediente o idea: pollo y arroz, postre sin huevo, navidad…",
     searchLabel: "Buscar recetas por nombre, ingredientes o una idea (por ejemplo: postre sin huevo)",
@@ -159,7 +160,8 @@ const translations = {
   en: {
     siteTitle: BRAND,
     subtitle: "Puerto Rican Cookbook",
-    author: "Puerto Rican recipes step by step, in Spanish and English. Free, no sign-up needed.",
+    author: "Puerto Rican recipes step by step, in Spanish and English.",
+    free: "Free!",
     heroTitle: ["The Flavor of", "Puerto Rican Cooking"],
     searchPlaceholder: "Dish, ingredient or idea: chicken and rice, dessert without eggs, christmas…",
     searchLabel: "Search recipes by name, ingredients or an idea (for example: dessert without eggs)",
@@ -456,6 +458,13 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
+  // Panes, viandas, ajonjolí, salsas de jobos, cereales y pastas (tanda 58).
+  [/^rosca de reyes/, "👑"],
+  [/^pastelon de batata/, "svg:ic-vg-pastelon"],
+  [/^tostones de yautia/, "svg:ic-yautia"],
+  [/^turron de ajonjoli/, "🍬"],
+  [/^salsa picante de carambola/, "🌶️"],
+  [/^pasta con garbanzos/, "🍝"],
   // Postres puertorriqueños (tanda 57): los dibujos de postres que ya había.
   [/^alfajor boricua/, "svg:ic-pos-dulce-mani"],
   [/^dulce de hicacos/, "svg:ic-pos-dulce-pajuil"],
@@ -1546,7 +1555,7 @@ function updateTexts() {
   const tr = t();
   document.documentElement.lang = currentLang;
   $("site-subtitle").textContent = tr.subtitle;
-  $("site-author").textContent = tr.author;
+  $("site-author").innerHTML = `${esc(tr.author)} <strong class="hero-free">${esc(tr.free)}</strong>`;
   $("hero-title").innerHTML = `${esc(tr.heroTitle[0])} <span class="hero-accent">${esc(tr.heroTitle[1])}</span>`;
   $("search-input").placeholder = tr.searchPlaceholder;
   $("footer-text").textContent = tr.footer;

@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.36.0 · **Versión de la app:** 4.36.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,244 en 24 categorías
+> **Última actualización:** 2026-10-19 · **Versión del documento:** 4.37.0 · **Versión de la app:** 4.37.0 (revisada el 19 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,279 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -188,25 +188,25 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 |---|---|---|
 | calientes | Bebidas Calientes | 39 |
 | frutas | Frutas | 36 |
-| cereales | Cereales | 18 |
+| cereales | Cereales | 22 |
 | granos | Granos y Legumbres | 29 |
 | ensaladas | Ensaladas | 34 |
 | sopas | Sopas | 70 |
 | carnes | Carnes | 80 |
-| aves | Aves | 60 |
+| aves | Aves | 65 |
 | pescados | Pescado y Mariscos | 86 |
 | huevos | Huevos y Queso | 23 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 64 |
-| pastas | Pastas | 26 |
+| pastas | Pastas | 31 |
 | bizcochos | Bizcochos | 49 |
 | galletitas | Galletitas | 42 |
 | pasteles_dulces | Pasteles Dulces | 22 |
-| panes | Pan y Panecillos | 46 |
+| panes | Pan y Panecillos | 54 |
 | emparedados | Emparedados | 25 |
-| postres | Helados, Budines, Flan y Otros Postres | 144 |
+| postres | Helados, Budines, Flan y Otros Postres | 146 |
 | arroces | Arroces y Habichuelas | 64 |
-| vegetales | Vegetales y Viandas | 88 |
-| salsas | Salsas y Aderezos | 72 |
+| vegetales | Vegetales y Viandas | 93 |
+| salsas | Salsas y Aderezos | 78 |
 | bebidas | Bebidas | 43 |
 | jugos | Jugos Naturales | 30 |
 | cocteles | Cócteles y Tragos | 54 |
@@ -253,7 +253,8 @@ Naturales tiene 30 recetas: no se junta con Bebidas.
   deslizaba: en el celular la receta se veía primero por el final y, si se tocaba la pantalla, se quedaba abajo. Abrir
   una receta, volver a los resultados, los planes y `#/admin` usan `jumpTo()` (`behavior: "instant"`). El deslizamiento
   suave queda para los enlaces dentro de la misma página.
-- **Inicio:** hero con buscador, la frase "Recetas boricuas paso a paso… Gratis y sin registrarse" (`#site-author`; desde
+- **Inicio:** hero con buscador, la frase "Recetas boricuas paso a paso, en español e inglés." con la etiqueta **"¡Gratis!"** (`.hero-free`, color
+  achiote; desde v4.37 ya no dice "sin registrarse") (`#site-author`; desde
   v4.30 la versión sólo sale en el pie) y estadísticas (`statsHero(publicRecipeCount(), categorías)`: "**Más de 1,000** recetas
   tradicionales · 24 categorías"; `publicRecipeCount()` baja el total al millar. En la v4.30 se puso el total exacto y en la
   v4.31.1 se volvió a "Más de 1,000" a pedido; el total exacto sale en `#/admin` y en `/recetas`), cuadrícula de
@@ -639,7 +640,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   primero y la lista de la época) siguen la corrección del administrador.
 - **Fecha de ingreso:** `RECIPE_ADDED` en `js/recipe-dates.js`, GENERADO por `node tools/recipe-dates.js` desde el
   historial de git (fecha del commit que escribió la línea `id: "…"`; las que aún no están en un commit, la de hoy).
-  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17 y 130 del 18 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
+  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17, 130 del 18 y 35 del 19 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
   Se carga con `loadScript()` sólo al abrir el panel. **Después de añadir recetas, hay que volver a generarlo** (§11).
 - **Seguridad (`firestore.rules`, `match /recipeMeta/{id}`):** leer, cualquiera que entre; escribir y borrar, sólo
   administradores, con sólo esas 3 claves, `seasons` entre `todo`, `navidad`, `cuaresma`, `verano`, `gracias` y `lluvia`
@@ -787,7 +788,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - **Por qué:** la app usa `#/receta/<id>`, y para Google todo lo que va después de `#` es la portada: ninguna receta salía
   en las búsquedas ("receta de pernil") y todos los enlaces compartidos se veían iguales (título, texto y bandera).
 - **`node tools/prerender.js`** (sin dependencias; carga los scripts en `vm` como el navegador) genera:
-  `receta/<id>.html` (1,244 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
+  `receta/<id>.html` (1,279 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
   `vercel.json`. Cada una es ligera y se lee sin JavaScript: título y descripción propios ("Coquito: receta puertorriqueña
   paso a paso para 12 porciones. Lleva leche de coco… Lista en 4 h 15 min."), `canonical`, Open Graph y Twitter con el
   nombre del plato, tiempo de cocina y total, porciones, calorías estimadas, alérgenos, ingredientes y pasos en español y
@@ -991,7 +992,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,244). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,279). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -1097,6 +1098,46 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-19 — v4.37.0 · Panes, viandas, ajonjolí, salsas de jobos, caderas de pollo, cereales y pastas; "¡Gratis!", carrito azul y corazón rojo
+- *Pedido:* más panes y panes dulces, vegetales y viandas, dulce de ajonjolí, salsas y aderezos (por ejemplo con jobos),
+  aves (por ejemplo caderas de pollo), cereales y pastas. Y en la portada: quitar "sin registrarse" y que "Gratis" llame
+  la atención; el ícono del carrito en azul y el corazón en rojo.
+- **Portada:** la frase queda "Recetas boricuas paso a paso, en español e inglés." seguida de una etiqueta **"¡Gratis!"**
+  ("Free!" en inglés) en color achiote, un poco inclinada (`.hero-free` en `css/styles.css`; textos `author` y `free` en
+  `js/app.js`; también en `index.html`).
+- Quincuagésima octava tanda en `js/recipes-5.js` (versiones propias), 35 que no estaban:
+  - **Panes (8):** pan de papa, pan integral de avena y miel, pan relleno de chorizo y queso, panecillos de hamburguesa,
+    rosca de Reyes boricua, pan dulce de chocolate, pan de pasas y canela en espiral y pan de mangó.
+  - **Vegetales y viandas (5):** pastelón de batata con picadillo, calabaza asada con ajo y miel, guingambó frito
+    empanado, tostones de yautía y mofongo de batata con chicharrón.
+  - **Ajonjolí (2, en Postres):** turrón de ajonjolí con melao y dulce de ajonjolí y coco (el dulce de ajonjolí clásico ya
+    estaba).
+  - **Salsas y aderezos (6):** salsa agridulce de jobos para cerdo, pique de jobos, vinagreta de jobos y miel, chutney de
+    jobos y jengibre, salsa picante de carambola y aderezo de guayaba y mostaza.
+  - **Caderas de pollo (5, en Aves):** al horno con adobo y papas, guisadas, fritas estilo kiosco, al carbón con BBQ de
+    guayaba y con arroz al horno en un solo molde.
+  - **Cereales (4):** avena de coquito (sin alcohol), granola de avena, ajonjolí y melao, maicena de chocolate y harina de
+    maíz con leche de coco (vegana).
+  - **Pastas (5):** espaguetis con albóndigas, lasaña de pollo en salsa blanca, fideuá boricua de mariscos, espaguetis con
+    chuletas ahumadas y pasta con garbanzos y espinaca (vegana).
+  - Menos adobo, sal o chuleta ahumada donde el sodio pasaba de ~900 mg.
+- **Nutrición** (`nutrition.js`): "caderas de pollo" (USDA leg, meat and skin, crudo; ~255 g sin hueso cada una; antes
+  contaban como pollos enteros). También en `tools/usda/map.js`.
+- **Filtro de dieta** (`search.js`, `S_MEAT_RX`): "cod" (bacalao en inglés) atrapaba "coditos"; ahora es `cod\b`. Los
+  "Macarrones con Queso al Horno" y la "Pasta con Pesto de Recao y Queso del País" vuelven a salir como vegetarianos.
+- **Colores de dos íconos** (`css/styles.css`): el carrito (`#i-cart`) siempre azul (`--cart-blue`) y el corazón
+  (`#i-heart`) siempre rojo (`--heart-red`), en el menú, la barra de abajo, los botones y las tarjetas, con su versión
+  clara para el tema oscuro. Se aplica con `svg.icon:has(> use[href="#i-cart"])`; en navegadores sin `:has()` quedan
+  del color de antes.
+- **Iconos:** 👑 para la rosca de Reyes, pastelón para el de batata, yautía para los tostones, 🍬 para el turrón, 🌶️
+  para la salsa de carambola; el resto usa los que había.
+- **Familias** (`families.js`): "Pan de agua, sobao y de molde" incluye pan de papa, integral y panecillos de
+  hamburguesa; en Vegetales, "pana" sólo cuenta como palabra suelta (el guingambó "empanado" ya no cae en viandas).
+  Ninguna receta anterior cambió.
+- Fechas regeneradas (las 35 nuevas quedaron del 19) y `node tools/prerender.js`: 1,279 páginas y `sitemap.xml` con 1,281
+  direcciones. Total: **1,244 → 1,279 recetas**.
+- *Verificado:* `node tools/check-recipes.js` 0 errores y 0 avisos; nutrición 0 sin contar; navegador: las 35 en ES y EN
+  a 375 px y la portada con "¡Gratis!" en claro y oscuro.
 ### 2026-10-18 — v4.36.0 · Más postres puertorriqueños
 - *Pedido:* más recetas de postres puertorriqueños.
 - Quincuagésima séptima tanda en `js/recipes-5.js` (versiones propias), 12 que no estaban (había 132 postres): alfajor
