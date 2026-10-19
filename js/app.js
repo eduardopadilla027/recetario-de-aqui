@@ -18,7 +18,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.35.0";
+const APP_VERSION = "4.36.0";
 const APP_REVISED = "2026-10-18";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
@@ -456,6 +456,11 @@ const dessertIcons = [
   [/^glaseado de grosellas/, "svg:ic-gr-glaseado-jamon"],
   [/^pique de grosellas/, "svg:ic-gr-pique"],
   [/^vinagreta de grosellas/, "svg:ic-gr-vinagreta"],
+  // Postres puertorriqueños (tanda 57): los dibujos de postres que ya había.
+  [/^alfajor boricua/, "svg:ic-pos-dulce-mani"],
+  [/^dulce de hicacos/, "svg:ic-pos-dulce-pajuil"],
+  [/^tembleque de parcha/, "svg:ic-pos-tembleque-mango"],
+  [/^limber de pina/, "svg:ic-pos-limber-guayaba"],
   // Sopas y asopaos (tanda 56): los dibujos de asopaos, cremas y sopas que ya había.
   [/^asopao de pescado/, "svg:ic-sopa-pescado"],
   [/^asopao de calamares/, "svg:ic-asopao-pulpo"],

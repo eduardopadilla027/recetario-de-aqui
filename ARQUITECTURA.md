@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.35.0 · **Versión de la app:** 4.35.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,232 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.36.0 · **Versión de la app:** 4.36.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,244 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -203,7 +203,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | pasteles_dulces | Pasteles Dulces | 22 |
 | panes | Pan y Panecillos | 46 |
 | emparedados | Emparedados | 25 |
-| postres | Helados, Budines, Flan y Otros Postres | 132 |
+| postres | Helados, Budines, Flan y Otros Postres | 144 |
 | arroces | Arroces y Habichuelas | 64 |
 | vegetales | Vegetales y Viandas | 88 |
 | salsas | Salsas y Aderezos | 72 |
@@ -639,7 +639,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   primero y la lista de la época) siguen la corrección del administrador.
 - **Fecha de ingreso:** `RECIPE_ADDED` en `js/recipe-dates.js`, GENERADO por `node tools/recipe-dates.js` desde el
   historial de git (fecha del commit que escribió la línea `id: "…"`; las que aún no están en un commit, la de hoy).
-  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17 y 118 del 18 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
+  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17 y 130 del 18 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
   Se carga con `loadScript()` sólo al abrir el panel. **Después de añadir recetas, hay que volver a generarlo** (§11).
 - **Seguridad (`firestore.rules`, `match /recipeMeta/{id}`):** leer, cualquiera que entre; escribir y borrar, sólo
   administradores, con sólo esas 3 claves, `seasons` entre `todo`, `navidad`, `cuaresma`, `verano`, `gracias` y `lluvia`
@@ -787,7 +787,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - **Por qué:** la app usa `#/receta/<id>`, y para Google todo lo que va después de `#` es la portada: ninguna receta salía
   en las búsquedas ("receta de pernil") y todos los enlaces compartidos se veían iguales (título, texto y bandera).
 - **`node tools/prerender.js`** (sin dependencias; carga los scripts en `vm` como el navegador) genera:
-  `receta/<id>.html` (1,232 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
+  `receta/<id>.html` (1,244 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
   `vercel.json`. Cada una es ligera y se lee sin JavaScript: título y descripción propios ("Coquito: receta puertorriqueña
   paso a paso para 12 porciones. Lleva leche de coco… Lista en 4 h 15 min."), `canonical`, Open Graph y Twitter con el
   nombre del plato, tiempo de cocina y total, porciones, calorías estimadas, alérgenos, ingredientes y pasos en español y
@@ -991,7 +991,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,232). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,244). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -1097,6 +1097,21 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-18 — v4.36.0 · Más postres puertorriqueños
+- *Pedido:* más recetas de postres puertorriqueños.
+- Quincuagésima séptima tanda en `js/recipes-5.js` (versiones propias), 12 que no estaban (había 132 postres): alfajor
+  boricua de yuca, melao y jengibre; dulce de hicacos en almíbar; tembleque de parcha y tembleque de guanábana (veganos);
+  limber de piña; helado de guanábana sin máquina; dulce de coco tierno; pudín de calabaza; piragua de parcha; brazo
+  gitano de crema de coco; flan de queso con guayaba; y natilla de calabaza con canela.
+- **Nutrición** (`nutrition.js`): "coco tierno" (de coco de agua, con mucha menos grasa que el maduro) e "hicacos", con
+  valores aproximados porque no están en USDA SR Legacy.
+- **Iconos:** los dibujos de postres que había (dulce de maní para el alfajor, dulce en almíbar para los hicacos,
+  tembleque de mangó para el de parcha, limber para el de piña).
+- **Familias:** cada una cae en su grupo con las reglas que había; no hizo falta tocar `families.js`.
+- Fechas regeneradas y `node tools/prerender.js`: 1,244 páginas y `sitemap.xml` con 1,246 direcciones. Total: **1,232 →
+  1,244 recetas**.
+- *Verificado:* `node tools/check-recipes.js` 0 errores y 0 avisos; nutrición 0 sin contar; navegador: las 12 en ES y EN
+  a 375 px.
 ### 2026-10-18 — v4.35.0 · Más sopas y asopaos
 - *Pedido:* más recetas de sopas y asopaos.
 - Quincuagésima sexta tanda en `js/recipes-5.js` (versiones propias), 16 que no estaban (había 54 sopas):

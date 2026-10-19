@@ -10658,5 +10658,526 @@ recipes.push(
         "Serve in glasses or bowls with the diced watermelon and cucumber and the mint. It's vegan and perfect for the August heat."
       ]
     }
+  },
+  // ---------- Tanda 57: más postres puertorriqueños (12) ----------
+  {
+    id: "alfajor-boricua",
+    category: "postres",
+    name: { es: "Alfajor Boricua de Yuca, Melao y Jengibre", en: "Puerto Rican Alfajor (Cassava, Molasses and Ginger Bars)" },
+    active: 30, total: 100, wait: "enfriar",
+    servings: 16,
+    ingredients: {
+      es: [
+        "1 taza de melao de caña",
+        "½ taza de azúcar morena",
+        "2 cucharadas de jengibre fresco rallado",
+        "1 cucharadita de canela en polvo",
+        "½ cucharadita de clavos molidos",
+        "1 pizca de sal",
+        "2 tazas de harina de yuca (casabe molido) o de harina de trigo tostada",
+        "1 cucharada de mantequilla"
+      ],
+      en: [
+        "1 cup cane molasses",
+        "½ cup brown sugar",
+        "2 tablespoons grated fresh ginger",
+        "1 teaspoon ground cinnamon",
+        "½ teaspoon ground cloves",
+        "1 pinch salt",
+        "2 cups cassava flour (ground casabe) or toasted wheat flour",
+        "1 tablespoon butter"
+      ]
+    },
+    steps: {
+      es: [
+        "Engrase con la mantequilla un molde de 8 × 8 pulgadas.",
+        "En una olla, hierva el melao con el azúcar, el jengibre, la canela, los clavos y la sal 5 minutos, moviendo, hasta que espese un poco.",
+        "Retire del fuego y añada la harina poco a poco, moviendo con fuerza con una cuchara de madera, hasta formar una masa espesa y brillosa.",
+        "Extiéndala en el molde y aplánela con una espátula mojada.",
+        "Deje enfriar 1 hora y córtela en 16 cuadritos. Es el alfajor antiguo de la isla, de las ventas de los pueblos: oscuro, picante de jengibre y masticable."
+      ],
+      en: [
+        "Grease an 8 × 8-inch pan with the butter.",
+        "In a pot, boil the molasses with the sugar, ginger, cinnamon, cloves and salt 5 minutes, stirring, until slightly thick.",
+        "Remove from the heat and add the flour little by little, stirring hard with a wooden spoon, until it forms a thick, glossy dough.",
+        "Spread it in the pan and flatten it with a wet spatula.",
+        "Let cool 1 hour and cut into 16 squares. It's the island's old-style alfajor from small-town candy stands: dark, spicy with ginger and chewy."
+      ]
+    }
+  },
+  {
+    id: "dulce-hicacos",
+    category: "postres",
+    name: { es: "Dulce de Hicacos en Almíbar", en: "Cocoplums (Hicacos) in Syrup" },
+    active: 40, total: 160, wait: "enfriar",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 libras de hicacos maduros",
+        "2 tazas de azúcar",
+        "3 tazas de agua",
+        "2 rajitas de canela",
+        "4 clavos de especia",
+        "1 tira de cáscara de limón"
+      ],
+      en: [
+        "2 pounds ripe cocoplums (hicacos)",
+        "2 cups sugar",
+        "3 cups water",
+        "2 cinnamon sticks",
+        "4 whole cloves",
+        "1 strip lime peel"
+      ]
+    },
+    steps: {
+      es: [
+        "Lave los hicacos y pínchelos 2 o 3 veces con un palillo para que no revienten.",
+        "Hiérvalos en agua 5 minutos y escúrralos.",
+        "En una olla, hierva el azúcar y las 3 tazas de agua con la canela, los clavos y la cáscara de limón 10 minutos.",
+        "Añada los hicacos y cocine a fuego bajo 25 minutos, hasta que estén brillosos y el almíbar espese.",
+        "Deje enfriar en el almíbar y sirva frío con queso blanco del país. Es un dulce de la costa, donde crecen los hicacos junto a la playa."
+      ],
+      en: [
+        "Wash the cocoplums and prick them 2 or 3 times with a toothpick so they don't burst.",
+        "Boil them in water 5 minutes and drain.",
+        "In a pot, boil the sugar and the 3 cups of water with the cinnamon, cloves and lime peel 10 minutes.",
+        "Add the cocoplums and cook over low heat 25 minutes, until glossy and the syrup thickens.",
+        "Let cool in the syrup and serve cold with Puerto Rican white cheese. It's a coastal sweet: cocoplums grow right by the beach."
+      ]
+    }
+  },
+  {
+    id: "tembleque-parcha",
+    category: "postres",
+    name: { es: "Tembleque de Parcha", en: "Passion Fruit Tembleque" },
+    active: 20, total: 260, wait: "frio",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 latas de 13.5 onzas de leche de coco",
+        "½ taza de pulpa de parcha colada",
+        "¾ taza de azúcar",
+        "½ taza de maicena",
+        "1 pizca de sal",
+        "2 cucharadas de pulpa de parcha con semillas para decorar"
+      ],
+      en: [
+        "2 cans (13.5 oz) coconut milk",
+        "½ cup strained passion fruit pulp",
+        "¾ cup sugar",
+        "½ cup cornstarch",
+        "1 pinch salt",
+        "2 tablespoons passion fruit pulp with seeds for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, disuelva la maicena en la leche de coco fría. Añada el azúcar y la sal.",
+        "Cocine a fuego medio, moviendo sin parar, hasta que hierva y espese, unos 10 minutos.",
+        "Retire del fuego y añada la pulpa de parcha colada, moviendo rápido para que quede lisa.",
+        "Vierta en un molde mojado con agua o en copitas y deje enfriar.",
+        "Refrigere al menos 4 horas. Desmolde y decore con la parcha con semillas. Es vegano: no lleva leche de vaca ni huevo."
+      ],
+      en: [
+        "In a pot, dissolve the cornstarch in the cold coconut milk. Add the sugar and salt.",
+        "Cook over medium heat, stirring constantly, until it boils and thickens, about 10 minutes.",
+        "Remove from the heat and stir in the strained passion fruit pulp quickly so it stays smooth.",
+        "Pour into a mold rinsed with water or into small cups and let cool.",
+        "Refrigerate at least 4 hours. Unmold and garnish with the passion fruit pulp with seeds. It's vegan: no dairy or eggs."
+      ]
+    }
+  },
+  {
+    id: "tembleque-guanabana",
+    category: "postres",
+    name: { es: "Tembleque de Guanábana", en: "Soursop Tembleque" },
+    active: 20, total: 260, wait: "frio",
+    servings: 8,
+    ingredients: {
+      es: [
+        "2 latas de 13.5 onzas de leche de coco",
+        "1 taza de pulpa de guanábana colada",
+        "¾ taza de azúcar",
+        "½ taza de maicena",
+        "1 pizca de sal",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "2 cans (13.5 oz) coconut milk",
+        "1 cup strained soursop (guanábana) pulp",
+        "¾ cup sugar",
+        "½ cup cornstarch",
+        "1 pinch salt",
+        "Ground cinnamon for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la leche de coco con la guanábana, la maicena, el azúcar y la sal.",
+        "Pase a una olla y cocine a fuego medio, moviendo sin parar, hasta que hierva y espese, unos 10 a 12 minutos.",
+        "Cocine 1 minuto más después de que espese para que no sepa a maicena cruda.",
+        "Vierta en un molde mojado con agua o en copitas y deje enfriar.",
+        "Refrigere al menos 4 horas. Desmolde y espolvoree canela. Es vegano y muy fresco."
+      ],
+      en: [
+        "Blend the coconut milk with the soursop, cornstarch, sugar and salt.",
+        "Transfer to a pot and cook over medium heat, stirring constantly, until it boils and thickens, about 10 to 12 minutes.",
+        "Cook 1 more minute after it thickens so it doesn't taste of raw cornstarch.",
+        "Pour into a mold rinsed with water or into small cups and let cool.",
+        "Refrigerate at least 4 hours. Unmold and dust with cinnamon. It's vegan and very refreshing."
+      ]
+    }
+  },
+  {
+    id: "limber-pina",
+    category: "postres",
+    name: { es: "Limber de Piña", en: "Pineapple Limber (Frozen Cup)" },
+    active: 15, total: 375, wait: "congelador",
+    servings: 10,
+    ingredients: {
+      es: [
+        "3 tazas de piña fresca en cubos",
+        "1 taza de jugo de piña",
+        "1 lata de 12 onzas de leche evaporada",
+        "½ taza de azúcar",
+        "1 cucharada de jugo de limón"
+      ],
+      en: [
+        "3 cups fresh pineapple, cubed",
+        "1 cup pineapple juice",
+        "1 can (12 oz) evaporated milk",
+        "½ cup sugar",
+        "1 tablespoon lime juice"
+      ]
+    },
+    steps: {
+      es: [
+        "Licúe la piña con el jugo de piña y el azúcar hasta que esté suave.",
+        "Añada la leche evaporada y el limón y licúe unos segundos más. Si la quiere sin pedacitos, cuélela.",
+        "Vierta en 10 vasitos plásticos de 5 onzas.",
+        "Congele al menos 6 horas.",
+        "Para sacarlo, apriete el vaso o páselo por agua tibia unos segundos. Se come chupándolo desde arriba, como en las casas del barrio."
+      ],
+      en: [
+        "Blend the pineapple with the pineapple juice and sugar until smooth.",
+        "Add the evaporated milk and lime juice and blend a few more seconds. Strain if you want it smooth.",
+        "Pour into 10 plastic 5-ounce cups.",
+        "Freeze at least 6 hours.",
+        "To unmold, squeeze the cup or run it under warm water a few seconds. It's eaten by sucking it from the top, like at neighborhood homes."
+      ]
+    }
+  },
+  {
+    id: "helado-guanabana",
+    category: "postres",
+    name: { es: "Helado de Guanábana (Sin Máquina)", en: "Soursop Ice Cream (No-Churn)" },
+    active: 15, total: 375, wait: "congelador",
+    servings: 10,
+    ingredients: {
+      es: [
+        "2 tazas de crema de batir (heavy cream) fría",
+        "1 lata de 14 onzas de leche condensada",
+        "1½ tazas de pulpa de guanábana colada",
+        "1 cucharadita de vainilla",
+        "1 pizca de sal"
+      ],
+      en: [
+        "2 cups cold heavy cream",
+        "1 can (14 oz) sweetened condensed milk",
+        "1½ cups strained soursop (guanábana) pulp",
+        "1 teaspoon vanilla",
+        "1 pinch salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la leche condensada con la guanábana, la vainilla y la sal.",
+        "Bata la crema hasta que forme picos firmes.",
+        "Incorpore la crema a la mezcla de guanábana en 3 partes, con movimientos envolventes, sin batir de más.",
+        "Vierta en un molde de pan, tape con papel plástico pegado a la superficie.",
+        "Congele al menos 6 horas. Sáquelo 10 minutos antes de servir para que se pueda servir con cuchara."
+      ],
+      en: [
+        "Mix the condensed milk with the soursop, vanilla and salt.",
+        "Whip the cream to stiff peaks.",
+        "Fold the cream into the soursop mixture in 3 parts, gently, without overmixing.",
+        "Pour into a loaf pan and cover with plastic wrap pressed onto the surface.",
+        "Freeze at least 6 hours. Take it out 10 minutes before serving so it can be scooped."
+      ]
+    }
+  },
+  {
+    id: "dulce-coco-tierno",
+    category: "postres",
+    name: { es: "Dulce de Coco Tierno", en: "Young Coconut Sweet (Dulce de Coco Tierno)" },
+    active: 40, total: 100, wait: "enfriar",
+    servings: 8,
+    ingredients: {
+      es: [
+        "3 tazas de coco tierno en tiritas (de 3 o 4 cocos de agua)",
+        "1 taza de agua de coco",
+        "1 taza de azúcar",
+        "1 rajita de canela",
+        "3 clavos de especia",
+        "1 pizca de sal",
+        "1 cucharadita de vainilla"
+      ],
+      en: [
+        "3 cups young coconut, in strips (from 3 or 4 water coconuts)",
+        "1 cup coconut water",
+        "1 cup sugar",
+        "1 cinnamon stick",
+        "3 whole cloves",
+        "1 pinch salt",
+        "1 teaspoon vanilla"
+      ]
+    },
+    steps: {
+      es: [
+        "Abra los cocos de agua, guarde el agua y saque la carne tierna con una cuchara. Córtela en tiritas.",
+        "En una olla, hierva el agua de coco con el azúcar, la canela, los clavos y la sal 8 minutos.",
+        "Añada el coco tierno y cocine a fuego bajo 20 a 25 minutos, moviendo de vez en cuando, hasta que el almíbar espese y el coco esté transparente.",
+        "Apague y añada la vainilla.",
+        "Deje enfriar y sirva frío. Es más suave que el dulce de coco rallado: el coco tierno queda como gelatina."
+      ],
+      en: [
+        "Open the water coconuts, save the water and scoop out the tender meat with a spoon. Cut it into strips.",
+        "In a pot, boil the coconut water with the sugar, cinnamon, cloves and salt 8 minutes.",
+        "Add the young coconut and cook over low heat 20 to 25 minutes, stirring now and then, until the syrup thickens and the coconut turns translucent.",
+        "Turn off the heat and add the vanilla.",
+        "Let cool and serve cold. It's softer than grated coconut sweet: young coconut turns almost jelly-like."
+      ]
+    }
+  },
+  {
+    id: "pudin-calabaza",
+    category: "postres",
+    name: { es: "Pudín de Calabaza", en: "Calabaza Pudding (Pudín de Calabaza)" },
+    active: 85, total: 140, wait: "enfriar",
+    servings: 12,
+    ingredients: {
+      es: [
+        "2 libras de calabaza pelada en trozos",
+        "1 lata de 13.5 onzas de leche de coco",
+        "1 lata de 12 onzas de leche evaporada",
+        "1 taza de azúcar",
+        "4 huevos",
+        "¾ taza de harina de trigo",
+        "4 cucharadas de mantequilla derretida",
+        "1 cucharadita de canela en polvo",
+        "½ cucharadita de jengibre en polvo",
+        "¼ cucharadita de clavos molidos",
+        "1 pizca de sal",
+        "½ taza de pasas"
+      ],
+      en: [
+        "2 pounds calabaza (West Indian pumpkin), peeled and cut in chunks",
+        "1 can (13.5 oz) coconut milk",
+        "1 can (12 oz) evaporated milk",
+        "1 cup sugar",
+        "4 eggs",
+        "¾ cup all-purpose flour",
+        "4 tablespoons melted butter",
+        "1 teaspoon ground cinnamon",
+        "½ teaspoon ground ginger",
+        "¼ teaspoon ground cloves",
+        "1 pinch salt",
+        "½ cup raisins"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la calabaza en agua 15 minutos, hasta que esté blanda. Escúrrala muy bien.",
+        "Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.",
+        "Licúe la calabaza con la leche de coco, la leche evaporada, el azúcar, los huevos, la harina, la mantequilla, las especias y la sal.",
+        "Vierta en el molde y riegue las pasas por encima.",
+        "Hornee 55 a 60 minutos, hasta que un palillo salga limpio del centro. Deje enfriar antes de cortar. Es el pudín de las Navidades del campo."
+      ],
+      en: [
+        "Boil the calabaza in water 15 minutes, until tender. Drain very well.",
+        "Heat the oven to 350 °F and grease a 9 × 13-inch pan.",
+        "Blend the calabaza with the coconut milk, evaporated milk, sugar, eggs, flour, butter, spices and salt.",
+        "Pour into the pan and scatter the raisins on top.",
+        "Bake 55 to 60 minutes, until a toothpick comes out clean from the center. Let cool before cutting. It's the country Christmas pudding."
+      ]
+    }
+  },
+  {
+    id: "piragua-parcha",
+    category: "postres",
+    name: { es: "Piragua de Parcha", en: "Passion Fruit Piragua (Shaved Ice)" },
+    active: 20, total: 80, wait: "enfriar",
+    servings: 6,
+    ingredients: {
+      es: [
+        "1 taza de pulpa de parcha",
+        "1½ tazas de azúcar",
+        "1 taza de agua",
+        "8 tazas de hielo raspado o picado bien fino"
+      ],
+      en: [
+        "1 cup passion fruit pulp",
+        "1½ cups sugar",
+        "1 cup water",
+        "8 cups shaved or very finely crushed ice"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, hierva el agua con el azúcar 5 minutos, hasta que se disuelva y espese un poco.",
+        "Añada la pulpa de parcha y cocine 3 minutos más.",
+        "Cuele para sacar las semillas y deje enfriar el sirope por completo, 1 hora.",
+        "Apriete el hielo raspado en vasos de papel en forma de cono, formando una pirámide.",
+        "Bañe con 3 a 4 cucharadas del sirope y sirva enseguida, con pajita, como en el carrito del piragüero."
+      ],
+      en: [
+        "In a pot, boil the water with the sugar 5 minutes, until dissolved and slightly thick.",
+        "Add the passion fruit pulp and cook 3 more minutes.",
+        "Strain out the seeds and let the syrup cool completely, 1 hour.",
+        "Pack the shaved ice into cone-shaped paper cups, forming a pyramid.",
+        "Drizzle with 3 to 4 tablespoons of the syrup and serve right away, with a straw, like from the piragüero's cart."
+      ]
+    }
+  },
+  {
+    id: "brazo-gitano-coco",
+    category: "postres",
+    name: { es: "Brazo Gitano de Crema de Coco", en: "Coconut Cream Swiss Roll (Brazo Gitano)" },
+    active: 50, total: 170, wait: "frio",
+    servings: 10,
+    ingredients: {
+      es: [
+        "5 huevos, separadas las claras de las yemas",
+        "½ taza de azúcar para el bizcocho",
+        "½ taza de harina de trigo",
+        "1 cucharadita de polvo de hornear",
+        "1 cucharadita de vainilla",
+        "1 lata de 13.5 onzas de leche de coco",
+        "¼ taza de azúcar para la crema",
+        "3 cucharadas de maicena",
+        "½ taza de coco rallado tostado",
+        "2 cucharadas de azúcar en polvo"
+      ],
+      en: [
+        "5 eggs, separated",
+        "½ cup sugar for the cake",
+        "½ cup all-purpose flour",
+        "1 teaspoon baking powder",
+        "1 teaspoon vanilla",
+        "1 can (13.5 oz) coconut milk",
+        "¼ cup sugar for the cream",
+        "3 tablespoons cornstarch",
+        "½ cup toasted shredded coconut",
+        "2 tablespoons powdered sugar"
+      ]
+    },
+    steps: {
+      es: [
+        "Para la crema: cocine la leche de coco con el azúcar y la maicena, moviendo sin parar, hasta que espese. Tape con papel plástico pegado y deje enfriar.",
+        "Caliente el horno a 375 °F y forre una bandeja de 10 × 15 pulgadas con papel de hornear engrasado. Bata las claras a punto de nieve con el azúcar; añada las yemas y la vainilla, y luego la harina cernida con el polvo de hornear, con movimientos envolventes.",
+        "Extienda en la bandeja y hornee 10 a 12 minutos, hasta que rebote al tocarlo. Vuélquelo sobre un paño espolvoreado con azúcar en polvo, quite el papel y enróllelo caliente con el paño. Deje enfriar 20 minutos.",
+        "Desenrolle, unte la crema de coco, espolvoree la mitad del coco tostado y enrolle otra vez, sin el paño.",
+        "Espolvoree el resto del coco y el azúcar en polvo. Refrigere 1 hora antes de cortar. Es otro de los sabores de los brazos gitanos de Mayagüez."
+      ],
+      en: [
+        "For the cream: cook the coconut milk with the sugar and cornstarch, stirring constantly, until thick. Cover with plastic wrap pressed on the surface and let cool.",
+        "Heat the oven to 375 °F and line a 10 × 15-inch pan with greased parchment. Beat the egg whites to stiff peaks with the sugar; add the yolks and vanilla, then fold in the flour sifted with the baking powder.",
+        "Spread in the pan and bake 10 to 12 minutes, until it springs back when touched. Turn it out onto a towel dusted with powdered sugar, peel off the paper and roll it up warm with the towel. Let cool 20 minutes.",
+        "Unroll, spread the coconut cream, sprinkle half the toasted coconut and roll it up again, without the towel.",
+        "Sprinkle with the rest of the coconut and the powdered sugar. Refrigerate 1 hour before slicing. It's another of the Mayagüez brazo gitano flavors."
+      ]
+    }
+  },
+  {
+    id: "flan-queso-guayaba",
+    category: "postres",
+    name: { es: "Flan de Queso con Guayaba", en: "Cream Cheese Flan with Guava" },
+    active: 100, total: 340, wait: "frio",
+    servings: 10,
+    ingredients: {
+      es: [
+        "1 taza de azúcar para el caramelo",
+        "1 paquete de 8 onzas de queso crema blando",
+        "1 lata de 14 onzas de leche condensada",
+        "1 lata de 12 onzas de leche evaporada",
+        "5 huevos",
+        "1 cucharadita de vainilla",
+        "4 onzas de pasta de guayaba en cubitos",
+        "2 cucharadas de agua caliente"
+      ],
+      en: [
+        "1 cup sugar for the caramel",
+        "1 package (8 oz) softened cream cheese",
+        "1 can (14 oz) sweetened condensed milk",
+        "1 can (12 oz) evaporated milk",
+        "5 eggs",
+        "1 teaspoon vanilla",
+        "4 ounces guava paste, in small cubes",
+        "2 tablespoons hot water"
+      ]
+    },
+    steps: {
+      es: [
+        "Derrita el azúcar en un sartén a fuego medio hasta que tenga color ámbar y viértalo en un molde de flan, cubriendo el fondo.",
+        "Derrita la guayaba con el agua caliente en el microondas 30 segundos, moviendo hasta que quede una pasta suave. Riéguela por cucharaditas sobre el caramelo.",
+        "Caliente el horno a 350 °F. Licúe el queso crema, las leches, los huevos y la vainilla, y vierta con cuidado sobre la guayaba.",
+        "Tape con papel de aluminio y hornee a baño de María 1 hora a 1 hora 10 minutos, hasta que el centro apenas tiemble.",
+        "Deje enfriar y refrigere al menos 4 horas. Desmolde volteándolo en un plato hondo: la guayaba queda arriba con el caramelo."
+      ],
+      en: [
+        "Melt the sugar in a skillet over medium heat until amber and pour it into a flan mold, coating the bottom.",
+        "Melt the guava with the hot water in the microwave 30 seconds, stirring into a smooth paste. Dot it by teaspoons over the caramel.",
+        "Heat the oven to 350 °F. Blend the cream cheese, both milks, eggs and vanilla and pour gently over the guava.",
+        "Cover with aluminum foil and bake in a water bath 1 hour to 1 hour 10 minutes, until the center barely jiggles.",
+        "Let cool and refrigerate at least 4 hours. Unmold by flipping onto a deep plate: the guava ends up on top with the caramel."
+      ]
+    }
+  },
+  {
+    id: "natilla-calabaza",
+    category: "postres",
+    name: { es: "Natilla de Calabaza con Canela", en: "Calabaza Custard with Cinnamon" },
+    active: 30, total: 210, wait: "frio",
+    servings: 8,
+    ingredients: {
+      es: [
+        "1 taza de calabaza hervida y majada",
+        "3 tazas de leche",
+        "½ taza de azúcar",
+        "4 yemas de huevo",
+        "¼ taza de maicena",
+        "1 rajita de canela",
+        "1 tira de cáscara de limón",
+        "1 cucharadita de vainilla",
+        "Canela en polvo para decorar"
+      ],
+      en: [
+        "1 cup boiled and mashed calabaza (West Indian pumpkin)",
+        "3 cups milk",
+        "½ cup sugar",
+        "4 egg yolks",
+        "¼ cup cornstarch",
+        "1 cinnamon stick",
+        "1 strip lime peel",
+        "1 teaspoon vanilla",
+        "Ground cinnamon for garnish"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva 2½ tazas de la leche con la rajita de canela y la cáscara de limón 5 minutos. Saque la canela y el limón.",
+        "Licúe la calabaza con el resto de la leche, las yemas, el azúcar y la maicena.",
+        "Añada la mezcla a la leche caliente y cocine a fuego medio-bajo, moviendo sin parar, hasta que espese y cubra la cuchara, unos 8 minutos. No deje que hierva fuerte.",
+        "Apague y añada la vainilla. Sirva en copitas.",
+        "Deje enfriar y refrigere al menos 2 horas. Espolvoree canela antes de servir."
+      ],
+      en: [
+        "Simmer 2½ cups of the milk with the cinnamon stick and lime peel 5 minutes. Remove the cinnamon and peel.",
+        "Blend the calabaza with the rest of the milk, the yolks, sugar and cornstarch.",
+        "Add the mixture to the hot milk and cook over medium-low heat, stirring constantly, until thick enough to coat the spoon, about 8 minutes. Don't let it boil hard.",
+        "Turn off the heat and add the vanilla. Pour into small cups.",
+        "Let cool and refrigerate at least 2 hours. Dust with cinnamon before serving."
+      ]
+    }
   }
 );

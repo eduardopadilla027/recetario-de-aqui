@@ -300,6 +300,10 @@ const NUTRI_FOODS = [
   // Cidra: se usa la parte blanca de la cáscara (la pulpa se bota).
   F("cidra", 30, 0.5, 9, 3, 3, 0.2, 0, 2, { u: 300 }),
   F("uva", 69, 0.7, 18, 15.5, 0.9, 0.2, 0.1, 2, { cup: 151 }),
+  // v4.36: aproximados (no están en USDA SR Legacy). El coco tierno (de coco de agua) tiene mucha menos grasa que
+  // el maduro; el hicaco (icaco, cocoplum) es una fruta de poca azúcar.
+  F("coco tierno", 98, 1.5, 7, 4, 2, 7, 6, 15, { cup: 160 }),
+  F("hicaco|hicacos|icaco", 47, 0.4, 12, 9, 1.5, 0.2, 0, 2, { cup: 150 }),
   F("coco|coco rallado|coco seco", 354, 3.3, 15, 6, 9, 33.5, 30, 20, { u: 400, cup: 80 }),
   // Jugos y bebidas
   F("jugo de limon|jugo de limon verde", 25, 0.4, 8.4, 1.7, 0.4, 0.1, 0, 1, { cup: 244 }),
