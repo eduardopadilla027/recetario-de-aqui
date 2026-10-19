@@ -6,7 +6,7 @@
  * - Si se cambia el texto de forma importante, se sube CONSENT_VERSION: todos deberán aceptar otra vez al entrar.
  * Texto redactado para la app; conviene que lo revise un abogado con licencia en Puerto Rico antes de depender de él. */
 
-const CONSENT_VERSION = "2026-10-18.2";
+const CONSENT_VERSION = "2026-10-18.3";
 const CONSENT_SITE = "https://recetariodeaqui.com";
 const CONSENT_CONTACT = "recetariodeaqui@gmail.com";
 
@@ -36,6 +36,7 @@ const TERMS = {
       "Si tiene una condición de salud, está embarazada o cocina para un menor, consulte a un profesional antes de cambiar su alimentación.",
       "La información nutricional y los alérgenos son estimados: lea siempre las etiquetas.",
       "Con cuenta guardamos su correo, su uso de la app, este consentimiento y lo que usted ponga en sus planes; no lo vendemos y usted lo puede borrar todo desde «Privacidad y mis datos».",
+      "Usaremos su correo para enviarle notificaciones de la app, recetas nuevas y recetas de la temporada; puede dejar de recibirlas cuando quiera.",
       "Usted cocina y come bajo su propia responsabilidad."
     ],
     sections: [
@@ -76,6 +77,7 @@ const TERMS = {
         ["su correo electrónico, la primera y la última vez que entró y cuántas veces usa la app;", "este consentimiento: la versión aceptada, la fecha y la hora, el idioma, las casillas marcadas y el tipo de navegador;", "los ajustes de sus planes, incluidos datos que usted da de forma voluntaria (sexo, edad, peso, estatura, actividad y objetivo de salud);", "Mi recetario: colecciones, notas, recetas que hizo y su lista de compras;", "las reseñas y fotos que usted publique."],
         "Sin cuenta no guardamos nada en el servidor: sus favoritas, planes y Mi recetario quedan sólo en su navegador.",
         "Para qué: para darle acceso, calcular sus planes, guardar lo suyo en su cuenta, enviarle la confirmación de este consentimiento y cuidar la app. Dónde: en los servicios de Google Firebase (en Estados Unidos) y en su navegador; el correo de confirmación se envía por medio de un proveedor de envío de correos.",
+        `Su correo electrónico también se usa para enviarle notificaciones de la app (por ejemplo, cambios en su cuenta o en estos términos), recetas nuevas y recetas de la temporada. Estos correos se envían por medio del mismo proveedor de envío de correos. Cada uno dirá cómo dejar de recibirlos, y también puede pedirlo escribiendo a ${CONSENT_CONTACT}; dejar de recibirlos no afecta su cuenta. Los avisos indispensables sobre su cuenta, como la confirmación de este consentimiento, se envían siempre.`,
         "Quién lo ve: usted. Los administradores de la app ven su correo, sus fechas y visitas, su consentimiento y el estado de su cuenta, pero no ven sus planes, sus datos de salud ni sus notas. No vendemos sus datos ni los compartimos para publicidad.",
         "Cuánto tiempo: mientras tenga la cuenta, hasta que usted la borre o nos pida borrarla. Las reseñas se guardan mientras estén publicadas o hasta que usted las borre. Al borrar la cuenta no nos quedamos con copia de sus datos en la app.",
         `Sus derechos: en «Privacidad y mis datos» (en el menú, con la sesión abierta) puede ver qué guardamos, retirar su consentimiento y borrar su cuenta con todos sus datos (registro, consentimiento, planes, Mi recetario, reseñas y fotos) en un solo paso. También puede pedirlo escribiendo a ${CONSENT_CONTACT}.`
@@ -116,6 +118,7 @@ const TERMS = {
       "If you have a health condition, are pregnant or cook for a minor, talk to a professional before changing how you eat.",
       "Nutrition information and allergens are estimates: always read the labels.",
       "With an account we store your email, your use of the app, this consent and what you enter in your plans; we don't sell it and you can delete all of it from “Privacy and my data”.",
+      "We'll use your email to send you app notifications, new recipes and seasonal recipes; you can stop receiving them at any time.",
       "You cook and eat at your own responsibility."
     ],
     sections: [
@@ -156,6 +159,7 @@ const TERMS = {
         ["your email address, the first and last time you entered and how many times you use the app;", "this consent: the accepted version, date and time, language, the boxes checked and the type of browser;", "your plan settings, including information you choose to give (sex, age, weight, height, activity and health goal);", "My cookbook: collections, notes, recipes you made and your shopping list;", "the reviews and photos you post."],
         "Without an account we store nothing on the server: your favorites, plans and My cookbook stay only in your browser.",
         "Why: to give you access, calculate your plans, keep your things in your account, send you the confirmation of this consent and look after the app. Where: in Google Firebase services (in the United States) and in your browser; the confirmation email is sent through an email delivery provider.",
+        `Your email address is also used to send you app notifications (for example, changes to your account or to these terms), new recipes and seasonal recipes. These emails are sent through the same email delivery provider. Each one will explain how to stop receiving them, and you can also ask by writing to ${CONSENT_CONTACT}; opting out doesn't affect your account. Essential notices about your account, such as the confirmation of this consent, are always sent.`,
         "Who sees it: you. The app's administrators see your email, dates and visits, your consent and your account status, but not your plans, health data or notes. We don't sell your data or share it for advertising.",
         "How long: while you have the account, until you delete it or ask us to. Reviews are kept while they are published or until you delete them. When you delete the account we keep no copy of your data in the app.",
         `Your rights: in “Privacy and my data” (in the menu, when signed in) you can see what we store, withdraw your consent and delete your account with all its data (record, consent, plans, My cookbook, reviews and photos) in one step. You can also ask by writing to ${CONSENT_CONTACT}.`

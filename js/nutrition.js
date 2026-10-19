@@ -335,6 +335,10 @@ const NUTRI_FOODS = [
   F("cafe|cafe negro", 1, 0.1, 0, 0, 0, 0, 0, 2, { cup: 240 }),
   F("agua|hielo", 0, 0, 0, 0, 0, 0, 0, 0, { cup: 240 }),
   F("caldo|caldo de pollo|consome", 6, 0.6, 0.4, 0.2, 0, 0.2, 0.1, 343, { cup: 240 }),
+  // v4.39: USDA SR Legacy, a mano (también en tools/usda/map.js).
+  F("aderezo cesar", 542, 2.2, 3.3, 2.8, 0.3, 57.9, 8.8, 1209, { cup: 235 }),
+  F("panecillos de hamburguesa|panecillo de hamburguesa|pan de hamburguesa", 279, 9.5, 49.4, 6.9, 2.1, 4.3, 1, 479, { u: 50 }),
+  F("salchichon", 407, 22.6, 1.6, 0.5, 0, 33.7, 11.9, 2260, { u: 10 }),
   // v4.35: el caldo "bajo en sodio" de lata o caja (≈140 mg por taza) y el cubito (≈1,000 mg cada uno).
   F("caldo bajo en sodio|caldo de pollo bajo en sodio|caldo de res bajo en sodio|caldo de vegetales bajo en sodio|caldo de pescado bajo en sodio", 6, 0.6, 0.4, 0.2, 0, 0.2, 0.1, 58, { cup: 240 }),
   F("cubito de caldo", 267, 16.7, 18, 13.9, 0, 13.9, 3.5, 24000, { u: 4 }),

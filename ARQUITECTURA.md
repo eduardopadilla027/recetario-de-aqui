@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.38.0 · **Versión de la app:** 4.38.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,298 en 24 categorías
+> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.39.0 · **Versión de la app:** 4.39.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,316 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -190,7 +190,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | frutas | Frutas | 36 |
 | cereales | Cereales | 22 |
 | granos | Granos y Legumbres | 29 |
-| ensaladas | Ensaladas | 34 |
+| ensaladas | Ensaladas | 43 |
 | sopas | Sopas | 70 |
 | carnes | Carnes | 80 |
 | aves | Aves | 65 |
@@ -202,7 +202,7 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | galletitas | Galletitas | 42 |
 | pasteles_dulces | Pasteles Dulces | 22 |
 | panes | Pan y Panecillos | 55 |
-| emparedados | Emparedados | 25 |
+| emparedados | Emparedados | 34 |
 | postres | Helados, Budines, Flan y Otros Postres | 147 |
 | arroces | Arroces y Habichuelas | 64 |
 | vegetales | Vegetales y Viandas | 97 |
@@ -640,7 +640,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   primero y la lista de la época) siguen la corrección del administrador.
 - **Fecha de ingreso:** `RECIPE_ADDED` en `js/recipe-dates.js`, GENERADO por `node tools/recipe-dates.js` desde el
   historial de git (fecha del commit que escribió la línea `id: "…"`; las que aún no están en un commit, la de hoy).
-  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17 y 184 del 18 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
+  Hoy: 161 del 28 de junio de 2026, 275 del 28 de septiembre, 144 del 9 de octubre, 313 del 10, 109 del 11, 112 del 17 y 202 del 18 (las 4 recetas que cambiaron de id en la v4.30 salen con la fecha del cambio).
   Se carga con `loadScript()` sólo al abrir el panel. **Después de añadir recetas, hay que volver a generarlo** (§11).
 - **Seguridad (`firestore.rules`, `match /recipeMeta/{id}`):** leer, cualquiera que entre; escribir y borrar, sólo
   administradores, con sólo esas 3 claves, `seasons` entre `todo`, `navidad`, `cuaresma`, `verano`, `gracias` y `lluvia`
@@ -747,7 +747,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   responsabilidad; cambios; ley de Puerto Rico; contacto). `CONSENT_ITEMS`: tres casillas obligatorias — `terms` (acepto
   los términos), `health` (los planes y la nutrición son orientación, no consejo médico) y `data` (18 años o permiso del
   tutor, y autorizo guardar mis datos, incluidos los de salud). **Conviene que lo revise un abogado en Puerto Rico.**
-- **`CONSENT_VERSION`** ("2026-10-18"): si el texto cambia de forma importante, se sube y todos aceptan otra vez al entrar.
+- **`CONSENT_VERSION`** (hoy "2026-10-18.3"): si el texto cambia de forma importante, se sube y todos aceptan otra vez al entrar.
 - **Antes de entrar:** la pantalla de entrada muestra el resumen, "Leer los términos completos" (caja con todo el texto)
   y las casillas; los botones de Gmail, Yahoo… y el enlace por correo están en `<fieldset id="auth-entry" disabled>`
   hasta marcar las tres. Lo aceptado se guarda en el navegador (`rcb.consent`: versión, casillas, hora e idioma).
@@ -763,6 +763,13 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - **`CONSENT_VERSION` "2026-10-18.2" (v4.30):** los términos dicen que la cuenta es opcional, que sin cuenta no se guarda
   nada en el servidor, cuánto tiempo se guardan los datos (mientras exista la cuenta) y que se puede borrar todo desde
   "Privacidad y mis datos". Todos aceptan otra vez al entrar.
+- **`CONSENT_VERSION` "2026-10-18.3" (v4.39):** en el resumen y en la sección 9 (Privacidad) se añade que el correo
+  también se usa para enviar notificaciones de la app, recetas nuevas y recetas de la temporada, por medio del mismo
+  proveedor de correos; cada correo dirá cómo dejar de recibirlos (o se pide a `CONSENT_CONTACT`) y dejar de recibirlos
+  no afecta la cuenta; los avisos indispensables (como la confirmación del consentimiento) se envían siempre. Como cambia
+  el uso de los datos, todos aceptan otra vez al entrar. **Pendiente:** la app todavía no envía esos correos; cuando se
+  haga, cada uno debe llevar el enlace o la instrucción para darse de baja (CAN-SPAM) y la app debe guardar quién se dio
+  de baja.
 - **Administración:** `#/admin` lee `consents` (`loadAdminConsents`) y muestra la columna **Consentimiento**: versión
   (verde si es la vigente), fecha y hora, y "correo enviado / sin enviar"; "Pendiente" si no aceptó. El CSV añade
   "Versión aceptada", "Fecha de aceptación" y "Correo de confirmación". Nadie puede borrar un consentimiento desde la app.
@@ -788,7 +795,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - **Por qué:** la app usa `#/receta/<id>`, y para Google todo lo que va después de `#` es la portada: ninguna receta salía
   en las búsquedas ("receta de pernil") y todos los enlaces compartidos se veían iguales (título, texto y bandera).
 - **`node tools/prerender.js`** (sin dependencias; carga los scripts en `vm` como el navegador) genera:
-  `receta/<id>.html` (1,298 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
+  `receta/<id>.html` (1,316 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
   `vercel.json`. Cada una es ligera y se lee sin JavaScript: título y descripción propios ("Coquito: receta puertorriqueña
   paso a paso para 12 porciones. Lleva leche de coco… Lista en 4 h 15 min."), `canonical`, Open Graph y Twitter con el
   nombre del plato, tiempo de cocina y total, porciones, calorías estimadas, alérgenos, ingredientes y pasos en español y
@@ -992,7 +999,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,298). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,316). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -1098,6 +1105,32 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-18 — v4.39.0 · Más ensaladas y emparedados; el correo también para notificaciones y recetas
+- *Pedido:* más recetas de ensaladas y emparedados. Y en privacidad: incluir que el correo electrónico también se usa para enviar notificaciones, recetas nuevas y recetas de la temporada.
+- Sexagésima tanda en `js/recipes-5.js` (versiones propias), 18 que no estaban (había 34 ensaladas y 25 emparedados):
+  - **Ensaladas (9):** de pollo con piña y pasas, de yuca con mojo, César con pollo a la plancha, de maíz con aguacate y
+    tomate, fría de arroz con vegetales y jamón, de pasta tricolor con queso del país, de jueyes con aguacate, de toronja
+    con aguacate y berro, y de tomate y cebolla con recao.
+  - **Emparedados (9):** jamón y queso prensado en pan sobao, pan con tortilla de papa, sándwich de pollo frito con
+    ensalada de repollo, de picadillo (sloppy joe boricua), de salchichón y queso de papa, de pavo con aguacate y queso
+    suizo, jibarito de pernil, de camarones al ajillo en pan de agua y wrap vegano de vegetales asados con hummus de recao.
+  - Menos jamón, salchichón, adobo, pepinillos o sal donde el sodio se pasaba. Los de jamón y de salchichón siguen
+    altos (≈1,100–1,450 mg) porque son embutidos: la app lo avisa.
+- **Privacidad** (`js/consent.js`): `CONSENT_VERSION` pasa a "2026-10-18.3". El resumen y la sección 9 (ES y EN) dicen
+  que el correo también se usa para enviar notificaciones de la app, recetas nuevas y recetas de la temporada, cómo dejar
+  de recibirlas y que los avisos indispensables se envían siempre. "Privacidad y mis datos" lo muestra solo (lee la
+  sección 9). Todos aceptan los términos otra vez al entrar (§7.14).
+- **Nutrición** (`nutrition.js`): "aderezo César", "panecillos de hamburguesa" y "salchichón" (USDA SR Legacy, a mano;
+  también en `tools/usda/map.js`).
+- **Familias** (`families.js`): en Ensaladas, "De papa, pasta y viandas" pasa a "De papa, pasta, arroz y viandas" (incluye
+  yuca, arroz y pasta) y "jueyes" va con mariscos; en Emparedados, jamón y queso, picadillo y salchichón van con carnes,
+  pavo con pollo y pavo, y "De pescado y atún" pasa a "De pescado y mariscos" (incluye camarones). Ninguna receta
+  anterior cambió.
+- **Iconos:** tortilla española para el pan con tortilla y jibarito para el de pernil; el resto 🥗 y 🥪.
+- Fechas regeneradas y `node tools/prerender.js`: 1,316 páginas y `sitemap.xml` con 1,318 direcciones. Total: **1,298 →
+  1,316 recetas**.
+- *Verificado:* `node tools/check-recipes.js` 0 errores y 0 avisos; nutrición 0 sin contar; navegador: las 18 en ES y EN
+  a 375 px.
 ### 2026-10-18 — v4.38.0 · Jugos y bebidas tropicales y recetas con apio del país
 - *Pedido:* más recetas de jugos y bebidas tropicales, y recetas con el apio.
 - Quincuagésima novena tanda en `js/recipes-5.js` (versiones propias), 19 que no estaban:

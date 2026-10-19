@@ -13610,5 +13610,840 @@ recipes.push(
         "For babies 6 months and older, when the pediatrician approves. Don't add salt or sugar. It can be frozen in portions in an ice cube tray."
       ]
     }
+  },
+  // ---------- Tanda 60: más ensaladas (9) y emparedados (9) ----------
+  {
+    id: "ensalada-pollo-pina",
+    category: "ensaladas",
+    name: { es: "Ensalada de Pollo con Piña y Pasas", en: "Chicken Salad with Pineapple and Raisins" },
+    active: 20, total: 80, wait: "frio",
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 tazas de pechuga de pollo cocida y desmenuzada",
+        "1 taza de piña en cubitos, escurrida",
+        "½ taza de apio de ensalada picadito",
+        "¼ taza de cebolla roja picadita",
+        "¼ taza de pasas",
+        "½ taza de mayonesa",
+        "¼ taza de yogur griego natural",
+        "1 cucharada de jugo de limón",
+        "½ cucharadita de sal",
+        "¼ cucharadita de pimienta",
+        "6 hojas de lechuga"
+      ],
+      en: [
+        "3 cups shredded cooked chicken breast",
+        "1 cup diced pineapple, drained",
+        "½ cup finely chopped celery",
+        "¼ cup finely chopped red onion",
+        "¼ cup raisins",
+        "½ cup mayonnaise",
+        "¼ cup plain Greek yogurt",
+        "1 tablespoon lime juice",
+        "½ teaspoon salt",
+        "¼ teaspoon pepper",
+        "6 lettuce leaves"
+      ]
+    },
+    steps: {
+      es: [
+        "Mezcle la mayonesa, el yogur, el limón, la sal y la pimienta.",
+        "Añada el pollo, la piña, el apio, la cebolla y las pasas, y mezcle bien.",
+        "Pruebe y ajuste la sal.",
+        "Refrigere al menos 1 hora para que los sabores se unan.",
+        "Sirva sobre las hojas de lechuga o en galletas de soda. Es la ensalada de pollo de los cumpleaños y las Navidades."
+      ],
+      en: [
+        "Mix the mayonnaise, yogurt, lime juice, salt and pepper.",
+        "Add the chicken, pineapple, celery, onion and raisins and mix well.",
+        "Taste and adjust the salt.",
+        "Refrigerate at least 1 hour so the flavors come together.",
+        "Serve on the lettuce leaves or on soda crackers. It's the chicken salad of birthdays and Christmas."
+      ]
+    }
+  },
+  {
+    id: "ensalada-yuca-mojo",
+    category: "ensaladas",
+    name: { es: "Ensalada de Yuca con Mojo y Cebolla", en: "Cassava Salad with Mojo and Onion" },
+    active: 35, total: 65, wait: "reposo",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2½ libras de yuca pelada en trozos",
+        "1 cucharadita de sal",
+        "⅓ taza de aceite de oliva",
+        "6 dientes de ajo majados",
+        "¼ taza de jugo de naranja agria o de limón",
+        "1 cebolla roja en ruedas finas",
+        "½ pimiento rojo en tiritas",
+        "¼ taza de cilantro picado"
+      ],
+      en: [
+        "2½ pounds cassava (yuca), peeled and cut into chunks",
+        "1 teaspoon salt",
+        "⅓ cup olive oil",
+        "6 garlic cloves, mashed",
+        "¼ cup sour orange or lime juice",
+        "1 red onion, thinly sliced",
+        "½ red bell pepper, in thin strips",
+        "¼ cup chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la yuca en agua con la mitad de la sal 20 a 25 minutos, hasta que esté blanda pero entera. Escúrrala, quítele la vena del centro y córtela en cubos.",
+        "Caliente el aceite con el ajo a fuego bajo 2 minutos, sin que dore. Apague y añada la naranja agria y el resto de la sal.",
+        "Vierta el mojo caliente sobre la yuca y mezcle con cuidado.",
+        "Añada la cebolla, el pimiento y el cilantro, y deje reposar 30 minutos para que la yuca chupe el mojo.",
+        "Sirva tibia o a temperatura ambiente. Acompaña bien el lechón y el pollo asado."
+      ],
+      en: [
+        "Boil the cassava in water with half the salt 20 to 25 minutes, until tender but whole. Drain, remove the center fiber and cut into cubes.",
+        "Warm the oil with the garlic over low heat 2 minutes, without browning. Turn off and add the sour orange juice and the rest of the salt.",
+        "Pour the hot mojo over the cassava and toss gently.",
+        "Add the onion, bell pepper and cilantro and let rest 30 minutes so the cassava soaks up the mojo.",
+        "Serve warm or at room temperature. It goes well with roast pork and roast chicken."
+      ]
+    }
+  },
+  {
+    id: "ensalada-cesar-pollo",
+    category: "ensaladas",
+    name: { es: "Ensalada César con Pollo a la Plancha", en: "Grilled Chicken Caesar Salad" },
+    active: 25, total: 25,
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 pechugas de pollo deshuesadas",
+        "½ cucharadita de adobo",
+        "1 cucharada de aceite de oliva",
+        "2 lechugas romanas picadas",
+        "1 taza de croutons (cubitos de pan tostado)",
+        "⅓ taza de aderezo César",
+        "¼ taza de queso parmesano rallado",
+        "1 limón en cuñas"
+      ],
+      en: [
+        "2 boneless chicken breasts",
+        "½ teaspoon adobo",
+        "1 tablespoon olive oil",
+        "2 heads romaine lettuce, chopped",
+        "1 cup croutons",
+        "⅓ cup Caesar dressing",
+        "¼ cup grated Parmesan cheese",
+        "1 lime, in wedges"
+      ]
+    },
+    steps: {
+      es: [
+        "Abra las pechugas en mariposa para que queden finas y sazónelas con el adobo.",
+        "Cocínelas en una plancha caliente con el aceite 4 a 5 minutos por lado, hasta que lleguen a 165 °F. Deje reposar 5 minutos y córtelas en tiras.",
+        "En un tazón grande, mezcle la lechuga con el aderezo.",
+        "Reparta en platos y ponga el pollo, los croutons y el parmesano encima.",
+        "Sirva con cuñas de limón. Con el aderezo César con queso del país de esta app queda más boricua."
+      ],
+      en: [
+        "Butterfly the chicken breasts so they're thin and season with the adobo.",
+        "Cook them on a hot griddle with the oil 4 to 5 minutes per side, until they reach 165 °F. Let rest 5 minutes and slice into strips.",
+        "In a large bowl, toss the lettuce with the dressing.",
+        "Divide among plates and top with the chicken, croutons and Parmesan.",
+        "Serve with lime wedges. With this app's Caesar dressing with queso del país, it's more Puerto Rican."
+      ]
+    }
+  },
+  {
+    id: "ensalada-maiz-aguacate",
+    category: "ensaladas",
+    name: { es: "Ensalada de Maíz, Aguacate y Tomate", en: "Corn, Avocado and Tomato Salad" },
+    active: 15, total: 15,
+    servings: 6,
+    ingredients: {
+      es: [
+        "3 tazas de maíz en grano (de 4 mazorcas asadas o congelado)",
+        "1 aguacate del país en cubos",
+        "1 taza de tomates cereza partidos a la mitad",
+        "¼ de cebolla roja picadita",
+        "2 ajíes dulces picaditos",
+        "¼ taza de cilantro picado",
+        "3 cucharadas de jugo de limón",
+        "2 cucharadas de aceite de oliva",
+        "½ cucharadita de sal"
+      ],
+      en: [
+        "3 cups corn kernels (from 4 grilled ears or frozen)",
+        "1 Caribbean avocado, cubed",
+        "1 cup cherry tomatoes, halved",
+        "¼ red onion, finely chopped",
+        "2 ají dulce (sweet chili peppers), finely chopped",
+        "¼ cup chopped cilantro",
+        "3 tablespoons lime juice",
+        "2 tablespoons olive oil",
+        "½ teaspoon salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Si usa maíz congelado, dórelo en un sartén caliente sin aceite 5 minutos para que agarre sabor a asado. Deje enfriar.",
+        "Bata el limón, el aceite y la sal.",
+        "Mezcle el maíz, los tomates, la cebolla, los ajíes y el cilantro con el aderezo.",
+        "Añada el aguacate al final y mezcle con cuidado para que no se desbarate.",
+        "Sirva enseguida. Es vegana y va bien con todo lo de la parrilla."
+      ],
+      en: [
+        "If using frozen corn, toast it in a hot dry skillet 5 minutes for a grilled flavor. Let cool.",
+        "Whisk the lime juice, oil and salt.",
+        "Toss the corn, tomatoes, onion, peppers and cilantro with the dressing.",
+        "Add the avocado last and fold gently so it doesn't fall apart.",
+        "Serve right away. It's vegan and goes with anything off the grill."
+      ]
+    }
+  },
+  {
+    id: "ensalada-arroz-fria",
+    category: "ensaladas",
+    name: { es: "Ensalada Fría de Arroz con Vegetales y Jamón", en: "Cold Rice Salad with Vegetables and Ham" },
+    active: 20, total: 80, wait: "frio",
+    servings: 8,
+    ingredients: {
+      es: [
+        "4 tazas de arroz blanco cocido y frío",
+        "1 taza de guisantes (petit pois) cocidos",
+        "1 taza de zanahoria en cubitos, cocida",
+        "½ taza de pimiento rojo picadito",
+        "4 onzas de jamón de cocinar en cubitos",
+        "¼ taza de aceitunas rellenas picadas",
+        "3 cucharadas de aceite de oliva",
+        "2 cucharadas de vinagre",
+        "1 cucharadita de mostaza",
+        "¼ cucharadita de sal",
+        "2 cucharadas de perejil picado"
+      ],
+      en: [
+        "4 cups cooked and cooled white rice",
+        "1 cup cooked green peas",
+        "1 cup diced cooked carrot",
+        "½ cup finely chopped red bell pepper",
+        "4 ounces cooking ham, diced",
+        "¼ cup chopped stuffed olives",
+        "3 tablespoons olive oil",
+        "2 tablespoons vinegar",
+        "1 teaspoon mustard",
+        "¼ teaspoon salt",
+        "2 tablespoons chopped parsley"
+      ]
+    },
+    steps: {
+      es: [
+        "Bata el aceite, el vinagre, la mostaza y la sal.",
+        "En un tazón grande, suelte el arroz frío con un tenedor.",
+        "Añada los guisantes, la zanahoria, el pimiento, el jamón y las aceitunas.",
+        "Vierta el aderezo y mezcle bien. Refrigere 1 hora.",
+        "Espolvoree el perejil y sirva fría. Es buena para aprovechar el arroz del día anterior y para llevar a la playa."
+      ],
+      en: [
+        "Whisk the oil, vinegar, mustard and salt.",
+        "In a large bowl, fluff the cold rice with a fork.",
+        "Add the peas, carrot, bell pepper, ham and olives.",
+        "Pour in the dressing and mix well. Refrigerate 1 hour.",
+        "Sprinkle with the parsley and serve cold. It's a good way to use yesterday's rice and to take to the beach."
+      ]
+    }
+  },
+  {
+    id: "ensalada-pasta-queso-pais",
+    category: "ensaladas",
+    name: { es: "Ensalada de Pasta Tricolor con Queso del País", en: "Tricolor Pasta Salad with Puerto Rican White Cheese" },
+    active: 25, total: 85, wait: "frio",
+    servings: 8,
+    ingredients: {
+      es: [
+        "12 onzas de pasta tricolor de espirales (rotini)",
+        "1 taza de tomates cereza partidos a la mitad",
+        "1 pepino en cubitos",
+        "½ pimiento verde picadito",
+        "¼ taza de cebolla roja picadita",
+        "6 onzas de queso blanco del país en cubitos",
+        "¼ taza de aceitunas negras en ruedas",
+        "⅓ taza de vinagreta criolla de ajo y orégano",
+        "2 cucharadas de cilantro picado"
+      ],
+      en: [
+        "12 ounces tricolor spiral pasta (rotini)",
+        "1 cup cherry tomatoes, halved",
+        "1 cucumber, diced",
+        "½ green bell pepper, finely chopped",
+        "¼ cup finely chopped red onion",
+        "6 ounces Puerto Rican white cheese (queso blanco), cubed",
+        "¼ cup sliced black olives",
+        "⅓ cup creole garlic-oregano vinaigrette",
+        "2 tablespoons chopped cilantro"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva la pasta en agua con sal hasta que esté al dente. Escúrrala y enjuáguela con agua fría.",
+        "En un tazón grande, mezcle la pasta con los tomates, el pepino, el pimiento, la cebolla y las aceitunas.",
+        "Añada la vinagreta y mezcle bien.",
+        "Incorpore el queso con cuidado y refrigere 1 hora.",
+        "Espolvoree el cilantro y sirva fría. Es vegetariana y aguanta bien en una nevera portátil."
+      ],
+      en: [
+        "Boil the pasta in salted water until al dente. Drain and rinse with cold water.",
+        "In a large bowl, toss the pasta with the tomatoes, cucumber, bell pepper, onion and olives.",
+        "Add the vinaigrette and mix well.",
+        "Fold in the cheese gently and refrigerate 1 hour.",
+        "Sprinkle with the cilantro and serve cold. It's vegetarian and holds up well in a cooler."
+      ]
+    }
+  },
+  {
+    id: "ensalada-jueyes",
+    category: "ensaladas",
+    name: { es: "Ensalada de Jueyes con Aguacate", en: "Land Crab Salad with Avocado" },
+    active: 20, total: 50, wait: "frio",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 libra de carne de juey limpia",
+        "¼ taza de cebolla roja picadita",
+        "2 ajíes dulces picaditos",
+        "¼ taza de pimiento rojo picadito",
+        "2 cucharadas de cilantro picado",
+        "3 cucharadas de jugo de limón",
+        "2 cucharadas de aceite de oliva",
+        "¼ cucharadita de sal",
+        "1 aguacate del país en cubos"
+      ],
+      en: [
+        "1 pound cleaned land crab meat (or lump crab meat)",
+        "¼ cup finely chopped red onion",
+        "2 ají dulce (sweet chili peppers), finely chopped",
+        "¼ cup finely chopped red bell pepper",
+        "2 tablespoons chopped cilantro",
+        "3 tablespoons lime juice",
+        "2 tablespoons olive oil",
+        "¼ teaspoon salt",
+        "1 Caribbean avocado, cubed"
+      ]
+    },
+    steps: {
+      es: [
+        "Revise la carne de juey con los dedos y saque cualquier pedacito de carapacho.",
+        "Bata el limón, el aceite y la sal.",
+        "Mezcle el juey con la cebolla, los ajíes, el pimiento, el cilantro y el aderezo, sin desbaratar mucho la carne.",
+        "Refrigere 30 minutos.",
+        "Justo antes de servir, añada el aguacate. Sirva con tostones o galletas de soda, como en los kioscos de Piñones."
+      ],
+      en: [
+        "Check the crab meat with your fingers and remove any bits of shell.",
+        "Whisk the lime juice, oil and salt.",
+        "Toss the crab with the onion, peppers, bell pepper, cilantro and dressing, without breaking up the meat much.",
+        "Refrigerate 30 minutes.",
+        "Right before serving, add the avocado. Serve with tostones or soda crackers, like at the Piñones kiosks."
+      ]
+    }
+  },
+  {
+    id: "ensalada-toronja-aguacate",
+    category: "ensaladas",
+    name: { es: "Ensalada de Toronja, Aguacate y Berro", en: "Grapefruit, Avocado and Watercress Salad" },
+    active: 15, total: 15,
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 toronjas",
+        "1 aguacate del país en lascas",
+        "2 tazas de berro",
+        "¼ de cebolla roja en ruedas finas",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharadita de miel",
+        "¼ cucharadita de sal",
+        "2 cucharadas de nueces tostadas picadas"
+      ],
+      en: [
+        "2 grapefruits",
+        "1 Caribbean avocado, sliced",
+        "2 cups watercress",
+        "¼ red onion, thinly sliced",
+        "2 tablespoons olive oil",
+        "1 teaspoon honey",
+        "¼ teaspoon salt",
+        "2 tablespoons chopped toasted walnuts"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele las toronjas a lo vivo con un cuchillo (quitando también lo blanco) y saque los gajos entre las membranas, sobre un tazón para recoger el jugo.",
+        "Bata 2 cucharadas del jugo de toronja con el aceite, la miel y la sal.",
+        "Acomode el berro en una fuente y ponga encima los gajos, el aguacate y la cebolla.",
+        "Rocíe el aderezo y espolvoree las nueces.",
+        "Sirva enseguida. Ojo: la toronja no se debe combinar con algunos medicamentos; consulte a su médico si toma alguno."
+      ],
+      en: [
+        "Peel the grapefruits with a knife (removing the white pith too) and cut out the segments between the membranes, over a bowl to catch the juice.",
+        "Whisk 2 tablespoons of the grapefruit juice with the oil, honey and salt.",
+        "Arrange the watercress on a platter and top with the segments, avocado and onion.",
+        "Drizzle with the dressing and sprinkle with the walnuts.",
+        "Serve right away. Note: grapefruit interacts with some medications; ask your doctor if you take any."
+      ]
+    }
+  },
+  {
+    id: "ensalada-tomate-cebolla-recao",
+    category: "ensaladas",
+    name: { es: "Ensalada de Tomate y Cebolla con Recao", en: "Tomato and Onion Salad with Culantro" },
+    active: 10, total: 25, wait: "reposo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 tomates maduros en ruedas",
+        "½ cebolla en ruedas finas",
+        "4 hojas de recao picadas finas",
+        "2 cucharadas de aceite de oliva",
+        "1 cucharada de vinagre",
+        "¼ cucharadita de sal",
+        "1 pizca de pimienta"
+      ],
+      en: [
+        "4 ripe tomatoes, sliced",
+        "½ onion, thinly sliced",
+        "4 culantro (recao) leaves, finely chopped",
+        "2 tablespoons olive oil",
+        "1 tablespoon vinegar",
+        "¼ teaspoon salt",
+        "1 pinch pepper"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga la cebolla en agua fría 10 minutos para quitarle lo fuerte. Escúrrala.",
+        "Acomode las ruedas de tomate en un plato.",
+        "Ponga la cebolla y el recao encima.",
+        "Bata el aceite, el vinagre, la sal y la pimienta, y rocíelo por encima. Deje reposar 5 minutos.",
+        "Sirva con arroz y habichuelas o con carne frita. Es la ensalada más sencilla de la cocina boricua."
+      ],
+      en: [
+        "Soak the onion in cold water 10 minutes to mellow it. Drain.",
+        "Arrange the tomato slices on a plate.",
+        "Top with the onion and culantro.",
+        "Whisk the oil, vinegar, salt and pepper and drizzle over the top. Let rest 5 minutes.",
+        "Serve with rice and beans or carne frita. It's the simplest salad in Puerto Rican cooking."
+      ]
+    }
+  },
+  {
+    id: "sandwich-jamon-queso-prensado",
+    category: "emparedados",
+    name: { es: "Sándwich de Jamón y Queso Prensado en Pan Sobao", en: "Pressed Ham and Cheese Sandwich on Pan Sobao" },
+    active: 15, total: 15,
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 pan sobao de 8 pulgadas",
+        "1 cucharada de mantequilla blanda",
+        "1 cucharada de mostaza",
+        "3 onzas de jamón de sándwich en lascas finas",
+        "2 lascas de queso suizo",
+        "2 ruedas de pepinillo"
+      ],
+      en: [
+        "1 Puerto Rican pan sobao (8 inches)",
+        "1 tablespoon softened butter",
+        "1 tablespoon mustard",
+        "3 ounces thinly sliced deli ham",
+        "2 slices Swiss cheese",
+        "2 pickle slices"
+      ]
+    },
+    steps: {
+      es: [
+        "Abra el pan a lo largo y unte la mostaza por dentro.",
+        "Ponga el jamón, el queso y los pepinillos, y cierre.",
+        "Unte la mantequilla por fuera del pan.",
+        "Prénselo en una sandwichera o en un sartén caliente con un peso encima (otro sartén), 3 a 4 minutos por lado, hasta que el pan esté crujiente y el queso se derrita.",
+        "Córtelo en diagonal y sirva caliente. Es el sándwich de la panadería del barrio."
+      ],
+      en: [
+        "Split the bread lengthwise and spread the mustard inside.",
+        "Add the ham, cheese and pickles and close it.",
+        "Spread the butter on the outside of the bread.",
+        "Press it in a sandwich press or in a hot skillet with a weight on top (another skillet), 3 to 4 minutes per side, until the bread is crisp and the cheese melts.",
+        "Cut diagonally and serve hot. It's the neighborhood bakery sandwich."
+      ]
+    }
+  },
+  {
+    id: "sandwich-tortilla",
+    category: "emparedados",
+    name: { es: "Pan con Tortilla de Papa", en: "Spanish Potato Omelet Sandwich" },
+    active: 30, total: 30,
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 papas peladas en lascas finas",
+        "½ cebolla en tiritas",
+        "¼ taza de aceite de oliva",
+        "5 huevos",
+        "½ cucharadita de sal",
+        "4 pedazos de pan de agua de 6 pulgadas",
+        "2 cucharadas de mayo-ajo"
+      ],
+      en: [
+        "2 potatoes, peeled and thinly sliced",
+        "½ onion, in thin strips",
+        "¼ cup olive oil",
+        "5 eggs",
+        "½ teaspoon salt",
+        "4 pieces Puerto Rican water bread, 6 inches each",
+        "2 tablespoons garlic mayo"
+      ]
+    },
+    steps: {
+      es: [
+        "Cocine las papas y la cebolla en el aceite a fuego medio-bajo, tapado, 12 minutos, hasta que estén blandas. Escurra el aceite y guarde 1 cucharada.",
+        "Bata los huevos con la sal y mézclelos con las papas.",
+        "En un sartén de 9 pulgadas con el aceite guardado, cocine la tortilla a fuego bajo 6 minutos. Voltéela con la ayuda de un plato y cocine 3 minutos más.",
+        "Corte la tortilla en 4 pedazos.",
+        "Abra los panes, unte el mayo-ajo y rellene con la tortilla. Es el desayuno de las cafeterías de pueblo."
+      ],
+      en: [
+        "Cook the potatoes and onion in the oil over medium-low heat, covered, 12 minutes, until tender. Drain the oil and save 1 tablespoon.",
+        "Beat the eggs with the salt and mix with the potatoes.",
+        "In a 9-inch skillet with the saved oil, cook the omelet over low heat 6 minutes. Flip it using a plate and cook 3 more minutes.",
+        "Cut the omelet into 4 pieces.",
+        "Split the bread, spread with the garlic mayo and fill with the omelet. It's the small-town cafeteria breakfast."
+      ]
+    }
+  },
+  {
+    id: "sandwich-pollo-frito",
+    category: "emparedados",
+    name: { es: "Sándwich de Pollo Frito con Ensalada de Repollo", en: "Fried Chicken Sandwich with Coleslaw" },
+    active: 35, total: 155, wait: "adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "4 muslos de pollo deshuesados y sin piel",
+        "½ cucharadita de adobo",
+        "2 dientes de ajo majados",
+        "2 cucharadas de jugo de limón",
+        "1 taza de harina de trigo",
+        "½ cucharadita de pimentón",
+        "Aceite para freír",
+        "4 panecillos de hamburguesa",
+        "1 taza de repollo rallado fino",
+        "3 cucharadas de mayonesa",
+        "1 cucharadita de vinagre",
+        "4 ruedas de pepinillo"
+      ],
+      en: [
+        "4 boneless, skinless chicken thighs",
+        "½ teaspoon adobo",
+        "2 garlic cloves, mashed",
+        "2 tablespoons lime juice",
+        "1 cup all-purpose flour",
+        "½ teaspoon paprika",
+        "Oil for frying",
+        "4 hamburger buns",
+        "1 cup finely shredded cabbage",
+        "3 tablespoons mayonnaise",
+        "1 teaspoon vinegar",
+        "4 pickle slices"
+      ]
+    },
+    steps: {
+      es: [
+        "Adobe los muslos con el adobo, el ajo y el limón, y déjelos 2 horas en la nevera.",
+        "Mezcle el repollo con la mayonesa y el vinagre, y guárdelo en la nevera.",
+        "Mezcle la harina con el pimentón y pase los muslos por la harina, apretando.",
+        "Fríalos a 350 °F 6 a 7 minutos, volteándolos, hasta que estén dorados y lleguen a 175 °F por dentro. Escurra sobre una rejilla.",
+        "Tueste los panecillos y arme los sándwiches con el pollo, los pepinillos y la ensalada de repollo. Sirva enseguida."
+      ],
+      en: [
+        "Season the thighs with the adobo, garlic and lime juice and refrigerate 2 hours.",
+        "Mix the cabbage with the mayonnaise and vinegar and refrigerate.",
+        "Mix the flour with the paprika and dredge the thighs in the flour, pressing.",
+        "Fry at 350 °F for 6 to 7 minutes, turning, until golden and 175 °F inside. Drain on a rack.",
+        "Toast the buns and build the sandwiches with the chicken, pickles and coleslaw. Serve right away."
+      ]
+    }
+  },
+  {
+    id: "sandwich-picadillo",
+    category: "emparedados",
+    name: { es: "Sándwich de Picadillo (Sloppy Joe Boricua)", en: "Picadillo Sandwich (Puerto Rican Sloppy Joe)" },
+    active: 25, total: 25,
+    servings: 6,
+    ingredients: {
+      es: [
+        "1½ libras de carne molida de res",
+        "½ taza de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "2 cucharadas de ketchup",
+        "1 cucharada de azúcar morena",
+        "¼ taza de aceitunas rellenas picadas",
+        "¼ cucharadita de sal",
+        "6 panecillos de hamburguesa",
+        "6 lascas de queso americano"
+      ],
+      en: [
+        "1½ pounds ground beef",
+        "½ cup sofrito",
+        "1 can (8 oz) tomato sauce",
+        "2 tablespoons ketchup",
+        "1 tablespoon brown sugar",
+        "¼ cup chopped stuffed olives",
+        "¼ teaspoon salt",
+        "6 hamburger buns",
+        "6 slices American cheese"
+      ]
+    },
+    steps: {
+      es: [
+        "Dore la carne en un sartén, desmenuzándola. Escurra la grasa.",
+        "Añada el sofrito y cocine 3 minutos.",
+        "Agregue la salsa de tomate, el ketchup, el azúcar, las aceitunas y la sal, y cocine 10 minutos a fuego bajo hasta que espese.",
+        "Tueste los panecillos y ponga una lasca de queso en la tapa de abajo.",
+        "Rellene con el picadillo caliente y tape. Se derrama: sírvalo con servilletas."
+      ],
+      en: [
+        "Brown the beef in a skillet, breaking it up. Drain the fat.",
+        "Add the sofrito and cook 3 minutes.",
+        "Add the tomato sauce, ketchup, sugar, olives and salt and cook 10 minutes over low heat until thick.",
+        "Toast the buns and put a slice of cheese on each bottom half.",
+        "Fill with the hot picadillo and close. It's messy: serve with napkins."
+      ]
+    }
+  },
+  {
+    id: "sandwich-salchichon-queso",
+    category: "emparedados",
+    name: { es: "Sándwich de Salchichón y Queso de Papa", en: "Salchichón and Gouda Sandwich" },
+    active: 10, total: 10,
+    servings: 3,
+    ingredients: {
+      es: [
+        "1 pan de agua de 12 pulgadas",
+        "2 cucharadas de mayonesa",
+        "2 onzas de salchichón en lascas finas",
+        "2 onzas de queso de papa (gouda) en lascas",
+        "1 tomate en ruedas",
+        "2 hojas de lechuga"
+      ],
+      en: [
+        "1 Puerto Rican water bread (12 inches)",
+        "2 tablespoons mayonnaise",
+        "2 ounces salchichón (dry sausage), thinly sliced",
+        "2 ounces gouda (queso de papa), sliced",
+        "1 tomato, sliced",
+        "2 lettuce leaves"
+      ]
+    },
+    steps: {
+      es: [
+        "Corte el pan en 3 pedazos y ábralos a lo largo.",
+        "Unte la mayonesa por dentro.",
+        "Ponga el salchichón, el queso, el tomate y la lechuga.",
+        "Cierre y, si quiere, caliéntelo en la plancha 2 minutos por lado.",
+        "Sirva enseguida. Es el sándwich de la merienda de la escuela y de los viajes a la isla."
+      ],
+      en: [
+        "Cut the bread into 3 pieces and split them lengthwise.",
+        "Spread the mayonnaise inside.",
+        "Add the salchichón, cheese, tomato and lettuce.",
+        "Close it and, if you like, warm it on the griddle 2 minutes per side.",
+        "Serve right away. It's the school-lunch and road-trip sandwich."
+      ]
+    }
+  },
+  {
+    id: "sandwich-pavo-aguacate",
+    category: "emparedados",
+    name: { es: "Sándwich de Pavo, Aguacate y Queso Suizo", en: "Turkey, Avocado and Swiss Sandwich" },
+    active: 10, total: 10,
+    servings: 2,
+    ingredients: {
+      es: [
+        "4 rebanadas de pan integral",
+        "1 aguacate del país majado",
+        "1 cucharada de jugo de limón",
+        "4 onzas de pechuga de pavo asada en lascas",
+        "2 lascas de queso suizo",
+        "1 tomate en ruedas",
+        "½ taza de berro o lechuga",
+        "1 pizca de sal"
+      ],
+      en: [
+        "4 slices whole wheat bread",
+        "1 Caribbean avocado, mashed",
+        "1 tablespoon lime juice",
+        "4 ounces sliced roast turkey breast",
+        "2 slices Swiss cheese",
+        "1 tomato, sliced",
+        "½ cup watercress or lettuce",
+        "1 pinch salt"
+      ]
+    },
+    steps: {
+      es: [
+        "Tueste el pan.",
+        "Maje el aguacate con el limón y la sal.",
+        "Unte el aguacate en 2 rebanadas.",
+        "Ponga el pavo, el queso, el tomate y el berro, y tape con las otras rebanadas.",
+        "Corte en triángulos y sirva. Con pavo asado en casa tiene mucho menos sodio que con el de paquete."
+      ],
+      en: [
+        "Toast the bread.",
+        "Mash the avocado with the lime juice and salt.",
+        "Spread the avocado on 2 slices.",
+        "Add the turkey, cheese, tomato and watercress and top with the other slices.",
+        "Cut into triangles and serve. With home-roasted turkey it has much less sodium than with packaged deli turkey."
+      ]
+    }
+  },
+  {
+    id: "jibarito-pernil",
+    category: "emparedados",
+    name: { es: "Jibarito de Pernil", en: "Roast Pork Jibarito (Plantain Sandwich)" },
+    active: 30, total: 30,
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 plátano verde grande",
+        "Aceite para freír",
+        "1½ tazas de pernil asado desmenuzado",
+        "2 cucharadas de mojo de ajo",
+        "2 lascas de queso suizo",
+        "2 hojas de lechuga",
+        "1 tomate en ruedas",
+        "2 cucharadas de mayo-ajo"
+      ],
+      en: [
+        "1 large green plantain",
+        "Oil for frying",
+        "1½ cups shredded roast pork (pernil)",
+        "2 tablespoons garlic mojo",
+        "2 slices Swiss cheese",
+        "2 lettuce leaves",
+        "1 tomato, sliced",
+        "2 tablespoons garlic mayo"
+      ]
+    },
+    steps: {
+      es: [
+        "Pele el plátano y córtelo a lo largo en 2 tajadas. Fríalas a 325 °F 4 minutos hasta que estén blandas.",
+        "Aplástelas entre dos tablas o con un sartén hasta que queden de ¼ de pulgada, y fríalas otra vez a 375 °F hasta que estén crujientes.",
+        "Caliente el pernil en un sartén con el mojo y ponga el queso encima para que se derrita.",
+        "Unte el mayo-ajo en las tajadas de plátano.",
+        "Arme el jibarito con el pernil, la lechuga y el tomate entre las dos tajadas. Sirva enseguida, cuando el plátano está crujiente."
+      ],
+      en: [
+        "Peel the plantain and cut it lengthwise into 2 slabs. Fry at 325 °F for 4 minutes until tender.",
+        "Flatten them between two boards or with a skillet to ¼ inch and fry again at 375 °F until crisp.",
+        "Heat the pork in a skillet with the mojo and lay the cheese on top to melt.",
+        "Spread the garlic mayo on the plantain slabs.",
+        "Build the jibarito with the pork, lettuce and tomato between the two slabs. Serve right away, while the plantain is crisp."
+      ]
+    }
+  },
+  {
+    id: "sandwich-camarones-ajillo",
+    category: "emparedados",
+    name: { es: "Sándwich de Camarones al Ajillo en Pan de Agua", en: "Garlic Shrimp Sandwich on Water Bread" },
+    active: 20, total: 20,
+    servings: 2,
+    ingredients: {
+      es: [
+        "½ libra de camarones pelados",
+        "2 cucharadas de aceite de oliva",
+        "4 dientes de ajo picados",
+        "1 cucharada de mantequilla",
+        "1 cucharada de jugo de limón",
+        "1 cucharada de perejil picado",
+        "1 pizca de pimienta",
+        "1 pan de agua de 12 pulgadas",
+        "2 cucharadas de mayo-ajo",
+        "1 taza de lechuga picada"
+      ],
+      en: [
+        "½ pound shrimp, peeled",
+        "2 tablespoons olive oil",
+        "4 garlic cloves, chopped",
+        "1 tablespoon butter",
+        "1 tablespoon lime juice",
+        "1 tablespoon chopped parsley",
+        "1 pinch pepper",
+        "1 Puerto Rican water bread (12 inches)",
+        "2 tablespoons garlic mayo",
+        "1 cup chopped lettuce"
+      ]
+    },
+    steps: {
+      es: [
+        "En un sartén, dore el ajo en el aceite a fuego bajo 1 minuto.",
+        "Añada los camarones y la pimienta y cocine 2 minutos por lado, hasta que estén rosados.",
+        "Apague y añada la mantequilla, el limón y el perejil.",
+        "Corte el pan en 2 pedazos, ábralos, tuéstelos un poco y unte el mayo-ajo.",
+        "Rellene con la lechuga y los camarones con su ajillo. Sirva enseguida."
+      ],
+      en: [
+        "In a skillet, cook the garlic in the oil over low heat 1 minute.",
+        "Add the shrimp and pepper and cook 2 minutes per side, until pink.",
+        "Turn off the heat and add the butter, lime juice and parsley.",
+        "Cut the bread into 2 pieces, split them, toast lightly and spread with the garlic mayo.",
+        "Fill with the lettuce and the shrimp with their garlic sauce. Serve right away."
+      ]
+    }
+  },
+  {
+    id: "wrap-vegetales-hummus",
+    category: "emparedados",
+    name: { es: "Wrap de Vegetales Asados con Hummus de Recao (Vegano)", en: "Roasted Vegetable Wrap with Culantro Hummus (Vegan)" },
+    active: 30, total: 30,
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 calabacín en tiras",
+        "1 berenjena pequeña en tiras",
+        "1 pimiento rojo en tiras",
+        "½ cebolla roja en tiras",
+        "2 cucharadas de aceite de oliva",
+        "¼ cucharadita de sal",
+        "1 cucharadita de orégano",
+        "4 tortillas de harina grandes",
+        "¾ taza de hummus de garbanzos con recao",
+        "2 tazas de espinaca fresca"
+      ],
+      en: [
+        "1 zucchini, cut in strips",
+        "1 small eggplant, cut in strips",
+        "1 red bell pepper, cut in strips",
+        "½ red onion, cut in strips",
+        "2 tablespoons olive oil",
+        "¼ teaspoon salt",
+        "1 teaspoon oregano",
+        "4 large flour tortillas",
+        "¾ cup culantro chickpea hummus",
+        "2 cups fresh spinach"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 425 °F. Mezcle los vegetales con el aceite, la sal y el orégano, y extiéndalos en una bandeja.",
+        "Hornee 18 a 20 minutos, hasta que estén blandos y con orillas doradas.",
+        "Caliente las tortillas en un sartén seco 20 segundos por lado.",
+        "Unte el hummus en cada tortilla, ponga la espinaca y los vegetales asados.",
+        "Enrolle doblando los lados hacia adentro y corte a la mitad. Es vegano y se puede llevar al trabajo."
+      ],
+      en: [
+        "Heat the oven to 425 °F. Toss the vegetables with the oil, salt and oregano and spread them on a tray.",
+        "Roast 18 to 20 minutes, until tender with golden edges.",
+        "Warm the tortillas in a dry skillet 20 seconds per side.",
+        "Spread the hummus on each tortilla and add the spinach and roasted vegetables.",
+        "Roll up, folding in the sides, and cut in half. It's vegan and easy to take to work."
+      ]
+    }
   }
 );

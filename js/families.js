@@ -34,8 +34,8 @@ const RECIPE_FAMILIES = {
   ensaladas: [
     ["verdes", { es: "Verdes y de vegetales", en: "Green and vegetable salads" }, null],
     ["granos", { es: "De granos", en: "Bean and grain salads" }, /frijoles|gandules|garbanzos|habichuelas|lentejas/],
-    ["papa", { es: "De papa, pasta y viandas", en: "Potato, pasta and root salads" }, /papa|coditos|pana/],
-    ["mariscos", { es: "De pescado y mariscos", en: "Fish and seafood salads" }, /camarones|bacalao|atun|serenata|pulpo|mariscos|carrucho|ceviche/]
+    ["papa", { es: "De papa, pasta, arroz y viandas", en: "Potato, pasta, rice and root salads" }, /papa|coditos|pana|yuca|arroz|pasta/],
+    ["mariscos", { es: "De pescado y mariscos", en: "Fish and seafood salads" }, /camarones|bacalao|atun|serenata|pulpo|mariscos|carrucho|ceviche|jueyes/]
   ],
   sopas: [
     ["asopaos", { es: "Asopaos", en: "Asopaos" }, /^asopao/],
@@ -121,9 +121,9 @@ const RECIPE_FAMILIES = {
   ],
   emparedados: [
     ["clasicos", { es: "Clásicos boricuas", en: "Puerto Rican classics" }, /cubano|medianoche|tripleta|jibarito(?! de pollo)|mezcla|club|desayuno/],
-    ["carnes", { es: "De carnes", en: "Meat sandwiches" }, /bistec|churrasco|pernil|lechon|choripan|hamburguesas boricuas/],
-    ["aves", { es: "De pollo y pavo", en: "Chicken and turkey sandwiches" }, /pollo|pechuga|pavochon/],
-    ["mar", { es: "De pescado y atún", en: "Fish and tuna sandwiches" }, /pescado|atun/],
+    ["carnes", { es: "De carnes", en: "Meat sandwiches" }, /bistec|churrasco|pernil|lechon|choripan|hamburguesas boricuas|jamon y queso|picadillo|salchichon/],
+    ["aves", { es: "De pollo y pavo", en: "Chicken and turkey sandwiches" }, /pollo|pechuga|pavochon|pavo/],
+    ["mar", { es: "De pescado y mariscos", en: "Fish and seafood sandwiches" }, /pescado|atun|camarones/],
     ["otros", { es: "Vegetarianos y otros", en: "Vegetarian and other" }, null]
   ],
   postres: [
