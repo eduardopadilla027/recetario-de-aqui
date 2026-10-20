@@ -917,15 +917,15 @@
       </a>
 
       <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav" data-i18n-label="menu">
-        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg><span class="menu-text" data-i18n="menuText" aria-hidden="true">Menú</span>
       </button>
 
       <nav class="primary-nav" id="primary-nav" data-i18n-label="mainNav">
-        <a href="#categorias" class="nav-link" data-i18n="navCategories">Categorías</a>
-        <a href="#/planes" class="nav-link" data-i18n="navPlans">Planes</a>
-        <a href="#/mi-recetario" class="nav-link" data-i18n="navMine">Mi recetario</a>
+        <a href="#categorias" class="nav-link"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><span data-i18n="navCategories">Categorías</span></a>
+        <a href="#/planes" class="nav-link"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span data-i18n="navPlans">Planes</span></a>
+        <a href="#/mi-recetario" class="nav-link"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><span data-i18n="navMine">Mi recetario</span></a>
         <a href="#/compras" class="nav-link nav-fav"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg><span data-i18n="navShop">Compras</span><span class="nav-badge" id="shop-count" hidden></span></a>
-        <a href="#/admin" class="nav-link" id="nav-admin" data-i18n="navAdmin" hidden>Administrador</a>
+        <a href="#/admin" class="nav-link nav-admin" id="nav-admin" hidden><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><span data-i18n="navAdmin">Administrador</span></a>
         <button type="button" class="nav-link nav-fav" id="nav-favorites">
           <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span data-i18n="navFavorites">Favoritas</span>
           <span class="nav-badge" id="fav-count" hidden></span>
@@ -985,21 +985,6 @@
       </section>
 
       <section class="section" id="temporada" aria-labelledby="season-heading" hidden></section>
-
-      <section class="section section-tint" id="rapidas" aria-labelledby="quick-heading">
-        <div class="container">
-          <div class="section-head section-head-row">
-            <div>
-              <h2 class="section-title" id="quick-heading" data-i18n="quickTitle">Listas en 30 minutos o menos</h2>
-              <p class="section-sub" data-i18n="quickSub">Según el tiempo indicado en cada receta.</p>
-            </div>
-            <button type="button" class="btn btn-ghost" id="quick-all">
-              <span data-i18n="quickAll">Ver todas</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </button>
-          </div>
-          <div class="card-rail" id="quick-rail"></div>
-        </div>
-      </section>
 
       <section class="section" id="recetas" aria-labelledby="results-heading" hidden>
         <div class="container">
@@ -1143,13 +1128,13 @@
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 900 600"><use href="#flag-pr"/></svg></span>
         <div>
           <p class="footer-name">Recetarios de Aquí · Cocina Boricua</p>
-          <p class="footer-text" id="footer-text">Recetas de la cocina tradicional puertorriqueña · Versión 4.41.0 · Revisión: 19 de octubre de 2026</p>
+          <p class="footer-text" id="footer-text">Recetas de la cocina tradicional puertorriqueña · Versión 4.42.0 · Revisión: 19 de octubre de 2026</p>
           <p class="footer-text footer-contact"><span data-i18n="contactLabel">Contacto:</span> <a href="mailto:recetariodeaqui@gmail.com">recetariodeaqui@gmail.com</a></p>
         </div>
       </div>
       <nav class="footer-nav" data-i18n-label="footerNav">
         <a href="#categorias" data-i18n="navCategories">Categorías</a>
-        <a href="#rapidas" data-i18n="quickShort">Recetas rápidas</a>
+        <a href="#categorias" id="footer-quick" data-i18n="quickShort">Recetas rápidas</a>
         <a href="#/planes" data-i18n="navPlans">Planes</a>
         <a href="#opiniones" data-i18n="navReviews">Opiniones</a>
         <a href="#/terminos" data-i18n="navTerms">Términos y condiciones</a>

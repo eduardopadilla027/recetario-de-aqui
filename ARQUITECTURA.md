@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-19 · **Versión del documento:** 4.41.0 · **Versión de la app:** 4.41.0 (revisada el 19 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,316 en 24 categorías
+> **Última actualización:** 2026-10-19 · **Versión del documento:** 4.42.0 · **Versión de la app:** 4.42.0 (revisada el 19 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,316 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -246,7 +246,7 @@ Naturales tiene 30 recetas: no se junta con Bebidas.
   queso y jamón. Arroces: con gandules, habichuelas y garbanzos; con pollo y carnes; con pescado y mariscos;
   fritos; paellas; arroz blanco, de hierbas y de sabores.
 
-- **Rutas por hash:** `#/` inicio · anclas `#categorias`, `#rapidas`, `#recetas` · detalle `#/receta/<id>`
+- **Rutas por hash:** `#/` inicio · anclas `#categorias`, `#recetas` · detalle `#/receta/<id>`
   ("Atrás" vuelve a la misma posición) · `#/planes`, `#/mi-recetario`, `#/compras`, `#/terminos`, `#/privacidad`,
   `#/glosario`, `#/admin`. **Compartir** da la página propia `https://recetariodeaqui.com/receta/<id>` (§7.15), y la app
   cambia el `<link rel="canonical">` y la descripción según la vista (`setPageMeta`). **Enlaces de afuera:** `?q=<texto>`
@@ -260,8 +260,11 @@ Naturales tiene 30 recetas: no se junta con Bebidas.
   v4.30 la versión sólo sale en el pie) y estadísticas (`statsHero(publicRecipeCount(), categorías)`: "**Más de 1,000** recetas
   tradicionales · 24 categorías"; `publicRecipeCount()` baja el total al millar. En la v4.30 se puso el total exacto y en la
   v4.31.1 se volvió a "Más de 1,000" a pedido; el total exacto sale en `#/admin` y en `/recetas`), cuadrícula de
-  categorías (clic = sólo esa categoría; clic de nuevo = todas), carril "Listas en 30 minutos o menos"
-  (`QUICK_MAX_MIN = 30`, contando el tiempo **total**), y resultados agrupados por categoría (acordeón) con filtros *Rápidas* y *Favoritas*.
+  categorías (clic = sólo esa categoría; clic de nuevo = todas) cuya **primera pestaña es "Listas en 30 minutos o
+  menos"** (v4.42, `quickTileHTML()`: rayo `i-bolt` y cuántas hay; pulsarla enciende `onlyQuick` y muestra las rápidas
+  en los resultados con ese título; elegir una categoría la apaga y viceversa; `QUICK_MAX_MIN = 30`, contando el tiempo
+  **total**). Antes era una sección aparte (`#rapidas`) con una tira de 12 tarjetas: se quitó, y "Recetas rápidas" del
+  pie (`#footer-quick`) enciende la pestaña. Luego los resultados agrupados por categoría (acordeón) con filtros *Rápidas* y *Favoritas*.
 - **Recetas incompletas:** al cargar, `recipeComplete()` quita (y avisa en la consola) cualquier receta sin nombre,
   tiempos, ingredientes o pasos en los dos idiomas o con líneas que no casan; `tools/check-recipes.js` lo revisa antes.
 - **Detalle:** portada (icono del plato), datos (tiempo, porciones, ingredientes, kcal/porción), línea de alérgenos,
@@ -1135,6 +1138,23 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-19 — v4.42.0 · Pestaña "Listas en 30 minutos o menos" y encabezado más ordenado
+- *Pedido:* añadir una pestaña "Listas en 30 minutos o menos" en "Explora por categoría", quitar esa sección de la
+  portada y que busque las rápidas al pulsarla. Y ordenar mejor el encabezado: con la cuenta de administrador los enlaces
+  quedaban pegados al nombre de la app; que se vea más atractivo.
+- **Pestaña de las rápidas** (`js/app.js`, §7): primera de la cuadrícula de categorías, con el rayo y el número de
+  recetas (417 hoy). Al pulsarla se ven en los resultados ("Listas en 30 minutos o menos"); es una pestaña más: elegir
+  una categoría la apaga. Se quitaron la sección `#rapidas`, `renderQuick()` y los textos `quickSub`/`quickAll`; el chip
+  "≤ 30 min" de los resultados sigue y queda sincronizado con la pestaña.
+- **Encabezado** (`index.html`, `css/styles.css`, `js/app.js`, `js/auth.js`): la marca y los enlaces no se parten en
+  renglones (`white-space: nowrap`) y hay más aire entre la marca y el menú; cada enlace lleva su icono (lista,
+  calendario, libro, carrito, personas, corazón); **Administrador** es una pastilla color achiote; la cuenta es un círculo
+  con el icono de persona (el correo sale al pasar el ratón y completo en el menú), Privacidad y Salir. El encabezado usa
+  hasta 1440 px de ancho. **`fitHeader()`** mide si todo cabe en una línea (cambia con el idioma, la cuenta y el ancho);
+  si no, recoge los enlaces en un botón **"☰ Menú"** con un panel a la derecha (`.header-collapsed`), que se cierra al
+  tocar fuera. En el celular sigue el menú de siempre.
+- *Verificado (servidor local, como administrador):* 1600 y 1366 px en una línea; 1024 px con "Menú" y su panel; 375 px
+  sin desbordes; la pestaña muestra 417 recetas y se apaga al elegir Postres.
 ### 2026-10-19 — v4.41.0 · Entrada con el correo electrónico y términos sin casillas
 - *Pedido:* corregir la forma de entrar: escribir el correo y validar si está registrado; si no lo está, que salgan los
   términos y condiciones con la opción de aceptar; si ya está registrado, que entre sin ver los términos. Quitar sólo las

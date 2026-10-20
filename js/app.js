@@ -8,7 +8,7 @@
  * nutricional se CALCULA de los ingredientes (js/nutrition.js) y se presenta
  * como estimación, con los ingredientes que no se pudieron contar.
  *
- * Vistas: inicio (#/ o anclas #categorias, #recetas, #rapidas), detalle
+ * Vistas: inicio (#/ o anclas #categorias, #recetas), detalle
  * (#/receta/<id>) y planes de comida (#/planes, en js/plans.js). El detalle tiene URL propia: se puede compartir, y "Atrás"
  * del navegador vuelve a los resultados en la misma posición. */
 
@@ -18,7 +18,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.41.0";
+const APP_VERSION = "4.42.0";
 const APP_REVISED = "2026-10-19";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
@@ -51,7 +51,7 @@ const translations = {
     recipeOne: "receta",
     footer: `Recetas de la cocina tradicional puertorriqueña · Versión ${APP_VERSION} · Revisión: ${revisedOn("es-PR")}`,
     skip: "Saltar al contenido",
-    menu: "Abrir menú",
+    menu: "Abrir menú", menuText: "Menú",
     mainNav: "Navegación principal",
     footerNav: "Enlaces del pie",
     language: "Idioma",
@@ -69,8 +69,6 @@ const translations = {
     categoriesSub: "Elige una categoría para ver sus recetas. Vuelve a pulsarla para cerrarla.",
     showing: "Mostrando",
     quickTitle: "Listas en 30 minutos o menos",
-    quickSub: "Contando las esperas: nevera, adobo, reposo…",
-    quickAll: "Ver todas",
     quickShort: "Recetas rápidas",
     results: "Resultados",
     resultsFor: (q) => `Resultados para «${q}»`,
@@ -176,7 +174,7 @@ const translations = {
     recipeOne: "recipe",
     footer: `Traditional Puerto Rican recipes · Version ${APP_VERSION} · Revised ${revisedOn("en-US")}`,
     skip: "Skip to content",
-    menu: "Open menu",
+    menu: "Open menu", menuText: "Menu",
     mainNav: "Main navigation",
     footerNav: "Footer links",
     language: "Language",
@@ -194,8 +192,6 @@ const translations = {
     categoriesSub: "Pick a category to see its recipes. Tap it again to close it.",
     showing: "Showing",
     quickTitle: "Ready in 30 minutes or less",
-    quickSub: "Counting the waits: chilling, marinating, resting…",
-    quickAll: "See all",
     quickShort: "Quick recipes",
     results: "Results",
     resultsFor: (q) => `Results for “${q}”`,
@@ -1427,9 +1423,22 @@ function renderUnderstood() {
 
 /* ------------------------------------------------------------ render ---- */
 
+/* "Listas en 30 minutos o menos" es la primera pestaña de "Explora por categoría" (v4.42): al pulsarla se ven
+   las rápidas (onlyQuick) en los resultados. Antes era una sección aparte con una tira de 12 tarjetas (#rapidas). */
+function quickTileHTML() {
+  const tr = t();
+  const count = recipes.filter(isQuick).length;
+  return `<button type="button" class="cat-tile cat-tile-quick" data-quick="1" aria-pressed="${onlyQuick}" data-active="${tr.showing}">
+      <span class="cover" style="--tone:#F7DDB0;--tone-2:#E8A54B;--cx:85%;--cy:90%;--cr:30%"><span class="cover-emoji cover-quick" aria-hidden="true"><svg class="icon"><use href="#i-bolt"/></svg></span></span>
+      <span class="cat-tile-body">
+        <span class="cat-tile-name">${esc(tr.quickTitle)}</span>
+        <span class="cat-tile-count">${count} ${count === 1 ? tr.recipeOne : tr.recipeCount}</span>
+      </span>
+    </button>`;
+}
 function renderNavPills() {
   const tr = t();
-  $("nav-pills").innerHTML = categoryOrder.map((cat) => {
+  $("nav-pills").innerHTML = quickTileHTML() + categoryOrder.map((cat) => {
     const count = recipes.filter((r) => r.category === cat).length;
     const active = selectedNavCategory === cat;
     return `<button type="button" class="cat-tile" data-category="${cat}" aria-pressed="${active}" data-active="${tr.showing}">
@@ -1440,12 +1449,6 @@ function renderNavPills() {
       </span>
     </button>`;
   }).join("");
-}
-
-function renderQuick() {
-  const quick = recipes.filter(isQuick).sort((a, b) => totalMinutes(a) - totalMinutes(b));
-  $("quick-rail").innerHTML = quick.slice(0, 12).map((r, i) => cardHTML(r, i)).join("");
-  $("rapidas").hidden = quick.length === 0;
 }
 
 function renderHero() {
@@ -1476,6 +1479,7 @@ function renderCategories() {
   let heading = tr.results;
   if (searchQuery) heading = tr.resultsFor(searchQuery);
   else if (selectedNavCategory) heading = tr.categories[selectedNavCategory];
+  else if (onlyQuick && !onlyFavorites) heading = tr.quickTitle;
   $("results-heading").textContent = heading;
   // El conteo sale con cualquier combinación de filtros, con lo que un filtro deja fuera (revisión 2, N8).
   $("results-count").textContent = [tr.countFound(filtered.length), ...(typeof advNotes === "function" ? advNotes() : [])].join(" ");
@@ -1556,7 +1560,6 @@ function renderFavCount() {
 function renderHome() {
   renderHero();
   renderNavPills();
-  renderQuick();
   renderCategories();
   renderFavCount();
 }
@@ -1582,6 +1585,7 @@ function updateTexts() {
   });
   $("btn-es").setAttribute("aria-pressed", String(currentLang === "es"));
   $("btn-en").setAttribute("aria-pressed", String(currentLang === "en"));
+  fitHeader(); // los textos cambian de largo con el idioma
 }
 
 function switchLang(lang) {
@@ -2051,6 +2055,24 @@ function closeMenu() {
   $("menu-toggle").setAttribute("aria-expanded", "false");
 }
 
+/* Encabezado (v4.42): si la marca y todos los enlaces no caben en una línea (p. ej. con "Administrador" y la cuenta
+   en una laptop), el menú se recoge en el botón ☰ con un panel desplegable, en vez de partir los textos y pegarlos
+   al nombre de la app. Se mide de verdad (cambia con el idioma, la cuenta y el ancho), no con un ancho fijo. */
+function fitHeader() {
+  const header = $("site-header");
+  if (!header) return;
+  header.classList.remove("header-collapsed");
+  if (window.innerWidth <= 760) return; // el celular ya usa el menú
+  const inner = header.querySelector(".header-inner");
+  const css = getComputedStyle(inner);
+  const need = $("brand-link").offsetWidth + $("primary-nav").scrollWidth + parseFloat(css.columnGap || 0);
+  const collapse = need > inner.clientWidth - parseFloat(css.paddingLeft) * 2;
+  header.classList.toggle("header-collapsed", collapse);
+  if (!collapse) closeMenu();
+}
+let fitHeaderFrame = 0;
+window.addEventListener("resize", () => { cancelAnimationFrame(fitHeaderFrame); fitHeaderFrame = requestAnimationFrame(fitHeader); });
+
 function setupEventListeners() {
   // Búsqueda en vivo + botón/Enter que lleva a los resultados.
   // - Espera a que se deje de escribir (SEARCH_DELAY) en vez de buscar y dibujar en cada letra.
@@ -2095,8 +2117,20 @@ function setupEventListeners() {
   $("nav-pills").addEventListener("click", (e) => {
     const tile = e.target.closest(".cat-tile");
     if (!tile) return;
+    // La pestaña de las rápidas: se enciende o se apaga, y quita la categoría elegida (una pestaña a la vez).
+    if (tile.dataset.quick) {
+      onlyQuick = !onlyQuick;
+      if (onlyQuick) selectedNavCategory = null;
+      renderNavPills();
+      renderCategories();
+      const q = document.querySelector(".cat-tile-quick");
+      if (q) q.focus({ preventScroll: true });
+      if (onlyQuick) scrollToResults();
+      return;
+    }
     const cat = tile.dataset.category;
     selectedNavCategory = selectedNavCategory === cat ? null : cat;
+    if (selectedNavCategory) onlyQuick = false;
     renderNavPills();
     renderCategories();
     const again = document.querySelector(`.cat-tile[data-category="${cat}"]`);
@@ -2138,10 +2172,15 @@ function setupEventListeners() {
     }
   });
 
-  $("filter-quick").addEventListener("click", () => { onlyQuick = !onlyQuick; renderCategories(); });
+  $("filter-quick").addEventListener("click", () => { onlyQuick = !onlyQuick; renderNavPills(); renderCategories(); });
   $("filter-fav").addEventListener("click", () => { onlyFavorites = !onlyFavorites; renderCategories(); });
   $("filter-clear").addEventListener("click", clearFilters);
-  $("quick-all").addEventListener("click", () => { onlyQuick = true; renderCategories(); scrollToResults(); });
+  // "Recetas rápidas" del pie: enciende la pestaña de las rápidas y baja a los resultados.
+  $("footer-quick").addEventListener("click", (e) => {
+    e.preventDefault();
+    onlyQuick = true; selectedNavCategory = null;
+    renderNavPills(); renderCategories(); scrollToResults();
+  });
   $("nav-favorites").addEventListener("click", () => {
     closeMenu();
     onlyFavorites = !onlyFavorites;
@@ -2189,6 +2228,12 @@ function setupEventListeners() {
     const open = !$("primary-nav").classList.contains("open");
     $("primary-nav").classList.toggle("open", open);
     $("menu-toggle").setAttribute("aria-expanded", String(open));
+  });
+  // El panel del menú se cierra al tocar fuera de él.
+  document.addEventListener("click", (e) => {
+    if (!$("primary-nav").classList.contains("open")) return;
+    if (e.target.closest("#primary-nav, #menu-toggle")) return;
+    closeMenu();
   });
 
   document.addEventListener("keydown", (e) => {

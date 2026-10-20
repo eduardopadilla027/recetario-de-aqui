@@ -564,17 +564,19 @@ function renderAccountBar() {
     box.hidden = false;
     box.innerHTML = `<button type="button" class="nav-link account-in" data-auth="open" title="${esc(tr.signInHint)}">
       <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg><span>${esc(tr.signIn)}</span></button>`;
+    if (typeof fitHeader === "function") fitHeader(); // js/app.js: el menú se recoge si no cabe
     return;
   }
   $("nav-admin").hidden = !authIsAdmin;
   box.hidden = false;
   box.innerHTML = `
-    <span class="account-email" title="${esc(authUser.email)}">${esc(authUser.email)}</span>
+    <span class="account-email" title="${esc(authUser.email)}"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg><span class="account-email-text">${esc(authUser.email)}</span></span>
     <a class="nav-link account-data" href="#/privacidad" title="${esc(tr.myData)}">
       <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span class="sr-only">${esc(tr.myData)}</span></a>
     <button type="button" class="nav-link account-out" data-auth="signout" title="${esc(authUser.email)}">
       <svg class="icon" aria-hidden="true"><use href="#i-logout"/></svg><span>${esc(tr.signOut)}</span>
     </button>`;
+  if (typeof fitHeader === "function") fitHeader();
 }
 
 /* ------------------------------------------------------------ acciones de entrada ---- */

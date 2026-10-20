@@ -141,9 +141,12 @@ svg.icon:has(> use[href="#i-heart"]) { color: var(--heart-red); }
   transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 .site-header.scrolled { border-bottom-color: var(--line); box-shadow: var(--shadow-sm); }
-.header-inner { display: flex; align-items: center; gap: var(--s-4); min-height: var(--header-h); }
+.header-inner { display: flex; align-items: center; gap: var(--s-6); min-height: var(--header-h); }
+/* El encabezado usa un poco más de ancho que la página para que el menú completo quepa en una laptop. */
+.site-header .container { max-width: 1440px; }
 
-.brand { display: inline-flex; align-items: center; gap: var(--s-3); min-height: 44px; text-decoration: none; margin-right: auto; }
+/* La marca nunca se parte en renglones ni se aprieta contra los enlaces (v4.42). */
+.brand { display: inline-flex; align-items: center; gap: var(--s-3); min-height: 44px; text-decoration: none; margin-right: auto; flex: none; white-space: nowrap; }
 /* Logotipo: bandera de Puerto Rico (3:2) con esquinas suaves y un filo para
    que la franja blanca no se pierda sobre el fondo crema. */
 .brand-mark { display: inline-block; flex: none; line-height: 0; border-radius: 6px; overflow: hidden; box-shadow: 0 0 0 1px rgba(43, 29, 20, .14), var(--shadow-sm); }
@@ -152,14 +155,20 @@ svg.icon:has(> use[href="#i-heart"]) { color: var(--heart-red); }
 .brand-name { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; }
 .brand-sub { font-size: .875rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--plantain); }
 
-.primary-nav { display: flex; align-items: center; gap: var(--s-1); }
+.primary-nav { display: flex; align-items: center; gap: 2px; }
 .nav-link {
-  display: inline-flex; align-items: center; gap: var(--s-2);
+  display: inline-flex; align-items: center; gap: var(--s-2); white-space: nowrap;
   min-height: 44px; padding: 0 var(--s-3); border-radius: 999px;
   font-weight: 500; font-size: var(--step--1); text-decoration: none; color: var(--ink-2);
   transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 .nav-link:hover { color: var(--ink); background: var(--sand); }
+.nav-link .icon { width: 18px; height: 18px; opacity: .8; }
+.nav-link:hover .icon { opacity: 1; }
+/* Administrador: su propia pastilla, para que se distinga de la navegación de todos. */
+.nav-admin { color: var(--achiote-600); background: var(--achiote-50); font-weight: 600; margin-inline: var(--s-1); }
+.nav-admin:hover { color: var(--achiote-600); background: var(--achiote-50); box-shadow: inset 0 0 0 1px var(--achiote); }
+.nav-admin .icon { opacity: 1; }
 .nav-fav[aria-pressed="true"] { color: var(--achiote-600); background: var(--achiote-50); }
 .nav-fav[aria-pressed="true"] .icon { fill: currentColor; }
 .nav-badge {
@@ -280,6 +289,8 @@ svg.icon:has(> use[href="#i-heart"]) { color: var(--heart-red); }
 }
 .cat-tile .cover { aspect-ratio: 16 / 9; }
 .cat-tile .cover-emoji { font-size: 2.2rem; }
+/* Pestaña "Listas en 30 minutos o menos" (v4.42): el rayo en vez de un plato. */
+.cover-quick .icon { width: 2.4rem; height: 2.4rem; fill: #A65A0C; }
 .cat-tile-body { padding: var(--s-3) var(--s-3) var(--s-4); display: flex; flex-direction: column; gap: 2px; }
 .cat-tile-name { font-weight: 600; font-size: .95rem; line-height: 1.3; }
 .cat-tile-count { font-size: .875rem; color: var(--ink-3); }
@@ -336,7 +347,7 @@ svg.icon:has(> use[href="#i-heart"]) { color: var(--heart-red); }
 /* Barra de resultados y filtros */
 /* Al buscar, los resultados van justo debajo del buscador (sin la cuadrícula de
    categorías ni las rápidas en medio). */
-.is-searching #categorias, .is-searching #rapidas, .is-searching #opiniones { display: none; }
+.is-searching #categorias, .is-searching #opiniones { display: none; }
 .is-searching #recetas { padding-top: var(--s-5); }
 .more-results { display: flex; justify-content: center; margin-top: var(--s-6); }
 .more-results .btn { min-height: 48px; padding: 0 var(--s-6); }
@@ -882,15 +893,43 @@ body.auth-locked .site-header, body.auth-locked main, body.auth-locked .site-foo
   .auth-top .brand-sub { display: none; }
 }
 
-/* Cuenta en el encabezado */
-.account-bar { display: inline-flex; align-items: center; gap: var(--s-1); margin-left: var(--s-2); padding-left: var(--s-2); border-left: 1px solid var(--line); }
+/* Cuenta en el encabezado: el correo en una pastilla con su icono, "Privacidad" y "Salir". */
+.account-bar { display: inline-flex; align-items: center; gap: 2px; margin-left: var(--s-2); padding-left: var(--s-3); border-left: 1px solid var(--line); }
 .account-bar[hidden] { display: none; }
-.account-email { max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .875rem; color: var(--ink-3); }
-@media (max-width: 1100px) and (min-width: 761px) { .account-email { display: none; } .account-bar { padding-left: 0; border-left: 0; } }
-@media (max-width: 760px) {
-  .account-bar { margin: var(--s-2) 0 0; padding: var(--s-2) 0 0; border-left: 0; border-top: 1px solid var(--line); justify-content: space-between; }
-  .account-email { max-width: none; flex: 1; min-width: 0; padding-left: var(--s-3); }
+.account-email { display: inline-flex; align-items: center; gap: var(--s-2); max-width: 220px; min-height: 36px; padding: 0 var(--s-3); border-radius: 999px; background: var(--sand); font-size: .875rem; color: var(--ink-2); }
+.account-email .icon { width: 16px; height: 16px; flex: none; }
+.account-email-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+/* En la línea del encabezado el correo es sólo el icono (el correo sale al pasar el ratón); en el menú, completo. */
+@media (min-width: 761px) {
+  .site-header:not(.header-collapsed) .account-email { padding: 0; width: 36px; justify-content: center; }
+  .site-header:not(.header-collapsed) .account-email-text { display: none; }
 }
+@media (max-width: 760px) {
+  .account-bar { margin: var(--s-2) 0 0; padding: var(--s-3) 0 0; border-left: 0; border-top: 1px solid var(--line); justify-content: space-between; }
+  .account-email { max-width: none; flex: 1; min-width: 0; }
+}
+/* Menú recogido en pantallas anchas (fitHeader en app.js): un panel bajo el botón ☰, alineado a la derecha. */
+.menu-text { display: none; }
+.header-collapsed .menu-toggle {
+  display: inline-flex; align-items: center; gap: var(--s-2); width: auto; padding: 0 var(--s-4);
+  border: 1px solid var(--line); border-radius: 999px; background: var(--ivory); font-weight: 600; font-size: var(--step--1);
+}
+.header-collapsed .menu-toggle[aria-expanded="true"] { border-color: var(--achiote); color: var(--achiote-600); }
+.header-collapsed .menu-text { display: inline; }
+.header-collapsed .primary-nav {
+  position: absolute; top: calc(100% + 6px);
+  right: max(clamp(16px, 4vw, 32px), calc((100vw - var(--container)) / 2 + 32px));
+  width: min(340px, calc(100vw - 32px));
+  flex-direction: column; align-items: stretch; gap: 2px;
+  padding: var(--s-3); background: var(--ivory);
+  border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow);
+}
+.header-collapsed .primary-nav:not(.open) { display: none; }
+.header-collapsed .nav-link { justify-content: flex-start; font-size: var(--step-0); }
+.header-collapsed .nav-admin { margin: var(--s-1) 0; }
+.header-collapsed .lang-toggle { margin: var(--s-2) 0 0; align-self: flex-start; }
+.header-collapsed .account-bar { margin: var(--s-2) 0 0; padding: var(--s-3) 0 0; border-left: 0; border-top: 1px solid var(--line); justify-content: space-between; }
+.header-collapsed .account-email { max-width: none; flex: 1; min-width: 0; }
 
 /* Panel de administración (#/admin) */
 .admin-view { padding: clamp(24px, 4vw, 48px) 0 var(--s-8); }
