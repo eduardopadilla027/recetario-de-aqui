@@ -641,7 +641,7 @@ const recipes = [
     id: "pernil",
     category: "carnes",
     name: { es: "Pernil Asado", en: "Roast Pork Shoulder" },
-    active: 360, total: 1100, wait: "frio",
+    active: 340, total: 1060, wait: "adobo",
     servings: 15,
     ingredients: {
       es: [
@@ -1325,8 +1325,8 @@ const recipes = [
         "6 dientes de ajo, machacados",
         "4 cucharadas de aceite de oliva",
         "1 taza de chicharrones de cerdo, triturados",
-        "Caldo de pollo para servir",
-        "Aceite vegetal para freír",
+        "2 tazas de caldo de pollo caliente, para servir",
+        "Aceite vegetal para freír (unas 3 tazas: 2 pulgadas de hondo en el caldero)",
         "Sal al gusto"
       ],
       en: [
@@ -1334,8 +1334,8 @@ const recipes = [
         "6 garlic cloves, crushed",
         "4 tablespoons olive oil",
         "1 cup pork cracklings (chicharrones), crushed",
-        "Chicken broth for serving",
-        "Vegetable oil for frying",
+        "2 cups hot chicken broth, for serving",
+        "Vegetable oil for frying (about 3 cups: 2 inches deep in the pot)",
         "Salt to taste"
       ]
     },

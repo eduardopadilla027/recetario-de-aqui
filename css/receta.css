@@ -29,3 +29,4 @@ h3 { font-size: 1.1rem; margin: 1.2em 0 .4em; }
 .foot { border-top: 1px solid var(--line); padding: 16px; text-align: center; font-size: .95rem; color: var(--ink-2); }
 .foot a { display: inline-block; min-height: 44px; line-height: 44px; }
 @media print { .top, .open, .related, .foot, .crumbs { display: none; } body { background: #fff; color: #000; } }
+.metric { color: var(--ink-2); font-size: .92em; white-space: nowrap; }

@@ -29,7 +29,9 @@ const CUI_T = {
     pvDone: "Su cuenta y sus datos se borraron. Puede seguir usando la app sin cuenta.",
     pvReauth: "Por seguridad, entre otra vez con su cuenta y vuelva a pulsar «Borrar mi cuenta».",
     pvFail: "No se pudo borrar todo. Inténtelo de nuevo o escríbanos.", pvLoading: "Cargando…",
-    footerPrivacy: "Privacidad", pending: "Pendiente", emailed: "correo enviado", notEmailed: "correo sin enviar", csvConsent: "Versión aceptada", csvConsentAt: "Fecha de aceptación", csvEmail: "Correo de confirmación",
+    footerPrivacy: "Privacidad", pending: "Pendiente", emailed: "correo enviado", notEmailed: "correo sin enviar",
+    unmailed: (n) => (n === 1 ? "1 cuenta aceptó los términos y no ha recibido el correo de confirmación:" : `${n} cuentas aceptaron los términos y no han recibido el correo de confirmación:`),
+    unmailedMore: (n) => `y ${n} más`, unmailedHelp: "Se vuelve a intentar cuando la persona entra. Si no baja, revise RESEND_API_KEY en Vercel.", csvConsent: "Versión aceptada", csvConsentAt: "Fecha de aceptación", csvEmail: "Correo de confirmación",
     emailFail: "Su aceptación quedó guardada, pero no se pudo enviar el correo de confirmación ahora. Lo intentaremos la próxima vez que entre.", footer: "Términos y condiciones",
     consentFail: "No pudimos guardar ni confirmar su consentimiento en el servidor, así que la cuenta no se abrió. Revise su conexión e intente de nuevo; mientras tanto puede usar la app sin cuenta." },
   en: {
@@ -44,7 +46,9 @@ const CUI_T = {
     pvReauth: "For security, sign in to your account again and tap “Delete my account” once more.",
     pvFail: "Not everything could be deleted. Try again or write to us.", pvLoading: "Loading…",
     footerPrivacy: "Privacy",
-    colConsent: "Consent", pending: "Pending", emailed: "email sent", notEmailed: "email not sent", csvConsent: "Accepted version", csvConsentAt: "Acceptance date", csvEmail: "Confirmation email",
+    colConsent: "Consent", pending: "Pending", emailed: "email sent", notEmailed: "email not sent",
+    unmailed: (n) => (n === 1 ? "1 account accepted the terms and hasn't received the confirmation email:" : `${n} accounts accepted the terms and haven't received the confirmation email:`),
+    unmailedMore: (n) => `and ${n} more`, unmailedHelp: "It's retried when the person signs in. If it doesn't go down, check RESEND_API_KEY in Vercel.", csvConsent: "Accepted version", csvConsentAt: "Acceptance date", csvEmail: "Confirmation email",
     emailFail: "Your acceptance was saved, but the confirmation email couldn't be sent right now. We'll try again next time you sign in.", footer: "Terms and conditions",
     consentFail: "We couldn't save or confirm your consent on the server, so the account wasn't opened. Check your connection and try again; meanwhile you can use the app without an account." }
 };
@@ -169,6 +173,13 @@ function consentCellHTML(uid) {
   const cur = c.version === CONSENT_VERSION;
   return `<span class="role-tag${cur ? " is-admin" : " is-blocked"}">v${esc(c.version)}</span> <span class="admin-date">${esc(fmtDate(c.at))}</span>
     <span class="consent-mail">${esc(c.emailSentAt ? cui().emailed : cui().notEmailed)}</span>`;
+}
+/* Las cuentas con el consentimiento guardado y sin correo de confirmación: antes sólo se veía fila por fila (revisión 2, N9). */
+function consentUnmailedHTML(users) {
+  const list = users.filter((u) => { const c = adminConsents.get(u.id); return c && !c.emailSentAt; }).map((u) => u.email || u.id);
+  if (!list.length) return "";
+  const shown = list.slice(0, 20);
+  return `<p class="admin-intro" role="note">${esc(cui().unmailed(list.length))} ${esc(shown.join(", "))}${list.length > shown.length ? ` ${esc(cui().unmailedMore(list.length - shown.length))}` : ""}. ${esc(cui().unmailedHelp)}</p>`;
 }
 function consentCSV(uid) {
   const c = adminConsents.get(uid);

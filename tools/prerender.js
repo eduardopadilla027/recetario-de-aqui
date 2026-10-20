@@ -37,8 +37,8 @@ vm.createContext(ctx);
 const files = ["recipes", "recipes-extra", "recipes-2", "recipes-3", "recipes-4", "recipes-5", "nutrition-usda", "nutrition",
   "advisories", "substitutes", "search", "families", "pairings", "app", "recipe-dates"];
 vm.runInContext(files.map((f) => fs.readFileSync(path.join(ROOT, "js", `${f}.js`), "utf8")).join("\n;\n") +
-  "\n;globalThis.__x = { recipes, estimateNutrition, getAdvisories, ADVICE_TEXT, translations, categoryOrder, WAIT_T, RECIPE_ADDED: typeof RECIPE_ADDED === 'undefined' ? {} : RECIPE_ADDED };", ctx);
-const { recipes, estimateNutrition, getAdvisories, ADVICE_TEXT, translations, categoryOrder, WAIT_T, RECIPE_ADDED } = ctx.__x;
+  "\n;globalThis.__x = { recipes, estimateNutrition, getAdvisories, allergenLabel, lineGrams, ADVICE_TEXT, translations, categoryOrder, WAIT_T, RECIPE_ADDED: typeof RECIPE_ADDED === 'undefined' ? {} : RECIPE_ADDED };", ctx);
+const { recipes, estimateNutrition, getAdvisories, allergenLabel, lineGrams, ADVICE_TEXT, translations, categoryOrder, WAIT_T, RECIPE_ADDED } = ctx.__x;
 
 /* ── Utilidades ── */
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -51,16 +51,39 @@ function fmtMin(min, lang) {
 function timeText(r, lang) {
   if (r.total === r.active) return fmtMin(r.active, lang);
   const w = r.wait ? ` (${WAIT_T[lang][r.wait] || r.wait})` : "";
-  return lang === "es" ? `${fmtMin(r.active, "es")} de cocina · ${fmtMin(r.total, "es")} en total${w}` : `${fmtMin(r.active, "en")} cooking · ${fmtMin(r.total, "en")} total${w}`;
+  return lang === "es" ? `${fmtMin(r.active, "es")} de preparación · ${fmtMin(r.total, "es")} en total${w}` : `${fmtMin(r.active, "en")} prep · ${fmtMin(r.total, "en")} total${w}`;
 }
-const cut = (s, n) => (s.length <= n ? s : `${s.slice(0, n - 1).replace(/[\s,;:]+\S*$/, "")}…`);
 // "2 tazas de arroz" → "arroz" (para la descripción)
-const mainWord = (line) => line.replace(/^[\d½¼¾⅓⅔⅛\s/.,-]+/, "").replace(/^(tazas?|cucharadas?|cucharaditas?|libras?|onzas?|latas?|sobres?|dientes?|paquetes?|ramitas?|hojas?|pizcas?|unidades?)\s+(de\s+)?/i, "").replace(/,.*$/, "").replace(/\(.*?\)/g, "").trim();
+const mainWord = (line) => line.replace(/\(.*?\)/g, "").replace(/\s{2,}/g, " ").replace(/^[\d½¼¾⅓⅔⅛\s/.,-]+/, "").replace(/^(tazas?|cucharadas?|cucharaditas?|libras?|lbs?\.?|onzas?|oz\.?|latas?|sobres?|dientes?|paquetes?|ramitas?|hojas?|pizcas?|unidades?|cabezas?|chorritos?|puñados?|botellas?|tarros?|frascos?|rebanadas?|lascas?|ruedas?|pedazos?|trozos?|manojos?|cajas?|bolsas?)\s+(de\s+)?/i, "").replace(/^(jugo|ralladura) de \d+\s+/i, "$1 de ").replace(/^[\d.,½¼¾-]+\s*(oz|onzas|lbs?|libras|g|gramos|ml)\.?\s+(de\s+)?/i, "").replace(/,.*$/, "").replace(/\(.*?\)/g, "").replace(/\s+(de|con)\s+[\d½¼¾⅓⅔⅛].*$/, "").replace(/\s+en\s+(presas|lascas|cubos|hojuelas|polvo de \S+|trozos|pedazos)\b.*$/i, "").replace(/\s+(blandas?|frescas?|frescos?|maduras?|grandes?|pequeñ[oa]s|medianas?|enteros?|enteras?)$/i, "").replace(/\s+(picad|pelad|majad|machacad|cortad|rallad|cocid|derretid|batid|desmenuzad|escurrid|lavad|sin semillas|en (cubitos|trocitos|ruedas|tiras|aros|rebanadas|pedazos))\S*.*$/i, "").trim().toLowerCase();
+const DESC_SKIP = new Set(["sal", "agua", "pimienta", "sal y pimienta", "hielo", "agua caliente", "agua fría", "aceite", "aceite vegetal"]);
+const andList = (xs) => (xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} y ${xs[xs.length - 1]}`);
 
+/* Descripción para Google y las vistas previas: siempre una oración completa de 155 caracteres o menos, nunca cortada
+ * con "…" (revisión 2, N1). Se quitan ingredientes y luego frases hasta que quepa. */
+const DESC_MAX = 155;
 function description(r) {
-  const tr = translations.es;
-  const ings = r.ingredients.es.filter((l) => !/al gusto|opcional|para servir|para freír/i.test(l)).slice(0, 4).map(mainWord).filter(Boolean);
-  return cut(`${r.name.es}: receta puertorriqueña paso a paso para ${r.servings} ${r.servings === 1 ? "porción" : "porciones"}. Lleva ${ings.join(", ")}. Lista en ${fmtMin(r.total, "es")}. ${tr.categories[r.category]}.`, 158);
+  const ings = [...new Set(r.ingredients.es.filter((l) => !/al gusto|opcional|para servir|para freír|para engrasar|:/i.test(l)).map(mainWord).filter((w) => w && w.length <= 30 && !DESC_SKIP.has(w)))];
+  const por = `${r.servings} ${r.servings === 1 ? "porción" : "porciones"}`;
+  const time = fmtMin(r.total, "es");
+  const tries = [];
+  for (let n = Math.min(4, ings.length); n >= 0; n--) {
+    const lleva = n ? ` con ${andList(ings.slice(0, n))}` : "";
+    tries.push(`${r.name.es}: receta puertorriqueña paso a paso, ${por}, lista en ${time}${lleva}.`);
+  }
+  tries.push(`${r.name.es}: receta puertorriqueña, ${por}, lista en ${time}.`, `${r.name.es}: receta puertorriqueña.`);
+  return tries.find((t) => t.length <= DESC_MAX) || r.name.es.slice(0, DESC_MAX);
+}
+
+/* Medidas métricas en la página (revisión 2, punto 12): las mismas conversiones de la app (js/app.js, modo "Gramos y °C"). */
+const toC = (f) => Math.round(((+f - 32) * 5) / 9 / 5) * 5;
+const withC = (html) => html.replace(/(\d{2,3})(?:\s*([-–])\s*(\d{2,3}))?\s*°\s*F\b(?!\s*\()/g,
+  (m, a, dash, b) => `${m} (${b ? `${toC(a)}${dash}${toC(b)}` : toC(a)}°C)`);
+function metricNote(line, lang) {
+  const g = lineGrams(line);
+  if (!g || g.grams < 1) return "";
+  const v = g.grams;
+  const n = v >= 1000 ? `${(v / 1000).toLocaleString(lang === "es" ? "es-PR" : "en-US", { maximumFractionDigits: 2 })} ${g.liquid ? "L" : "kg"}` : `${v < 10 ? Math.round(v * 2) / 2 : Math.round(v / 5) * 5} ${g.liquid ? "ml" : "g"}`;
+  return ` <span class="metric">≈ ${n}</span>`;
 }
 
 function jsonLd(r, kcal, desc) {
@@ -78,7 +101,7 @@ function jsonLd(r, kcal, desc) {
     recipeCuisine: "Puertorriqueña",
     recipeCategory: tr.categories[r.category],
     keywords: `${r.name.es}, receta puertorriqueña, cocina boricua, ${tr.categories[r.category]}`,
-    cookTime: iso(r.active),
+    prepTime: iso(r.active),
     totalTime: iso(r.total),
     recipeYield: `${r.servings} ${r.servings === 1 ? "porción" : "porciones"}`,
     recipeIngredient: r.ingredients.es,
@@ -95,7 +118,7 @@ function page(r, related) {
   const est = estimateNutrition(r);
   const kcal = est.counted ? Math.round(est.per.kcal / 10) * 10 : 0;
   const adv = getAdvisories(r);
-  const allergens = adv.allergens.map((a) => a.key);
+  const allergens = adv.allergens.map((a) => allergenLabel(a, "es"));
   const desc = description(r);
   const url = `${SITE}/receta/${r.id}`;
   const title = `${r.name.es} — Receta puertorriqueña | Recetarios de Aquí`;
@@ -147,30 +170,30 @@ function page(r, related) {
       <li><strong>Tiempo:</strong> ${esc(timeText(r, "es"))}</li>
       <li><strong>Porciones:</strong> ${r.servings}</li>
       ${kcal ? `<li><strong>Calorías:</strong> ≈ ${kcal} por porción (estimado)</li>` : ""}
-      ${allergens.length ? `<li><strong>Contiene:</strong> ${esc(allergens.map((k) => ADVICE_TEXT.es.allergens[k] || k).join(", "))}</li>` : ""}
+      ${allergens.length ? `<li><strong>Contiene:</strong> ${esc(allergens.join(", "))}</li>` : ""}
     </ul>
     <p><a class="open" href="/#/receta/${encodeURIComponent(r.id)}">Abrir en la app: ajustar porciones, modo cocina, nutrición y alergias</a></p>
     <section>
       <h2>Ingredientes</h2>
-      <ul class="ings">${r.ingredients.es.map((l) => `\n        <li>${esc(l)}</li>`).join("")}
+      <ul class="ings">${r.ingredients.es.map((l) => `\n        <li>${esc(l)}${metricNote(l, "es")}</li>`).join("")}
       </ul>
     </section>
     <section>
       <h2>Preparación</h2>
-      <ol class="steps">${r.steps.es.map((s, i) => `\n        <li id="paso-${i + 1}">${esc(s)}</li>`).join("")}
+      <ol class="steps">${r.steps.es.map((s, i) => `\n        <li id="paso-${i + 1}">${withC(esc(s))}</li>`).join("")}
       </ol>
     </section>
     <section lang="en" class="english">
       <h2>In English: ${esc(r.name.en)}</h2>
       <p><strong>Time:</strong> ${esc(timeText(r, "en"))} · <strong>Servings:</strong> ${r.servings}</p>
       <h3>Ingredients</h3>
-      <ul class="ings">${r.ingredients.en.map((l) => `\n        <li>${esc(l)}</li>`).join("")}
+      <ul class="ings">${r.ingredients.en.map((l, i) => `\n        <li>${esc(l)}${metricNote(r.ingredients.es[i] || "", "en")}</li>`).join("")}
       </ul>
       <h3>Preparation</h3>
-      <ol class="steps">${r.steps.en.map((s) => `\n        <li>${esc(s)}</li>`).join("")}
+      <ol class="steps">${r.steps.en.map((s) => `\n        <li>${withC(esc(s))}</li>`).join("")}
       </ol>
     </section>
-    <p class="note">La información nutricional y los alérgenos son estimados a partir de los ingredientes. No es consejo médico.</p>
+    <p class="note">Los gramos, mililitros y °C son aproximados. La información nutricional y los alérgenos son estimados a partir de los ingredientes. No es consejo médico.</p>
     ${related.length ? `<section class="related">
       <h2>Más recetas: ${esc(cat)}</h2>
       <ul>${related.map((x) => `\n        <li><a href="/receta/${encodeURIComponent(x.id)}">${esc(x.name.es)}</a></li>`).join("")}

@@ -62,6 +62,7 @@ const REVIEW_T = {
     none: "Sin reseñas",
     rateIt: "Opinar",
     more: (n) => `Ver más reseñas (${n})`,
+    retry: "Reintentar",
     loading: "Cargando reseñas…",
     error: "No se pudieron cargar las reseñas.",
     offline: "Las reseñas no se pueden ver ahora (sin conexión).",
@@ -143,6 +144,7 @@ const REVIEW_T = {
     none: "No reviews",
     rateIt: "Review it",
     more: (n) => `Show more reviews (${n})`,
+    retry: "Try again",
     loading: "Loading reviews…",
     error: "The reviews couldn't be loaded.",
     offline: "Reviews can't be shown right now (no connection).",
@@ -435,7 +437,8 @@ function renderReviews(target) {
   if (!isApp) renderRecipeRating(entry);
 
   if (!entry || entry.loading) { box.innerHTML = `<div class="reviews-head">${head}</div><p class="reviews-empty auth-loading">${esc(tr.loading)}</p>`; return; }
-  if (entry.error) { box.innerHTML = `<div class="reviews-head">${head}</div><p class="reviews-empty">${esc(entry.error)}</p>`; return; }
+  // Con el error, un botón para volver a intentarlo sin recargar la página (revisión 2, N9).
+  if (entry.error) { box.innerHTML = `<div class="reviews-head">${head}</div><p class="reviews-empty">${esc(entry.error)}</p><p><button type="button" class="btn btn-outline btn-sm" data-review="retry" data-target="${esc(target)}">${esc(tr.retry)}</button></p>`; return; }
 
   const { avg, n } = reviewStats(entry.list);
   const summary = n
@@ -792,12 +795,15 @@ async function approveDraft(id) {
   try {
     const batch = fbDb.batch();
     const d = r.draft;
+    // Si la foto nueva no está (se borró o no llegó a subir), se queda la que tenía: antes se marcaba "con foto" igual (revisión 2, N9).
+    let hasPhoto = Boolean(d.hasPhoto);
     if (d.newPhoto) {
       const snap = await reviewPhotoCol().doc(`${id}__draft`).get();
+      if (!snap.exists) hasPhoto = Boolean(r.hasPhoto);
       if (snap.exists) batch.set(reviewPhotoCol().doc(id), { target: r.target, uid: r.uid, photo: snap.data().photo, updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
       batch.delete(reviewPhotoCol().doc(`${id}__draft`));
     } else if (!d.hasPhoto && r.hasPhoto) batch.delete(reviewPhotoCol().doc(id));
-    batch.update(reviewCol().doc(id), { name: d.name, stars: d.stars, text: d.text, hasPhoto: Boolean(d.hasPhoto), status: "approved", draft: del, pendingEdit: del });
+    batch.update(reviewCol().doc(id), { name: d.name, stars: d.stars, text: d.text, hasPhoto, status: "approved", draft: del, pendingEdit: del });
     await batch.commit();
     photoCache.delete(id);
     pendingReviews = pendingReviews.filter((x) => x.id !== id);
@@ -842,7 +848,10 @@ document.addEventListener("click", (e) => {
   if (!btn) return;
   const act = btn.dataset.review;
   const target = btn.dataset.target;
-  if (act === "write" || act === "edit") {
+  if (act === "retry") {
+    reviewCache.delete(target);
+    loadReviews(target, true);
+  } else if (act === "write" || act === "edit") {
     // Sin cuenta: se pide entrar y, al entrar, se abre el formulario.
     if (!requireAccount(at().why.review, () => { reviewCache.delete(target); loadReviews(target).then(() => { reviewEditing.add(target); renderReviews(target); }); })) return;
     photoDraft.delete(target);

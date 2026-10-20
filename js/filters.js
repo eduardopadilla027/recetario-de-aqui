@@ -26,7 +26,9 @@ const FT = {
     haveMax: (n) => `Máximo ${n} ingredientes: quite uno para añadir otro.`,
     haveLeft: (n) => `Puede añadir ${n} más.`,
     found: (n) => (n === 1 ? "1 receta usa lo que tiene." : `${n} recetas usan lo que tiene.`),
-    kcalOut: (n) => (n === 1 ? "1 receta sin estimado de calorías queda fuera de este filtro." : `${n} recetas sin estimado de calorías quedan fuera de este filtro.`)
+    kcalOut: (n) => (n === 1 ? "1 receta sin estimado de calorías queda fuera de este filtro." : `${n} recetas sin estimado de calorías quedan fuera de este filtro.`),
+    timeOut: (n) => (n === 1 ? "1 receta sin tiempo anotado queda fuera del filtro de tiempo." : `${n} recetas sin tiempo anotado quedan fuera del filtro de tiempo.`),
+    kidsOff: "El filtro \"Para niños\" no se pudo cargar: no se muestran recetas con él. Recargue la página o quítelo."
   },
   en: {
     btn: "Filters", title: "Filters", close: "Close filters", clear: "Clear these filters",
@@ -45,7 +47,9 @@ const FT = {
     haveMax: (n) => `Up to ${n} ingredients: remove one to add another.`,
     haveLeft: (n) => `You can add ${n} more.`,
     found: (n) => (n === 1 ? "1 recipe uses what you have." : `${n} recipes use what you have.`),
-    kcalOut: (n) => (n === 1 ? "1 recipe without a calorie estimate is left out by this filter." : `${n} recipes without a calorie estimate are left out by this filter.`)
+    kcalOut: (n) => (n === 1 ? "1 recipe without a calorie estimate is left out by this filter." : `${n} recipes without a calorie estimate are left out by this filter.`),
+    timeOut: (n) => (n === 1 ? "1 recipe with no time listed is left out by the time filter." : `${n} recipes with no time listed are left out by the time filter.`),
+    kidsOff: "The \"Kid-friendly\" filter couldn't load, so it shows no recipes. Reload the page or turn it off."
   }
 };
 const ft = () => FT[currentLang];
@@ -128,8 +132,17 @@ function advOk(r) {
   if (adv.diet === "veg" && !isVegetarian(r)) return false;
   if (adv.diet === "vegan" && !isVegan(r)) return false;
   if (adv.season && !inSeasonOf(r, adv.season)) return false;
-  if (adv.kids) { const idea = KIDS_IDEA(); if (idea && !idea.test(r, { nameAll: nutriNorm(r.name.es + " " + r.name.en) })) return false; }
+  // Sin la regla de "para niños" no pasa ninguna (antes pasaban todas, sin aviso; revisión 2, N8): advNotes() lo dice.
+  if (adv.kids) { const idea = KIDS_IDEA(); if (!idea || !idea.test(r, { nameAll: nutriNorm(r.name.es + " " + r.name.en) })) return false; }
   return true;
+}
+/* Avisos junto al conteo de resultados (app.js, renderRecipes): lo que un filtro deja fuera sin decirlo. */
+function advNotes() {
+  const tr = ft(), out = [];
+  if (adv.time) { const n = recipes.filter((r) => totalMinutes(r) == null).length; if (n) out.push(tr.timeOut(n)); }
+  if (adv.kcal) { const n = recipes.filter((r) => !estimateNutrition(r).counted).length; if (n) out.push(tr.kcalOut(n)); }
+  if (adv.kids && !KIDS_IDEA()) out.push(tr.kidsOff);
+  return out;
 }
 /* Con "lo que tengo" y sin búsqueda: primero las que usan más de lo que tiene. */
 function advSort(list) {

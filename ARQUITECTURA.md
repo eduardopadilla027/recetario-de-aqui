@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-18 · **Versión del documento:** 4.39.0 · **Versión de la app:** 4.39.0 (revisada el 18 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,316 en 24 categorías
+> **Última actualización:** 2026-10-19 · **Versión del documento:** 4.40.0 · **Versión de la app:** 4.40.0 (revisada el 19 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,316 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -151,7 +151,7 @@ cuando la página ya cargó, con `typeof … === "function"`. Un archivo de rece
 coquito (4 horas de nevera) y el flan salían en "Listas en 30 minutos". Ahora cada receta guarda dos números en minutos:
 `active` (preparar y cocinar) y `total` (con nevera, adobo, reposo, remojo, desalar…), y `wait` dice cuál espera es la
 mayor. "Rápidas" y el filtro de tiempo usan **el total**; la dificultad, el activo. Las tarjetas muestran el total y la
-receta "15 min de cocina · 4 h 15 min en total (nevera)". La migración leyó el texto viejo y las esperas escritas en los
+receta "15 min de preparación · 4 h 15 min en total (nevera)" (antes "de cocina", que no cuadraba con el coquito; v4.40). La migración leyó el texto viejo y las esperas escritas en los
 pasos ("refrigere por al menos 4 horas", "marine toda la noche", "desale el bacalao de 8 a 12 horas"); no cuenta lo que
 es de guardar ("se guarda en la nevera 5 días") ni las esperas de menos de 15 minutos. Una receta nueva pone los dos
 números a mano.
@@ -193,10 +193,10 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | ensaladas | Ensaladas | 43 |
 | sopas | Sopas | 70 |
 | carnes | Carnes | 80 |
-| aves | Aves | 65 |
+| aves | Aves | 66 |
 | pescados | Pescado y Mariscos | 86 |
 | huevos | Huevos y Queso | 23 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 65 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 64 |
 | pastas | Pastas | 31 |
 | bizcochos | Bizcochos | 49 |
 | galletitas | Galletitas | 42 |
@@ -711,6 +711,9 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   recetas usan lo que tiene y cuántos ingredientes más puede añadir; al pasar de 8 (`HAVE_MAX`) lo avisa y deja escrito
   lo que no cupo (antes se perdía); con el filtro de calorías dice cuántas recetas sin estimado quedan fuera; y lo que se
   está escribiendo no se borra cuando el panel se vuelve a pintar.
+- **v4.40:** `advNotes()` pone junto al conteo de resultados ("N recetas encontradas", con cualquier combinación) lo que
+  un filtro deja fuera: recetas sin tiempo con el filtro de tiempo, sin estimado con el de calorías. Si la regla de "para
+  niños" no carga, el filtro no deja pasar ninguna y lo dice (antes dejaba pasar todas sin aviso).
 
 ### 7.12 De temporada en la isla (`js/seasonal.js`)
 
@@ -796,11 +799,15 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   en las búsquedas ("receta de pernil") y todos los enlaces compartidos se veían iguales (título, texto y bandera).
 - **`node tools/prerender.js`** (sin dependencias; carga los scripts en `vm` como el navegador) genera:
   `receta/<id>.html` (1,316 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
-  `vercel.json`. Cada una es ligera y se lee sin JavaScript: título y descripción propios ("Coquito: receta puertorriqueña
-  paso a paso para 12 porciones. Lleva leche de coco… Lista en 4 h 15 min."), `canonical`, Open Graph y Twitter con el
-  nombre del plato, tiempo de cocina y total, porciones, calorías estimadas, alérgenos, ingredientes y pasos en español y
-  en inglés, seis recetas de la misma categoría y el botón **"Abrir en la app"** (`/#/receta/<id>`: porciones, modo
-  cocina…). Datos estructurados **schema.org/Recipe** (JSON-LD: `cookTime` = activo, `totalTime`, `recipeYield`,
+  `vercel.json`. Cada una es ligera y se lee sin JavaScript: título y descripción propios, `canonical`, Open Graph y
+  Twitter con el nombre del plato, tiempo de preparación y total, porciones, calorías estimadas, alérgenos, ingredientes y
+  pasos en español y en inglés, seis recetas de la misma categoría y el botón **"Abrir en la app"** (`/#/receta/<id>`:
+  porciones, modo cocina…). **Descripción (v4.40):** siempre una oración completa de 155 caracteres o menos, sin "…"
+  ("Coquito: receta puertorriqueña paso a paso, 12 porciones, lista en 4 h 15 min con leche de coco, leche condensada,
+  leche evaporada y vainilla."); `description()` quita ingredientes hasta que quepa y `mainWord()` deja sólo el nombre
+  del ingrediente (sin cantidades, medidas, paréntesis ni "picado"). **Medidas métricas (v4.40):** cada ingrediente lleva
+  "≈ 450 g / 25 ml / 4.08 kg" (`lineGrams` de nutrition.js) y cada °F de los pasos su °C, como el modo "Gramos y °C" de
+  la app. Datos estructurados **schema.org/Recipe** (JSON-LD: `prepTime` = activo, `totalTime`, `recipeYield`,
   `recipeIngredient`, `recipeInstructions` con cada paso, `recipeCategory`, `recipeCuisine`, `nutrition.calories`,
   `datePublished` de `RECIPE_ADDED`) y `BreadcrumbList`. Estilos en `css/receta.css` (también en oscuro).
   También `recetas.html` (**/recetas**: todas las recetas por categoría, enlazado en el pie), `sitemap.xml` (portada,
@@ -1007,6 +1014,9 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 
 - **Alérgenos** (`ALLERGENS`): expresiones regulares sobre cada línea de ingredientes: gluten, leche, huevo, pescado,
   crustáceos, moluscos, nueces, maní, ajonjolí, soya, coco y sulfitos. Se muestran con la línea donde aparecen.
+  Los de grupo (sulfitos, crustáceos, moluscos) dicen entre paréntesis **sólo lo que la receta lleva** (`ALLERGEN_SOURCES`,
+  `allergenLabel()`, v4.40): la sangría dice "Sulfitos (vino)", no "Sulfitos (vino, pasas)"; lo usan la receta, la
+  pestaña de seguridad y las páginas de `receta/`.
 - **Sustitutos** (`js/substitutes.js`): debajo de cada alérgeno, "Puede usar:" con el sustituto de cada ingrediente donde
   aparece (`ALLERGEN_SUBS`: harina → mezcla sin gluten 1 a 1, pan rallado, pasta, salsa de soya, avena certificada;
   leche evaporada → leche de coco, condensada de coco, crema de coco, mantequilla → aceite o margarina vegetal, quesos
@@ -1105,6 +1115,35 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-19 — v4.40.0 · Segunda revisión del sitio
+- *Pedido:* aplicar la segunda revisión externa (sobre v4.35.0). Lo que ya estaba resuelto en v4.36–4.39 se comprobó y
+  no se tocó: el JSON-LD Recipe sí está en cada página y el sitemap tiene las 1,316 recetas (N2); los avisos de los
+  planes sí salen (meta de salud, menores de 14, menores de 2, "¿cuál plan conservar?") y `fmtHalf` existe (N6); las
+  habichuelas rosadas ya se distinguen ("sin carne") y no hay pastelillos de hojaldre duplicados (N5).
+- **Páginas de las recetas** (`tools/prerender.js`, §7.15): descripción completa de ≤ 155 caracteres sin "…" (N1);
+  gramos/mililitros y °C junto a las medidas caseras (punto 12); "de preparación" en vez de "de cocina" y `prepTime` en
+  vez de `cookTime` en el JSON-LD (N3); alérgenos con lo que la receta lleva.
+- **Tiempos** (N3): la app también dice "15 min de preparación · …" (`formatTimeLong`). Pernil asado: 5 h 40 min de
+  preparación y horno (cuadra con los pasos: 4 h + 1 h + 20 min de reposo) y 17 h 40 min en total con el adobo.
+- **Alérgenos** (N4, §9): `allergenLabel()` nombra sólo lo que se encontró ("Sulfitos (vino)", "Crustáceos (camarón)").
+- **Buscador** (N7, §7.1): "alcohol-free drink" en inglés ahora trae primero los tragos sin alcohol (el guion se quitaba
+  antes de comprobarlo, "drink" no buscaba en cócteles y el empuje era menor que "drink" en el nombre: ahora +8). El
+  vocabulario se rehace cuando cambia `APP_VERSION` o el número de recetas (antes sólo el número).
+- **Filtros** (N8, §7.11): avisos junto al conteo y "para niños" falla cerrado.
+- **Reseñas** (N9, §7.4): botón **Reintentar** cuando no cargan; al aprobar cambios con foto nueva que ya no está, se queda
+  la foto anterior (antes se marcaba "con foto" sin foto).
+- **Administración** (N9, §7.14): bajo las cifras, la lista de cuentas que aceptaron los términos y no han recibido el
+  correo de confirmación (`consentUnmailedHTML`).
+- **Datos** (N5, punto 11): Mollejas en Escabeche pasa de Entremeses a Aves (como las demás mollejas); "Gazpacho de
+  Bacalao con Aguacate (Ensalada)" (el gazpacho boricua de bacalao es ensalada: se queda en Ensaladas); mofongo con
+  "2 tazas de caldo de pollo caliente" y "aceite para freír (unas 3 tazas: 2 pulgadas de hondo)" (≈ 453 kcal por
+  porción; el aceite se sigue contando como absorbido). Sin cambiar: `guineo-pollo` (Pastelón de Pollo) conserva su
+  dirección porque las favoritas y Mi recetario guardan el id; Yogur Casero sigue en Cereales (no hay categoría de lácteos).
+- *Pendiente de la revisión:* fotos de los platos y su uso como imagen al compartir (puntos 3 y 6); confirmar en la Prueba
+  de resultados enriquecidos de Google y en Search Console (≈ 1,318 direcciones).
+- *Verificado:* `node tools/check-recipes.js` 0 errores y 0 avisos; `node tools/prerender.js` 1,316 páginas (todas las
+  descripciones ≤ 155 sin "…"); navegador: alérgenos de la sangría y los camarones, tiempos, búsqueda ES/EN, avisos de
+  planes (10 y 1 año, diabetes), botón Reintentar, página /receta/pernil; sin errores en la consola.
 ### 2026-10-18 — v4.39.0 · Más ensaladas y emparedados; el correo también para notificaciones y recetas
 - *Pedido:* más recetas de ensaladas y emparedados. Y en privacidad: incluir que el correo electrónico también se usa para enviar notificaciones, recetas nuevas y recetas de la temporada.
 - Sexagésima tanda en `js/recipes-5.js` (versiones propias), 18 que no estaban (había 34 ensaladas y 25 emparedados):

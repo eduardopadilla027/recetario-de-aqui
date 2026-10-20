@@ -8050,7 +8050,7 @@ recipes.push(
   {
     id: "gazpacho-bacalao",
     category: "ensaladas",
-    name: { es: "Gazpacho de Bacalao con Aguacate", en: "Puerto Rican Salt Cod and Avocado Gazpacho" },
+    name: { es: "Gazpacho de Bacalao con Aguacate (Ensalada)", en: "Puerto Rican Salt Cod and Avocado Gazpacho (Salad)" },
     active: 30, total: 525, wait: "frio",
     servings: 6,
     ingredients: {

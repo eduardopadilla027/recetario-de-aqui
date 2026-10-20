@@ -4297,7 +4297,7 @@ recipes.push(
   },
   {
     id: "mollejas-escabeche",
-    category: "entremeses",
+    category: "aves",
     name: { es: "Mollejas en Escabeche", en: "Pickled Chicken Gizzards" },
     active: 90, total: 1530, wait: "frio",
     servings: 8,

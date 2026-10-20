@@ -179,7 +179,10 @@ function sIndex(r) {
 }
 
 function sGetVocab() {
-  if (sVocab && sVocab.n === recipes.length) return sVocab.words;
+  // La clave es la versión de la app y el número de recetas (revisión 2, N7): editar una receta sube la versión.
+  const vKey = `${typeof APP_VERSION === "undefined" ? "" : APP_VERSION}:${recipes.length}`;
+  if (sVocab && sVocab.n === vKey) { return sVocab.words; }
+  sIndexCache.clear();
   // Palabra → cuánto aparece (en nombres vale 5, en ingredientes 1), para preferir la más común al corregir.
   const freq = new Map();
   recipes.forEach((r) => { const x = sIndex(r); x.name.forEach((w) => freq.set(w, (freq.get(w) || 0) + 5)); x.ing.forEach((w) => freq.set(w, (freq.get(w) || 0) + 1)); });
@@ -190,7 +193,7 @@ function sGetVocab() {
   // Clave fonética → la palabra más común que suena así (para corregir "poyo" → "pollo").
   const phon = new Map();
   freq.forEach((f, w) => { const k = sPhon(w); const cur = phon.get(k); if (!cur || f > freq.get(cur)) phon.set(k, w); });
-  sVocab = { n: recipes.length, words: [...freq.keys()], freq, phon };
+  sVocab = { n: vKey, words: [...freq.keys()], freq, phon };
   return sVocab.words;
 }
 
@@ -307,7 +310,8 @@ function smartSearch(query, ctx) {
   if (!terms.length && !excludes.length && !ideas.length) return null;
   // "trago/bebida sin alcohol": se buscan todas las bebidas y la exclusión quita las que llevan alcohol.
   if (excludes.some((e) => ["alcohol", "alcoholico", "alcoholica", "ron", "rum", "licor"].includes(e.stem))) {
-    terms.forEach((t) => { if (t.cats.includes("cocteles")) t.cats = ["bebidas", "jugos", "cocteles"]; });
+    // "drink" (bebidas) también: en inglés "alcohol-free drink" no traía los tragos sin alcohol (revisión 2, N7).
+    terms.forEach((t) => { if (t.cats.includes("cocteles") || t.cats.includes("bebidas")) t.cats = ["bebidas", "jugos", "cocteles"]; });
   }
 
   // Si lo de antes de "para" es una categoría, se busca en ella y el uso sólo ordena.
@@ -402,7 +406,7 @@ function smartSearch(query, ctx) {
   // "Trago sin alcohol": primero las versiones sin alcohol de los tragos (mojito, daiquirí, coquito… sin alcohol).
   if (excludes.some((e) => ["alcohol", "alcoholico", "alcoholica", "ron", "rum", "licor"].includes(e.stem)) || ideas.some((i) => i.label.en === "Alcohol-free drinks")) {
     for (const r of recipes) {
-      if (scores.has(r.id) && /sin alcohol|alcohol-free|virgin/.test(sNorm(r.name.es + " " + r.name.en))) scores.set(r.id, scores.get(r.id) + 3);
+      if (scores.has(r.id) && /sin alcohol|alcohol ?free|virgin/.test(sNorm(r.name.es + " " + r.name.en))) scores.set(r.id, scores.get(r.id) + 8); // +8: por encima de "drink" en el nombre
     }
   }
   return { scores, terms, excludes, ideas, corrections, partial };

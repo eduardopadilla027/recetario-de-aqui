@@ -891,7 +891,8 @@ function renderAdminTable() {
   const active = counted.filter((u) => u.lastSeen && u.lastSeen.toMillis() >= week).length;
   const n = (x) => x.toLocaleString(currentLang === "es" ? "es-PR" : "en-US");
   $("admin-stats").innerHTML = [[tr.statUsers, adminUsers.length], [tr.statUses, total], [tr.statActive, active], [tr.statRecipes, recipes.length]]
-    .map(([k, val]) => `<div class="admin-stat"><span class="admin-stat-num">${n(val)}</span><span class="admin-stat-label">${esc(k)}</span></div>`).join("");
+    .map(([k, val]) => `<div class="admin-stat"><span class="admin-stat-num">${n(val)}</span><span class="admin-stat-label">${esc(k)}</span></div>`).join("") +
+    (typeof consentUnmailedHTML === "function" ? consentUnmailedHTML(adminUsers) : ""); // js/consent-ui.js
 
   const q = lower(adminFilter);
   const rows = adminUsers.filter((u) => !q || (u.email || "").includes(q));

@@ -24,6 +24,21 @@ const ALLERGENS = [
   ["sulfites", /\bvinos?\b|\bpasas\b|marrasquino/]
 ];
 
+/* Qué ingrediente concreto disparó un alérgeno de grupo, para nombrar sólo lo que la receta lleva:
+ * "Sulfitos (vino)" en la sangría, no "Sulfitos (vino, pasas)" (revisión 2, N4). */
+const ALLERGEN_SOURCES = {
+  sulfites: [[/\bvinos?\b/, "vino", "wine"], [/\bpasas\b/, "pasas", "raisins"], [/marrasquino/, "cerezas marrasquino", "maraschino cherries"]],
+  crustacean: [[/camaron/, "camarón", "shrimp"], [/langost/, "langosta", "lobster"], [/\bjuey/, "jueyes", "land crab"], [/cangrejo/, "cangrejo", "crab"]],
+  mollusc: [[/\bpulpo\b/, "pulpo", "octopus"], [/calamar/, "calamar", "squid"], [/carrucho/, "carrucho", "conch"], [/caracol/, "caracoles", "snails"],
+    [/ostion|\bostras?\b/, "ostiones", "oysters"], [/almeja/, "almejas", "clams"], [/mejillon/, "mejillones", "mussels"], [/vieira|scallop/, "vieiras", "scallops"]]
+};
+/** Nombre del alérgeno para mostrar: los de grupo dicen entre paréntesis lo que la receta lleva. */
+function allergenLabel(a, lang) {
+  const base = ADVICE_TEXT[lang].allergens[a.key] || a.key;
+  if (!a.src || !a.src.length) return base;
+  return `${base.replace(/\s*\(.*\)$/, "")} (${a.src.map((x) => x[lang === "es" ? 0 : 1]).join(", ")})`;
+}
+
 /* Recetas con huevo crudo o poco cocido (no se deduce del texto). */
 const RAW_EGG_IDS = new Set(["malta-huevo", "tres-leches", "ponche-crema"]);
 
@@ -320,7 +335,9 @@ function getAdvisories(recipe) {
   const allergens = [];
   for (const [key, rx] of ALLERGENS) {
     const items = lines.map((l, i) => (rx.test(l) ? i : -1)).filter((i) => i >= 0);
-    if (items.length) allergens.push({ key, items });
+    if (!items.length) continue;
+    const src = (ALLERGEN_SOURCES[key] || []).filter(([w]) => items.some((i) => w.test(lines[i]))).map(([, es, en]) => [es, en]);
+    allergens.push(src.length ? { key, items, src } : { key, items });
   }
 
   const alerts = [];

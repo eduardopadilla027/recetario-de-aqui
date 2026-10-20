@@ -18,8 +18,8 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.39.0";
-const APP_REVISED = "2026-10-18";
+const APP_VERSION = "4.40.0";
+const APP_REVISED = "2026-10-19";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
 /* Lo que se muestra en la portada: "Más de 1,000 recetas", no el total exacto (que cambia con cada
@@ -1258,13 +1258,14 @@ function fmtMinutes(min) {
 }
 /** Tarjetas: el total, que es lo que hay que esperar para comer. */
 function formatTime(r) { return fmtMinutes(totalMinutes(r) || 0); }
-/** Detalle: "15 min de cocina · 4 h 15 min en total (nevera)". */
+/** Detalle: "15 min de preparación · 4 h 15 min en total (nevera)". "Preparación" y no "cocina" (revisión 2, N3):
+ *  el tiempo activo incluye recetas que no se cocinan, como el coquito. */
 function formatTimeLong(r) {
   const es = currentLang === "es";
   if (!r.total || r.total === r.active) return fmtMinutes(r.active);
   const w = r.wait ? ` (${WAIT_T[currentLang][r.wait] || r.wait})` : "";
-  return es ? `${fmtMinutes(r.active)} de cocina · ${fmtMinutes(r.total)} en total${w}`
-            : `${fmtMinutes(r.active)} cooking · ${fmtMinutes(r.total)} total${w}`;
+  return es ? `${fmtMinutes(r.active)} de preparación · ${fmtMinutes(r.total)} en total${w}`
+            : `${fmtMinutes(r.active)} prep · ${fmtMinutes(r.total)} total${w}`;
 }
 
 /* ------------------------------------------------------ porciones ---- */
@@ -1476,7 +1477,8 @@ function renderCategories() {
   if (searchQuery) heading = tr.resultsFor(searchQuery);
   else if (selectedNavCategory) heading = tr.categories[selectedNavCategory];
   $("results-heading").textContent = heading;
-  $("results-count").textContent = tr.countFound(filtered.length);
+  // El conteo sale con cualquier combinación de filtros, con lo que un filtro deja fuera (revisión 2, N8).
+  $("results-count").textContent = [tr.countFound(filtered.length), ...(typeof advNotes === "function" ? advNotes() : [])].join(" ");
 
   if (!filtered.length) {
     container.innerHTML = emptyHTML();
@@ -1800,7 +1802,7 @@ function renderSafety(recipe) {
   const line = $("allergen-line");
   line.hidden = !adv.allergens.length;
   line.innerHTML = adv.allergens.length
-    ? `${icon("i-alert")}<span><strong>${at.contains}</strong> ${adv.allergens.map((a) => esc(at.allergens[a.key])).join(" · ")}</span>`
+    ? `${icon("i-alert")}<span><strong>${at.contains}</strong> ${adv.allergens.map((a) => esc(allergenLabel(a, currentLang))).join(" · ")}</span>`
     : "";
 
   // Sustitutos de js/substitutes.js para cada alérgeno, según la línea donde aparece.
@@ -1811,7 +1813,7 @@ function renderSafety(recipe) {
   const allergens = adv.allergens.length
     ? `<ul class="allergen-list">${adv.allergens.map((a) => `
         <li>
-          <span class="allergen-chip">${esc(at.allergens[a.key])}</span>
+          <span class="allergen-chip">${esc(allergenLabel(a, currentLang))}</span>
           <span class="allergen-src">${at.foundIn} ${a.items.map((i) => esc(ings[i])).join("; ")}</span>
           ${subsHTML(a)}
         </li>`).join("")}</ul><p class="allergen-subs-note">${esc(SUBS_TEXT[currentLang].note)}</p>`
