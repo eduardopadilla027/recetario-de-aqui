@@ -1,16 +1,18 @@
 /* Recetarios de Aquí · Términos y Condiciones de Uso, consentimiento y correo de confirmación.
  *
- * - El texto de los términos (ES/EN), las tres casillas de consentimiento y el correo que confirma la aceptación.
+ * - El texto de los términos (ES/EN), las tres declaraciones que se aceptan con el botón "Acepto" (sin casillas desde
+ *   v4.41) y el correo que confirma la aceptación.
  * - Lo usan la app (js/auth.js: pantalla de entrada y estado "consent"; #/terminos) y el motor de correo
  *   (api/consent-email.js, en el servidor de Vercel), que lo carga con require(): por eso el final exporta.
- * - Si se cambia el texto de forma importante, se sube CONSENT_VERSION: todos deberán aceptar otra vez al entrar.
+ * - CONSENT_VERSION dice qué texto aceptó cada cuenta nueva. Desde v4.41 una cuenta que ya aceptó una versión no vuelve
+ *   a ver los términos al entrar (js/consent-ui.js, consentOnUser).
  * Texto redactado para la app; conviene que lo revise un abogado con licencia en Puerto Rico antes de depender de él. */
 
-const CONSENT_VERSION = "2026-10-18.3";
+const CONSENT_VERSION = "2026-10-19.1";
 const CONSENT_SITE = "https://recetariodeaqui.com";
 const CONSENT_CONTACT = "recetariodeaqui@gmail.com";
 
-/* Las tres casillas (todas obligatorias). Su clave se guarda en el registro del consentimiento. */
+/* Las tres declaraciones (se aceptan todas juntas con el botón). Su clave se guarda en el registro del consentimiento. */
 const CONSENT_ITEMS = {
   es: [
     ["terms", "He leído y acepto los Términos y Condiciones de Uso de Recetarios de Aquí."],
@@ -28,8 +30,8 @@ const CONSENT_ITEMS = {
 const TERMS = {
   es: {
     title: "Términos y Condiciones de Uso y Consentimiento",
-    meta: (v) => `Versión ${v} · Vigentes desde el 18 de octubre de 2026`,
-    intro: "Lea con calma. Las recetas se pueden ver sin cuenta. Para crear una cuenta debe aceptar estos términos marcando las tres casillas; le enviaremos a su correo una confirmación de lo que aceptó.",
+    meta: (v) => `Versión ${v} · Vigentes desde el 19 de octubre de 2026`,
+    intro: "Lea con calma. Para ver las recetas necesita una cuenta gratis con su correo electrónico. Al pulsar «Acepto los términos y condiciones» usted acepta estos términos y las tres declaraciones de abajo; le enviaremos a su correo una confirmación de lo que aceptó.",
     summaryTitle: "En resumen",
     summary: [
       "Las recetas, los planes de comida y la nutrición son orientación general, no consejo médico.",
@@ -42,7 +44,7 @@ const TERMS = {
     sections: [
       ["1. Quiénes somos y aceptación", [
         "Recetarios de Aquí (recetariodeaqui.com, «la app», «nosotros») es un recetario digital gratuito de cocina puertorriqueña. Estos Términos y Condiciones («los términos») son un acuerdo entre usted y nosotros sobre el uso de la app.",
-        "Al usar la app, y al marcar las casillas de consentimiento para crear una cuenta, usted declara que leyó, entendió y acepta estos términos. Si no está de acuerdo con alguna parte, no use la app."
+        "Al usar la app, y al pulsar «Acepto los términos y condiciones» para crear su cuenta, usted declara que leyó, entendió y acepta estos términos. Si no está de acuerdo con alguna parte, no use la app."
       ]],
       ["2. Edad y menores", [
         "Debe tener 18 años o más para crear una cuenta. Si es menor de 18 años, sólo puede usar la app con el permiso y la supervisión de su padre, madre o tutor legal, quien acepta estos términos en su nombre y es responsable de su uso.",
@@ -70,12 +72,12 @@ const TERMS = {
         "Usted decide qué cocina, qué come y en qué cantidad. Es responsable de revisar los ingredientes, las porciones, las temperaturas y el uso seguro de cuchillos, fuego, aceite caliente y equipos de cocina, y de supervisar a los niños en la cocina."
       ]],
       ["8. Su cuenta y el uso aceptable", [
-        "La cuenta es opcional: las recetas, el buscador, los planes y Mi recetario se usan sin ella (lo suyo queda sólo en su navegador). Para crear una cuenta se necesita un correo validado; no guardamos contraseñas. Usted es responsable de su cuenta. No use la app para fines ilegales, para dañarla, para enviar contenido ofensivo o engañoso, ni para obtener datos de otras personas. Podemos suspender o cerrar una cuenta que no cumpla estos términos."
+        "Para ver las recetas y usar la app se necesita una cuenta gratis con un correo electrónico validado; no guardamos contraseñas. Usted es responsable de su cuenta. No use la app para fines ilegales, para dañarla, para enviar contenido ofensivo o engañoso, ni para obtener datos de otras personas. Podemos suspender o cerrar una cuenta que no cumpla estos términos."
       ]],
       ["9. Privacidad: qué guardamos y para qué", [
         "Guardamos:",
-        ["su correo electrónico, la primera y la última vez que entró y cuántas veces usa la app;", "este consentimiento: la versión aceptada, la fecha y la hora, el idioma, las casillas marcadas y el tipo de navegador;", "los ajustes de sus planes, incluidos datos que usted da de forma voluntaria (sexo, edad, peso, estatura, actividad y objetivo de salud);", "Mi recetario: colecciones, notas, recetas que hizo y su lista de compras;", "las reseñas y fotos que usted publique."],
-        "Sin cuenta no guardamos nada en el servidor: sus favoritas, planes y Mi recetario quedan sólo en su navegador.",
+        ["su correo electrónico, la primera y la última vez que entró y cuántas veces usa la app;", "este consentimiento: la versión aceptada, la fecha y la hora, el idioma, las declaraciones aceptadas y el tipo de navegador;", "los ajustes de sus planes, incluidos datos que usted da de forma voluntaria (sexo, edad, peso, estatura, actividad y objetivo de salud);", "Mi recetario: colecciones, notas, recetas que hizo y su lista de compras;", "las reseñas y fotos que usted publique."],
+        "Algunas preferencias, como el idioma y las medidas, se guardan sólo en su navegador.",
         "Para qué: para darle acceso, calcular sus planes, guardar lo suyo en su cuenta, enviarle la confirmación de este consentimiento y cuidar la app. Dónde: en los servicios de Google Firebase (en Estados Unidos) y en su navegador; el correo de confirmación se envía por medio de un proveedor de envío de correos.",
         `Su correo electrónico también se usa para enviarle notificaciones de la app (por ejemplo, cambios en su cuenta o en estos términos), recetas nuevas y recetas de la temporada. Estos correos se envían por medio del mismo proveedor de envío de correos. Cada uno dirá cómo dejar de recibirlos, y también puede pedirlo escribiendo a ${CONSENT_CONTACT}; dejar de recibirlos no afecta su cuenta. Los avisos indispensables sobre su cuenta, como la confirmación de este consentimiento, se envían siempre.`,
         "Quién lo ve: usted. Los administradores de la app ven su correo, sus fechas y visitas, su consentimiento y el estado de su cuenta, pero no ven sus planes, sus datos de salud ni sus notas. No vendemos sus datos ni los compartimos para publicidad.",
@@ -101,17 +103,17 @@ const TERMS = {
         `Preguntas sobre estos términos o sobre sus datos: ${CONSENT_CONTACT}.`
       ]]
     ],
-    readAll: "Leer los términos completos", accept: "Para entrar, marque las tres casillas:",
-    acceptBtn: "Acepto y continúo", acceptedLocal: "Gracias. Ahora escoja cómo entrar.",
-    needAll: "Marque las tres casillas para continuar.", consentTitle: "Antes de continuar",
-    consentIntro: "Actualizamos los Términos y Condiciones de Uso. Para seguir usando la app, léalos y acéptelos.",
+    readAll: "Leer los términos completos", accept: "Al aceptar, usted declara:",
+    acceptBtn: "Acepto los términos y condiciones", acceptedLocal: "Gracias. Ahora entre con su correo.",
+    consentTitle: "Antes de continuar",
+    consentIntro: "Para entrar a la app, lea y acepte los Términos y Condiciones de Uso.",
     emailSent: (e) => `Le enviamos a ${e} la confirmación de lo que aceptó.`,
     viewTitle: "Términos y Condiciones", printBtn: "Imprimir", myConsent: (v, d) => `Usted aceptó la versión ${v} el ${d}.`
   },
   en: {
     title: "Terms and Conditions of Use and Consent",
-    meta: (v) => `Version ${v} · Effective October 18, 2026`,
-    intro: "Please read carefully. Recipes can be viewed without an account. To create an account you must accept these terms by checking the three boxes; we'll email you a confirmation of what you accepted.",
+    meta: (v) => `Version ${v} · Effective October 19, 2026`,
+    intro: "Please read carefully. To view the recipes you need a free account with your email address. By tapping “I accept the terms and conditions” you accept these terms and the three statements below; we'll email you a confirmation of what you accepted.",
     summaryTitle: "In short",
     summary: [
       "Recipes, meal plans and nutrition are general guidance, not medical advice.",
@@ -124,7 +126,7 @@ const TERMS = {
     sections: [
       ["1. Who we are and acceptance", [
         "Recetarios de Aquí (recetariodeaqui.com, “the app”, “we”) is a free digital cookbook of Puerto Rican cooking. These Terms and Conditions (“the terms”) are an agreement between you and us about using the app.",
-        "By using the app, and by checking the consent boxes to create an account, you state that you have read, understood and accept these terms. If you don't agree with any part, do not use the app."
+        "By using the app, and by tapping “I accept the terms and conditions” to create your account, you state that you have read, understood and accept these terms. If you don't agree with any part, do not use the app."
       ]],
       ["2. Age and minors", [
         "You must be 18 or older to create an account. If you are under 18, you may only use the app with the permission and supervision of your parent or legal guardian, who accepts these terms on your behalf and is responsible for your use.",
@@ -152,12 +154,12 @@ const TERMS = {
         "You decide what you cook, what you eat and how much. You are responsible for checking ingredients, portions, temperatures and the safe use of knives, fire, hot oil and kitchen equipment, and for supervising children in the kitchen."
       ]],
       ["8. Your account and acceptable use", [
-        "An account is optional: recipes, search, plans and My cookbook work without one (your things stay only in your browser). Creating an account requires a verified email; we don't store passwords. You are responsible for your account. Don't use the app for illegal purposes, to harm it, to post offensive or misleading content, or to collect other people's data. We may suspend or close an account that doesn't follow these terms."
+        "Viewing the recipes and using the app requires a free account with a verified email address; we don't store passwords. You are responsible for your account. Don't use the app for illegal purposes, to harm it, to post offensive or misleading content, or to collect other people's data. We may suspend or close an account that doesn't follow these terms."
       ]],
       ["9. Privacy: what we store and why", [
         "We store:",
-        ["your email address, the first and last time you entered and how many times you use the app;", "this consent: the accepted version, date and time, language, the boxes checked and the type of browser;", "your plan settings, including information you choose to give (sex, age, weight, height, activity and health goal);", "My cookbook: collections, notes, recipes you made and your shopping list;", "the reviews and photos you post."],
-        "Without an account we store nothing on the server: your favorites, plans and My cookbook stay only in your browser.",
+        ["your email address, the first and last time you entered and how many times you use the app;", "this consent: the accepted version, date and time, language, the statements accepted and the type of browser;", "your plan settings, including information you choose to give (sex, age, weight, height, activity and health goal);", "My cookbook: collections, notes, recipes you made and your shopping list;", "the reviews and photos you post."],
+        "Some preferences, such as language and units, are stored only in your browser.",
         "Why: to give you access, calculate your plans, keep your things in your account, send you the confirmation of this consent and look after the app. Where: in Google Firebase services (in the United States) and in your browser; the confirmation email is sent through an email delivery provider.",
         `Your email address is also used to send you app notifications (for example, changes to your account or to these terms), new recipes and seasonal recipes. These emails are sent through the same email delivery provider. Each one will explain how to stop receiving them, and you can also ask by writing to ${CONSENT_CONTACT}; opting out doesn't affect your account. Essential notices about your account, such as the confirmation of this consent, are always sent.`,
         "Who sees it: you. The app's administrators see your email, dates and visits, your consent and your account status, but not your plans, health data or notes. We don't sell your data or share it for advertising.",
@@ -183,10 +185,10 @@ const TERMS = {
         `Questions about these terms or your data: ${CONSENT_CONTACT}.`
       ]]
     ],
-    readAll: "Read the full terms", accept: "To enter, check the three boxes:",
-    acceptBtn: "I accept and continue", acceptedLocal: "Thank you. Now choose how to sign in.",
-    needAll: "Check the three boxes to continue.", consentTitle: "Before you continue",
-    consentIntro: "We updated the Terms and Conditions of Use. To keep using the app, please read and accept them.",
+    readAll: "Read the full terms", accept: "By accepting, you state that:",
+    acceptBtn: "I accept the terms and conditions", acceptedLocal: "Thank you. Now sign in with your email.",
+    consentTitle: "Before you continue",
+    consentIntro: "To enter the app, please read and accept the Terms and Conditions of Use.",
     emailSent: (e) => `We emailed ${e} a confirmation of what you accepted.`,
     viewTitle: "Terms and Conditions", printBtn: "Print", myConsent: (v, d) => `You accepted version ${v} on ${d}.`
   }
@@ -209,7 +211,7 @@ function consentEmail({ email, version, at, lang, items }) {
   const lines = es ? {
     hi: "Hola:",
     p1: `Gracias por usar Recetarios de Aquí. Este correo confirma que, con la cuenta ${email}, usted aceptó los ${T.title}, versión ${version}, el ${when}.`,
-    p2: "Usted marcó y aceptó lo siguiente:",
+    p2: "Usted aceptó lo siguiente:",
     p3: "Le recordamos lo más importante:",
     p4: `Puede leer los términos completos cuando quiera en ${link}. Guarde este correo como constancia.`,
     p5: `Si usted no hizo esta aceptación o tiene alguna pregunta, escríbanos a ${CONSENT_CONTACT}.`,
@@ -218,7 +220,7 @@ function consentEmail({ email, version, at, lang, items }) {
   } : {
     hi: "Hello,",
     p1: `Thank you for using Recetarios de Aquí. This email confirms that, with the account ${email}, you accepted the ${T.title}, version ${version}, on ${when}.`,
-    p2: "You checked and accepted the following:",
+    p2: "You accepted the following:",
     p3: "A reminder of the most important points:",
     p4: `You can read the full terms anytime at ${link}. Keep this email as a record.`,
     p5: `If you didn't make this acceptance or have any questions, write to us at ${CONSENT_CONTACT}.`,

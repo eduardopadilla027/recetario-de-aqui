@@ -1,13 +1,14 @@
 /* Recetarios de Aquí · Consentimiento en la pantalla de entrada, en la cuenta y en #/terminos.
  *
- * 1. ANTES de entrar (pantalla de entrada, js/auth.js): resumen de los términos, "Leer los términos completos" y
- *    las tres casillas (CONSENT_ITEMS, js/consent.js). Los botones de Gmail, Yahoo… y el enlace por correo quedan
- *    apagados hasta marcarlas todas. Lo aceptado se guarda en este navegador (rcb.consent) con la hora.
- * 2. AL ENTRAR (onUser en auth.js → consentOnUser): si la cuenta no tiene la versión vigente aceptada, se guarda en
- *    Firestore consents/{uid} (versión, casillas, idioma, hora local y del servidor, navegador e historial) y se
- *    pide al servidor (api/consent-email.js) que envíe el correo de confirmación; al enviarse se anota emailSentAt.
- *    Si la cuenta ya había entrado antes sin aceptar (o cambió la versión), sale el estado "consent" con las
- *    casillas y "Acepto y continúo".
+ * 1. ANTES de entrar (js/auth.js, v4.41): la persona escribe su correo y la app mira si está registrado
+ *    (registered/{correo}). Si NO lo está, sale el estado "terms": resumen, "Leer los términos completos", las tres
+ *    declaraciones (CONSENT_ITEMS, js/consent.js, ya sin casillas) y el botón "Acepto los términos y condiciones".
+ *    Lo aceptado se guarda en este navegador (rcb.consent) con la hora. Si YA está registrado, no ve los términos.
+ * 2. AL ENTRAR (onUser en auth.js → consentOnUser): si la cuenta ya tiene un consentimiento guardado (de cualquier
+ *    versión) entra directo. Si no, se guarda lo aceptado en Firestore consents/{uid} (versión, declaraciones, idioma,
+ *    hora local y del servidor, navegador e historial), se marca registered/{correo} y se pide al servidor
+ *    (api/consent-email.js) el correo de confirmación de la primera vez; al enviarse se anota emailSentAt.
+ *    Si entró sin haber aceptado aquí (p. ej. con otra cuenta de Google), sale el estado "consent" con el botón.
  * 3. Los administradores ven en #/admin la columna "Consentimiento" (versión, fecha y si se envió el correo).
  * 4. #/terminos muestra los términos completos para leerlos o imprimirlos.
  * 5. #/privacidad: qué se guarda y para qué (sección 9 de los términos) y, con la sesión abierta, lo que hay
@@ -24,25 +25,25 @@ const CUI_T = {
     pvPlan: "Ajustes de planes", pvKitchen: "Mi recetario", pvReviews: "Reseñas", pvYes: "Sí", pvNo: "No",
     pvGuest: "No ha entrado con una cuenta, así que no hay nada suyo en el servidor. Para borrar lo de este navegador, borre los datos del sitio en su navegador.",
     pvDownload: "Descargar mis datos", pvDelete: "Retirar mi consentimiento y borrar mi cuenta",
-    pvDeleteHelp: "Borra para siempre su registro, su consentimiento, sus planes, Mi recetario, sus reseñas y fotos y su cuenta. No se puede deshacer. Las recetas las puede seguir viendo sin cuenta.",
+    pvDeleteHelp: "Borra para siempre su registro, su consentimiento, sus planes, Mi recetario, sus reseñas y fotos y su cuenta. No se puede deshacer. Para volver a ver las recetas tendría que registrarse otra vez.",
     pvConfirm: "¿Borrar su cuenta y todos sus datos? No se puede deshacer.", pvWorking: "Borrando sus datos…",
-    pvDone: "Su cuenta y sus datos se borraron. Puede seguir usando la app sin cuenta.",
+    pvDone: "Su cuenta y sus datos se borraron. Gracias por usar Recetarios de Aquí.",
     pvReauth: "Por seguridad, entre otra vez con su cuenta y vuelva a pulsar «Borrar mi cuenta».",
     pvFail: "No se pudo borrar todo. Inténtelo de nuevo o escríbanos.", pvLoading: "Cargando…",
     footerPrivacy: "Privacidad", pending: "Pendiente", emailed: "correo enviado", notEmailed: "correo sin enviar",
     unmailed: (n) => (n === 1 ? "1 cuenta aceptó los términos y no ha recibido el correo de confirmación:" : `${n} cuentas aceptaron los términos y no han recibido el correo de confirmación:`),
     unmailedMore: (n) => `y ${n} más`, unmailedHelp: "Se vuelve a intentar cuando la persona entra. Si no baja, revise RESEND_API_KEY en Vercel.", csvConsent: "Versión aceptada", csvConsentAt: "Fecha de aceptación", csvEmail: "Correo de confirmación",
     emailFail: "Su aceptación quedó guardada, pero no se pudo enviar el correo de confirmación ahora. Lo intentaremos la próxima vez que entre.", footer: "Términos y condiciones",
-    consentFail: "No pudimos guardar ni confirmar su consentimiento en el servidor, así que la cuenta no se abrió. Revise su conexión e intente de nuevo; mientras tanto puede usar la app sin cuenta." },
+    consentFail: "No pudimos guardar ni confirmar su consentimiento en el servidor, así que la cuenta no se abrió. Revise su conexión e intente de nuevo." },
   en: {
     pvTitle: "Privacy and my data", pvIntro: "Without an account we store nothing on the server: your things stay only in this browser. With an account, this is what we store:",
     pvMine: "What's stored for your account", pvEmail: "Email", pvSince: "First time", pvUses: "Times you used the app", pvConsent: "Consent",
     pvPlan: "Plan settings", pvKitchen: "My cookbook", pvReviews: "Reviews", pvYes: "Yes", pvNo: "No",
     pvGuest: "You're not signed in to an account, so nothing of yours is on the server. To remove what's in this browser, clear this site's data in your browser.",
     pvDownload: "Download my data", pvDelete: "Withdraw my consent and delete my account",
-    pvDeleteHelp: "Permanently deletes your record, consent, plans, My cookbook, reviews and photos, and your account. This can't be undone. You can keep viewing recipes without an account.",
+    pvDeleteHelp: "Permanently deletes your record, consent, plans, My cookbook, reviews and photos, and your account. This can't be undone. To see the recipes again you'd have to sign up again.",
     pvConfirm: "Delete your account and all your data? This can't be undone.", pvWorking: "Deleting your data…",
-    pvDone: "Your account and data were deleted. You can keep using the app without an account.",
+    pvDone: "Your account and data were deleted. Thank you for using Recetarios de Aquí.",
     pvReauth: "For security, sign in to your account again and tap “Delete my account” once more.",
     pvFail: "Not everything could be deleted. Try again or write to us.", pvLoading: "Loading…",
     footerPrivacy: "Privacy",
@@ -50,7 +51,7 @@ const CUI_T = {
     unmailed: (n) => (n === 1 ? "1 account accepted the terms and hasn't received the confirmation email:" : `${n} accounts accepted the terms and haven't received the confirmation email:`),
     unmailedMore: (n) => `and ${n} more`, unmailedHelp: "It's retried when the person signs in. If it doesn't go down, check RESEND_API_KEY in Vercel.", csvConsent: "Accepted version", csvConsentAt: "Acceptance date", csvEmail: "Confirmation email",
     emailFail: "Your acceptance was saved, but the confirmation email couldn't be sent right now. We'll try again next time you sign in.", footer: "Terms and conditions",
-    consentFail: "We couldn't save or confirm your consent on the server, so the account wasn't opened. Check your connection and try again; meanwhile you can use the app without an account." }
+    consentFail: "We couldn't save or confirm your consent on the server, so the account wasn't opened. Check your connection and try again." }
 };
 const cui = () => CUI_T[currentLang];
 const ctT = () => TERMS[currentLang];
@@ -63,7 +64,6 @@ function consentPending() {
   const c = readLocalConsent();
   return c && c.version === CONSENT_VERSION && ALL_ITEMS().every((k) => (c.items || []).includes(k)) ? c : null;
 }
-let consentChecks = new Set(); // casillas marcadas en la pantalla (todavía sin aceptar)
 
 /* ── Texto completo ── */
 function termsBodyHTML(lang = currentLang) {
@@ -72,42 +72,45 @@ function termsBodyHTML(lang = currentLang) {
   return `<p class="terms-meta">${esc(T.meta(CONSENT_VERSION))}</p>
     ${T.sections.map(([h, ps]) => `<section class="terms-sec"><h3>${esc(h)}</h3>${ps.map(para).join("")}</section>`).join("")}`;
 }
-/* El bloque de la pantalla de entrada (mode "pre") o del estado "consent" (mode "update"). */
-function consentBlockHTML(mode = "pre") {
+/* Los términos con un solo botón "Acepto los términos y condiciones": antes de entrar, para un correo que no está
+   registrado (mode "new"), o ya dentro, si la cuenta no tiene consentimiento guardado (mode "update"). Las tres
+   declaraciones se siguen mostrando como lista (antes eran tres casillas que había que marcar). */
+function consentBlockHTML(mode = "new") {
   const T = ctT();
-  const done = consentPending();
-  if (mode === "pre" && done) consentChecks = new Set(done.items);
   return `<section class="consent-block" aria-labelledby="consent-title">
     <h2 class="auth-h2" id="consent-title">${esc(mode === "update" ? T.consentIntro : T.title)}</h2>
-    ${mode === "pre" ? `<p class="auth-text">${esc(T.intro)}</p>` : ""}
+    ${mode === "new" ? `<p class="auth-text">${esc(T.intro)}</p>` : ""}
     <p class="consent-sum-title">${esc(T.summaryTitle)}</p>
     <ul class="consent-summary">${T.summary.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
     <details class="consent-full"><summary>${esc(T.readAll)}</summary><div class="terms-box" tabindex="0">${termsBodyHTML()}</div></details>
-    <fieldset class="consent-checks"><legend>${esc(T.accept)}</legend>
-      ${CONSENT_ITEMS[currentLang].map(([k, txt]) => `<label class="consent-item"><input type="checkbox" data-consent-item="${k}" ${consentChecks.has(k) ? "checked" : ""}><span>${esc(txt)}</span></label>`).join("")}
-    </fieldset>
-    <p class="consent-status" id="consent-status" role="status">${done && mode === "pre" ? esc(T.acceptedLocal) : ""}</p>
-    ${mode === "update" ? `<div class="auth-actions"><button type="button" class="btn btn-primary" data-consent-accept ${ALL_ITEMS().every((k) => consentChecks.has(k)) ? "" : "aria-disabled=\"true\""}>${esc(T.acceptBtn)}</button>${signOutBtn()}</div>` : ""}
+    <p class="consent-sum-title">${esc(T.accept)}</p>
+    <ul class="consent-summary consent-items">${CONSENT_ITEMS[currentLang].map(([, txt]) => `<li>${esc(txt)}</li>`).join("")}</ul>
+    <div class="auth-actions"><button type="button" class="btn btn-primary" data-consent-accept>${esc(T.acceptBtn)}</button>
+      ${mode === "update" ? signOutBtn() : `<button type="button" class="btn btn-ghost auth-link" data-auth="restart">${esc(at().useOther)}</button>`}</div>
   </section>`;
 }
-/* Al marcar o desmarcar: con las tres, queda aceptado en este navegador y se encienden las formas de entrar. */
-function onConsentCheck(input) {
-  const k = input.dataset.consentItem;
-  if (input.checked) consentChecks.add(k); else consentChecks.delete(k);
-  const all = ALL_ITEMS().every((x) => consentChecks.has(x));
-  writeLocalConsent(all ? { version: CONSENT_VERSION, items: [...consentChecks], acceptedAt: new Date().toISOString(), lang: currentLang } : null);
-  const entry = $("auth-entry");
-  if (entry) entry.disabled = !all;
-  const st = $("consent-status");
-  if (st) st.textContent = all ? ctT().acceptedLocal : "";
-  const btn = document.querySelector("[data-consent-accept]");
-  if (btn) { if (all) btn.removeAttribute("aria-disabled"); else btn.setAttribute("aria-disabled", "true"); }
+/* "Acepto": queda aceptado en este navegador (las tres declaraciones) y se sigue: ya dentro, se guarda en la cuenta;
+   antes de entrar, se pasa a escoger cómo entrar con ese correo (auth.js, showMethod). */
+function acceptConsent() {
+  writeLocalConsent({ version: CONSENT_VERSION, items: ALL_ITEMS(), acceptedAt: new Date().toISOString(), lang: currentLang });
+  if (fbAuth && fbAuth.currentUser) { setAuthState("loading"); onUser(fbAuth.currentUser); }
+  else showMethod();
 }
 
 /* ── En la cuenta ── */
 const consentRef = (uid) => fbDb.collection("consents").doc(uid);
-/* Devuelve true si se puede entrar: el registro del SERVIDOR (consents/{uid}) tiene la versión vigente, o la persona
-   la aceptó en esta pantalla y se guardó allí con la hora del servidor. La copia del navegador (rcb.consent) sólo
+/* Marca el correo como registrado (registered/{correo}), lo que la pantalla de entrada consulta antes de entrar.
+   Sólo guarda la hora; las reglas no dejan listar la colección, sólo leer un correo exacto. */
+const registeredRef = (email) => fbDb.collection("registered").doc(lower(email));
+async function markRegistered(user) {
+  try {
+    const ref = registeredRef(user.email);
+    if (!(await ref.get()).exists) await ref.set({ at: firebase.firestore.FieldValue.serverTimestamp() });
+  } catch (err) { console.warn("No se marcó el registro:", (err && err.code) || err); }
+}
+/* Devuelve true si se puede entrar: el registro del SERVIDOR (consents/{uid}) existe (de cualquier versión: quien ya
+   aceptó no vuelve a ver los términos, v4.41), o la persona los aceptó en esta pantalla y se guardó allí con la hora
+   del servidor. La copia del navegador (rcb.consent) sólo
    recuerda las casillas marcadas antes de entrar: nunca basta por sí sola (antes, si el registro no se podía leer,
    se entraba con ella). Sin registro en el servidor no se abre la cuenta; la app se sigue usando sin cuenta. */
 async function consentOnUser(user) {
@@ -119,12 +122,13 @@ async function consentOnUser(user) {
     await fbAuth.signOut().catch(() => {});
     return false;
   }
-  if (saved && saved.version === CONSENT_VERSION) {
+  if (saved) {
+    markRegistered(user);
     if (!saved.emailSentAt) sendConsentEmail(user, false); // no se pudo enviar antes: se intenta otra vez
     return true;
   }
   const local = consentPending();
-  if (!local) { consentChecks = new Set(); setAuthState("consent"); return false; }
+  if (!local) { setAuthState("consent"); return false; }
   try {
     const history = saved ? [...(saved.history || []), `${saved.version}`].slice(-20) : [];
     await consentRef(user.uid).set({
@@ -136,7 +140,8 @@ async function consentOnUser(user) {
     // Se vuelve a leer: lo que vale es lo que quedó en el servidor (con su hora), no lo que se mandó.
     const check = await consentRef(user.uid).get();
     if (!check.exists || check.data().version !== CONSENT_VERSION || !check.data().at) throw new Error("sin registro");
-    sendConsentEmail(user, true);
+    await markRegistered(user);
+    sendConsentEmail(user, true); // la confirmación de la primera vez
   } catch (err) {
     console.warn("No se guardó el consentimiento en la cuenta:", (err && (err.code || err.message)) || err);
     setAuthState("consent", cui().consentFail);
@@ -166,6 +171,20 @@ let adminConsents = new Map();
 async function loadAdminConsents() {
   try { const snap = await fbDb.collection("consents").get(); adminConsents = new Map(snap.docs.map((d) => [d.id, d.data()])); }
   catch (err) { adminConsents = new Map(); console.warn("No se leyeron los consentimientos:", (err && err.code) || err); }
+  backfillRegistered();
+}
+/* Las cuentas que aceptaron antes de v4.41 no tenían registered/{correo}: al abrir #/admin se crean las que falten,
+   para que la pantalla de entrada las reconozca sin pedirles los términos otra vez. */
+async function backfillRegistered() {
+  try {
+    const have = new Set((await fbDb.collection("registered").get()).docs.map((d) => d.id));
+    const missing = [...new Set([...adminConsents.values()].map((c) => lower(c.email)).filter((e) => e && !have.has(e)))];
+    for (let i = 0; i < missing.length; i += 400) {
+      const batch = fbDb.batch();
+      for (const e of missing.slice(i, i + 400)) batch.set(registeredRef(e), { at: firebase.firestore.FieldValue.serverTimestamp() });
+      await batch.commit();
+    }
+  } catch (err) { console.warn("No se completaron los registros:", (err && err.code) || err); }
 }
 function consentCellHTML(uid) {
   const c = adminConsents.get(uid);
@@ -215,13 +234,7 @@ function renderTermsView() {
   </div>`;
 }
 
-document.addEventListener("change", (e) => { if (e.target.matches && e.target.matches("[data-consent-item]")) onConsentCheck(e.target); });
-document.addEventListener("click", (e) => {
-  const b = e.target.closest && e.target.closest("[data-consent-accept]");
-  if (!b) return;
-  if (b.getAttribute("aria-disabled") === "true") { const st = $("consent-status"); if (st) st.textContent = ctT().needAll; return; }
-  if (fbAuth && fbAuth.currentUser) { setAuthState("loading"); onUser(fbAuth.currentUser); }
-});
+document.addEventListener("click", (e) => { if (e.target.closest && e.target.closest("[data-consent-accept]")) acceptConsent(); });
 
 /* ── #/privacidad: qué guardamos, descargar mis datos y borrar mi cuenta ── */
 function privacySection(lang = currentLang) {
@@ -351,6 +364,7 @@ async function deleteMyAccount() {
     batch.delete(data.doc("plan"));
     batch.delete(data.doc("kitchen"));
     batch.delete(consentRef(uid));
+    batch.delete(registeredRef(user.email));
     batch.delete(fbDb.collection("users").doc(uid));
     await batch.commit();
     if (authIsAdmin) await fbDb.collection("admins").doc(lower(user.email)).delete().catch(() => {}); // el dueño no se puede quitar

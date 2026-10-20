@@ -5,7 +5,7 @@
  *   1. Se comprueba el token con las llaves públicas de Google (sin cuentas de servicio): que sea de este proyecto, que
  *      no haya vencido y que el correo esté validado. El correo SÓLO se envía al dueño de la sesión.
  *   2. Se lee su registro consents/{uid} de Firestore con esa misma sesión (las reglas sólo se lo dejan leer a ella),
- *      así el correo dice lo que de verdad quedó guardado: versión, casillas, fecha y hora.
+ *      así el correo dice lo que de verdad quedó guardado: versión, declaraciones aceptadas, fecha y hora.
  *   3. Se arma el correo con consentEmail() de js/consent.js (mismo texto que la app) y se envía por Resend.
  * Variables en Vercel (Settings → Environment Variables): RESEND_API_KEY (obligatoria), CONSENT_FROM (remitente; el
  * dominio debe estar verificado en Resend) y FIREBASE_PROJECT_ID (si no, "recetario-de-aqui"). Sin RESEND_API_KEY

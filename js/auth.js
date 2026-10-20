@@ -1,12 +1,16 @@
-/* Recetarios de Aquí · Cuenta de correo opcional (#/admin para administradores).
+/* Recetarios de Aquí · Entrada con correo electrónico (#/admin para administradores).
  *
- * Las recetas, el buscador, los planes y Mi recetario se usan SIN cuenta (estado "guest":
- * todo queda en este navegador). La cuenta sólo hace falta para guardar en la nube
- * (favoritas, planes y Mi recetario en el celular y la computadora) y para escribir o
- * reportar reseñas: entonces se abre la pantalla de entrada (openSignIn), que se puede
- * cerrar con "Seguir sin cuenta". Se entra con un correo validado por su propio
- * proveedor: Gmail (Google), Outlook/Hotmail (Microsoft), Yahoo, iCloud (Apple) o
- * cualquier otro correo con un enlace de validación que llega al buzón.
+ * Desde v4.41 las recetas se ven SÓLO con una cuenta (antes, v4.30–4.40, se veían sin ella). Al abrir la app
+ * sale la pantalla de entrada, que no se puede cerrar:
+ *   1. "signin": la persona escribe su correo y pulsa Continuar.
+ *   2. Se mira si ese correo ya está registrado (registered/{correo}, js/consent-ui.js).
+ *      - No lo está → "terms": los Términos y Condiciones con el botón "Acepto los términos y condiciones".
+ *      - Ya lo está → no ve los términos.
+ *   3. "method": con Gmail, botón de Google o un enlace al correo; con cualquier otro correo se le envía el
+ *      enlace de validación ("sent"). Al abrir el enlace (o al entrar con Google) entra a la app.
+ *   4. La primera vez se guarda el consentimiento y se envía el correo de confirmación (consentOnUser).
+ * Lo hace Firebase Authentication: la app NUNCA ve ni guarda contraseñas. Sin señal, quien ya había entrado en
+ * este navegador sigue con lo guardado (estado "guest"). Las páginas de receta/ (para Google) siguen públicas.
  * Lo hace Firebase Authentication: la app NUNCA ve ni guarda contraseñas.
  *
  * En Cloud Firestore se guarda sólo, por persona (users/{uid}): el correo, cuántas
@@ -27,25 +31,34 @@ const AUTH_USE_KEY = "rcb.useCounted.";      // + uid: el uso de esta sesión ya
 
 const AUTH_T = {
   es: {
-    title: "Entre con su cuenta",
-    intro: "La cuenta es opcional y gratis. Su propio proveedor de correo la valida.",
+    title: "Entre con su correo electrónico",
+    intro: "Para ver las recetas, entre con su correo electrónico. Es gratis y no necesita contraseña.",
+    emailStep: "Escriba su correo electrónico",
+    continueBtn: "Continuar",
+    checking: "Revisando su correo…",
+    newTitle: "Bienvenido a Recetarios de Aquí",
+    methodTitle: "Entrar",
+    welcomeBack: (e) => `Su correo ${e} ya está registrado. Escoja cómo entrar:`,
+    readyNew: (e) => `Gracias por aceptar. Escoja cómo entrar con ${e}:`,
+    sendLinkTo: "Enviarme un enlace al correo",
+    retry: "Reintentar",
     privacy: "No guardamos contraseñas: sólo su correo y cuántas veces usa la app.",
     contact: "¿Preguntas o problemas para entrar? Escríbanos a",
-    showTitle: "Para qué sirve la cuenta",
+    showTitle: "Lo que trae la app",
+    showRecipes: ["Más de 1,000 recetas boricuas", "Paso a paso, con porciones, nutrición, alergias y modo cocina."],
     showSync: ["Lo suyo en todos sus equipos", "Favoritas, planes de comida, colecciones, notas y lista de compras en el celular y la computadora."],
     showReviews: ["Reseñas", "Califique las recetas y cuéntele a otros cómo le quedaron."],
-    showNoNeed: ["Sin cuenta también puede", "Ver y buscar todas las recetas, armar planes y usar Mi recetario en este navegador."],
     showFree: "Gratis · En español e inglés",
-    close: "Seguir sin cuenta",
+    close: "Cerrar",
     signIn: "Entrar",
-    signInHint: "Entrar o crear una cuenta (opcional)",
+    signInHint: "Entrar con su correo",
     why: {
       review: "Para escribir una reseña, entre con su cuenta.",
       report: "Para reportar una reseña, entre con su cuenta.",
       sync: "Entre para guardar sus favoritas, planes y Mi recetario en todos sus equipos.",
       admin: "Entre con su cuenta de administrador."
     },
-    blockedNow: "Un administrador suspendió esta cuenta. Puede seguir viendo las recetas sin cuenta.",
+    blockedNow: "Un administrador suspendió esta cuenta. Si cree que es un error, escríbanos.",
     myData: "Privacidad y mis datos",
     inAppTitle: "Está dentro de Facebook o Instagram",
     inAppText: "Desde aquí Gmail y Yahoo no dejan entrar. Abra la app en su navegador:",
@@ -133,25 +146,34 @@ const AUTH_T = {
     noAccess: "Esta página es sólo para administradores."
   },
   en: {
-    title: "Sign in to your account",
-    intro: "An account is optional and free. Your own email provider verifies it.",
+    title: "Sign in with your email",
+    intro: "To see the recipes, sign in with your email address. It's free and needs no password.",
+    emailStep: "Type your email address",
+    continueBtn: "Continue",
+    checking: "Checking your email…",
+    newTitle: "Welcome to Recetarios de Aquí",
+    methodTitle: "Sign in",
+    welcomeBack: (e) => `Your email ${e} is already registered. Choose how to sign in:`,
+    readyNew: (e) => `Thank you for accepting. Choose how to sign in with ${e}:`,
+    sendLinkTo: "Email me a sign-in link",
+    retry: "Try again",
     privacy: "We never store passwords: only your email and how many times you use the app.",
     contact: "Questions or trouble signing in? Write to us at",
-    showTitle: "What an account is for",
+    showTitle: "What the app has",
+    showRecipes: ["Over 1,000 Puerto Rican recipes", "Step by step, with servings, nutrition, allergies and cooking mode."],
     showSync: ["Your things on every device", "Favorites, meal plans, collections, notes and shopping list on your phone and computer."],
     showReviews: ["Reviews", "Rate recipes and tell others how they turned out."],
-    showNoNeed: ["Without an account you can still", "See and search every recipe, build plans and use My cookbook in this browser."],
     showFree: "Free · In Spanish and English",
-    close: "Continue without an account",
+    close: "Close",
     signIn: "Sign in",
-    signInHint: "Sign in or create an account (optional)",
+    signInHint: "Sign in with your email",
     why: {
       review: "To write a review, sign in to your account.",
       report: "To report a review, sign in to your account.",
       sync: "Sign in to keep your favorites, plans and My cookbook on all your devices.",
       admin: "Sign in with your administrator account."
     },
-    blockedNow: "An administrator suspended this account. You can keep browsing recipes without an account.",
+    blockedNow: "An administrator suspended this account. If you think it's a mistake, write to us.",
     myData: "Privacy and my data",
     inAppTitle: "You're inside Facebook or Instagram",
     inAppText: "Gmail and Yahoo don't allow signing in from here. Open the app in your browser:",
@@ -247,7 +269,9 @@ let fbAuth = null;
 let fbDb = null;
 let authUser = null;          // usuario de Firebase con el correo validado
 let authIsAdmin = false;
-let authState = "loading";    // loading | guest | offline | signin | sent | confirm | verify | blocked | consent | unconfigured | ready
+let authState = "loading";    // loading | guest | offline | signin | terms | method | sent | confirm | verify | blocked | consent | unconfigured | ready
+let authEmail = "";           // el correo escrito en el primer paso
+let authKnown = false;        // ese correo ya está registrado (no ve los términos)
 let authMessage = "";         // error o aviso bajo el formulario
 let authReason = "";          // por qué se abrió la entrada ("Para escribir una reseña…")
 let authAfter = null;         // qué hacer al entrar (p. ej. abrir el formulario de reseña)
@@ -295,8 +319,8 @@ const PROVIDER_MARKS = {
   apple: '<span class="pmark pmark-apple" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.7zM14.2 5.8c.6-.8 1.1-1.8 1-2.8-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.7 1 .1 2-.5 2.7-1.3z"/></svg></span>'
 };
 
-/* Estados de la entrada que se cierran con "Seguir sin cuenta" (los demás se resuelven solos). */
-const GATE_CLOSABLE = new Set(["signin", "sent", "confirm", "verify", "consent", "blocked", "unconfigured", "offline"]);
+/* Desde v4.41 la entrada no se cierra sin entrar (las recetas piden cuenta): ningún estado lleva "Cerrar". */
+const GATE_CLOSABLE = new Set();
 
 function gateShell(title, body) {
   const es = currentLang === "es";
@@ -358,10 +382,10 @@ function inAppNoticeHTML() {
     </section>`;
 }
 
-/* Para qué sirve la cuenta (ya no es una vitrina: las recetas se ven sin entrar). */
+/* Lo que trae la app, debajo del correo en el primer paso. */
 function showcaseHTML() {
   const tr = at();
-  const points = [["i-heart", tr.showSync], ["i-star", tr.showReviews], ["i-check", tr.showNoNeed]];
+  const points = [["i-check", tr.showRecipes], ["i-heart", tr.showSync], ["i-star", tr.showReviews]];
   return `
     <section class="gate-show" aria-labelledby="gate-show-title">
       <h2 class="auth-h2" id="gate-show-title">${esc(tr.showTitle)}</h2>
@@ -379,15 +403,33 @@ function signOutBtn() {
 function renderGate() {
   const gate = $("auth-gate");
   const tr = at();
-  const p = (AUTH_CONFIG && AUTH_CONFIG.providers) || {};
   let html;
   switch (authState) {
     case "unconfigured":
       html = gateShell(tr.unconfiguredTitle, `<p class="auth-text">${esc(tr.unconfigured)}</p>`);
       break;
     case "offline":
-      html = gateShell(tr.title, `<p class="auth-text">${esc(tr.errors["auth/network-request-failed"])}</p>`);
+      html = gateShell(tr.title, `<p class="auth-text">${esc(tr.errors["auth/network-request-failed"])}</p>
+        <button type="button" class="btn btn-primary" data-auth="retry">${esc(tr.retry)}</button>`);
       break;
+    case "terms":
+      html = gateShell(tr.newTitle, consentBlockHTML("new"));
+      break;
+    case "method": {
+      const key = providerForEmail(authEmail);
+      html = gateShell(tr.methodTitle, `
+        <p class="auth-text">${esc(authKnown ? tr.welcomeBack(authEmail) : tr.readyNew(authEmail))}</p>
+        ${key ? `<div class="provider-grid">
+          <button type="button" class="provider-btn" data-provider="${key}">
+            ${PROVIDER_MARKS[key]}
+            <span class="provider-text"><span class="provider-name">${esc(tr.providers[key][0])}</span><span class="provider-sub">${esc(tr.providers[key][1])}</span></span>
+          </button></div>` : ""}
+        <div class="auth-actions">
+          <button type="button" class="btn btn-outline" data-auth="sendlink"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>${esc(tr.sendLinkTo)}</button>
+          <button type="button" class="btn btn-ghost auth-link" data-auth="restart">${esc(tr.useOther)}</button>
+        </div>`);
+      break;
+    }
     case "loading":
       html = gateShell(tr.title, `<p class="auth-text auth-loading">${esc(tr.loading)}</p>`);
       break;
@@ -420,36 +462,21 @@ function renderGate() {
       html = gateShell(TERMS[currentLang].consentTitle, consentBlockHTML("update"));
       break;
     case "blocked":
-      html = gateShell(tr.blockedTitle, `<p class="auth-text">${esc(tr.blockedNow)}</p>`);
+      html = gateShell(tr.blockedTitle, `<p class="auth-text">${esc(tr.blockedNow)}</p><div class="auth-actions">${signOutBtn()}</div>`);
       break;
-    default: { // signin
-      const buttons = ["google", "microsoft", "yahoo", "apple"].filter((k) => p[k]).map((k) => `
-        <button type="button" class="provider-btn" data-provider="${k}">
-          ${PROVIDER_MARKS[k]}
-          <span class="provider-text"><span class="provider-name">${esc(tr.providers[k][0])}</span><span class="provider-sub">${esc(tr.providers[k][1])}</span></span>
-        </button>`).join("");
-      const emailForm = p.email ? `
-        <div class="auth-or"><span>${esc(tr.other)}</span></div>
-        <form class="auth-form" data-auth-form="link" novalidate>
-          <label class="auth-label" for="auth-email">${esc(tr.otherHelp)}</label>
-          <div class="auth-row">
-            <input class="auth-input" id="auth-email" type="email" autocomplete="email" inputmode="email" placeholder="${esc(tr.emailLabel)}" aria-label="${esc(tr.emailLabel)}" required>
-            <button type="submit" class="btn btn-primary"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>${esc(tr.sendLink)}</button>
-          </div>
-        </form>` : "";
+    default: { // signin: primero el correo
       html = gateShell(tr.title, `
         ${authReason ? `<p class="auth-reason" role="status">${esc(authReason)}</p>` : ""}
+        <p class="auth-text">${esc(tr.intro)}</p>
+        <form class="auth-form" data-auth-form="email" novalidate>
+          <label class="auth-label" for="auth-email">${esc(tr.emailStep)}</label>
+          <div class="auth-row">
+            <input class="auth-input" id="auth-email" type="email" autocomplete="email" inputmode="email" placeholder="${esc(tr.emailLabel)}" value="${esc(authEmail)}" required>
+            <button type="submit" class="btn btn-primary">${esc(tr.continueBtn)}</button>
+          </div>
+        </form>
         ${inAppNoticeHTML()}
         ${showcaseHTML()}
-        ${consentBlockHTML("pre")}
-        <fieldset class="auth-entry" id="auth-entry" ${consentPending() ? "" : "disabled"}>
-          <legend class="sr-only">${esc(tr.pick)}</legend>
-          <p class="auth-text">${esc(tr.intro)}</p>
-          <h2 class="auth-h2">${esc(tr.pick)}</h2>
-          <p class="auth-entry-lock">${esc(TERMS[currentLang].needAll)}</p>
-          <div class="provider-grid">${buttons}</div>
-          ${emailForm}
-        </fieldset>
         <p class="auth-privacy"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>${esc(tr.privacy)}</p>`);
     }
   }
@@ -552,9 +579,39 @@ function renderAccountBar() {
 
 /* ------------------------------------------------------------ acciones de entrada ---- */
 
+/* Gmail entra con el botón de Google (sin gastar un enlace por correo); los demás, con el enlace. Sólo si ese
+   proveedor está activado en auth-config.js y no se está dentro de Facebook o Instagram (ahí Google no deja). */
+const EMAIL_PROVIDERS = [
+  [/@(gmail|googlemail)\.com$/, "google"], [/@(outlook|hotmail|live|msn)\.[a-z.]+$/, "microsoft"],
+  [/@(yahoo|ymail)\.[a-z.]+$/, "yahoo"], [/@(icloud|me|mac)\.com$/, "apple"]
+];
+function providerForEmail(email) {
+  const p = (AUTH_CONFIG && AUTH_CONFIG.providers) || {};
+  const hit = EMAIL_PROVIDERS.find(([rx]) => rx.test(email));
+  return hit && p[hit[1]] && !installDevice().inApp ? hit[1] : "";
+}
+/* Paso 1 → 2: ¿ese correo ya está registrado? Si la lectura falla (p. ej. sin las reglas nuevas publicadas) se
+   trata como nuevo: ve los términos, y al entrar consentOnUser igual reconoce la cuenta por su consentimiento. */
+async function checkEmail(email) {
+  email = lower(email);
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showAuthMessage(at().errors["auth/invalid-email"]); return; }
+  authEmail = email;
+  showAuthMessage(at().checking);
+  authKnown = false;
+  try { authKnown = (await fbDb.collection("registered").doc(email).get()).exists; }
+  catch (err) { console.warn("No se pudo revisar el registro:", (err && err.code) || err); }
+  if (authKnown) showMethod();
+  else setAuthState("terms");
+}
+/* Paso 3: con un proveedor que corresponde al correo, se escoge; si no, se envía el enlace directamente. */
+function showMethod() {
+  if (providerForEmail(authEmail)) setAuthState("method");
+  else sendLink(authEmail);
+}
+
 function providerFor(key) {
   const fb = firebase.auth;
-  if (key === "google") { const pr = new fb.GoogleAuthProvider(); pr.setCustomParameters({ prompt: "select_account" }); return pr; }
+  if (key === "google") { const pr = new fb.GoogleAuthProvider(); pr.setCustomParameters({ prompt: "select_account", ...(authEmail ? { login_hint: authEmail } : {}) }); return pr; }
   const pr = new fb.OAuthProvider({ microsoft: "microsoft.com", yahoo: "yahoo.com", apple: "apple.com" }[key]);
   pr.addScope("email");
   if (key === "microsoft") pr.setCustomParameters({ prompt: "select_account" });
@@ -589,12 +646,14 @@ function linkSettings() {
 async function sendLink(email) {
   email = lower(email);
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showAuthMessage(at().errors["auth/invalid-email"]); return; }
+  const back = authState;
+  setAuthState("loading");
   try {
     await fbAuth.sendSignInLinkToEmail(email, linkSettings());
     authStore(AUTH_EMAIL_KEY, email);
     authSentTo = email;
     setAuthState("sent");
-  } catch (err) { showAuthMessage(authError(err)); }
+  } catch (err) { setAuthState(back === "method" ? "method" : "signin", authError(err)); }
 }
 
 async function completeLink(email) {
@@ -705,10 +764,11 @@ async function onUser(user) {
   resetReviews(); // js/reviews.js: lo cargado era de la cuenta anterior
   if (!user) {
     stopWatchingUser();
-    // Sin cuenta se sigue usando la app; la entrada sólo se queda abierta si la persona la abrió.
+    // Sin cuenta no se ven las recetas (v4.41): la entrada se queda abierta. Si la persona va por la mitad
+    // (términos, escoger cómo entrar, esperando el enlace) se deja donde está.
+    if (["terms", "method", "sent", "confirm"].includes(authState)) return;
     const keep = authState === "signin" ? authMessage : ""; // p. ej. el aviso de consentimiento no guardado
-    setAuthState(gateIsOpen() && authState !== "blocked" ? "signin" : "guest", keep);
-    reviewsOnReady();
+    setAuthState("signin", keep);
     return;
   }
   if (!user.email) { await fbAuth.signOut(); setAuthState("signin", at().errors.generic); return; }
@@ -978,6 +1038,8 @@ function setupAuthEvents() {
       else if (a === "open-admin") openSignIn(at().why.admin);
       else if (a === "close") closeSignIn();
       else if (a === "restart") setAuthState("signin");
+      else if (a === "sendlink") sendLink(authEmail);
+      else if (a === "retry") location.reload();
       else if (a === "checkverified") checkVerified();
       else if (a === "resend") resendVerification();
       return;
@@ -990,7 +1052,7 @@ function setupAuthEvents() {
     if (!form) return;
     e.preventDefault();
     const email = $("auth-email").value;
-    if (form.dataset.authForm === "link") sendLink(email);
+    if (form.dataset.authForm === "email") checkEmail(email);
     else completeLink(email);
   });
   document.addEventListener("input", (e) => {
@@ -1016,11 +1078,12 @@ function loadFirebase() {
 
 async function setupAuth() {
   setupAuthEvents();
-  if (!authConfigured()) { authState = "unconfigured"; renderAccountBar(); reviewsOnReady(); return; }
+  if (!authConfigured()) { setAuthState("unconfigured"); return; }
   authState = "loading";
+  openGateNow(); // la app no se ve hasta entrar (v4.41)
   renderAccountBar();
   try { await loadFirebase(); }
-  catch { authState = "guest"; renderAccountBar(); reviewsOnReady(); return; } // sin señal: invitada; "Entrar" lo reintenta
+  catch { setAuthState("offline"); return; } // sin señal y sin el SDK guardado: "Reintentar"
   await afterFirebase();
 }
 /* Una vez cargado Firebase (al abrir la app, o más tarde desde "Entrar" si no había señal). */

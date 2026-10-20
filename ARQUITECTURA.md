@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-19 · **Versión del documento:** 4.40.0 · **Versión de la app:** 4.40.0 (revisada el 19 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,316 en 24 categorías
+> **Última actualización:** 2026-10-19 · **Versión del documento:** 4.41.0 · **Versión de la app:** 4.41.0 (revisada el 19 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,316 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -24,9 +24,11 @@ Recetario digital de **cocina tradicional puertorriqueña**, bilingüe (español
   barra de abajo en el celular (§7.13).
 - **Nutrición con datos oficiales del USDA** (FoodData Central, con el número de cada alimento), etiqueta completa como
   la de la FDA y planes revisados contra las Guías Alimentarias 2025–2030, con objetivos de Diabetes y Presión alta (§8, §7.2).
-- **Se usa sin cuenta (v4.30):** recetas, buscador, planes y Mi recetario abren para cualquiera. La **cuenta de correo
-  validada** (Gmail, Outlook/Hotmail, Yahoo, iCloud u otro correo con enlace) es opcional: guarda favoritas, planes y Mi
-  recetario en la nube y permite escribir y reportar reseñas (§7.3). **Panel de administración** con los usuarios y
+- **Se entra con el correo electrónico (v4.41):** para ver las recetas hay que registrarse. La persona escribe su correo;
+  si no está registrado ve los Términos y Condiciones con el botón "Acepto"; si ya lo está, entra sin verlos (con Gmail,
+  botón de Google; con otro correo, un enlace de validación). La primera vez recibe un correo de confirmación. La cuenta
+  guarda favoritas, planes y Mi recetario en la nube y permite escribir y reportar reseñas (§7.3). Las páginas
+  `/receta/<id>` siguen públicas para Google (§7.15). **Panel de administración** con los usuarios y
   cuántas veces usa cada uno la app. No se guardan contraseñas. "Privacidad y mis datos" deja borrar la cuenta (§7.17).
 - **Cada receta con su página propia** para Google y para compartir (`/receta/<id>`, datos estructurados, sitemap; §7.15).
 
@@ -445,7 +447,18 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
 
 ### 7.3 Acceso y administración (`js/auth.js`, `js/auth-config.js`, ruta `#/admin`)
 
-- **Cuenta opcional (v4.30):** la app abre sin cuenta (estado `guest`): recetas, buscador, filtros, planes y Mi recetario
+- **Entrada con correo, obligatoria (v4.41):** `setupAuth()` abre `#auth-gate` desde el principio y no se cierra
+  (`GATE_CLOSABLE` vacío, sin "Seguir sin cuenta"): `<body class="auth-locked">` esconde la app hasta entrar. Pasos:
+  **1. `signin`** — "Entre con su correo electrónico", campo de correo y **Continuar**, y debajo "Lo que trae la app".
+  **2. `checkEmail()`** lee `registered/{correo}` (público por correo exacto, no se puede listar; §7.14). Si no existe
+  (o no se puede leer) → **`terms`**: los términos con el botón "Acepto los términos y condiciones" (`consentBlockHTML("new")`).
+  Si existe, no ve los términos. **3. `showMethod()`** → **`method`** si el correo es de un proveedor activado
+  (`providerForEmail`: Gmail → Google, con `login_hint`; fuera de Facebook/Instagram) con "Enviarme un enlace al
+  correo"; si no, envía el enlace directamente (`sent`). Al entrar, `consentOnUser` (§7.14). Sin usuario, `onUser(null)`
+  deja la entrada en `signin` (o donde iba: `terms`, `method`, `sent`, `confirm`). Si el SDK no carga, `offline` con
+  **Reintentar**. Sin señal, quien ya había entrado sigue con lo de este navegador (`enterOffline`, estado `guest`).
+  Suspendida: "Acceso suspendido" con **Salir**.
+- **Antes (v4.30–4.40), cuenta opcional:** la app abría sin cuenta (estado `guest`): recetas, buscador, filtros, planes y Mi recetario
   funcionan y guardan en el navegador. Antes `<body class="auth-locked">` tapaba todo hasta entrar (con una vitrina de 4
   platos) y los enlaces compartidos caían en la entrada. Ahora `#auth-gate` sólo se abre con **Entrar** (barra de la
   cuenta, en el menú) o cuando algo necesita la cuenta: `requireAccount(motivo, después)` / `openSignIn()` (escribir o
@@ -749,9 +762,16 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   **privacidad**: qué se guarda, para qué, dónde y quién lo ve; reseñas y fotos; propiedad intelectual; limitación de
   responsabilidad; cambios; ley de Puerto Rico; contacto). `CONSENT_ITEMS`: tres casillas obligatorias — `terms` (acepto
   los términos), `health` (los planes y la nutrición son orientación, no consejo médico) y `data` (18 años o permiso del
-  tutor, y autorizo guardar mis datos, incluidos los de salud). **Conviene que lo revise un abogado en Puerto Rico.**
-- **`CONSENT_VERSION`** (hoy "2026-10-18.3"): si el texto cambia de forma importante, se sube y todos aceptan otra vez al entrar.
-- **Antes de entrar:** la pantalla de entrada muestra el resumen, "Leer los términos completos" (caja con todo el texto)
+  tutor, y autorizo guardar mis datos, incluidos los de salud). **Desde v4.41 ya no son casillas:** se muestran como lista
+  ("Al aceptar, usted declara:") y se aceptan todas con el botón **"Acepto los términos y condiciones"**
+  (`acceptConsent()`). **Conviene que lo revise un abogado en Puerto Rico.**
+- **`CONSENT_VERSION`** (hoy "2026-10-19.1"): la versión que acepta cada cuenta nueva. **Desde v4.41 quien ya aceptó
+  cualquier versión no vuelve a ver los términos** al entrar (pedido del dueño).
+- **`registered/{correo}` (v4.41):** `{ at }`. Lo crea `markRegistered()` al guardar el consentimiento (y al entrar, si
+  falta); `backfillRegistered()` crea los de las cuentas anteriores cuando un administrador abre `#/admin`. Se borra con
+  la cuenta. Reglas: `get` público, `list` sólo administradores, escribir sólo el propio correo o un administrador.
+  Cualquiera puede saber si un correo exacto está registrado (es lo que permite saltar los términos antes de entrar).
+- **Antes de entrar (v4.28–4.40):** la pantalla de entrada mostraba el resumen, "Leer los términos completos" (caja con todo el texto)
   y las casillas; los botones de Gmail, Yahoo… y el enlace por correo están en `<fieldset id="auth-entry" disabled>`
   hasta marcar las tres. Lo aceptado se guarda en el navegador (`rcb.consent`: versión, casillas, hora e idioma).
 - **Al entrar (`consentOnUser`, desde `onUser` en auth.js, después de revisar si está suspendida):** si
@@ -1115,6 +1135,26 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-19 — v4.41.0 · Entrada con el correo electrónico y términos sin casillas
+- *Pedido:* corregir la forma de entrar: escribir el correo y validar si está registrado; si no lo está, que salgan los
+  términos y condiciones con la opción de aceptar; si ya está registrado, que entre sin ver los términos. Quitar sólo las
+  3 casillas de los términos (la información se queda). Para ver las recetas hay que registrarse con el correo, y la
+  primera vez se le envía la confirmación a su correo.
+- **Entrada** (`js/auth.js`, §7.3): pasos `signin` (correo) → `terms` (sólo si no está registrado) → `method` / `sent`.
+  Las recetas vuelven a pedir cuenta: la entrada se abre al cargar y no se cierra (se quitó "Seguir sin cuenta"). Gmail
+  entra con el botón de Google (sin gastar enlaces por correo); los demás correos reciben el enlace.
+- **Términos** (`js/consent.js`, `js/consent-ui.js`, §7.14): sin casillas; las tres declaraciones como lista y un botón
+  "Acepto los términos y condiciones". `CONSENT_VERSION` "2026-10-19.1": la introducción y las secciones 1, 8 y 9 dicen
+  que las recetas piden cuenta. Quien ya aceptó cualquier versión entra sin verlos. El correo de confirmación de la
+  primera vez dice "Usted aceptó lo siguiente:".
+- **Firestore** (`firestore.rules`): colección nueva `registered/{correo}`. **Hay que pegar las reglas en la consola de
+  Firebase** (Firestore → Reglas → Publicar). Mientras no estén, todos los correos se tratan como nuevos (ven los
+  términos), pero al entrar las cuentas que ya aceptaron se reconocen por su consentimiento. Al abrir `#/admin` se
+  crean los `registered` de las cuentas anteriores.
+- **Textos:** sin "sin cuenta" en la entrada, la suspensión y "Privacidad y mis datos".
+- *Verificado (servidor local):* la app queda tapada hasta entrar; correo nuevo → términos con un botón → "Entrar" con
+  Gmail o enlace; correo registrado → sin términos; 375 px sin desbordes. *Sin probar:* una entrada real completa (Google
+  o enlace) ni el correo de confirmación en producción.
 ### 2026-10-19 — v4.40.0 · Segunda revisión del sitio
 - *Pedido:* aplicar la segunda revisión externa (sobre v4.35.0). Lo que ya estaba resuelto en v4.36–4.39 se comprobó y
   no se tocó: el JSON-LD Recipe sí está en cada página y el sitemap tiene las 1,316 recetas (N2); los avisos de los

@@ -8,10 +8,12 @@
 //                            draft?: { name, stars, text, hasPhoto, newPhoto }, pendingEdit? }  — js/reviews.js
 // reports/{reviewId}__{uid}: { review, target, uid, reason, at }  — reportes de reseñas (js/reviews.js)
 // consents/{uid}: { uid, email, version, lang, items, acceptedAt, ua, history, at, emailSentAt? }  — js/consent-ui.js
+// registered/{correo}: { at }  — el correo ya aceptó los términos (la entrada lo consulta antes de entrar, v4.41)
 // reviewPhotos/{mismo id}: { target, uid, photo (data URL WebP/JPEG ya achicado por js/photo.js), updatedAt }
 //   y reviewPhotos/{mismo id}__draft: la foto nueva de una reseña publicada que se editó (espera aprobación).
 //
-// Lo público (sin cuenta): reseñas aprobadas, sus fotos y las temporadas de recipeMeta. Todo lo demás pide
+// Lo público (sin cuenta): reseñas aprobadas, sus fotos, las temporadas de recipeMeta y si un correo exacto está
+// registrado (registered/{correo}, sin poder listarlos). Todo lo demás pide
 // un correo validado. Una cuenta suspendida (users/{uid}.blocked) no puede escribir nada propio, pero sí
 // borrar su cuenta y sus datos.
 //
@@ -112,6 +114,19 @@ service cloud.firestore {
       allow update: if activeUser() && request.auth.uid == uid
         && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['emailSentAt'])
         && request.resource.data.emailSentAt == request.time;
+    }
+
+    // ¿Ese correo ya está registrado? La pantalla de entrada lo pregunta ANTES de entrar, así que se puede leer un
+    // correo exacto sin cuenta; nadie puede listar la colección (salvo los administradores). Sólo guarda la hora.
+    match /registered/{email} {
+      allow get: if email.size() <= 254;
+      allow list: if isAdmin();
+      // La persona marca su propio correo al aceptar los términos; un administrador completa los de antes.
+      allow create, update: if (activeUser() && email == myEmail() || isAdmin())
+        && request.resource.data.keys().hasOnly(['at'])
+        && request.resource.data.at == request.time;
+      // Al borrar su cuenta ("Privacidad y mis datos").
+      allow delete: if verified() && email == myEmail();
     }
 
     match /admins/{email} {
