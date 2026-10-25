@@ -796,7 +796,56 @@ svg.icon:has(> use[href="#i-heart"]) { color: var(--heart-red); }
 .plans-saved { display: block; font-weight: 400; font-size: .88rem; color: var(--ink-3); }
 .plan-badges { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
 .plan-badge { font-size: .875rem; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--plantain-50); color: var(--plantain); }
-.plan-badge-prot { background: var(--achiote-50); color: var(--achiote-600); }
+/* v4.48: "Alta en proteína" iba en achiote y parecía una advertencia; las etiquetas buenas van todas en verde. */
+
+/* ── Planes v4.48: resumen arriba, objetivos agrupados, semáforo del día, pestañas y resumen de la semana ── */
+.plans-summary { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3); padding: var(--s-3) var(--s-4); border: 1.5px solid var(--achiote); border-radius: var(--radius); background: #FFF8F2; }
+.plans-summary-text { margin: 0; font-size: var(--step-0); }
+.plans-summary-text strong { color: var(--achiote-600); }
+.plans-summary-src { color: var(--ink-3); font-size: .875rem; }
+.plans-setup { display: flex; flex-direction: column; gap: var(--s-4); }
+.plans-setup[hidden] { display: none; }
+.plans-step { font-size: var(--step-1); }
+.plans-setup-done { align-self: flex-start; }
+.goal-groups { display: flex; flex-direction: column; gap: var(--s-4); }
+.goal-group-title { font-size: .875rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--plantain); margin-bottom: var(--s-2); }
+.plans-data-cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2); margin: 0; padding: var(--s-2) var(--s-3); border-radius: var(--radius-sm); background: #FFF3D6; font-size: .9rem; }
+.plans-actions-main, .plans-actions-more { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); }
+.plan-yield { font-weight: 400; color: var(--ink-3); }
+.plan-plate { font-size: .875rem; color: var(--ink-2); background: #FFF3D6; border-radius: 8px; padding: 2px 8px; justify-self: start; align-self: flex-start; margin-top: 2px; }
+.plan-plate.is-ok { background: var(--plantain-50); color: var(--plantain); font-weight: 600; }
+.plan-sums { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--s-2); }
+.plan-sum { display: grid; gap: 4px; padding: var(--s-2) var(--s-3); border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--field); font-size: .875rem; }
+.plan-sum-label { font-weight: 700; display: flex; align-items: center; gap: 6px; }
+.plan-sum-label span { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 999px; font-size: .75rem; font-weight: 800; color: #fff; }
+.plan-sum-val { font-variant-numeric: tabular-nums; color: var(--ink-2); }
+.plan-sum.is-ok { border-color: #B9D4B0; background: #F2F8EE; }
+.plan-sum.is-ok .plan-sum-label span, .plan-sum.is-ok .plan-bar-fill { background: var(--plantain); }
+.plan-sum.is-warn { border-color: #EBCB7A; background: #FFF8E4; }
+.plan-sum.is-warn .plan-sum-label span, .plan-sum.is-warn .plan-bar-fill { background: #B8860B; }
+.plan-sum.is-bad { border-color: #E6A592; background: #FDF0EB; }
+.plan-sum.is-bad .plan-sum-label span, .plan-sum.is-bad .plan-bar-fill { background: var(--achiote); }
+.plan-sum.is-water .plan-sum-label span { width: auto; background: none; font-size: .95rem; }
+.plan-sum-extra { margin: 0; font-size: .875rem; color: var(--ink-3); }
+.plan-tips { margin: 0; padding: var(--s-2) var(--s-3) var(--s-2) 1.8em; border-radius: var(--radius-sm); background: #FFF3D6; font-size: .875rem; display: grid; gap: 4px; }
+.plan-tabs { display: flex; gap: var(--s-1); overflow-x: auto; padding-bottom: 4px; margin-bottom: var(--s-3); scrollbar-width: thin; }
+.plan-tab { flex: 1 0 64px; display: flex; flex-direction: column; align-items: center; gap: 2px; min-height: 56px; padding: 6px 8px; border: 1.5px solid var(--line); border-radius: var(--radius-sm); background: var(--ivory); color: var(--ink-2); font: inherit; font-size: .875rem; cursor: pointer; }
+.plan-tab strong { font-size: var(--step-0); color: var(--ink); }
+.plan-tab[aria-selected="true"] { border-color: var(--achiote); background: var(--achiote); color: var(--on-accent); }
+.plan-tab[aria-selected="true"] strong { color: var(--on-accent); }
+.plan-tab:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.plan-week { border: 1px solid var(--line); border-radius: var(--radius); background: var(--ivory); padding: var(--s-3) var(--s-4); margin-bottom: var(--s-3); }
+.plan-week-title { font-size: var(--step-0); color: var(--achiote-600); }
+.plans-fold { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--s-3) var(--s-4); background: var(--ivory); }
+.plans-fold > summary { cursor: pointer; font-size: var(--step-1); }
+.plans-fold[open] > summary { margin-bottom: var(--s-2); }
+.plans-fold[hidden] { display: none; }
+@media (max-width: 520px) {
+  /* En el celular, la descripción sólo del objetivo escogido: los 13 juntos ocupaban ~1,500 px. */
+  .goal-card:not([aria-checked="true"]) .goal-desc { display: none; }
+  .plans-summary .btn { width: 100%; justify-content: center; }
+  .plan-sums { grid-template-columns: 1fr 1fr; }
+}
 .plans-season { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--s-4); background: #FFF8EE; }
 .plans-season-list { list-style: none; padding: 0; margin: var(--s-3) 0 0; display: grid; gap: 6px var(--s-4); grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 .plans-season-list a { color: var(--ink); font-weight: 600; text-decoration: none; }
@@ -1308,8 +1357,12 @@ body.cook-on { overflow: hidden; }
   .shop-aisle { border: 0; padding: 0; break-inside: avoid; }
   /* Plan de comidas impreso: sólo el plan */
   body.print-plan .goal-grid, body.print-plan .plans-controls, body.print-plan .plans-actions, body.print-plan .plans-more,
-  body.print-plan #plans-season, body.print-plan .plan-swap-btn, body.print-plan .plan-cal, body.print-plan .plans-target .plans-note { display: none !important; }
+  body.print-plan #plans-season, body.print-plan .plan-swap-btn, body.print-plan .plan-cal, body.print-plan .plans-target .plans-note,
+  body.print-plan .plans-setup, body.print-plan .plans-summary .btn, body.print-plan .plans-fold, body.print-plan .plan-tabs,
+  body.print-plan .plans-data-cta { display: none !important; }
   body.print-plan .plan-day { break-inside: avoid; }
+  /* Al imprimir salen los 7 días, aunque en pantalla se vea uno con sus pestañas. */
+  body.print-plan .plan-day[hidden] { display: flex !important; }
 }
 
 /* Recuadro de la nota del objetivo (autismo): aviso en negrita y recomendaciones */

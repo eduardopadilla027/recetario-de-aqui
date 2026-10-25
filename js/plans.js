@@ -101,7 +101,7 @@ const PLAN_T = {
       nutritivo: "Un plato nutritivo tiene la mitad de vegetales, un cuarto de proteína y un cuarto de vianda, arroz o grano.",
       vegetariano: "Combine granos (habichuelas, garbanzos, gandules, lentejas) con arroz o maíz para una proteína completa; el huevo y el queso también suman.",
       vegano: "Incluya habichuelas, garbanzos, lentejas, tofu o quinoa en cada comida principal. La vitamina B12 sólo viene de alimentos fortificados o suplementos: hable con su médico. Coma el hierro de los granos y la espinaca con vitamina C (limón, china) para aprovecharlo mejor.",
-      diabetes: "Se busca de 45 a 60 g de carbohidratos por comida y de 15 a 20 g en la merienda (una «porción de carbohidrato» son 15 g). Su médico o educador en diabetes le dirá su cantidad exacta, sobre todo si usa insulina. Viandas, arroz, pan y frutas son carbohidratos: cuéntelos.",
+      diabetes: "Se busca de 45 a 60 g de carbohidratos por comida (hasta 75 g si su meta pasa de 2,000 calorías) y de 15 a 20 g en la merienda (una «porción de carbohidrato» son 15 g). Su médico o educador en diabetes le dirá su cantidad exacta, sobre todo si usa insulina. Viandas, arroz, pan y frutas son carbohidratos: cuéntelos. Tome agua en vez de jugos, maltas o refrescos.",
       autismo: ["Realmente no existe una dieta que cure ni trate el autismo. Lo que sí ayuda en el día a día:",
         "Rutina: el desayuno y la merienda se repiten toda la semana; el almuerzo y la cena cambian poco a poco.",
         "Recetas sencillas y de sabor suave: sin picante, alcohol ni cafeína, y sin frituras.",
@@ -142,7 +142,35 @@ const PLAN_T = {
     limNaChild: (mg, max) => `Sodio: ${mg.toLocaleString("en-US")} mg (meta para su edad: menos de ${max.toLocaleString("en-US")} mg)`,
     limProtChild: (g, p) => `Proteína: ${g} g (ración recomendada para su edad: ${p} g)`,
     carbChoices: (g) => `${g} g de carbohidratos ≈ ${Math.round((g / 15) * 2) / 2} porciones de carbohidrato`,
-    dgaNote: "Cálculo aproximado con los alimentos de cada receta (FoodData Central del USDA). La proteína y los lácteos se cuentan según su receta."
+    dgaNote: "Cálculo aproximado con los alimentos de cada receta (FoodData Central del USDA). La proteína y los lácteos se cuentan según su receta.",
+    // v4.48: resumen arriba, objetivos agrupados, días en pestañas y revisión del día.
+    goalGroups: { peso: "Peso", estilo: "Estilo de comida", salud: "Salud" },
+    summary: (goal, kcal, p) => `<strong>${goal}</strong> · ${kcal.toLocaleString("en-US")} calorías · ${p} g de proteína`,
+    summaryNoData: "meta típica", summaryData: "con sus datos",
+    setupOpen: "Cambiar objetivo y ajustes", setupClose: "Ver mi plan",
+    stepGoal: "1. Su objetivo", stepMore: "2. Sus datos y preferencias",
+    dataCta: "Su meta es un estimado típico. Con su sexo, edad, peso y estatura se calcula la suya.",
+    dataBtn: "Poner mis datos",
+    dietByGoal: (g) => `La dieta la fija el objetivo «${g}».`,
+    adjusted: "Por su peso, la proteína se calcula con el peso ajustado (el ideal más 40 % de la diferencia), como lo hace un nutricionista.",
+    yields: (n) => `de las ${n} que rinde la receta`,
+    sum: { kcal: "Calorías", prot: "Proteína", na: "Sodio", water: "Agua", veg: "Vegetales y viandas", fruit: "Frutas" },
+    waterVal: (n) => `${n} vasos`, cups: "tazas",
+    sumHelp: "Verde: dentro de la meta. Amarillo: cerca. Rojo: lejos.",
+    plateOk: "Plato saludable: ½ plato de vegetales",
+    plateTip: "Para el plato saludable, añada una ensalada o vegetales (½ plato).",
+    protTip: { vegan: "Para llegar a la proteína: un vaso de leche de soya (7 g), un puñado de maní (7 g) o tofu.", veg: "Para llegar a la proteína: un yogur griego (15 g), un huevo (6 g) o un vaso de leche (8 g).", normal: "Para llegar a la proteína: un yogur griego (15 g), un huevo (6 g) o una lata pequeña de atún (20 g)." },
+    naTip: (cap) => `El día pasa de ${cap.toLocaleString("en-US")} mg de sodio: use adobo sin sal y no añada sal en la mesa.`,
+    fruitTip: "Falta fruta: añada una china, un guineo o una taza de lechosa en la merienda o el desayuno.",
+    weekTitle: "Resumen de la semana",
+    weekAvg: (k, p) => `En promedio: ${k}% de las calorías y ${p}% de la proteína de su meta.`,
+    weekNa: (n, cap) => `${n} de 7 días con el sodio bajo ${cap.toLocaleString("en-US")} mg.`,
+    weekFish: (n) => `Pescado o mariscos: ${n} ${n === 1 ? "vez" : "veces"} (se recomiendan 2 por semana).`,
+    weekBeans: (n) => `Habichuelas, garbanzos, gandules o lentejas: ${n} ${n === 1 ? "vez" : "veces"} (se recomiendan 3 o más).`,
+    weekProc: (n) => `Embutidos (salchichas, jamón, chorizo…): ${n} ${n === 1 ? "vez" : "veces"} (mejor 1 o menos).`,
+    dayTabs: "Días del plan",
+    seasonFold: (name, n) => `De temporada: ${name} (${n})`,
+    moreFold: "Recetas que encajan con su objetivo"
   },
   en: {
     title: "Meal plans",
@@ -225,7 +253,7 @@ const PLAN_T = {
       nutritivo: "A nutritious plate is half vegetables, a quarter protein and a quarter root vegetable, rice or grain.",
       vegetariano: "Pair beans, chickpeas, pigeon peas or lentils with rice or corn for complete protein; eggs and cheese help too.",
       vegano: "Include beans, chickpeas, lentils, tofu or quinoa at every main meal. Vitamin B12 only comes from fortified foods or supplements: talk to your doctor. Eat iron from beans and spinach with vitamin C (lime, orange) to absorb it better.",
-      diabetes: "The usual aim is 45 to 60 g of carbs per meal and 15 to 20 g for a snack (one “carb choice” is 15 g). Your doctor or diabetes educator will give you your exact amount, especially if you use insulin. Root vegetables, rice, bread and fruit are carbs: count them.",
+      diabetes: "The usual aim is 45 to 60 g of carbs per meal (up to 75 g if your target is over 2,000 calories) and 15 to 20 g for a snack (one “carb choice” is 15 g). Your doctor or diabetes educator will give you your exact amount, especially if you use insulin. Root vegetables, rice, bread and fruit are carbs: count them. Drink water instead of juice, malta or soda.",
       autismo: ["There really is no diet that cures or treats autism. What does help day to day:",
         "Routine: breakfast and snack repeat all week; lunch and dinner change little by little.",
         "Simple, mild-flavored recipes: no spicy food, alcohol or caffeine, and no fried foods.",
@@ -266,7 +294,34 @@ const PLAN_T = {
     limNaChild: (mg, max) => `Sodium: ${mg.toLocaleString("en-US")} mg (goal for the age: under ${max.toLocaleString("en-US")} mg)`,
     limProtChild: (g, p) => `Protein: ${g} g (recommended for the age: ${p} g)`,
     carbChoices: (g) => `${g} g carbs ≈ ${Math.round((g / 15) * 2) / 2} carb choices`,
-    dgaNote: "Approximate, from each recipe's ingredients (USDA FoodData Central). Protein and dairy are counted from the recipe."
+    dgaNote: "Approximate, from each recipe's ingredients (USDA FoodData Central). Protein and dairy are counted from the recipe.",
+    goalGroups: { peso: "Weight", estilo: "Eating style", salud: "Health" },
+    summary: (goal, kcal, p) => `<strong>${goal}</strong> · ${kcal.toLocaleString("en-US")} calories · ${p} g protein`,
+    summaryNoData: "typical target", summaryData: "from your details",
+    setupOpen: "Change goal and settings", setupClose: "See my plan",
+    stepGoal: "1. Your goal", stepMore: "2. Your details and preferences",
+    dataCta: "Your target is a typical estimate. Your sex, age, weight and height give you your own.",
+    dataBtn: "Add my details",
+    dietByGoal: (g) => `The diet is set by the “${g}” goal.`,
+    adjusted: "Because of your weight, protein uses the adjusted weight (ideal plus 40% of the difference), as a dietitian does.",
+    yields: (n) => `of the ${n} the recipe makes`,
+    sum: { kcal: "Calories", prot: "Protein", na: "Sodium", water: "Water", veg: "Vegetables (incl. starchy)", fruit: "Fruit" },
+    waterVal: (n) => `${n} glasses`, cups: "cups",
+    sumHelp: "Green: on target. Yellow: close. Red: far off.",
+    plateOk: "Healthy plate: ½ plate vegetables",
+    plateTip: "For a healthy plate, add a salad or vegetables (½ plate).",
+    protTip: { vegan: "To reach your protein: a glass of soy milk (7 g), a handful of peanuts (7 g) or tofu.", veg: "To reach your protein: a Greek yogurt (15 g), an egg (6 g) or a glass of milk (8 g).", normal: "To reach your protein: a Greek yogurt (15 g), an egg (6 g) or a small can of tuna (20 g)." },
+    naTip: (cap) => `The day goes over ${cap.toLocaleString("en-US")} mg of sodium: use salt-free adobo and don't salt at the table.`,
+    fruitTip: "Fruit is short: add an orange, a banana or a cup of papaya at snack or breakfast.",
+    weekTitle: "Week summary",
+    weekAvg: (k, p) => `On average: ${k}% of your calorie and ${p}% of your protein target.`,
+    weekNa: (n, cap) => `${n} of 7 days with sodium under ${cap.toLocaleString("en-US")} mg.`,
+    weekFish: (n) => `Fish or seafood: ${n} ${n === 1 ? "time" : "times"} (2 a week recommended).`,
+    weekBeans: (n) => `Beans, chickpeas, pigeon peas or lentils: ${n} ${n === 1 ? "time" : "times"} (3 or more recommended).`,
+    weekProc: (n) => `Processed meats (sausage, ham, chorizo…): ${n} ${n === 1 ? "time" : "times"} (best 1 or fewer).`,
+    dayTabs: "Plan days",
+    seasonFold: (name, n) => `In season: ${name} (${n})`,
+    moreFold: "Recipes that fit your goal"
   }
 };
 const pt = () => PLAN_T[currentLang];
@@ -564,8 +619,31 @@ function planTargets() {
     if (kcal < floor) kcal = floor;
   }
   kcal = Math.round(kcal / 50) * 50;
-  const protein = Math.round(kg * g.protPerKg / 5) * 5;
-  return { kcal, protein, custom, kg, age };
+  // Con obesidad (IMC 30 o más) la proteína se calcula con el peso ajustado, como lo hace un nutricionista:
+  // peso ideal (Devine) + 40 % de lo que pasa de él. Con el peso actual salían metas que no se alcanzaban.
+  let protKg = kg, adjusted = false;
+  if (custom && inches > 58) {
+    const bmi = kg / ((inches * 0.0254) ** 2);
+    if (bmi >= 30) {
+      const ibw = (plan.sex === "male" ? 50 : 45.5) + 2.3 * (inches - 60);
+      protKg = ibw + 0.4 * (kg - ibw);
+      adjusted = true;
+    }
+  }
+  const protein = Math.round(protKg * g.protPerKg / 5) * 5;
+  return { kcal, protein, custom, kg, age, adjusted };
+}
+/* Tope de sodio del día: 2,300 mg (valor diario de la FDA), 1,500 mg en bajo en sodio y DASH, y el de la
+   edad en niños (Academias Nacionales 2019). */
+function sodiumCap(target) {
+  if (target.child) return target.age < 4 ? 1200 : target.age < 9 ? 1500 : 1800;
+  return ["sodio", "dash"].includes(plan.goal) ? 1500 : 2300;
+}
+/* Agua: unos 35 ml por kilo en adultos (vasos de 8 onzas, entre 6 y 13); en niños, según la edad. */
+function waterGlasses(target) {
+  if (target.child) return target.age < 4 ? 4 : target.age < 9 ? 5 : 7;
+  if (!target.custom) return 8;
+  return Math.min(13, Math.max(6, Math.round((target.kg * 35) / 237)));
 }
 
 /* ── Qué recetas sirven para cada comida ── */
@@ -705,7 +783,9 @@ function periodStart() {
 }
 function hashStr(s) { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0)) | 0; return Math.abs(h); }
 // Ajustes que cambian las recetas o las porciones: si cambian, se arma otro plan.
-const planSig = (target) => JSON.stringify([plan.goal, plan.diet, plan.prefs, plan.protein, plan.avoid, activeSeason(), target.kcal, target.protein]);
+// PLAN_ENGINE sube cuando cambia cómo se arma el plan, para que los guardados se vuelvan a armar (v4.48: ajuste del día).
+const PLAN_ENGINE = 2;
+const planSig = (target) => JSON.stringify([plan.goal, plan.diet, plan.prefs, plan.protein, plan.avoid, activeSeason(), target.kcal, target.protein, PLAN_ENGINE]);
 function hydrateSaved(sv) {
   const byId = (id) => recipes.find((r) => r.id === canonicalId(id));
   const item = (id) => { const r = byId(id); if (!r) return undefined; const i = planInfo(r); return { r, n: i.n, g: i.g }; };
@@ -751,8 +831,11 @@ function dayName(iso, opts) {
 
 /* Objetivo con tope de carbohidratos (diabetes): se baja la porción, de ½ en ½, hasta que quepa. */
 function mealCarbs(meal) { return (meal.item ? meal.item.n.c * meal.m : 0) + (meal.sides || []).reduce((a, sd) => a + sd.item.n.c * sd.m, 0); }
+// Con más de 2,000 calorías (hombres, personas activas) el tope sube en proporción: 75 g por comida a 2,500 (v4.48).
+let carbScale = 1;
+const setCarbScale = (target) => { carbScale = Math.max(1, target.kcal / 2000); };
 function capCarbs(meal, g) {
-  const cap = meal.slot === "merienda" ? g.carbSnack : g.carbMeal;
+  const cap = (meal.slot === "merienda" ? g.carbSnack : g.carbMeal) * carbScale;
   if (!cap || !meal.item) return;
   for (let i = 0; i < 8 && mealCarbs(meal) > cap; i++) {
     const big = [meal, ...(meal.sides || [])].filter((x) => x.m > 0.5).sort((a, b) => b.item.n.c * b.m - a.item.n.c * a.m)[0];
@@ -763,6 +846,7 @@ function capCarbs(meal, g) {
 
 function buildPlan(pools, target, seed) {
   const g = PLAN_GOALS[plan.goal];
+  setCarbScale(target);
   const rand = rng(seed);
   const usedWeek = new Set();
   const days = [];
@@ -800,9 +884,77 @@ function buildPlan(pools, target, seed) {
       capCarbs(meal, g);
       meals.push(meal);
     }
+    tuneDay(meals, pools, target, usedDay, usedWeek, (x) => g.routine && d > 0 && ["desayuno", "merienda"].includes(x.slot));
     days.push(meals);
   }
   return days;
+}
+
+/* ── Ajuste del día, como lo revisaría un nutricionista (v4.48) ──
+   El azar escoge platos que cumplen el objetivo uno por uno, pero el día completo podía pasarse de sodio
+   (hasta 8,000 mg en ganar masa) o quedarse corto de proteína (62 % en vegano). Aquí se revisa el día: si el
+   sodio pasa del tope, la proteína no llega al 90 % de la meta o las calorías se alejan más de 10 %, se cambia
+   la pieza que más ayuda (plato, acompañante o media porción más o menos) por otra del mismo grupo que siga
+   cumpliendo el objetivo y los ajustes. Hasta 8 cambios por día. */
+function dayTotals(meals) {
+  const t = { kcal: 0, p: 0, na: 0, chol: 0 };
+  for (const x of meals) {
+    if (!x.item) continue;
+    for (const [it, m] of [[x.item, x.m], ...(x.sides || []).map((sd) => [sd.item, sd.m])]) { t.kcal += it.n.kcal * m; t.p += it.n.p * m; t.na += it.n.na * m; t.chol += (it.n.chol || 0) * m; }
+  }
+  return t;
+}
+// Colesterol: 300 mg (valor diario de la FDA), con menos peso que el sodio y la proteína; 200 mg con el objetivo de colesterol.
+const cholCap = () => (PLAN_GOALS[plan.goal].chol ? 200 : 300);
+function dayPenalty(t, target, cap) {
+  return (Math.max(0, t.na - cap) / cap) * 4 + (Math.max(0, target.protein * 0.9 - t.p) / target.protein) * 3 + Math.max(0, Math.abs(t.kcal - target.kcal) / target.kcal - 0.05) + Math.max(0, t.chol - cholCap()) / cholCap();
+}
+const dayFits = (t, target, cap) => t.na <= cap && t.p >= target.protein * 0.9 && Math.abs(t.kcal - target.kcal) <= target.kcal * 0.1 && t.chol <= cholCap();
+function tuneDay(meals, pools, target, used, usedWeek, locked) {
+  const g = PLAN_GOALS[plan.goal];
+  const cap = sodiumCap(target);
+  const kinds = SIDE_RULES[plan.goal].kinds;
+  for (let step = 0; step < 8; step++) {
+    const now = dayTotals(meals);
+    if (dayFits(now, target, cap)) return;
+    const base = dayPenalty(now, target, cap);
+    let best = null;
+    for (const meal of meals) {
+      if (!meal.item || locked(meal)) continue;
+      const main = ["almuerzo", "cena"].includes(meal.slot);
+      const parts = [{ s: null, cur: meal.item, m: meal.m }, ...(meal.sides || []).map((sd, s) => ({ s, cur: sd.item, m: sd.m }))];
+      for (const part of parts) {
+        const max = part.s !== null || meal.slot === "merienda" ? 1.5 : g.maxPortion;
+        let pool;
+        if (part.s !== null) { const grp = kinds.find((k) => k.includes(part.cur.kind)) || [part.cur.kind]; pool = pools.side.filter((x) => grp.includes(x.kind)); }
+        else pool = meal.slot === "desayuno" ? pools.desayuno : meal.slot === "merienda" ? pools.merienda : pools.main;
+        const top = pool.slice(0, Math.max(30, Math.ceil(pool.length * 0.4)));
+        // Opciones: la misma receta con media porción más o menos, u otra del grupo con las mismas calorías.
+        const opts = [[part.cur, part.m + 0.5], [part.cur, part.m - 0.5]];
+        for (const alt of top) {
+          if (used.has(alt.r.id)) continue;
+          if (part.s === null && main && isComplete(alt.r) !== isComplete(part.cur.r)) continue; // los acompañantes siguen igual
+          opts.push([alt, Math.min(max, portionFor(alt, part.cur.n.kcal * part.m, max))]);
+        }
+        for (const [alt, m2] of opts) {
+          if (m2 < 0.5 || m2 > max) continue;
+          const set = (it, m) => { if (part.s === null) { meal.item = it; meal.m = m; } else { meal.sides[part.s].item = it; meal.sides[part.s].m = m; } };
+          set(alt, m2);
+          const pen = dayPenalty(dayTotals(meals), target, cap);
+          set(part.cur, part.m);
+          if (pen < base - 0.01 && (!best || pen < best.pen)) best = { meal, part, alt, m2, pen, main };
+        }
+      }
+    }
+    if (!best) return;
+    const { meal, part, alt, m2 } = best;
+    if (part.s === null) { meal.item = alt; meal.m = m2; } else { meal.sides[part.s].item = alt; meal.sides[part.s].m = m2; }
+    if (alt !== part.cur) {
+      used.delete(part.cur.r.id); used.add(alt.r.id);
+      if (part.s === null && best.main) { usedWeek.delete(part.cur.r.id); usedWeek.add(alt.r.id); }
+    }
+    capCarbs(meal, g);
+  }
 }
 
 /* ── Cambiar una comida o un acompañante por otro sugerido ──
@@ -845,7 +997,9 @@ function applySwap(ref, id) {
   if (!sv || !sv.meals[ref.d] || !opt) return null;
   const meal = ref.meal;
   const g = PLAN_GOALS[plan.goal];
-  const slotKcal = planTargets().kcal * SLOTS.find((x) => x.key === meal.slot).share;
+  const tgt = planTargets();
+  setCarbScale(tgt);
+  const slotKcal = tgt.kcal * SLOTS.find((x) => x.key === meal.slot).share;
   if (ref.s !== null) meal.sides[ref.s] = { item: opt, m: 1 };
   else {
     meal.item = opt;
@@ -909,26 +1063,49 @@ function swapPanelHTML(key) {
 }
 
 /* ── Vista ── */
+/* Los 13 objetivos en tres grupos (v4.48): antes iban todos seguidos y mezclaban el peso, el estilo de comida
+   y las condiciones de salud. */
+const GOAL_GROUPS = [["peso", ["rebajar", "mantener", "masa"]], ["estilo", ["nutritivo", "vegetariano", "vegano", "lowcarb", "azucar"]], ["salud", ["sodio", "diabetes", "dash", "colesterol", "autismo"]]];
+const GOAL_ICONS = { rebajar: "🥗", masa: "💪", mantener: "⚖️", sodio: "🧂", lowcarb: "🥩", azucar: "🍬", nutritivo: "🥦", vegetariano: "🥕", vegano: "🌱", diabetes: "🩺", dash: "❤️", colesterol: "🫀", autismo: "♾️" };
 function goalButtonsHTML() {
   const tr = pt();
-  const icons = { rebajar: "🥗", masa: "💪", mantener: "⚖️", sodio: "🧂", lowcarb: "🥩", azucar: "🍬", nutritivo: "🥦", vegetariano: "🥕", vegano: "🌱", diabetes: "🩺", dash: "❤️", colesterol: "🫀", autismo: "♾️" };
-  return Object.keys(PLAN_GOALS).map((k) => `
-    <button type="button" class="goal-card" role="radio" aria-checked="${plan.goal === k}" data-goal="${k}">
-      <span class="goal-icon" aria-hidden="true">${icons[k]}</span>
-      <span class="goal-name">${esc(tr.goals[k][0])}</span>
-      <span class="goal-desc">${esc(tr.goals[k][1])}</span>
-    </button>`).join("");
+  return GOAL_GROUPS.map(([grp, keys]) => `
+    <div class="goal-group">
+      <h3 class="goal-group-title">${esc(tr.goalGroups[grp])}</h3>
+      <div class="goal-grid">${keys.map((k) => `
+        <button type="button" class="goal-card" role="radio" aria-checked="${plan.goal === k}" data-goal="${k}">
+          <span class="goal-icon" aria-hidden="true">${GOAL_ICONS[k]}</span>
+          <span class="goal-name">${esc(tr.goals[k][0])}</span>
+          <span class="goal-desc">${esc(tr.goals[k][1])}</span>
+        </button>`).join("")}</div>
+    </div>`).join("");
+}
+/* Los ajustes se abren la primera vez; después el plan va arriba y los ajustes, plegados tras el resumen. */
+let plansSetupOpen = null;
+function setPlansSetup(open) {
+  plansSetupOpen = open;
+  const box = $("plans-setup"), btn = $("plans-setup-btn");
+  if (box) box.hidden = !open;
+  if (btn) { btn.setAttribute("aria-expanded", String(open)); btn.querySelector("span").textContent = open ? pt().setupClose : pt().setupOpen; }
 }
 function renderPlansShell() {
   const tr = pt();
   const v = $("view-plans");
+  if (plansSetupOpen === null) plansSetupOpen = !plan.ts;
   v.innerHTML = `
   <div class="container plans-wrap">
     <header class="plans-head">
       <h1 class="section-title" id="plans-title" tabindex="-1">${esc(tr.title)}</h1>
       <p class="section-sub">${esc(tr.intro)}</p>
     </header>
-    <div class="goal-grid" role="radiogroup" aria-label="${esc(tr.goalLabel)}">${goalButtonsHTML()}</div>
+    <div class="plans-summary">
+      <p class="plans-summary-text" id="plans-summary" aria-live="polite"></p>
+      <button type="button" class="btn btn-outline" id="plans-setup-btn" aria-controls="plans-setup" aria-expanded="${plansSetupOpen}"><svg class="icon" aria-hidden="true"><use href="#i-filter"/></svg><span>${esc(plansSetupOpen ? tr.setupClose : tr.setupOpen)}</span></button>
+    </div>
+    <div class="plans-setup" id="plans-setup" ${plansSetupOpen ? "" : "hidden"}>
+    <h2 class="plans-step">${esc(tr.stepGoal)}</h2>
+    <div class="goal-groups" role="radiogroup" aria-label="${esc(tr.goalLabel)}">${goalButtonsHTML()}</div>
+    <h2 class="plans-step">${esc(tr.stepMore)}</h2>
     <div class="plans-controls">
       <details class="plans-me" ${plan.sex ? "open" : ""}>
         <summary>${esc(tr.meTitle)}</summary>
@@ -950,11 +1127,7 @@ function renderPlansShell() {
         <label class="plans-season-pick">${esc(tr.seasonLabel)}
           <select data-season>${Object.keys(tr.seasons).map((k) => `<option value="${k}" ${plan.season === k ? "selected" : ""}>${esc(k === "auto" ? `${tr.seasons.auto} (${tr.seasons[autoSeason()]})` : tr.seasons[k])}</option>`).join("")}</select>
         </label>
-        <fieldset class="plans-avoid"><legend>${esc(tr.prefsLabel)}</legend>
-          <p class="plans-help">${esc(tr.dietHelp)}</p>
-          ${PLAN_DIETS.map((k) => `<label class="chip-check chip-pref chip-radio"><input type="radio" name="plan-diet" data-diet="${k}" ${plan.diet === k ? "checked" : ""}><span>${esc(tr.diets[k])}</span></label>`).join("")}
-          ${Object.keys(tr.prefs).map((k) => `<label class="chip-check chip-pref"><input type="checkbox" data-pref="${k}" ${plan.prefs.includes(k) ? "checked" : ""}><span>${esc(tr.prefs[k])}</span></label>`).join("")}
-        </fieldset>
+        <fieldset class="plans-avoid" id="plans-prefs"></fieldset>
         <fieldset class="plans-avoid"><legend>${esc(tr.protLabel)}</legend>
           <p class="plans-help">${esc(tr.protHelp)}</p>
           ${Object.keys(tr.protOpts).map((k) => `<label class="chip-check chip-pref"><input type="checkbox" data-prot="${k}" ${plan.protein.includes(k) ? "checked" : ""}><span>${esc(tr.protOpts[k])}</span></label>`).join("")}
@@ -964,26 +1137,35 @@ function renderPlansShell() {
         </fieldset>
       </div>
     </div>
+    <button type="button" class="btn btn-primary plans-setup-done" data-setup-done>${esc(tr.setupClose)}</button>
+    </div>
     <div id="plans-health"></div>
     <div class="plans-target" id="plans-target" aria-live="polite"></div>
     <div class="plans-actions">
-      <div class="seg" role="group">
-        <button type="button" class="btn btn-outline" data-days="1" aria-pressed="${plan.days === 1}">${esc(tr.oneDay)}</button>
-        <button type="button" class="btn btn-outline" data-days="7" aria-pressed="${plan.days === 7}">${esc(tr.sevenDays)}</button>
+      <div class="plans-actions-main">
+        <div class="seg" role="group">
+          <button type="button" class="btn btn-outline" data-days="1" aria-pressed="${plan.days === 1}">${esc(tr.oneDay)}</button>
+          <button type="button" class="btn btn-outline" data-days="7" aria-pressed="${plan.days === 7}">${esc(tr.sevenDays)}</button>
+        </div>
+        <button type="button" class="btn btn-primary" id="plans-another">${esc(tr.another)}</button>
       </div>
-      <button type="button" class="btn btn-primary" id="plans-another">${esc(tr.another)}</button>
-      <label class="plans-people">${esc(tr.people)}
-        <input type="number" inputmode="numeric" min="1" max="12" data-people value="${plan.people}"></label>
-      <button type="button" class="btn btn-outline" id="plans-shop"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg><span>${esc(tr.shopPlan)}</span></button>
-      <button type="button" class="btn btn-outline" id="plans-print"><svg class="icon" aria-hidden="true"><use href="#i-print"/></svg><span>${esc(tr.printPlan)}</span></button>
+      <div class="plans-actions-more">
+        <label class="plans-people">${esc(tr.people)}
+          <input type="number" inputmode="numeric" min="1" max="12" data-people value="${plan.people}"></label>
+        <button type="button" class="btn btn-outline" id="plans-shop"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg><span>${esc(tr.shopPlan)}</span></button>
+        <button type="button" class="btn btn-outline" id="plans-print"><svg class="icon" aria-hidden="true"><use href="#i-print"/></svg><span>${esc(tr.printPlan)}</span></button>
+      </div>
     </div>
     <div id="plans-output"></div>
-    <div id="plans-season"></div>
-    <section class="plans-more" aria-labelledby="plans-more-title">
-      <h2 class="plans-more-title" id="plans-more-title">${esc(tr.moreTitle)}</h2>
+    <details class="plans-fold" id="plans-season-fold">
+      <summary class="plans-more-title" id="plans-season-sum"></summary>
+      <div id="plans-season"></div>
+    </details>
+    <details class="plans-fold plans-more">
+      <summary class="plans-more-title">${esc(tr.moreFold)}</summary>
       <p class="plans-help">${esc(tr.moreSub)}</p>
       <div id="plans-more"></div>
-    </section>
+    </details>
     <p class="plans-disclaimer" role="note">${esc(tr.disclaimer)}</p>
   </div>`;
   for (const el of v.querySelectorAll("[data-field]")) el.value = plan[el.dataset.field] ?? "";
@@ -1008,10 +1190,11 @@ function mealHTML(meal, d, j) {
         ${swapButtonHTML(key, r.name[currentLang])}
       </span>
       ${meal.lo ? `<span class="plan-badge plan-badge-lo">${esc(tr.leftoverLabel)}</span>` : ""}
-      <span class="plan-portion">${esc(tr.portions(meal.m))}</span>
+      <span class="plan-portion">${esc(tr.portions(meal.m))} <span class="plan-yield">${esc(tr.yields(r.servings))}</span></span>
       <span class="plan-nutri">${nutriLine(meal.item.n, meal.m)}</span>
       ${PLAN_GOALS[plan.goal].carbMeal ? `<span class="plan-carbs">${esc(tr.carbChoices(Math.round(mealCarbs(meal))))}</span>` : ""}
       ${badgesHTML(meal.item.n, meal.m)}
+      ${plateHTML(meal)}
       ${(meal.sides || []).length ? `<ul class="plan-sides">${meal.sides.map((sd, s) => `
         <li><span class="plan-side-plus" aria-hidden="true">+</span>
           <span class="plan-side-main">
@@ -1063,8 +1246,15 @@ function leftoverMeal(d, j) {
   savePlan();
   return true;
 }
-function dayHTML(meals, i, target, iso) {
+/* Plato saludable (almuerzo y cena): la mitad del plato de vegetales, que son ~1 taza o más. */
+function plateHTML(meal) {
+  if (!["almuerzo", "cena"].includes(meal.slot)) return "";
   const tr = pt();
+  // Sólo los vegetales que no son vianda (vegNS): la mitad del plato es de ésos. ¾ de taza o más ya lo cumple.
+  const veg = [[meal.item, meal.m], ...(meal.sides || []).map((sd) => [sd.item, sd.m])].reduce((a, [it, m]) => a + ((it.g && it.g.vegNS) || 0) * m, 0);
+  return veg >= 0.75 ? `<span class="plan-plate is-ok">✓ ${esc(tr.plateOk)}</span>` : `<span class="plan-plate">${esc(tr.plateTip)}</span>`;
+}
+function dayStats(meals) {
   const tot = { kcal: 0, p: 0, c: 0, na: 0, fib: 0, s: 0, sat: 0, k: 0, chol: 0, ca: 0, vd: 0 };
   const grp = { veg: 0, fruit: 0, grain: 0, wgrain: 0, dairy: 0 };
   let addOver = 0;
@@ -1079,21 +1269,74 @@ function dayHTML(meals, i, target, iso) {
     }
     if (add > 10) addOver++;
   }
-  const pctK = Math.min(130, Math.round((tot.kcal / target.kcal) * 100));
-  const pctP = Math.min(130, Math.round((tot.p / target.protein) * 100));
-  return `<article class="plan-day">
-    ${plan.days > 1 ? `<h3 class="plan-day-title">${esc(iso ? dayName(iso, { weekday: "long", day: "numeric", month: "short" }) : tr.day(i + 1))}</h3>` : ""}
+  return { tot, grp, addOver };
+}
+/* Semáforo del día, arriba (v4.48; antes los totales iban al final del día): verde dentro de la meta,
+   amarillo cerca y rojo lejos, con ✓ o ! para no depender sólo del color. */
+function daySummaryHTML(tot, grp, target) {
+  const tr = pt();
+  const cap = sodiumCap(target);
+  const tg = dgaTargets(target.kcal);
+  const rk = tot.kcal / target.kcal, rp = tot.p / target.protein;
+  const lvl = (ok, warn) => (ok ? "ok" : warn ? "warn" : "bad");
+  const cell = (label, val, level, pct) => `<li class="plan-sum is-${level}"><span class="plan-sum-label"><span aria-hidden="true">${level === "ok" ? "✓" : "!"}</span> ${esc(label)}</span><span class="plan-sum-val">${val}</span>${pct === undefined ? "" : `<span class="plan-bar"><span class="plan-bar-fill" style="width:${Math.min(100, Math.round(pct * 100))}%"></span></span>`}</li>`;
+  const tips = [];
+  if (rp < 0.9) tips.push(tr.protTip[activeDiet() === "vegan" ? "vegan" : activeDiet() ? "veg" : "normal"]);
+  if (tot.na > cap) tips.push(tr.naTip(cap));
+  if (grp.fruit < tg.fruit * 0.5 && !PLAN_GOALS[plan.goal].carbMeal) tips.push(tr.fruitTip);
+  return `<ul class="plan-sums" aria-label="${esc(tr.total)}">
+      ${cell(tr.sum.kcal, `${Math.round(tot.kcal).toLocaleString("en-US")} / ${target.kcal.toLocaleString("en-US")}`, lvl(rk >= 0.9 && rk <= 1.1, rk >= 0.8 && rk <= 1.2), rk)}
+      ${cell(tr.sum.prot, `${Math.round(tot.p)} / ${target.protein} g`, lvl(rp >= 0.9, rp >= 0.75), rp)}
+      ${cell(tr.sum.na, `${(Math.round(tot.na / 10) * 10).toLocaleString("en-US")} / ${cap.toLocaleString("en-US")} mg`, lvl(tot.na <= cap, tot.na <= cap * 1.2), tot.na / cap)}
+      ${cell(tr.sum.veg, `${fmtHalf(grp.veg)} / ${tg.veg} ${tr.cups}`, lvl(grp.veg >= tg.veg * 0.9, grp.veg >= tg.veg * 0.5), grp.veg / tg.veg)}
+      ${cell(tr.sum.fruit, `${fmtHalf(grp.fruit)} / ${tg.fruit} ${tr.cups}`, lvl(grp.fruit >= tg.fruit * 0.9, grp.fruit >= tg.fruit * 0.5), grp.fruit / tg.fruit)}
+      <li class="plan-sum is-water"><span class="plan-sum-label"><span aria-hidden="true">💧</span> ${esc(tr.sum.water)}</span><span class="plan-sum-val">${esc(tr.waterVal(waterGlasses(target)))}</span></li>
+    </ul>
+    <p class="plan-sum-extra">${Math.round(tot.c)} g ${tr.carbs} · ${Math.round(tot.fib)} g ${tr.fiber} · ${Math.round(tot.s)} g ${tr.sugarW} · ${Math.round(tot.chol).toLocaleString("en-US")} mg ${tr.chol}</p>
+    ${tips.length ? `<ul class="plan-tips">${tips.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}`;
+}
+function dayHTML(meals, i, target, iso, active) {
+  const tr = pt();
+  const { tot, grp, addOver } = dayStats(meals);
+  const week = plan.days > 1;
+  return `<article class="plan-day" ${week ? `id="plan-day-${i}" role="tabpanel" aria-labelledby="plan-tab-${i}" ${active ? "" : "hidden"}` : ""}>
+    ${week ? `<h3 class="plan-day-title">${esc(iso ? dayName(iso, { weekday: "long", day: "numeric", month: "short" }) : tr.day(i + 1))}</h3>` : ""}
+    ${daySummaryHTML(tot, grp, target)}
     <ol class="plan-meals">${meals.map((m, j) => mealHTML(m, i, j)).join("")}</ol>
-    <div class="plan-total">
-      <span class="plan-total-label">${esc(tr.total)}</span>
-      <span class="plan-bar"><span class="plan-bar-fill" style="width:${Math.min(100, pctK)}%"></span></span>
-      <span class="plan-total-val">${Math.round(tot.kcal).toLocaleString("en-US")} / ${target.kcal.toLocaleString("en-US")} ${tr.kcal}</span>
-      <span class="plan-bar plan-bar-p"><span class="plan-bar-fill" style="width:${Math.min(100, pctP)}%"></span></span>
-      <span class="plan-total-val">${Math.round(tot.p)} / ${target.protein} g ${tr.prot}</span>
-      <span class="plan-total-extra">${Math.round(tot.c)} g ${tr.carbs} · ${Math.round(tot.fib)} g ${tr.fiber} · ${Math.round(tot.s)} g ${tr.sugarW} · ${Math.round(tot.na).toLocaleString("en-US")} mg ${tr.sodium} · ${Math.round(tot.chol).toLocaleString("en-US")} mg ${tr.chol}</span>
-    </div>
     ${dgaHTML(tot, grp, addOver, target)}
   </article>`;
+}
+/* Resumen de la semana (plan de 7 días): promedios contra la meta y la variedad que pide un nutricionista. */
+const PROCESSED_RX = /salchich|longaniza|chorizo|jamon|salami|tocineta|tocino|salchichon|pepperoni|jamonilla|mortadela|spam/;
+const BEANS_RX = /habichuela|garbanzo|gandul|lenteja|frijol|hummus/;
+function weekHTML(days, target) {
+  const tr = pt();
+  const cap = sodiumCap(target);
+  let k = 0, p = 0, naOk = 0, fish = 0, beans = 0, proc = 0;
+  for (const meals of days) {
+    const { tot } = dayStats(meals);
+    k += tot.kcal / target.kcal; p += tot.p / target.protein; if (tot.na <= cap) naOk++;
+    for (const x of meals) {
+      if (!x.item || x.lo) continue;
+      const items = [x.item, ...(x.sides || []).map((sd) => sd.item)];
+      if (proteinsOf(x.item.r).some((q) => q === "pescado" || q === "mariscos")) fish++;
+      if (items.some((it) => BEANS_RX.test(planNorm(it.r.name.es)))) beans++;
+      if (items.some((it) => PROCESSED_RX.test(planNorm(it.r.name.es)))) proc++;
+    }
+  }
+  const n = days.length;
+  const row = (ok, txt) => `<li class="${ok ? "is-ok" : "is-warn"}"><span aria-hidden="true">${ok ? "✓" : "!"}</span> ${esc(txt)}</li>`;
+  const hasFish = !activeDiet() && !plan.avoid.includes("fish") && !(plan.protein.length && !plan.protein.some((q) => q === "pescado" || q === "mariscos"));
+  return `<section class="plan-week" aria-labelledby="plan-week-title">
+    <h3 class="plan-week-title" id="plan-week-title">${esc(tr.weekTitle)}</h3>
+    <ul class="dga-limits">
+      ${row(Math.abs(k / n - 1) <= 0.1 && p / n >= 0.9, tr.weekAvg(Math.round((k / n) * 100), Math.round((p / n) * 100)))}
+      ${row(naOk === n, tr.weekNa(naOk, cap))}
+      ${hasFish ? row(fish >= 2, tr.weekFish(fish)) : ""}
+      ${row(beans >= 3, tr.weekBeans(beans))}
+      ${activeDiet() ? "" : row(proc <= 1, tr.weekProc(proc))}
+    </ul>
+  </section>`;
 }
 /* Guías Alimentarias para Estadounidenses 2025–2030 (USDA/HHS): para 2,000 calorías, 3 porciones de
    vegetales, 2 de frutas, 2–4 de granos integrales y 3 de lácteos; proteína de 1.2 a 1.6 g por kilo;
@@ -1185,19 +1428,25 @@ function moreHTML(pools) {
       </ul>
     </div>`).join("");
 }
-function seasonHTML() {
+/* Lo de temporada va plegado (v4.48): antes ocupaba ~1,600 px debajo del plan en el celular. */
+function seasonHTML(list) {
   const tr = pt();
-  const season = activeSeason();
-  if (season === "todo") return "";
-  const list = seasonList();
-  return `<section class="plans-season" aria-labelledby="plans-season-title">
-    <h2 class="plans-more-title" id="plans-season-title">${esc(tr.seasonTitle(tr.seasons[season]))} <span class="plans-count">${list.length}</span></h2>
+  return `<div class="plans-season">
     <p class="plans-help">${esc(tr.seasonSub)}</p>
     <ul class="plans-season-list">${list.slice(0, 24).map((x) => `
       <li><a href="#/receta/${encodeURIComponent(x.r.id)}" data-open="${esc(x.r.id)}">${esc(x.r.name[currentLang])}</a>
       <span class="plans-more-n">${Math.round(x.n.kcal)} ${tr.kcal} · ${Math.round(x.n.p)} g ${tr.prot}</span></li>`).join("")}
     </ul>
-  </section>`;
+  </div>`;
+}
+/* Preferencias: la dieta sólo se escoge cuando el objetivo no la trae (antes salía dos veces). */
+function prefsHTML() {
+  const tr = pt();
+  const gd = PLAN_GOALS[plan.goal].diet;
+  return `<legend>${esc(tr.prefsLabel)}</legend>
+    ${gd ? `<p class="plans-help">${esc(tr.dietByGoal(tr.goals[plan.goal][0]))}</p>`
+      : `<p class="plans-help">${esc(tr.dietHelp)}</p>${PLAN_DIETS.map((k) => `<label class="chip-check chip-pref chip-radio"><input type="radio" name="plan-diet" data-diet="${k}" ${plan.diet === k ? "checked" : ""}><span>${esc(tr.diets[k])}</span></label>`).join("")}`}
+    ${Object.keys(tr.prefs).map((k) => `<label class="chip-check chip-pref"><input type="checkbox" data-pref="${k}" ${plan.prefs.includes(k) ? "checked" : ""}><span>${esc(tr.prefs[k])}</span></label>`).join("")}`;
 }
 function planPeriodHTML(pools, target) {
   const tr = pt();
@@ -1208,16 +1457,38 @@ function planPeriodHTML(pools, target) {
   const period = plan.days === 1
     ? tr.periodDay(dayName(start, long).toLowerCase())
     : tr.periodWeek(dayName(start, { day: "numeric", month: "long" }), dayName(addDays(start, 6), { day: "numeric", month: "long" }), dayName(addDays(start, 7), long).toLowerCase());
+  // 7 días: un día a la vez con pestañas (v4.48; antes los 7 seguidos). Empieza en el día de hoy.
+  const week = plan.days > 1;
+  if (week && (planDayTab === null || planDayTab >= days.length)) {
+    const today = Math.round((parseDay(isoDay(new Date())) - parseDay(start)) / 86400000);
+    planDayTab = Math.min(days.length - 1, Math.max(0, today));
+  }
+  const tabs = week ? `<div class="plan-tabs" role="tablist" aria-label="${esc(tr.dayTabs)}">${days.map((_, i) => {
+    const iso = addDays(start, i), on = i === planDayTab;
+    return `<button type="button" class="plan-tab" role="tab" id="plan-tab-${i}" aria-controls="plan-day-${i}" aria-selected="${on}" tabindex="${on ? 0 : -1}" data-day-tab="${i}"><span>${esc(dayName(iso, { weekday: "short" }))}</span><strong>${esc(dayName(iso, { day: "numeric" }))}</strong></button>`;
+  }).join("")}</div>` : "";
   return (pools.relaxed ? `<p class="plans-warn">${esc(tr.relaxed)}</p>` : "") +
     `<p class="plans-period">${esc(period)} <span class="plans-saved">${esc(tr.savedNote)}</span></p>` +
-    `<div class="plan-days${plan.days > 1 ? " week" : ""}">${days.map((d, i) => dayHTML(d, i, target, addDays(start, i))).join("")}</div>`;
+    (week ? weekHTML(days, target) : "") + tabs +
+    `<div class="plan-days">${days.map((d, i) => dayHTML(d, i, target, addDays(start, i), !week || i === planDayTab)).join("")}</div>`;
+}
+let planDayTab = null;
+function selectDayTab(i, focus) {
+  planDayTab = i;
+  const v = $("view-plans");
+  v.querySelectorAll("[data-day-tab]").forEach((b) => { const on = +b.dataset.dayTab === i; b.setAttribute("aria-selected", String(on)); b.tabIndex = on ? 0 : -1; if (on && focus) b.focus(); });
+  v.querySelectorAll(".plan-day[role=tabpanel]").forEach((d) => { d.hidden = d.id !== `plan-day-${i}`; });
 }
 function renderPlanOutput(keepSwap = false) {
   const tr = pt();
   if (!keepSwap) planSwap = null; // otro objetivo, otros ajustes u otro plan: se cierra la lista
   const target = planTargets();
   const floorHit = target.custom && !target.child && target.kcal <= (plan.sex === "male" ? 1500 : 1200);
+  $("plans-summary").innerHTML = `${tr.summary(esc(tr.goals[plan.goal][0]), target.kcal, target.protein)} <span class="plans-summary-src">(${esc(target.custom ? tr.summaryData : tr.summaryNoData)})</span>`;
+  $("plans-prefs").innerHTML = prefsHTML();
   $("plans-target").innerHTML = `<p>${target.child ? tr.targetsChild(target.kcal, target.protein) : tr.targets(target.kcal, target.protein, target.custom)}</p>` +
+    (!target.custom ? `<p class="plans-data-cta">${esc(tr.dataCta)} <button type="button" class="btn btn-outline btn-sm" data-open-me>${esc(tr.dataBtn)}</button></p>` : "") +
+    (target.adjusted ? `<p class="plans-note">${esc(tr.adjusted)}</p>` : "") +
     (PLAN_GOALS[plan.goal].routine ? `<p class="plans-note">${esc(tr.routine)}</p>` : "") +
     (floorHit ? `<p class="plans-warn">${esc(tr.minWarn)}</p>` : "") +
     ageNoteHTML() +
@@ -1231,7 +1502,11 @@ function renderPlanOutput(keepSwap = false) {
     ? planPeriodHTML(pools, target)
     : `<p class="plans-warn">${esc(tr.noMatch)}</p>`;
   $("plans-more").innerHTML = moreHTML(pools);
-  $("plans-season").innerHTML = seasonHTML();
+  const season = activeSeason();
+  const sList = season === "todo" ? [] : seasonList();
+  $("plans-season-fold").hidden = !sList.length;
+  $("plans-season-sum").textContent = sList.length ? tr.seasonFold(tr.seasons[season], sList.length) : "";
+  $("plans-season").innerHTML = sList.length ? seasonHTML(sList) : "";
 }
 
 /* El plan entero a la lista de compras (js/kitchen.js): cada receta por las porciones del plan ×
@@ -1295,6 +1570,19 @@ function setupPlans() {
       v.querySelectorAll("[data-days]").forEach((b) => b.setAttribute("aria-pressed", String(b === days)));
       renderPlanOutput(); return;
     }
+    if (e.target.closest("#plans-setup-btn")) { setPlansSetup(!plansSetupOpen); return; }
+    if (e.target.closest("[data-setup-done]")) {
+      setPlansSetup(false);
+      const out = $("plans-target"); if (out) jumpTo(out.getBoundingClientRect().top + window.scrollY - 80);
+      return;
+    }
+    if (e.target.closest("[data-open-me]")) {
+      setPlansSetup(true);
+      const me = v.querySelector(".plans-me"); if (me) { me.open = true; me.scrollIntoView({ block: "start" }); const f = me.querySelector("[data-field]"); if (f) f.focus({ preventScroll: true }); }
+      return;
+    }
+    const tab = e.target.closest("[data-day-tab]");
+    if (tab) { selectDayTab(+tab.dataset.dayTab); return; }
     if (e.target.closest("#plans-another")) { plan.seed = (plan.seed % 9973) + 1; savePlan(); renderPlanOutput(); return; }
     if (e.target.closest("#plans-print")) {
       document.body.classList.add("print-plan");
@@ -1367,6 +1655,14 @@ function setupPlans() {
   });
   // Flechas entre objetivos, como un grupo de opciones.
   v.addEventListener("keydown", (e) => {
+    // Flechas entre las pestañas de los días.
+    const tab = e.target.closest("[data-day-tab]");
+    if (tab && ["ArrowRight", "ArrowLeft", "Home", "End"].includes(e.key)) {
+      e.preventDefault();
+      const n = v.querySelectorAll("[data-day-tab]").length, i = +tab.dataset.dayTab;
+      selectDayTab(e.key === "Home" ? 0 : e.key === "End" ? n - 1 : (i + (e.key === "ArrowRight" ? 1 : n - 1)) % n, true);
+      return;
+    }
     const cur = e.target.closest("[data-goal]");
     if (!cur || !["ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp"].includes(e.key)) return;
     e.preventDefault();

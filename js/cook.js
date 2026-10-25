@@ -28,8 +28,8 @@ const COOK_T = {
     heard: (x) => `Escuché: «${x}»`, notUnderstood: (x) => `No entendí «${x}». Diga «siguiente», «atrás» o «comienzo».`,
     sayHelp: "Puede decirme: siguiente, atrás, comienzo, repite o para.", sayIngNext: "Diga siguiente para empezar con el paso 1.",
     atStart: "Ya está en el primer paso.", toSteps: "Empezar",
-    voiceBtn: (g) => `Voz: ${g}`, voiceTitle: "Voz", voiceExact: "Voz exacta", genders: { female: "Mujer", male: "Hombre" },
-    noGender: (g) => `Este aparato no tiene una voz de ${g} en español; se usa la que hay. En el celular se pueden bajar más voces en Ajustes → Accesibilidad → Contenido leído (iPhone) o Texto a voz (Android).`,
+    voiceBtn: (g) => `Voz: ${g}`, voiceTitle: "Voz", voiceExact: "Voz exacta", genders: { female: "Mujer", male: "Hombre" }, approx: "aprox.",
+    noGender: (g) => `Este aparato no tiene una voz de ${g} en español; se usa la que hay${g === "hombre" ? ", más grave" : ""}. En el celular se pueden bajar más voces en Ajustes → Accesibilidad → Contenido leído (iPhone) o Texto a voz (Android); en Windows, en Configuración → Hora e idioma → Voz.`,
     noVoices: "Este aparato no tiene voces instaladas para leer en voz alta.",
     speed: "Velocidad", slow: "Lenta", normal: "Normal", fast: "Rápida", test: "Probar",
     testText: "Hola, así leo sus recetas. Diga siguiente para continuar.",
@@ -51,8 +51,8 @@ const COOK_T = {
     heard: (x) => `I heard: “${x}”`, notUnderstood: (x) => `I didn't get “${x}”. Say “next”, “back” or “start”.`,
     sayHelp: "You can say: next, back, start, repeat or stop.", sayIngNext: "Say next to begin with step 1.",
     atStart: "You're already on the first step.", toSteps: "Start",
-    voiceBtn: (g) => `Voice: ${g}`, voiceTitle: "Voice", voiceExact: "Exact voice", genders: { female: "Female", male: "Male" },
-    noGender: (g) => `This device has no ${g} English voice; the available one is used. On phones you can download more voices in Settings → Accessibility → Spoken Content (iPhone) or Text-to-speech (Android).`,
+    voiceBtn: (g) => `Voice: ${g}`, voiceTitle: "Voice", voiceExact: "Exact voice", genders: { female: "Female", male: "Male" }, approx: "approx.",
+    noGender: (g) => `This device has no ${g} English voice; the available one is used${g === "male" ? ", at a lower pitch" : ""}. On phones you can download more voices in Settings → Accessibility → Spoken Content (iPhone) or Text-to-speech (Android); on Windows, in Settings → Time & language → Speech.`,
     noVoices: "This device has no voices installed for reading aloud.",
     speed: "Speed", slow: "Slow", normal: "Normal", fast: "Fast", test: "Test",
     testText: "Hi, this is how I read your recipes. Say next to continue.",
@@ -212,12 +212,20 @@ function timerAction(act, id) {
  * y no dicen si son de hombre o de mujer, así que se reconocen por el nombre (VOICE_FEMALE / VOICE_MALE). La
  * persona escoge "Mujer" u "Hombre" (y, si quiere, una voz exacta) y la velocidad; se guarda en rcb.voice. */
 const VOICE_STORE = "rcb.voice";
-const VOICE_FEMALE = /\b(helena|laura|sabina|paulina|m[oó]nica|marisol|elvira|dalia|ximena|paloma|luc[ií]a|isabela|francisca|camila|lupe|mia|pen[eé]lope|conchita|carmen|sof[ií]a|ang[eé]lica|elena|esperanza|valentina|catalina|renata|beatriz|zira|aria|jenny|samantha|karen|susan|hazel|catherine|victoria|allison|ava|joanna|salli|kimberly|kendra|emma|amy|moira|tessa|fiona|veena|michelle|libby|sonia|google|female|mujer)\b/i;
-const VOICE_MALE = /\b(pablo|ra[uú]l|jorge|juan|diego|carlos|[aá]lvaro|alonso|gonzalo|enrique|miguel|andr[eé]s|david|gerardo|federico|tom[aá]s|jos[eé]|alberto|antonio|manuel|mark|guy|james|george|daniel|alex|fred|tom|aaron|arthur|matthew|joey|justin|rishi|ryan|eric|brian|christopher|liam|thomas|oliver|male|hombre)\b/i;
+/* Los nombres se comparan sin acentos (voiceKey): \b no funciona junto a una letra acentuada, y "José" o
+ * "Álvaro" no se reconocían. v4.45: se añadieron las voces naturales de Edge de cada país (Karina y Víctor de
+ * Puerto Rico, Alonso, Emilio, Mateo…) y las del iPhone (Eddy, Reed, Rocko y Grandpa son de hombre). */
+const VOICE_FEMALE = /\b(helena|laura|sabina|paulina|monica|marisol|elvira|dalia|ximena|paloma|lucia|isabela|francisca|camila|lupe|mia|penelope|conchita|carmen|sofia|angelica|elena|esperanza|valentina|catalina|renata|beatriz|karina|salome|belkys|ramona|andrea|teresa|marta|karla|yolanda|margarita|tania|lorena|paola|irene|estrella|abril|laia|triana|vera|candela|carlota|larissa|marina|nuria|soledad|flo|sandy|shelley|grandma|zira|aria|jenny|samantha|karen|susan|hazel|catherine|victoria|allison|ava|joanna|salli|kimberly|kendra|emma|amy|moira|tessa|fiona|veena|michelle|libby|sonia|female|mujer)\b/i;
+const VOICE_MALE = /\b(pablo|raul|jorge|juan|diego|carlos|alvaro|alonso|gonzalo|enrique|miguel|andres|david|gerardo|federico|tomas|jose|alberto|antonio|manuel|victor|lorenzo|emilio|luis|javier|roberto|mario|rodrigo|mateo|sebastian|marcelo|arnau|dario|elias|saul|teo|cecilio|liberto|luciano|pelayo|yago|eddy|reed|rocko|grandpa|mark|guy|james|george|daniel|alex|fred|tom|aaron|arthur|matthew|joey|justin|rishi|ryan|eric|brian|christopher|liam|thomas|oliver|male|hombre)\b/i;
+// Las voces "Google español" de Chrome (computadora) son de mujer.
+const VOICE_GOOGLE_FEMALE = /^google\b/i;
+const voiceKey = (v) => String(v.name || "").normalize("NFD").replace(/[̀-ͯ]/g, "");
 let voicePrefs = (() => { try { return Object.assign({ gender: "female", name: "", rate: 1 }, JSON.parse(localStorage.getItem(VOICE_STORE) || "{}")); } catch { return { gender: "female", name: "", rate: 1 }; } })();
 const saveVoicePrefs = () => { try { localStorage.setItem(VOICE_STORE, JSON.stringify(voicePrefs)); } catch { /* sin almacenamiento */ } };
-// Las voces "Google español" de Chrome son de mujer.
-const voiceGender = (v) => (VOICE_MALE.test(v.name) ? "male" : VOICE_FEMALE.test(v.name) ? "female" : "");
+function voiceGender(v) {
+  const k = voiceKey(v);
+  return VOICE_MALE.test(k) ? "male" : VOICE_FEMALE.test(k) || VOICE_GOOGLE_FEMALE.test(k) ? "female" : "";
+}
 /* Voces del idioma de la app, primero las de Puerto Rico, EE. UU. y México. */
 function langVoices() {
   if (!("speechSynthesis" in window)) return [];
@@ -231,6 +239,15 @@ function pickVoice() {
   return list.find((v) => voiceGender(v) === voicePrefs.gender) || list.find((v) => !voiceGender(v)) || list[0] || null;
 }
 const hasGender = (g) => langVoices().some((v) => voiceGender(v) === g);
+/* Si se pidió hombre y el aparato no tiene una voz de hombre en el idioma, se lee con la que hay más grave
+ * (pitch) en vez de leer con voz de mujer como si nada; el botón lo dice ("Hombre (aprox.)"). */
+const voiceApprox = (v) => !voicePrefs.name && voicePrefs.gender === "male" && (!v || voiceGender(v) !== "male");
+function voiceLabel() {
+  const tr = ct();
+  const v = pickVoice();
+  if (voiceApprox(v)) return tr.voiceBtn(`${tr.genders.male} (${tr.approx})`);
+  return tr.voiceBtn(tr.genders[(v && voiceGender(v)) || voicePrefs.gender]);
+}
 if ("speechSynthesis" in window) speechSynthesis.addEventListener?.("voiceschanged", () => { if (cookOpen) renderCook(); });
 
 /* Lo que se lee: fracciones y abreviaturas en palabras ("1½ tazas" → "1 y media tazas", "350°F" → "350 grados"). */
@@ -250,14 +267,33 @@ function sayText(text) {
 
 let readAloud = false;
 let speaking = false;
+let voicesWait = null, voicesPending = null, voicesTried = false;
 function speak(text, force = false, onDone = null) {
   if (!("speechSynthesis" in window) || (!readAloud && !force)) return;
+  // Chrome entrega las voces un momento después de cargar: si todavía no hay, se espera a "voiceschanged"
+  // (máximo 1.5 s, una sola vez) y se lee lo último que se pidió. Antes se leía con la voz por defecto del
+  // aparato, que suele ser de mujer.
+  if (!speechSynthesis.getVoices().length && !voicesTried) {
+    voicesPending = [text, force, onDone];
+    if (voicesWait) return;
+    const go = () => {
+      if (!voicesWait) return;
+      clearTimeout(voicesWait); voicesWait = null; voicesTried = true;
+      speechSynthesis.removeEventListener?.("voiceschanged", go);
+      if (cookOpen) renderCook();
+      speak(...voicesPending);
+    };
+    voicesWait = setTimeout(go, 1500);
+    speechSynthesis.addEventListener?.("voiceschanged", go);
+    return;
+  }
   try {
     speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(sayText(text));
     const v = pickVoice();
     if (v) { u.voice = v; u.lang = v.lang; } else u.lang = currentLang === "es" ? "es-PR" : "en-US";
     u.rate = voicePrefs.rate || 1;
+    u.pitch = voiceApprox(v) ? 0.7 : 1;
     // Mientras habla, no se escucha (para que no se oiga a sí misma decir "siguiente").
     u.onstart = () => { speaking = true; pauseListening(); };
     u.onend = u.onerror = () => { speaking = false; resumeListening(); if (onDone) onDone(); };
@@ -422,7 +458,7 @@ function renderCook() {
     <div class="cook-tools">
       <button type="button" class="chip" data-cook="ing" aria-pressed="${cookShowIng}"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><span>${esc(tr.ingredients)}</span></button>
       ${voiceOk ? `<button type="button" class="chip" data-cook="read" aria-pressed="${readAloud}"><svg class="icon" aria-hidden="true"><use href="#i-volume"/></svg><span>${esc(readAloud ? tr.reading : tr.read)}</span></button>
-        <button type="button" class="chip" data-cook="voice" aria-expanded="${voicePanel}"><span>${esc(tr.voiceBtn(tr.genders[(pickVoice() && voiceGender(pickVoice())) || voicePrefs.gender]))}</span></button>` : ""}
+        <button type="button" class="chip" data-cook="voice" aria-expanded="${voicePanel}"><span>${esc(voiceLabel())}</span></button>` : ""}
       <button type="button" class="chip" data-cook="listen" aria-pressed="${listening}" ${SR ? "" : "disabled"}><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg><span>${esc(listening ? tr.listening : tr.listen)}</span></button>
     </div>
     ${voicePanel ? voicePanelHTML() : ""}

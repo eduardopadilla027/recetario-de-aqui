@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.43.0 · **Versión de la app:** 4.43.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,316 en 24 categorías
+> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.48.0 · **Versión de la app:** 4.48.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,316 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -238,6 +238,10 @@ Naturales tiene 30 recetas: no se junta con Bebidas.
   muestran (clave, nombre ES/EN, expresión sobre el nombre en español sin acentos; la que no tiene expresión recoge el
   resto); `FAMILY_MATCH_ORDER` dice en qué orden se prueban cuando no es el mismo ("costillas de res" antes que el cerdo,
   "pechuga de pavo" antes que las pechugas). Favoritas y rápidas también siguen este orden; al buscar, por parecido.
+  **Títulos de las familias (v4.46):** como los nombres de las categorías, cada palabra empieza con mayúscula menos los
+  conectores (ES: y, e, o, u, de, del, la, las, el, los, con, en, a, al, sin, para, por; EN: and, or, of, with, in, the,
+  a, an, for, to, on, without): "Tés de Hojas, Flores y Hierbas", "Leaf, Flower and Herb Teas". Una familia nueva se
+  escribe igual.
   Una receta nueva se clasifica sola por su nombre: revise que caiga en la familia correcta. Entremeses: empanadillas y
   pastelillos; alcapurrias y frituras de plátano y yuca; bolitas, buñuelos y rellenos; bacalaítos y frituras de mar;
   croquetas; sorullitos, domplines y otras frituras; otros. Vegetales: tostones y amarillos; mofongos y majados;
@@ -278,6 +282,24 @@ Naturales tiene 30 recetas: no se junta con Bebidas.
   no hay emoji correcto (🍠 es batata, 🍢 es oden japonés, 🧆 es falafel, 🍖 es carne de caricatura).
   Cada palabra va **una sola vez** en `dishIcons`: en empate (misma posición y largo) gana la primera, así que una
   repetida más abajo no se usa nunca (v4.43: "guarapo" estaba con 🍵 y con su vaso de caña; ganaba el té).
+  **Lechosa y toronja (v4.44):** no tienen emoji (🥭 es mangó y 🍊 es china). `ic-lechosa` (lechosa madura partida a
+  lo largo, en forma de pera, con sus semillas negras) e `ic-toronja` (toronja entera y media rosada) para las palabras
+  "lechosa", "papaya" y "toronja"; los dulces en almíbar tienen su tazón con canela: `ic-dulce-lechosa` (tiras de
+  lechosa verde y la lechosa verde con semillas blancas al lado) e `ic-cascos-toronja` (cascos con el borde amarillo y
+  media toronja al lado). Los dibujos se generan con un script de Node (`<symbol>` fijos junto a `ic-dulce-carambola`).
+  **Tanda de iconos v4.47** (todas sus reglas van al principio de `dessertIcons`, para que no las tomen las generales):
+  limbers en su vaso con el color del sabor y la fruta (`ic-pos-limber-*`, `ic-limber` para la palabra); piraguas con
+  el sirope del color de la fruta (`ic-pos-piragua-*`, `ic-piragua`); brazos gitanos con la espiral del relleno
+  (`ic-brazo-*`); dulces y buñuelos en tazón con almíbar, en platito o en cucurucho (`ic-dulce-*`, `ic-cascos-*`,
+  `ic-bunuelos-*`, `ic-besitos-coco`, `ic-melcocha`, `ic-gofio`, `ic-churros-chocolate`…); pastas con la forma de su
+  plato (`ic-pasta-*`: nido de espaguetis con su salsa y acompañante, lasaña en capas, canelones y macarrones en molde,
+  coditos en tazón, fideos en caldero, fideuá en paellera); sopas en el tazón de barro con su caldo y lo que llevan, los
+  gazpachos en copa y la de cebolla gratinada (`ic-sopa-*`, `ic-asopao-*`, `ic-crema-*`, `ic-caldo-*`,
+  `ic-gazpacho-*`); panes con su forma y su miga (`ic-pan-*`, `ic-panecillos-*`, `ic-mallorca*`, `ic-rollos-canela`,
+  `ic-trenza-*`, `ic-arepas-coco`, `ic-casabe`, `ic-quesitos`, `ic-cachitos`, `ic-rosca-reyes`, `ic-panapen-horno`);
+  bizcochos en pedazo con su miga, relleno, cubierta y adorno (`ic-biz-*`, `ic-ponque-boricua`), cupcakes
+  (`ic-cupcake-*`) y cada flan con el color de su receta (`ic-flan-*`, `ic-flancocho`, `ic-quesillo`). Ningún dibujo
+  se repite dentro de pastas (31), sopas (70) y flanes (23); ningún pan ni bizcocho queda con emoji.
 - **Postres (`dessertIcons`):** después de `meatIcons` y antes de `dishIcons`, por nombre y en orden (gana la primera):
   flan (con caramelo; el color sigue al sabor: vainilla, queso, chocolate y flancocho, café, coco con hojuelas, guayaba,
   frutas, calabaza y batata), tocino del cielo, gelatina en molde (roja, amarilla, blanca, café, guayaba y mosaico),
@@ -685,7 +707,16 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   español"… / Jorge, Juan, Diego, Pablo, Raúl…). En el modo cocina, **"Voz: Mujer/Hombre"** abre el panel: Mujer u Hombre,
   la voz exacta (todas las del idioma, primero es-PR, es-US y es-MX), la velocidad (lenta, normal, rápida) y "Probar"; se
   guarda en `rcb.voice`. Si el aparato no tiene voz de ese tipo, lo dice y explica dónde bajar más voces (iPhone: Ajustes
-  → Accesibilidad → Contenido leído; Android: Texto a voz).
+  → Accesibilidad → Contenido leído; Android: Texto a voz; Windows: Configuración → Hora e idioma → Voz).
+- **Voz de hombre sin trampas (v4.45):** los nombres se comparan sin acentos (`voiceKey`; `\b` no funciona junto a una
+  letra acentuada y "José" o "Álvaro" no se reconocían) y las listas incluyen las voces naturales de Edge de cada país
+  (Karina/Víctor de Puerto Rico, Paloma/Alonso, Dalia/Jorge, Elvira/Álvaro, Emilio, Mateo, Sebastián…) y las del iPhone
+  (Eddy, Reed, Rocko y Grandpa de hombre; Flo, Sandy, Shelley y Grandma de mujer). Si se pide Hombre y el aparato no
+  tiene ninguna voz de hombre en el idioma (Chrome en Windows sin el paquete de voz, Android), se lee con la que hay en
+  tono más grave (`pitch` 0.7, `voiceApprox`) y el botón dice **"Voz: Hombre (aprox.)"**; antes decía "Hombre" y leía
+  con voz de mujer. `voiceLabel()` pone en el botón el tipo de la voz que de verdad se usa. Si las voces todavía no
+  cargaron (Chrome las entrega un momento después), `speak()` espera a `voiceschanged` (hasta 1.5 s, una vez) y lee lo
+  último que se pidió, en vez de usar la voz por defecto del aparato.
 - **Manos libres (comandos cortos, v4.27):** `SpeechRecognition` (Chrome, Edge, Safari, Android). `VOICE_CMDS` entiende
   **siguiente / continúa / sigue / próximo / pasa / listo**, **atrás / anterior / regresa / vuelve**, **comienzo / inicio /
   desde el principio**, **"paso 3"** (también "paso tres"), **repite / otra vez / lee**, **ingredientes**, **temporizador**,
@@ -977,6 +1008,34 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - **Avisos:** orientación general, no consejo médico (embarazo, menores, diabetes, riñón, corazón); nota propia de cada
   objetivo (ritmo seguro al rebajar, entrenamiento de fuerza para masa, límite de sodio, azúcar añadida, plato saludable).
 - **Ajustes:** en `localStorage` (`rcb.plan`), sólo en ese navegador. Números con coma de miles (3,100) en los dos idiomas.
+- **Ajuste del día como un nutricionista (v4.48, `tuneDay()`):** después de escoger al azar, cada día se revisa con
+  `dayPenalty()`: sodio sobre el tope (`sodiumCap()`: 2,300 mg; 1,500 en bajo en sodio y DASH; 1,200/1,500/1,800 en
+  niños), proteína bajo el 90 % de la meta, calorías a más de 10 % y colesterol sobre 300 mg (200 con el objetivo de
+  colesterol). Si no cumple, se cambia la pieza que más ayuda (plato, acompañante o media porción más o menos) por otra
+  del mismo grupo y del mismo objetivo, con la porción para las mismas calorías; hasta 8 cambios por día. Los platos
+  completos se cambian sólo por otros completos (los acompañantes siguen igual); en autismo no se tocan el desayuno y
+  la merienda de rutina. `PLAN_ENGINE` va en `planSig()`: al subirlo, los planes guardados se vuelven a armar.
+  Simulación de 7 días × 3 planes × 13 objetivos (mujer de 40 años, 165 lb, 5'4"): antes el sodio promediaba más de
+  2,300 mg en 9 objetivos (ganar masa 4,023 y un día de 8,111; diabetes 3,108) y la proteína se quedaba en 62 % en
+  vegano, 72 % en vegetariano y 79 % en rebajar; ahora el sodio queda bajo el tope en 264 de 273 días y la proteína en
+  92–117 %, salvo vegano (87 %: hay pocos desayunos veganos con proteína; el día dice cómo completarla).
+- **Peso ajustado para la proteína (v4.48):** con IMC de 30 o más, `planTargets()` usa el peso ideal (Devine) más 40 %
+  de la diferencia (`adjusted`, con nota); antes un hombre de 240 lb en "ganar masa" tenía 220 g de proteína.
+- **Diabetes con más calorías (v4.48):** el tope de carbohidratos por comida sube en proporción a la meta sobre 2,000
+  calorías (`carbScale`: 75 g a 2,500); antes el plan de 2,500 calorías llegaba sólo al 79 %.
+- **Pantalla (v4.48):** arriba un **resumen** (objetivo, calorías, proteína, de dónde sale la meta) con "Cambiar
+  objetivo y ajustes"; los ajustes (`#plans-setup`) se abren la primera vez y después van plegados (`plansSetupOpen`).
+  Los objetivos van en tres grupos (`GOAL_GROUPS`: Peso, Estilo de comida, Salud); en el celular sólo el escogido
+  enseña su descripción. La dieta de Preferencias no sale cuando el objetivo ya la fija (vegetariano, vegano). Sin
+  datos personales, un aviso con "Poner mis datos". Cada día empieza con un **semáforo** (`daySummaryHTML()`: calorías,
+  proteína, sodio, vegetales y viandas, frutas, en verde/amarillo/rojo con ✓ o !, y el **agua** del día:
+  `waterGlasses()`, ~35 ml por kilo) y consejos cuando falta proteína (según la dieta), sobra sodio o falta fruta. Cada
+  almuerzo y cena dice si cumple el **plato saludable** (½ plato de vegetales que no son vianda: `groups.vegNS` de
+  `js/nutrition.js`, ¾ de taza o más). La porción dice cuántas rinde la receta. El plan de 7 días tiene un **resumen
+  de la semana** (`weekHTML()`: promedios contra la meta, días con el sodio bajo el tope, pescado 2 veces, granos 3 o
+  más, embutidos 1 o menos) y **pestañas por día** (`planDayTab`, flechas, empieza hoy; al imprimir salen los 7). "De
+  temporada" y "Recetas que encajan" van plegados. En el celular la página bajó de ~10,900 px a ~4,000 y el plan
+  empieza a ~970 px (antes ~2,800). "Alta en proteína" va en verde como las otras etiquetas buenas.
 
 ## 8. Estimación nutricional (`js/nutrition.js`, `js/nutrition-usda.js`)
 
@@ -1146,6 +1205,66 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-25 — v4.48.0 · Planes revisados como lo haría un nutricionista, y pantalla más ordenada
+- *Pedido:* revisar el motor de los planes, mejorar la interfaz y la organización, e implementar las recomendaciones
+  de un nutricionista.
+- **Motor** (`js/plans.js`, §7.2): ajuste de cada día (`tuneDay()`) con tope de sodio, proteína al 90 % de la meta,
+  calorías ±10 % y colesterol; peso ajustado para la proteína con IMC ≥ 30; tope de carbohidratos de diabetes según las
+  calorías; agua del día; `PLAN_ENGINE` para rearmar los planes guardados.
+- **Pantalla** (`js/plans.js`, `css/styles.css`): resumen arriba y ajustes plegados, objetivos en tres grupos, aviso
+  para poner los datos, semáforo del día con consejos, plato saludable por comida, porción con lo que rinde la receta,
+  resumen de la semana, pestañas por día, listas largas plegadas y la dieta sin repetir.
+- **Nutrición** (`js/nutrition.js`, §8): `groups.vegNS`, los vegetales que no son vianda.
+- *Verificado (servidor local):* simulación de 7 días × 3 planes × 13 objetivos con dos personas (mujer de 165 lb y
+  hombre de 240 lb, IMC 35): calorías 90–103 % de la meta, proteína 87–117 %, sodio bajo el tope en casi todos los días;
+  375 px y escritorio, ES y EN, sin desbordes ni errores en la consola; pestañas con clic y flechas, "Cambiar",
+  "Sobras para mañana" y la dieta según el objetivo funcionan. *Pendiente:* más desayunos veganos con proteína.
+### 2026-10-25 — v4.47.0 · Iconos propios para limbers, piraguas, dulces, pastas, sopas, panes, bizcochos y flanes
+- *Pedido:* el icono del limber era incorrecto; la piragua, del color de la fruta; el brazo gitano, incorrecto; los
+  buñuelos y los dulces, muy genéricos; los churros con chocolate, incorrectos; las pastas, todas iguales; muchas sopas,
+  genéricas y repetidas; los panes, los bizcochos y los flanes, acordes con la receta.
+- **Dibujos nuevos** (`index.html`, §7; generados con scripts de Node): 5 limbers + 1 genérico (antes 🍧, que es
+  piragua; el de piña usaba el de guayaba), 3 piraguas + 1 genérica, 4 brazos gitanos (antes 🍰), 26 dulces, buñuelos
+  y churros (antes 🍬 🥥 🍩 🍊 🥭 🍑 🎃 🍞 🥖), 29 pastas (antes 🍝), 35 sopas (7 compartían el del sancocho y 5 el de
+  fideos; 6 eran emoji), 41 panes (antes 🍞 🥐 🫓 👑 🍈), 28 bizcochos y cupcakes (antes 🍰 🎂 🧁) y 15 flanes (7 de
+  fruta compartían uno y 8 más compartían con otro sabor).
+- **Asignación** (`js/app.js`): reglas al principio de `dessertIcons`; "limber", "piragua" y "brazo gitano" en
+  `dishIcons` usan ahora `ic-limber`, `ic-piragua` e `ic-brazo-gitano`.
+- *Verificado (servidor local):* todos los dibujos revisados a tamaño grande; al recalcular `dishIcon` de las 1,316
+  recetas cambiaron sólo las previstas (ninguna fuera de cada grupo), todos los `svg:` existen en el sprite y no hay
+  ids repetidos; pastas 31/31, sopas 70/70 y flanes 23/23 con dibujo distinto; `node tools/check-recipes.js` 0 errores;
+  sin errores en la consola.
+### 2026-10-25 — v4.46.0 · Títulos de las subcategorías con mayúscula en cada palabra
+- *Pedido:* en los títulos de las subcategorías de más de una palabra, que cada palabra empiece con mayúscula.
+- **`js/families.js`** (§7): 95 títulos (ES y EN) pasan a la misma forma que los nombres de las categorías, con los
+  conectores en minúscula ("Chocolate caliente" → "Chocolate Caliente", "Tragos sin alcohol" → "Tragos sin Alcohol",
+  "Pollo entero y en presas" → "Pollo Entero y en Presas"); los de una sola palabra no cambian. Sólo cambian los
+  textos: las claves y las expresiones que clasifican las recetas son las mismas.
+- `node tools/prerender.js`: las páginas no usan estos títulos; sólo cambia la fecha de la portada en `sitemap.xml`.
+- *Verificado (servidor local):* los títulos se ven así en los resultados por categoría, sin errores en la consola;
+  repetir la conversión no cambia nada (0 títulos).
+### 2026-10-25 — v4.45.0 · La voz de hombre ya no sale de mujer
+- *Pedido:* al escoger la voz de hombre salía de mujer; verificar que todo esté correcto.
+- **Causas** (`js/cook.js`, §7.9): (1) sin una voz de hombre reconocida se usaba una sin clasificar o la primera, casi
+  siempre de mujer, y el botón seguía diciendo "Hombre"; (2) faltaban muchos nombres de hombre (voces naturales de
+  Edge como Víctor de Puerto Rico, y Eddy, Reed, Rocko y Grandpa del iPhone); (3) "José" y "Álvaro" no se reconocían
+  por el acento; (4) al abrir "Escuchar receta" recién cargada la página, Chrome todavía no daba las voces y se leía con
+  la voz por defecto.
+- **Arreglo:** nombres sin acentos (`voiceKey`) y listas ampliadas; Hombre sin voz de hombre → la que hay, más grave,
+  con "Voz: Hombre (aprox.)" y el aviso de dónde bajar voces (también Windows); `speak()` espera a que carguen las voces.
+- *Verificado (servidor local):* con las listas de voces de Chrome y Edge en Windows (con y sin español), voces
+  naturales de Edge, iPhone (con y sin Jorge) y Android, Mujer y Hombre escogen la voz correcta o la aproximada con su
+  aviso; en el modo cocina real (inglés: David, Mark y Zira) al escoger Hombre se lee con David, el siguiente paso
+  también, se guarda en `rcb.voice`, y con las voces sin cargar se espera y se lee con David.
+### 2026-10-25 — v4.44.0 · Iconos propios para la lechosa y la toronja
+- *Pedido:* los iconos de la toronja y de la papaya no eran los adecuados.
+- **Dibujos nuevos** (`index.html`, §7): `ic-lechosa`, `ic-toronja`, `ic-dulce-lechosa` e `ic-cascos-toronja`.
+- **Asignación** (`js/app.js`, `dishIcons`): Dulce de Lechosa (Papaya) y Dulce de Papaya Verde en Almíbar (🥭 →
+  `ic-dulce-lechosa`), Cascos de Toronja en Almíbar (🍊 → `ic-cascos-toronja`); las palabras "lechosa", "papaya" y
+  "toronja" usan ahora `ic-lechosa` e `ic-toronja`. El jugo de toronja, el de lechosa con china, la Paloma, la ensalada
+  de lechosa verde y la de toronja con aguacate ya tenían dibujo propio o de su tipo de plato y no cambian.
+- *Verificado (servidor local):* los dibujos revisados a tamaño grande y de tarjeta (también en el celular a 375 px);
+  al recalcular `dishIcon` de las 1,316 recetas sólo cambiaron esas 3; `node tools/check-recipes.js` 0 errores.
 ### 2026-10-25 — v4.43.0 · Celular más compacto y revisión de los iconos de las 1,316 recetas
 - *Pedido:* análisis exhaustivo del proyecto, mejorar la interfaz en la web y en el celular, y validar que el icono de
   cada receta corresponda a la receta.

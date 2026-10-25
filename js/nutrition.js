@@ -595,7 +595,10 @@ function splitIngredient(line) {
 }
 
 const EMPTY_TOTALS = () => ({ kcal: 0, p: 0, c: 0, s: 0, fib: 0, fat: 0, sat: 0, na: 0, chol: 0, trans: 0, ca: 0, fe: 0, k: 0, vd: 0, add: 0 });
-const EMPTY_GROUPS = () => ({ veg: 0, fruit: 0, grain: 0, wgrain: 0, prot: 0, dairy: 0 });
+// vegNS: los vegetales que no son vianda (v4.48), para el "plato saludable" de los planes: el USDA cuenta las
+// viandas como vegetales (con almidón), pero la mitad del plato se refiere a los otros.
+const EMPTY_GROUPS = () => ({ veg: 0, vegNS: 0, fruit: 0, grain: 0, wgrain: 0, prot: 0, dairy: 0 });
+const NUTRI_STARCHY = new Set(["platano", "platano maduro", "guineo verde", "yuca", "yautia", "name", "batata", "papa", "pana", "apio del pais", "harina de platano"]);
 
 /* Viandas, vegetales, granos y pastas que se hierven y se escurren pierden en el agua parte de sus
  * minerales. Factores aproximados a la Tabla de factores de retención del USDA (Release 6, 2007)
@@ -644,6 +647,7 @@ function estimateNutrition(recipe) {
     if (food.g) {
       groups[food.g[0]] += grams / food.g[1];
       if (food.g[2]) groups.wgrain += grams / food.g[1];
+      if (food.g[0] === "veg" && !NUTRI_STARCHY.has(food.kw[0])) groups.vegNS += grams / food.g[1];
     }
     if (line > -1) (sources[line] = sources[line] || []).push(food);
   };
