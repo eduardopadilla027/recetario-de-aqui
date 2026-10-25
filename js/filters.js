@@ -5,8 +5,7 @@
  *   llevan todos (o al menos uno), ordenadas por las que menos cosas le faltan.
  * - Tiempo, dificultad (calculada de ingredientes, pasos y tiempo), calorías por porción,
  *   sin alérgenos, dieta (vegetariana o vegana), época y "para niños".
- * - Bajo el buscador (v4.57): los filtros más usados como chips (renderQuickChips) y una línea de ayuda; dentro
- *   del panel, una explicación corta de cada grupo y el micrófono para decir los ingredientes (startDictation, app.js).
+ * - Bajo el botón, una línea que explica para qué sirve; dentro del panel (v4.57), una explicación corta de cada grupo y el micrófono para decir los ingredientes (startDictation, app.js).
  * Se combinan entre sí, con el buscador, la categoría, las rápidas y las favoritas: app.js llama a
  * advActive(), advOk() y advKey(). Depende de app.js, nutrition.js, advisories.js, plans.js y search.js. */
 
@@ -31,9 +30,7 @@ const FT = {
     kcalOut: (n) => (n === 1 ? "1 receta sin estimado de calorías queda fuera de este filtro." : `${n} recetas sin estimado de calorías quedan fuera de este filtro.`),
     timeOut: (n) => (n === 1 ? "1 receta sin tiempo anotado queda fuera del filtro de tiempo." : `${n} recetas sin tiempo anotado quedan fuera del filtro de tiempo.`),
     kidsOff: "El filtro \"Para niños\" no se pudo cargar: no se muestran recetas con él. Recargue la página o quítelo.",
-    quickLabel: "Filtros rápidos",
-    quick: { quick: "≤ 30 min", easy: "Fácil", veg: "Vegetariana", gluten: "Sin gluten", kcal: "≤ 500 calorías", kids: "Para niños" },
-    help: "Toque un filtro para ver sólo esas recetas; se suman entre sí y con lo que busque. En «Filtros» hay más: alérgenos, calorías, época y «¿Qué tengo en la nevera?».",
+    help: "Toque «Filtros» para ver sólo las recetas que quiere: por tiempo, dificultad, calorías, dieta, sin alérgenos, época, para niños o con «¿Qué tengo en la nevera?». Se suman entre sí y con lo que busque.",
     intro: "Marque lo que quiera: los filtros se suman entre sí y con la búsqueda, y el número del botón dice cuántos tiene puestos.",
     hints: {
       time: "Del principio hasta servir, con nevera y esperas.",
@@ -65,9 +62,7 @@ const FT = {
     kcalOut: (n) => (n === 1 ? "1 recipe without a calorie estimate is left out by this filter." : `${n} recipes without a calorie estimate are left out by this filter.`),
     timeOut: (n) => (n === 1 ? "1 recipe with no time listed is left out by the time filter." : `${n} recipes with no time listed are left out by the time filter.`),
     kidsOff: "The \"Kid-friendly\" filter couldn't load, so it shows no recipes. Reload the page or turn it off.",
-    quickLabel: "Quick filters",
-    quick: { quick: "≤ 30 min", easy: "Easy", veg: "Vegetarian", gluten: "Gluten-free", kcal: "≤ 500 calories", kids: "Kid-friendly" },
-    help: "Tap a filter to see only those recipes; they add up with each other and with your search. «Filters» has more: allergens, calories, season and «What's in my fridge?».",
+    help: "Tap «Filters» to see only the recipes you want: by time, difficulty, calories, diet, allergen-free, season, kid-friendly or with «What's in my fridge?». They add up with each other and with your search.",
     intro: "Pick what you want: filters add up with each other and with the search, and the number on the button shows how many are on.",
     hints: {
       time: "From start to serving, including fridge and waiting.",
@@ -178,25 +173,6 @@ function advSort(list) {
   return list.sort((a, b) => haveCount(b).hit - haveCount(a).hit || a.ingredients.es.length - b.ingredients.es.length);
 }
 
-/* ── Filtros rápidos bajo el buscador (v4.57): los más usados, a un toque. "≤ 30 min" es el mismo de la barra
-   de resultados (onlyQuick, app.js); los demás ponen o quitan un valor del panel. ── */
-const QUICK = [
-  { k: "quick", icon: "i-bolt", on: () => onlyQuick, set: (v) => { onlyQuick = v; renderNavPills(); } },
-  { k: "easy", icon: "i-check", on: () => adv.level === "easy", set: (v) => { adv.level = v ? "easy" : ""; } },
-  { k: "veg", icon: "i-leaf", on: () => adv.diet === "veg", set: (v) => { adv.diet = v ? "veg" : ""; } },
-  { k: "gluten", icon: "i-shield", on: () => adv.free.includes("gluten"), set: (v) => { adv.free = v ? [...adv.free, "gluten"] : adv.free.filter((x) => x !== "gluten"); } },
-  { k: "kcal", icon: "i-flame", on: () => adv.kcal === 500, set: (v) => { adv.kcal = v ? 500 : 0; } },
-  { k: "kids", icon: "i-users", on: () => adv.kids, set: (v) => { adv.kids = v; } }
-];
-function renderQuickChips() {
-  const box = $("quick-chips");
-  if (!box) return;
-  const tr = ft();
-  $("quick-filters").setAttribute("aria-label", tr.quickLabel);
-  box.innerHTML = QUICK.map((q) => `<button type="button" class="chip" data-quick="${q.k}" aria-pressed="${q.on()}"><svg class="icon" aria-hidden="true"><use href="#${q.icon}"/></svg><span>${esc(tr.quick[q.k])}</span></button>`).join("");
-  $("filters-help").textContent = tr.help;
-}
-
 /* ── Vista ── */
 function renderAdvButton() {
   const b = $("adv-toggle");
@@ -204,7 +180,7 @@ function renderAdvButton() {
   const n = advCount();
   b.setAttribute("aria-expanded", String(advOpen));
   b.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#i-filter"/></svg><span>${esc(ft().btn)}</span>${n ? `<span class="nav-badge">${n}</span>` : ""}`;
-  renderQuickChips();
+  $("filters-help").textContent = ft().help;
 }
 function renderAdvPanel() {
   const box = $("adv-filters");
@@ -276,14 +252,6 @@ function setupFilters() {
   $("adv-toggle").addEventListener("click", () => {
     advOpen = !advOpen; renderAdvPanel();
     if (advOpen) { box.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" }); $("adv-have-text").focus({ preventScroll: true }); }
-  });
-  $("quick-chips").addEventListener("click", (e) => {
-    const b = e.target.closest("[data-quick]");
-    if (!b) return;
-    const q = QUICK.find((x) => x.k === b.dataset.quick);
-    q.set(!q.on());
-    advChanged(`[data-quick="${q.k}"]`);
-    scrollToResultsSoon();
   });
   box.addEventListener("click", (e) => {
     if (e.target.closest("[data-adv-close]")) { advOpen = false; renderAdvPanel(); $("adv-toggle").focus(); return; }

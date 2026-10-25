@@ -1277,20 +1277,12 @@ body.cook-on { overflow: hidden; }
 .ing-item.is-done .ing-text { color: var(--ink-3); text-decoration: line-through; }
 
 /* Filtros y "qué tengo" (js/filters.js) */
-/* Filtros a la vista (v4.57): "Filtros" y los chips más usados en una fila bajo el buscador, con una línea de ayuda.
-   En el móvil la fila se desliza de lado (dentro de su caja, sin mover la página). */
-.hero-tools { margin-top: var(--s-3); max-width: 560px; min-width: 0; }
+/* "Filtros" bajo el buscador (más marcado desde v4.57) y la línea que explica para qué sirve. */
+.hero-tools { margin-top: var(--s-3); max-width: 560px; }
 .hero-tools .nav-badge { position: static; margin-left: 2px; }
-.quick-filters { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; }
-.quick-chips { display: contents; }
-.quick-filters .chip, .quick-filters .btn { flex: none; }
 #adv-toggle { border-color: var(--achiote); color: var(--achiote-600); font-weight: 700; }
 #adv-toggle[aria-expanded="true"] { background: var(--achiote-50); }
 .filters-help { margin: var(--s-2) 0 0; font-size: .85rem; line-height: 1.4; color: var(--ink-3); }
-@media (max-width: 640px) {
-  .quick-filters { flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; padding-bottom: 2px; margin-inline: calc(-1 * var(--s-1)); padding-inline: var(--s-1); }
-  .quick-filters::-webkit-scrollbar { display: none; }
-}
 .adv-intro { margin: 0; font-size: .92rem; color: var(--ink-2); }
 .adv-hint { flex-basis: 100%; margin: calc(-1 * var(--s-1)) 0 var(--s-1); font-size: .82rem; line-height: 1.35; color: var(--ink-3); }
 

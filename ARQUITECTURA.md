@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.57.0 · **Versión de la app:** 4.57.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,428 en 24 categorías
+> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.58.0 · **Versión de la app:** 4.58.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,428 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -762,11 +762,10 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 ### 7.11 "¿Qué tengo en la nevera?" y filtros (`js/filters.js`)
 
 - Botón **Filtros** bajo el buscador (con el número de filtros activos) que abre `#adv-filters`.
-- **A la vista (v4.57):** en la misma fila (`#quick-filters`), seis chips con los más usados (`QUICK`,
-  `renderQuickChips()`): ≤ 30 min (el mismo `onlyQuick` del chip de la barra de resultados), Fácil, Vegetariana, Sin
-  gluten, ≤ 500 calorías y Para niños; ponen o quitan el valor del panel y se redibujan con `renderCategories()`. Debajo,
-  `#filters-help` explica en una línea cómo se usan. En el móvil (≤ 640 px) la fila se desliza de lado sin mover la página.
-  Dentro del panel, una frase de entrada (`.adv-intro`) y una explicación corta bajo cada grupo (`.adv-hint`).
+- **Ayuda (v4.57–4.58):** bajo el botón (más marcado), `#filters-help` explica en una línea para qué sirven los
+  filtros y cuáles hay; se escribe en `renderAdvButton()`. Dentro del panel, una frase de entrada (`.adv-intro`) y una
+  explicación corta bajo cada grupo (`.adv-hint`). En v4.57 hubo además seis chips de filtros rápidos junto al botón;
+  se quitaron en v4.58 a pedido (el "≤ 30 min" sigue en la barra de resultados y en el mosaico "Rápidas").
 - **Micrófono (v4.57):** en el buscador (`#search-mic`) y en "¿Qué tengo en la nevera?" (`[data-adv-mic]`), con
   `startDictation()` de `app.js` (Web Speech API, es-PR o en-US, una frase): escribe lo que oye mientras habla (los
   resultados salen al momento) y al terminar busca o añade los ingredientes ("pollo y papa y cilantro" → tres). Mientras
@@ -1232,6 +1231,15 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-25 — v4.58.0 · Sólo el botón "Filtros" con su explicación
+- *Pedido:* quitar los chips de filtros añadidos en v4.57 y dejar el botón de Filtros con su explicación.
+- **`index.html`, `js/filters.js`, `js/app.js`, `css/styles.css`:** fuera los seis chips (`QUICK`, `renderQuickChips`,
+  `#quick-chips`, la fila deslizable). Queda "Filtros" (más marcado, con el número de filtros puestos) y debajo una línea
+  nueva que dice para qué sirve: "Toque «Filtros» para ver sólo las recetas que quiere: por tiempo, dificultad, calorías,
+  dieta, sin alérgenos, época, para niños o con «¿Qué tengo en la nevera?». Se suman entre sí y con lo que busque."
+  Las explicaciones dentro del panel y los micrófonos siguen igual.
+- *Verificado* en el navegador: no queda ningún chip; el panel abre con sus 6 explicaciones, un filtro marca "Filtros 1"
+  y da 892 recetas; la ayuda cambia a inglés; sin desbordes a 375 px ni errores en la consola.
 ### 2026-10-25 — v4.57.0 · Buscar por voz y filtros a la vista
 - *Pedido:* un micrófono para la búsqueda principal y los filtros; los filtros más relevantes a la vista, con una reseña
   corta de su uso.
