@@ -15443,5 +15443,338 @@ recipes.push(
       es: ["Licúe las acerolas con el agua 30 segundos, sin moler mucho las semillas.", "Cuele bien, apretando la pulpa.", "Licúe el jugo con la leche, la leche condensada y el hielo.", "Sirva enseguida, que la acerola con leche se corta si espera. Tiene muchísima vitamina C."],
       en: ["Blend the acerolas with the water 30 seconds, without grinding the seeds much.", "Strain well, pressing the pulp.", "Blend the juice with the milk, condensed milk and ice.", "Serve right away, since acerola and milk curdle if left to stand. It's very high in vitamin C."]
     }
+  },
+  // Tanda 59 (v4.52): recetas nutritivas de la cocina boricua — carnes y aves magras, pescado, granos, arroces y
+  // viandas: al horno, a la plancha o guisadas, con más vegetales y fibra, y poco sodio (adobo sin sal, caldo bajo
+  // en sodio, enlatados enjuagados).
+  {
+    id: "picadillo-magro-chayote",
+    category: "carnes",
+    name: { es: "Picadillo Magro con Chayote y Zanahoria", en: "Lean Picadillo with Chayote and Carrot" },
+    active: 35, total: 35,
+    servings: 5,
+    ingredients: {
+      es: ["1 libra de carne molida de res magra (90 % o más)", "1 cucharada de aceite de oliva", "4 cucharadas de sofrito", "1 chayote pelado, en cubitos", "1 zanahoria en cubitos", "1 lata de 8 onzas de salsa de tomate sin sal añadida", "10 aceitunas rellenas, picadas", "1 cucharadita de comino", "1 cucharadita de adobo sin sal", "¼ cucharadita de sal", "½ taza de agua"],
+      en: ["1 pound lean ground beef (90% or leaner)", "1 tablespoon olive oil", "4 tablespoons sofrito", "1 chayote, peeled and diced", "1 carrot, diced", "1 can (8 ounces) no-salt-added tomato sauce", "10 stuffed olives, chopped", "1 teaspoon cumin", "1 teaspoon salt-free adobo", "¼ teaspoon salt", "½ cup water"]
+    },
+    steps: {
+      es: ["En un sartén grande con el aceite, dore la carne 6 minutos, desmenuzándola; escurra la grasa que suelte.", "Añada el sofrito, el comino y el adobo, y cocine 2 minutos.", "Agregue el chayote, la zanahoria, la salsa de tomate, las aceitunas, la sal y el agua.", "Tape y cocine a fuego bajo 15 minutos, hasta que el chayote esté blando.", "Sirva con arroz integral o viandas. El chayote rinde la carne y le añade fibra con pocas calorías."],
+      en: ["In a large skillet with the oil, brown the beef 6 minutes, breaking it up; drain off the fat it releases.", "Add the sofrito, cumin and adobo and cook 2 minutes.", "Add the chayote, carrot, tomato sauce, olives, salt and water.", "Cover and cook over low heat 15 minutes, until the chayote is tender.", "Serve with brown rice or root vegetables. The chayote stretches the meat and adds fiber with few calories."]
+    }
+  },
+  {
+    id: "solomillo-plancha-mojo-batata",
+    category: "carnes",
+    name: { es: "Solomillo de Cerdo a la Plancha con Mojo de Recao y Batata Asada", en: "Seared Pork Tenderloin with Culantro Mojo and Roasted Sweet Potato" },
+    active: 40, total: 70, wait: "adobo",
+    servings: 4,
+    ingredients: {
+      es: ["1½ libras de solomillo de cerdo, sin grasa visible", "1 cucharadita de adobo sin sal", "¼ taza de jugo de naranja agria", "4 dientes de ajo machacados", "2 batatas medianas en cubos", "2 cucharadas de aceite de oliva", "6 hojas de recao picadas", "1 limón verde (el jugo)", "¼ cucharadita de sal"],
+      en: ["1½ pounds pork tenderloin, visible fat trimmed", "1 teaspoon salt-free adobo", "¼ cup sour orange juice", "4 garlic cloves, crushed", "2 medium sweet potatoes, cubed", "2 tablespoons olive oil", "6 culantro leaves, chopped", "1 lime (the juice)", "¼ teaspoon salt"]
+    },
+    steps: {
+      es: ["Adobe el solomillo con el adobo, el jugo de naranja agria y la mitad del ajo; déjelo 30 minutos en la nevera.", "Caliente el horno a 425 °F y ase la batata con 1 cucharada de aceite, 25 minutos.", "Dore el solomillo en un sartén caliente 3 minutos por lado y termínelo en el horno 12 a 15 minutos, hasta 145 °F por dentro.", "Para el mojo, mezcle el recao, el resto del ajo y del aceite, el jugo de limón y la sal.", "Deje reposar la carne 5 minutos, córtela en medallones y sírvala con la batata y el mojo. Es un corte de cerdo tan magro como la pechuga."],
+      en: ["Season the tenderloin with the adobo, sour orange juice and half the garlic; refrigerate 30 minutes.", "Heat the oven to 425 °F and roast the sweet potato with 1 tablespoon of oil, 25 minutes.", "Sear the tenderloin in a hot skillet 3 minutes per side and finish it in the oven 12 to 15 minutes, to 145 °F inside.", "For the mojo, mix the culantro, the rest of the garlic and oil, the lime juice and the salt.", "Rest the meat 5 minutes, slice it into medallions and serve with the sweet potato and mojo. It's a pork cut as lean as chicken breast."]
+    }
+  },
+  {
+    id: "albondigas-res-avena-horno",
+    category: "carnes",
+    name: { es: "Albóndigas Magras de Res al Horno en Salsa Criolla", en: "Baked Lean Beef Meatballs in Creole Sauce" },
+    active: 45, total: 45,
+    servings: 5,
+    ingredients: {
+      es: ["1 libra de carne molida de res magra", "½ taza de avena en hojuelas", "1 huevo", "3 cucharadas de sofrito", "1 cucharadita de adobo sin sal", "¼ cucharadita de sal", "1 lata de 15 onzas de salsa de tomate sin sal añadida", "½ taza de caldo de res bajo en sodio", "1 pimiento verde en tiras", "1 cucharadita de orégano"],
+      en: ["1 pound lean ground beef", "½ cup rolled oats", "1 egg", "3 tablespoons sofrito", "1 teaspoon salt-free adobo", "¼ teaspoon salt", "1 can (15 ounces) no-salt-added tomato sauce", "½ cup low-sodium beef broth", "1 green bell pepper, cut in strips", "1 teaspoon oregano"]
+    },
+    steps: {
+      es: ["Caliente el horno a 400 °F. Mezcle la carne, la avena, el huevo, 2 cucharadas de sofrito, el adobo y la sal.", "Forme 20 albóndigas y hornéelas en una bandeja 15 minutos, sin aceite.", "Mientras, en un caldero, cocine el resto del sofrito con el pimiento 3 minutos; añada la salsa de tomate, el caldo y el orégano.", "Pase las albóndigas a la salsa y cocine tapado 10 minutos a fuego bajo.", "Sirva con arroz y habichuelas o con espaguetis integrales. La avena las hace jugosas y añade fibra en vez de pan."],
+      en: ["Heat the oven to 400 °F. Mix the beef, oats, egg, 2 tablespoons sofrito, adobo and salt.", "Shape 20 meatballs and bake them on a tray 15 minutes, without oil.", "Meanwhile, in a caldero, cook the rest of the sofrito with the bell pepper 3 minutes; add the tomato sauce, broth and oregano.", "Move the meatballs to the sauce and cook covered 10 minutes over low heat.", "Serve with rice and beans or whole-wheat spaghetti. The oats keep them juicy and add fiber instead of bread."]
+    }
+  },
+  {
+    id: "carne-guisada-viandas-calabaza",
+    category: "carnes",
+    name: { es: "Carne con Viandas: Res Guisada con Yautía, Calabaza y Zanahoria", en: "Beef with Root Vegetables: Stew with Taro, Pumpkin and Carrot" },
+    active: 90, total: 90,
+    servings: 6,
+    ingredients: {
+      es: ["1½ libras de carne de res magra para guisar, en cubos", "1 cucharadita de adobo sin sal", "1 cucharada de aceite de oliva", "4 cucharadas de sofrito", "1 lata de 8 onzas de salsa de tomate sin sal añadida", "4 tazas de caldo de res bajo en sodio", "2 yautías peladas, en trozos", "2 tazas de calabaza en trozos", "2 zanahorias en ruedas", "1 hoja de laurel", "½ cucharadita de sal"],
+      en: ["1½ pounds stewing beef, trimmed, cubed", "1 teaspoon salt-free adobo", "1 tablespoon olive oil", "4 tablespoons sofrito", "1 can (8 ounces) no-salt-added tomato sauce", "4 cups low-sodium beef broth", "2 taro roots (yautía), peeled, in chunks", "2 cups pumpkin chunks", "2 carrots, sliced", "1 bay leaf", "½ teaspoon salt"]
+    },
+    steps: {
+      es: ["Sazone la carne con el adobo y dórela en un caldero con el aceite, 8 minutos.", "Añada el sofrito y la salsa de tomate y cocine 3 minutos.", "Agregue el caldo y el laurel, tape y cocine a fuego bajo 45 minutos, hasta que la carne esté casi blanda.", "Añada la yautía, la calabaza, la zanahoria y la sal, y cocine 25 minutos más, hasta que las viandas estén blandas y la calabaza espese la salsa.", "Saque el laurel y sirva. Es un plato completo, con la carne, las viandas y los vegetales en la misma olla."],
+      en: ["Season the beef with the adobo and brown it in a caldero with the oil, 8 minutes.", "Add the sofrito and tomato sauce and cook 3 minutes.", "Add the broth and bay leaf, cover and cook over low heat 45 minutes, until the beef is nearly tender.", "Add the taro, pumpkin, carrot and salt and cook 25 more minutes, until the vegetables are tender and the pumpkin thickens the sauce.", "Remove the bay leaf and serve. It's a complete meal, with the meat, root vegetables and vegetables in one pot."]
+    }
+  },
+  {
+    id: "pechugas-guisadas-gandules-calabaza",
+    category: "aves",
+    name: { es: "Pechugas Guisadas con Gandules y Calabaza", en: "Stewed Chicken Breasts with Pigeon Peas and Pumpkin" },
+    active: 40, total: 40,
+    servings: 4,
+    ingredients: {
+      es: ["1½ libras de pechuga de pollo sin piel, en trozos", "1 cucharadita de adobo sin sal", "1 cucharada de aceite de oliva", "4 cucharadas de sofrito", "1 sobre de sazón con achiote", "1 lata de 15 onzas de gandules, escurridos y enjuagados", "2 tazas de calabaza en cubos", "1½ tazas de caldo de pollo bajo en sodio", "½ taza de salsa de tomate sin sal añadida", "4 hojas de recao picadas"],
+      en: ["1½ pounds skinless chicken breast, in pieces", "1 teaspoon salt-free adobo", "1 tablespoon olive oil", "4 tablespoons sofrito", "1 packet sazón with annatto", "1 can (15 ounces) pigeon peas, drained and rinsed", "2 cups cubed pumpkin", "1½ cups low-sodium chicken broth", "½ cup no-salt-added tomato sauce", "4 culantro leaves, chopped"]
+    },
+    steps: {
+      es: ["Sazone el pollo con el adobo y dórelo en un caldero con el aceite, 5 minutos.", "Añada el sofrito y el sazón y cocine 2 minutos.", "Agregue los gandules, la calabaza, el caldo y la salsa de tomate.", "Tape y cocine a fuego bajo 20 minutos, hasta que el pollo esté cocido y la calabaza se deshaga un poco.", "Apague y añada el recao. Unos 40 g de proteína por plato, con la fibra de los gandules."],
+      en: ["Season the chicken with the adobo and brown it in a caldero with the oil, 5 minutes.", "Add the sofrito and sazón and cook 2 minutes.", "Add the pigeon peas, pumpkin, broth and tomato sauce.", "Cover and cook over low heat 20 minutes, until the chicken is cooked and the pumpkin breaks down a little.", "Turn off the heat and add the culantro. About 40 g of protein per plate, with the fiber of the pigeon peas."]
+    }
+  },
+  {
+    id: "pollo-horno-viandas-mojo",
+    category: "aves",
+    name: { es: "Pollo al Horno con Viandas y Mojo en una Bandeja", en: "One-Pan Baked Chicken with Root Vegetables and Mojo" },
+    active: 55, total: 85, wait: "adobo",
+    servings: 4,
+    ingredients: {
+      es: ["4 muslos de pollo sin piel", "1 cucharadita de adobo sin sal", "¼ taza de jugo de naranja agria", "1 batata en trozos", "1 yautía en trozos", "1 plátano maduro en ruedas", "1 cebolla en gajos", "6 dientes de ajo machacados", "2 cucharadas de aceite de oliva", "1 cucharadita de orégano", "¼ cucharadita de sal"],
+      en: ["4 skinless chicken thighs", "1 teaspoon salt-free adobo", "¼ cup sour orange juice", "1 sweet potato, in chunks", "1 taro root (yautía), in chunks", "1 ripe plantain, sliced", "1 onion, cut in wedges", "6 garlic cloves, crushed", "2 tablespoons olive oil", "1 teaspoon oregano", "¼ teaspoon salt"]
+    },
+    steps: {
+      es: ["Adobe el pollo con el adobo, el jugo de naranja agria y la mitad del ajo; déjelo 30 minutos en la nevera.", "Caliente el horno a 425 °F. Mezcle las viandas, el plátano y la cebolla con el aceite, el resto del ajo, el orégano y la sal.", "Ponga todo en una bandeja grande, con el pollo encima.", "Hornee 40 a 45 minutos, volteando las viandas a la mitad, hasta que el pollo llegue a 165 °F y las viandas estén doradas.", "Sirva con una ensalada verde. Sin freír, y se lava una sola bandeja."],
+      en: ["Season the chicken with the adobo, sour orange juice and half the garlic; refrigerate 30 minutes.", "Heat the oven to 425 °F. Toss the root vegetables, plantain and onion with the oil, the rest of the garlic, the oregano and salt.", "Spread everything on a large tray with the chicken on top.", "Bake 40 to 45 minutes, turning the vegetables halfway, until the chicken reaches 165 °F and the vegetables are golden.", "Serve with a green salad. No frying, and only one tray to wash."]
+    }
+  },
+  {
+    id: "picadillo-pavo-berenjena",
+    category: "aves",
+    name: { es: "Picadillo de Pavo con Berenjena", en: "Ground Turkey Picadillo with Eggplant" },
+    active: 35, total: 35,
+    servings: 5,
+    ingredients: {
+      es: ["1 libra de pavo molido", "1 cucharada de aceite de oliva", "4 cucharadas de sofrito", "1 berenjena en cubitos", "1 pimiento rojo picadito", "1 lata de 8 onzas de salsa de tomate sin sal añadida", "2 cucharadas de pasas", "10 aceitunas rellenas, picadas", "1 cucharadita de comino", "1 cucharadita de adobo sin sal", "¼ cucharadita de sal"],
+      en: ["1 pound ground turkey", "1 tablespoon olive oil", "4 tablespoons sofrito", "1 eggplant, diced", "1 red bell pepper, finely chopped", "1 can (8 ounces) no-salt-added tomato sauce", "2 tablespoons raisins", "10 stuffed olives, chopped", "1 teaspoon cumin", "1 teaspoon salt-free adobo", "¼ teaspoon salt"]
+    },
+    steps: {
+      es: ["En un sartén grande con el aceite, dore el pavo 6 minutos, desmenuzándolo.", "Añada el sofrito, el comino y el adobo, y cocine 2 minutos.", "Agregue la berenjena y el pimiento y cocine 5 minutos, moviendo.", "Añada la salsa de tomate, las pasas, las aceitunas y la sal; tape y cocine 12 minutos, hasta que la berenjena esté blanda.", "Sirva con arroz o úselo para rellenar pimientos o canoas al horno. El pavo y la berenjena lo hacen más ligero."],
+      en: ["In a large skillet with the oil, brown the turkey 6 minutes, breaking it up.", "Add the sofrito, cumin and adobo and cook 2 minutes.", "Add the eggplant and bell pepper and cook 5 minutes, stirring.", "Add the tomato sauce, raisins, olives and salt; cover and cook 12 minutes, until the eggplant is tender.", "Serve with rice or use it to stuff peppers or baked plantain canoes. Turkey and eggplant make it lighter."]
+    }
+  },
+  {
+    id: "salpicon-pollo-repollo",
+    category: "aves",
+    name: { es: "Salpicón de Pollo con Repollo y Zanahoria", en: "Shredded Chicken Salpicón with Cabbage and Carrot" },
+    active: 40, total: 40,
+    servings: 4,
+    ingredients: {
+      es: ["1½ libras de pechuga de pollo sin piel", "4 tazas de agua", "1 hoja de laurel", "2 tazas de repollo en tiras finas", "1 zanahoria rallada", "1 tomate en cubitos", "½ cebolla roja en tiritas", "2 cucharadas de aceite de oliva", "1 limón verde (el jugo)", "2 cucharadas de vinagre", "4 hojas de recao picadas", "½ cucharadita de sal"],
+      en: ["1½ pounds skinless chicken breast", "4 cups water", "1 bay leaf", "2 cups thinly sliced cabbage", "1 carrot, grated", "1 tomato, diced", "½ red onion, thinly sliced", "2 tablespoons olive oil", "1 lime (the juice)", "2 tablespoons vinegar", "4 culantro leaves, chopped", "½ teaspoon salt"]
+    },
+    steps: {
+      es: ["Hierva el pollo en el agua con el laurel 20 minutos, a fuego bajo; déjelo refrescar en el caldo.", "Desmenúcelo en hebras con dos tenedores (guarde el caldo para una sopa).", "En un tazón, mezcle el repollo, la zanahoria, el tomate y la cebolla.", "Bata el aceite, el jugo de limón, el vinagre, el recao y la sal, y mézclelo con el pollo y los vegetales.", "Sirva frío o a temperatura de ambiente, solo o en pan sobao. Es fresco, alto en proteína y con vegetales crudos."],
+      en: ["Simmer the chicken in the water with the bay leaf 20 minutes over low heat; let it cool in the broth.", "Shred it with two forks (save the broth for soup).", "In a bowl, mix the cabbage, carrot, tomato and onion.", "Whisk the oil, lime juice, vinegar, culantro and salt, and toss with the chicken and vegetables.", "Serve cold or at room temperature, on its own or on pan sobao. It's fresh, high in protein and full of raw vegetables."]
+    }
+  },
+  {
+    id: "sierra-horno-tomate-alcaparras",
+    category: "pescados",
+    name: { es: "Sierra al Horno con Tomate, Cebolla y Alcaparras", en: "Baked Kingfish with Tomato, Onion and Capers" },
+    active: 35, total: 35,
+    servings: 4,
+    ingredients: {
+      es: ["4 ruedas de sierra (6 onzas cada una)", "1 cucharadita de adobo sin sal", "1 limón verde (el jugo)", "2 cucharadas de aceite de oliva", "1 cebolla en ruedas", "1 pimiento verde en tiras", "3 tomates en ruedas", "1 cucharada de alcaparras, enjuagadas", "4 dientes de ajo en lascas", "1 cucharadita de orégano"],
+      en: ["4 kingfish steaks (6 ounces each)", "1 teaspoon salt-free adobo", "1 lime (the juice)", "2 tablespoons olive oil", "1 onion, sliced into rings", "1 green bell pepper, cut in strips", "3 tomatoes, sliced", "1 tablespoon capers, rinsed", "4 garlic cloves, sliced", "1 teaspoon oregano"]
+    },
+    steps: {
+      es: ["Caliente el horno a 400 °F. Sazone la sierra con el adobo y el jugo de limón.", "En un molde, ponga la mitad de la cebolla y el pimiento, la sierra encima y luego el tomate.", "Reparta el resto de la cebolla y el pimiento, las alcaparras, el ajo y el orégano, y rocíe el aceite.", "Hornee 20 a 25 minutos, hasta que el pescado se desmenuce fácil con un tenedor.", "Sirva con viandas hervidas. La sierra es rica en omega-3, y al horno no lleva la grasa de la fritura."],
+      en: ["Heat the oven to 400 °F. Season the kingfish with the adobo and lime juice.", "In a baking dish, layer half the onion and bell pepper, the fish on top and then the tomato.", "Scatter the rest of the onion and pepper, the capers, garlic and oregano, and drizzle with the oil.", "Bake 20 to 25 minutes, until the fish flakes easily with a fork.", "Serve with boiled root vegetables. Kingfish is rich in omega-3, and baking skips the fat of frying."]
+    }
+  },
+  {
+    id: "bacalao-garbanzos-espinaca",
+    category: "pescados",
+    name: { es: "Bacalao Guisado con Garbanzos y Espinaca", en: "Stewed Salt Cod with Chickpeas and Spinach" },
+    active: 35, total: 755, wait: "desalar",
+    servings: 5,
+    ingredients: {
+      es: ["6 onzas de bacalao sin espinas", "1 cucharada de aceite de oliva", "4 cucharadas de sofrito", "1 lata de 15 onzas de garbanzos, escurridos y enjuagados", "1 lata de 8 onzas de salsa de tomate sin sal añadida", "1 taza de agua", "2 papas en cubos", "4 tazas de espinaca fresca", "1 cucharadita de pimentón"],
+      en: ["6 ounces boneless salt cod", "1 tablespoon olive oil", "4 tablespoons sofrito", "1 can (15 ounces) chickpeas, drained and rinsed", "1 can (8 ounces) no-salt-added tomato sauce", "1 cup water", "2 potatoes, cubed", "4 cups fresh spinach", "1 teaspoon paprika"]
+    },
+    steps: {
+      es: ["Desale el bacalao en agua fría de 8 a 12 horas, cambiando el agua 3 o 4 veces; desmenúcelo.", "En un caldero con el aceite, sofría el sofrito y el pimentón 2 minutos.", "Añada el bacalao, los garbanzos, la salsa de tomate, el agua y las papas; tape y cocine 20 minutos.", "Agregue la espinaca y cocine 3 minutos más, hasta que se ablande.", "Sirva con arroz o viandas. No lleva sal: el bacalao bien desalado da la justa."],
+      en: ["Soak the salt cod in cold water 8 to 12 hours, changing the water 3 or 4 times; flake it.", "In a caldero with the oil, sauté the sofrito and paprika 2 minutes.", "Add the cod, chickpeas, tomato sauce, water and potatoes; cover and cook 20 minutes.", "Add the spinach and cook 3 more minutes, until wilted.", "Serve with rice or root vegetables. No added salt: well-soaked cod gives just enough."]
+    }
+  },
+  {
+    id: "pescado-salsa-calabaza-recao",
+    category: "pescados",
+    name: { es: "Pescado en Salsa de Calabaza y Recao", en: "Fish in Pumpkin and Culantro Sauce" },
+    active: 35, total: 35,
+    servings: 4,
+    ingredients: {
+      es: ["4 filetes de pescado blanco (mero o chillo), 6 onzas cada uno", "1 cucharadita de adobo sin sal", "1 cucharada de aceite de oliva", "3 cucharadas de sofrito", "2 tazas de calabaza en cubos", "1 taza de caldo de pescado bajo en sodio", "½ taza de leche de coco light", "6 hojas de recao picadas", "¼ cucharadita de sal"],
+      en: ["4 white fish fillets (grouper or snapper), 6 ounces each", "1 teaspoon salt-free adobo", "1 tablespoon olive oil", "3 tablespoons sofrito", "2 cups cubed pumpkin", "1 cup low-sodium fish broth", "½ cup light coconut milk", "6 culantro leaves, chopped", "¼ teaspoon salt"]
+    },
+    steps: {
+      es: ["En una olla con el aceite, sofría el sofrito 2 minutos; añada la calabaza y el caldo, y cocine tapado 15 minutos.", "Licúe la calabaza con su caldo y la leche de coco hasta que quede una salsa lisa.", "Devuelva la salsa a un sartén ancho con la sal y póngala a hervir suave.", "Sazone el pescado con el adobo y cocínelo en la salsa, tapado, 8 a 10 minutos.", "Eche el recao por encima y sirva con arroz. La salsa es cremosa sin crema: la espesa la calabaza."],
+      en: ["In a pot with the oil, sauté the sofrito 2 minutes; add the pumpkin and broth and cook covered 15 minutes.", "Blend the pumpkin with its broth and the coconut milk into a smooth sauce.", "Return the sauce to a wide skillet with the salt and bring to a gentle simmer.", "Season the fish with the adobo and cook it in the sauce, covered, 8 to 10 minutes.", "Sprinkle with the culantro and serve with rice. The sauce is creamy without cream: the pumpkin thickens it."]
+    }
+  },
+  {
+    id: "camarones-guisados-gandules-calabaza",
+    category: "pescados",
+    name: { es: "Camarones Guisados con Gandules y Calabaza", en: "Stewed Shrimp with Pigeon Peas and Pumpkin" },
+    active: 30, total: 30,
+    servings: 4,
+    ingredients: {
+      es: ["1 libra de camarones pelados y limpios", "1 cucharada de aceite de oliva", "4 cucharadas de sofrito", "1 sobre de sazón con achiote", "1 lata de 15 onzas de gandules, escurridos y enjuagados", "2 tazas de calabaza en cubitos", "1 taza de caldo de pescado bajo en sodio", "½ taza de salsa de tomate sin sal añadida", "4 hojas de recao picadas"],
+      en: ["1 pound shrimp, peeled and deveined", "1 tablespoon olive oil", "4 tablespoons sofrito", "1 packet sazón with annatto", "1 can (15 ounces) pigeon peas, drained and rinsed", "2 cups diced pumpkin", "1 cup low-sodium fish broth", "½ cup no-salt-added tomato sauce", "4 culantro leaves, chopped"]
+    },
+    steps: {
+      es: ["En un caldero con el aceite, sofría el sofrito y el sazón 2 minutos.", "Añada los gandules, la calabaza, el caldo y la salsa de tomate; tape y cocine 15 minutos.", "Agregue los camarones y cocine 4 minutos, sólo hasta que se pongan rosados.", "Apague y añada el recao.", "Sirva con arroz blanco o integral. Los camarones se cocinan en minutos: si se pasan, se ponen duros."],
+      en: ["In a caldero with the oil, sauté the sofrito and sazón 2 minutes.", "Add the pigeon peas, pumpkin, broth and tomato sauce; cover and cook 15 minutes.", "Add the shrimp and cook 4 minutes, just until pink.", "Turn off the heat and add the culantro.", "Serve with white or brown rice. Shrimp cook in minutes: overcooked, they turn tough."]
+    }
+  },
+  {
+    id: "garbanzos-bacalao-papas",
+    category: "granos",
+    name: { es: "Garbanzos Guisados con Bacalao y Papas", en: "Stewed Chickpeas with Salt Cod and Potatoes" },
+    active: 40, total: 760, wait: "desalar",
+    servings: 6,
+    ingredients: {
+      es: ["6 onzas de bacalao sin espinas", "2 latas de 15 onzas de garbanzos, escurridos y enjuagados", "1 cucharada de aceite de oliva", "4 cucharadas de sofrito", "1 lata de 8 onzas de salsa de tomate sin sal añadida", "3 tazas de agua", "2 papas en cubos", "1 taza de calabaza en cubos", "½ cucharadita de orégano"],
+      en: ["6 ounces boneless salt cod", "2 cans (15 ounces each) chickpeas, drained and rinsed", "1 tablespoon olive oil", "4 tablespoons sofrito", "1 can (8 ounces) no-salt-added tomato sauce", "3 cups water", "2 potatoes, cubed", "1 cup cubed pumpkin", "½ teaspoon oregano"]
+    },
+    steps: {
+      es: ["Desale el bacalao en agua fría de 8 a 12 horas, cambiando el agua varias veces; desmenúcelo.", "En un caldero con el aceite, sofría el sofrito 2 minutos y añada la salsa de tomate.", "Agregue los garbanzos, el agua, las papas, la calabaza, el bacalao y el orégano.", "Tape y cocine a fuego bajo 25 minutos, hasta que las papas estén blandas y el caldo espese.", "Sirva con arroz. Es un plato de Cuaresma lleno de fibra y proteína, sin carne."],
+      en: ["Soak the salt cod in cold water 8 to 12 hours, changing the water several times; flake it.", "In a caldero with the oil, sauté the sofrito 2 minutes and add the tomato sauce.", "Add the chickpeas, water, potatoes, pumpkin, cod and oregano.", "Cover and cook over low heat 25 minutes, until the potatoes are tender and the broth thickens.", "Serve with rice. It's a Lenten dish full of fiber and protein, without meat."]
+    }
+  },
+  {
+    id: "gandules-bolitas-platano",
+    category: "granos",
+    name: { es: "Gandules Guisados con Bolitas de Plátano", en: "Stewed Pigeon Peas with Plantain Dumplings" },
+    active: 45, total: 45,
+    servings: 6,
+    ingredients: {
+      es: ["2 latas de 15 onzas de gandules, escurridos y enjuagados", "1 cucharada de aceite de oliva", "4 cucharadas de sofrito", "½ taza de salsa de tomate sin sal añadida", "4 tazas de caldo de pollo bajo en sodio", "1 taza de calabaza en cubos", "2 plátanos verdes", "1 diente de ajo machacado", "¼ cucharadita de sal"],
+      en: ["2 cans (15 ounces each) pigeon peas, drained and rinsed", "1 tablespoon olive oil", "4 tablespoons sofrito", "½ cup no-salt-added tomato sauce", "4 cups low-sodium chicken broth", "1 cup cubed pumpkin", "2 green plantains", "1 garlic clove, crushed", "¼ teaspoon salt"]
+    },
+    steps: {
+      es: ["En un caldero con el aceite, sofría el sofrito 2 minutos; añada la salsa de tomate, los gandules, el caldo y la calabaza, y hierva.", "Pele los plátanos y rállelos por el lado fino del guayo; mézclelos con el ajo y la sal.", "Con las manos mojadas, forme bolitas del tamaño de una nuez.", "Échelas en el caldo hirviendo y cocine tapado a fuego bajo 20 minutos, sin mover mucho para que no se rompan.", "Sirva caliente. Las bolitas de plátano son la vianda del plato: sólo hace falta una ensalada."],
+      en: ["In a caldero with the oil, sauté the sofrito 2 minutes; add the tomato sauce, pigeon peas, broth and pumpkin and bring to a boil.", "Peel the plantains and grate them on the fine side of the grater; mix with the garlic and salt.", "With wet hands, shape walnut-sized balls.", "Drop them into the boiling broth and cook covered over low heat 20 minutes, without stirring much so they don't break.", "Serve hot. The plantain dumplings are the starch of the dish: just add a salad."]
+    }
+  },
+  {
+    id: "habichuelas-rosadas-viandas",
+    category: "granos",
+    name: { es: "Habichuelas Rosadas con Calabaza, Yautía y Recao", en: "Pink Beans with Pumpkin, Taro and Culantro" },
+    active: 40, total: 40,
+    servings: 6,
+    ingredients: {
+      es: ["2 latas de 15 onzas de habichuelas rosadas, escurridas y enjuagadas", "1 cucharada de aceite de oliva", "4 cucharadas de sofrito", "1 sobre de sazón con achiote", "½ taza de salsa de tomate sin sal añadida", "3 tazas de caldo de vegetales bajo en sodio", "1½ tazas de calabaza en cubos", "1 yautía pelada, en cubos", "6 hojas de recao picadas"],
+      en: ["2 cans (15 ounces each) pink beans, drained and rinsed", "1 tablespoon olive oil", "4 tablespoons sofrito", "1 packet sazón with annatto", "½ cup no-salt-added tomato sauce", "3 cups low-sodium vegetable broth", "1½ cups cubed pumpkin", "1 taro root (yautía), peeled and cubed", "6 culantro leaves, chopped"]
+    },
+    steps: {
+      es: ["En un caldero con el aceite, sofría el sofrito y el sazón 2 minutos.", "Añada la salsa de tomate, las habichuelas, el caldo, la calabaza y la yautía.", "Tape y cocine a fuego bajo 25 minutos, hasta que la yautía esté blanda y la calabaza espese el caldo.", "Aplaste unas cuantas habichuelas contra el caldero para que quede más espeso.", "Eche el recao y sirva sobre arroz. Sin jamón ni salchichas: el sabor lo dan el sofrito y el recao."],
+      en: ["In a caldero with the oil, sauté the sofrito and sazón 2 minutes.", "Add the tomato sauce, beans, broth, pumpkin and taro.", "Cover and cook over low heat 25 minutes, until the taro is tender and the pumpkin thickens the broth.", "Mash a few beans against the pot so it gets thicker.", "Add the culantro and serve over rice. No ham or sausage: the flavor comes from the sofrito and culantro."]
+    }
+  },
+  {
+    id: "arroz-integral-habichuelas-calabaza",
+    category: "arroces",
+    name: { es: "Arroz Integral Junto con Habichuelas Rosadas y Calabaza", en: "Brown Rice Cooked with Pink Beans and Pumpkin" },
+    active: 60, total: 60,
+    servings: 6,
+    ingredients: {
+      es: ["2 tazas de arroz integral", "1 lata de 15 onzas de habichuelas rosadas, escurridas y enjuagadas", "1½ tazas de calabaza en cubitos", "2 cucharadas de aceite de oliva", "4 cucharadas de sofrito", "1 sobre de sazón con achiote", "4 tazas de caldo de vegetales bajo en sodio", "½ cucharadita de sal"],
+      en: ["2 cups brown rice", "1 can (15 ounces) pink beans, drained and rinsed", "1½ cups diced pumpkin", "2 tablespoons olive oil", "4 tablespoons sofrito", "1 packet sazón with annatto", "4 cups low-sodium vegetable broth", "½ teaspoon salt"]
+    },
+    steps: {
+      es: ["En un caldero con el aceite, sofría el sofrito y el sazón 2 minutos.", "Añada el arroz y muévalo 1 minuto; agregue el caldo, las habichuelas, la calabaza y la sal.", "Hierva destapado hasta que el caldo baje al nivel del arroz.", "Tape, baje el fuego al mínimo y cocine 40 minutos sin destapar.", "Voltee el arroz con un tenedor y sirva. El arroz integral tiene 3 veces más fibra que el blanco."],
+      en: ["In a caldero with the oil, sauté the sofrito and sazón 2 minutes.", "Add the rice and stir 1 minute; add the broth, beans, pumpkin and salt.", "Boil uncovered until the broth drops to the level of the rice.", "Cover, lower the heat to minimum and cook 40 minutes without lifting the lid.", "Fluff the rice with a fork and serve. Brown rice has 3 times the fiber of white."]
+    }
+  },
+  {
+    id: "arroz-pollo-vegetales-integral",
+    category: "arroces",
+    name: { es: "Arroz con Pollo y Vegetales Bajo en Sodio", en: "Low-Sodium Chicken and Vegetable Rice" },
+    active: 55, total: 55,
+    servings: 6,
+    ingredients: {
+      es: ["1½ libras de pechuga de pollo sin piel, en trozos", "1 cucharadita de adobo sin sal", "2 cucharadas de aceite de oliva", "4 cucharadas de sofrito", "1 sobre de sazón con achiote", "2 tazas de arroz de grano mediano", "3½ tazas de caldo de pollo bajo en sodio", "1 taza de habichuelas tiernas picadas", "1 zanahoria en cubitos", "1 taza de maíz en grano", "½ pimiento rojo en tiras", "½ cucharadita de sal"],
+      en: ["1½ pounds skinless chicken breast, in pieces", "1 teaspoon salt-free adobo", "2 tablespoons olive oil", "4 tablespoons sofrito", "1 packet sazón with annatto", "2 cups medium-grain rice", "3½ cups low-sodium chicken broth", "1 cup chopped green beans", "1 carrot, diced", "1 cup corn kernels", "½ red bell pepper, in strips", "½ teaspoon salt"]
+    },
+    steps: {
+      es: ["Sazone el pollo con el adobo y dórelo en un caldero con el aceite, 5 minutos.", "Añada el sofrito y el sazón y cocine 2 minutos; agregue el arroz y muévalo 1 minuto.", "Añada el caldo, las habichuelas tiernas, la zanahoria, el maíz y la sal; hierva destapado hasta que el caldo baje al nivel del arroz.", "Tape, baje el fuego al mínimo y cocine 20 minutos; voltee el arroz, ponga el pimiento encima y cocine 5 minutos más.", "Sirva con aguacate. Tiene la mitad del sodio del arroz con pollo de siempre porque usa caldo bajo en sodio y adobo sin sal."],
+      en: ["Season the chicken with the adobo and brown it in a caldero with the oil, 5 minutes.", "Add the sofrito and sazón and cook 2 minutes; add the rice and stir 1 minute.", "Add the broth, green beans, carrot, corn and salt; boil uncovered until the broth drops to the level of the rice.", "Cover, lower the heat to minimum and cook 20 minutes; turn the rice, lay the bell pepper on top and cook 5 more minutes.", "Serve with avocado. It has half the sodium of the usual arroz con pollo thanks to low-sodium broth and salt-free adobo."]
+    }
+  },
+  {
+    id: "arroz-camarones-gandules",
+    category: "arroces",
+    name: { es: "Arroz con Camarones y Gandules", en: "Rice with Shrimp and Pigeon Peas" },
+    active: 45, total: 45,
+    servings: 6,
+    ingredients: {
+      es: ["1 libra de camarones pelados y limpios", "2 cucharadas de aceite de oliva", "4 cucharadas de sofrito", "1 sobre de sazón con achiote", "2 tazas de arroz de grano mediano", "1 lata de 15 onzas de gandules, escurridos y enjuagados", "3½ tazas de caldo de pescado bajo en sodio", "10 aceitunas rellenas", "½ cucharadita de sal", "4 hojas de recao picadas"],
+      en: ["1 pound shrimp, peeled and deveined", "2 tablespoons olive oil", "4 tablespoons sofrito", "1 packet sazón with annatto", "2 cups medium-grain rice", "1 can (15 ounces) pigeon peas, drained and rinsed", "3½ cups low-sodium fish broth", "10 stuffed olives", "½ teaspoon salt", "4 culantro leaves, chopped"]
+    },
+    steps: {
+      es: ["En un caldero con el aceite, sofría el sofrito y el sazón 2 minutos.", "Añada el arroz y muévalo 1 minuto; agregue los gandules, el caldo, las aceitunas y la sal.", "Hierva destapado hasta que el caldo baje al nivel del arroz; tape, baje el fuego al mínimo y cocine 20 minutos.", "Voltee el arroz, ponga los camarones encima, tape y cocine 6 minutos más, hasta que estén rosados.", "Eche el recao y sirva. Es el arroz con gandules de las fiestas, con proteína de mar."],
+      en: ["In a caldero with the oil, sauté the sofrito and sazón 2 minutes.", "Add the rice and stir 1 minute; add the pigeon peas, broth, olives and salt.", "Boil uncovered until the broth drops to the level of the rice; cover, lower the heat to minimum and cook 20 minutes.", "Turn the rice, lay the shrimp on top, cover and cook 6 more minutes, until pink.", "Add the culantro and serve. It's the holiday arroz con gandules, with seafood protein."]
+    }
+  },
+  {
+    id: "yautia-calabaza-horno-mojo",
+    category: "vegetales",
+    name: { es: "Yautía y Calabaza al Horno con Mojo de Recao", en: "Roasted Taro and Pumpkin with Culantro Mojo" },
+    active: 45, total: 45,
+    servings: 4,
+    ingredients: {
+      es: ["2 yautías peladas, en bastones", "3 tazas de calabaza en trozos", "2 cucharadas de aceite de oliva", "1 cucharadita de adobo sin sal", "6 hojas de recao", "3 dientes de ajo", "1 limón verde (el jugo)", "¼ cucharadita de sal"],
+      en: ["2 taro roots (yautía), peeled, cut in sticks", "3 cups pumpkin chunks", "2 tablespoons olive oil", "1 teaspoon salt-free adobo", "6 culantro leaves", "3 garlic cloves", "1 lime (the juice)", "¼ teaspoon salt"]
+    },
+    steps: {
+      es: ["Caliente el horno a 425 °F. Hierva la yautía 8 minutos y escúrrala bien.", "Mezcle la yautía y la calabaza con 1 cucharada de aceite y el adobo, y extiéndalas en una bandeja.", "Hornee 25 a 30 minutos, volteándolas a la mitad, hasta que estén doradas.", "Para el mojo, maje el recao y el ajo con el resto del aceite, el jugo de limón y la sal.", "Sirva las viandas con el mojo por encima. Saben a frituras, sin freír."],
+      en: ["Heat the oven to 425 °F. Boil the taro 8 minutes and drain well.", "Toss the taro and pumpkin with 1 tablespoon oil and the adobo and spread them on a tray.", "Bake 25 to 30 minutes, turning halfway, until golden.", "For the mojo, mash the culantro and garlic with the rest of the oil, the lime juice and salt.", "Serve the vegetables topped with the mojo. They taste like fritters, without frying."]
+    }
+  },
+  {
+    id: "repollo-guisado-garbanzos-calabaza",
+    category: "vegetales",
+    name: { es: "Repollo Guisado con Garbanzos y Calabaza", en: "Stewed Cabbage with Chickpeas and Pumpkin" },
+    active: 30, total: 30,
+    servings: 5,
+    ingredients: {
+      es: ["1 cucharada de aceite de oliva", "4 cucharadas de sofrito", "½ repollo en tiras", "1 lata de 15 onzas de garbanzos, escurridos y enjuagados", "2 tazas de calabaza en cubos", "½ taza de salsa de tomate sin sal añadida", "1 taza de caldo de vegetales bajo en sodio", "1 cucharadita de comino", "¼ cucharadita de sal"],
+      en: ["1 tablespoon olive oil", "4 tablespoons sofrito", "½ cabbage, sliced in strips", "1 can (15 ounces) chickpeas, drained and rinsed", "2 cups cubed pumpkin", "½ cup no-salt-added tomato sauce", "1 cup low-sodium vegetable broth", "1 teaspoon cumin", "¼ teaspoon salt"]
+    },
+    steps: {
+      es: ["En un caldero con el aceite, sofría el sofrito y el comino 2 minutos.", "Añada el repollo y muévalo 3 minutos, hasta que empiece a ablandarse.", "Agregue los garbanzos, la calabaza, la salsa de tomate, el caldo y la sal.", "Tape y cocine a fuego bajo 15 minutos, hasta que la calabaza esté blanda.", "Sirva con arroz o como acompañante. Es el repollo guisado de siempre, sin jamón y con proteína de garbanzos."],
+      en: ["In a caldero with the oil, sauté the sofrito and cumin 2 minutes.", "Add the cabbage and stir 3 minutes, until it starts to soften.", "Add the chickpeas, pumpkin, tomato sauce, broth and salt.", "Cover and cook over low heat 15 minutes, until the pumpkin is tender.", "Serve with rice or as a side. It's the classic stewed cabbage, without ham and with chickpea protein."]
+    }
+  },
+  {
+    id: "guineitos-bacalao-guisado",
+    category: "vegetales",
+    name: { es: "Guineítos Verdes con Bacalao Guisado y Aguacate", en: "Green Bananas with Stewed Salt Cod and Avocado" },
+    active: 40, total: 760, wait: "desalar",
+    servings: 4,
+    ingredients: {
+      es: ["8 guineítos verdes", "6 onzas de bacalao sin espinas", "1 cucharada de aceite de oliva", "1 cebolla en ruedas", "1 pimiento rojo en tiras", "2 tomates picados", "2 dientes de ajo", "1 aguacate en lascas"],
+      en: ["8 green bananas", "6 ounces boneless salt cod", "1 tablespoon olive oil", "1 onion, sliced into rings", "1 red bell pepper, cut in strips", "2 tomatoes, chopped", "2 garlic cloves", "1 avocado, sliced"]
+    },
+    steps: {
+      es: ["Desale el bacalao en agua fría de 8 a 12 horas, cambiando el agua varias veces; desmenúcelo.", "Corte las puntas de los guineítos, hágales un corte a lo largo y hiérvalos en agua 15 minutos; pélelos.", "En un sartén con el aceite, sofría la cebolla, el pimiento y el ajo 4 minutos; añada el tomate y el bacalao, y cocine 8 minutos.", "Sirva los guineítos con el bacalao guisado por encima.", "Acompañe con el aguacate. Es el desayuno o almuerzo del campo, con viandas, pescado y grasa buena."],
+      en: ["Soak the salt cod in cold water 8 to 12 hours, changing the water several times; flake it.", "Trim the ends of the green bananas, slit them lengthwise and boil 15 minutes; peel.", "In a skillet with the oil, sauté the onion, bell pepper and garlic 4 minutes; add the tomato and cod and cook 8 minutes.", "Serve the green bananas topped with the stewed cod.", "Serve with the avocado. It's the countryside breakfast or lunch, with root vegetables, fish and good fat."]
+    }
+  },
+  {
+    id: "calabaza-habichuelas-tiernas-maiz",
+    category: "vegetales",
+    name: { es: "Guiso de Calabaza, Habichuelas Tiernas y Maíz", en: "Pumpkin, Green Bean and Corn Stew" },
+    active: 30, total: 30,
+    servings: 5,
+    ingredients: {
+      es: ["1 cucharada de aceite de oliva", "4 cucharadas de sofrito", "3 tazas de calabaza en cubos", "2 tazas de habichuelas tiernas picadas", "1½ tazas de maíz en grano", "1 chayote pelado, en cubos", "1 taza de caldo de vegetales bajo en sodio", "½ cucharadita de orégano", "¼ cucharadita de sal", "4 hojas de recao picadas"],
+      en: ["1 tablespoon olive oil", "4 tablespoons sofrito", "3 cups cubed pumpkin", "2 cups chopped green beans", "1½ cups corn kernels", "1 chayote, peeled and cubed", "1 cup low-sodium vegetable broth", "½ teaspoon oregano", "¼ teaspoon salt", "4 culantro leaves, chopped"]
+    },
+    steps: {
+      es: ["En un caldero con el aceite, sofría el sofrito 2 minutos.", "Añada la calabaza, las habichuelas tiernas, el maíz, el chayote, el caldo, el orégano y la sal.", "Tape y cocine a fuego bajo 18 minutos, hasta que todo esté blando.", "Aplaste un poco de la calabaza para espesar el guiso.", "Eche el recao y sirva con arroz, o como acompañante de pollo o pescado. Muchos colores en un solo caldero."],
+      en: ["In a caldero with the oil, sauté the sofrito 2 minutes.", "Add the pumpkin, green beans, corn, chayote, broth, oregano and salt.", "Cover and cook over low heat 18 minutes, until everything is tender.", "Mash a little of the pumpkin to thicken the stew.", "Add the culantro and serve with rice, or as a side for chicken or fish. Lots of colors in one caldero."]
+    }
   }
 );

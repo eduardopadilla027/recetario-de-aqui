@@ -18,7 +18,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.51.0";
+const APP_VERSION = "4.53.0";
 const APP_REVISED = "2026-10-25";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
@@ -416,7 +416,8 @@ const meatIcons = {
     [/^pechuga de pavo/, "svg:ic-corte-pechuga-pavo"],
     [/^muslos de pavo/, "svg:ic-corte-muslos-pavo"],
     [/^higaditos/, "svg:ic-corte-higaditos"],
-    [/pincho|pastelon|albondiga|^pasteles/, null],
+    [/pincho|pastelon|albondiga|^pasteles|^picadillo de pavo|^salpicon de pollo/, null], // v4.52: los dos últimos, a dessertIcons
+    [/^pechugas guisadas/, "svg:ic-fricase-pollo"],
     [/^muslos de pollo al carbon/, "svg:ic-parrilla-muslos"],
     [/parmesana/, "svg:ic-parmesana"],
     [/cordon bleu/, "svg:ic-cordon-bleu"],
@@ -435,6 +436,14 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Nutritivas boricuas (tanda 59, v4.52): los dibujos que ya había para ese tipo de plato (salían el fricasé de
+  // pollo, 🐟, 🦐 o 🎃).
+  [/^picadillo de pavo/, "svg:ic-picadillo"],
+  [/^salpicon de pollo/, "svg:ic-desmenuzada"],
+  [/^sierra al horno/, "svg:ic-pez-ruedas"],
+  [/^pescado en salsa de calabaza/, "svg:ic-pez-salsa-coco"],
+  [/^camarones guisados con gandules/, "svg:ic-pes-camarones-enchilados"],
+  [/^guiso de calabaza/, "svg:ic-veg-calabaza-guisada"],
   // Veganas con proteína (tanda 57, v4.49): los dibujos veganos (hojita verde); sin esto salían un huevo 🍳,
   // carne 🥩 o el asopao de pollo.
   [/^avena con leche de soya/, "svg:ic-vg-avena-mani"],

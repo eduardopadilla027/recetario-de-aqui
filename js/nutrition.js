@@ -60,6 +60,10 @@ const NUTRI_FOODS = [
   F("rinon|rinones de res", 99, 17.4, 0.3, 0, 0, 3.1, 0.9, 182, { u: 300 }),
   F("bistec", 180, 21, 0, 0, 0, 10, 4, 60, { u: 150 }),
   F("carne molida", 254, 17, 0, 0, 0, 20, 7.6, 66, { cup: 225 }),
+  // v4.52: los cortes magros (USDA: res molida 90/10 y res magra para guisar); antes contaban como la carne molida
+  // 80/20 o la carne con grasa.
+  F("carne molida de res magra|carne molida magra", 176, 20, 0, 0, 0, 10, 3.9, 66, { cup: 225 }),
+  F("carne de res magra|res magra", 136, 21.5, 0, 0, 0, 5, 1.9, 66),
   F("picadillo", 250, 17, 4, 2, 1, 18, 6.5, 400, { cup: 225 }),
   F("rabo", 130, 10, 0, 0, 0, 10, 4, 60),
   F("higado", 135, 20, 4, 0, 0, 3.6, 1.2, 69),
@@ -106,6 +110,7 @@ const NUTRI_FOODS = [
   F("leche evaporada", 134, 6.8, 10, 10, 0, 7.6, 4.6, 106, { cup: 252, can: 354 }),
   F("leche condensada", 321, 7.9, 54, 54, 0, 8.7, 5.5, 127, { cup: 306, can: 397 }),
   F("leche de coco", 197, 2, 2.8, 1, 0, 21, 18.9, 13, { cup: 240, can: 400 }),
+  F("leche de coco light|leche de coco ligera", 73, 0.7, 1.6, 0.6, 0, 7.2, 6.4, 20, { cup: 240, can: 400 }),
   // La de cartón (para beber) es mucho más ligera que la de lata.
   F("leche de coco de carton|bebida de coco", 19, 0.2, 2.9, 2.5, 0, 2, 1.8, 19, { cup: 240 }),
   F("crema de coco", 324, 1.6, 44, 42, 0, 16, 14, 20, { cup: 300, can: 425 }),
@@ -210,6 +215,8 @@ const NUTRI_FOODS = [
   F("ajo", 149, 6.4, 33, 1, 2.1, 0.5, 0.1, 17, { u: 3, cup: 136 }),
   F("tomate", 18, 0.9, 3.9, 2.6, 1.2, 0.2, 0, 5, { u: 120, cup: 180, can: 400 }),
   F("salsa de tomate|salsa de pizza", 24, 1.2, 5.3, 3.6, 1.5, 0.3, 0, 560, { cup: 245, can: 227 }),
+  // v4.52: la salsa de tomate sin sal añadida (USDA: 20 mg de sodio por 100 g); antes contaba con la sal de la normal.
+  F("salsa de tomate sin sal|salsa de tomate sin sal anadida", 24, 1.2, 5.3, 3.6, 1.5, 0.3, 0, 20, { cup: 245, can: 227 }),
   F("pasta de tomate", 82, 4.3, 19, 12, 4, 0.5, 0.1, 59, { cup: 262, can: 170 }),
   F("sofrito|recaito", 35, 1, 7, 3, 2, 0.2, 0, 10, { cup: 240 }),
   F("aceituna", 145, 1, 3.8, 0, 3.3, 15, 2, 1556, { cup: 135, u: 4 }),

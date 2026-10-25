@@ -1253,6 +1253,14 @@ body.cook-on { overflow: hidden; }
 .mine-col summary { cursor: pointer; font-weight: 700; display: flex; align-items: center; gap: var(--s-2); }
 .mine-col-actions { display: flex; gap: var(--s-2); margin: var(--s-2) 0; }
 .mine-note { display: block; color: var(--ink-2); font-size: var(--step--1); white-space: pre-line; }
+/* v4.53: "Borrar nota" y "Quitar" en Mi recetario. */
+.mine-item { padding-bottom: var(--s-2); border-bottom: 1px dashed var(--line); }
+.mine-item:last-child { border-bottom: 0; }
+.mine-item .mine-note { margin-top: 2px; padding: 4px 8px; border-left: 3px solid var(--gold); background: var(--sand); border-radius: 4px; }
+.mine-item-actions { display: flex; flex-wrap: wrap; gap: var(--s-1); margin-top: 4px; }
+.mine-item-actions .btn { min-height: 44px; color: var(--achiote-600); }
+.mine-item-actions .icon { width: 14px; height: 14px; }
+#mine-cooked:focus, #mine-notes:focus { outline: none; }
 .shop-chips { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-2); }
 .shop-chip { display: inline-flex; align-items: center; gap: var(--s-2); padding: 4px 4px 4px 12px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--ivory); font-size: var(--step--1); }
 .shop-chip span { color: var(--ink-3); }

@@ -26,6 +26,8 @@ const KT = {
     notesTitle: "Mis notas", notesPh: "Lo que quiera recordar de esta receta: cambios, trucos, para quién la hizo…", notesSaved: "Nota guardada",
     cookedBtn: "La hice", cookedAgain: "La hice otra vez", cookedToast: "¡Anotado! Buen provecho.",
     cookedInfo: (n, d) => (n === 1 ? `La hizo 1 vez · ${d}` : `La hizo ${n} veces · la última: ${d}`), cookedUndo: "Deshacer",
+    delNote: "Borrar nota", delNoteLabel: (r) => `Borrar su nota de ${r}`, delNoteConfirm: (r) => `¿Borrar su nota de «${r}»?`, noteDeleted: "Nota borrada.",
+    uncook: "Quitar", uncookLabel: (r) => `Quitar ${r} de las que ha hecho`, uncookConfirm: (r) => `¿Quitar «${r}» de las que ha hecho? Se borran las veces que la marcó.`, uncooked: "Quitada de la lista.",
     shopBtn: "Lista de compras", shopAdded: (n) => `Añadida a la lista de compras (${n} ${n === 1 ? "porción" : "porciones"}).`, shopSee: "Ver la lista",
     shopTitle: "Lista de compras", shopIntro: "Los ingredientes de sus recetas, sumados y por sección del supermercado. Marque lo que ya tiene o ya compró.",
     shopEmpty: "La lista está vacía. Añada recetas con el botón «Lista de compras» de cada receta o desde su plan de comidas.",
@@ -50,6 +52,8 @@ const KT = {
     notesTitle: "My notes", notesPh: "Anything you want to remember about this recipe: changes, tips, who you made it for…", notesSaved: "Note saved",
     cookedBtn: "I made it", cookedAgain: "Made it again", cookedToast: "Noted! Enjoy.",
     cookedInfo: (n, d) => (n === 1 ? `Made it once · ${d}` : `Made it ${n} times · last: ${d}`), cookedUndo: "Undo",
+    delNote: "Delete note", delNoteLabel: (r) => `Delete your note on ${r}`, delNoteConfirm: (r) => `Delete your note on “${r}”?`, noteDeleted: "Note deleted.",
+    uncook: "Remove", uncookLabel: (r) => `Remove ${r} from the recipes you've cooked`, uncookConfirm: (r) => `Remove “${r}” from the recipes you've cooked? The times you marked it are deleted.`, uncooked: "Removed from the list.",
     shopBtn: "Shopping list", shopAdded: (n) => `Added to the shopping list (${n} ${n === 1 ? "serving" : "servings"}).`, shopSee: "See the list",
     shopTitle: "Shopping list", shopIntro: "Your recipes' ingredients, added up and grouped by store section. Check what you already have or bought.",
     shopEmpty: "The list is empty. Add recipes with each recipe's “Shopping list” button or from your meal plan.",
@@ -64,7 +68,11 @@ const KT = {
 const kt = () => KT[currentLang];
 
 /* ── Datos ── */
-const KITCHEN_DEFAULTS = () => ({ ts: 0, cols: [], notes: {}, cooked: {}, shop: { recipes: [], extra: [], done: [] }, favs: [] });
+/* shop.gone (v4.53): lo que la persona borró ("n:<id>" una nota, "c:<id>" una receta de "Las que he hecho") y
+   cuándo, para que al juntar copias (mergeKitchen) no vuelva lo borrado desde la copia de otro aparato. Va dentro
+   de `shop` porque las reglas de Firestore sólo aceptan esas claves de primer nivel en Mi recetario. */
+const KITCHEN_DEFAULTS = () => ({ ts: 0, cols: [], notes: {}, cooked: {}, shop: { recipes: [], extra: [], done: [], gone: {} }, favs: [] });
+const GONE_DAYS = 400;
 let kitchenOwner = "";
 const kitchenKey = () => (kitchenOwner ? `${KITCHEN_STORE}.${kitchenOwner}` : KITCHEN_STORE);
 function cleanKitchen(src) {
@@ -79,6 +87,8 @@ function cleanKitchen(src) {
   k.shop.recipes = Array.isArray(sh.recipes) ? sh.recipes.filter((x) => x && x.id).slice(0, 80).map((x) => ({ id: str(x.id, 100), f: Number.isFinite(+x.f) && +x.f > 0 ? Math.min(+x.f, 50) : 1 })) : [];
   k.shop.extra = Array.isArray(sh.extra) ? sh.extra.map((x) => str(x, 80)).filter(Boolean).slice(0, 100) : [];
   k.shop.done = Array.isArray(sh.done) ? sh.done.map((x) => str(x, 160)).slice(0, 400) : [];
+  const oldest = Date.now() - GONE_DAYS * 86400000;
+  if (sh.gone && typeof sh.gone === "object") for (const [key, t] of Object.entries(sh.gone).slice(0, 1000)) if (/^[nc]:/.test(key) && Number.isFinite(+t) && +t > oldest) k.shop.gone[str(key, 110)] = +t;
   k.favs = Array.isArray(src.favs) ? [...new Set(src.favs.map((x) => str(x, 100)).filter(Boolean))].slice(0, 1000) : [];
   return k;
 }
@@ -91,8 +101,16 @@ function mergeKitchen(a, b) {
     if (mine) mine.ids = [...new Set([...mine.ids, ...c.ids])];
     else out.cols.push(c);
   }
-  for (const [id, v] of Object.entries(o.notes)) if (!out.notes[id]) out.notes[id] = v;
-  for (const [id, v] of Object.entries(o.cooked)) out.cooked[id] = [...new Set([...(out.cooked[id] || []), ...v])].sort().slice(-30);
+  // Lo borrado (shop.gone) gana sobre una copia guardada antes de borrarlo; si se volvió a escribir o a marcar
+  // después, esa copia es más reciente y se queda.
+  const gone = { ...out.shop.gone };
+  for (const [key, t] of Object.entries(o.shop.gone)) gone[key] = Math.max(gone[key] || 0, t);
+  const dropped = (kind, id, copy) => (gone[`${kind}:${id}`] || 0) > copy.ts;
+  for (const id of Object.keys(out.notes)) if (dropped("n", id, out)) delete out.notes[id];
+  for (const id of Object.keys(out.cooked)) if (dropped("c", id, out)) delete out.cooked[id];
+  for (const [id, v] of Object.entries(o.notes)) if (!out.notes[id] && !dropped("n", id, o)) out.notes[id] = v;
+  for (const [id, v] of Object.entries(o.cooked)) if (!dropped("c", id, o)) out.cooked[id] = [...new Set([...(out.cooked[id] || []), ...v])].sort().slice(-30);
+  out.shop.gone = gone;
   for (const r of o.shop.recipes) if (!out.shop.recipes.some((x) => x.id === r.id)) out.shop.recipes.push(r);
   out.shop.extra = [...new Set([...out.shop.extra, ...o.shop.extra])];
   out.shop.done = [...new Set([...out.shop.done, ...o.shop.done])];
@@ -219,6 +237,17 @@ function renderRecipeKitchen(recipe) {
       <textarea id="notes-text" class="notes-text" rows="3" maxlength="2000" placeholder="${esc(tr.notesPh)}">${esc(kitchen.notes[id] || "")}</textarea>
       <p class="notes-status" id="notes-status" role="status" aria-live="polite"></p>`;
   }
+}
+/* Borrar una nota o quitar una receta de "Las que he hecho" (v4.53), con su marca en shop.gone. */
+function deleteNote(id) {
+  delete kitchen.notes[id];
+  kitchen.shop.gone[`n:${id}`] = Date.now();
+  saveKitchen();
+}
+function unmarkCooked(id) {
+  delete kitchen.cooked[id];
+  kitchen.shop.gone[`c:${id}`] = Date.now();
+  saveKitchen();
 }
 function markCooked(id) {
   const list = kitchen.cooked[id] || (kitchen.cooked[id] = []);
@@ -359,6 +388,7 @@ function showMine() {
 function miniList(list, extra = () => "") {
   return `<div class="recipe-grid">${list.map((r, i) => cardHTML(r, i).replace("</article>", `${extra(r)}</article>`)).join("")}</div>`;
 }
+const noteDeleteHTML = (id, name) => `<button type="button" class="btn btn-ghost btn-sm" data-del-note="${esc(id)}" aria-label="${esc(kt().delNoteLabel(name))}"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>${esc(kt().delNote)}</span></button>`;
 function renderMine() {
   const tr = kt();
   const v = $("view-mine");
@@ -381,12 +411,15 @@ function renderMine() {
           <button type="button" class="btn btn-ghost btn-sm" data-col-delete="${esc(c.id)}">${esc(tr.colDelete)}</button></div>
           ${list.length ? miniList(list) : ""}</details>`;
       }).join("") : `<p class="plans-help">${esc(tr.noCols)}</p>`}</section>
-    <section class="mine-section" aria-labelledby="mine-cooked"><h2 class="plans-more-title" id="mine-cooked">${esc(tr.cooked)} <span class="plans-count">${cookedList.length}</span></h2>
-      ${cookedList.length ? `<ul class="plans-more-list mine-cooked-list">${cookedList.map(([id, days]) => `<li><a href="#/receta/${encodeURIComponent(id)}" data-open="${esc(id)}">${esc(recipeById(id).name[currentLang])}</a>
-        <span class="plans-more-n">${esc(tr.cookedInfo(days.length, fmtDay(days[days.length - 1])))}</span></li>`).join("")}</ul>` : `<p class="plans-help">${esc(tr.noCooked)}</p>`}</section>
-    <section class="mine-section" aria-labelledby="mine-notes"><h2 class="plans-more-title" id="mine-notes">${esc(tr.noted)} <span class="plans-count">${notedList.length}</span></h2>
-      ${notedList.length ? `<ul class="plans-more-list">${notedList.map((r) => `<li><a href="#/receta/${encodeURIComponent(r.id)}" data-open="${esc(r.id)}">${esc(r.name[currentLang])}</a>
-        <span class="mine-note">${esc(kitchen.notes[r.id])}</span></li>`).join("")}</ul>` : `<p class="plans-help">${esc(tr.noNotes)}</p>`}</section>
+    <section class="mine-section" aria-labelledby="mine-cooked"><h2 class="plans-more-title" id="mine-cooked" tabindex="-1">${esc(tr.cooked)} <span class="plans-count">${cookedList.length}</span></h2>
+      ${cookedList.length ? `<ul class="plans-more-list mine-cooked-list">${cookedList.map(([id, days]) => { const nm = recipeById(id).name[currentLang]; return `<li class="mine-item"><a href="#/receta/${encodeURIComponent(id)}" data-open="${esc(id)}">${esc(nm)}</a>
+        <span class="plans-more-n">${esc(tr.cookedInfo(days.length, fmtDay(days[days.length - 1])))}</span>
+        ${kitchen.notes[id] ? `<span class="mine-note">${esc(kitchen.notes[id])}</span>` : ""}
+        <span class="mine-item-actions">${kitchen.notes[id] ? noteDeleteHTML(id, nm) : ""}<button type="button" class="btn btn-ghost btn-sm" data-uncook="${esc(id)}" aria-label="${esc(tr.uncookLabel(nm))}"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span>${esc(tr.uncook)}</span></button></span></li>`; }).join("")}</ul>` : `<p class="plans-help">${esc(tr.noCooked)}</p>`}</section>
+    <section class="mine-section" aria-labelledby="mine-notes"><h2 class="plans-more-title" id="mine-notes" tabindex="-1">${esc(tr.noted)} <span class="plans-count">${notedList.length}</span></h2>
+      ${notedList.length ? `<ul class="plans-more-list">${notedList.map((r) => `<li class="mine-item"><a href="#/receta/${encodeURIComponent(r.id)}" data-open="${esc(r.id)}">${esc(r.name[currentLang])}</a>
+        <span class="mine-note">${esc(kitchen.notes[r.id])}</span>
+        <span class="mine-item-actions">${noteDeleteHTML(r.id, r.name[currentLang])}</span></li>`).join("")}</ul>` : `<p class="plans-help">${esc(tr.noNotes)}</p>`}</section>
   </div>`;
 }
 function showShop() {
@@ -468,6 +501,23 @@ function setupKitchen() {
     }
     const ck = e.target.closest("[data-cooked]");
     if (ck) { markCooked(ck.dataset.cooked); return; }
+    // Mi recetario (v4.53): borrar una nota o quitar una receta de "Las que he hecho", preguntando antes.
+    const dn = e.target.closest("[data-del-note]");
+    if (dn) {
+      const r = recipeById(dn.dataset.delNote);
+      if (!confirm(tr.delNoteConfirm(r ? r.name[currentLang] : dn.dataset.delNote))) return;
+      deleteNote(dn.dataset.delNote); renderMine(); toast(tr.noteDeleted, true);
+      const h = $("mine-notes"); if (h) h.focus({ preventScroll: true });
+      return;
+    }
+    const uc = e.target.closest("[data-uncook]");
+    if (uc) {
+      const r = recipeById(uc.dataset.uncook);
+      if (!confirm(tr.uncookConfirm(r ? r.name[currentLang] : uc.dataset.uncook))) return;
+      unmarkCooked(uc.dataset.uncook); renderMine(); toast(tr.uncooked, true);
+      const h = $("mine-cooked"); if (h) h.focus({ preventScroll: true });
+      return;
+    }
     const rm = e.target.closest("[data-shop-remove]");
     if (rm) { kitchen.shop.recipes = kitchen.shop.recipes.filter((x) => x.id !== rm.dataset.shopRemove); saveKitchen(); renderShop(); renderNavCounts(); return; }
     const act = e.target.closest("[data-shop-act]");
@@ -559,8 +609,9 @@ function setupKitchen() {
     const id = current.id, val = e.target.value.slice(0, 2000);
     clearTimeout(noteTimer);
     noteTimer = setTimeout(() => {
-      if (val.trim()) kitchen.notes[id] = val; else delete kitchen.notes[id];
-      saveKitchen();
+      if (val.trim()) { kitchen.notes[id] = val; saveKitchen(); }
+      else if (kitchen.notes[id]) deleteNote(id); // vaciar la nota también la borra (con su marca)
+      else saveKitchen();
       const s = $("notes-status"); if (s) s.textContent = kt().notesSaved;
     }, 600);
   });
