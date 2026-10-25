@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.50.0 · **Versión de la app:** 4.50.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,348 en 24 categorías
+> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.51.0 · **Versión de la app:** 4.51.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,348 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -717,6 +717,13 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   con voz de mujer. `voiceLabel()` pone en el botón el tipo de la voz que de verdad se usa. Si las voces todavía no
   cargaron (Chrome las entrega un momento después), `speak()` espera a `voiceschanged` (hasta 1.5 s, una vez) y lee lo
   último que se pidió, en vez de usar la voz por defecto del aparato.
+- **Acento boricua (v4.51):** la app no puede cambiar el acento de una voz (usa las del aparato o del navegador), pero
+  escoge la de acento más parecido: `ACCENT_ORDER`/`voiceRank()` ordena Puerto Rico (es-PR), el Caribe (es-DO, es-CU,
+  es-VE, es-PA, es-CO), EE. UU., Latinoamérica (es-419) y México, los demás países y España al final (antes el Caribe
+  quedaba detrás de España). La lista "Voz exacta" dice el país de cada voz (`voiceCountry()`, con `Intl.DisplayNames`:
+  "Víctor · Puerto Rico · Hombre") y el panel dice el acento: "Acento: Puerto Rico" o, si el aparato no tiene voces de
+  Puerto Rico, cuál usa y que Microsoft Edge en la computadora trae las voces Karina y Víctor de Puerto Rico. iPhone,
+  Android y Chrome no traen voces de Puerto Rico: se usa la de EE. UU., México o la del Caribe que haya.
 - **Manos libres (comandos cortos, v4.27):** `SpeechRecognition` (Chrome, Edge, Safari, Android). `VOICE_CMDS` entiende
   **siguiente / continúa / sigue / próximo / pasa / listo**, **atrás / anterior / regresa / vuelve**, **comienzo / inicio /
   desde el principio**, **"paso 3"** (también "paso tres"), **repite / otra vez / lee**, **ingredientes**, **temporizador**,
@@ -1205,6 +1212,14 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-25 — v4.51.0 · La voz busca el acento más parecido al de Puerto Rico
+- *Pedido:* que el acento de la voz en español se parezca más al puertorriqueño.
+- **`js/cook.js`** (§7.9): orden de voces por acento (Puerto Rico, Caribe, EE. UU., Latinoamérica, México, otros y
+  España al final), país de cada voz en "Voz exacta" y nota del acento en el panel, con la recomendación de Edge en la
+  computadora (voces Karina y Víctor de Puerto Rico) cuando el aparato no tiene voces de Puerto Rico.
+- *Verificado (servidor local):* con las voces de Edge (con y sin Puerto Rico), Chrome en Windows, iPhone y Android,
+  Mujer y Hombre escogen la de acento más parecido (Karina/Víctor; si no, República Dominicana antes que España;
+  Paulina/Juan de México en el iPhone; EE. UU. en Chrome y Android) y el panel lo dice; sin errores en la consola.
 ### 2026-10-25 — v4.50.0 · 16 batidas y champolas más, y cada batida con su vaso
 - *Pedido:* añadir más recetas de batidas vegetarianas y de frutas, y champolas.
 - **Recetas** (`js/recipes-5.js`, tanda 58, categoría Bebidas; 1,332 → 1,348): batidas de guayaba con leche; carambola

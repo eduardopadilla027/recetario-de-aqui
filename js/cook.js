@@ -29,6 +29,8 @@ const COOK_T = {
     sayHelp: "Puede decirme: siguiente, atrás, comienzo, repite o para.", sayIngNext: "Diga siguiente para empezar con el paso 1.",
     atStart: "Ya está en el primer paso.", toSteps: "Empezar",
     voiceBtn: (g) => `Voz: ${g}`, voiceTitle: "Voz", voiceExact: "Voz exacta", genders: { female: "Mujer", male: "Hombre" }, approx: "aprox.",
+    accentPR: "Acento: Puerto Rico.",
+    accentNear: (c) => `Este aparato no tiene voces de Puerto Rico; se usa la de acento más parecido${c ? ` (${c})` : ""}. Para oír el acento boricua, abra la app en Microsoft Edge en la computadora: trae las voces Karina y Víctor de Puerto Rico.`,
     noGender: (g) => `Este aparato no tiene una voz de ${g} en español; se usa la que hay${g === "hombre" ? ", más grave" : ""}. En el celular se pueden bajar más voces en Ajustes → Accesibilidad → Contenido leído (iPhone) o Texto a voz (Android); en Windows, en Configuración → Hora e idioma → Voz.`,
     noVoices: "Este aparato no tiene voces instaladas para leer en voz alta.",
     speed: "Velocidad", slow: "Lenta", normal: "Normal", fast: "Rápida", test: "Probar",
@@ -52,6 +54,8 @@ const COOK_T = {
     sayHelp: "You can say: next, back, start, repeat or stop.", sayIngNext: "Say next to begin with step 1.",
     atStart: "You're already on the first step.", toSteps: "Start",
     voiceBtn: (g) => `Voice: ${g}`, voiceTitle: "Voice", voiceExact: "Exact voice", genders: { female: "Female", male: "Male" }, approx: "approx.",
+    accentPR: "Accent: Puerto Rico.",
+    accentNear: (c) => `This device has no Puerto Rican voices; the closest accent is used${c ? ` (${c})` : ""}. To hear a Puerto Rican accent, open the app in Microsoft Edge on a computer: it has the Puerto Rico voices Karina and Víctor.`,
     noGender: (g) => `This device has no ${g} English voice; the available one is used${g === "male" ? ", at a lower pitch" : ""}. On phones you can download more voices in Settings → Accessibility → Spoken Content (iPhone) or Text-to-speech (Android); on Windows, in Settings → Time & language → Speech.`,
     noVoices: "This device has no voices installed for reading aloud.",
     speed: "Speed", slow: "Slow", normal: "Normal", fast: "Fast", test: "Test",
@@ -226,12 +230,25 @@ function voiceGender(v) {
   const k = voiceKey(v);
   return VOICE_MALE.test(k) ? "male" : VOICE_FEMALE.test(k) || VOICE_GOOGLE_FEMALE.test(k) ? "female" : "";
 }
-/* Voces del idioma de la app, primero las de Puerto Rico, EE. UU. y México. */
+/* Voces del idioma de la app, de la más parecida al acento de Puerto Rico a la menos (v4.51): Puerto Rico,
+   después el Caribe (República Dominicana, Cuba, Venezuela, Panamá, Colombia), EE. UU., Latinoamérica y México,
+   los demás países, y España al final (antes el Caribe quedaba detrás de España). */
+const ACCENT_ORDER = { es: ["es-pr", "es-do", "es-cu", "es-ve", "es-pa", "es-co", "es-us", "es-419", "es-mx"], en: ["en-us", "en-gb"] };
+const voiceLang = (v) => (v.lang || "").toLowerCase().replace("_", "-");
+function voiceRank(v) {
+  const l = voiceLang(v), i = (ACCENT_ORDER[currentLang] || []).indexOf(l);
+  if (i >= 0) return i;
+  return l === "es-es" ? 99 : 50;
+}
 function langVoices() {
   if (!("speechSynthesis" in window)) return [];
-  const pref = currentLang === "es" ? ["es-pr", "es-us", "es-mx", "es-419", "es-es"] : ["en-us", "en-gb"];
-  const rank = (v) => { const i = pref.indexOf((v.lang || "").toLowerCase().replace("_", "-")); return i < 0 ? 9 : i; };
-  return speechSynthesis.getVoices().filter((v) => (v.lang || "").toLowerCase().startsWith(currentLang)).sort((a, b) => rank(a) - rank(b));
+  return speechSynthesis.getVoices().filter((v) => voiceLang(v).startsWith(currentLang)).sort((a, b) => voiceRank(a) - voiceRank(b));
+}
+/* El país de la voz, en palabras ("Puerto Rico", "República Dominicana"); si no se sabe, el código. */
+function voiceCountry(v) {
+  const region = (voiceLang(v).split("-")[1] || "").toUpperCase();
+  if (!region) return "";
+  try { return new Intl.DisplayNames([currentLang === "es" ? "es" : "en"], { type: "region" }).of(region === "419" ? "419" : region) || region; } catch { return region; }
 }
 function pickVoice() {
   const list = langVoices();
@@ -428,9 +445,10 @@ function voicePanelHTML() {
   return `<div class="cook-voice-panel" role="group" aria-label="${esc(tr.voiceTitle)}">
     <div class="cook-voice-row"><span class="cook-voice-label">${esc(tr.voiceTitle)}</span>${g("female")}${g("male")}</div>
     ${!hasGender(voicePrefs.gender) ? `<p class="cook-help">${esc(tr.noGender(tr.genders[voicePrefs.gender].toLowerCase()))}</p>` : ""}
+    ${currentLang === "es" && cur ? `<p class="cook-help cook-accent">${esc(voiceLang(cur) === "es-pr" ? tr.accentPR : tr.accentNear(voiceCountry(cur)))}</p>` : ""}
     <div class="cook-voice-row">
       <label class="cook-voice-label" for="cook-voice-name">${esc(tr.voiceExact)}</label>
-      <select id="cook-voice-name" data-voice-name>${list.map((v) => `<option value="${esc(v.name)}" ${cur && cur.name === v.name ? "selected" : ""}>${esc(v.name)} (${esc(v.lang)})${voiceGender(v) ? ` · ${esc(tr.genders[voiceGender(v)])}` : ""}</option>`).join("")}</select>
+      <select id="cook-voice-name" data-voice-name>${list.map((v) => `<option value="${esc(v.name)}" ${cur && cur.name === v.name ? "selected" : ""}>${esc(v.name.replace(/^(Microsoft|Google)\s+/, "").replace(/\s+Online \(Natural\)/, "").replace(/\s+-\s+.*$/, ""))} · ${esc(voiceCountry(v))}${voiceGender(v) ? ` · ${esc(tr.genders[voiceGender(v)])}` : ""}</option>`).join("")}</select>
     </div>
     <div class="cook-voice-row"><span class="cook-voice-label">${esc(tr.speed)}</span>
       ${[[0.8, tr.slow], [1, tr.normal], [1.2, tr.fast]].map(([r, l]) => `<label class="chip-check chip-radio"><input type="radio" name="cook-rate" data-voice-rate="${r}" ${voicePrefs.rate === r ? "checked" : ""}><span>${esc(l)}</span></label>`).join("")}
