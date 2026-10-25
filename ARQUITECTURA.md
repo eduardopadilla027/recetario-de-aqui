@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.56.0 · **Versión de la app:** 4.56.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,428 en 24 categorías
+> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.57.0 · **Versión de la app:** 4.57.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,428 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -762,6 +762,17 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 ### 7.11 "¿Qué tengo en la nevera?" y filtros (`js/filters.js`)
 
 - Botón **Filtros** bajo el buscador (con el número de filtros activos) que abre `#adv-filters`.
+- **A la vista (v4.57):** en la misma fila (`#quick-filters`), seis chips con los más usados (`QUICK`,
+  `renderQuickChips()`): ≤ 30 min (el mismo `onlyQuick` del chip de la barra de resultados), Fácil, Vegetariana, Sin
+  gluten, ≤ 500 calorías y Para niños; ponen o quitan el valor del panel y se redibujan con `renderCategories()`. Debajo,
+  `#filters-help` explica en una línea cómo se usan. En el móvil (≤ 640 px) la fila se desliza de lado sin mover la página.
+  Dentro del panel, una frase de entrada (`.adv-intro`) y una explicación corta bajo cada grupo (`.adv-hint`).
+- **Micrófono (v4.57):** en el buscador (`#search-mic`) y en "¿Qué tengo en la nevera?" (`[data-adv-mic]`), con
+  `startDictation()` de `app.js` (Web Speech API, es-PR o en-US, una frase): escribe lo que oye mientras habla (los
+  resultados salen al momento) y al terminar busca o añade los ingredientes ("pollo y papa y cilantro" → tres). Mientras
+  escucha el botón se pone rojo y late; tocarlo otra vez lo para. Avisa si no hay permiso, si no oyó nada o si falla.
+  Sin reconocimiento de voz (Firefox) no se muestra. Abrir el modo cocina lo para (`stopDictation()`), para no competir
+  con los comandos de voz.
 - **Lo que tengo:** se escriben ingredientes (varios con comas o "y"); salen las recetas que los llevan **todos** (o "al
   menos uno"), buscando en los ingredientes en español e inglés, con plural. Sin búsqueda de texto se ordenan por cuántos
   usan y luego por menos ingredientes (`advSort`).
@@ -1221,6 +1232,20 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-25 — v4.57.0 · Buscar por voz y filtros a la vista
+- *Pedido:* un micrófono para la búsqueda principal y los filtros; los filtros más relevantes a la vista, con una reseña
+  corta de su uso.
+- **Micrófono** (`index.html`, `js/app.js`, `js/filters.js`, `js/cook.js`): botón en el buscador y en "¿Qué tengo en la
+  nevera?" (§7.11). Escribe lo que oye mientras habla, busca al terminar y avisa si no hay permiso o no oyó nada; no sale
+  en navegadores sin reconocimiento de voz.
+- **Filtros a la vista** (`index.html`, `js/filters.js`, `css/styles.css`): bajo el buscador, "Filtros" (más marcado) y seis
+  chips (≤ 30 min, Fácil, Vegetariana, Sin gluten, ≤ 500 calorías, Para niños), con una línea de ayuda; en el panel, una
+  frase de entrada y una explicación corta en cada grupo (tiempo, dificultad, calorías, dieta, alérgenos, época).
+- *Verificado* en el navegador con un reconocedor de voz simulado (el panel de pruebas no deja usar el micrófono):
+  "arroz con pollo" se escribe y da 62 recetas; sin permiso y sin voz dan su aviso; "pollo y papa y cilantro" añade tres
+  ingredientes. Los chips filtran y se sincronizan con la barra de resultados; "Quitar filtros" los apaga. Sin desbordes
+  a 375 px, en claro y oscuro, en ES y EN; sin errores en la consola. *Falta* probarlo con el micrófono real en un
+  teléfono.
 ### 2026-10-25 — v4.56.0 · 8 recetas de mallorcas y 10 dulces de repostería
 - *Pedido:* más recetas de mallorcas y de dulces de repostería.
 - **Recetas** (`js/recipes-5.js`, tanda 62; 1,410 → 1,428): mallorcas rellenas de crema pastelera y de dulce de leche,

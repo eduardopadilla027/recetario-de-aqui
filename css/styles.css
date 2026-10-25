@@ -1277,8 +1277,30 @@ body.cook-on { overflow: hidden; }
 .ing-item.is-done .ing-text { color: var(--ink-3); text-decoration: line-through; }
 
 /* Filtros y "qué tengo" (js/filters.js) */
-.hero-tools { display: flex; gap: var(--s-2); margin-top: var(--s-3); }
+/* Filtros a la vista (v4.57): "Filtros" y los chips más usados en una fila bajo el buscador, con una línea de ayuda.
+   En el móvil la fila se desliza de lado (dentro de su caja, sin mover la página). */
+.hero-tools { margin-top: var(--s-3); max-width: 560px; min-width: 0; }
 .hero-tools .nav-badge { position: static; margin-left: 2px; }
+.quick-filters { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; }
+.quick-chips { display: contents; }
+.quick-filters .chip, .quick-filters .btn { flex: none; }
+#adv-toggle { border-color: var(--achiote); color: var(--achiote-600); font-weight: 700; }
+#adv-toggle[aria-expanded="true"] { background: var(--achiote-50); }
+.filters-help { margin: var(--s-2) 0 0; font-size: .85rem; line-height: 1.4; color: var(--ink-3); }
+@media (max-width: 640px) {
+  .quick-filters { flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; padding-bottom: 2px; margin-inline: calc(-1 * var(--s-1)); padding-inline: var(--s-1); }
+  .quick-filters::-webkit-scrollbar { display: none; }
+}
+.adv-intro { margin: 0; font-size: .92rem; color: var(--ink-2); }
+.adv-hint { flex-basis: 100%; margin: calc(-1 * var(--s-1)) 0 var(--s-1); font-size: .82rem; line-height: 1.35; color: var(--ink-3); }
+
+/* Micrófono del buscador y de "¿Qué tengo en la nevera?" (v4.57): rojo y latiendo mientras escucha. */
+.search-mic { display: inline-grid; place-items: center; flex: none; width: 44px; height: 44px; border-radius: 50%; color: var(--ink-2); }
+.search-mic:hover { background: var(--sand); color: var(--ink); }
+.search-mic.is-listening { background: var(--achiote); color: #fff; animation: mic-pulse 1.2s ease-in-out infinite alternate; }
+.adv-mic { border: 1.5px solid var(--line); background: var(--field); }
+@keyframes mic-pulse { from { box-shadow: 0 0 0 0 rgba(166, 58, 18, .35); } to { box-shadow: 0 0 0 8px rgba(166, 58, 18, 0); } }
+@media (prefers-reduced-motion: reduce) { .search-mic.is-listening { animation: none; } }
 .adv-filters { background: var(--ivory); border-block: 1px solid var(--line); padding: var(--s-5) 0; scroll-margin-top: calc(var(--header-h) + 8px); }
 .adv-inner { display: grid; gap: var(--s-4); }
 .adv-head { display: flex; justify-content: space-between; align-items: center; }

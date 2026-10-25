@@ -399,6 +399,7 @@ function openCook(withVoice = false) {
   if (!current) return;
   cookLastFocus = document.activeElement;
   cookOpen = true; cookStep = 0; cookShowIng = withVoice; voicePanel = false; heard = "";
+  stopDictation(); // el micrófono del buscador no compite con los comandos de voz
   if (withVoice) { readAloud = true; if (SR && !listening) startListening(); }
   $("cook-mode").hidden = false;
   document.body.classList.add("cook-on");

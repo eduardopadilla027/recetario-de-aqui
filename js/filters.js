@@ -5,6 +5,8 @@
  *   llevan todos (o al menos uno), ordenadas por las que menos cosas le faltan.
  * - Tiempo, dificultad (calculada de ingredientes, pasos y tiempo), calorías por porción,
  *   sin alérgenos, dieta (vegetariana o vegana), época y "para niños".
+ * - Bajo el buscador (v4.57): los filtros más usados como chips (renderQuickChips) y una línea de ayuda; dentro
+ *   del panel, una explicación corta de cada grupo y el micrófono para decir los ingredientes (startDictation, app.js).
  * Se combinan entre sí, con el buscador, la categoría, las rápidas y las favoritas: app.js llama a
  * advActive(), advOk() y advKey(). Depende de app.js, nutrition.js, advisories.js, plans.js y search.js. */
 
@@ -28,7 +30,20 @@ const FT = {
     found: (n) => (n === 1 ? "1 receta usa lo que tiene." : `${n} recetas usan lo que tiene.`),
     kcalOut: (n) => (n === 1 ? "1 receta sin estimado de calorías queda fuera de este filtro." : `${n} recetas sin estimado de calorías quedan fuera de este filtro.`),
     timeOut: (n) => (n === 1 ? "1 receta sin tiempo anotado queda fuera del filtro de tiempo." : `${n} recetas sin tiempo anotado quedan fuera del filtro de tiempo.`),
-    kidsOff: "El filtro \"Para niños\" no se pudo cargar: no se muestran recetas con él. Recargue la página o quítelo."
+    kidsOff: "El filtro \"Para niños\" no se pudo cargar: no se muestran recetas con él. Recargue la página o quítelo.",
+    quickLabel: "Filtros rápidos",
+    quick: { quick: "≤ 30 min", easy: "Fácil", veg: "Vegetariana", gluten: "Sin gluten", kcal: "≤ 500 calorías", kids: "Para niños" },
+    help: "Toque un filtro para ver sólo esas recetas; se suman entre sí y con lo que busque. En «Filtros» hay más: alérgenos, calorías, época y «¿Qué tengo en la nevera?».",
+    intro: "Marque lo que quiera: los filtros se suman entre sí y con la búsqueda, y el número del botón dice cuántos tiene puestos.",
+    hints: {
+      time: "Del principio hasta servir, con nevera y esperas.",
+      level: "Según los ingredientes, los pasos y el tiempo.",
+      kcal: "Estimado por porción.",
+      diet: "Vegetariana: sin carne ni pescado. Vegana: tampoco huevo, leche ni miel.",
+      free: "Quita las recetas que llevan ese alérgeno.",
+      season: "Recetas de la temporada o de la fiesta."
+    },
+    micHave: "Decir los ingredientes", haveVoice: "O toque el micrófono y dígalos con «y»: «pollo y papa y cilantro»."
   },
   en: {
     btn: "Filters", title: "Filters", close: "Close filters", clear: "Clear these filters",
@@ -49,7 +64,20 @@ const FT = {
     found: (n) => (n === 1 ? "1 recipe uses what you have." : `${n} recipes use what you have.`),
     kcalOut: (n) => (n === 1 ? "1 recipe without a calorie estimate is left out by this filter." : `${n} recipes without a calorie estimate are left out by this filter.`),
     timeOut: (n) => (n === 1 ? "1 recipe with no time listed is left out by the time filter." : `${n} recipes with no time listed are left out by the time filter.`),
-    kidsOff: "The \"Kid-friendly\" filter couldn't load, so it shows no recipes. Reload the page or turn it off."
+    kidsOff: "The \"Kid-friendly\" filter couldn't load, so it shows no recipes. Reload the page or turn it off.",
+    quickLabel: "Quick filters",
+    quick: { quick: "≤ 30 min", easy: "Easy", veg: "Vegetarian", gluten: "Gluten-free", kcal: "≤ 500 calories", kids: "Kid-friendly" },
+    help: "Tap a filter to see only those recipes; they add up with each other and with your search. «Filters» has more: allergens, calories, season and «What's in my fridge?».",
+    intro: "Pick what you want: filters add up with each other and with the search, and the number on the button shows how many are on.",
+    hints: {
+      time: "From start to serving, including fridge and waiting.",
+      level: "Based on ingredients, steps and time.",
+      kcal: "Estimated per serving.",
+      diet: "Vegetarian: no meat or fish. Vegan: also no eggs, milk or honey.",
+      free: "Leaves out recipes with that allergen.",
+      season: "Recipes for the season or the holiday."
+    },
+    micHave: "Say the ingredients", haveVoice: "Or tap the microphone and say them with «and»: «chicken and potato and cilantro»."
   }
 };
 const ft = () => FT[currentLang];
@@ -150,6 +178,25 @@ function advSort(list) {
   return list.sort((a, b) => haveCount(b).hit - haveCount(a).hit || a.ingredients.es.length - b.ingredients.es.length);
 }
 
+/* ── Filtros rápidos bajo el buscador (v4.57): los más usados, a un toque. "≤ 30 min" es el mismo de la barra
+   de resultados (onlyQuick, app.js); los demás ponen o quitan un valor del panel. ── */
+const QUICK = [
+  { k: "quick", icon: "i-bolt", on: () => onlyQuick, set: (v) => { onlyQuick = v; renderNavPills(); } },
+  { k: "easy", icon: "i-check", on: () => adv.level === "easy", set: (v) => { adv.level = v ? "easy" : ""; } },
+  { k: "veg", icon: "i-leaf", on: () => adv.diet === "veg", set: (v) => { adv.diet = v ? "veg" : ""; } },
+  { k: "gluten", icon: "i-shield", on: () => adv.free.includes("gluten"), set: (v) => { adv.free = v ? [...adv.free, "gluten"] : adv.free.filter((x) => x !== "gluten"); } },
+  { k: "kcal", icon: "i-flame", on: () => adv.kcal === 500, set: (v) => { adv.kcal = v ? 500 : 0; } },
+  { k: "kids", icon: "i-users", on: () => adv.kids, set: (v) => { adv.kids = v; } }
+];
+function renderQuickChips() {
+  const box = $("quick-chips");
+  if (!box) return;
+  const tr = ft();
+  $("quick-filters").setAttribute("aria-label", tr.quickLabel);
+  box.innerHTML = QUICK.map((q) => `<button type="button" class="chip" data-quick="${q.k}" aria-pressed="${q.on()}"><svg class="icon" aria-hidden="true"><use href="#${q.icon}"/></svg><span>${esc(tr.quick[q.k])}</span></button>`).join("");
+  $("filters-help").textContent = tr.help;
+}
+
 /* ── Vista ── */
 function renderAdvButton() {
   const b = $("adv-toggle");
@@ -157,6 +204,7 @@ function renderAdvButton() {
   const n = advCount();
   b.setAttribute("aria-expanded", String(advOpen));
   b.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#i-filter"/></svg><span>${esc(ft().btn)}</span>${n ? `<span class="nav-badge">${n}</span>` : ""}`;
+  renderQuickChips();
 }
 function renderAdvPanel() {
   const box = $("adv-filters");
@@ -171,16 +219,20 @@ function renderAdvPanel() {
   const ADV = ADVICE_TEXT[currentLang];
   const seasons = PLAN_T[currentLang].seasons;
   const radio = (name, value, label, on) => `<label class="chip-check chip-radio"><input type="radio" name="adv-${name}" data-adv="${name}" value="${value}" ${on ? "checked" : ""}><span>${esc(label)}</span></label>`;
+  const hint = (k) => `<p class="adv-hint">${esc(tr.hints[k])}</p>`;
+  const voice = Boolean(dictationClass());
   box.innerHTML = `
     <div class="container adv-inner">
       <div class="adv-head"><h2 class="panel-title">${esc(tr.title)}</h2>
         <button type="button" class="icon-btn" data-adv-close aria-label="${esc(tr.close)}"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+      <p class="adv-intro">${esc(tr.intro)}</p>
       <div class="adv-have">
         <h3 class="adv-title">${esc(tr.haveTitle)}</h3>
-        <p class="plans-help">${esc(tr.haveHelp)}</p>
+        <p class="plans-help">${esc(tr.haveHelp)}${voice ? ` ${esc(tr.haveVoice)}` : ""}</p>
         <form class="col-new" data-adv-have>
           <label class="sr-only" for="adv-have-text">${esc(tr.haveTitle)}</label>
           <input id="adv-have-text" type="text" maxlength="200" placeholder="${esc(tr.havePh)}" autocomplete="off" enterkeyhint="done">
+          ${voice ? `<button type="button" class="search-mic adv-mic" data-adv-mic aria-pressed="false" aria-label="${esc(tr.micHave)}"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></button>` : ""}
           <button type="submit" class="btn btn-outline btn-sm">${esc(tr.haveAdd)}</button>
         </form>
         <p class="adv-note" role="status">${esc(haveNote || (adv.have.length ? `${tr.found(recipes.filter(advOk).length)} ${adv.have.length < HAVE_MAX ? tr.haveLeft(HAVE_MAX - adv.have.length) : tr.haveMax(HAVE_MAX)}` : ""))}</p>
@@ -189,18 +241,18 @@ function renderAdvPanel() {
           <div class="adv-row">${radio("haveAny", "0", tr.haveAll, !adv.haveAny)}${radio("haveAny", "1", tr.haveAny, adv.haveAny)}</div>` : ""}
       </div>
       <div class="adv-grid">
-        <fieldset class="adv-set"><legend>${esc(tr.time)}</legend>
+        <fieldset class="adv-set"><legend>${esc(tr.time)}</legend>${hint("time")}
           ${radio("time", 0, tr.timeAny, !adv.time)}${[15, 30, 45].map((m) => radio("time", m, tr.timeOpt(m), adv.time === m)).join("")}${radio("time", 60, tr.timeHour, adv.time === 60)}</fieldset>
-        <fieldset class="adv-set"><legend>${esc(tr.level)}</legend>
+        <fieldset class="adv-set"><legend>${esc(tr.level)}</legend>${hint("level")}
           ${Object.entries(tr.levels).map(([k, l]) => radio("level", k, l, adv.level === k)).join("")}</fieldset>
-        <fieldset class="adv-set"><legend>${esc(tr.kcal)}</legend>
+        <fieldset class="adv-set"><legend>${esc(tr.kcal)}</legend>${hint("kcal")}
           ${radio("kcal", 0, tr.kcalAny, !adv.kcal)}${[300, 500, 700].map((k) => radio("kcal", k, tr.kcalOpt(k), adv.kcal === k)).join("")}
           ${adv.kcal ? `<p class="adv-note">${esc(tr.kcalOut(recipes.filter((r) => !estimateNutrition(r).counted).length))}</p>` : ""}</fieldset>
-        <fieldset class="adv-set"><legend>${esc(tr.diet)}</legend>
+        <fieldset class="adv-set"><legend>${esc(tr.diet)}</legend>${hint("diet")}
           ${Object.entries(tr.diets).map(([k, l]) => radio("diet", k, l, adv.diet === k)).join("")}</fieldset>
-        <fieldset class="adv-set adv-wide"><legend>${esc(tr.free)}</legend>
+        <fieldset class="adv-set adv-wide"><legend>${esc(tr.free)}</legend>${hint("free")}
           ${FREE_KEYS.map((k) => `<label class="chip-check"><input type="checkbox" data-adv-free="${k}" ${adv.free.includes(k) ? "checked" : ""}><span>${esc(ADV.allergens[k].replace(/\s*\(.*\)$/, ""))}</span></label>`).join("")}</fieldset>
-        <fieldset class="adv-set"><legend>${esc(tr.season)}</legend>
+        <fieldset class="adv-set"><legend>${esc(tr.season)}</legend>${hint("season")}
           ${radio("season", "", tr.seasonAny, !adv.season)}${SEASON_KEYS.map((k) => radio("season", k, seasons[k], adv.season === k)).join("")}</fieldset>
         <fieldset class="adv-set"><legend class="sr-only">${esc(tr.kids)}</legend>
           <label class="chip-check"><input type="checkbox" data-adv-kids ${adv.kids ? "checked" : ""}><span>${esc(tr.kids)}</span></label></fieldset>
@@ -225,8 +277,25 @@ function setupFilters() {
     advOpen = !advOpen; renderAdvPanel();
     if (advOpen) { box.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" }); $("adv-have-text").focus({ preventScroll: true }); }
   });
+  $("quick-chips").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-quick]");
+    if (!b) return;
+    const q = QUICK.find((x) => x.k === b.dataset.quick);
+    q.set(!q.on());
+    advChanged(`[data-quick="${q.k}"]`);
+    scrollToResultsSoon();
+  });
   box.addEventListener("click", (e) => {
     if (e.target.closest("[data-adv-close]")) { advOpen = false; renderAdvPanel(); $("adv-toggle").focus(); return; }
+    const mic = e.target.closest("[data-adv-mic]");
+    if (mic) {
+      // Lo dicho se añade como si lo hubiera escrito: "pollo y papa y cilantro" → tres ingredientes.
+      startDictation($("adv-have-text"), mic, () => {
+        const form = box.querySelector("[data-adv-have]");
+        if (form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+      });
+      return;
+    }
     if (e.target.closest("[data-adv-clear]")) { adv = ADV_DEFAULT(); haveNote = ""; advChanged(); return; }
     const x = e.target.closest("[data-adv-have-x]");
     if (x) { adv.have.splice(+x.dataset.advHaveX, 1); haveNote = ""; advChanged("#adv-have-text"); }

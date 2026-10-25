@@ -18,7 +18,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.56.0";
+const APP_VERSION = "4.57.0";
 const APP_REVISED = "2026-10-25";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
@@ -42,6 +42,11 @@ const translations = {
     searchLabel: "Buscar recetas por nombre, ingredientes o una idea (por ejemplo: postre sin huevo)",
     searchBtn: "Buscar",
     clearSearch: "Borrar búsqueda",
+    micSearch: "Buscar por voz",
+    micListening: "Escuchando… diga un plato o un ingrediente",
+    micNoSpeech: "No le escuché. Toque el micrófono y hable de nuevo.",
+    micDenied: "Sin permiso para el micrófono: actívelo en el navegador para buscar por voz.",
+    micFail: "La voz no está disponible ahora. Escriba lo que busca.",
     ingredients: "Ingredientes",
     steps: "Preparación",
     time: "Tiempo",
@@ -165,6 +170,11 @@ const translations = {
     searchLabel: "Search recipes by name, ingredients or an idea (for example: dessert without eggs)",
     searchBtn: "Search",
     clearSearch: "Clear search",
+    micSearch: "Search by voice",
+    micListening: "Listening… say a dish or an ingredient",
+    micNoSpeech: "I didn't hear you. Tap the microphone and speak again.",
+    micDenied: "No microphone permission: allow it in the browser to search by voice.",
+    micFail: "Voice isn't available right now. Type what you're looking for.",
     ingredients: "Ingredients",
     steps: "Preparation",
     time: "Time",
@@ -1764,6 +1774,7 @@ function renderCategories() {
   const tr = t();
   const container = $("categories-container");
   $("filter-quick").setAttribute("aria-pressed", String(onlyQuick));
+  if (typeof renderQuickChips === "function") renderQuickChips();
   $("filter-fav").setAttribute("aria-pressed", String(onlyFavorites));
   $("nav-favorites").setAttribute("aria-pressed", String(onlyFavorites));
 
@@ -2309,6 +2320,63 @@ function toggleFavorite(id, sourceBtn) {
   toast(added ? t().favAdded : t().favRemoved, true);
 }
 
+/* ── Dictado (v4.57): el micrófono del buscador y de "¿Qué tengo en la nevera?" ──
+   Escribe en la caja lo que va oyendo (y avisa con "input", así los resultados salen mientras habla) y al terminar
+   llama a onFinal con el texto. Tocar el mismo micrófono otra vez deja de escuchar. Sin reconocimiento de voz en
+   el navegador (Firefox) el botón no se muestra. Se busca la clase al usarla para poder probarla con una falsa. */
+const dictationClass = () => window.SpeechRecognition || window.webkitSpeechRecognition || null;
+let dictation = null;
+function stopDictation() {
+  if (!dictation) return;
+  const d = dictation;
+  try { d.rec.abort(); } catch { /* ya terminó */ }
+  d.done();
+}
+function startDictation(input, button, onFinal) {
+  const SRClass = dictationClass();
+  if (!SRClass) return;
+  if (dictation) { const same = dictation.button === button; stopDictation(); if (same) return; }
+  const rec = new SRClass();
+  rec.lang = currentLang === "es" ? "es-PR" : "en-US";
+  rec.interimResults = true;
+  rec.continuous = false;
+  rec.maxAlternatives = 1;
+  const before = input.value, placeholder = input.placeholder;
+  let heardText = "", finalText = "", failed = false;
+  const done = () => {
+    button.classList.remove("is-listening");
+    button.setAttribute("aria-pressed", "false");
+    input.placeholder = placeholder;
+    if (dictation && dictation.rec === rec) dictation = null;
+  };
+  dictation = { rec, button, done };
+  button.classList.add("is-listening");
+  button.setAttribute("aria-pressed", "true");
+  input.value = "";
+  input.placeholder = t().micListening;
+  rec.onresult = (e) => {
+    let txt = "";
+    for (const r of e.results) txt += r[0].transcript;
+    heardText = txt.trim();
+    input.value = heardText;
+    input.dispatchEvent(new Event("input", { bubbles: true }));
+    if (e.results[e.results.length - 1].isFinal) finalText = heardText;
+  };
+  rec.onerror = (e) => {
+    failed = true;
+    if (e.error === "not-allowed" || e.error === "service-not-allowed") toast(t().micDenied);
+    else if (e.error === "no-speech") toast(t().micNoSpeech);
+    else if (e.error !== "aborted") toast(t().micFail);
+  };
+  rec.onend = () => {
+    done();
+    const text = finalText || heardText;
+    if (text) onFinal(text);
+    else { input.value = before; input.dispatchEvent(new Event("input", { bubbles: true })); if (!failed) toast(t().micNoSpeech); }
+  };
+  try { rec.start(); } catch { done(); input.value = before; toast(t().micFail); }
+}
+
 let toastTimer = 0;
 function toast(message, ok = false) {
   const el = $("toast");
@@ -2412,6 +2480,16 @@ function setupEventListeners() {
     runSearch("");
     input.focus();
   });
+  // Micrófono: lo dicho se busca igual que lo escrito (también las ideas: "algo rápido con pollo").
+  const mic = $("search-mic");
+  if (dictationClass()) {
+    mic.hidden = false;
+    mic.addEventListener("click", () => startDictation(input, mic, (text) => {
+      $("search-clear").hidden = false;
+      runSearch(text);
+      scrollToResults();
+    }));
+  }
 
   $("btn-es").addEventListener("click", () => switchLang("es"));
   $("btn-en").addEventListener("click", () => switchLang("en"));
