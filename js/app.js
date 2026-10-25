@@ -18,7 +18,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.53.0";
+const APP_VERSION = "4.54.0";
 const APP_REVISED = "2026-10-25";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
@@ -436,6 +436,27 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Bizcochos, galletitas y brazos gitanos (tanda 60, v4.54): el pedazo, las galletas o el rollo de cada sabor.
+  [/^bizcocho de acerola/, "svg:ic-biz-acerola"],
+  [/^bizcocho de tamarindo/, "svg:ic-biz-tamarindo"],
+  [/^bizcocho de mamey/, "svg:ic-biz-mamey"],
+  [/^bizcocho mocha/, "svg:ic-biz-mocha"],
+  [/^bizcocho de lechosa/, "svg:ic-biz-lechosa-coco"],
+  [/^bizcocho integral de avena/, "svg:ic-biz-avena-guineo"],
+  [/^bizcocho de nueces/, "svg:ic-biz-nueces-melao"],
+  [/^bizcocho de ajonjoli/, "svg:ic-biz-ajonjoli-miel"],
+  [/^galletas de mango/, "svg:ic-galleta-mango"],
+  [/^galletas de acerola/, "svg:ic-galleta-acerola"],
+  [/^galletas de coco y pina/, "svg:ic-galleta-coco-pina"],
+  [/^galletas de mani y melao/, "svg:ic-galleta-mani-melao"],
+  [/^galletas de queso del pais/, "svg:ic-galleta-queso-guayaba"],
+  [/^galletas de platano maduro/, "svg:ic-galleta-platano"],
+  [/^galletas de guanabana/, "svg:ic-galleta-guanabana"],
+  [/^galletas de tembleque/, "svg:ic-galleta-tembleque"],
+  [/^brazo gitano de chocolate/, "svg:ic-brazo-chocolate-cafe"],
+  [/^brazo gitano de parcha/, "svg:ic-brazo-parcha"],
+  [/^brazo gitano de pina/, "svg:ic-brazo-pina"],
+  [/^brazo gitano de dulce de leche/, "svg:ic-brazo-dulce-leche"],
   // Nutritivas boricuas (tanda 59, v4.52): los dibujos que ya había para ese tipo de plato (salían el fricasé de
   // pollo, 🐟, 🦐 o 🎃).
   [/^picadillo de pavo/, "svg:ic-picadillo"],

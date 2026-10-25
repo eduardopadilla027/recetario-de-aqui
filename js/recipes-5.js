@@ -15776,5 +15776,306 @@ recipes.push(
       es: ["En un caldero con el aceite, sofría el sofrito 2 minutos.", "Añada la calabaza, las habichuelas tiernas, el maíz, el chayote, el caldo, el orégano y la sal.", "Tape y cocine a fuego bajo 18 minutos, hasta que todo esté blando.", "Aplaste un poco de la calabaza para espesar el guiso.", "Eche el recao y sirva con arroz, o como acompañante de pollo o pescado. Muchos colores en un solo caldero."],
       en: ["In a caldero with the oil, sauté the sofrito 2 minutes.", "Add the pumpkin, green beans, corn, chayote, broth, oregano and salt.", "Cover and cook over low heat 18 minutes, until everything is tender.", "Mash a little of the pumpkin to thicken the stew.", "Add the culantro and serve with rice, or as a side for chicken or fish. Lots of colors in one caldero."]
     }
+  },
+  // Tanda 60 (v4.54): más bizcochos, galletitas y brazos gitanos con frutas y sabores de la isla.
+  {
+    id: "bizcocho-acerola-glaseado",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Acerola con Glaseado", en: "Acerola Cake with Glaze" },
+    active: 30, total: 105, wait: "enfriar",
+    servings: 12,
+    ingredients: {
+      es: ["2½ tazas de harina de trigo", "2 cucharaditas de polvo de hornear", "¼ cucharadita de sal", "1 taza de mantequilla blanda", "1½ tazas de azúcar", "4 huevos", "1 taza de jugo de acerola colado", "1 cucharadita de vainilla", "1½ tazas de azúcar en polvo", "3 cucharadas de jugo de acerola para el glaseado"],
+      en: ["2½ cups all-purpose flour", "2 teaspoons baking powder", "¼ teaspoon salt", "1 cup softened butter", "1½ cups sugar", "4 eggs", "1 cup strained acerola juice", "1 teaspoon vanilla", "1½ cups powdered sugar", "3 tablespoons acerola juice for the glaze"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.", "Bata la mantequilla con el azúcar hasta que esté cremosa; añada los huevos uno a uno y la vainilla.", "Agregue la harina, el polvo de hornear y la sal alternando con el jugo de acerola, sin batir de más.", "Hornee 35 a 40 minutos, hasta que un palillo salga limpio, y deje enfriar 1 hora.", "Mezcle el azúcar en polvo con el jugo de acerola y viértalo por encima. El glaseado queda rosado y ácido como la cereza del país."],
+      en: ["Heat the oven to 350 °F and grease a 9 × 13 inch pan.", "Beat the butter with the sugar until creamy; add the eggs one at a time and the vanilla.", "Add the flour, baking powder and salt alternating with the acerola juice, without overmixing.", "Bake 35 to 40 minutes, until a toothpick comes out clean, and let cool 1 hour.", "Mix the powdered sugar with the acerola juice and pour it over the top. The glaze is pink and tart like the island cherry."]
+    }
+  },
+  {
+    id: "bizcocho-tamarindo",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Tamarindo con Glaseado de Melao", en: "Tamarind Cake with Molasses Glaze" },
+    active: 35, total: 110, wait: "enfriar",
+    servings: 12,
+    ingredients: {
+      es: ["1 taza de pulpa de tamarindo sin semillas", "½ taza de agua caliente", "2½ tazas de harina de trigo", "2 cucharaditas de polvo de hornear", "½ cucharadita de canela en polvo", "¾ taza de mantequilla blanda", "1¼ tazas de azúcar morena", "3 huevos", "½ taza de leche", "¼ taza de melao de caña", "1 taza de azúcar en polvo"],
+      en: ["1 cup seedless tamarind pulp", "½ cup hot water", "2½ cups all-purpose flour", "2 teaspoons baking powder", "½ teaspoon ground cinnamon", "¾ cup softened butter", "1¼ cups brown sugar", "3 eggs", "½ cup milk", "¼ cup sugarcane molasses", "1 cup powdered sugar"]
+    },
+    steps: {
+      es: ["Remoje el tamarindo en el agua caliente 10 minutos y májelo hasta que sea una pasta; cuélelo.", "Caliente el horno a 350 °F. Bata la mantequilla con el azúcar morena, añada los huevos y ¾ de la pasta de tamarindo.", "Agregue la harina, el polvo de hornear y la canela alternando con la leche.", "Hornee en un molde redondo de 10 pulgadas 40 minutos y deje enfriar 1 hora.", "Mezcle el melao, el resto del tamarindo y el azúcar en polvo, y glasee el bizcocho. Dulce y agrio, como las bolitas de tamarindo."],
+      en: ["Soak the tamarind in the hot water 10 minutes and mash into a paste; strain.", "Heat the oven to 350 °F. Beat the butter with the brown sugar, add the eggs and ¾ of the tamarind paste.", "Add the flour, baking powder and cinnamon alternating with the milk.", "Bake in a 10-inch round pan 40 minutes and let cool 1 hour.", "Mix the molasses, the rest of the tamarind and the powdered sugar, and glaze the cake. Sweet and sour, like tamarind candy balls."]
+    }
+  },
+  {
+    id: "bizcocho-mamey",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Mamey", en: "Mamey Cake" },
+    active: 30, total: 100, wait: "enfriar",
+    servings: 12,
+    ingredients: {
+      es: ["1½ tazas de pulpa de mamey majada", "2½ tazas de harina de trigo", "2 cucharaditas de polvo de hornear", "½ cucharadita de bicarbonato", "½ cucharadita de canela en polvo", "½ taza de aceite vegetal", "1 taza de azúcar", "3 huevos", "1 cucharadita de vainilla", "2 cucharadas de azúcar en polvo para decorar"],
+      en: ["1½ cups mashed mamey pulp", "2½ cups all-purpose flour", "2 teaspoons baking powder", "½ teaspoon baking soda", "½ teaspoon ground cinnamon", "½ cup vegetable oil", "1 cup sugar", "3 eggs", "1 teaspoon vanilla", "2 tablespoons powdered sugar for dusting"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F y engrase un molde de bundt.", "Bata los huevos con el azúcar, el aceite, la vainilla y el mamey hasta que quede liso.", "Añada la harina, el polvo de hornear, el bicarbonato y la canela, y mezcle sólo hasta integrar.", "Hornee 45 minutos, hasta que un palillo salga limpio; deje enfriar y desmolde.", "Espolvoree el azúcar en polvo. El mamey le da un color salmón y un sabor a batata con almendra."],
+      en: ["Heat the oven to 350 °F and grease a bundt pan.", "Beat the eggs with the sugar, oil, vanilla and mamey until smooth.", "Add the flour, baking powder, baking soda and cinnamon and mix just until combined.", "Bake 45 minutes, until a toothpick comes out clean; cool and unmold.", "Dust with the powdered sugar. Mamey gives it a salmon color and a sweet-potato-and-almond flavor."]
+    }
+  },
+  {
+    id: "bizcocho-mocha",
+    category: "bizcochos",
+    name: { es: "Bizcocho Mocha de Chocolate y Café de Puerto Rico", en: "Puerto Rican Coffee and Chocolate Mocha Cake" },
+    active: 35, total: 110, wait: "enfriar",
+    servings: 12,
+    ingredients: {
+      es: ["2 tazas de harina de trigo", "¾ taza de cacao en polvo sin azúcar", "1½ cucharaditas de bicarbonato", "1 cucharadita de polvo de hornear", "1¾ tazas de azúcar", "2 huevos", "1 taza de leche", "½ taza de aceite vegetal", "1 taza de café colado fuerte, caliente", "1 taza de chocolate semi-dulce picado", "½ taza de crema de leche"],
+      en: ["2 cups all-purpose flour", "¾ cup unsweetened cocoa powder", "1½ teaspoons baking soda", "1 teaspoon baking powder", "1¾ cups sugar", "2 eggs", "1 cup milk", "½ cup vegetable oil", "1 cup strong brewed coffee, hot", "1 cup chopped semisweet chocolate", "½ cup heavy cream"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F y engrase dos moldes redondos de 9 pulgadas.", "Mezcle la harina, el cacao, el bicarbonato, el polvo de hornear y el azúcar; añada los huevos, la leche y el aceite.", "Agregue el café caliente poco a poco: la mezcla queda líquida, así debe ser.", "Hornee 30 a 35 minutos y deje enfriar 1 hora. Para la cubierta, derrita el chocolate con la crema caliente.", "Ponga cubierta entre las capas y por encima. Use café de Yauco o de Adjuntas para que se sienta el sabor de la isla."],
+      en: ["Heat the oven to 350 °F and grease two 9-inch round pans.", "Mix the flour, cocoa, baking soda, baking powder and sugar; add the eggs, milk and oil.", "Add the hot coffee little by little: the batter will be thin, as it should.", "Bake 30 to 35 minutes and let cool 1 hour. For the frosting, melt the chocolate with the hot cream.", "Spread frosting between the layers and on top. Use coffee from Yauco or Adjuntas to taste the island in it."]
+    }
+  },
+  {
+    id: "bizcocho-lechosa-coco",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Lechosa y Coco", en: "Papaya and Coconut Cake" },
+    active: 30, total: 100, wait: "enfriar",
+    servings: 12,
+    ingredients: {
+      es: ["1½ tazas de lechosa madura majada", "2½ tazas de harina de trigo", "2 cucharaditas de polvo de hornear", "½ cucharadita de bicarbonato", "½ taza de mantequilla derretida", "1 taza de azúcar", "3 huevos", "1 taza de coco rallado", "1 limón verde (la ralladura)"],
+      en: ["1½ cups mashed ripe papaya", "2½ cups all-purpose flour", "2 teaspoons baking powder", "½ teaspoon baking soda", "½ cup melted butter", "1 cup sugar", "3 eggs", "1 cup shredded coconut", "1 lime (the zest)"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F y engrase un molde de 9 × 13 pulgadas.", "Bata los huevos con el azúcar, la mantequilla, la lechosa y la ralladura de limón.", "Añada la harina, el polvo de hornear y el bicarbonato, y luego ¾ del coco.", "Esparza en el molde, cubra con el resto del coco y hornee 35 minutos.", "Deje enfriar antes de cortar. La lechosa lo hace húmedo y el limón le quita lo empalagoso."],
+      en: ["Heat the oven to 350 °F and grease a 9 × 13 inch pan.", "Beat the eggs with the sugar, butter, papaya and lime zest.", "Add the flour, baking powder and baking soda, then ¾ of the coconut.", "Spread in the pan, top with the rest of the coconut and bake 35 minutes.", "Let cool before cutting. The papaya keeps it moist and the lime cuts the sweetness."]
+    }
+  },
+  {
+    id: "bizcocho-avena-guineo-integral",
+    category: "bizcochos",
+    name: { es: "Bizcocho Integral de Avena y Guineo (Menos Azúcar)", en: "Whole-Wheat Oat and Banana Cake (Less Sugar)" },
+    active: 20, total: 80, wait: "enfriar",
+    servings: 10,
+    ingredients: {
+      es: ["3 guineos bien maduros majados", "1½ tazas de harina de trigo integral", "1 taza de avena en hojuelas", "2 cucharaditas de polvo de hornear", "1 cucharadita de canela en polvo", "⅓ taza de aceite vegetal", "⅓ taza de azúcar morena", "2 huevos", "½ taza de yogur natural", "½ taza de nueces picadas"],
+      en: ["3 very ripe bananas, mashed", "1½ cups whole-wheat flour", "1 cup rolled oats", "2 teaspoons baking powder", "1 teaspoon ground cinnamon", "⅓ cup vegetable oil", "⅓ cup brown sugar", "2 eggs", "½ cup plain yogurt", "½ cup chopped walnuts"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F y engrase un molde de pan.", "Mezcle el guineo con el aceite, el azúcar, los huevos y el yogur.", "Añada la harina, la avena, el polvo de hornear y la canela, y luego las nueces.", "Hornee 50 minutos, hasta que un palillo salga limpio, y deje enfriar.", "Tiene la mitad del azúcar de un bizcocho de siempre: el dulce lo pone el guineo maduro. Bueno para el desayuno con café."],
+      en: ["Heat the oven to 350 °F and grease a loaf pan.", "Mix the banana with the oil, sugar, eggs and yogurt.", "Add the flour, oats, baking powder and cinnamon, then the walnuts.", "Bake 50 minutes, until a toothpick comes out clean, and let cool.", "It has half the sugar of a regular cake: the ripe banana provides the sweetness. Good for breakfast with coffee."]
+    }
+  },
+  {
+    id: "bizcocho-nueces-melao",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Nueces y Melao", en: "Walnut and Molasses Cake" },
+    active: 30, total: 100, wait: "enfriar",
+    servings: 12,
+    ingredients: {
+      es: ["2½ tazas de harina de trigo", "1 cucharadita de bicarbonato", "1 cucharadita de canela en polvo", "½ cucharadita de jengibre en polvo", "¾ taza de mantequilla blanda", "¾ taza de azúcar morena", "½ taza de melao de caña", "3 huevos", "1 taza de leche", "1 taza de nueces picadas"],
+      en: ["2½ cups all-purpose flour", "1 teaspoon baking soda", "1 teaspoon ground cinnamon", "½ teaspoon ground ginger", "¾ cup softened butter", "¾ cup brown sugar", "½ cup sugarcane molasses", "3 eggs", "1 cup milk", "1 cup chopped walnuts"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F y engrase un molde de bundt.", "Bata la mantequilla con el azúcar morena y el melao; añada los huevos uno a uno.", "Agregue la harina, el bicarbonato y las especias alternando con la leche.", "Añada ¾ de las nueces, eche en el molde, ponga el resto por encima y hornee 45 minutos.", "Deje enfriar y desmolde. Sabe a Navidad: melao, canela y nueces."],
+      en: ["Heat the oven to 350 °F and grease a bundt pan.", "Beat the butter with the brown sugar and molasses; add the eggs one at a time.", "Add the flour, baking soda and spices alternating with the milk.", "Fold in ¾ of the walnuts, pour into the pan, top with the rest and bake 45 minutes.", "Cool and unmold. It tastes like Christmas: molasses, cinnamon and walnuts."]
+    }
+  },
+  {
+    id: "bizcocho-ajonjoli-miel",
+    category: "bizcochos",
+    name: { es: "Bizcocho de Ajonjolí y Miel", en: "Sesame and Honey Cake" },
+    active: 25, total: 95, wait: "enfriar",
+    servings: 10,
+    ingredients: {
+      es: ["2 tazas de harina de trigo", "2 cucharaditas de polvo de hornear", "½ taza de ajonjolí tostado", "½ taza de mantequilla derretida", "½ taza de miel", "½ taza de azúcar", "3 huevos", "¾ taza de leche", "1 china (la ralladura)", "2 cucharadas de miel para barnizar"],
+      en: ["2 cups all-purpose flour", "2 teaspoons baking powder", "½ cup toasted sesame seeds", "½ cup melted butter", "½ cup honey", "½ cup sugar", "3 eggs", "¾ cup milk", "1 orange (the zest)", "2 tablespoons honey for brushing"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F y engrase un molde redondo de 9 pulgadas.", "Bata los huevos con el azúcar, la miel, la mantequilla, la leche y la ralladura de china.", "Añada la harina, el polvo de hornear y ¾ del ajonjolí.", "Eche en el molde, espolvoree el resto del ajonjolí y hornee 35 minutos.", "Barnice con la miel tibia al sacarlo. Recuerda al dulce de ajonjolí de las fiestas de pueblo."],
+      en: ["Heat the oven to 350 °F and grease a 9-inch round pan.", "Beat the eggs with the sugar, honey, butter, milk and orange zest.", "Add the flour, baking powder and ¾ of the sesame seeds.", "Pour into the pan, sprinkle with the rest of the sesame and bake 35 minutes.", "Brush with the warm honey as it comes out. It recalls the sesame candy of the town festivals."]
+    }
+  },
+  {
+    id: "galletas-mango-glaseadas",
+    category: "galletitas",
+    name: { es: "Galletas de Mangó Glaseadas", en: "Glazed Mango Cookies" },
+    active: 30, total: 60, wait: "enfriar",
+    servings: 24,
+    ingredients: {
+      es: ["2 tazas de harina de trigo", "½ cucharadita de polvo de hornear", "½ taza de mantequilla blanda", "½ taza de azúcar", "1 huevo", "½ taza de mangó maduro majado", "1 limón verde (la ralladura)", "1 taza de azúcar en polvo", "2 cucharadas de mangó majado para el glaseado"],
+      en: ["2 cups all-purpose flour", "½ teaspoon baking powder", "½ cup softened butter", "½ cup sugar", "1 egg", "½ cup mashed ripe mango", "1 lime (the zest)", "1 cup powdered sugar", "2 tablespoons mashed mango for the glaze"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F y forre dos bandejas con papel de hornear.", "Bata la mantequilla con el azúcar, añada el huevo, el mangó y la ralladura.", "Agregue la harina y el polvo de hornear, y forme bolitas de 1 cucharada.", "Hornee 12 minutos, hasta que las orillas estén doradas, y deje enfriar 30 minutos.", "Mezcle el azúcar en polvo con el mangó y glasee cada galleta. Salen suaves por dentro y amarillas."],
+      en: ["Heat the oven to 350 °F and line two trays with parchment.", "Beat the butter with the sugar, add the egg, mango and zest.", "Add the flour and baking powder and shape 1-tablespoon balls.", "Bake 12 minutes, until the edges are golden, and let cool 30 minutes.", "Mix the powdered sugar with the mango and glaze each cookie. They come out soft inside and yellow."]
+    }
+  },
+  {
+    id: "galletas-acerola",
+    category: "galletitas",
+    name: { es: "Galletas de Acerola con Azúcar", en: "Acerola Sugar Cookies" },
+    active: 25, total: 25,
+    servings: 24,
+    ingredients: {
+      es: ["2 tazas de harina de trigo", "½ cucharadita de polvo de hornear", "½ taza de mantequilla blanda", "¾ taza de azúcar", "1 huevo", "3 cucharadas de jugo de acerola concentrado", "1 cucharadita de vainilla", "¼ taza de azúcar para cubrir"],
+      en: ["2 cups all-purpose flour", "½ teaspoon baking powder", "½ cup softened butter", "¾ cup sugar", "1 egg", "3 tablespoons concentrated acerola juice", "1 teaspoon vanilla", "¼ cup sugar for coating"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F.", "Bata la mantequilla con el azúcar, añada el huevo, el jugo de acerola y la vainilla.", "Agregue la harina y el polvo de hornear hasta formar una masa suave.", "Forme bolitas, páselas por el azúcar y aplástelas un poco en la bandeja.", "Hornee 10 a 12 minutos. Quedan rosaditas y con un toque ácido de la cereza del país."],
+      en: ["Heat the oven to 350 °F.", "Beat the butter with the sugar, add the egg, acerola juice and vanilla.", "Add the flour and baking powder to form a soft dough.", "Shape balls, roll them in the sugar and flatten slightly on the tray.", "Bake 10 to 12 minutes. They turn out pinkish with a tart touch of island cherry."]
+    }
+  },
+  {
+    id: "galletas-coco-pina",
+    category: "galletitas",
+    name: { es: "Galletas de Coco y Piña", en: "Coconut and Pineapple Cookies" },
+    active: 25, total: 25,
+    servings: 24,
+    ingredients: {
+      es: ["1½ tazas de harina de trigo", "½ cucharadita de bicarbonato", "½ taza de mantequilla blanda", "½ taza de azúcar morena", "1 huevo", "½ taza de piña triturada, bien escurrida", "1½ tazas de coco rallado", "½ cucharadita de vainilla"],
+      en: ["1½ cups all-purpose flour", "½ teaspoon baking soda", "½ cup softened butter", "½ cup brown sugar", "1 egg", "½ cup crushed pineapple, well drained", "1½ cups shredded coconut", "½ teaspoon vanilla"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F.", "Bata la mantequilla con el azúcar morena y añada el huevo y la vainilla.", "Agregue la piña, la harina, el bicarbonato y el coco.", "Ponga cucharadas de masa en la bandeja, separadas 2 pulgadas.", "Hornee 12 a 14 minutos, hasta que el coco se dore. Saben a piña colada en galleta."],
+      en: ["Heat the oven to 350 °F.", "Beat the butter with the brown sugar and add the egg and vanilla.", "Add the pineapple, flour, baking soda and coconut.", "Drop spoonfuls of dough on the tray, 2 inches apart.", "Bake 12 to 14 minutes, until the coconut is golden. They taste like piña colada in a cookie."]
+    }
+  },
+  {
+    id: "galletas-mani-melao",
+    category: "galletitas",
+    name: { es: "Galletas de Maní y Melao", en: "Peanut and Molasses Cookies" },
+    active: 25, total: 25,
+    servings: 24,
+    ingredients: {
+      es: ["1½ tazas de harina de trigo", "1 cucharadita de bicarbonato", "½ cucharadita de canela en polvo", "½ taza de mantequilla blanda", "½ taza de azúcar morena", "¼ taza de melao de caña", "1 huevo", "1 taza de maní tostado picado"],
+      en: ["1½ cups all-purpose flour", "1 teaspoon baking soda", "½ teaspoon ground cinnamon", "½ cup softened butter", "½ cup brown sugar", "¼ cup sugarcane molasses", "1 egg", "1 cup chopped roasted peanuts"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F.", "Bata la mantequilla con el azúcar morena y el melao, y añada el huevo.", "Agregue la harina, el bicarbonato, la canela y ¾ del maní.", "Forme bolitas, póngalas en la bandeja y aplaste un poco el resto del maní encima.", "Hornee 11 minutos. Recuerdan al dulce de maní con melao de las plazas."],
+      en: ["Heat the oven to 350 °F.", "Beat the butter with the brown sugar and molasses, and add the egg.", "Add the flour, baking soda, cinnamon and ¾ of the peanuts.", "Shape balls, place them on the tray and press the rest of the peanuts on top.", "Bake 11 minutes. They recall the peanut-molasses candy of the town squares."]
+    }
+  },
+  {
+    id: "galletas-queso-pais-guayaba",
+    category: "galletitas",
+    name: { es: "Galletas de Queso del País con Guayaba", en: "Puerto Rican White Cheese and Guava Thumbprint Cookies" },
+    active: 30, total: 60, wait: "frio",
+    servings: 24,
+    ingredients: {
+      es: ["2 tazas de harina de trigo", "½ taza de mantequilla blanda", "4 onzas de queso blanco del país rallado fino", "⅓ taza de azúcar", "1 yema de huevo", "1 cucharadita de vainilla", "4 onzas de pasta de guayaba en cubitos"],
+      en: ["2 cups all-purpose flour", "½ cup softened butter", "4 ounces Puerto Rican white cheese, finely grated", "⅓ cup sugar", "1 egg yolk", "1 teaspoon vanilla", "4 ounces guava paste, diced"]
+    },
+    steps: {
+      es: ["Bata la mantequilla con el queso, el azúcar, la yema y la vainilla.", "Añada la harina hasta formar una masa; refrigérela 30 minutos.", "Caliente el horno a 350 °F. Forme bolitas y hágales un hoyito con el pulgar.", "Ponga un cubito de guayaba en cada hoyito.", "Hornee 14 minutos. Es el queso con guayaba de toda la vida, en una galleta."],
+      en: ["Beat the butter with the cheese, sugar, yolk and vanilla.", "Add the flour to form a dough; refrigerate 30 minutes.", "Heat the oven to 350 °F. Shape balls and make a dent with your thumb.", "Put a cube of guava paste in each dent.", "Bake 14 minutes. It's the classic cheese and guava, in a cookie."]
+    }
+  },
+  {
+    id: "galletas-platano-maduro-canela",
+    category: "galletitas",
+    name: { es: "Galletas de Plátano Maduro y Canela", en: "Ripe Plantain and Cinnamon Cookies" },
+    active: 30, total: 30,
+    servings: 20,
+    ingredients: {
+      es: ["1 plátano bien maduro (casi negro) majado", "1½ tazas de harina de trigo", "1 taza de avena en hojuelas", "1 cucharadita de polvo de hornear", "1 cucharadita de canela en polvo", "⅓ taza de mantequilla derretida", "⅓ taza de azúcar morena", "1 huevo", "¼ taza de pasas"],
+      en: ["1 very ripe plantain (nearly black), mashed", "1½ cups all-purpose flour", "1 cup rolled oats", "1 teaspoon baking powder", "1 teaspoon ground cinnamon", "⅓ cup melted butter", "⅓ cup brown sugar", "1 egg", "¼ cup raisins"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F.", "Mezcle el plátano majado con la mantequilla, el azúcar morena y el huevo.", "Añada la harina, la avena, el polvo de hornear, la canela y las pasas.", "Ponga cucharadas de masa en la bandeja y aplánelas un poco.", "Hornee 14 a 16 minutos. Saben a piononos dulces, con el plátano bien maduro."],
+      en: ["Heat the oven to 350 °F.", "Mix the mashed plantain with the butter, brown sugar and egg.", "Add the flour, oats, baking powder, cinnamon and raisins.", "Drop spoonfuls of dough on the tray and flatten slightly.", "Bake 14 to 16 minutes. They taste like sweet plantain, with the plantain very ripe."]
+    }
+  },
+  {
+    id: "galletas-guanabana",
+    category: "galletitas",
+    name: { es: "Galletas de Guanábana con Glaseado", en: "Soursop Cookies with Glaze" },
+    active: 30, total: 60, wait: "enfriar",
+    servings: 24,
+    ingredients: {
+      es: ["2 tazas de harina de trigo", "½ cucharadita de polvo de hornear", "½ taza de mantequilla blanda", "½ taza de azúcar", "1 huevo", "½ taza de pulpa de guanábana colada", "1 cucharadita de vainilla", "1 taza de azúcar en polvo", "2 cucharadas de pulpa de guanábana para el glaseado"],
+      en: ["2 cups all-purpose flour", "½ teaspoon baking powder", "½ cup softened butter", "½ cup sugar", "1 egg", "½ cup strained soursop pulp", "1 teaspoon vanilla", "1 cup powdered sugar", "2 tablespoons soursop pulp for the glaze"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F.", "Bata la mantequilla con el azúcar y añada el huevo, la guanábana y la vainilla.", "Agregue la harina y el polvo de hornear, y forme bolitas de 1 cucharada.", "Hornee 12 minutos y deje enfriar 30 minutos.", "Mezcle el azúcar en polvo con la guanábana y glasee. Suaves, blancas y con el perfume de la champola."],
+      en: ["Heat the oven to 350 °F.", "Beat the butter with the sugar and add the egg, soursop and vanilla.", "Add the flour and baking powder and shape 1-tablespoon balls.", "Bake 12 minutes and let cool 30 minutes.", "Mix the powdered sugar with the soursop and glaze. Soft, white and with the aroma of champola."]
+    }
+  },
+  {
+    id: "galletas-tembleque",
+    category: "galletitas",
+    name: { es: "Galletas de Tembleque (Coco y Canela)", en: "Tembleque Cookies (Coconut and Cinnamon)" },
+    active: 25, total: 25,
+    servings: 24,
+    ingredients: {
+      es: ["2 tazas de harina de trigo", "2 cucharadas de maicena", "½ cucharadita de polvo de hornear", "½ taza de mantequilla blanda", "½ taza de azúcar", "1 huevo", "¼ taza de leche de coco", "½ taza de coco rallado", "1 cucharadita de canela en polvo para espolvorear"],
+      en: ["2 cups all-purpose flour", "2 tablespoons cornstarch", "½ teaspoon baking powder", "½ cup softened butter", "½ cup sugar", "1 egg", "¼ cup coconut milk", "½ cup shredded coconut", "1 teaspoon ground cinnamon for dusting"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F.", "Bata la mantequilla con el azúcar, añada el huevo y la leche de coco.", "Agregue la harina, la maicena, el polvo de hornear y el coco.", "Forme bolitas, aplástelas y espolvoréelas con canela.", "Hornee 12 minutos, sin que se doren mucho. Saben al tembleque de Navidad: coco, maicena y canela."],
+      en: ["Heat the oven to 350 °F.", "Beat the butter with the sugar, add the egg and coconut milk.", "Add the flour, cornstarch, baking powder and coconut.", "Shape balls, flatten them and dust with cinnamon.", "Bake 12 minutes, without letting them brown much. They taste like Christmas tembleque: coconut, cornstarch and cinnamon."]
+    }
+  },
+  {
+    id: "brazo-gitano-chocolate-cafe",
+    category: "bizcochos",
+    name: { es: "Brazo Gitano de Chocolate con Crema de Café", en: "Chocolate Swiss Roll with Coffee Cream" },
+    active: 40, total: 100, wait: "frio",
+    servings: 10,
+    ingredients: {
+      es: ["4 huevos", "½ taza de azúcar", "½ taza de harina de trigo", "¼ taza de cacao en polvo sin azúcar", "½ cucharadita de polvo de hornear", "1 taza de crema de leche bien fría", "3 cucharadas de azúcar en polvo", "2 cucharadas de café colado fuerte, frío", "2 cucharadas de cacao en polvo para decorar"],
+      en: ["4 eggs", "½ cup sugar", "½ cup all-purpose flour", "¼ cup unsweetened cocoa powder", "½ teaspoon baking powder", "1 cup very cold heavy cream", "3 tablespoons powdered sugar", "2 tablespoons strong brewed coffee, cold", "2 tablespoons cocoa powder for dusting"]
+    },
+    steps: {
+      es: ["Caliente el horno a 375 °F y forre una bandeja de 10 × 15 pulgadas con papel de hornear engrasado.", "Bata los huevos con el azúcar 8 minutos, hasta que tripliquen; envuelva la harina, el cacao y el polvo de hornear cernidos.", "Hornee 10 a 12 minutos. Vírelo sobre un paño espolvoreado con cacao, enróllelo caliente con el paño y deje enfriar.", "Bata la crema con el azúcar en polvo y el café hasta que haga picos.", "Desenrolle, unte la crema, enrolle otra vez y refrigere 1 hora. Espolvoree cacao antes de cortar."],
+      en: ["Heat the oven to 375 °F and line a 10 × 15 inch tray with greased parchment.", "Beat the eggs with the sugar 8 minutes, until tripled; fold in the sifted flour, cocoa and baking powder.", "Bake 10 to 12 minutes. Turn it out onto a towel dusted with cocoa, roll it up warm with the towel and let cool.", "Whip the cream with the powdered sugar and coffee to stiff peaks.", "Unroll, spread the cream, roll up again and refrigerate 1 hour. Dust with cocoa before slicing."]
+    }
+  },
+  {
+    id: "brazo-gitano-parcha",
+    category: "bizcochos",
+    name: { es: "Brazo Gitano de Parcha", en: "Passion Fruit Swiss Roll" },
+    active: 45, total: 105, wait: "frio",
+    servings: 10,
+    ingredients: {
+      es: ["4 huevos", "½ taza de azúcar", "¾ taza de harina de trigo", "½ cucharadita de polvo de hornear", "½ taza de pulpa de parcha colada", "⅓ taza de azúcar para la crema", "2 cucharadas de maicena", "1 yema de huevo", "2 cucharadas de mantequilla", "2 cucharadas de azúcar en polvo para decorar"],
+      en: ["4 eggs", "½ cup sugar", "¾ cup all-purpose flour", "½ teaspoon baking powder", "½ cup strained passion fruit pulp", "⅓ cup sugar for the curd", "2 tablespoons cornstarch", "1 egg yolk", "2 tablespoons butter", "2 tablespoons powdered sugar for dusting"]
+    },
+    steps: {
+      es: ["Haga la crema: cocine la parcha, el azúcar, la maicena y la yema a fuego bajo, moviendo, hasta que espese; añada la mantequilla y deje enfriar.", "Caliente el horno a 375 °F y forre una bandeja de 10 × 15 pulgadas con papel de hornear engrasado.", "Bata los huevos con el azúcar 8 minutos y envuelva la harina con el polvo de hornear; hornee 10 a 12 minutos.", "Vírelo sobre un paño con azúcar en polvo, enróllelo caliente y deje enfriar.", "Desenrolle, unte la crema de parcha, enrolle y refrigere 1 hora. Ácido y dulce, con el amarillo de la parcha."],
+      en: ["Make the curd: cook the passion fruit, sugar, cornstarch and yolk over low heat, stirring, until thick; add the butter and let cool.", "Heat the oven to 375 °F and line a 10 × 15 inch tray with greased parchment.", "Beat the eggs with the sugar 8 minutes and fold in the flour with the baking powder; bake 10 to 12 minutes.", "Turn it out onto a towel with powdered sugar, roll it up warm and let cool.", "Unroll, spread the passion fruit curd, roll up and refrigerate 1 hour. Tart and sweet, with the yellow of passion fruit."]
+    }
+  },
+  {
+    id: "brazo-gitano-pina",
+    category: "bizcochos",
+    name: { es: "Brazo Gitano de Piña", en: "Pineapple Swiss Roll" },
+    active: 45, total: 105, wait: "frio",
+    servings: 10,
+    ingredients: {
+      es: ["4 huevos", "½ taza de azúcar", "¾ taza de harina de trigo", "½ cucharadita de polvo de hornear", "1 lata de 20 onzas de piña triturada con su jugo", "⅓ taza de azúcar para el relleno", "2 cucharadas de maicena", "1 rajita de canela", "2 cucharadas de azúcar en polvo para decorar"],
+      en: ["4 eggs", "½ cup sugar", "¾ cup all-purpose flour", "½ teaspoon baking powder", "1 can (20 ounces) crushed pineapple with its juice", "⅓ cup sugar for the filling", "2 tablespoons cornstarch", "1 cinnamon stick", "2 tablespoons powdered sugar for dusting"]
+    },
+    steps: {
+      es: ["Haga el relleno: cocine la piña, el azúcar, la maicena y la canela a fuego medio, moviendo, 10 minutos, hasta que espese; saque la canela y deje enfriar.", "Caliente el horno a 375 °F y forre una bandeja de 10 × 15 pulgadas con papel de hornear engrasado.", "Bata los huevos con el azúcar 8 minutos y envuelva la harina con el polvo de hornear; hornee 10 a 12 minutos.", "Vírelo sobre un paño con azúcar en polvo, enróllelo caliente y deje enfriar.", "Desenrolle, unte el dulce de piña, enrolle y refrigere 1 hora. Es el relleno del bizcocho boricua de cumpleaños, en brazo gitano."],
+      en: ["Make the filling: cook the pineapple, sugar, cornstarch and cinnamon over medium heat, stirring, 10 minutes, until thick; remove the cinnamon and let cool.", "Heat the oven to 375 °F and line a 10 × 15 inch tray with greased parchment.", "Beat the eggs with the sugar 8 minutes and fold in the flour with the baking powder; bake 10 to 12 minutes.", "Turn it out onto a towel with powdered sugar, roll it up warm and let cool.", "Unroll, spread the pineapple filling, roll up and refrigerate 1 hour. It's the Puerto Rican birthday-cake filling, as a Swiss roll."]
+    }
+  },
+  {
+    id: "brazo-gitano-dulce-leche-nueces",
+    category: "bizcochos",
+    name: { es: "Brazo Gitano de Dulce de Leche y Nueces", en: "Dulce de Leche and Walnut Swiss Roll" },
+    active: 40, total: 100, wait: "frio",
+    servings: 10,
+    ingredients: {
+      es: ["4 huevos", "½ taza de azúcar", "¾ taza de harina de trigo", "½ cucharadita de polvo de hornear", "1 cucharadita de vainilla", "1 taza de dulce de leche", "½ taza de nueces tostadas y picadas", "2 cucharadas de azúcar en polvo para decorar"],
+      en: ["4 eggs", "½ cup sugar", "¾ cup all-purpose flour", "½ teaspoon baking powder", "1 teaspoon vanilla", "1 cup dulce de leche", "½ cup toasted chopped walnuts", "2 tablespoons powdered sugar for dusting"]
+    },
+    steps: {
+      es: ["Caliente el horno a 375 °F y forre una bandeja de 10 × 15 pulgadas con papel de hornear engrasado.", "Bata los huevos con el azúcar y la vainilla 8 minutos, hasta que tripliquen; envuelva la harina con el polvo de hornear.", "Hornee 10 a 12 minutos. Vírelo sobre un paño con azúcar en polvo, enróllelo caliente y deje enfriar.", "Desenrolle, unte el dulce de leche y esparza las nueces.", "Enrolle y refrigere 1 hora. Espolvoree azúcar en polvo antes de cortar."],
+      en: ["Heat the oven to 375 °F and line a 10 × 15 inch tray with greased parchment.", "Beat the eggs with the sugar and vanilla 8 minutes, until tripled; fold in the flour with the baking powder.", "Bake 10 to 12 minutes. Turn it out onto a towel with powdered sugar, roll it up warm and let cool.", "Unroll, spread the dulce de leche and scatter the walnuts.", "Roll up and refrigerate 1 hour. Dust with powdered sugar before slicing."]
+    }
   }
 );
