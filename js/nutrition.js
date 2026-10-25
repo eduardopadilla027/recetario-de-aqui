@@ -128,6 +128,8 @@ const NUTRI_FOODS = [
   F("arroz", 360, 6.6, 79, 0.1, 1.3, 0.6, 0.2, 1, { cup: 200 }),
   F("arroz cocido", 130, 2.7, 28, 0, 0.4, 0.3, 0.1, 1, { cup: 158 }),
   F("harina|harina de trigo|harina de pan", 364, 10, 76, 0.3, 2.7, 1, 0.2, 2, { cup: 125 }),
+  F("harina integral|harina de trigo integral", 340, 13, 72, 0.4, 10.7, 2.5, 0.4, 2, { cup: 120 }),
+  F("mallorca|mallorcas", 360, 8, 50, 14, 1.6, 14, 7, 320, { u: 90 }),
   F("harina de arroz|crema de arroz", 366, 6, 80, 0.1, 2.4, 1.4, 0.4, 0, { cup: 158 }),
   F("harina de maiz|gofio", 370, 7, 79, 0.6, 7, 1.8, 0.3, 35, { cup: 157 }),
   F("harina de platano", 350, 3.6, 89, 10, 6, 1, 0.3, 5, { cup: 120 }),

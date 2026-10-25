@@ -16077,5 +16077,577 @@ recipes.push(
       es: ["Caliente el horno a 375 °F y forre una bandeja de 10 × 15 pulgadas con papel de hornear engrasado.", "Bata los huevos con el azúcar y la vainilla 8 minutos, hasta que tripliquen; envuelva la harina con el polvo de hornear.", "Hornee 10 a 12 minutos. Vírelo sobre un paño con azúcar en polvo, enróllelo caliente y deje enfriar.", "Desenrolle, unte el dulce de leche y esparza las nueces.", "Enrolle y refrigere 1 hora. Espolvoree azúcar en polvo antes de cortar."],
       en: ["Heat the oven to 375 °F and line a 10 × 15 inch tray with greased parchment.", "Beat the eggs with the sugar and vanilla 8 minutes, until tripled; fold in the flour with the baking powder.", "Bake 10 to 12 minutes. Turn it out onto a towel with powdered sugar, roll it up warm and let cool.", "Unroll, spread the dulce de leche and scatter the walnuts.", "Roll up and refrigerate 1 hour. Dust with powdered sugar before slicing."]
     }
+  },
+  // Tanda 61 (v4.55): bebidas sin alcohol y cócteles con frutas de la isla.
+  {
+    id: "refresco-tamarindo",
+    category: "bebidas",
+    name: { es: "Refresco de Tamarindo", en: "Tamarind Drink" },
+    active: 20, total: 50, wait: "remojo",
+    servings: 6,
+    ingredients: {
+      es: ["1 taza de pulpa de tamarindo con semillas", "6 tazas de agua", "½ taza de azúcar, o al gusto", "1 limón verde (el jugo)", "Hielo al gusto"],
+      en: ["1 cup tamarind pulp with seeds", "6 cups water", "½ cup sugar, or to taste", "1 lime (the juice)", "Ice to taste"]
+    },
+    steps: {
+      es: ["Remoje la pulpa de tamarindo en 3 tazas de agua tibia 30 minutos.", "Estrújela con las manos para soltar la pulpa de las semillas.", "Cuele, apretando bien, y añada el resto del agua, el azúcar y el limón.", "Pruebe y ajuste el dulce; enfríe.", "Sirva con mucho hielo. Es el refresco de los kioscos: agrio, dulce y bien frío."],
+      en: ["Soak the tamarind pulp in 3 cups of warm water 30 minutes.", "Squeeze it with your hands to free the pulp from the seeds.", "Strain, pressing well, and add the rest of the water, the sugar and the lime.", "Taste and adjust the sweetness; chill.", "Serve with plenty of ice. It's the roadside-kiosk drink: sour, sweet and ice cold."]
+    }
+  },
+  {
+    id: "limonada-acerola",
+    category: "bebidas",
+    name: { es: "Limonada de Acerola", en: "Acerola Limeade" },
+    active: 10, total: 10,
+    servings: 4,
+    ingredients: {
+      es: ["2 tazas de acerolas", "4 tazas de agua fría", "½ taza de jugo de limón verde", "½ taza de azúcar", "Hielo al gusto"],
+      en: ["2 cups acerolas", "4 cups cold water", "½ cup lime juice", "½ cup sugar", "Ice to taste"]
+    },
+    steps: {
+      es: ["Licúe las acerolas con 2 tazas de agua 20 segundos, sin moler mucho las semillas.", "Cuele bien.", "Añada el resto del agua, el jugo de limón y el azúcar, y mezcle hasta disolver.", "Enfríe y sirva con hielo.", "La acerola tiene muchísima vitamina C; queda rosada y muy refrescante."],
+      en: ["Blend the acerolas with 2 cups of water 20 seconds, without grinding the seeds much.", "Strain well.", "Add the rest of the water, the lime juice and the sugar, and stir to dissolve.", "Chill and serve with ice.", "Acerola is very high in vitamin C; it turns pink and very refreshing."]
+    }
+  },
+  {
+    id: "te-helado-guanabana",
+    category: "bebidas",
+    name: { es: "Té Helado de Guanábana", en: "Soursop Iced Tea" },
+    active: 15, total: 75, wait: "frio",
+    servings: 6,
+    ingredients: {
+      es: ["6 tazas de agua", "4 bolsitas de té negro", "1 taza de pulpa de guanábana", "⅓ taza de azúcar", "1 limón verde (el jugo)", "Hielo al gusto"],
+      en: ["6 cups water", "4 black tea bags", "1 cup soursop pulp", "⅓ cup sugar", "1 lime (the juice)", "Ice to taste"]
+    },
+    steps: {
+      es: ["Hierva el agua, apague y deje el té 5 minutos; saque las bolsitas.", "Disuelva el azúcar en el té caliente.", "Licúe la guanábana con 1 taza del té y cuélela sobre el resto.", "Añada el limón y refrigere al menos 1 hora.", "Sirva con hielo. La guanábana le da un sabor cremoso y floral."],
+      en: ["Boil the water, turn off the heat and steep the tea 5 minutes; remove the bags.", "Dissolve the sugar in the hot tea.", "Blend the soursop with 1 cup of the tea and strain it into the rest.", "Add the lime and refrigerate at least 1 hour.", "Serve with ice. Soursop gives it a creamy, floral flavor."]
+    }
+  },
+  {
+    id: "frappe-mango",
+    category: "bebidas",
+    name: { es: "Frappé de Mangó", en: "Mango Frappé" },
+    active: 5, total: 5,
+    servings: 2,
+    ingredients: {
+      es: ["2 tazas de mangó congelado en pedazos", "1 taza de jugo de china", "1 cucharada de azúcar, o al gusto", "1 taza de hielo", "1 limón verde (unas gotas)"],
+      en: ["2 cups frozen mango, in pieces", "1 cup orange juice", "1 tablespoon sugar, or to taste", "1 cup ice", "1 lime (a few drops)"]
+    },
+    steps: {
+      es: ["Ponga todo en la licuadora.", "Licúe a velocidad alta hasta que quede como granizado.", "Pruebe y ajuste el dulce.", "Sirva enseguida con cuchara y sorbeto.", "Sin leche: más ligero que una batida y bien frío."],
+      en: ["Put everything in the blender.", "Blend on high until slushy.", "Taste and adjust the sweetness.", "Serve right away with a spoon and straw.", "No milk: lighter than a shake and ice cold."]
+    }
+  },
+  {
+    id: "chicha-pina-jengibre",
+    category: "bebidas",
+    name: { es: "Chicha de Piña y Jengibre", en: "Pineapple and Ginger Chicha" },
+    active: 20, total: 80, wait: "frio",
+    servings: 8,
+    ingredients: {
+      es: ["Cáscaras y corazón de 1 piña bien lavados", "8 tazas de agua", "1 pedazo de jengibre de 2 pulgadas en lascas", "1 rajita de canela", "4 clavos de olor", "½ taza de azúcar morena"],
+      en: ["Peels and core of 1 pineapple, well washed", "8 cups water", "1 piece of ginger (2 inches), sliced", "1 cinnamon stick", "4 cloves", "½ cup brown sugar"]
+    },
+    steps: {
+      es: ["Hierva las cáscaras y el corazón de la piña con el agua, el jengibre, la canela y los clavos 20 minutos.", "Apague y deje reposar tapado 15 minutos.", "Cuele y añada el azúcar morena mientras está caliente.", "Refrigere al menos 1 hora.", "Sirva con hielo. Se aprovecha lo que se bota de la piña, como en casa de abuela."],
+      en: ["Boil the pineapple peels and core with the water, ginger, cinnamon and cloves 20 minutes.", "Turn off the heat and let it steep covered 15 minutes.", "Strain and add the brown sugar while hot.", "Refrigerate at least 1 hour.", "Serve with ice. It uses what usually gets thrown out of the pineapple, like at grandma's."]
+    }
+  },
+  {
+    id: "agua-sandia-limon",
+    category: "bebidas",
+    name: { es: "Agua de Sandía con Limón", en: "Watermelon Limeade" },
+    active: 10, total: 10,
+    servings: 6,
+    ingredients: {
+      es: ["6 tazas de sandía sin semillas, en pedazos", "2 tazas de agua fría", "2 limones verdes (el jugo)", "2 cucharadas de azúcar, o al gusto", "Hielo al gusto"],
+      en: ["6 cups seedless watermelon, in pieces", "2 cups cold water", "2 limes (the juice)", "2 tablespoons sugar, or to taste", "Ice to taste"]
+    },
+    steps: {
+      es: ["Licúe la sandía con el agua 30 segundos.", "Cuele si la quiere más ligera.", "Añada el jugo de limón y el azúcar.", "Sirva con hielo.", "Casi sin azúcar: la sandía ya es dulce. Ideal para el verano."],
+      en: ["Blend the watermelon with the water 30 seconds.", "Strain if you want it lighter.", "Add the lime juice and sugar.", "Serve with ice.", "Barely any sugar: watermelon is already sweet. Ideal for summer."]
+    }
+  },
+  {
+    id: "ponche-china-granadina-ninos",
+    category: "bebidas",
+    name: { es: "Ponche de China y Granadina para Niños", en: "Kids' Orange and Grenadine Punch" },
+    active: 5, total: 5,
+    servings: 4,
+    ingredients: {
+      es: ["2 tazas de jugo de china frío", "1 taza de jugo de piña frío", "1 taza de agua mineral con gas fría", "3 cucharadas de granadina", "4 cerezas para decorar", "Hielo al gusto"],
+      en: ["2 cups cold orange juice", "1 cup cold pineapple juice", "1 cup cold sparkling water", "3 tablespoons grenadine", "4 cherries for garnish", "Ice to taste"]
+    },
+    steps: {
+      es: ["Llene 4 vasos de hielo.", "Mezcle el jugo de china y el de piña, y repártalo en los vasos.", "Complete con el agua con gas.", "Eche la granadina despacio por el borde: baja al fondo y hace el degradado.", "Ponga una cereza. Es el trago de los nenes en los cumpleaños, sin alcohol."],
+      en: ["Fill 4 glasses with ice.", "Mix the orange and pineapple juices and divide among the glasses.", "Top with the sparkling water.", "Pour the grenadine slowly down the side: it sinks and makes the gradient.", "Add a cherry. It's the kids' drink at birthday parties, alcohol-free."]
+    }
+  },
+  {
+    id: "mojito-guayaba",
+    category: "cocteles",
+    name: { es: "Mojito de Guayaba", en: "Guava Mojito" },
+    active: 5, total: 5,
+    servings: 1,
+    ingredients: {
+      es: ["8 hojas de yerbabuena", "1 limón verde en cuartos", "2 cucharaditas de azúcar", "2 onzas de ron blanco", "2 onzas de néctar de guayaba", "2 onzas de agua mineral con gas", "Hielo al gusto"],
+      en: ["8 mint leaves", "1 lime, quartered", "2 teaspoons sugar", "2 ounces white rum", "2 ounces guava nectar", "2 ounces sparkling water", "Ice to taste"]
+    },
+    steps: {
+      es: ["En un vaso alto, maje la yerbabuena con el limón y el azúcar.", "Llene de hielo.", "Añada el ron y el néctar de guayaba, y revuelva.", "Complete con el agua con gas.", "Decore con yerbabuena. Tome con moderación; no maneje si bebe."],
+      en: ["In a tall glass, muddle the mint with the lime and sugar.", "Fill with ice.", "Add the rum and guava nectar and stir.", "Top with the sparkling water.", "Garnish with mint. Drink responsibly; don't drink and drive."]
+    }
+  },
+  {
+    id: "daiquiri-pina",
+    category: "cocteles",
+    name: { es: "Daiquirí de Piña", en: "Pineapple Daiquiri" },
+    active: 5, total: 5,
+    servings: 2,
+    ingredients: {
+      es: ["2 tazas de piña congelada en pedazos", "3 onzas de ron blanco", "1 limón verde (el jugo)", "2 cucharadas de almíbar simple", "1 taza de hielo"],
+      en: ["2 cups frozen pineapple, in pieces", "3 ounces white rum", "1 lime (the juice)", "2 tablespoons simple syrup", "1 cup ice"]
+    },
+    steps: {
+      es: ["Ponga todo en la licuadora.", "Licúe hasta que quede como granizado.", "Pruebe y ajuste el dulce con más almíbar.", "Sirva en copas con una cuña de piña.", "Tome con moderación; no maneje si bebe."],
+      en: ["Put everything in the blender.", "Blend until slushy.", "Taste and adjust the sweetness with more syrup.", "Serve in glasses with a pineapple wedge.", "Drink responsibly; don't drink and drive."]
+    }
+  },
+  {
+    id: "margarita-guanabana",
+    category: "cocteles",
+    name: { es: "Margarita de Guanábana", en: "Soursop Margarita" },
+    active: 5, total: 5,
+    servings: 1,
+    ingredients: {
+      es: ["2 onzas de tequila", "1 onza de licor de naranja", "2 onzas de pulpa de guanábana", "1 onza de jugo de limón verde", "1 cucharadita de sal gruesa para el borde", "Hielo al gusto"],
+      en: ["2 ounces tequila", "1 ounce orange liqueur", "2 ounces soursop pulp", "1 ounce lime juice", "1 teaspoon coarse salt for the rim", "Ice to taste"]
+    },
+    steps: {
+      es: ["Moje el borde de la copa con limón y páselo por la sal.", "En una coctelera con hielo, ponga el tequila, el licor, la guanábana y el limón.", "Agite fuerte 15 segundos.", "Cuele en la copa con hielo.", "Cremosa y ácida. Tome con moderación; no maneje si bebe."],
+      en: ["Wet the rim of the glass with lime and dip it in the salt.", "In a shaker with ice, add the tequila, liqueur, soursop and lime.", "Shake hard 15 seconds.", "Strain into the glass over ice.", "Creamy and tart. Drink responsibly; don't drink and drive."]
+    }
+  },
+  {
+    id: "mai-tai-parcha",
+    category: "cocteles",
+    name: { es: "Mai Tai de Parcha", en: "Passion Fruit Mai Tai" },
+    active: 5, total: 5,
+    servings: 1,
+    ingredients: {
+      es: ["1 onza de ron blanco", "1 onza de ron oscuro", "1 onza de pulpa de parcha", "½ onza de licor de naranja", "½ onza de jugo de limón verde", "½ onza de almíbar de almendras (orgeat)", "Hielo al gusto"],
+      en: ["1 ounce white rum", "1 ounce dark rum", "1 ounce passion fruit pulp", "½ ounce orange liqueur", "½ ounce lime juice", "½ ounce almond syrup (orgeat)", "Ice to taste"]
+    },
+    steps: {
+      es: ["En una coctelera con hielo, ponga el ron blanco, la parcha, el licor, el limón y el almíbar.", "Agite 15 segundos.", "Cuele en un vaso bajo con hielo.", "Eche el ron oscuro por encima despacio para que flote.", "Decore con yerbabuena y media parcha. Tome con moderación; no maneje si bebe."],
+      en: ["In a shaker with ice, add the white rum, passion fruit, liqueur, lime and syrup.", "Shake 15 seconds.", "Strain into a rocks glass over ice.", "Slowly pour the dark rum on top so it floats.", "Garnish with mint and half a passion fruit. Drink responsibly; don't drink and drive."]
+    }
+  },
+  {
+    id: "mojito-acerola",
+    category: "cocteles",
+    name: { es: "Mojito de Acerola", en: "Acerola Mojito" },
+    active: 5, total: 5,
+    servings: 1,
+    ingredients: {
+      es: ["8 acerolas sin semillas", "8 hojas de yerbabuena", "½ limón verde en cuartos", "2 cucharaditas de azúcar", "2 onzas de ron blanco", "3 onzas de agua mineral con gas", "Hielo al gusto"],
+      en: ["8 seeded acerolas", "8 mint leaves", "½ lime, quartered", "2 teaspoons sugar", "2 ounces white rum", "3 ounces sparkling water", "Ice to taste"]
+    },
+    steps: {
+      es: ["En un vaso alto, maje las acerolas con la yerbabuena, el limón y el azúcar.", "Llene de hielo.", "Añada el ron y revuelva.", "Complete con el agua con gas.", "Queda rosado y ácido. Tome con moderación; no maneje si bebe."],
+      en: ["In a tall glass, muddle the acerolas with the mint, lime and sugar.", "Fill with ice.", "Add the rum and stir.", "Top with the sparkling water.", "It turns pink and tart. Drink responsibly; don't drink and drive."]
+    }
+  },
+  {
+    id: "ron-collins-parcha",
+    category: "cocteles",
+    name: { es: "Ron Collins de Parcha", en: "Passion Fruit Rum Collins" },
+    active: 5, total: 5,
+    servings: 1,
+    ingredients: {
+      es: ["2 onzas de ron blanco", "1 onza de pulpa de parcha", "½ onza de jugo de limón", "½ onza de almíbar simple", "3 onzas de agua mineral con gas", "Hielo al gusto"],
+      en: ["2 ounces white rum", "1 ounce passion fruit pulp", "½ ounce lemon juice", "½ ounce simple syrup", "3 ounces sparkling water", "Ice to taste"]
+    },
+    steps: {
+      es: ["En una coctelera con hielo, ponga el ron, la parcha, el limón y el almíbar.", "Agite 10 segundos.", "Cuele en un vaso alto con hielo.", "Complete con el agua con gas y revuelva suave.", "Decore con una rueda de limón. Tome con moderación; no maneje si bebe."],
+      en: ["In a shaker with ice, add the rum, passion fruit, lemon and syrup.", "Shake 10 seconds.", "Strain into a tall glass over ice.", "Top with the sparkling water and stir gently.", "Garnish with a lemon wheel. Drink responsibly; don't drink and drive."]
+    }
+  },
+  {
+    id: "sangria-rosada-guayaba",
+    category: "cocteles",
+    name: { es: "Sangría Rosada con Guayaba", en: "Rosé Sangria with Guava" },
+    active: 15, total: 135, wait: "frio",
+    servings: 8,
+    ingredients: {
+      es: ["1 botella de 750 ml de vino rosado", "1 taza de néctar de guayaba", "½ taza de ron blanco", "2 cucharadas de azúcar", "1 taza de fresas en lascas", "1 china en ruedas", "1 taza de piña en cubitos", "2 tazas de agua mineral con gas", "Hielo al gusto"],
+      en: ["1 bottle (750 ml) rosé wine", "1 cup guava nectar", "½ cup white rum", "2 tablespoons sugar", "1 cup sliced strawberries", "1 orange, sliced into wheels", "1 cup pineapple, cubed", "2 cups sparkling water", "Ice to taste"]
+    },
+    steps: {
+      es: ["En una jarra, mezcle el vino, el néctar de guayaba, el ron y el azúcar.", "Añada las fresas, la china y la piña.", "Refrigere al menos 2 horas para que la fruta suelte su sabor.", "Al servir, añada el agua con gas y el hielo.", "Sirva en copas con un poco de fruta. Tome con moderación; no maneje si bebe."],
+      en: ["In a pitcher, mix the wine, guava nectar, rum and sugar.", "Add the strawberries, orange and pineapple.", "Refrigerate at least 2 hours so the fruit releases its flavor.", "When serving, add the sparkling water and ice.", "Serve in wine glasses with some fruit. Drink responsibly; don't drink and drive."]
+    }
+  },
+  {
+    id: "daiquiri-guanabana",
+    category: "cocteles",
+    name: { es: "Daiquirí de Guanábana", en: "Soursop Daiquiri" },
+    active: 5, total: 5,
+    servings: 2,
+    ingredients: {
+      es: ["1½ tazas de pulpa de guanábana congelada", "3 onzas de ron blanco", "1 limón verde (el jugo)", "2 cucharadas de leche condensada", "1 taza de hielo"],
+      en: ["1½ cups frozen soursop pulp", "3 ounces white rum", "1 lime (the juice)", "2 tablespoons sweetened condensed milk", "1 cup ice"]
+    },
+    steps: {
+      es: ["Ponga todo en la licuadora.", "Licúe hasta que quede cremoso y espeso.", "Pruebe y ajuste el dulce.", "Sirva en copas con una pizca de canela.", "Tome con moderación; no maneje si bebe."],
+      en: ["Put everything in the blender.", "Blend until creamy and thick.", "Taste and adjust the sweetness.", "Serve in glasses with a pinch of cinnamon.", "Drink responsibly; don't drink and drive."]
+    }
+  },
+  {
+    id: "carajillo-boricua",
+    category: "cocteles",
+    name: { es: "Carajillo Boricua (Café, Ron y Coco)", en: "Puerto Rican Carajillo (Coffee, Rum and Coconut)" },
+    active: 5, total: 5,
+    servings: 1,
+    ingredients: {
+      es: ["2 onzas de café colado fuerte, frío", "1½ onzas de ron oscuro", "1 onza de crema de coco", "1 pizca de canela en polvo", "Hielo al gusto"],
+      en: ["2 ounces strong brewed coffee, cold", "1½ ounces dark rum", "1 ounce cream of coconut", "1 pinch ground cinnamon", "Ice to taste"]
+    },
+    steps: {
+      es: ["En una coctelera con hielo, ponga el café, el ron y la crema de coco.", "Agite fuerte 15 segundos, hasta que haga espuma.", "Cuele en un vaso bajo con hielo.", "Espolvoree la canela.", "Use café de la isla. Tome con moderación; no maneje si bebe."],
+      en: ["In a shaker with ice, add the coffee, rum and cream of coconut.", "Shake hard 15 seconds, until foamy.", "Strain into a rocks glass over ice.", "Dust with the cinnamon.", "Use island coffee. Drink responsibly; don't drink and drive."]
+    }
+  },
+  {
+    id: "mamey-colada",
+    category: "cocteles",
+    name: { es: "Mamey Colada", en: "Mamey Colada" },
+    active: 5, total: 5,
+    servings: 2,
+    ingredients: {
+      es: ["1 taza de pulpa de mamey", "3 onzas de ron blanco", "3 onzas de crema de coco", "½ taza de jugo de piña", "1½ tazas de hielo"],
+      en: ["1 cup mamey pulp", "3 ounces white rum", "3 ounces cream of coconut", "½ cup pineapple juice", "1½ cups ice"]
+    },
+    steps: {
+      es: ["Ponga todo en la licuadora.", "Licúe hasta que quede cremoso.", "Sirva en copas altas.", "Decore con una cuña de piña.", "La piña colada con el mamey de la isla. Tome con moderación; no maneje si bebe."],
+      en: ["Put everything in the blender.", "Blend until creamy.", "Serve in tall glasses.", "Garnish with a pineapple wedge.", "The piña colada with island mamey. Drink responsibly; don't drink and drive."]
+    }
+  },
+  {
+    id: "pitorro-guayaba",
+    category: "cocteles",
+    name: { es: "Pitorro de Guayaba (Ron Curado)", en: "Guava Pitorro (Cured Rum)" },
+    active: 20, total: 20180, wait: "reposo",
+    servings: 16,
+    ingredients: {
+      es: ["1 botella de 750 ml de ron blanco o de caña", "4 guayabas maduras en cuartos", "2 rajitas de canela", "4 clavos de olor", "½ taza de azúcar morena", "1 tira de cáscara de china"],
+      en: ["1 bottle (750 ml) white rum or cane rum", "4 ripe guavas, quartered", "2 cinnamon sticks", "4 cloves", "½ cup brown sugar", "1 strip of orange peel"]
+    },
+    steps: {
+      es: ["Lave bien un frasco de vidrio grande con tapa.", "Ponga las guayabas, la canela, los clavos, el azúcar morena y la cáscara de china.", "Cubra con el ron, tape y agite para disolver el azúcar.", "Guárdelo en un lugar oscuro 2 semanas, agitándolo cada 2 o 3 días; cuele.", "Sirva en vasitos de 1 onza, como en Navidad. Use ron comprado: no destile en casa. Tome con moderación."],
+      en: ["Wash a large glass jar with a lid well.", "Add the guavas, cinnamon, cloves, brown sugar and orange peel.", "Cover with the rum, close and shake to dissolve the sugar.", "Store in a dark place 2 weeks, shaking every 2 or 3 days; strain.", "Serve in 1-ounce glasses, as at Christmas. Use store-bought rum: don't distill at home. Drink responsibly."]
+    }
+  },
+  {
+    id: "ron-agua-coco-limon",
+    category: "cocteles",
+    name: { es: "Ron con Agua de Coco y Limón", en: "Rum with Coconut Water and Lime" },
+    active: 3, total: 3,
+    servings: 1,
+    ingredients: {
+      es: ["1½ onzas de ron blanco", "4 onzas de agua de coco fría", "½ limón verde (el jugo)", "2 hojas de yerbabuena", "Hielo al gusto"],
+      en: ["1½ ounces white rum", "4 ounces cold coconut water", "½ lime (the juice)", "2 mint leaves", "Ice to taste"]
+    },
+    steps: {
+      es: ["Llene un vaso alto de hielo.", "Añada el ron y el agua de coco.", "Exprima el limón y revuelva.", "Decore con la yerbabuena.", "Ligero y sin azúcar añadida. Tome con moderación; no maneje si bebe."],
+      en: ["Fill a tall glass with ice.", "Add the rum and coconut water.", "Squeeze in the lime and stir.", "Garnish with the mint.", "Light and with no added sugar. Drink responsibly; don't drink and drive."]
+    }
+  },
+  {
+    id: "brazo-gitano-pistacho-guayaba",
+    category: "bizcochos",
+    name: { es: "Brazo Gitano de Pistacho y Guayaba", en: "Pistachio and Guava Swiss Roll" },
+    active: 50, total: 110, wait: "frio",
+    servings: 10,
+    ingredients: {
+      es: ["4 huevos", "½ taza de azúcar", "½ taza de harina de trigo", "½ taza de pistachos sin sal, molidos fino", "½ cucharadita de polvo de hornear", "8 onzas de pasta de guayaba", "3 cucharadas de agua", "4 onzas de queso crema, blando", "2 cucharadas de pistachos picados para decorar", "2 cucharadas de azúcar en polvo para decorar"],
+      en: ["4 eggs", "½ cup sugar", "½ cup all-purpose flour", "½ cup unsalted pistachios, finely ground", "½ teaspoon baking powder", "8 ounces guava paste", "3 tablespoons water", "4 ounces cream cheese, softened", "2 tablespoons chopped pistachios for garnish", "2 tablespoons powdered sugar for dusting"]
+    },
+    steps: {
+      es: ["Derrita la pasta de guayaba con el agua a fuego bajo, moviendo, hasta que quede untable; deje refrescar.", "Caliente el horno a 375 °F y forre una bandeja de 10 × 15 pulgadas con papel de hornear engrasado.", "Bata los huevos con el azúcar 8 minutos; envuelva la harina, los pistachos molidos y el polvo de hornear, y hornee 10 a 12 minutos.", "Vírelo sobre un paño con azúcar en polvo, enróllelo caliente y deje enfriar.", "Desenrolle, unte el queso crema y encima la guayaba, enrolle y refrigere 1 hora; decore con los pistachos picados. El verde del pistacho con el rosado de la guayaba."],
+      en: ["Melt the guava paste with the water over low heat, stirring, until spreadable; let cool.", "Heat the oven to 375 °F and line a 10 × 15 inch tray with greased parchment.", "Beat the eggs with the sugar 8 minutes; fold in the flour, ground pistachios and baking powder, and bake 10 to 12 minutes.", "Turn it out onto a towel with powdered sugar, roll it up warm and let cool.", "Unroll, spread the cream cheese and the guava on top, roll up and refrigerate 1 hour; garnish with the chopped pistachios. Pistachio green with guava pink."]
+    }
+  },
+  // Tanda 62 (v4.56): mallorcas y dulces de repostería de panadería.
+  {
+    id: "mallorcas-crema-pastelera",
+    category: "panes",
+    name: { es: "Mallorcas Rellenas de Crema Pastelera", en: "Custard-Filled Mallorcas" },
+    active: 60, total: 210, wait: "levado",
+    servings: 12,
+    ingredients: {
+      es: ["4 tazas de harina de pan", "1 sobre de levadura", "¾ taza de leche tibia", "½ taza de azúcar", "3 yemas de huevo", "½ taza de mantequilla suavizada (más 2 cucharadas derretidas)", "½ cucharadita de sal", "1½ tazas de leche para la crema", "⅓ taza de azúcar para la crema", "3 cucharadas de maicena", "2 yemas de huevo para la crema", "1 cucharadita de vainilla", "¼ taza de azúcar en polvo para cubrir"],
+      en: ["4 cups bread flour", "1 packet yeast", "¾ cup warm milk", "½ cup sugar", "3 egg yolks", "½ cup softened butter (plus 2 tablespoons melted)", "½ teaspoon salt", "1½ cups milk for the custard", "⅓ cup sugar for the custard", "3 tablespoons cornstarch", "2 egg yolks for the custard", "1 teaspoon vanilla", "¼ cup powdered sugar for dusting"]
+    },
+    steps: {
+      es: ["Haga la crema: cocine la leche, el azúcar, la maicena y las 2 yemas a fuego bajo, moviendo, hasta que espese; añada la vainilla, tápela con plástico pegado a la superficie y enfríe.", "Disuelva la levadura en la leche tibia con 1 cucharada de azúcar; a los 10 minutos añada las 3 yemas, el resto del azúcar, la harina y la sal, y amase incorporando la mantequilla suavizada. Deje crecer 1½ horas.", "Divida en 12 bolitas, estire cada una en una tira, ponga 1 cucharada de crema en el centro, ciérrela y enróllela en espiral.", "Deje crecer 45 minutos en bandejas engrasadas y hornee a 350 °F por 15 a 18 minutos, hasta que doren.", "Barnice con la mantequilla derretida y cubra con el azúcar en polvo. Guárdelas en la nevera por la crema."],
+      en: ["Make the custard: cook the milk, sugar, cornstarch and 2 yolks over low heat, stirring, until thick; add the vanilla, cover with plastic pressed onto the surface and chill.", "Dissolve the yeast in the warm milk with 1 tablespoon of sugar; after 10 minutes add the 3 yolks, the rest of the sugar, the flour and salt, and knead in the softened butter. Let rise 1½ hours.", "Divide into 12 balls, roll each into a strip, put 1 tablespoon of custard in the center, close it and coil it into a spiral.", "Let rise 45 minutes on greased trays and bake at 350 °F for 15 to 18 minutes, until golden.", "Brush with the melted butter and dust with the powdered sugar. Keep them in the fridge because of the custard."]
+    }
+  },
+  {
+    id: "mallorcas-coco",
+    category: "panes",
+    name: { es: "Mallorcas de Coco", en: "Coconut Mallorcas" },
+    active: 45, total: 195, wait: "levado",
+    servings: 12,
+    ingredients: {
+      es: ["4 tazas de harina de pan", "1 sobre de levadura", "¾ taza de leche de coco tibia", "½ taza de azúcar", "3 yemas de huevo", "½ taza de mantequilla suavizada (más 2 cucharadas derretidas)", "½ cucharadita de sal", "1 taza de coco rallado endulzado", "¼ taza de azúcar en polvo para cubrir"],
+      en: ["4 cups bread flour", "1 packet yeast", "¾ cup warm coconut milk", "½ cup sugar", "3 egg yolks", "½ cup softened butter (plus 2 tablespoons melted)", "½ teaspoon salt", "1 cup sweetened shredded coconut", "¼ cup powdered sugar for dusting"]
+    },
+    steps: {
+      es: ["Disuelva la levadura en la leche de coco tibia con 1 cucharada de azúcar y espere 10 minutos.", "Añada las yemas, el resto del azúcar, la harina y la sal; amase incorporando la mantequilla suavizada hasta que la masa quede suave y brillosa. Deje crecer 1½ horas.", "Divida en 12 bolitas, estire cada una en una tira, espolvoree coco por encima y enróllela en espiral, como caracol.", "Deje crecer 45 minutos en bandejas engrasadas y hornee a 350 °F por 15 a 18 minutos.", "Barnice con la mantequilla derretida y cubra con el azúcar en polvo. Saben a coco por dentro y por fuera."],
+      en: ["Dissolve the yeast in the warm coconut milk with 1 tablespoon of sugar and wait 10 minutes.", "Add the yolks, the rest of the sugar, the flour and salt; knead in the softened butter until the dough is soft and glossy. Let rise 1½ hours.", "Divide into 12 balls, roll each into a strip, sprinkle coconut on top and coil it into a spiral, like a snail.", "Let rise 45 minutes on greased trays and bake at 350 °F for 15 to 18 minutes.", "Brush with the melted butter and dust with the powdered sugar. They taste of coconut inside and out."]
+    }
+  },
+  {
+    id: "mallorcas-chocolate",
+    category: "panes",
+    name: { es: "Mallorcas de Chocolate", en: "Chocolate Mallorcas" },
+    active: 45, total: 195, wait: "levado",
+    servings: 12,
+    ingredients: {
+      es: ["4 tazas de harina de pan", "¼ taza de cacao en polvo", "1 sobre de levadura", "¾ taza de leche tibia", "½ taza de azúcar", "3 yemas de huevo", "½ taza de mantequilla suavizada (más 2 cucharadas derretidas)", "½ cucharadita de sal", "½ taza de chispas de chocolate", "¼ taza de azúcar en polvo para cubrir"],
+      en: ["4 cups bread flour", "¼ cup cocoa powder", "1 packet yeast", "¾ cup warm milk", "½ cup sugar", "3 egg yolks", "½ cup softened butter (plus 2 tablespoons melted)", "½ teaspoon salt", "½ cup chocolate chips", "¼ cup powdered sugar for dusting"]
+    },
+    steps: {
+      es: ["Disuelva la levadura en la leche tibia con 1 cucharada de azúcar y espere 10 minutos.", "Mezcle la harina con el cacao; añada la levadura, las yemas, el resto del azúcar y la sal, y amase incorporando la mantequilla suavizada. Deje crecer 1½ horas.", "Divida en 12 bolitas, estire cada una en una tira, reparta las chispas de chocolate y enróllela en espiral.", "Deje crecer 45 minutos en bandejas engrasadas y hornee a 350 °F por 15 a 18 minutos (no se ven doradas: toque el centro, debe rebotar).", "Barnice con la mantequilla derretida y cubra con el azúcar en polvo."],
+      en: ["Dissolve the yeast in the warm milk with 1 tablespoon of sugar and wait 10 minutes.", "Mix the flour with the cocoa; add the yeast, yolks, the rest of the sugar and the salt, and knead in the softened butter. Let rise 1½ hours.", "Divide into 12 balls, roll each into a strip, scatter the chocolate chips and coil it into a spiral.", "Let rise 45 minutes on greased trays and bake at 350 °F for 15 to 18 minutes (they won't look golden: touch the center, it should spring back).", "Brush with the melted butter and dust with the powdered sugar."]
+    }
+  },
+  {
+    id: "mallorcas-integrales",
+    category: "panes",
+    name: { es: "Mallorcas Integrales (Menos Azúcar)", en: "Whole Wheat Mallorcas (Less Sugar)" },
+    active: 45, total: 195, wait: "levado",
+    servings: 12,
+    ingredients: {
+      es: ["2 tazas de harina integral", "2 tazas de harina de pan", "1 sobre de levadura", "1 taza de leche tibia", "¼ taza de miel", "2 huevos", "¼ taza de mantequilla suavizada (más 1 cucharada derretida)", "½ cucharadita de sal", "2 cucharadas de azúcar en polvo para cubrir"],
+      en: ["2 cups whole wheat flour", "2 cups bread flour", "1 packet yeast", "1 cup warm milk", "¼ cup honey", "2 eggs", "¼ cup softened butter (plus 1 tablespoon melted)", "½ teaspoon salt", "2 tablespoons powdered sugar for dusting"]
+    },
+    steps: {
+      es: ["Disuelva la levadura en la leche tibia con 1 cucharada de la miel y espere 10 minutos.", "Añada los huevos, el resto de la miel, las dos harinas y la sal; amase 10 minutos incorporando la mantequilla suavizada. Deje crecer 1½ horas (la integral crece un poco menos).", "Divida en 12 bolitas, estire cada una en una tira y enróllela en espiral.", "Deje crecer 45 minutos y hornee a 350 °F por 16 a 18 minutos.", "Barnice con la mantequilla y espolvoree apenas el azúcar en polvo: tienen la mitad del azúcar y más fibra que las de panadería."],
+      en: ["Dissolve the yeast in the warm milk with 1 tablespoon of the honey and wait 10 minutes.", "Add the eggs, the rest of the honey, both flours and the salt; knead 10 minutes working in the softened butter. Let rise 1½ hours (whole wheat rises a bit less).", "Divide into 12 balls, roll each into a strip and coil it into a spiral.", "Let rise 45 minutes and bake at 350 °F for 16 to 18 minutes.", "Brush with the butter and dust lightly with the powdered sugar: they have half the sugar and more fiber than bakery ones."]
+    }
+  },
+  {
+    id: "mallorcas-dulce-leche",
+    category: "panes",
+    name: { es: "Mallorcas Rellenas de Dulce de Leche", en: "Dulce de Leche Mallorcas" },
+    active: 45, total: 195, wait: "levado",
+    servings: 12,
+    ingredients: {
+      es: ["4 tazas de harina de pan", "1 sobre de levadura", "¾ taza de leche tibia", "½ taza de azúcar", "3 yemas de huevo", "½ taza de mantequilla suavizada (más 2 cucharadas derretidas)", "½ cucharadita de sal", "¾ taza de dulce de leche espeso", "¼ taza de azúcar en polvo para cubrir"],
+      en: ["4 cups bread flour", "1 packet yeast", "¾ cup warm milk", "½ cup sugar", "3 egg yolks", "½ cup softened butter (plus 2 tablespoons melted)", "½ teaspoon salt", "¾ cup thick dulce de leche", "¼ cup powdered sugar for dusting"]
+    },
+    steps: {
+      es: ["Disuelva la levadura en la leche tibia con 1 cucharada de azúcar y espere 10 minutos.", "Añada las yemas, el resto del azúcar, la harina y la sal; amase incorporando la mantequilla suavizada. Deje crecer 1½ horas.", "Divida en 12 bolitas, estire cada una en una tira, unte 1 cucharada de dulce de leche a lo largo, ciérrela y enróllela en espiral.", "Deje crecer 45 minutos y hornee a 350 °F por 15 a 18 minutos.", "Barnice con la mantequilla derretida y cubra con el azúcar en polvo. Use dulce de leche espeso para que no se salga."],
+      en: ["Dissolve the yeast in the warm milk with 1 tablespoon of sugar and wait 10 minutes.", "Add the yolks, the rest of the sugar, the flour and salt; knead in the softened butter. Let rise 1½ hours.", "Divide into 12 balls, roll each into a strip, spread 1 tablespoon of dulce de leche along it, close it and coil it into a spiral.", "Let rise 45 minutes and bake at 350 °F for 15 to 18 minutes.", "Brush with the melted butter and dust with the powdered sugar. Use thick dulce de leche so it doesn't leak."]
+    }
+  },
+  {
+    id: "mallorcas-calabaza",
+    category: "panes",
+    name: { es: "Mallorcas de Calabaza y Canela", en: "Pumpkin Cinnamon Mallorcas" },
+    active: 50, total: 200, wait: "levado",
+    servings: 12,
+    ingredients: {
+      es: ["4½ tazas de harina de pan", "1 sobre de levadura", "½ taza de leche tibia", "1 taza de puré de calabaza", "½ taza de azúcar", "2 yemas de huevo", "½ taza de mantequilla suavizada (más 2 cucharadas derretidas)", "½ cucharadita de sal", "1 cucharadita de canela en polvo", "¼ taza de azúcar en polvo para cubrir"],
+      en: ["4½ cups bread flour", "1 packet yeast", "½ cup warm milk", "1 cup pumpkin purée", "½ cup sugar", "2 egg yolks", "½ cup softened butter (plus 2 tablespoons melted)", "½ teaspoon salt", "1 teaspoon ground cinnamon", "¼ cup powdered sugar for dusting"]
+    },
+    steps: {
+      es: ["Disuelva la levadura en la leche tibia con 1 cucharada de azúcar y espere 10 minutos.", "Añada el puré de calabaza, las yemas, el resto del azúcar, la harina, la sal y la canela; amase incorporando la mantequilla suavizada. Deje crecer 1½ horas.", "Divida en 12 bolitas, estire cada una en una tira y enróllela en espiral.", "Deje crecer 45 minutos y hornee a 350 °F por 16 a 18 minutos.", "Barnice con la mantequilla derretida y cubra con el azúcar en polvo. Quedan anaranjadas y bien suaves."],
+      en: ["Dissolve the yeast in the warm milk with 1 tablespoon of sugar and wait 10 minutes.", "Add the pumpkin purée, yolks, the rest of the sugar, the flour, salt and cinnamon; knead in the softened butter. Let rise 1½ hours.", "Divide into 12 balls, roll each into a strip and coil it into a spiral.", "Let rise 45 minutes and bake at 350 °F for 16 to 18 minutes.", "Brush with the melted butter and dust with the powdered sugar. They turn orange and very soft."]
+    }
+  },
+  {
+    id: "mallorca-tostada-jamon-queso-huevo",
+    category: "emparedados",
+    name: { es: "Mallorca de Desayuno con Jamón, Queso y Huevo", en: "Breakfast Mallorca with Ham, Cheese and Egg" },
+    active: 10, total: 10,
+    servings: 1,
+    ingredients: {
+      es: ["1 mallorca", "1 cucharadita de mantequilla", "1 huevo", "2 lascas de jamón", "1 lasca de queso suizo", "1 cucharadita de azúcar en polvo"],
+      en: ["1 mallorca", "1 teaspoon butter", "1 egg", "2 slices ham", "1 slice Swiss cheese", "1 teaspoon powdered sugar"]
+    },
+    steps: {
+      es: ["Abra la mallorca a lo largo y úntele la mantequilla por dentro.", "Fría el huevo en la sartén y caliente el jamón al lado.", "Rellene la mallorca con el jamón, el queso y el huevo.", "Tuéstela en la plancha o en una sartén con peso encima, 2 minutos por lado, hasta que el queso se derrita.", "Espolvoree el azúcar en polvo por encima. Es el desayuno de panadería: dulce y salado a la vez."],
+      en: ["Split the mallorca lengthwise and butter the inside.", "Fry the egg in the skillet and warm the ham next to it.", "Fill the mallorca with the ham, cheese and egg.", "Toast it on the griddle or in a skillet with a weight on top, 2 minutes per side, until the cheese melts.", "Dust the powdered sugar on top. It's the bakery breakfast: sweet and savory at once."]
+    }
+  },
+  {
+    id: "budin-mallorca",
+    category: "postres",
+    name: { es: "Budín de Mallorca", en: "Mallorca Bread Pudding" },
+    active: 75, total: 75,
+    servings: 10,
+    ingredients: {
+      es: ["6 mallorcas del día anterior, en pedazos", "2 tazas de leche", "1 lata de 12 oz de leche evaporada", "3 huevos", "½ taza de azúcar", "1 cucharadita de vainilla", "½ cucharadita de canela en polvo", "2 cucharadas de mantequilla derretida", "½ taza de pasas"],
+      en: ["6 day-old mallorcas, torn into pieces", "2 cups milk", "1 can (12 oz) evaporated milk", "3 eggs", "½ cup sugar", "1 teaspoon vanilla", "½ teaspoon ground cinnamon", "2 tablespoons melted butter", "½ cup raisins"]
+    },
+    steps: {
+      es: ["Remoje la mallorca en la leche y la leche evaporada 15 minutos, aplastándola con un tenedor.", "Bata los huevos con el azúcar, la vainilla, la canela y la mantequilla, y mézclelos con la mallorca y las pasas.", "Vierta en un molde engrasado de 9 × 13 pulgadas.", "Hornee a 350 °F por 45 a 50 minutos, hasta que el centro esté firme.", "Deje refrescar y corte en cuadros. Aprovecha las mallorcas que se pusieron duras."],
+      en: ["Soak the mallorca in the milk and evaporated milk 15 minutes, mashing it with a fork.", "Beat the eggs with the sugar, vanilla, cinnamon and butter, and mix them with the mallorca and raisins.", "Pour into a greased 9 × 13 inch pan.", "Bake at 350 °F for 45 to 50 minutes, until the center is firm.", "Let cool and cut into squares. It uses up mallorcas that went hard."]
+    }
+  },
+  {
+    id: "quesitos-guayaba-queso",
+    category: "pasteles_dulces",
+    name: { es: "Quesitos de Guayaba y Queso", en: "Guava and Cream Cheese Quesitos" },
+    active: 45, total: 45,
+    servings: 12,
+    ingredients: {
+      es: ["2 láminas de masa de hojaldre descongelada", "8 oz de queso crema, blando", "¼ taza de azúcar", "1 yema de huevo", "1 cucharadita de vainilla", "6 oz de pasta de guayaba, en 12 tiras", "1 huevo batido para barnizar", "2 cucharadas de almíbar simple"],
+      en: ["2 sheets thawed puff pastry", "8 oz cream cheese, softened", "¼ cup sugar", "1 egg yolk", "1 teaspoon vanilla", "6 oz guava paste, in 12 strips", "1 beaten egg for brushing", "2 tablespoons simple syrup"]
+    },
+    steps: {
+      es: ["Caliente el horno a 400 °F. Bata el queso crema con el azúcar, la yema y la vainilla.", "Corte cada lámina de hojaldre en 6 rectángulos.", "Ponga 1 cucharada de queso y una tira de guayaba en cada uno y enróllelos como tubito, con la unión abajo.", "Barnice con el huevo batido y hornee 18 a 20 minutos, hasta que estén dorados e inflados.", "Al sacarlos, barnícelos con el almíbar para que brillen como los de panadería."],
+      en: ["Heat the oven to 400 °F. Beat the cream cheese with the sugar, yolk and vanilla.", "Cut each pastry sheet into 6 rectangles.", "Put 1 tablespoon of cheese and a strip of guava on each and roll them into tubes, seam side down.", "Brush with the beaten egg and bake 18 to 20 minutes, until golden and puffed.", "When they come out, brush them with the syrup so they shine like bakery ones."]
+    }
+  },
+  {
+    id: "panuelos-crema",
+    category: "pasteles_dulces",
+    name: { es: "Pañuelos de Crema", en: "Custard Puff Pastry Handkerchiefs" },
+    active: 50, total: 70, wait: "enfriar",
+    servings: 12,
+    ingredients: {
+      es: ["2 láminas de masa de hojaldre descongelada", "1½ tazas de leche", "⅓ taza de azúcar", "3 cucharadas de maicena", "2 yemas de huevo", "1 cucharadita de vainilla", "1 huevo batido para barnizar", "2 cucharadas de azúcar en polvo para decorar"],
+      en: ["2 sheets thawed puff pastry", "1½ cups milk", "⅓ cup sugar", "3 tablespoons cornstarch", "2 egg yolks", "1 teaspoon vanilla", "1 beaten egg for brushing", "2 tablespoons powdered sugar for dusting"]
+    },
+    steps: {
+      es: ["Haga la crema: cocine la leche, el azúcar, la maicena y las yemas a fuego bajo, moviendo, hasta que espese; añada la vainilla y enfríe tapada.", "Caliente el horno a 400 °F y corte cada lámina de hojaldre en 6 cuadrados.", "Ponga 1 cucharada de crema en el centro y doble las cuatro puntas hacia el centro, como un pañuelo; apriete para que peguen.", "Barnice con el huevo batido y hornee 18 a 20 minutos, hasta que doren.", "Deje refrescar y espolvoree el azúcar en polvo."],
+      en: ["Make the custard: cook the milk, sugar, cornstarch and yolks over low heat, stirring, until thick; add the vanilla and chill covered.", "Heat the oven to 400 °F and cut each pastry sheet into 6 squares.", "Put 1 tablespoon of custard in the center and fold the four corners to the center, like a handkerchief; press so they stick.", "Brush with the beaten egg and bake 18 to 20 minutes, until golden.", "Let cool and dust with the powdered sugar."]
+    }
+  },
+  {
+    id: "danes-queso-guayaba",
+    category: "pasteles_dulces",
+    name: { es: "Danés de Queso y Guayaba", en: "Cheese and Guava Danish" },
+    active: 50, total: 50,
+    servings: 9,
+    ingredients: {
+      es: ["1 lámina de masa de hojaldre descongelada", "6 oz de queso crema, blando", "3 cucharadas de azúcar", "1 yema de huevo", "½ cucharadita de vainilla", "4 oz de pasta de guayaba", "1 cucharada de agua", "1 huevo batido para barnizar", "¼ taza de azúcar en polvo", "1 cucharada de leche"],
+      en: ["1 sheet thawed puff pastry", "6 oz cream cheese, softened", "3 tablespoons sugar", "1 egg yolk", "½ teaspoon vanilla", "4 oz guava paste", "1 tablespoon water", "1 beaten egg for brushing", "¼ cup powdered sugar", "1 tablespoon milk"]
+    },
+    steps: {
+      es: ["Caliente el horno a 400 °F. Bata el queso crema con el azúcar, la yema y la vainilla; derrita la guayaba con el agua.", "Corte el hojaldre en 9 cuadrados y doble los bordes ½ pulgada para hacer un marquito.", "Ponga 1 cucharada de queso en el centro de cada uno y encima 1 cucharadita de guayaba.", "Barnice los bordes con el huevo y hornee 18 a 20 minutos.", "Mezcle el azúcar en polvo con la leche y haga rayitas de glaseado por encima cuando estén tibios."],
+      en: ["Heat the oven to 400 °F. Beat the cream cheese with the sugar, yolk and vanilla; melt the guava with the water.", "Cut the pastry into 9 squares and fold the edges ½ inch to make a little frame.", "Put 1 tablespoon of cheese in the center of each and 1 teaspoon of guava on top.", "Brush the edges with the egg and bake 18 to 20 minutes.", "Mix the powdered sugar with the milk and drizzle glaze lines on top while they're warm."]
+    }
+  },
+  {
+    id: "pastelitos-coco",
+    category: "pasteles_dulces",
+    name: { es: "Pastelitos de Coco", en: "Coconut Turnovers" },
+    active: 45, total: 60, wait: "enfriar",
+    servings: 12,
+    ingredients: {
+      es: ["2 láminas de masa de hojaldre descongelada", "2 tazas de coco rallado", "½ taza de azúcar morena", "½ taza de leche de coco", "½ cucharadita de canela en polvo", "1 pizca de sal", "1 huevo batido para barnizar", "2 cucharadas de azúcar"],
+      en: ["2 sheets thawed puff pastry", "2 cups shredded coconut", "½ cup brown sugar", "½ cup coconut milk", "½ teaspoon ground cinnamon", "1 pinch salt", "1 beaten egg for brushing", "2 tablespoons sugar"]
+    },
+    steps: {
+      es: ["Cocine el coco, el azúcar morena, la leche de coco, la canela y la sal a fuego medio 8 a 10 minutos, hasta que se seque; enfríe.", "Caliente el horno a 400 °F y corte cada lámina de hojaldre en 6 cuadrados.", "Ponga 1 cucharada de coco en cada uno, doble en triángulo y selle los bordes con un tenedor.", "Barnice con el huevo, espolvoree el azúcar y hornee 18 a 20 minutos.", "Sírvalos tibios. El relleno es como el de los dulces de coco de antes."],
+      en: ["Cook the coconut, brown sugar, coconut milk, cinnamon and salt over medium heat 8 to 10 minutes, until dry; cool.", "Heat the oven to 400 °F and cut each pastry sheet into 6 squares.", "Put 1 tablespoon of coconut on each, fold into a triangle and seal the edges with a fork.", "Brush with the egg, sprinkle the sugar and bake 18 to 20 minutes.", "Serve them warm. The filling is like old-fashioned coconut candy."]
+    }
+  },
+  {
+    id: "tartaletas-frutas-tropicales",
+    category: "pasteles_dulces",
+    name: { es: "Tartaletas de Frutas Tropicales", en: "Tropical Fruit Tartlets" },
+    active: 45, total: 105, wait: "frio",
+    servings: 12,
+    ingredients: {
+      es: ["1½ tazas de harina de trigo", "½ taza de mantequilla fría en cubitos", "¼ taza de azúcar", "1 huevo", "1½ tazas de leche", "⅓ taza de azúcar para la crema", "3 cucharadas de maicena", "2 yemas de huevo", "1 cucharadita de vainilla", "1 taza de mango en cubitos", "1 taza de fresas en lascas", "½ taza de piña en cubitos", "2 cucharadas de jalea de guayaba derretida"],
+      en: ["1½ cups all-purpose flour", "½ cup cold butter, cubed", "¼ cup sugar", "1 egg", "1½ cups milk", "⅓ cup sugar for the custard", "3 tablespoons cornstarch", "2 egg yolks", "1 teaspoon vanilla", "1 cup mango, cubed", "1 cup sliced strawberries", "½ cup pineapple, cubed", "2 tablespoons melted guava jelly"]
+    },
+    steps: {
+      es: ["Haga la crema: cocine la leche, el azúcar, la maicena y las yemas a fuego bajo hasta que espese; añada la vainilla y enfríe tapada.", "Una la harina, la mantequilla, el azúcar y el huevo sin amasar mucho; forre 12 moldecitos de muffin con la masa y pinche el fondo.", "Hornee a 375 °F por 15 a 18 minutos, hasta que doren; deje enfriar y desmolde.", "Llene cada tartaleta con crema y acomode el mango, las fresas y la piña por encima.", "Barnice la fruta con la jalea de guayaba para que brille y refrigere 1 hora."],
+      en: ["Make the custard: cook the milk, sugar, cornstarch and yolks over low heat until thick; add the vanilla and chill covered.", "Bring the flour, butter, sugar and egg together without kneading much; line 12 muffin cups with the dough and prick the bottoms.", "Bake at 375 °F for 15 to 18 minutes, until golden; let cool and unmold.", "Fill each tartlet with custard and arrange the mango, strawberries and pineapple on top.", "Brush the fruit with the guava jelly so it shines and refrigerate 1 hour."]
+    }
+  },
+  {
+    id: "lionesas-crema-coco",
+    category: "pasteles_dulces",
+    name: { es: "Lionesas Rellenas de Crema de Coco", en: "Cream Puffs with Coconut Custard" },
+    active: 75, total: 105, wait: "enfriar",
+    servings: 16,
+    ingredients: {
+      es: ["1 taza de agua", "½ taza de mantequilla", "1 pizca de sal", "1 taza de harina de trigo", "4 huevos", "1½ tazas de leche de coco", "⅓ taza de azúcar", "3 cucharadas de maicena", "2 yemas de huevo", "¼ taza de coco rallado tostado", "2 cucharadas de azúcar en polvo"],
+      en: ["1 cup water", "½ cup butter", "1 pinch salt", "1 cup all-purpose flour", "4 eggs", "1½ cups coconut milk", "⅓ cup sugar", "3 tablespoons cornstarch", "2 egg yolks", "¼ cup toasted shredded coconut", "2 tablespoons powdered sugar"]
+    },
+    steps: {
+      es: ["Haga la crema: cocine la leche de coco, el azúcar, la maicena y las yemas a fuego bajo hasta que espese; enfríe tapada.", "Hierva el agua con la mantequilla y la sal, eche la harina de una vez y mueva hasta que la masa se despegue de la olla; deje refrescar 5 minutos.", "Añada los huevos uno a uno, batiendo bien, y haga 16 montoncitos en una bandeja con papel de hornear.", "Hornee a 400 °F por 25 a 30 minutos sin abrir el horno, hasta que estén dorados y huecos; deje enfriar.", "Ábralas por un lado, rellénelas con la crema y decore con el coco tostado y el azúcar en polvo."],
+      en: ["Make the custard: cook the coconut milk, sugar, cornstarch and yolks over low heat until thick; chill covered.", "Boil the water with the butter and salt, add the flour all at once and stir until the dough pulls away from the pot; let cool 5 minutes.", "Add the eggs one at a time, beating well, and pipe 16 mounds on a parchment-lined tray.", "Bake at 400 °F for 25 to 30 minutes without opening the oven, until golden and hollow; let cool.", "Split them on one side, fill with the custard and garnish with the toasted coconut and powdered sugar."]
+    }
+  },
+  {
+    id: "relampagos-cafe",
+    category: "pasteles_dulces",
+    name: { es: "Relámpagos de Café (Éclairs)", en: "Coffee Éclairs" },
+    active: 80, total: 110, wait: "enfriar",
+    servings: 12,
+    ingredients: {
+      es: ["1 taza de agua", "½ taza de mantequilla", "1 pizca de sal", "1 taza de harina de trigo", "4 huevos", "1½ tazas de leche", "⅓ taza de azúcar", "3 cucharadas de maicena", "2 yemas de huevo", "2 cucharadas de café colado bien fuerte", "1 taza de azúcar en polvo para el glaseado", "2 cucharadas de café colado para el glaseado"],
+      en: ["1 cup water", "½ cup butter", "1 pinch salt", "1 cup all-purpose flour", "4 eggs", "1½ cups milk", "⅓ cup sugar", "3 tablespoons cornstarch", "2 egg yolks", "2 tablespoons very strong brewed coffee", "1 cup powdered sugar for the glaze", "2 tablespoons brewed coffee for the glaze"]
+    },
+    steps: {
+      es: ["Haga la crema: cocine la leche, el azúcar, la maicena y las yemas a fuego bajo hasta que espese; añada el café fuerte y enfríe tapada.", "Hierva el agua con la mantequilla y la sal, eche la harina de una vez y mueva hasta que se despegue; deje refrescar y añada los huevos uno a uno.", "Con una manga, haga 12 tiras de 4 pulgadas en una bandeja con papel de hornear.", "Hornee a 400 °F por 25 a 30 minutos sin abrir el horno; deje enfriar y rellénelos con la crema por un huequito.", "Mezcle el azúcar en polvo con el café y cubra la parte de arriba. Con café de la isla saben mejor."],
+      en: ["Make the custard: cook the milk, sugar, cornstarch and yolks over low heat until thick; add the strong coffee and chill covered.", "Boil the water with the butter and salt, add the flour all at once and stir until it pulls away; let cool and add the eggs one at a time.", "With a piping bag, pipe 12 strips 4 inches long on a parchment-lined tray.", "Bake at 400 °F for 25 to 30 minutes without opening the oven; let cool and fill with the custard through a small hole.", "Mix the powdered sugar with the coffee and coat the tops. They taste better with island coffee."]
+    }
+  },
+  {
+    id: "cuernitos-guayaba",
+    category: "pasteles_dulces",
+    name: { es: "Cuernitos de Guayaba", en: "Guava Crescents" },
+    active: 40, total: 160, wait: "frio",
+    servings: 24,
+    ingredients: {
+      es: ["2 tazas de harina de trigo", "1 taza de mantequilla fría", "8 oz de queso crema frío", "1 pizca de sal", "8 oz de pasta de guayaba", "2 cucharadas de agua", "1 huevo batido para barnizar", "3 cucharadas de azúcar", "1 cucharadita de canela en polvo"],
+      en: ["2 cups all-purpose flour", "1 cup cold butter", "8 oz cold cream cheese", "1 pinch salt", "8 oz guava paste", "2 tablespoons water", "1 beaten egg for brushing", "3 tablespoons sugar", "1 teaspoon ground cinnamon"]
+    },
+    steps: {
+      es: ["Una la harina, la mantequilla, el queso crema y la sal hasta formar una masa; divídala en 2 discos y refrigere 1 hora.", "Derrita la guayaba con el agua hasta que quede untable y deje refrescar.", "Estire cada disco en un círculo de 12 pulgadas, unte la guayaba y córtelo en 12 triángulos como pizza.", "Enrolle cada triángulo desde la base hacia la punta, barnice con el huevo y espolvoree el azúcar con canela.", "Hornee a 350 °F por 20 a 22 minutos, hasta que doren. Se guardan una semana en lata."],
+      en: ["Bring the flour, butter, cream cheese and salt together into a dough; divide into 2 disks and refrigerate 1 hour.", "Melt the guava with the water until spreadable and let cool.", "Roll each disk into a 12-inch circle, spread the guava and cut into 12 wedges like a pizza.", "Roll each wedge from the base to the tip, brush with the egg and sprinkle with the cinnamon sugar.", "Bake at 350 °F for 20 to 22 minutes, until golden. They keep a week in a tin."]
+    }
+  },
+  {
+    id: "cortaditos-guayaba",
+    category: "pasteles_dulces",
+    name: { es: "Cortaditos de Guayaba", en: "Guava Crumb Bars" },
+    active: 55, total: 95, wait: "enfriar",
+    servings: 16,
+    ingredients: {
+      es: ["2 tazas de harina de trigo", "1 taza de avena", "¾ taza de azúcar morena", "1 taza de mantequilla derretida", "½ cucharadita de polvo de hornear", "1 pizca de sal", "14 oz de pasta de guayaba", "3 cucharadas de agua", "1 limón verde (el jugo)"],
+      en: ["2 cups all-purpose flour", "1 cup oats", "¾ cup brown sugar", "1 cup melted butter", "½ teaspoon baking powder", "1 pinch salt", "14 oz guava paste", "3 tablespoons water", "1 lime (the juice)"]
+    },
+    steps: {
+      es: ["Caliente el horno a 350 °F. Mezcle la harina, la avena, el azúcar morena, la mantequilla, el polvo de hornear y la sal hasta que quede como arena húmeda.", "Apriete dos terceras partes en el fondo de un molde engrasado de 9 × 9 pulgadas.", "Derrita la guayaba con el agua y el limón, y úntela sobre la base.", "Desmorone el resto de la masa por encima y hornee 35 a 40 minutos, hasta que dore.", "Deje enfriar por completo antes de cortar en 16 cuadritos; si los corta calientes se rompen."],
+      en: ["Heat the oven to 350 °F. Mix the flour, oats, brown sugar, butter, baking powder and salt until it looks like damp sand.", "Press two thirds into the bottom of a greased 9 × 9 inch pan.", "Melt the guava with the water and lime and spread it over the base.", "Crumble the rest of the dough on top and bake 35 to 40 minutes, until golden.", "Let cool completely before cutting into 16 squares; if you cut them hot they break."]
+    }
+  },
+  {
+    id: "hojaldritos-queso-parcha",
+    category: "pasteles_dulces",
+    name: { es: "Hojaldritos de Queso y Parcha", en: "Cream Cheese and Passion Fruit Pinwheels" },
+    active: 50, total: 50,
+    servings: 16,
+    ingredients: {
+      es: ["2 láminas de masa de hojaldre descongelada", "6 oz de queso crema, blando", "3 cucharadas de azúcar", "½ taza de pulpa de parcha colada", "¼ taza de azúcar para la parcha", "1 cucharada de maicena", "1 huevo batido para barnizar"],
+      en: ["2 sheets thawed puff pastry", "6 oz cream cheese, softened", "3 tablespoons sugar", "½ cup strained passion fruit pulp", "¼ cup sugar for the passion fruit", "1 tablespoon cornstarch", "1 beaten egg for brushing"]
+    },
+    steps: {
+      es: ["Cocine la parcha con el azúcar y la maicena a fuego bajo, moviendo, hasta que espese; enfríe. Bata el queso crema con el azúcar.", "Caliente el horno a 400 °F y corte cada lámina en 8 cuadrados.", "Haga un corte desde cada esquina hacia el centro, sin llegar, y doble una punta de cada lado hacia el centro, como un molinete.", "Ponga 1 cucharadita de queso en el centro y encima un poco de parcha; barnice con el huevo.", "Hornee 15 a 18 minutos, hasta que doren. Quedan como flores amarillas."],
+      en: ["Cook the passion fruit with the sugar and cornstarch over low heat, stirring, until thick; cool. Beat the cream cheese with the sugar.", "Heat the oven to 400 °F and cut each sheet into 8 squares.", "Cut from each corner toward the center, without reaching it, and fold one point of each side to the center, like a pinwheel.", "Put 1 teaspoon of cheese in the center and a little passion fruit on top; brush with the egg.", "Bake 15 to 18 minutes, until golden. They look like yellow flowers."]
+    }
   }
 );

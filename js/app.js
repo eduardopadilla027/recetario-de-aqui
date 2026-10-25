@@ -18,7 +18,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.54.0";
+const APP_VERSION = "4.56.0";
 const APP_REVISED = "2026-10-25";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
@@ -436,6 +436,24 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Mallorcas y repostería (tanda 62, v4.56): la mallorca con su masa o su relleno, y cada dulce con su forma.
+  [/^mallorcas rellenas de crema/, "svg:ic-mallorca-crema"],
+  [/^mallorcas rellenas de dulce de leche/, "svg:ic-mallorca-dulce-leche"],
+  [/^mallorca de desayuno/, "svg:ic-mallorca-desayuno"],
+  [/^mallorcas de coco/, "svg:ic-mallorca-coco"],
+  [/^mallorcas de chocolate/, "svg:ic-mallorca-chocolate"],
+  [/^mallorcas integrales/, "svg:ic-mallorca-integral"],
+  [/^mallorcas de calabaza/, "svg:ic-mallorca-calabaza"],
+  [/^quesitos de guayaba/, "svg:ic-quesitos-guayaba"],
+  [/^panuelos de crema/, "svg:ic-panuelos-crema"],
+  [/^danes de queso/, "svg:ic-danes-queso-guayaba"],
+  [/^pastelitos de coco/, "svg:ic-pastelitos-coco"],
+  [/^tartaletas de frutas/, "svg:ic-tartaletas-frutas"],
+  [/^lionesas/, "svg:ic-lionesas-coco"],
+  [/^relampagos de cafe/, "svg:ic-relampagos-cafe"],
+  [/^cuernitos de guayaba/, "svg:ic-cuernitos-guayaba"],
+  [/^cortaditos de guayaba/, "svg:ic-cortaditos-guayaba"],
+  [/^hojaldritos de queso/, "svg:ic-hojaldritos-parcha"],
   // Bizcochos, galletitas y brazos gitanos (tanda 60, v4.54): el pedazo, las galletas o el rollo de cada sabor.
   [/^bizcocho de acerola/, "svg:ic-biz-acerola"],
   [/^bizcocho de tamarindo/, "svg:ic-biz-tamarindo"],
@@ -453,6 +471,7 @@ const dessertIcons = [
   [/^galletas de platano maduro/, "svg:ic-galleta-platano"],
   [/^galletas de guanabana/, "svg:ic-galleta-guanabana"],
   [/^galletas de tembleque/, "svg:ic-galleta-tembleque"],
+  [/^brazo gitano de pistacho/, "svg:ic-brazo-pistacho-guayaba"],
   [/^brazo gitano de chocolate/, "svg:ic-brazo-chocolate-cafe"],
   [/^brazo gitano de parcha/, "svg:ic-brazo-parcha"],
   [/^brazo gitano de pina/, "svg:ic-brazo-pina"],
@@ -1358,7 +1377,7 @@ const dessertIcons = [
   [/^salsa de yogur/, "svg:ic-salsa-yogur"]
 ];
 
-/* Batidas y champolas (v4.50): cada una en su vaso con su color y su fruta (antes casi todas 🥤). Por id,
+/* Batidas y champolas (v4.50), bebidas y cócteles (v4.55): cada una en su vaso con su color y su fruta. Por id,
    porque los nombres de las batidas se parecen mucho entre sí. */
 const SHAKE_ICONS = {
   "batida-guayaba-leche": "bat-guayaba-leche", "batida-carambola-china": "bat-carambola-china", "batida-melon-leche": "bat-melon",
@@ -1371,7 +1390,30 @@ const SHAKE_ICONS = {
   "batida-yogur-mango-parcha": "bat-yogur-mango-parcha", "batida-yogur-pina-colada": "bat-yogur-pina-colada", "batida-nutella-guineo": "bat-nutella-guineo",
   "batida-vegana-mango-avena": "bat-mango-avena", "batida-nispero": "bat-nispero", "batida-anon": "bat-anon", "batida-acerola-guineo": "bat-acerola-guineo",
   "batida-verde-tropical": "bat-verde-tropical", "batida-guineo-avena-mani": "bat-guineo-avena-mani", "batida-tamarindo": "bat-tamarindo",
-  "batida-mango-coco": "bat-mango-coco", "batida-pitahaya": "bat-pitahaya", "batida-fresa-guineo": "bat-fresa-guineo", "batida-aguacate": "bat-aguacate"
+  "batida-mango-coco": "bat-mango-coco", "batida-pitahaya": "bat-pitahaya", "batida-fresa-guineo": "bat-fresa-guineo", "batida-aguacate": "bat-aguacate",
+  // Bebidas y cócteles (v4.55): cada trago en su vaso real (alto, bajo, copa, huracán, vino, botella, frasco o coco).
+  "refresco-tamarindo": "tg-refresco-tamarindo", "limonada-acerola": "tg-limonada-acerola", "te-helado-guanabana": "tg-te-helado-guanabana",
+  "frappe-mango": "tg-frappe-mango", "chicha-pina-jengibre": "tg-chicha-pina-jengibre", "agua-sandia-limon": "tg-agua-sandia-limon",
+  "ponche-china-granadina-ninos": "tg-ponche-china-granadina-ninos", "mojito-guayaba": "tg-mojito-guayaba", "daiquiri-pina": "tg-daiquiri-pina",
+  "margarita-guanabana": "tg-margarita-guanabana", "mai-tai-parcha": "tg-mai-tai-parcha", "mojito-acerola": "tg-mojito-acerola",
+  "ron-collins-parcha": "tg-ron-collins-parcha", "sangria-rosada-guayaba": "tg-sangria-rosada-guayaba", "daiquiri-guanabana": "tg-daiquiri-guanabana",
+  "carajillo-boricua": "tg-carajillo-boricua", "mamey-colada": "tg-mamey-colada", "pitorro-guayaba": "tg-pitorro-guayaba",
+  "ron-agua-coco-limon": "tg-ron-agua-coco-limon", "coquito": "tg-coquito", "coquito-chocolate": "tg-coquito-chocolate",
+  "coquito-pistacho": "tg-coquito-pistacho", "coquito-guayaba": "tg-coquito-guayaba", "coquito-cafe": "tg-coquito-cafe",
+  "coquito-calabaza": "tg-coquito-calabaza", "ponche-crema": "tg-ponche-crema", "limoncello-pr": "tg-limoncello-pr",
+  "pitorro-coco": "tg-pitorro-coco", "pitorro-parcha": "tg-pitorro-parcha", "chichaito": "tg-chichaito",
+  "bili": "tg-bili", "pina-colada": "tg-pina-colada", "pina-colada-sin-alcohol": "tg-pina-colada-sin-alcohol",
+  "mango-colada": "tg-mango-colada", "lava-flow": "tg-lava-flow", "bahama-mama": "tg-bahama-mama",
+  "blue-hawaiian": "tg-blue-hawaiian", "hurricane": "tg-hurricane", "rum-runner": "tg-rum-runner",
+  "mojito-pr": "tg-mojito-pr", "mojito-parcha": "tg-mojito-parcha", "cuba-libre": "tg-cuba-libre",
+  "planters-punch": "tg-planters-punch", "zombie": "tg-zombie", "ponche-guayaba": "tg-ponche-guayaba",
+  "ron-ponche": "tg-ron-ponche", "mai-tai": "tg-mai-tai", "tamarindo-con-ron": "tg-tamarindo-con-ron",
+  "daiquiri-parcha": "tg-daiquiri-parcha", "daiquiri-mango": "tg-daiquiri-mango", "daiquiri-fresa": "tg-daiquiri-fresa",
+  "margarita-parcha": "tg-margarita-parcha", "margarita-tamarindo": "tg-margarita-tamarindo", "sangria-tropical": "tg-sangria-tropical",
+  "sangria-blanca-tropical": "tg-sangria-blanca-tropical", "coco-loco": "tg-coco-loco", "coco-frio-ron": "tg-coco-frio-ron",
+  "malta-huevo": "tg-malta-huevo", "avena-fria": "tg-avena-fria", "mabi": "tg-mabi",
+  "horchata-ajonjoli": "tg-horchata-ajonjoli", "horchata-arroz-coco": "tg-horchata-arroz-coco", "agua-jamaica": "tg-agua-jamaica",
+  "ponche-parcha-sin-alcohol": "tg-ponche-parcha-sin-alcohol"
 };
 
 function dishIcon(recipe) {

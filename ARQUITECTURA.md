@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.54.0 · **Versión de la app:** 4.54.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,390 en 24 categorías
+> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.56.0 · **Versión de la app:** 4.56.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,428 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -77,7 +77,7 @@ cocine-a-gusto/
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
 │   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, más salsas y aderezos y platos fuertes veganos, y dulces y salsas de grosella, en cuarenta y tres tandas (ver §13)
-│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46), pescados y mariscos (tanda 47), jugos y bebidas tropicales (tanda 48), sopas, asopaos, pastas y panes dulces (tanda 49) carnes y aves (tanda 50), salsas, aderezos y huevos (tanda 51) , veganas con proteína para los planes (tanda 57: desayunos, platos y meriendas), batidas y champolas (tanda 58), nutritivas boricuas de carnes, aves, pescado, granos, arroces y viandas (tanda 59) y bizcochos, galletitas y brazos gitanos (tanda 60), ver §13
+│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46), pescados y mariscos (tanda 47), jugos y bebidas tropicales (tanda 48), sopas, asopaos, pastas y panes dulces (tanda 49) carnes y aves (tanda 50), salsas, aderezos y huevos (tanda 51) , veganas con proteína para los planes (tanda 57: desayunos, platos y meriendas), batidas y champolas (tanda 58), nutritivas boricuas de carnes, aves, pescado, granos, arroces y viandas (tanda 59) bizcochos, galletitas y brazos gitanos (tanda 60) bebidas, cócteles y un brazo gitano de pistacho y guayaba (tanda 61) y mallorcas y dulces de repostería (tanda 62), ver §13
 │   ├── nutrition-usda.js GENERADO (tools/usda/): número FDC y valores oficiales del USDA de cada alimento (§8)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
@@ -200,18 +200,18 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | huevos | Huevos y Queso | 23 |
 | entremeses | Croquetas, Buñuelos y Pastelillos | 66 |
 | pastas | Pastas | 31 |
-| bizcochos | Bizcochos | 61 |
+| bizcochos | Bizcochos | 62 |
 | galletitas | Galletitas | 50 |
-| pasteles_dulces | Pasteles Dulces | 22 |
-| panes | Pan y Panecillos | 56 |
-| emparedados | Emparedados | 34 |
-| postres | Helados, Budines, Flan y Otros Postres | 147 |
+| pasteles_dulces | Pasteles Dulces | 32 |
+| panes | Pan y Panecillos | 62 |
+| emparedados | Emparedados | 35 |
+| postres | Helados, Budines, Flan y Otros Postres | 148 |
 | arroces | Arroces y Habichuelas | 68 |
 | vegetales | Vegetales y Viandas | 103 |
 | salsas | Salsas y Aderezos | 78 |
-| bebidas | Bebidas | 66 |
+| bebidas | Bebidas | 73 |
 | jugos | Jugos Naturales | 36 |
-| cocteles | Cócteles y Tragos | 54 |
+| cocteles | Cócteles y Tragos | 66 |
 
 **Recetas que cambiaron de categoría (v4.30):** ensaladas de pulpo, de mariscos y de carrucho y la ensalada fría de pulpo
 y mangó pasan de Pescados a Ensaladas (familia "De pescado y mariscos"); los pasteles de masa, de yuca y de arroz pasan
@@ -870,7 +870,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - **Por qué:** la app usa `#/receta/<id>`, y para Google todo lo que va después de `#` es la portada: ninguna receta salía
   en las búsquedas ("receta de pernil") y todos los enlaces compartidos se veían iguales (título, texto y bandera).
 - **`node tools/prerender.js`** (sin dependencias; carga los scripts en `vm` como el navegador) genera:
-  `receta/<id>.html` (1,390 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
+  `receta/<id>.html` (1,428 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
   `vercel.json`. Cada una es ligera y se lee sin JavaScript: título y descripción propios, `canonical`, Open Graph y
   Twitter con el nombre del plato, tiempo de preparación y total, porciones, calorías estimadas, alérgenos, ingredientes y
   pasos en español y en inglés, seis recetas de la misma categoría y el botón **"Abrir en la app"** (`/#/receta/<id>`:
@@ -1106,7 +1106,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,390). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,428). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -1221,6 +1221,44 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-25 — v4.56.0 · 8 recetas de mallorcas y 10 dulces de repostería
+- *Pedido:* más recetas de mallorcas y de dulces de repostería.
+- **Recetas** (`js/recipes-5.js`, tanda 62; 1,410 → 1,428): mallorcas rellenas de crema pastelera y de dulce de leche,
+  de coco, de chocolate, integrales (con miel y la mitad del azúcar), de calabaza y canela (Pan y Panecillos); mallorca
+  de desayuno con jamón, queso y huevo (Emparedados; "desayuno" en el nombre la pone en el desayuno de los planes); budín
+  de mallorca para las que se pusieron duras (Postres); y en Pasteles Dulces: quesitos de guayaba y queso, pañuelos de
+  crema, danés de queso y guayaba, pastelitos de coco, tartaletas de frutas tropicales, lionesas con crema de coco,
+  relámpagos (éclairs) de café, cuernitos de guayaba, cortaditos de guayaba y hojaldritos de queso y parcha. El horno
+  cuenta como tiempo activo; `enfriar` sólo donde la crema o las barras tienen que enfriar.
+- **Nutrición** (`js/nutrition.js`): "harina integral" (fibra 10.7 g/100 g; antes contaba como harina blanca) y
+  "mallorca" (90 g la unidad), para la de desayuno y el budín.
+- **Iconos** (`index.html`, `js/app.js`): 17 dibujos al principio de `dessertIcons`: la mallorca en espiral con el color
+  de su masa (coco, chocolate, integral, calabaza) o abierta con su relleno (crema, dulce de leche; jamón, queso y huevo),
+  y cada dulce con su forma: pañuelo doblado, danés con marquito, pastelito en triángulo con marcas de tenedor,
+  tartaleta con fruta, lionesas, relámpagos con cobertura de café, cuernitos, cortaditos con su capa de guayaba,
+  molinetes de parcha y los quesitos con la guayaba en las puntas. El budín usa `ic-budin`. Antes salían 🥐, 🧀, 🥧 o
+  la mallorca de guayaba.
+- *Verificado:* `node tools/check-recipes.js` 0 errores; 0 de 1,428 recetas con ingredientes sin contar;
+  `node tools/recipe-dates.js` y `node tools/prerender.js` (1,428 páginas); las 18 abren en ES y EN a 375 px sin
+  desbordes ni errores.
+### 2026-10-25 — v4.55.0 · 7 bebidas, 12 cócteles y el brazo gitano de pistacho y guayaba; cada trago en su vaso
+- *Pedido:* más recetas de bebidas, tragos y cócteles; y el brazo gitano de pistacho y guayaba.
+- **Recetas** (`js/recipes-5.js`, tanda 61; 1,390 → 1,410): refresco de tamarindo, limonada de acerola, té helado de
+  guanábana, frappé de mangó, chicha de piña y jengibre (con las cáscaras), agua de sandía con limón y ponche de china y
+  granadina para niños (Bebidas); mojitos de guayaba y de acerola, daiquirís de piña y de guanábana, margarita de
+  guanábana, mai tai de parcha, Ron Collins de parcha, sangría rosada con guayaba, carajillo boricua (café, ron y coco),
+  mamey colada, pitorro de guayaba (con ron comprado, curado 2 semanas) y ron con agua de coco y limón (Cócteles); y el
+  brazo gitano de pistacho y guayaba (bizcocho con pistacho molido, queso crema y pasta de guayaba; en Bizcochos). La
+  limonada de coco y el agua de coco con piña ya existían y no se repitieron.
+- **Iconos** (`index.html`, `js/app.js`): 64 dibujos `ic-tg-<id>`, por id en `SHAKE_ICONS`: cada trago en su vaso real
+  (alto con hielo o yerbabuena, bajo, copa con borde de sal, huracán, copa de vino con fruta, botella con vasito para
+  coquitos y pitorros, frasco para el bilí y coco con sombrilla), con el color del trago y su fruta. Cubre los 18 nuevos
+  y los 46 que todavía eran 🍹🥃🥥🍷🥤🌺🥛. El brazo de pistacho (`ic-brazo-pistacho-guayaba`, regla al principio de
+  `dessertIcons`): bizcocho verde con la espiral rosada de guayaba.
+- *Verificado:* `node tools/check-recipes.js` 0 errores; 0 de 1,410 recetas con ingredientes sin contar; los cócteles
+  dan los avisos de alcohol y de no manejar, el ponche de niños el de azúcar; ninguna bebida entra a los planes (igual
+  que antes); `node tools/recipe-dates.js` y `node tools/prerender.js` (1,410 páginas); las 20 abren en ES y EN a
+  375 px sin desbordes ni errores.
 ### 2026-10-25 — v4.54.0 · 8 bizcochos, 8 galletitas y 4 brazos gitanos más
 - *Pedido:* más recetas de bizcocho, galletitas y brazos gitanos.
 - **Recetas** (`js/recipes-5.js`, tanda 60; 1,370 → 1,390): bizcochos de acerola con glaseado, tamarindo con glaseado
