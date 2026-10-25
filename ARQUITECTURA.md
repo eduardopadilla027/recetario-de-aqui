@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-19 · **Versión del documento:** 4.42.0 · **Versión de la app:** 4.42.0 (revisada el 19 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,316 en 24 categorías
+> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.43.0 · **Versión de la app:** 4.43.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,316 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -276,6 +276,8 @@ Naturales tiene 30 recetas: no se junta con Bebidas.
   y, en empate, la más larga. Sin coincidencia: el icono de la categoría. Valores `svg:<id>` usan dibujos del sprite
   (plátano verde y maduro, longaniza, morcilla, yuca, yautía, ñame, viandas, pinchos de camarones, cerdo y pollo, albóndigas, chuleta, churrasco) porque
   no hay emoji correcto (🍠 es batata, 🍢 es oden japonés, 🧆 es falafel, 🍖 es carne de caricatura).
+  Cada palabra va **una sola vez** en `dishIcons`: en empate (misma posición y largo) gana la primera, así que una
+  repetida más abajo no se usa nunca (v4.43: "guarapo" estaba con 🍵 y con su vaso de caña; ganaba el té).
 - **Postres (`dessertIcons`):** después de `meatIcons` y antes de `dishIcons`, por nombre y en orden (gana la primera):
   flan (con caramelo; el color sigue al sabor: vainilla, queso, chocolate y flancocho, café, coco con hojuelas, guayaba,
   frutas, calabaza y batata), tocino del cielo, gelatina en molde (roja, amarilla, blanca, café, guayaba y mosaico),
@@ -1086,6 +1088,12 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   redirección. Si en un iPhone no se puede entrar desde el icono, se entra desde Safari.
   Para regenerarlos: script de PowerShell con System.Drawing que dibuja `#flag-pr` con sus coordenadas.
 - Responsive con un menú plegable en móvil y la barra de abajo (§7.13); sin desbordes horizontales a 360 px.
+- **Celular, tarjetas y receta (v4.43, ≤ 560 px):** las tarjetas de receta (`.recipe-grid .recipe-card`) son una fila
+  compacta: el plato en un cuadro de 96 px a la izquierda, categoría (una línea, con "…"), nombre, tiempo y porciones a
+  la derecha y el corazón centrado a la derecha; lo que Mi recetario añade debajo ocupa todo el ancho. En la receta la
+  portada es 2:1, los datos van en dos columnas y los botones en una cuadrícula de 6: Modo cocina y Escuchar a media
+  fila, Guardar/Imprimir/Compartir a un tercio, Colección y Lista de compras a media fila y "La hice" entera. La pestaña
+  "Listas en 30 minutos o menos" ocupa las dos columnas de categorías.
 - **Celular y accesibilidad (v4.30):** ningún texto baja de 14 px (`.875rem`: categorías, insignias, conteos, pestañas,
   barra de abajo) y el cuerpo es de 16 px; todo lo que se toca mide al menos 44 px (cambiar comida del plan, chips de
   temporizador, enlaces de reseñas, botones pequeños, medidas, mover comida, quitar de la lista). Bajo 380 px el botón de
@@ -1138,6 +1146,21 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-25 — v4.43.0 · Celular más compacto y revisión de los iconos de las 1,316 recetas
+- *Pedido:* análisis exhaustivo del proyecto, mejorar la interfaz en la web y en el celular, y validar que el icono de
+  cada receta corresponda a la receta.
+- **Celular** (`css/styles.css`, §10): tarjetas de receta en fila compacta (antes ~440 px cada una con el dibujo
+  pequeño; Postres pedía deslizar 147 tarjetas así; ahora caben unas 4 por pantalla); en la receta, portada más baja
+  (el título se ve sin deslizar), datos en dos columnas y botones en cuadrícula pareja (antes 2-2-1-2-1); la pestaña de
+  las rápidas a lo ancho (su nombre salía en 4 líneas).
+- **Iconos** (`js/app.js`, §7): se calculó `dishIcon` de las 1,316 recetas con un script (cargando los archivos en `vm`):
+  todos los `svg:` existen en el sprite; 733 salen de `dessertIcons`, 117 de `meatIcons`, 35 jugos con su vaso, 414 por
+  palabra y 17 con el de la categoría. Se revisaron a mano los 431 de palabra/categoría y los 77 de reglas cuyo dibujo
+  no comparte palabra con el nombre. Corregidos: Guarapo de Caña con Ron (🍵 → vaso de guarapo, se quitó la entrada
+  repetida), Café Frío con Leche (☕ → `ic-sin-cafe-frappe`), Fettuccine con Camarones (🦐 → 🍝), Mofongo de Batata
+  con Chicharrón (plátano verde → 🍠) y Croquetas de Calabaza y Queso (🥟 → `ic-ent-croqueta-papa`).
+- *Verificado (servidor local):* 375 y 360 px en ES y EN sin desbordes, ningún botón con el texto cortado;
+  `node tools/check-recipes.js` 0 errores; sólo cambiaron los 5 iconos previstos.
 ### 2026-10-19 — v4.42.0 · Pestaña "Listas en 30 minutos o menos" y encabezado más ordenado
 - *Pedido:* añadir una pestaña "Listas en 30 minutos o menos" en "Explora por categoría", quitar esa sección de la
   portada y que busque las rápidas al pulsarla. Y ordenar mejor el encabezado: con la cuenta de administrador los enlaces

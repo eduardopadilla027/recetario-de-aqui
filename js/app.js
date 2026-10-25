@@ -18,8 +18,8 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.42.0";
-const APP_REVISED = "2026-10-19";
+const APP_VERSION = "4.43.0";
+const APP_REVISED = "2026-10-25";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
 /* Lo que se muestra en la portada: "Más de 1,000 recetas", no el total exacto (que cambia con cada
@@ -320,7 +320,7 @@ const dishIcons = [
   ["salsa", "🍅"], ["mojo isleno", "🍅"], ["gazpacho", "🍅"], ["gazpacho de bacalao", "🐟"], ["gazpacho de mango", "🥭"], ["salsa de mango", "🥭"],
   ["ternera", "🥩"], ["chicharrones de pollo", "🍗"], ["rellenos de papa", "🥔"], ["surullito", "🌽"],
   ["guineito", VERDE], ["guineitos ninos", "🍌"], ["guingambo", "🥒"], ["grosella", "🍒"], ["pasta de guayaba", "🫙"], ["cascos de guayaba", "🫙"],
-  ["maicena", "🥣"], ["cremita", "🥣"], ["guarapo", "🍵"], ["avena fria", "🥤"],
+  ["maicena", "🥣"], ["cremita", "🥣"], ["avena fria", "🥤"],
   ["mero", "🐟"], ["conejo", "🐇"], ["morcilla", MORCILLA], ["masitas de res", "🥩"], ["pudin", "🍮"], ["arroz con leche", "🍮"],
   ["gofio", "🍬"], ["coconete", "🍪"], ["mamey", "🍑"], ["tres leches", "🍰"], ["tarta", "🍰"],
   ["bienmesabe", "🍮"], ["mampostial", "🍬"], ["dulce de leche", "🍬"], ["dulce de ajonjoli", "🍬"], ["bolitas de tamarindo", "🍬"], ["tocino del cielo", "🍮"],
@@ -334,7 +334,7 @@ const dishIcons = [
   ["salchicha", LONGANIZA], ["longaniza", LONGANIZA], ["chorizo", LONGANIZA], ["salami", LONGANIZA],
   ["lechon", "🍖"], ["pernil", "🍖"], ["chuleta", CHULETA], ["costilla", "🍖"], ["chicharron", "🍖"], ["patitas", "🍖"], ["masitas", "🍖"], ["pincho", "svg:ic-pincho-cerdo"], ["pinchos de pollo", "svg:ic-pincho-pollo"], ["pincho de pollo", "svg:ic-pincho-pollo"], ["pinchos de camarones", PINCHO_CAMARONES], ["pincho de camarones", PINCHO_CAMARONES],
   ["bistec", "🥩"], ["carne", "🥩"], ["rabo", "🥩"], ["ropa vieja", "🥩"], ["churrasco", CHURRASCO], ["higado", "🥩"], ["albondiga", ALBONDIGAS], ["picadillo", "🥩"], ["lengua", "🥩"], ["cabro", "🥩"], ["cabrito", "🥩"], ["carne de cerdo", "🍖"], ["costillita", "🍖"], ["cuajito", "🍖"], ["salpicon", "🥩"], ["lomo", "🍖"], ["jamon", "🍖"],
-  ["espagueti", "🍝"], ["lasana", "🍝"], ["coditos", "🍝"], ["macarrones", "🍝"], ["canelones", "🍝"], ["fideos", "🍝"],
+  ["espagueti", "🍝"], ["lasana", "🍝"], ["coditos", "🍝"], ["macarrones", "🍝"], ["canelones", "🍝"], ["fideos", "🍝"], ["fettuccine", "🍝"],
   ["tortilla", "🍳"], ["revoltillo", "🍳"], ["huevo", "🍳"],
   ["queso", "🧀"], ["quesito", "🥐"],
   ["mofongo", VERDE], ["trifongo", VERDE], ["tostones", VERDE], ["platano", VERDE], ["jibarito", VERDE], ["guineo", VERDE], ["platanutre", VERDE], ["aranita", VERDE],
@@ -343,7 +343,9 @@ const dishIcons = [
   ["pasteles de", "🫔"], ["alcapurria", "🥟"], ["empanadilla", "🥟"], ["pastelillo", "🥟"], ["empanada", "🥟"], ["croqueta", "🥟"], ["relleno", "🥟"],
   ["yuca", YUCA], ["yautia", YAUTIA], ["batata", "🍠"], ["panapen", "🍈"], ["pana", "🍈"], ["viandas", "svg:ic-viandas"], ["papa", "🥔"],
   ["maiz", "🌽"], ["sorullito", "🌽"], ["guanime", "🌽"], ["funche", "🌽"], ["majarete", "🍮"], ["arepa", "🫓"], ["casabe", "🫓"],
-  ["mazamorra", "🌽"], ["domplines", "🫓"], ["yaniqueques", "🫓"], ["mofongo de yuca", YUCA], ["sopa borracha", "🍰"],
+  ["mazamorra", "🌽"], ["domplines", "🫓"], ["yaniqueques", "🫓"], ["mofongo de yuca", YUCA], ["mofongo de batata", "🍠"], ["sopa borracha", "🍰"],
+  // v4.43: el café frío iba en taza humeante y la croqueta de calabaza en 🥟 (empanadilla).
+  ["cafe frio", "svg:ic-sin-cafe-frappe"], ["croquetas de calabaza", "svg:ic-ent-croqueta-papa"],
   ["ostiones", "🦪"], ["chicharrones de pescado", "🐟"], ["ceviche de camarones", "🦐"],
   ["melcocha", "🍬"], ["cidra", "🍋"], ["torrejas", "🍞"], ["flor de jamaica", "🌺"], ["jugo de carambola", "⭐"], ["alitas", "🍗"], ["name", "svg:ic-name"], ["papita", "🥔"], ["malanga", YAUTIA],
   ["cupcake", "🧁"], ["donas", "🍩"], ["rollos de canela", "🥐"], ["churros", "🥖"], ["gelatina", "🍮"], ["guacamole", "🥑"], ["salsa de aguacate", "🥑"], ["fricase de cerdo", "🍖"], ["polvo de amor", "🥥"], ["coquimol", "🥥"],
@@ -359,6 +361,7 @@ const dishIcons = [
   ["pan", "🍞"], ["mallorca", "🥐"], ["rosquilla", "🍩"], ["bunuelo", "🍩"], ["barriguita", "🍩"], ["almojabana", "🧆"],
   ["sangria", "🍷"], ["ponche", "🍹"], ["mojito", "🍹"], ["daiquiri", "🍹"], ["cuba libre", "🥃"], ["pitorro", "🥃"], ["chichaito", "🥃"], ["bili", "🥃"], ["limoncello", "🥃"],
   ["jugo de china", "🍊"], ["jugo de toronja", "🍊"], ["jugo de mango", "🥭"], ["jugo de pina", "🍍"], ["jugo de acerola", "🍒"],
+  // Guarapo de caña: el vaso con su caña (antes una entrada "guarapo" con 🍵, que es té, le ganaba al empatar).
   ["jugo de sandia", "🍉"], ["guarapo", "svg:ic-jugo-guarapo-cana"], ["agua de coco", "🥥"],
   ["jugo", "svg:ic-jugo-natural"], ["batida", "🥤"], ["champola", "🥤"], ["malta", "🥤"], ["avena", "🥣"], ["crema", "🥣"], ["farina", "🥣"],
   ["pique", "🌶️"], ["sofrito", "🌿"], ["recaito", "🌿"], ["ajilimojili", "🌶️"], ["mojo", "🧄"], ["adobo", "🧂"], ["sazon", "🧂"], ["achiote", "🫙"], ["mayo", "🫙"]
