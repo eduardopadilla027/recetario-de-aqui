@@ -9515,7 +9515,7 @@ recipes.push(
   {
     id: "deditos-pescado-horno",
     category: "pescados",
-    name: { es: "Deditos de Pescado al Horno (para Niños)", en: "Baked Fish Sticks (Kid-Friendly)" },
+    name: { es: "Deditos de Pescado al Horno", en: "Baked Fish Sticks" },
     active: 30, total: 30,
     servings: 4,
     ingredients: {
@@ -16170,9 +16170,9 @@ recipes.push(
     }
   },
   {
-    id: "ponche-china-granadina-ninos",
+    id: "ponche-china-granadina",
     category: "bebidas",
-    name: { es: "Ponche de China y Granadina para Niños", en: "Kids' Orange and Grenadine Punch" },
+    name: { es: "Ponche de China y Granadina", en: "Orange and Grenadine Punch" },
     active: 5, total: 5,
     servings: 4,
     ingredients: {
@@ -16180,8 +16180,8 @@ recipes.push(
       en: ["2 cups cold orange juice", "1 cup cold pineapple juice", "1 cup cold sparkling water", "3 tablespoons grenadine", "4 cherries for garnish", "Ice to taste"]
     },
     steps: {
-      es: ["Llene 4 vasos de hielo.", "Mezcle el jugo de china y el de piña, y repártalo en los vasos.", "Complete con el agua con gas.", "Eche la granadina despacio por el borde: baja al fondo y hace el degradado.", "Ponga una cereza. Es el trago de los nenes en los cumpleaños, sin alcohol."],
-      en: ["Fill 4 glasses with ice.", "Mix the orange and pineapple juices and divide among the glasses.", "Top with the sparkling water.", "Pour the grenadine slowly down the side: it sinks and makes the gradient.", "Add a cherry. It's the kids' drink at birthday parties, alcohol-free."]
+      es: ["Llene 4 vasos de hielo.", "Mezcle el jugo de china y el de piña, y repártalo en los vasos.", "Complete con el agua con gas.", "Eche la granadina despacio por el borde: baja al fondo y hace el degradado.", "Ponga una cereza. Es el ponche de los cumpleaños, sin alcohol."],
+      en: ["Fill 4 glasses with ice.", "Mix the orange and pineapple juices and divide among the glasses.", "Top with the sparkling water.", "Pour the grenadine slowly down the side: it sinks and makes the gradient.", "Add a cherry. It's the birthday-party punch, alcohol-free."]
     }
   },
   {

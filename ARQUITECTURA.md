@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.58.0 · **Versión de la app:** 4.58.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,428 en 24 categorías
+> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.60.0 · **Versión de la app:** 4.60.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,428 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -443,7 +443,7 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   milhojas = palmera. "postre" también cubre pasteles dulces, bizcochos y galletitas ("postre de hojaldre").
 - **Empanados:** `empanado`, `empanada` y `breaded` amplían a milanesa, parmesana y panko ("pechuga empanada",
   "breaded chicken").
-- **"X para Y"**: si lo de antes de "para"/"for" nombra una categoría ("salsa para pollo", "postre para niños"), se
+- **"X para Y"**: si lo de antes de "para"/"for" nombra una categoría ("salsa para pollo", "postre para Navidad"), se
   busca sólo en esa categoría y lo de después ordena los resultados sin ser obligatorio.
 - **Categorías por su nombre** (`S_CATS`): "postres", "tragos", "sopas", "frituras"…
 - **Errores de escritura:** si una palabra no existe en el recetario, primero se busca una que **suene igual**
@@ -459,7 +459,8 @@ devuelve una puntuación por receta y un resumen de lo que entendió; `app.js` f
   excluye las recetas que la llevan en los ingredientes.
 - **Ideas** (`S_IDEAS`): navidad, playa/kioscos, desayuno, rápido (≤ 30 min), vegetariano, vegano (las recetas con "vegano" en el nombre van primero; además sin lácteos, huevo, miel ni
   gelatina; la leche y crema de coco y la mantequilla de maní sí valen), picante, frío y refrescante,
-  saludable/ligero (< 350 kcal y sin freír), con alcohol, "mocktail" (tragos sin alcohol), para niños (sin alcohol, cafeína ni crudos).
+  saludable/ligero (< 350 kcal y sin freír), con alcohol y "mocktail" (tragos sin alcohol). La idea "para niños" se quitó en v4.59; su regla quedó
+  interna como `sKidSafe()` (sin alcohol, cafeína, crudos, anís estrellado ni tés fuertes) para el plan de autismo.
   "Trago/bebida sin alcohol" y "mocktail" ponen primero las recetas cuyo nombre dice "sin alcohol".
 - **Orden:** suma de puntuaciones + desempates (el nombre contiene la frase buscada, empieza con ella, o la búsqueda cubre
   la mayor parte del nombre: "Arroz con Pollo" antes que "Sopón de Pollo con Arroz").
@@ -778,8 +779,8 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - **Filtros:** tiempo (15, 30, 45 min, 1 hora), **dificultad** (`recipeLevel()`: fácil = ≤ 8 ingredientes, ≤ 5 pasos y
   ≤ 45 min; elaborada = ≥ 14 ingredientes, ≥ 9 pasos, más de 2 horas o espera con ≥ 7 pasos; si no, intermedia; también
   sale en los datos de la receta), calorías por porción (300, 500, 700), **sin** alérgenos (gluten, leche, huevo, pescado,
-  crustáceos, moluscos, maní, nueces, soya, ajonjolí), dieta (vegetariana/vegana, las de los planes), época y "para niños"
-  (la misma idea del buscador). Se combinan con el buscador, la categoría, las rápidas y las favoritas: `hasFilters()`,
+  crustáceos, moluscos, maní, nueces, soya, ajonjolí), dieta (vegetariana/vegana, las de los planes) y época ("para niños" se quitó
+  en v4.59). Se combinan con el buscador, la categoría, las rápidas y las favoritas: `hasFilters()`,
   `matches()` y la clave de la vista de `app.js` llaman a `advActive()`, `advOk()` y `advKey()`.
 - **Más claro (v4.30):** cada tarjeta dice **"Le falta: cilantro, ajíes dulces y 2 más"** o "Tiene lo principal"
   (`haveMissing`/`haveCardHTML`: sin sal, pimienta, aceite, agua, lo opcional ni lo de adornar); el panel dice cuántas
@@ -787,8 +788,8 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   lo que no cupo (antes se perdía); con el filtro de calorías dice cuántas recetas sin estimado quedan fuera; y lo que se
   está escribiendo no se borra cuando el panel se vuelve a pintar.
 - **v4.40:** `advNotes()` pone junto al conteo de resultados ("N recetas encontradas", con cualquier combinación) lo que
-  un filtro deja fuera: recetas sin tiempo con el filtro de tiempo, sin estimado con el de calorías. Si la regla de "para
-  niños" no carga, el filtro no deja pasar ninguna y lo dice (antes dejaba pasar todas sin aviso).
+  un filtro deja fuera: recetas sin tiempo con el filtro de tiempo, sin estimado con el de calorías. (El aviso de "para niños"
+  se fue con ese filtro en v4.59.)
 
 ### 7.12 De temporada en la isla (`js/seasonal.js`)
 
@@ -1010,7 +1011,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   caseína sin beneficio probado, y cuándo ir al pediatra o a un terapeuta de alimentación). El plan (`autismo`): **rutina**
   (`routine: true`: `buildPlan()` repite el desayuno y la merienda del primer día toda la semana); sólo recetas sencillas
   (`only`: hasta 12 ingredientes y no "elaboradas", §7.11), de sabor suave (`SPICY_RX`: sin pique, ají picante, chile…),
-  aptas para niños (`kidsOk`: la idea "para niños" del buscador) y sin frituras; topes de azúcar añadida y de sodio por
+  aptas para niños (`kidsOk`: `sKidSafe()` de `search.js`) y sin frituras; topes de azúcar añadida y de sodio por
   comida (desayuno 450, principal 600, merienda 250, acompañante 300 mg); un acompañante; la puntuación premia fibra,
   calcio y vitamina D. Acepta **niños de 2 a 13 años** (`kids: true` en `planTargets()`): calorías de las Guías
   Alimentarias por edad (2–3 años 1,200; 4–8 1,500; 9–13 1,800 niñas y 2,000 niños) y proteína de la ración recomendada
@@ -1148,12 +1149,12 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
   porción (≈ 1 trago por hora) y que no hay una cantidad segura para conducir. Los cócteles "sin alcohol" no la llevan.
   Los postres cuyo licor va sin cocinar (`RAW_ALCOHOL_IDS`: bizcochos de brandy, de amaretto y de ron) llevan la alerta
   alta `alcoholRaw` con los gramos y tragos por porción, en vez de "una parte se evapora"; el buscador los cuenta como
-  con alcohol ("sin alcohol", "para niños").
+  con alcohol ("sin alcohol"; el plan de autismo, con `sKidSafe()`).
 - **Tés** (`TEA_INFO`, por id, 33 tés): uso tradicional en Puerto Rico (aclarando que es remedio casero y no sustituye al
   médico) y una precaución propia de cada planta (manzanilla y alergia a la familia de la margarita, canela y cumarina,
   anís estrellado japonés, tilo y sedantes, hojas de guayaba con medicinas para la diabetes…). Los de riesgo serio
-  (`TEA_HIGH`: poleo, anamú, cundeamor, hoja de guanábana) llevan la precaución en rojo, no salen en "para niños" (que
-  tampoco muestra los tés cuya precaución dice "niños" ni el anís estrellado) ni en la lista de la época de lluvia de
+  (`TEA_HIGH`: poleo, anamú, cundeamor, hoja de guanábana) llevan la precaución en rojo, no salen en el plan de autismo (`sKidSafe()`, que
+  tampoco deja los tés cuya precaución dice "niños" ni el anís estrellado) ni en la lista de la época de lluvia de
   los planes. No se incluyen ruda, yerba bruja, epazote, higuereta ni sábila tomada, por ser tóxicas.
 - **Manejo seguro:** temperaturas internas según el USDA según el tipo de carne o marisco.
 - Es información general: la interfaz pide revisar etiquetas y consultar al médico.
@@ -1231,12 +1232,32 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-25 — v4.60.0 · "Porciones" también en el móvil
+- *Pedido:* en las recetas del móvil no salía la palabra "Porciones" junto al − / + de los ingredientes (en la web sí).
+- **`css/styles.css`:** en pantallas de 760 px o menos ya no se esconde `.stepper-label`; sale un poco más pequeña
+  (0.75 rem) y el control baja a su propia línea bajo "Ingredientes" cuando no cabe al lado.
+- *Verificado* a 375 px: "PORCIONES − 12 +" (EN "SERVINGS") sin desbordes.
+### 2026-10-25 — v4.59.0 · Fuera todo lo que dice "para niños"
+- *Pedido:* eliminar todo lo que diga "para niños".
+- **Filtros** (`js/filters.js`): fuera la casilla "Para niños (sin alcohol ni cafeína)", su aviso y `adv.kids`; la
+  explicación bajo "Filtros" ya no lo nombra.
+- **Buscador** (`js/search.js`): fuera la idea "Para niños" (palabras niño, kid, infantil): "postre para niños" ahora
+  busca postres como cualquier texto. Su regla queda interna como `sKidSafe()`, porque el plan de autismo (2 a 13
+  años, `plans.js`, `kidsOk`) la necesita para dejar fuera alcohol, cafeína y crudos.
+- **Recetas** (`js/recipes-5.js`): "Ponche de China y Granadina para Niños" pasa a "Ponche de China y Granadina" (id
+  `ponche-china-granadina`, antes `…-ninos`; su dibujo `ic-tg-ponche-china-granadina`; la página vieja se borró) y
+  "Deditos de Pescado al Horno (para Niños)" a "Deditos de Pescado al Horno"; en inglés sin "Kids'"/"Kid-Friendly".
+- **Se quedan a propósito:** los avisos de seguridad que nombran a niños (miel antes de 1 año, huevo y pescado crudos,
+  alcohol sin cocinar, cafeína, quenepa, poleo, anís estrellado) y 14 consejos dentro de pasos de recetas; los textos
+  legales del consentimiento y los del plan de autismo para menores; y "guineítos niños", que es la fruta.
+- *Verificado:* `check-recipes` 0 errores; el panel no dice "niños"; el plan de autismo sigue sin mojito ni café;
+  0 dibujos faltantes; `recipe-dates` y `prerender` (1,428 páginas, 1 borrada); sin errores en la consola.
 ### 2026-10-25 — v4.58.0 · Sólo el botón "Filtros" con su explicación
 - *Pedido:* quitar los chips de filtros añadidos en v4.57 y dejar el botón de Filtros con su explicación.
 - **`index.html`, `js/filters.js`, `js/app.js`, `css/styles.css`:** fuera los seis chips (`QUICK`, `renderQuickChips`,
   `#quick-chips`, la fila deslizable). Queda "Filtros" (más marcado, con el número de filtros puestos) y debajo una línea
   nueva que dice para qué sirve: "Toque «Filtros» para ver sólo las recetas que quiere: por tiempo, dificultad, calorías,
-  dieta, sin alérgenos, época, para niños o con «¿Qué tengo en la nevera?». Se suman entre sí y con lo que busque."
+  dieta, sin alérgenos, época o con «¿Qué tengo en la nevera?». Se suman entre sí y con lo que busque."
   Las explicaciones dentro del panel y los micrófonos siguen igual.
 - *Verificado* en el navegador: no queda ningún chip; el panel abre con sus 6 explicaciones, un filtro marca "Filtros 1"
   y da 892 recetas; la ayuda cambia a inglés; sin desbordes a 375 px ni errores en la consola.

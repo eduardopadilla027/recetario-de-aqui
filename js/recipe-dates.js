@@ -1154,7 +1154,7 @@ const RECIPE_ADDED = {
   "polvo-de-amor": "2026-10-09",
   "polvorones": "2026-06-28",
   "ponche-acerola-ron": "2026-10-10",
-  "ponche-china-granadina-ninos": "2026-10-25",
+  "ponche-china-granadina": "2026-10-25",
   "ponche-crema": "2026-06-28",
   "ponche-crema-sin-alcohol": "2026-10-10",
   "ponche-guayaba": "2026-10-09",

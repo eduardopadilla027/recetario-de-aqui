@@ -150,12 +150,14 @@ const S_IDEAS = [
   { words: "alcohol alcoholico alcoholica boozy", label: { es: "Con alcohol", en: "With alcohol" },
     test: (r) => sIsAlcohol(r) },
   { words: "mocktail mocktails", label: { es: "Tragos sin alcohol", en: "Alcohol-free drinks" },
-    test: (r) => ["bebidas", "jugos", "cocteles"].includes(r.category) && !sIsAlcohol(r) },
-  { words: "nino ninos kid kids infantil", label: { es: "Para niños (sin alcohol ni cafeína)", en: "Kid-friendly (no alcohol or caffeine)" },
-    // Tampoco los tés que no son para niños (poleo, anamú, anís estrellado, orégano brujo…).
-    test: (r) => !getAdvisories(r).alerts.some((a) => ["alcoholDrink", "alcoholCooked", "alcoholRaw", "caffeine", "rawEgg", "rawFish", "starAnise"].includes(a.key)) &&
-      !(typeof TEA_INFO !== "undefined" && TEA_INFO[r.id] && (TEA_HIGH.has(r.id) || /niños/.test(TEA_INFO[r.id].es[1]))) }
+    test: (r) => ["bebidas", "jugos", "cocteles"].includes(r.category) && !sIsAlcohol(r) }
 ].map((idea) => ({ ...idea, words: idea.words.split(" ").map(sStem) }));
+
+/* Apta para niños: sin alcohol, cafeína, huevo o pescado crudo, anís estrellado ni los tés que no son para
+   ellos (poleo, anamú, orégano brujo…). Desde v4.59 no es idea del buscador ni filtro: sólo la usa el plan de
+   autismo (2 a 13 años; plans.js, kidsOk). */
+const sKidSafe = (r) => !getAdvisories(r).alerts.some((a) => ["alcoholDrink", "alcoholCooked", "alcoholRaw", "caffeine", "rawEgg", "rawFish", "starAnise"].includes(a.key)) &&
+  !(typeof TEA_INFO !== "undefined" && TEA_INFO[r.id] && (TEA_HIGH.has(r.id) || /niños/.test(TEA_INFO[r.id].es[1])));
 
 /* ---------------------------------------------------------------- índice ---- */
 
@@ -266,7 +268,7 @@ function smartSearch(query, ctx) {
   const terms = [], excludes = [], ideas = [], corrections = [];
   const vocab = sGetVocab();
   const vocabSet = new Set(vocab);
-  // "salsa para pollo", "postre para niños": lo que va después de "para" es el uso, no el plato.
+  // "salsa para pollo", "postre para Navidad": lo que va después de "para" es el uso, no el plato.
   let afterPara = false;
 
   for (let i = 0; i < words.length; i++) {

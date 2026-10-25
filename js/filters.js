@@ -4,7 +4,7 @@
  * - Lo que tengo: escriba ingredientes ("pollo", "papa", "cilantro") y salen las recetas que los
  *   llevan todos (o al menos uno), ordenadas por las que menos cosas le faltan.
  * - Tiempo, dificultad (calculada de ingredientes, pasos y tiempo), calorías por porción,
- *   sin alérgenos, dieta (vegetariana o vegana), época y "para niños".
+ *   sin alérgenos, dieta (vegetariana o vegana) y época.
  * - Bajo el botón, una línea que explica para qué sirve; dentro del panel (v4.57), una explicación corta de cada grupo y el micrófono para decir los ingredientes (startDictation, app.js).
  * Se combinan entre sí, con el buscador, la categoría, las rápidas y las favoritas: app.js llama a
  * advActive(), advOk() y advKey(). Depende de app.js, nutrition.js, advisories.js, plans.js y search.js. */
@@ -19,7 +19,7 @@ const FT = {
     level: "Dificultad", levels: { "": "Cualquiera", easy: "Fácil", medium: "Intermedia", hard: "Elaborada" },
     kcal: "Calorías por porción", kcalAny: "Cualquiera", kcalOpt: (k) => `${k} o menos`,
     free: "Sin…", diet: "Dieta", diets: { "": "De todo", veg: "Vegetariana", vegan: "Vegana" },
-    season: "Época", seasonAny: "Cualquiera", kids: "Para niños (sin alcohol ni cafeína)",
+    season: "Época", seasonAny: "Cualquiera",
     count: (n) => (n === 1 ? "1 filtro" : `${n} filtros`),
     levelTag: { easy: "Fácil", medium: "Intermedia", hard: "Elaborada" },
     missing: (n) => (n ? `le faltan ${n} de sus ingredientes` : "tiene todo"),
@@ -29,8 +29,7 @@ const FT = {
     found: (n) => (n === 1 ? "1 receta usa lo que tiene." : `${n} recetas usan lo que tiene.`),
     kcalOut: (n) => (n === 1 ? "1 receta sin estimado de calorías queda fuera de este filtro." : `${n} recetas sin estimado de calorías quedan fuera de este filtro.`),
     timeOut: (n) => (n === 1 ? "1 receta sin tiempo anotado queda fuera del filtro de tiempo." : `${n} recetas sin tiempo anotado quedan fuera del filtro de tiempo.`),
-    kidsOff: "El filtro \"Para niños\" no se pudo cargar: no se muestran recetas con él. Recargue la página o quítelo.",
-    help: "Toque «Filtros» para ver sólo las recetas que quiere: por tiempo, dificultad, calorías, dieta, sin alérgenos, época, para niños o con «¿Qué tengo en la nevera?». Se suman entre sí y con lo que busque.",
+    help: "Toque «Filtros» para ver sólo las recetas que quiere: por tiempo, dificultad, calorías, dieta, sin alérgenos, época o con «¿Qué tengo en la nevera?». Se suman entre sí y con lo que busque.",
     intro: "Marque lo que quiera: los filtros se suman entre sí y con la búsqueda, y el número del botón dice cuántos tiene puestos.",
     hints: {
       time: "Del principio hasta servir, con nevera y esperas.",
@@ -51,7 +50,7 @@ const FT = {
     level: "Difficulty", levels: { "": "Any", easy: "Easy", medium: "Intermediate", hard: "Elaborate" },
     kcal: "Calories per serving", kcalAny: "Any", kcalOpt: (k) => `${k} or less`,
     free: "Free of…", diet: "Diet", diets: { "": "Everything", veg: "Vegetarian", vegan: "Vegan" },
-    season: "Season", seasonAny: "Any", kids: "Kid-friendly (no alcohol or caffeine)",
+    season: "Season", seasonAny: "Any",
     count: (n) => (n === 1 ? "1 filter" : `${n} filters`),
     levelTag: { easy: "Easy", medium: "Intermediate", hard: "Elaborate" },
     missing: (n) => (n ? `${n} of your ingredients missing` : "you have it all"),
@@ -61,8 +60,7 @@ const FT = {
     found: (n) => (n === 1 ? "1 recipe uses what you have." : `${n} recipes use what you have.`),
     kcalOut: (n) => (n === 1 ? "1 recipe without a calorie estimate is left out by this filter." : `${n} recipes without a calorie estimate are left out by this filter.`),
     timeOut: (n) => (n === 1 ? "1 recipe with no time listed is left out by the time filter." : `${n} recipes with no time listed are left out by the time filter.`),
-    kidsOff: "The \"Kid-friendly\" filter couldn't load, so it shows no recipes. Reload the page or turn it off.",
-    help: "Tap «Filters» to see only the recipes you want: by time, difficulty, calories, diet, allergen-free, season, kid-friendly or with «What's in my fridge?». They add up with each other and with your search.",
+    help: "Tap «Filters» to see only the recipes you want: by time, difficulty, calories, diet, allergen-free, season or with «What's in my fridge?». They add up with each other and with your search.",
     intro: "Pick what you want: filters add up with each other and with the search, and the number on the button shows how many are on.",
     hints: {
       time: "From start to serving, including fridge and waiting.",
@@ -77,7 +75,7 @@ const FT = {
 };
 const ft = () => FT[currentLang];
 const FREE_KEYS = ["gluten", "milk", "egg", "fish", "crustacean", "mollusc", "peanut", "treenut", "soy", "sesame"];
-const ADV_DEFAULT = () => ({ have: [], haveAny: false, time: 0, level: "", kcal: 0, free: [], diet: "", season: "", kids: false });
+const ADV_DEFAULT = () => ({ have: [], haveAny: false, time: 0, level: "", kcal: 0, free: [], diet: "", season: "" });
 let adv = ADV_DEFAULT();
 let advOpen = false;
 
@@ -136,13 +134,12 @@ function haveCardHTML(r) {
 }
 
 function advActive() {
-  return Boolean(adv.have.length || adv.time || adv.level || adv.kcal || adv.free.length || adv.diet || adv.season || adv.kids);
+  return Boolean(adv.have.length || adv.time || adv.level || adv.kcal || adv.free.length || adv.diet || adv.season);
 }
 function advCount() {
-  return (adv.have.length ? 1 : 0) + (adv.time ? 1 : 0) + (adv.level ? 1 : 0) + (adv.kcal ? 1 : 0) + adv.free.length + (adv.diet ? 1 : 0) + (adv.season ? 1 : 0) + (adv.kids ? 1 : 0);
+  return (adv.have.length ? 1 : 0) + (adv.time ? 1 : 0) + (adv.level ? 1 : 0) + (adv.kcal ? 1 : 0) + adv.free.length + (adv.diet ? 1 : 0) + (adv.season ? 1 : 0);
 }
 const advKey = () => JSON.stringify(adv);
-const KIDS_IDEA = () => (typeof S_IDEAS !== "undefined" ? S_IDEAS.find((i) => i.label.es.startsWith("Para niños")) : null);
 function advOk(r) {
   if (adv.have.length) {
     const c = haveCount(r);
@@ -155,8 +152,6 @@ function advOk(r) {
   if (adv.diet === "veg" && !isVegetarian(r)) return false;
   if (adv.diet === "vegan" && !isVegan(r)) return false;
   if (adv.season && !inSeasonOf(r, adv.season)) return false;
-  // Sin la regla de "para niños" no pasa ninguna (antes pasaban todas, sin aviso; revisión 2, N8): advNotes() lo dice.
-  if (adv.kids) { const idea = KIDS_IDEA(); if (!idea || !idea.test(r, { nameAll: nutriNorm(r.name.es + " " + r.name.en) })) return false; }
   return true;
 }
 /* Avisos junto al conteo de resultados (app.js, renderRecipes): lo que un filtro deja fuera sin decirlo. */
@@ -164,7 +159,6 @@ function advNotes() {
   const tr = ft(), out = [];
   if (adv.time) { const n = recipes.filter((r) => totalMinutes(r) == null).length; if (n) out.push(tr.timeOut(n)); }
   if (adv.kcal) { const n = recipes.filter((r) => !estimateNutrition(r).counted).length; if (n) out.push(tr.kcalOut(n)); }
-  if (adv.kids && !KIDS_IDEA()) out.push(tr.kidsOff);
   return out;
 }
 /* Con "lo que tengo" y sin búsqueda: primero las que usan más de lo que tiene. */
@@ -230,8 +224,6 @@ function renderAdvPanel() {
           ${FREE_KEYS.map((k) => `<label class="chip-check"><input type="checkbox" data-adv-free="${k}" ${adv.free.includes(k) ? "checked" : ""}><span>${esc(ADV.allergens[k].replace(/\s*\(.*\)$/, ""))}</span></label>`).join("")}</fieldset>
         <fieldset class="adv-set"><legend>${esc(tr.season)}</legend>${hint("season")}
           ${radio("season", "", tr.seasonAny, !adv.season)}${SEASON_KEYS.map((k) => radio("season", k, seasons[k], adv.season === k)).join("")}</fieldset>
-        <fieldset class="adv-set"><legend class="sr-only">${esc(tr.kids)}</legend>
-          <label class="chip-check"><input type="checkbox" data-adv-kids ${adv.kids ? "checked" : ""}><span>${esc(tr.kids)}</span></label></fieldset>
       </div>
       ${advActive() ? `<button type="button" class="btn btn-ghost btn-sm" data-adv-clear>${esc(tr.clear)}</button>` : ""}
     </div>`;
@@ -295,7 +287,7 @@ function setupFilters() {
       const k = el.dataset.advFree;
       adv.free = el.checked ? [...adv.free, k] : adv.free.filter((x) => x !== k);
       advChanged(`[data-adv-free="${k}"]`);
-    } else if (el.matches("[data-adv-kids]")) { adv.kids = el.checked; advChanged("[data-adv-kids]"); }
+    }
   });
   renderAdvButton();
 }

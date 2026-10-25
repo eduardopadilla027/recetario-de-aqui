@@ -418,7 +418,7 @@ const PLAN_GOALS = {
   }
 };
 const SPICY_RX = /\b(pique|picante|aji picante|ajies picantes|jalapen|chiles?\b|hojuelas de aji|cayena|habanero|chipotle|sriracha|wasabi|curry)/;
-const kidsOk = (r) => { const idea = typeof S_IDEAS !== "undefined" && S_IDEAS.find((i) => i.label.es.startsWith("Para niños")); return !idea || idea.test(r, { nameAll: planNorm(r.name.es + " " + r.name.en) }); };
+const kidsOk = (r) => typeof sKidSafe !== "function" || sKidSafe(r);
 
 /* ── Épocas: platos típicos por nombre (y categoría) ── */
 const SEASONS = {

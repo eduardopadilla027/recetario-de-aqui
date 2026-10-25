@@ -682,7 +682,8 @@ svg.icon:has(> use[href="#i-heart"]) { color: var(--heart-red); }
   .recipe-actions #cook-btn, .recipe-actions #listen-btn { grid-column: span 3; }
   .recipe-actions-2 .btn { grid-column: span 3; }
   .recipe-actions-2 .btn:last-child:nth-child(odd) { grid-column: 1 / -1; }
-  .stepper-label { display: none; }
+  /* "Porciones" también en el móvil (antes se escondía y sólo se veían − 4 +), un poco más pequeña (v4.60). */
+  .stepper-label { font-size: .75rem; letter-spacing: .04em; margin-right: 0; }
 }
 
 @media (max-width: 380px) {

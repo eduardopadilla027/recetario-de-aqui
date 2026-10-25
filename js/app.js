@@ -18,7 +18,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.58.0";
+const APP_VERSION = "4.60.0";
 const APP_REVISED = "2026-10-25";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
@@ -1404,7 +1404,7 @@ const SHAKE_ICONS = {
   // Bebidas y cócteles (v4.55): cada trago en su vaso real (alto, bajo, copa, huracán, vino, botella, frasco o coco).
   "refresco-tamarindo": "tg-refresco-tamarindo", "limonada-acerola": "tg-limonada-acerola", "te-helado-guanabana": "tg-te-helado-guanabana",
   "frappe-mango": "tg-frappe-mango", "chicha-pina-jengibre": "tg-chicha-pina-jengibre", "agua-sandia-limon": "tg-agua-sandia-limon",
-  "ponche-china-granadina-ninos": "tg-ponche-china-granadina-ninos", "mojito-guayaba": "tg-mojito-guayaba", "daiquiri-pina": "tg-daiquiri-pina",
+  "ponche-china-granadina": "tg-ponche-china-granadina", "mojito-guayaba": "tg-mojito-guayaba", "daiquiri-pina": "tg-daiquiri-pina",
   "margarita-guanabana": "tg-margarita-guanabana", "mai-tai-parcha": "tg-mai-tai-parcha", "mojito-acerola": "tg-mojito-acerola",
   "ron-collins-parcha": "tg-ron-collins-parcha", "sangria-rosada-guayaba": "tg-sangria-rosada-guayaba", "daiquiri-guanabana": "tg-daiquiri-guanabana",
   "carajillo-boricua": "tg-carajillo-boricua", "mamey-colada": "tg-mamey-colada", "pitorro-guayaba": "tg-pitorro-guayaba",
