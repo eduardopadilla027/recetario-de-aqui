@@ -77,6 +77,7 @@
   <url><loc>https://recetariodeaqui.com/receta/bowl-pitahaya-mango</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/pina-rellena-frutas</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/brochetas-frutas-parcha</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/bolitas-guineo-avena-mani</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/funche</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/avena-criolla</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/harina-maiz-leche</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
@@ -99,6 +100,10 @@
   <url><loc>https://recetariodeaqui.com/receta/granola-ajonjoli-melao</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/maicena-chocolate</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/harina-maiz-coco</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/avena-soya-mani-guineo</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/desayuno-quinoa-coco-mango</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/pudin-chia-soya-parcha</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/avena-salada-tofu-sofrito</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/garbanzos-guisados</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/habichuelas-blancas</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/gandules-guisados</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
@@ -128,6 +133,9 @@
   <url><loc>https://recetariodeaqui.com/receta/habichuelas-negras-calabaza</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/gandules-secos-desde-cero</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/habichuelas-coloradas-patitas</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/desayuno-revoltillo-tofu-garbanzos</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/picadillo-lentejas-tofu-arroz</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/chili-habichuelas-quinoa-tostones</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/ensalada-pulpo</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/ensalada-papa</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/ensalada-bacalao</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
@@ -241,6 +249,7 @@
   <url><loc>https://recetariodeaqui.com/receta/sopa-cabro</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/sopa-hueso-res</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/gazpacho-sandia</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/asopao-garbanzos-tofu</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/carne-guisada</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/bistec-encebollado</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/pernil</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
@@ -560,6 +569,8 @@
   <url><loc>https://recetariodeaqui.com/receta/tostones-camarones-ajillo</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/croquetas-garbanzos-recao</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/bunuelos-apio-queso</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/garbanzos-crujientes-adobo-limon</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/hummus-gandules-vegetales</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/espaguetis-salchichas</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/espaguetis-carne-molida</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/espaguetis-atun</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
@@ -759,6 +770,7 @@
   <url><loc>https://recetariodeaqui.com/receta/pan-pasas-canela</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/pan-mango</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/pan-apio</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/panqueques-avena-garbanzo</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/sandwich-mezcla</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/medianoche</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/cubano</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
@@ -1004,6 +1016,7 @@
   <url><loc>https://recetariodeaqui.com/receta/pegao-crujiente</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/arroz-lentejas-cebolla</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/arroz-pavo</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/arroz-habichuelas-tofu-guisado</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/tostones</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/mofongo</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/amarillos</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
@@ -1101,6 +1114,8 @@
   <url><loc>https://recetariodeaqui.com/receta/apio-escabeche</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/pastelon-apio</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/pure-apio-bebes</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/tofu-mojo-isleno-gandules</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/pastelon-amarillos-lentejas-tofu</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/sofrito</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/mojo-isleno</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/pique</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
@@ -1228,6 +1243,23 @@
   <url><loc>https://recetariodeaqui.com/receta/te-frio-limoncillo-jengibre</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/batida-fresa-guineo</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/ponche-parcha-sin-alcohol</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/batida-soya-mani-guineo</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/batida-guayaba-leche</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/batida-carambola-china</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/batida-melon-leche</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/batida-sandia-fresa</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/batida-china-zanahoria</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/batida-calabaza-canela</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/batida-remolacha-fresa</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/batida-verde-pepino-pina</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/batida-zanahoria-mango-jengibre</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/batida-espinaca-guineo-mani</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/batida-yogur-griego-guayaba</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/batida-chocolate-guineo</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/champola-mamey</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/champola-nispero</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/champola-mango</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://recetariodeaqui.com/receta/champola-acerola</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/jugo-parcha</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/jugo-tamarindo</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://recetariodeaqui.com/receta/limonada-criolla</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>

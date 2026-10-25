@@ -14445,5 +14445,1003 @@ recipes.push(
         "Roll up, folding in the sides, and cut in half. It's vegan and easy to take to work."
       ]
     }
+  },
+  // Tanda 57 (v4.49): veganas con proteína para los planes — desayunos, platos principales y meriendas.
+  // Antes el plan vegano llegaba al 87 % de la proteína: de 8 desayunos veganos sólo uno pasaba de 7 g.
+  {
+    id: "avena-soya-mani-guineo",
+    category: "cereales",
+    name: { es: "Avena con Leche de Soya, Mantequilla de Maní y Guineo (Vegana)", en: "Oatmeal with Soy Milk, Peanut Butter and Banana (Vegan)" },
+    active: 12, total: 12,
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 taza de avena en hojuelas",
+        "2 tazas de leche de soya sin azúcar",
+        "1 pizca de sal",
+        "½ cucharadita de canela en polvo",
+        "1 cucharada de semillas de chía",
+        "2 cucharadas de mantequilla de maní natural",
+        "1 guineo maduro en ruedas"
+      ],
+      en: [
+        "1 cup rolled oats",
+        "2 cups unsweetened soy milk",
+        "1 pinch salt",
+        "½ teaspoon ground cinnamon",
+        "1 tablespoon chia seeds",
+        "2 tablespoons natural peanut butter",
+        "1 ripe banana, sliced"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, mezcle la avena, la leche de soya, la sal y la canela.",
+        "Cocine a fuego medio, moviendo, de 5 a 6 minutos, hasta que espese.",
+        "Apague, añada la chía y deje reposar 2 minutos.",
+        "Sirva en 2 tazones con la mantequilla de maní por encima y las ruedas de guineo.",
+        "Cada tazón tiene unos 18 g de proteína: la leche de soya y el maní la ponen."
+      ],
+      en: [
+        "In a pot, mix the oats, soy milk, salt and cinnamon.",
+        "Cook over medium heat, stirring, 5 to 6 minutes, until thick.",
+        "Turn off the heat, add the chia and let it rest 2 minutes.",
+        "Serve in 2 bowls topped with the peanut butter and banana slices.",
+        "Each bowl has about 18 g of protein: the soy milk and peanuts provide it."
+      ]
+    }
+  },
+  {
+    id: "desayuno-revoltillo-tofu-garbanzos",
+    category: "granos",
+    name: { es: "Desayuno Criollo: Revoltillo de Tofu y Garbanzos con Sofrito (Vegano)", en: "Puerto Rican Breakfast: Tofu and Chickpea Scramble with Sofrito (Vegan)" },
+    active: 15, total: 15,
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 paquete de 14 onzas de tofu firme, escurrido",
+        "1 lata de 15 onzas de garbanzos, escurridos",
+        "1 cucharada de aceite de oliva",
+        "3 cucharadas de sofrito",
+        "½ pimiento rojo picadito",
+        "½ cucharadita de cúrcuma",
+        "1 cucharada de levadura nutricional",
+        "½ cucharadita de sal",
+        "2 tazas de espinaca fresca"
+      ],
+      en: [
+        "1 package (14 ounces) firm tofu, drained",
+        "1 can (15 ounces) chickpeas, drained",
+        "1 tablespoon olive oil",
+        "3 tablespoons sofrito",
+        "½ red bell pepper, finely chopped",
+        "½ teaspoon turmeric",
+        "1 tablespoon nutritional yeast",
+        "½ teaspoon salt",
+        "2 cups fresh spinach"
+      ]
+    },
+    steps: {
+      es: [
+        "Desmorone el tofu con las manos y aplaste un poco los garbanzos con un tenedor.",
+        "En un sartén con el aceite, sofría el sofrito y el pimiento 2 minutos.",
+        "Añada el tofu, los garbanzos, la cúrcuma, la levadura nutricional y la sal; cocine 5 minutos moviendo.",
+        "Agregue la espinaca y cocine 1 minuto, hasta que se ablande.",
+        "Sirva caliente. Rinde 4 porciones de unos 22 g de proteína: un desayuno criollo sin huevo."
+      ],
+      en: [
+        "Crumble the tofu with your hands and lightly mash the chickpeas with a fork.",
+        "In a skillet with the oil, sauté the sofrito and bell pepper 2 minutes.",
+        "Add the tofu, chickpeas, turmeric, nutritional yeast and salt; cook 5 minutes, stirring.",
+        "Add the spinach and cook 1 minute, until wilted.",
+        "Serve hot. Makes 4 servings of about 22 g of protein: a Puerto Rican breakfast without eggs."
+      ]
+    }
+  },
+  {
+    id: "desayuno-quinoa-coco-mango",
+    category: "cereales",
+    name: { es: "Desayuno de Quinoa con Leche de Soya, Mangó y Almendras (Vegano)", en: "Quinoa Breakfast Bowl with Soy Milk, Mango and Almonds (Vegan)" },
+    active: 20, total: 20,
+    servings: 3,
+    ingredients: {
+      es: [
+        "1 taza de quinoa, enjuagada",
+        "2 tazas de leche de soya sin azúcar",
+        "½ taza de agua",
+        "1 cucharadita de canela en polvo",
+        "1 cucharadita de vainilla",
+        "2 cucharadas de semillas de chía",
+        "¼ taza de almendras picadas",
+        "1 mangó en cubitos",
+        "2 cucharadas de coco rallado sin azúcar"
+      ],
+      en: [
+        "1 cup quinoa, rinsed",
+        "2 cups unsweetened soy milk",
+        "½ cup water",
+        "1 teaspoon ground cinnamon",
+        "1 teaspoon vanilla",
+        "2 tablespoons chia seeds",
+        "¼ cup chopped almonds",
+        "1 mango, diced",
+        "2 tablespoons unsweetened shredded coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla, hierva la quinoa con la leche de soya, el agua y la canela.",
+        "Baje el fuego, tape y cocine 15 minutos, hasta que la quinoa abra y absorba el líquido.",
+        "Apague y añada la vainilla y la chía.",
+        "Sirva en 3 tazones con el mangó, las almendras y el coco.",
+        "Se puede preparar la noche antes y comer frío. Cada tazón tiene unos 18 g de proteína."
+      ],
+      en: [
+        "In a pot, bring the quinoa, soy milk, water and cinnamon to a boil.",
+        "Lower the heat, cover and cook 15 minutes, until the quinoa opens and absorbs the liquid.",
+        "Turn off the heat and add the vanilla and chia.",
+        "Serve in 3 bowls with the mango, almonds and coconut.",
+        "It can be made the night before and eaten cold. Each bowl has about 18 g of protein."
+      ]
+    }
+  },
+  {
+    id: "pudin-chia-soya-parcha",
+    category: "cereales",
+    name: { es: "Pudín de Chía y Leche de Soya con Parcha y Maní (Vegano)", en: "Chia and Soy Milk Pudding with Passion Fruit and Peanuts (Vegan)" },
+    active: 10, total: 250, wait: "frio",
+    servings: 2,
+    ingredients: {
+      es: [
+        "⅓ taza de semillas de chía",
+        "1½ tazas de leche de soya sin azúcar",
+        "1 cucharadita de vainilla",
+        "1 cucharada de melao de caña",
+        "2 parchas (la pulpa)",
+        "2 cucharadas de maní tostado sin sal, picado"
+      ],
+      en: [
+        "⅓ cup chia seeds",
+        "1½ cups unsweetened soy milk",
+        "1 teaspoon vanilla",
+        "1 tablespoon sugarcane molasses",
+        "2 passion fruits (the pulp)",
+        "2 tablespoons unsalted roasted peanuts, chopped"
+      ]
+    },
+    steps: {
+      es: [
+        "En un frasco, mezcle la chía, la leche de soya, la vainilla y el melao.",
+        "Revuelva bien, espere 5 minutos y revuelva otra vez para que la chía no se pegue.",
+        "Tape y refrigere por al menos 4 horas o toda la noche.",
+        "Sirva en 2 vasos con la pulpa de parcha y el maní por encima.",
+        "Cada vaso tiene unos 14 g de proteína y mucha fibra."
+      ],
+      en: [
+        "In a jar, mix the chia, soy milk, vanilla and molasses.",
+        "Stir well, wait 5 minutes and stir again so the chia doesn't clump.",
+        "Cover and refrigerate at least 4 hours or overnight.",
+        "Serve in 2 glasses topped with the passion fruit pulp and peanuts.",
+        "Each glass has about 14 g of protein and plenty of fiber."
+      ]
+    }
+  },
+  {
+    id: "panqueques-avena-garbanzo",
+    category: "panes",
+    name: { es: "Panqueques de Avena y Garbanzos con Mantequilla de Maní (Veganos)", en: "Oat and Chickpea Pancakes with Peanut Butter (Vegan)" },
+    active: 25, total: 25,
+    servings: 3,
+    ingredients: {
+      es: [
+        "1 taza de avena en hojuelas",
+        "1 lata de 15 onzas de garbanzos, escurridos y enjuagados",
+        "1 taza de leche de soya sin azúcar",
+        "1 guineo maduro",
+        "2 cucharaditas de polvo de hornear",
+        "1 cucharadita de canela en polvo",
+        "1 pizca de sal",
+        "1 cucharada de aceite de coco para el sartén",
+        "3 cucharadas de mantequilla de maní natural"
+      ],
+      en: [
+        "1 cup rolled oats",
+        "1 can (15 ounces) chickpeas, drained and rinsed",
+        "1 cup unsweetened soy milk",
+        "1 ripe banana",
+        "2 teaspoons baking powder",
+        "1 teaspoon ground cinnamon",
+        "1 pinch salt",
+        "1 tablespoon coconut oil for the skillet",
+        "3 tablespoons natural peanut butter"
+      ]
+    },
+    steps: {
+      es: [
+        "Muela la avena en la licuadora hasta que parezca harina.",
+        "Añada los garbanzos, la leche de soya, el guineo, el polvo de hornear, la canela y la sal, y licúe hasta que quede una mezcla lisa.",
+        "Caliente un sartén a fuego medio-bajo y engráselo con un poco del aceite de coco.",
+        "Eche ¼ de taza de mezcla por panqueque y cocine 2 a 3 minutos por lado, hasta que estén dorados.",
+        "Sirva con la mantequilla de maní por encima. Nadie nota los garbanzos, y cada porción tiene unos 17 g de proteína."
+      ],
+      en: [
+        "Grind the oats in the blender until they look like flour.",
+        "Add the chickpeas, soy milk, banana, baking powder, cinnamon and salt, and blend until smooth.",
+        "Heat a skillet over medium-low heat and grease it with a little of the coconut oil.",
+        "Pour ¼ cup of batter per pancake and cook 2 to 3 minutes per side, until golden.",
+        "Serve topped with the peanut butter. Nobody notices the chickpeas, and each serving has about 17 g of protein."
+      ]
+    }
+  },
+  {
+    id: "avena-salada-tofu-sofrito",
+    category: "cereales",
+    name: { es: "Avena Salada con Tofu, Espinaca y Sofrito (Vegana)", en: "Savory Oatmeal with Tofu, Spinach and Sofrito (Vegan)" },
+    active: 15, total: 15,
+    servings: 2,
+    ingredients: {
+      es: [
+        "1 cucharadita de aceite de oliva",
+        "2 cucharadas de sofrito",
+        "7 onzas de tofu firme, desmoronado",
+        "¾ taza de avena en hojuelas",
+        "1½ tazas de caldo de vegetales bajo en sodio",
+        "1 taza de espinaca fresca",
+        "1 cucharada de levadura nutricional",
+        "¼ de aguacate en lascas",
+        "1 cucharada de semillas de ajonjolí tostado"
+      ],
+      en: [
+        "1 teaspoon olive oil",
+        "2 tablespoons sofrito",
+        "7 ounces firm tofu, crumbled",
+        "¾ cup rolled oats",
+        "1½ cups low-sodium vegetable broth",
+        "1 cup fresh spinach",
+        "1 tablespoon nutritional yeast",
+        "¼ avocado, sliced",
+        "1 tablespoon toasted sesame seeds"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla con el aceite, sofría el sofrito 1 minuto.",
+        "Añada el tofu y dórelo 3 minutos.",
+        "Agregue la avena y el caldo, y cocine a fuego medio 5 minutos, moviendo, hasta que espese.",
+        "Añada la espinaca y la levadura nutricional y cocine 1 minuto más.",
+        "Sirva con el aguacate y el ajonjolí por encima. Es un desayuno salado de unos 20 g de proteína por tazón."
+      ],
+      en: [
+        "In a pot with the oil, sauté the sofrito 1 minute.",
+        "Add the tofu and brown it 3 minutes.",
+        "Add the oats and broth and cook over medium heat 5 minutes, stirring, until thick.",
+        "Add the spinach and nutritional yeast and cook 1 more minute.",
+        "Serve topped with the avocado and sesame seeds. It's a savory breakfast with about 20 g of protein per bowl."
+      ]
+    }
+  },
+  {
+    id: "arroz-habichuelas-tofu-guisado",
+    category: "arroces",
+    name: { es: "Arroz con Habichuelas y Tofu Guisado a la Criolla (Vegano)", en: "Rice and Beans with Creole Stewed Tofu (Vegan)" },
+    active: 40, total: 40,
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 paquete de 14 onzas de tofu firme, en cubos",
+        "2 cucharadas de aceite de oliva",
+        "4 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "1 lata de 8 onzas de salsa de tomate",
+        "1 lata de 15 onzas de habichuelas rosadas, con su líquido",
+        "1 taza de calabaza en cubos",
+        "½ taza de agua",
+        "2 tazas de arroz cocido"
+      ],
+      en: [
+        "1 package (14 ounces) firm tofu, cubed",
+        "2 tablespoons olive oil",
+        "4 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "1 can (8 ounces) tomato sauce",
+        "1 can (15 ounces) pink beans, with their liquid",
+        "1 cup cubed pumpkin",
+        "½ cup water",
+        "2 cups cooked rice"
+      ]
+    },
+    steps: {
+      es: [
+        "Seque el tofu con papel toalla. Dórelo en un caldero con 1 cucharada de aceite, 8 minutos, volteándolo.",
+        "Sáquelo y, en el mismo caldero con el resto del aceite, sofría el sofrito y el sazón 2 minutos.",
+        "Añada la salsa de tomate, las habichuelas, la calabaza y el agua; hierva y cocine tapado 15 minutos.",
+        "Devuelva el tofu y cocine 5 minutos más, hasta que la salsa espese y la calabaza se deshaga un poco.",
+        "Sirva sobre el arroz. Cada plato tiene unos 25 g de proteína: tofu y habichuelas juntos."
+      ],
+      en: [
+        "Pat the tofu dry with paper towels. Brown it in a caldero with 1 tablespoon of oil, 8 minutes, turning.",
+        "Remove it and, in the same caldero with the rest of the oil, sauté the sofrito and sazón 2 minutes.",
+        "Add the tomato sauce, beans, pumpkin and water; bring to a boil and cook covered 15 minutes.",
+        "Return the tofu and cook 5 more minutes, until the sauce thickens and the pumpkin breaks down a little.",
+        "Serve over the rice. Each plate has about 25 g of protein: tofu and beans together."
+      ]
+    }
+  },
+  {
+    id: "picadillo-lentejas-tofu-arroz",
+    category: "granos",
+    name: { es: "Picadillo de Lentejas y Tofu con Arroz y Maduros (Vegano)", en: "Lentil and Tofu Picadillo with Rice and Sweet Plantains (Vegan)" },
+    active: 45, total: 45,
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 taza de lentejas secas, enjuagadas",
+        "3 tazas de agua",
+        "7 onzas de tofu firme, desmoronado",
+        "1 cucharada de aceite de oliva",
+        "4 cucharadas de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "10 aceitunas rellenas, picadas",
+        "1 cucharadita de comino",
+        "½ cucharadita de sal",
+        "2 tazas de arroz cocido",
+        "1 plátano maduro en tajadas, horneado"
+      ],
+      en: [
+        "1 cup dried lentils, rinsed",
+        "3 cups water",
+        "7 ounces firm tofu, crumbled",
+        "1 tablespoon olive oil",
+        "4 tablespoons sofrito",
+        "1 can (8 ounces) tomato sauce",
+        "10 stuffed olives, chopped",
+        "1 teaspoon cumin",
+        "½ teaspoon salt",
+        "2 cups cooked rice",
+        "1 ripe plantain, sliced and baked"
+      ]
+    },
+    steps: {
+      es: [
+        "Hierva las lentejas en el agua 20 minutos, hasta que estén blandas pero enteras; escúrralas.",
+        "En un sartén con el aceite, dore el tofu desmoronado 5 minutos.",
+        "Añada el sofrito, la salsa de tomate, las aceitunas, el comino y la sal, y cocine 3 minutos.",
+        "Agregue las lentejas y cocine 5 minutos más, hasta que parezca picadillo.",
+        "Sirva con el arroz y las tajadas de maduro horneadas (20 minutos a 400 °F). Unos 24 g de proteína por plato."
+      ],
+      en: [
+        "Boil the lentils in the water 20 minutes, until tender but whole; drain.",
+        "In a skillet with the oil, brown the crumbled tofu 5 minutes.",
+        "Add the sofrito, tomato sauce, olives, cumin and salt and cook 3 minutes.",
+        "Add the lentils and cook 5 more minutes, until it looks like picadillo.",
+        "Serve with the rice and the baked plantain slices (20 minutes at 400 °F). About 24 g of protein per plate."
+      ]
+    }
+  },
+  {
+    id: "chili-habichuelas-quinoa-tostones",
+    category: "granos",
+    name: { es: "Chili Boricua de Habichuelas y Quinoa con Tostones (Vegano)", en: "Puerto Rican Bean and Quinoa Chili with Tostones (Vegan)" },
+    active: 45, total: 45,
+    servings: 5,
+    ingredients: {
+      es: [
+        "1 cucharada de aceite de oliva",
+        "1 cebolla picada",
+        "4 cucharadas de sofrito",
+        "1 lata de 15 onzas de habichuelas negras, escurridas",
+        "1 lata de 15 onzas de habichuelas coloradas, escurridas",
+        "1 lata de 15 onzas de gandules, escurridos",
+        "½ taza de quinoa, enjuagada",
+        "1 lata de 14 onzas de tomates picados",
+        "2 tazas de caldo de vegetales bajo en sodio",
+        "2 cucharaditas de comino",
+        "1 cucharadita de orégano",
+        "2 plátanos verdes",
+        "Aceite vegetal para freír"
+      ],
+      en: [
+        "1 tablespoon olive oil",
+        "1 onion, chopped",
+        "4 tablespoons sofrito",
+        "1 can (15 ounces) black beans, drained",
+        "1 can (15 ounces) red kidney beans, drained",
+        "1 can (15 ounces) pigeon peas, drained",
+        "½ cup quinoa, rinsed",
+        "1 can (14 ounces) diced tomatoes",
+        "2 cups low-sodium vegetable broth",
+        "2 teaspoons cumin",
+        "1 teaspoon oregano",
+        "2 green plantains",
+        "Vegetable oil for frying"
+      ]
+    },
+    steps: {
+      es: [
+        "En una olla con el aceite, sofría la cebolla y el sofrito 4 minutos.",
+        "Añada las habichuelas, los gandules, la quinoa, los tomates, el caldo, el comino y el orégano.",
+        "Hierva, baje el fuego y cocine destapado 25 minutos, moviendo a veces, hasta que espese.",
+        "Mientras, haga tostones con los plátanos: fríalos en ruedas 4 minutos, aplástelos y fríalos otra vez 2 minutos.",
+        "Sirva el chili con los tostones al lado. Unos 22 g de proteína por plato, sin carne."
+      ],
+      en: [
+        "In a pot with the oil, sauté the onion and sofrito 4 minutes.",
+        "Add the beans, pigeon peas, quinoa, tomatoes, broth, cumin and oregano.",
+        "Bring to a boil, lower the heat and cook uncovered 25 minutes, stirring now and then, until thick.",
+        "Meanwhile, make tostones with the plantains: fry the slices 4 minutes, flatten them and fry again 2 minutes.",
+        "Serve the chili with the tostones on the side. About 22 g of protein per plate, without meat."
+      ]
+    }
+  },
+  {
+    id: "tofu-mojo-isleno-gandules",
+    category: "vegetales",
+    name: { es: "Tofu al Horno en Mojo Isleño con Gandules y Batata (Vegano)", en: "Baked Tofu in Mojo Isleño with Pigeon Peas and Sweet Potato (Vegan)" },
+    active: 40, total: 55,
+    wait: "adobo",
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 paquete de 14 onzas de tofu extra firme, en lascas gruesas",
+        "1 cucharadita de adobo sin sal",
+        "2 cucharadas de aceite de oliva",
+        "1 cebolla en ruedas",
+        "1 pimiento rojo en tiras",
+        "1 lata de 8 onzas de salsa de tomate",
+        "10 aceitunas rellenas",
+        "1 cucharada de alcaparras",
+        "1 cucharada de vinagre",
+        "1 lata de 15 onzas de gandules, escurridos",
+        "1 batata grande en cubos"
+      ],
+      en: [
+        "1 package (14 ounces) extra-firm tofu, cut in thick slices",
+        "1 teaspoon salt-free adobo",
+        "2 tablespoons olive oil",
+        "1 onion, cut in rings",
+        "1 red bell pepper, cut in strips",
+        "1 can (8 ounces) tomato sauce",
+        "10 stuffed olives",
+        "1 tablespoon capers",
+        "1 tablespoon vinegar",
+        "1 can (15 ounces) pigeon peas, drained",
+        "1 large sweet potato, cubed"
+      ]
+    },
+    steps: {
+      es: [
+        "Seque el tofu, sazónelo con el adobo y déjelo reposar 15 minutos.",
+        "Caliente el horno a 400 °F. Hornee el tofu y la batata en una bandeja con 1 cucharada de aceite, 25 minutos, volteándolos a la mitad.",
+        "Mientras, haga el mojo isleño: sofría la cebolla y el pimiento en el resto del aceite 5 minutos.",
+        "Añada la salsa de tomate, las aceitunas, las alcaparras, el vinagre y los gandules; cocine 8 minutos.",
+        "Ponga el tofu y la batata en una fuente y cúbralos con el mojo. Unos 21 g de proteína por plato; la receta del mojo isleño de Salinas, sin pescado."
+      ],
+      en: [
+        "Pat the tofu dry, season it with the adobo and let it rest 15 minutes.",
+        "Heat the oven to 400 °F. Bake the tofu and sweet potato on a tray with 1 tablespoon of oil, 25 minutes, turning halfway.",
+        "Meanwhile, make the mojo isleño: sauté the onion and bell pepper in the rest of the oil 5 minutes.",
+        "Add the tomato sauce, olives, capers, vinegar and pigeon peas; cook 8 minutes.",
+        "Arrange the tofu and sweet potato on a platter and cover with the mojo. About 21 g of protein per plate; Salinas-style mojo isleño, without fish."
+      ]
+    }
+  },
+  {
+    id: "asopao-garbanzos-tofu",
+    category: "sopas",
+    name: { es: "Asopao de Garbanzos y Tofu con Recao (Vegano)", en: "Chickpea and Tofu Asopao with Culantro (Vegan)" },
+    active: 40, total: 40,
+    servings: 5,
+    ingredients: {
+      es: [
+        "2 cucharadas de aceite de oliva",
+        "4 cucharadas de sofrito",
+        "1 sobre de sazón con achiote",
+        "1 taza de arroz de grano mediano",
+        "6 tazas de caldo de vegetales bajo en sodio",
+        "1 lata de 15 onzas de garbanzos, escurridos",
+        "1 paquete de 14 onzas de tofu firme, en cubos",
+        "½ taza de salsa de tomate",
+        "1 taza de calabaza en cubos",
+        "4 hojas de recao picadas",
+        "10 aceitunas rellenas"
+      ],
+      en: [
+        "2 tablespoons olive oil",
+        "4 tablespoons sofrito",
+        "1 packet sazón with annatto",
+        "1 cup medium-grain rice",
+        "6 cups low-sodium vegetable broth",
+        "1 can (15 ounces) chickpeas, drained",
+        "1 package (14 ounces) firm tofu, cubed",
+        "½ cup tomato sauce",
+        "1 cup cubed pumpkin",
+        "4 culantro leaves, chopped",
+        "10 stuffed olives"
+      ]
+    },
+    steps: {
+      es: [
+        "En un caldero con el aceite, sofría el sofrito y el sazón 2 minutos.",
+        "Añada el arroz y muévalo 1 minuto para que coja el color.",
+        "Agregue el caldo, los garbanzos, la salsa de tomate y la calabaza; hierva y cocine tapado 15 minutos.",
+        "Añada el tofu y las aceitunas y cocine 5 minutos más, hasta que el arroz esté blando y el caldo espeso.",
+        "Apague, eche el recao y sirva enseguida, que el asopao sigue espesando. Unos 20 g de proteína por plato."
+      ],
+      en: [
+        "In a caldero with the oil, sauté the sofrito and sazón 2 minutes.",
+        "Add the rice and stir 1 minute so it takes on the color.",
+        "Add the broth, chickpeas, tomato sauce and pumpkin; bring to a boil and cook covered 15 minutes.",
+        "Add the tofu and olives and cook 5 more minutes, until the rice is tender and the broth thick.",
+        "Turn off the heat, add the culantro and serve right away, since asopao keeps thickening. About 20 g of protein per plate."
+      ]
+    }
+  },
+  {
+    id: "pastelon-amarillos-lentejas-tofu",
+    category: "vegetales",
+    name: { es: "Pastelón de Amarillos con Picadillo de Lentejas y Tofu (Vegano)", en: "Sweet Plantain Pastelón with Lentil and Tofu Picadillo (Vegan)" },
+    active: 60, total: 60,
+    servings: 6,
+    ingredients: {
+      es: [
+        "4 plátanos maduros, en tajadas a lo largo",
+        "2 cucharadas de aceite de oliva",
+        "1 taza de lentejas secas, cocidas y escurridas",
+        "1 paquete de 14 onzas de tofu firme, desmoronado",
+        "4 cucharadas de sofrito",
+        "1 lata de 8 onzas de salsa de tomate",
+        "10 aceitunas rellenas, picadas",
+        "1 cucharadita de comino",
+        "½ cucharadita de sal",
+        "1 taza de habichuelas tiernas picadas",
+        "2 cucharadas de levadura nutricional"
+      ],
+      en: [
+        "4 ripe plantains, sliced lengthwise",
+        "2 tablespoons olive oil",
+        "1 cup dried lentils, cooked and drained",
+        "1 package (14 ounces) firm tofu, crumbled",
+        "4 tablespoons sofrito",
+        "1 can (8 ounces) tomato sauce",
+        "10 stuffed olives, chopped",
+        "1 teaspoon cumin",
+        "½ teaspoon salt",
+        "1 cup chopped green beans",
+        "2 tablespoons nutritional yeast"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400 °F. Barnice las tajadas de amarillo con 1 cucharada de aceite y hornéelas 15 minutos.",
+        "En un sartén con el resto del aceite, dore el tofu 5 minutos; añada el sofrito, la salsa de tomate, las aceitunas, el comino y la sal.",
+        "Agregue las lentejas y las habichuelas tiernas, y cocine 8 minutos.",
+        "En un molde, ponga capas de amarillo y picadillo, y termine con amarillo y la levadura nutricional por encima.",
+        "Baje el horno a 375 °F y hornee 25 minutos. Deje reposar 10 minutos antes de cortar. Unos 18 g de proteína por pedazo."
+      ],
+      en: [
+        "Heat the oven to 400 °F. Brush the plantain slices with 1 tablespoon of oil and bake 15 minutes.",
+        "In a skillet with the rest of the oil, brown the tofu 5 minutes; add the sofrito, tomato sauce, olives, cumin and salt.",
+        "Add the lentils and green beans and cook 8 minutes.",
+        "In a baking dish, layer plantain and picadillo, and finish with plantain and the nutritional yeast on top.",
+        "Lower the oven to 375 °F and bake 25 minutes. Let rest 10 minutes before cutting. About 18 g of protein per piece."
+      ]
+    }
+  },
+  {
+    id: "garbanzos-crujientes-adobo-limon",
+    category: "entremeses",
+    name: { es: "Garbanzos Crujientes al Horno con Adobo y Limón (Veganos)", en: "Crunchy Baked Chickpeas with Adobo and Lime (Vegan)" },
+    active: 45, total: 45,
+    servings: 4,
+    ingredients: {
+      es: [
+        "2 latas de 15 onzas de garbanzos, escurridos y enjuagados",
+        "1 cucharada de aceite de oliva",
+        "1 cucharadita de adobo sin sal",
+        "½ cucharadita de pimentón",
+        "¼ cucharadita de sal",
+        "1 limón (la ralladura)"
+      ],
+      en: [
+        "2 cans (15 ounces each) chickpeas, drained and rinsed",
+        "1 tablespoon olive oil",
+        "1 teaspoon salt-free adobo",
+        "½ teaspoon paprika",
+        "¼ teaspoon salt",
+        "1 lime (the zest)"
+      ]
+    },
+    steps: {
+      es: [
+        "Caliente el horno a 400 °F. Seque muy bien los garbanzos con papel toalla y quíteles los pellejitos sueltos.",
+        "Extiéndalos en una bandeja y hornéelos solos 15 minutos para que se sequen.",
+        "Sáquelos, mézclelos con el aceite, el adobo, el pimentón y la sal.",
+        "Hornee 20 a 25 minutos más, moviendo la bandeja a la mitad, hasta que suenen crujientes.",
+        "Échele la ralladura de limón y deje enfriar: se ponen más crujientes. Unos 11 g de proteína por porción, para picar."
+      ],
+      en: [
+        "Heat the oven to 400 °F. Dry the chickpeas very well with paper towels and remove any loose skins.",
+        "Spread them on a tray and bake them plain 15 minutes so they dry out.",
+        "Take them out and toss with the oil, adobo, paprika and salt.",
+        "Bake 20 to 25 more minutes, shaking the tray halfway, until they sound crunchy.",
+        "Add the lime zest and let cool: they get crunchier. About 11 g of protein per serving, for snacking."
+      ]
+    }
+  },
+  {
+    id: "batida-soya-mani-guineo",
+    category: "bebidas",
+    name: { es: "Batida de Leche de Soya, Guineo y Maní (Vegana)", en: "Soy Milk, Banana and Peanut Shake (Vegan)" },
+    active: 5, total: 5,
+    servings: 2,
+    ingredients: {
+      es: [
+        "2 tazas de leche de soya sin azúcar",
+        "2 guineos maduros congelados, en pedazos",
+        "2 cucharadas de mantequilla de maní natural",
+        "2 cucharadas de avena en hojuelas",
+        "½ cucharadita de canela en polvo",
+        "Hielo al gusto"
+      ],
+      en: [
+        "2 cups unsweetened soy milk",
+        "2 ripe bananas, frozen, in pieces",
+        "2 tablespoons natural peanut butter",
+        "2 tablespoons rolled oats",
+        "½ teaspoon ground cinnamon",
+        "Ice to taste"
+      ]
+    },
+    steps: {
+      es: [
+        "Ponga todo en la licuadora.",
+        "Licúe a velocidad alta 1 minuto, hasta que quede cremosa.",
+        "Si la quiere más espesa, añada otro pedazo de guineo congelado.",
+        "Sirva enseguida en 2 vasos.",
+        "Cada vaso tiene unos 14 g de proteína: buena merienda después de hacer ejercicio."
+      ],
+      en: [
+        "Put everything in the blender.",
+        "Blend on high 1 minute, until creamy.",
+        "For a thicker shake, add another piece of frozen banana.",
+        "Serve right away in 2 glasses.",
+        "Each glass has about 14 g of protein: a good snack after exercise."
+      ]
+    }
+  },
+  {
+    id: "hummus-gandules-vegetales",
+    category: "entremeses",
+    name: { es: "Hummus de Gandules con Palitos de Vegetales (Vegano)", en: "Pigeon Pea Hummus with Vegetable Sticks (Vegan)" },
+    active: 15, total: 15,
+    servings: 4,
+    ingredients: {
+      es: [
+        "1 lata de 15 onzas de gandules, escurridos",
+        "2 cucharadas de ajonjolí tostado",
+        "2 cucharadas de aceite de oliva",
+        "1 diente de ajo",
+        "1 limón (el jugo)",
+        "2 hojas de recao",
+        "¼ cucharadita de comino",
+        "3 cucharadas de agua fría",
+        "2 zanahorias en palitos",
+        "1 pepino en palitos",
+        "1 pimiento rojo en tiras"
+      ],
+      en: [
+        "1 can (15 ounces) pigeon peas, drained",
+        "2 tablespoons toasted sesame seeds",
+        "2 tablespoons olive oil",
+        "1 garlic clove",
+        "1 lime (the juice)",
+        "2 culantro leaves",
+        "¼ teaspoon cumin",
+        "3 tablespoons cold water",
+        "2 carrots, cut in sticks",
+        "1 cucumber, cut in sticks",
+        "1 red bell pepper, cut in strips"
+      ]
+    },
+    steps: {
+      es: [
+        "Muela el ajonjolí en el procesador hasta que suelte su aceite y parezca una pasta.",
+        "Añada los gandules, el aceite, el ajo, el jugo de limón, el recao y el comino.",
+        "Procese 2 minutos, añadiendo el agua fría poco a poco, hasta que quede bien cremoso.",
+        "Sirva en un tazón con un chorrito de aceite por encima.",
+        "Acompañe con los palitos de zanahoria, pepino y pimiento para mojar. El hummus boricua, con gandules."
+      ],
+      en: [
+        "Grind the sesame seeds in the food processor until they release their oil and look like a paste.",
+        "Add the pigeon peas, oil, garlic, lime juice, culantro and cumin.",
+        "Process 2 minutes, adding the cold water little by little, until very creamy.",
+        "Serve in a bowl with a drizzle of oil on top.",
+        "Serve with the carrot, cucumber and bell pepper sticks for dipping. Puerto Rican hummus, with pigeon peas."
+      ]
+    }
+  },
+  {
+    id: "bolitas-guineo-avena-mani",
+    category: "frutas",
+    name: { es: "Bolitas Energéticas de Guineo y Maní sin Horno (Veganas)", en: "No-Bake Banana and Peanut Energy Bites (Vegan)" },
+    active: 15, total: 45, wait: "frio",
+    servings: 6,
+    ingredients: {
+      es: [
+        "2 guineos maduros majados",
+        "1½ tazas de avena en hojuelas",
+        "½ taza de mantequilla de maní natural",
+        "2 cucharadas de semillas de chía",
+        "¼ taza de maní tostado sin sal, picado",
+        "1 cucharadita de canela en polvo",
+        "2 cucharadas de coco rallado sin azúcar"
+      ],
+      en: [
+        "2 ripe bananas, mashed",
+        "1½ cups rolled oats",
+        "½ cup natural peanut butter",
+        "2 tablespoons chia seeds",
+        "¼ cup unsalted roasted peanuts, chopped",
+        "1 teaspoon ground cinnamon",
+        "2 tablespoons unsweetened shredded coconut"
+      ]
+    },
+    steps: {
+      es: [
+        "En un tazón, mezcle el guineo majado con la mantequilla de maní hasta que quede parejo.",
+        "Añada la avena, la chía, el maní y la canela, y mezcle bien.",
+        "Refrigere la mezcla 15 minutos para que sea más fácil de formar.",
+        "Forme 18 bolitas con las manos mojadas y páselas por el coco rallado.",
+        "Refrigere 15 minutos más. Se guardan 5 días en la nevera; 3 bolitas tienen unos 10 g de proteína."
+      ],
+      en: [
+        "In a bowl, mix the mashed banana with the peanut butter until even.",
+        "Add the oats, chia, peanuts and cinnamon and mix well.",
+        "Refrigerate the mixture 15 minutes so it's easier to shape.",
+        "Shape 18 balls with wet hands and roll them in the shredded coconut.",
+        "Refrigerate 15 more minutes. They keep 5 days in the fridge; 3 bites have about 10 g of protein."
+      ]
+    }
+  },
+  // Tanda 58 (v4.50): batidas de frutas y vegetales (vegetarianas) y champolas tradicionales.
+  {
+    id: "batida-guayaba-leche",
+    category: "bebidas",
+    name: { es: "Batida de Guayaba con Leche", en: "Guava Milkshake" },
+    active: 10, total: 10,
+    servings: 2,
+    ingredients: {
+      es: ["2 tazas de guayaba madura en pedazos", "1 taza de agua", "1½ tazas de leche fría", "2 cucharadas de azúcar", "½ cucharadita de vainilla", "Hielo al gusto"],
+      en: ["2 cups ripe guava, in pieces", "1 cup water", "1½ cups cold milk", "2 tablespoons sugar", "½ teaspoon vanilla", "Ice to taste"]
+    },
+    steps: {
+      es: ["Licúe la guayaba con el agua 1 minuto.", "Cuele para sacar las semillas, apretando la pulpa con una cuchara.", "Vuelva a la licuadora con la leche, el azúcar, la vainilla y el hielo, y licúe 30 segundos.", "Sirva enseguida, bien fría. Una guayaba tiene más vitamina C que una china."],
+      en: ["Blend the guava with the water 1 minute.", "Strain to remove the seeds, pressing the pulp with a spoon.", "Return to the blender with the milk, sugar, vanilla and ice and blend 30 seconds.", "Serve right away, well chilled. A guava has more vitamin C than an orange."]
+    }
+  },
+  {
+    id: "batida-carambola-china",
+    category: "bebidas",
+    name: { es: "Batida de Carambola y China", en: "Star Fruit and Orange Smoothie" },
+    active: 8, total: 8,
+    servings: 2,
+    ingredients: {
+      es: ["2 carambolas maduras en pedazos", "1 taza de jugo de china fresco", "1 guineo maduro", "½ taza de yogur natural", "Hielo al gusto"],
+      en: ["2 ripe star fruits, in pieces", "1 cup fresh orange juice", "1 ripe banana", "½ cup plain yogurt", "Ice to taste"]
+    },
+    steps: {
+      es: ["Corte una rueda de carambola para adornar y reserve.", "Licúe el resto de la carambola con el jugo de china, el guineo, el yogur y el hielo, 1 minuto.", "Sirva en 2 vasos con la estrellita de carambola en el borde.", "Si tiene enfermedad de los riñones, evite la carambola: consulte a su médico."],
+      en: ["Cut one star fruit slice for garnish and set aside.", "Blend the rest of the star fruit with the orange juice, banana, yogurt and ice, 1 minute.", "Serve in 2 glasses with the star fruit slice on the rim.", "If you have kidney disease, avoid star fruit: check with your doctor."]
+    }
+  },
+  {
+    id: "batida-melon-leche",
+    category: "bebidas",
+    name: { es: "Batida de Melón con Leche y Canela", en: "Cantaloupe Milkshake with Cinnamon" },
+    active: 8, total: 8,
+    servings: 2,
+    ingredients: {
+      es: ["3 tazas de melón (cantalupo) en pedazos, frío", "1 taza de leche fría", "1 cucharada de azúcar", "¼ cucharadita de canela en polvo", "Hielo al gusto"],
+      en: ["3 cups cantaloupe, in pieces, chilled", "1 cup cold milk", "1 tablespoon sugar", "¼ teaspoon ground cinnamon", "Ice to taste"]
+    },
+    steps: {
+      es: ["Ponga el melón, la leche, el azúcar y el hielo en la licuadora.", "Licúe 1 minuto, hasta que quede espumosa.", "Sirva en 2 vasos con una pizca de canela por encima.", "Tómela enseguida: el melón con leche se separa si espera."],
+      en: ["Put the cantaloupe, milk, sugar and ice in the blender.", "Blend 1 minute, until frothy.", "Serve in 2 glasses with a pinch of cinnamon on top.", "Drink it right away: cantaloupe and milk separate if left to stand."]
+    }
+  },
+  {
+    id: "batida-sandia-fresa",
+    category: "bebidas",
+    name: { es: "Batida de Sandía y Fresa con Yerbabuena", en: "Watermelon and Strawberry Smoothie with Mint" },
+    active: 8, total: 8,
+    servings: 3,
+    ingredients: {
+      es: ["4 tazas de sandía sin semillas, en pedazos", "1 taza de fresas congeladas", "1 limón verde (el jugo)", "6 hojas de yerbabuena", "1 cucharadita de miel, o al gusto"],
+      en: ["4 cups seedless watermelon, in pieces", "1 cup frozen strawberries", "1 lime (the juice)", "6 mint leaves", "1 teaspoon honey, or to taste"]
+    },
+    steps: {
+      es: ["Licúe la sandía sola 30 segundos.", "Añada las fresas, el jugo de limón, la yerbabuena y la miel.", "Licúe 1 minuto más: las fresas congeladas la ponen fría y espesa sin hielo.", "Sirva con una hojita de yerbabuena. Es ligera y refrescante para el calor de la isla."],
+      en: ["Blend the watermelon alone 30 seconds.", "Add the strawberries, lime juice, mint and honey.", "Blend 1 more minute: the frozen strawberries make it cold and thick without ice.", "Serve with a mint leaf. It's light and refreshing for island heat."]
+    }
+  },
+  {
+    id: "batida-china-zanahoria",
+    category: "bebidas",
+    name: { es: "Batida Mañanera de China, Zanahoria y Jengibre", en: "Morning Orange, Carrot and Ginger Smoothie" },
+    active: 10, total: 10,
+    servings: 2,
+    ingredients: {
+      es: ["1½ tazas de jugo de china fresco", "2 zanahorias peladas, en ruedas", "1 mangó maduro en pedazos", "1 cucharadita de jengibre fresco rallado", "½ taza de yogur natural", "Hielo al gusto"],
+      en: ["1½ cups fresh orange juice", "2 carrots, peeled and sliced", "1 ripe mango, in pieces", "1 teaspoon fresh grated ginger", "½ cup plain yogurt", "Ice to taste"]
+    },
+    steps: {
+      es: ["Licúe las zanahorias con el jugo de china 1 minuto, hasta que estén bien deshechas.", "Añada el mangó, el jengibre, el yogur y el hielo.", "Licúe 1 minuto más, hasta que quede cremosa.", "Sirva en el desayuno: tiene vitamina A de la zanahoria y el mangó, y vitamina C de la china."],
+      en: ["Blend the carrots with the orange juice 1 minute, until well broken down.", "Add the mango, ginger, yogurt and ice.", "Blend 1 more minute, until creamy.", "Serve at breakfast: it has vitamin A from the carrot and mango, and vitamin C from the orange."]
+    }
+  },
+  {
+    id: "batida-calabaza-canela",
+    category: "bebidas",
+    name: { es: "Batida de Calabaza con Canela y Guineo", en: "Pumpkin Smoothie with Cinnamon and Banana" },
+    active: 25, total: 55, wait: "enfriar",
+    servings: 2,
+    ingredients: {
+      es: ["1½ tazas de calabaza en cubos", "1 guineo maduro congelado", "1½ tazas de leche fría", "1 cucharada de melao de caña", "½ cucharadita de canela en polvo", "1 pizca de nuez moscada"],
+      en: ["1½ cups cubed pumpkin", "1 ripe banana, frozen", "1½ cups cold milk", "1 tablespoon sugarcane molasses", "½ teaspoon ground cinnamon", "1 pinch nutmeg"]
+    },
+    steps: {
+      es: ["Hierva la calabaza en agua 15 minutos, hasta que esté blanda; escúrrala.", "Déjela enfriar en la nevera al menos 30 minutos (o use calabaza cocida del día antes).", "Licúe la calabaza con el guineo, la leche, el melao, la canela y la nuez moscada, 1 minuto.", "Sirva fría con canela por encima. Sabe a tembleque de calabaza en vaso."],
+      en: ["Boil the pumpkin in water 15 minutes, until tender; drain.", "Let it cool in the fridge at least 30 minutes (or use pumpkin cooked the day before).", "Blend the pumpkin with the banana, milk, molasses, cinnamon and nutmeg, 1 minute.", "Serve cold with cinnamon on top. It tastes like pumpkin tembleque in a glass."]
+    }
+  },
+  {
+    id: "batida-remolacha-fresa",
+    category: "bebidas",
+    name: { es: "Batida de Remolacha, Fresa y China", en: "Beet, Strawberry and Orange Smoothie" },
+    active: 8, total: 8,
+    servings: 2,
+    ingredients: {
+      es: ["1 remolacha pequeña cocida, pelada y en pedazos", "1 taza de fresas congeladas", "1 taza de jugo de china fresco", "½ taza de yogur natural", "1 cucharadita de miel, o al gusto"],
+      en: ["1 small cooked beet, peeled and in pieces", "1 cup frozen strawberries", "1 cup fresh orange juice", "½ cup plain yogurt", "1 teaspoon honey, or to taste"]
+    },
+    steps: {
+      es: ["Ponga la remolacha, las fresas, el jugo de china, el yogur y la miel en la licuadora.", "Licúe 1 minuto, hasta que no queden pedazos.", "Pruebe y añada más miel si la quiere más dulce.", "Sirva enseguida: el color fucsia es de la remolacha, que casi no se siente."],
+      en: ["Put the beet, strawberries, orange juice, yogurt and honey in the blender.", "Blend 1 minute, until no pieces remain.", "Taste and add more honey if you want it sweeter.", "Serve right away: the fuchsia color comes from the beet, which you barely taste."]
+    }
+  },
+  {
+    id: "batida-verde-pepino-pina",
+    category: "bebidas",
+    name: { es: "Batida Verde de Pepino, Piña y Yerbabuena", en: "Green Cucumber, Pineapple and Mint Smoothie" },
+    active: 8, total: 8,
+    servings: 2,
+    ingredients: {
+      es: ["1 pepino pelado, en pedazos", "2 tazas de piña en pedazos", "1 taza de espinaca fresca", "8 hojas de yerbabuena", "1 limón verde (el jugo)", "1 taza de agua fría", "Hielo al gusto"],
+      en: ["1 cucumber, peeled and in pieces", "2 cups pineapple, in pieces", "1 cup fresh spinach", "8 mint leaves", "1 lime (the juice)", "1 cup cold water", "Ice to taste"]
+    },
+    steps: {
+      es: ["Ponga el pepino, la piña, la espinaca y la yerbabuena en la licuadora.", "Añada el jugo de limón, el agua y el hielo.", "Licúe 1 minuto, hasta que quede lisa.", "Sirva enseguida. Es baja en calorías: buena merienda para rebajar."],
+      en: ["Put the cucumber, pineapple, spinach and mint in the blender.", "Add the lime juice, water and ice.", "Blend 1 minute, until smooth.", "Serve right away. It's low in calories: a good snack for losing weight."]
+    }
+  },
+  {
+    id: "batida-zanahoria-mango-jengibre",
+    category: "bebidas",
+    name: { es: "Batida de Zanahoria, Mangó y Coco", en: "Carrot, Mango and Coconut Smoothie" },
+    active: 10, total: 10,
+    servings: 2,
+    ingredients: {
+      es: ["2 zanahorias peladas, en ruedas", "1½ tazas de mangó congelado en pedazos", "1 taza de agua de coco", "½ taza de leche", "1 cucharadita de jengibre fresco rallado"],
+      en: ["2 carrots, peeled and sliced", "1½ cups frozen mango, in pieces", "1 cup coconut water", "½ cup milk", "1 teaspoon fresh grated ginger"]
+    },
+    steps: {
+      es: ["Licúe las zanahorias con el agua de coco 1 minuto.", "Añada el mangó, la leche y el jengibre.", "Licúe hasta que quede cremosa, 1 minuto más.", "Sirva bien fría. El agua de coco le da potasio sin azúcar añadida."],
+      en: ["Blend the carrots with the coconut water 1 minute.", "Add the mango, milk and ginger.", "Blend until creamy, 1 more minute.", "Serve well chilled. The coconut water adds potassium without added sugar."]
+    }
+  },
+  {
+    id: "batida-espinaca-guineo-mani",
+    category: "bebidas",
+    name: { es: "Batida Verde de Espinaca, Guineo y Maní con Leche", en: "Green Spinach, Banana and Peanut Milk Smoothie" },
+    active: 5, total: 5,
+    servings: 2,
+    ingredients: {
+      es: ["2 tazas de espinaca fresca", "2 guineos maduros congelados", "2 tazas de leche fría", "2 cucharadas de mantequilla de maní", "1 cucharada de avena en hojuelas", "½ cucharadita de canela en polvo"],
+      en: ["2 cups fresh spinach", "2 ripe bananas, frozen", "2 cups cold milk", "2 tablespoons peanut butter", "1 tablespoon rolled oats", "½ teaspoon ground cinnamon"]
+    },
+    steps: {
+      es: ["Licúe la espinaca con la leche 30 segundos.", "Añada los guineos, la mantequilla de maní, la avena y la canela.", "Licúe 1 minuto, hasta que quede cremosa.", "Sirva enseguida. El guineo tapa el sabor de la espinaca y cada vaso tiene unos 15 g de proteína."],
+      en: ["Blend the spinach with the milk 30 seconds.", "Add the bananas, peanut butter, oats and cinnamon.", "Blend 1 minute, until creamy.", "Serve right away. The banana hides the spinach, and each glass has about 15 g of protein."]
+    }
+  },
+  {
+    id: "batida-yogur-griego-guayaba",
+    category: "bebidas",
+    name: { es: "Batida de Yogur Griego con Guayaba y Avena", en: "Greek Yogurt, Guava and Oat Smoothie" },
+    active: 10, total: 10,
+    servings: 2,
+    ingredients: {
+      es: ["1 taza de yogur griego natural", "1 taza de guayaba madura en pedazos, sin semillas", "1 taza de leche fría", "2 cucharadas de avena en hojuelas", "1 cucharada de miel", "Hielo al gusto"],
+      en: ["1 cup plain Greek yogurt", "1 cup ripe guava, in pieces, seeded", "1 cup cold milk", "2 tablespoons rolled oats", "1 tablespoon honey", "Ice to taste"]
+    },
+    steps: {
+      es: ["Licúe la guayaba con la leche y cuélela para sacar las semillitas que queden.", "Vuelva a la licuadora con el yogur griego, la avena, la miel y el hielo.", "Licúe 1 minuto, hasta que quede espesa.", "Sirva enseguida. Cada vaso tiene unos 17 g de proteína: buena para después del ejercicio."],
+      en: ["Blend the guava with the milk and strain out any remaining seeds.", "Return to the blender with the Greek yogurt, oats, honey and ice.", "Blend 1 minute, until thick.", "Serve right away. Each glass has about 17 g of protein: good after exercise."]
+    }
+  },
+  {
+    id: "batida-chocolate-guineo",
+    category: "bebidas",
+    name: { es: "Batida de Chocolate y Guineo con Leche", en: "Chocolate Banana Milkshake" },
+    active: 5, total: 5,
+    servings: 2,
+    ingredients: {
+      es: ["2 guineos maduros congelados", "2 tazas de leche fría", "2 cucharadas de cacao en polvo sin azúcar", "1 cucharada de azúcar", "½ cucharadita de vainilla"],
+      en: ["2 ripe bananas, frozen", "2 cups cold milk", "2 tablespoons unsweetened cocoa powder", "1 tablespoon sugar", "½ teaspoon vanilla"]
+    },
+    steps: {
+      es: ["Ponga todo en la licuadora.", "Licúe 1 minuto, hasta que quede espesa y cremosa.", "Pruebe: si la quiere más dulce, añada otro pedazo de guineo en vez de más azúcar.", "Sirva enseguida. Es la batida favorita de los nenes para la merienda."],
+      en: ["Put everything in the blender.", "Blend 1 minute, until thick and creamy.", "Taste: if you want it sweeter, add another piece of banana instead of more sugar.", "Serve right away. It's the kids' favorite shake for a snack."]
+    }
+  },
+  {
+    id: "champola-mamey",
+    category: "bebidas",
+    name: { es: "Champola de Mamey", en: "Mamey Champola" },
+    active: 10, total: 10,
+    servings: 3,
+    ingredients: {
+      es: ["2 tazas de pulpa de mamey maduro", "2 tazas de leche fría", "½ taza de leche evaporada", "3 cucharadas de azúcar", "½ cucharadita de vainilla", "1 pizca de canela en polvo", "Hielo al gusto"],
+      en: ["2 cups ripe mamey pulp", "2 cups cold milk", "½ cup evaporated milk", "3 tablespoons sugar", "½ teaspoon vanilla", "1 pinch ground cinnamon", "Ice to taste"]
+    },
+    steps: {
+      es: ["Pele el mamey, quítele la semilla y la piel fina de alrededor, y corte la pulpa.", "Licúe la pulpa con la leche, la leche evaporada, el azúcar y la vainilla.", "Añada el hielo y licúe 30 segundos más.", "Sirva con una pizca de canela. La champola es la batida de pulpa y leche de siempre en la isla."],
+      en: ["Peel the mamey, remove the seed and the thin skin around it, and cut up the pulp.", "Blend the pulp with the milk, evaporated milk, sugar and vanilla.", "Add the ice and blend 30 more seconds.", "Serve with a pinch of cinnamon. Champola is the classic island shake of fruit pulp and milk."]
+    }
+  },
+  {
+    id: "champola-nispero",
+    category: "bebidas",
+    name: { es: "Champola de Níspero", en: "Sapodilla Champola" },
+    active: 10, total: 10,
+    servings: 3,
+    ingredients: {
+      es: ["4 nísperos maduros", "1½ tazas de leche fría", "½ taza de leche evaporada", "1 cucharada de azúcar", "½ cucharadita de vainilla", "Hielo al gusto"],
+      en: ["4 ripe sapodillas", "1½ cups cold milk", "½ cup evaporated milk", "1 tablespoon sugar", "½ teaspoon vanilla", "Ice to taste"]
+    },
+    steps: {
+      es: ["Pele los nísperos, quíteles las semillas negras y corte la pulpa.", "Licúe la pulpa con la leche, la leche evaporada, el azúcar y la vainilla.", "Añada el hielo y licúe 30 segundos.", "Sirva enseguida. El níspero ya es muy dulce: pruebe antes de añadir más azúcar."],
+      en: ["Peel the sapodillas, remove the black seeds and cut up the pulp.", "Blend the pulp with the milk, evaporated milk, sugar and vanilla.", "Add the ice and blend 30 seconds.", "Serve right away. Sapodilla is already very sweet: taste before adding more sugar."]
+    }
+  },
+  {
+    id: "champola-mango",
+    category: "bebidas",
+    name: { es: "Champola de Mangó", en: "Mango Champola" },
+    active: 10, total: 10,
+    servings: 3,
+    ingredients: {
+      es: ["2 mangós maduros en pedazos", "2 tazas de leche fría", "½ taza de leche evaporada", "2 cucharadas de azúcar", "1 limón verde (unas gotas)", "Hielo al gusto"],
+      en: ["2 ripe mangoes, in pieces", "2 cups cold milk", "½ cup evaporated milk", "2 tablespoons sugar", "1 lime (a few drops)", "Ice to taste"]
+    },
+    steps: {
+      es: ["Licúe el mangó con la leche y la leche evaporada 1 minuto.", "Si el mangó es de hebra, cuele la mezcla.", "Vuelva a la licuadora con el azúcar, unas gotas de limón y el hielo, y licúe 30 segundos.", "Sirva bien fría en temporada de mangó, de mayo a agosto."],
+      en: ["Blend the mango with the milk and evaporated milk 1 minute.", "If the mango is stringy, strain the mixture.", "Return to the blender with the sugar, a few drops of lime and the ice, and blend 30 seconds.", "Serve well chilled in mango season, May to August."]
+    }
+  },
+  {
+    id: "champola-acerola",
+    category: "bebidas",
+    name: { es: "Champola de Acerola (Cereza del País)", en: "Acerola (Puerto Rican Cherry) Champola" },
+    active: 15, total: 15,
+    servings: 3,
+    ingredients: {
+      es: ["2 tazas de acerolas", "1 taza de agua", "2 tazas de leche fría", "½ taza de leche condensada", "Hielo al gusto"],
+      en: ["2 cups acerolas", "1 cup water", "2 cups cold milk", "½ cup sweetened condensed milk", "Ice to taste"]
+    },
+    steps: {
+      es: ["Licúe las acerolas con el agua 30 segundos, sin moler mucho las semillas.", "Cuele bien, apretando la pulpa.", "Licúe el jugo con la leche, la leche condensada y el hielo.", "Sirva enseguida, que la acerola con leche se corta si espera. Tiene muchísima vitamina C."],
+      en: ["Blend the acerolas with the water 30 seconds, without grinding the seeds much.", "Strain well, pressing the pulp.", "Blend the juice with the milk, condensed milk and ice.", "Serve right away, since acerola and milk curdle if left to stand. It's very high in vitamin C."]
+    }
   }
 );

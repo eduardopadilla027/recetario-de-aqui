@@ -7,7 +7,7 @@
  * No se tocan las llamadas a Firebase (cuenta, planes, reseñas): ésas las maneja su propio SDK.
  * Al publicar una versión nueva, subir SW_VERSION (igual que APP_VERSION en js/app.js) para que se
  * borren las copias viejas. */
-const SW_VERSION = "4.48.0";
+const SW_VERSION = "4.50.0";
 const CACHE = `rda-${SW_VERSION}`;
 const NET_TIMEOUT = 4000;
 

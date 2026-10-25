@@ -18,7 +18,7 @@ const CONTACT_EMAIL = "recetariodeaqui@gmail.com"; // pie de página y pantalla 
 // Versión de la app = "Versión del documento" de ARQUITECTURA.md, y la fecha de su última actualización.
 // Se cambian juntas en cada commit (§13); también el texto inicial de #footer-text en index.html. Desde v4.30 la
 // versión sólo sale en el pie (#site-author, en el inicio, es la frase de bienvenida).
-const APP_VERSION = "4.48.0";
+const APP_VERSION = "4.50.0";
 const APP_REVISED = "2026-10-25";
 /* El número de recetas sale de los datos (v4.30): el total exacto, el mismo que ve el administrador.
    Antes decía "Más de 1,000" redondeado hacia abajo, y quien contaba no lo podía comprobar. */
@@ -435,6 +435,20 @@ const meatIcons = {
  * arroz con dulce…). Cada tipo tiene su dibujo y el color sigue al sabor. Van
  * por nombre y en orden; gana la primera. */
 const dessertIcons = [
+  // Veganas con proteína (tanda 57, v4.49): los dibujos veganos (hojita verde); sin esto salían un huevo 🍳,
+  // carne 🥩 o el asopao de pollo.
+  [/^avena con leche de soya/, "svg:ic-vg-avena-mani"],
+  [/^desayuno criollo: revoltillo de tofu/, "svg:ic-vg-revoltillo-tofu"],
+  [/^desayuno de quinoa/, "svg:ic-vg-quinoa-mango"],
+  [/^pudin de chia y leche de soya/, "svg:ic-vg-pudin-chia"],
+  [/^panqueques de avena y garbanzos/, "svg:ic-vg-panqueques"],
+  [/^avena salada con tofu/, "svg:ic-vg-avena-salada"],
+  [/^arroz con habichuelas y tofu/, "svg:ic-vg-arroz-habichuelas-tofu"],
+  [/^picadillo de lentejas y tofu/, "svg:ic-vg-picadillo"],
+  [/^asopao de garbanzos y tofu/, "svg:ic-vg-asopao"],
+  [/^pastelon de amarillos con picadillo de lentejas/, "svg:ic-vg-pastelon"],
+  [/^batida de leche de soya/, "svg:ic-vg-batida-mani"],
+  [/^bolitas energeticas/, "svg:ic-vg-bolitas-mani"],
   // Dulces y buñuelos (v4.47): cada uno con su forma (antes 🍬 🥥 🍩 🍊 🥭 🍑 🎃 🍞 🥖). Primero, para que
   // no los tomen reglas más generales.
   [/^bunuelos de batata/, "svg:ic-bunuelos-batata"],
@@ -1314,7 +1328,24 @@ const dessertIcons = [
   [/^salsa de yogur/, "svg:ic-salsa-yogur"]
 ];
 
+/* Batidas y champolas (v4.50): cada una en su vaso con su color y su fruta (antes casi todas 🥤). Por id,
+   porque los nombres de las batidas se parecen mucho entre sí. */
+const SHAKE_ICONS = {
+  "batida-guayaba-leche": "bat-guayaba-leche", "batida-carambola-china": "bat-carambola-china", "batida-melon-leche": "bat-melon",
+  "batida-sandia-fresa": "bat-sandia-fresa", "batida-china-zanahoria": "bat-china-zanahoria", "batida-calabaza-canela": "bat-calabaza",
+  "batida-remolacha-fresa": "bat-remolacha-fresa", "batida-verde-pepino-pina": "bat-pepino-pina", "batida-zanahoria-mango-jengibre": "bat-zanahoria-mango",
+  "batida-espinaca-guineo-mani": "bat-espinaca-mani", "batida-yogur-griego-guayaba": "bat-yogur-guayaba", "batida-chocolate-guineo": "bat-chocolate-guineo",
+  "champola-mamey": "champola-mamey", "champola-nispero": "champola-nispero", "champola-mango": "champola-mango", "champola-acerola": "champola-acerola",
+  champola: "champola-guanabana", "champola-guayaba": "champola-guayaba", "champola-parcha": "champola-parcha", "morir-sonando": "bat-morir-sonando",
+  "batida-guineo": "bat-guineo", "batida-parcha": "bat-parcha", "batida-mamey": "bat-mamey", "batida-lechosa": "bat-lechosa", "batida-mango": "bat-mango",
+  "batida-yogur-mango-parcha": "bat-yogur-mango-parcha", "batida-yogur-pina-colada": "bat-yogur-pina-colada", "batida-nutella-guineo": "bat-nutella-guineo",
+  "batida-vegana-mango-avena": "bat-mango-avena", "batida-nispero": "bat-nispero", "batida-anon": "bat-anon", "batida-acerola-guineo": "bat-acerola-guineo",
+  "batida-verde-tropical": "bat-verde-tropical", "batida-guineo-avena-mani": "bat-guineo-avena-mani", "batida-tamarindo": "bat-tamarindo",
+  "batida-mango-coco": "bat-mango-coco", "batida-pitahaya": "bat-pitahaya", "batida-fresa-guineo": "bat-fresa-guineo", "batida-aguacate": "bat-aguacate"
+};
+
 function dishIcon(recipe) {
+  if (SHAKE_ICONS[recipe.id]) return `svg:ic-${SHAKE_ICONS[recipe.id]}`;
   // Jugos naturales: un vaso con el color del jugo y su fruta (ic-jugo-<id> en el sprite de index.html);
   // si un jugo nuevo todavía no tiene dibujo, el vaso de la categoría. El de grosella conserva el suyo.
   if (recipe.category === "jugos" && recipe.id !== "refresco-grosella") {

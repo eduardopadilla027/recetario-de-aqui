@@ -1,6 +1,6 @@
 # ARQUITECTURA — Recetarios de Aquí · Cocina Boricua
 
-> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.48.0 · **Versión de la app:** 4.48.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,316 en 24 categorías
+> **Última actualización:** 2026-10-25 · **Versión del documento:** 4.50.0 · **Versión de la app:** 4.50.0 (revisada el 25 de octubre de 2026; es la misma que la del documento) · **Recetas:** 1,348 en 24 categorías
 >
 > Este archivo es la **fuente de verdad** del proyecto *cocine-a-gusto* (app "Recetarios de Aquí").
 > **Regla:** cada vez que Claude Code (o cualquier persona) cambie el proyecto, este documento se actualiza en el
@@ -77,7 +77,7 @@ cocine-a-gusto/
 │   ├── recipes-2.js      recipes.push(...) — bebidas calientes y pastas, entre otras
 │   ├── recipes-3.js      recipes.push(...) — segunda ampliación (2026-09): cuchifritos, pana, bases…
 │   ├── recipes-4.js      recipes.push(...) — tercera ampliación (2026-10): clásicos, tragos tropicales, platos de pueblos, mariscos y frituras de playa, postres y dulces, más bebidas tropicales, pechugas y alitas, viandas, majados y aguacate, papas y malanga, cupcakes, bizcochos y panes dulces, gelatinas, flanes y bizcochos de calabaza, galletitas, ensaladas verdes y de granos y gazpachos, galletas (cucas, jengibre…) y más postres, pies tropicales y salsas para carnes y pollo, yogures tropicales, paellas, recetas a la parrilla y al carbón, adobos criollos, parmesanas, milanesas y recetas con Nutella, dulces de frutas tropicales, berenjena y hojaldre, cheesecakes tropicales, más tragos tropicales, más emparedados, más sopas, cremas y asopaos, más arroces y granos, recetas vegetarianas, y más pescados y mariscos, salsas y aderezos, y cereales, más postres tropicales, tragos sin alcohol, más tés, otros cortes de carnes y aves, tés tradicionales, más entremeses y frituras, más vegetales y viandas, bizcochos mojados y de sabores, panqueques, más arroces, recetas veganas, desayunos y meriendas veganos, más salsas y aderezos y platos fuertes veganos, y dulces y salsas de grosella, en cuarenta y tres tandas (ver §13)
-│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46), pescados y mariscos (tanda 47), jugos y bebidas tropicales (tanda 48), sopas, asopaos, pastas y panes dulces (tanda 49) carnes y aves (tanda 50) y salsas, aderezos y huevos (tanda 51), ver §13
+│   ├── recipes-5.js      recipes.push(...) — cuarta ampliación (2026-10): más veganas y vegetarianas (tanda 44), postres puertorriqueños (tanda 45), frutas tropicales de la isla (tanda 46), pescados y mariscos (tanda 47), jugos y bebidas tropicales (tanda 48), sopas, asopaos, pastas y panes dulces (tanda 49) carnes y aves (tanda 50), salsas, aderezos y huevos (tanda 51) , veganas con proteína para los planes (tanda 57: desayunos, platos y meriendas) y batidas y champolas (tanda 58), ver §13
 │   ├── nutrition-usda.js GENERADO (tools/usda/): número FDC y valores oficiales del USDA de cada alimento (§8)
 │   ├── nutrition.js      tabla de alimentos y estimación nutricional (estimateNutrition)
 │   ├── advisories.js     alérgenos, alertas y manejo seguro (getAdvisories)
@@ -189,27 +189,27 @@ Definidas en `js/app.js`: nombre ES/EN (`translations.*.categories`), icono (`ca
 | Clave | Nombre | Recetas |
 |---|---|---|
 | calientes | Bebidas Calientes | 39 |
-| frutas | Frutas | 36 |
-| cereales | Cereales | 22 |
-| granos | Granos y Legumbres | 29 |
+| frutas | Frutas | 37 |
+| cereales | Cereales | 26 |
+| granos | Granos y Legumbres | 32 |
 | ensaladas | Ensaladas | 43 |
-| sopas | Sopas | 70 |
+| sopas | Sopas | 71 |
 | carnes | Carnes | 80 |
 | aves | Aves | 66 |
 | pescados | Pescado y Mariscos | 86 |
 | huevos | Huevos y Queso | 23 |
-| entremeses | Croquetas, Buñuelos y Pastelillos | 64 |
+| entremeses | Croquetas, Buñuelos y Pastelillos | 66 |
 | pastas | Pastas | 31 |
 | bizcochos | Bizcochos | 49 |
 | galletitas | Galletitas | 42 |
 | pasteles_dulces | Pasteles Dulces | 22 |
-| panes | Pan y Panecillos | 55 |
+| panes | Pan y Panecillos | 56 |
 | emparedados | Emparedados | 34 |
 | postres | Helados, Budines, Flan y Otros Postres | 147 |
-| arroces | Arroces y Habichuelas | 64 |
-| vegetales | Vegetales y Viandas | 97 |
+| arroces | Arroces y Habichuelas | 65 |
+| vegetales | Vegetales y Viandas | 99 |
 | salsas | Salsas y Aderezos | 78 |
-| bebidas | Bebidas | 49 |
+| bebidas | Bebidas | 66 |
 | jugos | Jugos Naturales | 36 |
 | cocteles | Cócteles y Tragos | 54 |
 
@@ -854,7 +854,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - **Por qué:** la app usa `#/receta/<id>`, y para Google todo lo que va después de `#` es la portada: ninguna receta salía
   en las búsquedas ("receta de pernil") y todos los enlaces compartidos se veían iguales (título, texto y bandera).
 - **`node tools/prerender.js`** (sin dependencias; carga los scripts en `vm` como el navegador) genera:
-  `receta/<id>.html` (1,316 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
+  `receta/<id>.html` (1,348 páginas, ≈ 9 MB en total), servidas en **`/receta/<id>`** gracias a `"cleanUrls": true` en
   `vercel.json`. Cada una es ligera y se lee sin JavaScript: título y descripción propios, `canonical`, Open Graph y
   Twitter con el nombre del plato, tiempo de preparación y total, porciones, calorías estimadas, alérgenos, ingredientes y
   pasos en español y en inglés, seis recetas de la misma categoría y el botón **"Abrir en la app"** (`/#/receta/<id>`:
@@ -1090,7 +1090,7 @@ Sin `apiKey` la app se usa igual sin cuenta; "Entrar" muestra "Acceso sin config
 - `estimateNutrition(receta)` lee cada línea de `ingredients.es`: cantidad + unidad → gramos → nutrientes. Devuelve
   totales, valores por porción, cuántas líneas contó y cuáles **no pudo contar** (`missing`).
 - La interfaz la presenta como **estimación** y lista lo no contado. % de valor diario con `NUTRI_DV` (dieta de 2,000 kcal).
-- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,316). Si una receta nueva usa un alimento
+- **Objetivo de calidad:** ninguna receta con ingredientes sin contar (hoy: 0 de 1,348). Si una receta nueva usa un alimento
   que no está, se añade a `NUTRI_FOODS` en su sección (aves, cerdo, res, pescados, lácteos, harinas, dulces, legumbres,
   viandas, frutas, bebidas, grasas y condimentos).
 
@@ -1205,6 +1205,42 @@ entrada nueva) y, en el mismo commit, `APP_VERSION` y `APP_REVISED` (fecha AAAA-
 `sw.js` y el texto inicial de `#footer-text` en `index.html`. Desde v4.30 la versión sólo sale en el pie: "… · Versión X ·
 Revisión: …" (EN "Version X · Revised …"); la fecha se escribe con `toLocaleDateString` (es-PR / en-US).
 
+### 2026-10-25 — v4.50.0 · 16 batidas y champolas más, y cada batida con su vaso
+- *Pedido:* añadir más recetas de batidas vegetarianas y de frutas, y champolas.
+- **Recetas** (`js/recipes-5.js`, tanda 58, categoría Bebidas; 1,332 → 1,348): batidas de guayaba con leche; carambola
+  y china (con aviso para quien tiene enfermedad de los riñones); melón con leche y canela; sandía y fresa con
+  yerbabuena; mañanera de china, zanahoria y jengibre; calabaza con canela y guineo; remolacha, fresa y china; verde de
+  pepino, piña y yerbabuena (vegana); zanahoria, mangó y coco; verde de espinaca, guineo y maní (14 g de proteína);
+  yogur griego con guayaba y avena (17 g); chocolate y guineo. Champolas de mamey, níspero, mangó y acerola. Todas
+  vegetarianas, sin ingredientes sin contar.
+- **Iconos** (`index.html`, `js/app.js`): `SHAKE_ICONS` (por id, porque los nombres se parecen) da a las 40 batidas y
+  champolas su dibujo: batidas en vaso alto con espuma, sorbeto y su fruta en el borde (`ic-bat-*`); champolas en vaso
+  bajo y ancho con canela (`ic-champola-*`), del color de cada una. Antes 22 eran 🥤 y una 🥑. Ninguna repite dibujo.
+- *Verificado:* `node tools/check-recipes.js` 0 errores; `node tools/recipe-dates.js` y `node tools/prerender.js`
+  (1,348 páginas); las 16 abren en ES y EN a 375 px con su dibujo, sin desbordes ni errores en la consola.
+### 2026-10-25 — v4.49.0 · 16 recetas veganas con proteína (desayunos, platos y meriendas)
+- *Pedido:* añadir recetas veganas en desayunos, platos principales y meriendas, como se recomendó al revisar los
+  planes (el plan vegano llegaba al 87 % de la proteína: de 8 desayunos veganos sólo uno pasaba de 7 g).
+- **Recetas** (`js/recipes-5.js`, tanda 57; 1,316 → 1,332): desayunos — avena con leche de soya, mantequilla de maní
+  y guineo (17 g de proteína por porción); revoltillo de tofu y garbanzos con sofrito (24 g); quinoa con leche de
+  soya, mangó y almendras (16 g); pudín de chía y leche de soya con parcha (13 g); panqueques de avena y garbanzos
+  (17 g); avena salada con tofu y espinaca (26 g). Platos — arroz con habichuelas y tofu guisado (26 g); picadillo de
+  lentejas y tofu con arroz y maduros (24 g); chili boricua de habichuelas y quinoa con tostones (18 g); tofu al horno
+  en mojo isleño con gandules y batata (25 g); asopao de garbanzos y tofu (23 g); pastelón de amarillos con picadillo
+  de lentejas y tofu (22 g). Meriendas — garbanzos crujientes con adobo (11 g); batida de leche de soya, guineo y maní
+  (13 g); hummus de gandules con vegetales (7 g); bolitas energéticas de guineo y maní (10 g).
+- **Nutrición** (`js/nutrition.js`, §8): la **leche de soya** tiene su propio alimento (2.9 g de proteína por 100 g,
+  ~7 g por taza; antes contaba como las otras leches vegetales, 1 g) y el **adobo sin sal** también (antes contaba con
+  el sodio del adobo, 42,500 mg por 100 g; corrige además 3 recetas que ya lo usaban). Ninguna receta con
+  ingredientes sin contar (0 de 1,332).
+- **Iconos** (`index.html`, `js/app.js`): 7 dibujos veganos nuevos con la hojita (`ic-vg-avena-mani`,
+  `ic-vg-pudin-chia`, `ic-vg-avena-salada`, `ic-vg-arroz-habichuelas-tofu`, `ic-vg-batida-mani`, `ic-vg-bolitas-mani`,
+  `ic-vg-panqueques`) y los veganos que ya había para el revoltillo, el picadillo, el asopao, el pastelón y la quinoa
+  (sin esto salían un huevo 🍳, carne 🥩 o el asopao de pollo).
+- *Verificado:* `node tools/check-recipes.js` 0 errores; `node tools/recipe-dates.js` y `node tools/prerender.js`
+  (1,332 páginas; 54 páginas viejas cambian sólo sus recetas relacionadas); las 16 abren en ES y EN a 375 px sin
+  desbordes ni errores. Plan vegano (7 días × 3 planes): proteína del 87 % (mín. 45 %) al 97 % (mín. 86–88 %), con
+  una mujer de 165 lb y un hombre de 240 lb; el vegetariano también las usa (95–98 %).
 ### 2026-10-25 — v4.48.0 · Planes revisados como lo haría un nutricionista, y pantalla más ordenada
 - *Pedido:* revisar el motor de los planes, mejorar la interfaz y la organización, e implementar las recomendaciones
   de un nutricionista.

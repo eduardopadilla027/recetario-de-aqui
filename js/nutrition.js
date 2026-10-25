@@ -161,7 +161,10 @@ const NUTRI_FOODS = [
   F("dulce de leche|cajeta", 315, 6.8, 55, 50, 0, 7.4, 4.6, 129, { can: 370, cup: 300 }),
   F("coquito sin alcohol", 260, 4, 30, 28, 1, 14, 11, 70, { cup: 250 }),
   // Ingredientes veganos (tanda 40).
-  F("leche de avena|leche de almendra|leche de soya|leche de arroz|leche vegetal", 46, 1, 7, 4, 0.8, 1.5, 0.2, 40, { cup: 240 }),
+  F("leche de avena|leche de almendra|leche de arroz|leche vegetal", 46, 1, 7, 4, 0.8, 1.5, 0.2, 40, { cup: 240 }),
+  // v4.49: la leche de soya tiene ~7 g de proteína por taza (USDA "Soymilk, unsweetened", fortificada); antes contaba como
+  // las otras leches vegetales (1 g).
+  F("leche de soya|leche de soja", 33, 2.9, 1.7, 0.4, 0.4, 1.6, 0.2, 37, { cup: 243 }),
   F("leche condensada de coco", 320, 2.5, 52, 50, 0, 12, 10, 40, { can: 310, cup: 300 }),
   F("levadura nutricional", 325, 50, 36, 0, 22, 4, 1, 50, { cup: 60 }),
   F("aquafaba", 18, 1, 3, 0, 0, 0, 0, 30, { cup: 240 }),
@@ -356,6 +359,8 @@ const NUTRI_FOODS = [
   F("mostaza", 60, 3.7, 5.3, 0.9, 4, 3.3, 0.2, 1120, { cup: 250 }),
   F("sal|sal gruesa", 0, 0, 0, 0, 0, 0, 0, 38758, { cup: 292 }),
   F("adobo", 150, 5, 30, 1, 5, 1, 0, 42500, { cup: 150 }),
+  // v4.49: el adobo sin sal es ajo, cebolla, orégano y pimienta en polvo; antes contaba como el adobo con sal.
+  F("adobo sin sal", 300, 10, 60, 5, 15, 2, 0.4, 60, { cup: 150 }),
   F("sazon|sazon casero", 150, 5, 30, 1, 5, 1, 0, 27857, { cup: 200, sobre: 1.4 }),
   F("polvo de hornear", 53, 0, 28, 0, 0, 0, 0, 10600, { cup: 220 }),
   F("bicarbonato", 0, 0, 0, 0, 0, 0, 0, 27360, { cup: 220 }),
@@ -375,7 +380,7 @@ const NUTRI_LOCAL_X = {
   picadillo: [60, 1, 20, 2, 270, 0.1], cuero: [80, 0, 10, 0.5, 60, 0], sangre: [10, 0, 6, 25, 80, 0],
   rabo: [60, 0.5, 10, 1.5, 180, 0.1], chorizo: [80, 0, 10, 1.5, 400, 0.5], "harina de platano": [0, 0, 10, 1, 1300, 0],
   "coquito sin alcohol": [10, 0, 110, 0.3, 200, 0.5], "leche condensada de coco": [0, 0, 10, 1, 150, 0],
-  "levadura nutricional": [0, 0, 30, 4, 1800, 0], aquafaba: [0, 0, 20, 0.5, 40, 0], "pasta de guayaba": [0, 0, 15, 0.4, 100, 0],
+  "levadura nutricional": [0, 0, 30, 4, 1800, 0], "leche de soya": [0, 0, 123, 0.4, 122, 1.2], aquafaba: [0, 0, 20, 0.5, 40, 0], "pasta de guayaba": [0, 0, 15, 0.4, 100, 0],
   gandul: [0, 0, 40, 1.5, 250, 0], sofrito: [0, 0, 25, 0.5, 220, 0], "apio del pais": [0, 0, 25, 0.9, 400, 0],
   quenepa: [0, 0, 15, 0.7, 250, 0], "cana de azucar": [0, 0, 10, 0.4, 40, 0], pajuil: [0, 0, 10, 0.3, 120, 0],
   jobo: [0, 0, 20, 0.9, 250, 0], pitahaya: [0, 0, 18, 0.7, 120, 0], caimito: [0, 0, 17, 0.3, 250, 0], cidra: [0, 0, 40, 0.3, 150, 0],
